@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -99,7 +99,11 @@ enum AMSI_ATTRIBUTE
         AMSI_ATTRIBUTE_CONTENT_NAME	= 1,
         AMSI_ATTRIBUTE_CONTENT_SIZE	= 2,
         AMSI_ATTRIBUTE_CONTENT_ADDRESS	= 3,
-        AMSI_ATTRIBUTE_SESSION	= 4
+        AMSI_ATTRIBUTE_SESSION	= 4,
+        AMSI_ATTRIBUTE_REDIRECT_CHAIN_SIZE	= 5,
+        AMSI_ATTRIBUTE_REDIRECT_CHAIN_ADDRESS	= 6,
+        AMSI_ATTRIBUTE_ALL_SIZE	= 7,
+        AMSI_ATTRIBUTE_ALL_ADDRESS	= 8
     } 	AMSI_ATTRIBUTE;
 
 typedef /* [v1_enum] */ 

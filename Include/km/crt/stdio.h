@@ -378,6 +378,7 @@ __DEFINE_CPP_OVERLOAD_STANDARD_NFUNC_0_2_ARGLIST_EX(int, __RETURN_POLICY_SAME, _
 _CRT_STDIO_IMP_ALT int __ALTDECL vsprintf_s(_Out_writes_z_(_SizeInBytes) char * _DstBuf, _In_ size_t _SizeInBytes, _In_z_ _Printf_format_string_ const char * _Format, va_list _ArgList);
 #endif
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_2(int, vsprintf_s, char, _Dest, _In_z_ _Printf_format_string_ const char *, _Format, va_list, _Args)
+#pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_ARGLIST(int, __RETURN_POLICY_SAME, _CRT_STDIO_IMP, sprintf, vsprintf, _Pre_notnull_ _Post_z_, char, _Dest, _In_z_ _Printf_format_string_ const char *, _Format)
 _Check_return_ _CRT_STDIO_IMP int __cdecl _vscprintf(_In_z_ _Printf_format_string_ const char * _Format, va_list _ArgList);
 _Check_return_opt_ _CRT_STDIO_IMP int __cdecl _snprintf_c(_Out_writes_(_MaxCount) char * _DstBuf, _In_ size_t _MaxCount, _In_z_ _Printf_format_string_ const char * _Format, ...);
@@ -429,7 +430,7 @@ _Check_return_opt_ _CRT_INSECURE_DEPRECATE(_snprintf_s_l) _CRT_STDIO_IMP int __c
 _Check_return_opt_ _CRT_STDIO_IMP int __cdecl _snprintf_c_l(_Out_writes_(_MaxCount) char * _DstBuf, _In_ size_t _MaxCount, _In_z_ _Printf_format_string_params_(0) const char * _Format, _In_opt_ _locale_t _Locale, ...);
 _Check_return_opt_ _CRT_STDIO_IMP_ALT int __cdecl _snprintf_s_l(_Out_writes_z_(_DstSize) char * _DstBuf, _In_ size_t _DstSize, _In_ size_t _MaxCount, _In_z_ _Printf_format_string_params_(0) const char * _Format, _In_opt_ _locale_t _Locale, ...);
 _Check_return_opt_ _CRT_INSECURE_DEPRECATE(_vsnprintf_s_l) _CRT_STDIO_IMP int __cdecl _vsnprintf_l(_Out_writes_(_MaxCount) char * _DstBuf, _In_ size_t _MaxCount, _In_z_ _Printf_format_string_ const char * _Format, _In_opt_ _locale_t _Locale, va_list _ArgList);
-_Check_return_opt_ _CRT_STDIO_IMP int __cdecl _vsnprintf_c_l(_Out_writes_(_MaxCount) char * _DstBuf, _In_ size_t _MaxCount, const char *, _In_opt_ _locale_t _Locale, va_list _ArgList);
+_Check_return_opt_ _CRT_STDIO_IMP int __cdecl _vsnprintf_c_l(_Out_writes_(_MaxCount) char * _DstBuf, _In_ size_t _MaxCount, _In_z_ _Printf_format_string_ const char *, _In_opt_ _locale_t _Locale, va_list _ArgList);
 _Check_return_opt_ _CRT_STDIO_IMP int __cdecl _vsnprintf_s_l(_Out_writes_z_(_DstSize) char * _DstBuf, _In_ size_t _DstSize, _In_ size_t _MaxCount, _In_z_ _Printf_format_string_ const char* _Format,_In_opt_ _locale_t _Locale, va_list _ArgList);
 
 #ifndef _WSTDIO_DEFINED
@@ -484,7 +485,7 @@ _CRT_STDIO_IMP_ALT int __ALTDECL vswprintf_s(_Out_writes_z_(_SizeInWords) wchar_
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_2(int, vswprintf_s, wchar_t, _Dest, _In_z_ _Printf_format_string_ const wchar_t *, _Format, va_list, _Args)
 
  _CRT_INSECURE_DEPRECATE_CORE(swprintf) _Check_return_opt_ _CRT_STDIO_IMP int __cdecl swprintf(_Out_ wchar_t *, _Printf_format_string_ const wchar_t *, ...);
- _CRT_INSECURE_DEPRECATE_CORE(vswprintf) _CRT_STDIO_IMP int __cdecl vswprintf(_Out_ wchar_t *, const wchar_t *, va_list);
+ _CRT_INSECURE_DEPRECATE_CORE(vswprintf) _CRT_STDIO_IMP int __cdecl vswprintf(_Pre_notnull_ _Post_z_ wchar_t *, _In_z_ _Printf_format_string_ const wchar_t *, va_list);
 
 _Check_return_opt_ _CRT_STDIO_IMP int __cdecl _swprintf_c(_Out_writes_z_(_SizeInWords) wchar_t * _DstBuf, _In_ size_t _SizeInWords, _In_z_ _Printf_format_string_ const wchar_t * _Format, ...);
 _Check_return_opt_ _CRT_STDIO_IMP int __cdecl _vswprintf_c(_Out_writes_z_(_SizeInWords) wchar_t * _DstBuf, _In_ size_t _SizeInWords, _In_z_ _Printf_format_string_ const wchar_t * _Format, va_list _ArgList);

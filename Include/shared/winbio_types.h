@@ -977,6 +977,24 @@ typedef WINBIO_BDB_ANSI_381_RECORD *PWINBIO_BDB_ANSI_381_RECORD;
 
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Validation header placed at the beginning of every secure buffer.
+//
+///////////////////////////////////////////////////////////////////////////////
+typedef struct _WINBIO_SECURE_BUFFER_HEADER_V1 {
+    ULONG Type;                 // WINBIO_SECURE_BUFFER_TYPE_V1
+    ULONG Size;                 // sizeof(this structure)
+    ULONG Flags;                // Buffer creator must set to zero
+    ULONGLONG ValidationTag;    // Buffer creator must set
+} WINBIO_SECURE_BUFFER_HEADER_V1, *PWINBIO_SECURE_BUFFER_HEADER_V1;
+
+#define WINBIO_SECURE_BUFFER_TYPE_V1         ((ULONG)0xB9BE0001)
+
+#endif  // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
 //
 // Sensor pool type identifiers
 //
@@ -1309,7 +1327,13 @@ typedef struct _WINBIO_STORAGE_SCHEMA {
 //
 typedef ULONG WINBIO_FRAMEWORK_CHANGE_TYPE, *PWINBIO_FRAMEWORK_CHANGE_TYPE;
 
-#define WINBIO_FRAMEWORK_CHANGE_UNIT    ((WINBIO_FRAMEWORK_CHANGE_TYPE)0x00000001)
+#define WINBIO_FRAMEWORK_CHANGE_UNIT            ((WINBIO_FRAMEWORK_CHANGE_TYPE)0x00000001)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#define WINBIO_FRAMEWORK_CHANGE_UNIT_STATUS     ((WINBIO_FRAMEWORK_CHANGE_TYPE)0x00000002)
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1936,6 +1960,7 @@ typedef struct _WINBIO_EXTENDED_ENROLLMENT_STATUS {
 
 typedef struct _WINBIO_EXTENDED_UNIT_STATUS { 
     WINBIO_SENSOR_STATUS Availability;
+    ULONG ReasonCode;
 } WINBIO_EXTENDED_UNIT_STATUS, *PWINBIO_EXTENDED_UNIT_STATUS; 
 
 
@@ -2073,7 +2098,6 @@ typedef ULONG32 WINBIO_SETTING_SOURCE_TYPE, *PWINBIO_SETTING_SOURCE_TYPE;
 #define WINBIO_SETTING_SOURCE_POLICY     ((WINBIO_SETTING_SOURCE_TYPE)2)
 #define WINBIO_SETTING_SOURCE_LOCAL      ((WINBIO_SETTING_SOURCE_TYPE)3)
 
-
 typedef struct _WINBIO_EXTENDED_ENROLLMENT_PARAMETERS {
     SIZE_T Size;
     WINBIO_BIOMETRIC_SUBTYPE SubFactor;
@@ -2084,6 +2108,42 @@ typedef struct _WINBIO_ACCOUNT_POLICY {
     WINBIO_ANTI_SPOOF_POLICY_ACTION AntiSpoofBehavior;
 } WINBIO_ACCOUNT_POLICY, *PWINBIO_ACCOUNT_POLICY;
 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#define WINBIO_OPERATION_ENROLL_AUTHORIZE               ((WINBIO_OPERATION_TYPE)31)
+#define WINBIO_OPERATION_ENROLL_REVOKE                  ((WINBIO_OPERATION_TYPE)32)
+#define WINBIO_OPERATION_GET_PROTECTION_POLICY          ((WINBIO_OPERATION_TYPE)33)
+
+typedef struct _WINBIO_PROTECTION_POLICY
+{
+    ULONG Version;
+    WINBIO_IDENTITY Identity;
+    WINBIO_UUID DatabaseId;
+    ULONGLONG UserState;
+    SIZE_T PolicySize;
+    UCHAR Policy[128];
+} WINBIO_PROTECTION_POLICY, *PWINBIO_PROTECTION_POLICY;
+
+typedef ULONG32 WINBIO_MATCH_TYPE, *PWINBIO_MATCH_TYPE;
+
+#define WINBIO_MATCH_SOFTWARE                      ((WINBIO_MATCH_TYPE)1)
+#define WINBIO_MATCH_TRUSTED_EXECUTION_ENVIRONMENT ((WINBIO_MATCH_TYPE)2)
+#define WINBIO_MATCH_ON_CHIP                       ((WINBIO_MATCH_TYPE)3)
+
+typedef struct _WINBIO_GESTURE_METADATA
+{
+    SIZE_T Size;
+    WINBIO_BIOMETRIC_TYPE BiometricType;
+    WINBIO_MATCH_TYPE MatchType;
+} WINBIO_GESTURE_METADATA, *PWINBIO_GESTURE_METADATA;
+
+//
+// Framework operation - async unit status update notification...
+//
+#define WINBIO_OPERATION_NOTIFY_UNIT_STATUS_CHANGE      ((WINBIO_OPERATION_TYPE)34)
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #ifdef __cplusplus
 } // extern "C"

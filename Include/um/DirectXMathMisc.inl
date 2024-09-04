@@ -7,6 +7,8 @@
 // PARTICULAR PURPOSE.
 //  
 // Copyright (c) Microsoft Corporation. All rights reserved.
+//
+// http://go.microsoft.com/fwlink/?LinkID=615560
 //-------------------------------------------------------------------------------------
 
 #pragma once
@@ -121,7 +123,7 @@ inline XMVECTOR XM_CALLCONV XMQuaternionMultiply
     float32x4_t Q2X = vdupq_lane_f32( Q2L, 0 );
     float32x4_t Q2Y = vdupq_lane_f32( Q2L, 1 );
     float32x4_t Q2Z = vdupq_lane_f32( Q2H, 0 );
-    XMVECTOR vResult = XM_VMULQ_LANE_F32(Q1, Q2H, 1);
+    XMVECTOR vResult = vmulq_lane_f32(Q1, Q2H, 1);
 
     // Mul by Q1WZYX
     float32x4_t vTemp = vrev64q_f32(Q1);
@@ -1476,7 +1478,7 @@ inline XMVECTOR XM_CALLCONV XMColorAdjustSaturation
     static const XMVECTORF32 gvLuminance = {0.2125f, 0.7154f, 0.0721f, 0.0f};
     XMVECTOR vLuminance = XMVector3Dot( vColor, gvLuminance );
     XMVECTOR vResult = vsubq_f32(vColor, vLuminance);
-    vResult = XM_VMLAQ_N_F32( vLuminance, vResult, fSaturation );
+    vResult = vmlaq_n_f32( vLuminance, vResult, fSaturation );
     return vbslq_f32( g_XMSelect1110, vResult, vColor );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 gvLuminance = {0.2125f, 0.7154f, 0.0721f, 0.0f};
@@ -1514,7 +1516,7 @@ inline XMVECTOR XM_CALLCONV XMColorAdjustContrast
     return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     XMVECTOR vResult = vsubq_f32(vColor, g_XMOneHalf.v);
-    vResult = XM_VMLAQ_N_F32( g_XMOneHalf.v, vResult, fContrast );
+    vResult = vmlaq_n_f32( g_XMOneHalf.v, vResult, fContrast );
     return vbslq_f32( g_XMSelect1110, vResult, vColor );
 #elif defined(_XM_SSE_INTRINSICS_)
     XMVECTOR vScale = _mm_set_ps1(fContrast);           // Splat the scale
@@ -1981,54 +1983,53 @@ inline XMVECTOR XM_CALLCONV XMColorSRGBToRGB( FXMVECTOR srgb )
 inline bool XMVerifyCPUSupport()
 {
 #if defined(_XM_SSE_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-#if defined(_XM_F16C_INTRINSICS_) || defined(_XM_AVX_INTRINSICS_)
-   int avxCPUInfo[4] = {-1};
-   __cpuid( avxCPUInfo, 0 );
+    int CPUInfo[4] = { -1 };
+    __cpuid(CPUInfo, 0);
 
-   if ( avxCPUInfo[0] < 1  )
-       return false;
-
-    __cpuid(avxCPUInfo, 1 );
-
-#ifdef _XM_F16C_INTRINSICS_
-    if ( (avxCPUInfo[2] & 0x38000000 ) != 0x38000000 )
-        return false; // No F16C/AVX/OSXSAVE support
+#ifdef __AVX2__
+    if (CPUInfo[0] < 7)
+        return false;
 #else
-    if ( (avxCPUInfo[2] & 0x18000000 ) != 0x18000000 )
-        return false; // No AVX/OSXSAVE support
+    if (CPUInfo[0] < 1)
+        return false;
 #endif
+
+    __cpuid(CPUInfo, 1);
+
+#ifdef __AVX2__
+    // The compiler can emit FMA3 instructions even without explicit intrinsics use
+    if ((CPUInfo[2] & 0x38081001) != 0x38081001)
+        return false; // No F16C/AVX/OSXSAVE/SSE4.1/FMA3/SSE3 support
+#elif defined(_XM_F16C_INTRINSICS_)
+    if ((CPUInfo[2] & 0x38080001) != 0x38080001)
+        return false; // No F16C/AVX/OSXSAVE/SSE4.1/SSE3 support
+#elif defined(__AVX__) || defined(_XM_AVX_INTRINSICS_)
+    if ((CPUInfo[2] & 0x18080001) != 0x18080001)
+        return false; // No AVX/OSXSAVE/SSE4.1/SSE3 support
+#elif defined(_XM_SSE4_INTRINSICS_)
+    if ((CPUInfo[2] & 0x80001) != 0x80001)
+        return false; // No SSE3/SSE4.1 support
+#elif defined(_XM_SSE3_INTRINSICS_)
+    if (!(CPUInfo[2] & 0x1))
+        return false; // No SSE3 support  
 #endif
-#ifdef _XM_SSE4_INTRINSICS_
-   int CPUInfo[4] = {-1};
-   __cpuid( CPUInfo, 0 );
 
-   if ( CPUInfo[0] < 1  )
-       return false;
+    // The x64 processor model requires SSE2 support, but no harm in checking
+    if ((CPUInfo[3] & 0x6000000) != 0x6000000)
+        return false; // No SSE2/SSE support
 
-    __cpuid(CPUInfo, 1 );
-
-    if ( (CPUInfo[2] & 0x80001) != 0x80001 )
-        return false; // Missing SSE3 or SSE 4.1 support
+#ifdef __AVX2__
+    __cpuidex(CPUInfo, 7, 0);
+    if (!(CPUInfo[1] & 0x20))
+        return false; // No AVX2 support
 #endif
-#if defined(_M_X64)
-    // The X64 processor model requires SSE2 support
+
     return true;
-#elif defined(PF_XMMI_INSTRUCTIONS_AVAILABLE)
-    // Note that on Windows 2000 or older, SSE2 detection is not supported so this will always fail
-    // Detecting SSE2 on older versions of Windows would require using cpuid directly
-    return ( IsProcessorFeaturePresent( PF_XMMI_INSTRUCTIONS_AVAILABLE ) != 0 && IsProcessorFeaturePresent( PF_XMMI64_INSTRUCTIONS_AVAILABLE ) != 0 );
-#else
-    // If windows.h is not included, we return false (likely a false negative)
-    return false;
-#endif
 #elif defined(_XM_ARM_NEON_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-#ifdef PF_ARM_NEON_INSTRUCTIONS_AVAILABLE
-    return ( IsProcessorFeaturePresent( PF_ARM_NEON_INSTRUCTIONS_AVAILABLE ) != 0 );
+    // ARM-NEON support is required for the Windows on ARM platform
+    return true;
 #else
-    // If windows.h is not included, we return false (likely a false negative)
-    return false;
-#endif
-#else
+    // No intrinsics path always supported
     return true;
 #endif
 }

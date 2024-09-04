@@ -19,6 +19,7 @@
 #include <rpc.h>
 
 /* APISET_NAME: api-ms-win-core-winrt-string-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -162,42 +163,6 @@ WindowsDeleteStringBuffer(
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-// HSTRING Inspection
-typedef HRESULT (WINAPI *PINSPECT_HSTRING_CALLBACK)(_In_ void* context, UINT_PTR readAddress, UINT32 length, _Out_writes_(length) BYTE* buffer);
-STDAPI
-WindowsInspectString(
-    _In_ UINT_PTR targetHString,
-    USHORT machine,
-    _In_ PINSPECT_HSTRING_CALLBACK callback,
-    _In_opt_ void * context,
-    _Out_ UINT32 * length,
-    _Out_ UINT_PTR * targetStringAddress
-    );
-
-
-
-#if !defined(_CONTRACT_GEN) || (_APISET_WINRT_STRING_VER >= 0x0101)
-// HSTRING Inspection 2
-typedef HRESULT (WINAPI *PINSPECT_HSTRING_CALLBACK2)(_In_ void* context, UINT64 readAddress, UINT32 length, _Out_writes_(length) BYTE* buffer);
-STDAPI
-WindowsInspectString2(
-    _In_ UINT64 targetHString,
-    USHORT machine,
-    _In_ PINSPECT_HSTRING_CALLBACK2 callback,
-    _In_opt_ void * context,
-    _Out_ UINT32 * length,
-    _Out_ UINT64 * targetStringAddress
-    );
-
-#endif
-
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
-
 #pragma region Application Family or OneCore Family
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
@@ -282,6 +247,42 @@ HSTRING_UserFree64(
 #endif // __cplusplus
 
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+// HSTRING Inspection
+typedef HRESULT (WINAPI *PINSPECT_HSTRING_CALLBACK)(_In_ void* context, UINT_PTR readAddress, UINT32 length, _Out_writes_(length) BYTE* buffer);
+STDAPI
+WindowsInspectString(
+    _In_ UINT_PTR targetHString,
+    USHORT machine,
+    _In_ PINSPECT_HSTRING_CALLBACK callback,
+    _In_opt_ void * context,
+    _Out_ UINT32 * length,
+    _Out_ UINT_PTR * targetStringAddress
+    );
+
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_WINRT_STRING_VER >= 0x0101)
+// HSTRING Inspection 2
+typedef HRESULT (WINAPI *PINSPECT_HSTRING_CALLBACK2)(_In_ void* context, UINT64 readAddress, UINT32 length, _Out_writes_(length) BYTE* buffer);
+STDAPI
+WindowsInspectString2(
+    _In_ UINT64 targetHString,
+    USHORT machine,
+    _In_ PINSPECT_HSTRING_CALLBACK2 callback,
+    _In_opt_ void * context,
+    _Out_ UINT32 * length,
+    _Out_ UINT64 * targetStringAddress
+    );
+
+#endif
+
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 #endif // __WINSTRING_H_

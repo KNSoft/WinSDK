@@ -1311,7 +1311,7 @@ CPER_FIELD_CHECK(WHEA_FIRMWARE_ERROR_RECORD_REFERENCE, FirmwareRecordId, 8,  8);
 //
 // This is the start of the Microsoft specific extensions to the Common Platform
 // Error Record specification. This is in accordance with Appendix N, section
-// 2.3 of the Unified Extensible Firware Interface specification, which allows
+// 2.3 of the Unified Extensible Firmware Interface specification, which allows
 // the specification of non-standard section bodies.
 //
 
@@ -1434,7 +1434,7 @@ typedef union _WHEA_ARM_PROCESSOR_ERROR_INFORMATION_VALID_BITS {
         USHORT Flags:1;
         USHORT ErrorInformation:1;
         USHORT VirtualFaultAddress:1;
-        USHORT PhysicalFaultAddresss:1;
+        USHORT PhysicalFaultAddress:1;
         USHORT Reserved:11;
     } DUMMYSTRUCTNAME;
     USHORT AsUSHORT;
@@ -1521,7 +1521,7 @@ typedef struct _WHEA_ARM_BUS_ERROR {
     UCHAR Corrected:1;
     UCHAR PrecisePC:1;
     UCHAR RestartablePC:1;
-    UCHAR PariticpationType:2;
+    UCHAR ParticipationType:2;
     UCHAR TimeOut:1;
     UCHAR AddressSpace:2;
     USHORT MemoryAccessAttributes:9;
@@ -1545,7 +1545,7 @@ typedef struct _WHEA_ARM_PROCESSOR_ERROR_INFORMATION {
     UCHAR Flags;
     ULONGLONG ErrorInformation;
     ULONGLONG VirtualFaultAddress;
-    ULONGLONG PhysicalFaultAddresss;
+    ULONGLONG PhysicalFaultAddress;
 } WHEA_ARM_PROCESSOR_ERROR_INFORMATION, *PWHEA_ARM_PROCESSOR_ERROR_INFORMATION;
 
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, Version,                 0,   1);
@@ -1556,7 +1556,7 @@ CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, MultipleError,           
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, Flags,                   7,   1);
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, ErrorInformation,        8,   8);
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, VirtualFaultAddress,    16,   8);
-CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, PhysicalFaultAddresss,  24,   8);
+CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, PhysicalFaultAddress,  24,   8);
 
 //------------------------------------------------------ WHEA_ARM_PROCESSOR_ERROR_CONTEXT_INFORMATION_HEADER
 

@@ -27,6 +27,12 @@
 
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 //
 // Define API decoration for direct importing of DLL references.
 //
@@ -43,6 +49,12 @@
 #define LWSTDAPIV_(type)  STDAPIV_(type)
 #endif
 #endif // WINSHLWAPI
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 
 #if _MSC_VER >= 1200
@@ -1909,6 +1921,12 @@ LWSTDAPI_(IStream *) SHCreateMemStream(_In_reads_bytes_opt_(cbInit) const BYTE *
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+
 #if (_WIN32_IE >= 0x0603)
 LWSTDAPI GetAcceptLanguagesA(_Out_writes_to_(*pcchLanguages, *pcchLanguages) LPSTR pszLanguages, _Inout_ DWORD *pcchLanguages);
 LWSTDAPI GetAcceptLanguagesW(_Out_writes_to_(*pcchLanguages, *pcchLanguages) LPWSTR pszLanguages, _Inout_ DWORD *pcchLanguages);
@@ -1919,7 +1937,7 @@ LWSTDAPI GetAcceptLanguagesW(_Out_writes_to_(*pcchLanguages, *pcchLanguages) LPW
 #endif // !UNICODE
 #endif // (_WIN32_IE >= 0x0603)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #endif // NO_SHLWAPI_HTTP
@@ -2300,7 +2318,7 @@ LWSTDAPI_(UINT) WhichPlatform(void);
 typedef struct
 {
     const IID * piid;
-    int         dwOffset;
+    DWORD         dwOffset;
 } QITAB, *LPQITAB;
 typedef const QITAB *LPCQITAB;
 

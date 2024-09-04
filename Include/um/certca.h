@@ -2033,6 +2033,9 @@ CAGetCertTypeFlagsEx(
 #define CTPKSetServerVersion(f, v) \
     f = (((f) & ~CTPRIVATEKEY_FLAG_SERVERVERSION_MASK) | v << CTPRIVATEKEY_FLAG_SERVERVERSION_SHIFT)
 
+#define CTPRIVATEKEY_FLAG_HELLO_KSP_KEY				0x00100000
+#define CTPRIVATEKEY_FLAG_HELLO_LOGON_KEY			0x00200000
+
 // Convert CSVER_MAJOR_* to TEMPLATE_SERVER_VER_*
 // CSVER_MAJOR increases in each release. TEMPLATE_SERVER_VER_* may or may not.
 // Update the following macro if TEMPLATE_SERVER_VER_CURRENT stays the same

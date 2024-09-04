@@ -476,7 +476,7 @@
 /* ============================================================
 **
 ** IContentHeader errors: error codes from DRM_E_CH_BASECODE+0
-** to DRM_E_CH_BASECODE+0xFF, 0x80041100-0x800411ff.
+** to DRM_E_CH_BASECODE+0x7F, 0x80041100-0x8004117f.
 **
 ** ============================================================
 */
@@ -616,6 +616,138 @@
 
 /* ============================================================
 **
+** CD Migration Tool errors: error codes from DRM_E_CH_BASECODE+0x80
+** to DRM_E_CH_BASECODE+0xFF, 0x80041180-0x800411ff.
+**
+** ============================================================
+*/
+
+#define DRM_E_CDMIGRATIONTOOL_BASECODE                ((DRM_RESULT)0x80041180L)
+#define DRM_E_CDMIGRATIONTOOL_MAXCODE                 ((DRM_RESULT)0x800411FFL)
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_INVALID_FILE
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because it is invalid.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_INVALID_FILE ((DRM_RESULT)0x80041180L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_FILE_IS_NOT_CD_RIPPED
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because it was not ripped from CD.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_FILE_IS_NOT_CD_RIPPED ((DRM_RESULT)0x80041181L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_FILE_IS_NOT_PROTECTED
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because it is not protected.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_FILE_IS_NOT_PROTECTED ((DRM_RESULT)0x80041182L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_LICENSE_KID_INVALID
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the server returned a license with an invalid KID.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_LICENSE_KID_INVALID ((DRM_RESULT)0x80041183L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_LICENSE_KID_MISMATCH
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the server returned a license with a KID that did not match the content.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_LICENSE_KID_MISMATCH ((DRM_RESULT)0x80041184L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_LICENSE_CONTENT_KEY_INVALID
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the server returned a license with an invalid content key.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_LICENSE_CONTENT_KEY_INVALID ((DRM_RESULT)0x80041185L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_INVALID_ASF_FORMAT
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the ASF is corrupt.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_INVALID_ASF_FORMAT ((DRM_RESULT)0x80041186L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_INVALID_ASF_PACKETS
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the ASF packets are corrupt.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_INVALID_ASF_PACKETS ((DRM_RESULT)0x80041187L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_CONTENT_KEY_CACHE_CORRUPT
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the content key obtained from the local cache is invalid.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_CONTENT_KEY_CACHE_CORRUPT ((DRM_RESULT)0x80041188L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_FILE_WRITE_ERROR
+ *
+ * MessageText:
+ *
+ * File cannot be migrated because the file could not be written.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_FILE_WRITE_ERROR ((DRM_RESULT)0x80041189L)
+
+
+/*
+ * MessageId: DRM_E_CDMIGRATIONTOOL_CANCELLED
+ *
+ * MessageText:
+ *
+ * File migration was cancelled.
+ *
+ */
+#define DRM_E_CDMIGRATIONTOOL_CANCELLED  ((DRM_RESULT)0x8004118AL)
+
+
+/* ============================================================
+**
 ** License parsing results: error codes from 0x80041200-0x800412ff.
 **
 ** ============================================================
@@ -652,6 +784,166 @@
  *
  */
 #define DRM_E_LIC_UNSUPPORTED_VALUE      ((DRM_RESULT)0x80041207L)
+
+
+/* ============================================================
+**
+** CDMI: error codes from 0x80041300-0x8004137f.
+**
+** ============================================================
+*/
+
+#define DRM_E_CDMI_BASECODE          ((DRM_RESULT)0x80041300L)
+
+/*
+ * MessageId: DRM_E_CDMI_INVALID_INITIALIZATION_DATA
+ *
+ * MessageText:
+ *
+ * Invalid initialization data.
+ *
+ */
+#define DRM_E_CDMI_INVALID_INITIALIZATION_DATA ((DRM_RESULT)0x80041301L)
+
+/*
+ * MessageId: DRM_E_CDMI_PERSISTENT_LICENSE_FOR_NON_PERSISTENT_LICENSE_SESSION
+ *
+ * MessageText:
+ *
+ * A persistent license was provided for a session that was not persistent-license.
+ *
+ */
+#define DRM_E_CDMI_PERSISTENT_LICENSE_FOR_NON_PERSISTENT_LICENSE_SESSION ((DRM_RESULT)0x80041302L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS
+ *
+ * MessageText:
+ *
+ * The existing MediaKeys object cannot be removed.
+ *
+ */
+#define DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS ((DRM_RESULT)0x80041303L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNSUPPORTED_KEY_SYSTEM
+ *
+ * MessageText:
+ *
+ * The requested key system is not supported by PlayReady.
+ *
+ */
+#define DRM_E_CDMI_UNSUPPORTED_KEY_SYSTEM ((DRM_RESULT)0x80041304L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA_TYPES
+ *
+ * MessageText:
+ *
+ * None of the requested initialization data types are supported by PlayReady.
+ *
+ */
+#define DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA_TYPES ((DRM_RESULT)0x80041305L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNSUPPORTED_DISTINCTIVE_IDENTIFIER
+ *
+ * MessageText:
+ *
+ * The requested distinctive identifier setting is not supported by PlayReady.
+ *
+ */
+#define DRM_E_CDMI_UNSUPPORTED_DISTINCTIVE_IDENTIFIER ((DRM_RESULT)0x80041306L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNSUPPORTED_SESSION_TYPE
+ *
+ * MessageText:
+ *
+ * The requested session type is not supported by PlayReady.
+ *
+ */
+#define DRM_E_CDMI_UNSUPPORTED_SESSION_TYPE ((DRM_RESULT)0x80041307L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA
+ *
+ * MessageText:
+ *
+ * The provided initialization data is not supported by PlayReady.
+ *
+ */
+#define DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA ((DRM_RESULT)0x80041308L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNSUPPORTED_OPERATION
+ *
+ * MessageText:
+ *
+ * The requested operation is not supported by PlayReady.
+ *
+ */
+#define DRM_E_CDMI_UNSUPPORTED_OPERATION ((DRM_RESULT)0x80041309L)
+
+/*
+ * MessageId: DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS_AT_THIS_TIME
+ *
+ * MessageText:
+ *
+ * The existing MediaKeys object cannot be removed at this time.
+ *
+ */
+#define DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS_AT_THIS_TIME ((DRM_RESULT)0x8004130AL)
+
+/*
+ * MessageId: DRM_E_CDMI_SESSION_ALREADY_USED
+ *
+ * MessageText:
+ *
+ * The session has already been used.
+ *
+ */
+#define DRM_E_CDMI_SESSION_ALREADY_USED  ((DRM_RESULT)0x8004130BL)
+
+/*
+ * MessageId: DRM_E_CDMI_SESSION_UNINITIALIZED
+ *
+ * MessageText:
+ *
+ * The session is not yet initialized.
+ *
+ */
+#define DRM_E_CDMI_SESSION_UNINITIALIZED ((DRM_RESULT)0x8004130CL)
+
+/*
+ * MessageId: DRM_E_CDMI_SESSION_CLOSED
+ *
+ * MessageText:
+ *
+ * The session is closed.
+ *
+ */
+#define DRM_E_CDMI_SESSION_CLOSED        ((DRM_RESULT)0x8004130DL)
+
+/*
+ * MessageId: DRM_E_CDMI_SESSION_EXISTS
+ *
+ * MessageText:
+ *
+ * A non-closed session already exists for this sessionId.
+ *
+ */
+#define DRM_E_CDMI_SESSION_EXISTS        ((DRM_RESULT)0x8004130EL)
+
+/*
+ * MessageId: DRM_E_CDMI_SECURE_STOP_LICENSE_FOR_NON_PERSISTENT_USAGE_RECORD_SESSION
+ *
+ * MessageText:
+ *
+ * A secure stop license was provided for a session that was not persistent-usage-record.
+ *
+ */
+#define DRM_E_CDMI_SECURE_STOP_LICENSE_FOR_NON_PERSISTENT_USAGE_RECORD_SESSION ((DRM_RESULT)0x8004130FL)
 
 
 /* ============================================================

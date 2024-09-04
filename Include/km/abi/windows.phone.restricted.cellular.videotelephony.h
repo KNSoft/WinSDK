@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -30,42 +30,14 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __windows2Ephone2Erestricted2Ecellular2Evideotelephony_h__
-#define __windows2Ephone2Erestricted2Ecellular2Evideotelephony_h__
+#ifndef __vt_h__
+#define __vt_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
 #endif
 
 /* Forward Declarations */ 
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_FWD_DEFINED__ */
-
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_FWD_DEFINED__ */
-
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_FWD_DEFINED__ */
-
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_FWD_DEFINED__ */
-
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_FWD_DEFINED__
@@ -89,6 +61,20 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_FWD_DEFINED__
@@ -283,6 +269,20 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream;
@@ -319,7 +319,7 @@ extern "C"{
 #endif 
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0000 */
+/* interface __MIDL_itf_vt_0000_0000 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -393,30 +393,30 @@ interface IRotationChangeEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0000 */
+/* interface __MIDL_itf_vt_0000_0000 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0000_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2199 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2199 */
+/* interface __MIDL_itf_vt2Eidl_0000_2198 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2199_v0_0_s_ifspec;
+/* interface __MIDL_itf_vt2Eidl_0000_2198 */
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0001 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2198_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0001 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_USE
@@ -471,30 +471,30 @@ interface IVideoQualityChangeEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0001 */
+/* interface __MIDL_itf_vt_0000_0001 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2200 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2200 */
+/* interface __MIDL_itf_vt2Eidl_0000_2199 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2200_v0_0_s_ifspec;
+/* interface __MIDL_itf_vt2Eidl_0000_2199 */
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2199_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0002 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_USE
@@ -580,7 +580,7 @@ interface IResolutionChangeEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0002 */
+/* interface __MIDL_itf_vt_0000_0002 */
 /* [local] */ 
 
 
@@ -588,23 +588,23 @@ interface IResolutionChangeEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2201 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2201 */
+/* interface __MIDL_itf_vt2Eidl_0000_2200 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2201_v0_0_s_ifspec;
+/* interface __MIDL_itf_vt2Eidl_0000_2200 */
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2200_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0003 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_USE
@@ -659,30 +659,30 @@ interface IVideoStateChangeEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0003 */
+/* interface __MIDL_itf_vt_0000_0003 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2202 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2202 */
+/* interface __MIDL_itf_vt2Eidl_0000_2201 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2202_v0_0_s_ifspec;
+/* interface __MIDL_itf_vt2Eidl_0000_2201 */
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2201_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_USE
@@ -803,9 +803,64 @@ class VideoCallInitializationParameters;
 } /*Windows*/
 }
 #endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CCameraLocation
+    {
+        CameraLocation_Front	= 0,
+        CameraLocation_Back	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CStreamIdentifier
+    {
+        StreamIdentifier_LocalPreview	= 0,
+        StreamIdentifier_RemoteView	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CVideoQuality
+    {
+        VideoQuality_Low	= 0,
+        VideoQuality_Average	= 1,
+        VideoQuality_High	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CVideoStreamState
+    {
+        VideoStreamState_Initialized	= 0,
+        VideoStreamState_ResourcesAcquired	= 1,
+        VideoStreamState_Playing	= 2,
+        VideoStreamState_Paused	= 3,
+        VideoStreamState_Destroyed	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Phone_Restricted_Cellular_VideoTelephony_ILocalVideoStream[] = L"Windows.Phone.Restricted.Cellular.VideoTelephony.ILocalVideoStream";
+#endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0004 */
+/* interface __MIDL_itf_vt_0000_0004 */
 /* [local] */ 
 
 
@@ -900,585 +955,6 @@ extern "C" {
 
 
 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0004_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2203 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2203 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2203_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0005 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0005 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0005_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b4758f55-75f0-53c2-b199-5d9590f1be42")
-    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRotationChangeEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl;
-
-    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0006 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0006 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0006_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2204 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2204 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2204_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0007 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0007 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0007_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("ca109493-57a8-5118-9be5-b139acbfe98e")
-    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoQualityChangeEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl;
-
-    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0008 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0008 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0008_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2205 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2205 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2205_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0009 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0009 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0009_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("89be92a7-be21-5f45-a03f-6ecd7fd37d2e")
-    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IResolutionChangeEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl;
-
-    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0010 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0010_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2206 */
-
-
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2206 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony2Eidl_0000_2206_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0011 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0011 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0011_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("8957cc9a-a959-5706-8d1f-aa2281b7fd2e")
-    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStateChangeEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl;
-
-    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0012 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs */
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CCameraLocation
-    {
-        CameraLocation_Front	= 0,
-        CameraLocation_Back	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CStreamIdentifier
-    {
-        StreamIdentifier_LocalPreview	= 0,
-        StreamIdentifier_RemoteView	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CVideoQuality
-    {
-        VideoQuality_Low	= 0,
-        VideoQuality_Average	= 1,
-        VideoQuality_High	= 2
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CVideoStreamState
-    {
-        VideoStreamState_Initialized	= 0,
-        VideoStreamState_ResourcesAcquired	= 1,
-        VideoStreamState_Playing	= 2,
-        VideoStreamState_Paused	= 3,
-        VideoStreamState_Destroyed	= 4
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
-#if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Phone_Restricted_Cellular_VideoTelephony_ILocalVideoStream[] = L"Windows.Phone.Restricted.Cellular.VideoTelephony.ILocalVideoStream";
-#endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0012 */
-/* [local] */ 
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -1586,8 +1062,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0004_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__
@@ -1714,21 +1190,270 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0013 */
+/* interface __MIDL_itf_vt2Eidl_0000_2202 */
+
+
+
+
+/* interface __MIDL_itf_vt2Eidl_0000_2202 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2202_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0006 */
 /* [local] */ 
 
+#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_vt_0000_0006 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0006_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b4758f55-75f0-53c2-b199-5d9590f1be42")
+    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRotationChangeEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_vt_0000_0007 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRotationChangeEventArgs */
+
+
+/* interface __MIDL_itf_vt_0000_0007 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0007_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt2Eidl_0000_2203 */
+
+
+
+
+/* interface __MIDL_itf_vt2Eidl_0000_2203 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2203_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0008 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_vt_0000_0008 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0008_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("ca109493-57a8-5118-9be5-b139acbfe98e")
+    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoQualityChangeEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_vt_0000_0009 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CRemoteVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoQualityChangeEventArgs */
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Phone_Restricted_Cellular_VideoTelephony_IRemoteVideoStream[] = L"Windows.Phone.Restricted.Cellular.VideoTelephony.IRemoteVideoStream";
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0013 */
+/* interface __MIDL_itf_vt_0000_0009 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0009_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__
@@ -1909,7 +1634,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0014 */
+/* interface __MIDL_itf_vt_0000_0010 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__)
@@ -1917,13 +1642,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0014 */
+/* interface __MIDL_itf_vt_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__
@@ -2050,7 +1775,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0015 */
+/* interface __MIDL_itf_vt_0000_0011 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__)
@@ -2058,13 +1783,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0015 */
+/* interface __MIDL_itf_vt_0000_0011 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0011_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__
@@ -2191,7 +1916,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0016 */
+/* interface __MIDL_itf_vt_0000_0012 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__)
@@ -2199,13 +1924,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0016 */
+/* interface __MIDL_itf_vt_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__
@@ -2396,7 +2121,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0017 */
+/* interface __MIDL_itf_vt_0000_0013 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__)
@@ -2404,13 +2129,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0017 */
+/* interface __MIDL_itf_vt_0000_0013 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__
@@ -2539,7 +2264,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0018 */
+/* interface __MIDL_itf_vt_0000_0014 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__)
@@ -2547,13 +2272,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0018 */
+/* interface __MIDL_itf_vt_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__
@@ -2770,7 +2495,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0019 */
+/* interface __MIDL_itf_vt_0000_0015 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__)
@@ -2778,13 +2503,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0019 */
+/* interface __MIDL_itf_vt_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__
@@ -2911,7 +2636,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0020 */
+/* interface __MIDL_itf_vt_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__)
@@ -2919,13 +2644,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0020 */
+/* interface __MIDL_itf_vt_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__
@@ -3052,21 +2777,270 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0021 */
+/* interface __MIDL_itf_vt2Eidl_0000_2204 */
+
+
+
+
+/* interface __MIDL_itf_vt2Eidl_0000_2204 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2204_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0018 */
 /* [local] */ 
 
+#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_vt_0000_0018 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0018_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("89be92a7-be21-5f45-a03f-6ecd7fd37d2e")
+    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IResolutionChangeEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_vt_0000_0019 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CResolutionChangeEventArgs */
+
+
+/* interface __MIDL_itf_vt_0000_0019 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0019_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt2Eidl_0000_2205 */
+
+
+
+
+/* interface __MIDL_itf_vt2Eidl_0000_2205 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt2Eidl_0000_2205_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_vt_0000_0020 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_vt_0000_0020 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0020_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8957cc9a-a959-5706-8d1f-aa2281b7fd2e")
+    __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStateChangeEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_vt_0000_0021 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStream_Windows__CPhone__CRestricted__CCellular__CVideoTelephony__CVideoStateChangeEventArgs */
 #if !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Phone_Restricted_Cellular_VideoTelephony_IVideoStream[] = L"Windows.Phone.Restricted.Cellular.VideoTelephony.IVideoStream";
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0021 */
+/* interface __MIDL_itf_vt_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__
@@ -3277,7 +3251,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelep
 #endif 	/* ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0022 */
+/* interface __MIDL_itf_vt_0000_0022 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Phone_Restricted_Cellular_VideoTelephony_LocalVideoStream_DEFINED
@@ -3318,13 +3292,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0022 */
+/* interface __MIDL_itf_vt_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Ephone2Erestricted2Ecellular2Evideotelephony_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vt_0000_0022_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -10,15 +10,15 @@ Abstract:
 
     This file contains TCP/IP specific information for use
     by WinSock2 compatible applications.
-  
+
    Copyright (c) Microsoft Corporation. All rights reserved.
-  
+
     To provide the backward compatibility, all the TCP/IP
     specific definitions that were included in the WINSOCK.H
     file are now included in WINSOCK2.H file. WS2TCPIP.H
     file includes only the definitions  introduced in the
     "WinSock 2 Protocol-Specific Annex" document.
-  
+
     Rev 0.3 Nov 13, 1995
         Rev 0.4 Dec 15, 1996
 
@@ -48,11 +48,11 @@ extern "C" {
 #pragma warning(disable:4201)
 #pragma warning(disable:4127) // conditional expression is constant
 
-#ifdef _PREFAST_    
+#ifdef _PREFAST_
 #pragma prefast(push)
 #pragma prefast(disable: 24002, "This code requires explicit usage of IPv4 address types.")
-#endif    
-    
+#endif
+
 #ifndef WS2IPDEF_ASSERT
 #define WS2IPDEF_ASSERT(exp) ((VOID) 0)
 #endif
@@ -62,7 +62,7 @@ extern "C" {
 #else
 #define WS2TCPIP_INLINE extern inline /* GNU style */
 #endif
-    
+
 #include <in6addr.h>
 
 //
@@ -85,7 +85,7 @@ typedef union sockaddr_gen {
 //
 // Structure to keep interface specific information
 //
-    
+
 typedef struct _INTERFACE_INFO {
     ULONG iiFlags;              // Interface flags.
     sockaddr_gen iiAddress;     // Interface address.
@@ -107,14 +107,25 @@ typedef struct _INTERFACE_INFO_EX {
 //
 // Possible flags for the  iiFlags - bitmask.
 //
-    
+
 #define IFF_UP              0x00000001 // Interface is up.
 #define IFF_BROADCAST       0x00000002 // Broadcast is  supported.
 #define IFF_LOOPBACK        0x00000004 // This is loopback interface.
 #define IFF_POINTTOPOINT    0x00000008 // This is point-to-point interface.
 #define IFF_MULTICAST       0x00000010 // Multicast is supported.
 
-    
+//
+// Path MTU discovery states.
+//
+
+typedef enum _PMTUD_STATE {
+    IP_PMTUDISC_NOT_SET,
+    IP_PMTUDISC_DO,
+    IP_PMTUDISC_DONT,
+    IP_PMTUDISC_PROBE,
+    IP_PMTUDISC_MAX
+} PMTUD_STATE, *PPMTUD_STATE;
+
 //
 // Options to use with [gs]etsockopt at the IPPROTO_IP level.
 // The values should be consistent with the IPv6 equivalents.
@@ -148,10 +159,13 @@ typedef struct _INTERFACE_INFO_EX {
 #define IP_TCLASS                 39 // Packet traffic class.
 #define IP_RECVTCLASS             40 // Receive packet traffic class.
 #define IP_ORIGINAL_ARRIVAL_IF    47 // Original Arrival Interface Index.
-#define IP_ECN                    50 // Receive ECN codepoints in the IP header
+#define IP_ECN                    50 // Receive ECN codepoints in the IP header.
 #define IP_PKTINFO_EX             51 // Receive extended packet information.
-#define IP_WFP_REDIRECT_RECORDS   60 // WFP's Connection Redirect Records
-#define IP_WFP_REDIRECT_CONTEXT   70 // WFP's Connection Redirect Context
+#define IP_WFP_REDIRECT_RECORDS   60 // WFP's Connection Redirect Records.
+#define IP_WFP_REDIRECT_CONTEXT   70 // WFP's Connection Redirect Context.
+#define IP_MTU_DISCOVER           71 // Set/get path MTU discover state.
+#define IP_RECVTOS                40 // Receive packet Type Of Service (TOS).
+#define IP_RECVTTL                21 // Receive packet Time To Live (TTL).
 
 #define IP_UNSPECIFIED_TYPE_OF_SERVICE -1
 
@@ -175,7 +189,7 @@ typedef struct sockaddr_in6 {
     IN6_ADDR sin6_addr;         // IPv6 address.
     union {
         ULONG sin6_scope_id;     // Set of interfaces for a scope.
-        SCOPE_ID sin6_scope_struct; 
+        SCOPE_ID sin6_scope_struct;
     };
 } SOCKADDR_IN6_LH, *PSOCKADDR_IN6_LH, FAR *LPSOCKADDR_IN6_LH;
 
@@ -204,7 +218,7 @@ typedef SOCKADDR_IN6_LH FAR *LPSOCKADDR_IN6;
 typedef union _SOCKADDR_INET {
     SOCKADDR_IN Ipv4;
     SOCKADDR_IN6 Ipv6;
-    ADDRESS_FAMILY si_family;    
+    ADDRESS_FAMILY si_family;
 } SOCKADDR_INET, *PSOCKADDR_INET;
 
 //
@@ -467,7 +481,7 @@ WS2TCPIP_INLINE
 BOOLEAN
 IN6_IS_ADDR_ANYCAST(CONST IN6_ADDR *a)
 {
-    return (IN6_IS_ADDR_SUBNET_RESERVED_ANYCAST(a) || 
+    return (IN6_IS_ADDR_SUBNET_RESERVED_ANYCAST(a) ||
             IN6_IS_ADDR_SUBNET_ROUTER_ANYCAST(a));
 }
 
@@ -475,7 +489,7 @@ WS2TCPIP_INLINE
 BOOLEAN
 IN6_IS_ADDR_LINKLOCAL(CONST IN6_ADDR *a)
 {
-    return (BOOLEAN)((a->s6_bytes[0] == 0xfe) && 
+    return (BOOLEAN)((a->s6_bytes[0] == 0xfe) &&
                      ((a->s6_bytes[1] & 0xc0) == 0x80));
 }
 
@@ -483,7 +497,7 @@ WS2TCPIP_INLINE
 BOOLEAN
 IN6_IS_ADDR_SITELOCAL(CONST IN6_ADDR *a)
 {
-    return (BOOLEAN)((a->s6_bytes[0] == 0xfe) && 
+    return (BOOLEAN)((a->s6_bytes[0] == 0xfe) &&
                      ((a->s6_bytes[1] & 0xc0) == 0xc0));
 }
 
@@ -580,7 +594,7 @@ IN6_IS_ADDR_MC_GLOBAL(CONST IN6_ADDR *a)
                      ((a->s6_bytes[1] & 0xf) == 0xe));
 }
 
-WS2TCPIP_INLINE 
+WS2TCPIP_INLINE
 VOID
 IN6_SET_ADDR_UNSPECIFIED(PIN6_ADDR a)
 {
@@ -591,7 +605,7 @@ IN6_SET_ADDR_UNSPECIFIED(PIN6_ADDR a)
     memset(a->s6_bytes, 0, sizeof(IN6_ADDR));
 }
 
-WS2TCPIP_INLINE 
+WS2TCPIP_INLINE
 VOID
 IN6_SET_ADDR_LOOPBACK(PIN6_ADDR a)
 {
@@ -661,7 +675,7 @@ IN6ADDR_ISUNSPECIFIED(CONST SOCKADDR_IN6 *a)
 
 #endif // __midl
 
-#endif // (NTDDI_VERSION >= NTDDI_WIN2KSP1) 
+#endif // (NTDDI_VERSION >= NTDDI_WIN2KSP1)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
@@ -677,7 +691,7 @@ IN6ADDR_ISUNSPECIFIED(CONST SOCKADDR_IN6 *a)
 #define SIOCGIPMSFILTER            SIO_GET_MULTICAST_FILTER
 
 //
-// Protocol independent ioctls for setting and retrieving multicast filters. 
+// Protocol independent ioctls for setting and retrieving multicast filters.
 //
 #define SIOCSMSFILTER     _IOW('t', 126, ULONG)
 #define SIOCGMSFILTER     _IOW('t', 127 | IOC_IN, ULONG)
@@ -688,7 +702,7 @@ IN6ADDR_ISUNSPECIFIED(CONST SOCKADDR_IN6 *a)
 
 //
 // Query and change notification ioctls for the ideal send backlog size
-// for a given connection. Clients should use the wrappers defined in 
+// for a given connection. Clients should use the wrappers defined in
 // ws2tcpip.h rather than using these ioctls directly.
 //
 
@@ -708,15 +722,15 @@ IN6ADDR_ISUNSPECIFIED(CONST SOCKADDR_IN6 *a)
 #define MCAST_LEAVE_SOURCE_GROUP    46	// Leave IP group/source.
 
 //
-// Definitions of MCAST_INCLUDE and MCAST_EXCLUDE for multicast source filter. 
+// Definitions of MCAST_INCLUDE and MCAST_EXCLUDE for multicast source filter.
 //
 typedef enum {
     MCAST_INCLUDE = 0,
-    MCAST_EXCLUDE 
+    MCAST_EXCLUDE
 } MULTICAST_MODE_TYPE;
 
 //
-// Structure for IP_MREQ (used by IP_ADD_MEMBERSHIP and IP_DROP_MEMBERSHIP). 
+// Structure for IP_MREQ (used by IP_ADD_MEMBERSHIP and IP_DROP_MEMBERSHIP).
 //
 typedef struct ip_mreq {
     IN_ADDR imr_multiaddr;  // IP multicast address of group.
@@ -725,7 +739,7 @@ typedef struct ip_mreq {
 
 //
 // Structure for IP_MREQ_SOURCE (used by IP_BLOCK_SOURCE, IP_UNBLOCK_SOURCE
-// etc.). 
+// etc.).
 //
 typedef struct ip_mreq_source {
     IN_ADDR imr_multiaddr;  // IP multicast address of group.
@@ -734,8 +748,8 @@ typedef struct ip_mreq_source {
 } IP_MREQ_SOURCE, *PIP_MREQ_SOURCE;
 
 //
-// Structure for IP_MSFILTER (used by SIOCSIPMSFILTER and SIOCGIPMSFILTER). 
-// 
+// Structure for IP_MSFILTER (used by SIOCSIPMSFILTER and SIOCGIPMSFILTER).
+//
 typedef struct ip_msfilter {
     IN_ADDR imsf_multiaddr;  // IP multicast address of group.
     IN_ADDR imsf_interface;  // Local IP address of interface.
@@ -783,6 +797,7 @@ typedef struct ip_msfilter {
 #define IPV6_PKTINFO_EX       51 // Receive extended packet information.
 #define IPV6_WFP_REDIRECT_RECORDS   60 // WFP's Connection Redirect Records
 #define IPV6_WFP_REDIRECT_CONTEXT   70 // WFP's Connection Redirect Context
+#define IPV6_MTU_DISCOVER           71 // Set/get path MTU discover state.
 
 #define IP_UNSPECIFIED_HOP_LIMIT -1
 
@@ -790,7 +805,7 @@ typedef struct ip_msfilter {
 //
 // Values of IPV6_PROTECTION_LEVEL.
 //
-#define PROTECTION_LEVEL_UNRESTRICTED   10 // For peer-to-peer apps. 
+#define PROTECTION_LEVEL_UNRESTRICTED   10 // For peer-to-peer apps.
 #define PROTECTION_LEVEL_EDGERESTRICTED 20 // Same as unrestricted. Except for
                                            // Teredo.
 #define PROTECTION_LEVEL_RESTRICTED     30 // For Intranet apps.
@@ -812,7 +827,7 @@ typedef struct ipv6_mreq {
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 //
 // Structure for GROUP_REQ used by protocol independent source filters
-// (MCAST_JOIN_GROUP and MCAST_LEAVE_GROUP). 
+// (MCAST_JOIN_GROUP and MCAST_LEAVE_GROUP).
 //
 typedef struct group_req {
     ULONG gr_interface;         // Interface index.
@@ -933,6 +948,7 @@ C_ASSERT(sizeof(IN6_PKTINFO_EX) == 24);
 #define TCP_DELAY_FIN_ACK        13
 #define TCP_MAXRTMS              14
 #define TCP_FASTOPEN             15
+#define TCP_KEEPCNT              16
 
 #ifdef _PREFAST_
 #pragma prefast(pop)

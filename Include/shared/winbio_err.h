@@ -63,8 +63,8 @@ Revision History:
 //
 // Define the facility codes
 //
-#define FACILITY_NONE                    0x0
 #define FACILITY_WINBIO                  0x9
+#define FACILITY_NONE                    0x0
 
 
 //
@@ -814,6 +814,57 @@ Revision History:
 
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+//
+// MessageId: WINBIO_E_POLICY_PROTECTION_UNAVAILABLE
+//
+// MessageText:
+//
+// Policy protection is not available because a TPM 2.0 device is either not present or not supported.
+//
+#define WINBIO_E_POLICY_PROTECTION_UNAVAILABLE ((HRESULT)0x80098056L)
+
+//
+// MessageId: WINBIO_E_INSECURE_SENSOR
+//
+// MessageText:
+//
+// The biometric sensor does not support a secure hardware data path.
+//
+#define WINBIO_E_INSECURE_SENSOR         ((HRESULT)0x80098057L)
+
+//
+// MessageId: WINBIO_E_INVALID_BUFFER_ID
+//
+// MessageText:
+//
+// The identifier does not refer to a valid buffer.
+//
+#define WINBIO_E_INVALID_BUFFER_ID       ((HRESULT)0x80098058L)
+
+//
+// MessageId: WINBIO_E_INVALID_BUFFER
+//
+// MessageText:
+//
+// The contents of the buffer are not valid.
+//
+#define WINBIO_E_INVALID_BUFFER          ((HRESULT)0x80098059L)
+
+//
+// MessageId: WINBIO_E_TRUSTLET_INTEGRITY_FAIL
+//
+// MessageText:
+//
+// The Windows Biometric Service secure component was compromised.
+//
+#define WINBIO_E_TRUSTLET_INTEGRITY_FAIL ((HRESULT)0x8009805AL)
+
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 

@@ -696,8 +696,9 @@ typedef struct FWPM_CALLOUT_SUBSCRIPTION0_
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-// The macro is repeated here, so that midl has access.
-#define FWP_ACTION_FLAG_CALLOUT (0x00004000)
+// The macro is repeated here, so that MIDL has access.
+#define FWP_ACTION_FLAG_CALLOUT         (0x00004000)
+#define FWP_ACTION_BITMAP_INDEX_SET     (0x00000009)
 
 // Action taken if all the filter conditions are true.
 typedef struct FWPM_ACTION0_
@@ -710,11 +711,14 @@ typedef struct FWPM_ACTION0_
    [switch_is(type & FWP_ACTION_FLAG_CALLOUT)]
    union
    {
-      [case(0)]
-         GUID filterType;
-      [case(FWP_ACTION_FLAG_CALLOUT)]
-         GUID calloutKey;
+       [case(0)]
+       GUID filterType;
+       [case(FWP_ACTION_FLAG_CALLOUT)]
+       GUID calloutKey;
+       [case(FWP_ACTION_BITMAP_INDEX_SET)]
+       UINT8 bitmapIndex;
    };
+
 } FWPM_ACTION0;
 
 // Expresses a filter condition that must be true for the action to be taken.
@@ -755,10 +759,12 @@ cpp_quote("#define FWPM_FILTER_FLAG_DISABLED (0x00000020)")
 cpp_quote("#define FWPM_FILTER_FLAG_INDEXED (0x00000040)")
 // The filter references a provider context for IPsec security realm Id
 cpp_quote("#define FWPM_FILTER_FLAG_HAS_SECURITY_REALM_PROVIDER_CONTEXT (0x00000080)")
-// The filter is exclusive to Xbox system OS only
+// The filter is exclusive to system OS only
 cpp_quote("#define FWPM_FILTER_FLAG_SYSTEMOS_ONLY (0x00000100)")
 // The filter is exclusive to Xbox game OS only
 cpp_quote("#define FWPM_FILTER_FLAG_GAMEOS_ONLY (0x00000200)")
+// The filter is in silent mode
+cpp_quote("#define FWPM_FILTER_FLAG_SILENT_MODE (0x00000400)")
 
 
 // Stores the state associated with a filter.

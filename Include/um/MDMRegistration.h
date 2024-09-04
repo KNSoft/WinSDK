@@ -184,6 +184,15 @@ extern "C" {
 // MDM Management was blocked, such as via GP or SetManagedExternally()
 #define MENROLL_E_DEVICE_MANAGEMENT_BLOCKED             MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 38)
 
+// Failed to create the private key as requested
+#define MENROLL_E_CERTPOLICY_PRIVATEKEYCREATION_FAILED  MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 39)
+
+// Certificate Authentication was requested, but failed find the cert to use
+#define MENROLL_E_CERTAUTH_FAILED_TO_FIND_CERT          MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 40)
+
+// Server responded with HTTP 200, but the message was empty
+#define MENROLL_E_EMPTY_MESSAGE                         MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 41)
+
 // Struct returned by the discovery service containing
 // the endpoints and information about the management service.
 typedef struct _MANAGEMENT_SERVICE_INFO

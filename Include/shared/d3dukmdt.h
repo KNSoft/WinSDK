@@ -39,6 +39,8 @@
 #define DXGKDDI_INTERFACE_VERSION_WDDM1_3_PATH_INDEPENDENT_ROTATION  0x4003
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_0    0x5023
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_1    0x6003
+#define DXGKDDI_INTERFACE_VERSION_WDDM2_2    0x700A
+
 
 #define IS_OFFICIAL_DDI_INTERFACE_VERSION(version)                 \
             (((version) == DXGKDDI_INTERFACE_VERSION_VISTA) ||     \
@@ -48,11 +50,12 @@
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM1_3) ||   \
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM1_3_PATH_INDEPENDENT_ROTATION) || \
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_0) ||   \
-             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_1)      \
+             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_1) ||   \
+             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_2)      \
             )
 
 #if !defined(DXGKDDI_INTERFACE_VERSION)
-#define DXGKDDI_INTERFACE_VERSION           DXGKDDI_INTERFACE_VERSION_WDDM2_1
+#define DXGKDDI_INTERFACE_VERSION           DXGKDDI_INTERFACE_VERSION_WDDM2_2
 #endif // !defined(DXGKDDI_INTERFACE_VERSION)
 
 #define D3D_UMD_INTERFACE_VERSION_VISTA      0x000C
@@ -74,8 +77,12 @@
 #define D3D_UMD_INTERFACE_VERSION_WDDM2_1_4     0x6003
 #define D3D_UMD_INTERFACE_VERSION_WDDM2_1       D3D_UMD_INTERFACE_VERSION_WDDM2_1_4
 
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_2_1     0x7000
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_2_2     0x7001
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_2       D3D_UMD_INTERFACE_VERSION_WDDM2_2_2
+
 #if !defined(D3D_UMD_INTERFACE_VERSION)
-#define D3D_UMD_INTERFACE_VERSION           D3D_UMD_INTERFACE_VERSION_WDDM2_1
+#define D3D_UMD_INTERFACE_VERSION           D3D_UMD_INTERFACE_VERSION_WDDM2_2
 #endif // !defined(D3D_UMD_INTERFACE_VERSION)
 
 //
@@ -90,6 +97,42 @@ typedef ULONGLONG D3DGPU_SIZE_T;
 
 #define DXGK_MAX_PAGE_TABLE_LEVEL_COUNT 6
 #define DXGK_MIN_PAGE_TABLE_LEVEL_COUNT 2
+
+//
+// IOCTL_GPUP_DRIVER_ESCAPE - The user mode emulation DLL calls this IOCTL 
+// to exchange information with the kernel mode driver.
+//
+#define IOCTL_GPUP_DRIVER_ESCAPE CTL_CODE(FILE_DEVICE_UNKNOWN, (8 + 0x910), METHOD_BUFFERED, FILE_READ_DATA)
+typedef struct _GPUP_DRIVER_ESCAPE_INPUT
+{
+   LUID        vfLUID; //LUID that was returned from SET_PARTITION_DETAILS
+} GPUP_DRIVER_ESCAPE_INPUT, *PGPUP_DRIVER_ESCAPE_INPUT;
+
+typedef enum _DXGKVGPU_ESCAPE_TYPE
+{
+    DXGKVGPU_ESCAPE_TYPE_READ_PCI_CONFIG    = 0,
+    DXGKVGPU_ESCAPE_TYPE_GET_VGPU_TYPE      = 4,
+} DXGKVGPU_ESCAPE_TYPE;
+
+typedef struct _DXGKVGPU_ESCAPE_HEAD
+{
+    GPUP_DRIVER_ESCAPE_INPUT    Luid;
+    DXGKVGPU_ESCAPE_TYPE        Type;
+} DXGKVGPU_ESCAPE_HEAD;
+
+typedef struct _DXGKVGPU_ESCAPE_READ_PCI_CONFIG
+{
+    DXGKVGPU_ESCAPE_HEAD Header;
+
+    UINT  Offset;           // Offset in bytes in the PCI config space
+    UINT  Size;             // Size in bytes to read
+} DXGKVGPU_ESCAPE_READ_PCI_CONFIG;
+
+typedef struct _DXGKVGPU_ESCAPE_READ_VGPU_TYPE
+{
+    DXGKVGPU_ESCAPE_HEAD Header;
+} DXGKVGPU_ESCAPE_READ_VGPU_TYPE;
+
 
 typedef enum _DXGK_PTE_PAGE_SIZE
 {
@@ -214,19 +257,35 @@ typedef struct _D3DDDI_ALLOCATIONINFO2
     {
         struct
         {
-            UINT    Primary         : 1;    // 0x00000001
+            UINT    Primary          : 1;    // 0x00000001
 #if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8) || \
      (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WIN8))
-            UINT    Stereo          : 1;    // 0x00000002
-            UINT    Reserved        :30;    // 0xFFFFFFFC
+            UINT    Stereo           : 1;    // 0x00000002
+#if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2) || \
+     (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2))
+            UINT    OverridePriority : 1;    // 0x00000004
+            UINT    Reserved         : 29;    // 0xFFFFFFF8
 #else
-            UINT    Reserved        :31;    // 0xFFFFFFFE
+            UINT    Reserved         : 30;    // 0xFFFFFFFC
+#endif
+#else
+            UINT    Reserved          :31;    // 0xFFFFFFFE
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
         };
         UINT        Value;
     } Flags;
     D3DGPU_VIRTUAL_ADDRESS          GpuVirtualAddress;    // out: GPU Virtual address of the allocation created.
+#if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2) || \
+     (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2))
+    union
+    {
+        UINT                        Priority;             // in: priority of allocation
+        ULONG_PTR                   Unused;
+    };
+    ULONG_PTR                       Reserved[5];          // Reserved
+#else
     ULONG_PTR                       Reserved[6];          // Reserved
+#endif
 } D3DDDI_ALLOCATIONINFO2;
 
 #endif
@@ -369,7 +428,13 @@ typedef struct _D3DDDI_ESCAPEFLAGS
             UINT    ChangeFrameLatency  : 1;    // 0x00000004
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
             UINT    NoAdapterSynchronization    : 1; // 0x00000008
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+            UINT    Reserved            : 1;    // 0x00000010   Used internally by DisplayOnly present
+            UINT    VirtualMachineData  : 1;    // 0x00000020   Cannot be set from user mode
+            UINT    Reserved2           :26;    // 0xFFFFFFC0
+#else
             UINT    Reserved            :28;    // 0xFFFFFFF0
+#endif //  (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 #else
             UINT    Reserved            :29;    // 0xFFFFFFF8
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
@@ -401,6 +466,36 @@ typedef struct _D3DDDI_CREATECONTEXTFLAGS
         UINT Value;
     };
 } D3DDDI_CREATECONTEXTFLAGS;
+
+#if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2) || \
+     (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1))
+
+typedef struct _D3DDDI_CREATEHWCONTEXTFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    Reserved            :32;      // 0xFFFFFFFF
+        };
+        UINT Value;
+    };
+} D3DDDI_CREATEHWCONTEXTFLAGS;
+
+typedef struct _D3DDDI_CREATEHWQUEUEFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    DisableGpuTimeout   : 1;      // 0x00000001
+            UINT    Reserved            :31;      // 0xFFFFFFFE
+        };
+        UINT Value;
+    };
+} D3DDDI_CREATEHWQUEUEFLAGS;
+
+#endif // ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 typedef struct _D3DDDI_SEGMENTPREFERENCE
 {
@@ -622,6 +717,8 @@ typedef enum D3DDDI_COLOR_SPACE_TYPE
     D3DDDI_COLOR_SPACE_YCBCR_STUDIO_G22_TOPLEFT_P2020     = 15,
     D3DDDI_COLOR_SPACE_YCBCR_STUDIO_G2084_TOPLEFT_P2020   = 16,
     D3DDDI_COLOR_SPACE_RGB_FULL_G22_NONE_P2020            = 17,
+    D3DDDI_COLOR_SPACE_YCBCR_STUDIO_GHLG_TOPLEFT_P2020    = 18,
+    D3DDDI_COLOR_SPACE_YCBCR_FULL_GHLG_TOPLEFT_P2020      = 19,
     D3DDDI_COLOR_SPACE_CUSTOM                             = 0xFFFFFFFF
 } D3DDDI_COLOR_SPACE_TYPE;
 
@@ -763,6 +860,11 @@ typedef enum D3DDDI_FLIPINTERVAL_TYPE
     D3DDDI_FLIPINTERVAL_TWO       = 2,
     D3DDDI_FLIPINTERVAL_THREE     = 3,
     D3DDDI_FLIPINTERVAL_FOUR      = 4,
+
+    // This value is only valid for the D3D9 runtime PresentCb SyncIntervalOverride field.
+    // For this field, IMMEDIATE means the API semantic of sync interval 0, where 
+    // IMMEDIATE_ALLOW_TEARING is equivalent to the addition of the DXGI ALLOW_TEARING API flags.
+    D3DDDI_FLIPINTERVAL_IMMEDIATE_ALLOW_TEARING = 5,
 } D3DDDI_FLIPINTERVAL_TYPE;
 
 
@@ -972,6 +1074,11 @@ typedef enum _D3DDDI_SYNCHRONIZATIONOBJECT_TYPE
 #if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0) || \
      (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_0))
     D3DDDI_MONITORED_FENCE          = 5,
+#endif // DXGKDDI_INTERFACE_VERSION
+
+#if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2) || \
+     (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2))
+    D3DDDI_PERIODIC_MONITORED_FENCE = 6,
 #endif // DXGKDDI_INTERFACE_VERSION
 
 } D3DDDI_SYNCHRONIZATIONOBJECT_TYPE;
@@ -1411,6 +1518,20 @@ typedef struct _D3DDDI_SYNCHRONIZATIONOBJECTINFO2
             UINT                    EngineAffinity;                         // in: Defines physical adapters where the GPU VA will be mapped
         } MonitoredFence;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
+
+#if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2) || \
+     (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2))
+        struct
+        {
+            D3DKMT_HANDLE                   hAdapter;                               // in: A handle to the adapter associated with VidPnTargetId
+            D3DDDI_VIDEO_PRESENT_TARGET_ID  VidPnTargetId;                          // in: The output that the compositor wishes to receive notifications for
+            UINT64                          Time;                                   // in: Represents an offset before the VSync.
+                                                                                    // The Time value may not be longer than a VSync interval. In units of 100ns.
+            VOID*                           FenceValueCPUVirtualAddress;            // out: Read-only mapping of the fence value for the CPU
+            D3DGPU_VIRTUAL_ADDRESS          FenceValueGPUVirtualAddress;            // out: Read-only mapping of the fence value for the GPU
+            UINT                            EngineAffinity;                         // in: Defines physical adapters where the GPU VA will be mapped
+        } PeriodicMonitoredFence;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 
         struct

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -344,6 +344,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                interface ISecondaryTileVisualElements2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3 __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3;
@@ -362,6 +382,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                interface IStartScreenManager;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                interface IStartScreenManagerStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_FWD_DEFINED__
@@ -429,8 +489,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.UI.h"
-#include "Windows.UI.Popups.h"
+#include "Windows.ApplicationModel.Core.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -481,18 +540,18 @@ interface IJumpListItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0001 */
 /* [local] */ 
@@ -527,18 +586,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0002 */
 /* [local] */ 
@@ -597,18 +656,18 @@ interface ISecondaryTile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0003 */
 /* [local] */ 
@@ -643,18 +702,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0004 */
 /* [local] */ 
@@ -713,18 +772,18 @@ interface ISecondaryTileVisualElements;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0005 */
 /* [local] */ 
@@ -759,18 +818,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0350_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0006 */
 /* [local] */ 
@@ -805,18 +864,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0351 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0351 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0351_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0007 */
 /* [local] */ 
@@ -851,18 +910,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0352 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0352 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0352_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0352_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0008 */
 /* [local] */ 
@@ -897,18 +956,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0353 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0353 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0353_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0353_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0009 */
 /* [local] */ 
@@ -943,18 +1002,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0354 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0354 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0354_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0354_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0010 */
 /* [local] */ 
@@ -989,18 +1048,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0355 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0355 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0355_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0355_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0011 */
 /* [local] */ 
@@ -1035,18 +1094,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0356 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0356 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0356_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0356_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0012 */
 /* [local] */ 
@@ -1105,18 +1164,18 @@ interface IJumpList;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0357 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0357 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0357_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0357_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0013 */
 /* [local] */ 
@@ -1151,18 +1210,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0358 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0358 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0358_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0358_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0014 */
 /* [local] */ 
@@ -1221,18 +1280,18 @@ interface IVisualElementsRequestedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0359 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0359 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0359_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0359_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0015 */
 /* [local] */ 
@@ -1267,18 +1326,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0360 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0360 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0360_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0360_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0016 */
 /* [local] */ 
@@ -1313,18 +1372,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0361 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0361 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0361_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0361_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0017 */
 /* [local] */ 
@@ -1352,6 +1411,12 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Eapplicationmodel2Ecore_h__)
+#include <Windows.ApplicationModel.Core.h>
+#endif // !defined(__windows2Eapplicationmodel2Ecore_h__)
+#if !defined(__windows2Esystem_h__)
+#include <Windows.System.h>
+#endif // !defined(__windows2Esystem_h__)
 #if !defined(__windows2Eui_h__)
 #include <Windows.UI.h>
 #endif // !defined(__windows2Eui_h__)
@@ -1361,6 +1426,18 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Core {
+class AppListEntry;
+} /*Core*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
@@ -1380,6 +1457,16 @@ namespace Windows {
 namespace Foundation {
 class Uri;
 } /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+class User;
+} /*System*/
 } /*Windows*/
 }
 #endif
@@ -1457,6 +1544,20 @@ typedef enum __x_ABI_CWindows_CUI_CStartScreen_CTileSize __x_ABI_CWindows_CUI_CS
 
 
 
+
+
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace StartScreen {
+class StartScreenManager;
+} /*StartScreen*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1483,6 +1584,7 @@ class VisualElementsRequestDeferral;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0017 */
 /* [local] */ 
+
 
 
 #ifdef __cplusplus
@@ -1533,6 +1635,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 #ifdef __cplusplus
@@ -1670,21 +1773,24 @@ extern "C" {
 
 
 
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0362 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0362 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0362_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0362_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0018 */
 /* [local] */ 
@@ -1859,18 +1965,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CStartScreen__CJumpListItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0363 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0363 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0363_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0363_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0020 */
 /* [local] */ 
@@ -2011,18 +2117,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CStartScreen__CJumpListItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0364 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0364 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0364_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0364_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0022 */
 /* [local] */ 
@@ -2197,18 +2303,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CStartScreen__CSecondaryTile
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0365 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0365 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0365_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0024 */
 /* [local] */ 
@@ -2349,18 +2455,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CStartScreen__CSecondaryTile
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0366 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0366 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0366_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0026 */
 /* [local] */ 
@@ -2535,18 +2641,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CStartScreen__CSecondaryTile
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0367 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0367 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0367_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0028 */
 /* [local] */ 
@@ -2687,18 +2793,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CStartScreen__CSecondaryTile
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0368 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0368 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0368_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0030 */
 /* [local] */ 
@@ -2881,18 +2987,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CStartScreen__CJumpListIte
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0369 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0369 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0369_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0032 */
 /* [local] */ 
@@ -3075,18 +3181,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CStartScreen__CSecondaryTi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0370 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0370 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0370_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0034 */
 /* [local] */ 
@@ -3269,18 +3375,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CStartScreen__CSecondaryTi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0371 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0371 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0371_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0371_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0036 */
 /* [local] */ 
@@ -3545,18 +3651,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CStartScreen__CJumpListItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0372 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0372 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0372_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0372_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0038 */
 /* [local] */ 
@@ -3678,18 +3784,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0373 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0373 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0373_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0373_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0040 */
 /* [local] */ 
@@ -3850,18 +3956,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CStar
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0374 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0374 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0374_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0374_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0042 */
 /* [local] */ 
@@ -3983,18 +4089,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CStart
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0375 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0375 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0375_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0375_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0044 */
 /* [local] */ 
@@ -4155,18 +4261,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CStartScreen__CJumpLis
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0376 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0376 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0376_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_0376_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0046 */
 /* [local] */ 
@@ -6674,9 +6780,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualEl
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0057 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_ISecondaryTileVisualElements3[] = L"Windows.UI.StartScreen.ISecondaryTileVisualElements3";
-#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_ISecondaryTileVisualElements2[] = L"Windows.UI.StartScreen.ISecondaryTileVisualElements2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0057 */
@@ -6686,6 +6792,153 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0057_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::StartScreen::ISecondaryTileVisualElements2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace StartScreen {
+                    
+                    MIDL_INTERFACE("FD2E31D0-57DC-4794-8ECF-5682F5F3E6EF")
+                    ISecondaryTileVisualElements2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Square71x71Logo( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Square71x71Logo( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISecondaryTileVisualElements2 = __uuidof(ISecondaryTileVisualElements2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Square71x71Logo )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Square71x71Logo )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_put_Square71x71Logo(This,value)	\
+    ( (This)->lpVtbl -> put_Square71x71Logo(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_get_Square71x71Logo(This,value)	\
+    ( (This)->lpVtbl -> get_Square71x71Logo(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0058 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_ISecondaryTileVisualElements3[] = L"Windows.UI.StartScreen.ISecondaryTileVisualElements3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0058 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__
@@ -6818,7 +7071,329 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualEl
 #endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElements3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0059 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_IStartScreenManager[] = L"Windows.UI.StartScreen.IStartScreenManager";
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0059 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0059_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::StartScreen::IStartScreenManager */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace StartScreen {
+                    
+                    MIDL_INTERFACE("4A1DCBCB-26E9-4EB4-8933-859EB6ECDB29")
+                    IStartScreenManager : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SupportsAppListEntry( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Core::IAppListEntry *appListEntry,
+                            /* [out][retval] */ __RPC__out boolean *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE ContainsAppListEntryAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Core::IAppListEntry *appListEntry,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAddAppListEntryAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Core::IAppListEntry *appListEntry,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IStartScreenManager = __uuidof(IStartScreenManager);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SupportsAppListEntry )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry *appListEntry,
+            /* [out][retval] */ __RPC__out boolean *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *ContainsAppListEntryAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry *appListEntry,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAddAppListEntryAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry *appListEntry,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerVtbl;
+
+    interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_get_User(This,value)	\
+    ( (This)->lpVtbl -> get_User(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_SupportsAppListEntry(This,appListEntry,result)	\
+    ( (This)->lpVtbl -> SupportsAppListEntry(This,appListEntry,result) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_ContainsAppListEntryAsync(This,appListEntry,operation)	\
+    ( (This)->lpVtbl -> ContainsAppListEntryAsync(This,appListEntry,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_RequestAddAppListEntryAsync(This,appListEntry,operation)	\
+    ( (This)->lpVtbl -> RequestAddAppListEntryAsync(This,appListEntry,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0060 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_IStartScreenManagerStatics[] = L"Windows.UI.StartScreen.IStartScreenManagerStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0060 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0060_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::StartScreen::IStartScreenManagerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace StartScreen {
+                    
+                    MIDL_INTERFACE("7865EF0F-B585-464E-8993-34E8F8738D48")
+                    IStartScreenManagerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefault( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::StartScreen::IStartScreenManager **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetForUser( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::StartScreen::IStartScreenManager **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IStartScreenManagerStatics = __uuidof(IStartScreenManagerStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefault )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForUser )( 
+            __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_GetDefault(This,value)	\
+    ( (This)->lpVtbl -> GetDefault(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_GetForUser(This,user,result)	\
+    ( (This)->lpVtbl -> GetForUser(This,user,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0061 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_INTERFACE_DEFINED__)
@@ -6826,13 +7401,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_INTERFACE_DEFINED__
@@ -6985,7 +7560,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest
 #endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestDeferral_INTERFACE_DEFINED__)
@@ -6993,13 +7568,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestDeferral_INTERFACE_DEFINED__
@@ -7120,7 +7695,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest
 #endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestedEventArgs_INTERFACE_DEFINED__)
@@ -7128,13 +7703,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestedEventArgs_INTERFACE_DEFINED__
@@ -7257,7 +7832,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequest
 #endif 	/* ____x_ABI_CWindows_CUI_CStartScreen_CIVisualElementsRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0064 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_StartScreen_JumpList_DEFINED
@@ -7276,6 +7851,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_StartScreen_SecondaryTileVisualElements_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_StartScreen_SecondaryTileVisualElements[] = L"Windows.UI.StartScreen.SecondaryTileVisualElements";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_StartScreen_StartScreenManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_StartScreen_StartScreenManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_StartScreen_StartScreenManager[] = L"Windows.UI.StartScreen.StartScreenManager";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_StartScreen_VisualElementsRequest_DEFINED
 #define RUNTIMECLASS_Windows_UI_StartScreen_VisualElementsRequest_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_StartScreen_VisualElementsRequest[] = L"Windows.UI.StartScreen.VisualElementsRequest";
@@ -7290,13 +7869,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Estartscreen_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Estartscreen_0000_0064_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

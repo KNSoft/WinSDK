@@ -427,6 +427,13 @@ EapHostPeerGetIdentity (
       IN OUT BYTE **ppvReserved
       );
 
+DWORD APIENTRY
+EapHostPeerGetEncryptedPassword(
+      IN DWORD dwSizeofPassword,
+      IN __in_bcount(dwSizeofPassword) LPWSTR szPassword,
+      OUT _Outptr_ LPWSTR* ppszEncPassword
+      );
+
 // In case of GetInentity returned memory needs to be released using this API
 void APIENTRY EapHostPeerFreeRuntimeMemory (IN BYTE* pData);
 

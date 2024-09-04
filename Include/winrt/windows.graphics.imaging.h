@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -666,18 +666,18 @@ interface IBitmapTypedValue;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0001 */
 /* [local] */ 
@@ -712,18 +712,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0002 */
 /* [local] */ 
@@ -758,18 +758,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4599 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4599_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0003 */
 /* [local] */ 
@@ -828,18 +828,18 @@ interface IBitmapCodecInformation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0004 */
 /* [local] */ 
@@ -874,18 +874,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0005 */
 /* [local] */ 
@@ -933,18 +933,18 @@ enum BitmapPixelFormat;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0006 */
 /* [local] */ 
@@ -979,18 +979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4603 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4603_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0007 */
 /* [local] */ 
@@ -1049,18 +1049,18 @@ interface IRandomAccessStreamWithContentType;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4604 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4604_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0008 */
 /* [local] */ 
@@ -1095,18 +1095,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0009 */
 /* [local] */ 
@@ -1141,18 +1141,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0010 */
 /* [local] */ 
@@ -1187,18 +1187,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0011 */
 /* [local] */ 
@@ -1233,18 +1233,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0012 */
 /* [local] */ 
@@ -1279,18 +1279,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0013 */
 /* [local] */ 
@@ -1325,18 +1325,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0014 */
 /* [local] */ 
@@ -1371,18 +1371,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0015 */
 /* [local] */ 
@@ -1417,18 +1417,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0016 */
 /* [local] */ 
@@ -1487,18 +1487,18 @@ interface IBitmapDecoder;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0017 */
 /* [local] */ 
@@ -1533,18 +1533,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0018 */
 /* [local] */ 
@@ -1603,18 +1603,18 @@ interface IBitmapEncoder;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0019 */
 /* [local] */ 
@@ -1649,18 +1649,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0020 */
 /* [local] */ 
@@ -1719,18 +1719,18 @@ interface IBitmapFrame;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0021 */
 /* [local] */ 
@@ -1765,18 +1765,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0022 */
 /* [local] */ 
@@ -1822,18 +1822,18 @@ class BitmapPropertySet;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0023 */
 /* [local] */ 
@@ -1868,18 +1868,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0024 */
 /* [local] */ 
@@ -1914,18 +1914,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0025 */
 /* [local] */ 
@@ -1960,18 +1960,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0026 */
 /* [local] */ 
@@ -2030,18 +2030,18 @@ interface IPixelDataProvider;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0027 */
 /* [local] */ 
@@ -2076,18 +2076,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0028 */
 /* [local] */ 
@@ -2146,18 +2146,18 @@ interface ISoftwareBitmap;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0029 */
 /* [local] */ 
@@ -2192,18 +2192,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0030 */
 /* [local] */ 
@@ -2238,18 +2238,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0031 */
 /* [local] */ 
@@ -2284,18 +2284,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0032 */
 /* [local] */ 
@@ -2330,18 +2330,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0033 */
 /* [local] */ 
@@ -2873,18 +2873,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0034 */
 /* [local] */ 
@@ -3035,18 +3035,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0036 */
 /* [local] */ 
@@ -3221,18 +3221,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CGraph
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0038 */
 /* [local] */ 
@@ -3373,18 +3373,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraph
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0040 */
 /* [local] */ 
@@ -3559,18 +3559,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CImaging__CBitmapCodec
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0042 */
 /* [local] */ 
@@ -3711,18 +3711,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CImaging__CBitmapCodec
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0044 */
 /* [local] */ 
@@ -3897,18 +3897,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CImaging__CBitmapPixel
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0046 */
 /* [local] */ 
@@ -4049,18 +4049,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CImaging__CBitmapPixel
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0048 */
 /* [local] */ 
@@ -4235,18 +4235,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CImaging__CImageStream
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0050 */
 /* [local] */ 
@@ -4387,18 +4387,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CImaging__CImageStream
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0052 */
 /* [local] */ 
@@ -4575,18 +4575,18 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CGraphics__CImaging__CBitm
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0054 */
 /* [local] */ 
@@ -4793,18 +4793,18 @@ EXTERN_C const IID IID___FIMap_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTy
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0056 */
 /* [local] */ 
@@ -4987,18 +4987,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CImaging__CBitmapCod
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0058 */
 /* [local] */ 
@@ -5181,18 +5181,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CImaging__CBitmapPix
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0059_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0060 */
 /* [local] */ 
@@ -5375,18 +5375,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CImaging__CImageStre
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0061_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0062 */
 /* [local] */ 
@@ -5508,18 +5508,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0063_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0064 */
 /* [local] */ 
@@ -5680,18 +5680,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CGraphics_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0065_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0066 */
 /* [local] */ 
@@ -5813,18 +5813,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0067_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0068 */
 /* [local] */ 
@@ -5985,18 +5985,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0069_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0070 */
 /* [local] */ 
@@ -6118,18 +6118,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0071_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0072 */
 /* [local] */ 
@@ -6290,18 +6290,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0073_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0074 */
 /* [local] */ 
@@ -6423,18 +6423,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0075_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0076 */
 /* [local] */ 
@@ -6595,18 +6595,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0077_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0078 */
 /* [local] */ 
@@ -6728,18 +6728,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0079_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0080 */
 /* [local] */ 
@@ -6900,18 +6900,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0081_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0082 */
 /* [local] */ 
@@ -7033,18 +7033,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0083_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0084 */
 /* [local] */ 
@@ -7205,18 +7205,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGraphics__CImaging__CImage
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0085_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0086 */
 /* [local] */ 
@@ -7338,18 +7338,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0087_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0088 */
 /* [local] */ 
@@ -7510,18 +7510,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGraphics__CImaging__CPixel
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0089_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0090 */
 /* [local] */ 
@@ -7643,18 +7643,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGraphics__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0091_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_3185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eimaging2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eimaging_0000_0092 */
 /* [local] */ 

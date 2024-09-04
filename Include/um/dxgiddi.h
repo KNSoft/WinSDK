@@ -15,6 +15,7 @@
 
 
 
+#include "dxgicommon.h"
 #include "dxgitype.h"
 
 
@@ -52,6 +53,11 @@ typedef enum DXGI_DDI_FLIP_INTERVAL_TYPE
     DXGI_DDI_FLIP_INTERVAL_TWO       = 2,
     DXGI_DDI_FLIP_INTERVAL_THREE     = 3,
     DXGI_DDI_FLIP_INTERVAL_FOUR      = 4,
+
+    // For the sync interval override in the present callbacks, IMMEDIATE means the API
+    // semantic of sync interval 0, where IMMEDIATE_ALLOW_TEARING is equivalent to the addition
+    // of the ALLOW_TEARING API flags.
+    DXGI_DDI_FLIP_INTERVAL_IMMEDIATE_ALLOW_TEARING = 5,
 } DXGI_DDI_FLIP_INTERVAL_TYPE;
 
 //--------------------------------------------------------------------------------------------------------
@@ -575,8 +581,8 @@ typedef struct _DXGI_DDI_ARG_PRESENTMULTIPLANEOVERLAY1
     DXGI_DDI_FLIP_INTERVAL_TYPE           FlipInterval; 
 
     UINT                                  PresentPlaneCount; 
-    DXGI_DDI_PRESENT_MULTIPLANE_OVERLAY1* pPresentPlanes; 
-} DXGI_DDI_ARG_PRESENTMULTIPLANEOVERLAY1; 
+    DXGI_DDI_PRESENT_MULTIPLANE_OVERLAY1* pPresentPlanes;
+} DXGI_DDI_ARG_PRESENTMULTIPLANEOVERLAY1;
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_0)
 
@@ -605,6 +611,43 @@ typedef struct _DXGI_DDI_ARG_RECLAIMRESOURCES1
 } DXGI_DDI_ARG_RECLAIMRESOURCES1;
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_1_2)
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+
+typedef struct DXGI1_6_1_DDI_ARG_PRESENT
+{
+    DXGI_DDI_HDEVICE                   hDevice;             //in
+    CONST DXGI_DDI_ARG_PRESENTSURFACE* phSurfacesToPresent; //in
+    UINT                               SurfacesToPresent;   //in
+    DXGI_DDI_HRESOURCE                 hDstResource;        // if non-zero, it's the destination of the present
+    UINT                               DstSubResourceIndex; // Index of surface level
+    void *                             pDXGIContext;        // opaque: Pass this to the Present callback
+    DXGI_DDI_PRESENT_FLAGS             Flags;               // Presentation flags.
+    DXGI_DDI_FLIP_INTERVAL_TYPE        FlipInterval;        // Presentation interval (flip only)
+    DXGI_DDI_MODE_ROTATION             RotationHint;        // in: Hint that the contents of the frame are rotated with respect to scanout.
+    CONST RECT*                        pDirtyRects;         // in: Array of dirty rects
+    UINT                               DirtyRects;          // in: Number of dirty rects
+
+    // out: for LDA only.  
+    // The number of physical back buffer per logical back buffer.
+    UINT                               BackBufferMultiplicity; 
+} DXGI1_6_1_DDI_ARG_PRESENT;
+
+typedef struct DXGI1_6_1_DDI_ARG_PRESENTMULTIPLANEOVERLAY
+{ 
+    DXGI_DDI_HDEVICE                      hDevice; 
+    void *                                pDXGIContext; 
+
+    D3DDDI_VIDEO_PRESENT_SOURCE_ID        VidPnSourceId; 
+    DXGI_DDI_PRESENT_FLAGS                Flags; 
+    DXGI_DDI_FLIP_INTERVAL_TYPE           FlipInterval; 
+
+    UINT                                  PresentPlaneCount; 
+    DXGI_DDI_PRESENT_MULTIPLANE_OVERLAY1* pPresentPlanes;
+    DXGI_DDI_MODE_ROTATION*               pRotationHints;
+} DXGI1_6_1_DDI_ARG_PRESENTMULTIPLANEOVERLAY;
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
 
 //--------------------------------------------------------------------------------------------------------
 typedef struct DXGI_DDI_BASE_FUNCTIONS
@@ -744,6 +787,37 @@ typedef struct DXGI1_5_DDI_BASE_FUNCTIONS
 
 #endif
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+
+//--------------------------------------------------------------------------------------------------------
+typedef struct DXGI1_6_1_DDI_BASE_FUNCTIONS
+{
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnPresent )               (DXGI_DDI_ARG_PRESENT*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnGetGammaCaps )          (DXGI_DDI_ARG_GET_GAMMA_CONTROL_CAPS*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnSetDisplayMode )        (DXGI_DDI_ARG_SETDISPLAYMODE*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnSetResourcePriority )   (DXGI_DDI_ARG_SETRESOURCEPRIORITY*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnQueryResourceResidency )(DXGI_DDI_ARG_QUERYRESOURCERESIDENCY*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnRotateResourceIdentities )(DXGI_DDI_ARG_ROTATE_RESOURCE_IDENTITIES*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnBlt                    )(DXGI_DDI_ARG_BLT*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnResolveSharedResource ) (DXGI_DDI_ARG_RESOLVESHAREDRESOURCE*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnBlt1 )                  (DXGI_DDI_ARG_BLT1*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnOfferResources1 )       (DXGI_DDI_ARG_OFFERRESOURCES1*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnReclaimResources )      (DXGI_DDI_ARG_RECLAIMRESOURCES*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnGetMultiplaneOverlayCaps )        (DXGI_DDI_ARG_GETMULTIPLANEOVERLAYCAPS*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnGetMultiplaneOverlayGroupCaps )   (DXGI_DDI_ARG_GETMULTIPLANEOVERLAYGROUPCAPS*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnReserved1 )                       (void*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnPresentMultiplaneOverlay )        (DXGI_DDI_ARG_PRESENTMULTIPLANEOVERLAY*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnReserved2 )                       (void*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnPresent1 )                        (DXGI1_6_1_DDI_ARG_PRESENT*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnCheckPresentDurationSupport )     (DXGI_DDI_ARG_CHECKPRESENTDURATIONSUPPORT*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnTrimResidencySet )                (DXGI_DDI_ARG_TRIMRESIDENCYSET*);
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnCheckMultiplaneOverlayColorSpaceSupport )     (DXGI_DDI_ARG_CHECKMULTIPLANEOVERLAYCOLORSPACESUPPORT*); 
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnPresentMultiplaneOverlay1 )        (DXGI1_6_1_DDI_ARG_PRESENTMULTIPLANEOVERLAY*); 
+    HRESULT ( __stdcall /*APIENTRY*/ * pfnReclaimResources1 )      (DXGI_DDI_ARG_RECLAIMRESOURCES1*);
+}DXGI1_6_1_DDI_BASE_FUNCTIONS;
+
+#endif
+
 
 //========================================================================================================
 // DXGI callback definitions.
@@ -751,6 +825,7 @@ typedef struct DXGI1_5_DDI_BASE_FUNCTIONS
 
 
 //--------------------------------------------------------------------------------------------------------
+
 typedef struct DXGIDDICB_PRESENT
 {
     D3DKMT_HANDLE   hSrcAllocation;             // in: The allocation of which content will be presented
@@ -773,6 +848,10 @@ typedef struct DXGIDDICB_PRESENT
     BOOLEAN                     bOptimizeForComposition;                        // out: DWM is involved in composition
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_0)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+    BOOL                        SyncIntervalOverrideValid;
+    DXGI_DDI_FLIP_INTERVAL_TYPE SyncIntervalOverride;
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
 } DXGIDDICB_PRESENT;
 
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WIN8)
@@ -795,6 +874,35 @@ typedef struct DXGIDDICB_PRESENT_MULTIPLANE_OVERLAY
 } DXGIDDICB_PRESENT_MULTIPLANE_OVERLAY;
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WIN8)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+typedef struct DXGIDDI_MULTIPLANE_OVERLAY_PLANE_INFO
+{
+    UINT                                      ContextCount;
+    _Field_size_(ContextCount) 
+    HANDLE*                                   pContextList;
+    _Field_size_(ContextCount) 
+    D3DKMT_HANDLE*                            pAllocationList;
+
+    UINT                                      DriverPrivateDataSize;
+    _Field_size_bytes_(DriverPrivateDataSize)
+    VOID*                                     pDriverPrivateData;
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+    BOOL                        SyncIntervalOverrideValid;
+    DXGI_DDI_FLIP_INTERVAL_TYPE SyncIntervalOverride;
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+} DXGIDDI_MULTIPLANE_OVERLAY_PLANE_INFO;
+
+typedef struct DXGIDDICB_PRESENT_MULTIPLANE_OVERLAY1
+{
+    void *                                    pDXGIContext;               // opaque: Fill this with the value in DXGI_DDI_ARG_PRESENT.pDXGIContext
+    DWORD                                     PresentPlaneCount;
+    _Field_size_(PresentPlaneCount) 
+    DXGIDDI_MULTIPLANE_OVERLAY_PLANE_INFO**   ppPresentPlanes;
+} DXGIDDICB_PRESENT_MULTIPLANE_OVERLAY1;
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+
+
 
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFNDDXGIDDI_PRESENTCB)(
         _In_ HANDLE hDevice, _In_ DXGIDDICB_PRESENT*);
@@ -804,6 +912,11 @@ typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFNDDXGIDDI_PRESENT_MULTIPLAN
         _In_ HANDLE hDevice, _In_ CONST DXGIDDICB_PRESENT_MULTIPLANE_OVERLAY*);
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WIN8)
 
+#if (D3D_UMD_INTERFACE_VERSION >=  D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFNDDXGIDDI_PRESENT_MULTIPLANE_OVERLAY1CB)(
+        _In_ HANDLE hDevice, _In_ CONST DXGIDDICB_PRESENT_MULTIPLANE_OVERLAY1*);
+#endif // (D3D_UMD_INTERFACE_VERSION >=  D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+
 //--------------------------------------------------------------------------------------------------------
 typedef struct DXGI_DDI_BASE_CALLBACKS
 {
@@ -812,6 +925,10 @@ typedef struct DXGI_DDI_BASE_CALLBACKS
     // Use IS_DXGI_MULTIPLANE_OVERLAY_FUNCTIONS macro to check if field is available.
     PFNDDXGIDDI_PRESENT_MULTIPLANE_OVERLAYCB pfnPresentMultiplaneOverlayCb;
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WIN8)
+#if (D3D_UMD_INTERFACE_VERSION >=  D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+    // Use IS_DXGI1_6_BASE_FUNCTIONS macro to check if field is available.
+    PFNDDXGIDDI_PRESENT_MULTIPLANE_OVERLAY1CB pfnPresentMultiplaneOverlay1Cb;
+#endif // (D3D_UMD_INTERFACE_VERSION >=  D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
 } DXGI_DDI_BASE_CALLBACKS;
 
 //========================================================================================================
@@ -819,9 +936,12 @@ typedef struct DXGI_DDI_BASE_CALLBACKS
 
 typedef struct DXGI_DDI_BASE_ARGS
 {
-    DXGI_DDI_BASE_CALLBACKS *pDXGIBaseCallbacks;            // in: The driver should record this pointer for later use
+    DXGI_DDI_BASE_CALLBACKS *pDXGIBaseCallbacks;        // in: The driver should record this pointer for later use
     union
     {
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+        DXGI1_6_1_DDI_BASE_FUNCTIONS *pDXGIDDIBaseFunctions6_1; // in/out: The driver should fill the denoted struct with DXGI base driver entry points
+#endif
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_1_1)
         DXGI1_5_DDI_BASE_FUNCTIONS *pDXGIDDIBaseFunctions6; // in/out: The driver should fill the denoted struct with DXGI base driver entry points
 #endif

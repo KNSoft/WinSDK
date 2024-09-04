@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -492,7 +492,6 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Numerics.h"
 #include "Windows.Media.MediaProperties.h"
-#include "Windows.Perception.Spatial.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -547,18 +546,18 @@ interface IFrameController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0001 */
 /* [local] */ 
@@ -593,18 +592,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0002 */
 /* [local] */ 
@@ -639,18 +638,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0003 */
 /* [local] */ 
@@ -685,18 +684,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0004 */
 /* [local] */ 
@@ -731,18 +730,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0005 */
 /* [local] */ 
@@ -777,18 +776,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0006 */
 /* [local] */ 
@@ -834,18 +833,18 @@ struct TimeSpan;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0007 */
 /* [local] */ 
@@ -880,18 +879,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0008 */
 /* [local] */ 
@@ -1326,18 +1325,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0009 */
 /* [local] */ 
@@ -1512,18 +1511,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CCore__CFrameCo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0011 */
 /* [local] */ 
@@ -1664,18 +1663,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CCore__CFrameCo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0013 */
 /* [local] */ 
@@ -1858,18 +1857,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CCore__CFrame
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_3189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Ecore2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices2Ecore_0000_0015 */
 /* [local] */ 

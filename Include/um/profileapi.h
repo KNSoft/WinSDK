@@ -19,6 +19,7 @@
 #include <minwindef.h>
 
 /* APISET_NAME: api-ms-win-core-profile-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

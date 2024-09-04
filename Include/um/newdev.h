@@ -84,9 +84,6 @@ DiInstallDevice(
     _In_      DWORD Flags,
     _Out_opt_ PBOOL NeedReboot
     );
-#endif // (WINVER >= _WIN32_WINNT_LONGHORN)
-
-#if (WINVER >= _WIN32_WINNT_LONGHORN)
 
 //
 // Flags for DiInstallDriver
@@ -168,6 +165,45 @@ DiUninstallDevice(
 #endif // (WINVER >= _WIN32_WINNT_WIN7)
 
 
+#if (WINVER >= _WIN32_WINNT_WIN10) // _WIN32_WINNT_WIN10_RS2
+
+//
+// Flags for DiUninstallDriver
+//
+#define DIURFLAG_NO_REMOVE_INF      0x00000001   // Do not remove inf from the system
+#define DIURFLAG_UNCONFIGURE_INF    0x00000002   // Unconfigure inf, if possible
+
+#define DIURFLAG_BITS               (DIURFLAG_NO_REMOVE_INF |\
+                                     DIURFLAG_UNCONFIGURE_INF)
+
+#define DIURFLAG_SYSTEM_BITS        (DIURFLAG_BITS)
+
+BOOL
+WINAPI
+DiUninstallDriverW(
+    _In_opt_  HWND hwndParent,
+    _In_      LPCWSTR InfPath,
+    _In_      DWORD Flags,
+    _Out_opt_ PBOOL NeedReboot
+    );
+
+BOOL
+WINAPI
+DiUninstallDriverA(
+    _In_opt_  HWND hwndParent,
+    _In_      LPCSTR InfPath,
+    _In_      DWORD Flags,
+    _Out_opt_ PBOOL NeedReboot
+    );
+
+#ifdef UNICODE
+#define DiUninstallDriver DiUninstallDriverW
+#else
+#define DiUninstallDriver DiUninstallDriverA
+#endif
+#endif // (WINVER >= _WIN32_WINNT_WIN10) // _WIN32_WINNT_WIN10_RS2
+
+
 #if (WINVER >= _WIN32_WINNT_LONGHORN)
 BOOL
 WINAPI
@@ -198,6 +234,16 @@ DiRollbackDriver(
     );
 #endif // (WINVER >= _WIN32_WINNT_LONGHORN)
 
+#if (WINVER >= _WIN32_WINNT_WIN10)
+BOOL
+WINAPI
+DiShowUpdateDriver(
+    __in_opt  HWND hwndParent,
+    __in_opt  PCWSTR FilePath,
+    __in      DWORD Flags,
+    __out_opt PBOOL NeedReboot
+    );
+#endif // (WINVER >= _WIN32_WINNT_WIN10)
 
 #ifdef __cplusplus
 }

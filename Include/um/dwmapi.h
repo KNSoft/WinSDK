@@ -97,26 +97,28 @@ enum DWMFLIP3DWINDOWPOLICY
 #define DWM_CLOAKED_SHELL       0x00000002
 #define DWM_CLOAKED_INHERITED   0x00000004
 
-// Thumbnails
-typedef HANDLE HTHUMBNAIL;
+#pragma region Thumbnails
+typedef HANDLE      HTHUMBNAIL;
 typedef HTHUMBNAIL* PHTHUMBNAIL;
 
-#define DWM_TNP_RECTDESTINATION       0x00000001
-#define DWM_TNP_RECTSOURCE            0x00000002
-#define DWM_TNP_OPACITY               0x00000004
-#define DWM_TNP_VISIBLE               0x00000008
-#define DWM_TNP_SOURCECLIENTAREAONLY  0x00000010
-
+#pragma region Flags for DWM_THUMBNAIL_PROPERTIES
+#define DWM_TNP_RECTDESTINATION                  0x00000001 // A value for the "rcDestination" member has been specified.
+#define DWM_TNP_RECTSOURCE                       0x00000002 // A value for the "rcSource" member has been specified.
+#define DWM_TNP_OPACITY                          0x00000004 // A value for the "opacity" member has been specified.
+#define DWM_TNP_VISIBLE                          0x00000008 // A value for the "fVisible" member has been specified.
+#define DWM_TNP_SOURCECLIENTAREAONLY             0x00000010 // A value for the "fSourceClientAreaOnly" member has been specified.
+#pragma endregion
 
 typedef struct _DWM_THUMBNAIL_PROPERTIES
 {
-    DWORD dwFlags;
-    RECT rcDestination;
-    RECT rcSource;
-    BYTE opacity;
-    BOOL fVisible;
-    BOOL fSourceClientAreaOnly;
+    DWORD dwFlags;              // Specifies which members of this struct have been specified
+    RECT rcDestination;         // The area in the destination window where the thumbnail will be rendered
+    RECT rcSource;              // The region of the source window to use as the thumbnail.  By default, the entire window is used as the thumbnail
+    BYTE opacity;               // The opacity with which to render the thumbnail.  0 is fully transparent, while 255 is fully opaque.  The default value is 255
+    BOOL fVisible;              // Whether the thumbnail should be visible.  The default is FALSE
+    BOOL fSourceClientAreaOnly; // Whether only the client area of the source window should be included in the thumbnail.  The default is FALSE
 } DWM_THUMBNAIL_PROPERTIES, *PDWM_THUMBNAIL_PROPERTIES;
+#pragma endregion
 
 // Video enabling apis
 
@@ -318,9 +320,9 @@ typedef enum
     DWM_SOURCE_FRAME_SAMPLING_LAST
 } DWM_SOURCE_FRAME_SAMPLING;
 
-static const UINT c_DwmMaxQueuedBuffers = 8;
-static const UINT c_DwmMaxMonitors = 16;
-static const UINT c_DwmMaxAdapters = 16;
+EXTERN_C __declspec(selectany) const UINT c_DwmMaxQueuedBuffers = 8;
+EXTERN_C __declspec(selectany) const UINT c_DwmMaxMonitors = 16;
+EXTERN_C __declspec(selectany) const UINT c_DwmMaxAdapters = 16;
 
 #pragma warning(push)
 #pragma warning(disable:4201)

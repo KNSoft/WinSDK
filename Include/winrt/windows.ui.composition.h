@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -107,6 +107,13 @@ typedef interface __FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAni
 typedef interface __FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs __FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_FWD_DEFINED__
@@ -336,6 +343,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionBrushFactory_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionCapabilities;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionCapabilitiesStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionClip_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionClip_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionClip __x_ABI_CWindows_CUI_CComposition_CICompositionClip;
@@ -454,6 +501,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionDrawingSurface2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionDrawingSurfaceFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction_FWD_DEFINED__
@@ -594,6 +681,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionGraphicsDevice2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLight_FWD_DEFINED__
@@ -916,6 +1023,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionTarget_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionVirtualDrawingSurface;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositionVirtualDrawingSurfaceFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositor_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositor __x_ABI_CWindows_CUI_CComposition_CICompositor;
@@ -954,6 +1101,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositor2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositor3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositor3 __x_ABI_CWindows_CUI_CComposition_CICompositor3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface ICompositor3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositor3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_FWD_DEFINED__
@@ -1154,6 +1321,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IKeyFrameAnimation3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFactory_FWD_DEFINED__
@@ -1456,6 +1643,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisual_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisual2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIVisual2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIVisual2 __x_ABI_CWindows_CUI_CComposition_CIVisual2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IVisual2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisual2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CIVisualCollection __x_ABI_CWindows_CUI_CComposition_CIVisualCollection;
@@ -1522,6 +1729,7 @@ namespace ABI {
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Numerics.h"
+#include "Windows.Graphics.h"
 #include "Windows.Graphics.DirectX.h"
 #include "Windows.Graphics.Effects.h"
 #include "Windows.UI.h"
@@ -1565,18 +1773,18 @@ interface ICompositionAnimationBase;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0001 */
 /* [local] */ 
@@ -1611,18 +1819,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0002 */
 /* [local] */ 
@@ -1657,18 +1865,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0003 */
 /* [local] */ 
@@ -1727,18 +1935,18 @@ interface ICompositionAnimation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0004 */
 /* [local] */ 
@@ -1773,18 +1981,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0005 */
 /* [local] */ 
@@ -1843,18 +2051,18 @@ interface IVisual;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0006 */
 /* [local] */ 
@@ -1889,18 +2097,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0007 */
 /* [local] */ 
@@ -1935,18 +2143,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0008 */
 /* [local] */ 
@@ -1981,18 +2189,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0009 */
 /* [local] */ 
@@ -2054,18 +2262,18 @@ interface ICompositionBatchCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0010 */
 /* [local] */ 
@@ -2089,6 +2297,76 @@ typedef ITypedEventHandler<IInspectable*,ABI::Windows::UI::Composition::Composit
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Composition {
+class CompositionCapabilities;
+} /*Composition*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Composition {
+interface ICompositionCapabilities;
+} /*Composition*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0010 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4649 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4649 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("6e8cc6f4-6cf5-5994-9447-726171236ea8"))
+ITypedEventHandler<ABI::Windows::UI::Composition::CompositionCapabilities*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Composition::CompositionCapabilities*, ABI::Windows::UI::Composition::ICompositionCapabilities*>,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Composition.CompositionCapabilities, Object>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Composition::CompositionCapabilities*,IInspectable*> __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2137,7 +2415,7 @@ interface IRenderingDeviceReplacedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0011 */
 /* [local] */ 
 
 
@@ -2145,23 +2423,23 @@ interface IRenderingDeviceReplacedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3131 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3131_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_USE
@@ -2185,29 +2463,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3132 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3132_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -2231,29 +2509,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3133 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3133_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
@@ -2282,6 +2560,9 @@ extern "C" {
 #if !defined(__windows2Efoundation2Enumerics_h__)
 #include <Windows.Foundation.Numerics.h>
 #endif // !defined(__windows2Efoundation2Enumerics_h__)
+#if !defined(__windows2Egraphics_h__)
+#include <Windows.Graphics.h>
+#endif // !defined(__windows2Egraphics_h__)
 #if !defined(__windows2Egraphics2Edirectx_h__)
 #include <Windows.Graphics.DirectX.h>
 #endif // !defined(__windows2Egraphics2Edirectx_h__)
@@ -2353,6 +2634,18 @@ typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat __x_ABI_CWi
 
 
 #if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CGraphics_CPointInt32 __x_ABI_CWindows_CGraphics_CPointInt32;
+
+#endif
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CGraphics_CRectInt32 __x_ABI_CWindows_CGraphics_CRectInt32;
+
+#endif
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CGraphics_CSizeInt32 __x_ABI_CWindows_CGraphics_CSizeInt32;
+
+#endif
+#if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CUI_CColor __x_ABI_CWindows_CUI_CColor;
 
 #endif
@@ -2368,6 +2661,16 @@ class CoreDispatcher;
 }
 #endif
 
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -2488,6 +2791,15 @@ typedef enum __x_ABI_CWindows_CUI_CComposition_CCompositionStretch __x_ABI_CWind
 
 
 #endif
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2799,6 +3111,17 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Composition {
+class CompositionVirtualDrawingSurface;
+} /*Composition*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Composition {
 class Compositor;
 } /*Composition*/
 } /*UI*/
@@ -3038,7 +3361,7 @@ class VisualUnorderedCollection;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0014 */
 /* [local] */ 
 
 
@@ -3226,6 +3549,54 @@ extern "C" {
 } /* end extern "C" */
 namespace ABI {
     namespace Windows {
+        namespace Graphics {
+            
+            typedef struct PointInt32 PointInt32;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            
+            typedef struct RectInt32 RectInt32;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            
+            typedef struct SizeInt32 SizeInt32;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
         namespace UI {
             
             typedef struct Color Color;
@@ -3237,6 +3608,24 @@ namespace ABI {
 extern "C" { 
 #endif
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                
+                typedef enum AnimationDelayBehavior AnimationDelayBehavior;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -3520,23 +3909,32 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0013_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3134 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3134 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3134_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0014 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0014_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4653 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4653 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
@@ -3544,13 +3942,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3134_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
@@ -3670,40 +4068,11 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CI
 #endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0016 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0015 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0015_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3135 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3135 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3135_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0016 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0016 */
@@ -3713,6 +4082,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3135_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0016_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4654 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4654 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0017 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0017 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
@@ -3856,40 +4254,11 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__C
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0017 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0018 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0017 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0017_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3136 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3136 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3136_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0018 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0018 */
@@ -3899,6 +4268,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3136_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0018_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0019 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0019 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
@@ -4008,40 +4406,11 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__C
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0020 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0019 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0019_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3137 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3137 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3137_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0020 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation
-#define DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0020 */
@@ -4051,6 +4420,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3137_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0020_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4656 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4656 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0021 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation
+#define DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0021 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation_INTERFACE_DEFINED__
@@ -4194,40 +4592,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CComposition__CCompositionAn
 #endif 	/* ____FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0022 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CComposition__CCompositionAnimation */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0021 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0021_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3138 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3138 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3138_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0022 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation
-#define DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0022 */
@@ -4237,6 +4606,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3138_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4657 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4657 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0023 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation
+#define DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0023 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation_INTERFACE_DEFINED__
@@ -4346,40 +4744,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CComposition__CCompositionAn
 #endif 	/* ____FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0024 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CComposition__CCompositionAnimation */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0023 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0023_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3139 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3139 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3139_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0024 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CUI__CComposition__CVisual
-#define DEF___FIIterator_1_Windows__CUI__CComposition__CVisual
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0024 */
@@ -4389,6 +4758,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3139_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CComposition__CVisual
+#define DEF___FIIterator_1_Windows__CUI__CComposition__CVisual
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0025 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__
@@ -4532,40 +4930,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CComposition__CVisual;
 #endif 	/* ____FIIterator_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0026 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CComposition__CVisual */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0025 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0025_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3140 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3140 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3140_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0026 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CComposition__CVisual
-#define DEF___FIIterable_1_Windows__CUI__CComposition__CVisual
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0026 */
@@ -4575,6 +4944,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3140_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0026_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4659 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4659 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0027 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CComposition__CVisual
+#define DEF___FIIterable_1_Windows__CUI__CComposition__CVisual
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0027 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__
@@ -4684,40 +5082,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CComposition__CVisual;
 #endif 	/* ____FIIterable_1_Windows__CUI__CComposition__CVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0028 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CComposition__CVisual */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0027 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0027_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3141 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3141 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3141_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0028 */
-/* [local] */ 
-
-#ifndef DEF___FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#define DEF___FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0028 */
@@ -4727,6 +5096,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3141_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4660 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4660 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#define DEF___FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0029 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
@@ -4872,40 +5270,11 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompo
 #endif 	/* ____FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0029 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0029_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3142 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3142 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3142_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0030 */
-/* [local] */ 
-
-#ifndef DEF___FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#define DEF___FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0030 */
@@ -4915,6 +5284,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3142_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4661 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4661 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#define DEF___FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
 #define ____FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__
@@ -5090,40 +5488,11 @@ EXTERN_C const IID IID___FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositi
 #endif 	/* ____FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0032 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMap_2_HSTRING_Windows__CUI__CComposition__CICompositionAnimationBase */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0031 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0031_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3143 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3143 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3143_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0032 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs
-#define DEF___FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0032 */
@@ -5133,6 +5502,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3143_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4662 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4662 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0033 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs
+#define DEF___FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0033 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_INTERFACE_DEFINED__
@@ -5221,40 +5619,11 @@ EXTERN_C const IID IID___FITypedEventHandler_2_IInspectable_Windows__CUI__CCompo
 #endif 	/* ____FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs */
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0033 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0033_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3144 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3144 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3144_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0034 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0034 */
@@ -5264,6 +5633,166 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_3144_v0_0_s_i
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0034_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4663 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4663 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0035 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable
+#define DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0035 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0035_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("6e8cc6f4-6cf5-5994-9447-726171236ea8")
+    __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Composition::ICompositionCapabilities *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectableVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectableVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectableVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0036 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0036 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0036_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4664 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4664 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0037 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0037 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__
@@ -5352,11 +5881,23 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CComposition__CComp
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior
+    {
+        AnimationDelayBehavior_SetInitialValueAfterDelay	= 0,
+        AnimationDelayBehavior_SetInitialValueBeforeDelay	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -5531,8 +6072,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIAmbientLight_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0038 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                
+                /* [v1_enum] */ 
+                enum AnimationDelayBehavior
+                    {
+                        AnimationDelayBehavior_SetInitialValueAfterDelay	= 0,
+                        AnimationDelayBehavior_SetInitialValueBeforeDelay	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -5802,8 +6364,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIAmbientLight_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIAmbientLight_INTERFACE_DEFINED__
@@ -5936,7 +6498,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIAmbientLight;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIAmbientLight_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_INTERFACE_DEFINED__)
@@ -5944,13 +6506,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_INTERFACE_DEFINED__
@@ -6109,7 +6671,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimatio
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIColorKeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation_INTERFACE_DEFINED__)
@@ -6117,13 +6679,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation_INTERFACE_DEFINED__
@@ -6362,7 +6924,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionAnimation;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation2_INTERFACE_DEFINED__)
@@ -6370,13 +6932,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation2_INTERFACE_DEFINED__
@@ -6521,7 +7083,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionAnimation2
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimation2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase_INTERFACE_DEFINED__)
@@ -6529,13 +7091,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase_INTERFACE_DEFINED__
@@ -6648,7 +7210,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionAnimationB
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0043 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationFactory_INTERFACE_DEFINED__)
@@ -6656,13 +7218,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationFactory_INTERFACE_DEFINED__
@@ -6775,7 +7337,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionAnimationF
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0044 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationGroup_INTERFACE_DEFINED__)
@@ -6783,13 +7345,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationGroup_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationGroup_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationGroup_INTERFACE_DEFINED__
@@ -6940,7 +7502,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionAnimationG
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionAnimationGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBrush_INTERFACE_DEFINED__)
@@ -6948,13 +7510,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBrush_INTERFACE_DEFINED__
@@ -7067,7 +7629,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBr
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0046 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBatchCompletedEventArgs_INTERFACE_DEFINED__)
@@ -7075,13 +7637,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBatchCompletedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionBatchCompletedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionBatchCompletedEventArgs_INTERFACE_DEFINED__
@@ -7194,7 +7756,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionBatchCompl
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionBatchCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_INTERFACE_DEFINED__)
@@ -7202,13 +7764,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_INTERFACE_DEFINED__
@@ -7321,7 +7883,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionBrush;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0048 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBrushFactory_INTERFACE_DEFINED__)
@@ -7329,13 +7891,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionBrushFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionBrushFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionBrushFactory_INTERFACE_DEFINED__
@@ -7448,7 +8010,313 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionBrushFacto
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionBrushFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0049 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionCapabilities[] = L"Windows.UI.Composition.ICompositionCapabilities";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0049 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0049_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionCapabilities */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("8253353E-B517-48BC-B1E8-4B3561A2E181")
+                    ICompositionCapabilities : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE AreEffectsSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE AreEffectsFast( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_Changed( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_Changed( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionCapabilities = __uuidof(ICompositionCapabilities);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *AreEffectsSupported )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *AreEffectsFast )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_Changed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_Changed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesVtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_AreEffectsSupported(This,value)	\
+    ( (This)->lpVtbl -> AreEffectsSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_AreEffectsFast(This,value)	\
+    ( (This)->lpVtbl -> AreEffectsFast(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_add_Changed(This,handler,token)	\
+    ( (This)->lpVtbl -> add_Changed(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_remove_Changed(This,token)	\
+    ( (This)->lpVtbl -> remove_Changed(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0050 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionCapabilitiesStatics[] = L"Windows.UI.Composition.ICompositionCapabilitiesStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0050 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0050_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionCapabilitiesStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("F7B7A86E-6416-49E5-8DDF-AFE949E20562")
+                    ICompositionCapabilitiesStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetForCurrentView( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionCapabilities **current) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionCapabilitiesStatics = __uuidof(ICompositionCapabilitiesStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilities **current);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_GetForCurrentView(This,current)	\
+    ( (This)->lpVtbl -> GetForCurrentView(This,current) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionCapabilitiesStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionClip_INTERFACE_DEFINED__)
@@ -7456,13 +8324,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionClip_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionClip_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionClip_INTERFACE_DEFINED__
@@ -7575,7 +8443,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionClip;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionClip_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionClip2_INTERFACE_DEFINED__)
@@ -7583,13 +8451,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionClip2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionClip2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionClip2_INTERFACE_DEFINED__
@@ -7842,7 +8710,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionClip2;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionClip2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionClipFactory_INTERFACE_DEFINED__)
@@ -7850,13 +8718,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionClipFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionClipFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionClipFactory_INTERFACE_DEFINED__
@@ -7969,7 +8837,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionClipFactor
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionClipFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionColorBrush_INTERFACE_DEFINED__)
@@ -7977,13 +8845,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionColorBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionColorBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionColorBrush_INTERFACE_DEFINED__
@@ -8116,7 +8984,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionColorBrush
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionColorBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_INTERFACE_DEFINED__)
@@ -8124,13 +8992,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_INTERFACE_DEFINED__
@@ -8285,7 +9153,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatc
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionCommitBatch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_INTERFACE_DEFINED__)
@@ -8293,13 +9161,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_INTERFACE_DEFINED__
@@ -8442,7 +9310,329 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSur
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0057 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionDrawingSurface2[] = L"Windows.UI.Composition.ICompositionDrawingSurface2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0057 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0057_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionDrawingSurface2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("FAD0E88B-E354-44E8-8E3D-C4880D5A213F")
+                    ICompositionDrawingSurface2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SizeInt32( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Graphics::SizeInt32 *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE Resize( 
+                            /* [in] */ ABI::Windows::Graphics::SizeInt32 sizePixels) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE Scroll( 
+                            /* [in] */ ABI::Windows::Graphics::PointInt32 offset) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE ScrollRect( 
+                            /* [in] */ ABI::Windows::Graphics::PointInt32 offset,
+                            /* [in] */ ABI::Windows::Graphics::RectInt32 scrollRect) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE ScrollWithClip( 
+                            /* [in] */ ABI::Windows::Graphics::PointInt32 offset,
+                            /* [in] */ ABI::Windows::Graphics::RectInt32 clipRect) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE ScrollRectWithClip( 
+                            /* [in] */ ABI::Windows::Graphics::PointInt32 offset,
+                            /* [in] */ ABI::Windows::Graphics::RectInt32 clipRect,
+                            /* [in] */ ABI::Windows::Graphics::RectInt32 scrollRect) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionDrawingSurface2 = __uuidof(ICompositionDrawingSurface2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SizeInt32 )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CGraphics_CSizeInt32 *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *Resize )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CSizeInt32 sizePixels);
+        
+        HRESULT ( STDMETHODCALLTYPE *Scroll )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CPointInt32 offset);
+        
+        HRESULT ( STDMETHODCALLTYPE *ScrollRect )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CPointInt32 offset,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CRectInt32 scrollRect);
+        
+        HRESULT ( STDMETHODCALLTYPE *ScrollWithClip )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CPointInt32 offset,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CRectInt32 clipRect);
+        
+        HRESULT ( STDMETHODCALLTYPE *ScrollRectWithClip )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CPointInt32 offset,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CRectInt32 clipRect,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CRectInt32 scrollRect);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_get_SizeInt32(This,value)	\
+    ( (This)->lpVtbl -> get_SizeInt32(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_Resize(This,sizePixels)	\
+    ( (This)->lpVtbl -> Resize(This,sizePixels) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_Scroll(This,offset)	\
+    ( (This)->lpVtbl -> Scroll(This,offset) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_ScrollRect(This,offset,scrollRect)	\
+    ( (This)->lpVtbl -> ScrollRect(This,offset,scrollRect) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_ScrollWithClip(This,offset,clipRect)	\
+    ( (This)->lpVtbl -> ScrollWithClip(This,offset,clipRect) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_ScrollRectWithClip(This,offset,clipRect,scrollRect)	\
+    ( (This)->lpVtbl -> ScrollRectWithClip(This,offset,clipRect,scrollRect) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0058 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionDrawingSurfaceFactory[] = L"Windows.UI.Composition.ICompositionDrawingSurfaceFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0058 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0058_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionDrawingSurfaceFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("9497B00A-312D-46B9-9DB3-412FD79464C8")
+                    ICompositionDrawingSurfaceFactory : public IInspectable
+                    {
+                    public:
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionDrawingSurfaceFactory = __uuidof(ICompositionDrawingSurfaceFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurfaceFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction_INTERFACE_DEFINED__)
@@ -8450,13 +9640,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction_INTERFACE_DEFINED__
@@ -8569,7 +9759,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunc
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunction_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0060 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunctionFactory_INTERFACE_DEFINED__)
@@ -8577,13 +9767,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunctionFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunctionFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunctionFactory_INTERFACE_DEFINED__
@@ -8696,7 +9886,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunc
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionEasingFunctionFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0061 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectBrush_INTERFACE_DEFINED__)
@@ -8704,13 +9894,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectBrush_INTERFACE_DEFINED__
@@ -8847,7 +10037,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEffectBrus
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectFactory_INTERFACE_DEFINED__)
@@ -8855,13 +10045,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectFactory_INTERFACE_DEFINED__
@@ -9004,7 +10194,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEffectFact
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameter_INTERFACE_DEFINED__)
@@ -9012,13 +10202,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameter_INTERFACE_DEFINED__
@@ -9141,7 +10331,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEffectSour
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0064 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_INTERFACE_DEFINED__)
@@ -9149,13 +10339,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_INTERFACE_DEFINED__
@@ -9280,7 +10470,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionEffectSour
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionEffectSourceParameterFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0065 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice_INTERFACE_DEFINED__)
@@ -9288,13 +10478,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice_INTERFACE_DEFINED__
@@ -9445,7 +10635,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDe
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0066 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionGraphicsDevice2[] = L"Windows.UI.Composition.ICompositionGraphicsDevice2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0066 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0066_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionGraphicsDevice2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("0FB8BDF6-C0F0-4BCC-9FB8-084982490D7D")
+                    ICompositionGraphicsDevice2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateDrawingSurface2( 
+                            /* [in] */ ABI::Windows::Graphics::SizeInt32 sizePixels,
+                            /* [in] */ ABI::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat,
+                            /* [in] */ ABI::Windows::Graphics::DirectX::DirectXAlphaMode alphaMode,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionDrawingSurface **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateVirtualDrawingSurface( 
+                            /* [in] */ ABI::Windows::Graphics::SizeInt32 sizePixels,
+                            /* [in] */ ABI::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat,
+                            /* [in] */ ABI::Windows::Graphics::DirectX::DirectXAlphaMode alphaMode,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionVirtualDrawingSurface **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionGraphicsDevice2 = __uuidof(ICompositionGraphicsDevice2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateDrawingSurface2 )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CSizeInt32 sizePixels,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat pixelFormat,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDirectX_CDirectXAlphaMode alphaMode,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionDrawingSurface **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateVirtualDrawingSurface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CSizeInt32 sizePixels,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat pixelFormat,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDirectX_CDirectXAlphaMode alphaMode,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_CreateDrawingSurface2(This,sizePixels,pixelFormat,alphaMode,result)	\
+    ( (This)->lpVtbl -> CreateDrawingSurface2(This,sizePixels,pixelFormat,alphaMode,result) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_CreateVirtualDrawingSurface(This,sizePixels,pixelFormat,alphaMode,result)	\
+    ( (This)->lpVtbl -> CreateVirtualDrawingSurface(This,sizePixels,pixelFormat,alphaMode,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionGraphicsDevice2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0067 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight_INTERFACE_DEFINED__)
@@ -9453,13 +10802,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLight_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLight_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionLight_INTERFACE_DEFINED__
@@ -9582,7 +10931,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLight;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionLight_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__)
@@ -9590,13 +10939,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__
@@ -9709,7 +11058,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionLightFacto
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionLightFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0069 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionMaskBrush_INTERFACE_DEFINED__)
@@ -9717,13 +11066,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionMaskBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionMaskBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionMaskBrush_INTERFACE_DEFINED__
@@ -9876,7 +11225,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionMaskBrush;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionMaskBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionNineGridBrush_INTERFACE_DEFINED__)
@@ -9884,13 +11233,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionNineGridBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionNineGridBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionNineGridBrush_INTERFACE_DEFINED__
@@ -10255,7 +11604,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionNineGridBr
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionNineGridBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject_INTERFACE_DEFINED__)
@@ -10263,13 +11612,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObject_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionObject_INTERFACE_DEFINED__
@@ -10434,7 +11783,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObject;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionObject_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject2_INTERFACE_DEFINED__)
@@ -10442,13 +11791,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObject2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObject2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionObject2_INTERFACE_DEFINED__
@@ -10621,7 +11970,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObject2;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionObject2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__)
@@ -10629,13 +11978,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__
@@ -10748,7 +12097,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionObjectFact
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionObjectFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_INTERFACE_DEFINED__)
@@ -10756,13 +12105,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_INTERFACE_DEFINED__
@@ -11083,7 +12432,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPropertySe
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_INTERFACE_DEFINED__)
@@ -11091,13 +12440,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_INTERFACE_DEFINED__
@@ -11236,7 +12585,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionPropertySe
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_INTERFACE_DEFINED__)
@@ -11244,13 +12593,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_INTERFACE_DEFINED__
@@ -11429,7 +12778,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatc
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionScopedBatch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShadow_INTERFACE_DEFINED__)
@@ -11437,13 +12786,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShadow_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionShadow_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionShadow_INTERFACE_DEFINED__
@@ -11556,7 +12905,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShadow;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionShadow_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__)
@@ -11564,13 +12913,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__
@@ -11683,7 +13032,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionShadowFact
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionShadowFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_INTERFACE_DEFINED__)
@@ -11691,13 +13040,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_INTERFACE_DEFINED__
@@ -11810,7 +13159,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionSurface;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush_INTERFACE_DEFINED__)
@@ -11818,13 +13167,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush_INTERFACE_DEFINED__
@@ -12037,7 +13386,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBru
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush2_INTERFACE_DEFINED__)
@@ -12045,13 +13394,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush2_INTERFACE_DEFINED__
@@ -12304,7 +13653,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBru
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionSurfaceBrush2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionTarget_INTERFACE_DEFINED__)
@@ -12312,13 +13661,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionTarget_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionTarget_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionTarget_INTERFACE_DEFINED__
@@ -12451,7 +13800,273 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionTarget;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionTarget_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0083 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionVirtualDrawingSurface[] = L"Windows.UI.Composition.ICompositionVirtualDrawingSurface";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0083 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0083_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionVirtualDrawingSurface */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("A9C384DB-8740-4F94-8B9D-B68521E7863D")
+                    ICompositionVirtualDrawingSurface : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Trim( 
+                            /* [in] */ UINT32 __rectsSize,
+                            /* [in][size_is] */ __RPC__in_ecount_full(__rectsSize) ABI::Windows::Graphics::RectInt32 *rects) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionVirtualDrawingSurface = __uuidof(ICompositionVirtualDrawingSurface);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Trim )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface * This,
+            /* [in] */ UINT32 __rectsSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__rectsSize) __x_ABI_CWindows_CGraphics_CRectInt32 *rects);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceVtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_Trim(This,__rectsSize,rects)	\
+    ( (This)->lpVtbl -> Trim(This,__rectsSize,rects) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurface_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0084 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositionVirtualDrawingSurfaceFactory[] = L"Windows.UI.Composition.ICompositionVirtualDrawingSurfaceFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0084 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0084_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("6766106C-D56B-4A49-B1DF-5076A0620768")
+                    ICompositionVirtualDrawingSurfaceFactory : public IInspectable
+                    {
+                    public:
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositionVirtualDrawingSurfaceFactory = __uuidof(ICompositionVirtualDrawingSurfaceFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositionVirtualDrawingSurfaceFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor_INTERFACE_DEFINED__)
@@ -12459,13 +14074,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositor_INTERFACE_DEFINED__
@@ -12846,7 +14461,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor2_INTERFACE_DEFINED__)
@@ -12854,13 +14469,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositor2_INTERFACE_DEFINED__
@@ -13105,7 +14720,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor2;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositor2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0087 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_ICompositor3[] = L"Windows.UI.Composition.ICompositor3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICompositor3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0087 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0087_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositor3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CICompositor3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CICompositor3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::ICompositor3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICompositor3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("C9DD8EF0-6EB1-4E3C-A658-675D9C64D4AB")
+                    ICompositor3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateHostBackdropBrush( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionBackdropBrush **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICompositor3 = __uuidof(ICompositor3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CICompositor3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateHostBackdropBrush )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CICompositor3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionBackdropBrush **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CICompositor3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CICompositor3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CICompositor3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CICompositor3_CreateHostBackdropBrush(This,result)	\
+    ( (This)->lpVtbl -> CreateHostBackdropBrush(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICompositor3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_INTERFACE_DEFINED__)
@@ -13113,13 +14865,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_INTERFACE_DEFINED__
@@ -13242,7 +14994,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIContainerVisual;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIContainerVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIContainerVisualFactory_INTERFACE_DEFINED__)
@@ -13250,13 +15002,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIContainerVisualFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIContainerVisualFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIContainerVisualFactory_INTERFACE_DEFINED__
@@ -13369,7 +15121,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIContainerVisualFactor
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIContainerVisualFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CICubicBezierEasingFunction_INTERFACE_DEFINED__)
@@ -13377,13 +15129,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CICubicBezierEasingFunction_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICubicBezierEasingFunction_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICubicBezierEasingFunction_INTERFACE_DEFINED__
@@ -13516,7 +15268,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CICubicBezierEasingFunc
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CICubicBezierEasingFunction_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIDistantLight_INTERFACE_DEFINED__)
@@ -13524,13 +15276,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIDistantLight_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIDistantLight_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIDistantLight_INTERFACE_DEFINED__
@@ -13703,7 +15455,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIDistantLight;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIDistantLight_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIDropShadow_INTERFACE_DEFINED__)
@@ -13711,13 +15463,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIDropShadow_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIDropShadow_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIDropShadow_INTERFACE_DEFINED__
@@ -13930,7 +15682,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIDropShadow;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIDropShadow_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIExpressionAnimation_INTERFACE_DEFINED__)
@@ -13938,13 +15690,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIExpressionAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIExpressionAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIExpressionAnimation_INTERFACE_DEFINED__
@@ -14077,7 +15829,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIExpressionAnimation;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIExpressionAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIImplicitAnimationCollection_INTERFACE_DEFINED__)
@@ -14085,13 +15837,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIImplicitAnimationCollection_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIImplicitAnimationCollection_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIImplicitAnimationCollection_INTERFACE_DEFINED__
@@ -14204,7 +15956,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIImplicitAnimationColl
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIImplicitAnimationCollection_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIInsetClip_INTERFACE_DEFINED__)
@@ -14212,13 +15964,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIInsetClip_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIInsetClip_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIInsetClip_INTERFACE_DEFINED__
@@ -14411,7 +16163,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIInsetClip;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIInsetClip_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation_INTERFACE_DEFINED__)
@@ -14419,13 +16171,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation_INTERFACE_DEFINED__
@@ -14674,7 +16426,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2_INTERFACE_DEFINED__)
@@ -14682,13 +16434,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2_INTERFACE_DEFINED__
@@ -14821,7 +16573,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0098 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IKeyFrameAnimation3[] = L"Windows.UI.Composition.IKeyFrameAnimation3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0098 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0098_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::IKeyFrameAnimation3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("845BF0B4-D8DE-462F-8753-C80D43C6FF5A")
+                    IKeyFrameAnimation3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DelayBehavior( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::UI::Composition::AnimationDelayBehavior *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DelayBehavior( 
+                            /* [in] */ ABI::Windows::UI::Composition::AnimationDelayBehavior value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IKeyFrameAnimation3 = __uuidof(IKeyFrameAnimation3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DelayBehavior )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DelayBehavior )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CComposition_CAnimationDelayBehavior value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_get_DelayBehavior(This,value)	\
+    ( (This)->lpVtbl -> get_DelayBehavior(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_put_DelayBehavior(This,value)	\
+    ( (This)->lpVtbl -> put_DelayBehavior(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimation3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFactory_INTERFACE_DEFINED__)
@@ -14829,13 +16728,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFactory_INTERFACE_DEFINED__
@@ -14948,7 +16847,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFact
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIKeyFrameAnimationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0100 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CILayerVisual_INTERFACE_DEFINED__)
@@ -14956,13 +16855,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CILayerVisual_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CILayerVisual_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CILayerVisual_INTERFACE_DEFINED__
@@ -15095,7 +16994,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CILayerVisual;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CILayerVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CILinearEasingFunction_INTERFACE_DEFINED__)
@@ -15103,13 +17002,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CILinearEasingFunction_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CILinearEasingFunction_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CILinearEasingFunction_INTERFACE_DEFINED__
@@ -15222,7 +17121,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CILinearEasingFunction;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CILinearEasingFunction_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight_INTERFACE_DEFINED__)
@@ -15230,13 +17129,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIPointLight_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIPointLight_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIPointLight_INTERFACE_DEFINED__
@@ -15469,7 +17368,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIPointLight;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIPointLight_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_INTERFACE_DEFINED__)
@@ -15477,13 +17376,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_INTERFACE_DEFINED__
@@ -15622,7 +17521,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAni
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIQuaternionKeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__)
@@ -15630,13 +17529,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__
@@ -15759,7 +17658,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIRenderingDeviceReplac
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIRenderingDeviceReplacedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIScalarKeyFrameAnimation_INTERFACE_DEFINED__)
@@ -15767,13 +17666,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIScalarKeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIScalarKeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIScalarKeyFrameAnimation_INTERFACE_DEFINED__
@@ -15912,7 +17811,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIScalarKeyFrameAnimati
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIScalarKeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight_INTERFACE_DEFINED__)
@@ -15920,13 +17819,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CISpotLight_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpotLight_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpotLight_INTERFACE_DEFINED__
@@ -16279,7 +18178,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpotLight;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CISpotLight_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CISpriteVisual_INTERFACE_DEFINED__)
@@ -16287,13 +18186,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CISpriteVisual_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpriteVisual_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpriteVisual_INTERFACE_DEFINED__
@@ -16426,7 +18325,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpriteVisual;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CISpriteVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CISpriteVisual2_INTERFACE_DEFINED__)
@@ -16434,13 +18333,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CISpriteVisual2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CISpriteVisual2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CISpriteVisual2_INTERFACE_DEFINED__
@@ -16573,7 +18472,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CISpriteVisual2;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CISpriteVisual2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIStepEasingFunction_INTERFACE_DEFINED__)
@@ -16581,13 +18480,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIStepEasingFunction_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIStepEasingFunction_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIStepEasingFunction_INTERFACE_DEFINED__
@@ -16800,7 +18699,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIStepEasingFunction;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIStepEasingFunction_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVector2KeyFrameAnimation_INTERFACE_DEFINED__)
@@ -16808,13 +18707,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVector2KeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVector2KeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVector2KeyFrameAnimation_INTERFACE_DEFINED__
@@ -16953,7 +18852,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVector2KeyFrameAnimat
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVector2KeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVector3KeyFrameAnimation_INTERFACE_DEFINED__)
@@ -16961,13 +18860,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVector3KeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVector3KeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVector3KeyFrameAnimation_INTERFACE_DEFINED__
@@ -17106,7 +19005,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVector3KeyFrameAnimat
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVector3KeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVector4KeyFrameAnimation_INTERFACE_DEFINED__)
@@ -17114,13 +19013,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVector4KeyFrameAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVector4KeyFrameAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVector4KeyFrameAnimation_INTERFACE_DEFINED__
@@ -17259,7 +19158,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVector4KeyFrameAnimat
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVector4KeyFrameAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVisual_INTERFACE_DEFINED__)
@@ -17267,13 +19166,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVisual_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisual_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVisual_INTERFACE_DEFINED__
@@ -17716,7 +19615,194 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVisual;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0114 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CComposition_CIVisual2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Composition_IVisual2[] = L"Windows.UI.Composition.IVisual2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVisual2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0114 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0114_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisual2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIVisual2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CComposition_CIVisual2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Composition::IVisual2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVisual2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Composition {
+                    
+                    MIDL_INTERFACE("3052B611-56C3-4C3E-8BF3-F6E1AD473F06")
+                    IVisual2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ParentForTransform( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Composition::IVisual **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ParentForTransform( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Composition::IVisual *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RelativeOffsetAdjustment( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Numerics::Vector3 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_RelativeOffsetAdjustment( 
+                            /* [in] */ ABI::Windows::Foundation::Numerics::Vector3 value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RelativeSizeAdjustment( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Numerics::Vector2 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_RelativeSizeAdjustment( 
+                            /* [in] */ ABI::Windows::Foundation::Numerics::Vector2 value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IVisual2 = __uuidof(IVisual2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CComposition_CIVisual2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ParentForTransform )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CIVisual **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ParentForTransform )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CIVisual *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RelativeOffsetAdjustment )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_RelativeOffsetAdjustment )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CNumerics_CVector3 value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RelativeSizeAdjustment )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector2 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_RelativeSizeAdjustment )( 
+            __RPC__in __x_ABI_CWindows_CUI_CComposition_CIVisual2 * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CNumerics_CVector2 value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CComposition_CIVisual2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CComposition_CIVisual2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CComposition_CIVisual2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_get_ParentForTransform(This,value)	\
+    ( (This)->lpVtbl -> get_ParentForTransform(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_put_ParentForTransform(This,value)	\
+    ( (This)->lpVtbl -> put_ParentForTransform(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_get_RelativeOffsetAdjustment(This,value)	\
+    ( (This)->lpVtbl -> get_RelativeOffsetAdjustment(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_put_RelativeOffsetAdjustment(This,value)	\
+    ( (This)->lpVtbl -> put_RelativeOffsetAdjustment(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_get_RelativeSizeAdjustment(This,value)	\
+    ( (This)->lpVtbl -> get_RelativeSizeAdjustment(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CComposition_CIVisual2_put_RelativeSizeAdjustment(This,value)	\
+    ( (This)->lpVtbl -> put_RelativeSizeAdjustment(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisual2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_INTERFACE_DEFINED__)
@@ -17724,13 +19810,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_INTERFACE_DEFINED__
@@ -17915,7 +20001,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVisualCollection;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisualCollection_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVisualFactory_INTERFACE_DEFINED__)
@@ -17923,13 +20009,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVisualFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisualFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVisualFactory_INTERFACE_DEFINED__
@@ -18042,7 +20128,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVisualFactory;
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisualFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0117 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollection_INTERFACE_DEFINED__)
@@ -18050,13 +20136,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollection_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollection_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollection_INTERFACE_DEFINED__
@@ -18207,7 +20293,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollec
 #endif 	/* ____x_ABI_CWindows_CUI_CComposition_CIVisualUnorderedCollection_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0118 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Composition_AmbientLight_DEFINED
@@ -18237,6 +20323,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionBrush_DEFINED
 #define RUNTIMECLASS_Windows_UI_Composition_CompositionBrush_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionBrush[] = L"Windows.UI.Composition.CompositionBrush";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionCapabilities_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionCapabilities_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionCapabilities[] = L"Windows.UI.Composition.CompositionCapabilities";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionClip_DEFINED
 #define RUNTIMECLASS_Windows_UI_Composition_CompositionClip_DEFINED
@@ -18309,6 +20399,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionTarget_DEFINED
 #define RUNTIMECLASS_Windows_UI_Composition_CompositionTarget_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionTarget[] = L"Windows.UI.Composition.CompositionTarget";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Composition_CompositionVirtualDrawingSurface_DEFINED
+#define RUNTIMECLASS_Windows_UI_Composition_CompositionVirtualDrawingSurface_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Composition_CompositionVirtualDrawingSurface[] = L"Windows.UI.Composition.CompositionVirtualDrawingSurface";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Composition_Compositor_DEFINED
 #define RUNTIMECLASS_Windows_UI_Composition_Compositor_DEFINED
@@ -18408,13 +20502,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Ecomposition_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Ecomposition_0000_0118_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

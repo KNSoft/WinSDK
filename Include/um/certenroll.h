@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -2147,6 +2147,9 @@ enum EncodingType
         XCN_CRYPT_STRING_HEXASCIIADDR	= 0xb,
         XCN_CRYPT_STRING_HEXRAW	= 0xc,
         XCN_CRYPT_STRING_BASE64URI	= 0xd,
+        XCN_CRYPT_STRING_ENCODEMASK	= 0xff,
+        XCN_CRYPT_STRING_CHAIN	= 0x100,
+        XCN_CRYPT_STRING_RESERVED200	= 0x200,
         XCN_CRYPT_STRING_PERCENTESCAPE	= 0x8000000,
         XCN_CRYPT_STRING_HASHDATA	= 0x10000000,
         XCN_CRYPT_STRING_STRICT	= 0x20000000,
@@ -2961,12 +2964,14 @@ enum X500NameFlags
         XCN_CERT_NAME_STR_COMMA_FLAG	= 0x4000000,
         XCN_CERT_NAME_STR_REVERSE_FLAG	= 0x2000000,
         XCN_CERT_NAME_STR_FORWARD_FLAG	= 0x1000000,
+        XCN_CERT_NAME_STR_AMBIGUOUS_SEPARATOR_FLAGS	= ( ( 0x40000000 | 0x8000000 )  | 0x4000000 ) ,
         XCN_CERT_NAME_STR_DISABLE_IE4_UTF8_FLAG	= 0x10000,
         XCN_CERT_NAME_STR_ENABLE_T61_UNICODE_FLAG	= 0x20000,
         XCN_CERT_NAME_STR_ENABLE_UTF8_UNICODE_FLAG	= 0x40000,
         XCN_CERT_NAME_STR_FORCE_UTF8_DIR_STR_FLAG	= 0x80000,
         XCN_CERT_NAME_STR_DISABLE_UTF8_DIR_STR_FLAG	= 0x100000,
-        XCN_CERT_NAME_STR_ENABLE_PUNYCODE_FLAG	= 0x200000
+        XCN_CERT_NAME_STR_ENABLE_PUNYCODE_FLAG	= 0x200000,
+        XCN_CERT_NAME_STR_DS_ESCAPED	= 0x800000
     } 	X500NameFlags;
 
 
@@ -4925,7 +4930,8 @@ enum KeyIdentifierHashAlgorithm
         SKIHashDefault	= 0,
         SKIHashSha1	= 1,
         SKIHashCapiSha1	= 2,
-        SKIHashSha256	= 3
+        SKIHashSha256	= 3,
+        SKIHashHPKP	= 5
     } 	KeyIdentifierHashAlgorithm;
 
 
@@ -11327,6 +11333,7 @@ enum RequestClientInfoClientId
         ClientIdEOBO	= 8,
         ClientIdCertReq	= 9,
         ClientIdTest	= 10,
+        ClientIdWinRT	= 11,
         ClientIdUserStart	= 1000
     } 	RequestClientInfoClientId;
 
@@ -12958,7 +12965,11 @@ enum CERTENROLL_PROPERTYID
         XCN_CERT_KEY_CLASSIFICATION_PROP_ID	= 120,
         XCN_CERT_DISALLOWED_ENHKEY_USAGE_PROP_ID	= 122,
         XCN_CERT_NONCOMPLIANT_ROOT_URL_PROP_ID	= 123,
-        XCN_CERT_FIRST_RESERVED_PROP_ID	= 124,
+        XCN_CERT_PIN_SHA256_HASH_PROP_ID	= 124,
+        XCN_CERT_CLR_DELETE_KEY_PROP_ID	= 125,
+        XCN_CERT_NOT_BEFORE_FILETIME_PROP_ID	= 126,
+        XCN_CERT_CERT_NOT_BEFORE_ENHKEY_USAGE_PROP_ID	= 127,
+        XCN_CERT_FIRST_RESERVED_PROP_ID	= 128,
         XCN_CERT_LAST_RESERVED_PROP_ID	= 0x7fff,
         XCN_CERT_FIRST_USER_PROP_ID	= 0x8000,
         XCN_CERT_LAST_USER_PROP_ID	= 0xffff,
@@ -28415,6 +28426,8 @@ enum X509CertificateTemplatePrivateKeyFlag
         PrivateKeyAttestWithoutPolicy	= 0x4000,
         PrivateKeyServerVersionMask	= 0xf0000,
         PrivateKeyServerVersionShift	= 16,
+        PrivateKeyHelloKspKey	= 0x100000,
+        PrivateKeyHelloLogonKey	= 0x200000,
         PrivateKeyClientVersionMask	= 0xf000000,
         PrivateKeyClientVersionShift	= 24
     } 	X509CertificateTemplatePrivateKeyFlag;

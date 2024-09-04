@@ -1148,8 +1148,6 @@ endif ; ifb <SkipSetCtxState>
 ; Check if the thread is a Scheduled UMS Thread or profiling is active.
 ;
 
-ifb <NmiFlag>
-
         mov     rcx, gs:[PcCurrentThread] ; get current thread address
         test    dword ptr ThLock[rcx], DEBUG_ACTIVE_SCHEDULED_THREAD_LOCK or THREAD_FLAGS_CYCLE_PROFILING_LOCK
         jz      short second            ; if z, profiling and UMS are not enabled
@@ -1165,6 +1163,8 @@ endif
         CAPCALL KiCopyCounters
         mov     rcx, gs:[PcCurrentThread] ; reload current thread address
 @@:
+
+ifb <NmiFlag>
 
 ifndef XBOX_SYSTEMOS
 
@@ -1193,6 +1193,8 @@ endif ; ifb <SkipUmsExit>
 
 endif ; ifndef XBOX_SYSTEMOS
 
+endif ; ifb <NmiFlag>
+
 ifidn <State>, <Service>
 
         mov     rax, TrRax[rbp]         ; restore service status
@@ -1200,8 +1202,6 @@ ifidn <State>, <Service>
 endif
 
 second:
-
-endif ; ifb <NmiFlag>
 
         ldmxcsr TrMxCsr[rbp]            ; restore XMM control/status
 
@@ -1539,18 +1539,6 @@ else
 
 endif
 
-        cmp     qword ptr ThTebMappedLowVa[Thread], rax ; check if low TEB matches
-
-ifnb <SkipLabel>
-
-        jz      short SkipLabel         ; match, not a directed switch
-
-else
-
-        jz      short first             ; match, not a directed switch
-
-endif
-
 ;
 ; This thread will attempt to perform a directed switch. Until it reaches the
 ; control transfer point disable all kernel apcs as the backing UMS KT may
@@ -1586,7 +1574,7 @@ endif
 
 SAVE_TRAP_STATE macro Service, SaveGSSwap, NmiFlag, LBranch, PrepareUms
 
-        local   first, second, third, fourth
+        local   first, second, third, fourth, fifth
 
         mov     TrRax[rbp], rax         ; save volatile integer registers
         mov     TrRcx[rbp], rcx         ;
@@ -1599,7 +1587,7 @@ SAVE_TRAP_STATE macro Service, SaveGSSwap, NmiFlag, LBranch, PrepareUms
 ifnb <NmiFlag>
 
         test    byte ptr TrSegCs[rbp], MODE_MASK ; test if previous mode user
-        jnz     short second            ; if nz, previous mode user
+        jnz     second                  ; if nz, previous mode user
 
 ;
 ; Preserve the current GS base in the trap frame.
@@ -1614,13 +1602,36 @@ ifnb <NmiFlag>
 ; Attempt to retrieve the processor number by decoding the compatibility mode
 ; TEB segment limit.  If this fails (e.g. descriptor tables are truncated),
 ; then extract the processor number via rdtscp, which is guaranteed to be
-; available should descriptor tables be truncated.
+; available should descriptor tables be truncated except in the case of an RFG
+; process, in which case the IDT is examined.
+;
+; N.B.  The IDT examination code path will not function should the system be
+;       handling a hypervisor (or secure kernel) initiated bugcheck on the root
+;       partition as SIDT is intercepted and not fully supported by the
+;       hypervisor minimal dispatch loop.  All processors that are supported by
+;       Hyper-V support RDTSCP (at least on the root partition), however.
 ;
 
         mov     eax, KGDT64_R3_CMTEB    ; set selector number
         lsl     eax, eax                ; load segment limit
         jz      short third             ; if z, processor number encoded
 
+        mov     rax, USER_SHARED_DATA   ; get kernel shared user data mapping
+        test    byte ptr [rax + PF_RDTSCP_INSTRUCTION_AVAILABLE + UsProcessorFeatures], 0ffh ; test for rdtscp support
+        jnz     short @f                ; if nz, rdtscp supported
+
+;
+; Retrieve the correct kernel GS base by reading the proper offset from the GDT
+; base to the kernel GS base value.
+;
+
+        sgdt    TrXmm0[rbp]             ; save GDT pseudo-descriptor to scratch
+        mov     rdx, qword ptr (TrXmm0 + 2)[rbp] ; get GDT base
+        mov     rdx, qword ptr (PdaKernelGsBase - PdaGdt)[rdx] ; get new GS base
+
+        jmp     short fifth             ; rejoin common code and load MSR
+
+@@:
         rdtscp                          ; get processor number
         movzx   eax, cl                 ; get group relative processor number
         shr     ecx, 8                  ; shift off processor number
@@ -1663,7 +1674,8 @@ endif
 
         mov     rdx, [rcx + rax * 8]    ; get current PRCB address
         sub     rdx, PcPrcb             ; compute current PCR address
-        mov     eax, edx                ; set current GS base MSR
+
+fifth:  mov     eax, edx                ; set current GS base MSR
         shr     rdx, 32                 ;
         mov     ecx, MSR_GS_BASE        ;
         wrmsr                           ;
@@ -2056,9 +2068,10 @@ ifb <NoCycleCount>
         mov     rcx, gs:[PcCurrentPrcb] ; get current PRCB address
         cmp     byte ptr PbNestingLevel[rcx], 1 ; check if ending processor time
         ja      decrement               ; if nz, more interrupts nested
+
         rdtsc                           ; read time stamp counter
         shl     rdx, 32                 ; combine low and high parts
-        or      rax, rdx                ;
+        or      rax, rdx                ;        
         sub     rax, PbStartCycles[rcx] ; compute total cycles for period
         add     PbCycleTime[rcx], rax   ; accumulate cycles
         add     PbStartCycles[rcx], rax ; compute start of next period
@@ -2134,6 +2147,13 @@ endif
 ;           CR2. The error code is returned in eax and the virtual address is
 ;           returned in rcx.
 ;
+;       Secure - An error code is present and the PRCB secure fault mailbox is
+;                loaded with secure fault data.  The fault mailbox contents are
+;                transferred to rcx (FaultCode) and rdx (FaultVa) and then the
+;                mailbox is zeroed if the error code indicated a secure fault.
+;                A secure fault is indicated by the LDT_MASK field being set in
+;                the error code.
+;
 ;   DisableInt - If equal to Disable, do not enable interrupts.
 ;
 ;   SaveGSSwap - If non-blank, then save the GS swap register if the previous
@@ -2155,7 +2175,7 @@ endif
 
 GENERATE_TRAP_FRAME macro ErrorCode, DisableInt, SaveGSSwap, PrepareUms
 
-        local   exit
+        local   exit, gtf10
 
 ifb <ErrorCode>
 
@@ -2200,6 +2220,19 @@ else
 ifidn <ErrorCode>, <Virtual>
 
         mov     rcx, cr2                ; return virtual address
+
+endif
+
+ifidn <ErrorCode>, <Secure>
+
+        test    ax, LDT_MASK            ; is fault a secure fault?
+        jz      short gtf10             ; if z, not secure fault
+
+        xor     ecx, ecx                ; zero register
+        mov     rdx, qword ptr gs:[PcSfVa] ; get secure fault VA
+        xchg    rcx, qword ptr gs:[PcSfCode] ; get and clear secure fault code
+
+gtf10:                                  ; rejoin common code
 
 endif
 

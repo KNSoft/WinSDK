@@ -512,6 +512,12 @@ cpp_quote( "    IMFAttributes* pConfiguration," )
 cpp_quote( "    _Outptr_ IMFMediaSession** ppMediaSession" )
 cpp_quote( "    );" )
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+
+#pragma region PC Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)")
+
 /// <summary>
 ///     Creates a PMP (Protected Media Path) Media Session
 /// </summary>
@@ -541,8 +547,7 @@ cpp_quote( "    _Outptr_ IMFMediaSession** ppMediaSession," )
 cpp_quote( "    _Outptr_opt_ IMFActivate **ppEnablerActivate" )
 cpp_quote( "    );" )
 
-
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */")
 #pragma endregion
 
 #pragma region Application Family
@@ -1236,8 +1241,8 @@ interface IMFPresentationClock;
 
 cpp_quote("#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
 
-#pragma region Desktop Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 [
     object,
@@ -1254,7 +1259,7 @@ interface IMFClockConsumer : IUnknown
         );
 }
 
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
@@ -2492,15 +2497,14 @@ cpp_quote( "EXTERN_GUID( MF_LOCAL_PLUGIN_CONTROL_POLICY, 0xd91b0085, 0xc86d, 0x4
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WIN8) ")
 
-#pragma region Desktop Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+#pragma region PC Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)")
 
 //
 // Topology functions
 //
 cpp_quote( "STDAPI MFCreateTopology(" )
 cpp_quote( "    _Outptr_ IMFTopology ** ppTopo );" )
-
 
 //////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -2532,6 +2536,12 @@ typedef enum MF_TOPOLOGY_TYPE
 
     MF_TOPOLOGY_MAX = 0xffffffff
 } MF_TOPOLOGY_TYPE;
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */")
+#pragma endregion
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 
 /// <summary>
 /// IMFTopologyNode interface.
@@ -3115,14 +3125,25 @@ cpp_quote( "EXTERN_GUID( MF_TOPONODE_DISABLE_PREROLL, 0x14932f9e, 0x9087, 0x4bb4
 // from the remaining outputs.
 cpp_quote( "EXTERN_GUID( MF_TOPONODE_PRIMARYOUTPUT, 0x6304ef99, 0x16b2, 0x4ebe, 0x9d, 0x67, 0xe4, 0xc5, 0x39, 0xb3, 0xa2, 0x59);" )
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
 
 //
 // Topology node functions
 //
 
+#pragma region PC Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)")
+
 cpp_quote( "STDAPI MFCreateTopologyNode(" )
 cpp_quote( "    MF_TOPOLOGY_TYPE NodeType," )
 cpp_quote( "    _Outptr_ IMFTopologyNode ** ppNode );" )
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */")
+#pragma endregion
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 
 cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN7) ")
 /// <summary>
@@ -3688,8 +3709,8 @@ interface IMFPresentationClock : IMFClock
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
 
-#pragma region Desktop Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+#pragma region PC Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)")
 
 /// <summary>
 ///     Creates a Presentation Clock object
@@ -3709,7 +3730,7 @@ cpp_quote( "    );" )
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */")
 #pragma endregion
 
 #pragma region Application Family
@@ -3768,11 +3789,6 @@ interface IMFPresentationTimeSource : IMFClock
         );
 }
 
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
-#pragma endregion
-
-#pragma region Desktop Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 
 /// <summary>
 ///     Creates a Presentation Time Source that returns system time
@@ -3786,16 +3802,8 @@ cpp_quote( "MFCreateSystemTimeSource(" )
 cpp_quote( "    _Outptr_ IMFPresentationTimeSource** ppSystemTimeSource" )
 cpp_quote( "    );" )
 
-
-
 ///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
-#pragma endregion
-
-#pragma region Application Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 [
     object,
@@ -4086,6 +4094,16 @@ cpp_quote( "EXTERN_GUID( MF_PD_AUDIO_ISVARIABLEBITRATE, 0x33026ee0, 0xe387, 0x45
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WIN7) ")
 
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
+
+// MF_PD_ADAPTIVE_STREAMING
+// Data type: UINT32 (treat as BOOL)
+// {EA0D5D97-29F9-488B-AE6B-7D6B4136112B}
+// Indicates on the presentation descriptor that the source content uses adaptive streaming.
+// Pulling the content faster or slower than real time may cause bitrate switches.
+cpp_quote("DEFINE_GUID( MF_PD_ADAPTIVE_STREAMING, 0xEA0D5D97, 0x29F9, 0x488B, 0xAE, 0x6B, 0x7D, 0x6B, 0x41, 0x36, 0x11, 0x2B);")
+
+cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
 
 [
     object,
@@ -4492,6 +4510,12 @@ cpp_quote( "    IMFAttributes* pAudioAttributes," )
 cpp_quote( "    _Outptr_ IMFMediaSink** ppSink" )
 cpp_quote( "    );" )
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+
+#pragma region PC Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)")
+
 /// <summary>
 ///     Creates an Audio Renderer Media Sink Activate
 /// </summary>
@@ -4503,6 +4527,13 @@ cpp_quote( "STDAPI" )
 cpp_quote( "MFCreateAudioRendererActivate( " )
 cpp_quote( "    _Outptr_ IMFActivate ** ppActivate " )
 cpp_quote( "    );" )
+
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */")
+#pragma endregion
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 
 //
 // Attributes for use with MFCreateAudioRenderer (0xede4b5e0, 0xf805, 0x4d6c, 0x99, 0xb3, 0xdb, 0x01, 0xbf, 0x95, 0xdf, 0xab)
@@ -7093,8 +7124,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 [
    object,
-   uuid(03910848-AB16-4611-B100-17B88AE2F248),
-   local
+   uuid(03910848-AB16-4611-B100-17B88AE2F248)   
 ]
 /// <summary>
 ///     Implemented by components who spin off new threads and need to enlist
@@ -7107,9 +7137,9 @@ interface IMFRealTimeClientEx : IUnknown
     ///     Implementation uses this data for enlisting threads in MMCSS
     /// </summary>
     HRESULT RegisterThreadsEx(
-        [in, out, annotation("_Inout_")] DWORD* pdwTaskIndex,
-        [in, annotation("_In_")] LPCWSTR wszClassName,
-        [in, annotation("_In_")] LONG lBasePriority );
+        [in, out] DWORD* pdwTaskIndex,
+        [in] LPCWSTR wszClassName,
+        [in] LONG lBasePriority );
 
     /// <summary>
     ///     This method is called by MF when the RT operations end
@@ -7124,8 +7154,8 @@ interface IMFRealTimeClientEx : IUnknown
     ///     function.
     /// </summary>
     HRESULT SetWorkQueueEx(
-        [in, annotation("_In_")] DWORD dwMultithreadedWorkQueueId,
-        [in, annotation("_In_")] LONG lWorkItemBasePriority );
+        [in] DWORD dwMultithreadedWorkQueueId,
+        [in] LONG lWorkItemBasePriority );
 };
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
@@ -12473,12 +12503,146 @@ interface IMFNetCrossOriginSupport : IUnknown
 // </summary>
 cpp_quote("EXTERN_GUID(MFNETSOURCE_CROSS_ORIGIN_SUPPORT, 0x9842207c, 0xb02c, 0x4271, 0xa2, 0xfc, 0x72, 0xe4, 0x93, 0x8, 0xe5, 0xc2);")
 
+// <summary>
+// This interface is implemented by clients to provide HTTP based download functionality to Media Foundation.
+// </summary>
+[
+    object,
+    uuid(F779FDDF-26E7-4270-8A8B-B983D1859DE0),
+    local
+]
+interface IMFHttpDownloadRequest : IUnknown
+{
+    HRESULT AddHeader(
+        [in, annotation("_In_")] LPCWSTR szHeader
+    );
+
+    HRESULT BeginSendRequest(
+        [in, size_is(cbPayload), annotation("_In_reads_opt_(cbPayload)")] const BYTE* pbPayload,
+        [in, annotation("_In_")] ULONG cbPayload,
+        [in, annotation("_In_")] IMFAsyncCallback* pCallback,
+        [in, annotation("_In_opt_")] IUnknown* punkState
+    );
+
+    HRESULT EndSendRequest(
+        [in, annotation("_In_")] IMFAsyncResult* pResult
+    );
+
+    HRESULT BeginReceiveResponse(
+        [in, annotation("_In_")] IMFAsyncCallback* pCallback,
+        [in, annotation("_In_opt_")] IUnknown* punkState
+    );
+
+    HRESULT EndReceiveResponse(
+        [in, annotation("_In_")] IMFAsyncResult* pResult
+    );
+
+    HRESULT BeginReadPayload(
+        [out, size_is(cb), annotation("_Out_writes_(cb)")] BYTE* pb,
+        [in, annotation("_In_")] ULONG cb,
+        [in, annotation("_In_")] IMFAsyncCallback* pCallback,
+        [in, annotation("_In_opt_")] IUnknown* punkState
+    );
+
+    HRESULT EndReadPayload(
+        [in, annotation("_In_")] IMFAsyncResult* pResult,
+        [out, annotation("_Out_")] QWORD* pqwOffset,
+        [out, annotation("_Out_")] ULONG* pcbRead
+    );
+
+    HRESULT QueryHeader(
+        [in, annotation("_In_")] LPCWSTR szHeaderName,
+        [in, annotation("_In_")] DWORD dwIndex,
+        [out, annotation("_Outptr_")] LPWSTR* ppszHeaderValue
+    );
+
+    HRESULT GetURL(
+        [out, annotation("_Outptr_")] LPWSTR* ppszURL
+    );
+
+    HRESULT HasNullSourceOrigin(
+        [out, annotation("_Out_")] BOOL* pfNullSourceOrigin
+    );
+
+    HRESULT GetTimeSeekResult(
+        [out, annotation("_Out_")] QWORD* pqwStartTime,
+        [out, annotation("_Out_")] QWORD* pqwStopTime,
+        [out, annotation("_Out_")] QWORD* pqwDuration
+    );
+
+    HRESULT GetHttpStatus(
+        [out, annotation("_Out_")] DWORD* pdwHttpStatus
+    );
+
+    HRESULT GetAtEndOfPayload(
+        [out, annotation("_Out_")] BOOL* pfAtEndOfPayload
+    );
+
+    HRESULT GetTotalLength(
+        [out, annotation("_Out_")] QWORD* pqwTotalLength
+    );
+
+    HRESULT GetRangeEndOffset(
+        [out, annotation("_Out_")] QWORD* pqwRangeEnd
+    );
+
+    HRESULT Close();
+};
+
+// <summary>
+// This interface is implemented by clients to provide an IMFHttpDownloadRequest implementation to Media Foundation.
+// </summary>
+[
+    object,
+    uuid(71FA9A2C-53CE-4662-A132-1A7E8CBF62DB),
+    local
+]
+interface IMFHttpDownloadSession : IUnknown
+{
+    HRESULT SetServer(
+        [in, annotation("_In_")] LPCWSTR szServerName,
+        [in, annotation("_In_")] DWORD nPort
+    );
+
+    HRESULT CreateRequest(
+        [in, annotation("_In_")] LPCWSTR szObjectName,
+        [in, annotation("_In_")] BOOL fBypassProxyCache,
+        [in, annotation("_In_")] BOOL fSecure,
+        [in, annotation("_In_opt_")] LPCWSTR szVerb,
+        [in, annotation("_In_opt_")] LPCWSTR szReferrer,
+        [out, annotation("_COM_Outptr_")] IMFHttpDownloadRequest** ppRequest
+    );
+
+    HRESULT Close();
+};
+
+// <summary>
+// This interface is implemented by clients that want to provide their own IMFHttpDownloadSession implementation.
+// Media Foundation uses this interface to create an IMFHttpDownloadSession for downloading media.
+// </summary>
+[
+    object,
+    uuid(1B4CF4B9-3A16-4115-839D-03CC5C99DF01),
+    local
+]
+interface IMFHttpDownloadSessionProvider : IUnknown
+{
+    HRESULT CreateHttpDownloadSession(
+        [in, annotation("_In_")] LPCWSTR wszScheme,
+        [out, annotation("_COM_Outptr_")] IMFHttpDownloadSession** ppDownloadSession
+    );
+};
+
+// <summary>
+// The property ID for the IMFHttpDownloadSessionProvider object in a source resolver's IPropertyStore.
+// </summary>
+cpp_quote("EXTERN_GUID(MFNETSOURCE_HTTP_DOWNLOAD_SESSION_PROVIDER, 0x7d55081e, 0x307d, 0x4d6d, 0xa6, 0x63, 0xa9, 0x3b, 0xe9, 0x7c, 0x4b, 0x5c);")
+
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
 #pragma endregion
 
 
-//  TODO_WIN32_WINNT_REDSTONE
-cpp_quote("#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN10) ")
 
 typedef enum MF_MEDIASOURCE_STATUS_INFO
 {
@@ -12490,6 +12654,37 @@ typedef enum MF_MEDIASOURCE_STATUS_INFO
 // Type: MF_MEDIASOURCE_STATUS_INFO
 // {1913678B-FC0F-44DA-8F43-1BA3B526F4AE}
 cpp_quote("EXTERN_GUID(MF_SD_MEDIASOURCE_STATUS, 0x1913678b, 0xfc0f, 0x44da, 0x8f, 0x43, 0x1b, 0xa3, 0xb5, 0x26, 0xf4, 0xae);")
+
+// Enum describing the packing for spherical video frames
+typedef enum _MFVideoSphericalFormat {
+    MFVideoSphericalFormat_Unsupported = 0,
+    MFVideoSphericalFormat_Equirectangular = 1
+} MFVideoSphericalFormat;
+
+// Struct describing the view direction for spherical video
+typedef struct _MF_VIDEO_SPHERICAL_VIEWDIRECTION
+{
+    int iHeading;           // Range: -180 to 180
+    int iPitch;             // Range: -180 to 180
+    int iRoll;              // Range: -180 to 180
+} MF_VIDEO_SPHERICAL_VIEWDIRECTION;
+
+cpp_quote("#define MF_UNKNOWN_DURATION 0")
+
+// MF_SD_VIDEO_SPHERICAL
+// Type: UINT32 (treat as BOOL)
+// {A51DA449-3FDC-478C-BCB5-30BE76595F55}
+cpp_quote("EXTERN_GUID(MF_SD_VIDEO_SPHERICAL, 0xa51da449, 0x3fdc, 0x478c, 0xbc, 0xb5, 0x30, 0xbe, 0x76, 0x59, 0x5f, 0x55);")
+
+// MF_SD_VIDEO_SPHERICAL_FORMAT
+// Type: MFVideoSphericalFormat
+// {4A8FC407-6EA1-46C8-B567-6971D4A139C3}
+cpp_quote("EXTERN_GUID(MF_SD_VIDEO_SPHERICAL_FORMAT, 0x4a8fc407, 0x6ea1, 0x46c8, 0xb5, 0x67, 0x69, 0x71, 0xd4, 0xa1, 0x39, 0xc3);")
+
+// MF_SD_VIDEO_SPHERICAL_INITIAL_VIEWDIRECTION
+// Type: MF_VIDEO_SPHERICAL_VIEWDIRECTION
+// {11D25A49-BB62-467F-9DB1-C17165716C49}
+cpp_quote("EXTERN_GUID(MF_SD_VIDEO_SPHERICAL_INITIAL_VIEWDIRECTION, 0x11d25a49, 0xbb62, 0x467f, 0x9d, 0xb1, 0xc1, 0x71, 0x65, 0x71, 0x6c, 0x49);")
 
 // MF_MEDIASOURCE_EXPOSE_ALL_STREAMS
 // Type: bool
@@ -12534,12 +12729,76 @@ cpp_quote("#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
 #pragma region Application Family
 cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
+// {616DE972-83AD-4950-8170-630D19CBE307}
+// MF_ST_MEDIASOURCE_COLLECTION
+// Data type:  IUnknown
+// This attribute stores the IUnknown of the IMFCollection which contains the
+// IMFMediaSourceEx corresponding to the sources available to the ST.
+cpp_quote("EXTERN_GUID(MF_ST_MEDIASOURCE_COLLECTION, 0x616DE972, 0x83AD, 0x4950, 0x81, 0x70, 0x63, 0x0D, 0x19, 0xCB, 0xE3, 0x07);")
+
+// {46783CCA-3DF5-4923-A9EF-36B7223EDDE0}
+// MF_DEVICESTREAM_FILTER_KSCONTROL
+// Data type:  IUnknown
+// This attribute stores the IUnknown of the IKsControl corresponding to the source filter.
+cpp_quote("EXTERN_GUID(MF_DEVICESTREAM_FILTER_KSCONTROL, 0x46783CCA, 0x3DF5, 0x4923, 0xA9, 0xEF, 0x36, 0xB7, 0x22, 0x3E, 0xDD, 0xE0);")
+
+// {EF3EF9A7-87F2-48CA-BE02-674878918E98}
+// MF_DEVICESTREAM_PIN_KSCONTROL
+// Data type:  IUnknown
+// This attribute stores the IUnknown of the IKsControl corresponding to the source pin.
+cpp_quote("EXTERN_GUID(MF_DEVICESTREAM_PIN_KSCONTROL, 0xEF3EF9A7, 0x87F2, 0x48CA, 0xBE, 0x02, 0x67, 0x48, 0x78, 0x91, 0x8E, 0x98);")
+
+// {2F8CB617-361B-434F-85EA-99A03E1CE4E0}
+// MF_DEVICESTREAM_SOURCE_ATTRIBUTES
+// Data type:  IUnknown
+// This attribute stores the IUnknown of the IMFAttributes corresponding to the source attributes
+cpp_quote("EXTERN_GUID(MF_DEVICESTREAM_SOURCE_ATTRIBUTES, 0x2F8CB617, 0x361B, 0x434F, 0x85, 0xEA, 0x99, 0xA0, 0x3E, 0x1C, 0xE4, 0xE0);")
+
+// {F402567B-4D91-4179-96D1-74C8480C2034}
+// MF_DEVICESTREAM_FRAMESERVER_HIDDEN
+// Data type: UINT32
+// this attribute, when set on a stream, marks the stream as being 
+// hidden from the client.
+cpp_quote( "EXTERN_GUID( MF_DEVICESTREAM_FRAMESERVER_HIDDEN, 0xF402567B, 0x4D91, 0x4179, 0x96, 0xD1, 0x74, 0xC8, 0x48, 0x0C, 0x20, 0x34);" )
+
+// {6770BD39-EF82-44EE-A49B-934BEB24AEF7}
+// MF_STF_VERSION_INFO
+// Data type: Unicode String
+// Represents the version information provided by IHV/OEMs for the 
+// Sensor Transform Factory.  This data must be treated as an 
+// opaque data by the pipeline.
+cpp_quote( "EXTERN_GUID( MF_STF_VERSION_INFO, 0x6770BD39, 0xEF82, 0x44EE, 0xA4, 0x9B, 0x93, 0x4B, 0xEB, 0x24, 0xAE, 0xF7);" )
+
+// {31A165D5-DF67-4095-8E44-8868FC20DBFD}
+// MF_STF_VERSION_DATE
+// Data type: UINT64
+// FILETIME representing the date/time stamp of the Sensor Transform Factory.
+cpp_quote( "EXTERN_GUID( MF_STF_VERSION_DATE, 0x31A165D5, 0xDF67, 0x4095, 0x8E, 0x44, 0x88, 0x68, 0xFC, 0x20, 0xDB, 0xFD);" )
+
+// {6D8B957E-7CF6-43F4-AF56-9C0E1E4FCBE1}
+// MF_DEVICESTREAM_REQUIRED_CAPABILITIES
+// Data type: Unicode String
+// Semi-colon delimited capability string(s), which denotes the 
+// required capabilities of a specific stream.
+// The available list of capabilities can be obtained from 
+// https://msdn.microsoft.com/en-us/library/windows/apps/br211430
+cpp_quote( "EXTERN_GUID( MF_DEVICESTREAM_REQUIRED_CAPABILITIES, 0x6D8B957E, 0x7CF6, 0x43F4, 0xAF, 0x56, 0x9C, 0x0E, 0x1E, 0x4F, 0xCB, 0xE1);" )
+
+// {331AE85D-C0D3-49BA-83BA-82A12D63CDD6}
+// MF_DEVICESTREAM_REQUIRED_SDDL
+// Data type: Unicode String
+// To specify more fine grain access rights for a given Sensor
+// Transform stream, the Sensor Transform can specify SDDL on
+// the stream.
+cpp_quote( "EXTERN_GUID( MF_DEVICESTREAM_REQUIRED_SDDL, 0x331AE85D, 0xC0D3, 0x49BA, 0x83, 0xBA, 0x82, 0xA1, 0x2D, 0x63, 0xCD, 0xD6);" )
+
 typedef enum
 {
     MFSensorDeviceType_Unknown = 0,
     MFSensorDeviceType_Device,
     MFSensorDeviceType_MediaSource,
-    MFSensorDeviceType_FrameProvider
+    MFSensorDeviceType_FrameProvider,
+    MFSensorDeviceType_SensorTransform
 } MFSensorDeviceType;
 
 typedef enum
@@ -12649,14 +12908,81 @@ interface IMFSensorGroup : IUnknown
         );
 };
 
+[
+    object,
+    uuid(E9A42171-C56E-498A-8B39-EDA5A070B7FC),
+    helpstring("IMFSensorStream Interface"),
+    local
+]
+interface IMFSensorStream : IMFAttributes
+{
+    HRESULT GetMediaTypeCount(
+        [out, annotation("_Out_")] DWORD* pdwCount
+        );
+
+    HRESULT GetMediaType(
+        [in, annotation("_In_")] DWORD dwIndex,
+        [out, annotation("_COM_Outptr_")] IMFMediaType** ppMediaType
+        );
+
+    HRESULT CloneSensorStream(
+        [out, annotation("_COM_Outptr_")] IMFSensorStream** ppStream
+        );
+};
+
+[
+    object,
+    uuid(EED9C2EE-66B4-4F18-A697-AC7D3960215C),
+    helpstring("IMFSensorTransformFactory Interface"),
+    local
+
+]
+interface IMFSensorTransformFactory : IUnknown
+{
+    HRESULT GetFactoryAttributes(
+        [out, annotation("_COM_Outptr_")] IMFAttributes** ppAttributes
+        );
+
+    HRESULT InitializeFactory(
+        [in, annotation("_In_")] DWORD dwMaxTransformCount,
+        [in, annotation("_In_")] IMFCollection* pSensorDevices,
+        [in, annotation("_In_opt_")] IMFAttributes* pAttributes
+        );
+
+    HRESULT GetTransformCount(
+        [out, annotation("_Out_")] DWORD* pdwCount
+        );
+
+    HRESULT GetTransformInformation(
+        [in, annotation("_In_")] DWORD TransformIndex,
+        [out, annotation("_Out_")] GUID* pguidTransformId,
+        [out, annotation("_COM_Outptr_result_maybenull_")] IMFAttributes** ppAttributes,
+        [out, annotation("_COM_Outptr_")] IMFCollection** ppStreamInformation
+        );
+
+    HRESULT CreateTransform(
+        [in, annotation("_In_")] REFGUID guidSensorTransformID,
+        [in, annotation("_In_opt_")] IMFAttributes* pAttributes,
+        [out, annotation("_COM_Outptr_")] IMFDeviceTransform** ppDeviceMFT
+        );
+};
+
 cpp_quote("STDAPI")
 cpp_quote("MFCreateSensorGroup(")
 cpp_quote("    _In_z_ LPCWSTR SensorGroupSymbolicLink,")
 cpp_quote("    _COM_Outptr_ IMFSensorGroup** ppSensorGroup")
 cpp_quote("    );")
+cpp_quote("")
+cpp_quote("STDAPI")
+cpp_quote("MFCreateSensorStream(")
+cpp_quote("    _In_ DWORD StreamId,")
+cpp_quote("    _In_opt_ IMFAttributes* pAttributes,")
+cpp_quote("    _In_ IMFCollection* pMediaTypeCollection,")
+cpp_quote("    _COM_Outptr_ IMFSensorStream** ppStream")
+cpp_quote("    );")
+cpp_quote("")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
-

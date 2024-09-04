@@ -336,7 +336,7 @@ typedef struct _ERROR_RECORD_HEADER { // Offsets:
     ERROR_SEVERITY     ErrorSeverity;     //  10: Error Severity
     ERROR_RECORD_VALID Valid;             //  11: Validation bits
     ULONG              Length;            //  12: Length of this record in bytes, including the header
-    ERROR_TIMESTAMP    TimeStamp;         //  16: Timestamp recorded when event occured
+    ERROR_TIMESTAMP    TimeStamp;         //  16: Timestamp recorded when event occurred
     UCHAR              OemPlatformId[16]; //  24: Unique platform identifier. OEM defined.
 } ERROR_RECORD_HEADER, *PERROR_RECORD_HEADER;
 
@@ -407,7 +407,7 @@ GetFwMceLogProcessorNumber(
 //      64-bit integer containing the physical address where the data was to be delivered or
 //      obtained. This could also be the incoming address for external snoops and TLB shoot-downs.
 //
-//  - Requestor Identifier:
+//  - Requester Identifier:
 //      64-bit integer specifying the bus agent that generated the transaction responsible for
 //      the Machine Check event.
 //                    
@@ -481,13 +481,13 @@ typedef union _ERROR_CACHE_CHECK    {
         ULONGLONG Reserved4:2;             //      52-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG TargetAddressValid:1;    //      60   : Target Address is valid
         ULONGLONG RequestIdValid:1;        //      61   : RequestId is valid
         ULONGLONG ResponderIdValid:1;      //      62   : ResponderId is valid
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_CACHE_CHECK, *PERROR_CACHE_CHECK;
 # else
@@ -511,13 +511,13 @@ typedef union _ERROR_CACHE_CHECK    {
         ULONGLONG Reserved3:2;             //      52-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG TargetAddressValid:1;    //      60   : Target Address is valid
         ULONGLONG RequestIdValid:1;        //      61   : RequestId is valid
         ULONGLONG ResponderIdValid:1;      //      62   : ResponderId is valid
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_CACHE_CHECK, *PERROR_CACHE_CHECK;
 #endif
@@ -551,13 +551,13 @@ typedef union _ERROR_TLB_CHECK  {
         ULONGLONG Reserved3:30;            //      24-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG TargetAddressValid:1;    //      60   : Target Address is valid
         ULONGLONG RequestIdValid:1;        //      61   : RequestId is valid
         ULONGLONG ResponderIdValid:1;      //      62   : ResponderId is valid
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_TLB_CHECK, *PERROR_TLB_CHECK;
 
@@ -581,7 +581,7 @@ typedef union _ERROR_BUS_CHECK  {
         ULONGLONG Size:5;                  // bits  0- 4: Transaction size
         ULONGLONG Internal:1;              //       5   : Internal bus error
         ULONGLONG External:1;              //       6   : External bus error
-        ULONGLONG CacheTransfer:1;         //       7   : Error occured in Cache to Cache Transfer 
+        ULONGLONG CacheTransfer:1;         //       7   : Error occurred in Cache to Cache Transfer 
         ULONGLONG Type:8;                  //       8-15: Transaction type
         ULONGLONG Severity:5;              //      16-20: Error severity - platform specific
         ULONGLONG Hierarchy:2;             //      21-22: Level or Bus hierarchy
@@ -590,13 +590,13 @@ typedef union _ERROR_BUS_CHECK  {
         ULONGLONG Reserved1:22;            //      32-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG TargetAddressValid:1;    //      60   : Target Address is valid
         ULONGLONG RequestIdValid:1;        //      61   : RequestId is valid
         ULONGLONG ResponderIdValid:1;      //      62   : ResponderId is valid
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_BUS_CHECK, *PERROR_BUS_CHECK;
 #else
@@ -607,7 +607,7 @@ typedef union _ERROR_BUS_CHECK  {
         ULONGLONG Size:5;                  // bits  0- 4: Transaction size
         ULONGLONG Internal:1;              //       5   : Internal bus error
         ULONGLONG External:1;              //       6   : External bus error
-        ULONGLONG CacheTransfer:1;         //       7   : Error occured in Cache to Cache Transfer 
+        ULONGLONG CacheTransfer:1;         //       7   : Error occurred in Cache to Cache Transfer 
         ULONGLONG Type:8;                  //       8-15: Transaction type
         ULONGLONG Severity:5;              //      16-20: Error severity - platform specific
         ULONGLONG Hierarchy:2;             //      21-22: Level or Bus hierarchy
@@ -616,13 +616,13 @@ typedef union _ERROR_BUS_CHECK  {
         ULONGLONG Reserved2:22;            //      32-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG TargetAddressValid:1;    //      60   : Target Address is valid
         ULONGLONG RequestIdValid:1;        //      61   : RequestId is valid
         ULONGLONG ResponderIdValid:1;      //      62   : ResponderId is valid
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_BUS_CHECK, *PERROR_BUS_CHECK;
 #endif
@@ -661,11 +661,11 @@ typedef union _ERROR_REGFILE_CHECK  {
         ULONGLONG Reserved1:38;            //      16-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG Reserved2:3;             //      60-62
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_REGFILE_CHECK, *PERROR_REGFILE_CHECK;
 
@@ -680,8 +680,8 @@ typedef enum _ERROR_MS_CHECK_OPERATION   {
     MsUnknownOp = 0,
     MsReadOrLoad = 1,
     MsWriteOrStore = 2,
-	MsOverTemperature = 3,
-	MsNormalTemperature = 4
+    MsOverTemperature = 3,
+    MsNormalTemperature = 4
 } ERROR_MS_CHECK_OPERATION;
 #endif
 
@@ -701,13 +701,13 @@ typedef union _ERROR_MS_CHECK  {
         ULONGLONG Reserved2:14;            //      40-53
         ULONGLONG InstructionSet:1;        //      54   : 0 - IA64 instruction, 1- IA32 instruction
         ULONGLONG InstructionSetValid:1;   //      55   : InstructionSet field is valid
-        ULONGLONG PrivilegeLevel:2;        //      56-57: Privlege level of instrustion
+        ULONGLONG PrivilegeLevel:2;        //      56-57: Privilege level of instruction
         ULONGLONG PrivilegeLevelValid:1;   //      58   : PrivilegeLevel field is Valid
         ULONGLONG MachineCheckCorrected:1; //      59   : 1 - Machine Check Corrected
         ULONGLONG TargetAddressValid:1;    //      60   : Target Address is valid
         ULONGLONG RequestIdValid:1;        //      61   : RequestId is valid
         ULONGLONG ResponderIdValid:1;      //      62   : ResponderId is valid
-        ULONGLONG PreciseIPValid:1;        //      63   : Precise Inststruction Pointer is Valid
+        ULONGLONG PreciseIPValid:1;        //      63   : Precise Instruction Pointer is Valid
     } DUMMYSTRUCTNAME;
 } ERROR_MS_CHECK, *PERROR_MS_CHECK;
 
@@ -771,8 +771,8 @@ typedef union _ERROR_PROCESSOR_STATE_PARAMETER {
     ULONGLONG   StateParameter;
     struct {
         ULONGLONG reserved0:2;  //   0-1 : reserved
-        ULONGLONG rz:1;         //     2 : Rendez-vous successful
-        ULONGLONG ra:1;         //     3 : Rendez-vous attempted
+        ULONGLONG rz:1;         //     2 : Rendezvous successful
+        ULONGLONG ra:1;         //     3 : Rendezvous attempted
         ULONGLONG me:1;         //     4 : Distinct Multiple errors
         ULONGLONG mn:1;         //     5 : Min-state Save Area registered
         ULONGLONG sy:1;         //     6 : Storage integrity synchronized
@@ -950,7 +950,7 @@ typedef union _ERROR_STATUS {
         ULONGLONG Control:1;    //    17: Error was detected on control signals or in control portion of transaction
         ULONGLONG Data:1;       //    18: Error was detected on data signals or in data portion of transaction
         ULONGLONG Responder:1;  //    19: Error was detected by responder of transaction
-        ULONGLONG Requestor:1;  //    20: Error was detected by requestor of transaction
+        ULONGLONG Requestor:1;  //    20: Error was detected by requester of transaction
         ULONGLONG FirstError:1; //    21: If multiple errors, this is the first error of the highest severity that occurred
         ULONGLONG Overflow:1;   //    22: Additional errors occurred which were not logged because registers overflow 
         ULONGLONG Reserved1:41; // 63-23: Reserved
@@ -1020,8 +1020,8 @@ typedef union _ERROR_MEMORY_VALID    {
         ULONGLONG Row:1;                     //       8: Row valid bit
         ULONGLONG Column:1;                  //       9: Column valid bit
         ULONGLONG BitPosition:1;             //      10: Bit Position valid bit
-        ULONGLONG RequestorId:1;             //      11: Platform Requestor Id valid bit
-        ULONGLONG ResponderId:1;             //      12: Platform Respinder Id valid bit
+        ULONGLONG RequestorId:1;             //      11: Platform Requester Id valid bit
+        ULONGLONG ResponderId:1;             //      12: Platform Responder Id valid bit
         ULONGLONG TargetId:1;                //      13: Platform Target    Id valid bit
         ULONGLONG BusSpecificData:1;         //      14: Platform Bus specific data valid bit
         ULONGLONG OemId:1;                   //      15: Platform OEM id   valid bit
@@ -1070,9 +1070,9 @@ typedef union _ERROR_PCI_BUS_VALID    {
         ULONGLONG Address:1;                //       3: Address                  valid bit
         ULONGLONG Data:1;                   //       4: Data                     valid bit
         ULONGLONG CmdType:1;                //       5: Command Type             valid bit
-        ULONGLONG RequestorId:1;            //       6: Requestor Identifier     valid bit
+        ULONGLONG RequestorId:1;            //       6: Requester Identifier     valid bit
         ULONGLONG ResponderId:1;            //       7: Responder Identifier     valid bit
-        ULONGLONG TargetId:1;               //       8: Target    Identifer      valid bit
+        ULONGLONG TargetId:1;               //       8: Target    Identifier     valid bit
         ULONGLONG OemId:1;                  //       9: OEM Identification       valid bit
         ULONGLONG OemData:1;                //      10: OEM Data                 valid bit
         ULONGLONG Reserved:53;              //   11-63: Reserved
@@ -1110,7 +1110,7 @@ typedef struct _ERROR_PCI_BUS    {
                                           // the time of the event
     ULONGLONG             Data;           // Data on the PCI bus at time of the event
     ULONGLONG             CmdType;        // Bus Command or Operation at time of the event
-    ULONGLONG             RequestorId;    // Bus Requestor Identifier at time of the event
+    ULONGLONG             RequestorId;    // Bus Requester Identifier at time of the event
     ULONGLONG             ResponderId;    // Bus Responder Identifier at time of the event
     ULONGLONG             TargetId;       // Intended Bus Target Identifier at time of the event
     UCHAR                 OemId[16];      // OEM defined identification for pci bus
@@ -1268,7 +1268,7 @@ typedef union _ERROR_PLATFORM_SPECIFIC_VALID   {
     ULONGLONG Valid;
     struct {                               // Bits:
         ULONGLONG ErrorStatus:1;          //    0: Error Status         valid bit
-        ULONGLONG RequestorId:1;          //    1: Requestor Identifier valid bit
+        ULONGLONG RequestorId:1;          //    1: Requester Identifier valid bit
         ULONGLONG ResponderId:1;          //    2: Responder Identifier valid bit
         ULONGLONG TargetId:1;             //    3: Target    Identifier valid bit
         ULONGLONG BusSpecificData:1;      //    4: Bus Specific Data    valid bit
@@ -1283,7 +1283,7 @@ typedef struct _ERROR_PLATFORM_SPECIFIC  {
      ERROR_SECTION_HEADER           Header;
      ERROR_PLATFORM_SPECIFIC_VALID  Valid;
      ERROR_STATUS                   ErrorStatus; // Platform Generic Error Status
-     ULONGLONG                      RequestorId; // Bus Requestor ID at the time of the event
+     ULONGLONG                      RequestorId; // Bus Requester ID at the time of the event
      ULONGLONG                      ResponderId; // Bus Responder ID at the time of the event
      ULONGLONG                      TargetId;    // Bus intended Target ID at the time of the event
      ERROR_BUS_SPECIFIC_DATA        BusSpecificData; // OEM specific Bus dependent data
@@ -1305,7 +1305,7 @@ typedef union _ERROR_PLATFORM_BUS_VALID   {
     ULONGLONG Valid;
     struct {                               // Bits:
         ULONGLONG ErrorStatus:1;          //    0: Error Status         valid bit
-        ULONGLONG RequestorId:1;          //    1: Requestor Identifier valid bit
+        ULONGLONG RequestorId:1;          //    1: Requester Identifier valid bit
         ULONGLONG ResponderId:1;          //    2: Responder Identifier valid bit
         ULONGLONG TargetId:1;             //    3: Target    Identifier valid bit
         ULONGLONG BusSpecificData:1;      //    4: Bus Specific Data    valid bit
@@ -1320,7 +1320,7 @@ typedef struct _ERROR_PLATFORM_BUS {
      ERROR_SECTION_HEADER        Header;
      ERROR_PLATFORM_BUS_VALID    Valid;
      ERROR_STATUS                ErrorStatus;       // Bus Error Status
-     ULONGLONG                   RequestorId;       // Bus Requestor ID at the time of the event
+     ULONGLONG                   RequestorId;       // Bus Requester ID at the time of the event
      ULONGLONG                   ResponderId;       // Bus Responder ID at the time of the event
      ULONGLONG                   TargetId;          // Bus intended Target ID at the time of the event
      ERROR_BUS_SPECIFIC_DATA     BusSpecificData;   // OEM specific Bus dependent data
@@ -1343,7 +1343,7 @@ typedef union _ERROR_PLATFORM_HOST_CONTROLLER_VALID   {
     ULONGLONG Valid;
     struct {                               // Bits:
         ULONGLONG ErrorStatus:1;          //    0: Error Status         valid bit
-        ULONGLONG RequestorId:1;          //    1: Requestor Identifier valid bit
+        ULONGLONG RequestorId:1;          //    1: Requester Identifier valid bit
         ULONGLONG ResponderId:1;          //    2: Responder Identifier valid bit
         ULONGLONG TargetId:1;             //    3: Target    Identifier valid bit
         ULONGLONG BusSpecificData:1;      //    4: Bus Specific Data    valid bit
@@ -1358,7 +1358,7 @@ typedef struct _ERROR_PLATFORM_HOST_CONTROLLER {
      ERROR_SECTION_HEADER        Header;
      ERROR_PCI_COMPONENT_VALID   Valid;
      ERROR_STATUS                ErrorStatus;       // Host Controller Error Status
-     ULONGLONG                   RequestorId;       // Host controller Requestor ID at the time of the event
+     ULONGLONG                   RequestorId;       // Host controller Requester ID at the time of the event
      ULONGLONG                   ResponderId;       // Host controller Responder ID at the time of the event
      ULONGLONG                   TargetId;          // Host controller intended Target ID at the time of the event
      ERROR_BUS_SPECIFIC_DATA     BusSpecificData;   // OEM specific Bus dependent data

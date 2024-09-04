@@ -110,6 +110,9 @@ Revision History:
 #define FILE_DEVICE_TRUST_ENV           0x00000056
 #define FILE_DEVICE_UCM                 0x00000057
 #define FILE_DEVICE_UCMTCPCI            0x00000058
+#define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
+#define FILE_DEVICE_NVDIMM              0x0000005a
+#define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note

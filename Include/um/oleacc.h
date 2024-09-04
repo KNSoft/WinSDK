@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -226,6 +226,7 @@ STDAPI          CreateStdAccessibleProxyW(_In_ HWND hwnd, _In_ LPCWSTR pClassNam
 #define ANRUS_TOUCH_MODIFICATION_ACTIVE 0x0000002
 #define ANRUS_PRIORITY_AUDIO_ACTIVE     0x0000004
 #define ANRUS_PRIORITY_AUDIO_ACTIVE_NODUCK 0x0000008
+#define ANRUS_PRIORITY_AUDIO_DYNAMIC_DUCK 0x0000010
 
 STDAPI          AccSetRunningUtilityState(_In_ HWND hwndApp, _In_ DWORD dwUtilityStateMask, _In_ DWORD dwUtilityState);
 

@@ -118,6 +118,8 @@ extern "C" {
 #define SERVICE_CONTROL_TRIGGEREVENT           0x00000020
 //reserved for internal use                    0x00000021
 //reserved for internal use                    0x00000050
+#define SERVICE_CONTROL_LOWRESOURCES           0x00000060
+#define SERVICE_CONTROL_SYSTEMLOWRESOURCES     0x00000061
 
 //
 // Service State -- for CurrentState
@@ -146,6 +148,8 @@ extern "C" {
 #define SERVICE_ACCEPT_TRIGGEREVENT            0x00000400
 #define SERVICE_ACCEPT_USER_LOGOFF             0x00000800
 // reserved for internal use                   0x00001000
+#define SERVICE_ACCEPT_LOWRESOURCES            0x00002000
+#define SERVICE_ACCEPT_SYSTEMLOWRESOURCES      0x00004000
 
 //
 // Service Control Manager object specific access types
@@ -291,7 +295,8 @@ extern "C" {
 #define SERVICE_STOP_REASON_MINOR_SECURITYFIX_UNINSTALL         0x00000015
 #define SERVICE_STOP_REASON_MINOR_MMC                           0x00000016
 #define SERVICE_STOP_REASON_MINOR_NONE                          0x00000017
-#define SERVICE_STOP_REASON_MINOR_MAX                           0x00000018
+#define SERVICE_STOP_REASON_MINOR_MEMOTYLIMIT                   0x00000018
+#define SERVICE_STOP_REASON_MINOR_MAX                           0x00000019
 #define SERVICE_STOP_REASON_MINOR_MIN_CUSTOM                    0x00000100
 #define SERVICE_STOP_REASON_MINOR_MAX_CUSTOM                    0x0000FFFF
 
@@ -460,9 +465,9 @@ DEFINE_GUID ( /* 2d7a2816-0c5e-45fc-9ce7-570e5ecde9c9 */
     0x45fc,
     0x9c, 0xe7, 0x57, 0x0e, 0x5e, 0xcd, 0xe9, 0xc9
   );
-  
+
 //
-// Service notification trigger identifier 
+// Service notification trigger identifier
 //
 typedef struct
 {
@@ -1725,6 +1730,59 @@ QueryServiceDynamicInformation (
     );
 
 #endif // NTDDI_VERSION >= NTDDI_VISTA
+
+#if (NTDDI_VERSION >= NTDDI_WIN8)
+
+//
+// Service status change notification API
+//
+
+typedef enum _SC_EVENT_TYPE {
+    SC_EVENT_DATABASE_CHANGE,
+    SC_EVENT_PROPERTY_CHANGE,
+    SC_EVENT_STATUS_CHANGE
+} SC_EVENT_TYPE, *PSC_EVENT_TYPE;
+
+typedef
+VOID
+CALLBACK
+SC_NOTIFICATION_CALLBACK (
+    _In_        DWORD                   dwNotify,
+    _In_opt_    PVOID                   pCallbackContext
+    );
+typedef SC_NOTIFICATION_CALLBACK* PSC_NOTIFICATION_CALLBACK;
+
+typedef struct _SC_NOTIFICATION_REGISTRATION* PSC_NOTIFICATION_REGISTRATION;
+
+WINADVAPI
+DWORD
+WINAPI
+SubscribeServiceChangeNotifications (
+    _In_      SC_HANDLE                      hService,
+    _In_      SC_EVENT_TYPE                  eEventType,
+    _In_      PSC_NOTIFICATION_CALLBACK      pCallback,
+    _In_opt_  PVOID                          pCallbackContext,
+    _Out_     PSC_NOTIFICATION_REGISTRATION* pSubscription
+    );
+
+WINADVAPI
+VOID
+WINAPI
+UnsubscribeServiceChangeNotifications (
+    _In_      PSC_NOTIFICATION_REGISTRATION pSubscription
+    );
+
+WINADVAPI
+DWORD
+WINAPI
+WaitServiceState (
+    _In_      SC_HANDLE  hService,
+    _In_      DWORD      dwNotify,
+    _In_opt_  DWORD      dwTimeout,
+    _In_opt_  HANDLE     hCancelEvent
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_WIN8
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

@@ -1,5 +1,4 @@
  
- 
 // begin_1_0
 /********************************************************************************
 *                                                                               *
@@ -26,6 +25,7 @@
 #include <winapifamily.h>
 
 /* APISET_NAME: api-ms-win-core-rtlsupport-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -607,116 +607,8 @@ RtlVirtualUnwind(
 
 #endif // _ARM64_
 
-// end_winnt
 
-// begin_winnt
-
-
-#if defined(_IA64_)
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-_IRQL_requires_max_(PASSIVE_LEVEL)
-_Success_(return!=0)
-NTSYSAPI
-BOOLEAN
-NTAPI
-RtlAddFunctionTable(
-    _In_reads_(EntryCount) PRUNTIME_FUNCTION FunctionTable,
-    _In_ ULONG EntryCount,
-    _In_ ULONGLONG BaseAddress,
-    _In_ ULONGLONG TargetGp
-    );
-
-
-_IRQL_requires_max_(PASSIVE_LEVEL)
-_Success_(return!=0)
-NTSYSAPI
-BOOLEAN
-NTAPI
-RtlDeleteFunctionTable(
-    _In_ PRUNTIME_FUNCTION FunctionTable
-    );
-
-
-_IRQL_requires_max_(PASSIVE_LEVEL)
-_Success_(return!=0)
-NTSYSAPI
-BOOLEAN
-NTAPI
-RtlInstallFunctionTableCallback(
-    _In_ ULONG64 TableIdentifier,
-    _In_ ULONG64 BaseAddress,
-    _In_ ULONG Length,
-    _In_ ULONG64 TargetGp,
-    _In_ PGET_RUNTIME_FUNCTION_CALLBACK Callback,
-    _In_opt_ PVOID Context,
-    _In_opt_ PCWSTR OutOfProcessCallbackDll
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
-_IRQL_requires_max_(SYNCH_LEVEL)
-_IRQL_requires_min_(PASSIVE_LEVEL)
-NTSYSAPI
-PRUNTIME_FUNCTION
-NTAPI
-RtlLookupFunctionEntry(
-    _In_ ULONGLONG ControlPc,
-    _Out_ PULONGLONG ImageBase,
-    _Out_ PULONGLONG TargetGp
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-NTSYSAPI
-VOID
-NTAPI
-RtlRestoreContext(
-    _In_ PCONTEXT ContextRecord,
-    _In_opt_ struct _EXCEPTION_RECORD * ExceptionRecord
-    );
-
-
-NTSYSAPI
-ULONGLONG
-NTAPI
-RtlVirtualUnwind(
-    _In_ ULONGLONG ImageBase,
-    _In_ ULONGLONG ControlPc,
-    _In_ PRUNTIME_FUNCTION FunctionEntry,
-    _Inout_ PCONTEXT ContextRecord,
-    _Out_ PBOOLEAN InFunction,
-    _Out_ PFRAME_POINTERS EstablisherFrame,
-    _Inout_opt_ PKNONVOLATILE_CONTEXT_POINTERS ContextPointers
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#endif // _IA64_
-
-// end_winnt
-
-// begin_winnt
-
-
-#if defined(_IA64_)
+#if defined(_CHPE_X86_ARM64_)
 
 #pragma region Application or OneCore Family
 
@@ -726,19 +618,36 @@ NTSYSAPI
 VOID
 NTAPI
 RtlUnwindEx(
-    _In_opt_ FRAME_POINTERS TargetFrame,
+    _In_opt_ PVOID TargetFrame,
     _In_opt_ PVOID TargetIp,
     _In_opt_ PEXCEPTION_RECORD ExceptionRecord,
     _In_ PVOID ReturnValue,
     _In_ PCONTEXT ContextRecord,
-    _In_opt_ PUNWIND_HISTORY_TABLE HistoryTable
+    _In_opt_ PVOID HistoryTable
     );
 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#endif // _IA64_
+#pragma region Application or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+NTSYSAPI
+PIMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
+NTAPI
+RtlLookupFunctionEntryCHPE(
+    _In_ ULONG_PTR ControlPc,
+    _Out_ PULONG_PTR ImageBase,
+    _Inout_opt_ PVOID HistoryTable
+    );
+
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#endif // _X86_
 
 // end_winnt
 
@@ -799,6 +708,7 @@ RtlPcToFileHeader(
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
 _Check_return_
 NTSYSAPI
 SIZE_T

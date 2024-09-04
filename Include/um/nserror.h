@@ -116,16 +116,16 @@ Notes:
 //
 // Define the facility codes
 //
-#define FACILITY_NS_WIN32                0x7
 #define FACILITY_NS                      0xD
+#define FACILITY_NS_WIN32                0x7
 
 
 //
 // Define the severity codes
 //
-#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_SUCCESS          0x0
 #define STATUS_SEVERITY_INFORMATIONAL    0x1
+#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_ERROR            0x3
 
 

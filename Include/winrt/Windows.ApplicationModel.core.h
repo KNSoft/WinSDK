@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -296,6 +296,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Core {
+                interface ICoreApplicationView5;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar;
@@ -482,7 +502,6 @@ namespace ABI {
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.h"
-#include "Windows.ApplicationModel.Activation.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -533,18 +552,18 @@ interface IAppListEntry;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0001 */
 /* [local] */ 
@@ -579,18 +598,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0002 */
 /* [local] */ 
@@ -649,18 +668,18 @@ interface ICoreApplicationView;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0003 */
 /* [local] */ 
@@ -695,18 +714,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0004 */
 /* [local] */ 
@@ -741,18 +760,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0005 */
 /* [local] */ 
@@ -787,18 +806,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0006 */
 /* [local] */ 
@@ -857,18 +876,18 @@ interface IUnhandledErrorDetectedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0007 */
 /* [local] */ 
@@ -903,18 +922,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0008 */
 /* [local] */ 
@@ -949,18 +968,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0009 */
 /* [local] */ 
@@ -1019,18 +1038,18 @@ interface IHostedViewClosingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0010 */
 /* [local] */ 
@@ -1092,18 +1111,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0011 */
 /* [local] */ 
@@ -1138,18 +1157,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0012 */
 /* [local] */ 
@@ -1184,18 +1203,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0013 */
 /* [local] */ 
@@ -1250,18 +1269,18 @@ interface ISuspendingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0014 */
 /* [local] */ 
@@ -1296,18 +1315,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0015 */
 /* [local] */ 
@@ -1366,18 +1385,18 @@ interface IBackgroundActivatedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0016 */
 /* [local] */ 
@@ -1432,18 +1451,18 @@ interface ILeavingBackgroundEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0017 */
 /* [local] */ 
@@ -1498,18 +1517,18 @@ interface IEnteredBackgroundEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0018 */
 /* [local] */ 
@@ -1557,18 +1576,18 @@ interface IActivatedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0019 */
 /* [local] */ 
@@ -1667,6 +1686,7 @@ class CoreWindow;
 
 
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1705,21 +1725,22 @@ class UnhandledError;
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0020 */
 /* [local] */ 
@@ -1894,18 +1915,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CCore__CAppLis
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0022 */
 /* [local] */ 
@@ -2046,18 +2067,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CCore__CAppLis
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0024 */
 /* [local] */ 
@@ -2232,18 +2253,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CCore__CCoreAp
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0026 */
 /* [local] */ 
@@ -2384,18 +2405,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CCore__CCoreAp
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0028 */
 /* [local] */ 
@@ -2578,18 +2599,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CCore__CAppL
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0030 */
 /* [local] */ 
@@ -2772,18 +2793,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CCore__CCore
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0032 */
 /* [local] */ 
@@ -2903,18 +2924,18 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CApplicationModel__CCore__CUn
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0034 */
 /* [local] */ 
@@ -3036,18 +3057,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0036 */
 /* [local] */ 
@@ -3208,18 +3229,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0038 */
 /* [local] */ 
@@ -3339,18 +3360,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCore
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0040 */
 /* [local] */ 
@@ -4965,9 +4986,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicatio
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0050 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Core_ICoreApplicationViewTitleBar[] = L"Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Core_ICoreApplicationView5[] = L"Windows.ApplicationModel.Core.ICoreApplicationView5";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0050 */
@@ -4977,6 +4998,143 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0050_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Core::ICoreApplicationView5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Core {
+                    
+                    MIDL_INTERFACE("2BC095A8-8EF0-446D-9E60-3A3E0428C671")
+                    ICoreApplicationView5 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Properties( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICoreApplicationView5 = __uuidof(ICoreApplicationView5);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Properties )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_get_Properties(This,value)	\
+    ( (This)->lpVtbl -> get_Properties(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationView5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Core_ICoreApplicationViewTitleBar[] = L"Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__
@@ -5193,7 +5351,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicatio
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreApplicationViewTitleBar_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication_INTERFACE_DEFINED__)
@@ -5201,13 +5359,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication_INTERFACE_DEFINED__
@@ -5354,7 +5512,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveA
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication2_INTERFACE_DEFINED__)
@@ -5362,13 +5520,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication2_INTERFACE_DEFINED__
@@ -5491,7 +5649,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveA
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication3_INTERFACE_DEFINED__)
@@ -5499,13 +5657,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication3_INTERFACE_DEFINED__
@@ -5630,7 +5788,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveA
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CICoreImmersiveApplication3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkView_INTERFACE_DEFINED__)
@@ -5638,13 +5796,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkView_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkView_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkView_INTERFACE_DEFINED__
@@ -5803,7 +5961,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkView;
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkView_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkViewSource_INTERFACE_DEFINED__)
@@ -5811,13 +5969,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkViewSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkViewSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkViewSource_INTERFACE_DEFINED__
@@ -5940,7 +6098,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkViewS
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CIFrameworkViewSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIHostedViewClosingEventArgs_INTERFACE_DEFINED__)
@@ -5948,13 +6106,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIHostedViewClosingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIHostedViewClosingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CIHostedViewClosingEventArgs_INTERFACE_DEFINED__
@@ -6077,7 +6235,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIHostedViewClos
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CIHostedViewClosingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError_INTERFACE_DEFINED__)
@@ -6085,13 +6243,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError_INTERFACE_DEFINED__
@@ -6222,7 +6380,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledErrorDetectedEventArgs_INTERFACE_DEFINED__)
@@ -6230,13 +6388,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledErrorDetectedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledErrorDetectedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledErrorDetectedEventArgs_INTERFACE_DEFINED__
@@ -6359,7 +6517,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledError
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CCore_CIUnhandledErrorDetectedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0060 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Core_AppListEntry_DEFINED
@@ -6392,13 +6550,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ecore_0000_0060_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -196,6 +196,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Web {
+                    namespace Provider {
+                        interface IWebAccountManagerStatics3;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_FWD_DEFINED__
@@ -438,6 +462,30 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Web {
+                    namespace Provider {
+                        interface IWebAccountProviderTokenObjects2;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation;
@@ -613,7 +661,6 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.Security.Authentication.Web.h"
 #include "Windows.Security.Authentication.Web.Core.h"
-#include "Windows.Web.Http.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -672,18 +719,18 @@ interface IWebAccountClientView;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0001 */
 /* [local] */ 
@@ -718,18 +765,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0002 */
 /* [local] */ 
@@ -796,18 +843,18 @@ interface IWebProviderTokenResponse;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0003 */
 /* [local] */ 
@@ -842,18 +889,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0004 */
 /* [local] */ 
@@ -888,18 +935,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0005 */
 /* [local] */ 
@@ -934,18 +981,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0006 */
 /* [local] */ 
@@ -980,18 +1027,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0007 */
 /* [local] */ 
@@ -1026,18 +1073,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0008 */
 /* [local] */ 
@@ -1072,18 +1119,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0009 */
 /* [local] */ 
@@ -1118,18 +1165,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0010 */
 /* [local] */ 
@@ -1164,18 +1211,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0011 */
 /* [local] */ 
@@ -1210,18 +1257,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0012 */
 /* [local] */ 
@@ -1256,18 +1303,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0013 */
 /* [local] */ 
@@ -1326,18 +1373,18 @@ interface IWebAccount;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0014 */
 /* [local] */ 
@@ -1372,18 +1419,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0015 */
 /* [local] */ 
@@ -1418,18 +1465,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0016 */
 /* [local] */ 
@@ -1464,18 +1511,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0017 */
 /* [local] */ 
@@ -1510,18 +1557,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0018 */
 /* [local] */ 
@@ -1556,18 +1603,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0019 */
 /* [local] */ 
@@ -1602,18 +1649,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0020 */
 /* [local] */ 
@@ -1672,18 +1719,18 @@ interface IHttpCookie;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0021 */
 /* [local] */ 
@@ -1718,18 +1765,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0022 */
 /* [local] */ 
@@ -1764,18 +1811,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0023 */
 /* [local] */ 
@@ -1810,18 +1857,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0024 */
 /* [local] */ 
@@ -1884,18 +1931,18 @@ interface ICryptographicKey;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0025 */
 /* [local] */ 
@@ -1930,18 +1977,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0026 */
 /* [local] */ 
@@ -1989,18 +2036,18 @@ interface IBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0027 */
 /* [local] */ 
@@ -2035,18 +2082,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0028 */
 /* [local] */ 
@@ -2089,6 +2136,9 @@ extern "C" {
 #if !defined(__windows2Estorage2Estreams_h__)
 #include <Windows.Storage.Streams.h>
 #endif // !defined(__windows2Estorage2Estreams_h__)
+#if !defined(__windows2Esystem_h__)
+#include <Windows.System.h>
+#endif // !defined(__windows2Esystem_h__)
 #if !defined(__windows2Eweb2Ehttp_h__)
 #include <Windows.Web.Http.h>
 #endif // !defined(__windows2Eweb2Ehttp_h__)
@@ -2169,6 +2219,16 @@ typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CTokenBindingKeyTyp
 
 #endif
 
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+class User;
+} /*System*/
+} /*Windows*/
+}
+#endif
+
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -2209,6 +2269,8 @@ typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CWebAccou
 
 
 #endif
+
+
 
 
 
@@ -2411,6 +2473,7 @@ extern "C" {
 #endif
 
 
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -2520,21 +2583,23 @@ extern "C" {
 
 
 
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0029 */
 /* [local] */ 
@@ -2709,18 +2774,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CAuthentication__CWeb_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0031 */
 /* [local] */ 
@@ -2861,18 +2926,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CAuthentication__CWeb_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0033 */
 /* [local] */ 
@@ -3047,18 +3112,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CAuthentication__CWeb_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0035 */
 /* [local] */ 
@@ -3199,18 +3264,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CAuthentication__CWeb_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0037 */
 /* [local] */ 
@@ -3393,18 +3458,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CAuthentication__CWe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0039 */
 /* [local] */ 
@@ -3587,18 +3652,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CAuthentication__CWe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0041 */
 /* [local] */ 
@@ -3863,18 +3928,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CSecurity__CAuthentication__CWeb__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0043 */
 /* [local] */ 
@@ -3996,18 +4061,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0045 */
 /* [local] */ 
@@ -5063,9 +5128,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0050 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Web_Provider_IWebAccountMapManagerStatics[] = L"Windows.Security.Authentication.Web.Provider.IWebAccountMapManagerStatics";
-#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Web_Provider_IWebAccountManagerStatics3[] = L"Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics3";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0050 */
@@ -5075,6 +5140,209 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0050_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace Web {
+                        namespace Provider {
+                            
+                            MIDL_INTERFACE("DD4523A6-8A4F-4AA2-B15E-03F550AF1359")
+                            IWebAccountManagerStatics3 : public IInspectable
+                            {
+                            public:
+                                virtual HRESULT STDMETHODCALLTYPE FindAllProviderWebAccountsForUserAsync( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount **operation) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE AddWebAccountForUserAsync( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                    /* [in] */ __RPC__in HSTRING webAccountId,
+                                    /* [in] */ __RPC__in HSTRING webAccountUserName,
+                                    /* [in] */ __RPC__in_opt __FIMapView_2_HSTRING_HSTRING *props,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount **operation) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE AddWebAccountWithScopeForUserAsync( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                    /* [in] */ __RPC__in HSTRING webAccountId,
+                                    /* [in] */ __RPC__in HSTRING webAccountUserName,
+                                    /* [in] */ __RPC__in_opt __FIMapView_2_HSTRING_HSTRING *props,
+                                    /* [in] */ ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope scope,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount **operation) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE AddWebAccountWithScopeAndMapForUserAsync( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                    /* [in] */ __RPC__in HSTRING webAccountId,
+                                    /* [in] */ __RPC__in HSTRING webAccountUserName,
+                                    /* [in] */ __RPC__in_opt __FIMapView_2_HSTRING_HSTRING *props,
+                                    /* [in] */ ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope scope,
+                                    /* [in] */ __RPC__in HSTRING perUserWebAccountId,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount **operation) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IWebAccountManagerStatics3 = __uuidof(IWebAccountManagerStatics3);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAllProviderWebAccountsForUserAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddWebAccountForUserAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [in] */ __RPC__in HSTRING webAccountId,
+            /* [in] */ __RPC__in HSTRING webAccountUserName,
+            /* [in] */ __RPC__in_opt __FIMapView_2_HSTRING_HSTRING *props,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddWebAccountWithScopeForUserAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [in] */ __RPC__in HSTRING webAccountId,
+            /* [in] */ __RPC__in HSTRING webAccountUserName,
+            /* [in] */ __RPC__in_opt __FIMapView_2_HSTRING_HSTRING *props,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CWebAccountScope scope,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddWebAccountWithScopeAndMapForUserAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [in] */ __RPC__in HSTRING webAccountId,
+            /* [in] */ __RPC__in HSTRING webAccountUserName,
+            /* [in] */ __RPC__in_opt __FIMapView_2_HSTRING_HSTRING *props,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CWebAccountScope scope,
+            /* [in] */ __RPC__in HSTRING perUserWebAccountId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_FindAllProviderWebAccountsForUserAsync(This,user,operation)	\
+    ( (This)->lpVtbl -> FindAllProviderWebAccountsForUserAsync(This,user,operation) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_AddWebAccountForUserAsync(This,user,webAccountId,webAccountUserName,props,operation)	\
+    ( (This)->lpVtbl -> AddWebAccountForUserAsync(This,user,webAccountId,webAccountUserName,props,operation) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_AddWebAccountWithScopeForUserAsync(This,user,webAccountId,webAccountUserName,props,scope,operation)	\
+    ( (This)->lpVtbl -> AddWebAccountWithScopeForUserAsync(This,user,webAccountId,webAccountUserName,props,scope,operation) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_AddWebAccountWithScopeAndMapForUserAsync(This,user,webAccountId,webAccountUserName,props,scope,perUserWebAccountId,operation)	\
+    ( (This)->lpVtbl -> AddWebAccountWithScopeAndMapForUserAsync(This,user,webAccountId,webAccountUserName,props,scope,perUserWebAccountId,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountManagerStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Web_Provider_IWebAccountMapManagerStatics[] = L"Windows.Security.Authentication.Web.Provider.IWebAccountMapManagerStatics";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__
@@ -5249,7 +5517,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountMapManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderAddAccountOperation_INTERFACE_DEFINED__)
@@ -5257,13 +5525,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderAddAccountOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderAddAccountOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderAddAccountOperation_INTERFACE_DEFINED__
@@ -5388,7 +5656,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderAddAccountOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderBaseReportOperation_INTERFACE_DEFINED__)
@@ -5396,13 +5664,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderBaseReportOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderBaseReportOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderBaseReportOperation_INTERFACE_DEFINED__
@@ -5537,7 +5805,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderBaseReportOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderDeleteAccountOperation_INTERFACE_DEFINED__)
@@ -5545,13 +5813,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderDeleteAccountOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderDeleteAccountOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderDeleteAccountOperation_INTERFACE_DEFINED__
@@ -5678,7 +5946,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderDeleteAccountOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderManageAccountOperation_INTERFACE_DEFINED__)
@@ -5686,13 +5954,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderManageAccountOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderManageAccountOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderManageAccountOperation_INTERFACE_DEFINED__
@@ -5827,7 +6095,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderManageAccountOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderOperation_INTERFACE_DEFINED__)
@@ -5835,13 +6103,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderOperation_INTERFACE_DEFINED__
@@ -5968,7 +6236,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderRetrieveCookiesOperation_INTERFACE_DEFINED__)
@@ -5976,13 +6244,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderRetrieveCookiesOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderRetrieveCookiesOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderRetrieveCookiesOperation_INTERFACE_DEFINED__
@@ -6149,7 +6417,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderRetrieveCookiesOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSignOutAccountOperation_INTERFACE_DEFINED__)
@@ -6157,13 +6425,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSignOutAccountOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSignOutAccountOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSignOutAccountOperation_INTERFACE_DEFINED__
@@ -6310,7 +6578,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSignOutAccountOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSilentReportOperation_INTERFACE_DEFINED__)
@@ -6318,13 +6586,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSilentReportOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSilentReportOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSilentReportOperation_INTERFACE_DEFINED__
@@ -6459,7 +6727,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderSilentReportOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects_INTERFACE_DEFINED__)
@@ -6467,13 +6735,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects_INTERFACE_DEFINED__
@@ -6600,7 +6868,148 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Web_Provider_IWebAccountProviderTokenObjects2[] = L"Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects2";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace Web {
+                        namespace Provider {
+                            
+                            MIDL_INTERFACE("1020B893-5CA5-4FFF-95FB-B820273FC395")
+                            IWebAccountProviderTokenObjects2 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IWebAccountProviderTokenObjects2 = __uuidof(IWebAccountProviderTokenObjects2);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_get_User(This,value)	\
+    ( (This)->lpVtbl -> get_User(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenObjects2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_INTERFACE_DEFINED__)
@@ -6608,13 +7017,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_INTERFACE_DEFINED__
@@ -6771,7 +7180,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderTokenOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderUIReportOperation_INTERFACE_DEFINED__)
@@ -6779,13 +7188,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderUIReportOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderUIReportOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderUIReportOperation_INTERFACE_DEFINED__
@@ -6910,7 +7319,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountProviderUIReportOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountScopeManagerStatics_INTERFACE_DEFINED__)
@@ -6918,13 +7327,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountScopeManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountScopeManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountScopeManagerStatics_INTERFACE_DEFINED__
@@ -7085,7 +7494,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebAccountScopeManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest_INTERFACE_DEFINED__)
@@ -7093,13 +7502,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest_INTERFACE_DEFINED__
@@ -7270,7 +7679,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_INTERFACE_DEFINED__)
@@ -7278,13 +7687,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_INTERFACE_DEFINED__
@@ -7415,7 +7824,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenRequest2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_INTERFACE_DEFINED__)
@@ -7423,13 +7832,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_INTERFACE_DEFINED__
@@ -7556,7 +7965,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponse_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponseFactory_INTERFACE_DEFINED__)
@@ -7564,13 +7973,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponseFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponseFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponseFactory_INTERFACE_DEFINED__
@@ -7699,7 +8108,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CProvider_CIWebProviderTokenResponseFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0069 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Security_Authentication_Web_Provider_WebAccountClientView_DEFINED
@@ -7752,13 +8161,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eweb2Eprovider_0000_0069_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

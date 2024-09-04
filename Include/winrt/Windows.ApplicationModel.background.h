@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -39,6 +39,27 @@
 
 /* Forward Declarations */ 
 
+#ifndef ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+typedef interface __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#endif 	/* ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+typedef interface __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#endif 	/* ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+typedef interface __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#endif 	/* ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__ */
+
+
 #ifndef ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_FWD_DEFINED__
 #define ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_FWD_DEFINED__
 typedef interface __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration;
@@ -60,11 +81,46 @@ typedef interface __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationMo
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_FWD_DEFINED__ */
 
 
+#ifndef ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+typedef interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+typedef interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+typedef interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__ */
+
+
+#ifndef ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+typedef interface __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#endif 	/* ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__ */
+
+
 #ifndef ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_FWD_DEFINED__
 #define ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_FWD_DEFINED__
 typedef interface __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration;
 
 #endif 	/* ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_FWD_DEFINED__ */
+
+
+#ifndef ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+typedef interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#endif 	/* ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_FWD_DEFINED__
@@ -135,6 +191,20 @@ typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationMode
 typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult;
 
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_FWD_DEFINED__
@@ -269,6 +339,66 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApplicationManagerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IAppBroadcastTrigger;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IAppBroadcastTriggerFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IAppBroadcastTriggerProviderInfo;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTrigger_FWD_DEFINED__
@@ -451,6 +581,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBackgroundTaskBuilder4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs;
@@ -611,6 +761,66 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBackgroundTaskRegistration3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBackgroundTaskRegistrationGroup;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBackgroundTaskRegistrationGroupFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics;
@@ -629,6 +839,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBackgroundTaskRegistrationStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger_FWD_DEFINED__
@@ -891,6 +1121,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTriggerStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IDeviceManufacturerNotificationTrigger;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IDeviceManufacturerNotificationTriggerFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger;
@@ -991,6 +1261,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IGattCharacteristicNotificationTrigger2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory;
@@ -1009,6 +1299,86 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IGattCharacteristicNotificationTriggerFactory2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IGattServiceProviderTrigger;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IGattServiceProviderTriggerResult;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IGattServiceProviderTriggerStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTrigger_FWD_DEFINED__
@@ -1331,46 +1701,6 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTriggerFactory_FWD_DEFINED__ */
 
 
-#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_FWD_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger;
-
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace ApplicationModel {
-            namespace Background {
-                interface ISmartCardTrigger;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_FWD_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_FWD_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory;
-
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace ApplicationModel {
-            namespace Background {
-                interface ISmartCardTriggerFactory;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_FWD_DEFINED__ */
-
-
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory __x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory;
@@ -1636,13 +1966,14 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
+#include "Windows.ApplicationModel.Activation.h"
 #include "Windows.ApplicationModel.Calls.Background.h"
 #include "Windows.Devices.Bluetooth.h"
 #include "Windows.Devices.Bluetooth.Advertisement.h"
 #include "Windows.Devices.Bluetooth.Background.h"
 #include "Windows.Devices.Sensors.h"
-#include "Windows.Devices.SmartCards.h"
 #include "Windows.Devices.Sms.h"
+#include "Windows.Media.Capture.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -1658,6 +1989,17 @@ extern "C"{
 #include <windows.foundation.collections.h>
 #ifdef __cplusplus
 extern "C" {
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class BackgroundTaskRegistration;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
 #endif
 
 #ifdef __cplusplus
@@ -1682,20 +2024,158 @@ interface IBackgroundTaskRegistration;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#define DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9bcb843b-221b-5fbe-9b20-7028bc4e8653"))
+IKeyValuePair<GUID,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration*> : IKeyValuePair_impl<GUID,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration*, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IKeyValuePair`2<Guid, Windows.ApplicationModel.Background.BackgroundTaskRegistration>"; }
+};
+typedef IKeyValuePair<GUID,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration*> __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t;
+#define ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4609 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4609 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("8445d2ae-dd03-5b98-95e4-82b43a3f0d64"))
+IIterator<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration*> : IIterator_impl<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<Guid, Windows.ApplicationModel.Background.BackgroundTaskRegistration>>"; }
+};
+typedef IIterator<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration*> __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t;
+#define ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4610 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4610 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("62ae0fda-b238-554f-a275-1dc16d6ca03a"))
+IIterable<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration*> : IIterable_impl<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<Guid, Windows.ApplicationModel.Background.BackgroundTaskRegistration>>"; }
+};
+typedef IIterable<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration*> __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t;
+#define ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4611 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4611 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE
@@ -1719,29 +2199,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE
@@ -1765,29 +2245,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE
@@ -1809,31 +2289,239 @@ typedef IIterable<__FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackgroun
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class BackgroundTaskRegistrationGroup;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+interface IBackgroundTaskRegistrationGroup;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3081 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#define DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("67a07f76-20b0-573b-9d74-ed0fc4f653c7"))
+IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*> : IKeyValuePair_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup>"; }
+};
+typedef IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*> __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t;
+#define ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4615 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4615 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("4c21744b-b583-559d-89f7-d4138cffffbc"))
+IIterator<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup>>"; }
+};
+typedef IIterator<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup*> __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t;
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4616 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4616 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("04428524-7d54-59b4-bf17-ac57c4ce6b40"))
+IIterable<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup>>"; }
+};
+typedef IIterable<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup*> __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t;
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4617 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4617 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#define DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2c08602f-40b1-5e97-ae21-5c04d7fb829c"))
+IMapView<GUID,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration*> : IMapView_impl<GUID,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration*, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapView`2<Guid, Windows.ApplicationModel.Background.BackgroundTaskRegistration>"; }
+};
+typedef IMapView<GUID,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration*> __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t;
+#define ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_FWD_DEFINED__
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4618 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4618 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE
@@ -1856,6 +2544,52 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_USE */
 
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4619 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4619 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#define DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("f6a9dc12-01f7-54f0-a257-c404815b9c1c"))
+IMapView<HSTRING,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*> : IMapView_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapView`2<String, Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup>"; }
+};
+typedef IMapView<HSTRING,ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*> __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t;
+#define ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_FWD_DEFINED__
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_USE */
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1869,30 +2603,30 @@ enum AlarmAccessStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_USE
@@ -1916,29 +2650,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_USE
@@ -1974,30 +2708,30 @@ enum ApplicationTriggerResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4622 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_USE
@@ -2021,29 +2755,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_USE
@@ -2079,30 +2813,30 @@ enum BackgroundAccessStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4624 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_USE
@@ -2126,29 +2860,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_USE
@@ -2195,30 +2929,30 @@ interface IDeviceConnectionChangeTrigger;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_USE
@@ -2242,29 +2976,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_USE
@@ -2300,30 +3034,30 @@ enum DeviceTriggerResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_USE
@@ -2347,29 +3081,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_USE
@@ -2391,6 +3125,122 @@ typedef IAsyncOperation<enum ABI::Windows::ApplicationModel::Background::DeviceT
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class GattServiceProviderTriggerResult;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+interface IGattServiceProviderTriggerResult;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4630 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4630 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("39d8105f-a505-5f88-91a9-b0fc6d628699"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult*, ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Background.GattServiceProviderTriggerResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4631 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4631 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f402ec9f-84b2-57c3-9543-01fbda05219b"))
+IAsyncOperation<ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult*, ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Background.GattServiceProviderTriggerResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult*> __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t;
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_USE */
 
 #ifdef __cplusplus
 namespace ABI {
@@ -2405,30 +3255,30 @@ enum MediaProcessingTriggerResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_USE
@@ -2452,29 +3302,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_USE
@@ -2510,30 +3360,30 @@ enum ActivityType;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CSensors__CActivityType_USE
@@ -2557,29 +3407,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CDevices__CSensors__CActivityType_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CSensors__CActivityType_USE
@@ -2603,29 +3453,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CDevices__CSensors__CActivityType_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CSensors__CActivityType_USE
@@ -2649,29 +3499,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CSensors__CActivityType_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CDevices__CSensors__CActivityType_USE
@@ -2697,30 +3547,30 @@ extern "C" {
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -2744,29 +3594,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -2790,29 +3640,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -2836,29 +3686,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -2882,29 +3732,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
@@ -2928,29 +3778,29 @@ extern "C" {
 #endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
@@ -2974,29 +3824,29 @@ extern "C" {
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
@@ -3020,29 +3870,29 @@ extern "C" {
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
@@ -3067,6 +3917,76 @@ extern "C" {
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
+class BackgroundActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
+interface IBackgroundActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4646 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4646 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d4f89768-688f-59ec-bf24-c2af6a310fa4"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*,ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs*, ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*,ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs*> __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
 namespace Storage {
 class StorageLibrary;
 } /*Storage*/
@@ -3085,30 +4005,30 @@ interface IStorageLibrary;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CStorage__CStorageLibrary_USE
@@ -3132,29 +4052,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CStorage__CStorageLibrary_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CStorage__CStorageLibrary_USE
@@ -3180,6 +4100,12 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Eapplicationmodel2Eactivation_h__)
+#include <Windows.ApplicationModel.Activation.h>
+#endif // !defined(__windows2Eapplicationmodel2Eactivation_h__)
+#if !defined(__windows2Eapplicationmodel2Ecalls_h__)
+#include <Windows.ApplicationModel.Calls.h>
+#endif // !defined(__windows2Eapplicationmodel2Ecalls_h__)
 #if !defined(__windows2Eapplicationmodel2Ecalls2Ebackground_h__)
 #include <Windows.ApplicationModel.Calls.Background.h>
 #endif // !defined(__windows2Eapplicationmodel2Ecalls2Ebackground_h__)
@@ -3198,12 +4124,12 @@ extern "C" {
 #if !defined(__windows2Edevices2Esensors_h__)
 #include <Windows.Devices.Sensors.h>
 #endif // !defined(__windows2Edevices2Esensors_h__)
-#if !defined(__windows2Edevices2Esmartcards_h__)
-#include <Windows.Devices.SmartCards.h>
-#endif // !defined(__windows2Edevices2Esmartcards_h__)
 #if !defined(__windows2Edevices2Esms_h__)
 #include <Windows.Devices.Sms.h>
 #endif // !defined(__windows2Edevices2Esms_h__)
+#if !defined(__windows2Emedia2Ecapture_h__)
+#include <Windows.Media.Capture.h>
+#endif // !defined(__windows2Emedia2Ecapture_h__)
 #if !defined(__windows2Enetworking_h__)
 #include <Windows.Networking.h>
 #endif // !defined(__windows2Enetworking_h__)
@@ -3263,6 +4189,16 @@ class BluetoothLEAdvertisementFilter;
 }
 #endif
 
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CBluetooth_CBackground_CBluetoothEventTriggeringMode __x_ABI_CWindows_CDevices_CBluetooth_CBackground_CBluetoothEventTriggeringMode;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3291,6 +4227,16 @@ class RfcommOutboundConnectionInformation;
 }
 #endif
 
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothError __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothError;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3317,6 +4263,34 @@ class GattCharacteristic;
 }
 #endif
 
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+namespace GenericAttributeProfile {
+class GattLocalService;
+} /*GenericAttributeProfile*/
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+namespace GenericAttributeProfile {
+class GattServiceProviderAdvertisingParameters;
+} /*GenericAttributeProfile*/
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -3328,16 +4302,6 @@ typedef enum __x_ABI_CWindows_CDevices_CSensors_CActivityType __x_ABI_CWindows_C
 
 #endif
 
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3610,12 +4574,45 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CBackground_CSystemTriggerType _
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Background {
 class ActivitySensorTrigger;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class AppBroadcastTrigger;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class AppBroadcastTriggerProviderInfo;
 } /*Background*/
 } /*ApplicationModel*/
 } /*Windows*/
@@ -3693,17 +4690,6 @@ namespace Windows {
 namespace ApplicationModel {
 namespace Background {
 class BackgroundTaskProgressEventArgs;
-} /*Background*/
-} /*ApplicationModel*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace ApplicationModel {
-namespace Background {
-class BackgroundTaskRegistration;
 } /*Background*/
 } /*ApplicationModel*/
 } /*Windows*/
@@ -3802,6 +4788,17 @@ namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Background {
+class DeviceManufacturerNotificationTrigger;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
 class DeviceServicingTrigger;
 } /*Background*/
 } /*ApplicationModel*/
@@ -3847,6 +4844,17 @@ namespace Windows {
 namespace ApplicationModel {
 namespace Background {
 class GattCharacteristicNotificationTrigger;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class GattServiceProviderTrigger;
 } /*Background*/
 } /*ApplicationModel*/
 } /*Windows*/
@@ -4022,17 +5030,6 @@ namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Background {
-class SmartCardTrigger;
-} /*Background*/
-} /*ApplicationModel*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace ApplicationModel {
-namespace Background {
 class SmsMessageReceivedTrigger;
 } /*Background*/
 } /*ApplicationModel*/
@@ -4129,7 +5126,7 @@ class UserNotificationChangedTrigger;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041 */
 /* [local] */ 
 
 
@@ -4155,6 +5152,46 @@ extern "C" {
 
 
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace Background {
+                    
+                    typedef enum BluetoothEventTriggeringMode BluetoothEventTriggeringMode;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                
+                typedef enum BluetoothError BluetoothError;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
 
 
 
@@ -4177,24 +5214,6 @@ namespace ABI {
 extern "C" { 
 #endif
 
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace SmartCards {
-                
-                typedef enum SmartCardTriggerType SmartCardTriggerType;
-                
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
 
 
 
@@ -4543,23 +5562,534 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0030_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3108 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3108 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3108_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031 */
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4649 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4649 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#define DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042_v0_0_s_ifspec;
+
+#ifndef ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+#define ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+
+/* interface __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9bcb843b-221b-5fbe-9b20-7028bc4e8653")
+    __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Key( 
+            /* [retval][out] */ __RPC__out GUID *key) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Value( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration **value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__out GUID *key);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )( 
+            __RPC__in __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration **value);
+        
+        END_INTERFACE
+    } __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl;
+
+    interface __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+    {
+        CONST_VTBL struct __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_get_Key(This,key)	\
+    ( (This)->lpVtbl -> get_Key(This,key) ) 
+
+#define __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4650 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4650 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#define DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+#define ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8445d2ae-dd03-5b98-95e4-82b43a3f0d64")
+    __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl;
+
+    interface __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+    {
+        CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4651 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4651 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#define DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+#define ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("62ae0fda-b238-554f-a275-1dc16d6ca03a")
+    __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **first);
+        
+        END_INTERFACE
+    } __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl;
+
+    interface __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+    {
+        CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4652 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4652 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration
@@ -4567,13 +6097,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
@@ -4693,35 +6223,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBack
 #endif 	/* ____FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration
@@ -4729,13 +6259,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
@@ -4879,35 +6409,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicat
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration
@@ -4915,13 +6445,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
@@ -5031,35 +6561,723 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicat
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#define DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054_v0_0_s_ifspec;
+
+#ifndef ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+#define ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+
+/* interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("67a07f76-20b0-573b-9d74-ed0fc4f653c7")
+    __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Key( 
+            /* [retval][out] */ __RPC__deref_out_opt HSTRING *key) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Value( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt HSTRING *key);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )( 
+            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **value);
+        
+        END_INTERFACE
+    } __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl;
+
+    interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+    {
+        CONST_VTBL struct __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_get_Key(This,key)	\
+    ( (This)->lpVtbl -> get_Key(This,key) ) 
+
+#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4656 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4656 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4c21744b-b583-559d-89f7-d4138cffffbc")
+    __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl;
+
+    interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+    {
+        CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4657 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4657 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("04428524-7d54-59b4-bf17-ac57c4ce6b40")
+    __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **first);
+        
+        END_INTERFACE
+    } __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl;
+
+    interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+    {
+        CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#define DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060_v0_0_s_ifspec;
+
+#ifndef ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+#define ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__
+
+/* interface __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2c08602f-40b1-5e97-ae21-5c04d7fb829c")
+    __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Lookup( 
+            /* [in] */ GUID key,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration **value) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE HasKey( 
+            /* [in] */ GUID key,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Split( 
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **firstPartition,
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **secondPartition) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Lookup )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ GUID key,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *HasKey )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [in] */ GUID key,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *Split )( 
+            __RPC__in __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration * This,
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **firstPartition,
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **secondPartition);
+        
+        END_INTERFACE
+    } __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl;
+
+    interface __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration
+    {
+        CONST_VTBL struct __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_Lookup(This,key,value)	\
+    ( (This)->lpVtbl -> Lookup(This,key,value) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_HasKey(This,key,found)	\
+    ( (This)->lpVtbl -> HasKey(This,key,found) ) 
+
+#define __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_Split(This,firstPartition,secondPartition)	\
+    ( (This)->lpVtbl -> Split(This,firstPartition,secondPartition) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4659 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4659 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration
@@ -5067,13 +7285,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
 #define ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__
@@ -5219,35 +7437,223 @@ EXTERN_C const IID IID___FIMapView_2_GUID_Windows__CApplicationModel__CBackgroun
 #endif 	/* ____FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0063 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0064 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#define DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0064 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0064_v0_0_s_ifspec;
+
+#ifndef ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+#define ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+
+/* interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f6a9dc12-01f7-54f0-a257-c404815b9c1c")
+    __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Lookup( 
+            /* [in] */ __RPC__in HSTRING key,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **value) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE HasKey( 
+            /* [in] */ __RPC__in HSTRING key,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Split( 
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **firstPartition,
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **secondPartition) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Lookup )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in HSTRING key,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *HasKey )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in HSTRING key,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *Split )( 
+            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **firstPartition,
+            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **secondPartition);
+        
+        END_INTERFACE
+    } __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl;
+
+    interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup
+    {
+        CONST_VTBL struct __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Lookup(This,key,value)	\
+    ( (This)->lpVtbl -> Lookup(This,key,value) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_HasKey(This,key,found)	\
+    ( (This)->lpVtbl -> HasKey(This,key,found) ) 
+
+#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Split(This,firstPartition,secondPartition)	\
+    ( (This)->lpVtbl -> Split(This,firstPartition,secondPartition) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4661 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4661 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus
@@ -5256,14 +7662,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_INTERFACE_DEFINED__
@@ -5352,35 +7758,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus
@@ -5388,13 +7794,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_INTERFACE_DEFINED__
@@ -5524,35 +7930,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackgro
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CAlarmAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3114 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3114_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult
@@ -5561,14 +7967,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_INTERFACE_DEFINED__
@@ -5657,35 +8063,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3115 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3115_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4664 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult
@@ -5693,13 +8099,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_INTERFACE_DEFINED__
@@ -5829,35 +8235,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackgro
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CApplicationTriggerResult */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3116 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3116_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4665 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus
@@ -5866,14 +8272,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_INTERFACE_DEFINED__
@@ -5962,35 +8368,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3117 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3117_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4666 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus
@@ -5998,13 +8404,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_INTERFACE_DEFINED__
@@ -6134,35 +8540,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackgro
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CBackgroundAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3118 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3118_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4667 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger
@@ -6171,14 +8577,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_INTERFACE_DEFINED__
@@ -6267,35 +8673,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3119 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3119_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4668 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger
@@ -6303,13 +8709,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_INTERFACE_DEFINED__
@@ -6439,35 +8845,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackgro
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3120 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3120_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult
@@ -6476,14 +8882,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_INTERFACE_DEFINED__
@@ -6572,35 +8978,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3121 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3121_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult
@@ -6608,13 +9014,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_INTERFACE_DEFINED__
@@ -6744,35 +9150,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackgro
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceTriggerResult */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3122 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3122_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4671 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("39d8105f-a505-5f88-91a9-b0fc6d628699")
+    __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResultVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4672 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4672 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f402ec9f-84b2-57c3-9543-01fbda05219b")
+    __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResultVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4673 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4673 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4673_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult
@@ -6781,14 +9492,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_INTERFACE_DEFINED__
@@ -6877,35 +9588,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3123 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_3123_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4674 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult
@@ -6913,13 +9624,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_INTERFACE_DEFINED__
@@ -7049,7 +9760,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CBackgro
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CMediaProcessingTriggerResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -7234,7 +9945,7 @@ enum __x_ABI_CWindows_CApplicationModel_CBackground_CSystemTriggerType
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -7516,8 +10227,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCanceledEventHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCanceledEventHandler_INTERFACE_DEFINED__
@@ -7819,7 +10530,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskProgressEventHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTrigger_INTERFACE_DEFINED__)
@@ -7827,13 +10538,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTrigger_INTERFACE_DEFINED__
@@ -7986,7 +10697,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIActivity
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTriggerFactory_INTERFACE_DEFINED__)
@@ -7994,13 +10705,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTriggerFactory_INTERFACE_DEFINED__
@@ -8125,7 +10836,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIActivity
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIActivitySensorTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApplicationManagerStatics_INTERFACE_DEFINED__)
@@ -8133,13 +10844,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApplicationManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApplicationManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApplicationManagerStatics_INTERFACE_DEFINED__
@@ -8272,7 +10983,540 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApp
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAlarmApplicationManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IAppBroadcastTrigger[] = L"Windows.ApplicationModel.Background.IAppBroadcastTrigger";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IAppBroadcastTrigger */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("74D4F496-8D37-44EC-9481-2A0B9854EB48")
+                    IAppBroadcastTrigger : public IInspectable
+                    {
+                    public:
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ProviderInfo( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProviderInfo( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAppBroadcastTrigger = __uuidof(IAppBroadcastTrigger);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ProviderInfo )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProviderInfo )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_put_ProviderInfo(This,value)	\
+    ( (This)->lpVtbl -> put_ProviderInfo(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_get_ProviderInfo(This,value)	\
+    ( (This)->lpVtbl -> get_ProviderInfo(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IAppBroadcastTriggerFactory[] = L"Windows.ApplicationModel.Background.IAppBroadcastTriggerFactory";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("280B9F44-22F4-4618-A02E-E7E411EB7238")
+                    IAppBroadcastTriggerFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateAppBroadcastTrigger( 
+                            /* [in] */ __RPC__in HSTRING providerKey,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IAppBroadcastTrigger **broadcastTrigger) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAppBroadcastTriggerFactory = __uuidof(IAppBroadcastTriggerFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateAppBroadcastTrigger )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory * This,
+            /* [in] */ __RPC__in HSTRING providerKey,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTrigger **broadcastTrigger);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactoryVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_CreateAppBroadcastTrigger(This,providerKey,broadcastTrigger)	\
+    ( (This)->lpVtbl -> CreateAppBroadcastTrigger(This,providerKey,broadcastTrigger) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IAppBroadcastTriggerProviderInfo[] = L"Windows.ApplicationModel.Background.IAppBroadcastTriggerProviderInfo";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("F219352D-9DE8-4420-9CE2-5EFF8F17376B")
+                    IAppBroadcastTriggerProviderInfo : public IInspectable
+                    {
+                    public:
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DisplayNameResource( 
+                            /* [in] */ __RPC__in HSTRING value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DisplayNameResource( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_LogoResource( 
+                            /* [in] */ __RPC__in HSTRING value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LogoResource( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_VideoKeyFrameInterval( 
+                            /* [in] */ ABI::Windows::Foundation::TimeSpan value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VideoKeyFrameInterval( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MaxVideoBitrate( 
+                            /* [in] */ UINT32 value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxVideoBitrate( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MaxVideoWidth( 
+                            /* [in] */ UINT32 value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxVideoWidth( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MaxVideoHeight( 
+                            /* [in] */ UINT32 value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxVideoHeight( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAppBroadcastTriggerProviderInfo = __uuidof(IAppBroadcastTriggerProviderInfo);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DisplayNameResource )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DisplayNameResource )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_LogoResource )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogoResource )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_VideoKeyFrameInterval )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CTimeSpan value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VideoKeyFrameInterval )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_MaxVideoBitrate )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ UINT32 value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxVideoBitrate )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_MaxVideoWidth )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ UINT32 value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxVideoWidth )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_MaxVideoHeight )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [in] */ UINT32 value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxVideoHeight )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfoVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_put_DisplayNameResource(This,value)	\
+    ( (This)->lpVtbl -> put_DisplayNameResource(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_get_DisplayNameResource(This,value)	\
+    ( (This)->lpVtbl -> get_DisplayNameResource(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_put_LogoResource(This,value)	\
+    ( (This)->lpVtbl -> put_LogoResource(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_get_LogoResource(This,value)	\
+    ( (This)->lpVtbl -> get_LogoResource(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_put_VideoKeyFrameInterval(This,value)	\
+    ( (This)->lpVtbl -> put_VideoKeyFrameInterval(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_get_VideoKeyFrameInterval(This,value)	\
+    ( (This)->lpVtbl -> get_VideoKeyFrameInterval(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_put_MaxVideoBitrate(This,value)	\
+    ( (This)->lpVtbl -> put_MaxVideoBitrate(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_get_MaxVideoBitrate(This,value)	\
+    ( (This)->lpVtbl -> get_MaxVideoBitrate(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_put_MaxVideoWidth(This,value)	\
+    ( (This)->lpVtbl -> put_MaxVideoWidth(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_get_MaxVideoWidth(This,value)	\
+    ( (This)->lpVtbl -> get_MaxVideoWidth(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_put_MaxVideoHeight(This,value)	\
+    ( (This)->lpVtbl -> put_MaxVideoHeight(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_get_MaxVideoHeight(This,value)	\
+    ( (This)->lpVtbl -> get_MaxVideoHeight(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppBroadcastTriggerProviderInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTrigger_INTERFACE_DEFINED__)
@@ -8280,13 +11524,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTrigger_INTERFACE_DEFINED__
@@ -8421,7 +11665,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIApplicat
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTriggerDetails_INTERFACE_DEFINED__)
@@ -8429,13 +11673,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTriggerDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTriggerDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTriggerDetails_INTERFACE_DEFINED__
@@ -8558,7 +11802,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIApplicat
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIApplicationTriggerDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppointmentStoreNotificationTrigger_INTERFACE_DEFINED__)
@@ -8566,13 +11810,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIAppointmentStoreNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppointmentStoreNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppointmentStoreNotificationTrigger_INTERFACE_DEFINED__
@@ -8685,7 +11929,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIAppointmentStoreNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundCondition_INTERFACE_DEFINED__)
@@ -8693,13 +11937,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundCondition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundCondition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundCondition_INTERFACE_DEFINED__
@@ -8812,7 +12056,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundCondition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_INTERFACE_DEFINED__)
@@ -8820,13 +12064,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_INTERFACE_DEFINED__
@@ -9001,7 +12245,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundExecutionManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_INTERFACE_DEFINED__)
@@ -9009,13 +12253,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_INTERFACE_DEFINED__
@@ -9138,7 +12382,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTask_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder_INTERFACE_DEFINED__)
@@ -9146,13 +12390,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder_INTERFACE_DEFINED__
@@ -9335,7 +12579,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder2_INTERFACE_DEFINED__)
@@ -9343,13 +12587,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder2_INTERFACE_DEFINED__
@@ -9482,7 +12726,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder3_INTERFACE_DEFINED__)
@@ -9490,13 +12734,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder3_INTERFACE_DEFINED__
@@ -9629,7 +12873,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundTaskBuilder4[] = L"Windows.ApplicationModel.Background.IBackgroundTaskBuilder4";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IBackgroundTaskBuilder4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("4755E522-CBA2-4E35-BD16-A6DA7F1C19AA")
+                    IBackgroundTaskBuilder4 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TaskGroup( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_TaskGroup( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBackgroundTaskBuilder4 = __uuidof(IBackgroundTaskBuilder4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TaskGroup )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_TaskGroup )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_get_TaskGroup(This,value)	\
+    ( (This)->lpVtbl -> get_TaskGroup(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_put_TaskGroup(This,value)	\
+    ( (This)->lpVtbl -> put_TaskGroup(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskBuilder4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_INTERFACE_DEFINED__)
@@ -9637,13 +13028,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_INTERFACE_DEFINED__
@@ -9774,7 +13165,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskDeferral_INTERFACE_DEFINED__)
@@ -9782,13 +13173,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskDeferral_INTERFACE_DEFINED__
@@ -9909,7 +13300,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance_INTERFACE_DEFINED__)
@@ -9917,13 +13308,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance_INTERFACE_DEFINED__
@@ -10128,7 +13519,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance2_INTERFACE_DEFINED__)
@@ -10136,13 +13527,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance2_INTERFACE_DEFINED__
@@ -10267,7 +13658,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance4_INTERFACE_DEFINED__)
@@ -10275,13 +13666,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance4_INTERFACE_DEFINED__
@@ -10404,7 +13795,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskInstance4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskProgressEventArgs_INTERFACE_DEFINED__)
@@ -10412,13 +13803,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskProgressEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskProgressEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskProgressEventArgs_INTERFACE_DEFINED__
@@ -10551,7 +13942,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskProgressEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration_INTERFACE_DEFINED__)
@@ -10559,13 +13950,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration_INTERFACE_DEFINED__
@@ -10752,7 +14143,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration2_INTERFACE_DEFINED__)
@@ -10760,13 +14151,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration2_INTERFACE_DEFINED__
@@ -10889,7 +14280,476 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundTaskRegistration3[] = L"Windows.ApplicationModel.Background.IBackgroundTaskRegistration3";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("FE338195-9423-4D8B-830D-B1DD2C7BADD5")
+                    IBackgroundTaskRegistration3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TaskGroup( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBackgroundTaskRegistration3 = __uuidof(IBackgroundTaskRegistration3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TaskGroup )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_get_TaskGroup(This,value)	\
+    ( (This)->lpVtbl -> get_TaskGroup(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistration3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup[] = L"Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("2AB1919A-871B-4167-8A76-055CD67B5B23")
+                    IBackgroundTaskRegistrationGroup : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_BackgroundActivated( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_BackgroundActivated( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AllTasks( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBackgroundTaskRegistrationGroup = __uuidof(IBackgroundTaskRegistrationGroup);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_BackgroundActivated )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_BackgroundActivated )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AllTasks )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_get_Name(This,value)	\
+    ( (This)->lpVtbl -> get_Name(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_add_BackgroundActivated(This,handler,token)	\
+    ( (This)->lpVtbl -> add_BackgroundActivated(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_remove_BackgroundActivated(This,token)	\
+    ( (This)->lpVtbl -> remove_BackgroundActivated(This,token) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_get_AllTasks(This,value)	\
+    ( (This)->lpVtbl -> get_AllTasks(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroupFactory[] = L"Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroupFactory";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("83D92B69-44CF-4631-9740-03C7D8741BC5")
+                    IBackgroundTaskRegistrationGroupFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Create( 
+                            /* [in] */ __RPC__in HSTRING id,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **group) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateWithName( 
+                            /* [in] */ __RPC__in HSTRING id,
+                            /* [in] */ __RPC__in HSTRING name,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **group) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBackgroundTaskRegistrationGroupFactory = __uuidof(IBackgroundTaskRegistrationGroupFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This,
+            /* [in] */ __RPC__in HSTRING id,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **group);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateWithName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory * This,
+            /* [in] */ __RPC__in HSTRING id,
+            /* [in] */ __RPC__in HSTRING name,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **group);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactoryVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_Create(This,id,group)	\
+    ( (This)->lpVtbl -> Create(This,id,group) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_CreateWithName(This,id,name,group)	\
+    ( (This)->lpVtbl -> CreateWithName(This,id,name,group) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroupFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_INTERFACE_DEFINED__)
@@ -10897,13 +14757,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_INTERFACE_DEFINED__
@@ -11026,7 +14886,156 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationStatics2[] = L"Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("174B671E-B20D-4FA9-AD9A-E93AD6C71E01")
+                    IBackgroundTaskRegistrationStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AllTaskGroups( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetTaskGroup( 
+                            /* [in] */ __RPC__in HSTRING groupId,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBackgroundTaskRegistrationStatics2 = __uuidof(IBackgroundTaskRegistrationStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AllTaskGroups )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTaskGroup )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2 * This,
+            /* [in] */ __RPC__in HSTRING groupId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_get_AllTaskGroups(This,value)	\
+    ( (This)->lpVtbl -> get_AllTaskGroups(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_GetTaskGroup(This,groupId,value)	\
+    ( (This)->lpVtbl -> GetTaskGroup(This,groupId,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger_INTERFACE_DEFINED__)
@@ -11034,13 +15043,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger_INTERFACE_DEFINED__
@@ -11153,7 +15162,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundWorkCostStatics_INTERFACE_DEFINED__)
@@ -11161,13 +15170,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundWorkCostStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundWorkCostStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundWorkCostStatics_INTERFACE_DEFINED__
@@ -11290,7 +15299,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundWorkCostStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger_INTERFACE_DEFINED__)
@@ -11298,13 +15307,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger_INTERFACE_DEFINED__
@@ -11427,7 +15436,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoot
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_INTERFACE_DEFINED__)
@@ -11435,13 +15444,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_INTERFACE_DEFINED__
@@ -11634,7 +15643,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoot
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_INTERFACE_DEFINED__)
@@ -11642,13 +15651,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_INTERFACE_DEFINED__
@@ -11761,7 +15770,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICachedFi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTriggerDetails_INTERFACE_DEFINED__)
@@ -11769,13 +15778,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTriggerDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTriggerDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTriggerDetails_INTERFACE_DEFINED__
@@ -11918,7 +15927,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CICachedFi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTriggerDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageNotificationTrigger_INTERFACE_DEFINED__)
@@ -11926,13 +15935,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageNotificationTrigger_INTERFACE_DEFINED__
@@ -12045,7 +16054,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIChatMess
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_INTERFACE_DEFINED__)
@@ -12053,13 +16062,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_INTERFACE_DEFINED__
@@ -12172,7 +16181,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIChatMess
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIChatMessageReceivedNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_INTERFACE_DEFINED__)
@@ -12180,13 +16189,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_INTERFACE_DEFINED__
@@ -12299,7 +16308,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIContactS
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIContactStoreNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTrigger_INTERFACE_DEFINED__)
@@ -12307,13 +16316,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTrigger_INTERFACE_DEFINED__
@@ -12436,7 +16445,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIContentP
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_INTERFACE_DEFINED__)
@@ -12444,13 +16453,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_INTERFACE_DEFINED__
@@ -12575,7 +16584,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIContentP
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIContentPrefetchTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_INTERFACE_DEFINED__)
@@ -12583,13 +16592,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_INTERFACE_DEFINED__
@@ -12742,7 +16751,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceCo
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTriggerStatics_INTERFACE_DEFINED__)
@@ -12750,13 +16759,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTriggerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTriggerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTriggerStatics_INTERFACE_DEFINED__
@@ -12881,7 +16890,295 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceCo
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceConnectionChangeTriggerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0138 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTrigger[] = L"Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTrigger";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0138 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0138_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("81278AB5-41AB-16DA-86C2-7F7BF0912F5B")
+                    IDeviceManufacturerNotificationTrigger : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TriggerQualifier( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OneShot( 
+                            /* [out][retval] */ __RPC__out boolean *oneShot) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IDeviceManufacturerNotificationTrigger = __uuidof(IDeviceManufacturerNotificationTrigger);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TriggerQualifier )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OneShot )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger * This,
+            /* [out][retval] */ __RPC__out boolean *oneShot);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_get_TriggerQualifier(This,value)	\
+    ( (This)->lpVtbl -> get_TriggerQualifier(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_get_OneShot(This,oneShot)	\
+    ( (This)->lpVtbl -> get_OneShot(This,oneShot) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0139 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTriggerFactory[] = L"Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTriggerFactory";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0139 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0139_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("7955DE75-25BB-4153-A1A2-3029FCABB652")
+                    IDeviceManufacturerNotificationTriggerFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Create( 
+                            /* [in] */ __RPC__in HSTRING triggerQualifier,
+                            /* [in] */ boolean oneShot,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger **trigger) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IDeviceManufacturerNotificationTriggerFactory = __uuidof(IDeviceManufacturerNotificationTriggerFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory * This,
+            /* [in] */ __RPC__in HSTRING triggerQualifier,
+            /* [in] */ boolean oneShot,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTrigger **trigger);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactoryVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_Create(This,triggerQualifier,oneShot,trigger)	\
+    ( (This)->lpVtbl -> Create(This,triggerQualifier,oneShot,trigger) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceManufacturerNotificationTriggerFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0140 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_INTERFACE_DEFINED__)
@@ -12889,13 +17186,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_INTERFACE_DEFINED__
@@ -13038,7 +17335,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceSe
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceServicingTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0141 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceUseTrigger_INTERFACE_DEFINED__)
@@ -13046,13 +17343,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceUseTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0141_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceUseTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceUseTrigger_INTERFACE_DEFINED__
@@ -13191,7 +17488,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceUseTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0142 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceWatcherTrigger_INTERFACE_DEFINED__)
@@ -13199,13 +17496,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceWatcherTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceWatcherTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceWatcherTrigger_INTERFACE_DEFINED__
@@ -13318,7 +17615,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceWa
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIDeviceWatcherTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0143 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIEmailStoreNotificationTrigger_INTERFACE_DEFINED__)
@@ -13326,13 +17623,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIEmailStoreNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIEmailStoreNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIEmailStoreNotificationTrigger_INTERFACE_DEFINED__
@@ -13445,7 +17742,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIEmailSto
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIEmailStoreNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger_INTERFACE_DEFINED__)
@@ -13453,13 +17750,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger_INTERFACE_DEFINED__
@@ -13582,7 +17879,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattChar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0145 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IGattCharacteristicNotificationTrigger2[] = L"Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0145 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0145_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("9322A2C4-AE0E-42F2-B28C-F51372E69245")
+                    IGattCharacteristicNotificationTrigger2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EventTriggeringMode( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IGattCharacteristicNotificationTrigger2 = __uuidof(IGattCharacteristicNotificationTrigger2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EventTriggeringMode )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CBluetooth_CBackground_CBluetoothEventTriggeringMode *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_get_EventTriggeringMode(This,value)	\
+    ( (This)->lpVtbl -> get_EventTriggeringMode(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0146 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_INTERFACE_DEFINED__)
@@ -13590,13 +18024,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0146_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_INTERFACE_DEFINED__
@@ -13721,7 +18155,603 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattChar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0147 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IGattCharacteristicNotificationTriggerFactory2[] = L"Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0147 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0147_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("5998E91F-8A53-4E9F-A32C-23CD33664CEE")
+                    IGattCharacteristicNotificationTriggerFactory2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateWithEventTriggeringMode( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic *characteristic,
+                            /* [in] */ ABI::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IGattCharacteristicNotificationTriggerFactory2 = __uuidof(IGattCharacteristicNotificationTriggerFactory2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateWithEventTriggeringMode )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattCharacteristic *characteristic,
+            /* [in] */ __x_ABI_CWindows_CDevices_CBluetooth_CBackground_CBluetoothEventTriggeringMode eventTriggeringMode,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTrigger **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_CreateWithEventTriggeringMode(This,characteristic,eventTriggeringMode,result)	\
+    ( (This)->lpVtbl -> CreateWithEventTriggeringMode(This,characteristic,eventTriggeringMode,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattCharacteristicNotificationTriggerFactory2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0148 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IGattServiceProviderTrigger[] = L"Windows.ApplicationModel.Background.IGattServiceProviderTrigger";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0148 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0148_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IGattServiceProviderTrigger */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("DDC6A3E9-1557-4BD8-8542-468AA0C696F6")
+                    IGattServiceProviderTrigger : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TriggerId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Service( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AdvertisingParameters( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AdvertisingParameters( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IGattServiceProviderTrigger = __uuidof(IGattServiceProviderTrigger);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TriggerId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Service )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattLocalService **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AdvertisingParameters )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AdvertisingParameters )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_get_TriggerId(This,value)	\
+    ( (This)->lpVtbl -> get_TriggerId(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_get_Service(This,value)	\
+    ( (This)->lpVtbl -> get_Service(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_put_AdvertisingParameters(This,value)	\
+    ( (This)->lpVtbl -> put_AdvertisingParameters(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_get_AdvertisingParameters(This,value)	\
+    ( (This)->lpVtbl -> get_AdvertisingParameters(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0149 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IGattServiceProviderTriggerResult[] = L"Windows.ApplicationModel.Background.IGattServiceProviderTriggerResult";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0149 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0149_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("3C4691B1-B198-4E84-BAD4-CF4AD299ED3A")
+                    IGattServiceProviderTriggerResult : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Trigger( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IGattServiceProviderTrigger **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Error( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::Bluetooth::BluetoothError *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IGattServiceProviderTriggerResult = __uuidof(IGattServiceProviderTriggerResult);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Trigger )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTrigger **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Error )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothError *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResultVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_get_Trigger(This,value)	\
+    ( (This)->lpVtbl -> get_Trigger(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_get_Error(This,value)	\
+    ( (This)->lpVtbl -> get_Error(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0150 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IGattServiceProviderTriggerStatics[] = L"Windows.ApplicationModel.Background.IGattServiceProviderTriggerStatics";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0150 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0150_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Background {
+                    
+                    MIDL_INTERFACE("B413A36A-E294-4591-A5A6-64891A828153")
+                    IGattServiceProviderTriggerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateAsync( 
+                            /* [in] */ __RPC__in HSTRING triggerId,
+                            /* [in] */ GUID serviceUuid,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IGattServiceProviderTriggerStatics = __uuidof(IGattServiceProviderTriggerStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics * This,
+            /* [in] */ __RPC__in HSTRING triggerId,
+            /* [in] */ GUID serviceUuid,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_CreateAsync(This,triggerId,serviceUuid,operation)	\
+    ( (This)->lpVtbl -> CreateAsync(This,triggerId,serviceUuid,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIGattServiceProviderTriggerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTrigger_INTERFACE_DEFINED__)
@@ -13729,13 +18759,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTrigger_INTERFACE_DEFINED__
@@ -13858,7 +18888,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CILocation
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTriggerFactory_INTERFACE_DEFINED__)
@@ -13866,13 +18896,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTriggerFactory_INTERFACE_DEFINED__
@@ -13997,7 +19027,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CILocation
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CILocationTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0153 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTrigger_INTERFACE_DEFINED__)
@@ -14005,13 +19035,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTrigger_INTERFACE_DEFINED__
@@ -14144,7 +19174,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIMaintena
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTriggerFactory_INTERFACE_DEFINED__)
@@ -14152,13 +19182,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTriggerFactory_INTERFACE_DEFINED__
@@ -14285,7 +19315,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIMaintena
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIMaintenanceTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIMediaProcessingTrigger_INTERFACE_DEFINED__)
@@ -14293,13 +19323,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIMediaProcessingTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIMediaProcessingTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIMediaProcessingTrigger_INTERFACE_DEFINED__
@@ -14434,7 +19464,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIMediaPro
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIMediaProcessingTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorHotspotAuthenticationTrigger_INTERFACE_DEFINED__)
@@ -14442,13 +19472,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorHotspotAuthenticationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorHotspotAuthenticationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorHotspotAuthenticationTrigger_INTERFACE_DEFINED__
@@ -14561,7 +19591,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CINetworkO
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorHotspotAuthenticationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTrigger_INTERFACE_DEFINED__)
@@ -14569,13 +19599,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTrigger_INTERFACE_DEFINED__
@@ -14698,7 +19728,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CINetworkO
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0158 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTriggerFactory_INTERFACE_DEFINED__)
@@ -14706,13 +19736,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTriggerFactory_INTERFACE_DEFINED__
@@ -14837,7 +19867,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CINetworkO
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CINetworkOperatorNotificationTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0159 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTrigger_INTERFACE_DEFINED__)
@@ -14845,13 +19875,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0159 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0159_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTrigger_INTERFACE_DEFINED__
@@ -14984,7 +20014,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTri
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0160 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTriggerFactory_INTERFACE_DEFINED__)
@@ -14992,13 +20022,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTriggerFactory_INTERFACE_DEFINED__
@@ -15125,7 +20155,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTri
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIPhoneTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIPushNotificationTriggerFactory_INTERFACE_DEFINED__)
@@ -15133,13 +20163,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIPushNotificationTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIPushNotificationTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIPushNotificationTriggerFactory_INTERFACE_DEFINED__
@@ -15264,7 +20294,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIPushNoti
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIPushNotificationTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIRcsEndUserMessageAvailableTrigger_INTERFACE_DEFINED__)
@@ -15272,13 +20302,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIRcsEndUserMessageAvailableTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIRcsEndUserMessageAvailableTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIRcsEndUserMessageAvailableTrigger_INTERFACE_DEFINED__
@@ -15391,7 +20421,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIRcsEndUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIRcsEndUserMessageAvailableTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0163 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIRfcommConnectionTrigger_INTERFACE_DEFINED__)
@@ -15399,13 +20429,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIRfcommConnectionTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0163 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0163_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIRfcommConnectionTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIRfcommConnectionTrigger_INTERFACE_DEFINED__
@@ -15598,7 +20628,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIRfcommCo
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIRfcommConnectionTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISecondaryAuthenticationFactorAuthenticationTrigger_INTERFACE_DEFINED__)
@@ -15606,13 +20636,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISecondaryAuthenticationFactorAuthenticationTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISecondaryAuthenticationFactorAuthenticationTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISecondaryAuthenticationFactorAuthenticationTrigger_INTERFACE_DEFINED__
@@ -15725,7 +20755,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISecondar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISecondaryAuthenticationFactorAuthenticationTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTrigger_INTERFACE_DEFINED__)
@@ -15733,13 +20763,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTrigger_INTERFACE_DEFINED__
@@ -15852,7 +20882,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISensorDa
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTriggerFactory_INTERFACE_DEFINED__)
@@ -15860,13 +20890,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTriggerFactory_INTERFACE_DEFINED__
@@ -15991,283 +21021,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISensorDa
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISensorDataThresholdTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ISmartCardTrigger[] = L"Windows.ApplicationModel.Background.ISmartCardTrigger";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0121_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::ApplicationModel::Background::ISmartCardTrigger */
-/* [uuid][object] */ 
-
-
-EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace ApplicationModel {
-                namespace Background {
-                    
-                    MIDL_INTERFACE("F53BC5AC-84CA-4972-8CE9-E58F97B37A50")
-                    ISmartCardTrigger : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TriggerType( 
-                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::SmartCards::SmartCardTriggerType *triggerType) = 0;
-                        
-                    };
-
-                    extern const __declspec(selectany) IID & IID_ISmartCardTrigger = __uuidof(ISmartCardTrigger);
-
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TriggerType )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType *triggerType);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerVtbl;
-
-    interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_get_TriggerType(This,triggerType)	\
-    ( (This)->lpVtbl -> get_TriggerType(This,triggerType) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_ISmartCardTriggerFactory[] = L"Windows.ApplicationModel.Background.ISmartCardTriggerFactory";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0122_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::ApplicationModel::Background::ISmartCardTriggerFactory */
-/* [uuid][object] */ 
-
-
-EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace ApplicationModel {
-                namespace Background {
-                    
-                    MIDL_INTERFACE("63BF54C3-89C1-4E00-A9D3-97C629269DAD")
-                    ISmartCardTriggerFactory : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Create( 
-                            /* [in] */ ABI::Windows::Devices::SmartCards::SmartCardTriggerType triggerType,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::ISmartCardTrigger **trigger) = 0;
-                        
-                    };
-
-                    extern const __declspec(selectany) IID & IID_ISmartCardTriggerFactory = __uuidof(ISmartCardTriggerFactory);
-
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Create )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory * This,
-            /* [in] */ __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType triggerType,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTrigger **trigger);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactoryVtbl;
-
-    interface __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactoryVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_Create(This,triggerType,trigger)	\
-    ( (This)->lpVtbl -> Create(This,triggerType,trigger) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISmartCardTriggerFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_INTERFACE_DEFINED__)
@@ -16275,13 +21029,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_INTERFACE_DEFINED__
@@ -16406,7 +21160,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessa
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISmsMessageReceivedTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_INTERFACE_DEFINED__)
@@ -16414,13 +21168,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_INTERFACE_DEFINED__
@@ -16543,7 +21297,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISocketAc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISocketActivityTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0169 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_INTERFACE_DEFINED__)
@@ -16551,13 +21305,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0169_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_INTERFACE_DEFINED__
@@ -16670,7 +21424,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIStorageL
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0170 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTriggerStatics_INTERFACE_DEFINED__)
@@ -16678,13 +21432,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTriggerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTriggerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTriggerStatics_INTERFACE_DEFINED__
@@ -16821,7 +21575,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIStorageL
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIStorageLibraryContentChangedTriggerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0171 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemCondition_INTERFACE_DEFINED__)
@@ -16829,13 +21583,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemCondition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0171_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemCondition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemCondition_INTERFACE_DEFINED__
@@ -16958,7 +21712,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISystemCo
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemCondition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0172 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemConditionFactory_INTERFACE_DEFINED__)
@@ -16966,13 +21720,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemConditionFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemConditionFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemConditionFactory_INTERFACE_DEFINED__
@@ -17097,7 +21851,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISystemCo
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemConditionFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTrigger_INTERFACE_DEFINED__)
@@ -17105,13 +21859,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTrigger_INTERFACE_DEFINED__
@@ -17244,7 +21998,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISystemTr
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0174 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTriggerFactory_INTERFACE_DEFINED__)
@@ -17252,13 +22006,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTriggerFactory_INTERFACE_DEFINED__
@@ -17385,7 +22139,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CISystemTr
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CISystemTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0175 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrigger_INTERFACE_DEFINED__)
@@ -17393,13 +22147,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrigger_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0175_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrigger_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrigger_INTERFACE_DEFINED__
@@ -17532,7 +22286,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrig
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrigger_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0176 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTriggerFactory_INTERFACE_DEFINED__)
@@ -17540,13 +22294,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTriggerFactory_INTERFACE_DEFINED__
@@ -17673,7 +22427,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CITimeTrig
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CITimeTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0177 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_INTERFACE_DEFINED__)
@@ -17681,13 +22435,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0177_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_INTERFACE_DEFINED__
@@ -17812,7 +22566,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIToastNot
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0178 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_INTERFACE_DEFINED__)
@@ -17820,13 +22574,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_INTERFACE_DEFINED__
@@ -17951,7 +22705,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIToastNot
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0179 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_INTERFACE_DEFINED__)
@@ -17959,13 +22713,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0179_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_INTERFACE_DEFINED__
@@ -18090,7 +22844,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIUserNoti
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0180 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_ActivitySensorTrigger_DEFINED
@@ -18100,6 +22854,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_AlarmApplicationManager_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_AlarmApplicationManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_AlarmApplicationManager[] = L"Windows.ApplicationModel.Background.AlarmApplicationManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_AppBroadcastTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_AppBroadcastTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_AppBroadcastTrigger[] = L"Windows.ApplicationModel.Background.AppBroadcastTrigger";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_AppBroadcastTriggerProviderInfo_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_AppBroadcastTriggerProviderInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_AppBroadcastTriggerProviderInfo[] = L"Windows.ApplicationModel.Background.AppBroadcastTriggerProviderInfo";
 #endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_ApplicationTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_ApplicationTrigger_DEFINED
@@ -18136,6 +22898,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_BackgroundTaskRegistration_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_BackgroundTaskRegistration_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_BackgroundTaskRegistration[] = L"Windows.ApplicationModel.Background.BackgroundTaskRegistration";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_BackgroundTaskRegistrationGroup_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_BackgroundTaskRegistrationGroup_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_BackgroundTaskRegistrationGroup[] = L"Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup";
 #endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_BackgroundWorkCost_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_BackgroundWorkCost_DEFINED
@@ -18177,6 +22943,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceConnectionChangeTrigger_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_DeviceConnectionChangeTrigger[] = L"Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_DeviceManufacturerNotificationTrigger[] = L"Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger";
+#endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceServicingTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_DeviceServicingTrigger_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_DeviceServicingTrigger[] = L"Windows.ApplicationModel.Background.DeviceServicingTrigger";
@@ -18196,6 +22966,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_GattCharacteristicNotificationTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_GattCharacteristicNotificationTrigger_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_GattCharacteristicNotificationTrigger[] = L"Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_GattServiceProviderTrigger_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_GattServiceProviderTrigger_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_GattServiceProviderTrigger[] = L"Windows.ApplicationModel.Background.GattServiceProviderTrigger";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_GattServiceProviderTriggerResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Background_GattServiceProviderTriggerResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_GattServiceProviderTriggerResult[] = L"Windows.ApplicationModel.Background.GattServiceProviderTriggerResult";
 #endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_LocationTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_LocationTrigger_DEFINED
@@ -18257,10 +23035,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_SensorDataThresholdTrigger_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_SensorDataThresholdTrigger[] = L"Windows.ApplicationModel.Background.SensorDataThresholdTrigger";
 #endif
-#ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_SmartCardTrigger_DEFINED
-#define RUNTIMECLASS_Windows_ApplicationModel_Background_SmartCardTrigger_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_SmartCardTrigger[] = L"Windows.ApplicationModel.Background.SmartCardTrigger";
-#endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Background_SmsMessageReceivedTrigger_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Background_SmsMessageReceivedTrigger_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Background_SmsMessageReceivedTrigger[] = L"Windows.ApplicationModel.Background.SmsMessageReceivedTrigger";
@@ -18299,13 +23073,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ebackground_0000_0180_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -143,6 +143,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IDeploymentResult2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager;
@@ -221,6 +241,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager4_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IPackageManager5;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IPackageManagerDebugSettings;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInformation_FWD_DEFINED__
@@ -339,18 +399,18 @@ interface IPackageUserInformation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0001 */
 /* [local] */ 
@@ -385,18 +445,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0002 */
 /* [local] */ 
@@ -455,18 +515,18 @@ interface IPackageVolume;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0003 */
 /* [local] */ 
@@ -501,18 +561,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0004 */
 /* [local] */ 
@@ -547,18 +607,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0005 */
 /* [local] */ 
@@ -630,18 +690,18 @@ struct DeploymentProgress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0006 */
 /* [local] */ 
@@ -676,18 +736,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0007 */
 /* [local] */ 
@@ -722,18 +782,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0008 */
 /* [local] */ 
@@ -768,18 +828,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0009 */
 /* [local] */ 
@@ -814,18 +874,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0010 */
 /* [local] */ 
@@ -860,18 +920,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0011 */
 /* [local] */ 
@@ -906,18 +966,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0012 */
 /* [local] */ 
@@ -972,18 +1032,18 @@ interface IUriRuntimeClass;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0013 */
 /* [local] */ 
@@ -1018,18 +1078,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0014 */
 /* [local] */ 
@@ -1084,18 +1144,18 @@ interface IPackage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0015 */
 /* [local] */ 
@@ -1130,18 +1190,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0016 */
 /* [local] */ 
@@ -1176,18 +1236,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0017 */
 /* [local] */ 
@@ -1222,18 +1282,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0018 */
 /* [local] */ 
@@ -1268,18 +1328,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0019 */
 /* [local] */ 
@@ -1314,18 +1374,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0020 */
 /* [local] */ 
@@ -1360,18 +1420,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0021 */
 /* [local] */ 
@@ -1406,18 +1466,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0022 */
 /* [local] */ 
@@ -1451,6 +1511,17 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CPackageContentGroupState __x_ABI_CWindows_CApplicationModel_CPackageContentGroupState;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -1530,6 +1601,9 @@ typedef struct __x_ABI_CWindows_CManagement_CDeployment_CDeploymentProgress __x_
 
 
 
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1541,10 +1615,38 @@ class PackageManager;
 } /*Windows*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Management {
+namespace Deployment {
+class PackageManagerDebugSettings;
+} /*Deployment*/
+} /*Management*/
+} /*Windows*/
+}
+#endif
 
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0022 */
 /* [local] */ 
+
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            
+            typedef enum PackageContentGroupState PackageContentGroupState;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 #ifdef __cplusplus
@@ -1698,21 +1800,24 @@ extern "C" {
 
 
 
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0023 */
 /* [local] */ 
@@ -1887,18 +1992,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CManagement__CDeployment__CPackag
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0025 */
 /* [local] */ 
@@ -2039,18 +2144,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CManagement__CDeployment__CPackag
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0027 */
 /* [local] */ 
@@ -2225,18 +2330,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CManagement__CDeployment__CPackag
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0029 */
 /* [local] */ 
@@ -2377,18 +2482,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CManagement__CDeployment__CPackag
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0031 */
 /* [local] */ 
@@ -2571,18 +2676,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CManagement__CDeployment__CPack
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0033 */
 /* [local] */ 
@@ -2704,18 +2809,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CManagement_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0035 */
 /* [local] */ 
@@ -2837,18 +2942,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0037 */
 /* [local] */ 
@@ -3029,18 +3134,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CManagement__CD
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0039 */
 /* [local] */ 
@@ -3162,18 +3267,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0041 */
 /* [local] */ 
@@ -3334,18 +3439,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CManagemen
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0043 */
 /* [local] */ 
@@ -3467,18 +3572,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CManagement
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_3143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0045 */
 /* [local] */ 
@@ -3639,7 +3744,8 @@ enum __x_ABI_CWindows_CManagement_CDeployment_CDeploymentOptions
         DeploymentOptions_ForceApplicationShutdown	= 0x1,
         DeploymentOptions_DevelopmentMode	= 0x2,
         DeploymentOptions_InstallAllResources	= 0x20,
-        DeploymentOptions_ForceTargetApplicationShutdown	= 0x40
+        DeploymentOptions_ForceTargetApplicationShutdown	= 0x40,
+        DeploymentOptions_RequiredContentGroupOnly	= 0x100
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3801,7 +3907,8 @@ namespace ABI {
                         DeploymentOptions_ForceApplicationShutdown	= 0x1,
                         DeploymentOptions_DevelopmentMode	= 0x2,
                         DeploymentOptions_InstallAllResources	= 0x20,
-                        DeploymentOptions_ForceTargetApplicationShutdown	= 0x40
+                        DeploymentOptions_ForceTargetApplicationShutdown	= 0x40,
+                        DeploymentOptions_RequiredContentGroupOnly	= 0x100
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -4118,9 +4225,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResu
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0047 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager[] = L"Windows.Management.Deployment.IPackageManager";
-#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IDeploymentResult2[] = L"Windows.Management.Deployment.IDeploymentResult2";
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0047 */
@@ -4130,6 +4237,143 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0047_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Management::Deployment::IDeploymentResult2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Management {
+                namespace Deployment {
+                    
+                    MIDL_INTERFACE("FC0E715C-5A01-4BD7-BCF1-381C8C82E04A")
+                    IDeploymentResult2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsRegistered( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IDeploymentResult2 = __uuidof(IDeploymentResult2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsRegistered )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2Vtbl;
+
+    interface __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_get_IsRegistered(This,value)	\
+    ( (This)->lpVtbl -> get_IsRegistered(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIDeploymentResult2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0048 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager[] = L"Windows.Management.Deployment.IPackageManager";
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0048 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__
@@ -4458,7 +4702,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0048 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_INTERFACE_DEFINED__)
@@ -4466,13 +4710,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0048 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_INTERFACE_DEFINED__
@@ -4733,7 +4977,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0049 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0050 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager3_INTERFACE_DEFINED__)
@@ -4741,13 +4985,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0049 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager3_INTERFACE_DEFINED__
@@ -5058,7 +5302,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0050 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager4_INTERFACE_DEFINED__)
@@ -5066,13 +5310,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0050 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager4_INTERFACE_DEFINED__
@@ -5195,7 +5439,369 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0051 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0052 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager5[] = L"Windows.Management.Deployment.IPackageManager5";
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0052 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0052_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Management::Deployment::IPackageManager5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Management {
+                namespace Deployment {
+                    
+                    MIDL_INTERFACE("711F3117-1AFD-4313-978C-9BB6E1B864A7")
+                    IPackageManager5 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE AddPackageToVolumeAndOptionalPackagesAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *packageUri,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *dependencyPackageUris,
+                            /* [in] */ ABI::Windows::Management::Deployment::DeploymentOptions deploymentOptions,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Management::Deployment::IPackageVolume *targetVolume,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *optionalPackageFamilyNames,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *externalPackageUris,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress **deploymentOperation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE StagePackageToVolumeAndOptionalPackagesAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *packageUri,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *dependencyPackageUris,
+                            /* [in] */ ABI::Windows::Management::Deployment::DeploymentOptions deploymentOptions,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Management::Deployment::IPackageVolume *targetVolume,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *optionalPackageFamilyNames,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *externalPackageUris,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress **deploymentOperation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RegisterPackageByFamilyNameAndOptionalPackagesAsync( 
+                            /* [in] */ __RPC__in HSTRING mainPackageFamilyName,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *dependencyPackageFamilyNames,
+                            /* [in] */ ABI::Windows::Management::Deployment::DeploymentOptions deploymentOptions,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Management::Deployment::IPackageVolume *appDataVolume,
+                            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *optionalPackageFamilyNames,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress **deploymentOperation) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DebugSettings( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Management::Deployment::IPackageManagerDebugSettings **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPackageManager5 = __uuidof(IPackageManager5);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddPackageToVolumeAndOptionalPackagesAsync )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *packageUri,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *dependencyPackageUris,
+            /* [in] */ __x_ABI_CWindows_CManagement_CDeployment_CDeploymentOptions deploymentOptions,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume *targetVolume,
+            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *optionalPackageFamilyNames,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *externalPackageUris,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress **deploymentOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *StagePackageToVolumeAndOptionalPackagesAsync )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *packageUri,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *dependencyPackageUris,
+            /* [in] */ __x_ABI_CWindows_CManagement_CDeployment_CDeploymentOptions deploymentOptions,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume *targetVolume,
+            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *optionalPackageFamilyNames,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CFoundation__CUri *externalPackageUris,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress **deploymentOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterPackageByFamilyNameAndOptionalPackagesAsync )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [in] */ __RPC__in HSTRING mainPackageFamilyName,
+            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *dependencyPackageFamilyNames,
+            /* [in] */ __x_ABI_CWindows_CManagement_CDeployment_CDeploymentOptions deploymentOptions,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume *appDataVolume,
+            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *optionalPackageFamilyNames,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress **deploymentOperation);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DebugSettings )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5Vtbl;
+
+    interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_AddPackageToVolumeAndOptionalPackagesAsync(This,packageUri,dependencyPackageUris,deploymentOptions,targetVolume,optionalPackageFamilyNames,externalPackageUris,deploymentOperation)	\
+    ( (This)->lpVtbl -> AddPackageToVolumeAndOptionalPackagesAsync(This,packageUri,dependencyPackageUris,deploymentOptions,targetVolume,optionalPackageFamilyNames,externalPackageUris,deploymentOperation) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_StagePackageToVolumeAndOptionalPackagesAsync(This,packageUri,dependencyPackageUris,deploymentOptions,targetVolume,optionalPackageFamilyNames,externalPackageUris,deploymentOperation)	\
+    ( (This)->lpVtbl -> StagePackageToVolumeAndOptionalPackagesAsync(This,packageUri,dependencyPackageUris,deploymentOptions,targetVolume,optionalPackageFamilyNames,externalPackageUris,deploymentOperation) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_RegisterPackageByFamilyNameAndOptionalPackagesAsync(This,mainPackageFamilyName,dependencyPackageFamilyNames,deploymentOptions,appDataVolume,optionalPackageFamilyNames,deploymentOperation)	\
+    ( (This)->lpVtbl -> RegisterPackageByFamilyNameAndOptionalPackagesAsync(This,mainPackageFamilyName,dependencyPackageFamilyNames,deploymentOptions,appDataVolume,optionalPackageFamilyNames,deploymentOperation) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_get_DebugSettings(This,value)	\
+    ( (This)->lpVtbl -> get_DebugSettings(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0053 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManagerDebugSettings[] = L"Windows.Management.Deployment.IPackageManagerDebugSettings";
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0053_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Management::Deployment::IPackageManagerDebugSettings */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Management {
+                namespace Deployment {
+                    
+                    MIDL_INTERFACE("1A611683-A988-4FCF-8F0F-CE175898E8EB")
+                    IPackageManagerDebugSettings : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE SetContentGroupStateAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::IPackage *package,
+                            /* [in] */ __RPC__in HSTRING contentGroupName,
+                            /* [in] */ ABI::Windows::ApplicationModel::PackageContentGroupState state,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SetContentGroupStateWithPercentageAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::IPackage *package,
+                            /* [in] */ __RPC__in HSTRING contentGroupName,
+                            /* [in] */ ABI::Windows::ApplicationModel::PackageContentGroupState state,
+                            /* [in] */ DOUBLE completionPercentage,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPackageManagerDebugSettings = __uuidof(IPackageManagerDebugSettings);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettingsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetContentGroupStateAsync )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CIPackage *package,
+            /* [in] */ __RPC__in HSTRING contentGroupName,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CPackageContentGroupState state,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetContentGroupStateWithPercentageAsync )( 
+            __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CIPackage *package,
+            /* [in] */ __RPC__in HSTRING contentGroupName,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CPackageContentGroupState state,
+            /* [in] */ DOUBLE completionPercentage,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettingsVtbl;
+
+    interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettingsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_SetContentGroupStateAsync(This,package,contentGroupName,state,action)	\
+    ( (This)->lpVtbl -> SetContentGroupStateAsync(This,package,contentGroupName,state,action) ) 
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_SetContentGroupStateWithPercentageAsync(This,package,contentGroupName,state,completionPercentage,action)	\
+    ( (This)->lpVtbl -> SetContentGroupStateWithPercentageAsync(This,package,contentGroupName,state,completionPercentage,action) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInformation_INTERFACE_DEFINED__)
@@ -5203,13 +5809,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInformation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0051 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInformation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInformation_INTERFACE_DEFINED__
@@ -5342,7 +5948,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInf
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageUserInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0052 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume_INTERFACE_DEFINED__)
@@ -5350,13 +5956,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0052 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume_INTERFACE_DEFINED__
@@ -5723,7 +6329,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume;
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0053 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume2_INTERFACE_DEFINED__)
@@ -5731,13 +6337,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0053 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume2_INTERFACE_DEFINED__
@@ -5880,7 +6486,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume2
 #endif 	/* ____x_ABI_CWindows_CManagement_CDeployment_CIPackageVolume2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0054 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0057 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Management_Deployment_DeploymentResult_DEFINED
@@ -5890,6 +6496,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Management_Deployment_PackageManager_DEFINED
 #define RUNTIMECLASS_Windows_Management_Deployment_PackageManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Management_Deployment_PackageManager[] = L"Windows.Management.Deployment.PackageManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_Management_Deployment_PackageManagerDebugSettings_DEFINED
+#define RUNTIMECLASS_Windows_Management_Deployment_PackageManagerDebugSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Management_Deployment_PackageManagerDebugSettings[] = L"Windows.Management.Deployment.PackageManagerDebugSettings";
 #endif
 #ifndef RUNTIMECLASS_Windows_Management_Deployment_PackageUserInformation_DEFINED
 #define RUNTIMECLASS_Windows_Management_Deployment_PackageUserInformation_DEFINED
@@ -5901,13 +6511,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0054 */
+/* interface __MIDL_itf_windows2Emanagement2Edeployment_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emanagement2Edeployment_0000_0057_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

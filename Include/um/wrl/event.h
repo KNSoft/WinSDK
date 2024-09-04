@@ -225,209 +225,181 @@ struct ArgTraitsHelper<TDelegateInterface, true> : ArgTraitsHelper<typename TDel
 
 // Invoke helper provide implementation of invoke method
 // depending on amount and type of arguments from ArgTraitsHelper
-template<typename TDelegateInterface, typename TCallback, unsigned int argCount>
+template<typename TDelegateInterface, typename TCallback, unsigned int argCount, DelegateCheckMode checkMode = DefaultDelegateCheckMode>
 struct InvokeHelper;
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 0> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 0, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    // Using a forwarding reference here creates a breaking change for functions that forward
+    // to InvokeHelper without using perfect forwarding.
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)()
+    HRESULT STDMETHODCALLTYPE Invoke() throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_());
+        return DelegateTraits<checkMode>::CheckReturn((*this)());
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 1> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-{    
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
-
-    STDMETHOD(Invoke)(typename Traits::Arg1Type arg1)
-    {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1));
-    }
-    TCallback callback_;
-};
-
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 2> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 1, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
     typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
+    HRESULT STDMETHODCALLTYPE Invoke(typename Traits::Arg1Type arg1) throw() override
+    {
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1));
+    }
+};
+
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 2, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
+{
+    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
+
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
+
+    HRESULT STDMETHODCALLTYPE Invoke(
             typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2)
+            typename Traits::Arg2Type arg2) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 3> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-{    
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 3, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
+{
     typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
+    HRESULT STDMETHODCALLTYPE Invoke(
             typename Traits::Arg1Type arg1,
             typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3)
+            typename Traits::Arg3Type arg3) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 4> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 4, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
     typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
+    HRESULT STDMETHODCALLTYPE Invoke(
             typename Traits::Arg1Type arg1,
             typename Traits::Arg2Type arg2,
             typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4)
+            typename Traits::Arg4Type arg4) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3, arg4));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 5> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 5, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
     typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback) 
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
-            typename Traits::Arg1Type arg1, 
-            typename Traits::Arg2Type arg2, 
-            typename Traits::Arg3Type arg3, 
+    HRESULT STDMETHODCALLTYPE Invoke(
+            typename Traits::Arg1Type arg1,
+            typename Traits::Arg2Type arg2,
+            typename Traits::Arg3Type arg3,
             typename Traits::Arg4Type arg4,
-            typename Traits::Arg5Type arg5)
+            typename Traits::Arg5Type arg5) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3, arg4, arg5));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 6> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 6, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;   
+    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
-            typename Traits::Arg1Type arg1, 
-            typename Traits::Arg2Type arg2, 
-            typename Traits::Arg3Type arg3, 
+    HRESULT STDMETHODCALLTYPE Invoke(
+            typename Traits::Arg1Type arg1,
+            typename Traits::Arg2Type arg2,
+            typename Traits::Arg3Type arg3,
             typename Traits::Arg4Type arg4,
             typename Traits::Arg5Type arg5,
-            typename Traits::Arg6Type arg6)
+            typename Traits::Arg6Type arg6) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3, arg4, arg5, arg6));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 7> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 7, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;       
+    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
-            typename Traits::Arg1Type arg1, 
-            typename Traits::Arg2Type arg2, 
-            typename Traits::Arg3Type arg3, 
+    HRESULT STDMETHODCALLTYPE Invoke(
+            typename Traits::Arg1Type arg1,
+            typename Traits::Arg2Type arg2,
+            typename Traits::Arg3Type arg3,
             typename Traits::Arg4Type arg4,
             typename Traits::Arg5Type arg5,
             typename Traits::Arg6Type arg6,
-            typename Traits::Arg7Type arg7)
+            typename Traits::Arg7Type arg7) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3, arg4, arg5, arg6, arg7));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6, arg7));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 8> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 8, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
     typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
-            typename Traits::Arg1Type arg1, 
-            typename Traits::Arg2Type arg2, 
-            typename Traits::Arg3Type arg3, 
+    HRESULT STDMETHODCALLTYPE Invoke(
+            typename Traits::Arg1Type arg1,
+            typename Traits::Arg2Type arg2,
+            typename Traits::Arg3Type arg3,
             typename Traits::Arg4Type arg4,
             typename Traits::Arg5Type arg5,
             typename Traits::Arg6Type arg6,
             typename Traits::Arg7Type arg7,
-            typename Traits::Arg8Type arg8)
+            typename Traits::Arg8Type arg8) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8));
     }
-    TCallback callback_;
 };
 
-template<typename TDelegateInterface, typename TCallback>
-struct InvokeHelper<TDelegateInterface, TCallback, 9> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
+template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
+struct InvokeHelper<TDelegateInterface, TCallback, 9, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
 {
     typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
 
-    explicit InvokeHelper(TCallback callback) throw() : callback_(callback)
-    {
-    }
+    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
 
-    STDMETHOD(Invoke)(
-            typename Traits::Arg1Type arg1, 
-            typename Traits::Arg2Type arg2, 
-            typename Traits::Arg3Type arg3, 
+    HRESULT STDMETHODCALLTYPE Invoke(
+            typename Traits::Arg1Type arg1,
+            typename Traits::Arg2Type arg2,
+            typename Traits::Arg3Type arg3,
             typename Traits::Arg4Type arg4,
             typename Traits::Arg5Type arg5,
             typename Traits::Arg6Type arg6,
             typename Traits::Arg7Type arg7,
             typename Traits::Arg8Type arg8,
-            typename Traits::Arg9Type arg9)
+            typename Traits::Arg9Type arg9) throw() override
     {
-        return DelegateTraits<DefaultDelegateCheckMode>::CheckReturn(callback_(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9));
+        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9));
     }
-    TCallback callback_;
 };
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
@@ -577,302 +549,34 @@ HRESULT CreateAgileHelper(_In_ TDelegateInterface *delegateInterface, _COM_Outpt
 
 } // namespace Details
 
-// Implementation of Callback helper that wire delegate interfaces
-// and provide object implementation for Invoke method
-// Specialization for lambda, function pointer and functor
-template<typename TDelegateInterface, typename TCallback>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(TCallback callback) throw()
+// Construct a COM/WinRT delegate (an object with an Invoke() method) from a lambda.
+// Check the return from this function for null to detect out of memory (E_OUTOFMEMORY) failure case.
+template<typename TDelegateInterface, typename TLambda>
+ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(TLambda&& callback) throw()
 {
     static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-
-    return Make<Details::InvokeHelper<TDelegateInterface, TCallback, 
-        Details::ArgTraitsHelper<TDelegateInterface>::args>>(callback);
+    return Make<Details::InvokeHelper<TDelegateInterface, TLambda, Details::ArgTraitsHelper<TDelegateInterface>::args>>(Details::Forward<TLambda>(callback));
 }
 
-// Specialization for pointer to the method
-template<typename TDelegateInterface, typename TCallbackObject>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)()) throw()
+// Construct a COM/WinRT delegate, an object with an Invoke() method, from a raw function.
+template<typename TDelegateInterface, typename TFunc>
+ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(TFunc* callback) throw()
 {
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 0, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<ClassicCom>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)()) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)()
-        {
-            return (object_->*method_)();
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)();
-    };
-
-    return Make<ComObject>(object, method);
+    // delegate to the lambda case
+    return Callback<TDelegateInterface>([=](auto&& ...args) { return callback(args...); });
 }
 
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1)) throw()
+// Construct a COM/WinRT delegate, an object with an Invoke() method, from an object and member function.
+template<typename TDelegateInterface, typename TCallbackObject, typename... TArgs>
+ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT(TCallbackObject::* method)(TArgs...)) throw()
 {
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 1, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1)
-        {
-            return (object_->*method_)(arg1);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2)) throw()
-{    
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 2, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2)
-        {
-            return (object_->*method_)(arg1, arg2);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 3, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>   
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3)
-        {
-            return (object_->*method_)(arg1, arg2, arg3);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3, typename TArg4>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 4, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-    static_assert(Details::IsSame<TArg4, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg4Type>::value, "Argument 4 from object method doesn't match Invoke argument 4");
-
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4)
-        {
-            return (object_->*method_)(arg1, arg2, arg3, arg4);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3, TArg4);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 5, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-    static_assert(Details::IsSame<TArg4, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg4Type>::value, "Argument 4 from object method doesn't match Invoke argument 4");
-    static_assert(Details::IsSame<TArg5, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg5Type>::value, "Argument 5 from object method doesn't match Invoke argument 5");
-    
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4, TArg5 arg5)
-        {
-            return (object_->*method_)(arg1, arg2, arg3, arg4, arg5);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3, TArg4, TArg5);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 6, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-    static_assert(Details::IsSame<TArg4, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg4Type>::value, "Argument 4 from object method doesn't match Invoke argument 4");
-    static_assert(Details::IsSame<TArg5, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg5Type>::value, "Argument 5 from object method doesn't match Invoke argument 5");
-    static_assert(Details::IsSame<TArg6, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg6Type>::value, "Argument 6 from object method doesn't match Invoke argument 6");
-    
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4, TArg5 arg5, TArg6 arg6)
-        {
-            return (object_->*method_)(arg1, arg2, arg3, arg4, arg5, arg6);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 7, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-    static_assert(Details::IsSame<TArg4, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg4Type>::value, "Argument 4 from object method doesn't match Invoke argument 4");
-    static_assert(Details::IsSame<TArg5, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg5Type>::value, "Argument 5 from object method doesn't match Invoke argument 5");
-    static_assert(Details::IsSame<TArg6, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg6Type>::value, "Argument 6 from object method doesn't match Invoke argument 6");
-    static_assert(Details::IsSame<TArg7, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg7Type>::value, "Argument 7 from object method doesn't match Invoke argument 7");
-
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4, TArg5 arg5, TArg6 arg6, TArg7 arg7)
-        {
-            return (object_->*method_)(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 8, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-    static_assert(Details::IsSame<TArg4, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg4Type>::value, "Argument 4 from object method doesn't match Invoke argument 4");
-    static_assert(Details::IsSame<TArg5, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg5Type>::value, "Argument 5 from object method doesn't match Invoke argument 5");
-    static_assert(Details::IsSame<TArg6, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg6Type>::value, "Argument 6 from object method doesn't match Invoke argument 6");
-    static_assert(Details::IsSame<TArg7, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg7Type>::value, "Argument 7 from object method doesn't match Invoke argument 7");
-    static_assert(Details::IsSame<TArg8, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg8Type>::value, "Argument 8 from object method doesn't match Invoke argument 8");
-
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4, TArg5 arg5, TArg6 arg6, TArg7 arg7, TArg8 arg8)
-        {
-            return (object_->*method_)(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8);
-    };
-
-    return Make<ComObject>(object, method);
-}
-
-template<typename TDelegateInterface, typename TCallbackObject, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8, typename TArg9>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9)) throw()
-{
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    static_assert(Details::ArgTraitsHelper<TDelegateInterface>::Traits::args == 9, "Number of arguments on object method doesn't match number of arguments on Delegate::Invoke");
-    static_assert(Details::IsSame<TArg1, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg1Type>::value, "Argument 1 from object method doesn't match Invoke argument 1");
-    static_assert(Details::IsSame<TArg2, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg2Type>::value, "Argument 2 from object method doesn't match Invoke argument 2");
-    static_assert(Details::IsSame<TArg3, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg3Type>::value, "Argument 3 from object method doesn't match Invoke argument 3");
-    static_assert(Details::IsSame<TArg4, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg4Type>::value, "Argument 4 from object method doesn't match Invoke argument 4");
-    static_assert(Details::IsSame<TArg5, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg5Type>::value, "Argument 5 from object method doesn't match Invoke argument 5");
-    static_assert(Details::IsSame<TArg6, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg6Type>::value, "Argument 6 from object method doesn't match Invoke argument 6");
-    static_assert(Details::IsSame<TArg7, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg7Type>::value, "Argument 7 from object method doesn't match Invoke argument 7");
-    static_assert(Details::IsSame<TArg8, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg8Type>::value, "Argument 8 from object method doesn't match Invoke argument 8");
-    static_assert(Details::IsSame<TArg9, Details::ArgTraitsHelper<TDelegateInterface>::Traits::Arg9Type>::value, "Argument 9 from object method doesn't match Invoke argument 9");
-    
-    struct ComObject WrlSealed : RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>
-    {
-        ComObject(TCallbackObject *object, HRESULT (TCallbackObject::* method)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9)) throw() : object_(object), method_(method)
-        {
-        }
-
-        STDMETHOD(Invoke)(TArg1 arg1, TArg2 arg2, TArg3 arg3, TArg4 arg4, TArg5 arg5, TArg6 arg6, TArg7 arg7, TArg8 arg8, TArg9 arg9)
-        {
-            return (object_->*method_)(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-        }
-
-        TCallbackObject* object_;
-        HRESULT (TCallbackObject::* method_)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9);
-    };
-
-    return Make<ComObject>(object, method);
+#ifdef IS_9225090_FIXED // see http://osgvsowi/9225090
+    return Callback<TDelegateInterface>([=](auto&& ...args) { return ((*object).*(method))(args ...); });
+#else
+    auto callback = [=](auto&& ...args) { return ((*object).*(method))(args ...); };
+    return Make<Details::InvokeHelper<TDelegateInterface, decltype(callback),
+        Details::ArgTraitsHelper<TDelegateInterface>::args, DelegateCheckMode::NoCheck>>(Details::Move(callback));
+#endif
 }
 
 namespace Details
@@ -891,7 +595,7 @@ class EventTargetArray WrlSealed : public ::Microsoft::WRL::RuntimeClass< ::Micr
         HRESULT RuntimeClassInitialize(size_t items) throw()
         {
             begin_ = new(std::nothrow) ComPtr<IUnknown>[items];
-            bucketAssists_ = new(std::nothrow) void *[items];            
+            bucketAssists_ = new(std::nothrow) void *[items];
             if (begin_ == nullptr || bucketAssists_ == nullptr)
             {
                 // Don't check against nullptr because delete does it

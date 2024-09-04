@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -72,6 +72,20 @@ typedef interface __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrame
 typedef interface __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat;
 
 #endif 	/* ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource;
+
+#endif 	/* ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource;
+
+#endif 	/* ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__ */
 
 
 #ifndef ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_FWD_DEFINED__
@@ -214,6 +228,34 @@ typedef interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMedi
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__ */
+
+
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs;
@@ -226,6 +268,13 @@ typedef interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CM
 typedef interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_FWD_DEFINED__
@@ -270,6 +319,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IDepthMediaFrame2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrameFormat_FWD_DEFINED__
@@ -448,6 +519,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMediaFrameSourceController2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult;
@@ -536,6 +629,72 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMultiSourceMediaFrameArrivedEventArgs;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMultiSourceMediaFrameReader;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    interface IMultiSourceMediaFrameReference;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame __x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame;
@@ -586,10 +745,6 @@ namespace ABI {
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.Devices.Enumeration.h"
-#include "Windows.Graphics.DirectX.Direct3D11.h"
-#include "Windows.Graphics.Imaging.h"
-#include "Windows.Media.h"
-#include "Windows.Media.Capture.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -644,18 +799,18 @@ interface IMediaFrameSource;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3989 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4594 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3989 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3989_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3989_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4594_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0001 */
 /* [local] */ 
@@ -690,18 +845,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3990 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4595 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3990 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3990_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3990_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4595_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0002 */
 /* [local] */ 
@@ -736,18 +891,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3991 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4596 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3991 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3991_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3991_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4596_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0003 */
 /* [local] */ 
@@ -810,18 +965,18 @@ interface IMediaFrameFormat;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3992 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3992 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3992_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3992_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0004 */
 /* [local] */ 
@@ -856,18 +1011,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3993 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3993 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3993_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3993_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005 */
 /* [local] */ 
@@ -891,6 +1046,98 @@ typedef IIterable<ABI::Windows::Media::Capture::Frames::MediaFrameFormat*> __FII
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4599 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4599 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4599_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE
+#define DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d05e53cd-bbec-5fb7-8e4e-de86115b5e88"))
+IIterator<ABI::Windows::Media::Capture::Frames::MediaFrameSource*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::Frames::MediaFrameSource*, ABI::Windows::Media::Capture::Frames::IMediaFrameSource*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.Capture.Frames.MediaFrameSource>"; }
+};
+typedef IIterator<ABI::Windows::Media::Capture::Frames::MediaFrameSource*> __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t;
+#define ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4600 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4600 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4600_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE
+#define DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("0d447be3-8c91-581d-8071-17984b8b5994"))
+IIterable<ABI::Windows::Media::Capture::Frames::MediaFrameSource*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::Frames::MediaFrameSource*, ABI::Windows::Media::Capture::Frames::IMediaFrameSource*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.Capture.Frames.MediaFrameSource>"; }
+};
+typedef IIterable<ABI::Windows::Media::Capture::Frames::MediaFrameSource*> __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t;
+#define ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_FWD_DEFINED__
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -920,30 +1167,30 @@ interface IMediaFrameSourceGroup;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3994 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3994 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3994_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3994_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4601 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4601_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -967,29 +1214,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3995 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3995 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3995_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3995_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4602 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4602_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -1040,30 +1287,30 @@ interface IMediaFrameSourceInfo;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3996 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3996 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3996_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3996_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_USE
@@ -1087,29 +1334,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3997 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3997 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3997_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3997_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_USE
@@ -1133,29 +1380,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3998 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3998 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3998_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3998_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4605 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE
@@ -1179,29 +1426,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3999 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3999 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3999_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_3999_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_USE
@@ -1225,29 +1472,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4000 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4000 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4000_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -1271,29 +1518,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4001 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4001 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4001_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4608 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_USE
@@ -1317,29 +1564,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4002 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4002 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4002_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4609 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -1363,29 +1610,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4003 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4003 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4003_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -1436,30 +1683,30 @@ interface IMediaFrameReader;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4004 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4004 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4004_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_USE
@@ -1483,29 +1730,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4005 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4005 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4005_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_USE
@@ -1543,30 +1790,30 @@ enum MediaFrameReaderStartStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4006 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4006 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4006_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_USE
@@ -1590,29 +1837,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4007 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4007 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4007_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_USE
@@ -1663,30 +1910,30 @@ interface IMediaFrameSourceGetPropertyResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4008 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4008 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4008_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_USE
@@ -1710,29 +1957,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4009 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4009 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4009_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_USE
@@ -1756,29 +2003,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4010 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4010 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4010_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -1802,29 +2049,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4011 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4011 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4011_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_USE
@@ -1862,30 +2109,30 @@ enum MediaFrameSourceSetPropertyStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4012 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4012 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4012_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_USE
@@ -1909,29 +2156,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4013 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4013 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4013_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_USE
@@ -1953,6 +2200,233 @@ typedef IAsyncOperation<enum ABI::Windows::Media::Capture::Frames::MediaFrameSou
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Capture {
+namespace Frames {
+class MultiSourceMediaFrameReader;
+} /*Frames*/
+} /*Capture*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Capture {
+namespace Frames {
+interface IMultiSourceMediaFrameReader;
+} /*Frames*/
+} /*Capture*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4621 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4621 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("69993778-a48c-50cc-a6f0-5368f58a297a"))
+IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*, ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Media.Capture.Frames.MultiSourceMediaFrameReader>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*> __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4622 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4622 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_USE
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("53d56be8-f110-5226-9ce1-a8c26a572576"))
+IAsyncOperation<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*, ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Media.Capture.Frames.MultiSourceMediaFrameReader>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*> __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t;
+#define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Capture {
+namespace Frames {
+enum MultiSourceMediaFrameReaderStartStatus;
+} /*Frames*/
+} /*Capture*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4623 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4623 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("18eef24a-3332-5fee-a0f0-72ceed330645"))
+IAsyncOperationCompletedHandler<enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> : IAsyncOperationCompletedHandler_impl<enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus>"; }
+};
+typedef IAsyncOperationCompletedHandler<enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4624 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4624 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_USE
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a242b952-76aa-54e5-a13b-a8707c1098e1"))
+IAsyncOperation<enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> : IAsyncOperation_impl<enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus>"; }
+};
+typedef IAsyncOperation<enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_t;
+#define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1982,30 +2456,30 @@ interface IMediaFrameArrivedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4014 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4014 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4014_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_USE
@@ -2031,30 +2505,30 @@ extern "C" {
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4015 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4015_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_USE
@@ -2076,31 +2550,105 @@ typedef ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MediaFrameSourc
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Capture {
+namespace Frames {
+class MultiSourceMediaFrameArrivedEventArgs;
+} /*Frames*/
+} /*Capture*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Capture {
+namespace Frames {
+interface IMultiSourceMediaFrameArrivedEventArgs;
+} /*Frames*/
+} /*Capture*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4016 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4016_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("82b1ad4d-9887-56f4-9a9e-3ab18b02198c"))
+ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*,ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*, ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs*, ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader*,ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs*> __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4628 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4628 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_GUID_IInspectable_USE
@@ -2124,29 +2672,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_GUID_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4017 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4017_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_GUID_IInspectable_USE
@@ -2170,29 +2718,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_GUID_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4018 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4018_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_GUID_IInspectable_USE
@@ -2216,29 +2764,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_GUID_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4019 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4019_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_GUID_IInspectable_USE
@@ -2272,30 +2820,30 @@ struct TimeSpan;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4020 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4020_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
@@ -2317,6 +2865,52 @@ typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Wi
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4633 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4633 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_UINT32_USE
+#define DEF___FIReference_1_UINT32_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3"))
+IReference<UINT32> : IReference_impl<UINT32> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<UInt32>"; }
+};
+typedef IReference<UINT32> __FIReference_1_UINT32_t;
+#define ____FIReference_1_UINT32_FWD_DEFINED__
+#define __FIReference_1_UINT32 ABI::Windows::Foundation::__FIReference_1_UINT32_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_UINT32_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -2510,6 +3104,19 @@ typedef enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMediaFrameSourceSetProper
 
 
 #endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartStatus __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
+
+
 
 
 
@@ -2603,6 +3210,19 @@ namespace Windows {
 namespace Media {
 namespace Capture {
 namespace Frames {
+class MultiSourceMediaFrameReference;
+} /*Frames*/
+} /*Capture*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Capture {
+namespace Frames {
 class VideoMediaFrame;
 } /*Frames*/
 } /*Capture*/
@@ -2625,7 +3245,7 @@ class VideoMediaFrameFormat;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040 */
 /* [local] */ 
 
 
@@ -2755,6 +3375,25 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    
+                    typedef enum MultiSourceMediaFrameReaderStartStatus MultiSourceMediaFrameReaderStartStatus;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -2766,23 +3405,27 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0032_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4021 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4021 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4021_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
@@ -2790,13 +3433,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4021_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
@@ -2916,35 +3559,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFr
 #endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4022 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4022_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
@@ -2952,13 +3595,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4022_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
@@ -3102,35 +3745,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4023 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4023_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
@@ -3138,13 +3781,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4023_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
@@ -3254,35 +3897,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4024 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4024_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat
@@ -3290,13 +3933,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4024_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__
@@ -3440,35 +4083,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMedia
 #endif 	/* ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4025 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4025_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat
@@ -3476,13 +4119,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4025_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__
@@ -3592,35 +4235,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMedia
 #endif 	/* ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4026 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4026_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
+#define DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d05e53cd-bbec-5fb7-8e4e-de86115b5e88")
+    __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameSource **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Media::Capture::Frames::IMediaFrameSource **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceVtbl;
+
+    interface __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4640 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4640 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
+#define DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0d447be3-8c91-581d-8071-17984b8b5994")
+    __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceVtbl;
+
+    interface __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4641 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4641 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -3628,13 +4609,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4026_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -3778,35 +4759,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMedia
 #endif 	/* ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4027 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4027_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -3814,13 +4795,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4027_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -3930,35 +4911,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMedia
 #endif 	/* ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4028 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4028_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo
@@ -3966,13 +4947,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4028_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__
@@ -4116,35 +5097,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMedia
 #endif 	/* ____FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4029 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4029_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo
@@ -4152,13 +5133,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4029_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__
@@ -4268,35 +5249,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMedia
 #endif 	/* ____FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4030 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4030_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource
@@ -4304,13 +5285,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4030_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__
@@ -4456,35 +5437,35 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames_
 #endif 	/* ____FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4031 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4031_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat
@@ -4492,13 +5473,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4031_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__
@@ -4650,35 +5631,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMed
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4032 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4032_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -4686,13 +5667,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4032_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -4844,35 +5825,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMed
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4033 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4033_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo
@@ -4880,13 +5861,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4033_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__
@@ -5038,35 +6019,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMed
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4034 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4034_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -5075,14 +6056,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4034_v
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -5171,35 +6152,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4035 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4035_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -5207,13 +6188,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4035_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -5343,35 +6324,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CC
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4036 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4036_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader
@@ -5380,14 +6361,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4036_v
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_INTERFACE_DEFINED__
@@ -5476,35 +6457,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCa
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4037 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4037_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader
@@ -5512,13 +6493,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4037_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_INTERFACE_DEFINED__
@@ -5648,35 +6629,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4038 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4038_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus
@@ -5685,14 +6666,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4038_v
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_INTERFACE_DEFINED__
@@ -5781,35 +6762,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCa
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4039 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4039_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus
@@ -5817,13 +6798,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4039_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_INTERFACE_DEFINED__
@@ -5953,35 +6934,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReaderStartStatus */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4040 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4040_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult
@@ -5990,14 +6971,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4040_v
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__
@@ -6086,35 +7067,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCa
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4041 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4041_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult
@@ -6122,13 +7103,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4041_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__
@@ -6258,35 +7239,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4042 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4042_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -6295,14 +7276,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4042_v
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -6391,35 +7372,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCa
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4043 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4043_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup
@@ -6427,13 +7408,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4043_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -6563,35 +7544,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4044 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4044_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus
@@ -6600,14 +7581,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4044_v
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_INTERFACE_DEFINED__
@@ -6696,35 +7677,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCa
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4045 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4045_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus
@@ -6732,13 +7713,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4045_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_INTERFACE_DEFINED__
@@ -6868,35 +7849,645 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4046 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4046 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4046_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("69993778-a48c-50cc-a6f0-5368f58a297a")
+    __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4662 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4662 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("53d56be8-f110-5226-9ce1-a8c26a572576")
+    __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4663 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4663 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("18eef24a-3332-5fee-a0f0-72ceed330645")
+    __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatusVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatusVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatusVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4664 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4664 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a242b952-76aa-54e5-a13b-a8707c1098e1")
+    __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__out enum ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus *results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatusVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus * This,
+            /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartStatus *results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatusVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatusVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4665 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4665 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0103 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs
@@ -6904,13 +8495,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4046_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
@@ -6999,35 +8590,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrame
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0104 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4047 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4047 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4047_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4666 */
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0105 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable
@@ -7035,13 +8626,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4047_v
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_INTERFACE_DEFINED__
@@ -7130,11 +8721,142 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrame
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0106 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0106 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0106_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4667 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4667 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0107 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0107 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0107_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("82b1ad4d-9887-56f4-9a9e-3ab18b02198c")
+    __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0108 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs */
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -7144,7 +8866,8 @@ enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMediaFrameReaderStartStatus
         MediaFrameReaderStartStatus_Success	= 0,
         MediaFrameReaderStartStatus_UnknownFailure	= 1,
         MediaFrameReaderStartStatus_DeviceNotAvailable	= 2,
-        MediaFrameReaderStartStatus_OutputFormatNotSupported	= 3
+        MediaFrameReaderStartStatus_OutputFormatNotSupported	= 3,
+        MediaFrameReaderStartStatus_ExclusiveControlNotAvailable	= 4
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -7158,7 +8881,9 @@ enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMediaFrameSourceGetPropertyStatus
         MediaFrameSourceGetPropertyStatus_Success	= 0,
         MediaFrameSourceGetPropertyStatus_UnknownFailure	= 1,
         MediaFrameSourceGetPropertyStatus_NotSupported	= 2,
-        MediaFrameSourceGetPropertyStatus_DeviceNotAvailable	= 3
+        MediaFrameSourceGetPropertyStatus_DeviceNotAvailable	= 3,
+        MediaFrameSourceGetPropertyStatus_MaxPropertyValueSizeTooSmall	= 4,
+        MediaFrameSourceGetPropertyStatus_MaxPropertyValueSizeRequired	= 5
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -7193,12 +8918,27 @@ enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMediaFrameSourceSetPropertyStatus
 #endif /* end if !defined(__cplusplus) */
 
 #endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CCapture_CFrames_CMultiSourceMediaFrameReaderStartStatus
+    {
+        MultiSourceMediaFrameReaderStartStatus_Success	= 0,
+        MultiSourceMediaFrameReaderStartStatus_NotSupported	= 1,
+        MultiSourceMediaFrameReaderStartStatus_InsufficientResources	= 2,
+        MultiSourceMediaFrameReaderStartStatus_DeviceNotAvailable	= 3,
+        MultiSourceMediaFrameReaderStartStatus_UnknownFailure	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IBufferMediaFrame[] = L"Windows.Media.Capture.Frames.IBufferMediaFrame";
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0108 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -7215,7 +8955,8 @@ namespace ABI {
                             MediaFrameReaderStartStatus_Success	= 0,
                             MediaFrameReaderStartStatus_UnknownFailure	= 1,
                             MediaFrameReaderStartStatus_DeviceNotAvailable	= 2,
-                            MediaFrameReaderStartStatus_OutputFormatNotSupported	= 3
+                            MediaFrameReaderStartStatus_OutputFormatNotSupported	= 3,
+                            MediaFrameReaderStartStatus_ExclusiveControlNotAvailable	= 4
                         } ;
                 } /* end namespace */
             } /* end namespace */
@@ -7240,7 +8981,9 @@ namespace ABI {
                             MediaFrameSourceGetPropertyStatus_Success	= 0,
                             MediaFrameSourceGetPropertyStatus_UnknownFailure	= 1,
                             MediaFrameSourceGetPropertyStatus_NotSupported	= 2,
-                            MediaFrameSourceGetPropertyStatus_DeviceNotAvailable	= 3
+                            MediaFrameSourceGetPropertyStatus_DeviceNotAvailable	= 3,
+                            MediaFrameSourceGetPropertyStatus_MaxPropertyValueSizeTooSmall	= 4,
+                            MediaFrameSourceGetPropertyStatus_MaxPropertyValueSizeRequired	= 5
                         } ;
                 } /* end namespace */
             } /* end namespace */
@@ -7303,10 +9046,36 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Capture {
+                namespace Frames {
+                    
+                    /* [v1_enum] */ 
+                    enum MultiSourceMediaFrameReaderStartStatus
+                        {
+                            MultiSourceMediaFrameReaderStartStatus_Success	= 0,
+                            MultiSourceMediaFrameReaderStartStatus_NotSupported	= 1,
+                            MultiSourceMediaFrameReaderStartStatus_InsufficientResources	= 2,
+                            MultiSourceMediaFrameReaderStartStatus_DeviceNotAvailable	= 3,
+                            MultiSourceMediaFrameReaderStartStatus_UnknownFailure	= 4
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0086_v0_0_s_ifspec;
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_INTERFACE_DEFINED__
@@ -7441,7 +9210,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFra
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIBufferMediaFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame_INTERFACE_DEFINED__)
@@ -7449,13 +9218,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame_INTERFACE_DEFINED__
@@ -7614,7 +9383,156 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFram
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0110 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IDepthMediaFrame2[] = L"Windows.Media.Capture.Frames.IDepthMediaFrame2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0110 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0110_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Capture::Frames::IDepthMediaFrame2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Capture {
+                    namespace Frames {
+                        
+                        MIDL_INTERFACE("6CCA473D-C4A4-4176-B0CD-33EAE3B35AA3")
+                        IDepthMediaFrame2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxReliableDepth( 
+                                /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MinReliableDepth( 
+                                /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IDepthMediaFrame2 = __uuidof(IDepthMediaFrame2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxReliableDepth )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinReliableDepth )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2 * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_get_MaxReliableDepth(This,value)	\
+    ( (This)->lpVtbl -> get_MaxReliableDepth(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_get_MinReliableDepth(This,value)	\
+    ( (This)->lpVtbl -> get_MinReliableDepth(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrame2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrameFormat_INTERFACE_DEFINED__)
@@ -7622,13 +9540,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrameFormat_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrameFormat_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrameFormat_INTERFACE_DEFINED__
@@ -7763,7 +9681,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFram
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIDepthMediaFrameFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIInfraredMediaFrame_INTERFACE_DEFINED__)
@@ -7771,13 +9689,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIInfraredMediaFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIInfraredMediaFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIInfraredMediaFrame_INTERFACE_DEFINED__
@@ -7922,7 +9840,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIInfraredMediaF
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIInfraredMediaFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameArrivedEventArgs_INTERFACE_DEFINED__)
@@ -7930,13 +9848,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameArrivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
@@ -8051,7 +9969,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameArri
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameArrivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_INTERFACE_DEFINED__)
@@ -8059,13 +9977,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_INTERFACE_DEFINED__
@@ -8230,7 +10148,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameForm
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_INTERFACE_DEFINED__)
@@ -8238,13 +10156,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_INTERFACE_DEFINED__
@@ -8411,7 +10329,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_INTERFACE_DEFINED__)
@@ -8419,13 +10337,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_INTERFACE_DEFINED__
@@ -8620,7 +10538,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameRefe
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0117 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_INTERFACE_DEFINED__)
@@ -8628,13 +10546,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_INTERFACE_DEFINED__
@@ -8835,7 +10753,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0118 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController_INTERFACE_DEFINED__)
@@ -8843,13 +10761,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController_INTERFACE_DEFINED__
@@ -9000,7 +10918,170 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0119 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMediaFrameSourceController2[] = L"Windows.Media.Capture.Frames.IMediaFrameSourceController2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0119 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0119_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Capture::Frames::IMediaFrameSourceController2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Capture {
+                    namespace Frames {
+                        
+                        MIDL_INTERFACE("EFC49FD4-FCF2-4A03-B4E4-AC9628739BEE")
+                        IMediaFrameSourceController2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE GetPropertyByExtendedIdAsync( 
+                                /* [in] */ UINT32 __extendedPropertyIdSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+                                /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *maxPropertyValueSize,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult **operation) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetPropertyByExtendedIdAsync( 
+                                /* [in] */ UINT32 __extendedPropertyIdSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+                                /* [in] */ UINT32 __propertyValueSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__propertyValueSize) BYTE *propertyValue,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus **operation) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IMediaFrameSourceController2 = __uuidof(IMediaFrameSourceController2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPropertyByExtendedIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This,
+            /* [in] */ UINT32 __extendedPropertyIdSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *maxPropertyValueSize,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetPropertyByExtendedIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2 * This,
+            /* [in] */ UINT32 __extendedPropertyIdSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+            /* [in] */ UINT32 __propertyValueSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__propertyValueSize) BYTE *propertyValue,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_GetPropertyByExtendedIdAsync(This,__extendedPropertyIdSize,extendedPropertyId,maxPropertyValueSize,operation)	\
+    ( (This)->lpVtbl -> GetPropertyByExtendedIdAsync(This,__extendedPropertyIdSize,extendedPropertyId,maxPropertyValueSize,operation) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_SetPropertyByExtendedIdAsync(This,__extendedPropertyIdSize,extendedPropertyId,__propertyValueSize,propertyValue,operation)	\
+    ( (This)->lpVtbl -> SetPropertyByExtendedIdAsync(This,__extendedPropertyIdSize,extendedPropertyId,__propertyValueSize,propertyValue,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceController2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0120 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__)
@@ -9008,13 +11089,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0120_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__
@@ -9149,7 +11230,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGetPropertyResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0121 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroup_INTERFACE_DEFINED__)
@@ -9157,13 +11238,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroup_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroup_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroup_INTERFACE_DEFINED__
@@ -9308,7 +11389,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0122 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroupStatics_INTERFACE_DEFINED__)
@@ -9316,13 +11397,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroupStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroupStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroupStatics_INTERFACE_DEFINED__
@@ -9469,7 +11550,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceGroupStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_INTERFACE_DEFINED__)
@@ -9477,13 +11558,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_INTERFACE_DEFINED__
@@ -9668,7 +11749,458 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSour
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameSourceInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0124 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMultiSourceMediaFrameArrivedEventArgs[] = L"Windows.Media.Capture.Frames.IMultiSourceMediaFrameArrivedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0124 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0124_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Capture {
+                    namespace Frames {
+                        
+                        MIDL_INTERFACE("63115E01-CF51-48FD-AAB0-6D693EB48127")
+                        IMultiSourceMediaFrameArrivedEventArgs : public IInspectable
+                        {
+                        public:
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IMultiSourceMediaFrameArrivedEventArgs = __uuidof(IMultiSourceMediaFrameArrivedEventArgs);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameArrivedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0125 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMultiSourceMediaFrameReader[] = L"Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0125 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0125_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Capture {
+                    namespace Frames {
+                        
+                        MIDL_INTERFACE("8D144402-F763-488D-98F2-B437BCF075E7")
+                        IMultiSourceMediaFrameReader : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE add_FrameArrived( 
+                                /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs *handler,
+                                /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE remove_FrameArrived( 
+                                /* [in] */ EventRegistrationToken token) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE TryAcquireLatestFrame( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference **value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE StartAsync( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus **operation) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE StopAsync( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IMultiSourceMediaFrameReader = __uuidof(IMultiSourceMediaFrameReader);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReaderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_FrameArrived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameArrivedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_FrameArrived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryAcquireLatestFrame )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *StartAsync )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReaderStartStatus **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *StopAsync )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReaderVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReaderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_add_FrameArrived(This,handler,token)	\
+    ( (This)->lpVtbl -> add_FrameArrived(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_remove_FrameArrived(This,token)	\
+    ( (This)->lpVtbl -> remove_FrameArrived(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_TryAcquireLatestFrame(This,value)	\
+    ( (This)->lpVtbl -> TryAcquireLatestFrame(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_StartAsync(This,operation)	\
+    ( (This)->lpVtbl -> StartAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_StopAsync(This,action)	\
+    ( (This)->lpVtbl -> StopAsync(This,action) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReader_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0126 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Capture_Frames_IMultiSourceMediaFrameReference[] = L"Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0126 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0126_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Capture {
+                    namespace Frames {
+                        
+                        MIDL_INTERFACE("21964B1A-7FE2-44D6-92E5-298E6D2810E9")
+                        IMultiSourceMediaFrameReference : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE TryGetFrameReferenceBySourceId( 
+                                /* [in] */ __RPC__in HSTRING sourceId,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Capture::Frames::IMediaFrameReference **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IMultiSourceMediaFrameReference = __uuidof(IMultiSourceMediaFrameReference);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReferenceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetFrameReferenceBySourceId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference * This,
+            /* [in] */ __RPC__in HSTRING sourceId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMediaFrameReference **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReferenceVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReferenceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId(This,sourceId,value)	\
+    ( (This)->lpVtbl -> TryGetFrameReferenceBySourceId(This,sourceId,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIMultiSourceMediaFrameReference_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_INTERFACE_DEFINED__)
@@ -9676,13 +12208,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_INTERFACE_DEFINED__
@@ -9877,7 +12409,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFram
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0128 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat_INTERFACE_DEFINED__)
@@ -9885,13 +12417,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat_INTERFACE_DEFINED__
@@ -10046,7 +12578,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFram
 #endif 	/* ____x_ABI_CWindows_CMedia_CCapture_CFrames_CIVideoMediaFrameFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0129 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_BufferMediaFrame_DEFINED
@@ -10101,6 +12633,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_Capture_Frames_MediaFrameSourceInfo_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_MediaFrameSourceInfo[] = L"Windows.Media.Capture.Frames.MediaFrameSourceInfo";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_MultiSourceMediaFrameArrivedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Media_Capture_Frames_MultiSourceMediaFrameArrivedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_MultiSourceMediaFrameArrivedEventArgs[] = L"Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_DEFINED
+#define RUNTIMECLASS_Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_MultiSourceMediaFrameReader[] = L"Windows.Media.Capture.Frames.MultiSourceMediaFrameReader";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_DEFINED
+#define RUNTIMECLASS_Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_MultiSourceMediaFrameReference[] = L"Windows.Media.Capture.Frames.MultiSourceMediaFrameReference";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_Capture_Frames_VideoMediaFrame_DEFINED
 #define RUNTIMECLASS_Windows_Media_Capture_Frames_VideoMediaFrame_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Capture_Frames_VideoMediaFrame[] = L"Windows.Media.Capture.Frames.VideoMediaFrame";
@@ -10111,13 +12655,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Eframes_0000_0129_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

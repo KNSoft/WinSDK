@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -60,9 +60,11 @@ namespace ABI {
 
 
 /* header files for imported files */
-#include "oaidl.h"
-#include "Inspectable.h"
-#include "windows.ui.core.h"
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "Windows.Foundation.h"
+#include "Windows.UI.Core.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -72,11 +74,47 @@ extern "C"{
 /* interface __MIDL_itf_windows2Eui2Ecore2Ecorewindowfactory_0000_0000 */
 /* [local] */ 
 
-#pragma warning(push)
-#pragma warning(disable:4668) 
-#pragma warning(disable:4001) 
-#pragma once
-#pragma warning(pop)
+#if defined(__cplusplus)
+}
+#endif // defined(__cplusplus)
+#include <Windows.Foundation.h>
+#if defined(__cplusplus)
+extern "C" {
+#endif // defined(__cplusplus)
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Core {
+class HostedCoreWindowFactory;
+} /*Core*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Core {
+class ImmersiveCoreWindowFactory;
+} /*Core*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Core {
+class UAPCoreWindowFactory;
+} /*Core*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 #if !defined(____x_ABI_CWindows_CUI_CCore_CICoreWindowFactory_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Core_ICoreWindowFactory[] = L"Windows.UI.Core.ICoreWindowFactory";
 #endif /* !defined(____x_ABI_CWindows_CUI_CCore_CICoreWindowFactory_INTERFACE_DEFINED__) */
@@ -84,6 +122,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 /* interface __MIDL_itf_windows2Eui2Ecore2Ecorewindowfactory_0000_0000 */
 /* [local] */ 
+
 
 
 
@@ -226,42 +265,22 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CCore_CICoreWindowFactory;
 /* interface __MIDL_itf_windows2Eui2Ecore2Ecorewindowfactory_0000_0001 */
 /* [local] */ 
 
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Core {
-class ImmersiveCoreWindowFactory;
-} /*Core*/
-} /*UI*/
-} /*Windows*/
-}
+#ifndef RUNTIMECLASS_Windows_UI_Core_HostedCoreWindowFactory_DEFINED
+#define RUNTIMECLASS_Windows_UI_Core_HostedCoreWindowFactory_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Core_HostedCoreWindowFactory[] = L"Windows.UI.Core.HostedCoreWindowFactory";
 #endif
-
 #ifndef RUNTIMECLASS_Windows_UI_Core_ImmersiveCoreWindowFactory_DEFINED
 #define RUNTIMECLASS_Windows_UI_Core_ImmersiveCoreWindowFactory_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Core_ImmersiveCoreWindowFactory[] = L"Windows.UI.Core.ImmersiveCoreWindowFactory";
 #endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Core {
-class HostedCoreWindowFactory;
-} /*Core*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifndef RUNTIMECLASS_Windows_UI_Core_HostedCoreWindowFactory_DEFINED
-#define RUNTIMECLASS_Windows_UI_Core_HostedCoreWindowFactory_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Core_HostedCoreWindowFactory[] = L"Windows.UI.Core.HostedCoreWindowFactory";
+#ifndef RUNTIMECLASS_Windows_UI_Core_UAPCoreWindowFactory_DEFINED
+#define RUNTIMECLASS_Windows_UI_Core_UAPCoreWindowFactory_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Core_UAPCoreWindowFactory[] = L"Windows.UI.Core.UAPCoreWindowFactory";
 #endif
 
 
 /* interface __MIDL_itf_windows2Eui2Ecore2Ecorewindowfactory_0000_0001 */
 /* [local] */ 
-
 
 
 

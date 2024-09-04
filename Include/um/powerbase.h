@@ -27,6 +27,7 @@
 #endif
 
 /* APISET_NAME: api-ms-win-power-base-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

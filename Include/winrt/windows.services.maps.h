@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -38,6 +38,34 @@
 #endif
 
 /* Forward Declarations */ 
+
+#ifndef ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint;
+
+#endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint;
+
+#endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning;
+
+#endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning;
+
+#endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__ */
+
 
 #ifndef ____FIIterator_1_Windows__CServices__CMaps__CMapLocation_FWD_DEFINED__
 #define ____FIIterator_1_Windows__CServices__CMaps__CMapLocation_FWD_DEFINED__
@@ -95,6 +123,13 @@ typedef interface __FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver __
 #endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver_FWD_DEFINED__ */
 
 
+#ifndef ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning;
+
+#endif 	/* ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__ */
+
+
 #ifndef ____FIVectorView_1_Windows__CServices__CMaps__CMapLocation_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CServices__CMaps__CMapLocation_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CServices__CMaps__CMapLocation __FIVectorView_1_Windows__CServices__CMaps__CMapLocation;
@@ -149,6 +184,66 @@ typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps
 typedef interface __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult;
 
 #endif 	/* ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IEnhancedWaypoint;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IEnhancedWaypointFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IManeuverWarning;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapAddress_FWD_DEFINED__
@@ -331,6 +426,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRoute2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 __x_ABI_CWindows_CServices_CMaps_CIMapRoute3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IMapRoute3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions;
@@ -431,6 +546,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IMapRouteFinderStatics3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg;
@@ -449,6 +584,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IMapRouteLeg2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver_FWD_DEFINED__
@@ -489,6 +644,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IMapRouteManeuver3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics_FWD_DEFINED__
@@ -551,6 +726,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                interface IMapServiceStatics4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -578,6 +773,237 @@ namespace ABI {
 namespace Windows {
 namespace Services {
 namespace Maps {
+class EnhancedWaypoint;
+} /*Maps*/
+} /*Services*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Services {
+namespace Maps {
+interface IEnhancedWaypoint;
+} /*Maps*/
+} /*Services*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0000 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0000_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_USE
+#define DEF___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("164a4c21-d0a0-5d68-80e2-44889dcea6d5"))
+IIterator<ABI::Windows::Services::Maps::EnhancedWaypoint*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Maps::EnhancedWaypoint*, ABI::Windows::Services::Maps::IEnhancedWaypoint*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Services.Maps.EnhancedWaypoint>"; }
+};
+typedef IIterator<ABI::Windows::Services::Maps::EnhancedWaypoint*> __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_t;
+#define ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_USE */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_USE
+#define DEF___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d0545dba-9b05-5e37-bfc0-3da2b51d135b"))
+IIterable<ABI::Windows::Services::Maps::EnhancedWaypoint*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Maps::EnhancedWaypoint*, ABI::Windows::Services::Maps::IEnhancedWaypoint*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Services.Maps.EnhancedWaypoint>"; }
+};
+typedef IIterable<ABI::Windows::Services::Maps::EnhancedWaypoint*> __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_t;
+#define ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_FWD_DEFINED__
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Services {
+namespace Maps {
+class ManeuverWarning;
+} /*Maps*/
+} /*Services*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Services {
+namespace Maps {
+interface IManeuverWarning;
+} /*Maps*/
+} /*Services*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0002 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_USE
+#define DEF___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("df74a2a3-1eeb-5ac2-bc5f-9f2daffce017"))
+IIterator<ABI::Windows::Services::Maps::ManeuverWarning*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Maps::ManeuverWarning*, ABI::Windows::Services::Maps::IManeuverWarning*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Services.Maps.ManeuverWarning>"; }
+};
+typedef IIterator<ABI::Windows::Services::Maps::ManeuverWarning*> __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_t;
+#define ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_USE */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0003 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0004 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_USE
+#define DEF___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("ce0a7c13-d3c4-55af-a90f-c53f7bd93373"))
+IIterable<ABI::Windows::Services::Maps::ManeuverWarning*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Maps::ManeuverWarning*, ABI::Windows::Services::Maps::IManeuverWarning*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Services.Maps.ManeuverWarning>"; }
+};
+typedef IIterable<ABI::Windows::Services::Maps::ManeuverWarning*> __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_t;
+#define ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Services {
+namespace Maps {
 class MapLocation;
 } /*Maps*/
 } /*Services*/
@@ -598,29 +1024,30 @@ interface IMapLocation;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0000 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0004 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0374 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0004_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0374 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0374_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0374_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0001 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapLocation_USE
@@ -644,29 +1071,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapLocation_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0001 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0375 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0375 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0375_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0375_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapLocation_USE
@@ -713,30 +1140,30 @@ interface IMapRoute;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0002 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0376 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0376 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0376_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0376_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapRoute_USE
@@ -760,29 +1187,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapRoute_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0003 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0377 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0377 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0377_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0377_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapRoute_USE
@@ -829,30 +1256,30 @@ interface IMapRouteLeg;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0004 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0008 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0378 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0378 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0378_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0378_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg_USE
@@ -876,29 +1303,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0005 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0379 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0379 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0379_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0379_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg_USE
@@ -945,30 +1372,30 @@ interface IMapRouteManeuver;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0006 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0010 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0380 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0380 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0380_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0380_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver_USE
@@ -992,29 +1419,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0007 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0381_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver_USE
@@ -1038,29 +1465,75 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0008 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0382_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0013 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_USE
+#define DEF___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("44c11b20-c16d-56e1-a0a3-6eb44f2492ea"))
+IVectorView<ABI::Windows::Services::Maps::ManeuverWarning*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Services::Maps::ManeuverWarning*, ABI::Windows::Services::Maps::IManeuverWarning*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Services.Maps.ManeuverWarning>"; }
+};
+typedef IVectorView<ABI::Windows::Services::Maps::ManeuverWarning*> __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_t;
+#define ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_USE */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0013 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0013_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapLocation_USE
@@ -1084,29 +1557,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapLocation_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0009 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0383_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRoute_USE
@@ -1130,29 +1603,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRoute_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0010 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0384_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg_USE
@@ -1176,29 +1649,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0011 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0016 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0385_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteManeuver_USE
@@ -1245,30 +1718,30 @@ interface IMapLocationFinderResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0012 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0017 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0386_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult_USE
@@ -1292,29 +1765,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0013 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0387_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult_USE
@@ -1361,30 +1834,30 @@ interface IMapRouteFinderResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0014 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0019 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0388_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult_USE
@@ -1408,29 +1881,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0015 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0389_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult_USE
@@ -1454,29 +1927,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0016 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0390_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double_USE
@@ -1523,30 +1996,30 @@ interface IGeopoint;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0017 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0022 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0391_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_USE
@@ -1570,29 +2043,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0018 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0392_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint_USE
@@ -1650,6 +2123,26 @@ class Geopath;
 
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CServices_CMaps_CManeuverWarningKind __x_ABI_CWindows_CServices_CMaps_CManeuverWarningKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CServices_CMaps_CManeuverWarningSeverity __x_ABI_CWindows_CServices_CMaps_CManeuverWarningSeverity;
+
+
+#endif /* end if !defined(__cplusplus) */
+
 
 #endif
 #if !defined(__cplusplus)
@@ -1722,6 +2215,42 @@ typedef enum __x_ABI_CWindows_CServices_CMaps_CMapRouteRestrictions __x_ABI_CWin
 
 
 #endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CServices_CMaps_CMapServiceDataUsagePreference __x_ABI_CWindows_CServices_CMaps_CMapServiceDataUsagePreference;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CServices_CMaps_CTrafficCongestion __x_ABI_CWindows_CServices_CMaps_CTrafficCongestion;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CServices_CMaps_CWaypointKind __x_ABI_CWindows_CServices_CMaps_CWaypointKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
+
+
+
+
+
 
 
 
@@ -1760,7 +2289,7 @@ class MapRouteDrivingOptions;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0019 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0024 */
 /* [local] */ 
 
 
@@ -1775,6 +2304,42 @@ namespace ABI {
             
             typedef struct TimeSpan TimeSpan;
             
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                typedef enum ManeuverWarningKind ManeuverWarningKind;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                typedef enum ManeuverWarningSeverity ManeuverWarningSeverity;
+                
+            } /* end namespace */
         } /* end namespace */
     } /* end namespace */
 } /* end namespace */
@@ -1908,6 +2473,59 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                typedef enum MapServiceDataUsagePreference MapServiceDataUsagePreference;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                typedef enum TrafficCongestion TrafficCongestion;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                typedef enum WaypointKind WaypointKind;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -1924,23 +2542,706 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0019_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint
+#define DEF___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0025 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0025_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("164a4c21-d0a0-5d68-80e2-44889dcea6d5")
+    __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Services::Maps::IEnhancedWaypoint **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Services::Maps::IEnhancedWaypoint **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypointVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypointVtbl;
+
+    interface __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypointVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0026 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0026 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0026_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0027 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint
+#define DEF___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0027 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0027_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d0545dba-9b05-5e37-bfc0-3da2b51d135b")
+    __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypointVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CServices__CMaps__CEnhancedWaypoint **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypointVtbl;
+
+    interface __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypointVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0028 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0028 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning
+#define DEF___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0029 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0029_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("df74a2a3-1eeb-5ac2-bc5f-9f2daffce017")
+    __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Services::Maps::IManeuverWarning **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Services::Maps::IManeuverWarning **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CServices__CMaps__CManeuverWarningVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CServices__CMaps__CManeuverWarningVtbl;
+
+    interface __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CServices__CMaps__CManeuverWarningVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0030 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CManeuverWarning */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0030 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning
+#define DEF___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0031_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("ce0a7c13-d3c4-55af-a90f-c53f7bd93373")
+    __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CServices__CMaps__CManeuverWarningVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CServices__CMaps__CManeuverWarning **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CServices__CMaps__CManeuverWarningVtbl;
+
+    interface __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CServices__CMaps__CManeuverWarningVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0032 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CManeuverWarning */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0032 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0409 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0409 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0409_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0409_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapLocation
@@ -1948,13 +3249,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0393_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0020 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__
@@ -2098,35 +3399,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CMapLocation;
 #endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0021 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapLocation */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0021 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0410 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0410 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0410_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0410_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapLocation
@@ -2134,13 +3435,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0394_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0022 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__
@@ -2250,35 +3551,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CMapLocation;
 #endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0023 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CMapLocation */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0023 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0411 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0411 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0411_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0411_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapRoute
@@ -2286,13 +3587,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0395_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0024 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__
@@ -2436,35 +3737,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CMapRoute;
 #endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0025 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapRoute */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0025 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0412 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0412 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0412_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0412_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapRoute
@@ -2472,13 +3773,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0396_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0026 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__
@@ -2588,35 +3889,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CMapRoute;
 #endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0027 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CMapRoute */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0027 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0413 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0413 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0413_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0413_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg
@@ -2624,13 +3925,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0397_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0028 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__
@@ -2774,35 +4075,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg;
 #endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0029 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteLeg */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0029 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0414 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0414 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0414_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0414_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg
@@ -2810,13 +4111,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0398_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0030 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__
@@ -2926,35 +4227,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg;
 #endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0031 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteLeg */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0031 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0415 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0415 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0415_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0415_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver
@@ -2962,13 +4263,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0399_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0032 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__
@@ -3112,35 +4413,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuv
 #endif 	/* ____FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0033 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CMapRouteManeuver */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0033 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0416 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0416 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0416_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0416_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver
@@ -3148,13 +4449,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0400_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0034 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__
@@ -3264,35 +4565,229 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuv
 #endif 	/* ____FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0035 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CMapRouteManeuver */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0035 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0417 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0417 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0417_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0417_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0049 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning
+#define DEF___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0049 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0049_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("44c11b20-c16d-56e1-a0a3-6eb44f2492ea")
+    __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Services::Maps::IManeuverWarning **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Services::Maps::IManeuverWarning *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Services::Maps::IManeuverWarning **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarningVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarningVtbl;
+
+    interface __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarningVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0050 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0050 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0050_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0418 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0418 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0418_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0418_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapLocation
@@ -3300,13 +4795,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0401_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0036 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__
@@ -3458,35 +4953,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CMapLocation;
 #endif 	/* ____FIVectorView_1_Windows__CServices__CMaps__CMapLocation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0037 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0052 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapLocation */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0037 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0419 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0419 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0419_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0419_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRoute
@@ -3494,13 +4989,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0402_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0038 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__
@@ -3652,35 +5147,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CMapRoute;
 #endif 	/* ____FIVectorView_1_Windows__CServices__CMaps__CMapRoute_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0039 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0054 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRoute */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0039 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0420 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0420 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0420_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0420_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg
@@ -3688,13 +5183,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0403_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0040 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__
@@ -3846,35 +5341,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg;
 #endif 	/* ____FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0041 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteLeg */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0041 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0421 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0421 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0421_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0421_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteManeuver
@@ -3882,13 +5377,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0404_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0042 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__
@@ -4040,35 +5535,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CMapRouteMane
 #endif 	/* ____FIVectorView_1_Windows__CServices__CMaps__CMapRouteManeuver_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0043 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CMapRouteManeuver */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0043 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0422 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0422 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0422_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0422_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult
@@ -4077,14 +5572,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0405_v0_0_s_if
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0044 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0059 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult_INTERFACE_DEFINED__
@@ -4173,35 +5668,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CServices__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0045 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapLocationFinderResult */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0045 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0423 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0423 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0423_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0423_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult
@@ -4209,13 +5704,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0406_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0046 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult_INTERFACE_DEFINED__
@@ -4345,35 +5840,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocat
 #endif 	/* ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0047 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapLocationFinderResult */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0047 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0424 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0424 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0424_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0424_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult
@@ -4382,14 +5877,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0407_v0_0_s_if
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0048 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0063 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult_INTERFACE_DEFINED__
@@ -4478,35 +5973,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CServices__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0049 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CServices__CMaps__CMapRouteFinderResult */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0049 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0425 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0425 */
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0425_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0425_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult
@@ -4514,13 +6009,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Eidl_0000_0408_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0050 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult_INTERFACE_DEFINED__
@@ -4650,11 +6145,72 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CServices__CMaps__CMapRoute
 #endif 	/* ____FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0051 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CServices_CMaps_CManeuverWarningKind
+    {
+        ManeuverWarningKind_None	= 0,
+        ManeuverWarningKind_Accident	= 1,
+        ManeuverWarningKind_AdministrativeDivisionChange	= 2,
+        ManeuverWarningKind_Alert	= 3,
+        ManeuverWarningKind_BlockedRoad	= 4,
+        ManeuverWarningKind_CheckTimetable	= 5,
+        ManeuverWarningKind_Congestion	= 6,
+        ManeuverWarningKind_Construction	= 7,
+        ManeuverWarningKind_CountryChange	= 8,
+        ManeuverWarningKind_DisabledVehicle	= 9,
+        ManeuverWarningKind_GateAccess	= 10,
+        ManeuverWarningKind_GetOffTransit	= 11,
+        ManeuverWarningKind_GetOnTransit	= 12,
+        ManeuverWarningKind_IllegalUTurn	= 13,
+        ManeuverWarningKind_MassTransit	= 14,
+        ManeuverWarningKind_Miscellaneous	= 15,
+        ManeuverWarningKind_NoIncident	= 16,
+        ManeuverWarningKind_Other	= 17,
+        ManeuverWarningKind_OtherNews	= 18,
+        ManeuverWarningKind_OtherTrafficIncidents	= 19,
+        ManeuverWarningKind_PlannedEvent	= 20,
+        ManeuverWarningKind_PrivateRoad	= 21,
+        ManeuverWarningKind_RestrictedTurn	= 22,
+        ManeuverWarningKind_RoadClosures	= 23,
+        ManeuverWarningKind_RoadHazard	= 24,
+        ManeuverWarningKind_ScheduledConstruction	= 25,
+        ManeuverWarningKind_SeasonalClosures	= 26,
+        ManeuverWarningKind_Tollbooth	= 27,
+        ManeuverWarningKind_TollRoad	= 28,
+        ManeuverWarningKind_TollZoneEnter	= 29,
+        ManeuverWarningKind_TollZoneExit	= 30,
+        ManeuverWarningKind_TrafficFlow	= 31,
+        ManeuverWarningKind_TransitLineChange	= 32,
+        ManeuverWarningKind_UnpavedRoad	= 33,
+        ManeuverWarningKind_UnscheduledConstruction	= 34,
+        ManeuverWarningKind_Weather	= 35
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CServices_CMaps_CManeuverWarningSeverity
+    {
+        ManeuverWarningSeverity_None	= 0,
+        ManeuverWarningSeverity_LowImpact	= 1,
+        ManeuverWarningSeverity_Minor	= 2,
+        ManeuverWarningSeverity_Moderate	= 3,
+        ManeuverWarningSeverity_Serious	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -4804,13 +6360,131 @@ DEFINE_ENUM_FLAG_OPERATORS(MapRouteRestrictions)
 } /*Windows*/
 }
 #endif
-#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapAddress[] = L"Windows.Services.Maps.IMapAddress";
-#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__) */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CServices_CMaps_CMapServiceDataUsagePreference
+    {
+        MapServiceDataUsagePreference_Default	= 0,
+        MapServiceDataUsagePreference_OfflineMapDataOnly	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CServices_CMaps_CTrafficCongestion
+    {
+        TrafficCongestion_Unknown	= 0,
+        TrafficCongestion_Light	= 1,
+        TrafficCongestion_Mild	= 2,
+        TrafficCongestion_Medium	= 3,
+        TrafficCongestion_Heavy	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CServices_CMaps_CWaypointKind
+    {
+        WaypointKind_Stop	= 0,
+        WaypointKind_Via	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IEnhancedWaypoint[] = L"Windows.Services.Maps.IEnhancedWaypoint";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0051 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0066 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                /* [v1_enum] */ 
+                enum ManeuverWarningKind
+                    {
+                        ManeuverWarningKind_None	= 0,
+                        ManeuverWarningKind_Accident	= 1,
+                        ManeuverWarningKind_AdministrativeDivisionChange	= 2,
+                        ManeuverWarningKind_Alert	= 3,
+                        ManeuverWarningKind_BlockedRoad	= 4,
+                        ManeuverWarningKind_CheckTimetable	= 5,
+                        ManeuverWarningKind_Congestion	= 6,
+                        ManeuverWarningKind_Construction	= 7,
+                        ManeuverWarningKind_CountryChange	= 8,
+                        ManeuverWarningKind_DisabledVehicle	= 9,
+                        ManeuverWarningKind_GateAccess	= 10,
+                        ManeuverWarningKind_GetOffTransit	= 11,
+                        ManeuverWarningKind_GetOnTransit	= 12,
+                        ManeuverWarningKind_IllegalUTurn	= 13,
+                        ManeuverWarningKind_MassTransit	= 14,
+                        ManeuverWarningKind_Miscellaneous	= 15,
+                        ManeuverWarningKind_NoIncident	= 16,
+                        ManeuverWarningKind_Other	= 17,
+                        ManeuverWarningKind_OtherNews	= 18,
+                        ManeuverWarningKind_OtherTrafficIncidents	= 19,
+                        ManeuverWarningKind_PlannedEvent	= 20,
+                        ManeuverWarningKind_PrivateRoad	= 21,
+                        ManeuverWarningKind_RestrictedTurn	= 22,
+                        ManeuverWarningKind_RoadClosures	= 23,
+                        ManeuverWarningKind_RoadHazard	= 24,
+                        ManeuverWarningKind_ScheduledConstruction	= 25,
+                        ManeuverWarningKind_SeasonalClosures	= 26,
+                        ManeuverWarningKind_Tollbooth	= 27,
+                        ManeuverWarningKind_TollRoad	= 28,
+                        ManeuverWarningKind_TollZoneEnter	= 29,
+                        ManeuverWarningKind_TollZoneExit	= 30,
+                        ManeuverWarningKind_TrafficFlow	= 31,
+                        ManeuverWarningKind_TransitLineChange	= 32,
+                        ManeuverWarningKind_UnpavedRoad	= 33,
+                        ManeuverWarningKind_UnscheduledConstruction	= 34,
+                        ManeuverWarningKind_Weather	= 35
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                /* [v1_enum] */ 
+                enum ManeuverWarningSeverity
+                    {
+                        ManeuverWarningSeverity_None	= 0,
+                        ManeuverWarningSeverity_LowImpact	= 1,
+                        ManeuverWarningSeverity_Minor	= 2,
+                        ManeuverWarningSeverity_Moderate	= 3,
+                        ManeuverWarningSeverity_Serious	= 4
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -5002,10 +6676,511 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                /* [v1_enum] */ 
+                enum MapServiceDataUsagePreference
+                    {
+                        MapServiceDataUsagePreference_Default	= 0,
+                        MapServiceDataUsagePreference_OfflineMapDataOnly	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                /* [v1_enum] */ 
+                enum TrafficCongestion
+                    {
+                        TrafficCongestion_Unknown	= 0,
+                        TrafficCongestion_Light	= 1,
+                        TrafficCongestion_Mild	= 2,
+                        TrafficCongestion_Medium	= 3,
+                        TrafficCongestion_Heavy	= 4
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Maps {
+                
+                /* [v1_enum] */ 
+                enum WaypointKind
+                    {
+                        WaypointKind_Stop	= 0,
+                        WaypointKind_Via	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0051_v0_0_s_ifspec;
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0066_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IEnhancedWaypoint */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("ED268C74-5913-11E6-8B77-86F30CA893D3")
+                    IEnhancedWaypoint : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Point( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Kind( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Services::Maps::WaypointKind *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IEnhancedWaypoint = __uuidof(IEnhancedWaypoint);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Point )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Kind )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CServices_CMaps_CWaypointKind *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointVtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_get_Point(This,value)	\
+    ( (This)->lpVtbl -> get_Point(This,value) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_get_Kind(This,value)	\
+    ( (This)->lpVtbl -> get_Kind(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0067 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IEnhancedWaypointFactory[] = L"Windows.Services.Maps.IEnhancedWaypointFactory";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0067 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0067_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IEnhancedWaypointFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("AF868477-A2AA-46DD-B645-23B31B8AA6C7")
+                    IEnhancedWaypointFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Create( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint *point,
+                            /* [in] */ ABI::Windows::Services::Maps::WaypointKind kind,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Services::Maps::IEnhancedWaypoint **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IEnhancedWaypointFactory = __uuidof(IEnhancedWaypointFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint *point,
+            /* [in] */ __x_ABI_CWindows_CServices_CMaps_CWaypointKind kind,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypoint **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactoryVtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_Create(This,point,kind,value)	\
+    ( (This)->lpVtbl -> Create(This,point,kind,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIEnhancedWaypointFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0068 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IManeuverWarning[] = L"Windows.Services.Maps.IManeuverWarning";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0068 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0068_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IManeuverWarning */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIManeuverWarning;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("C1A36D8A-2630-4378-9E4A-6E44253DCEBA")
+                    IManeuverWarning : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Kind( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Services::Maps::ManeuverWarningKind *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Severity( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Services::Maps::ManeuverWarningSeverity *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IManeuverWarning = __uuidof(IManeuverWarning);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIManeuverWarningVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Kind )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CServices_CMaps_CManeuverWarningKind *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Severity )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CServices_CMaps_CManeuverWarningSeverity *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIManeuverWarningVtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIManeuverWarningVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_get_Kind(This,value)	\
+    ( (This)->lpVtbl -> get_Kind(This,value) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_get_Severity(This,value)	\
+    ( (This)->lpVtbl -> get_Severity(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIManeuverWarning_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0069 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapAddress[] = L"Windows.Services.Maps.IMapAddress";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0069 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__
@@ -5268,7 +7443,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapAddress;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0052 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapAddress2_INTERFACE_DEFINED__)
@@ -5276,13 +7451,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapAddress2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0052 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapAddress2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapAddress2_INTERFACE_DEFINED__
@@ -5405,7 +7580,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapAddress2;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapAddress2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0053 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocation_INTERFACE_DEFINED__)
@@ -5413,13 +7588,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0053 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapLocation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapLocation_INTERFACE_DEFINED__
@@ -5572,7 +7747,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapLocation;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapLocation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0054 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderResult_INTERFACE_DEFINED__)
@@ -5580,13 +7755,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0054 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderResult_INTERFACE_DEFINED__
@@ -5719,7 +7894,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderResul
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0055 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics_INTERFACE_DEFINED__)
@@ -5727,13 +7902,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0055 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics_INTERFACE_DEFINED__
@@ -5888,7 +8063,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStati
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0056 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics2_INTERFACE_DEFINED__)
@@ -5896,13 +8071,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0056 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics2_INTERFACE_DEFINED__
@@ -6029,7 +8204,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStati
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapLocationFinderStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0057 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapManagerStatics_INTERFACE_DEFINED__)
@@ -6037,13 +8212,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0057 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapManagerStatics_INTERFACE_DEFINED__
@@ -6172,7 +8347,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapManagerStatics;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0058 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRoute_INTERFACE_DEFINED__)
@@ -6180,13 +8355,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRoute_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0058 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRoute_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRoute_INTERFACE_DEFINED__
@@ -6359,7 +8534,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRoute;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRoute_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0059 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRoute2_INTERFACE_DEFINED__)
@@ -6367,13 +8542,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRoute2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0059 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRoute2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRoute2_INTERFACE_DEFINED__
@@ -6506,7 +8681,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRoute2;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRoute2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0060 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0078 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapRoute3[] = L"Windows.Services.Maps.IMapRoute3";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0078 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0078_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IMapRoute3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRoute3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("858D1EAE-F2AD-429F-BB37-CD21094FFC92")
+                    IMapRoute3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DurationWithoutTraffic( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TrafficCongestion( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Services::Maps::TrafficCongestion *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMapRoute3 = __uuidof(IMapRoute3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIMapRoute3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DurationWithoutTraffic )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TrafficCongestion )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRoute3 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CServices_CMaps_CTrafficCongestion *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIMapRoute3Vtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIMapRoute3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIMapRoute3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_get_DurationWithoutTraffic(This,value)	\
+    ( (This)->lpVtbl -> get_DurationWithoutTraffic(This,value) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRoute3_get_TrafficCongestion(This,value)	\
+    ( (This)->lpVtbl -> get_TrafficCongestion(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRoute3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_INTERFACE_DEFINED__)
@@ -6514,13 +8836,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0060 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_INTERFACE_DEFINED__
@@ -6713,7 +9035,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0061 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_INTERFACE_DEFINED__)
@@ -6721,13 +9043,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0061 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_INTERFACE_DEFINED__
@@ -6860,7 +9182,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0062 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult2_INTERFACE_DEFINED__)
@@ -6868,13 +9190,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0062 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult2_INTERFACE_DEFINED__
@@ -6997,7 +9319,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult2;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderResult2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0063 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics_INTERFACE_DEFINED__)
@@ -7005,13 +9327,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0063 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics_INTERFACE_DEFINED__
@@ -7278,7 +9600,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0064 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2_INTERFACE_DEFINED__)
@@ -7286,13 +9608,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0064 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2_INTERFACE_DEFINED__
@@ -7421,7 +9743,160 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0065 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0084 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapRouteFinderStatics3[] = L"Windows.Services.Maps.IMapRouteFinderStatics3";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0084 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0084_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IMapRouteFinderStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("F6098134-5913-11E6-8B77-86F30CA893D3")
+                    IMapRouteFinderStatics3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDrivingRouteFromEnhancedWaypointsAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint *waypoints,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint *waypoints,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Services::Maps::IMapRouteDrivingOptions *options,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMapRouteFinderStatics3 = __uuidof(IMapRouteFinderStatics3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDrivingRouteFromEnhancedWaypointsAsync )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint *waypoints,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CServices__CMaps__CEnhancedWaypoint *waypoints,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CServices_CMaps_CIMapRouteDrivingOptions *options,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CServices__CMaps__CMapRouteFinderResult **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_GetDrivingRouteFromEnhancedWaypointsAsync(This,waypoints,result)	\
+    ( (This)->lpVtbl -> GetDrivingRouteFromEnhancedWaypointsAsync(This,waypoints,result) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(This,waypoints,options,result)	\
+    ( (This)->lpVtbl -> GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(This,waypoints,options,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteFinderStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_INTERFACE_DEFINED__)
@@ -7429,13 +9904,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0065 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_INTERFACE_DEFINED__
@@ -7598,7 +10073,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0066 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0086 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapRouteLeg2[] = L"Windows.Services.Maps.IMapRouteLeg2";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0086 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0086_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IMapRouteLeg2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("02E2062D-C9C6-45B8-8E54-1A10B57A17E8")
+                    IMapRouteLeg2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DurationWithoutTraffic( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TrafficCongestion( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Services::Maps::TrafficCongestion *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMapRouteLeg2 = __uuidof(IMapRouteLeg2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DurationWithoutTraffic )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TrafficCongestion )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CServices_CMaps_CTrafficCongestion *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2Vtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_get_DurationWithoutTraffic(This,value)	\
+    ( (This)->lpVtbl -> get_DurationWithoutTraffic(This,value) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_get_TrafficCongestion(This,value)	\
+    ( (This)->lpVtbl -> get_TrafficCongestion(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteLeg2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver_INTERFACE_DEFINED__)
@@ -7606,13 +10228,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0066 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver_INTERFACE_DEFINED__
@@ -7785,7 +10407,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0067 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2_INTERFACE_DEFINED__)
@@ -7793,13 +10415,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0067 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2_INTERFACE_DEFINED__
@@ -7942,7 +10564,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0068 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0089 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapRouteManeuver3[] = L"Windows.Services.Maps.IMapRouteManeuver3";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0089 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0089_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IMapRouteManeuver3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("A6A138DF-0483-4166-85BE-B99336C11875")
+                    IMapRouteManeuver3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Warnings( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMapRouteManeuver3 = __uuidof(IMapRouteManeuver3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Warnings )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CServices__CMaps__CManeuverWarning **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3Vtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_get_Warnings(This,value)	\
+    ( (This)->lpVtbl -> get_Warnings(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapRouteManeuver3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics_INTERFACE_DEFINED__)
@@ -7950,13 +10709,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0068 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics_INTERFACE_DEFINED__
@@ -8089,7 +10848,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0069 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics2_INTERFACE_DEFINED__)
@@ -8097,13 +10856,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0069 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics2_INTERFACE_DEFINED__
@@ -8226,7 +10985,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics2;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0070 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3_INTERFACE_DEFINED__)
@@ -8234,13 +10993,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0070 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3_INTERFACE_DEFINED__
@@ -8363,9 +11122,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3;
 #endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0071 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0093 */
 /* [local] */ 
 
+#if !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Maps_IMapServiceStatics4[] = L"Windows.Services.Maps.IMapServiceStatics4";
+#endif /* !defined(____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0093 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0093_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Services::Maps::IMapServiceStatics4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Services {
+                namespace Maps {
+                    
+                    MIDL_INTERFACE("088A2862-6ABC-420E-945F-4CFD89C67356")
+                    IMapServiceStatics4 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DataUsagePreference( 
+                            /* [in] */ ABI::Windows::Services::Maps::MapServiceDataUsagePreference value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DataUsagePreference( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Services::Maps::MapServiceDataUsagePreference *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMapServiceStatics4 = __uuidof(IMapServiceStatics4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DataUsagePreference )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This,
+            /* [in] */ __x_ABI_CWindows_CServices_CMaps_CMapServiceDataUsagePreference value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DataUsagePreference )( 
+            __RPC__in __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CServices_CMaps_CMapServiceDataUsagePreference *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4Vtbl;
+
+    interface __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_put_DataUsagePreference(This,value)	\
+    ( (This)->lpVtbl -> put_DataUsagePreference(This,value) ) 
+
+#define __x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_get_DataUsagePreference(This,value)	\
+    ( (This)->lpVtbl -> get_DataUsagePreference(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CServices_CMaps_CIMapServiceStatics4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0094 */
+/* [local] */ 
+
+#ifndef RUNTIMECLASS_Windows_Services_Maps_EnhancedWaypoint_DEFINED
+#define RUNTIMECLASS_Windows_Services_Maps_EnhancedWaypoint_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Maps_EnhancedWaypoint[] = L"Windows.Services.Maps.EnhancedWaypoint";
+#endif
+#ifndef RUNTIMECLASS_Windows_Services_Maps_ManeuverWarning_DEFINED
+#define RUNTIMECLASS_Windows_Services_Maps_ManeuverWarning_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Maps_ManeuverWarning[] = L"Windows.Services.Maps.ManeuverWarning";
+#endif
 #ifndef RUNTIMECLASS_Windows_Services_Maps_MapAddress_DEFINED
 #define RUNTIMECLASS_Windows_Services_Maps_MapAddress_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Maps_MapAddress[] = L"Windows.Services.Maps.MapAddress";
@@ -8416,13 +11330,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0071 */
+/* interface __MIDL_itf_windows2Eservices2Emaps_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps_0000_0094_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

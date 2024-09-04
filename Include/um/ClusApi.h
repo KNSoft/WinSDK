@@ -34,6 +34,7 @@ Revision History:
 #define NT8_MAJOR_VERSION           7
 #define NT9_MAJOR_VERSION           8
 #define NT10_MAJOR_VERSION          9
+#define NT11_MAJOR_VERSION          10
 
 // And cluster upgrade versions (eg technical previews)
 #define WS2016_TP4_UPGRADE_VERSION  6
@@ -1725,6 +1726,32 @@ typedef DWORD
     _In_ LPCWSTR lpRemoteClusterName,
     _In_ LPCWSTR lpRemoteGroupSetName
 );
+
+#define CLUSTER_AVAILABILITY_SET_CONFIG_V1 0x00000001
+
+typedef struct CLUSTER_AVAILABILITY_SET_CONFIG
+{
+    DWORD dwVersion;
+    DWORD dwUpdateDomains;
+    DWORD dwFaultDomains;
+    BOOL  bReserveSpareNode;
+} CLUSTER_AVAILABILITY_SET_CONFIG, *PCLUSTER_AVAILABILITY_SET_CONFIG;
+
+HGROUPSET
+WINAPI
+CreateClusterAvailabilitySet(
+    _In_ HCLUSTER hCluster,
+    _In_ LPCWSTR lpAvailabilitySetName,
+    _In_ PCLUSTER_AVAILABILITY_SET_CONFIG pAvailabilitySetConfig
+);
+
+typedef HGROUPSET
+(WINAPI *PCLUSAPI_CREATE_CLUSTER_AVAILABILITY_SET)(
+    _In_ HCLUSTER hCluster,
+    _In_ LPCWSTR lpAvailabilitySetName,
+    _In_ PCLUSTER_AVAILABILITY_SET_CONFIG pAvailabilitySetConfig
+);
+
 
 #endif //(CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD)
 
@@ -3714,6 +3741,8 @@ typedef enum CLCTL_CODES {
 
     CLCTL_NOTIFY_QUORUM_STATUS              = CLCTL_INTERNAL_CODE( 31, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
 
+    CLCTL_NOTIFY_MONITOR_SHUTTING_DOWN      = CLCTL_INTERNAL_CODE( 32, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
+
     CLCTL_GET_OPERATION_CONTEXT             = CLCTL_INTERNAL_CODE( 2106, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
     CLCTL_NOTIFY_OWNER_CHANGE               = CLCTL_INTERNAL_CODE( 2120, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
 #if (CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD)
@@ -4281,6 +4310,9 @@ typedef enum CLUSCTL_RESOURCE_TYPE_CODES {
     CLUSCTL_RESOURCE_TYPE_UPGRADE_COMPLETED =
         CLUSCTL_RESOURCE_TYPE_CODE( CLCTL_RESOURCE_UPGRADE_COMPLETED ),
 
+    CLUSCTL_RESOURCE_TYPE_NOTIFY_MONITOR_SHUTTING_DOWN =
+        CLUSCTL_RESOURCE_TYPE_CODE( CLCTL_NOTIFY_MONITOR_SHUTTING_DOWN ),
+
 } CLUSCTL_RESOURCE_TYPE_CODES;
 
 //
@@ -4696,6 +4728,7 @@ typedef enum CLUSCTL_GROUPSET_CODES {
 
     CLUSCTL_GROUPSET_GET_ID =
         CLUSCTL_GROUPSET_CODE( CLCTL_GET_ID ),
+
 } CLUSCTL_GROUPSET_CODES;
 
 //
@@ -6747,6 +6780,8 @@ typedef DWORD
 #define CLUSREG_NAME_GRP_RESILIENCY_PERIOD                 L"ResiliencyPeriod"
 #define CLUSREG_NAME_GRP_PREFERRED_SITE                    L"PreferredSite"
 #define CLUSREG_NAME_GRP_COLD_START_SETTING                L"ColdStartSetting"
+#define CLUSREG_NAME_GRP_FAULT_DOMAIN                      L"FaultDomain"
+#define CLUSREG_NAME_GRP_UPDATE_DOMAIN                     L"UpdateDomain"
 
 
 //
@@ -6839,6 +6874,11 @@ typedef DWORD
 #define CLUSREG_NAME_GROUPSET_STARTUP_DELAY         L"StartupDelay"
 #define CLUSREG_NAME_GROUPSET_IS_GLOBAL             L"IsGlobal"
 #define CLUSREG_NAME_GROUPSET_STATUS_INFORMATION    L"StatusInformation"
+#define CLUSREG_NAME_GROUPSET_IS_AVAILABILITY_SET   L"IsAvailabilitySet"
+#define CLUSREG_NAME_GROUPSET_UPDATE_DOMAINS        L"UpdateDomains"
+#define CLUSREG_NAME_GROUPSET_FAULT_DOMAINS         L"FaultDomains"
+#define CLUSREG_NAME_GROUPSET_RESERVE_NODE  L"ReserveSpareNode"
+#define CLUSREG_NAME_GROUPSET_AVAILABILITY_SET_INDEX_TO_NODE_MAPPING L"NodeDomainInfo"
 
 //
 // Resource private property names
@@ -7091,10 +7131,12 @@ typedef enum PLACEMENT_OPTIONS {
     PLACEMENT_OPTIONS_CONSIDER_OFFLINE_VMS          = 0x00000002,
     PLACEMENT_OPTIONS_DONT_USE_MEMORY               = 0x00000004,
     PLACEMENT_OPTIONS_DONT_USE_CPU                  = 0x00000008,
+    PLACEMENT_OPTIONS_DONT_USE_LOCAL_TEMP_DISK      = 0x00000010,
     PLACEMENT_OPTIONS_ALL                           = (PLACEMENT_OPTIONS_DISABLE_CSV_VM_DEPENDENCY      |
                                                       PLACEMENT_OPTIONS_CONSIDER_OFFLINE_VMS            |
                                                       PLACEMENT_OPTIONS_DONT_USE_MEMORY                 |
-                                                      PLACEMENT_OPTIONS_DONT_USE_CPU)
+                                                      PLACEMENT_OPTIONS_DONT_USE_CPU                    |
+                                                      PLACEMENT_OPTIONS_DONT_USE_LOCAL_TEMP_DISK)
 } PLACEMENT_OPTIONS;
 
 

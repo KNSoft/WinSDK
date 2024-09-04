@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -410,7 +410,8 @@ enum BrowserNavConstants
         navReserved2	= 0x4000000,
         navReserved3	= 0x8000000,
         navReserved4	= 0x10000000,
-        navReserved5	= 0x20000000
+        navReserved5	= 0x20000000,
+        navReserved6	= 0x40000000
     } 	BrowserNavConstants;
 
 //;begin_internal
@@ -419,6 +420,7 @@ enum BrowserNavConstants
 #define navServerRedirectedVtabSwitch navReserved3
 #define navVtabSwitchNotUserInitiatedAction navReserved4
 #define navCheckDontShowNeedIE navReserved5
+#define navCheckDontShowNeedHVSI navReserved6
 //;end_internal
 typedef /* [helpstring][uuid] */  DECLSPEC_UUID("C317C261-A991-11cf-A731-00A0C9082637") 
 enum RefreshConstants
@@ -6561,6 +6563,9 @@ EXTERN_C const IID IID_IShellUIHelper8;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE OpenFavoritesSettings( void) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE LaunchInHVSI( 
+            /* [in] */ __RPC__in BSTR bstrUrl) = 0;
+        
     };
     
     
@@ -7028,6 +7033,10 @@ EXTERN_C const IID IID_IShellUIHelper8;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *OpenFavoritesSettings )( 
             __RPC__in IShellUIHelper8 * This);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *LaunchInHVSI )( 
+            __RPC__in IShellUIHelper8 * This,
+            /* [in] */ __RPC__in BSTR bstrUrl);
+        
         END_INTERFACE
     } IShellUIHelper8Vtbl;
 
@@ -7358,6 +7367,9 @@ EXTERN_C const IID IID_IShellUIHelper8;
 
 #define IShellUIHelper8_OpenFavoritesSettings(This)	\
     ( (This)->lpVtbl -> OpenFavoritesSettings(This) ) 
+
+#define IShellUIHelper8_LaunchInHVSI(This,bstrUrl)	\
+    ( (This)->lpVtbl -> LaunchInHVSI(This,bstrUrl) ) 
 
 #endif /* COBJMACROS */
 

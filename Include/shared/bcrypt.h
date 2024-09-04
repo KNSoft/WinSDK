@@ -1822,6 +1822,12 @@ BCryptResolveProviders(
         _When_(_Old_(*ppBuffer) == NULL, _Outptr_result_bytebuffer_all_(*pcbBuffer))
     PCRYPT_PROVIDER_REFS *ppBuffer);
 
+#endif /* WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 //
 // Miscellaneous queries about the crypto environment
 //
@@ -1831,7 +1837,7 @@ BCryptGetFipsAlgorithmMode(
     _Out_ BOOLEAN *pfEnabled
     );
     
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)*/
 #pragma endregion
 
 #pragma region Desktop Family

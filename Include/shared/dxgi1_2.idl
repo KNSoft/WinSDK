@@ -229,7 +229,7 @@ typedef struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
 typedef struct DXGI_PRESENT_PARAMETERS
 {
     UINT DirtyRectsCount;
-    RECT* pDirtyRects;
+    [annotation("_Field_size_full_opt_(DirtyRectsCount)")] RECT* pDirtyRects;
     RECT* pScrollRect;
     POINT* pScrollOffset;
 } DXGI_PRESENT_PARAMETERS;

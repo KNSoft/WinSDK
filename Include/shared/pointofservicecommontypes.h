@@ -23,7 +23,9 @@ User and Kernel Mode and MIDL.
 #pragma once
 #endif
 
-#define STATISTICS_STRING_SIZE                  128
+#include <pshpack8.h>
+
+#define STATISTICS_STRING_SIZE 128
 
 #if(NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
@@ -49,7 +51,7 @@ typedef enum DriverUnifiedPosHealthCheckLevel
 {
     UnknownHealthCheckLevel = 0, //
     POSInternal = 1, // performs a health check without altering the device. The device is tested by internal tests as far as possible.
-    External = 2, // performs a more thourough test which may affect the device.  For example, a printer may produce some output.
+    External = 2, // performs a more thorough test which may affect the device.  For example, a printer may produce some output.
     Interactive = 3 // may display a dialog box that displays test options and results so that you can test the device interactively. No APIs for testing interactively are currently supported.
 } DriverUnifiedPosHealthCheckLevel;
 
@@ -65,7 +67,7 @@ typedef enum DriverUnifiedPosErrorReason
     Failure = 7,        // The device failed to perform the operation but is connected and powered on
     Timeout = 8,        // Operation timed out from the device
     Busy = 9,           // Device is busy and cannot complete the operation
-    Extended = 10,      // Device returned a vendor specific error 
+    Extended = 10,      // Device returned a vendor specific error
 } DriverUnifiedPosErrorReason;
 
 typedef enum DriverMagneticStripeReaderAuthenticationLevel
@@ -74,7 +76,6 @@ typedef enum DriverMagneticStripeReaderAuthenticationLevel
     Optional = 1,
     Required = 2
 } DriverMagneticStripeReaderAuthenticationLevel;
-
 
 typedef enum PointOfServicePrinterBitmapWidthType
 {
@@ -103,6 +104,23 @@ typedef enum PosPrinterStation
     PosPrinterStation_Slip = 2
 } PosPrinterStation;
 
+typedef enum DriverPosPrinterBarcodeTextPosition
+{
+    PrinterBarcodeTextNone = 0,
+    PrinterBarcodeTextAbove,
+    PrinterBarcodeTextBelow
+} DriverPosPrinterBarcodeTextPosition;
+
+// Values must correspond to Windows.Devices.PointOfService.PosPrinterCartridgeSensors
+typedef enum DriverPosPrinterCartridgeSensors
+{
+    PrinterCartridgeNone = 0x0,
+    PrinterCartridgeRemoved = 0x1,
+    PrinterCartridgeEmpty = 0x2,
+    PrinterCartridgeHeadCleaning = 0x4,
+    PrinterCartridgeNearEmpty = 0x8
+} DriverPosPrinterCartridgeSensors;
+
 typedef enum PosPrinterCartridgeState
 {
     PosPrinterCartridgeState_Unknown = 0,
@@ -112,6 +130,47 @@ typedef enum PosPrinterCartridgeState
     PosPrinterCartridgeState_NearEmpty = 4,
     PosPrinterCartridgeState_Ok = 5
 } PosPrinterCartridgeState;
+
+// Values must correspond to Windows.Devices.PointOfService.PosPrinterColorCapabilities
+typedef enum DriverPosPrinterColorCapabilities
+{
+    PrinterColorCapNone = 0,
+    PrinterColorCapPrimary = 0x1,
+    PrinterColorCapCustom1 = 0x2,
+    PrinterColorCapCustom2 = 0x4,
+    PrinterColorCapCustom3 = 0x8,
+    PrinterColorCapCustom4 = 0x10,
+    PrinterColorCapCustom5 = 0x20,
+    PrinterColorCapCustom6 = 0x40,
+    PrinterColorCapCyan = 0x80,
+    PrinterColorCapMagenta = 0x100,
+    PrinterColorCapYellow = 0x200,
+    PrinterColorCapFull = 0x400,
+} DriverPosPrinterColorCapabilities;
+
+// Values must correspond to Windows.Devices.PointOfService.PosPrinterColorCartridge
+typedef enum DriverPosPrinterColorCartridge
+{
+    PrinterColorCartUnknown = 0,
+    PrinterColorCartPrimary,
+    PrinterColorCartCustom1,
+    PrinterColorCartCustom2,
+    PrinterColorCartCustom3,
+    PrinterColorCartCustom4,
+    PrinterColorCartCustom5,
+    PrinterColorCartCustom6,
+    PrinterColorCartCyan,
+    PrinterColorCartMagenta,
+    PrinterColorCartYellow,
+} DriverPosPrinterColorCartridge;
+
+typedef enum DriverPosPrinterMarkFeed
+{
+    PrinterFeedTakeup = 0,
+    PrinterFeedToCutter = 1,
+    PrinterFeedToCurrentTopOfForm = 2,
+    PrinterFeedToNextTopOfForm = 3,
+} DriverPosPrinterMarkFeed;
 
 typedef enum PointOfServicePrinterPageModeTypes
 {
@@ -146,6 +205,13 @@ typedef enum PointOfServicePrinterObjectAlignment
     PointOfServicePrinterObjectAlignment_Right = 2,
     PointOfServicePrinterObjectAlignment_CustomDistance = 3
 } PointOfServicePrinterObjectAlignment;
+
+typedef enum DriverPosPrinterPrintSide
+{
+    PrintSideUnknown = 0,
+    PrintSide1,
+    PrintSide2
+} DriverPosPrinterPrintSide;
 
 typedef enum PointOfServicePrinterTransactionMode
 {
@@ -189,6 +255,38 @@ typedef enum PointOfServicePrinterExtendedStatus
     PointOfServicePrinterExtendedStatus_SlipCoverOk,
 } PointOfServicePrinterExtendedStatus;
 
+// Values must correspond to Windows.Devices.PointOfService.PosPrinterLineDirection
+typedef enum DriverPosPrinterLineDirection
+{
+    LineDirectionHorizontal = 0,
+    LineDirectionVertical
+} DriverPosPrinterLineDirection;
+
+// Values must correspond to Windows.Devices.PointOfService.PosPrinterLineStyle
+typedef enum DriverPosPrinterLineStyle
+{
+    LineStyleSingleSolid = 0,
+    LineStyleDoubleSolid,
+    LineStyleBroken,
+    LineStyleChain
+} DriverPosPrinterLineStyle;
+
+typedef enum DriverPosPrinterMapMode
+{
+    MapModeDots = 0,
+    MapModeTwips,
+    MapModeEnglish,
+    MapModeMetric
+} DriverPosPrinterMapMode;
+
+// Values must correspond to Windows.Devices.PointOfService.PosPrinterRotation
+typedef enum DriverPosPrinterRotation
+{
+    RotateNormal = 0,
+    RotateRight90,
+    RotateLeft90,
+    RotateInvert180
+} DriverPosPrinterRotation;
 
 typedef struct _CommonPosStationCapabilitiesType
 {
@@ -260,20 +358,56 @@ typedef struct _PointOfServicePrinterCapabilitiesType
     SlipCapabilitiesType SlipCapabilities;
 }PointOfServicePrinterCapabilitiesType;
 
+typedef enum _CashDrawerStatusType
+{
+    CashDrawerStatusType_Online = 0,
+    CashDrawerStatusType_Off = 1,
+    CashDrawerStatusType_Offline = 2,
+    CashDrawerStatusType_OffOrOffline = 3,
+    CashDrawerStatusType_Extended = 4
+} CashDrawerStatusType;
+
 typedef struct _CashDrawerCapabilitiesType
 {
-    UINT32 PowerReportingType;
-    BOOLEAN IsStatisticsReportingSupported;
-    BOOLEAN IsStatisticsUpdatingSupported;
-    BOOLEAN IsStatusReportingSupported;
-    BOOLEAN IsStatusMultiDrawerDetectSupported;
-    BOOLEAN IsDrawerOpenSensorAvailable;
-}CashDrawerCapabilitiesType;
+    UINT32 PowerReportingType;                  //CapPowerReporting
+    BOOLEAN IsStatisticsReportingSupported;     //CapStatisticsReporting
+    BOOLEAN IsStatisticsUpdatingSupported;      //CapStatisticsUpdating
+    BOOLEAN IsStatusReportingSupported;         //CapStatus
+    BOOLEAN IsStatusMultiDrawerDetectSupported; //CapStatusMultiDrawerDetect
+    BOOLEAN IsDrawerOpenSensorAvailable;        //CapStatus (duplicate)
+} CashDrawerCapabilitiesType;
 
+typedef struct _LineDisplayCapabilitiesType
+{
+    BOOLEAN IsStatisticsReportingSupported;     //CapStatisticsReporting
+    BOOLEAN IsStatisticsUpdatingSupported;      //CapStatisticsUpdating
+    UINT32 PowerReportingType;                  //CapPowerReporting
+    BOOLEAN CanChangeScreenSize;                //CapScreenMode
+    BOOLEAN CanDisplayBitmaps;                  //CapBitmap
+    BOOLEAN CanReadCharacterAtCursor;           //CapReadBack
+    BOOLEAN CanMapCharacterSets;                //CapMapCharacterSet
+    BOOLEAN CanDisplayCustomGlyphs;             //CapCustomGlyph
+    UINT32 CanReverse;                          //CapReverse (LineDisplayCharactersSelection values)
+    UINT32 CanBlink;                            //CapBlink (LineDisplayCharactersSelection values)
+    BOOLEAN CanChangeBlinkRate;                 //CapBlinkRate
+    BOOLEAN IsBrightnessSupported;              //CapBrightness
+    BOOLEAN IsCursorSupported;                  //CapCursorType
+    BOOLEAN IsHorizontalMarqueeSupported;       //CapHMarquee
+    BOOLEAN IsVerticalMarqueeSupported;         //CapVMarquee
+    BOOLEAN IsInterCharacterWaitSupported;      //CapICharWait
+    UINT32 SupportedDescriptors;                //DeviceDescriptors
+    UINT32 SupportedWindows;                    //DeviceWindows
+} LineDisplayCapabilitiesType;
+
+typedef struct _LineDisplayCharactersSize
+{
+    UINT32 Rows;
+    UINT32 Columns;
+} LineDisplayCharactersSize;
 
 typedef enum _BarcodeSymbology
 {
-    PosUnknown = 0,        // The service object can't determine the barcode symbology.
+    PosUnknown = 0, // The service object can't determine the barcode symbology.
 
     Ean8 = 101,
     Ean8Add2 = 102,
@@ -380,20 +514,38 @@ typedef enum _BarcodeSymbology
     OcrB = 190,
     Micr = 191,
 
+    Gs1DWCode = 192,
+
     // Special cases
-    ExtendedBase = 501       // If greater than or equal to this type, the device has returned an OEM or undefined symbology.             
+    ExtendedBase = 501 // If greater than or equal to this type, the device has returned an OEM or undefined symbology.
 } BarcodeSymbology;
+
+typedef enum _BarcodeSymbologyDecodeLengthType
+{
+    DecodeLengthType_AnyLength = 0,
+    DecodeLengthType_Discrete = 1,
+    DecodeLengthType_Range = 2
+} BarcodeSymbologyDecodeLengthType;
+
+typedef struct _BarcodeSymbologyAttributesData
+{
+    BarcodeSymbology Symbology;
+    UINT32 IsCheckDigitValidationSupported;
+    UINT32 IsCheckDigitValidationEnabled;
+    UINT32 IsCheckDigitTransmissionSupported;
+    UINT32 IsCheckDigitTransmissionEnabled;
+    UINT32 IsDecodeLengthSupported;
+    BarcodeSymbologyDecodeLengthType DecodeLengthType;
+    UINT32 DecodeLength1;
+    UINT32 DecodeLength2;
+} BarcodeSymbologyAttributesData;
 
 typedef enum _BarcodeStatus
 {
     BarcodeStatusUpdateType_Online = 0,
-
     BarcodeStatusUpdateType_Off = 1,
-
     BarcodeStatusUpdateType_Offline = 2,
-
     BarcodeStatusUpdateType_OffOrOffline = 3,
-
     BarcodeStatusUpdateType_Extended = 4
 } BarcodeStatus;
 
@@ -471,7 +623,7 @@ typedef enum _PosPrinterErrorOccuredData
 
 // PosDeviceInformation
 // The structure holds the device information value required by UPOS
-//      All entries are as define in UPOS standard. 
+//      All entries are as define in UPOS standard.
 typedef struct _PosDeviceInformation
 {
     _Field_z_ wchar_t UnifiedPOSVersion[STATISTICS_STRING_SIZE];
@@ -484,7 +636,31 @@ typedef struct _PosDeviceInformation
     _Field_z_ wchar_t FirmwareRevision[STATISTICS_STRING_SIZE];
     _Field_z_ wchar_t Interface[STATISTICS_STRING_SIZE];
     _Field_z_ wchar_t InstallationDate[STATISTICS_STRING_SIZE];
-}PosDeviceInformation;
+} PosDeviceInformation;
+
+typedef enum _LineDisplayTextDisplayAttribute
+{
+    Normal = 0,
+    Blink,
+    Reverse,
+    ReverseBlink
+} LineDisplayTextDisplayAttribute;
+
+typedef enum _LineDisplayTextScrollDirection
+{
+    Up = 0,
+    Down,
+    Left,
+    Right
+} LineDisplayTextScrollDirection;
+
+typedef enum _LineDisplayCharactersSelection
+{
+    NoCharacters = 0,
+    EntireDisplay,
+    PerCharacter
+} LineDisplayCharactersSelection;
+
 //------------------------------------
 // Common Control Data formats
 //------------------------------------
@@ -495,12 +671,14 @@ typedef enum _PosDeviceType
     PosDeviceType_MagneticStripeReader = 2,
     PosDeviceType_Printer = 3,
     PosDeviceType_CashDrawer = 4,
+    PosDeviceType_LineDisplay = 5,
 
     // Update the following value when new device types show up.
-    PosDeviceType_Max = 5
+    PosDeviceType_Max = 6
 } PosDeviceType;
 
-
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+
+#include <poppack.h>
 
 #endif // POINT_OF_SERVICE_COMMON_TYPES_H

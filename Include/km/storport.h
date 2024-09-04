@@ -359,6 +359,8 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 //
 #define SRB_FUNCTION_STORAGE_REQUEST_BLOCK  0x28
 
+#define SRB_FUNCTION_CRYPTO_OPERATION   0x29
+
 //
 // SRB Status
 //
@@ -656,6 +658,7 @@ typedef struct SRB_ALIGN _SRBEX_DATA_PNP {
 
 #define REQUEST_INFO_NO_FILE_OBJECT_FLAG            0x00000040
 #define REQUEST_INFO_VOLSNAP_IO_FLAG                0x00000080
+#define REQUEST_INFO_STREAM_FLAG                    0x00000100
 
 #endif //(NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
@@ -3390,6 +3393,7 @@ typedef struct _INQUIRYDATA {
 #define OPTICAL_CARD_READER_WRITER_DEVICE 0x0F
 #define BRIDGE_CONTROLLER_DEVICE        0x10
 #define OBJECT_BASED_STORAGE_DEVICE     0x11    // OSD
+#define UNKNOWN_OR_NO_DEVICE            0x1F    // Unknown or no device type
 #define LOGICAL_UNIT_NOT_PRESENT_DEVICE 0x7F
 
 #define DEVICE_QUALIFIER_ACTIVE         0x00
@@ -7874,11 +7878,12 @@ typedef struct _STOR_POFX_POWER_CONTROL {
 // longer Model or Firmware etc. information than defined in SCSI.
 // This is invoked during Unit enumeration process or device description update process.
 //
-#define STOR_RICH_DEVICE_DESCRIPTION_STRUCTURE_VERSION   0x1
 
 #define STOR_VENDOR_ID_LENGTH            16
 #define STOR_MODEL_NUMBER_LENGTH         64
 #define STOR_FIRMWARE_REVISION_LENGTH    16
+
+#define STOR_RICH_DEVICE_DESCRIPTION_STRUCTURE_VERSION   0x1
 
 typedef struct _STOR_RICH_DEVICE_DESCRIPTION {
 
@@ -7890,6 +7895,21 @@ typedef struct _STOR_RICH_DEVICE_DESCRIPTION {
     CHAR    FirmwareRevision[STOR_FIRMWARE_REVISION_LENGTH + 1];
 
 } STOR_RICH_DEVICE_DESCRIPTION, *PSTOR_RICH_DEVICE_DESCRIPTION;
+
+#define STOR_RICH_DEVICE_DESCRIPTION_STRUCTURE_VERSION_V2   0x2
+
+typedef struct _STOR_RICH_DEVICE_DESCRIPTION_V2 {
+
+    ULONG   Version;
+    ULONG   Size;
+
+    CHAR    VendorId[STOR_VENDOR_ID_LENGTH + 1];
+    CHAR    ModelNumber[STOR_MODEL_NUMBER_LENGTH + 1];
+    CHAR    FirmwareRevision[STOR_FIRMWARE_REVISION_LENGTH + 1];
+
+    PSTOR_ADDRESS Address;
+
+} STOR_RICH_DEVICE_DESCRIPTION_V2, *PSTOR_RICH_DEVICE_DESCRIPTION_V2;
 
 //
 // ScsiQuerySupportedControlTypes:
@@ -7974,14 +7994,18 @@ typedef struct _STOR_LOCK_HANDLE {
 // Optimizations supported in STOR_PERF_VERSION_4
 #define STOR_PERF_DPC_REDIRECTION_CURRENT_CPU 0x00000020
 
+// Optimizations supported in STOR_PERF_VERSION_5
+#define STOR_PERF_NO_SGL 0x00000040
+
 //
 // STOR_PERF_VERSION supported and current STOR_PERF_VERSION
 //
 #define STOR_PERF_VERSION_2 0x00000002
 #define STOR_PERF_VERSION_3 0x00000003
 #define STOR_PERF_VERSION_4 0x00000004
+#define STOR_PERF_VERSION_5 0x00000005
 
-#define STOR_PERF_VERSION STOR_PERF_VERSION_4
+#define STOR_PERF_VERSION STOR_PERF_VERSION_5
 
 typedef struct _PERF_CONFIGURATION_DATA {
     ULONG Version;
@@ -8117,6 +8141,59 @@ typedef struct _STOR_RPMB_CAPABILITIES_DATA {
     STOR_RPMB_FRAME_TYPE FrameFormat;
 } STOR_RPMB_CAPABILITIES_DATA, *PSTOR_RPMB_CAPABILITIES_DATA;
 
+//
+// Adapter Crypto Engine definitions
+//
+
+typedef enum _STOR_CRYPTO_ALGORITHM_ID {
+    StorCryptoAlgorithmUnknown = 0,
+    StorCryptoAlgorithmXTSAES = 1,
+    StorCryptoAlgorithmBitlockerAESCBC,
+    StorCryptoAlgorithmAESECB,
+    StorCryptoAlgorithmESSIVAESCBC,
+    StorCryptoAlgorithmMax
+} STOR_CRYPTO_ALGORITHM_ID, *PSTOR_CRYPTO_ALGORITHM_ID;
+
+typedef enum _STOR_CRYPTO_KEY_SIZE {
+    StorCryptoKeySizeUnknown = 0,
+    StorCryptoKeySize128Bits = 1,
+    StorCryptoKeySize192Bits,
+    StorCryptoKeySize256Bits,
+    StorCryptoKeySize512Bits,
+    StorCryptoKeySizeMax
+} STOR_CRYPTO_KEY_SIZE, *PSTOR_CRYPTO_KEY_SIZE;
+
+#define STOR_CRYPTO_ALGORITHM_ID_OFFSET                  StorCryptoAlgorithmXTSAES
+
+#define STOR_CRYPTO_CAPABILITY_VERSION_1              1
+
+typedef struct _STOR_CRYPTO_CAPABILITY {
+    ULONG Version;
+    ULONG Size;
+    USHORT CryptoCapabilityIndex;
+    USHORT DataUnitSizeBitmask;
+    STOR_CRYPTO_ALGORITHM_ID AlgorithmId;
+    STOR_CRYPTO_KEY_SIZE KeySize;
+} STOR_CRYPTO_CAPABILITY, *PSTOR_CRYPTO_CAPABILITY;
+
+#define STOR_CRYPTO_CAPABILITIES_DATA_VERSION_1       1
+
+typedef struct _STOR_CRYPTO_CAPABILITIES_DATA {
+    ULONG Version;
+    ULONG Size;
+    USHORT NumKeysSupported;
+    USHORT NumCryptoCapabilities;
+    _Field_size_(NumCryptoCapabilities) STOR_CRYPTO_CAPABILITY CryptoCapabilities[ANYSIZE_ARRAY];
+} STOR_CRYPTO_CAPABILITIES_DATA, *PSTOR_CRYPTO_CAPABILITIES_DATA;
+
+#define STOR_CRYPTO_KEY_INFO_VERSION_1                1
+
+typedef struct _STOR_CRYPTO_KEY_INFO {
+    ULONG Version;
+    ULONG Size;
+    ULONG KeyIndex;
+    ULONGLONG Tweak;
+} STOR_CRYPTO_KEY_INFO, *PSTOR_CRYPTO_KEY_INFO;
 
 //
 // Minimum tolerable delay supported for additional timers API
@@ -8213,6 +8290,17 @@ typedef union _STOR_SLIST_HEADER {
 } STOR_SLIST_HEADER, *PSTOR_SLIST_HEADER;
 
 #endif //  defined(_WIN64)
+
+//
+// Structure definition for interlocked double link list.
+//
+typedef struct _STOR_LIST_ENTRY {
+    struct _STOR_LIST_ENTRY *Flink;
+    struct _STOR_LIST_ENTRY *Blink;
+} STOR_LIST_ENTRY, *PSTOR_LIST_ENTRY;
+
+typedef ULONG_PTR STOR_KSPIN_LOCK;
+typedef STOR_KSPIN_LOCK *PSTOR_KSPIN_LOCK;
 
 //
 // Flags for StorPortMarkDumpMemory function.
@@ -8565,7 +8653,15 @@ typedef enum _STORPORT_FUNCTION_CODE {
     ExtFunctionInitializeRpmb,
     ExtFunctionAllocateHmb,
     ExtFunctionFreeHmb,
-    ExtFunctionPropagateIrpExtension
+    ExtFunctionPropagateIrpExtension,
+    ExtFunctionInterlockedInsertHeadList,
+    ExtFunctionInterlockedInsertTailList,
+    ExtFunctionInterlockedRemoveHeadList,
+    ExtFunctionInitializeSpinlock,
+    ExtFunctionGetPfns,
+    ExtFunctionInitializeCryptoEngine,
+    ExtFunctionGetRequestCryptoInfo,
+    ExtFunctionMiniportTelemetry
 } STORPORT_FUNCTION_CODE, *PSTORPORT_FUNCTION_CODE;
 
 
@@ -9110,6 +9206,7 @@ typedef struct _HW_INITIALIZATION_DATA {
 #define STOR_FEATURE_EXTRA_IO_INFORMATION                   0x00000080  // Indicating that miniport driver wants SRBEX_DATA_IO_INFO in a SRBEX if available
 #define STOR_FEATURE_ADAPTER_CONTROL_PRE_FINDADAPTER        0x00000100  // Indicating that miniport driver can safely process AdapterControl call from Storport before receiving HwFindAdapter.
 #define STOR_FEATURE_ADAPTER_NOT_REQUIRE_IO_PORT            0x00000200  // Indicating that miniport driver doesn't require IO Port resource for its adapter.
+#define STOR_FEATURE_ADAPTER_CRYPTO_OPERATIONS              0x00000400  // Indicating that the miniport driver supports adapter crypto operations
 
 
 // Flags for denoting the SRB type(s) supported by miniport
@@ -9225,6 +9322,54 @@ typedef struct _MINIPORT_DUMP_POINTERS {
     UCHAR MaximumNumberOfTargets;
 
 } MINIPORT_DUMP_POINTERS, *PMINIPORT_DUMP_POINTERS;
+
+//
+// Adapter Crypto Operation Data Structures for SRB_FUNCTION_CRYPTO_OPERATION
+//
+
+typedef enum _STOR_CRYPTO_OPERATION_TYPE {
+    
+    StorCryptoOperationInsertKey = 1,
+    StorCryptoOperationMax,
+    
+} STOR_CRYPTO_OPERATION_TYPE, *PSTOR_CRYPTO_OPERATION_TYPE;
+
+#define STOR_CRYPTO_OPERATION_INSERT_KEY_VERSION_1            1
+
+typedef struct _STOR_CRYPTO_OPERATION_INSERT_KEY {
+
+    //
+    // Structure version
+    //
+    USHORT Version;
+
+    //
+    // Structure size
+    //
+    USHORT Size;
+
+    //
+    // Key Operation
+    //
+    _Field_range_(StorCryptoKeyOperationInsertKey, StorCryptoKeyOperationInsertKey)
+    STOR_CRYPTO_OPERATION_TYPE KeyOperation;
+
+    //
+    // Key Table Index
+    //
+    ULONG KeyIndex;
+    
+    //
+    // Data for Inserting a Key into an Adapter Crypto Engine
+    //
+
+    ULONG CryptoCapabilityIndex;
+    ULONG DataUnitSizeBitmask;
+    ULONG KeySize;
+    PVOID KeyVirtualAddress;
+    PHYSICAL_ADDRESS KeyPhysicalAddress;
+    
+} STOR_CRYPTO_OPERATION_INSERT_KEY, *PSTOR_CRYPTO_OPERATION_INSERT_KEY;
 
 //
 //  Structure used with StorPortLogSystemEvent
@@ -11459,6 +11604,8 @@ typedef struct _STOR_POFX_DEVICE_V3 {
 //  Valid only for STOR_POFX_DEVICEs that represent an adapter.
 // STOR_POFX_DEVICE_FLAG_PERF_STATE_PEP_OPTIONAL - Indicates the miniport does not
 //  require P-State support from the PEP.  When in doubt, set this flag.
+// STOR_POFX_DEVICE_FLAG_DISABLE_INTERRUPTS_ON_D3 - Indicates that the miniport would
+//  like Storport to disable/ enable interrupts on Dx transitions
 //
 #define STOR_POFX_DEVICE_FLAG_NO_D0                     0x01
 #define STOR_POFX_DEVICE_FLAG_NO_D3                     0x02
@@ -11470,6 +11617,7 @@ typedef struct _STOR_POFX_DEVICE_V3 {
 #define STOR_POFX_DEVICE_FLAG_PERF_STATE_PEP_OPTIONAL   0x80
 #define STOR_POFX_DEVICE_FLAG_NO_IDLE_DEBOUNCE          0x100
 #define STOR_POFX_DEVICE_FLAG_DUMP_ALWAYS_POWER_ON      0x200
+#define STOR_POFX_DEVICE_FLAG_DISABLE_INTERRUPTS_ON_D3  0x400
 
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -12004,6 +12152,254 @@ Returns:
     return status;
 }
 
+VOID
+FORCEINLINE
+StorPortInitializeListHead(
+    _In_ PVOID HwDeviceExtension,
+    _Out_ PSTOR_LIST_ENTRY ListHead
+    )
+{
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    if ( ListHead ) {
+        ListHead->Flink = ListHead->Blink = ListHead;
+    }
+    
+#else
+
+    UNREFERENCED_PARAMETER(ListHead);
+    
+#endif
+
+    return;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortInterlockedInsertHeadList(
+    _In_ PVOID HwDeviceExtension,
+    _Inout_ PSTOR_LIST_ENTRY ListHead,
+    _Inout_ PSTOR_LIST_ENTRY ListEntry,
+    _Inout_ PSTOR_LIST_ENTRY *Result,
+    _Inout_ PSTOR_KSPIN_LOCK Lock
+    )
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    if ((ListHead) && (ListEntry) && (Result) && (Lock)) {
+        status = StorPortExtendedFunction(ExtFunctionInterlockedInsertHeadList,
+                                          HwDeviceExtension,
+                                          ListHead,
+                                          ListEntry,
+                                          Result,
+                                          Lock);
+    } else {
+        status = STOR_STATUS_INVALID_PARAMETER;
+    }
+    
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ListHead);
+    UNREFERENCED_PARAMETER(ListEntry);
+    UNREFERENCED_PARAMETER(Result);
+    UNREFERENCED_PARAMETER(Lock);
+    
+#endif
+
+    return status;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortInterlockedInsertTailList(
+    _In_ PVOID HwDeviceExtension,
+    _Inout_ PSTOR_LIST_ENTRY ListHead,
+    _Inout_ PSTOR_LIST_ENTRY ListEntry,
+    _Inout_ PSTOR_LIST_ENTRY *Result,
+    _Inout_ PSTOR_KSPIN_LOCK Lock
+    )
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    if ((ListHead) && (ListEntry) && (Result) && (Lock)) {
+        status = StorPortExtendedFunction(ExtFunctionInterlockedInsertTailList,
+                                          HwDeviceExtension,
+                                          ListHead,
+                                          ListEntry,
+                                          Result,
+                                          Lock);
+    } else {
+        status = STOR_STATUS_INVALID_PARAMETER;
+    }
+    
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ListHead);
+    UNREFERENCED_PARAMETER(ListEntry);
+    UNREFERENCED_PARAMETER(Result);
+    UNREFERENCED_PARAMETER(Lock);
+    
+#endif
+
+    return status;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortInterlockedRemoveHeadList(
+    _In_ PVOID HwDeviceExtension,
+    _Inout_ PSTOR_LIST_ENTRY ListHead,
+    _Inout_ PSTOR_LIST_ENTRY *Result,
+    _Inout_ PSTOR_KSPIN_LOCK Lock
+    )
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    if ((ListHead) && (Result) && (Lock)) {
+        status = StorPortExtendedFunction(ExtFunctionInterlockedRemoveHeadList,
+                                          HwDeviceExtension,
+                                          ListHead,
+                                          Result,
+                                          Lock);
+    } else {
+        status = STOR_STATUS_INVALID_PARAMETER;
+    }
+    
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ListHead);
+    UNREFERENCED_PARAMETER(Result);
+    UNREFERENCED_PARAMETER(Lock);
+    
+#endif
+
+    return status;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortInitializeSpinlock(
+    _In_ PVOID HwDeviceExtension,
+    _Out_ PSTOR_KSPIN_LOCK Lock
+    )
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    if (Lock) {
+        status = StorPortExtendedFunction(ExtFunctionInitializeSpinlock,
+                                          HwDeviceExtension,
+                                          Lock);
+    } else {
+        status = STOR_STATUS_INVALID_PARAMETER;
+    }
+    
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Lock);
+    
+#endif
+
+    return status;
+}
+
+_Success_(return == STOR_STATUS_SUCCESS)
+ULONG
+FORCEINLINE
+StorPortGetPfns(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSCSI_REQUEST_BLOCK Srb,
+    _In_ PVOID Mdl,
+    _Outptr_result_buffer_(*PfnCount) PVOID* Pfns,
+    _Out_ ULONG* PfnCount,
+    _Out_ ULONG* StartingOffset
+)
+/*++
+
+Description:
+    A miniport can call this function to retreive PFNs associated with a MDL for a SRB
+
+Parameters:
+    HwDeviceExtension - The miniport's device extension.
+    Srb - Pointer to the source SRB.
+    Mdl - Pointer to the MDL for which Pfns are requested. Only MDLs obtained
+    using StorPortGetOriginalMdl or StorPortGetDataInBufferMdl are supported
+    Pfns - Pointer to the beginning of the array of physical page numbers that are associated with the MDL.
+    Callers must NOT modify or update or free the list.
+    PfnCount - The number of PFNs in the array.
+    StartingOffset - the byte offset within the initial page of the buffer described by the given MDL.
+
+Returns:
+    A STOR_STATUS code.
+
+--*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    status = StorPortExtendedFunction(ExtFunctionGetPfns,
+                                      HwDeviceExtension,
+                                      Srb,
+                                      Mdl,
+                                      Pfns,
+                                      PfnCount,
+                                      StartingOffset);
+#else
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Srb);
+    UNREFERENCED_PARAMETER(Mdl);
+    UNREFERENCED_PARAMETER(Pfns);
+    UNREFERENCED_PARAMETER(PfnCount);
+    UNREFERENCED_PARAMETER(StartingOffset);
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
+StorPortInitializeCryptoEngine(
+    _In_ PVOID HwDeviceExtension,
+    _Inout_ PSTOR_CRYPTO_CAPABILITIES_DATA CryptoCapabilitiesData
+    )
+{
+    return StorPortExtendedFunction(ExtFunctionInitializeCryptoEngine,
+                                    HwDeviceExtension,
+                                    CryptoCapabilitiesData);
+}
+
+ULONG
+FORCEINLINE
+StorPortGetRequestCryptoInfo(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSCSI_REQUEST_BLOCK Srb,
+    _Out_ PSTOR_CRYPTO_KEY_INFO CryptoKeyInfo
+    )
+{
+    return StorPortExtendedFunction(ExtFunctionGetRequestCryptoInfo,
+                                    HwDeviceExtension,
+                                    Srb,
+                                    CryptoKeyInfo);
+}
+
 //
 // Storport interfaces to allow miniports to log ETW events.
 //
@@ -12338,6 +12734,93 @@ Returns:
     UNREFERENCED_PARAMETER(Parameter7Value);
     UNREFERENCED_PARAMETER(Parameter8Name);
     UNREFERENCED_PARAMETER(Parameter8Value);
+#endif
+
+    return status;
+}
+
+
+#define EVENT_BUFFER_MAX_LENGTH     4096
+#define EVENT_NAME_MAX_LENGTH       32
+#define EVENT_MAX_PARAM_NAME_LEN    32
+
+typedef struct _STORPORT_TELEMETRY_EVENT {
+    ULONG   DriverVersion;
+    ULONG   EventId;
+    UCHAR   EventName[EVENT_NAME_MAX_LENGTH];
+    ULONG   EventVersion;
+    ULONG   Flags;
+    _Field_range_(0, EVENT_BUFFER_MAX_LENGTH)
+    ULONG   EventBufferLength;
+    _Field_size_bytes_(EventBufferLength)
+    PUCHAR  EventBuffer;
+    UCHAR   ParameterName0[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue0;
+    UCHAR   ParameterName1[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue1;
+    UCHAR   ParameterName2[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue2;
+    UCHAR   ParameterName3[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue3;
+    UCHAR   ParameterName4[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue4;
+    UCHAR   ParameterName5[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue5;
+    UCHAR   ParameterName6[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue6;
+    UCHAR   ParameterName7[EVENT_MAX_PARAM_NAME_LEN];
+    ULONGLONG ParameterValue7;
+} STORPORT_TELEMETRY_EVENT, *PSTORPORT_TELEMETRY_EVENT;
+
+
+ULONG
+FORCEINLINE
+StorPortLogTelemetry(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PSTOR_ADDRESS StorAddress,
+    _In_ PSTORPORT_TELEMETRY_EVENT Event
+)
+/*
+Description:
+    
+    A miniport can call this function to log a tracelogging telemetry event with 
+    miniport customized data, which encapsulated in the EventBuffer structure.
+    
+Parameters:
+    
+    HwDeviceExtension - The miniport's device extension.
+    
+    Address - NULL if the device is an adapter, otherwise the address specifies
+            the unit object.
+                
+    Event - Telemetry data that includes standard event fields and miniport
+            payload, which both general buffer and name/value pairs.
+    
+Returns:
+        
+    STOR_STATUS_SUCCESS if the telemetry event was successfully logged.
+            
+    STOR_STATUS_NOT_IMPLEMENTED if the API is called on the OS that not support it.
+    
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+    status = StorPortExtendedFunction(ExtFunctionMiniportTelemetry,
+                                      HwDeviceExtension,
+                                      StorAddress,
+                                      Event);
+
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(StorAddress);
+    UNREFERENCED_PARAMETER(Event);
+
 #endif
 
     return status;

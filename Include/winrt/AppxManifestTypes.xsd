@@ -74,7 +74,6 @@
     <xs:restriction base="ST_FileNameCharSet">
       <xs:pattern value="([^/\\]*[^./\\]+)(\\[^/\\]*[^./\\]+)*"/>
       <xs:pattern value="([^/\\]*[^./\\]+)(/[^/\\]*[^./\\]+)*"/>
-      <xs:maxLength value="256"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -101,6 +100,12 @@
   <xs:simpleType name="ST_ExecutableNoPath">
     <xs:restriction base="ST_FileName">
       <xs:pattern value="[^\\]+\.(exe)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_DllFile">
+    <xs:restriction base="ST_FileName">
+      <xs:pattern value=".+\.(dll)"/>
     </xs:restriction>
   </xs:simpleType>
   
@@ -165,6 +170,13 @@
     <xs:restriction base="ST_NonEmptyString">
       <xs:pattern value="[-.a-z0-9]+"/>
       <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ProgId">
+    <xs:restriction base="ST_NonEmptyString">
+      <xs:pattern value="[A-Za-z][A-Za-z0-9\.]*"/>
+      <xs:maxLength value="39"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -299,6 +311,13 @@
       <xs:enumeration value="backgroundMediaPlayback"/>
       <xs:enumeration value="userNotificationListener"/>
       <xs:enumeration value="remoteSystem"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_Capability_Uap_4">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="offlineMapsManagement"/>
+      <xs:enumeration value="userDataTasks"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -457,6 +476,12 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_PackageExtensionCategory_Com">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="windows.comInterface"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
   <xs:simpleType name="ST_PackageExtensionCategory_Foundation">
     <xs:restriction base="xs:string">
       <xs:enumeration value="windows.activatableClass.inProcessServer"/>
@@ -569,6 +594,26 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_ApplicationExtensionCategory_Uap4">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="windows.sharedFonts"/>
+      <xs:enumeration value="windows.userDataTaskDataProvider"/>
+      <xs:enumeration value="windows.mediaCodec"/>
+      <xs:enumeration value="windows.contactPanel"/>
+      <xs:enumeration value="windows.loopbackAccessRules"/>
+      <xs:enumeration value="windows.devicePortalProvider"/>
+      <xs:enumeration value="windows.printWorkflowBackgroundTask"/>
+      <xs:enumeration value="windows.printWorkflowForegroundTask"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ExtensionCategory_Com">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="windows.comServer"/>
+      <xs:enumeration value="windows.comInterface"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_ApplicationExtensionCategory_Mobile">
     <xs:restriction base="xs:string">
       <xs:enumeration value="windows.aowApp"/>
@@ -587,6 +632,19 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_ExtensionCategory_Desktop2">
+    <xs:restriction base="xs:string">
+      <!-- Application Extensions -->
+      <xs:enumeration value="windows.appPrinter"/>
+      <xs:enumeration value="windows.searchFilterHandler"/>
+      <xs:enumeration value="windows.searchPropertyHandler"/>
+      <xs:enumeration value="windows.mailProvider"/>
+      <!-- Package Extensions -->
+      <xs:enumeration value="windows.firewallRules"/>
+      <xs:enumeration value="windows.desktopEventLogging"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_ApplicationExtensionCategory_Restricted">
     <xs:restriction base="xs:string">
       <xs:enumeration value="windows.settingsApp"/>
@@ -599,9 +657,22 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_ApplicationExtensionCategory_Restricted3">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="windows.lockScreenComponent"/>
+      <xs:enumeration value="windows.desktopAppMigration"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_ApplicationExtensionCategory_Windows_Restricted_Party2">
     <xs:restriction base="xs:string">
       <xs:enumeration value="windows.internal.filePickerExperience"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ExtensionCategory_Windows_Restricted_Party3">
+    <xs:restriction base="ST_NonEmptyString">
+      <xs:pattern value="windows\.internal\.[0-9a-z][0-9a-zA-Z]*"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -680,6 +751,12 @@
       <xs:enumeration value="accounts"/>
       <xs:enumeration value="privacy"/>
       <xs:enumeration value="extras"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_SettingsPageUri">
+    <xs:restriction base="xs:anyURI">
+      <xs:pattern value="ms-settings:.*"/>
     </xs:restriction>
   </xs:simpleType>
 

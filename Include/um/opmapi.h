@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -195,15 +195,6 @@ enum _OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL
         OPM_TYPE_ENFORCEMENT_HDCP_FORCE_ULONG	= 0x7fffffff
     } 	OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL;
 
-typedef 
-enum _OPM_HDCP_WITH_TYPE_ENFORCEMENT_PROTECTION_LEVEL
-    {
-        OPM_HDCP_WITH_TYPE_ENFORCEMENT_OFF	= 0,
-        OPM_HDCP_WITH_TYPE_ENFORCEMENT_ON	= 1,
-        OPM_HDCP_WITH_TYPE_1_ENFORCEMENT_ON	= 2,
-        OPM_HDCP_WITH_TYPE_ENFORCEMENT_FORCE_ULONG	= 0x7fffffff
-    } 	OPM_HDCP_WITH_TYPE_ENFORCEMENT_PROTECTION_LEVEL;
-
 
 enum __MIDL___MIDL_itf_opmapi_0000_0000_0007
     {
@@ -234,8 +225,7 @@ enum __MIDL___MIDL_itf_opmapi_0000_0000_0008
         OPM_PROTECTION_TYPE_CGMSA	= 0x4,
         OPM_PROTECTION_TYPE_HDCP	= 0x8,
         OPM_PROTECTION_TYPE_DPCP	= 0x10,
-        OPM_PROTECTION_TYPE_TYPE_ENFORCEMENT_HDCP	= 0x20,
-        OPM_PROTECTION_TYPE_HDCP_TYPE_ENFORCEMENT	= 0x20
+        OPM_PROTECTION_TYPE_TYPE_ENFORCEMENT_HDCP	= 0x20
     } ;
 
 enum __MIDL___MIDL_itf_opmapi_0000_0000_0009
@@ -616,6 +606,12 @@ STDAPI OPMGetVideoOutputsFromHMONITOR(
     _In_ OPM_VIDEO_OUTPUT_SEMANTICS vos,                                                    
     _Out_ ULONG* pulNumVideoOutputs,                                                        
     _Outptr_result_buffer_(*pulNumVideoOutputs) IOPMVideoOutput*** pppOPMVideoOutputArray       
+    );                                                                                      
+STDAPI OPMGetVideoOutputForTarget(                                                          
+    _In_ LUID* pAdapterLuid,                                                                
+    _In_ ULONG VidPnTarget,                                                                 
+    _In_ OPM_VIDEO_OUTPUT_SEMANTICS vos,                                                    
+    _COM_Outptr_ IOPMVideoOutput** ppOPMVideoOutput                                         
     );                                                                                      
 #ifndef DO_NOT_USE_DIRECTX_OR_DXVA2
 STDAPI OPMGetVideoOutputsFromIDirect3DDevice9Object(                                        

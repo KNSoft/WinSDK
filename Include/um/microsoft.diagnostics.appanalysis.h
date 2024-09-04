@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -484,18 +484,18 @@ interface IEtwEvent;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0322 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0322 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0322_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0322_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0001 */
 /* [local] */ 
@@ -530,18 +530,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0323 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0323 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0323_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0323_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0002 */
 /* [local] */ 
@@ -576,18 +576,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0324 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0324 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0003 */
 /* [local] */ 
@@ -622,18 +622,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0325 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0325 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0004 */
 /* [local] */ 
@@ -668,18 +668,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0326 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0326 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0005 */
 /* [local] */ 
@@ -714,18 +714,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0327 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0327 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0006 */
 /* [local] */ 
@@ -760,18 +760,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0007 */
 /* [local] */ 
@@ -843,18 +843,18 @@ interface IRuleTriggeredEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0008 */
 /* [local] */ 
@@ -913,18 +913,18 @@ interface IEtwRule;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0009 */
 /* [local] */ 
@@ -959,18 +959,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0010 */
 /* [local] */ 
@@ -1005,18 +1005,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0011 */
 /* [local] */ 
@@ -1075,18 +1075,18 @@ interface IEtwProvider;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0012 */
 /* [local] */ 
@@ -1121,18 +1121,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0013 */
 /* [local] */ 
@@ -1167,18 +1167,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0014 */
 /* [local] */ 
@@ -1213,18 +1213,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0015 */
 /* [local] */ 
@@ -1259,18 +1259,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0016 */
 /* [local] */ 
@@ -1305,18 +1305,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0017 */
 /* [local] */ 
@@ -2551,18 +2551,18 @@ EXTERN_C const IID IID___x_ABI_CMicrosoft_CDiagnostics_CAppAnalysis_CIEtwEventWa
 #endif 	/* ____x_ABI_CMicrosoft_CDiagnostics_CAppAnalysis_CIEtwEventWatcher_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0024 */
 /* [local] */ 
@@ -2737,18 +2737,18 @@ EXTERN_C const IID IID___FIIterator_1_Microsoft__CDiagnostics__CAppAnalysis__CEt
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0026 */
 /* [local] */ 
@@ -4512,18 +4512,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Microsof
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0037 */
 /* [local] */ 
@@ -4722,18 +4722,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Microsof
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0039 */
 /* [local] */ 
@@ -4908,18 +4908,18 @@ EXTERN_C const IID IID___FIIterator_1_Microsoft__CDiagnostics__CAppAnalysis__CEt
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0041 */
 /* [local] */ 
@@ -5060,18 +5060,18 @@ EXTERN_C const IID IID___FIIterable_1_Microsoft__CDiagnostics__CAppAnalysis__CEt
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0043 */
 /* [local] */ 
@@ -5254,18 +5254,18 @@ EXTERN_C const IID IID___FIVectorView_1_Microsoft__CDiagnostics__CAppAnalysis__C
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0045 */
 /* [local] */ 
@@ -5530,18 +5530,18 @@ EXTERN_C const IID IID___FIVector_1_Microsoft__CDiagnostics__CAppAnalysis__CEtwP
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0352 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0352 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0352_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0047 */
 /* [local] */ 
@@ -5724,18 +5724,18 @@ EXTERN_C const IID IID___FIVectorView_1_Microsoft__CDiagnostics__CAppAnalysis__C
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0353 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0353 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0353_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0049 */
 /* [local] */ 
@@ -6000,18 +6000,18 @@ EXTERN_C const IID IID___FIVector_1_Microsoft__CDiagnostics__CAppAnalysis__CEtwE
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0354 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0354 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0354_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0051 */
 /* [local] */ 
@@ -6152,18 +6152,18 @@ EXTERN_C const IID IID___FIIterable_1_Microsoft__CDiagnostics__CAppAnalysis__CEt
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0355 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0355 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0355_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0053 */
 /* [local] */ 
@@ -6346,18 +6346,18 @@ EXTERN_C const IID IID___FIVectorView_1_Microsoft__CDiagnostics__CAppAnalysis__C
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0356 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0356 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0350_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0356_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0055 */
 /* [local] */ 
@@ -6622,18 +6622,18 @@ EXTERN_C const IID IID___FIVector_1_Microsoft__CDiagnostics__CAppAnalysis__CEtwR
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0357 */
 
 
 
 
-/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351 */
+/* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0357 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0351_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_microsoft2Ediagnostics2Eappanalysis2Eidl_0000_0357_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_microsoft2Ediagnostics2Eappanalysis_0000_0057 */
 /* [local] */ 

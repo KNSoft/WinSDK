@@ -4,6 +4,7 @@
 // begin_1_2
 // begin_1_3
 // begin_1_4
+// begin_1_5
 /********************************************************************************
 *                                                                               *
 * memoryapi.h -- ApiSet Contract for api-ms-win-core-memory-l1-1-0              *
@@ -25,12 +26,15 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-memory-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_MEMORY_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#define _APISET_MEMORY_VER 0x0105
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_MEMORY_VER 0x0104
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
 #define _APISET_MEMORY_VER 0x0103
@@ -62,18 +66,17 @@ extern "C" {
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
-//
-// Constants
-//
+#define FILE_MAP_WRITE            SECTION_MAP_WRITE
+#define FILE_MAP_READ             SECTION_MAP_READ
+#define FILE_MAP_ALL_ACCESS       SECTION_ALL_ACCESS
 
-#define FILE_MAP_WRITE      SECTION_MAP_WRITE
-#define FILE_MAP_READ       SECTION_MAP_READ
-#define FILE_MAP_ALL_ACCESS SECTION_ALL_ACCESS
+#define FILE_MAP_EXECUTE          SECTION_MAP_EXECUTE_EXPLICIT  // not included in FILE_MAP_ALL_ACCESS
 
-#define FILE_MAP_EXECUTE    SECTION_MAP_EXECUTE_EXPLICIT    // not included in FILE_MAP_ALL_ACCESS
+#define FILE_MAP_COPY             0x00000001
 
-#define FILE_MAP_COPY       0x00000001
-#define FILE_MAP_RESERVE    0x80000000
+#define FILE_MAP_RESERVE          0x80000000
+#define FILE_MAP_TARGETS_INVALID  0x40000000
+#define FILE_MAP_LARGE_PAGES      0x20000000
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
@@ -83,6 +86,7 @@ extern "C" {
 // end_1_2
 // end_1_3
 // end_1_4
+// end_1_5
 // begin_1_0
 
 #pragma region Desktop Family or OneCore Family
@@ -775,14 +779,12 @@ DiscardVirtualMemory(
 
 #if !defined(_CONTRACT_GEN) || (_APISET_MEMORY_VER >= 0x0103)
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10)
-
-#define FILE_MAP_TARGETS_INVALID       0x40000000
 
 WINBASEAPI
 BOOL
@@ -795,18 +797,6 @@ SetProcessValidCallTargets(
     _Inout_updates_(NumberOfOffsets) PCFG_CALL_TARGET_INFO OffsetInformation
     );
 
-
-#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10) */
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10)
 
 WINBASEAPI
 _Ret_maybenull_ _Post_writable_byte_size_(Size)
@@ -1022,11 +1012,85 @@ QueryVirtualMemoryInformation(
 #endif // !defined(_CONTRACT_GEN) || (_APISET_MEMORY_VER >= 0x0104)
 // end_1_4
 
+// begin_1_5
+
+#if !defined(_CONTRACT_GEN) || (_APISET_MEMORY_VER >= 0x0105)
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+WINBASEAPI
+_Ret_maybenull_  __out_data_source(FILE)
+PVOID
+WINAPI
+MapViewOfFileNuma2(
+    _In_ HANDLE FileMappingHandle,
+    _In_ HANDLE ProcessHandle,
+    _In_ ULONG64 Offset,
+    _In_opt_ PVOID BaseAddress,
+    _In_ SIZE_T ViewSize,
+    _In_ ULONG AllocationType,
+    _In_ ULONG PageProtection,
+    _In_ ULONG PreferredNode
+    );
+
+
+
+#if !defined(MIDL_PASS)
+
+FORCEINLINE
+_Ret_maybenull_  __out_data_source(FILE)
+PVOID
+MapViewOfFile2(
+    _In_ HANDLE FileMappingHandle,
+    _In_ HANDLE ProcessHandle,
+    _In_ ULONG64 Offset,
+    _In_opt_ PVOID BaseAddress,
+    _In_ SIZE_T ViewSize,
+    _In_ ULONG AllocationType,
+    _In_ ULONG PageProtection
+    )
+{
+    return MapViewOfFileNuma2(FileMappingHandle,
+                              ProcessHandle,
+                              Offset,
+                              BaseAddress,
+                              ViewSize,
+                              AllocationType,
+                              PageProtection,
+                              NUMA_NO_PREFERRED_NODE);
+}
+
+#endif // !defined(MIDL_PASS)
+
+WINBASEAPI
+BOOL
+WINAPI
+UnmapViewOfFile2(
+    _In_ HANDLE ProcessHandle,
+    _In_ PVOID BaseAddress,
+    _In_ ULONG UnmapFlags
+    );
+
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_MEMORY_VER >= 0x0105)
+// end_1_5
+
 // begin_1_0
 // begin_1_1
 // begin_1_2
 // begin_1_3
 // begin_1_4
+// begin_1_5
 
 
 #if _MSC_VER >= 1200
@@ -1043,3 +1107,4 @@ QueryVirtualMemoryInformation(
 // end_1_2
 // end_1_3
 // end_1_4
+// end_1_5

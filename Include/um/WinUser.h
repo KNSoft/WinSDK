@@ -2425,6 +2425,12 @@ typedef struct {
 #if(WINVER >= 0x0601)
 #define WM_DPICHANGED                   0x02E0
 #endif /* WINVER >= 0x0601 */
+#if(WINVER >= 0x0605)
+#define WM_DPICHANGED_BEFOREPARENT      0x02E2
+#define WM_DPICHANGED_AFTERPARENT       0x02E3
+#define WM_GETDPISCALEDSIZE             0x02E4
+#endif /* WINVER >= 0x0605 */
+
 
 #define WM_CUT                          0x0300
 #define WM_COPY                         0x0301
@@ -5163,6 +5169,51 @@ DefDlgProcW(
 #endif // !UNICODE
 
 
+typedef enum DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
+     DCDC_DEFAULT                  = 0x0000,
+     DCDC_DISABLE_FONT_UPDATE      = 0x0001,
+     DCDC_DISABLE_RELAYOUT         = 0x0002,
+} DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS;
+
+#ifndef MIDL_PASS
+DEFINE_ENUM_FLAG_OPERATORS(DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS);
+#endif
+
+BOOL
+WINAPI
+SetDialogControlDpiChangeBehavior(
+    _In_ HWND hWnd,
+    _In_ DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS mask,
+    _In_ DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS values);
+
+DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS
+WINAPI
+GetDialogControlDpiChangeBehavior(
+    _In_ HWND hWnd);
+
+typedef enum DIALOG_DPI_CHANGE_BEHAVIORS {
+    DDC_DEFAULT                     = 0x0000,
+    DDC_DISABLE_ALL                 = 0x0001,
+    DDC_DISABLE_RESIZE              = 0x0002,
+    DDC_DISABLE_CONTROL_RELAYOUT    = 0x0004,
+} DIALOG_DPI_CHANGE_BEHAVIORS;
+
+#ifndef MIDL_PASS
+DEFINE_ENUM_FLAG_OPERATORS(DIALOG_DPI_CHANGE_BEHAVIORS);
+#endif
+
+BOOL
+WINAPI
+SetDialogDpiChangeBehavior(
+    _In_ HWND hDlg,
+    _In_ DIALOG_DPI_CHANGE_BEHAVIORS mask,
+    _In_ DIALOG_DPI_CHANGE_BEHAVIORS values);
+
+DIALOG_DPI_CHANGE_BEHAVIORS
+WINAPI
+GetDialogDpiChangeBehavior(
+    _In_ HWND hDlg);
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
@@ -5721,10 +5772,10 @@ WINAPI
 SetKeyboardState(
     _In_reads_(256) LPBYTE lpKeyState);
 
-	  	
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
-	
+
 #pragma region  Desktop or PC Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP)
 
@@ -6067,12 +6118,12 @@ IsTouchWindow(
 #define POINTER_STRUCTURES
 
 enum tagPOINTER_INPUT_TYPE {
-    PT_POINTER  = 0x00000001,   // Generic pointer
-    PT_TOUCH    = 0x00000002,   // Touch
-    PT_PEN      = 0x00000003,   // Pen
-    PT_MOUSE    = 0x00000004,   // Mouse
+    PT_POINTER  = 1,   // Generic pointer
+    PT_TOUCH    = 2,   // Touch
+    PT_PEN      = 3,   // Pen
+    PT_MOUSE    = 4,   // Mouse
 #if(WINVER >= 0x0603)
-    PT_TOUCHPAD = 0x00000005,   // Touchpad
+    PT_TOUCHPAD = 5,   // Touchpad
 #endif /* WINVER >= 0x0603 */
 };
 
@@ -6594,7 +6645,7 @@ GetPointerInputTransform(
 #pragma endregion
 
 #pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP)
 
 #if(_WIN32_WINNT >= 0x0500)
 typedef struct tagLASTINPUTINFO {
@@ -6609,7 +6660,7 @@ GetLastInputInfo(
     _Out_ PLASTINPUTINFO plii);
 #endif /* _WIN32_WINNT >= 0x0500 */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 
 #pragma region Desktop or PC Family
@@ -6943,7 +6994,6 @@ TranslateAcceleratorW(
 
 #ifndef NOSYSMETRICS
 
-
 /*
  * GetSystemMetrics() codes
  */
@@ -7123,7 +7173,6 @@ GetSystemMetricsForDpi(
     _In_ UINT dpi);
 
 #endif /* WINVER >= 0x0605 */
-
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
@@ -9060,12 +9109,6 @@ GetPhysicalCursorPos(
     _Out_ LPPOINT lpPoint);
 #endif /* WINVER >= 0x0600 */
 
-WINUSERAPI
-BOOL
-WINAPI
-ClipCursor(
-    _In_opt_ CONST RECT *lpRect);
-
 
 WINUSERAPI
 BOOL
@@ -9210,6 +9253,16 @@ ChildWindowFromPoint(
     _In_ POINT Point);
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Desktop or PC Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP)
+WINUSERAPI
+BOOL
+WINAPI
+ClipCursor(
+    _In_opt_ CONST RECT *lpRect);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 
 #if(WINVER >= 0x0400)
@@ -11959,7 +12012,6 @@ GetGuiResources(
     _In_ DWORD uiFlags);
 #endif /* WINVER >= 0x0500 */
 
-
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
@@ -12181,7 +12233,6 @@ typedef struct tagTouchPredictionParameters
 
 #define SPI_GETMENURECT   0x00A2
 #define SPI_SETMENURECT   0x00A3
-
 #endif /* WINVER >= 0x0602 */
 
 
@@ -12752,6 +12803,7 @@ DisplayConfigSetDeviceInfo(
     _In_ DISPLAYCONFIG_DEVICE_INFO_HEADER* setPacket);
 
 #endif /* WINVER >= 0x0601 */
+
 
 #endif /* NOGDI */
 #endif /* _WINGDI_ */
@@ -13976,7 +14028,8 @@ SetThreadDpiAwarenessContext(
 WINUSERAPI
 DPI_AWARENESS_CONTEXT
 WINAPI
-GetThreadDpiAwarenessContext();
+GetThreadDpiAwarenessContext(
+    VOID);
 
 WINUSERAPI
 DPI_AWARENESS_CONTEXT
@@ -14012,7 +14065,8 @@ GetDpiForWindow(
 WINUSERAPI
 UINT
 WINAPI
-GetDpiForSystem();
+GetDpiForSystem(
+    VOID);
 
 WINUSERAPI
 BOOL
@@ -14026,6 +14080,15 @@ WINAPI
 InheritWindowMonitor(
     _In_ HWND hwnd,
     _In_opt_ HWND hwndInherit);
+
+#endif /* WINVER >= 0x0605 */
+
+#if(WINVER >= 0x0605)
+WINUSERAPI
+BOOL
+WINAPI
+SetProcessDpiAwarenessContext(
+    _In_ DPI_AWARENESS_CONTEXT value);
 
 #endif /* WINVER >= 0x0605 */
 
@@ -15469,6 +15532,10 @@ SetProcessRestrictionExemption(
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 
+
+/*
+ * Ink Feedback APIs
+ */
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

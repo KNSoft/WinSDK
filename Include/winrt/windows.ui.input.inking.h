@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -245,6 +245,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkDrawingAttributes4;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties;
@@ -355,6 +377,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPoint2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory;
@@ -375,6 +419,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPointFactory2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_FWD_DEFINED__
@@ -399,6 +465,72 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPresenter2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPresenterProtractor;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPresenterProtractorFactory;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler;
@@ -419,6 +551,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkPresenterRuler2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFactory_FWD_DEFINED__
@@ -575,6 +729,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkStroke3;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder;
@@ -619,6 +795,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkStrokeBuilder3;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer;
@@ -661,6 +859,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    interface IInkStrokeContainer3;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput_FWD_DEFINED__
@@ -856,18 +1076,18 @@ interface IInkPoint;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0001 */
 /* [local] */ 
@@ -902,18 +1122,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0002 */
 /* [local] */ 
@@ -976,18 +1196,18 @@ interface IInkRecognitionResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0003 */
 /* [local] */ 
@@ -1022,18 +1242,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0004 */
 /* [local] */ 
@@ -1096,18 +1316,18 @@ interface IInkRecognizer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0005 */
 /* [local] */ 
@@ -1142,18 +1362,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0006 */
 /* [local] */ 
@@ -1216,18 +1436,18 @@ interface IInkStroke;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0007 */
 /* [local] */ 
@@ -1262,18 +1482,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0008 */
 /* [local] */ 
@@ -1336,18 +1556,18 @@ interface IInkStrokeRenderingSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0009 */
 /* [local] */ 
@@ -1382,18 +1602,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0010 */
 /* [local] */ 
@@ -1428,18 +1648,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0011 */
 /* [local] */ 
@@ -1474,18 +1694,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0012 */
 /* [local] */ 
@@ -1520,18 +1740,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0013 */
 /* [local] */ 
@@ -1566,18 +1786,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0014 */
 /* [local] */ 
@@ -1612,18 +1832,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0015 */
 /* [local] */ 
@@ -1658,18 +1878,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0016 */
 /* [local] */ 
@@ -1704,18 +1924,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0017 */
 /* [local] */ 
@@ -1750,18 +1970,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0018 */
 /* [local] */ 
@@ -1852,18 +2072,18 @@ interface IInkStrokesCollectedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0019 */
 /* [local] */ 
@@ -1926,18 +2146,18 @@ interface IInkStrokesErasedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0020 */
 /* [local] */ 
@@ -1972,18 +2192,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0021 */
 /* [local] */ 
@@ -2018,18 +2238,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0022 */
 /* [local] */ 
@@ -2064,18 +2284,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0023 */
 /* [local] */ 
@@ -2104,7 +2324,7 @@ extern "C" {
 namespace ABI {
 namespace Windows {
 namespace Foundation {
-struct Point;
+struct DateTime;
 } /*Foundation*/
 } /*Windows*/
 }
@@ -2121,20 +2341,134 @@ struct Point;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0024 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c"))
+IReference<struct ABI::Windows::Foundation::DateTime> : IReference_impl<struct ABI::Windows::Foundation::DateTime> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.Foundation.DateTime>"; }
+};
+typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Windows__CFoundation__CDateTime_t;
+#define ____FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+struct TimeSpan;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0024 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4633 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4633 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#define DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800"))
+IReference<struct ABI::Windows::Foundation::TimeSpan> : IReference_impl<struct ABI::Windows::Foundation::TimeSpan> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>"; }
+};
+typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Windows__CFoundation__CTimeSpan_t;
+#define ____FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+struct Point;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0025 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0025_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4634 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4634 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CPoint_USE
@@ -2158,29 +2492,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CPoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0026 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CPoint_USE
@@ -2204,29 +2538,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CPoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0027 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionProgressHandler_1_UINT64_USE
@@ -2250,29 +2584,29 @@ extern "C" {
 #endif /* DEF___FIAsyncActionProgressHandler_1_UINT64_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE
@@ -2296,29 +2630,29 @@ extern "C" {
 #endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionWithProgress_1_UINT64_USE
@@ -2342,29 +2676,29 @@ extern "C" {
 #endif /* DEF___FIAsyncActionWithProgress_1_UINT64_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0028 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0030 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
@@ -2388,29 +2722,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
@@ -2434,29 +2768,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0032 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
@@ -2530,7 +2864,7 @@ interface IPointerEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0033 */
 /* [local] */ 
 
 
@@ -2538,23 +2872,23 @@ interface IPointerEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkStrokeInput_Windows__CUI__CCore__CPointerEventArgs_USE
@@ -2605,30 +2939,30 @@ interface IInkUnprocessedInput;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0034 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkUnprocessedInput_Windows__CUI__CCore__CPointerEventArgs_USE
@@ -2673,6 +3007,10 @@ extern "C" {
 extern "C" {
 #endif // defined(__cplusplus)
 #if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
+
+#endif
+#if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2 __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2;
 
 #endif
@@ -2686,6 +3024,10 @@ typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_C
 #endif
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CSize __x_ABI_CWindows_CFoundation_CSize;
+
+#endif
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
 
 #endif
 
@@ -2729,6 +3071,16 @@ typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkDrawingAttributesKind __x_A
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkHighContrastAdjustment __x_ABI_CWindows_CUI_CInput_CInking_CInkHighContrastAdjustment;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkInputProcessingMode __x_ABI_CWindows_CUI_CInput_CInking_CInkInputProcessingMode;
 
 
@@ -2750,6 +3102,16 @@ typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkInputRightDragAction __x_AB
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkManipulationMode __x_ABI_CWindows_CUI_CInput_CInking_CInkManipulationMode;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CInkPersistenceFormat __x_ABI_CWindows_CUI_CInput_CInking_CInkPersistenceFormat;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -2796,6 +3158,16 @@ typedef enum __x_ABI_CWindows_CUI_CInput_CInking_CPenTipShape __x_ABI_CWindows_C
 
 
 #endif
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2872,6 +3244,19 @@ namespace Windows {
 namespace UI {
 namespace Input {
 namespace Inking {
+class InkPresenterProtractor;
+} /*Inking*/
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+namespace Inking {
 class InkPresenterRuler;
 } /*Inking*/
 } /*Input*/
@@ -2933,9 +3318,25 @@ class InkSynchronizer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0035 */
 /* [local] */ 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct DateTime DateTime;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -2995,6 +3396,22 @@ namespace ABI {
         namespace Foundation {
             
             typedef struct Size Size;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct TimeSpan TimeSpan;
             
         } /* end namespace */
     } /* end namespace */
@@ -3069,6 +3486,26 @@ namespace ABI {
             namespace Input {
                 namespace Inking {
                     
+                    typedef enum InkHighContrastAdjustment InkHighContrastAdjustment;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    
                     typedef enum InkInputProcessingMode InkInputProcessingMode;
                     
                 } /* end namespace */
@@ -3110,6 +3547,26 @@ namespace ABI {
                 namespace Inking {
                     
                     typedef enum InkManipulationMode InkManipulationMode;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    
+                    typedef enum InkPersistenceFormat InkPersistenceFormat;
                     
                 } /* end namespace */
             } /* end namespace */
@@ -3220,23 +3677,33 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0033_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3094 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3094 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0034 */
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0035_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4644 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4644 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkPoint
@@ -3244,13 +3711,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3094_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
@@ -3394,35 +3861,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CInking__CInkPoint;
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0037 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint
@@ -3430,13 +3897,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3095_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
@@ -3546,35 +4013,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint;
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0039 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognitionResult
@@ -3582,13 +4049,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3096_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
@@ -3732,35 +4199,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CInking__CInkRecogni
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0041 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognitionResult */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognitionResult
@@ -3768,13 +4235,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3097_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
@@ -3884,35 +4351,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CInking__CInkRecogni
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0043 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognitionResult */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognizer
@@ -3920,13 +4387,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3098_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__
@@ -4070,35 +4537,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CInking__CInkRecogni
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0045 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkRecognizer */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognizer
@@ -4106,13 +4573,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3099_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__
@@ -4222,35 +4689,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CInking__CInkRecogni
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0047 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkRecognizer */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkStroke
@@ -4258,13 +4725,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3100_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__
@@ -4408,35 +4875,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CInking__CInkStroke;
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0049 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkStroke */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke
@@ -4444,13 +4911,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3101_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__
@@ -4560,35 +5027,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke;
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0051 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkStroke */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment
@@ -4596,13 +5063,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3102_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__
@@ -4746,35 +5213,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CInking__CInkStrokeR
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0053 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment
@@ -4782,13 +5249,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3103_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__
@@ -4898,35 +5365,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CInking__CInkStrokeR
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0055 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkPoint
@@ -4934,13 +5401,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3104_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
@@ -5092,35 +5559,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CInking__CInkPoint
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0057 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult
@@ -5128,13 +5595,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3105_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
@@ -5286,35 +5753,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecog
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0059 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognizer
@@ -5322,13 +5789,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3106_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__
@@ -5480,35 +5947,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecog
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognizer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0061 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognizer */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke
@@ -5516,13 +5983,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3107_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__
@@ -5674,35 +6141,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrok
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0063 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkStroke */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0064 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment
@@ -5710,13 +6177,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3108_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__
@@ -5868,35 +6335,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrok
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0065 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CInking__CInkStrokeRenderingSegment */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CInput__CInking__CInkPoint
@@ -5904,13 +6371,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3109_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__
@@ -6144,35 +6611,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CInput__CInking__CInkPoint;
 #endif 	/* ____FIVector_1_Windows__CUI__CInput__CInking__CInkPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CInput__CInking__CInkPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult
@@ -6181,14 +6648,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3110_v0_0_s
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0068 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
@@ -6277,35 +6744,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0069 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0070 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult
@@ -6313,13 +6780,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3111_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__
@@ -6449,35 +6916,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInpu
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0071 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CInput__CInking__CInkRecognitionResult */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs
@@ -6485,13 +6952,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3112_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_INTERFACE_DEFINED__
@@ -6580,35 +7047,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CI
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0073 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesCollectedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0074 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs
@@ -6616,13 +7083,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking2Eidl_0000_3113_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_INTERFACE_DEFINED__
@@ -6711,7 +7178,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CInking__CI
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CInking__CInkPresenter_Windows__CUI__CInput__CInking__CInkStrokesErasedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0075 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -6724,6 +7191,19 @@ enum __x_ABI_CWindows_CUI_CInput_CInking_CInkDrawingAttributesKind
     {
         InkDrawingAttributesKind_Default	= 0,
         InkDrawingAttributesKind_Pencil	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CInput_CInking_CInkHighContrastAdjustment
+    {
+        InkHighContrastAdjustment_UseSystemColorsWhenNecessary	= 0,
+        InkHighContrastAdjustment_UseSystemColors	= 1,
+        InkHighContrastAdjustment_UseOriginalColors	= 2
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -6770,6 +7250,18 @@ enum __x_ABI_CWindows_CUI_CInput_CInking_CInkManipulationMode
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CInput_CInking_CInkPersistenceFormat
+    {
+        InkPersistenceFormat_GifWithEmbeddedIsf	= 0,
+        InkPersistenceFormat_Isf	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CInput_CInking_CInkPresenterPredefinedConfiguration
     {
         InkPresenterPredefinedConfiguration_SimpleSinglePointer	= 0,
@@ -6785,7 +7277,8 @@ enum __x_ABI_CWindows_CUI_CInput_CInking_CInkPresenterPredefinedConfiguration
 enum __x_ABI_CWindows_CUI_CInput_CInking_CInkPresenterStencilKind
     {
         InkPresenterStencilKind_Other	= 0,
-        InkPresenterStencilKind_Ruler	= 1
+        InkPresenterStencilKind_Ruler	= 1,
+        InkPresenterStencilKind_Protractor	= 2
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -6820,7 +7313,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0075 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -6836,6 +7329,30 @@ namespace ABI {
                         {
                             InkDrawingAttributesKind_Default	= 0,
                             InkDrawingAttributesKind_Pencil	= 1
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    
+                    /* [v1_enum] */ 
+                    enum InkHighContrastAdjustment
+                        {
+                            InkHighContrastAdjustment_UseSystemColorsWhenNecessary	= 0,
+                            InkHighContrastAdjustment_UseSystemColors	= 1,
+                            InkHighContrastAdjustment_UseOriginalColors	= 2
                         } ;
                 } /* end namespace */
             } /* end namespace */
@@ -6926,6 +7443,29 @@ namespace ABI {
                 namespace Inking {
                     
                     /* [v1_enum] */ 
+                    enum InkPersistenceFormat
+                        {
+                            InkPersistenceFormat_GifWithEmbeddedIsf	= 0,
+                            InkPersistenceFormat_Isf	= 1
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Inking {
+                    
+                    /* [v1_enum] */ 
                     enum InkPresenterPredefinedConfiguration
                         {
                             InkPresenterPredefinedConfiguration_SimpleSinglePointer	= 0,
@@ -6952,7 +7492,8 @@ namespace ABI {
                     enum InkPresenterStencilKind
                         {
                             InkPresenterStencilKind_Other	= 0,
-                            InkPresenterStencilKind_Ruler	= 1
+                            InkPresenterStencilKind_Ruler	= 1,
+                            InkPresenterStencilKind_Protractor	= 2
                         } ;
                 } /* end namespace */
             } /* end namespace */
@@ -7012,8 +7553,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes_INTERFACE_DEFINED__
@@ -7228,7 +7769,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttribute
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes2_INTERFACE_DEFINED__)
@@ -7236,13 +7777,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes2_INTERFACE_DEFINED__
@@ -7397,7 +7938,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttribute
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes3_INTERFACE_DEFINED__)
@@ -7405,13 +7946,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes3_INTERFACE_DEFINED__
@@ -7546,7 +8087,156 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttribute
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0078 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkDrawingAttributes4[] = L"Windows.UI.Input.Inking.IInkDrawingAttributes4";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0078 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0078_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkDrawingAttributes4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("EF65DC25-9F19-456D-91A3-BC3A3D91C5FB")
+                        IInkDrawingAttributes4 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IgnoreTilt( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IgnoreTilt( 
+                                /* [in] */ boolean value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkDrawingAttributes4 = __uuidof(IInkDrawingAttributes4);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IgnoreTilt )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IgnoreTilt )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4 * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_get_IgnoreTilt(This,value)	\
+    ( (This)->lpVtbl -> get_IgnoreTilt(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_put_IgnoreTilt(This,value)	\
+    ( (This)->lpVtbl -> put_IgnoreTilt(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributes4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_INTERFACE_DEFINED__)
@@ -7554,13 +8244,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_INTERFACE_DEFINED__
@@ -7695,7 +8385,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttribute
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesPencilProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__)
@@ -7703,13 +8393,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__
@@ -7834,7 +8524,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttribute
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkDrawingAttributesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_INTERFACE_DEFINED__)
@@ -7842,13 +8532,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_INTERFACE_DEFINED__
@@ -8003,7 +8693,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingC
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkInputProcessingConfiguration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_INTERFACE_DEFINED__)
@@ -8011,13 +8701,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_INTERFACE_DEFINED__
@@ -8208,7 +8898,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkManager;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_INTERFACE_DEFINED__)
@@ -8216,13 +8906,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_INTERFACE_DEFINED__
@@ -8357,7 +9047,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0084 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPoint2[] = L"Windows.UI.Input.Inking.IInkPoint2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0084 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0084_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkPoint2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("FBA9C3F7-AE56-4D5C-BD2F-0AC45F5E4AF9")
+                        IInkPoint2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TiltX( 
+                                /* [out][retval] */ __RPC__out FLOAT *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TiltY( 
+                                /* [out][retval] */ __RPC__out FLOAT *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Timestamp( 
+                                /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkPoint2 = __uuidof(IInkPoint2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TiltX )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [out][retval] */ __RPC__out FLOAT *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TiltY )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [out][retval] */ __RPC__out FLOAT *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Timestamp )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2 * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_get_TiltX(This,value)	\
+    ( (This)->lpVtbl -> get_TiltX(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_get_TiltY(This,value)	\
+    ( (This)->lpVtbl -> get_TiltY(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_get_Timestamp(This,value)	\
+    ( (This)->lpVtbl -> get_Timestamp(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_INTERFACE_DEFINED__)
@@ -8365,13 +9214,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_INTERFACE_DEFINED__
@@ -8500,7 +9349,156 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0086 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPointFactory2[] = L"Windows.UI.Input.Inking.IInkPointFactory2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0086 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0086_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkPointFactory2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("E0145E85-DAFF-45F2-AD69-050D8256A209")
+                        IInkPointFactory2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInkPointWithTiltAndTimestamp( 
+                                /* [in] */ ABI::Windows::Foundation::Point position,
+                                /* [in] */ FLOAT pressure,
+                                /* [in] */ FLOAT tiltX,
+                                /* [in] */ FLOAT tiltY,
+                                /* [in] */ UINT64 timestamp,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkPoint **result) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkPointFactory2 = __uuidof(IInkPointFactory2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateInkPointWithTiltAndTimestamp )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2 * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CPoint position,
+            /* [in] */ FLOAT pressure,
+            /* [in] */ FLOAT tiltX,
+            /* [in] */ FLOAT tiltY,
+            /* [in] */ UINT64 timestamp,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkPoint **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_CreateInkPointWithTiltAndTimestamp(This,position,pressure,tiltX,tiltY,timestamp,result)	\
+    ( (This)->lpVtbl -> CreateInkPointWithTiltAndTimestamp(This,position,pressure,tiltX,tiltY,timestamp,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPointFactory2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_INTERFACE_DEFINED__)
@@ -8508,13 +9506,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_INTERFACE_DEFINED__
@@ -8803,7 +9801,566 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0088 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPresenter2[] = L"Windows.UI.Input.Inking.IInkPresenter2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0088 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0088_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkPresenter2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("CF53E612-9A34-11E6-9F33-A24FC0D9649C")
+                        IInkPresenter2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HighContrastAdjustment( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Input::Inking::InkHighContrastAdjustment *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_HighContrastAdjustment( 
+                                /* [in] */ ABI::Windows::UI::Input::Inking::InkHighContrastAdjustment value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkPresenter2 = __uuidof(IInkPresenter2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HighContrastAdjustment )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CInput_CInking_CInkHighContrastAdjustment *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_HighContrastAdjustment )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CInput_CInking_CInkHighContrastAdjustment value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_get_HighContrastAdjustment(This,value)	\
+    ( (This)->lpVtbl -> get_HighContrastAdjustment(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_put_HighContrastAdjustment(This,value)	\
+    ( (This)->lpVtbl -> put_HighContrastAdjustment(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0089 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPresenterProtractor[] = L"Windows.UI.Input.Inking.IInkPresenterProtractor";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0089 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0089_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkPresenterProtractor */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("7DE3F2AA-EF6C-4E91-A73B-5B70D56FBD17")
+                        IInkPresenterProtractor : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AreTickMarksVisible( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AreTickMarksVisible( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AreRaysVisible( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AreRaysVisible( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCenterMarkerVisible( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsCenterMarkerVisible( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsAngleReadoutVisible( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsAngleReadoutVisible( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsResizable( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsResizable( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Radius( 
+                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Radius( 
+                                /* [in] */ DOUBLE value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AccentColor( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Color *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AccentColor( 
+                                /* [in] */ ABI::Windows::UI::Color value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkPresenterProtractor = __uuidof(IInkPresenterProtractor);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AreTickMarksVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AreTickMarksVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AreRaysVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AreRaysVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCenterMarkerVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsCenterMarkerVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsAngleReadoutVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsAngleReadoutVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsResizable )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsResizable )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Radius )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Radius )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ DOUBLE value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AccentColor )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CColor *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AccentColor )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CColor value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_AreTickMarksVisible(This,value)	\
+    ( (This)->lpVtbl -> get_AreTickMarksVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_AreTickMarksVisible(This,value)	\
+    ( (This)->lpVtbl -> put_AreTickMarksVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_AreRaysVisible(This,value)	\
+    ( (This)->lpVtbl -> get_AreRaysVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_AreRaysVisible(This,value)	\
+    ( (This)->lpVtbl -> put_AreRaysVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_IsCenterMarkerVisible(This,value)	\
+    ( (This)->lpVtbl -> get_IsCenterMarkerVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_IsCenterMarkerVisible(This,value)	\
+    ( (This)->lpVtbl -> put_IsCenterMarkerVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_IsAngleReadoutVisible(This,value)	\
+    ( (This)->lpVtbl -> get_IsAngleReadoutVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_IsAngleReadoutVisible(This,value)	\
+    ( (This)->lpVtbl -> put_IsAngleReadoutVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_IsResizable(This,value)	\
+    ( (This)->lpVtbl -> get_IsResizable(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_IsResizable(This,value)	\
+    ( (This)->lpVtbl -> put_IsResizable(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_Radius(This,value)	\
+    ( (This)->lpVtbl -> get_Radius(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_Radius(This,value)	\
+    ( (This)->lpVtbl -> put_Radius(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_get_AccentColor(This,value)	\
+    ( (This)->lpVtbl -> get_AccentColor(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_put_AccentColor(This,value)	\
+    ( (This)->lpVtbl -> put_AccentColor(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0090 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPresenterProtractorFactory[] = L"Windows.UI.Input.Inking.IInkPresenterProtractorFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0090 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0090_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkPresenterProtractorFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("320103C9-68FA-47E9-8127-8370711FC46C")
+                        IInkPresenterProtractorFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE Create( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::Inking::IInkPresenter *inkPresenter,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkPresenterProtractor **inkPresenterProtractor) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkPresenterProtractorFactory = __uuidof(IInkPresenterProtractorFactory);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenter *inkPresenter,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractor **inkPresenterProtractor);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_Create(This,inkPresenter,inkPresenterProtractor)	\
+    ( (This)->lpVtbl -> Create(This,inkPresenter,inkPresenterProtractor) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterProtractorFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_INTERFACE_DEFINED__)
@@ -8811,13 +10368,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_INTERFACE_DEFINED__
@@ -8972,7 +10529,176 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0092 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkPresenterRuler2[] = L"Windows.UI.Input.Inking.IInkPresenterRuler2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0092 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0092_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkPresenterRuler2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("45130DC1-BC61-44D4-A423-54712AE671C4")
+                        IInkPresenterRuler2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AreTickMarksVisible( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AreTickMarksVisible( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCompassVisible( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsCompassVisible( 
+                                /* [in] */ boolean value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkPresenterRuler2 = __uuidof(IInkPresenterRuler2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AreTickMarksVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AreTickMarksVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCompassVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsCompassVisible )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2 * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_get_AreTickMarksVisible(This,value)	\
+    ( (This)->lpVtbl -> get_AreTickMarksVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_put_AreTickMarksVisible(This,value)	\
+    ( (This)->lpVtbl -> put_AreTickMarksVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_get_IsCompassVisible(This,value)	\
+    ( (This)->lpVtbl -> get_IsCompassVisible(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_put_IsCompassVisible(This,value)	\
+    ( (This)->lpVtbl -> put_IsCompassVisible(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRuler2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFactory_INTERFACE_DEFINED__)
@@ -8980,13 +10706,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFactory_INTERFACE_DEFINED__
@@ -9113,7 +10839,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFa
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterRulerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterStencil_INTERFACE_DEFINED__)
@@ -9121,13 +10847,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterStencil_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterStencil_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterStencil_INTERFACE_DEFINED__
@@ -9332,7 +11058,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterStencil
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkPresenterStencil_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognitionResult_INTERFACE_DEFINED__)
@@ -9340,13 +11066,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognitionResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognitionResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognitionResult_INTERFACE_DEFINED__
@@ -9491,7 +11217,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognitionResul
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognitionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizer_INTERFACE_DEFINED__)
@@ -9499,13 +11225,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizer_INTERFACE_DEFINED__
@@ -9630,7 +11356,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizer;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizerContainer_INTERFACE_DEFINED__)
@@ -9638,13 +11364,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizerContainer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizerContainer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizerContainer_INTERFACE_DEFINED__
@@ -9793,7 +11519,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizerContai
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkRecognizerContainer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke_INTERFACE_DEFINED__)
@@ -9801,13 +11527,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke_INTERFACE_DEFINED__
@@ -10002,7 +11728,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2_INTERFACE_DEFINED__)
@@ -10010,13 +11736,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2_INTERFACE_DEFINED__
@@ -10161,7 +11887,186 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0100 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkStroke3[] = L"Windows.UI.Input.Inking.IInkStroke3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0100 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0100_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkStroke3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("4A807374-9499-411D-A1C4-68855D03D65F")
+                        IInkStroke3 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                                /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StrokeStartedTime( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StrokeStartedTime( 
+                                /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StrokeDuration( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StrokeDuration( 
+                                /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkStroke3 = __uuidof(IInkStroke3);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StrokeStartedTime )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_StrokeStartedTime )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StrokeDuration )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_StrokeDuration )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3 * This,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_get_StrokeStartedTime(This,value)	\
+    ( (This)->lpVtbl -> get_StrokeStartedTime(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_put_StrokeStartedTime(This,value)	\
+    ( (This)->lpVtbl -> put_StrokeStartedTime(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_get_StrokeDuration(This,value)	\
+    ( (This)->lpVtbl -> get_StrokeDuration(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_put_StrokeDuration(This,value)	\
+    ( (This)->lpVtbl -> put_StrokeDuration(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_INTERFACE_DEFINED__)
@@ -10169,13 +12074,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_INTERFACE_DEFINED__
@@ -10346,7 +12251,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2_INTERFACE_DEFINED__)
@@ -10354,13 +12259,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2_INTERFACE_DEFINED__
@@ -10489,7 +12394,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0103 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkStrokeBuilder3[] = L"Windows.UI.Input.Inking.IInkStrokeBuilder3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0103 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0103_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkStrokeBuilder3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("B2C71FCD-5472-46B1-A81D-C37A3D169441")
+                        IInkStrokeBuilder3 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateStrokeFromInkPoints( 
+                                /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint *inkPoints,
+                                /* [in] */ ABI::Windows::Foundation::Numerics::Matrix3x2 transform,
+                                /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime *strokeStartedTime,
+                                /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan *strokeDuration,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkStroke **result) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkStrokeBuilder3 = __uuidof(IInkStrokeBuilder3);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateStrokeFromInkPoints )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CUI__CInput__CInking__CInkPoint *inkPoints,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CNumerics_CMatrix3x2 transform,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime *strokeStartedTime,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan *strokeDuration,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_CreateStrokeFromInkPoints(This,inkPoints,transform,strokeStartedTime,strokeDuration,result)	\
+    ( (This)->lpVtbl -> CreateStrokeFromInkPoints(This,inkPoints,transform,strokeStartedTime,strokeDuration,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeBuilder3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_INTERFACE_DEFINED__)
@@ -10497,13 +12549,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_INTERFACE_DEFINED__
@@ -10770,7 +12822,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2_INTERFACE_DEFINED__)
@@ -10778,13 +12830,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2_INTERFACE_DEFINED__
@@ -10917,7 +12969,162 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0106 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Inking_IInkStrokeContainer3[] = L"Windows.UI.Input.Inking.IInkStrokeContainer3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0106 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0106_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Inking::IInkStrokeContainer3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Inking {
+                        
+                        MIDL_INTERFACE("3D07BEA5-BAEA-4C82-A719-7B83DA1067D2")
+                        IInkStrokeContainer3 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE SaveWithFormatAsync( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream *outputStream,
+                                /* [in] */ ABI::Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 **outputStreamOperation) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetStrokeById( 
+                                /* [in] */ UINT32 id,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Inking::IInkStroke **stroke) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IInkStrokeContainer3 = __uuidof(IInkStrokeContainer3);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveWithFormatAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream *outputStream,
+            /* [in] */ __x_ABI_CWindows_CUI_CInput_CInking_CInkPersistenceFormat inkPersistenceFormat,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperationWithProgress_2_UINT32_UINT32 **outputStreamOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStrokeById )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3 * This,
+            /* [in] */ UINT32 id,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CInking_CIInkStroke **stroke);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_SaveWithFormatAsync(This,outputStream,inkPersistenceFormat,outputStreamOperation)	\
+    ( (This)->lpVtbl -> SaveWithFormatAsync(This,outputStream,inkPersistenceFormat,outputStreamOperation) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_GetStrokeById(This,id,stroke)	\
+    ( (This)->lpVtbl -> GetStrokeById(This,id,stroke) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeContainer3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput_INTERFACE_DEFINED__)
@@ -10925,13 +13132,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput_INTERFACE_DEFINED__
@@ -11144,7 +13351,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeInput_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeRenderingSegment_INTERFACE_DEFINED__)
@@ -11152,13 +13359,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeRenderingSegment_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeRenderingSegment_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeRenderingSegment_INTERFACE_DEFINED__
@@ -11343,7 +13550,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeRenderingS
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokeRenderingSegment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesCollectedEventArgs_INTERFACE_DEFINED__)
@@ -11351,13 +13558,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesCollectedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesCollectedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesCollectedEventArgs_INTERFACE_DEFINED__
@@ -11482,7 +13689,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesCollected
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesCollectedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesErasedEventArgs_INTERFACE_DEFINED__)
@@ -11490,13 +13697,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesErasedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesErasedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesErasedEventArgs_INTERFACE_DEFINED__
@@ -11621,7 +13828,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesErasedEve
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkStrokesErasedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkSynchronizer_INTERFACE_DEFINED__)
@@ -11629,13 +13836,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkSynchronizer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkSynchronizer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkSynchronizer_INTERFACE_DEFINED__
@@ -11768,7 +13975,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkSynchronizer;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkSynchronizer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput_INTERFACE_DEFINED__)
@@ -11776,13 +13983,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput_INTERFACE_DEFINED__
@@ -12061,7 +14268,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CInking_CIInkUnprocessedInput_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0113 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkDrawingAttributes_DEFINED
@@ -12087,6 +14294,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkPresenter_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_Inking_InkPresenter_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkPresenter[] = L"Windows.UI.Input.Inking.InkPresenter";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkPresenterProtractor_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Inking_InkPresenterProtractor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Inking_InkPresenterProtractor[] = L"Windows.UI.Input.Inking.InkPresenterProtractor";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Input_Inking_InkPresenterRuler_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_Inking_InkPresenterRuler_DEFINED
@@ -12142,13 +14353,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Einput2Einking_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Einking_0000_0113_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

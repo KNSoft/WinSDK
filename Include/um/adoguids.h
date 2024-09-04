@@ -25,7 +25,7 @@
 #endif
 
 #define INCLUDING_ADOGUIDS
-#include "adogpool.h"
+#include <adogpool.h>
 #undef  INCLUDING_ADOGUIDS
 
 #undef IMMEDIATE_GUID_USE

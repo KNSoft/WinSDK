@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -269,7 +269,6 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.DataTransfer.h"
 #include "Windows.ApplicationModel.DataTransfer.DragDrop.h"
-#include "Windows.Graphics.Imaging.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -360,18 +359,18 @@ interface ICoreDropOperationTargetRequestedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0001 */
 /* [local] */ 
@@ -419,18 +418,18 @@ enum DataPackageOperation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0002 */
 /* [local] */ 
@@ -465,18 +464,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0003 */
 /* [local] */ 
@@ -737,18 +736,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_3190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Edragdrop2Ecore_0000_0004 */
 /* [local] */ 

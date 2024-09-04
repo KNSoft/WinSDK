@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -38,6 +38,20 @@
 #endif
 
 /* Forward Declarations */ 
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__ */
+
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_FWD_DEFINED__
@@ -79,6 +93,46 @@ typedef interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBlueto
 typedef interface __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable __FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                interface IBluetoothAdapter;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                interface IBluetoothAdapterStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_FWD_DEFINED__
@@ -179,6 +233,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                interface IBluetoothDeviceId;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics_FWD_DEFINED__
@@ -341,6 +415,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                interface IBluetoothLEDevice3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics;
@@ -401,12 +495,33 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStrengthFilter_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                interface IBluetoothUuidHelperStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.Devices.Bluetooth.GenericAttributeProfile.h"
+#include "Windows.Devices.Radios.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -423,6 +538,121 @@ extern "C"{
 #ifdef __cplusplus
 extern "C" {
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+class BluetoothAdapter;
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+interface IBluetoothAdapter;
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0000 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0000_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4628 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4628 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("10a10a88-90e0-511a-9a08-d75feb52a19f"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::BluetoothAdapter*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Bluetooth::BluetoothAdapter*, ABI::Windows::Devices::Bluetooth::IBluetoothAdapter*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.Bluetooth.BluetoothAdapter>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::BluetoothAdapter*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4629 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4629 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("46fce70c-6c07-5a3a-b775-26f99402553f"))
+IAsyncOperation<ABI::Windows::Devices::Bluetooth::BluetoothAdapter*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Bluetooth::BluetoothAdapter*, ABI::Windows::Devices::Bluetooth::IBluetoothAdapter*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.Bluetooth.BluetoothAdapter>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Devices::Bluetooth::BluetoothAdapter*> __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_t;
+#define ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -448,29 +678,30 @@ interface IBluetoothDevice;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0000 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3087 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_USE
@@ -494,29 +725,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_USE
@@ -563,30 +794,30 @@ interface IBluetoothLEDevice;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_USE
@@ -610,29 +841,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_USE
@@ -658,30 +889,30 @@ extern "C" {
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_USE
@@ -705,29 +936,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_USE
@@ -749,6 +980,122 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Bluetooth::BluetoothLEDevice*,
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Radios {
+class Radio;
+} /*Radios*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Radios {
+interface IRadio;
+} /*Radios*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4636 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4636 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("8a5c7e3a-80e2-585b-8630-7a8e777f0354"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::Radios::Radio*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Radios::Radio*, ABI::Windows::Devices::Radios::IRadio*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.Radios.Radio>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::Radios::Radio*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CRadios__CRadio_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4637 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4637 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("eac62c40-8dbc-5854-8ba0-b7b9940e7389"))
+IAsyncOperation<ABI::Windows::Devices::Radios::Radio*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Radios::Radio*, ABI::Windows::Devices::Radios::IRadio*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.Radios.Radio>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Devices::Radios::Radio*> __FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t;
+#define ____FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_USE */
 
 #ifdef __cplusplus
 namespace ABI {
@@ -763,30 +1110,30 @@ interface IBuffer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -810,29 +1157,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -856,29 +1203,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -929,30 +1276,30 @@ interface IRfcommDeviceService;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_USE
@@ -976,29 +1323,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_USE
@@ -1022,29 +1369,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_USE
@@ -1080,30 +1427,30 @@ enum DeviceAccessStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceAccessStatus_USE
@@ -1127,29 +1474,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CEnumeration__CDeviceAccessStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceAccessStatus_USE
@@ -1200,30 +1547,30 @@ interface IRfcommDeviceServicesResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_USE
@@ -1247,29 +1594,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_USE
@@ -1320,30 +1667,30 @@ interface IGattDeviceService;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_USE
@@ -1367,29 +1714,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_USE
@@ -1413,29 +1760,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_USE
@@ -1457,31 +1804,151 @@ typedef IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::G
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+namespace GenericAttributeProfile {
+class GattDeviceServicesResult;
+} /*GenericAttributeProfile*/
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+namespace GenericAttributeProfile {
+interface IGattDeviceServicesResult;
+} /*GenericAttributeProfile*/
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3106 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("74ab0892-a631-5d6c-b1b4-bd2e1a741a9b"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult*, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServicesResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4652 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4652 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e7c667f6-e874-500f-86ff-760ca6f07a58"))
+IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult*, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServicesResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult*> __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t;
+#define ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4653 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4653 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_short_USE
@@ -1515,30 +1982,30 @@ struct TimeSpan;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
@@ -1560,6 +2027,52 @@ typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Wi
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_UINT32_USE
+#define DEF___FIReference_1_UINT32_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3"))
+IReference<UINT32> : IReference_impl<UINT32> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<UInt32>"; }
+};
+typedef IReference<UINT32> __FIReference_1_UINT32_t;
+#define ____FIReference_1_UINT32_FWD_DEFINED__
+#define __FIReference_1_UINT32 ABI::Windows::Foundation::__FIReference_1_UINT32_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_UINT32_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -1573,6 +2086,9 @@ extern "C" {
 #if !defined(__windows2Edevices2Eenumeration_h__)
 #include <Windows.Devices.Enumeration.h>
 #endif // !defined(__windows2Edevices2Eenumeration_h__)
+#if !defined(__windows2Edevices2Eradios_h__)
+#include <Windows.Devices.Radios.h>
+#endif // !defined(__windows2Edevices2Eradios_h__)
 #if !defined(__windows2Enetworking_h__)
 #include <Windows.Networking.h>
 #endif // !defined(__windows2Enetworking_h__)
@@ -1729,12 +2245,27 @@ typedef enum __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothServiceCapabilities 
 
 
 
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace Devices {
 namespace Bluetooth {
 class BluetoothClassOfDevice;
+} /*Bluetooth*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Bluetooth {
+class BluetoothDeviceId;
 } /*Bluetooth*/
 } /*Devices*/
 } /*Windows*/
@@ -1764,7 +2295,7 @@ class BluetoothSignalStrengthFilter;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028 */
 /* [local] */ 
 
 
@@ -1949,23 +2480,332 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0021_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3108 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3108 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("10a10a88-90e0-511a-9a08-d75feb52a19f")
+    __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapterVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapterVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapterVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4657 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4657 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("46fce70c-6c07-5a3a-b775-26f99402553f")
+    __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::Bluetooth::IBluetoothAdapter **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapterVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothAdapter **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapterVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapterVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice
@@ -1974,14 +2814,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3108_v0_0_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_INTERFACE_DEFINED__
@@ -2070,35 +2910,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothDevice */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice
@@ -2106,13 +2946,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3109_v0_0_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_INTERFACE_DEFINED__
@@ -2242,35 +3082,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBlue
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice
@@ -2279,14 +3119,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3110_v0_0_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_INTERFACE_DEFINED__
@@ -2375,35 +3215,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice
@@ -2411,13 +3251,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3111_v0_0_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_INTERFACE_DEFINED__
@@ -2547,35 +3387,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBlue
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable
@@ -2583,13 +3423,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3112_v0_0_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_INTERFACE_DEFINED__
@@ -2678,35 +3518,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CB
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable
@@ -2714,13 +3554,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth2Eidl_0000_3113_v0_0_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_INTERFACE_DEFINED__
@@ -2809,7 +3649,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CB
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -2821,7 +3661,8 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CBluetooth__CB
 enum __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothAddressType
     {
         BluetoothAddressType_Public	= 0,
-        BluetoothAddressType_Random	= 1
+        BluetoothAddressType_Random	= 1,
+        BluetoothAddressType_Unspecified	= 2
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -2864,7 +3705,8 @@ enum __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothError
         BluetoothError_DisabledByPolicy	= 5,
         BluetoothError_NotSupported	= 6,
         BluetoothError_DisabledByUser	= 7,
-        BluetoothError_ConsentRequired	= 8
+        BluetoothError_ConsentRequired	= 8,
+        BluetoothError_TransportNotSupported	= 9
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3001,12 +3843,12 @@ DEFINE_ENUM_FLAG_OPERATORS(BluetoothServiceCapabilities)
 } /*Windows*/
 }
 #endif
-#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothClassOfDevice[] = L"Windows.Devices.Bluetooth.IBluetoothClassOfDevice";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapter[] = L"Windows.Devices.Bluetooth.IBluetoothAdapter";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -3020,7 +3862,8 @@ namespace ABI {
                 enum BluetoothAddressType
                     {
                         BluetoothAddressType_Public	= 0,
-                        BluetoothAddressType_Random	= 1
+                        BluetoothAddressType_Random	= 1,
+                        BluetoothAddressType_Unspecified	= 2
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -3090,7 +3933,8 @@ namespace ABI {
                         BluetoothError_DisabledByPolicy	= 5,
                         BluetoothError_NotSupported	= 6,
                         BluetoothError_DisabledByUser	= 7,
-                        BluetoothError_ConsentRequired	= 8
+                        BluetoothError_ConsentRequired	= 8,
+                        BluetoothError_TransportNotSupported	= 9
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -3250,8 +4094,374 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Bluetooth::IBluetoothAdapter */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Bluetooth {
+                    
+                    MIDL_INTERFACE("7974F04C-5F7A-4A34-9225-A855F84B1A8B")
+                    IBluetoothAdapter : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BluetoothAddress( 
+                            /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsClassicSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsLowEnergySupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsPeripheralRoleSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCentralRoleSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsAdvertisementOffloadSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetRadioAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBluetoothAdapter = __uuidof(IBluetoothAdapter);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceId )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BluetoothAddress )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsClassicSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsLowEnergySupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsPeripheralRoleSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCentralRoleSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsAdvertisementOffloadSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRadioAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_DeviceId(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceId(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_BluetoothAddress(This,value)	\
+    ( (This)->lpVtbl -> get_BluetoothAddress(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_IsClassicSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsClassicSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_IsLowEnergySupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsLowEnergySupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_IsPeripheralRoleSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsPeripheralRoleSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_IsCentralRoleSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsCentralRoleSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_get_IsAdvertisementOffloadSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsAdvertisementOffloadSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_GetRadioAsync(This,operation)	\
+    ( (This)->lpVtbl -> GetRadioAsync(This,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapterStatics[] = L"Windows.Devices.Bluetooth.IBluetoothAdapterStatics";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Bluetooth::IBluetoothAdapterStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Bluetooth {
+                    
+                    MIDL_INTERFACE("8B02FB6A-AC4C-4741-8661-8EAB7D17EA9F")
+                    IBluetoothAdapterStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FromIdAsync( 
+                            /* [in] */ __RPC__in HSTRING deviceId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDefaultAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBluetoothAdapterStatics = __uuidof(IBluetoothAdapterStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelector )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *FromIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefaultAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothAdapter **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStaticsVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_GetDeviceSelector(This,result)	\
+    ( (This)->lpVtbl -> GetDeviceSelector(This,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FromIdAsync(This,deviceId,operation)	\
+    ( (This)->lpVtbl -> FromIdAsync(This,deviceId,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_GetDefaultAsync(This,operation)	\
+    ( (This)->lpVtbl -> GetDefaultAsync(This,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothClassOfDevice[] = L"Windows.Devices.Bluetooth.IBluetoothClassOfDevice";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__
@@ -3404,7 +4614,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDe
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDeviceStatics_INTERFACE_DEFINED__)
@@ -3412,13 +4622,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDeviceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDeviceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDeviceStatics_INTERFACE_DEFINED__
@@ -3559,7 +4769,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDe
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothClassOfDeviceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice_INTERFACE_DEFINED__)
@@ -3567,13 +4777,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice_INTERFACE_DEFINED__
@@ -3832,7 +5042,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice;
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice2_INTERFACE_DEFINED__)
@@ -3840,13 +5050,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice2_INTERFACE_DEFINED__
@@ -3969,7 +5179,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice2;
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0050 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3_INTERFACE_DEFINED__)
@@ -3977,13 +5187,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3_INTERFACE_DEFINED__
@@ -4164,7 +5374,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3;
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDevice3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0051 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothDeviceId[] = L"Windows.Devices.Bluetooth.IBluetoothDeviceId";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0051_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Bluetooth {
+                    
+                    MIDL_INTERFACE("C17949AF-57C1-4642-BCCE-E6C06B20AE76")
+                    IBluetoothDeviceId : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsClassicDevice( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsLowEnergyDevice( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBluetoothDeviceId = __uuidof(IBluetoothDeviceId);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceIdVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsClassicDevice )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsLowEnergyDevice )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceIdVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceIdVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_get_IsClassicDevice(This,value)	\
+    ( (This)->lpVtbl -> get_IsClassicDevice(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_get_IsLowEnergyDevice(This,value)	\
+    ( (This)->lpVtbl -> get_IsLowEnergyDevice(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceId_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics_INTERFACE_DEFINED__)
@@ -4172,13 +5539,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics_INTERFACE_DEFINED__
@@ -4337,7 +5704,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics2_INTERFACE_DEFINED__)
@@ -4345,13 +5712,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics2_INTERFACE_DEFINED__
@@ -4524,7 +5891,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothDeviceStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearance_INTERFACE_DEFINED__)
@@ -4532,13 +5899,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearance_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearance_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearance_INTERFACE_DEFINED__
@@ -4681,7 +6048,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppeara
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearance_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceCategoriesStatics_INTERFACE_DEFINED__)
@@ -4689,13 +6056,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceCategoriesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceCategoriesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceCategoriesStatics_INTERFACE_DEFINED__
@@ -5028,7 +6395,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppeara
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceCategoriesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceStatics_INTERFACE_DEFINED__)
@@ -5036,13 +6403,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceStatics_INTERFACE_DEFINED__
@@ -5181,7 +6548,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppeara
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceSubcategoriesStatics_INTERFACE_DEFINED__)
@@ -5189,13 +6556,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceSubcategoriesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceSubcategoriesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceSubcategoriesStatics_INTERFACE_DEFINED__
@@ -5588,7 +6955,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppeara
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEAppearanceSubcategoriesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice_INTERFACE_DEFINED__)
@@ -5596,13 +6963,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice_INTERFACE_DEFINED__
@@ -5843,7 +7210,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice;
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2_INTERFACE_DEFINED__)
@@ -5851,13 +7218,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2_INTERFACE_DEFINED__
@@ -6000,7 +7367,202 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0060 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothLEDevice3[] = L"Windows.Devices.Bluetooth.IBluetoothLEDevice3";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0060 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0060_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Bluetooth::IBluetoothLEDevice3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Bluetooth {
+                    
+                    MIDL_INTERFACE("AEE9E493-44AC-40DC-AF33-B2C13C01CA46")
+                    IBluetoothLEDevice3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceAccessInformation( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Enumeration::IDeviceAccessInformation **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceAccessStatus **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetGattServicesAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetGattServicesWithCacheModeAsync( 
+                            /* [in] */ ABI::Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetGattServicesForUuidAsync( 
+                            /* [in] */ GUID serviceUuid,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetGattServicesForUuidWithCacheModeAsync( 
+                            /* [in] */ GUID serviceUuid,
+                            /* [in] */ ABI::Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBluetoothLEDevice3 = __uuidof(IBluetoothLEDevice3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceAccessInformation )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceAccessInformation **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceAccessStatus **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetGattServicesAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetGattServicesWithCacheModeAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothCacheMode cacheMode,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetGattServicesForUuidAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [in] */ GUID serviceUuid,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetGattServicesForUuidWithCacheModeAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3 * This,
+            /* [in] */ GUID serviceUuid,
+            /* [in] */ __x_ABI_CWindows_CDevices_CBluetooth_CBluetoothCacheMode cacheMode,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_get_DeviceAccessInformation(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceAccessInformation(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_RequestAccessAsync(This,operation)	\
+    ( (This)->lpVtbl -> RequestAccessAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetGattServicesAsync(This,operation)	\
+    ( (This)->lpVtbl -> GetGattServicesAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetGattServicesWithCacheModeAsync(This,cacheMode,operation)	\
+    ( (This)->lpVtbl -> GetGattServicesWithCacheModeAsync(This,cacheMode,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetGattServicesForUuidAsync(This,serviceUuid,operation)	\
+    ( (This)->lpVtbl -> GetGattServicesForUuidAsync(This,serviceUuid,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_GetGattServicesForUuidWithCacheModeAsync(This,serviceUuid,cacheMode,operation)	\
+    ( (This)->lpVtbl -> GetGattServicesForUuidWithCacheModeAsync(This,serviceUuid,cacheMode,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDevice3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0061 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_INTERFACE_DEFINED__)
@@ -6008,13 +7570,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_INTERFACE_DEFINED__
@@ -6161,7 +7723,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceS
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics2_INTERFACE_DEFINED__)
@@ -6169,13 +7731,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics2_INTERFACE_DEFINED__
@@ -6376,7 +7938,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceS
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothLEDeviceStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStrengthFilter_INTERFACE_DEFINED__)
@@ -6384,13 +7946,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStrengthFilter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStrengthFilter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStrengthFilter_INTERFACE_DEFINED__
@@ -6583,9 +8145,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStr
 #endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothSignalStrengthFilter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0064 */
 /* [local] */ 
 
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothUuidHelperStatics[] = L"Windows.Devices.Bluetooth.IBluetoothUuidHelperStatics";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0064 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0064_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Bluetooth {
+                    
+                    MIDL_INTERFACE("17DF0CD8-CF74-4B21-AFE6-F57A11BCDEA0")
+                    IBluetoothUuidHelperStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE FromShortId( 
+                            /* [in] */ UINT32 shortId,
+                            /* [out][retval] */ __RPC__out GUID *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryGetShortId( 
+                            /* [in] */ GUID uuid,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT32 **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBluetoothUuidHelperStatics = __uuidof(IBluetoothUuidHelperStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *FromShortId )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This,
+            /* [in] */ UINT32 shortId,
+            /* [out][retval] */ __RPC__out GUID *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetShortId )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics * This,
+            /* [in] */ GUID uuid,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT32 **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStaticsVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_FromShortId(This,shortId,result)	\
+    ( (This)->lpVtbl -> FromShortId(This,shortId,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_TryGetShortId(This,uuid,result)	\
+    ( (This)->lpVtbl -> TryGetShortId(This,uuid,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelperStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0065 */
+/* [local] */ 
+
+#ifndef RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothAdapter_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothAdapter_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Bluetooth_BluetoothAdapter[] = L"Windows.Devices.Bluetooth.BluetoothAdapter";
+#endif
 #ifndef RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothClassOfDevice_DEFINED
 #define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothClassOfDevice_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Bluetooth_BluetoothClassOfDevice[] = L"Windows.Devices.Bluetooth.BluetoothClassOfDevice";
@@ -6593,6 +8310,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothDevice_DEFINED
 #define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothDevice_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Bluetooth_BluetoothDevice[] = L"Windows.Devices.Bluetooth.BluetoothDevice";
+#endif
+#ifndef RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothDeviceId_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothDeviceId_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Bluetooth_BluetoothDeviceId[] = L"Windows.Devices.Bluetooth.BluetoothDeviceId";
 #endif
 #ifndef RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothLEAppearance_DEFINED
 #define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothLEAppearance_DEFINED
@@ -6614,15 +8335,19 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothSignalStrengthFilter_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Bluetooth_BluetoothSignalStrengthFilter[] = L"Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter";
 #endif
+#ifndef RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothUuidHelper_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Bluetooth_BluetoothUuidHelper_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Bluetooth_BluetoothUuidHelper[] = L"Windows.Devices.Bluetooth.BluetoothUuidHelper";
+#endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049 */
+/* interface __MIDL_itf_windows2Edevices2Ebluetooth_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ebluetooth_0000_0065_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

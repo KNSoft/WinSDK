@@ -1,7 +1,7 @@
  
 /*++
 
-Copyright (c) 1997-1998  Microsoft Corporation
+Copyright (c) Microsoft Corporation. All rights reserved.
 
 Module Name:
 
@@ -30,6 +30,7 @@ Revision History:
 #endif
 
 /* APISET_NAME: api-ms-win-security-sddl-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -49,9 +50,9 @@ Revision History:
 extern "C" {
 #endif
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //
 // SDDL Version information
@@ -94,6 +95,7 @@ extern "C" {
 #define SDDL_SCOPED_POLICY_ID               TEXT("SP")  // Scoped policy
 #define SDDL_CALLBACK_AUDIT                 TEXT("XU")  // Callback audit
 #define SDDL_CALLBACK_OBJECT_ACCESS_ALLOWED TEXT("ZA")  // Callback object access allowed
+#define SDDL_ACCESS_FILTER                  TEXT("FL")  // Access Filter
 
 
 //
@@ -116,6 +118,7 @@ extern "C" {
 #define SDDL_NO_PROPAGATE                   TEXT("NP")  // Inherit no propagate
 #define SDDL_INHERIT_ONLY                   TEXT("IO")  // Inherit only
 #define SDDL_INHERITED                      TEXT("ID")  // Inherited
+#define SDDL_TRUST_PROTECTED_FILTER         TEXT("TP")  // Trust Protected Filter
 #define SDDL_AUDIT_SUCCESS                  TEXT("SA")  // Audit success
 #define SDDL_AUDIT_FAILURE                  TEXT("FA")  // Audit failure
 
@@ -243,38 +246,39 @@ extern "C" {
 //
 // SDDL Seperators - character version
 //
-#define SDDL_SEPERATORC                     TEXT(';')
-#define SDDL_DELIMINATORC                   TEXT(':')
-#define SDDL_ACE_BEGINC                     TEXT('(')
-#define SDDL_ACE_ENDC                       TEXT(')')
-#define SDDL_SPACEC                              TEXT(' ')
-#define SDDL_ACE_COND_BEGINC           TEXT('(')
-#define SDDL_ACE_COND_ENDC           TEXT(')')
-#define SDDL_ACE_COND_STRING_BEGINC           TEXT('"')
-#define SDDL_ACE_COND_STRING_ENDC           TEXT('"')
+#define SDDL_SEPERATORC                           TEXT(';')
+#define SDDL_DELIMINATORC                         TEXT(':')
+#define SDDL_ACE_BEGINC                           TEXT('(')
+#define SDDL_ACE_ENDC                             TEXT(')')
+#define SDDL_SPACEC                               TEXT(' ')
+#define SDDL_ACE_COND_BEGINC                      TEXT('(')
+#define SDDL_ACE_COND_ENDC                        TEXT(')')
+#define SDDL_ACE_COND_STRING_BEGINC               TEXT('"')
+#define SDDL_ACE_COND_STRING_ENDC                 TEXT('"')
 #define SDDL_ACE_COND_COMPOSITEVALUE_BEGINC       TEXT('{')
-#define SDDL_ACE_COND_COMPOSITEVALUE_ENDC           TEXT('}')
-#define SDDL_ACE_COND_COMPOSITEVALUE_SEPERATORC           TEXT(',')
-#define SDDL_ACE_COND_BLOB_PREFIXC          TEXT('#')
-#define SDDL_ACE_COND_SID_BEGINC           TEXT('(')
-#define SDDL_ACE_COND_SID_ENDC           TEXT(')')
+#define SDDL_ACE_COND_COMPOSITEVALUE_ENDC         TEXT('}')
+#define SDDL_ACE_COND_COMPOSITEVALUE_SEPERATORC   TEXT(',')
+#define SDDL_ACE_COND_BLOB_PREFIXC                TEXT('#')
+#define SDDL_ACE_COND_SID_BEGINC                  TEXT('(')
+#define SDDL_ACE_COND_SID_ENDC                    TEXT(')')
 
 //
 // SDDL Seperators - string version
 //
-#define SDDL_SEPERATOR                     TEXT(";")
-#define SDDL_DELIMINATOR                   TEXT(":")
-#define SDDL_ACE_BEGIN                     TEXT("(")
-#define SDDL_ACE_END                       TEXT(")")
-#define SDDL_ACE_COND_BEGIN           TEXT("(")
-#define SDDL_ACE_COND_END           TEXT(")")
-#define SDDL_SPACE                              TEXT(" ")
-#define SDDL_ACE_COND_BLOB_PREFIX          TEXT("#")
-#define SDDL_ACE_COND_SID_PREFIX          TEXT("SID")
-#define SDDL_ACE_COND_ATTRIBUTE_PREFIX          TEXT("@")
-#define SDDL_ACE_COND_USER_ATTRIBUTE_PREFIX          TEXT("@USER.")
-#define SDDL_ACE_COND_RESOURCE_ATTRIBUTE_PREFIX          TEXT("@RESOURCE.")
-#define SDDL_ACE_COND_DEVICE_ATTRIBUTE_PREFIX          TEXT("@DEVICE.")
+#define SDDL_SEPERATOR                            TEXT(";")
+#define SDDL_DELIMINATOR                          TEXT(":")
+#define SDDL_ACE_BEGIN                            TEXT("(")
+#define SDDL_ACE_END                              TEXT(")")
+#define SDDL_ACE_COND_BEGIN                       TEXT("(")
+#define SDDL_ACE_COND_END                         TEXT(")")
+#define SDDL_SPACE                                TEXT(" ")
+#define SDDL_ACE_COND_BLOB_PREFIX                 TEXT("#")
+#define SDDL_ACE_COND_SID_PREFIX                  TEXT("SID")
+#define SDDL_ACE_COND_ATTRIBUTE_PREFIX            TEXT("@")
+#define SDDL_ACE_COND_USER_ATTRIBUTE_PREFIX       TEXT("@USER.")
+#define SDDL_ACE_COND_RESOURCE_ATTRIBUTE_PREFIX   TEXT("@RESOURCE.")
+#define SDDL_ACE_COND_DEVICE_ATTRIBUTE_PREFIX     TEXT("@DEVICE.")
+#define SDDL_ACE_COND_TOKEN_ATTRIBUTE_PREFIX      TEXT("@TOKEN.")
 
 
 
@@ -381,14 +385,13 @@ ConvertSecurityDescriptorToStringSecurityDescriptorW(
 #define ConvertSecurityDescriptorToStringSecurityDescriptor  ConvertSecurityDescriptorToStringSecurityDescriptorA
 #endif // !UNICODE
 
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
 
 #endif /* _WIN32_WINNT >=  0x0500 */
 
 #endif /* !defined(_NTDDK_) */
 
-
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
 
 
 #ifdef __cplusplus

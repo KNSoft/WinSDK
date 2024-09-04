@@ -7,6 +7,8 @@
 // PARTICULAR PURPOSE.
 //  
 // Copyright (c) Microsoft Corporation. All rights reserved.
+//
+// http://go.microsoft.com/fwlink/?LinkID=615560
 //-------------------------------------------------------------------------------------
 
 #pragma once
@@ -265,32 +267,32 @@ inline XMMATRIX XM_CALLCONV XMMatrixMultiply
     float32x2_t VL = vget_low_f32( M1.r[0] );
     float32x2_t VH = vget_high_f32( M1.r[0] );
     // Perform the operation on the first row
-    XMVECTOR vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    XMVECTOR vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    XMVECTOR vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    XMVECTOR vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    XMVECTOR vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    XMVECTOR vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    XMVECTOR vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    XMVECTOR vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     mResult.r[0] = vaddq_f32( vZ, vW );
     // Repeat for the other 3 rows
     VL = vget_low_f32( M1.r[1] );
     VH = vget_high_f32( M1.r[1] );
-    vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     mResult.r[1] = vaddq_f32( vZ, vW );
     VL = vget_low_f32( M1.r[2] );
     VH = vget_high_f32( M1.r[2] );
-    vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     mResult.r[2] = vaddq_f32( vZ, vW );
     VL = vget_low_f32( M1.r[3] );
     VH = vget_high_f32( M1.r[3] );
-    vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     mResult.r[3] = vaddq_f32( vZ, vW );
     return mResult;
 #elif defined(_XM_SSE_INTRINSICS_)
@@ -406,32 +408,32 @@ inline XMMATRIX XM_CALLCONV XMMatrixMultiplyTranspose
     float32x2_t VL = vget_low_f32( M1.r[0] );
     float32x2_t VH = vget_high_f32( M1.r[0] );
     // Perform the operation on the first row
-    XMVECTOR vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    XMVECTOR vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    XMVECTOR vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    XMVECTOR vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    XMVECTOR vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    XMVECTOR vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    XMVECTOR vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    XMVECTOR vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     float32x4_t r0 = vaddq_f32( vZ, vW );
     // Repeat for the other 3 rows
     VL = vget_low_f32( M1.r[1] );
     VH = vget_high_f32( M1.r[1] );
-    vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     float32x4_t r1 = vaddq_f32( vZ, vW );
     VL = vget_low_f32( M1.r[2] );
     VH = vget_high_f32( M1.r[2] );
-    vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     float32x4_t r2 = vaddq_f32( vZ, vW );
     VL = vget_low_f32( M1.r[3] );
     VH = vget_high_f32( M1.r[3] );
-    vX = XM_VMULQ_LANE_F32(M2.r[0], VL, 0);
-    vY = XM_VMULQ_LANE_F32(M2.r[1], VL, 1);
-    vZ = XM_VMLAQ_LANE_F32(vX, M2.r[2], VH, 0);
-    vW = XM_VMLAQ_LANE_F32(vY, M2.r[3], VH, 1);
+    vX = vmulq_lane_f32(M2.r[0], VL, 0);
+    vY = vmulq_lane_f32(M2.r[1], VL, 1);
+    vZ = vmlaq_lane_f32(vX, M2.r[2], VH, 0);
+    vW = vmlaq_lane_f32(vY, M2.r[3], VH, 1);
     float32x4_t r3 = vaddq_f32( vZ, vW );
  
     // Transpose result
@@ -2033,7 +2035,6 @@ inline XMMATRIX XM_CALLCONV XMMatrixPerspectiveLH
     // 0,0,-fRange * NearZ,0
     vTemp = _mm_shuffle_ps(vTemp,vValues,_MM_SHUFFLE(2,1,0,0));
     M.r[3] = vTemp;
-
     return M;
 #endif
 }
@@ -2995,6 +2996,13 @@ inline XMMATRIX& XMMATRIX::operator/= (float S)
     r[3] = XMVectorDivide( r[3], vS );
     return *this;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+    float32x4_t vS = vdupq_n_f32( S );
+    r[0] = vdivq_f32( r[0], vS );
+    r[1] = vdivq_f32( r[1], vS );
+    r[2] = vdivq_f32( r[2], vS );
+    r[3] = vdivq_f32( r[3], vS );
+#else
     // 2 iterations of Newton-Raphson refinement of reciprocal
     float32x2_t vS = vdup_n_f32( S );
     float32x2_t R0 = vrecpe_f32( vS );
@@ -3007,6 +3015,7 @@ inline XMMATRIX& XMMATRIX::operator/= (float S)
     r[1] = vmulq_f32( r[1], Reciprocal );
     r[2] = vmulq_f32( r[2], Reciprocal );
     r[3] = vmulq_f32( r[3], Reciprocal );
+#endif
     return *this;
 #elif defined(_XM_SSE_INTRINSICS_)
     __m128 vS = _mm_set_ps1( S );
@@ -3074,6 +3083,14 @@ inline XMMATRIX XMMATRIX::operator/ (float S) const
     R.r[3] = XMVectorDivide( r[3], vS );
     return R;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+    float32x4_t vS = vdupq_n_f32( S );
+    XMMATRIX R;
+    R.r[0] = vdivq_f32( r[0], vS );
+    R.r[1] = vdivq_f32( r[1], vS );
+    R.r[2] = vdivq_f32( r[2], vS );
+    R.r[3] = vdivq_f32( r[3], vS );
+#else
     // 2 iterations of Newton-Raphson refinement of reciprocal
     float32x2_t vS = vdup_n_f32( S );
     float32x2_t R0 = vrecpe_f32( vS );
@@ -3087,6 +3104,7 @@ inline XMMATRIX XMMATRIX::operator/ (float S) const
     R.r[1] = vmulq_f32( r[1], Reciprocal );
     R.r[2] = vmulq_f32( r[2], Reciprocal );
     R.r[3] = vmulq_f32( r[3], Reciprocal );
+#endif
     return R;
 #elif defined(_XM_SSE_INTRINSICS_)
     __m128 vS = _mm_set_ps1( S );

@@ -19,12 +19,16 @@
 #include <minwindef.h>
 
 /* APISET_NAME: api-ms-win-core-realtime-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_REALTIME_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
+
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#define _APISET_REALTIME_VER 0x0102
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
 #define _APISET_REALTIME_VER 0x0101
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_REALTIME_VER 0x0100
@@ -138,6 +142,39 @@ QueryUnbiasedInterruptTime(
 
 
 #endif // (_WIN32_WINNT >= 0x0601)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_REALTIME_VER >= 0x0102)
+
+WINBASEAPI
+HRESULT
+WINAPI
+QueryAuxiliaryCounterFrequency(
+    _Out_ PULONGLONG lpAuxiliaryCounterFrequency
+    );
+
+
+WINBASEAPI
+HRESULT
+WINAPI
+ConvertAuxiliaryCounterToPerformanceCounter(
+    _In_ ULONGLONG ullAuxiliaryCounterValue,
+    _Out_ PULONGLONG lpPerformanceCounterValue,
+    _Out_opt_ PULONGLONG lpConversionError
+    );
+
+
+WINBASEAPI
+HRESULT
+WINAPI
+ConvertPerformanceCounterToAuxiliaryCounter(
+    _In_ ULONGLONG ullPerformanceCounterValue,
+    _Out_ PULONGLONG lpAuxiliaryCounterValue,
+    _Out_opt_ PULONGLONG lpConversionError
+    );
+
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_REALTIME_VER >= 0x0102)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

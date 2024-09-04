@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -38,6 +38,34 @@
 #endif
 
 /* Forward Declarations */ 
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_FWD_DEFINED__ */
+
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler_FWD_DEFINED__
@@ -447,6 +475,126 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        interface ISvgImageSource;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        interface ISvgImageSourceFactory;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        interface ISvgImageSourceFailedEventArgs;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        interface ISvgImageSourceOpenedEventArgs;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        interface ISvgImageSourceStatics;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource;
@@ -621,7 +769,6 @@ namespace ABI {
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.Background.h"
-#include "Windows.Graphics.Imaging.h"
 #include "Windows.UI.Xaml.h"
 
 #ifdef __cplusplus
@@ -643,11 +790,15 @@ extern "C" {
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
-namespace Storage {
-namespace Streams {
-interface IBuffer;
-} /*Streams*/
-} /*Storage*/
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+enum SvgImageSourceLoadStatus;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
 } /*Windows*/
 }
 #endif
@@ -662,20 +813,313 @@ interface IBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5371 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4711_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4711_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5371_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("7c8bc668-4e0b-5924-b7e7-234a11d63d61"))
+IAsyncOperationCompletedHandler<enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> : IAsyncOperationCompletedHandler_impl<enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus>"; }
+};
+typedef IAsyncOperationCompletedHandler<enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5372 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5372 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5372_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_USE
+#define DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f19df5c2-2b78-53a9-8d38-5ca8dbb5dbc6"))
+IAsyncOperation<enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> : IAsyncOperation_impl<enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus>"; }
+};
+typedef IAsyncOperation<enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_t;
+#define ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+class SvgImageSource;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+interface ISvgImageSource;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+class SvgImageSourceFailedEventArgs;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+interface ISvgImageSourceFailedEventArgs;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002 */
+/* [local] */ 
+
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5373 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5373 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5373_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d723938d-efee-5a0c-ab3e-1e1db3c9a216"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource*,ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource*, ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs*, ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource*,ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+class SvgImageSourceOpenedEventArgs;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+interface ISvgImageSourceOpenedEventArgs;
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5374 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5374 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5374_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("9e321151-8b27-5e18-9ea3-50520aceb7ef"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource*,ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource*, ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs*, ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource*,ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Storage {
+namespace Streams {
+interface IBuffer;
+} /*Streams*/
+} /*Storage*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5375 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5375 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5375_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -699,29 +1143,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4712 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4712_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_4712_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5376 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5376_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -837,6 +1281,18 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CDecodePixelType __x_ABI
 
 
 #endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CSvgImageSourceLoadStatus __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CSvgImageSourceLoadStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
+
 
 
 
@@ -996,48 +1452,9 @@ class XamlRenderingBackgroundTask;
 } /*Windows*/
 }
 #endif
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CBitmapCreateOptions
-    {
-        BitmapCreateOptions_None	= 0,
-        BitmapCreateOptions_IgnoreImageCache	= 0x8
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#else
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Media {
-namespace Imaging {
-enum BitmapCreateOptions;
-DEFINE_ENUM_FLAG_OPERATORS(BitmapCreateOptions)
-} /*Imaging*/
-} /*Media*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CDecodePixelType
-    {
-        DecodePixelType_Physical	= 0,
-        DecodePixelType_Logical	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006 */
 /* [local] */ 
 
 
@@ -1095,6 +1512,27 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        
+                        typedef enum SvgImageSourceLoadStatus SvgImageSourceLoadStatus;
+                        
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -1118,6 +1556,629 @@ extern "C" {
 
 
 
+
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5377 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5377 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5377_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("7c8bc668-4e0b-5924-b7e7-234a11d63d61")
+    __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatusVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatusVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatusVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5378 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5378 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5378_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus
+#define DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f19df5c2-2b78-53a9-8d38-5ca8dbb5dbc6")
+    __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__out enum ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus *results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatusVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * This,
+            /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CSvgImageSourceLoadStatus *results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatusVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatusVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5379 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5379 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5379_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d723938d-efee-5a0c-ab3e-1e1db3c9a216")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5380 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5380 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging2Eidl_0000_5380_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9e321151-8b27-5e18-9ea3-50520aceb7ef")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CBitmapCreateOptions
+    {
+        BitmapCreateOptions_None	= 0,
+        BitmapCreateOptions_IgnoreImageCache	= 0x8
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#else
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Media {
+namespace Imaging {
+enum BitmapCreateOptions;
+DEFINE_ENUM_FLAG_OPERATORS(BitmapCreateOptions)
+} /*Imaging*/
+} /*Media*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CDecodePixelType
+    {
+        DecodePixelType_Physical	= 0,
+        DecodePixelType_Logical	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CSvgImageSourceLoadStatus
+    {
+        SvgImageSourceLoadStatus_Success	= 0,
+        SvgImageSourceLoadStatus_NetworkError	= 1,
+        SvgImageSourceLoadStatus_InvalidFormat	= 2,
+        SvgImageSourceLoadStatus_Other	= 3
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014 */
+/* [local] */ 
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -1169,10 +2230,37 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Imaging {
+                        
+                        /* [v1_enum] */ 
+                        enum SvgImageSourceLoadStatus
+                            {
+                                SvgImageSourceLoadStatus_Success	= 0,
+                                SvgImageSourceLoadStatus_NetworkError	= 1,
+                                SvgImageSourceLoadStatus_InvalidFormat	= 2,
+                                SvgImageSourceLoadStatus_Other	= 3
+                            } ;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0002_v0_0_s_ifspec;
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler_INTERFACE_DEFINED__
@@ -1278,7 +2366,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProg
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_INTERFACE_DEFINED__)
@@ -1286,13 +2374,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_INTERFACE_DEFINED__
@@ -1555,7 +2643,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage2_INTERFACE_DEFINED__)
@@ -1563,13 +2651,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage2_INTERFACE_DEFINED__
@@ -1706,7 +2794,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage2
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage3_INTERFACE_DEFINED__)
@@ -1714,13 +2802,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage3_INTERFACE_DEFINED__
@@ -1893,7 +2981,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage3
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_INTERFACE_DEFINED__)
@@ -1901,13 +2989,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_INTERFACE_DEFINED__
@@ -2036,7 +3124,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics_INTERFACE_DEFINED__)
@@ -2044,13 +3132,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics_INTERFACE_DEFINED__
@@ -2207,7 +3295,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics2_INTERFACE_DEFINED__)
@@ -2215,13 +3303,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics2_INTERFACE_DEFINED__
@@ -2348,7 +3436,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics3_INTERFACE_DEFINED__)
@@ -2356,13 +3444,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics3_INTERFACE_DEFINED__
@@ -2509,7 +3597,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_INTERFACE_DEFINED__)
@@ -2517,13 +3605,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_INTERFACE_DEFINED__
@@ -2682,7 +3770,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_INTERFACE_DEFINED__)
@@ -2690,13 +3778,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_INTERFACE_DEFINED__
@@ -2827,7 +3915,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceStatics_INTERFACE_DEFINED__)
@@ -2835,13 +3923,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceStatics_INTERFACE_DEFINED__
@@ -2978,7 +4066,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventArgs_INTERFACE_DEFINED__)
@@ -2986,13 +4074,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventArgs_INTERFACE_DEFINED__
@@ -3129,7 +4217,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProg
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_INTERFACE_DEFINED__)
@@ -3137,13 +4225,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_INTERFACE_DEFINED__
@@ -3318,7 +4406,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTarget
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0027 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmapStatics_INTERFACE_DEFINED__)
@@ -3326,13 +4414,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmapStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmapStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmapStatics_INTERFACE_DEFINED__
@@ -3469,7 +4557,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTarget
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmapStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0028 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_INTERFACE_DEFINED__)
@@ -3477,13 +4565,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0028_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_INTERFACE_DEFINED__
@@ -3612,7 +4700,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitm
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0029 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource_INTERFACE_DEFINED__)
@@ -3620,13 +4708,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource_INTERFACE_DEFINED__
@@ -3743,7 +4831,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImage
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0030 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_INTERFACE_DEFINED__)
@@ -3751,13 +4839,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0030_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_INTERFACE_DEFINED__
@@ -3912,7 +5000,848 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImage
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0031 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Imaging_ISvgImageSource[] = L"Windows.UI.Xaml.Media.Imaging.ISvgImageSource";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0031_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Media {
+                        namespace Imaging {
+                            
+                            MIDL_INTERFACE("03E1CEC3-0CA8-4A4E-8D7C-C808A0838586")
+                            ISvgImageSource : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UriSource( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass **value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_UriSource( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RasterizePixelWidth( 
+                                    /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_RasterizePixelWidth( 
+                                    /* [in] */ DOUBLE value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RasterizePixelHeight( 
+                                    /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_RasterizePixelHeight( 
+                                    /* [in] */ DOUBLE value) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE add_Opened( 
+                                    /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs *value,
+                                    /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE remove_Opened( 
+                                    /* [in] */ EventRegistrationToken token) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE add_OpenFailed( 
+                                    /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs *value,
+                                    /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE remove_OpenFailed( 
+                                    /* [in] */ EventRegistrationToken token) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE SetSourceAsync( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream *streamSource,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus **returnValue) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISvgImageSource = __uuidof(ISvgImageSource);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UriSource )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_UriSource )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RasterizePixelWidth )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_RasterizePixelWidth )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ DOUBLE value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RasterizePixelHeight )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_RasterizePixelHeight )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ DOUBLE value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_Opened )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_Opened )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_OpenFailed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_OpenFailed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetSourceAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream *streamSource,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus **returnValue);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_get_UriSource(This,value)	\
+    ( (This)->lpVtbl -> get_UriSource(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_put_UriSource(This,value)	\
+    ( (This)->lpVtbl -> put_UriSource(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_get_RasterizePixelWidth(This,value)	\
+    ( (This)->lpVtbl -> get_RasterizePixelWidth(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_put_RasterizePixelWidth(This,value)	\
+    ( (This)->lpVtbl -> put_RasterizePixelWidth(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_get_RasterizePixelHeight(This,value)	\
+    ( (This)->lpVtbl -> get_RasterizePixelHeight(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_put_RasterizePixelHeight(This,value)	\
+    ( (This)->lpVtbl -> put_RasterizePixelHeight(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_add_Opened(This,value,token)	\
+    ( (This)->lpVtbl -> add_Opened(This,value,token) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_remove_Opened(This,token)	\
+    ( (This)->lpVtbl -> remove_Opened(This,token) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_add_OpenFailed(This,value,token)	\
+    ( (This)->lpVtbl -> add_OpenFailed(This,value,token) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_remove_OpenFailed(This,token)	\
+    ( (This)->lpVtbl -> remove_OpenFailed(This,token) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_SetSourceAsync(This,streamSource,returnValue)	\
+    ( (This)->lpVtbl -> SetSourceAsync(This,streamSource,returnValue) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0032 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Imaging_ISvgImageSourceFactory[] = L"Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0032 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0032_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Media {
+                        namespace Imaging {
+                            
+                            MIDL_INTERFACE("C794E9E7-CF23-4D72-BF1A-DFAA16D8EA52")
+                            ISvgImageSourceFactory : public IInspectable
+                            {
+                            public:
+                                virtual HRESULT STDMETHODCALLTYPE CreateInstance( 
+                                    /* [in] */ __RPC__in_opt IInspectable *outer,
+                                    /* [out] */ __RPC__deref_out_opt IInspectable **inner,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource **instance) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithUriSource( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *uriSource,
+                                    /* [in] */ __RPC__in_opt IInspectable *outer,
+                                    /* [out] */ __RPC__deref_out_opt IInspectable **inner,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource **instance) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISvgImageSourceFactory = __uuidof(ISvgImageSourceFactory);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateInstance )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
+            /* [in] */ __RPC__in_opt IInspectable *outer,
+            /* [out] */ __RPC__deref_out_opt IInspectable **inner,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource **instance);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithUriSource )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *uriSource,
+            /* [in] */ __RPC__in_opt IInspectable *outer,
+            /* [out] */ __RPC__deref_out_opt IInspectable **inner,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource **instance);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_CreateInstance(This,outer,inner,instance)	\
+    ( (This)->lpVtbl -> CreateInstance(This,outer,inner,instance) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_CreateInstanceWithUriSource(This,uriSource,outer,inner,instance)	\
+    ( (This)->lpVtbl -> CreateInstanceWithUriSource(This,uriSource,outer,inner,instance) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0033 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Imaging_ISvgImageSourceFailedEventArgs[] = L"Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0033 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0033_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Media {
+                        namespace Imaging {
+                            
+                            MIDL_INTERFACE("68BB3170-3CCC-4035-AC01-9834543D744E")
+                            ISvgImageSourceFailedEventArgs : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus *value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISvgImageSourceFailedEventArgs = __uuidof(ISvgImageSourceFailedEventArgs);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CSvgImageSourceLoadStatus *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_get_Status(This,value)	\
+    ( (This)->lpVtbl -> get_Status(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFailedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0034 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Imaging_ISvgImageSourceOpenedEventArgs[] = L"Windows.UI.Xaml.Media.Imaging.ISvgImageSourceOpenedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0034 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0034_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Media {
+                        namespace Imaging {
+                            
+                            MIDL_INTERFACE("85EF4C16-748E-4008-95C7-6A23DD7316DB")
+                            ISvgImageSourceOpenedEventArgs : public IInspectable
+                            {
+                            public:
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISvgImageSourceOpenedEventArgs = __uuidof(ISvgImageSourceOpenedEventArgs);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceOpenedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0035 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Imaging_ISvgImageSourceStatics[] = L"Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0035 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0035_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Media {
+                        namespace Imaging {
+                            
+                            MIDL_INTERFACE("9C6638CE-BED1-4AAB-ACBB-D3E2185D315A")
+                            ISvgImageSourceStatics : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UriSourceProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RasterizePixelWidthProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RasterizePixelHeightProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISvgImageSourceStatics = __uuidof(ISvgImageSourceStatics);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UriSourceProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RasterizePixelWidthProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RasterizePixelHeightProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_get_UriSourceProperty(This,value)	\
+    ( (This)->lpVtbl -> get_UriSourceProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_get_RasterizePixelWidthProperty(This,value)	\
+    ( (This)->lpVtbl -> get_RasterizePixelWidthProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_get_RasterizePixelHeightProperty(This,value)	\
+    ( (This)->lpVtbl -> get_RasterizePixelHeightProperty(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0036 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_INTERFACE_DEFINED__)
@@ -3920,13 +5849,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_INTERFACE_DEFINED__
@@ -4043,7 +5972,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_INTERFACE_DEFINED__)
@@ -4051,13 +5980,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_INTERFACE_DEFINED__
@@ -4204,7 +6133,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0038 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap_INTERFACE_DEFINED__)
@@ -4212,13 +6141,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap_INTERFACE_DEFINED__
@@ -4353,7 +6282,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBit
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_INTERFACE_DEFINED__)
@@ -4361,13 +6290,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_INTERFACE_DEFINED__
@@ -4498,7 +6427,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBit
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask_INTERFACE_DEFINED__)
@@ -4506,13 +6435,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask_INTERFACE_DEFINED__
@@ -4629,7 +6558,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_INTERFACE_DEFINED__)
@@ -4637,13 +6566,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_INTERFACE_DEFINED__
@@ -4774,7 +6703,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskOverrides_INTERFACE_DEFINED__)
@@ -4782,13 +6711,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskOverrides_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskOverrides_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskOverrides_INTERFACE_DEFINED__
@@ -4915,7 +6844,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskOverrides_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0043 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_BitmapImage_DEFINED
@@ -4942,6 +6871,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SurfaceImageSource_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Imaging_SurfaceImageSource[] = L"Windows.UI.Xaml.Media.Imaging.SurfaceImageSource";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SvgImageSource_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SvgImageSource_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Imaging_SvgImageSource[] = L"Windows.UI.Xaml.Media.Imaging.SvgImageSource";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SvgImageSourceFailedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SvgImageSourceFailedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Imaging_SvgImageSourceFailedEventArgs[] = L"Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SvgImageSourceOpenedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_SvgImageSourceOpenedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Imaging_SvgImageSourceOpenedEventArgs[] = L"Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_VirtualSurfaceImageSource_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Media_Imaging_VirtualSurfaceImageSource_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Imaging_VirtualSurfaceImageSource[] = L"Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource";
@@ -4956,13 +6897,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eimaging_0000_0043_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

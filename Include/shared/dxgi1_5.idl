@@ -7,8 +7,10 @@ cpp_quote("#include <winapifamily.h>")
 #pragma region App Family
 cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
-    
-    
+typedef enum DXGI_OUTDUPL_FLAG {
+    DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY = 1,
+} DXGI_OUTDUPL_FLAG;
+
 
 //--------------------------------------------------------------------------------------------------------
 // IDXGIOutput5 interface

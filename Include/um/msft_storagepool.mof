@@ -906,6 +906,9 @@ class MSFT_StoragePool : MSFT_StorageObject {
         String FriendlyName,
 
         [In]
+        UInt16 ProvisioningType,
+
+        [In]
         UInt16 MediaType,
 
         [In]

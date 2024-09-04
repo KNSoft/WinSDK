@@ -540,6 +540,9 @@
 #define IDM_CUT                     16
 #define IDM_PASTE                   26
 #define IDM_SAVEPDF                 99
+#define IDM_TOGGLEREADINGBAR        15209
+#define IDM_ADDPDFHIGHLIGHT         15210
+#define IDM_DELETEPDFHIGHLIGHT      15211
 
 // Defines for IDM_ZOOMPERCENT
 #define CMD_ZOOM_PAGEWIDTH -1
@@ -649,5 +652,6 @@
 #define IDM_GETDEBUGGERSTATE            15205
 #define IDM_SELECTIONSEARCH             15206
 #define IDM_SHOWSHAREUI                 15207
+#define IDM_RUNFLASH                    15208
 
 #endif

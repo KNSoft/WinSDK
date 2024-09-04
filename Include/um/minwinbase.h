@@ -417,6 +417,11 @@ typedef PCONTEXT LPCONTEXT;
 #define LMEM_DISCARDED      0x4000
 #define LMEM_LOCKCOUNT      0x00FF
 
+//
+// NUMA values
+//
+
+#define NUMA_NO_PREFERRED_NODE ((DWORD) -1)
 
 #ifdef __cplusplus
 }

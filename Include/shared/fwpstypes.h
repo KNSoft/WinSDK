@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -73,6 +73,7 @@ typedef struct FWPS_ACTION0_
 #define FWPS_FILTER_FLAG_PERMIT_IF_CALLOUT_UNREGISTERED   (0x0002)
 #define FWPS_FILTER_FLAG_OR_CONDITIONS   (0x0004)
 #define FWPS_FILTER_FLAG_HAS_SECURITY_REALM_PROVIDER_CONTEXT (0x0008)
+#define FWPS_FILTER_FLAG_SILENT_MODE     (0x0010)
 typedef struct FWPM_PROVIDER_CONTEXT0_ FWPM_PROVIDER_CONTEXT0;
 
 typedef struct FWPS_FILTER0_

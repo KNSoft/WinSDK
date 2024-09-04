@@ -174,79 +174,92 @@ DEFINE_GUID(GUID_EXECUTION_REQUIRED_REQUEST_TIMEOUT, 0x3166bc41, 0x7e98, 0x4e03,
 // Specifies the subgroup which will contain all of the video
 // settings for a single policy.
 //
+// {7516b95f-f776-4464-8c53-06167f40cc99}
+//
 DEFINE_GUID( GUID_VIDEO_SUBGROUP, 0x7516B95F, 0xF776, 0x4464, 0x8C, 0x53, 0x06, 0x16, 0x7F, 0x40, 0xCC, 0x99 );
 
 //
 // Specifies (in seconds) how long we wait after the last user input has been
-// recieved before we power off the video.
+// received before we power off the video.
+//
+// {3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e}
 //
 DEFINE_GUID( GUID_VIDEO_POWERDOWN_TIMEOUT, 0x3C0BC021, 0xC8A8, 0x4E07, 0xA9, 0x73, 0x6B, 0x14, 0xCB, 0xCB, 0x2B, 0x7E );
 
 //
 // Specifies whether adaptive display dimming is turned on or off.
-// 82DBCF2D-CD67-40C5-BFDC-9F1A5CCD4663
 //
 // N.B. This setting is DEPRECATED in Windows 8.1
+//
+// {82DBCF2D-CD67-40C5-BFDC-9F1A5CCD4663}
 //
 DEFINE_GUID( GUID_VIDEO_ANNOYANCE_TIMEOUT, 0x82DBCF2D, 0xCD67, 0x40C5, 0xBF, 0xDC, 0x9F, 0x1A, 0x5C, 0xCD, 0x46, 0x63 );
 
 //
 // Specifies how much adaptive dim time out will be increased by.
-// EED904DF-B142-4183-B10B-5A1197A37864
 //
 // N.B. This setting is DEPRECATED in Windows 8.1
+//
+// {EED904DF-B142-4183-B10B-5A1197A37864}
 //
 DEFINE_GUID( GUID_VIDEO_ADAPTIVE_PERCENT_INCREASE, 0xEED904DF, 0xB142, 0x4183, 0xB1, 0x0B, 0x5A, 0x11, 0x97, 0xA3, 0x78, 0x64 );
 
 //
 // Specifies (in seconds) how long we wait after the last user input has been
-// recieved before we dim the video.
+// received before we dim the video.
+//
+// {17aaa29b-8b43-4b94-aafe-35f64daaf1ee}
 //
 DEFINE_GUID( GUID_VIDEO_DIM_TIMEOUT, 0x17aaa29b, 0x8b43, 0x4b94, 0xaa, 0xfe, 0x35, 0xf6, 0x4d, 0xaa, 0xf1, 0xee);
 
 //
 // Specifies if the operating system should use adaptive timers (based on
-// previous behavior) to power down the video,
+// previous behavior) to power down the video.
+//
+// {90959d22-d6a1-49b9-af93-bce885ad335b}
 //
 DEFINE_GUID( GUID_VIDEO_ADAPTIVE_POWERDOWN, 0x90959D22, 0xD6A1, 0x49B9, 0xAF, 0x93, 0xBC, 0xE8, 0x85, 0xAD, 0x33, 0x5B );
 
 //
-// Specifies a maximum power consumption level.
-//
-DEFINE_GUID(GUID_DISK_MAX_POWER, 0x51dea550, 0xbb38, 0x4bc4, 0x99, 0x1b, 0xea, 0xcf, 0x37, 0xbe, 0x5e, 0xc8);
-
-//
 // Specifies if the monitor is currently being powered or not.
-// 02731015-4510-4526-99E6-E5A17EBD1AEA
+//
+// {02731015-4510-4526-99E6-E5A17EBD1AEA}
 //
 DEFINE_GUID( GUID_MONITOR_POWER_ON, 0x02731015, 0x4510, 0x4526, 0x99, 0xE6, 0xE5, 0xA1, 0x7E, 0xBD, 0x1A, 0xEA );
 
 //
-// Monitor brightness policy when in normal state
+// Monitor brightness policy when in normal state.
+//
 // {aded5e82-b909-4619-9949-f5d71dac0bcb}
+//
 DEFINE_GUID(GUID_DEVICE_POWER_POLICY_VIDEO_BRIGHTNESS, 0xaded5e82L, 0xb909, 0x4619, 0x99, 0x49, 0xf5, 0xd7, 0x1d, 0xac, 0x0b, 0xcb);
 
 //
+// Monitor brightness policy when in dim state.
 //
-// Monitor brightness policy when in dim state
 // {f1fbfde2-a960-4165-9f88-50667911ce96}
+//
 DEFINE_GUID(GUID_DEVICE_POWER_POLICY_VIDEO_DIM_BRIGHTNESS, 0xf1fbfde2, 0xa960, 0x4165, 0x9f, 0x88, 0x50, 0x66, 0x79, 0x11, 0xce, 0x96);
 
 //
-// Current Monitor brightness
+// Current monitor brightness.
+//
 // {8ffee2c6-2d01-46be-adb9-398addc5b4ff}
+//
 DEFINE_GUID(GUID_VIDEO_CURRENT_MONITOR_BRIGHTNESS, 0x8ffee2c6, 0x2d01, 0x46be, 0xad, 0xb9, 0x39, 0x8a, 0xdd, 0xc5, 0xb4, 0xff);
-
 
 //
 // Specifies if the operating system should use ambient light sensor to change
-// disply brightness adatively.
+// adaptively the display's brightness.
+//
 // {FBD9AA66-9553-4097-BA44-ED6E9D65EAB8}
+//
 DEFINE_GUID(GUID_VIDEO_ADAPTIVE_DISPLAY_BRIGHTNESS, 0xFBD9AA66, 0x9553, 0x4097, 0xBA, 0x44, 0xED, 0x6E, 0x9D, 0x65, 0xEA, 0xB8);
 
 //
 // Specifies a change in the current monitor's display state.
-// 6fe69556-704a-47a0-8f24-c28d936fda47
+//
+// {6fe69556-704a-47a0-8f24-c28d936fda47}
 //
 DEFINE_GUID(GUID_CONSOLE_DISPLAY_STATE, 0x6fe69556, 0x704a, 0x47a0, 0x8f, 0x24, 0xc2, 0x8d, 0x93, 0x6f, 0xda, 0x47);
 
@@ -264,6 +277,7 @@ DEFINE_GUID( GUID_ALLOW_DISPLAY_REQUIRED, 0xA9CEB8DA, 0xCD46, 0x44FB, 0xA9, 0x8B
 // effectively disables this feature.
 //
 // {8EC4B3A5-6868-48c2-BE75-4F3044BE88A7}
+//
 DEFINE_GUID(GUID_VIDEO_CONSOLE_LOCK_TIMEOUT, 0x8ec4b3a5, 0x6868, 0x48c2, 0xbe, 0x75, 0x4f, 0x30, 0x44, 0xbe, 0x88, 0xa7);
 
 
@@ -280,6 +294,13 @@ DEFINE_GUID(GUID_ADAPTIVE_POWER_BEHAVIOR_SUBGROUP, 0x8619b916, 0xe004, 0x4dd8, 0
 // {5ADBBFBC-074E-4da1-BA38-DB8B36B2C8F3}
 DEFINE_GUID(GUID_NON_ADAPTIVE_INPUT_TIMEOUT, 0x5adbbfbc, 0x74e, 0x4da1, 0xba, 0x38, 0xdb, 0x8b, 0x36, 0xb2, 0xc8, 0xf3);
 
+//
+// Specifies a change in the input controller(s) global system's state:
+// e.g. enabled, suppressed, filtered.
+//
+// {0E98FAE9-F45A-4DE1-A757-6031F197F6EA}
+DEFINE_GUID(GUID_ADAPTIVE_INPUT_CONTROLLER_STATE, 0xe98fae9, 0xf45a, 0x4de1, 0xa7, 0x57, 0x60, 0x31, 0xf1, 0x97, 0xf6, 0xea);
+
 // Harddisk settings
 // -----------------
 //
@@ -287,6 +308,11 @@ DEFINE_GUID(GUID_NON_ADAPTIVE_INPUT_TIMEOUT, 0x5adbbfbc, 0x74e, 0x4da1, 0xba, 0x
 // settings for a single policy.
 //
 DEFINE_GUID( GUID_DISK_SUBGROUP, 0x0012EE47, 0x9041, 0x4B5D, 0x9B, 0x77, 0x53, 0x5F, 0xBA, 0x8B, 0x14, 0x42 );
+
+//
+// Specifies a maximum power consumption level.
+//
+DEFINE_GUID(GUID_DISK_MAX_POWER, 0x51dea550, 0xbb38, 0x4bc4, 0x99, 0x1b, 0xea, 0xcf, 0x37, 0xbe, 0x5e, 0xc8);
 
 //
 // Specifies (in seconds) how long we wait after the last disk access
@@ -608,7 +634,7 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MAXIMUM, 0xBC5038F7, 0x23E0, 0x4960, 0x96, 
 //
 // Specifies a percentage (between 0 and 100) that the processor frequency
 // should never go above for Processor Power Efficiency Class 1.
-// For example, if this value is set to 80, then the processor frequency will 
+// For example, if this value is set to 80, then the processor frequency will
 // never be throttled above 80 percent of its maximum frequency by the system.
 //
 // {bc5038f7-23e0-4960-96da-33abaf5935ed}
@@ -634,6 +660,18 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MINIMUM, 0x893DEE8E, 0x2BEF, 0x41E0, 0x89, 
 // {893dee8e-2bef-41e0-89c6-b55d0929964d}
 //
 DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MINIMUM_1, 0x893DEE8E, 0x2BEF, 0x41E0, 0x89, 0xC6, 0xB5, 0x5D, 0x09, 0x29, 0x96, 0x4D );
+
+//
+// Specifies the maximum processor frequency (expresssed in MHz).
+//
+
+// {75B0AE3F-BCE0-45a7-8C89-C9611C25E100}
+DEFINE_GUID(GUID_PROCESSOR_FREQUENCY_LIMIT,
+0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x00);
+
+// {75B0AE3F-BCE0-45a7-8C89-C9611C25E101}
+DEFINE_GUID(GUID_PROCESSOR_FREQUENCY_LIMIT_1,
+0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x01);
 
 //
 // Specifies whether throttle states are allowed to be used even when
@@ -839,7 +877,7 @@ DEFINE_GUID(GUID_PROCESSOR_PERF_AUTONOMOUS_ACTIVITY_WINDOW,
 // Specifies whether the processor should perform duty cycling.
 //
 // {4E4450B3-6179-4e91-B8F1-5BB9938F81A1}
-DEFINE_GUID(GUID_PROCESSOR_DUTY_CYCLING, 
+DEFINE_GUID(GUID_PROCESSOR_DUTY_CYCLING,
 0x4e4450b3, 0x6179, 0x4e91, 0xb8, 0xf1, 0x5b, 0xb9, 0x93, 0x8f, 0x81, 0xa1);
 
 #define PROCESSOR_DUTY_CYCLING_DISABLED 0
@@ -941,7 +979,7 @@ DEFINE_GUID( GUID_PROCESSOR_CORE_PARKING_DECREASE_POLICY, 0x71021b41, 0xc749, 0x
 DEFINE_GUID( GUID_PROCESSOR_CORE_PARKING_MAX_CORES, 0xea062031, 0x0e34, 0x4ff1, 0x9b, 0x6d, 0xeb, 0x10, 0x59, 0x33, 0x40, 0x28);
 
 //
-// Specifies, on a per processor group basis, the maximum number of cores that 
+// Specifies, on a per processor group basis, the maximum number of cores that
 // can be kept unparked for Processor Power Efficiency Class 1.
 //
 // {ea062031-0e34-4ff1-9b6d-eb1059334029}
@@ -1137,7 +1175,7 @@ DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT, 0x0822df31, 0x9c83, 0x441c, 0xa0,
 DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF, 0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x71);
 
 //
-// Specifies the processor performance state in response to latency sensitivity 
+// Specifies the processor performance state in response to latency sensitivity
 // hints for Processor Power Efficiency Class 1.
 //
 // {619b7505-003b-4e82-b7a6-4dd29c300972}
@@ -1270,6 +1308,16 @@ DEFINE_GUID( GUID_CONNECTIVITY_IN_STANDBY, 0xF15576E8, 0x98B7, 0x4186, 0xB9, 0x4
 
 #define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0
 #define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1
+#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED_LID_CLOSE 2
+
+//
+// Specifies the mode for disconnected standby. 
+// 
+// 68AFB2D9-EE95-47A8-8F50-4115088073B1
+DEFINE_GUID( GUID_DISCONNECTED_STANDBY_MODE, 0x68AFB2D9, 0xEE95, 0x47A8, 0x8F, 0x50, 0x41, 0x15, 0x08, 0x80, 0x73, 0xB1 );
+
+#define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0
+#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1 
 
 // AC/DC power source
 // ------------------
@@ -1754,6 +1802,10 @@ typedef enum {
     ThermalStandby,
     SystemHiberFileType,
     PhysicalPowerButtonPress,
+    QueryPotentialDripsConstraint,
+    EnergyTrackerCreate,
+    EnergyTrackerQuery,
+    UpdateBlackBoxRecorder,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -1841,6 +1893,11 @@ typedef enum {
     MonitorRequestReasonResumeS4,
     MonitorRequestReasonTerminal,
     MonitorRequestReasonPdcSignal,
+    MonitorRequestReasonAcDcDisplayBurstSuppressed,
+    MonitorRequestReasonSystemStateEntered, // When CS exit happens because system
+                                            // transition to S4/S5, please note this
+                                            // reason is different than ReasonSxTransition.
+    MonitorRequestReasonWinrt,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -2366,6 +2423,7 @@ typedef struct {
 #define PPM_FIRMWARE_OSC          0x00010000
 #define PPM_FIRMWARE_PDC          0x00020000
 #define PPM_FIRMWARE_CPC          0x00040000
+#define PPM_FIRMWARE_LPI          0x00080000
 
 //
 // Processor performance and idle controls implementations.
@@ -2381,6 +2439,7 @@ typedef struct {
 #define PPM_IDLE_IMPLEMENTATION_CSTATES          0x00000001
 #define PPM_IDLE_IMPLEMENTATION_PEP              0x00000002
 #define PPM_IDLE_IMPLEMENTATION_MICROPEP         0x00000003
+#define PPM_IDLE_IMPLEMENTATION_LPISTATES        0x00000004
 
 //
 // Processor Power Management WMI interface.
@@ -2478,6 +2537,7 @@ typedef struct {
 #define POWER_ACTION_OVERRIDE_APPS      0x00000004
 #define POWER_ACTION_HIBERBOOT          0x00000008
 #define POWER_ACTION_USER_NOTIFY        0x00000010  // Indicate User-mode of an impending action.
+#define POWER_ACTION_DOZE_TO_HIBERNATE  0x00000020
 #define POWER_ACTION_PSEUDO_TRANSITION  0x08000000
 #define POWER_ACTION_LIGHTEST_FIRST     0x10000000
 #define POWER_ACTION_LOCK_CONSOLE       0x20000000
@@ -3100,9 +3160,18 @@ typedef enum _PO_SLEEP_DISABLE_REASON {
     PoSleepDisableReasonHypervisor,
     PoSleepDisableReasonVhdBoot,
     PoSleepDisableReasonPortableWorkspace,
+    PoSleepDisableReasonPolicy,
+    PoSleepDisableReasonGuardedHost,
     PoSleepDisableReasonMax
 
 } PO_SLEEP_DISABLE_REASON, *PPO_SLEEP_DISABLE_REASON;
+
+typedef enum _PO_HIBER_FORCE_DISABLE_REASON {
+    PoHiberForceDisableReasonPolicy,
+    PoHiberForceDisableReasonGuardedHost,
+    PoHiberForceDisableReasonMax
+
+} PO_HIBER_FORCE_DISABLE_REASON, *PPO_HIBER_FORCE_DISABLE_REASON;
 
 //
 // Connected Standby device compliance notification information.

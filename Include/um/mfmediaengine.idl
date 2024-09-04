@@ -157,6 +157,7 @@ typedef enum MF_MEDIA_ENGINE_EVENT
     MF_MEDIA_ENGINE_EVENT_RESOURCELOST = 1012,
     MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED = 1013,
     MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR = 1014,
+    MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED = 1015,
 
 } MF_MEDIA_ENGINE_EVENT;
 
@@ -561,7 +562,7 @@ interface IMFMediaEngineEx : IMFMediaEngine
 
     HRESULT GetStreamSelection(  
         [in, annotation("_In_")] DWORD dwStreamIndex,
-        [in, annotation("_Out_")] BOOL* pEnabled
+        [out, annotation("_Out_")] BOOL* pEnabled
         );
 
     HRESULT SetStreamSelection(  
@@ -1502,16 +1503,16 @@ cpp_quote("0xd988879b,0x67c9,0x4d92,0xba,0xa7,0x6e,0xad,0xd4,0x46,0x03,0x9d);")
 cpp_quote("EXTERN_GUID(MF_MEDIA_ENGINE_OPM_HWND,")
 cpp_quote("0xa0be8ee7, 0x0572, 0x4f2c, 0xa8, 0x01, 0x2a, 0x15, 0x1b, 0xd3, 0xe7, 0x26);")
 
-// MF_MEDIA_ENGINE_PLAYBACK_VISUAL
-// Data type: IUnknown
-cpp_quote("EXTERN_GUID(MF_MEDIA_ENGINE_PLAYBACK_VISUAL,")
-cpp_quote("0x6debd26f,0x6ab9,0x4d7e,0xb0,0xee,0xc6,0x1a,0x73,0xff,0xad,0x15);")
-
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion
 
 #pragma region Application Family
 cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
+
+// MF_MEDIA_ENGINE_PLAYBACK_VISUAL
+// Data type: IUnknown
+cpp_quote("EXTERN_GUID(MF_MEDIA_ENGINE_PLAYBACK_VISUAL,")
+cpp_quote("0x6debd26f,0x6ab9,0x4d7e,0xb0,0xee,0xc6,0x1a,0x73,0xff,0xad,0x15);")
 
 // MF_MEDIA_ENGINE_COREWINDOW - needed for app state (and protected content when there is no PLAYBACK_HWND)
 // Data type: IUnknown (ICoreWindow)
@@ -1523,7 +1524,6 @@ cpp_quote("0xfccae4dc, 0x0b7f, 0x41c2, 0x9f, 0x96, 0x46, 0x59, 0x94, 0x8a, 0xcd,
 // Data type: UINT32 (actually a  DXGI_FORMAT type)
 cpp_quote("EXTERN_GUID(MF_MEDIA_ENGINE_VIDEO_OUTPUT_FORMAT,")
 cpp_quote("0x5066893c,0x8cf9,0x42bc,0x8b,0x8a,0x47,0x22,0x12,0xe5,0x27,0x26);")
-
 
 // MF_MEDIA_ENGINE_CONTENT_PROTECTION_FLAGS
 // Data type:  UINT32 - MF_MEDIA_ENGINE_PROTECTION_FLAGS

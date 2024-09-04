@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -96,7 +96,8 @@ enum __MIDL___MIDL_itf_tsgpolicyengine_0000_0000_0001
         AA_AUTH_DIGEST	= ( AA_AUTH_COOKIE + 1 ) ,
         AA_AUTH_ORGID	= ( AA_AUTH_DIGEST + 1 ) ,
         AA_AUTH_CONID	= ( AA_AUTH_ORGID + 1 ) ,
-        AA_AUTH_MAX	= ( AA_AUTH_CONID + 1 ) 
+        AA_AUTH_SSPI_NTLM	= ( AA_AUTH_CONID + 1 ) ,
+        AA_AUTH_MAX	= ( AA_AUTH_SSPI_NTLM + 1 ) 
     } 	AAAuthSchemes;
 
 typedef /* [public][public] */ 

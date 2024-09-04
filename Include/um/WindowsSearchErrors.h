@@ -35,9 +35,9 @@
 //
 // Define the severity codes
 //
-#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_SUCCESS          0x0
 #define STATUS_SEVERITY_INFORMATIONAL    0x1
+#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_ERROR            0x3
 
 
@@ -7974,6 +7974,15 @@
 // The catalog manager does not exist.
 //
 #define CI_E_NO_CATALOG_MANAGER          ((HRESULT)0xC0041831L)
+
+//
+// MessageId: CI_E_INCONSISTENT_TRANSACTION
+//
+// MessageText:
+//
+// The transaction in catalog is found as inconsistent.
+//
+#define CI_E_INCONSISTENT_TRANSACTION    ((HRESULT)0xC0041832L)
 
 #endif // _CIERROR_H_
 #ifndef _FILTERR_H_

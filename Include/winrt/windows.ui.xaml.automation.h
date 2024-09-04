@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -309,6 +309,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics5_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    interface IAutomationElementIdentifiersStatics6;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties;
@@ -439,6 +461,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    interface IAutomationPropertiesStatics6;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
@@ -1403,18 +1447,18 @@ interface IAutomationAnnotation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4695 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5363 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4695 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5363 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4695_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4695_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5363_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0001 */
 /* [local] */ 
@@ -1449,18 +1493,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5364 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5364 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4696_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4696_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5364_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0002 */
 /* [local] */ 
@@ -1495,18 +1539,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4697 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5365 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4697 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5365 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4697_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4697_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5365_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0003 */
 /* [local] */ 
@@ -1541,18 +1585,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4698 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5366 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4698 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5366 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4698_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4698_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5366_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0004 */
 /* [local] */ 
@@ -1611,18 +1655,18 @@ interface IUIElement;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4699 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5367 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4699 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5367 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4699_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4699_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5367_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0005 */
 /* [local] */ 
@@ -1657,18 +1701,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4700 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5368 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4700 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4700_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4700_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5368_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0006 */
 /* [local] */ 
@@ -1703,18 +1747,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4701 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5369 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4701 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4701_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4701_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5369_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0007 */
 /* [local] */ 
@@ -1749,18 +1793,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4702 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5370 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4702 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5370 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4702_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4702_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5370_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0008 */
 /* [local] */ 
@@ -1819,18 +1863,18 @@ interface IDependencyObject;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4703 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5371 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4703 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4703_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4703_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5371_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0009 */
 /* [local] */ 
@@ -1865,18 +1909,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4704 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5372 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4704 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5372 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4704_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4704_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5372_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0010 */
 /* [local] */ 
@@ -1911,18 +1955,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5373 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4705_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4705_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5373_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0011 */
 /* [local] */ 
@@ -1957,18 +2001,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5374 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4706_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4706_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5374_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0012 */
 /* [local] */ 
@@ -2257,6 +2301,8 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CZoomUnit __x_ABI_CWindows_C
 
 
 #endif
+
+
 
 
 
@@ -3178,21 +3224,23 @@ extern "C" {
 
 
 
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5375 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4707_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4707_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5375_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0013 */
 /* [local] */ 
@@ -3367,18 +3415,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CAutomation__CAutomat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5376 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4708_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4708_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5376_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0015 */
 /* [local] */ 
@@ -3519,18 +3567,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CAutomation__CAutomat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5377 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4709_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4709_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5377_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0017 */
 /* [local] */ 
@@ -3713,18 +3761,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CAutomation__CAutom
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5378 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4710_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_4710_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation2Eidl_0000_5378_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0019 */
 /* [local] */ 
@@ -6817,9 +6865,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElemen
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0031 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationProperties[] = L"Windows.UI.Xaml.Automation.IAutomationProperties";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics6[] = L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0031 */
@@ -6829,6 +6877,145 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0031_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Automation {
+                        
+                        MIDL_INTERFACE("DE52B00D-8328-4EAE-8035-F8DB99C8BAC4")
+                        IAutomationElementIdentifiersStatics6 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CultureProperty( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAutomationElementIdentifiersStatics6 = __uuidof(IAutomationElementIdentifiersStatics6);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CultureProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_get_CultureProperty(This,value)	\
+    ( (This)->lpVtbl -> get_CultureProperty(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics6_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationProperties[] = L"Windows.UI.Xaml.Automation.IAutomationProperties";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__
@@ -6943,7 +7130,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_INTERFACE_DEFINED__)
@@ -6951,13 +7138,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_INTERFACE_DEFINED__
@@ -7412,7 +7599,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_INTERFACE_DEFINED__)
@@ -7420,13 +7607,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_INTERFACE_DEFINED__
@@ -7597,7 +7784,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_INTERFACE_DEFINED__)
@@ -7605,13 +7792,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_INTERFACE_DEFINED__
@@ -7850,7 +8037,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_INTERFACE_DEFINED__)
@@ -7858,13 +8045,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_INTERFACE_DEFINED__
@@ -8047,7 +8234,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_INTERFACE_DEFINED__)
@@ -8055,13 +8242,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_INTERFACE_DEFINED__
@@ -8378,7 +8565,170 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics6[] = L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Automation {
+                        
+                        MIDL_INTERFACE("C61E030F-EB49-4E5D-B012-4C1C96C3901B")
+                        IAutomationPropertiesStatics6 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CultureProperty( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetCulture( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *element,
+                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetCulture( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *element,
+                                /* [in] */ INT32 value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAutomationPropertiesStatics6 = __uuidof(IAutomationPropertiesStatics6);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CultureProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCulture )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *element,
+            /* [out][retval] */ __RPC__out INT32 *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetCulture )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *element,
+            /* [in] */ INT32 value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_get_CultureProperty(This,value)	\
+    ( (This)->lpVtbl -> get_CultureProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_GetCulture(This,element,value)	\
+    ( (This)->lpVtbl -> GetCulture(This,element,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_SetCulture(This,element,value)	\
+    ( (This)->lpVtbl -> SetCulture(This,element,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_INTERFACE_DEFINED__)
@@ -8386,13 +8736,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_INTERFACE_DEFINED__
@@ -8507,7 +8857,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProper
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiers_INTERFACE_DEFINED__)
@@ -8515,13 +8865,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiers_INTERFACE_DEFINED__
@@ -8636,7 +8986,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -8644,13 +8994,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -8775,7 +9125,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDockPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiers_INTERFACE_DEFINED__)
@@ -8783,13 +9133,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiers_INTERFACE_DEFINED__
@@ -8904,7 +9254,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -8912,13 +9262,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -9073,7 +9423,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDragPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiers_INTERFACE_DEFINED__)
@@ -9081,13 +9431,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiers_INTERFACE_DEFINED__
@@ -9202,7 +9552,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatter
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -9210,13 +9560,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -9351,7 +9701,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatter
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIDropTargetPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiers_INTERFACE_DEFINED__)
@@ -9359,13 +9709,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiers_INTERFACE_DEFINED__
@@ -9480,7 +9830,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -9488,13 +9838,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -9619,7 +9969,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIExpandCollapsePatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiers_INTERFACE_DEFINED__)
@@ -9627,13 +9977,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiers_INTERFACE_DEFINED__
@@ -9748,7 +10098,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternI
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -9756,13 +10106,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -9927,7 +10277,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternI
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridItemPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiers_INTERFACE_DEFINED__)
@@ -9935,13 +10285,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiers_INTERFACE_DEFINED__
@@ -10056,7 +10406,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -10064,13 +10414,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -10205,7 +10555,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIGridPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiers_INTERFACE_DEFINED__)
@@ -10213,13 +10563,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiers_INTERFACE_DEFINED__
@@ -10334,7 +10684,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -10342,13 +10692,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -10483,7 +10833,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIMultipleViewPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiers_INTERFACE_DEFINED__)
@@ -10491,13 +10841,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiers_INTERFACE_DEFINED__
@@ -10612,7 +10962,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatter
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -10620,13 +10970,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -10801,7 +11151,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatter
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIRangeValuePatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiers_INTERFACE_DEFINED__)
@@ -10809,13 +11159,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiers_INTERFACE_DEFINED__
@@ -10930,7 +11280,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -10938,13 +11288,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -11129,7 +11479,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIScrollPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiers_INTERFACE_DEFINED__)
@@ -11137,13 +11487,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiers_INTERFACE_DEFINED__
@@ -11258,7 +11608,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -11266,13 +11616,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -11407,7 +11757,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionItemPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiers_INTERFACE_DEFINED__)
@@ -11415,13 +11765,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiers_INTERFACE_DEFINED__
@@ -11536,7 +11886,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -11544,13 +11894,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -11695,7 +12045,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISelectionPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiers_INTERFACE_DEFINED__)
@@ -11703,13 +12053,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiers_INTERFACE_DEFINED__
@@ -11824,7 +12174,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemP
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -11832,13 +12182,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -11963,7 +12313,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemP
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CISpreadsheetItemPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiers_INTERFACE_DEFINED__)
@@ -11971,13 +12321,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiers_INTERFACE_DEFINED__
@@ -12092,7 +12442,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -12100,13 +12450,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -12291,7 +12641,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIStylesPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiers_INTERFACE_DEFINED__)
@@ -12299,13 +12649,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiers_INTERFACE_DEFINED__
@@ -12420,7 +12770,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -12428,13 +12778,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -12569,7 +12919,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITableItemPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiers_INTERFACE_DEFINED__)
@@ -12577,13 +12927,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiers_INTERFACE_DEFINED__
@@ -12698,7 +13048,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIden
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -12706,13 +13056,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -12857,7 +13207,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIden
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITablePatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiers_INTERFACE_DEFINED__)
@@ -12865,13 +13215,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiers_INTERFACE_DEFINED__
@@ -12986,7 +13336,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -12994,13 +13344,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -13125,7 +13475,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITogglePatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2Identifiers_INTERFACE_DEFINED__)
@@ -13133,13 +13483,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2Identifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2Identifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2Identifiers_INTERFACE_DEFINED__
@@ -13254,7 +13604,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2Identifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2IdentifiersStatics_INTERFACE_DEFINED__)
@@ -13262,13 +13612,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2IdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2IdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2IdentifiersStatics_INTERFACE_DEFINED__
@@ -13423,7 +13773,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern2IdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiers_INTERFACE_DEFINED__)
@@ -13431,13 +13781,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiers_INTERFACE_DEFINED__
@@ -13552,7 +13902,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -13560,13 +13910,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -13711,7 +14061,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPattern
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CITransformPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiers_INTERFACE_DEFINED__)
@@ -13719,13 +14069,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiers_INTERFACE_DEFINED__
@@ -13840,7 +14190,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIden
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -13848,13 +14198,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -13989,7 +14339,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIden
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIValuePatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiers_INTERFACE_DEFINED__)
@@ -13997,13 +14347,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiers_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiers_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiers_INTERFACE_DEFINED__
@@ -14118,7 +14468,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiersStatics_INTERFACE_DEFINED__)
@@ -14126,13 +14476,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiersStatics_INTERFACE_DEFINED__
@@ -14307,7 +14657,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIde
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIWindowPatternIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0080 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_AnnotationPatternIdentifiers_DEFINED
@@ -14412,13 +14762,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Eautomation_0000_0080_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -159,10 +159,10 @@ public:
     static HMODULE 
     GetProcessModule()
     {
-        HMODULE module = ::GetModuleHandleW(IEPROCESS_MODULE_NAME);
-        if (module)
+        HMODULE moduleHandle = ::GetModuleHandleW(IEPROCESS_MODULE_NAME);
+        if (moduleHandle)
         {
-            IEGetProcessModule_t IEGetProcessModule = (IEGetProcessModule_t)::GetProcAddress(module, IEGetProcessModule_PROC_NAME);
+            IEGetProcessModule_t IEGetProcessModule = (IEGetProcessModule_t)::GetProcAddress(moduleHandle, IEGetProcessModule_PROC_NAME);
             if (IEGetProcessModule)
             {
                 return IEGetProcessModule();

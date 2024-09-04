@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -58,20 +58,6 @@ typedef interface __FIIterable_1_Windows__CApplicationModel__CAppExtensions__CAp
 typedef interface __FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension __FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension;
 
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_FWD_DEFINED__ */
-
-
-#ifndef ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_FWD_DEFINED__
-#define ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_FWD_DEFINED__
-typedef interface __FIAsyncOperationCompletedHandler_1___F__CIPropertySet __FIAsyncOperationCompletedHandler_1___F__CIPropertySet;
-
-#endif 	/* ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_FWD_DEFINED__ */
-
-
-#ifndef ____FIAsyncOperation_1___F__CIPropertySet_FWD_DEFINED__
-#define ____FIAsyncOperation_1___F__CIPropertySet_FWD_DEFINED__
-typedef interface __FIAsyncOperation_1___F__CIPropertySet __FIAsyncOperation_1___F__CIPropertySet;
-
-#endif 	/* ____FIAsyncOperation_1___F__CIPropertySet_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_FWD_DEFINED__
@@ -339,18 +325,18 @@ interface IAppExtension;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0001 */
 /* [local] */ 
@@ -385,18 +371,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0002 */
 /* [local] */ 
@@ -431,18 +417,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0003 */
 /* [local] */ 
@@ -467,18 +453,6 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_USE */
 
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Foundation {
-namespace Collections {
-interface IPropertySet;
-} /*Collections*/
-} /*Foundation*/
-} /*Windows*/
-}
-#endif
-
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0003 */
 /* [local] */ 
@@ -486,116 +460,23 @@ interface IPropertySet;
 
 
 
-
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3112_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("5075a55f-68ba-56f2-97e6-9b1cbfa2c5f2"))
-IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IPropertySet*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Collections::IPropertySet*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IPropertySet>"; }
-};
-typedef IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IPropertySet*> __FIAsyncOperationCompletedHandler_1___F__CIPropertySet_t;
-#define ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___F__CIPropertySet ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___F__CIPropertySet_t
-
-/* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE */
-
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3113 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3113_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1___F__CIPropertySet_USE
-#define DEF___FIAsyncOperation_1___F__CIPropertySet_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("490b0686-afd7-5037-9647-d8fe248f182c"))
-IAsyncOperation<ABI::Windows::Foundation::Collections::IPropertySet*> : IAsyncOperation_impl<ABI::Windows::Foundation::Collections::IPropertySet*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IPropertySet>"; }
-};
-typedef IAsyncOperation<ABI::Windows::Foundation::Collections::IPropertySet*> __FIAsyncOperation_1___F__CIPropertySet_t;
-#define ____FIAsyncOperation_1___F__CIPropertySet_FWD_DEFINED__
-#define __FIAsyncOperation_1___F__CIPropertySet ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t
-
-/* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___F__CIPropertySet_USE */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3114 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3114 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3114_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_USE
@@ -619,29 +500,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3115 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3115_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4665 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_USE
@@ -711,7 +592,7 @@ interface IAppExtensionPackageInstalledEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005 */
 /* [local] */ 
 
 
@@ -719,23 +600,23 @@ interface IAppExtensionPackageInstalledEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3116 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3116_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4666 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageInstalledEventArgs_USE
@@ -782,30 +663,30 @@ interface IAppExtensionPackageStatusChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3117 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3117_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4667 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageStatusChangedEventArgs_USE
@@ -852,30 +733,30 @@ interface IAppExtensionPackageUninstallingEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3118 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3118_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4668 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUninstallingEventArgs_USE
@@ -922,30 +803,30 @@ interface IAppExtensionPackageUpdatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3119 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3119_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatedEventArgs_USE
@@ -992,30 +873,30 @@ interface IAppExtensionPackageUpdatingEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3120 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3120_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatingEventArgs_USE
@@ -1037,6 +918,111 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::AppExtensions::AppExt
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatingEventArgs_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+namespace Collections {
+interface IPropertySet;
+} /*Collections*/
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4671 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4671 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5075a55f-68ba-56f2-97e6-9b1cbfa2c5f2"))
+IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IPropertySet*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Collections::IPropertySet*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IPropertySet>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IPropertySet*> __FIAsyncOperationCompletedHandler_1___F__CIPropertySet_t;
+#define ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___F__CIPropertySet ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___F__CIPropertySet_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4672 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4672 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___F__CIPropertySet_USE
+#define DEF___FIAsyncOperation_1___F__CIPropertySet_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("490b0686-afd7-5037-9647-d8fe248f182c"))
+IAsyncOperation<ABI::Windows::Foundation::Collections::IPropertySet*> : IAsyncOperation_impl<ABI::Windows::Foundation::Collections::IPropertySet*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IPropertySet>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Foundation::Collections::IPropertySet*> __FIAsyncOperation_1___F__CIPropertySet_t;
+#define ____FIAsyncOperation_1___F__CIPropertySet_FWD_DEFINED__
+#define __FIAsyncOperation_1___F__CIPropertySet ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___F__CIPropertySet_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1068,18 +1054,18 @@ interface IStorageFolder;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0013 */
 /* [local] */ 
@@ -1114,18 +1100,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0014 */
 /* [local] */ 
@@ -1160,18 +1146,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0015 */
 /* [local] */ 
@@ -1206,18 +1192,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0016 */
 /* [local] */ 
@@ -1289,18 +1275,18 @@ class Package;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0017 */
 /* [local] */ 
@@ -1475,18 +1461,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppExtensions
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0019 */
 /* [local] */ 
@@ -1627,18 +1613,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppExtensions
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0021 */
 /* [local] */ 
@@ -1821,24 +1807,24 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppExtensio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0023 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet
-#define DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
@@ -1851,311 +1837,6 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0023_v0_0_s_ifspec;
-
-#ifndef ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_INTERFACE_DEFINED__
-#define ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_INTERFACE_DEFINED__
-
-/* interface __FIAsyncOperationCompletedHandler_1___F__CIPropertySet */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FIAsyncOperationCompletedHandler_1___F__CIPropertySet */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___F__CIPropertySet;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("5075a55f-68ba-56f2-97e6-9b1cbfa2c5f2")
-    __FIAsyncOperationCompletedHandler_1___F__CIPropertySet : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___F__CIPropertySet *asyncInfo,
-            /* [in] */ AsyncStatus status) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FIAsyncOperationCompletedHandler_1___F__CIPropertySetVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___F__CIPropertySet * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___F__CIPropertySet * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___F__CIPropertySet * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___F__CIPropertySet * This,
-            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___F__CIPropertySet *asyncInfo,
-            /* [in] */ AsyncStatus status);
-        
-        END_INTERFACE
-    } __FIAsyncOperationCompletedHandler_1___F__CIPropertySetVtbl;
-
-    interface __FIAsyncOperationCompletedHandler_1___F__CIPropertySet
-    {
-        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___F__CIPropertySetVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FIAsyncOperationCompletedHandler_1___F__CIPropertySet_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIAsyncOperationCompletedHandler_1___F__CIPropertySet_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIAsyncOperationCompletedHandler_1___F__CIPropertySet_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIAsyncOperationCompletedHandler_1___F__CIPropertySet_Invoke(This,asyncInfo,status)	\
-    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3129 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3129 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3129_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1___F__CIPropertySet
-#define DEF___FIAsyncOperation_1___F__CIPropertySet
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025_v0_0_s_ifspec;
-
-#ifndef ____FIAsyncOperation_1___F__CIPropertySet_INTERFACE_DEFINED__
-#define ____FIAsyncOperation_1___F__CIPropertySet_INTERFACE_DEFINED__
-
-/* interface __FIAsyncOperation_1___F__CIPropertySet */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FIAsyncOperation_1___F__CIPropertySet */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FIAsyncOperation_1___F__CIPropertySet;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("490b0686-afd7-5037-9647-d8fe248f182c")
-    __FIAsyncOperation_1___F__CIPropertySet : public IInspectable
-    {
-    public:
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
-            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___F__CIPropertySet *handler) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___F__CIPropertySet **handler) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetResults( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **results) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FIAsyncOperation_1___F__CIPropertySetVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___F__CIPropertySet *handler);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___F__CIPropertySet **handler);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
-            __RPC__in __FIAsyncOperation_1___F__CIPropertySet * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **results);
-        
-        END_INTERFACE
-    } __FIAsyncOperation_1___F__CIPropertySetVtbl;
-
-    interface __FIAsyncOperation_1___F__CIPropertySet
-    {
-        CONST_VTBL struct __FIAsyncOperation_1___F__CIPropertySetVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FIAsyncOperation_1___F__CIPropertySet_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIAsyncOperation_1___F__CIPropertySet_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIAsyncOperation_1___F__CIPropertySet_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIAsyncOperation_1___F__CIPropertySet_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIAsyncOperation_1___F__CIPropertySet_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIAsyncOperation_1___F__CIPropertySet_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIAsyncOperation_1___F__CIPropertySet_put_Completed(This,handler)	\
-    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
-
-#define __FIAsyncOperation_1___F__CIPropertySet_get_Completed(This,handler)	\
-    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
-
-#define __FIAsyncOperation_1___F__CIPropertySet_GetResults(This,results)	\
-    ( (This)->lpVtbl -> GetResults(This,results) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____FIAsyncOperation_1___F__CIPropertySet_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIAsyncOperation_1___F__CIPropertySet */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3130 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3130 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3130_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_INTERFACE_DEFINED__
@@ -2244,35 +1925,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3131 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3131_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4681 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4681_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension
@@ -2280,13 +1961,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_INTERFACE_DEFINED__
@@ -2416,35 +2097,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppExtensions__CAppExtension */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3132 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3132_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4682 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4682_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageInstalledEventArgs
@@ -2452,13 +2133,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__
@@ -2547,35 +2228,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CAppE
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageInstalledEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3133 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3133_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4683 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4683_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageStatusChangedEventArgs
@@ -2583,13 +2264,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -2678,35 +2359,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CAppE
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageStatusChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3134 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3134_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4684 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4684_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUninstallingEventArgs
@@ -2714,13 +2395,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__
@@ -2809,35 +2490,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CAppE
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUninstallingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3135 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3135_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4685 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4685_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatedEventArgs
@@ -2845,13 +2526,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__
@@ -2940,35 +2621,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CAppE
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3136 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_3136_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4686 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_0000_4686_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatingEventArgs
@@ -2976,13 +2657,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions2Eidl_00
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__
@@ -3071,7 +2752,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CAppE
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CAppExtensions__CAppExtensionCatalog_Windows__CApplicationModel__CAppExtensions__CAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -3081,13 +2762,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtension_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtension_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtension_INTERFACE_DEFINED__
@@ -3270,7 +2951,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtension_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalog_INTERFACE_DEFINED__)
@@ -3278,13 +2959,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalog_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalog_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalog_INTERFACE_DEFINED__
@@ -3529,7 +3210,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalog_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalogStatics_INTERFACE_DEFINED__)
@@ -3537,13 +3218,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalogStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalogStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalogStatics_INTERFACE_DEFINED__
@@ -3668,7 +3349,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionCatalogStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__)
@@ -3676,13 +3357,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__
@@ -3825,7 +3506,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageInstalledEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__)
@@ -3833,13 +3514,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -3972,7 +3653,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageStatusChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__)
@@ -3980,13 +3661,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__
@@ -4119,7 +3800,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUninstallingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -4127,13 +3808,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__
@@ -4276,7 +3957,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__)
@@ -4284,13 +3965,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__
@@ -4423,7 +4104,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppEx
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CAppExtensions_CIAppExtensionPackageUpdatingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_AppExtensions_AppExtension_DEFINED
@@ -4456,13 +4137,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappextensions_0000_0044_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

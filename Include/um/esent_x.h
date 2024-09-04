@@ -464,6 +464,7 @@ typedef struct tagDBUTIL_W
 #endif // JET_VERSION >= 0x0600
 #define JET_bitDBUtilOptionDumpVerbose			0x10000000	// DEBUG only
 #define JET_bitDBUtilOptionCheckBTree			0x20000000	// DEBUG only
+#define JET_bitDBUtilOptionDumpLogSummary		0x40000000
 
 // begin_PubEsent
 
@@ -570,7 +571,9 @@ typedef struct tagDBUTIL_W
 																	//		has redone to the DB file (layering violation info: and most importantly to fix replicas 
 																	//		in Exchange).
 #define JET_efvExtHdrRootFieldAutoIncStorageReleased		8960	//	Moves to retail the extend node/page's extended header to have multiple root fields values therein; And store the max Auto-Increment Column value used in a new extended header root field.
-
+#define JET_efvXpress9Compression							8980	//	Adds support for compressing/decompressing data using Xpress9.
+#define JET_efvUppercaseTextNormalization					9000	//	Allow LCMAP_UPPERCASE for OS text normalization flags in index definitions.
+#define JET_efvDbscanHeaderHighestPageSeen					9020	//  Adds support for tracking (in the header) the highest page seen by dbscan follower
 
 // Special format specifiers here
 #define JET_efvUseEngineDefault 			(0x40000001)	//  Instructs the engine to use the maximal default supported Engine Format Version. (default)
@@ -767,6 +770,9 @@ typedef enum
 	JET_tracetagSysInitTerm,			// High level status traces for beginning and finishing of one-time system init/term operations during DLL load/unload. Contrast to JET_tracetagInitTerm. Introduced in Windows 10.
 #if ( JET_VERSION >= 0x0A01 )
 	JET_tracetagVersionAndStagingChecks,
+	JET_tracetagFile,
+	JET_tracetagFlushFileBuffers,		// Traces for flush file buffers (including suppressed FFB calls).
+	JET_tracetagCheckpointUpdate,
 
 	//	Add all new tracetags here, must be in order ...
 #endif // JET_VERSION >= 0x0A01
@@ -2843,6 +2849,27 @@ struct JET_THREADSTATS3 {
 #endif // JET_VERSION >= 0x0A01
 // end_PubEsent
 
+#if ( JET_VERSION >= 0x0A01 )
+//  JET performance counters accumulated by thread
+//
+struct JET_THREADSTATS4 {
+	unsigned long		cbStruct;						//  size of this struct
+	unsigned long		cPageReferenced;				//  pages referenced
+	unsigned long		cPageRead;						//  pages read from disk
+	unsigned long		cPagePreread;					//  pages preread from disk
+	unsigned long		cPageDirtied;					//  clean pages modified
+	unsigned long		cPageRedirtied;					//  dirty pages modified
+	unsigned long		cLogRecord;						//  log records generated
+	unsigned long		cbLogRecord;					//  log record bytes generated
+	unsigned __int64	cusecPageCacheMiss;				//  page cache miss latency in microseconds
+	unsigned long		cPageCacheMiss;					//  page cache misses
+	unsigned long		cSeparatedLongValueRead;		//  separated LV reads
+	unsigned __int64	cusecLongValuePageCacheMiss;	//  page cache miss latency in microseconds while reading separated LV data
+	unsigned long		cLongValuePageCacheMiss;		//  page cache misses while reading separated LV data
+	unsigned long		cSeparatedLongValueCreated;		//  separated LV creations
+	};
+#endif // JET_VERSION >= 0x0A01
+
 #if ( JET_VERSION >= 0x0603 )
 //	Resources supported by the JET
 //	NOTE: Instanceless resources are not bound to a specific instance
@@ -3903,7 +3930,16 @@ typedef enum {
 #define JET_sesparamTransactionLevel		4099	//	Retrieves (read-only, no set) the current number of nested levels of transactions begun.  0 = not in a transaction.
 #define JET_sesparamOperationContext		4100	//	a client context that the engine uses to track and trace operations (such as IOs)
 #define JET_sesparamCorrelationID			4101	//	an ID that is logged in traces and can be used by clients to correlate ESE actions with their activity
-#define JET_sesparamMaxValueInvalid			4102	//	This is not a valid session parameter. It can change from release to release!
+// end_PubEsent
+
+#if ( JET_VERSION >= 0x0A01 )
+#define JET_sesparamCachePriority			4102	//	cache priority to be assign to database pages accessed by the session
+													//	(default is the ESE instance's current JET_paramCachePriority at
+													//	JetBeginSession-time).
+#endif // JET_VERSION >= 0x0A01
+
+// begin_PubEsent
+#define JET_sesparamMaxValueInvalid			4103	//	This is not a valid session parameter. It can change from release to release!
 
 typedef struct {
 	unsigned long	ulUserID;
@@ -5143,6 +5179,34 @@ typedef JET_ERR (JET_API * JET_PFNEMITLOGDATA)(
 #endif // JET_VERSION >= 0x0602
 
 #endif // JET_VERSION >= 0x0600
+
+
+#if ( JET_VERSION >= 0x0601 )
+
+	/* Flags for JetPatchDatabasePages */
+
+#define JET_bitResetDatabasePages		0x00000001
+#define JET_bitPatchingCorruptPage		0x00000002
+
+#endif // JET_VERSION >= 0x0601
+
+#if ( JET_VERSION >= 0x602 )
+
+	/* Flags for JetOnlinePatchDatabasePage */
+
+// #define JET_bitPatchAllowCorruption		0x00000002				//	OBSOLETE and UNSUPPORTED - don't checksum the page
+
+#endif // JET_VERSION >= 0x0602
+
+#if ( JET_VERSION >= 0x0601 )
+
+	/* Flags for JetEndDatabaseIncrementalReseed */
+
+#define JET_bitEndDatabaseIncrementalReseedCancel		0x00000001		//	Stop an incremental reseed operation prematurely for any (failing) reason.  Database will be left in inconsistent JET_dbstateIncrementalReseedInProgress state.
+
+#endif // JET_VERSION >= 0x0601
+
+
 // begin_PubEsent
 
 
@@ -5366,7 +5430,14 @@ typedef JET_ERR (JET_API * JET_PFNEMITLOGDATA)(
 // begin_PubEsent
 #define JET_errDisabledFunctionality		-112  /* You are running MinESE, that does not have all features compiled in.  This functionality is only supported in a full version of ESE. */
 #define JET_errUnloadableOSFunctionality	-113  /* The desired OS functionality could not be located and loaded / linked. */
+// end_PubEsent
+#define JET_errDeviceMissing				-114  /* A required hardware device or functionality was missing. */
+#define JET_errDeviceMisconfigured			-115  /* A required hardware device was misconfigured externally. */
+#define JET_errDeviceTimeout				-116  /* Timeout occurred while waiting for a hardware device to respond. */
+#define errDeviceBusy						-117  /* Hardware device is busy doing other operations. */
+#define JET_errDeviceFailure				-118  /* A required hardware device didn't function as expected. */
 
+// begin_PubEsent
 
 //	BUFFER MANAGER errors
 //
@@ -5536,6 +5607,7 @@ typedef JET_ERR (JET_API * JET_PFNEMITLOGDATA)(
 #define JET_wrnNoMoreRecords				 428  /* No more records to stream */
 #define errRECColumnNotFound				-429  /* Column value not found in record */
 #define errRECNoCurrentColumnValue			-430  /* No current column value in record */
+#define JET_errCompressionIntegrityCheckFailed	-431  /* A compression integrity check failed. Decompressing data failed the integrity checksum indicating a data corruption in the compress/decompress pipeline. */
 // begin_PubEsent
 
 /*	LOGGING/RECOVERY errors
@@ -5774,6 +5846,8 @@ typedef JET_ERR (JET_API * JET_PFNEMITLOGDATA)(
 #define JET_errDatabaseUnavailable			-1091 /* This database cannot be used because it encountered a fatal error */
 #define JET_errInstanceUnavailableDueToFatalLogDiskFull	-1092 /* This instance cannot be used because it encountered a log-disk-full error performing an operation (likely transaction rollback) that could not tolerate failure */
 #define JET_errInvalidSesparamId			-1093 /* This JET_sesparam* identifier is not known to the ESE engine. */
+
+#define JET_errTooManyRecords				-1094 /* There are too many records to enumerate, switch to an API that handles 64-bit numbers */
 
 #define JET_errOutOfSessions  				-1101 /* Out of sessions */
 #define JET_errWriteConflict				-1102 /* Write lock failed due to outstanding write lock */
@@ -9492,6 +9566,19 @@ JetIndexRecordCount(
 	_Out_ unsigned long *	pcrec,
 	_In_ unsigned long		crecMax );
 
+// end_PubEsent
+#if ( JET_VERSION >= 0x0A01 )
+
+JET_ERR JET_API
+JetIndexRecordCount2(
+	_In_ JET_SESID				sesid,
+	_In_ JET_TABLEID			tableid,
+	_Out_ unsigned __int64 *	pcrec,
+	_In_ unsigned __int64		crecMax );
+
+#endif // JET_VERSION >= 0x0A01
+// begin_PubEsent
+
 JET_ERR JET_API
 JetRetrieveKey(
 	_In_ JET_SESID										sesid,
@@ -10532,8 +10619,7 @@ JetGetPageInfo2(
 	_In_ JET_GRBIT								grbit,			//	options
 	_In_ unsigned long							ulInfoLevel );	//	info level
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetGetDatabasePages(
 	_In_ JET_SESID								sesid,
 	_In_ JET_DBID								dbid,
@@ -10553,15 +10639,10 @@ JetGetDatabasePages(
 
 #if ( JET_VERSION >= 0x602 )
 
-	/* Flags for JetOnlinePatchDatabasePage */
-
-// #define JET_bitPatchAllowCorruption		0x00000002				//	OBSOLETE and UNSUPPORTED - don't checksum the page
-
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetOnlinePatchDatabasePage(
 	_In_ JET_SESID								sesid,
 	_In_ JET_DBID								dbid,
@@ -10604,15 +10685,13 @@ JetRemoveLogfileW(
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetBeginDatabaseIncrementalReseedA(
 	_In_ JET_INSTANCE	instance,
 	_In_ JET_PCSTR		szDatabase,
 	_In_ JET_GRBIT		grbit );
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetBeginDatabaseIncrementalReseedW(
 	_In_ JET_INSTANCE	instance,
 	_In_ JET_PCWSTR		szDatabase,
@@ -10624,8 +10703,7 @@ JetBeginDatabaseIncrementalReseedW(
 #define JetBeginDatabaseIncrementalReseed JetBeginDatabaseIncrementalReseedA
 #endif
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetEndDatabaseIncrementalReseedA(
 	_In_ JET_INSTANCE	instance,
 	_In_ JET_PCSTR		szDatabase,
@@ -10634,8 +10712,7 @@ JetEndDatabaseIncrementalReseedA(
 	_In_ unsigned long	genMaxRequired,
 	_In_ JET_GRBIT		grbit );
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetEndDatabaseIncrementalReseedW(
 	_In_ JET_INSTANCE	instance,
 	_In_ JET_PCWSTR		szDatabase,
@@ -10650,13 +10727,7 @@ JetEndDatabaseIncrementalReseedW(
 #define JetEndDatabaseIncrementalReseed JetEndDatabaseIncrementalReseedA
 #endif
 
-
-	/* Flags for JetPatchDatabasePages */
-
-#define JET_bitResetDatabasePages		0x00000001
-
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetPatchDatabasePagesA(
 	_In_ JET_INSTANCE				instance,
 	_In_ JET_PCSTR					szDatabase,
@@ -10666,8 +10737,7 @@ JetPatchDatabasePagesA(
 	_In_ unsigned long				cb,
 	_In_ JET_GRBIT					grbit );
 
-JET_ERR
-JET_API
+JET_ERR JET_API
 JetPatchDatabasePagesW(
 	_In_ JET_INSTANCE				instance,
 	_In_ JET_PCWSTR					szDatabase,
@@ -10790,6 +10860,8 @@ enum
 	fInvalidUsage						= 0x800,	// invalid usage of some sub-component during unit testing
 	fCorruptingPageLogically			= 0x1000,	// but checksum (and perhaps structure / consistency) is ok.
 	fOutOfMemory						= 0x2000,
+	fLeakingUnflushedIos				= 0x4000,	// for internal tests that do not flush file buffers before deleting the pfapi.
+	fHangingIOs							= 0x8000,	// Simulate hung IOs
 	};
 
 typedef struct tagJET_TESTHOOKUNITTEST2

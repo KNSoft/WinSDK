@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -1555,7 +1555,7 @@ EXTERN_C const IID IID_IMFTopologyServiceLookup;
             /* [in] */ REFGUID guidService,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _Out_writes_all_(*pnObjects)  LPVOID *ppvObjects,
+            _Out_writes_to_(1,*pnObjects)  LPVOID *ppvObjects,
             /* [annotation][out][in] */ 
             _Inout_  DWORD *pnObjects) = 0;
         
@@ -1587,7 +1587,7 @@ EXTERN_C const IID IID_IMFTopologyServiceLookup;
             /* [in] */ REFGUID guidService,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _Out_writes_all_(*pnObjects)  LPVOID *ppvObjects,
+            _Out_writes_to_(1,*pnObjects)  LPVOID *ppvObjects,
             /* [annotation][out][in] */ 
             _Inout_  DWORD *pnObjects);
         

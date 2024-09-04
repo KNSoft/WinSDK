@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -282,6 +282,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformation3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Proximity {
+                interface IPeerInformationWithHostAndService;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher __x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher;
@@ -387,7 +407,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.Networking.Sockets.h"
+#include "Windows.Networking.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -438,18 +458,18 @@ interface IPeerInformation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0001 */
 /* [local] */ 
@@ -484,18 +504,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0002 */
 /* [local] */ 
@@ -530,18 +550,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0003 */
 /* [local] */ 
@@ -576,18 +596,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0004 */
 /* [local] */ 
@@ -622,18 +642,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0005 */
 /* [local] */ 
@@ -695,18 +715,18 @@ interface IConnectionRequestedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0006 */
 /* [local] */ 
@@ -765,18 +785,18 @@ interface ITriggeredConnectionStateChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0007 */
 /* [local] */ 
@@ -835,18 +855,18 @@ interface IPeerWatcher;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0008 */
 /* [local] */ 
@@ -881,18 +901,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0009 */
 /* [local] */ 
@@ -927,18 +947,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0010 */
 /* [local] */ 
@@ -973,18 +993,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0011 */
 /* [local] */ 
@@ -1019,18 +1039,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0012 */
 /* [local] */ 
@@ -1065,18 +1085,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0013 */
 /* [local] */ 
@@ -1111,18 +1131,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0014 */
 /* [local] */ 
@@ -1181,18 +1201,18 @@ interface IStreamSocket;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0015 */
 /* [local] */ 
@@ -1227,18 +1247,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0016 */
 /* [local] */ 
@@ -1266,6 +1286,9 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Enetworking_h__)
+#include <Windows.Networking.h>
+#endif // !defined(__windows2Enetworking_h__)
 #if !defined(__windows2Enetworking2Esockets_h__)
 #include <Windows.Networking.Sockets.h>
 #endif // !defined(__windows2Enetworking2Esockets_h__)
@@ -1281,6 +1304,16 @@ namespace Windows {
 namespace Foundation {
 class Uri;
 } /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Networking {
+class HostName;
+} /*Networking*/
 } /*Windows*/
 }
 #endif
@@ -1336,6 +1369,7 @@ typedef enum __x_ABI_CWindows_CNetworking_CProximity_CTriggeredConnectState __x_
 
 
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1362,6 +1396,7 @@ class ProximityMessage;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0016 */
 /* [local] */ 
+
 
 
 
@@ -1450,21 +1485,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0017 */
 /* [local] */ 
@@ -1639,18 +1675,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CProximity__CPeerInf
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0019 */
 /* [local] */ 
@@ -1791,18 +1827,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CProximity__CPeerInf
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0021 */
 /* [local] */ 
@@ -1985,18 +2021,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CProximity__CPeerI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0023 */
 /* [local] */ 
@@ -2118,18 +2154,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0025 */
 /* [local] */ 
@@ -2290,18 +2326,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworkin
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0027 */
 /* [local] */ 
@@ -2421,18 +2457,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_IInspectable_Windows__CNetworking
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0029 */
 /* [local] */ 
@@ -2552,18 +2588,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_IInspectable_Windows__CNetworking
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0031 */
 /* [local] */ 
@@ -2683,18 +2719,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CProximity_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0033 */
 /* [local] */ 
@@ -4293,9 +4329,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CIPeerInformation
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0043 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Proximity_IPeerWatcher[] = L"Windows.Networking.Proximity.IPeerWatcher";
-#endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Proximity_IPeerInformationWithHostAndService[] = L"Windows.Networking.Proximity.IPeerInformationWithHostAndService";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0043 */
@@ -4305,6 +4341,153 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0043_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Networking::Proximity::IPeerInformationWithHostAndService */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Networking {
+                namespace Proximity {
+                    
+                    MIDL_INTERFACE("ECC7CCAD-1B70-4E8B-92DB-BBE781419308")
+                    IPeerInformationWithHostAndService : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HostName( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Networking::IHostName **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ServiceName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPeerInformationWithHostAndService = __uuidof(IPeerInformationWithHostAndService);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndServiceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HostName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CIHostName **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ServiceName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndServiceVtbl;
+
+    interface __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndServiceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_get_HostName(This,value)	\
+    ( (This)->lpVtbl -> get_HostName(This,value) ) 
+
+#define __x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_get_ServiceName(This,value)	\
+    ( (This)->lpVtbl -> get_ServiceName(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIPeerInformationWithHostAndService_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0044 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Proximity_IPeerWatcher[] = L"Windows.Networking.Proximity.IPeerWatcher";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0044 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__
@@ -4553,7 +4736,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher;
 #endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIPeerWatcher_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0044 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice_INTERFACE_DEFINED__)
@@ -4561,13 +4744,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0044 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice_INTERFACE_DEFINED__
@@ -4874,7 +5057,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice
 #endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0045 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0046 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CProximity_CIProximityDeviceStatics_INTERFACE_DEFINED__)
@@ -4882,13 +5065,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CIProximityDeviceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0045 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIProximityDeviceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CProximity_CIProximityDeviceStatics_INTERFACE_DEFINED__
@@ -5033,7 +5216,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CIProximityDevice
 #endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIProximityDeviceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0046 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CProximity_CIProximityMessage_INTERFACE_DEFINED__)
@@ -5041,13 +5224,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CIProximityMessage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0046 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CProximity_CIProximityMessage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CProximity_CIProximityMessage_INTERFACE_DEFINED__
@@ -5200,7 +5383,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CIProximityMessag
 #endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CIProximityMessage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0047 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0048 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CProximity_CITriggeredConnectionStateChangedEventArgs_INTERFACE_DEFINED__)
@@ -5208,13 +5391,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CProximity_CITriggeredConnectionStateChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0047 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CProximity_CITriggeredConnectionStateChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CProximity_CITriggeredConnectionStateChangedEventArgs_INTERFACE_DEFINED__
@@ -5357,7 +5540,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CProximity_CITriggeredConnec
 #endif 	/* ____x_ABI_CWindows_CNetworking_CProximity_CITriggeredConnectionStateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0048 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0049 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Networking_Proximity_ConnectionRequestedEventArgs_DEFINED
@@ -5390,13 +5573,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0048 */
+/* interface __MIDL_itf_windows2Enetworking2Eproximity_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Eproximity_0000_0049_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

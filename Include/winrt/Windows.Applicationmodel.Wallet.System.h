@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -186,18 +186,18 @@ interface IWalletItemSystemStore;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0001 */
 /* [local] */ 
@@ -232,18 +232,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0002 */
 /* [local] */ 
@@ -281,18 +281,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0003 */
 /* [local] */ 
@@ -351,18 +351,18 @@ interface IWalletItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0004 */
 /* [local] */ 
@@ -397,18 +397,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0005 */
 /* [local] */ 
@@ -443,18 +443,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0006 */
 /* [local] */ 
@@ -489,18 +489,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0007 */
 /* [local] */ 
@@ -535,18 +535,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0008 */
 /* [local] */ 
@@ -581,18 +581,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0009 */
 /* [local] */ 
@@ -627,18 +627,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0010 */
 /* [local] */ 
@@ -673,18 +673,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0011 */
 /* [local] */ 
@@ -719,18 +719,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0012 */
 /* [local] */ 
@@ -816,18 +816,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0013 */
 /* [local] */ 
@@ -949,18 +949,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0015 */
 /* [local] */ 
@@ -1121,18 +1121,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CWallet_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Ewallet2Esystem_0000_0017 */
 /* [local] */ 

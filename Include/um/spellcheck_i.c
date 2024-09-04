@@ -5,7 +5,7 @@
 /* link this file in with the server and any clients */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -52,9 +52,9 @@ typedef IID CLSID;
 #endif // CLSID_DEFINED
 
 #define MIDL_DEFINE_GUID(type,name,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) \
-        const type name = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
+        EXTERN_C __declspec(selectany) const type name = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
 
-#endif !_MIDL_USE_GUIDDEF_
+#endif // !_MIDL_USE_GUIDDEF_
 
 MIDL_DEFINE_GUID(IID, IID_ISpellingError,0xB7C82D61,0xFBE8,0x4B47,0x9B,0x27,0x6C,0x0D,0x2E,0x0D,0xE0,0xA3);
 

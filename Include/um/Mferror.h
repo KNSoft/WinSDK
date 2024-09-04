@@ -63,6 +63,8 @@ Notes:
 
  45000 - 45999 = MF Media Timeline Controller errors
 
+ 46000 - 46999 = MediaExtensions via AppService errors
+
 **************************** READ ME ******************************************
 
 --*/
@@ -129,16 +131,16 @@ Notes:
 //
 // Define the facility codes
 //
-#define FACILITY_MF_WIN32                0x7
 #define FACILITY_MF                      0xD
+#define FACILITY_MF_WIN32                0x7
 
 
 //
 // Define the severity codes
 //
-#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_SUCCESS          0x0
 #define STATUS_SEVERITY_INFORMATIONAL    0x1
+#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_ERROR            0x3
 
 
@@ -2323,6 +2325,24 @@ Notes:
 //
 #define MF_E_TRANSFORM_STREAM_INVALID_RESOLUTION _HRESULT_TYPEDEF_(0xC00D6D79L)
 
+//
+// MessageId: MF_E_TRANSFORM_ASYNC_MFT_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The transform cannot be asynchronous in current context.%0
+//
+#define MF_E_TRANSFORM_ASYNC_MFT_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC00D6D7AL)
+
+//
+// MessageId: MF_E_TRANSFORM_EXATTRIBUTE_NOT_SUPPORTED
+//
+// MessageText:
+//
+// It is not supported in the current context to have the transform copy attributes from an input sample to an output sample.%0
+//
+#define MF_E_TRANSFORM_EXATTRIBUTE_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC00D6D7CL)
+
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -3229,6 +3249,15 @@ Notes:
 //
 #define MF_E_HW_ACCELERATED_THUMBNAIL_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC00DABECL)
 
+//
+// MessageId: MF_E_UNSUPPORTED_CAPTURE_DEVICE_PRESENT
+//
+// MessageText:
+//
+// Capture device that is present on the system is not supported by Media Foundation.%0
+//
+#define MF_E_UNSUPPORTED_CAPTURE_DEVICE_PRESENT _HRESULT_TYPEDEF_(0xC00DABEDL)
+
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -3262,6 +3291,49 @@ Notes:
 // Attaching Media Timeline Controller is blocked because of the current state of the object.%0
 //
 #define MF_E_TIMELINECONTROLLER_CANNOT_ATTACH _HRESULT_TYPEDEF_(0xC00DAFCAL)
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// MediaExtension as AppService errors
+//
+//////////////////////////////////////////////////////////////////////////////
+
+//
+// MessageId: MF_E_MEDIA_EXTENSION_APPSERVICE_CONNECTION_FAILED
+//
+// MessageText:
+//
+// Connection to app service providing a media extension failed.%0
+//
+#define MF_E_MEDIA_EXTENSION_APPSERVICE_CONNECTION_FAILED _HRESULT_TYPEDEF_(0xC00DB3B0L)
+
+//
+// MessageId: MF_E_MEDIA_EXTENSION_APPSERVICE_REQUEST_FAILED
+//
+// MessageText:
+//
+// App service providing a media extension failed to process the request.%0
+//
+#define MF_E_MEDIA_EXTENSION_APPSERVICE_REQUEST_FAILED _HRESULT_TYPEDEF_(0xC00DB3B1L)
+
+//
+// MessageId: MF_E_MEDIA_EXTENSION_PACKAGE_INTEGRITY_CHECK_FAILED
+//
+// MessageText:
+//
+// Package integrity check for app failed.%0
+//
+#define MF_E_MEDIA_EXTENSION_PACKAGE_INTEGRITY_CHECK_FAILED _HRESULT_TYPEDEF_(0xC00DB3B2L)
+
+//
+// MessageId: MF_E_MEDIA_EXTENSION_PACKAGE_LICENSE_INVALID
+//
+// MessageText:
+//
+// License check for app failed.%0
+//
+#define MF_E_MEDIA_EXTENSION_PACKAGE_LICENSE_INVALID _HRESULT_TYPEDEF_(0xC00DB3B3L)
 
 
 //////////////////////////////////////////////////////////////////////////////

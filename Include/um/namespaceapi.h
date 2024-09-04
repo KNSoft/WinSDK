@@ -20,6 +20,7 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-namespace-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -40,7 +41,7 @@ extern "C" {
 
 #pragma region Desktop Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #define PRIVATE_NAMESPACE_FLAG_DESTROY      0x00000001
 
@@ -98,7 +99,7 @@ DeleteBoundaryDescriptor(
     );
 
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 #ifdef __cplusplus

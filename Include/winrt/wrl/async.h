@@ -520,13 +520,9 @@ public:
 
     HRESULT FireCompletion(void) override
     {
-        HRESULT hr = AsyncBase< TComplete, Details::Nil, resultType, TAsyncBaseOptions >::FireCompletion();
-
-        if (progressDelegate_)
-        {
-            progressDelegate_ = nullptr;
-        }
-        return hr;
+        // "this" may be deleted during the completion call. Remove progress prior to firing completion.
+        progressDelegate_.Reset();
+        return AsyncBase< TComplete, Details::Nil, resultType, TAsyncBaseOptions >::FireCompletion();
     }
 
 private:

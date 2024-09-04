@@ -214,6 +214,9 @@ DEFINE_DEVPROPKEY(DEVPKEY_Storage_System_Critical,    0x4d1ebee8, 0x803, 0x4774,
 #define FILE_DEVICE_TRUST_ENV           0x00000056
 #define FILE_DEVICE_UCM                 0x00000057
 #define FILE_DEVICE_UCMTCPCI            0x00000058
+#define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
+#define FILE_DEVICE_NVDIMM              0x0000005a
+#define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -328,6 +331,11 @@ extern "C" {
 #define IOCTL_STORAGE_PERSISTENT_RESERVE_OUT  CTL_CODE(IOCTL_STORAGE_BASE, 0x0407, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
 #define IOCTL_STORAGE_GET_DEVICE_NUMBER       CTL_CODE(IOCTL_STORAGE_BASE, 0x0420, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+//
+// This IOCTL includes the same information as IOCTL_STORAGE_GET_DEVICE_NUMBER, plus the device GUID.
+//
+#define IOCTL_STORAGE_GET_DEVICE_NUMBER_EX    CTL_CODE(IOCTL_STORAGE_BASE, 0x0421, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 
 #define IOCTL_STORAGE_PREDICT_FAILURE         CTL_CODE(IOCTL_STORAGE_BASE, 0x0440, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -501,6 +509,111 @@ typedef struct _STORAGE_DEVICE_NUMBER {
 
     DWORD       PartitionNumber;
 } STORAGE_DEVICE_NUMBER, *PSTORAGE_DEVICE_NUMBER;
+
+typedef struct _STORAGE_DEVICE_NUMBERS {
+
+    DWORD NumberOfDevices;
+
+    STORAGE_DEVICE_NUMBER Devices[ANYSIZE_ARRAY];
+
+} STORAGE_DEVICE_NUMBERS, *PSTORAGE_DEVICE_NUMBERS;
+
+//
+// IOCTL_STORAGE_GET_DEVICE_NUMBER_EX
+//
+// input - none
+//
+// output - STORAGE_DEVICE_NUMBER_EX structure
+//
+
+//
+// Possible flags that can be set in Flags field of
+// STORAGE_DEVICE_NUMBER_EX structure defined below
+//
+
+//
+// This flag indicates that deviceguid is randomly created because a deviceguid conflict was observed
+//
+#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT 0x1
+
+//
+// This flag indicates that deviceguid is randomly created because the HW ID was not available
+//
+#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID   0x2
+
+//
+// This flag indicates that deviceguid is created from the scsi page83 data. 
+// If this flag is not set this implies it's created from serial number or is randomly generated.
+//
+#define STORAGE_DEVICE_FLAGS_PAGE_83_DEVICEGUID                0x4
+
+typedef struct _STORAGE_DEVICE_NUMBER_EX {
+
+    //
+    // Sizeof(STORAGE_DEVICE_NUMBER_EX).
+    //
+
+    DWORD       Version;
+
+    //
+    // Total size of the structure, including any additional data. Currently
+    // this will always be the same as sizeof(STORAGE_DEVICE_NUMBER_EX).
+    //
+
+    DWORD       Size;
+
+    //
+    // Flags - this shall be a combination of STORAGE_DEVICE_FLAGS_XXX flags
+    // that gives more information about the members of this structure.
+    //
+
+    DWORD       Flags;
+
+    //
+    // The FILE_DEVICE_XXX type for this device. This IOCTL is only
+    // supported for disk devices.
+    //
+
+    DEVICE_TYPE DeviceType;
+
+    //
+    // The number of this device.
+    //
+
+    DWORD       DeviceNumber;
+
+    //
+    // A globally-unique identification number for this device.
+    // A GUID of {0} indicates that a GUID could not be generated. The GUID
+    // is based on hardware information that doesn't change with firmware updates
+    // (for instance, serial number can be used to form the GUID, but not the firmware
+    // revision). The device GUID remains the same across reboots.
+    //
+    // In general, if a device exposes a globally unique identifier, the storage driver
+    // will use that identifier to form the GUID. Otherwise, the storage driver will combine
+    // the device's vendor ID, product ID and serial number to create the GUID.
+    //
+    // If a storage driver detects two devices with the same hardware information (which is
+    // an indication of a problem with the device), the driver will generate a random GUID for
+    // one of the two devices. When handling IOCTL_STORAGE_GET_DEVICE_NUMBER_EX for the device
+    // with the random GUID, the driver will add STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT
+    // to the Flags member of this structure.
+    //
+    // If a storage device does not provide any identifying information, the driver will generate a random
+    // GUID and add STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID to the Flags member of this structure.
+    //
+    // A random GUID is not persisted and will not be the same after a reboot.
+    //
+
+    GUID        DeviceGuid;
+
+    //
+    // If the device is partitionable, the partition number of the device.
+    // Otherwise -1.
+    //
+
+    DWORD       PartitionNumber;
+} STORAGE_DEVICE_NUMBER_EX, *PSTORAGE_DEVICE_NUMBER_EX;
 
 
 //
@@ -716,6 +829,7 @@ typedef enum _STORAGE_BUS_TYPE {
     BusTypeSpaces,
     BusTypeNvme,
     BusTypeSCM,
+    BusTypeUfs,
     BusTypeMax,
     BusTypeMaxReserved = 0x7F
 } STORAGE_BUS_TYPE, *PSTORAGE_BUS_TYPE;
@@ -876,6 +990,7 @@ typedef enum _STORAGE_PROPERTY_ID {
     StorageDeviceResiliencyProperty,
     StorageDeviceMediumProductType,
     StorageAdapterRpmbProperty,
+    StorageAdapterCryptoProperty,
     StorageDeviceIoCapabilityProperty = 48,
     StorageAdapterProtocolSpecificProperty,
     StorageDeviceProtocolSpecificProperty,
@@ -887,6 +1002,7 @@ typedef enum _STORAGE_PROPERTY_ID {
     StorageDeviceManagementStatus,
     StorageAdapterSerialNumberProperty,
     StorageDeviceLocationProperty,
+    StorageDeviceNumaProperty
 } STORAGE_PROPERTY_ID, *PSTORAGE_PROPERTY_ID;
 
 //
@@ -1082,7 +1198,7 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_ADAPTER_DESCRIPTOR {
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 #define NO_SRBTYPE_ADAPTER_DESCRIPTOR_SIZE  \
-    FIELD_OFFSET(STORAGE_ADAPTER_DESCRIPTOR, SrbType)
+    UFIELD_OFFSET(STORAGE_ADAPTER_DESCRIPTOR, SrbType)
 
 #if !defined(SRB_TYPE_SCSI_REQUEST_BLOCK)
 #define SRB_TYPE_SCSI_REQUEST_BLOCK         0
@@ -1521,6 +1637,116 @@ typedef struct _STORAGE_RPMB_DESCRIPTOR {
 
 } STORAGE_RPMB_DESCRIPTOR, *PSTORAGE_RPMB_DESCRIPTOR;
 
+//
+// Output buffer for StorageAdapterCryptoProperty & PropertyStandardQuery
+//
+
+typedef enum _STORAGE_CRYPTO_ALGORITHM_ID {
+    
+    StorageCryptoAlgorithmUnknown = 0,
+    StorageCryptoAlgorithmXTSAES = 1,
+    StorageCryptoAlgorithmBitlockerAESCBC,
+    StorageCryptoAlgorithmAESECB,
+    StorageCryptoAlgorithmESSIVAESCBC,
+    StorageCryptoAlgorithmMax
+
+} STORAGE_CRYPTO_ALGORITHM_ID, *PSTORAGE_CRYPTO_ALGORITHM_ID;
+
+typedef enum _STORAGE_CRYPTO_KEY_SIZE {
+    
+    StorageCryptoKeySizeUnknown = 0,
+    StorageCryptoKeySize128Bits = 1,
+    StorageCryptoKeySize192Bits,
+    StorageCryptoKeySize256Bits,
+    StorageCryptoKeySize512Bits
+
+} STORAGE_CRYPTO_KEY_SIZE, *PSTORAGE_CRYPTO_KEY_SIZE;
+
+#define STORAGE_CRYPTO_CAPABILITY_VERSION_1           1
+
+typedef struct _STORAGE_CRYPTO_CAPABILITY {
+
+    //
+    // To enable versioning of this structure. This shall bet set
+    // to STORAGE_CRYPTO_CAPABILITY_VERSION_1
+    //
+
+    DWORD Version;
+
+    //
+    // Size of this structure. This shall be set to
+    // sizeof(STORAGE_CRYPTO_CAPABILITY)
+    //
+
+    DWORD Size;
+
+    //
+    // The index for this crypto capability
+    //
+
+    DWORD CryptoCapabilityIndex;
+
+    //
+    // Supported algorithm for this crypto capability
+    //
+
+    STORAGE_CRYPTO_ALGORITHM_ID AlgorithmId;
+
+    //
+    // The supported key size for this algorithm
+    //
+
+    STORAGE_CRYPTO_KEY_SIZE KeySize;
+
+    //
+    // Bitmask for the supported sizes of encryptable data blocks. When bit
+    // j is set (j=0...7), a data unit size of 512*2^j bytes is supported.
+    // Bit 0 represents 512 bytes, 1 represents 1 KB, bit 7 represents 64 KB
+    //
+
+    DWORD DataUnitSizeBitmask;
+
+} STORAGE_CRYPTO_CAPABILITY, *PSTORAGE_CRYPTO_CAPABILITY;
+
+#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_1           1
+
+typedef struct _STORAGE_CRYPTO_DESCRIPTOR {
+
+    //
+    // Keep compatible with STORAGE_DESCRIPTOR_HEADER
+    // Shall be set to STORAGE_CRYPTO_DESCRIPTOR_VERSION_1
+    //
+
+    DWORD Version;
+
+    //
+    // Keep compatible with STORAGE_DESCRIPTOR_HEADER
+    // Shall be set to sizeof(STORAGE_CRYPTO_DESCRIPTOR)
+    //
+
+    DWORD Size;
+
+    //
+    // The number of keys the crypto engine in the adapter supports
+    //
+
+    DWORD NumKeysSupported;
+
+    //
+    // The number of crypto capability entries. This outlines the
+    // crypto configurations the adapter supports
+    //
+
+    DWORD NumCryptoCapabilities;
+
+    //
+    // Array of Crypto Capabilities
+    //
+
+    _Field_size_(NumCryptoCapabilities) STORAGE_CRYPTO_CAPABILITY CryptoCapabilities[ANYSIZE_ARRAY];
+
+} STORAGE_CRYPTO_DESCRIPTOR, *PSTORAGE_CRYPTO_DESCRIPTOR;
+
 
 //
 //  The STORAGE_TIER is an identifier for the storage tier relative to the volume/LUN.
@@ -1539,10 +1765,21 @@ typedef struct _STORAGE_RPMB_DESCRIPTOR {
 typedef enum _STORAGE_TIER_MEDIA_TYPE {
 
     StorageTierMediaTypeUnspecified = 0,
-    StorageTierMediaTypeDisk,
-    StorageTierMediaTypeSsd
+    StorageTierMediaTypeDisk        = 1,
+    StorageTierMediaTypeSsd         = 2,
+    StorageTierMediaTypeScm         = 4,
+    StorageTierMediaTypeMax
 
 } STORAGE_TIER_MEDIA_TYPE, *PSTORAGE_TIER_MEDIA_TYPE;
+
+typedef enum _STORAGE_TIER_CLASS {
+
+    StorageTierClassUnspecified = 0,
+    StorageTierClassCapacity,
+    StorageTierClassPerformance,
+    StorageTierClassMax
+
+} STORAGE_TIER_CLASS, *PSTORAGE_TIER_CLASS;
 
 typedef struct _STORAGE_TIER {
 
@@ -1581,6 +1818,12 @@ typedef struct _STORAGE_TIER {
     //
 
     STORAGE_TIER_MEDIA_TYPE MediaType;
+
+    //
+    // Classification of the tier
+    //
+
+    STORAGE_TIER_CLASS Class;
 
 } STORAGE_TIER, *PSTORAGE_TIER;
 
@@ -2039,6 +2282,7 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR {
 #define STORAGE_ATTRIBUTE_DYNAMIC_PERSISTENCE       0x04
 #define STORAGE_ATTRIBUTE_VOLATILE                  0x08
 #define STORAGE_ATTRIBUTE_ASYNC_EVENT_NOTIFICATION  0x10
+#define STORAGE_ATTRIBUTE_PERF_SIZE_INDEPENDENT	    0x20
 
 //
 // Constants for StorageDeviceManagementStatus
@@ -2087,7 +2331,8 @@ typedef enum _STORAGE_OPERATIONAL_STATUS_REASON {
     DiskOpReasonInvalidFirmware,
     DiskOpReasonHealthCheck,
     DiskOpReasonLostDataPersistence,
-    DiskOpReasonDisabledByPlatform
+    DiskOpReasonDisabledByPlatform,
+    DiskOpReasonMax
 } STORAGE_OPERATIONAL_STATUS_REASON, *PSTORAGE_OPERATIONAL_STATUS_REASON;
 
 typedef struct _STORAGE_OPERATIONAL_REASON {
@@ -2126,7 +2371,7 @@ typedef struct _STORAGE_OPERATIONAL_REASON {
 
 #define STORAGE_DEVICE_MAX_OPERATIONAL_STATUS    16
 
-typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
+typedef struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
 
     //
     // Sizeof() of this structure serves
@@ -2172,7 +2417,7 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
     // Additional reasons. There are NumberOfAdditionalReasons valid elements in the array.
     //
 
-    _Field_size_(NumberOfAdditionalReasons) STORAGE_OPERATIONAL_REASON AdditionalReasons[ANYSIZE_ARRAY];
+    STORAGE_OPERATIONAL_REASON AdditionalReasons[ANYSIZE_ARRAY];
 
 } STORAGE_DEVICE_MANAGEMENT_STATUS, *PSTORAGE_DEVICE_MANAGEMENT_STATUS;
 
@@ -2191,9 +2436,9 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
 #define STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH (128)
 
 typedef _Struct_size_bytes_(Size) struct _STORAGE_ADAPTER_SERIAL_NUMBER {
-    
+
     DWORD Version;
-    
+
     DWORD Size;
 
     //
@@ -2257,6 +2502,22 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_LOCATION_DESCRIPTOR {
 
 } STORAGE_DEVICE_LOCATION_DESCRIPTOR, *PSTORAGE_DEVICE_LOCATION_DESCRIPTOR;
 
+//
+// Output buffer for StorageDeviceNumaProperty.
+//
+// If the query for this property is successful, then the caller should
+// validate the NumaNode field before using it to optimize any operations.
+// That is, the caller should ensure the NumaNode value is less than or equal
+// to the system's highest NUMA node value and the NumaNode value is not equal
+// to STORAGE_DEVICE_NUMA_NODE_UNKNOWN.
+//
+typedef struct _STORAGE_DEVICE_NUMA_PROPERTY {
+    DWORD Version;
+    DWORD Size;
+    DWORD NumaNode;
+} STORAGE_DEVICE_NUMA_PROPERTY, *PSTORAGE_DEVICE_NUMA_PROPERTY;
+
+#define STORAGE_DEVICE_NUMA_NODE_UNKNOWN MAXDWORD
 
 //
 // IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES
@@ -2779,7 +3040,7 @@ typedef struct _DEVICE_STORAGE_ADDRESS_RANGE {
 typedef struct _DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT {
 
     DWORD                      Version;                    // The version of this structure.
-    
+
     DWORD                      Flags;                      // Additional information about the output.
 
     DWORD                      TotalNumberOfRanges;        // The number of ranges that would be necessary to fulfill the request.
@@ -2791,7 +3052,7 @@ typedef struct _DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT {
     DWORD                      NumberOfRangesReturned;     // Number of entries in Ranges. If the buffer provided by the caller
                                                            // isn't large enough to hold all the requested ranges, the device
                                                            // returns STATUS_BUFFER_OVERFLOW in IoStatus.Status.
-                                                           
+
     DEVICE_STORAGE_ADDRESS_RANGE Ranges[ANYSIZE_ARRAY];
 
 } DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT, *PDEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT;
@@ -3845,6 +4106,11 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_COUNTERS {
 // This is used in "Flags" field of data structures for firmware upgrade request.
 //
 #define STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER                     0x00000001
+
+//
+// Indicate that current FW image segment is the last one.
+//
+#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_LAST_SEGMENT                   0x00000002
 
 //
 // Indicate that the existing firmware in slot should be activated.
@@ -6425,17 +6691,6 @@ typedef enum _CHANGER_DEVICE_PROBLEM_TYPE {
 
 #endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
 
-//
-// Dedup FSCTLs
-// Values 162 - 170 are reserved for Dedup.
-//
-
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
-#define FSCTL_DEDUP_FILE                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 165, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define FSCTL_DEDUP_QUERY_FILE_HASHES       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 166, METHOD_NEITHER, FILE_READ_DATA)
-#define FSCTL_DEDUP_QUERY_RANGE_STATE       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 167, METHOD_NEITHER, FILE_READ_DATA)
-#define FSCTL_DEDUP_QUERY_REPARSE_INFO      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 168, METHOD_NEITHER, FILE_ANY_ACCESS)
-#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
 #define FSCTL_RKF_INTERNAL                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 171, METHOD_NEITHER, FILE_ANY_ACCESS) // Resume Key Filter
@@ -6519,7 +6774,6 @@ typedef enum _CHANGER_DEVICE_PROBLEM_TYPE {
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
 #define FSCTL_QUERY_DIRECT_IMAGE_ORIGINAL_BASE   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 233, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_READ_UNPRIVILEGED_USN_JOURNAL      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 234,  METHOD_NEITHER, FILE_ANY_ACCESS) // READ_USN_JOURNAL_DATA, USN
-#define FSCTL_START_VIRTUALIZATION_INSTANCE      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 235, METHOD_BUFFERED, FILE_ANY_ACCESS) // VIRTUALIZATION_INSTANCE_INFO_INPUT, VIRTUALIZATION_INSTANCE_INFO_OUTPUT
 #endif
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_TH2)
@@ -6531,6 +6785,21 @@ typedef enum _CHANGER_DEVICE_PROBLEM_TYPE {
 #endif
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
 #define FSCTL_HCS_SYNC_NO_WRITE_TUNNEL_REQUEST   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 238, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#define FSCTL_STREAMS_QUERY_PARAMETERS          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 241, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_STREAMS_ASSOCIATE_ID              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 242, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_STREAMS_QUERY_ID                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 243, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+#define FSCTL_GET_RETRIEVAL_POINTERS_AND_REFCOUNT CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 244, METHOD_NEITHER,  FILE_ANY_ACCESS) // STARTING_VCN_INPUT_BUFFER, RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER
+
+#define FSCTL_QUERY_VOLUME_NUMA_INFO            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 245, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+#endif
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+
+#define FSCTL_REFS_DEALLOCATE_RANGES            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 246, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
 //
 // AVIO IOCTLS.
@@ -6718,6 +6987,30 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 
 } RETRIEVAL_POINTERS_BUFFER, *PRETRIEVAL_POINTERS_BUFFER;
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_NT4 */
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+//
+//==================== FSCTL_GET_RETRIEVAL_POINTERS_AND_REFCOUNT ======================
+//
+// Structure for FSCTL_GET_RETRIEVAL_POINTERS_AND_REFCOUNT
+//
+
+//
+// Input structure is STARTING_VCN_INPUT_BUFFER
+//
+
+typedef struct RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER {
+
+    DWORD ExtentCount;
+    LARGE_INTEGER StartingVcn;
+    struct {
+        LARGE_INTEGER NextVcn;
+        LARGE_INTEGER Lcn;
+        DWORD ReferenceCount;
+    } Extents[1];
+
+} RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER, *PRETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER;
+#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2 */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_NT4)
 //
@@ -7041,6 +7334,7 @@ typedef union {
 #define USN_REASON_STREAM_CHANGE         (0x00200000)
 #define USN_REASON_TRANSACTED_CHANGE     (0x00400000)
 #define USN_REASON_INTEGRITY_CHANGE      (0x00800000)
+#define USN_REASON_DESIRED_STORAGE_CLASS_CHANGE (0x01000000)
 #define USN_REASON_CLOSE                 (0x80000000)
 
 //
@@ -10130,8 +10424,51 @@ typedef struct _FILE_LEVEL_TRIM_OUTPUT {
 //  This flag may only be used when no cluster ranges are specified (i. e.
 //  on a whole-volume query).
 //
-
 #define QUERY_FILE_LAYOUT_INCLUDE_STREAMS_WITH_NO_CLUSTERS_ALLOCATED    (0x00000020)
+
+//
+//  Request the full path to the file be included in the file name.
+//  This flag must be used with QUERY_FILE_LAYOUT_INCLUDE_NAMES
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_FULL_PATH_IN_NAMES                    (0x00000040)
+
+//
+//  Enable QueryFileLayout to include information on attribute streams.
+//  Additionally, individual stream information flags must be enabled for
+//  information on a given stream to be returned.
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION                    (0x00000080)
+
+//
+//  Have QueryFileLayout include information on DSC streams.
+//  This flag must be used in conjunction with QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION_FOR_DSC_ATTRIBUTE  (0x00000100)
+
+//
+//  Have QueryFileLayout include information on TxF streams.
+//  This flag must be used in conjunction with QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION_FOR_TXF_ATTRIBUTE  (0x00000200)
+
+//
+//  Have QueryFileLayout include information on EFS streams.
+//  This flag must be used in conjunction with QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_STREAM_INFORMATION_FOR_EFS_ATTRIBUTE  (0x00000400)
+
+//
+//  We can ask (politely) QueryFileLayout to only return files that have
+//  a given set of attributes present. This flag must be used with at least
+//  one attribute type flag or Query File Layout will return no files.
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_ONLY_FILES_WITH_SPECIFIC_ATTRIBUTES   (0x00000800)
+
+//
+//  Have QueryFileLayout include files with a DSC attribute in the output buffer.
+//  This must be used in conjunction with QUERY_FILE_LAYOUT_INCLUDE_ONLY_FILES_WITH_SPECIFIC_ATTRIBUTES
+//
+#define QUERY_FILE_LAYOUT_INCLUDE_FILES_WITH_DSC_ATTRIBUTE              (0x00001000)
 
 typedef enum _QUERY_FILE_LAYOUT_FILTER_TYPE {
     QUERY_FILE_LAYOUT_FILTER_TYPE_NONE = 0,
@@ -10322,7 +10659,6 @@ typedef struct _FILE_LAYOUT_ENTRY {
     // a FILE_BASIC_INFORMATION structure, etc.). This
     // sort of change should coincide with a version
     // number increase.
-    //
 
 } FILE_LAYOUT_ENTRY, *PFILE_LAYOUT_ENTRY;
 
@@ -10421,10 +10757,15 @@ typedef struct _FILE_LAYOUT_INFO_ENTRY {
 //
 #define STREAM_LAYOUT_ENTRY_NO_CLUSTERS_ALLOCATED                       (0x00000008)
 
+//
+// This layout entry contains the information (data) for the attribute
+//
+#define STREAM_LAYOUT_ENTRY_HAS_INFORMATION                             (0x00000010)
+
 typedef struct _STREAM_LAYOUT_ENTRY {
 
     //
-    // Version of this struct. Current version is 1.
+    // Version of this struct. Current version is 2.
     //
     DWORD         Version;
 
@@ -10458,10 +10799,15 @@ typedef struct _STREAM_LAYOUT_ENTRY {
     LARGE_INTEGER EndOfFile;
 
     //
-    // For alignment purposes. Can be used
-    // for future expansion.
+    //  Offset to stream information. This is the
+    //  content of the stream
     //
-    DWORDLONG     Reserved;
+    DWORD         StreamInformationOffset;
+
+    //
+    // Attribute code.
+    //
+    DWORD         AttributeTypeCode;
 
     //
     // Stream attribute flags.
@@ -10622,44 +10968,6 @@ typedef struct _SET_PURGE_FAILURE_MODE_INPUT {
 
 
 //
-//======================== FSCTL_SET_PURGE_FAILURE_MODE ===========================
-//
-
-// Used as input by FSCTL_DEDUP_QUERY_FILE_HASHES to specify the hash query range/offset in a file
-typedef struct _DEDUP_QUERY_FILE_HASHES_INPUT_BUFFER {
-    DWORD           Version;
-    DWORD           QueryFlags;
-    DWORD           HashAlgorithm;
-    LARGE_INTEGER   RangeOffsetInFile;
-    LARGE_INTEGER   RangeLength;
-} DEDUP_QUERY_FILE_HASHES_INPUT_BUFFER, *PDEDUP_QUERY_FILE_HASHES_INPUT_BUFFER;
-
-// Used as output by FSCTL_DEDUP_QUERY_FILE_HASHES to capture the information for a chunk
-typedef struct _DEDUP_CHUNK_INFORMATION_HASH32 {
-    DWORD    ChunkFlags;
-    LONGLONG ChunkOffsetInFile;
-    LONGLONG ChunkSize;
-    BYTE     HashVal[32];
-} DEDUP_CHUNK_INFORMATION_HASH32, *PDEDUP_CHUNK_INFORMATION_HASH32;
-
-// Used as input by FSCTL_DEDUP_FILE to specify the operation code.
-typedef struct _DEDUP_FILE_OPERATION {
-    DWORD   Code;
-} DEDUP_FILE_OPERATION, *PDEDUP_FILE_OPERATION;
-
-// Operation code used to signal optimization is about to start on a file.
-#define DEDUP_FILE_OP_NOTIFY_OPTIMIZATION   0xc0000013
-
-// Operation code used to zero data a deduped file
-#define DEDUP_FILE_OP_SET_ZERO_DATA   0xc0000002
-
-// Operation code used to recall user file
-#define DEDUP_FILE_RECALL             0xc0000009
-
-// Operation code used to set dedup reparse point
-#define DEDUP_FILE_OP_SET_REPARSE_POINT 0xc0000001
-
-//
 //======================= FSCTL_REPAIR_COPIES =============================
 //
 
@@ -10766,12 +11074,18 @@ typedef struct _WRITE_USN_REASON_INPUT {
 #endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE)
+
 // ****************** FSCTL_QUERY_STORAGE_CLASSES ***************************
 
 //
 //  The FILE_STORAGE_TIER is an identifier for the storage tier relative to the volume.
 //  The storage tier ID for a particular volume has no relationship to the storage tier
 //  ID with the same value on a different volume.
+//
+
+//
+//  Note! The MediaType is used to indicate an uninitialized in-memory DSC structure.
+//  Do not use values 0xfe or 0xff as media types.
 //
 
 #define FILE_STORAGE_TIER_NAME_LENGTH           (256)
@@ -10782,18 +11096,30 @@ typedef struct _WRITE_USN_REASON_INPUT {
 //  pass through.
 //
 
-#define FILE_STORAGE_TIER_FLAG_NO_SEEK_PENALTY    (0x00020000)
-#define FILE_STORAGE_TIER_FLAG_WRITE_BACK_CACHE   (0x00200000)
-#define FILE_STORAGE_TIER_FLAG_READ_CACHE         (0x00400000)
-#define FILE_STORAGE_TIER_FLAG_PARITY             (0x00800000)
+#define FILE_STORAGE_TIER_FLAG_NO_SEEK_PENALTY  (0x00020000)
+#define FILE_STORAGE_TIER_FLAG_WRITE_BACK_CACHE (0x00200000)
+#define FILE_STORAGE_TIER_FLAG_READ_CACHE       (0x00400000)
+#define FILE_STORAGE_TIER_FLAG_PARITY           (0x00800000)
+
 
 typedef enum _FILE_STORAGE_TIER_MEDIA_TYPE {
 
     FileStorageTierMediaTypeUnspecified = 0,
-    FileStorageTierMediaTypeDisk,
-    FileStorageTierMediaTypeSsd
+    FileStorageTierMediaTypeDisk        = 1,
+    FileStorageTierMediaTypeSsd         = 2,
+    FileStorageTierMediaTypeScm         = 4,
+    FileStorageTierMediaTypeMax
 
 } FILE_STORAGE_TIER_MEDIA_TYPE, *PFILE_STORAGE_TIER_MEDIA_TYPE;
+
+typedef enum _FILE_STORAGE_TIER_CLASS {
+
+    FileStorageTierClassUnspecified = 0,
+    FileStorageTierClassCapacity,
+    FileStorageTierClassPerformance,
+    FileStorageTierClassMax
+
+} FILE_STORAGE_TIER_CLASS, *PFILE_STORAGE_TIER_CLASS;
 
 typedef struct _FILE_STORAGE_TIER {
 
@@ -10833,6 +11159,12 @@ typedef struct _FILE_STORAGE_TIER {
 
     FILE_STORAGE_TIER_MEDIA_TYPE MediaType;
 
+    //
+    // Classification of the tier
+    //
+
+    FILE_STORAGE_TIER_CLASS Class;
+
 } FILE_STORAGE_TIER, *PFILE_STORAGE_TIER;
 
 //
@@ -10841,8 +11173,8 @@ typedef struct _FILE_STORAGE_TIER {
 //  We define the following possible values for the Flags field.
 //
 
-#define QUERY_STORAGE_CLASSES_FLAGS_MEASURE_WRITE      0x80000000
-#define QUERY_STORAGE_CLASSES_FLAGS_MEASURE_READ       0x40000000
+#define QUERY_STORAGE_CLASSES_FLAGS_MEASURE_WRITE   0x80000000
+#define QUERY_STORAGE_CLASSES_FLAGS_MEASURE_READ    0x40000000
 #define QUERY_STORAGE_CLASSES_FLAGS_NO_DEFRAG_VOLUME   0x20000000
 
 //
@@ -10894,6 +11226,51 @@ typedef _Struct_size_bytes_(Size) struct _FSCTL_QUERY_STORAGE_CLASSES_OUTPUT {
 } FSCTL_QUERY_STORAGE_CLASSES_OUTPUT, *PFSCTL_QUERY_STORAGE_CLASSES_OUTPUT;
 
 #define FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION          sizeof(FSCTL_QUERY_STORAGE_CLASSES_OUTPUT)
+
+//
+// This structure lists information on the stream.
+//
+typedef struct _STREAM_INFORMATION_ENTRY {
+
+    //
+    // Version of this struct. Current version is 1.
+    //
+    DWORD         Version;
+
+    //
+    // Flags
+    //
+    DWORD         Flags;
+
+    //
+    // The stream information varies by type of stream. We enclose
+    // the various types in a union.
+    //
+    union _StreamInformation {
+
+        //
+        //  Desired Storage Class
+        //
+
+        struct _DesiredStorageClass {
+
+            //
+            //  Class
+            //
+
+            FILE_STORAGE_TIER_CLASS          Class;
+
+            //
+            //  Flags
+            //
+
+            DWORD                            Flags;
+
+        } DesiredStorageClass;
+
+    } StreamInformation;
+
+} STREAM_INFORMATION_ENTRY, *PSTREAM_INFORMATION_ENTRY;
 
 // ****************** FSCTL_QUERY_REGION_INFO *******************************
 
@@ -10958,6 +11335,35 @@ typedef struct _FSCTL_QUERY_REGION_INFO_OUTPUT {
 #define FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION              sizeof(FSCTL_QUERY_REGION_INFO_OUTPUT)
 
 //
+//  This structure contains the information for the Desired Storage Class attribute.
+//
+
+typedef struct _FILE_DESIRED_STORAGE_CLASS_INFORMATION {
+
+    //
+    // Class type of the tier
+    //
+
+    FILE_STORAGE_TIER_CLASS Class;
+
+    //
+    // Flags
+    //
+
+    DWORD Flags;
+
+} FILE_DESIRED_STORAGE_CLASS_INFORMATION, *PFILE_DESIRED_STORAGE_CLASS_INFORMATION;
+
+//
+//  This structure has the same fields as STORAGE_DEVICE_TIERING_DESCRIPTOR and
+//  that structure reserves the upper WORD   of the Flags field for file system use.
+//  We define the following possible values for the Flags field.
+//
+
+#define QUERY_STORAGE_CLASSES_FLAGS_MEASURE_WRITE   0x80000000
+#define QUERY_STORAGE_CLASSES_FLAGS_MEASURE_READ    0x40000000
+
+//
 //=============== FSCTL_DUPLICATE_EXTENTS_TO_FILE ====================
 //
 
@@ -10967,6 +11373,21 @@ typedef struct _DUPLICATE_EXTENTS_DATA {
     LARGE_INTEGER TargetFileOffset;
     LARGE_INTEGER ByteCount;
 } DUPLICATE_EXTENTS_DATA, *PDUPLICATE_EXTENTS_DATA;
+
+
+#if ((_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2) && defined(_WIN64))
+//
+//  32/64 Bit thunking support structure
+//
+
+typedef struct _DUPLICATE_EXTENTS_DATA32 {
+    UINT32 FileHandle;
+    LARGE_INTEGER SourceFileOffset;
+    LARGE_INTEGER TargetFileOffset;
+    LARGE_INTEGER ByteCount;
+} DUPLICATE_EXTENTS_DATA32, *PDUPLICATE_EXTENTS_DATA32;
+
+#endif /* ((_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2) && defined(_WIN64)) */
 
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE) */
 
@@ -11062,6 +11483,8 @@ typedef struct _WIM_PROVIDER_OVERLAY_ENTRY {
 #endif
 
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
+
 //
 // Structures for WOF File provider specific fsctl's.
 //
@@ -11092,6 +11515,8 @@ typedef struct _FILE_PROVIDER_EXTERNAL_INFO_V1 {
 typedef FILE_PROVIDER_EXTERNAL_INFO_V1  FILE_PROVIDER_EXTERNAL_INFO;
 typedef PFILE_PROVIDER_EXTERNAL_INFO_V1 PFILE_PROVIDER_EXTERNAL_INFO;
 
+#endif  //  (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
+
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
 
@@ -11111,14 +11536,6 @@ typedef struct _CONTAINER_ROOT_INFO_OUTPUT {
     BYTE  ContainerRootId[ANYSIZE_ARRAY];
 } CONTAINER_ROOT_INFO_OUTPUT, *PCONTAINER_ROOT_INFO_OUTPUT;
 
-typedef struct _VIRTUALIZATION_INSTANCE_INFO_INPUT {
-    DWORD Flags;
-} VIRTUALIZATION_INSTANCE_INFO_INPUT, *PVIRTUALIZATION_INSTANCE_INFO_INPUT;
-
-typedef struct _VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
-    GUID VirtualizationInstanceID;
-} VIRTUALIZATION_INSTANCE_INFO_OUTPUT, *PVIRTUALIZATION_INSTANCE_INFO_OUTPUT;
-
 #define CONTAINER_ROOT_INFO_FLAG_SCRATCH_ROOT                   (0x00000001)
 #define CONTAINER_ROOT_INFO_FLAG_LAYER_ROOT                     (0x00000002)
 #define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_ROOT            (0x00000004)
@@ -11127,7 +11544,31 @@ typedef struct _VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
 
 #define CONTAINER_ROOT_INFO_VALID_FLAGS                         (0x0000001f)
 
+typedef struct _VIRTUALIZATION_INSTANCE_INFO_INPUT {
+    DWORD NumberOfWorkerThreads;
+    DWORD Flags;
+} VIRTUALIZATION_INSTANCE_INFO_INPUT, *PVIRTUALIZATION_INSTANCE_INFO_INPUT;
+
+typedef struct _VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
+    GUID VirtualizationInstanceID;
+} VIRTUALIZATION_INSTANCE_INFO_OUTPUT, *PVIRTUALIZATION_INSTANCE_INFO_OUTPUT;
+
+//
+//  Structures for FSCTL_GET_FILTER_FILE_IDENTIFIER.
+//
+
+typedef struct _GET_FILTER_FILE_IDENTIFIER_INPUT {
+    WORD   AltitudeLength;
+    WCHAR Altitude[ANYSIZE_ARRAY];
+} GET_FILTER_FILE_IDENTIFIER_INPUT, *PGET_FILTER_FILE_IDENTIFIER_INPUT;
+
+typedef struct _GET_FILTER_FILE_IDENTIFIER_OUTPUT {
+    WORD   FilterFileIdentifierLength;
+    BYTE  FilterFileIdentifier[ANYSIZE_ARRAY];
+} GET_FILTER_FILE_IDENTIFIER_OUTPUT, *PGET_FILTER_FILE_IDENTIFIER_OUTPUT;
+
 #endif
+
 
 // ****************** Insert New FSCTLs Here ********************************
 
@@ -11333,9 +11774,9 @@ typedef VOID
 
 //
 //  When any IRP extension exists which has an OFFSET which needs processing,
-//  the Irp extention field in the IRP must point to one of these structures.
-//  This is so IoPropagateIrpExtensionEx can caluclate proper file offset
-//  adjustments for the sub IRPS as they are split and shiffted
+//  the Irp extension field in the IRP must point to one of these structures.
+//  This is so IoPropagateIrpExtensionEx can calculate proper file offset
+//  adjustments for the sub IRPS as they are split and shifted
 //
 
 #define IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE 'TO'    //Track Offset

@@ -819,6 +819,7 @@ typedef LSA_CALLBACK_FUNCTION * PLSA_CALLBACK_FUNCTION;
                                                                 // or online. However if the logon package adds this flag then SSPs know for sure
                                                                 // that the logon was cached interactive(no network) and the absence of this flag
                                                                 // denotes network logon was attempted.
+#define PRIMARY_CRED_INTERACTIVE_NGC_LOGON          0x00080000
 
 #define PRIMARY_CRED_LOGON_PACKAGE_SHIFT 24
 #define PRIMARY_CRED_PACKAGE_MASK 0xff000000
@@ -2101,6 +2102,7 @@ typedef NTSTATUS
 
 typedef NTSTATUS
 (NTAPI SpGetRemoteCredGuardLogonBufferFn) (
+    _In_ LSA_SEC_HANDLE CredHandle,
     _In_ LSA_SEC_HANDLE ContextHandle,
     _In_ const UNICODE_STRING* TargetName,
     _Out_ PHANDLE RedirectedLogonHandle,
@@ -2112,7 +2114,7 @@ typedef NTSTATUS
 
 typedef NTSTATUS
 (NTAPI SpGetRemoteCredGuardSupplementalCredsFn) (
-    _In_ LSA_SEC_HANDLE ContextHandle,
+    _In_ LSA_SEC_HANDLE CredHandle,
     _In_ const UNICODE_STRING* TargetName,
     _Out_ PHANDLE RedirectedLogonHandle,
     _Out_ PLSA_REDIRECTED_LOGON_CALLBACK* Callback,

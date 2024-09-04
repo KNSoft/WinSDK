@@ -163,9 +163,6 @@ __declspec(selectany) __declspec(allocate("minATL$__z")) const CreatorMap* __pob
 class __declspec(novtable) ModuleBase
 {
 private:
-    ModuleBase(const ModuleBase&);
-    ModuleBase& operator=(const ModuleBase&);
-
     // Lock that synchronize access and termination of factories
     static void* moduleLock_;
 
@@ -192,6 +189,9 @@ public:
         module_ = this;
 #endif
     }
+
+    ModuleBase(const ModuleBase&) = delete;
+    ModuleBase& operator=(const ModuleBase&) = delete;
 
     virtual ~ModuleBase() throw()
     {
@@ -1577,7 +1577,7 @@ public:
 #ifdef _PERF_COUNTERS
         IncrementQueryInterfaceCount();
 #endif
-        return AsIID(this, riid, ppvObject);
+        return Super::AsIID(this, riid, ppvObject);
     }
 
     STDMETHOD_(ULONG, AddRef)()
@@ -1592,10 +1592,10 @@ public:
         {
             delete this;
 
-            auto module = ::Microsoft::WRL::GetModuleBase();
-            if (module != nullptr)
+            auto modulePtr = ::Microsoft::WRL::GetModuleBase();
+            if (modulePtr != nullptr)
             {
-                module->DecrementObjectCount();
+                modulePtr->DecrementObjectCount();
             }
         }
 
@@ -1603,6 +1603,8 @@ public:
     }
 
 protected:
+    using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
+
     RuntimeClass() throw() : refcount_(1)
     {
     }    
@@ -1703,7 +1705,7 @@ public:
 #ifdef _PERF_COUNTERS
         IncrementQueryInterfaceCount();
 #endif
-        return AsIID(this, riid, ppvObject);
+        return Super::AsIID(this, riid, ppvObject);
     }
 
     STDMETHOD_(ULONG, AddRef)()
@@ -1718,10 +1720,10 @@ public:
         {
             delete this;
 
-            auto module = ::Microsoft::WRL::GetModuleBase();
-            if (module != nullptr)
+            auto modulePtr = ::Microsoft::WRL::GetModuleBase();
+            if (modulePtr != nullptr)
             {
-                module->DecrementObjectCount();
+                modulePtr->DecrementObjectCount();
             }
         }
 
@@ -1735,7 +1737,7 @@ public:
         _When_(*iidCount > 0, _At_(*iids, _Post_notnull_))
         _Result_nullonfailure_ IID **iids)
     {
-        return GetImplementedIIDS(this, iidCount, iids);
+        return Super::GetImplementedIIDS(this, iidCount, iids);
     }
 
 #if !defined(__WRL_STRICT__) || !defined(__WRL_FORCE_INSPECTABLE_CLASS_MACRO__)
@@ -1763,6 +1765,8 @@ public:
 #endif // !defined(__WRL_STRICT__) || !defined(__WRL_FORCE_INSPECTABLE_CLASS_MACRO__)
 
 protected:
+    using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
+
     RuntimeClass() throw() : refcount_(1)
     {
     }
@@ -2000,7 +2004,7 @@ public:
 #ifdef _PERF_COUNTERS
         IncrementQueryInterfaceCount();
 #endif
-        return AsIID(this, riid, ppvObject);
+        return Super::AsIID(this, riid, ppvObject);
     }
 
     STDMETHOD_(ULONG, AddRef)()
@@ -2015,10 +2019,10 @@ public:
         {
             delete this;
 
-            auto module = ::Microsoft::WRL::GetModuleBase();
-            if (module != nullptr)
+            auto modulePtr = ::Microsoft::WRL::GetModuleBase();
+            if (modulePtr != nullptr)
             {
-                module->DecrementObjectCount();
+                modulePtr->DecrementObjectCount();
             }
         }
 
@@ -2032,7 +2036,7 @@ public:
         _When_(*iidCount > 0, _At_(*iids, _Post_notnull_))
         _Result_nullonfailure_ IID **iids)
     {
-        return GetImplementedIIDS(this, iidCount, iids);
+        return Super::GetImplementedIIDS(this, iidCount, iids);
     }
 
 #if !defined(__WRL_STRICT__) || !defined(__WRL_FORCE_INSPECTABLE_CLASS_MACRO__)
@@ -2076,7 +2080,7 @@ public:
         }
 
         // WeakReferenceImpl is created with ref count 2 to avoid interlocked increment
-        weakRef = CreateWeakReference(CastToUnknown());
+        weakRef = CreateWeakReference(ImplementsHelper::CastToUnknown());
         if (weakRef == nullptr)
         {
             return E_OUTOFMEMORY;
@@ -2130,6 +2134,10 @@ public:
     }
 
 protected:
+    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
+    using ImplementsHelper = Details::ImplementsHelper<RuntimeClassFlagsT, typename IInspectableInjector<InterfaceList<typename ILst::FirstT, InterfaceList<IWeakReferenceSource, typename ILst::RestT> > >::InterfaceList, false>;
+    using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
+
     unsigned long InternalAddRef() throw()
     {
 #ifdef _PERF_COUNTERS
@@ -2254,10 +2262,10 @@ class RuntimeClass :
 public:
     RuntimeClass() throw()
     {
-        auto module = ::Microsoft::WRL::GetModuleBase();
-        if (module != nullptr)
+        auto modulePtr = ::Microsoft::WRL::GetModuleBase();
+        if (modulePtr != nullptr)
         {
-            module->IncrementObjectCount();
+            modulePtr->IncrementObjectCount();
         }
     }
     typedef RuntimeClass RuntimeClassT;
@@ -2275,10 +2283,10 @@ class RuntimeClass<RuntimeClassFlags<classFlags>, I0, I1, I2, I3, I4, I5, I6, I7
 public:
     RuntimeClass() throw()
     {
-        auto module = ::Microsoft::WRL::GetModuleBase();
-        if (module != nullptr)
+        auto modulePtr = ::Microsoft::WRL::GetModuleBase();
+        if (modulePtr != nullptr)
         {
-            module->IncrementObjectCount();
+            modulePtr->IncrementObjectCount();
         }
     }
     typedef RuntimeClass RuntimeClassT;

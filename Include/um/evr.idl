@@ -1479,7 +1479,7 @@ interface IMFTopologyServiceLookup : IUnknown
         [in] DWORD dwIndex,
         [in] REFGUID guidService,
         [in] REFIID riid,
-        [out, iid_is(riid), annotation("_Out_writes_all_(*pnObjects)")] LPVOID* ppvObjects,
+        [out, iid_is(riid), annotation("_Out_writes_to_(1,*pnObjects)")] LPVOID* ppvObjects,
         [in, out, annotation("_Inout_")] DWORD * pnObjects
         );
 }

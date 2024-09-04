@@ -962,8 +962,9 @@ interface IClientSecurity : IUnknown
         EOAC_DYNAMIC           = 0x10,
         EOAC_REQUIRE_FULLSIC   = 0x200,
         EOAC_AUTO_IMPERSONATE  = 0x400,
+        EOAC_DISABLE_AAA       = 0x1000,
         EOAC_NO_CUSTOM_MARSHAL = 0x2000,
-        EOAC_DISABLE_AAA       = 0x1000
+        EOAC_RESERVED1         = 0x4000,
     } EOLE_AUTHENTICATION_CAPABILITIES;
 
     const OLECHAR *COLE_DEFAULT_PRINCIPAL = (OLECHAR *)((INT_PTR) -1);
@@ -1095,6 +1096,7 @@ typedef enum tagGLOBALOPT_PROPERTIES
    COMGLB_RPC_THREADPOOL_SETTING = 3,   // sets the ThreadPool behavior of RPC runtime in the process.
    COMGLB_RO_SETTINGS = 4,   // miscellaneous settings.
    COMGLB_UNMARSHALING_POLICY = 5,  // policy applied to CoUnmarshalInterface
+   COMGLB_PROPERTIES_RESERVED1 = 6,
 } GLOBALOPT_PROPERTIES;
 
 //values
@@ -1147,7 +1149,6 @@ typedef enum tagGLOBALOPT_UNMARSHALING_POLICY_VALUES
    COMGLB_UNMARSHALING_POLICY_STRONG = 1,
    COMGLB_UNMARSHALING_POLICY_HYBRID = 2
 } GLOBALOPT_UNMARSHALING_POLICY_VALUES;
-
 
 [
     object,

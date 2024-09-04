@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -38,13 +38,6 @@
 #endif
 
 /* Forward Declarations */ 
-
-#ifndef __IUpdateEndpointProvider_FWD_DEFINED__
-#define __IUpdateEndpointProvider_FWD_DEFINED__
-typedef interface IUpdateEndpointProvider IUpdateEndpointProvider;
-
-#endif 	/* __IUpdateEndpointProvider_FWD_DEFINED__ */
-
 
 #ifndef __IUpdateEndpointAuthToken_FWD_DEFINED__
 #define __IUpdateEndpointAuthToken_FWD_DEFINED__
@@ -102,9 +95,6 @@ extern "C"{
 // --------------------------------------------------------------------------------
 // GUIDS
 // --------------------------------------------------------------------------------
-// {1c72ac05-f0ca-49fd-91a4-fed81a9341b9}
-DEFINE_GUID(IID_UpdateEndpointProvider,0x1c72ac05,0xf0ca,0x49fd,0x91,0xa4,0xfe,0xd8,0x1a,0x93,0x41,0xb9);
-// {b18a7c5a-22cc-4390-8e14-da1ab61367d6}
 DEFINE_GUID(IID_UpdateEndpointAuthProvider,0xb18a7c5a,0x22cc,0x4390,0x8e,0x14,0xda,0x1a,0xb6,0x13,0x67,0xd6);
 // {60214134-6c24-4b5d-9766-c03e6b0a82a9}
 DEFINE_GUID(IID_UpdateEndpointAuthToken,0x60214134,0x6c24,0x4b5d,0x97,0x66,0xc0,0x3e,0x6b,0x0a,0x82,0xa9);
@@ -122,8 +112,7 @@ enum tagEndpointType
     {
         uetClientServer	= 0,
         uetReporting	= ( uetClientServer + 1 ) ,
-        uetWuaSelfUpdate	= ( uetReporting + 1 ) ,
-        uetRegulation	= ( uetWuaSelfUpdate + 1 ) ,
+        uetRegulation	= ( uetReporting + 1 ) ,
         uetSimpleTargeting	= ( uetRegulation + 1 ) ,
         uetSecuredClientServer	= ( uetSimpleTargeting + 1 ) ,
         uetSecondaryServiceAuth	= ( uetSecuredClientServer + 1 ) ,
@@ -143,96 +132,6 @@ typedef /* [public] */ struct tagUpdateEndpointProxySettings
 
 extern RPC_IF_HANDLE __MIDL_itf_updateendpointauth_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_updateendpointauth_0000_0000_v0_0_s_ifspec;
-
-#ifndef __IUpdateEndpointProvider_INTERFACE_DEFINED__
-#define __IUpdateEndpointProvider_INTERFACE_DEFINED__
-
-/* interface IUpdateEndpointProvider */
-/* [local][unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID_IUpdateEndpointProvider;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("1c72ac05-f0ca-49fd-91a4-fed81a9341b9")
-    IUpdateEndpointProvider : public IUnknown
-    {
-    public:
-        virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetServiceEndpoint( 
-            /* [in] */ GUID serviceId,
-            /* [in] */ UpdateEndpointType endpointType,
-            /* [in] */ UpdateEndpointProxySettings proxySettings,
-            /* [in] */ HANDLE_PTR hUserToken,
-            /* [in] */ BOOL fRefreshOnline,
-            /* [out] */ BSTR *pbstrEndpointLoc) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct IUpdateEndpointProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IUpdateEndpointProvider * This,
-            /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IUpdateEndpointProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            IUpdateEndpointProvider * This);
-        
-        /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetServiceEndpoint )( 
-            IUpdateEndpointProvider * This,
-            /* [in] */ GUID serviceId,
-            /* [in] */ UpdateEndpointType endpointType,
-            /* [in] */ UpdateEndpointProxySettings proxySettings,
-            /* [in] */ HANDLE_PTR hUserToken,
-            /* [in] */ BOOL fRefreshOnline,
-            /* [out] */ BSTR *pbstrEndpointLoc);
-        
-        END_INTERFACE
-    } IUpdateEndpointProviderVtbl;
-
-    interface IUpdateEndpointProvider
-    {
-        CONST_VTBL struct IUpdateEndpointProviderVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define IUpdateEndpointProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define IUpdateEndpointProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define IUpdateEndpointProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define IUpdateEndpointProvider_GetServiceEndpoint(This,serviceId,endpointType,proxySettings,hUserToken,fRefreshOnline,pbstrEndpointLoc)	\
-    ( (This)->lpVtbl -> GetServiceEndpoint(This,serviceId,endpointType,proxySettings,hUserToken,fRefreshOnline,pbstrEndpointLoc) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __IUpdateEndpointProvider_INTERFACE_DEFINED__ */
-
 
 #ifndef __IUpdateEndpointAuthToken_INTERFACE_DEFINED__
 #define __IUpdateEndpointAuthToken_INTERFACE_DEFINED__

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -99,6 +99,8 @@ enum _VDS_STORAGE_BUS_TYPE
         VDSBusTypeFileBackedVirtual	= 0xf,
         VDSBusTypeSpaces	= 0x10,
         VDSBusTypeNVMe	= 0x11,
+        VDSBusTypeScm	= 0x12,
+        VDSBusTypeUfs	= 0x13,
         VDSBusTypeMaxReserved	= 0x7f
     } 	VDS_STORAGE_BUS_TYPE;
 

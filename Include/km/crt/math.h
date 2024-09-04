@@ -179,7 +179,7 @@ static __inline float __CRTDECL hypotf(_In_ float _X, _In_ float _Y)
 
 #endif
 
-#if     defined(_M_IX86)
+#if     defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 _CRTIMP int     __cdecl _set_SSE2_enable(_In_ int _Flag);
 _CRTIMP float  __cdecl _hypotf(_In_ float _X, _In_ float _Y);
@@ -272,7 +272,7 @@ _CRTIMP int    __cdecl _fpclassf(_In_ float _X);
 
 #endif /* _M_AMD64 */
 
-#if defined (_M_ARM) || defined(_M_ARM64)
+#if defined (_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 /* ANSI C, 4.5 Mathematics        */
 
@@ -314,7 +314,7 @@ _CRTIMP float  __cdecl sqrtf( _In_ float _X);
 _CRTIMP float __cdecl _logbf(_In_ float _X);
 _CRTIMP int    __cdecl _finitef(_In_ float _X);
 
-#if defined(_ARM64_)
+#if defined(_ARM64_) || defined(_M_HYBRID_X86_ARM64)
 #pragma intrinsic(fabsf)
 #pragma intrinsic(fabs)
 #pragma intrinsic(ceilf)
@@ -359,13 +359,12 @@ _CRTIMP int    __cdecl _finitef(_In_ float _X);
 
 #define frexpf(x,y) ((float)frexp((double)(x),(y)))
 
-#if !defined (_M_IA64)
-#if !defined (_M_ARM) && !defined(_M_ARM64)
+#if defined(_M_AMD64) || (defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64))
 #define fabsf(x)    ((float)fabs((double)(x)))
 #endif
 #define ldexpf(x,y) ((float)ldexp((double)(x),(y)))
 
-#if !defined (_M_AMD64) && !defined (_M_ARM) && !defined(_M_ARM64)
+#if !defined (_M_AMD64) && !defined (_M_ARM) && !defined(_M_ARM64) && !defined(_M_HYBRID_X86_ARM64)
 
 #define acosf(x)    ((float)acos((double)(x)))
 #define asinf(x)    ((float)asin((double)(x)))
@@ -388,7 +387,6 @@ _CRTIMP int    __cdecl _finitef(_In_ float _X);
 #define tanhf(x)    ((float)tanh((double)(x)))
 
 #endif  /* !defined (_M_AMD64) && !defined (_M_ARM) && !defined(_M_ARM64) */
-#endif  /* !defined (_M_IA64) */
 
 #else   /* __cplusplus */
 inline long double acosl(_In_ long double _X)
@@ -457,13 +455,13 @@ inline float frexpf(_In_ float _X, _Out_ int *_Y)
         {return ((float)frexp((double)_X, _Y)); }
 
 #if     !defined(_M_IA64) 
-#if     !defined(_M_ARM) && !defined(_M_ARM64)
+#if     !defined(_M_ARM) && !defined(_M_ARM64) && !defined(_M_HYBRID_X86_ARM64)
 inline float fabsf(_In_ float _X)
         {return ((float)fabs((double)_X)); }
 #endif
 inline float ldexpf(_In_ float _X, _In_ int _Y)
         {return ((float)ldexp((double)_X, _Y)); }
-#if     !defined(_M_AMD64) && !defined(_M_ARM) && !defined(_M_ARM64)
+#if     !defined(_M_AMD64) && !defined(_M_ARM) && !defined(_M_ARM64) && !defined(_M_HYBRID_X86_ARM64)
 inline float acosf(_In_ float _X)
         {return ((float)acos((double)_X)); }
 inline float asinf(_In_ float _X)

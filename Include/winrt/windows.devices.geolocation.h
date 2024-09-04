@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -400,6 +400,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionData_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Geolocation {
+                interface IGeocoordinateWithPositionSourceTimestamp;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator __x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator;
@@ -744,18 +764,18 @@ struct BasicGeoposition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0001 */
 /* [local] */ 
@@ -790,18 +810,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0002 */
 /* [local] */ 
@@ -860,18 +880,18 @@ interface IGeopath;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0003 */
 /* [local] */ 
@@ -906,18 +926,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0004 */
 /* [local] */ 
@@ -976,18 +996,18 @@ interface IGeopoint;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0005 */
 /* [local] */ 
@@ -1022,18 +1042,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0006 */
 /* [local] */ 
@@ -1092,18 +1112,18 @@ interface IGeoposition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0007 */
 /* [local] */ 
@@ -1138,18 +1158,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0008 */
 /* [local] */ 
@@ -1184,18 +1204,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0009 */
 /* [local] */ 
@@ -1230,18 +1250,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0010 */
 /* [local] */ 
@@ -1276,18 +1296,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0011 */
 /* [local] */ 
@@ -1322,18 +1342,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0012 */
 /* [local] */ 
@@ -1381,18 +1401,18 @@ enum GeolocationAccessStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0013 */
 /* [local] */ 
@@ -1427,18 +1447,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0014 */
 /* [local] */ 
@@ -1473,18 +1493,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0015 */
 /* [local] */ 
@@ -1519,18 +1539,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0016 */
 /* [local] */ 
@@ -1565,18 +1585,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0017 */
 /* [local] */ 
@@ -1611,18 +1631,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0018 */
 /* [local] */ 
@@ -1657,18 +1677,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0019 */
 /* [local] */ 
@@ -1703,18 +1723,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0020 */
 /* [local] */ 
@@ -1749,18 +1769,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0021 */
 /* [local] */ 
@@ -1843,18 +1863,18 @@ interface IPositionChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0022 */
 /* [local] */ 
@@ -1913,18 +1933,18 @@ interface IStatusChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0023 */
 /* [local] */ 
@@ -1959,18 +1979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0024 */
 /* [local] */ 
@@ -1995,6 +2015,16 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_double_USE */
 
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+struct DateTime;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0024 */
 /* [local] */ 
@@ -2002,23 +2032,70 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c"))
+IReference<struct ABI::Windows::Foundation::DateTime> : IReference_impl<struct ABI::Windows::Foundation::DateTime> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.Foundation.DateTime>"; }
+};
+typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Windows__CFoundation__CDateTime_t;
+#define ____FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0025 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0025_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT32_USE
@@ -2138,6 +2215,7 @@ typedef struct __x_ABI_CWindows_CDevices_CGeolocation_CBasicGeoposition __x_ABI_
 
 
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2206,7 +2284,7 @@ class VenueData;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0025 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0026 */
 /* [local] */ 
 
 
@@ -2389,23 +2467,24 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0026_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357 */
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CBasicGeoposition
@@ -2413,13 +2492,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0350_v0_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0026 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
@@ -2563,40 +2642,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CGeolocation__CBasicGeo
 #endif 	/* ____FIIterator_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0027 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0028 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CBasicGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0027 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0027_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0028 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition
-#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0028 */
@@ -2606,6 +2656,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0351_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition
+#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0029 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
@@ -2715,40 +2794,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeo
 #endif 	/* ____FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0029 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CDevices__CGeolocation__CBasicGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0029 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0029_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0030 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath
-#define DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0030 */
@@ -2758,6 +2808,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0352_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath
+#define DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
@@ -2901,40 +2980,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath;
 #endif 	/* ____FIIterator_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0031 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0032 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0031 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0031_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0032 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath
-#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0032 */
@@ -2944,6 +2994,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0353_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0033 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath
+#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0033 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
@@ -3053,40 +3132,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath;
 #endif 	/* ____FIIterable_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0033 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0033 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0033_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0034 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint
-#define DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0034 */
@@ -3096,6 +3146,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0354_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0034_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0035 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint
+#define DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0035 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
@@ -3239,40 +3318,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint
 #endif 	/* ____FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0035 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0035 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0035_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0036 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint
-#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0036 */
@@ -3282,6 +3332,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0355_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0036_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0037 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint
+#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0037 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
@@ -3391,40 +3470,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint
 #endif 	/* ____FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0037 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0037 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0037_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0038 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition
-#define DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0038 */
@@ -3434,6 +3484,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0356_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0038_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0039 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition
+#define DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0039 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -3577,40 +3656,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CGeolocation__CGeoposit
 #endif 	/* ____FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0039 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0039 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0039_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0040 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition
-#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0040 */
@@ -3620,6 +3670,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0357_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0040_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0041 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition
+#define DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0041 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -3729,40 +3808,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CGeolocation__CGeoposit
 #endif 	/* ____FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0041 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0041 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0041_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0042 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition
-#define DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0042 */
@@ -3772,6 +3822,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0358_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0042_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0043 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition
+#define DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0043 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
@@ -3923,40 +4002,11 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CGeolocation__CBasicG
 #endif 	/* ____FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0043 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CBasicGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0043 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0043_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0044 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath
-#define DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0044 */
@@ -3966,6 +4016,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0359_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0044_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0045 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath
+#define DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0045 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
@@ -4117,40 +4196,11 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopat
 #endif 	/* ____FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0045 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0045 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0045_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0046 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
-#define DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0046 */
@@ -4160,6 +4210,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0360_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0046_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0047 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
+#define DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0047 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -4311,40 +4390,11 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopos
 #endif 	/* ____FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0047 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0047 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0047_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0048 */
-/* [local] */ 
-
-#ifndef DEF___FIVector_1_Windows__CDevices__CGeolocation__CGeopath
-#define DEF___FIVector_1_Windows__CDevices__CGeolocation__CGeopath
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0048 */
@@ -4354,6 +4404,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0361_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0048_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0049 */
+/* [local] */ 
+
+#ifndef DEF___FIVector_1_Windows__CDevices__CGeolocation__CGeopath
+#define DEF___FIVector_1_Windows__CDevices__CGeolocation__CGeopath
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0049 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__
@@ -4587,35 +4666,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CDevices__CGeolocation__CGeopath;
 #endif 	/* ____FIVector_1_Windows__CDevices__CGeolocation__CGeopath_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0049 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CDevices__CGeolocation__CGeopath */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0049 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369 */
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus
@@ -4624,14 +4703,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0362_v0_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0050 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0051 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_INTERFACE_DEFINED__
@@ -4720,40 +4799,11 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0051 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0052 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0051 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0051_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0052 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus
-#define DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0052 */
@@ -4763,6 +4813,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0363_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0052_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0053 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_INTERFACE_DEFINED__
@@ -4892,35 +4971,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGe
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0053 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0054 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0053 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371 */
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeopoint
@@ -4929,14 +5008,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0364_v0_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0054 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0055 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
@@ -5025,40 +5104,11 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0055 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeopoint */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0055 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0055_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0056 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint
-#define DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0056 */
@@ -5068,6 +5118,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0365_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0056_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0057 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0057 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__
@@ -5197,35 +5276,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGe
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0057 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0057 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0373 */
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0373_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeoposition
@@ -5234,14 +5313,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0366_v0_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0058 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0059 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -5330,40 +5409,11 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0059 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CGeolocation__CGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0059 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0059_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0060 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition
-#define DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0060 */
@@ -5373,6 +5423,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0367_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0060_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0374 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0374 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0374_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0061 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0061 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -5502,35 +5581,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGe
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0061 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0061 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0375 */
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0375_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
@@ -5539,14 +5618,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0368_v0_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0062 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0063 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -5635,40 +5714,11 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0063 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0063 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0063_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0064 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
-#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0064 */
@@ -5678,6 +5728,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0369_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0064_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0064_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0376 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0376 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0376_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0065 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0065 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__
@@ -5807,40 +5886,11 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0065 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0065 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0065_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0066 */
-/* [local] */ 
-
-#ifndef DEF___FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition
-#define DEF___FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0066 */
@@ -5850,6 +5900,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0370_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0066_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0066_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0377 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0377 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0377_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0067 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition
+#define DEF___FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0067 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__
@@ -5959,40 +6038,11 @@ EXTERN_C const IID IID___FIReference_1_Windows__CDevices__CGeolocation__CBasicGe
 #endif 	/* ____FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0067 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CDevices__CGeolocation__CBasicGeoposition */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0067 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0067_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0068 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0068 */
@@ -6002,6 +6052,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0371_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0068_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0068_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0378 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0378 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0378_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0069 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0069 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_INTERFACE_DEFINED__
@@ -6090,40 +6169,11 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CGeolocation__
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0069 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs */
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0069 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0069_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0070 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0070 */
@@ -6133,6 +6183,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0372_v0_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0070_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0070_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0379 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0379 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation2Eidl_0000_0379_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0071 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0071 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -6221,7 +6300,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CGeolocation__
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0071 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -6326,7 +6405,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CICivicAddress_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0071 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0072 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -6493,8 +6572,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CICivicAddress_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CICivicAddress_INTERFACE_DEFINED__
@@ -6657,7 +6736,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CICivicAddress;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CICivicAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0072 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox_INTERFACE_DEFINED__)
@@ -6665,13 +6744,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0072 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox_INTERFACE_DEFINED__
@@ -6834,7 +6913,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0073 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxFactory_INTERFACE_DEFINED__)
@@ -6842,13 +6921,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0073 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxFactory_INTERFACE_DEFINED__
@@ -7009,7 +7088,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxFa
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0074 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxStatics_INTERFACE_DEFINED__)
@@ -7017,13 +7096,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0074 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxStatics_INTERFACE_DEFINED__
@@ -7178,7 +7257,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxSt
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBoxStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0075 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircle_INTERFACE_DEFINED__)
@@ -7186,13 +7265,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircle_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0075 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircle_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircle_INTERFACE_DEFINED__
@@ -7325,7 +7404,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocircle;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircle_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0076 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircleFactory_INTERFACE_DEFINED__)
@@ -7333,13 +7412,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircleFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0076 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircleFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircleFactory_INTERFACE_DEFINED__
@@ -7500,7 +7579,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocircleFactory
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocircleFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0077 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinate_INTERFACE_DEFINED__)
@@ -7508,13 +7587,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinate_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0077 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinate_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinate_INTERFACE_DEFINED__
@@ -7707,7 +7786,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinate;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0078 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateSatelliteData_INTERFACE_DEFINED__)
@@ -7715,13 +7794,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateSatelliteData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0078 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateSatelliteData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateSatelliteData_INTERFACE_DEFINED__
@@ -7864,7 +7943,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateSat
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateSatelliteData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0079 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPoint_INTERFACE_DEFINED__)
@@ -7872,13 +7951,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPoint_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0079 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPoint_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPoint_INTERFACE_DEFINED__
@@ -8001,7 +8080,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWit
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0080 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionData_INTERFACE_DEFINED__)
@@ -8009,13 +8088,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0080 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionData_INTERFACE_DEFINED__
@@ -8148,7 +8227,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWit
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0081 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0082 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Geolocation_IGeocoordinateWithPositionSourceTimestamp[] = L"Windows.Devices.Geolocation.IGeocoordinateWithPositionSourceTimestamp";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0082 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0082_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Geolocation {
+                    
+                    MIDL_INTERFACE("8543FC02-C9F1-4610-AFE0-8BC3A6A87036")
+                    IGeocoordinateWithPositionSourceTimestamp : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PositionSourceTimestamp( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IGeocoordinateWithPositionSourceTimestamp = __uuidof(IGeocoordinateWithPositionSourceTimestamp);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestampVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PositionSourceTimestamp )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestampVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestampVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_get_PositionSourceTimestamp(This,value)	\
+    ( (This)->lpVtbl -> get_PositionSourceTimestamp(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeocoordinateWithPositionSourceTimestamp_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_INTERFACE_DEFINED__)
@@ -8156,13 +8372,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0081 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_INTERFACE_DEFINED__
@@ -8413,7 +8629,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0082 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator2_INTERFACE_DEFINED__)
@@ -8421,13 +8637,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0082 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator2_INTERFACE_DEFINED__
@@ -8548,7 +8764,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator2;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocator2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0083 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics_INTERFACE_DEFINED__)
@@ -8556,13 +8772,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0083 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics_INTERFACE_DEFINED__
@@ -8711,7 +8927,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatic
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0084 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics2_INTERFACE_DEFINED__)
@@ -8719,13 +8935,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0084 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics2_INTERFACE_DEFINED__
@@ -8868,7 +9084,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatic
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0085 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorWithScalarAccuracy_INTERFACE_DEFINED__)
@@ -8876,13 +9092,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorWithScalarAccuracy_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0085 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorWithScalarAccuracy_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorWithScalarAccuracy_INTERFACE_DEFINED__
@@ -9015,7 +9231,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorWithSc
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeolocatorWithScalarAccuracy_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0086 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopath_INTERFACE_DEFINED__)
@@ -9023,13 +9239,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopath_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0086 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopath_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopath_INTERFACE_DEFINED__
@@ -9152,7 +9368,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeopath;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopath_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0087 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopathFactory_INTERFACE_DEFINED__)
@@ -9160,13 +9376,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopathFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0087 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopathFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopathFactory_INTERFACE_DEFINED__
@@ -9321,7 +9537,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeopathFactory;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopathFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0088 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_INTERFACE_DEFINED__)
@@ -9329,13 +9545,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0088 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_INTERFACE_DEFINED__
@@ -9458,7 +9674,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0089 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopointFactory_INTERFACE_DEFINED__)
@@ -9466,13 +9682,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeopointFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0089 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopointFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopointFactory_INTERFACE_DEFINED__
@@ -9627,7 +9843,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeopointFactory;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeopointFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0090 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition_INTERFACE_DEFINED__)
@@ -9635,13 +9851,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0090 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition_INTERFACE_DEFINED__
@@ -9774,7 +9990,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0091 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition2_INTERFACE_DEFINED__)
@@ -9782,13 +9998,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0091 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition2_INTERFACE_DEFINED__
@@ -9911,7 +10127,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition2;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoposition2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0092 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape_INTERFACE_DEFINED__)
@@ -9919,13 +10135,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0092 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape_INTERFACE_DEFINED__
@@ -10068,7 +10284,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIGeoshape_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0093 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIPositionChangedEventArgs_INTERFACE_DEFINED__)
@@ -10076,13 +10292,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIPositionChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0093 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIPositionChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIPositionChangedEventArgs_INTERFACE_DEFINED__
@@ -10205,7 +10421,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIPositionChangedE
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIPositionChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0094 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIStatusChangedEventArgs_INTERFACE_DEFINED__)
@@ -10213,13 +10429,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIStatusChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0094 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIStatusChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIStatusChangedEventArgs_INTERFACE_DEFINED__
@@ -10342,7 +10558,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIStatusChangedEve
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIStatusChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0095 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIVenueData_INTERFACE_DEFINED__)
@@ -10350,13 +10566,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CGeolocation_CIVenueData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0095 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CGeolocation_CIVenueData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CGeolocation_CIVenueData_INTERFACE_DEFINED__
@@ -10489,7 +10705,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CGeolocation_CIVenueData;
 #endif 	/* ____x_ABI_CWindows_CDevices_CGeolocation_CIVenueData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0096 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0098 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Devices_Geolocation_CivicAddress_DEFINED
@@ -10542,13 +10758,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0096 */
+/* interface __MIDL_itf_windows2Edevices2Egeolocation_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Egeolocation_0000_0098_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

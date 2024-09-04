@@ -118,7 +118,7 @@ extern void __cdecl __va_end(va_list*);
                                 _APALIGN(t,ap), (t *)0) )
 #define _crt_va_end(ap)      ( __va_end(&ap) )
 
-#elif   defined(_M_IX86)
+#elif   defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 #define _INTSIZEOF(n)   ( (sizeof(n) + sizeof(int) - 1) & ~(sizeof(int) - 1) )
 
@@ -140,6 +140,12 @@ extern void __cdecl __va_start(_Out_ va_list*, ...);
                                                      -_SLOTSIZEOF(t)))
 
 #define _crt_va_end(ap)      ( ap = (va_list)0 )
+
+#elif defined _M_HYBRID_X86_ARM64
+    void __cdecl __va_start(va_list*, ...);
+    #define _crt_va_start(ap,v) ((void)(__va_start(&ap, _ADDRESSOF(v), _SLOTSIZEOF(v), __alignof(v), _ADDRESSOF(v))))
+    #define _crt_va_arg(ap, t)    (*(t*)((ap += _SLOTSIZEOF(t)) - _SLOTSIZEOF(t)))
+    #define _crt_va_end(ap)       ((void)(ap = (va_list)0))
 
 #elif defined(_M_ARM64)
 

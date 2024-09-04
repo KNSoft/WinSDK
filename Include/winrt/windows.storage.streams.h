@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -760,18 +760,18 @@ interface IBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3004 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4553 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3004 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4553 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4553_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4553_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0001 */
 /* [local] */ 
@@ -806,18 +806,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3005 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4554 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3005 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4554 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4554_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4554_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0002 */
 /* [local] */ 
@@ -852,18 +852,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3006 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4555 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3006 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4555 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4555_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4555_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0003 */
 /* [local] */ 
@@ -922,18 +922,18 @@ interface IRandomAccessStreamReference;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3007 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4556 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3007 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4556 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4556_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4556_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0004 */
 /* [local] */ 
@@ -968,18 +968,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3008 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4557 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3008 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4557 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4557_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4557_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0005 */
 /* [local] */ 
@@ -1014,18 +1014,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3009 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4558 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3009 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4558 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4558_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4558_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0006 */
 /* [local] */ 
@@ -1060,18 +1060,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3010 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4559 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3010 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4559 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4559_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4559_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0007 */
 /* [local] */ 
@@ -1106,18 +1106,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3011 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4560 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3011 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4560 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4560_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4560_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0008 */
 /* [local] */ 
@@ -1152,18 +1152,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3012 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4561 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3012 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4561 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4561_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4561_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0009 */
 /* [local] */ 
@@ -1198,18 +1198,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3013 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4562 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3013 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4562 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4562_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4562_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0010 */
 /* [local] */ 
@@ -1244,18 +1244,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3014 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4563 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3014 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4563 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4563_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4563_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0011 */
 /* [local] */ 
@@ -1303,18 +1303,18 @@ interface IRandomAccessStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3015 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4564 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3015 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4564 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4564_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4564_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0012 */
 /* [local] */ 
@@ -1349,18 +1349,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3016 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4565 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3016 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4565 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4565_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4565_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0013 */
 /* [local] */ 
@@ -1395,18 +1395,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3017 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4566 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3017 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4566 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4566_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4566_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0014 */
 /* [local] */ 
@@ -1441,18 +1441,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3018 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4567 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3018 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4567 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4567_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4567_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0015 */
 /* [local] */ 
@@ -1487,18 +1487,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3019 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4568 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3019 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4568 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4568_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4568_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0016 */
 /* [local] */ 
@@ -1533,18 +1533,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3020 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4569 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3020 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4569 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4569_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4569_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0017 */
 /* [local] */ 
@@ -1579,18 +1579,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3021 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4570 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3021 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4570 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4570_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4570_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0018 */
 /* [local] */ 
@@ -1625,18 +1625,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3022 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4571 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3022 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4571 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4571_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4571_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0019 */
 /* [local] */ 
@@ -1671,18 +1671,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3023 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4572 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3023 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4572 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4572_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4572_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0020 */
 /* [local] */ 
@@ -1717,18 +1717,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3024 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4573 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3024 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4573 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4573_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4573_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0021 */
 /* [local] */ 
@@ -1763,18 +1763,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3025 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4574 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3025 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4574 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4574_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4574_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0022 */
 /* [local] */ 
@@ -1809,18 +1809,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3026 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4575 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3026 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4575 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4575_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4575_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0023 */
 /* [local] */ 
@@ -1855,18 +1855,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3027 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4576 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3027 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4576 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4576_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0024 */
 /* [local] */ 
@@ -1901,18 +1901,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3028 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4577 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3028 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4577 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4577_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0025 */
 /* [local] */ 
@@ -1947,18 +1947,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3029 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4578 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3029 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4578 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4578_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0026 */
 /* [local] */ 
@@ -1993,18 +1993,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3030 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4579 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3030 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4579 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4579_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0027 */
 /* [local] */ 
@@ -2052,18 +2052,18 @@ interface IInputStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4580 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4580_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0028 */
 /* [local] */ 
@@ -2098,18 +2098,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4581 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4581_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0029 */
 /* [local] */ 
@@ -2144,18 +2144,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4582 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4582_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0030 */
 /* [local] */ 
@@ -2190,18 +2190,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4583 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4583_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0031 */
 /* [local] */ 
@@ -2236,18 +2236,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4584 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4584_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0032 */
 /* [local] */ 
@@ -2282,18 +2282,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4585 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4585_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0033 */
 /* [local] */ 
@@ -2328,18 +2328,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4586 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4586_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0034 */
 /* [local] */ 
@@ -2374,18 +2374,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4587 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4587_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0035 */
 /* [local] */ 
@@ -2420,18 +2420,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4588 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4588_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0036 */
 /* [local] */ 
@@ -2466,18 +2466,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4589 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4589_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0037 */
 /* [local] */ 
@@ -2512,18 +2512,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4590 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4590_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0038 */
 /* [local] */ 
@@ -2571,18 +2571,18 @@ interface IOutputStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4591 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4591_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0039 */
 /* [local] */ 
@@ -2617,18 +2617,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4592 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4592_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0040 */
 /* [local] */ 
@@ -2663,18 +2663,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4593 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4593_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0041 */
 /* [local] */ 
@@ -2709,18 +2709,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4594 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4594_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0042 */
 /* [local] */ 
@@ -2755,18 +2755,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4595 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4595_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0043 */
 /* [local] */ 
@@ -2801,18 +2801,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4596 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4596_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0044 */
 /* [local] */ 
@@ -2860,18 +2860,18 @@ interface IRandomAccessStreamWithContentType;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0045 */
 /* [local] */ 
@@ -2906,18 +2906,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0046 */
 /* [local] */ 
@@ -2952,18 +2952,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4599 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4599_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0047 */
 /* [local] */ 
@@ -2998,18 +2998,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0048 */
 /* [local] */ 
@@ -3044,18 +3044,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0049 */
 /* [local] */ 
@@ -3090,18 +3090,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0050 */
 /* [local] */ 
@@ -3136,18 +3136,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4603 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4603_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0051 */
 /* [local] */ 
@@ -3182,18 +3182,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4604 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4604_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0052 */
 /* [local] */ 
@@ -3228,18 +3228,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0053 */
 /* [local] */ 
@@ -3274,18 +3274,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0054 */
 /* [local] */ 
@@ -3320,18 +3320,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0055 */
 /* [local] */ 
@@ -3366,18 +3366,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0056 */
 /* [local] */ 
@@ -3412,18 +3412,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0057 */
 /* [local] */ 
@@ -3458,18 +3458,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0058 */
 /* [local] */ 
@@ -3818,18 +3818,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0058_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0059 */
 /* [local] */ 
@@ -3980,18 +3980,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CStorage__CStreams__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0061 */
 /* [local] */ 
@@ -4166,18 +4166,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CStora
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0062_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0063 */
 /* [local] */ 
@@ -4318,18 +4318,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CStora
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0064_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0065 */
 /* [local] */ 
@@ -4480,18 +4480,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CStorage__CStreams__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0066_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0067 */
 /* [local] */ 
@@ -4666,18 +4666,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CStora
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0068_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0069 */
 /* [local] */ 
@@ -4818,18 +4818,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CStora
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0070_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0071 */
 /* [local] */ 
@@ -4980,18 +4980,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_UINT32_Windows__CStorage__CStreams__CI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0072_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0073 */
 /* [local] */ 
@@ -5166,18 +5166,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_UINT32_Windows__CStorag
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0074_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0075 */
 /* [local] */ 
@@ -5318,18 +5318,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_UINT32_Windows__CStorag
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0076_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0077 */
 /* [local] */ 
@@ -5504,18 +5504,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CStorage__CStreams__CIBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0078_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0079 */
 /* [local] */ 
@@ -5656,18 +5656,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CStorage__CStreams__CIBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0080_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0081 */
 /* [local] */ 
@@ -5842,18 +5842,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CStorage__CStreams__CIRandomAcces
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0082_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0083 */
 /* [local] */ 
@@ -5994,18 +5994,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CStorage__CStreams__CIRandomAcces
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0084_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0085 */
 /* [local] */ 
@@ -6182,18 +6182,18 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CIBuff
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0086_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0087 */
 /* [local] */ 
@@ -6370,18 +6370,18 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CRando
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0088_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0089 */
 /* [local] */ 
@@ -6558,18 +6558,18 @@ EXTERN_C const IID IID___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0090_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0091 */
 /* [local] */ 
@@ -6776,18 +6776,18 @@ EXTERN_C const IID IID___FIMap_2_HSTRING_Windows__CStorage__CStreams__CRandomAcc
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0092_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0093 */
 /* [local] */ 
@@ -6994,18 +6994,18 @@ EXTERN_C const IID IID___FIMap_2_UINT32_Windows__CStorage__CStreams__CIBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0094_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0095 */
 /* [local] */ 
@@ -7188,18 +7188,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CStorage__CStreams__CIBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0096_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0097 */
 /* [local] */ 
@@ -7382,18 +7382,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CStorage__CStreams__CIRandomAcc
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0098_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0099 */
 /* [local] */ 
@@ -7658,18 +7658,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CStorage__CStreams__CIRandomAccessS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0100_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0101 */
 /* [local] */ 
@@ -7791,18 +7791,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CStorage__CS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0102_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0103 */
 /* [local] */ 
@@ -7924,18 +7924,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0104_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0105 */
 /* [local] */ 
@@ -8116,18 +8116,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CStorage__CStre
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0106_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0107 */
 /* [local] */ 
@@ -8249,18 +8249,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CStorage__CS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0108_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0108_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0109 */
 /* [local] */ 
@@ -8382,18 +8382,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0110_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0110_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0111 */
 /* [local] */ 
@@ -8574,18 +8574,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CStorage__CStre
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0112_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0112_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0113 */
 /* [local] */ 
@@ -8707,18 +8707,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CStorage__CS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0114_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0115 */
 /* [local] */ 
@@ -8840,18 +8840,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0116_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0116_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0117 */
 /* [local] */ 
@@ -9032,18 +9032,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CStorage__CStre
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0118_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0118_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0119 */
 /* [local] */ 
@@ -9165,18 +9165,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRIN
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0120_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0120_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0121 */
 /* [local] */ 
@@ -9337,18 +9337,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CStor
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0122_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0122_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0123 */
 /* [local] */ 
@@ -9470,18 +9470,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIMapView_2_UINT32
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0124_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0124_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0125 */
 /* [local] */ 
@@ -9642,18 +9642,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStora
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0126_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0126_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0127 */
 /* [local] */ 
@@ -9775,18 +9775,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0128_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0128_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0129 */
 /* [local] */ 
@@ -9947,18 +9947,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0130_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0130_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0131 */
 /* [local] */ 
@@ -10080,18 +10080,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0132_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0132_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0133 */
 /* [local] */ 
@@ -10252,18 +10252,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CStorage__CStreams__CIInput
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0134_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0134_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0135 */
 /* [local] */ 
@@ -10385,18 +10385,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0136_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0136_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0137 */
 /* [local] */ 
@@ -10557,18 +10557,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutpu
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0138_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0138_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0139 */
 /* [local] */ 
@@ -10690,18 +10690,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0140_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0140_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0141 */
 /* [local] */ 
@@ -10862,18 +10862,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRando
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0142_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0142_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0143 */
 /* [local] */ 
@@ -10995,18 +10995,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0144_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0144_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0145 */
 /* [local] */ 
@@ -11167,18 +11167,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRando
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0146_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0146_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0147 */
 /* [local] */ 
@@ -11300,18 +11300,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0148_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0148_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0149 */
 /* [local] */ 
@@ -11472,18 +11472,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRando
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0150_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0150_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0151 */
 /* [local] */ 
@@ -11605,18 +11605,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CStorage__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0152_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams_0000_0152_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Estreams2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Estreams_0000_0153 */
 /* [local] */ 

@@ -563,12 +563,6 @@ typedef struct _MEMORYSTATUS {
     SIZE_T dwAvailVirtual;
 } MEMORYSTATUS, *LPMEMORYSTATUS;
 
-
-//
-// NUMA values
-//
-#define NUMA_NO_PREFERRED_NODE ((DWORD) -1)
-
 //
 // Process dwCreationFlag values
 //
@@ -969,8 +963,8 @@ GlobalReAlloc (
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 SIZE_T
@@ -980,9 +974,9 @@ GlobalSize (
     );
 
 WINBASEAPI
-UINT
+BOOL
 WINAPI
-GlobalFlags (
+GlobalUnlock(
     _In_ HGLOBAL hMem
     );
 
@@ -994,19 +988,25 @@ GlobalLock (
     _In_ HGLOBAL hMem
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
+WINBASEAPI
+UINT
+WINAPI
+GlobalFlags (
+    _In_ HGLOBAL hMem
+    );
+
 WINBASEAPI
 _Ret_maybenull_
 HGLOBAL
 WINAPI
 GlobalHandle (
     _In_ LPCVOID pMem
-    );
-
-WINBASEAPI
-BOOL
-WINAPI
-GlobalUnlock(
-    _In_ HGLOBAL hMem
     );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
@@ -2834,6 +2834,12 @@ IsTextUnicode(
     _Inout_opt_ LPINT lpiResult
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if(_WIN32_WINNT >= 0x0400)
 WINBASEAPI
 DWORD
@@ -2845,6 +2851,12 @@ SignalObjectAndWait(
     _In_ BOOL bAlertable
     );
 #endif /* _WIN32_WINNT >= 0x0400 */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 WINBASEAPI
 BOOL
@@ -3029,7 +3041,7 @@ OpenSemaphoreA(
 #if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
 
 #pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 _Ret_maybenull_
@@ -3057,12 +3069,7 @@ OpenWaitableTimerA(
 #define OpenWaitableTimer  OpenWaitableTimerA
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
 #if (_WIN32_WINNT >= 0x0600)
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 _Ret_maybenull_
@@ -3079,9 +3086,6 @@ CreateSemaphoreExA(
 #ifndef UNICODE
 #define CreateSemaphoreEx  CreateSemaphoreExA
 #endif
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 _Ret_maybenull_
@@ -3097,9 +3101,9 @@ CreateWaitableTimerExA(
 #define CreateWaitableTimerEx  CreateWaitableTimerExA
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-
 #endif /* (_WIN32_WINNT >= 0x0600) */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 
 #endif /* (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400) */
 
@@ -3278,6 +3282,9 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
     ProcThreadAttributeSafeOpenPromptOriginClaim    = 17,
 #endif
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+    ProcThreadAttributeDesktopAppPolicy = 18,
+#endif
 } PROC_THREAD_ATTRIBUTE_NUM;
 #endif
 
@@ -3439,7 +3446,7 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY_CONTROL_FLOW_GUARD_DEFER                       (0x00000000ui64 << 40)
 #define PROCESS_CREATION_MITIGATION_POLICY_CONTROL_FLOW_GUARD_ALWAYS_ON                   (0x00000001ui64 << 40)
 #define PROCESS_CREATION_MITIGATION_POLICY_CONTROL_FLOW_GUARD_ALWAYS_OFF                  (0x00000002ui64 << 40)
-#define PROCESS_CREATION_MITIGATION_POLICY_CONTROL_FLOW_GUARD_ALWAYS_RESERVED             (0x00000003ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_POLICY_CONTROL_FLOW_GUARD_EXPORT_SUPPRESSION          (0x00000003ui64 << 40)
 
 //
 // Define module signature options.  When enabled, this option will
@@ -3450,7 +3457,7 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_DEFER             (0x00000000ui64 << 44)
 #define PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_ALWAYS_ON         (0x00000001ui64 << 44)
 #define PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_ALWAYS_OFF        (0x00000002ui64 << 44)
-#define PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_RESERVED          (0x00000003ui64 << 44)
+#define PROCESS_CREATION_MITIGATION_POLICY_BLOCK_NON_MICROSOFT_BINARIES_ALLOW_STORE       (0x00000003ui64 << 44)
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
 
@@ -3488,7 +3495,7 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY_IMAGE_LOAD_NO_LOW_LABEL_RESERVED               (0x00000003ui64 << 56)
 
 //
-// Define image load options to prefer System32 images compared to 
+// Define image load options to prefer System32 images compared to
 // the same images in application directory. When enabled, this option
 // will prefer loading images from system32 folder.
 //
@@ -3499,6 +3506,27 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY_IMAGE_LOAD_PREFER_SYSTEM32_ALWAYS_OFF          (0x00000002ui64 << 60)
 #define PROCESS_CREATION_MITIGATION_POLICY_IMAGE_LOAD_PREFER_SYSTEM32_RESERVED            (0x00000003ui64 << 60)
 
+//
+// Define Loader Integrity Continuity mitigation policy options.  This mitigation
+// enforces OS signing levels for depenedent module loads.
+//
+
+#define PROCESS_CREATION_MITIGATION_POLICY2_LOADER_INTEGRITY_CONTINUITY_MASK              (0x00000003ui64 << 4)
+#define PROCESS_CREATION_MITIGATION_POLICY2_LOADER_INTEGRITY_CONTINUITY_DEFER             (0x00000000ui64 << 4)
+#define PROCESS_CREATION_MITIGATION_POLICY2_LOADER_INTEGRITY_CONTINUITY_ALWAYS_ON         (0x00000001ui64 << 4)
+#define PROCESS_CREATION_MITIGATION_POLICY2_LOADER_INTEGRITY_CONTINUITY_ALWAYS_OFF        (0x00000002ui64 << 4)
+#define PROCESS_CREATION_MITIGATION_POLICY2_LOADER_INTEGRITY_CONTINUITY_AUDIT             (0x00000003ui64 << 4)
+
+//
+// Define the strict Control Flow Guard (CFG) mitigation policy options. This mitigation
+// requires all images that load in the process to be instrumented by CFG.
+//
+
+#define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_MASK                (0x00000003ui64 << 8)
+#define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_DEFER               (0x00000000ui64 << 8)
+#define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_ALWAYS_ON           (0x00000001ui64 << 8)
+#define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_ALWAYS_OFF          (0x00000002ui64 << 8)
+#define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_RESERVED            (0x00000003ui64 << 8)
 
 #endif // _WIN32_WINNT_WINTHRESHOLD
 #endif // _WIN32_WINNT_WINBLUE
@@ -3517,7 +3545,7 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_CHILD_PROCESS_OVERRIDE                                           0x02
 
 //
-// Define Attribute for Desktop Appx Overide. 
+// Define Attribute for Desktop Appx Overide.
 //
 
 #define PROCESS_CREATION_DESKTOP_APPX_OVERRIDE                                            0x04
@@ -3534,9 +3562,6 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROC_THREAD_ATTRIBUTE_ALL_APPLICATION_PACKAGES_POLICY \
     ProcThreadAttributeValue (ProcThreadAttributeAllApplicationPackagesPolicy, FALSE, TRUE, FALSE)
 
-#define PROCESS_CREATION_ENABLE_WIN32K_FILTER                                             0x01
-#define PROCESS_CREATION_AUDIT_WIN32K_FILTER                                              0x02
-
 #define PROC_THREAD_ATTRIBUTE_WIN32K_FILTER \
     ProcThreadAttributeValue (ProcThreadAttributeWin32kFilter, FALSE, TRUE, FALSE)
 
@@ -3546,6 +3571,22 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 
 
 #endif // NTDDI_WIN10_RS1
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+//
+// Define Attribute for Desktop App Override
+//
+
+#define PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_ENABLE_PROCESS_TREE                        0x01
+#define PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_DISABLE_PROCESS_TREE                       0x02
+#define PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_OVERRIDE                                   0x04
+
+#define PROC_THREAD_ATTRIBUTE_DESKTOP_APP_POLICY \
+    ProcThreadAttributeValue (ProcThreadAttributeDesktopAppPolicy, FALSE, TRUE, FALSE)
+
+
+#endif // NTDDI_WIN10_RS2
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
@@ -6502,8 +6543,8 @@ IsBadStringPtrW(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 _Success_(return != FALSE) BOOL
@@ -6565,7 +6606,7 @@ LookupAccountNameW(
 #define LookupAccountName  LookupAccountNameA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -6656,8 +6697,8 @@ LookupAccountSidLocalW(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Appliation Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -6731,7 +6772,7 @@ LookupPrivilegeDisplayNameW(
 #define LookupPrivilegeDisplayName  LookupPrivilegeDisplayNameA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -7252,8 +7293,8 @@ SetThreadpoolCallbackPersistent(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //
 //  Private Namespaces support
@@ -7310,7 +7351,7 @@ CreateBoundaryDescriptorA(
 #define CreateBoundaryDescriptor CreateBoundaryDescriptorW
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -7432,6 +7473,27 @@ VerifyVersionInfoW(
 // Power Management APIs
 //
 
+WINBASEAPI
+BOOL
+WINAPI
+SetSystemPowerState(
+    _In_ BOOL fSuspend,
+    _In_ BOOL fForce
+    );
+
+#endif /* WINVER >= 0x0400 */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region  Desktop or PC Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP)
+
+#if(WINVER >= 0x0400)
+//
+// Power Management APIs
+//
+
 #define AC_LINE_OFFLINE                 0x00
 #define AC_LINE_ONLINE                  0x01
 #define AC_LINE_BACKUP_POWER            0x02
@@ -7466,17 +7528,9 @@ GetSystemPowerStatus(
     _Out_ LPSYSTEM_POWER_STATUS lpSystemPowerStatus
     );
 
-WINBASEAPI
-BOOL
-WINAPI
-SetSystemPowerState(
-    _In_ BOOL fSuspend,
-    _In_ BOOL fForce
-    );
-
 #endif /* WINVER >= 0x0400 */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 
 #if (_WIN32_WINNT >= 0x0500)
@@ -8628,12 +8682,23 @@ OpenFileById (
 #if (_WIN32_WINNT >= 0x0600)
 
 //
-//  Flags to be passed into CREATE_SYMBOLIC_LINK
+//  Flag values for the dwFlags parameter of the CreateSymbolicLink API
 //
 
-#define SYMBOLIC_LINK_FLAG_DIRECTORY            (0x1)
+//  Request to create a directory symbolic link
+#define SYMBOLIC_LINK_FLAG_DIRECTORY                    (0x1)
 
-#define VALID_SYMBOLIC_LINK_FLAGS  SYMBOLIC_LINK_FLAG_DIRECTORY // & whatever other flags we think of!
+//  Specify this flag if you want to allow creation of symbolic links when the
+//  process is not elevated.  As of now enabling DEVELOPER MODE on a system
+//  is the only scenario that allow unprivileged symlink creation. There may
+//  be future scenarios that this flag will enable in the future.
+//
+//  Also be aware that the behavior of this API with this flag set will likely
+//  be different between a development environment and an and customers
+//  environment so please be careful with the usage of this flag.
+
+#define SYMBOLIC_LINK_FLAG_ALLOW_UNPRIVILEGED_CREATE    (0x2)
+
 
 WINBASEAPI
 BOOLEAN

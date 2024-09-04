@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -100,6 +100,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            namespace Collation {
+                interface ICharacterGroupingsFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -155,18 +175,18 @@ interface ICharacterGrouping;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001 */
 /* [local] */ 
@@ -201,18 +221,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002 */
 /* [local] */ 
@@ -247,18 +267,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003 */
 /* [local] */ 
@@ -290,6 +310,7 @@ extern "C" {
 extern "C" {
 #endif // defined(__cplusplus)
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -310,21 +331,22 @@ class CharacterGroupings;
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0004 */
 /* [local] */ 
@@ -499,18 +521,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGlobalization__CCollation__CChar
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0006 */
 /* [local] */ 
@@ -651,18 +673,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGlobalization__CCollation__CChar
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0008 */
 /* [local] */ 
@@ -1121,6 +1143,145 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGro
 /* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011 */
 /* [local] */ 
 
+#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupingsFactory[] = L"Windows.Globalization.Collation.ICharacterGroupingsFactory";
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Globalization::Collation::ICharacterGroupingsFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Globalization {
+                namespace Collation {
+                    
+                    MIDL_INTERFACE("99EA9FD9-886D-4401-9F98-69C82D4C2F78")
+                    ICharacterGroupingsFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Create( 
+                            /* [in] */ __RPC__in HSTRING language,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Globalization::Collation::ICharacterGroupings **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICharacterGroupingsFactory = __uuidof(ICharacterGroupingsFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+            /* [in] */ __RPC__in HSTRING language,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl;
+
+    interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_Create(This,language,result)	\
+    ( (This)->lpVtbl -> Create(This,language,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012 */
+/* [local] */ 
+
 #ifndef RUNTIMECLASS_Windows_Globalization_Collation_CharacterGrouping_DEFINED
 #define RUNTIMECLASS_Windows_Globalization_Collation_CharacterGrouping_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Globalization_Collation_CharacterGrouping[] = L"Windows.Globalization.Collation.CharacterGrouping";
@@ -1131,13 +1292,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011 */
+/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

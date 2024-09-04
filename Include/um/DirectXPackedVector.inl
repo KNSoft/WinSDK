@@ -7,6 +7,8 @@
 // PARTICULAR PURPOSE.
 //  
 // Copyright (c) Microsoft Corporation. All rights reserved.
+//
+// http://go.microsoft.com/fwlink/?LinkID=615560
 //-------------------------------------------------------------------------------------
 
 #pragma once
@@ -28,6 +30,10 @@ inline float PackedVector::XMConvertHalfToFloat
     __m128i V1 = _mm_cvtsi32_si128( static_cast<uint32_t>(Value) );
     __m128 V2 = _mm_cvtph_ps( V1 );
     return _mm_cvtss_f32( V2 );
+#elif defined(_XM_ARM_NEON_INTRINSICS_) && (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)) && !defined(_XM_NO_INTRINSICS_)
+    uint16x4_t vHalf = vdup_n_u16(Value);
+    float32x4_t vFloat = vcvt_f32_f16(vreinterpret_f16_u16(vHalf));
+    return vgetq_lane_f32(vFloat, 0);
 #else
     uint32_t Mantissa = (uint32_t)(Value & 0x03FF);
 
@@ -209,6 +215,38 @@ inline float* PackedVector::XMConvertHalfToFloatStream
                 }
             }
         }
+        else
+        {
+            // Scattered input, scattered output
+            for (size_t j = 0; j < four; ++j)
+            {
+                uint16_t H1 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H2 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H3 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H4 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+
+                __m128i HV = _mm_setzero_si128();
+                HV = _mm_insert_epi16(HV, H1, 0);
+                HV = _mm_insert_epi16(HV, H2, 1);
+                HV = _mm_insert_epi16(HV, H3, 2);
+                HV = _mm_insert_epi16(HV, H4, 3);
+                __m128 FV = _mm_cvtph_ps(HV);
+
+                _mm_store_ss(reinterpret_cast<float*>(pFloat), FV);
+                pFloat += OutputStride;
+                *reinterpret_cast<int*>(pFloat) = _mm_extract_ps(FV, 1);
+                pFloat += OutputStride;
+                *reinterpret_cast<int*>(pFloat) = _mm_extract_ps(FV, 2);
+                pFloat += OutputStride;
+                *reinterpret_cast<int*>(pFloat) = _mm_extract_ps(FV, 3);
+                pFloat += OutputStride;
+                i += 4;
+            }
+        }
     }
 
     for (; i < HalfCount; ++i)
@@ -219,6 +257,117 @@ inline float* PackedVector::XMConvertHalfToFloatStream
     }
 
     XM_SFENCE();
+
+    return pOutputStream;
+#elif defined(_XM_ARM_NEON_INTRINSICS_) && (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)) && !defined(_XM_NO_INTRINSICS_)
+    const uint8_t* pHalf = reinterpret_cast<const uint8_t*>(pInputStream);
+    uint8_t* pFloat = reinterpret_cast<uint8_t*>(pOutputStream);
+
+    size_t i = 0;
+    size_t four = HalfCount >> 2;
+    if (four > 0)
+    {
+        if (InputStride == sizeof(HALF))
+        {
+            if (OutputStride == sizeof(float))
+            {
+                // Packed input, packed output
+                for (size_t j = 0; j < four; ++j)
+                {
+                    uint16x4_t vHalf = vld1_u16(reinterpret_cast<const uint16_t*>(pHalf));
+                    pHalf += InputStride * 4;
+
+                    float32x4_t vFloat = vcvt_f32_f16(vreinterpret_f16_u16(vHalf));
+
+                    vst1q_f32(reinterpret_cast<float*>(pFloat), vFloat);
+                    pFloat += OutputStride * 4;
+                    i += 4;
+                }
+            }
+            else
+            {
+                // Packed input, scattered output
+                for (size_t j = 0; j < four; ++j)
+                {
+                    uint16x4_t vHalf = vld1_u16(reinterpret_cast<const uint16_t*>(pHalf));
+                    pHalf += InputStride * 4;
+
+                    float32x4_t vFloat = vcvt_f32_f16(vreinterpret_f16_u16(vHalf));
+
+                    vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 0);
+                    pFloat += OutputStride;
+                    vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 1);
+                    pFloat += OutputStride;
+                    vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 2);
+                    pFloat += OutputStride;
+                    vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 3);
+                    pFloat += OutputStride;
+                    i += 4;
+                }
+            }
+        }
+        else if (OutputStride == sizeof(float))
+        {
+            // Scattered input, packed output
+            for (size_t j = 0; j < four; ++j)
+            {
+                uint16_t H1 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H2 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H3 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H4 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+
+                uint64_t iHalf = uint64_t(H1) | (uint64_t(H2) << 16) | (uint64_t(H3) << 32) | (uint64_t(H4) << 48);
+                uint16x4_t vHalf = vcreate_u16(iHalf);
+
+                float32x4_t vFloat = vcvt_f32_f16(vreinterpret_f16_u16(vHalf));
+
+                vst1q_f32(reinterpret_cast<float*>(pFloat), vFloat);
+                pFloat += OutputStride * 4;
+                i += 4;
+            }
+        }
+        else
+        {
+            // Scattered input, scattered output
+            for (size_t j = 0; j < four; ++j)
+            {
+                uint16_t H1 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H2 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H3 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+                uint16_t H4 = *reinterpret_cast<const HALF*>(pHalf);
+                pHalf += InputStride;
+
+                uint64_t iHalf = uint64_t(H1) | (uint64_t(H2) << 16) | (uint64_t(H3) << 32) | (uint64_t(H4) << 48);
+                uint16x4_t vHalf = vcreate_u16(iHalf);
+
+                float32x4_t vFloat = vcvt_f32_f16(vreinterpret_f16_u16(vHalf));
+
+                vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 0);
+                pFloat += OutputStride;
+                vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 1);
+                pFloat += OutputStride;
+                vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 2);
+                pFloat += OutputStride;
+                vst1q_lane_f32(reinterpret_cast<float*>(pFloat), vFloat, 3);
+                pFloat += OutputStride;
+                i += 4;
+            }
+        }
+    }
+
+    for (; i < HalfCount; ++i)
+    {
+        *reinterpret_cast<float*>(pFloat) = XMConvertHalfToFloat(reinterpret_cast<const HALF*>(pHalf)[0]);
+        pHalf += InputStride;
+        pFloat += OutputStride;
+    }
 
     return pOutputStream;
 #else
@@ -247,6 +396,10 @@ inline PackedVector::HALF PackedVector::XMConvertFloatToHalf
     __m128 V1 = _mm_set_ss( Value );
     __m128i V2 = _mm_cvtps_ph( V1, 0 );
     return static_cast<HALF>( _mm_cvtsi128_si32(V2) );
+#elif defined(_XM_ARM_NEON_INTRINSICS_) && (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)) && !defined(_XM_NO_INTRINSICS_)
+    float32x4_t vFloat = vdupq_n_f32(Value);
+    float16x4_t vHalf = vcvt_f16_f32(vFloat);
+    return vget_lane_u16(vreinterpret_u16_f16(vHalf), 0);
 #else
     uint32_t Result;
 
@@ -424,6 +577,153 @@ inline PackedVector::HALF* PackedVector::XMConvertFloatToHalfStream
                 i += 4;
             }
         }
+        else
+        {
+            // Scattered input, scattered output
+            for (size_t j = 0; j < four; ++j)
+            {
+                __m128 FV1 = _mm_load_ss(reinterpret_cast<const float*>(pFloat));
+                pFloat += InputStride;
+
+                __m128 FV2 = _mm_broadcast_ss(reinterpret_cast<const float*>(pFloat));
+                pFloat += InputStride;
+
+                __m128 FV3 = _mm_broadcast_ss(reinterpret_cast<const float*>(pFloat));
+                pFloat += InputStride;
+
+                __m128 FV4 = _mm_broadcast_ss(reinterpret_cast<const float*>(pFloat));
+                pFloat += InputStride;
+
+                __m128 FV = _mm_blend_ps(FV1, FV2, 0x2);
+                __m128 FT = _mm_blend_ps(FV3, FV4, 0x8);
+                FV = _mm_blend_ps(FV, FT, 0xC);
+
+                __m128i HV = _mm_cvtps_ph(FV, 0);
+
+                *reinterpret_cast<HALF*>(pHalf) = static_cast<HALF>(_mm_extract_epi16(HV, 0));
+                pHalf += OutputStride;
+                *reinterpret_cast<HALF*>(pHalf) = static_cast<HALF>(_mm_extract_epi16(HV, 1));
+                pHalf += OutputStride;
+                *reinterpret_cast<HALF*>(pHalf) = static_cast<HALF>(_mm_extract_epi16(HV, 2));
+                pHalf += OutputStride;
+                *reinterpret_cast<HALF*>(pHalf) = static_cast<HALF>(_mm_extract_epi16(HV, 3));
+                pHalf += OutputStride;
+                i += 4;
+            }
+        }
+    }
+
+    for (; i < FloatCount; ++i)
+    {
+        *reinterpret_cast<HALF*>(pHalf) = XMConvertFloatToHalf(reinterpret_cast<const float*>(pFloat)[0]);
+        pFloat += InputStride; 
+        pHalf += OutputStride;
+    }
+
+    return pOutputStream;
+#elif defined(_XM_ARM_NEON_INTRINSICS_) && (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)) && !defined(_XM_NO_INTRINSICS_)
+    const uint8_t* pFloat = reinterpret_cast<const uint8_t*>(pInputStream);
+    uint8_t* pHalf = reinterpret_cast<uint8_t*>(pOutputStream);
+
+    size_t i = 0;
+    size_t four = FloatCount >> 2;
+    if (four > 0)
+    {
+        if (InputStride == sizeof(float))
+        {
+            if (OutputStride == sizeof(HALF))
+            {
+                // Packed input, packed output
+                for (size_t j = 0; j < four; ++j)
+                {
+                    float32x4_t vFloat = vld1q_f32(reinterpret_cast<const float*>(pFloat));
+                    pFloat += InputStride*4;
+
+                    uint16x4_t vHalf = vreinterpret_u16_f16(vcvt_f16_f32(vFloat));
+
+                    vst1_u16(reinterpret_cast<uint16_t*>(pHalf), vHalf);
+                    pHalf += OutputStride*4;
+                    i += 4;
+                }
+            }
+            else
+            {
+                // Packed input, scattered output
+                for (size_t j = 0; j < four; ++j)
+                {
+                    float32x4_t vFloat = vld1q_f32(reinterpret_cast<const float*>(pFloat));
+                    pFloat += InputStride*4;
+
+                    uint16x4_t vHalf = vreinterpret_u16_f16(vcvt_f16_f32(vFloat));
+
+                    vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 0);
+                    pHalf += OutputStride;
+                    vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 1);
+                    pHalf += OutputStride;
+                    vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 2);
+                    pHalf += OutputStride;
+                    vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 3);
+                    pHalf += OutputStride;
+                    i += 4;
+                }
+            }
+        }
+        else if (OutputStride == sizeof(HALF))
+        {
+            // Scattered input, packed output
+            for (size_t j = 0; j < four; ++j)
+            {
+                float32x4_t vFloat = vdupq_n_f32(0);
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 0);
+                pFloat += InputStride;
+
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 1);
+                pFloat += InputStride;
+
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 2);
+                pFloat += InputStride;
+
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 3);
+                pFloat += InputStride;
+
+                uint16x4_t vHalf = vreinterpret_u16_f16(vcvt_f16_f32(vFloat));
+
+                vst1_u16(reinterpret_cast<uint16_t*>(pHalf), vHalf);
+                pHalf += OutputStride*4;
+                i += 4;
+            }
+        }
+        else
+        {
+            // Scattered input, scattered output
+            for (size_t j = 0; j < four; ++j)
+            {
+                float32x4_t vFloat = vdupq_n_f32(0);
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 0);
+                pFloat += InputStride;
+
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 1);
+                pFloat += InputStride;
+
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 2);
+                pFloat += InputStride;
+
+                vFloat = vld1q_lane_f32(reinterpret_cast<const float*>(pFloat), vFloat, 3);
+                pFloat += InputStride;
+
+                uint16x4_t vHalf = vreinterpret_u16_f16(vcvt_f16_f32(vFloat));
+
+                vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 0);
+                pHalf += OutputStride;
+                vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 1);
+                pHalf += OutputStride;
+                vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 2);
+                pHalf += OutputStride;
+                vst1_lane_u16(reinterpret_cast<float*>(pHalf), vHalf, 3);
+                pHalf += OutputStride;
+                i += 4;
+            }
+        }
     }
 
     for (; i < FloatCount; ++i)
@@ -483,7 +783,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadColor
     uint16x8_t vInt16 = vmovl_u8( vreinterpret_u8_u32(vInt8) );
     uint32x4_t vInt = vmovl_u16( vget_low_u16(vInt16) );
     float32x4_t R = vcvtq_f32_u32(vInt);
-    return XM_VMULQ_N_F32( R, 1.0f/255.0f );
+    return vmulq_n_f32( R, 1.0f/255.0f );
 #elif defined(_XM_SSE_INTRINSICS_)
     // Splat the color in all four entries
     __m128i vInt = _mm_set1_epi32(pSource->c);
@@ -543,7 +843,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadShortN2
     int32x4_t vInt = vmovl_s16( vreinterpret_s16_u32(vInt16) );
     vInt = vandq_s32( vInt, g_XMMaskXY );
     float32x4_t R = vcvtq_f32_s32(vInt);
-    R = XM_VMULQ_N_F32( R, 1.0f/32767.0f );
+    R = vmulq_n_f32( R, 1.0f/32767.0f );
     return vmaxq_f32( R, vdupq_n_f32(-1.f) );
 #elif defined(_XM_SSE_INTRINSICS_)
     // Splat the two shorts in all four entries (WORD alignment okay,
@@ -623,7 +923,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadUShortN2
     uint32x4_t vInt = vmovl_u16( vreinterpret_u16_u32(vInt16) );
     vInt = vandq_u32( vInt, g_XMMaskXY );
     float32x4_t R = vcvtq_f32_u32(vInt);
-    R = XM_VMULQ_N_F32( R, 1.0f/65535.0f );
+    R = vmulq_n_f32( R, 1.0f/65535.0f );
     return vmaxq_f32( R, vdupq_n_f32(-1.f) );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 FixupY16 = {1.0f/65535.0f,1.0f/(65535.0f*65536.0f),0.0f,0.0f};
@@ -707,7 +1007,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadByteN2
     int32x4_t vInt = vmovl_s16( vget_low_s16( vInt16 ) );
     vInt = vandq_s32( vInt, g_XMMaskXY );
     float32x4_t R = vcvtq_f32_s32(vInt);
-    R = XM_VMULQ_N_F32( R, 1.0f/127.0f );
+    R = vmulq_n_f32( R, 1.0f/127.0f );
     return vmaxq_f32( R, vdupq_n_f32(-1.f) );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 Scale = {1.0f/127.0f,1.0f/(127.0f*256.0f),0,0};
@@ -791,7 +1091,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadUByteN2
     uint32x4_t vInt = vmovl_u16( vget_low_u16(vInt16) );
     vInt = vandq_u32( vInt, g_XMMaskXY );
     float32x4_t R = vcvtq_f32_u32(vInt);
-    return XM_VMULQ_N_F32( R, 1.0f/255.0f );
+    return vmulq_n_f32( R, 1.0f/255.0f );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 Scale = {1.0f/255.0f,1.0f/(255.0f*256.0f),0,0};
     static const XMVECTORU32 Mask = {0xFF,0xFF00,0,0};
@@ -1070,7 +1370,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadShortN4
     int16x4_t vInt = vld1_s16( (const int16_t*)pSource );
     int32x4_t V = vmovl_s16( vInt );
     V = vcvtq_f32_s32( V );
-    V = XM_VMULQ_N_F32( V,  1.0f/32767.0f );
+    V = vmulq_n_f32( V,  1.0f/32767.0f );
     return vmaxq_f32( V, vdupq_n_f32(-1.f) );
 #elif defined(_XM_SSE_INTRINSICS_)
     // Splat the color in all four entries (x,z,y,w)
@@ -1150,7 +1450,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadUShortN4
     uint16x4_t vInt = vld1_u16( (const uint16_t*)pSource );
     uint32x4_t V = vmovl_u16( vInt );
     V = vcvtq_f32_u32( V );
-    return XM_VMULQ_N_F32( V, 1.0f/65535.0f );
+    return vmulq_n_f32( V, 1.0f/65535.0f );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 FixupY16W16 = {1.0f/65535.0f,1.0f/65535.0f,1.0f/(65535.0f*65536.0f),1.0f/(65535.0f*65536.0f)};
     static const XMVECTORF32 FixaddY16W16  = {0,0,32768.0f*65536.0f,32768.0f*65536.0f};
@@ -1584,7 +1884,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadUByteN4
     uint16x8_t vInt16 = vmovl_u8( vreinterpret_u8_u32(vInt8) );
     uint32x4_t vInt = vmovl_u16( vget_low_u16(vInt16) );
     float32x4_t R = vcvtq_f32_u32(vInt);
-    return XM_VMULQ_N_F32( R, 1.0f/255.0f );
+    return vmulq_n_f32( R, 1.0f/255.0f );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 LoadUByteN4Mul = {1.0f/255.0f,1.0f/(255.0f*256.0f),1.0f/(255.0f*65536.0f),1.0f/(255.0f*65536.0f*256.0f)};
     // Splat the color in all four entries (x,z,y,w)
@@ -1663,7 +1963,7 @@ inline XMVECTOR XM_CALLCONV PackedVector::XMLoadByteN4
     int16x8_t vInt16 = vmovl_s8( vreinterpret_s8_u32(vInt8) );
     int32x4_t vInt = vmovl_s16( vget_low_s16(vInt16) );
     float32x4_t R = vcvtq_f32_s32(vInt);
-    R = XM_VMULQ_N_F32( R, 1.0f/127.0f );
+    R = vmulq_n_f32( R, 1.0f/127.0f );
     return vmaxq_f32( R, vdupq_n_f32(-1.f) );
 #elif defined(_XM_SSE_INTRINSICS_)
     static const XMVECTORF32 LoadByteN4Mul = {1.0f/127.0f,1.0f/(127.0f*256.0f),1.0f/(127.0f*65536.0f),1.0f/(127.0f*65536.0f*256.0f)};
@@ -1833,7 +2133,7 @@ inline void XM_CALLCONV PackedVector::XMStoreColor
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(0) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 255.0f );
+    R = vmulq_n_f32( R, 255.0f );
     R = XMVectorRound(R);
     uint32x4_t vInt32 = vcvtq_u32_f32(R);
     uint16x4_t vInt16 = vqmovn_u32( vInt32 );
@@ -1902,7 +2202,7 @@ inline void XM_CALLCONV PackedVector::XMStoreShortN2
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(-1.f) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 32767.0f );
+    R = vmulq_n_f32( R, 32767.0f );
     int32x4_t vInt32 = vcvtq_s32_f32(R);
     int16x4_t vInt16 = vqmovn_s32( vInt32 );
     vst1_lane_u32( &pDestination->v, vreinterpret_u32_s16(vInt16), 0 );
@@ -1978,7 +2278,7 @@ inline void XM_CALLCONV PackedVector::XMStoreUShortN2
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(0.f) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 65535.0f );
+    R = vmulq_n_f32( R, 65535.0f );
     R = vaddq_f32( R, g_XMOneHalf );
     uint32x4_t vInt32 = vcvtq_u32_f32(R);
     uint16x4_t vInt16 = vqmovn_u32( vInt32 );
@@ -2061,7 +2361,7 @@ inline void XM_CALLCONV PackedVector::XMStoreByteN2
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(-1.f) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 127.0f );
+    R = vmulq_n_f32( R, 127.0f );
     int32x4_t vInt32 = vcvtq_s32_f32(R);
     int16x4_t vInt16 = vqmovn_s32( vInt32 );
     int8x8_t vInt8 = vqmovn_s16( vcombine_s16(vInt16,vInt16) );
@@ -2145,7 +2445,7 @@ inline void XM_CALLCONV PackedVector::XMStoreUByteN2
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(0.f) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 255.0f );
+    R = vmulq_n_f32( R, 255.0f );
     R = vaddq_f32( R, g_XMOneHalf );
     uint32x4_t vInt32 = vcvtq_u32_f32(R);
     uint16x4_t vInt16 = vqmovn_u32( vInt32 );
@@ -2405,20 +2705,15 @@ inline void XM_CALLCONV PackedVector::XMStoreFloat3SE
     fi.f = maxColor;
     fi.i += 0x00004000; // round up leaving 9 bits in fraction (including assumed 1)
 
-    pDestination->e = (fi.i - 0x37800000) >> 23;
+    uint32_t exp = fi.i >> 23;
+    pDestination->e = exp - 0x6f;
 
-    fi.i = 0x83000000 - fi.i;
+    fi.i = 0x83000000 - (exp << 23);
     float ScaleR = fi.f;
 
-#ifdef _XM_NO_ROUNDF_
     pDestination->xm = static_cast<uint32_t>( Internal::round_to_nearest(x * ScaleR) );
     pDestination->ym = static_cast<uint32_t>( Internal::round_to_nearest(y * ScaleR) );
     pDestination->zm = static_cast<uint32_t>( Internal::round_to_nearest(z * ScaleR) );
-#else
-    pDestination->xm = static_cast<uint32_t>( roundf(x * ScaleR) );
-    pDestination->ym = static_cast<uint32_t>( roundf(y * ScaleR) );
-    pDestination->zm = static_cast<uint32_t>( roundf(z * ScaleR) );
-#endif
 }
 
 //------------------------------------------------------------------------------
@@ -2470,7 +2765,7 @@ inline void XM_CALLCONV PackedVector::XMStoreShortN4
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t vResult = vmaxq_f32( V, vdupq_n_f32(-1.f) );
     vResult = vminq_f32( vResult, vdupq_n_f32(1.0f) );
-    vResult = XM_VMULQ_N_F32( vResult, 32767.0f );
+    vResult = vmulq_n_f32( vResult, 32767.0f );
     vResult = vcvtq_s32_f32( vResult );
     int16x4_t vInt = vmovn_s32( vResult );
     vst1_s16( reinterpret_cast<int16_t*>(pDestination), vInt );
@@ -2550,7 +2845,7 @@ inline void XM_CALLCONV PackedVector::XMStoreUShortN4
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t vResult = vmaxq_f32( V, vdupq_n_f32(0) );
     vResult = vminq_f32( vResult, vdupq_n_f32(1.0f) );
-    vResult = XM_VMULQ_N_F32( vResult, 65535.0f );
+    vResult = vmulq_n_f32( vResult, 65535.0f );
     vResult = vaddq_f32( vResult, g_XMOneHalf );
     vResult = vcvtq_u32_f32( vResult );
     uint16x4_t vInt = vmovn_u32( vResult );
@@ -3131,7 +3426,7 @@ inline void XM_CALLCONV PackedVector::XMStoreUByteN4
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(0) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 255.0f );
+    R = vmulq_n_f32( R, 255.0f );
     uint32x4_t vInt32 = vcvtq_u32_f32(R);
     uint16x4_t vInt16 = vqmovn_u32( vInt32 );
     uint8x8_t vInt8 = vqmovn_u16( vcombine_u16(vInt16,vInt16) );
@@ -3243,7 +3538,7 @@ inline void XM_CALLCONV PackedVector::XMStoreByteN4
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     float32x4_t R = vmaxq_f32(V, vdupq_n_f32(-1.f) );
     R = vminq_f32(R, vdupq_n_f32(1.0f));
-    R = XM_VMULQ_N_F32( R, 127.0f );
+    R = vmulq_n_f32( R, 127.0f );
     int32x4_t vInt32 = vcvtq_s32_f32(R);
     int16x4_t vInt16 = vqmovn_s32( vInt32 );
     int8x8_t vInt8 = vqmovn_s16( vcombine_s16(vInt16,vInt16) );
@@ -4295,5 +4590,4 @@ inline PackedVector::XMU555::XMU555
     XMVECTOR V = XMLoadFloat3(reinterpret_cast<const XMFLOAT3*>(pArray));
     XMStoreU555(this, XMVectorSetW(V, ((_w) ? 1.0f : 0.0f) ));
 }
-
 

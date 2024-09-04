@@ -22,6 +22,7 @@
 #include <winapifamily.h>
 
 /* APISET_NAME: api-ms-win-core-comm-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

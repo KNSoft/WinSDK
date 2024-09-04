@@ -2637,6 +2637,7 @@ typedef struct _INQUIRYDATA {
 #define OPTICAL_CARD_READER_WRITER_DEVICE 0x0F
 #define BRIDGE_CONTROLLER_DEVICE        0x10
 #define OBJECT_BASED_STORAGE_DEVICE     0x11    // OSD
+#define UNKNOWN_OR_NO_DEVICE            0x1F    // Unknown or no device type
 #define LOGICAL_UNIT_NOT_PRESENT_DEVICE 0x7F
 
 #define DEVICE_QUALIFIER_ACTIVE         0x00

@@ -7,6 +7,8 @@
 // PARTICULAR PURPOSE.
 //  
 // Copyright (c) Microsoft Corporation. All rights reserved.
+//
+// http://go.microsoft.com/fwlink/?LinkID=615560
 //-------------------------------------------------------------------------------------
 
 #pragma once
@@ -20,10 +22,11 @@ namespace PackedVector
 {
 
 #pragma warning(push)
-#pragma warning(disable:4201 4365 4324)
+#pragma warning(disable:4201 4365 4324 4996)
 // C4201: nonstandard extension used
 // C4365: Off by default noise
 // C4324: alignment padding warnings
+// C4996: deprecation warnings
 
 //------------------------------------------------------------------------------
 // ARGB Color; 8-8-8-8 bit unsigned normalized integer components packed into
@@ -998,5 +1001,4 @@ void    XM_DEPRECATED XM_CALLCONV XMStoreXDec4(_Out_ XMXDEC4* pDestination, _In_
 }; // namespace PackedVector
 
 }; // namespace DirectX
-
 

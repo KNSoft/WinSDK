@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -61,7 +61,7 @@ typedef struct ImageTranscode ImageTranscode;
 /* header files for imported files */
 #include "objidl.h"
 #include "propidl.h"
-#include "shobjidl.h"
+#include "shobjidl_core.h"
 
 #ifdef __cplusplus
 extern "C"{

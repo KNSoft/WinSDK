@@ -5,7 +5,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 import "oaidl.idl";
 import "shtypes.idl";
-import "shobjidl.idl";
+import "shobjidl_core.idl";
 
 typedef[v1_enum] enum ThumbnailStreamCacheOptions
 {

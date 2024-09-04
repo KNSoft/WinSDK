@@ -156,7 +156,7 @@ extern "C" {
 
 //
 // Define PROBE_ALIGNMENT32 to be the same as PROBE_ALIGNMENT on x86, so that
-// code hosting x86 under WoW can handle x86's maximum garanteed alignment.
+// code hosting x86 under WoW can handle x86's maximum guaranteed alignment.
 //
 
 #define PROBE_ALIGNMENT32( _s ) TYPE_ALIGNMENT( DWORD )
@@ -301,6 +301,14 @@ extern "C" {
 #define DECLSPEC_GUARD_SUPPRESS  __declspec(guard(suppress))
 #else
 #define DECLSPEC_GUARD_SUPPRESS
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_GUEST
+#if _M_HYBRID
+#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#else
+#define DECLSPEC_CHPE_GUEST
 #endif
 #endif
 
@@ -799,6 +807,8 @@ typedef LONGLONG USN;
 
 #if defined(MIDL_PASS)
 typedef struct _LARGE_INTEGER {
+    LONGLONG QuadPart;
+} LARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _LARGE_INTEGER {
     struct {
@@ -809,14 +819,16 @@ typedef union _LARGE_INTEGER {
         DWORD LowPart;
         LONG HighPart;
     } u;
-#endif //MIDL_PASS
     LONGLONG QuadPart;
 } LARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef LARGE_INTEGER *PLARGE_INTEGER;
 
 #if defined(MIDL_PASS)
 typedef struct _ULARGE_INTEGER {
+    ULONGLONG QuadPart;
+} ULARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _ULARGE_INTEGER {
     struct {
@@ -827,9 +839,9 @@ typedef union _ULARGE_INTEGER {
         DWORD LowPart;
         DWORD HighPart;
     } u;
-#endif //MIDL_PASS
     ULONGLONG QuadPart;
 } ULARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef ULARGE_INTEGER *PULARGE_INTEGER;
 
@@ -838,6 +850,7 @@ typedef ULARGE_INTEGER *PULARGE_INTEGER;
 //
 
 typedef LONG_PTR RTL_REFERENCE_COUNT, *PRTL_REFERENCE_COUNT;
+typedef LONG RTL_REFERENCE_COUNT32, *PRTL_REFERENCE_COUNT32;
 
 // end_ntminiport end_ntndis end_ntminitape
 // end_ntoshvp
@@ -864,7 +877,8 @@ typedef DWORDLONG *PDWORDLONG;
 
 #if defined(MIDL_PASS) || defined(RC_INVOKED) || defined(_M_CEE_PURE) \
     || defined(_68K_) || defined(_MPPC_) \
-    || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)
+    || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64) \
+    || defined(_M_HYBRID_X86_ARM64)
 
 //
 // Midl does not understand inline assembler. Therefore, the Rtl functions
@@ -1172,7 +1186,8 @@ typedef struct  _OBJECTID {     // size is 20
 //
 //  RTL_CONTAINS_FIELD usage:
 //
-//      if (RTL_CONTAINS_FIELD(pBlock, pBlock->cbSize, dwMumble)) { // safe to use pBlock->dwMumble
+//      if (RTL_CONTAINS_FIELD(pBlock, pBlock->cbSize, dwMumble))
+//          // safe to use pBlock->dwMumble
 //
 #define RTL_CONTAINS_FIELD(Struct, Size, Field) \
     ( (((PCHAR)(&(Struct)->Field)) + sizeof((Struct)->Field)) <= (((PCHAR)(Struct))+(Size)) )
@@ -1209,7 +1224,7 @@ typedef struct  _OBJECTID {     // size is 20
 // pointer_to_array_of_char RtlpNumberOf(reference_to_array_of_T);
 //
 // We never even call RtlpNumberOf, we just take the size of dereferencing its return type.
-// We do not even implement RtlpNumberOf, we just decare it.
+// We do not even implement RtlpNumberOf, we just declare it.
 //
 // Attempts to pass pointers instead of arrays to this macro result in compile time errors.
 // That is the point.
@@ -1541,6 +1556,10 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 #define PRODUCT_PRO_FOR_EDUCATION_N                 0x000000A5
 #define PRODUCT_AZURE_SERVER_CORE                   0x000000A8
 #define PRODUCT_AZURE_NANO_SERVER                   0x000000A9
+#define PRODUCT_ENTERPRISEG                         0x000000AB
+#define PRODUCT_ENTERPRISEGN                        0x000000AC
+#define PRODUCT_CLOUD                               0x000000B2
+#define PRODUCT_CLOUDN                              0x000000B3
 
 #define PRODUCT_UNLICENSED                          0xABCDABCD
 
@@ -2178,7 +2197,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 #else // lint
 
 // Note: lint -e530 says don't complain about uninitialized variables for
-// this varible.  Error 527 has to do with unreachable code.
+// this variable.  Error 527 has to do with unreachable code.
 // -restore restores checking to the -save state
 
 #define UNREFERENCED_PARAMETER(P)          \
@@ -2238,7 +2257,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 // Moved here from objbase.w.
 
 // Templates are defined here in order to avoid a dependency on C++ <type_traits> header file,
-// or on compiler-specific contructs.
+// or on compiler-specific constructs.
 extern "C++" {
 
     template <size_t S>
@@ -3068,6 +3087,7 @@ _mm_clflush (
 
 #pragma intrinsic(_mm_clflush)
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 VOID
@@ -3084,11 +3104,13 @@ _ReadWriteBarrier (
 #define FastFence __faststorefence
 
 // end_wudfpwdm
+// end_sdfwdm
 
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 VOID
@@ -3097,6 +3119,7 @@ __faststorefence (
     );
 
 // end_wudfpwdm
+// end_sdfwdm
 
 VOID
 _mm_lfence (
@@ -3138,11 +3161,13 @@ _m_prefetchw (
 #define _MM_HINT_T2     3
 #define _MM_HINT_NTA    0
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 #pragma intrinsic(__faststorefence)
 
 // end_wudfpwdm
+// end_sdfwdm
 
 #pragma intrinsic(_mm_pause)
 #pragma intrinsic(_mm_prefetch)
@@ -4952,26 +4977,18 @@ typedef struct _SCOPE_TABLE_ARM64 {
     } ScopeRecord[1];
 } SCOPE_TABLE_ARM64, *PSCOPE_TABLE_ARM64;
 
-// begin_ntoshvp
+// begin_ntddk begin_wdm begin_nthal begin_ntminiport begin_wx86
 
-#ifdef _ARM64_
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
+// end_ntddk end_wdm end_nthal end_ntminiport end_wx86
 
-#if defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#if !defined(_M_CEE_PURE)
+#if !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #include <intrin.h>
 
-#if !defined(_M_CEE_PURE)
-
-#pragma intrinsic(__getReg)
-#pragma intrinsic(__getCallerReg)
-#pragma intrinsic(__getRegFp)
-#pragma intrinsic(__getCallerRegFp)
-
-#pragma intrinsic(__setReg)
-#pragma intrinsic(__setCallerReg)
-#pragma intrinsic(__setRegFp)
-#pragma intrinsic(__setCallerRegFp)
+#if defined(_M_ARM64)
 
 #pragma intrinsic(__readx18byte)
 #pragma intrinsic(__readx18word)
@@ -4992,42 +5009,6 @@ typedef struct _SCOPE_TABLE_ARM64 {
 #pragma intrinsic(__incx18word)
 #pragma intrinsic(__incx18dword)
 #pragma intrinsic(__incx18qword)
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-//
-// Memory barriers and prefetch intrinsics.
-//
-
-#pragma intrinsic(__yield)
-#pragma intrinsic(__prefetch)
-
-#pragma intrinsic(__dmb)
-#pragma intrinsic(__dsb)
-#pragma intrinsic(__isb)
-
-#pragma intrinsic(_ReadWriteBarrier)
-#pragma intrinsic(_WriteBarrier)
-
-FORCEINLINE
-VOID
-YieldProcessor (
-    VOID
-    )
-{
-    __dmb(_ARM64_BARRIER_ISHST);
-    __yield();
-}
-
-#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
-#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
-
-#define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
-#define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
 
 //
 // Define bit test intrinsics.
@@ -5363,6 +5344,52 @@ YieldProcessor (
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrementNoFence64((LONG64 *)a)
 
+#endif // defined(_M_ARM64)
+
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+
+#pragma intrinsic(__getReg)
+#pragma intrinsic(__getCallerReg)
+#pragma intrinsic(__getRegFp)
+#pragma intrinsic(__getCallerRegFp)
+
+#pragma intrinsic(__setReg)
+#pragma intrinsic(__setCallerReg)
+#pragma intrinsic(__setRegFp)
+#pragma intrinsic(__setCallerRegFp)
+
+//
+// Memory barriers and prefetch intrinsics.
+//
+
+#pragma intrinsic(__yield)
+#pragma intrinsic(__prefetch)
+
+#pragma intrinsic(__dmb)
+#pragma intrinsic(__dsb)
+#pragma intrinsic(__isb)
+
+#pragma intrinsic(_ReadWriteBarrier)
+#pragma intrinsic(_WriteBarrier)
+
+#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
+#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
+#define PrefetchForWrite(p)         __prefetch((const void *) (p))
+#define ReadForWriteAccess(p)       (*(p))
+
+#define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
+#define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
+
+FORCEINLINE
+VOID
+YieldProcessor (
+    VOID
+    )
+{
+    __dmb(_ARM64_BARRIER_ISHST);
+    __yield();
+}
+
 //
 // Define accessors for volatile loads and stores.
 //
@@ -5376,11 +5403,9 @@ YieldProcessor (
 #pragma intrinsic(__iso_volatile_store32)
 #pragma intrinsic(__iso_volatile_store64)
 
-// end_wdm end_ntndis end_ntosp end_ntminiport
-// end_ntoshvp
+// end_wdm end_ntndis end_ntosp end_ntminiport end_ntoshvp
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-// begin_ntoshvp
-// begin_wdm begin_ntndis begin_ntosp begin_ntminiport
+// begin_wdm begin_ntndis begin_ntosp begin_ntminiport begin_ntoshvp
 
 FORCEINLINE
 CHAR
@@ -5606,11 +5631,9 @@ WriteNoFence64 (
     return;
 }
 
-// end_wdm end_ntndis end_ntosp end_ntminiport
-// end_ntoshvp
+// end_wdm end_ntndis end_ntosp end_ntminiport end_ntoshvp
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-// begin_ntoshvp
-// begin_wdm begin_ntndis begin_ntosp begin_ntminiport
+// begin_wdm begin_ntndis begin_ntosp begin_ntminiport begin_ntoshvp
 
 //
 // Define coprocessor access intrinsics.  Coprocessor 15 contains
@@ -5618,6 +5641,7 @@ WriteNoFence64 (
 // identification and performance counters.
 //
 
+// op0=2/3 encodings, use with _Read/WriteStatusReg
 #define ARM64_SYSREG(op0, op1, crn, crm, op2) \
         ( ((op0 & 1) << 14) | \
           ((op1 & 7) << 11) | \
@@ -5625,6 +5649,14 @@ WriteNoFence64 (
           ((crm & 15) << 3) | \
           ((op2 & 7) << 0) )
 
+// op0=1 encodings, use with __sys
+#define ARM64_SYSINSTR(op0, op1, crn, crm, op2) \
+        ( ((op1 & 7) << 11) | \
+          ((crn & 15) << 7) | \
+          ((crm & 15) << 3) | \
+          ((op2 & 7) << 0) )
+
+#define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
 #define ARM64_PMXEVCNTR_EL0     ARM64_SYSREG(3,3, 9,13,2)  // Event Count Register [CP15_PMXEVCNTR]
@@ -5657,7 +5689,22 @@ ReadTimeStampCounter(
     VOID
     )
 {
+
+#if defined(_M_HYBRID_X86_ARM64)
+
+    //
+    // For guest code, the rdtsc instruction is implemented in terms of CNTVCT.
+    // Use the same implementation for consistency.
+    //
+
+    return (DWORD64)_ReadStatusReg(ARM64_CNTVCT);
+
+#else
+
     return (DWORD64)_ReadStatusReg(ARM64_PMCCNTR_EL0);
+
+#endif
+
 }
 
 FORCEINLINE
@@ -5685,13 +5732,15 @@ ReadPMC (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
-#ifdef __cplusplus
-}
-#endif
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+
+#endif // !defined(RC_INVOKED) && !defined(MIDL_PASS)
+
+#else // defined(_M_CEE_PURE)
+
+#include <intrin.h>
 
 #endif // !defined(_M_CEE_PURE)
-
-#endif // defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #if defined(_M_CEE_PURE)
 FORCEINLINE
@@ -5703,7 +5752,6 @@ YieldProcessor (
 }
 #endif
 
-// end_ntoshvp
 //
 // The following values specify the type of access in the first parameter
 // of the exception record whan the exception code specifies an access
@@ -5715,6 +5763,17 @@ YieldProcessor (
 #define EXCEPTION_EXECUTE_FAULT 8       // exception caused by an instruction fetch
 
 // begin_wx86
+
+//
+// Define initial Cpsr/Fpscr value
+//
+
+#define INITIAL_CPSR 0x10
+#define INITIAL_FPSCR 0
+
+// end_wx86
+// begin_wx86
+
 //
 // The following flags control the contents of the CONTEXT structure.
 //
@@ -5725,19 +5784,31 @@ YieldProcessor (
 
 // end_wx86
 
-#define CONTEXT_CONTROL (CONTEXT_ARM64 | 0x1L)
-#define CONTEXT_INTEGER (CONTEXT_ARM64 | 0x2L)
-#define CONTEXT_FLOATING_POINT  (CONTEXT_ARM64 | 0x4L)
-#define CONTEXT_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x8L)
+#define CONTEXT_ARM64_CONTROL (CONTEXT_ARM64 | 0x1L)
+#define CONTEXT_ARM64_INTEGER (CONTEXT_ARM64 | 0x2L)
+#define CONTEXT_ARM64_FLOATING_POINT  (CONTEXT_ARM64 | 0x4L)
+#define CONTEXT_ARM64_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x8L)
 
-#define CONTEXT_FULL (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT)
+#define CONTEXT_ARM64_FULL (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT)
+#define CONTEXT_ARM64_ALL  (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT | CONTEXT_ARM64_DEBUG_REGISTERS)
 
-#define CONTEXT_ALL (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS)
+#if defined(_ARM64_)
 
-#define CONTEXT_EXCEPTION_ACTIVE 0x08000000L
-#define CONTEXT_SERVICE_ACTIVE 0x10000000L
-#define CONTEXT_EXCEPTION_REQUEST 0x40000000L
+#define CONTEXT_CONTROL CONTEXT_ARM64_CONTROL
+#define CONTEXT_INTEGER CONTEXT_ARM64_INTEGER
+#define CONTEXT_FLOATING_POINT CONTEXT_ARM64_FLOATING_POINT
+#define CONTEXT_DEBUG_REGISTERS CONTEXT_ARM64_DEBUG_REGISTERS
+#define CONTEXT_FULL CONTEXT_ARM64_FULL
+#define CONTEXT_ALL CONTEXT_ARM64_ALL
+
+#define CONTEXT_EXCEPTION_ACTIVE    0x08000000L
+#define CONTEXT_SERVICE_ACTIVE      0x10000000L
+#define CONTEXT_EXCEPTION_REQUEST   0x40000000L
 #define CONTEXT_EXCEPTION_REPORTING 0x80000000L
+
+#endif
+
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_X86_)
 
 //
 // This flag is set by the unwinder if it has unwound to a call
@@ -5749,16 +5820,11 @@ YieldProcessor (
 #define CONTEXT_UNWOUND_TO_CALL 0x20000000
 #define CONTEXT_RET_TO_GUEST    0x04000000
 
+#endif
+
 // begin_wx86
 
 #endif // !defined(RC_INVOKED)
-
-//
-// Define initial Cpsr/Fpscr value
-//
-
-#define INITIAL_CPSR 0x10
-#define INITIAL_FPSCR 0
 
 // begin_ntoshvp
 
@@ -5802,7 +5868,7 @@ YieldProcessor (
 //      DBGWCR.
 //
 
-typedef union _NEON128 {
+typedef union _ARM64_NT_NEON128 {
     struct {
         ULONGLONG Low;
         LONGLONG High;
@@ -5811,9 +5877,27 @@ typedef union _NEON128 {
     float S[4];
     WORD   H[8];
     BYTE  B[16];
-} NEON128, *PNEON128;
+} ARM64_NT_NEON128, *PARM64_NT_NEON128;
 
-typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
+#if defined(_ARM64_)
+
+typedef ARM64_NT_NEON128 NEON128, *PNEON128;
+
+#endif
+
+#if defined(_ARM64_)
+
+#pragma push_macro("_ARM64_NT_CONTEXT")
+#undef _ARM64_NT_CONTEXT
+#define _ARM64_NT_CONTEXT _CONTEXT
+
+#pragma push_macro("ARM64_NT_NEON128")
+#undef ARM64_NT_NEON128
+#define ARM64_NT_NEON128 NEON128
+
+#endif
+
+typedef struct DECLSPEC_ALIGN(16) _ARM64_NT_CONTEXT {
 
     //
     // Control flags.
@@ -5869,7 +5953,7 @@ typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
     // Floating Point/NEON Registers
     //
 
-    /* +0x110 */ NEON128 V[32];
+    /* +0x110 */ ARM64_NT_NEON128 V[32];
     /* +0x310 */ DWORD Fpcr;
     /* +0x314 */ DWORD Fpsr;
 
@@ -5883,14 +5967,34 @@ typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
     /* +0x380 */ DWORD64 Wvr[ARM64_MAX_WATCHPOINTS];
     /* +0x390 */
 
-} CONTEXT, *PCONTEXT;
+} ARM64_NT_CONTEXT, *PARM64_NT_CONTEXT;
+
+#if defined(_ARM64_)
+
+#undef ARM64_NT_NEON128
+#pragma pop_macro("ARM64_NT_NEON128")
+
+#undef _ARM64_NT_CONTEXT
+#pragma pop_macro("_ARM64_NT_CONTEXT")
+
+typedef ARM64_NT_CONTEXT CONTEXT, *PCONTEXT;
+
+#endif
 
 // end_ntoshvp
+// end_wx86
+
 //
 // Select platform-specific definitions
 //
 
+#if defined(_ARM64_)
+
 typedef struct _IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY RUNTIME_FUNCTION, *PRUNTIME_FUNCTION;
+
+#endif
+
+typedef struct _IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY ARM64_RUNTIME_FUNCTION, *PARM64_RUNTIME_FUNCTION;
 typedef SCOPE_TABLE_ARM64 SCOPE_TABLE, *PSCOPE_TABLE;
 
 //
@@ -5909,7 +6013,7 @@ typedef SCOPE_TABLE_ARM64 SCOPE_TABLE, *PSCOPE_TABLE;
 
 typedef struct _UNWIND_HISTORY_TABLE_ENTRY {
     DWORD64 ImageBase;
-    PRUNTIME_FUNCTION FunctionEntry;
+    PARM64_RUNTIME_FUNCTION FunctionEntry;
 } UNWIND_HISTORY_TABLE_ENTRY, *PUNWIND_HISTORY_TABLE_ENTRY;
 
 typedef struct _UNWIND_HISTORY_TABLE {
@@ -5923,24 +6027,43 @@ typedef struct _UNWIND_HISTORY_TABLE {
     UNWIND_HISTORY_TABLE_ENTRY Entry[UNWIND_HISTORY_TABLE_SIZE];
 } UNWIND_HISTORY_TABLE, *PUNWIND_HISTORY_TABLE;
 
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+
+#pragma push_macro("_DISPATCHER_CONTEXT_ARM64")
+#undef _DISPATCHER_CONTEXT_ARM64
+#define _DISPATCHER_CONTEXT_ARM64 _DISPATCHER_CONTEXT
+
+#endif
+
 //
 // Define exception dispatch context structure.
 //
 
-typedef struct _DISPATCHER_CONTEXT {
-    DWORD64 ControlPc;
-    DWORD64 ImageBase;
-    PRUNTIME_FUNCTION FunctionEntry;
-    DWORD64 EstablisherFrame;
-    DWORD64 TargetPc;
-    PCONTEXT ContextRecord;
+typedef struct _DISPATCHER_CONTEXT_ARM64 {
+    ULONG_PTR ControlPc;
+    ULONG_PTR ImageBase;
+    PARM64_RUNTIME_FUNCTION FunctionEntry;
+    ULONG_PTR EstablisherFrame;
+    ULONG_PTR TargetPc;
+    PARM64_NT_CONTEXT ContextRecord;
     PEXCEPTION_ROUTINE LanguageHandler;
     PVOID HandlerData;
     PUNWIND_HISTORY_TABLE HistoryTable;
     DWORD ScopeIndex;
     BOOLEAN ControlPcIsUnwound;
     PBYTE  NonVolatileRegisters;
-} DISPATCHER_CONTEXT, *PDISPATCHER_CONTEXT;
+} DISPATCHER_CONTEXT_ARM64, *PDISPATCHER_CONTEXT_ARM64;
+
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+
+#undef _DISPATCHER_CONTEXT_ARM64
+#pragma pop_macro("_DISPATCHER_CONTEXT_ARM64")
+
+typedef DISPATCHER_CONTEXT_ARM64 DISPATCHER_CONTEXT, *PDISPATCHER_CONTEXT;
+
+#endif
+
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
 //
 // Define exception filter and termination handler function types.
@@ -5962,13 +6085,17 @@ VOID
     DWORD64 EstablisherFrame
     );
 
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+
+#if defined(_ARM64_)
+
 //
 // Define dynamic function table entry.
 //
 
 typedef
 _Function_class_(GET_RUNTIME_FUNCTION_CALLBACK)
-PRUNTIME_FUNCTION
+PARM64_RUNTIME_FUNCTION
 GET_RUNTIME_FUNCTION_CALLBACK (
     _In_ DWORD64 ControlPc,
     _In_opt_ PVOID Context
@@ -5982,19 +6109,27 @@ OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK (
     _In_ HANDLE Process,
     _In_ PVOID TableAddress,
     _Out_ PDWORD Entries,
-    _Out_ PRUNTIME_FUNCTION* Functions
+    _Out_ PARM64_RUNTIME_FUNCTION* Functions
     );
 typedef OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK *POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK;
 
 #define OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME \
     "OutOfProcessFunctionTableCallback"
 
+#endif // defined(_ARM64_)
+
+
+// begin_ntoshvp
+
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+
+// end_ntoshvp
 
 //
 // Nonvolatile context pointer record.
 //
 
-typedef struct _KNONVOLATILE_CONTEXT_POINTERS {
+typedef struct _KNONVOLATILE_CONTEXT_POINTERS_ARM64 {
 
     PDWORD64 X19;
     PDWORD64 X20;
@@ -6018,13 +6153,26 @@ typedef struct _KNONVOLATILE_CONTEXT_POINTERS {
     PDWORD64 D14;
     PDWORD64 D15;
 
-} KNONVOLATILE_CONTEXT_POINTERS, *PKNONVOLATILE_CONTEXT_POINTERS;
+} KNONVOLATILE_CONTEXT_POINTERS_ARM64, *PKNONVOLATILE_CONTEXT_POINTERS_ARM64;
 
-// begin_ntoshvp
+#if defined(_ARM64_)
 
-#endif // _ARM64_
+typedef KNONVOLATILE_CONTEXT_POINTERS_ARM64 KNONVOLATILE_CONTEXT_POINTERS, *PKNONVOLATILE_CONTEXT_POINTERS;
 
-// end_ntoshvp
+#endif
+
+#if defined(_CHPE_X86_ARM64_)
+
+//
+// The following typedef works-around the fact that the dummy NV_C_P for x86
+// is defined in i386.h, which is incorrect because it doesn't have the
+// correct scope. This will not be needed after fixing that: moving the
+// definition to nti386_x.w with the same scoping as other architectures.
+//
+
+typedef struct _KNONVOLATILE_CONTEXT_POINTERS *PKNONVOLATILE_CONTEXT_POINTERS;
+
+#endif
 
 
 #ifdef __cplusplus
@@ -6069,9 +6217,9 @@ __int2c (
 
 #endif // defined(_M_AMD64)
 
-#elif defined(_X86_)
+#elif defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)
 
-#if defined(_M_IX86)
+#if defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 #if _MSC_FULL_VER >= 140030222
 
@@ -6136,9 +6284,9 @@ __break(
 
 #endif // defined(_M_IA64)
 
-#elif defined(_ARM64_)
+#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 void
 __break(
@@ -6153,7 +6301,7 @@ __break(
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 #elif defined(_ARM_)
 
@@ -7023,7 +7171,7 @@ __writefsdword (
 #endif // !defined(_M_CEE_PURE)
 
 
-#if !defined(_MANAGED)
+#if !defined(_MANAGED) && !defined(_M_HYBRID_X86_ARM64)
 VOID
 _mm_pause (
     VOID
@@ -7033,7 +7181,7 @@ _mm_pause (
 
 #define YieldProcessor _mm_pause
 
-#endif // !defined(_MANAGED)
+#endif // !defined(_MANAGED) && !defined(_M_HYBRID_X86_ARM64)
 
 #ifdef __cplusplus
 }
@@ -7045,7 +7193,7 @@ _mm_pause (
 // begin_ntoshvp
 #if !defined(MIDL_PASS) && defined(_M_IX86)
 
-#if !defined(_M_CEE_PURE)
+#if !defined(_M_CEE_PURE) && !defined(_M_HYBRID_X86_ARM64)
 
 #pragma prefast(push)
 #pragma warning(push)
@@ -7066,7 +7214,9 @@ MemoryBarrier (
 #pragma warning(pop)
 #pragma prefast(pop)
 
-#endif /* _M_CEE_PURE */
+#endif /* !_M_CEE_PURE || !_M_HYBRID_X86_ARM64*/
+
+#if !defined(_M_HYBRID_X86_ARM64)
 
 //
 // Define constants for use with _mm_prefetch.
@@ -7127,6 +7277,8 @@ __rdtsc (
 #pragma intrinsic(__rdtsc)
 
 #endif // !defined(_MANAGED)
+
+#endif // !defined(_M_HYBRID_X86_ARM64)
 
 // end_ntoshvp
 // end_ntddk
@@ -7369,7 +7521,7 @@ typedef struct _LDT_ENTRY {
 // begin_wdm begin_ntminiport
 
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
-#if defined(_M_AMD64) || defined(_M_IX86) || defined(_M_CEE_PURE)
+#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64)) || defined(_M_CEE_PURE)
 
 #ifdef __cplusplus
 extern "C" {
@@ -7497,7 +7649,7 @@ ReadAcquire (
     return Value;
 }
 
-FORCEINLINE
+CFORCEINLINE
 LONG
 ReadNoFence (
     _In_ _Interlocked_operand_ LONG const volatile *Source
@@ -7551,7 +7703,7 @@ ReadAcquire64 (
     return Value;
 }
 
-FORCEINLINE
+CFORCEINLINE
 LONG64
 ReadNoFence64 (
     _In_ _Interlocked_operand_ LONG64 const volatile *Source
@@ -8074,7 +8226,7 @@ ReadPointerAcquire (
     return (PVOID)ReadAcquire((PLONG)Source);
 }
 
-FORCEINLINE
+CFORCEINLINE
 PVOID
 ReadPointerNoFence (
     _In_ _Interlocked_operand_ PVOID const volatile *Source
@@ -8172,7 +8324,7 @@ ReadPointerAcquire (
     return (PVOID)ReadAcquire64((PLONG64)Source);
 }
 
-FORCEINLINE
+CFORCEINLINE
 PVOID
 ReadPointerNoFence (
     _In_ _Interlocked_operand_ PVOID const volatile *Source
@@ -8723,6 +8875,18 @@ typedef struct _SID {
 #define SECURITY_SID_SIZE(SubAuthorityCount_) (sizeof(SID) - sizeof(DWORD) + \
                                                 (SubAuthorityCount_) * sizeof(DWORD))
 
+// 2 (S-)
+// 4 (Rev(max: 255)-)
+// 15 (
+//      If (Auth < 2^32): Auth(max:4294967295)-
+//      Else:             0xAuth(max:FFFFFFFFFFFF)-
+//    )
+// (11 * SID_MAX_SUB_AUTHORITIES) (SubN(max:4294967295)-)
+// 1 (NULL character)
+// = 187 (assuming SID_MAX_SUB_AUTHORITIES = 15)
+#define SECURITY_MAX_SID_STRING_CHARACTERS \
+    (2 + 4 + 15 + (11 * SID_MAX_SUB_AUTHORITIES) + 1)
+
 //
 // Union which can hold any valid sid.
 //
@@ -8939,7 +9103,8 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define SECURITY_WINRM_ID_BASE_RID      (0x0000005EL)
 #define SECURITY_WINRM_ID_RID_COUNT     (6L)
 
-#define SECURITY_CCG_ID_BASE_RID    (0x0000005FL)
+#define SECURITY_CCG_ID_BASE_RID        (0x0000005FL)
+#define SECURITY_UMFD_BASE_RID          (0x00000060L)
 
 #define SECURITY_VIRTUALACCOUNT_ID_RID_COUNT   (6L)
 
@@ -9143,6 +9308,7 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 
 #define SECURITY_PROCESS_PROTECTION_LEVEL_WINTCB_RID        (0x00002000L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_WINDOWS_RID       (0x00001000L)
+#define SECURITY_PROCESS_PROTECTION_LEVEL_APP_RID           (0x00000800L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_NONE_RID          (0x00000000L)
 
 //
@@ -9456,7 +9622,8 @@ typedef ACE_HEADER *PACE_HEADER;
 #define SYSTEM_RESOURCE_ATTRIBUTE_ACE_TYPE      (0x12)
 #define SYSTEM_SCOPED_POLICY_ID_ACE_TYPE        (0x13)
 #define SYSTEM_PROCESS_TRUST_LABEL_ACE_TYPE     (0x14)
-#define ACCESS_MAX_MS_V5_ACE_TYPE               (0x14)
+#define SYSTEM_ACCESS_FILTER_ACE_TYPE           (0x15)
+#define ACCESS_MAX_MS_V5_ACE_TYPE               (0x15)
 
 
 //
@@ -9476,11 +9643,6 @@ typedef ACE_HEADER *PACE_HEADER;
 //  AceFlags field of an ACE header.  Each ACE type has its own set of
 //  AceFlags.
 //
-//  SUCCESSFUL_ACCESS_ACE_FLAG - used only with system audit and alarm ACE
-//  types to indicate that a message is generated for successful accesses.
-//
-//  FAILED_ACCESS_ACE_FLAG - used only with system audit and alarm ACE types
-//  to indicate that a message is generated for failed accesses.
 //
 
 //
@@ -9488,9 +9650,28 @@ typedef ACE_HEADER *PACE_HEADER;
 //
 //  These control the signaling of audit and alarms for success or failure.
 //
+//  SUCCESSFUL_ACCESS_ACE_FLAG - used only with system audit and alarm ACE
+//  types to indicate that a message is generated for successful accesses.
+//
+//  FAILED_ACCESS_ACE_FLAG - used only with system audit and alarm ACE types
+//  to indicate that a message is generated for failed accesses.
+//
 
 #define SUCCESSFUL_ACCESS_ACE_FLAG       (0x40)
 #define FAILED_ACCESS_ACE_FLAG           (0x80)
+
+//
+//  SYSTEM_ACCESS_FILTER_ACE AceFlags
+//
+//  These control the behaviour of SYSTEM_ACCESS_FILTER_ACE .
+//
+//  TRUST_PROTECTED_FILTER_ACE_FLAG - used only with SYSTEM_FILTERING_ACE_TYPE
+//  ACEs to indicate that this ACE may not be deleted/modified except when the,
+//  the current Trust Level dominates the one specified in the Ace SID.
+//  If this flag is set then the SID in the ACE should be a valid TrustLevelSid.
+//
+
+#define TRUST_PROTECTED_FILTER_ACE_FLAG  (0x40)
 
 
 //
@@ -9579,6 +9760,13 @@ typedef struct _SYSTEM_PROCESS_TRUST_LABEL_ACE {
     DWORD SidStart;
 } SYSTEM_PROCESS_TRUST_LABEL_ACE, *PSYSTEM_PROCESS_TRUST_LABEL_ACE;
 
+typedef struct _SYSTEM_ACCESS_FILTER_ACE {
+    ACE_HEADER Header;
+    ACCESS_MASK Mask;
+    DWORD SidStart;
+    // Filter Condition follows the SID
+} SYSTEM_ACCESS_FILTER_ACE, *PSYSTEM_ACCESS_FILTER_ACE;
+
 #define SYSTEM_MANDATORY_LABEL_NO_WRITE_UP         0x1
 #define SYSTEM_MANDATORY_LABEL_NO_READ_UP          0x2
 #define SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP       0x4
@@ -9590,6 +9778,8 @@ typedef struct _SYSTEM_PROCESS_TRUST_LABEL_ACE {
 // Placeholder value that allows all ranges
 #define SYSTEM_PROCESS_TRUST_LABEL_VALID_MASK      0x00ffffff
 #define SYSTEM_PROCESS_TRUST_NOCONSTRAINT_MASK     0xffffffff
+#define SYSTEM_ACCESS_FILTER_VALID_MASK            0x00ffffff
+#define SYSTEM_ACCESS_FILTER_NOCONSTRAINT_MASK     0xffffffff
 // end_ntifs
 
 
@@ -9709,7 +9899,7 @@ typedef struct _SYSTEM_ALARM_CALLBACK_OBJECT_ACE {
 #define ACE_OBJECT_TYPE_PRESENT           0x1
 #define ACE_INHERITED_OBJECT_TYPE_PRESENT 0x2
 
-
+
 //
 //  The following declarations are used for setting and querying information
 //  about and ACL.  First are the various information classes available to
@@ -10063,7 +10253,9 @@ typedef enum _ACCESS_REASON_TYPE{
     AccessReasonNoSD                        = 0x00700000,
     AccessReasonNoGrant                     = 0x00800000,   // this access bit is not granted by any ACE.
 
-    AccessReasonTrustLabel                  = 0x00900000    // The trust label ACE did not grant this access.
+    AccessReasonTrustLabel                  = 0x00900000,   // The trust label ACE did not grant this access.
+
+    AccessReasonFilterAce                   = 0x00a00000    // The filtering ACE did not grant this access
 }
 ACCESS_REASON_TYPE;
 
@@ -10105,9 +10297,11 @@ functions.
 // (NOTE NOTE) The cache key can be constructed by SecurityDescriptorId, Token and
 // PrincipalSelfSid. Watch how GenericMapping affects the cache results.
 //
-#define SE_SECURITY_DESCRIPTOR_FLAG_NO_OWNER_ACE    0x00000001
-#define SE_SECURITY_DESCRIPTOR_FLAG_NO_LABEL_ACE    0x00000002
-#define SE_SECURITY_DESCRIPTOR_VALID_FLAGS          0x00000003
+#define SE_SECURITY_DESCRIPTOR_FLAG_NO_OWNER_ACE            0x00000001
+#define SE_SECURITY_DESCRIPTOR_FLAG_NO_LABEL_ACE            0x00000002
+#define SE_SECURITY_DESCRIPTOR_FLAG_NO_ACCESS_FILTER_ACE    0x00000004
+#define SE_SECURITY_DESCRIPTOR_VALID_FLAGS                  0x00000007
+
 
 typedef struct _SE_SECURITY_DESCRIPTOR
 {
@@ -10183,6 +10377,8 @@ typedef struct _SE_ACCESS_REPLY
 #define SE_CREATE_SYMBOLIC_LINK_NAME                 TEXT("SeCreateSymbolicLinkPrivilege")
 #define SE_DELEGATE_SESSION_USER_IMPERSONATE_NAME    TEXT("SeDelegateSessionUserImpersonatePrivilege")
 
+// begin_ntosifs
+
 //
 // List Of String Capabilities.
 //
@@ -10190,6 +10386,9 @@ typedef struct _SE_ACCESS_REPLY
 #define SE_CONSTRAINED_IMPERSONATION_CAPABILITY L"constrainedImpersonation"
 #define SE_SESSION_IMPERSONATION_CAPABILITY L"sessionImpersonation"
 #define SE_MUMA_CAPABILITY L"muma"
+#define SE_DEVELOPMENT_MODE_NETWORK_CAPABILITY L"developmentModeNetwork"
+
+// end_ntosifs
 
 
 
@@ -10358,6 +10557,7 @@ typedef enum _TOKEN_INFORMATION_CLASS {
     TokenProcessTrustLevel,
     TokenPrivateNameSpace,
     TokenSingletonAttributes,
+    TokenBnoIsolation,
     MaxTokenInfoClass  // MaxTokenInfoClass should always be the last enum
 } TOKEN_INFORMATION_CLASS, *PTOKEN_INFORMATION_CLASS;
 
@@ -10553,6 +10753,11 @@ typedef struct _TOKEN_APPCONTAINER_INFORMATION {
 typedef struct _TOKEN_SID_INFORMATION {
     PSID Sid;
 } TOKEN_SID_INFORMATION, *PTOKEN_SID_INFORMATION;
+
+typedef struct _TOKEN_BNO_ISOLATION_INFORMATION {
+    PWSTR       IsolationPrefix;
+    BOOLEAN     IsolationEnabled;
+} TOKEN_BNO_ISOLATION_INFORMATION, *PTOKEN_BNO_ISOLATION_INFORMATION;
 
 //
 //  *** Claim Security attributes ***
@@ -10848,20 +11053,21 @@ typedef struct _SE_IMPERSONATION_STATE {
 
 typedef DWORD SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 
-#define OWNER_SECURITY_INFORMATION       (0x00000001L)
-#define GROUP_SECURITY_INFORMATION       (0x00000002L)
-#define DACL_SECURITY_INFORMATION        (0x00000004L)
-#define SACL_SECURITY_INFORMATION        (0x00000008L)
-#define LABEL_SECURITY_INFORMATION       (0x00000010L)
-#define ATTRIBUTE_SECURITY_INFORMATION   (0x00000020L)
-#define SCOPE_SECURITY_INFORMATION       (0x00000040L)
-#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION (0x00000080L) 
-#define BACKUP_SECURITY_INFORMATION      (0x00010000L)
+#define OWNER_SECURITY_INFORMATION                  (0x00000001L)
+#define GROUP_SECURITY_INFORMATION                  (0x00000002L)
+#define DACL_SECURITY_INFORMATION                   (0x00000004L)
+#define SACL_SECURITY_INFORMATION                   (0x00000008L)
+#define LABEL_SECURITY_INFORMATION                  (0x00000010L)
+#define ATTRIBUTE_SECURITY_INFORMATION              (0x00000020L)
+#define SCOPE_SECURITY_INFORMATION                  (0x00000040L)
+#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION    (0x00000080L) 
+#define ACCESS_FILTER_SECURITY_INFORMATION          (0x00000100L)
+#define BACKUP_SECURITY_INFORMATION                 (0x00010000L)
 
-#define PROTECTED_DACL_SECURITY_INFORMATION     (0x80000000L)
-#define PROTECTED_SACL_SECURITY_INFORMATION     (0x40000000L)
-#define UNPROTECTED_DACL_SECURITY_INFORMATION   (0x20000000L)
-#define UNPROTECTED_SACL_SECURITY_INFORMATION   (0x10000000L)
+#define PROTECTED_DACL_SECURITY_INFORMATION         (0x80000000L)
+#define PROTECTED_SACL_SECURITY_INFORMATION         (0x40000000L)
+#define UNPROTECTED_DACL_SECURITY_INFORMATION       (0x20000000L)
+#define UNPROTECTED_SACL_SECURITY_INFORMATION       (0x10000000L)
 
 
 //
@@ -10976,8 +11182,9 @@ typedef struct _SECURITY_CAPABILITIES {
 #define JOB_OBJECT_QUERY                    (0x0004)
 #define JOB_OBJECT_TERMINATE                (0x0008)
 #define JOB_OBJECT_SET_SECURITY_ATTRIBUTES  (0x0010)
+#define JOB_OBJECT_IMPERSONATE              (0x0020)
 #define JOB_OBJECT_ALL_ACCESS       (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | \
-                                        0x1F )
+                                        0x3F )
 
 // end_access
 
@@ -11231,7 +11438,8 @@ typedef struct _PROCESS_MITIGATION_DYNAMIC_CODE_POLICY {
         struct {
             DWORD ProhibitDynamicCode : 1;
             DWORD AllowThreadOptOut : 1;
-            DWORD ReservedFlags : 30;
+            DWORD AllowRemoteDowngrade : 1;
+            DWORD ReservedFlags : 29;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_DYNAMIC_CODE_POLICY, *PPROCESS_MITIGATION_DYNAMIC_CODE_POLICY;
@@ -11241,7 +11449,9 @@ typedef struct _PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY {
         DWORD Flags;
         struct {
             DWORD EnableControlFlowGuard : 1;
-            DWORD ReservedFlags : 31;
+            DWORD EnableExportSuppression : 1;
+            DWORD StrictMode : 1;
+            DWORD ReservedFlags : 29;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY, *PPROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY;
@@ -11757,11 +11967,16 @@ typedef enum _JOBOBJECTINFOCLASS {
     JobObjectCreateSilo,
     JobObjectSiloBasicInformation,
     JobObjectReserved15Information = 37,
-    JobObjectReserved16Information,
-    JobObjectReserved17Information,
-    JobObjectReserved18Information,
+    JobObjectReserved16Information = 38,
+    JobObjectReserved17Information = 39,
+    JobObjectReserved18Information = 40,
     JobObjectReserved19Information = 41,
-    JobObjectReserved20Information,
+    JobObjectReserved20Information = 42,
+    JobObjectReserved21Information = 43,
+    JobObjectReserved22Information = 44,
+    JobObjectReserved23Information = 45,
+    JobObjectReserved24Information = 46,
+    JobObjectReserved25Information = 47,
     MaxJobObjectInfoClass
 } JOBOBJECTINFOCLASS;
 
@@ -12007,6 +12222,7 @@ typedef struct _SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION {
 #define PROCESSOR_ARCHITECTURE_NEUTRAL          11
 #define PROCESSOR_ARCHITECTURE_ARM64            12
 #define PROCESSOR_ARCHITECTURE_ARM32_ON_WIN64   13
+#define PROCESSOR_ARCHITECTURE_IA32_ON_ARM64    14
 
 #define PROCESSOR_ARCHITECTURE_UNKNOWN 0xFFFF
 
@@ -12212,14 +12428,24 @@ typedef struct DECLSPEC_ALIGN(16) _MEMORY_BASIC_INFORMATION64 {
 // invalid.  Input flag.
 //
 
-#define CFG_CALL_TARGET_VALID           (0x00000001) 
+#define CFG_CALL_TARGET_VALID                               (0x00000001) 
 
 //
 // Call target has been successfully processed.  Used to report to the caller
 // how much progress has been made.  Output flag.
 //
 
-#define CFG_CALL_TARGET_PROCESSED       (0x00000002)
+#define CFG_CALL_TARGET_PROCESSED                           (0x00000002)
+
+//
+// Call target should be made valid only if it is suppressed export.
+// What this flag means is that it can *only* be used on a cell which is
+// currently in the CFG export suppressed state (only considered for export
+// suppressed processes and not legacy CFG processes!), and it is also
+// allowed to be used even if the process is a restricted (i.e. no ACG) process.
+//
+
+#define CFG_CALL_TARGET_CONVERT_EXPORT_SUPPRESSED_TO_VALID  (0x00000004)
 
 typedef struct _CFG_CALL_TARGET_INFO {
     ULONG_PTR Offset;
@@ -12405,6 +12631,10 @@ typedef struct _ENCLAVE_INIT_INFO_SGX {
 #define FILE_ATTRIBUTE_VIRTUAL              0x00010000  
 #define FILE_ATTRIBUTE_NO_SCRUB_DATA        0x00020000  
 #define FILE_ATTRIBUTE_EA                   0x00040000  
+#define FILE_ATTRIBUTE_PINNED               0x00080000  
+#define FILE_ATTRIBUTE_UNPINNED             0x00100000  
+#define FILE_ATTRIBUTE_RECALL_ON_OPEN       0x00040000  
+#define FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS 0x00400000 
 #define FILE_NOTIFY_CHANGE_FILE_NAME    0x00000001   
 #define FILE_NOTIFY_CHANGE_DIR_NAME     0x00000002   
 #define FILE_NOTIFY_CHANGE_ATTRIBUTES   0x00000004   
@@ -12429,7 +12659,7 @@ typedef struct _ENCLAVE_INIT_INFO_SGX {
 #define FILE_SUPPORTS_SPARSE_FILES          0x00000040  
 #define FILE_SUPPORTS_REPARSE_POINTS        0x00000080  
 #define FILE_SUPPORTS_REMOTE_STORAGE        0x00000100  
-
+#define FILE_RETURNS_CLEANUP_RESULT_INFO    0x00000200  
 
 
 
@@ -12649,10 +12879,17 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_FILE_PLACEHOLDER         (0x80000015L)       
 #define IO_REPARSE_TAG_WOF                      (0x80000017L)       
 #define IO_REPARSE_TAG_WCI                      (0x80000018L)       
-#define IO_REPARSE_TAG_GLOBAL_REPARSE           (0x80000019L)       
+#define IO_REPARSE_TAG_GLOBAL_REPARSE           (0xA0000019L)       
 #define IO_REPARSE_TAG_CLOUD                    (0x9000001AL)       
+#define IO_REPARSE_TAG_CLOUD_ROOT               (0x9000101AL)       
+#define IO_REPARSE_TAG_CLOUD_ON_DEMAND          (0x9000201AL)       
+#define IO_REPARSE_TAG_CLOUD_ROOT_ON_DEMAND     (0x9000301AL)       
 #define IO_REPARSE_TAG_APPEXECLINK              (0x8000001BL)       
 #define IO_REPARSE_TAG_GVFS                     (0x9000001CL)       
+#define IO_REPARSE_TAG_WCI_TOMBSTONE            (0xA000001FL)       
+#define IO_REPARSE_TAG_UNHANDLED                (0x80000020L)       
+#define IO_REPARSE_TAG_ONEDRIVE                 (0x80000021L)       
+#define IO_REPARSE_TAG_GVFS_TOMBSTONE           (0xA0000022L)       
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
 
@@ -13173,79 +13410,92 @@ DEFINE_GUID(GUID_EXECUTION_REQUIRED_REQUEST_TIMEOUT, 0x3166bc41, 0x7e98, 0x4e03,
 // Specifies the subgroup which will contain all of the video
 // settings for a single policy.
 //
+// {7516b95f-f776-4464-8c53-06167f40cc99}
+//
 DEFINE_GUID( GUID_VIDEO_SUBGROUP, 0x7516B95F, 0xF776, 0x4464, 0x8C, 0x53, 0x06, 0x16, 0x7F, 0x40, 0xCC, 0x99 );
 
 //
 // Specifies (in seconds) how long we wait after the last user input has been
-// recieved before we power off the video.
+// received before we power off the video.
+//
+// {3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e}
 //
 DEFINE_GUID( GUID_VIDEO_POWERDOWN_TIMEOUT, 0x3C0BC021, 0xC8A8, 0x4E07, 0xA9, 0x73, 0x6B, 0x14, 0xCB, 0xCB, 0x2B, 0x7E );
 
 //
 // Specifies whether adaptive display dimming is turned on or off.
-// 82DBCF2D-CD67-40C5-BFDC-9F1A5CCD4663
 //
 // N.B. This setting is DEPRECATED in Windows 8.1
+//
+// {82DBCF2D-CD67-40C5-BFDC-9F1A5CCD4663}
 //
 DEFINE_GUID( GUID_VIDEO_ANNOYANCE_TIMEOUT, 0x82DBCF2D, 0xCD67, 0x40C5, 0xBF, 0xDC, 0x9F, 0x1A, 0x5C, 0xCD, 0x46, 0x63 );
 
 //
 // Specifies how much adaptive dim time out will be increased by.
-// EED904DF-B142-4183-B10B-5A1197A37864
 //
 // N.B. This setting is DEPRECATED in Windows 8.1
+//
+// {EED904DF-B142-4183-B10B-5A1197A37864}
 //
 DEFINE_GUID( GUID_VIDEO_ADAPTIVE_PERCENT_INCREASE, 0xEED904DF, 0xB142, 0x4183, 0xB1, 0x0B, 0x5A, 0x11, 0x97, 0xA3, 0x78, 0x64 );
 
 //
 // Specifies (in seconds) how long we wait after the last user input has been
-// recieved before we dim the video.
+// received before we dim the video.
+//
+// {17aaa29b-8b43-4b94-aafe-35f64daaf1ee}
 //
 DEFINE_GUID( GUID_VIDEO_DIM_TIMEOUT, 0x17aaa29b, 0x8b43, 0x4b94, 0xaa, 0xfe, 0x35, 0xf6, 0x4d, 0xaa, 0xf1, 0xee);
 
 //
 // Specifies if the operating system should use adaptive timers (based on
-// previous behavior) to power down the video,
+// previous behavior) to power down the video.
+//
+// {90959d22-d6a1-49b9-af93-bce885ad335b}
 //
 DEFINE_GUID( GUID_VIDEO_ADAPTIVE_POWERDOWN, 0x90959D22, 0xD6A1, 0x49B9, 0xAF, 0x93, 0xBC, 0xE8, 0x85, 0xAD, 0x33, 0x5B );
 
 //
-// Specifies a maximum power consumption level.
-//
-DEFINE_GUID(GUID_DISK_MAX_POWER, 0x51dea550, 0xbb38, 0x4bc4, 0x99, 0x1b, 0xea, 0xcf, 0x37, 0xbe, 0x5e, 0xc8);
-
-//
 // Specifies if the monitor is currently being powered or not.
-// 02731015-4510-4526-99E6-E5A17EBD1AEA
+//
+// {02731015-4510-4526-99E6-E5A17EBD1AEA}
 //
 DEFINE_GUID( GUID_MONITOR_POWER_ON, 0x02731015, 0x4510, 0x4526, 0x99, 0xE6, 0xE5, 0xA1, 0x7E, 0xBD, 0x1A, 0xEA );
 
 //
-// Monitor brightness policy when in normal state
+// Monitor brightness policy when in normal state.
+//
 // {aded5e82-b909-4619-9949-f5d71dac0bcb}
+//
 DEFINE_GUID(GUID_DEVICE_POWER_POLICY_VIDEO_BRIGHTNESS, 0xaded5e82L, 0xb909, 0x4619, 0x99, 0x49, 0xf5, 0xd7, 0x1d, 0xac, 0x0b, 0xcb);
 
 //
+// Monitor brightness policy when in dim state.
 //
-// Monitor brightness policy when in dim state
 // {f1fbfde2-a960-4165-9f88-50667911ce96}
+//
 DEFINE_GUID(GUID_DEVICE_POWER_POLICY_VIDEO_DIM_BRIGHTNESS, 0xf1fbfde2, 0xa960, 0x4165, 0x9f, 0x88, 0x50, 0x66, 0x79, 0x11, 0xce, 0x96);
 
 //
-// Current Monitor brightness
+// Current monitor brightness.
+//
 // {8ffee2c6-2d01-46be-adb9-398addc5b4ff}
+//
 DEFINE_GUID(GUID_VIDEO_CURRENT_MONITOR_BRIGHTNESS, 0x8ffee2c6, 0x2d01, 0x46be, 0xad, 0xb9, 0x39, 0x8a, 0xdd, 0xc5, 0xb4, 0xff);
-
 
 //
 // Specifies if the operating system should use ambient light sensor to change
-// disply brightness adatively.
+// adaptively the display's brightness.
+//
 // {FBD9AA66-9553-4097-BA44-ED6E9D65EAB8}
+//
 DEFINE_GUID(GUID_VIDEO_ADAPTIVE_DISPLAY_BRIGHTNESS, 0xFBD9AA66, 0x9553, 0x4097, 0xBA, 0x44, 0xED, 0x6E, 0x9D, 0x65, 0xEA, 0xB8);
 
 //
 // Specifies a change in the current monitor's display state.
-// 6fe69556-704a-47a0-8f24-c28d936fda47
+//
+// {6fe69556-704a-47a0-8f24-c28d936fda47}
 //
 DEFINE_GUID(GUID_CONSOLE_DISPLAY_STATE, 0x6fe69556, 0x704a, 0x47a0, 0x8f, 0x24, 0xc2, 0x8d, 0x93, 0x6f, 0xda, 0x47);
 
@@ -13263,6 +13513,7 @@ DEFINE_GUID( GUID_ALLOW_DISPLAY_REQUIRED, 0xA9CEB8DA, 0xCD46, 0x44FB, 0xA9, 0x8B
 // effectively disables this feature.
 //
 // {8EC4B3A5-6868-48c2-BE75-4F3044BE88A7}
+//
 DEFINE_GUID(GUID_VIDEO_CONSOLE_LOCK_TIMEOUT, 0x8ec4b3a5, 0x6868, 0x48c2, 0xbe, 0x75, 0x4f, 0x30, 0x44, 0xbe, 0x88, 0xa7);
 
 
@@ -13279,6 +13530,13 @@ DEFINE_GUID(GUID_ADAPTIVE_POWER_BEHAVIOR_SUBGROUP, 0x8619b916, 0xe004, 0x4dd8, 0
 // {5ADBBFBC-074E-4da1-BA38-DB8B36B2C8F3}
 DEFINE_GUID(GUID_NON_ADAPTIVE_INPUT_TIMEOUT, 0x5adbbfbc, 0x74e, 0x4da1, 0xba, 0x38, 0xdb, 0x8b, 0x36, 0xb2, 0xc8, 0xf3);
 
+//
+// Specifies a change in the input controller(s) global system's state:
+// e.g. enabled, suppressed, filtered.
+//
+// {0E98FAE9-F45A-4DE1-A757-6031F197F6EA}
+DEFINE_GUID(GUID_ADAPTIVE_INPUT_CONTROLLER_STATE, 0xe98fae9, 0xf45a, 0x4de1, 0xa7, 0x57, 0x60, 0x31, 0xf1, 0x97, 0xf6, 0xea);
+
 // Harddisk settings
 // -----------------
 //
@@ -13286,6 +13544,11 @@ DEFINE_GUID(GUID_NON_ADAPTIVE_INPUT_TIMEOUT, 0x5adbbfbc, 0x74e, 0x4da1, 0xba, 0x
 // settings for a single policy.
 //
 DEFINE_GUID( GUID_DISK_SUBGROUP, 0x0012EE47, 0x9041, 0x4B5D, 0x9B, 0x77, 0x53, 0x5F, 0xBA, 0x8B, 0x14, 0x42 );
+
+//
+// Specifies a maximum power consumption level.
+//
+DEFINE_GUID(GUID_DISK_MAX_POWER, 0x51dea550, 0xbb38, 0x4bc4, 0x99, 0x1b, 0xea, 0xcf, 0x37, 0xbe, 0x5e, 0xc8);
 
 //
 // Specifies (in seconds) how long we wait after the last disk access
@@ -13607,7 +13870,7 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MAXIMUM, 0xBC5038F7, 0x23E0, 0x4960, 0x96, 
 //
 // Specifies a percentage (between 0 and 100) that the processor frequency
 // should never go above for Processor Power Efficiency Class 1.
-// For example, if this value is set to 80, then the processor frequency will 
+// For example, if this value is set to 80, then the processor frequency will
 // never be throttled above 80 percent of its maximum frequency by the system.
 //
 // {bc5038f7-23e0-4960-96da-33abaf5935ed}
@@ -13633,6 +13896,18 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MINIMUM, 0x893DEE8E, 0x2BEF, 0x41E0, 0x89, 
 // {893dee8e-2bef-41e0-89c6-b55d0929964d}
 //
 DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MINIMUM_1, 0x893DEE8E, 0x2BEF, 0x41E0, 0x89, 0xC6, 0xB5, 0x5D, 0x09, 0x29, 0x96, 0x4D );
+
+//
+// Specifies the maximum processor frequency (expresssed in MHz).
+//
+
+// {75B0AE3F-BCE0-45a7-8C89-C9611C25E100}
+DEFINE_GUID(GUID_PROCESSOR_FREQUENCY_LIMIT,
+0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x00);
+
+// {75B0AE3F-BCE0-45a7-8C89-C9611C25E101}
+DEFINE_GUID(GUID_PROCESSOR_FREQUENCY_LIMIT_1,
+0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x01);
 
 //
 // Specifies whether throttle states are allowed to be used even when
@@ -13838,7 +14113,7 @@ DEFINE_GUID(GUID_PROCESSOR_PERF_AUTONOMOUS_ACTIVITY_WINDOW,
 // Specifies whether the processor should perform duty cycling.
 //
 // {4E4450B3-6179-4e91-B8F1-5BB9938F81A1}
-DEFINE_GUID(GUID_PROCESSOR_DUTY_CYCLING, 
+DEFINE_GUID(GUID_PROCESSOR_DUTY_CYCLING,
 0x4e4450b3, 0x6179, 0x4e91, 0xb8, 0xf1, 0x5b, 0xb9, 0x93, 0x8f, 0x81, 0xa1);
 
 #define PROCESSOR_DUTY_CYCLING_DISABLED 0
@@ -13940,7 +14215,7 @@ DEFINE_GUID( GUID_PROCESSOR_CORE_PARKING_DECREASE_POLICY, 0x71021b41, 0xc749, 0x
 DEFINE_GUID( GUID_PROCESSOR_CORE_PARKING_MAX_CORES, 0xea062031, 0x0e34, 0x4ff1, 0x9b, 0x6d, 0xeb, 0x10, 0x59, 0x33, 0x40, 0x28);
 
 //
-// Specifies, on a per processor group basis, the maximum number of cores that 
+// Specifies, on a per processor group basis, the maximum number of cores that
 // can be kept unparked for Processor Power Efficiency Class 1.
 //
 // {ea062031-0e34-4ff1-9b6d-eb1059334029}
@@ -14136,7 +14411,7 @@ DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT, 0x0822df31, 0x9c83, 0x441c, 0xa0,
 DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF, 0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x71);
 
 //
-// Specifies the processor performance state in response to latency sensitivity 
+// Specifies the processor performance state in response to latency sensitivity
 // hints for Processor Power Efficiency Class 1.
 //
 // {619b7505-003b-4e82-b7a6-4dd29c300972}
@@ -14269,6 +14544,16 @@ DEFINE_GUID( GUID_CONNECTIVITY_IN_STANDBY, 0xF15576E8, 0x98B7, 0x4186, 0xB9, 0x4
 
 #define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0
 #define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1
+#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED_LID_CLOSE 2
+
+//
+// Specifies the mode for disconnected standby. 
+// 
+// 68AFB2D9-EE95-47A8-8F50-4115088073B1
+DEFINE_GUID( GUID_DISCONNECTED_STANDBY_MODE, 0x68AFB2D9, 0xEE95, 0x47A8, 0x8F, 0x50, 0x41, 0x15, 0x08, 0x80, 0x73, 0xB1 );
+
+#define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0
+#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1 
 
 // AC/DC power source
 // ------------------
@@ -14647,6 +14932,10 @@ typedef enum {
     ThermalStandby,
     SystemHiberFileType,
     PhysicalPowerButtonPress,
+    QueryPotentialDripsConstraint,
+    EnergyTrackerCreate,
+    EnergyTrackerQuery,
+    UpdateBlackBoxRecorder,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -14734,6 +15023,11 @@ typedef enum {
     MonitorRequestReasonResumeS4,
     MonitorRequestReasonTerminal,
     MonitorRequestReasonPdcSignal,
+    MonitorRequestReasonAcDcDisplayBurstSuppressed,
+    MonitorRequestReasonSystemStateEntered, // When CS exit happens because system
+                                            // transition to S4/S5, please note this
+                                            // reason is different than ReasonSxTransition.
+    MonitorRequestReasonWinrt,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -15084,6 +15378,7 @@ typedef struct {
 #define PPM_FIRMWARE_OSC          0x00010000
 #define PPM_FIRMWARE_PDC          0x00020000
 #define PPM_FIRMWARE_CPC          0x00040000
+#define PPM_FIRMWARE_LPI          0x00080000
 
 //
 // Processor performance and idle controls implementations.
@@ -15099,6 +15394,7 @@ typedef struct {
 #define PPM_IDLE_IMPLEMENTATION_CSTATES          0x00000001
 #define PPM_IDLE_IMPLEMENTATION_PEP              0x00000002
 #define PPM_IDLE_IMPLEMENTATION_MICROPEP         0x00000003
+#define PPM_IDLE_IMPLEMENTATION_LPISTATES        0x00000004
 
 //
 // Processor Power Management WMI interface.
@@ -15196,6 +15492,7 @@ typedef struct {
 #define POWER_ACTION_OVERRIDE_APPS      0x00000004
 #define POWER_ACTION_HIBERBOOT          0x00000008
 #define POWER_ACTION_USER_NOTIFY        0x00000010  // Indicate User-mode of an impending action.
+#define POWER_ACTION_DOZE_TO_HIBERNATE  0x00000020
 #define POWER_ACTION_PSEUDO_TRANSITION  0x08000000
 #define POWER_ACTION_LIGHTEST_FIRST     0x10000000
 #define POWER_ACTION_LOCK_CONSOLE       0x20000000
@@ -16525,7 +16822,7 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 //
 
 #define IMAGE_REL_ARM64_ABSOLUTE        0x0000  // No relocation required
-#define IMAGE_REL_ARM64_ADDR32          0x0001  // 32 bit address. Review! do we need it? 
+#define IMAGE_REL_ARM64_ADDR32          0x0001  // 32 bit address. Review! do we need it?
 #define IMAGE_REL_ARM64_ADDR32NB        0x0002  // 32 bit address w/o image base (RVA: for Data/PData/XData)
 #define IMAGE_REL_ARM64_BRANCH26        0x0003  // 26 bit offset << 2 & sign ext. for B & BL
 #define IMAGE_REL_ARM64_PAGEBASE_REL21  0x0004  // ADRP
@@ -16539,6 +16836,7 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 #define IMAGE_REL_ARM64_TOKEN           0x000C
 #define IMAGE_REL_ARM64_SECTION         0x000D  // Section table index
 #define IMAGE_REL_ARM64_ADDR64          0x000E  // 64 bit address
+#define IMAGE_REL_ARM64_BRANCH19        0x000F  // 19 bit offset << 2 & sign ext. for conditional B
 
 //
 // x64 relocations
@@ -16804,6 +17102,8 @@ typedef IMAGE_BASE_RELOCATION UNALIGNED * PIMAGE_BASE_RELOCATION;
 #define IMAGE_ARCHIVE_PAD                    "\n"
 #define IMAGE_ARCHIVE_LINKER_MEMBER          "/               "
 #define IMAGE_ARCHIVE_LONGNAMES_MEMBER       "//              "
+#define IMAGE_ARCHIVE_HYBRIDMAP_MEMBER       "/<HYBRIDMAP>/   "
+
 
 typedef struct _IMAGE_ARCHIVE_MEMBER_HEADER {
     BYTE     Name[16];                          // File member name - `/' terminated.
@@ -17100,6 +17400,8 @@ typedef struct _IMAGE_RESOURCE_DATA_ENTRY {
     DWORD   Reserved;
 } IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
 
+// begin_ntoshvp
+
 //
 // Code Integrity in loadconfig (CI)
 //
@@ -17125,11 +17427,80 @@ typedef struct _IMAGE_DYNAMIC_RELOCATION_TABLE {
 // Dynamic value relocation entries following IMAGE_DYNAMIC_RELOCATION_TABLE
 //
 
-typedef struct _IMAGE_DYNAMIC_RELOCATION {
-    PVOID Symbol;
-    DWORD BaseRelocSize;
+#include "pshpack1.h"
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION32 {
+    DWORD      Symbol;
+    DWORD      BaseRelocSize;
 //  IMAGE_BASE_RELOCATION BaseRelocations[0];
-} IMAGE_DYNAMIC_RELOCATION, *PIMAGE_DYNAMIC_RELOCATION;
+} IMAGE_DYNAMIC_RELOCATION32, *PIMAGE_DYNAMIC_RELOCATION32;
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION64 {
+    ULONGLONG  Symbol;
+    DWORD      BaseRelocSize;
+//  IMAGE_BASE_RELOCATION BaseRelocations[0];
+} IMAGE_DYNAMIC_RELOCATION64, *PIMAGE_DYNAMIC_RELOCATION64;
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION32_V2 {
+    DWORD      HeaderSize;
+    DWORD      FixupInfoSize;
+    DWORD      Symbol;
+    DWORD      SymbolGroup;
+    DWORD      Flags;
+    // ...     variable length header fields
+    // BYTE    FixupInfo[FixupInfoSize]
+} IMAGE_DYNAMIC_RELOCATION32_V2, *PIMAGE_DYNAMIC_RELOCATION32_V2;
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION64_V2 {
+    DWORD      HeaderSize;
+    DWORD      FixupInfoSize;
+    ULONGLONG  Symbol;
+    DWORD      SymbolGroup;
+    DWORD      Flags;
+    // ...     variable length header fields
+    // BYTE    FixupInfo[FixupInfoSize]
+} IMAGE_DYNAMIC_RELOCATION64_V2, *PIMAGE_DYNAMIC_RELOCATION64_V2;
+
+#include "poppack.h"                    // Back to 4 byte packing
+
+#ifdef _WIN64
+typedef IMAGE_DYNAMIC_RELOCATION64          IMAGE_DYNAMIC_RELOCATION;
+typedef PIMAGE_DYNAMIC_RELOCATION64         PIMAGE_DYNAMIC_RELOCATION;
+typedef IMAGE_DYNAMIC_RELOCATION64_V2       IMAGE_DYNAMIC_RELOCATION_V2;
+typedef PIMAGE_DYNAMIC_RELOCATION64_V2      PIMAGE_DYNAMIC_RELOCATION_V2;
+#else
+typedef IMAGE_DYNAMIC_RELOCATION32          IMAGE_DYNAMIC_RELOCATION;
+typedef PIMAGE_DYNAMIC_RELOCATION32         PIMAGE_DYNAMIC_RELOCATION;
+typedef IMAGE_DYNAMIC_RELOCATION32_V2       IMAGE_DYNAMIC_RELOCATION_V2;
+typedef PIMAGE_DYNAMIC_RELOCATION32_V2      PIMAGE_DYNAMIC_RELOCATION_V2;
+#endif
+
+//
+// Defined symbolic dynamic relocation entries.
+//
+
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_RF_PROLOGUE   0x00000001
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_RF_EPILOGUE   0x00000002
+
+#include "pshpack1.h"
+
+typedef struct _IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER {
+    BYTE       PrologueByteCount;
+    // BYTE    PrologueBytes[PrologueByteCount];
+} IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER;
+typedef IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER UNALIGNED * PIMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER;
+
+typedef struct _IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER {
+    DWORD      EpilogueCount;
+    BYTE       EpilogueByteCount;
+    BYTE       BranchDescriptorElementSize;
+    WORD       BranchDescriptorCount;
+    // BYTE    BranchDescriptors[...];
+    // BYTE    BranchDescriptorBitMap[...];
+} IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER;
+typedef IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER UNALIGNED * PIMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER;
+
+#include "poppack.h"                    // Back to 4 byte packing
 
 //
 // Load Configuration Directory Entry
@@ -17167,7 +17538,14 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     DWORD   GuardLongJumpTargetTable;       // VA
     DWORD   GuardLongJumpTargetCount;
     DWORD   DynamicValueRelocTable;         // VA
-    DWORD   HybridMetadataPointer;
+    DWORD   CHPEMetadataPointer;
+    DWORD   GuardRFFailureRoutine;          // VA
+    DWORD   GuardRFFailureRoutineFunctionPointer; // VA
+    DWORD   DynamicValueRelocTableOffset;
+    WORD    DynamicValueRelocTableSection;
+    WORD    Reserved2;
+    DWORD   GuardRFVerifyStackPointerFunctionPointer; // VA
+    DWORD   HotPatchTableOffset;
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -17202,9 +17580,18 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     ULONGLONG  GuardLongJumpTargetTable;       // VA
     ULONGLONG  GuardLongJumpTargetCount;
     ULONGLONG  DynamicValueRelocTable;         // VA
-    ULONGLONG  HybridMetadataPointer;          // VA
+    ULONGLONG  CHPEMetadataPointer;            // VA
+    ULONGLONG  GuardRFFailureRoutine;          // VA
+    ULONGLONG  GuardRFFailureRoutineFunctionPointer; // VA
+    DWORD      DynamicValueRelocTableOffset;
+    WORD       DynamicValueRelocTableSection;
+    WORD       Reserved2;
+    ULONGLONG  GuardRFVerifyStackPointerFunctionPointer; // VA
+    DWORD      HotPatchTableOffset;
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
+// end_ntoshvp 
+// begin_ntoshvp
 
 #ifdef _WIN64
 typedef IMAGE_LOAD_CONFIG_DIRECTORY64     IMAGE_LOAD_CONFIG_DIRECTORY;
@@ -17214,15 +17601,63 @@ typedef IMAGE_LOAD_CONFIG_DIRECTORY32     IMAGE_LOAD_CONFIG_DIRECTORY;
 typedef PIMAGE_LOAD_CONFIG_DIRECTORY32    PIMAGE_LOAD_CONFIG_DIRECTORY;
 #endif
 
+// end_ntoshvp
+
+typedef struct _IMAGE_HOT_PATCH_INFO {
+    DWORD Version;
+    DWORD Size;
+    DWORD SequenceNumber;
+    DWORD BaseImageList;
+    DWORD BaseImageCount;
+} IMAGE_HOT_PATCH_INFO, *PIMAGE_HOT_PATCH_INFO;
+
+typedef struct _IMAGE_HOT_PATCH_BASE {
+    DWORD SequenceNumber;
+    DWORD Flags;
+    DWORD OriginalTimeDateStamp;
+    DWORD OriginalCheckSum;
+    DWORD CodeIntegrityInfo;
+    DWORD CodeIntegritySize;
+    DWORD PatchTable;
+} IMAGE_HOT_PATCH_BASE, *PIMAGE_HOT_PATCH_BASE;
+
+typedef struct _IMAGE_HOT_PATCH_HASHES {
+    BYTE  SHA256[32];
+    BYTE  SHA1[20];
+} IMAGE_HOT_PATCH_HASHES, *PIMAGE_HOT_PATCH_HASHES;
+
+#define IMAGE_HOT_PATCH_BASE_OBLIGATORY     0x00000001
+
+#define IMAGE_HOT_PATCH_CHUNK_INVERSE       0x80000000
+#define IMAGE_HOT_PATCH_CHUNK_OBLIGATORY    0x40000000
+#define IMAGE_HOT_PATCH_CHUNK_RESERVED      0x3FF03000
+#define IMAGE_HOT_PATCH_CHUNK_TYPE          0x000FC000
+#define IMAGE_HOT_PATCH_CHUNK_SOURCE_RVA    0x00008000
+#define IMAGE_HOT_PATCH_CHUNK_TARGET_RVA    0x00004000
+#define IMAGE_HOT_PATCH_CHUNK_SIZE          0x00000FFF
+
+#define IMAGE_HOT_PATCH_NONE                0x00000000
+#define IMAGE_HOT_PATCH_FUNCTION            0x0001C000
+#define IMAGE_HOT_PATCH_ABSOLUTE            0x0002C000
+#define IMAGE_HOT_PATCH_REL32               0x0003C000
+#define IMAGE_HOT_PATCH_CALL_TARGET         0x00044000
+#define IMAGE_HOT_PATCH_INDIRECT            0x0005C000
+#define IMAGE_HOT_PATCH_NO_CALL_TARGET      0x00064000
+#define IMAGE_HOT_PATCH_DYNAMIC_VALUE       0x00078000
+
 #define IMAGE_GUARD_CF_INSTRUMENTED                    0x00000100 // Module performs control flow integrity checks using system-supplied support
 #define IMAGE_GUARD_CFW_INSTRUMENTED                   0x00000200 // Module performs control flow and write integrity checks
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_PRESENT          0x00000400 // Module contains valid control flow target metadata
 #define IMAGE_GUARD_SECURITY_COOKIE_UNUSED             0x00000800 // Module does not make use of the /GS security cookie
 #define IMAGE_GUARD_PROTECT_DELAYLOAD_IAT              0x00001000 // Module supports read only delay load IAT
 #define IMAGE_GUARD_DELAYLOAD_IAT_IN_ITS_OWN_SECTION   0x00002000 // Delayload import table in its own .didat section (with nothing else in it) that can be freely reprotected
-#define IMAGE_GUARD_CF_EXPORT_SUPPRESSION_INFO_PRESENT 0x00004000 // Module contains suppressed export information
+#define IMAGE_GUARD_CF_EXPORT_SUPPRESSION_INFO_PRESENT 0x00004000 // Module contains suppressed export information. This also infers that the address taken
+                                                                  // taken IAT table is also present in the load config.
 #define IMAGE_GUARD_CF_ENABLE_EXPORT_SUPPRESSION       0x00008000 // Module enables suppression of exports
 #define IMAGE_GUARD_CF_LONGJUMP_TABLE_PRESENT          0x00010000 // Module contains longjmp target information
+#define IMAGE_GUARD_RF_INSTRUMENTED                    0x00020000 // Module contains return flow instrumentation and metadata
+#define IMAGE_GUARD_RF_ENABLE                          0x00040000 // Module requests that the OS enable return flow protection
+#define IMAGE_GUARD_RF_STRICT                          0x00080000 // Module requests that the OS enable return flow protection in strict mode
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK        0xF0000000 // Stride of Guard CF function table encoded in these bits (additional count of bytes per element)
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_SHIFT       28         // Shift to right-justify Guard CF function table stride
 
@@ -17231,7 +17666,7 @@ typedef PIMAGE_LOAD_CONFIG_DIRECTORY32    PIMAGE_LOAD_CONFIG_DIRECTORY;
 //
 
 #define IMAGE_GUARD_FLAG_FID_SUPPRESSED               0x01       // The containing GFID entry is suppressed
-#define IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED            0x02       // The containing GFID entry is suppressed
+#define IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED            0x02       // The containing GFID entry is export suppressed
 
 //
 // WIN CE Exception table format
@@ -17372,6 +17807,7 @@ typedef struct _IMAGE_DEBUG_DIRECTORY {
 #define IMAGE_DEBUG_TYPE_POGO             13
 #define IMAGE_DEBUG_TYPE_ILTCG            14
 #define IMAGE_DEBUG_TYPE_MPX              15
+#define IMAGE_DEBUG_TYPE_REPRO            16
 
 
 typedef struct _IMAGE_COFF_SYMBOLS_HEADER {
@@ -17566,7 +18002,8 @@ typedef enum IMPORT_OBJECT_NAME_TYPE
     IMPORT_OBJECT_NAME = 1,             // Import name == public symbol name.
     IMPORT_OBJECT_NAME_NO_PREFIX = 2,   // Import name == public symbol name skipping leading ?, @, or optionally _.
     IMPORT_OBJECT_NAME_UNDECORATE = 3,  // Import name == public symbol name skipping leading ?, @, or optionally _
-                                        // and truncating at first @
+                                        //  and truncating at first @.
+    IMPORT_OBJECT_NAME_EXPORTAS = 4,    // Import name == a name is explicitly provided after the DLL name.
 } IMPORT_OBJECT_NAME_TYPE;
 
 
@@ -18201,109 +18638,7 @@ RtlVirtualUnwind(
 #endif // _ARM64_
 
 
-
-#if defined(_IA64_)
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-_IRQL_requires_max_(PASSIVE_LEVEL)
-_Success_(return!=0)
-NTSYSAPI
-BOOLEAN
-NTAPI
-RtlAddFunctionTable(
-    _In_reads_(EntryCount) PRUNTIME_FUNCTION FunctionTable,
-    _In_ DWORD EntryCount,
-    _In_ ULONGLONG BaseAddress,
-    _In_ ULONGLONG TargetGp
-    );
-
-
-_IRQL_requires_max_(PASSIVE_LEVEL)
-_Success_(return!=0)
-NTSYSAPI
-BOOLEAN
-NTAPI
-RtlDeleteFunctionTable(
-    _In_ PRUNTIME_FUNCTION FunctionTable
-    );
-
-
-_IRQL_requires_max_(PASSIVE_LEVEL)
-_Success_(return!=0)
-NTSYSAPI
-BOOLEAN
-NTAPI
-RtlInstallFunctionTableCallback(
-    _In_ DWORD64 TableIdentifier,
-    _In_ DWORD64 BaseAddress,
-    _In_ DWORD Length,
-    _In_ DWORD64 TargetGp,
-    _In_ PGET_RUNTIME_FUNCTION_CALLBACK Callback,
-    _In_opt_ PVOID Context,
-    _In_opt_ PCWSTR OutOfProcessCallbackDll
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
-_IRQL_requires_max_(SYNCH_LEVEL)
-_IRQL_requires_min_(PASSIVE_LEVEL)
-NTSYSAPI
-PRUNTIME_FUNCTION
-NTAPI
-RtlLookupFunctionEntry(
-    _In_ ULONGLONG ControlPc,
-    _Out_ PULONGLONG ImageBase,
-    _Out_ PULONGLONG TargetGp
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-NTSYSAPI
-VOID
-NTAPI
-RtlRestoreContext(
-    _In_ PCONTEXT ContextRecord,
-    _In_opt_ struct _EXCEPTION_RECORD * ExceptionRecord
-    );
-
-
-NTSYSAPI
-ULONGLONG
-NTAPI
-RtlVirtualUnwind(
-    _In_ ULONGLONG ImageBase,
-    _In_ ULONGLONG ControlPc,
-    _In_ PRUNTIME_FUNCTION FunctionEntry,
-    _Inout_ PCONTEXT ContextRecord,
-    _Out_ PBOOLEAN InFunction,
-    _Out_ PFRAME_POINTERS EstablisherFrame,
-    _Inout_opt_ PKNONVOLATILE_CONTEXT_POINTERS ContextPointers
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#endif // _IA64_
-
-
-
-#if defined(_IA64_)
+#if defined(_CHPE_X86_ARM64_)
 
 #pragma region Application or OneCore Family
 
@@ -18313,19 +18648,36 @@ NTSYSAPI
 VOID
 NTAPI
 RtlUnwindEx(
-    _In_opt_ FRAME_POINTERS TargetFrame,
+    _In_opt_ PVOID TargetFrame,
     _In_opt_ PVOID TargetIp,
     _In_opt_ PEXCEPTION_RECORD ExceptionRecord,
     _In_ PVOID ReturnValue,
     _In_ PCONTEXT ContextRecord,
-    _In_opt_ PUNWIND_HISTORY_TABLE HistoryTable
+    _In_opt_ PVOID HistoryTable
     );
 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#endif // _IA64_
+#pragma region Application or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+NTSYSAPI
+PIMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
+NTAPI
+RtlLookupFunctionEntryCHPE(
+    _In_ ULONG_PTR ControlPc,
+    _Out_ PULONG_PTR ImageBase,
+    _Inout_opt_ PVOID HistoryTable
+    );
+
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#endif // _X86_
 
 
 #pragma region Application or OneCore Family
@@ -18359,6 +18711,7 @@ RtlPcToFileHeader(
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
 _Check_return_
 NTSYSAPI
 SIZE_T
@@ -18586,46 +18939,53 @@ typedef struct _RTL_BARRIER {
 //       for compatibility with previous handling of the
 //       STATUS_STACK_BUFFER_OVERRUN exception status code.
 //
-
-#define FAST_FAIL_LEGACY_GS_VIOLATION          0
-#define FAST_FAIL_VTGUARD_CHECK_FAILURE        1
-#define FAST_FAIL_STACK_COOKIE_CHECK_FAILURE   2
-#define FAST_FAIL_CORRUPT_LIST_ENTRY           3
-#define FAST_FAIL_INCORRECT_STACK              4
-#define FAST_FAIL_INVALID_ARG                  5
-#define FAST_FAIL_GS_COOKIE_INIT               6
-#define FAST_FAIL_FATAL_APP_EXIT               7
-#define FAST_FAIL_RANGE_CHECK_FAILURE          8
-#define FAST_FAIL_UNSAFE_REGISTRY_ACCESS       9
-#define FAST_FAIL_GUARD_ICALL_CHECK_FAILURE    10
-#define FAST_FAIL_GUARD_WRITE_CHECK_FAILURE    11
-#define FAST_FAIL_INVALID_FIBER_SWITCH         12
-#define FAST_FAIL_INVALID_SET_OF_CONTEXT       13
-#define FAST_FAIL_INVALID_REFERENCE_COUNT      14
-#define FAST_FAIL_INVALID_JUMP_BUFFER          18
-#define FAST_FAIL_MRDATA_MODIFIED              19
-#define FAST_FAIL_CERTIFICATION_FAILURE        20
-#define FAST_FAIL_INVALID_EXCEPTION_CHAIN      21
-#define FAST_FAIL_CRYPTO_LIBRARY               22
-#define FAST_FAIL_INVALID_CALL_IN_DLL_CALLOUT  23
-#define FAST_FAIL_INVALID_IMAGE_BASE           24
-#define FAST_FAIL_DLOAD_PROTECTION_FAILURE     25
-#define FAST_FAIL_UNSAFE_EXTENSION_CALL        26
-#define FAST_FAIL_DEPRECATED_SERVICE_INVOKED   27
-#define FAST_FAIL_INVALID_BUFFER_ACCESS        28
-#define FAST_FAIL_INVALID_BALANCED_TREE        29
-#define FAST_FAIL_INVALID_NEXT_THREAD          30
-#define FAST_FAIL_GUARD_ICALL_CHECK_SUPPRESSED 31         // Telemetry, nonfatal
-#define FAST_FAIL_APCS_DISABLED                32
-#define FAST_FAIL_INVALID_IDLE_STATE           33
-#define FAST_FAIL_MRDATA_PROTECTION_FAILURE    34
-#define FAST_FAIL_UNEXPECTED_HEAP_EXCEPTION    35
-#define FAST_FAIL_INVALID_LOCK_STATE           36
-#define FAST_FAIL_GUARD_JUMPTABLE              37         // Known to compiler, must retain value 37
-#define FAST_FAIL_INVALID_LONGJUMP_TARGET      38
-#define FAST_FAIL_INVALID_DISPATCH_CONTEXT     39
-#define FAST_FAIL_INVALID_THREAD               40
-#define FAST_FAIL_INVALID_FAST_FAIL_CODE       0xFFFFFFFF
+#define FAST_FAIL_LEGACY_GS_VIOLATION               0
+#define FAST_FAIL_VTGUARD_CHECK_FAILURE             1
+#define FAST_FAIL_STACK_COOKIE_CHECK_FAILURE        2
+#define FAST_FAIL_CORRUPT_LIST_ENTRY                3
+#define FAST_FAIL_INCORRECT_STACK                   4
+#define FAST_FAIL_INVALID_ARG                       5
+#define FAST_FAIL_GS_COOKIE_INIT                    6
+#define FAST_FAIL_FATAL_APP_EXIT                    7
+#define FAST_FAIL_RANGE_CHECK_FAILURE               8
+#define FAST_FAIL_UNSAFE_REGISTRY_ACCESS            9
+#define FAST_FAIL_GUARD_ICALL_CHECK_FAILURE         10
+#define FAST_FAIL_GUARD_WRITE_CHECK_FAILURE         11
+#define FAST_FAIL_INVALID_FIBER_SWITCH              12
+#define FAST_FAIL_INVALID_SET_OF_CONTEXT            13
+#define FAST_FAIL_INVALID_REFERENCE_COUNT           14
+#define FAST_FAIL_INVALID_JUMP_BUFFER               18
+#define FAST_FAIL_MRDATA_MODIFIED                   19
+#define FAST_FAIL_CERTIFICATION_FAILURE             20
+#define FAST_FAIL_INVALID_EXCEPTION_CHAIN           21
+#define FAST_FAIL_CRYPTO_LIBRARY                    22
+#define FAST_FAIL_INVALID_CALL_IN_DLL_CALLOUT       23
+#define FAST_FAIL_INVALID_IMAGE_BASE                24
+#define FAST_FAIL_DLOAD_PROTECTION_FAILURE          25
+#define FAST_FAIL_UNSAFE_EXTENSION_CALL             26
+#define FAST_FAIL_DEPRECATED_SERVICE_INVOKED        27
+#define FAST_FAIL_INVALID_BUFFER_ACCESS             28
+#define FAST_FAIL_INVALID_BALANCED_TREE             29
+#define FAST_FAIL_INVALID_NEXT_THREAD               30
+#define FAST_FAIL_GUARD_ICALL_CHECK_SUPPRESSED      31         // Telemetry, nonfatal
+#define FAST_FAIL_APCS_DISABLED                     32
+#define FAST_FAIL_INVALID_IDLE_STATE                33
+#define FAST_FAIL_MRDATA_PROTECTION_FAILURE         34
+#define FAST_FAIL_UNEXPECTED_HEAP_EXCEPTION         35
+#define FAST_FAIL_INVALID_LOCK_STATE                36
+#define FAST_FAIL_GUARD_JUMPTABLE                   37         // Known to compiler, must retain value 37
+#define FAST_FAIL_INVALID_LONGJUMP_TARGET           38
+#define FAST_FAIL_INVALID_DISPATCH_CONTEXT          39
+#define FAST_FAIL_INVALID_THREAD                    40
+#define FAST_FAIL_INVALID_SYSCALL_NUMBER            41         // Telemetry, nonfatal
+#define FAST_FAIL_INVALID_FILE_OPERATION            42         // Telemetry, nonfatal
+#define FAST_FAIL_LPAC_ACCESS_DENIED                43         // Telemetry, nonfatal
+#define FAST_FAIL_GUARD_SS_FAILURE                  44
+#define FAST_FAIL_LOADER_CONTINUITY_FAILURE         45         // Telemetry, nonfatal
+#define FAST_FAIL_GUARD_EXPORT_SUPPRESSION_FAILURE  46
+#define FAST_FAIL_INVALID_CONTROL_STACK             47
+#define FAST_FAIL_SET_CONTEXT_DENIED                48
+#define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
 
@@ -18653,6 +19013,8 @@ __fastfail(
 #define HEAP_MAXIMUM_TAG                0x0FFF              
 #define HEAP_PSEUDO_TAG_FLAG            0x8000              
 #define HEAP_TAG_SHIFT                  18                  
+#define HEAP_CREATE_SEGMENT_HEAP        0x00000100      
+#define HEAP_CREATE_HARDENED            0x00000200      
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 #if !defined(MIDL_PASS)
@@ -19057,7 +19419,8 @@ typedef RTL_UMS_SCHEDULER_ENTRY_POINT *PRTL_UMS_SCHEDULER_ENTRY_POINT;
 //
 
 #define CTMF_INCLUDE_APPCONTAINER   0x00000001UL
-#define CTMF_VALID_FLAGS            (CTMF_INCLUDE_APPCONTAINER)
+#define CTMF_INCLUDE_LPAC           0x00000002UL
+#define CTMF_VALID_FLAGS            (CTMF_INCLUDE_APPCONTAINER | CTMF_INCLUDE_LPAC)
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -19127,6 +19490,92 @@ RtlOsDeploymentState(
 
 
 #endif // NTDDI_VERSION >= NTDDI_WINTHRESHOLD
+
+
+//
+// Flush routines for DAX mapped files
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) && defined(_AMD64_)
+typedef struct _NV_MEMORY_RANGE {
+    VOID *BaseAddress;
+    SIZE_T Length;
+} NV_MEMORY_RANGE, *PNV_MEMORY_RANGE;
+
+//
+// Flags for RtlFlushNonVolatileMemory and RtlFlushNonVolatileMemoryRanges
+//
+
+#define FLUSH_NV_MEMORY_IN_FLAG_NO_DRAIN    (0x00000001)
+
+//
+// Default token is used to call the flush and drain routines without the
+// RtlGetNonVolatileToken call, for callers who know the details about the
+// region they are flushing.
+//
+
+#define FLUSH_NV_MEMORY_DEFAULT_TOKEN       (ULONG_PTR)(-1)
+
+_IRQL_requires_max_(APC_LEVEL)
+NTSYSAPI
+DWORD   
+NTAPI
+RtlGetNonVolatileToken (
+    _In_reads_bytes_(Size) PVOID NvBuffer,
+    _In_ SIZE_T Size,
+    _Outptr_ PVOID *NvToken
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+DWORD   
+NTAPI
+RtlFreeNonVolatileToken (
+    _In_ PVOID NvToken
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+DWORD   
+NTAPI
+RtlFlushNonVolatileMemory (
+    _In_ PVOID NvToken,
+    _In_reads_bytes_(Size) PVOID NvBuffer,
+    _In_ SIZE_T Size,
+    _In_ DWORD Flags
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+DWORD   
+NTAPI
+RtlDrainNonVolatileFlush (
+    _In_ PVOID NvToken
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+DWORD   
+NTAPI
+RtlWriteNonVolatileMemory (
+    _In_ PVOID NvToken,
+    _Out_writes_bytes_(Size) VOID UNALIGNED *NvDestination,
+    _In_reads_bytes_(Size) VOID UNALIGNED *Source,
+    _In_ SIZE_T Size,
+    _In_ DWORD Flags
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+DWORD   
+NTAPI
+RtlFlushNonVolatileMemoryRanges (
+    _In_ PVOID NvToken,
+    _In_reads_(NumRanges) PNV_MEMORY_RANGE NvRanges,
+    _In_ SIZE_T NumRanges,
+    _In_ DWORD Flags
+    );
+#endif // (NTDDI_VERSION >= NTDDI_RS2) && defined(_AMD64_)
 
 
 typedef struct _RTL_CRITICAL_SECTION_DEBUG {
@@ -19710,18 +20159,25 @@ struct _PACKEDEVENTINFO
 
 #define REG_OPTION_OPEN_LINK        (0x00000008L)   // Open symbolic link
 
+#define REG_OPTION_DONT_VIRTUALIZE  (0x00000010L)   // Disable Open/Read/Write
+                                                    // virtualization for this
+                                                    // open and the resulting
+                                                    // handle.
+
 #define REG_LEGAL_OPTION            \
                 (REG_OPTION_RESERVED            |\
                  REG_OPTION_NON_VOLATILE        |\
                  REG_OPTION_VOLATILE            |\
                  REG_OPTION_CREATE_LINK         |\
                  REG_OPTION_BACKUP_RESTORE      |\
-                 REG_OPTION_OPEN_LINK)
+                 REG_OPTION_OPEN_LINK           |\
+                 REG_OPTION_DONT_VIRTUALIZE)
 
 #define REG_OPEN_LEGAL_OPTION       \
                 (REG_OPTION_RESERVED            |\
                  REG_OPTION_BACKUP_RESTORE      |\
-                 REG_OPTION_OPEN_LINK)
+                 REG_OPTION_OPEN_LINK           |\
+                 REG_OPTION_DONT_VIRTUALIZE)
 
 //
 // Key creation/open disposition
@@ -19762,6 +20218,7 @@ struct _PACKEDEVENTINFO
 // Unload Flags
 //
 #define REG_FORCE_UNLOAD            1
+#define REG_UNLOAD_LEGAL_FLAGS      (REG_FORCE_UNLOAD)
 
 //
 // Notify filter values

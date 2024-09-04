@@ -105,7 +105,7 @@ DEFINE_PROPERTYKEY(PKEY_Pairing_IsWifiOnlyDevice, 0x8807cae6, 0x7db6, 0x4f10, 0x
 #define DEVICEDISPLAY_DISCOVERYMETHOD_WSD               L"WSD"
 #define DEVICEDISPLAY_DISCOVERYMETHOD_WUSB              L"WUSB"
 #define DEVICEDISPLAY_DISCOVERYMETHOD_WFD               L"WiFiDirect"
-#define DEVICEDISPLAY_DISCOVERYMETHOD_INFRA             L"InfraCast"
+#define DEVICEDISPLAY_DISCOVERYMETHOD_ASP_INFRA         L"AspInfra"
 
 
 //  Name:     System.Device.BIOSVersion -- PKEY_Device_BIOSVersion

@@ -324,10 +324,31 @@ typedef struct _NCRYPT_KEY_ATTEST_PADDING_INFO {
 
 #define NCRYPT_CLAIM_AUTHORITY_ONLY          0x00000001
 #define NCRYPT_CLAIM_SUBJECT_ONLY            0x00000002
+#define NCRYPT_CLAIM_WEB_AUTH_SUBJECT_ONLY   0x00000102
 #define NCRYPT_CLAIM_AUTHORITY_AND_SUBJECT   0x00000003
 #define NCRYPT_CLAIM_UNKNOWN                 0x00001000
 
+
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+typedef struct __NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT
+{
+    UINT32 Magic;  // { 'A', 'W', 'A', 'K' } - 'KAWA'
+    UINT32 Version;  // 1 for the statement defined in this specification
+    UINT32 HeaderSize;  // 24
+    UINT32 cbCertifyInfo;
+    UINT32 cbSignature;
+    UINT32 cbTpmPublic;
+    // CertifyInfo[cbCertifyInfo];
+    // Signature[cbSignature];
+    // TpmPublic[cbTpmPublic];
+
+} NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT,*PNCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT;
+
+#endif// (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 //
 // NCrypt API Flags
 //
@@ -368,6 +389,11 @@ typedef struct _NCRYPT_KEY_ATTEST_PADDING_INFO {
 #define NCRYPT_PERSIST_ONLY_FLAG                0x40000000
 #define NCRYPT_PERSIST_FLAG                     0x80000000
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define NCRYPT_PREFER_VIRTUAL_ISOLATION_FLAG    0x00010000 // NCryptCreatePersistedKey NCryptImportKey
+#define NCRYPT_USE_VIRTUAL_ISOLATION_FLAG       0x00020000 // NCryptCreatePersistedKey NCryptImportKey
+#define NCRYPT_USE_PER_BOOT_KEY_FLAG            0x00040000 // NCryptCreatePersistedKey NCryptImportKey
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 //
 // Functions used to manage persisted keys.
@@ -562,6 +588,11 @@ NCryptCreatePersistedKey(
 #define NCRYPT_ECC_CURVE_NAME_LIST_PROPERTY     BCRYPT_ECC_CURVE_NAME_LIST
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define NCRYPT_USE_VIRTUAL_ISOLATION_PROPERTY   L"Virtual Iso"
+#define NCRYPT_USE_PER_BOOT_KEY_PROPERTY        L"Per Boot Key"
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 #define NCRYPT_PROVIDER_HANDLE_PROPERTY         L"Provider Handle"
 #define NCRYPT_PIN_PROPERTY                     L"SmartCardPin"
 #define NCRYPT_READER_PROPERTY                  L"SmartCardReader"
@@ -607,6 +638,7 @@ NCryptCreatePersistedKey(
 #define NCRYPT_PCP_PLATFORM_BINDING_PCRDIGESTLIST_PROPERTY L"PCP_PLATFORM_BINDING_PCRDIGESTLIST"
 #define NCRYPT_PCP_PLATFORM_BINDING_PCRDIGEST_PROPERTY     L"PCP_PLATFORM_BINDING_PCRDIGEST"
 #define NCRYPT_PCP_KEY_USAGE_POLICY_PROPERTY               L"PCP_KEY_USAGE_POLICY"
+#define NCRYPT_PCP_RSA_SCHEME_PROPERTY                     L"PCP_RSA_SCHEME"
 #define NCRYPT_PCP_TPM12_IDBINDING_PROPERTY                L"PCP_TPM12_IDBINDING"
 #define NCRYPT_PCP_TPM12_IDBINDING_DYNAMIC_PROPERTY        L"PCP_TPM12_IDBINDING_DYNAMIC"
 #define NCRYPT_PCP_TPM12_IDACTIVATION_PROPERTY             L"PCP_TPM12_IDACTIVATION"
@@ -621,6 +653,11 @@ NCryptCreatePersistedKey(
 #define NCRYPT_PCP_HMAC_AUTH_TICKET                        L"PCP_HMAC_AUTH_TICKET"
 #define NCRYPT_PCP_NO_DA_PROTECTION_PROPERTY               L"PCP_NO_DA_PROTECTION"
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define NCRYPT_PCP_TPM_MANUFACTURER_ID_PROPERTY            L"PCP_TPM_MANUFACTURER_ID"
+#define NCRYPT_PCP_TPM_FW_VERSION_PROPERTY                 L"PCP_TPM_FW_VERSION"
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 //
 // BCRYPT_PCP_KEY_USAGE_POLICY values
@@ -789,6 +826,17 @@ typedef struct __NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO
     BYTE        pabHMAC[32];
 } NCRYPT_PCP_HMAC_AUTH_SIGNATURE_INFO;
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+// NCRYPT_PCP_TPM_FW_VERSION property structure.
+typedef struct __NCRYPT_PCP_TPM_FW_VERSION_INFO
+{
+    UINT16      major1;
+    UINT16      major2;
+    UINT16      minor1;
+    UINT16      minor2;
+} NCRYPT_PCP_TPM_FW_VERSION_INFO;
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 // NCryptGetProperty flags
 #define NCRYPT_PERSIST_ONLY_FLAG        0x40000000

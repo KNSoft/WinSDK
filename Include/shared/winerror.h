@@ -34,29 +34,22 @@
 //
 //   3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
 //   1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
-//  +-+-+-+-+-+---------------------+-------------------------------+
-//  |S|R|C|N|r|    Facility         |               Code            |
-//  +-+-+-+-+-+---------------------+-------------------------------+
+//  +---+-+-+-----------------------+-------------------------------+
+//  |Sev|C|R|     Facility          |               Code            |
+//  +---+-+-+-----------------------+-------------------------------+
 //
 //  where
 //
-//      S - Severity - indicates success/fail
+//      Sev - is the severity code
 //
-//          0 - Success
-//          1 - Fail (COERROR)
+//          00 - Success
+//          01 - Informational
+//          10 - Warning
+//          11 - Error
 //
-//      R - reserved portion of the facility code, corresponds to NT's
-//              second severity bit.
+//      C - is the Customer code flag
 //
-//      C - reserved portion of the facility code, corresponds to NT's
-//              C field.
-//
-//      N - reserved portion of the facility code. Used to indicate a
-//              mapped NT status value.
-//
-//      r - reserved portion of the facility code. Reserved for internal
-//              use. Used to indicate HRESULT values that are not status
-//              values, but are instead message ids for display strings.
+//      R - is a reserved bit
 //
 //      Facility - is the facility code
 //
@@ -65,144 +58,145 @@
 //
 // Define the facility codes
 //
-#define FACILITY_XPS                     82
-#define FACILITY_XBOX                    2339
-#define FACILITY_XAML                    43
-#define FACILITY_USN                     129
-#define FACILITY_BLBUI                   128
-#define FACILITY_SPP                     256
-#define FACILITY_WSB_ONLINE              133
-#define FACILITY_DLS                     153
-#define FACILITY_BLB_CLI                 121
-#define FACILITY_BLB                     120
-#define FACILITY_WSBAPP                  122
-#define FACILITY_WPN                     62
-#define FACILITY_WMAAECMA                1996
-#define FACILITY_WINRM                   51
-#define FACILITY_WINPE                   61
-#define FACILITY_WINDOWSUPDATE           36
-#define FACILITY_WINDOWS_STORE           63
-#define FACILITY_WINDOWS_SETUP           48
-#define FACILITY_WINDOWS_DEFENDER        80
-#define FACILITY_WINDOWS_CE              24
-#define FACILITY_WINDOWS                 8
-#define FACILITY_WINCODEC_DWRITE_DWM     2200
-#define FACILITY_WIA                     33
-#define FACILITY_WER                     27
-#define FACILITY_WEP                     2049
-#define FACILITY_WEB_SOCKET              886
-#define FACILITY_WEB                     885
-#define FACILITY_USERMODE_VOLSNAP        130
-#define FACILITY_USERMODE_VOLMGR         56
-#define FACILITY_VISUALCPP               109
-#define FACILITY_USERMODE_VIRTUALIZATION 55
-#define FACILITY_USERMODE_VHD            58
-#define FACILITY_UTC                     1989
-#define FACILITY_URT                     19
-#define FACILITY_UMI                     22
-#define FACILITY_UI                      42
-#define FACILITY_TPM_SOFTWARE            41
-#define FACILITY_TPM_SERVICES            40
-#define FACILITY_TIERING                 131
-#define FACILITY_SYNCENGINE              2050
-#define FACILITY_SXS                     23
-#define FACILITY_STORAGE                 3
-#define FACILITY_STATEREPOSITORY         103
-#define FACILITY_STATE_MANAGEMENT        34
-#define FACILITY_SSPI                    9
-#define FACILITY_SQLITE                  1967
-#define FACILITY_USERMODE_SPACES         231
-#define FACILITY_SOS                     160
-#define FACILITY_SCARD                   16
-#define FACILITY_SHELL                   39
-#define FACILITY_SETUPAPI                15
-#define FACILITY_SECURITY                9
-#define FACILITY_USER_MODE_SECURITY_CORE 232
-#define FACILITY_SDIAG                   60
-#define FACILITY_USERMODE_SDBUS          2305
+#define FACILITY_NULL                    0
 #define FACILITY_RPC                     1
-#define FACILITY_RESTORE                 256
-#define FACILITY_SCRIPT                  112
-#define FACILITY_PARSE                   113
-#define FACILITY_RAS                     83
-#define FACILITY_POWERSHELL              84
+#define FACILITY_DISPATCH                2
+#define FACILITY_STORAGE                 3
+#define FACILITY_ITF                     4
+#define FACILITY_WIN32                   7
+#define FACILITY_WINDOWS                 8
+#define FACILITY_SSPI                    9
+#define FACILITY_SECURITY                9
+#define FACILITY_CONTROL                 10
+#define FACILITY_CERT                    11
+#define FACILITY_INTERNET                12
+#define FACILITY_MEDIASERVER             13
+#define FACILITY_MSMQ                    14
+#define FACILITY_SETUPAPI                15
+#define FACILITY_SCARD                   16
+#define FACILITY_COMPLUS                 17
+#define FACILITY_AAF                     18
+#define FACILITY_URT                     19
+#define FACILITY_ACS                     20
+#define FACILITY_DPLAY                   21
+#define FACILITY_UMI                     22
+#define FACILITY_SXS                     23
+#define FACILITY_WINDOWS_CE              24
+#define FACILITY_HTTP                    25
+#define FACILITY_USERMODE_COMMONLOG      26
+#define FACILITY_WER                     27
+#define FACILITY_USERMODE_FILTER_MANAGER 31
+#define FACILITY_BACKGROUNDCOPY          32
+#define FACILITY_CONFIGURATION           33
+#define FACILITY_WIA                     33
+#define FACILITY_STATE_MANAGEMENT        34
+#define FACILITY_METADIRECTORY           35
+#define FACILITY_WINDOWSUPDATE           36
+#define FACILITY_DIRECTORYSERVICE        37
+#define FACILITY_GRAPHICS                38
+#define FACILITY_SHELL                   39
+#define FACILITY_NAP                     39
+#define FACILITY_TPM_SERVICES            40
+#define FACILITY_TPM_SOFTWARE            41
+#define FACILITY_UI                      42
+#define FACILITY_XAML                    43
+#define FACILITY_ACTION_QUEUE            44
 #define FACILITY_PLA                     48
-#define FACILITY_PIDGENX                 2561
+#define FACILITY_WINDOWS_SETUP           48
+#define FACILITY_FVE                     49
+#define FACILITY_FWP                     50
+#define FACILITY_WINRM                   51
+#define FACILITY_NDIS                    52
+#define FACILITY_USERMODE_HYPERVISOR     53
+#define FACILITY_CMI                     54
+#define FACILITY_USERMODE_VIRTUALIZATION 55
+#define FACILITY_USERMODE_VOLMGR         56
+#define FACILITY_BCD                     57
+#define FACILITY_USERMODE_VHD            58
+#define FACILITY_USERMODE_HNS            59
+#define FACILITY_SDIAG                   60
+#define FACILITY_WEBSERVICES             61
+#define FACILITY_WINPE                   61
+#define FACILITY_WPN                     62
+#define FACILITY_WINDOWS_STORE           63
+#define FACILITY_INPUT                   64
+#define FACILITY_EAP                     66
+#define FACILITY_WINDOWS_DEFENDER        80
+#define FACILITY_OPC                     81
+#define FACILITY_XPS                     82
+#define FACILITY_MBN                     84
+#define FACILITY_POWERSHELL              84
+#define FACILITY_RAS                     83
 #define FACILITY_P2P_INT                 98
 #define FACILITY_P2P                     99
-#define FACILITY_OPC                     81
-#define FACILITY_ONLINE_ID               134
-#define FACILITY_WIN32                   7
-#define FACILITY_CONTROL                 10
-#define FACILITY_WEBSERVICES             61
-#define FACILITY_NULL                    0
-#define FACILITY_NDIS                    52
-#define FACILITY_NAP                     39
-#define FACILITY_MOBILE                  1793
-#define FACILITY_METADIRECTORY           35
-#define FACILITY_MSMQ                    14
-#define FACILITY_MEDIASERVER             13
-#define FACILITY_MBN                     84
-#define FACILITY_LINGUISTIC_SERVICES     305
-#define FACILITY_USERMODE_LICENSING      234
-#define FACILITY_LEAP                    2184
-#define FACILITY_JSCRIPT                 2306
-#define FACILITY_INTERNET                12
-#define FACILITY_ITF                     4
-#define FACILITY_INPUT                   64
-#define FACILITY_USERMODE_HYPERVISOR     53
-#define FACILITY_ACCELERATOR             1536
-#define FACILITY_HTTP                    25
-#define FACILITY_USERMODE_HNS            59
-#define FACILITY_GRAPHICS                38
-#define FACILITY_FWP                     50
-#define FACILITY_FVE                     49
-#define FACILITY_USERMODE_FILTER_MANAGER 31
-#define FACILITY_EAS                     85
-#define FACILITY_EAP                     66
-#define FACILITY_DXGI_DDI                2171
-#define FACILITY_DXGI                    2170
-#define FACILITY_DPLAY                   21
-#define FACILITY_DMSERVER                256
-#define FACILITY_DISPATCH                2
-#define FACILITY_DIRECTORYSERVICE        37
-#define FACILITY_DIRECTMUSIC             2168
-#define FACILITY_DIRECT3D12_DEBUG        2175
-#define FACILITY_DIRECT3D12              2174
-#define FACILITY_DIRECT3D11_DEBUG        2173
-#define FACILITY_DIRECT3D11              2172
-#define FACILITY_DIRECT3D10              2169
-#define FACILITY_DIRECT2D                2201
 #define FACILITY_DAF                     100
+#define FACILITY_BLUETOOTH_ATT           101
+#define FACILITY_AUDIO                   102
+#define FACILITY_STATEREPOSITORY         103
+#define FACILITY_VISUALCPP               109
+#define FACILITY_SCRIPT                  112
+#define FACILITY_PARSE                   113
+#define FACILITY_BLB                     120
+#define FACILITY_BLB_CLI                 121
+#define FACILITY_WSBAPP                  122
+#define FACILITY_BLBUI                   128
+#define FACILITY_USN                     129
+#define FACILITY_USERMODE_VOLSNAP        130
+#define FACILITY_TIERING                 131
+#define FACILITY_WSB_ONLINE              133
+#define FACILITY_ONLINE_ID               134
+#define FACILITY_DLS                     153
+#define FACILITY_DELIVERY_OPTIMIZATION   208
+#define FACILITY_USERMODE_SPACES         231
+#define FACILITY_USER_MODE_SECURITY_CORE 232
+#define FACILITY_USERMODE_LICENSING      234
+#define FACILITY_SOS                     160
+#define FACILITY_DEBUGGERS               176
+#define FACILITY_SPP                     256
+#define FACILITY_RESTORE                 256
+#define FACILITY_DMSERVER                256
+#define FACILITY_DEPLOYMENT_SERVICES_SERVER 257
+#define FACILITY_DEPLOYMENT_SERVICES_IMAGING 258
+#define FACILITY_DEPLOYMENT_SERVICES_MANAGEMENT 259
 #define FACILITY_DEPLOYMENT_SERVICES_UTIL 260
-#define FACILITY_DEPLOYMENT_SERVICES_TRANSPORT_MANAGEMENT 272
-#define FACILITY_DEPLOYMENT_SERVICES_TFTP 264
+#define FACILITY_DEPLOYMENT_SERVICES_BINLSVC 261
 #define FACILITY_DEPLOYMENT_SERVICES_PXE 263
+#define FACILITY_DEPLOYMENT_SERVICES_TFTP 264
+#define FACILITY_DEPLOYMENT_SERVICES_TRANSPORT_MANAGEMENT 272
+#define FACILITY_DEPLOYMENT_SERVICES_DRIVER_PROVISIONING 278
 #define FACILITY_DEPLOYMENT_SERVICES_MULTICAST_SERVER 289
 #define FACILITY_DEPLOYMENT_SERVICES_MULTICAST_CLIENT 290
-#define FACILITY_DEPLOYMENT_SERVICES_MANAGEMENT 259
-#define FACILITY_DEPLOYMENT_SERVICES_IMAGING 258
-#define FACILITY_DEPLOYMENT_SERVICES_DRIVER_PROVISIONING 278
-#define FACILITY_DEPLOYMENT_SERVICES_SERVER 257
 #define FACILITY_DEPLOYMENT_SERVICES_CONTENT_PROVIDER 293
-#define FACILITY_DEPLOYMENT_SERVICES_BINLSVC 261
-#define FACILITY_DELIVERY_OPTIMIZATION   208
-#define FACILITY_DEFRAG                  2304
-#define FACILITY_DEBUGGERS               176
-#define FACILITY_CONFIGURATION           33
-#define FACILITY_COMPLUS                 17
-#define FACILITY_USERMODE_COMMONLOG      26
-#define FACILITY_CMI                     54
-#define FACILITY_CERT                    11
-#define FACILITY_BLUETOOTH_ATT           101
-#define FACILITY_BCD                     57
-#define FACILITY_BACKGROUNDCOPY          32
+#define FACILITY_LINGUISTIC_SERVICES     305
 #define FACILITY_AUDIOSTREAMING          1094
+#define FACILITY_ACCELERATOR             1536
+#define FACILITY_WMAAECMA                1996
+#define FACILITY_DIRECTMUSIC             2168
+#define FACILITY_DIRECT3D10              2169
+#define FACILITY_DXGI                    2170
+#define FACILITY_DXGI_DDI                2171
+#define FACILITY_DIRECT3D11              2172
+#define FACILITY_DIRECT3D11_DEBUG        2173
+#define FACILITY_DIRECT3D12              2174
+#define FACILITY_DIRECT3D12_DEBUG        2175
+#define FACILITY_LEAP                    2184
 #define FACILITY_AUDCLNT                 2185
-#define FACILITY_AUDIO                   102
-#define FACILITY_ACTION_QUEUE            44
-#define FACILITY_ACS                     20
-#define FACILITY_AAF                     18
+#define FACILITY_WINCODEC_DWRITE_DWM     2200
+#define FACILITY_DIRECT2D                2201
+#define FACILITY_DEFRAG                  2304
+#define FACILITY_USERMODE_SDBUS          2305
+#define FACILITY_JSCRIPT                 2306
+#define FACILITY_PIDGENX                 2561
+#define FACILITY_EAS                     85
+#define FACILITY_WEB                     885
+#define FACILITY_WEB_SOCKET              886
+#define FACILITY_MOBILE                  1793
+#define FACILITY_SQLITE                  1967
+#define FACILITY_UTC                     1989
+#define FACILITY_WEP                     2049
+#define FACILITY_SYNCENGINE              2050
+#define FACILITY_XBOX                    2339
+#define FACILITY_PIX                     2748
 
 
 //
@@ -2488,7 +2482,7 @@
 //
 // MessageText:
 //
-// Enterprise Data Protection policy does not allow access to this network resource.
+// Windows Information Protection policy does not allow access to this network resource.
 //
 #define ERROR_NETWORK_ACCESS_DENIED_EDP  354L
 
@@ -2506,7 +2500,7 @@
 //
 // MessageText:
 //
-// The requested operation was blocked by Enterprise Data Protection policy. For more information, contact your system administrator.
+// The requested operation was blocked by Windows Information Protection policy. For more information, contact your system administrator.
 //
 #define ERROR_EDP_POLICY_DENIES_OPERATION 356L
 
@@ -2515,7 +2509,7 @@
 //
 // MessageText:
 //
-// The requested operation cannot be performed because hardware or software configuration of the device does not comply with Enterprise Data Protection under Lock policy. Please, verify that user PIN has been created. For more information, contact your system administrator.
+// The requested operation cannot be performed because hardware or software configuration of the device does not comply with Windows Information Protection under Lock policy. Please, verify that user PIN has been created. For more information, contact your system administrator.
 //
 #define ERROR_EDP_DPL_POLICY_CANT_BE_SATISFIED 357L
 
@@ -2578,7 +2572,7 @@
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File metadata has is too large.
+// The operation could not be completed because the Cloud File metadata is too large.
 //
 #define ERROR_CLOUD_FILE_METADATA_TOO_LARGE 364L
 
@@ -2617,6 +2611,87 @@
 // The storage device has lost data or persistence.
 //
 #define ERROR_STORAGE_LOST_DATA_PERSISTENCE 368L
+
+//
+// MessageId: ERROR_FILE_SYSTEM_VIRTUALIZATION_UNAVAILABLE
+//
+// MessageText:
+//
+// The provider that supports file system virtualization is temporarily unavailable.
+//
+#define ERROR_FILE_SYSTEM_VIRTUALIZATION_UNAVAILABLE 369L
+
+//
+// MessageId: ERROR_FILE_SYSTEM_VIRTUALIZATION_METADATA_CORRUPT
+//
+// MessageText:
+//
+// The metadata for file system virtualization is corrupt and unreadable.
+//
+#define ERROR_FILE_SYSTEM_VIRTUALIZATION_METADATA_CORRUPT 370L
+
+//
+// MessageId: ERROR_FILE_SYSTEM_VIRTUALIZATION_BUSY
+//
+// MessageText:
+//
+// The provider that supports file system virtualization is too busy to complete this operation.
+//
+#define ERROR_FILE_SYSTEM_VIRTUALIZATION_BUSY 371L
+
+//
+// MessageId: ERROR_FILE_SYSTEM_VIRTUALIZATION_PROVIDER_UNKNOWN
+//
+// MessageText:
+//
+// The provider that supports file system virtualization is unknown.
+//
+#define ERROR_FILE_SYSTEM_VIRTUALIZATION_PROVIDER_UNKNOWN 372L
+
+//
+// MessageId: ERROR_GDI_HANDLE_LEAK
+//
+// MessageText:
+//
+// GDI handles were potentially leaked by the application.
+//
+#define ERROR_GDI_HANDLE_LEAK            373L
+
+//
+// MessageId: ERROR_CLOUD_FILE_TOO_MANY_PROPERTY_BLOBS
+//
+// MessageText:
+//
+// The operation could not be completed because the maximum number of Cloud File property blobs would be exceeded.
+//
+#define ERROR_CLOUD_FILE_TOO_MANY_PROPERTY_BLOBS 374L
+
+//
+// MessageId: ERROR_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The operation could not be completed because the Cloud File metadata version is not supported.
+//
+#define ERROR_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED 375L
+
+//
+// MessageId: ERROR_NOT_A_CLOUD_FILE
+//
+// MessageText:
+//
+// The operation could not be completed because the file is not a Cloud File.
+//
+#define ERROR_NOT_A_CLOUD_FILE           376L
+
+//
+// MessageId: ERROR_CLOUD_FILE_NOT_IN_SYNC
+//
+// MessageText:
+//
+// The operation could not be completed because the Cloud File is not in sync.
+//
+#define ERROR_CLOUD_FILE_NOT_IN_SYNC     377L
 
 //
 // **** Available SYSTEM error codes ****
@@ -2726,6 +2801,33 @@
 // **** Available SYSTEM error codes ****
 //
 //
+// MessageId: ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT
+//
+// MessageText:
+//
+// The operation timed out waiting for this device to complete a PnP query-remove request due to a potential hang in its device stack. The system may need to be rebooted to complete the request.
+//
+#define ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT 480L
+
+//
+// MessageId: ERROR_PNP_QUERY_REMOVE_RELATED_DEVICE_TIMEOUT
+//
+// MessageText:
+//
+// The operation timed out waiting for this device to complete a PnP query-remove request due to a potential hang in the device stack of a related device. The system may need to be rebooted to complete the operation.
+//
+#define ERROR_PNP_QUERY_REMOVE_RELATED_DEVICE_TIMEOUT 481L
+
+//
+// MessageId: ERROR_PNP_QUERY_REMOVE_UNRELATED_DEVICE_TIMEOUT
+//
+// MessageText:
+//
+// The operation timed out waiting for this device to complete a PnP query-remove request due to a potential hang in the device stack of an unrelated device. The system may need to be rebooted to complete the operation.
+//
+#define ERROR_PNP_QUERY_REMOVE_UNRELATED_DEVICE_TIMEOUT 482L
+
+//
 // MessageId: ERROR_DEVICE_HARDWARE_ERROR
 //
 // MessageText:
@@ -2742,6 +2844,15 @@
 // Attempt to access invalid address.
 //
 #define ERROR_INVALID_ADDRESS            487L
+
+//
+// MessageId: ERROR_VRF_CFG_ENABLED
+//
+// MessageText:
+//
+// Driver Verifier Volatile settings cannot be set when CFG is enabled.
+//
+#define ERROR_VRF_CFG_ENABLED            1183L
 
 //
 // **** Available SYSTEM error codes ****
@@ -7430,7 +7541,7 @@
 //
 // MessageText:
 //
-// There are currently no logon servers available to service the logon request.
+// We can't sign you in with this credential because your domain isn't available. Make sure your device is connected to your organization's network and try again. If you previously signed in on this device with another credential, you can sign in with that credential.
 //
 #define ERROR_NO_LOGON_SERVERS           1311L
 
@@ -9482,6 +9593,51 @@
 //
 #define ERROR_NOT_SAME_OBJECT            1656L
 
+//
+// MessageId: ERROR_STRICT_CFG_VIOLATION
+//
+// MessageText:
+//
+// The specified image file was blocked from loading because it does not enable a feature required by the process: Control Flow Guard.
+//
+#define ERROR_STRICT_CFG_VIOLATION       1657L
+
+//
+// MessageId: ERROR_STRICT_RFG_VIOLATION
+//
+// MessageText:
+//
+// The specified image file was blocked from loading because it does not enable a feature required by the process: Return Flow Guard.
+//
+#define ERROR_STRICT_RFG_VIOLATION       1658L
+
+//
+// MessageId: ERROR_RFG_ACCESS_VIOLATION
+//
+// MessageText:
+//
+// An invalid memory access occurred to a Return Flow Guard restricted region.
+//
+#define ERROR_RFG_ACCESS_VIOLATION       1659L
+
+//
+// MessageId: ERROR_SET_CONTEXT_DENIED
+//
+// MessageText:
+//
+// The thread context could not be updated because this has been restricted for the process.
+//
+#define ERROR_SET_CONTEXT_DENIED         1660L
+
+//
+// MessageId: ERROR_CROSS_PARTITION_VIOLATION
+//
+// MessageText:
+//
+// An invalid cross-partition private file/section access was attempted.
+//
+#define ERROR_CROSS_PARTITION_VIOLATION  1661L
+
 
 ///////////////////////////////////////////////////
 //                                               //
@@ -11064,6 +11220,15 @@
 // Logon Failure: EAS policy requires that the user change their password before this operation can be performed.
 //
 #define ERROR_PASSWORD_CHANGE_REQUIRED   1938L
+
+//
+// MessageId: ERROR_LOST_MODE_LOGON_RESTRICTION
+//
+// MessageText:
+//
+// An administrator has restricted sign in. To sign in, make sure your device is connected to the Internet, and have your administrator sign in first.
+//
+#define ERROR_LOST_MODE_LOGON_RESTRICTION 1939L
 
 
 ///////////////////////////////////////////////////
@@ -12782,6 +12947,15 @@
 // The copy offload write operation is not supported for the file.
 //
 #define ERROR_OFFLOAD_WRITE_FILE_NOT_SUPPORTED 4443L
+
+//
+// MessageId: ERROR_ALREADY_HAS_STREAM_ID
+//
+// MessageText:
+//
+// This file is currently associated with a different stream id.
+//
+#define ERROR_ALREADY_HAS_STREAM_ID      4444L
 
 
 ///////////////////////////////////////////////////
@@ -22139,7 +22313,7 @@
 //
 // DNS Virtualization errors from 9921 to 9950
 //
-// DNS_ERROR_VIRTUALIZATION_INSTANCE_ALREADY_EXISTS	0x000026c1
+// DNS_ERROR_VIRTUALIZATION_INSTANCE_ALREADY_EXISTS    0x000026c1
 //
 // MessageId: DNS_ERROR_VIRTUALIZATION_INSTANCE_ALREADY_EXISTS
 //
@@ -22149,7 +22323,7 @@
 //
 #define DNS_ERROR_VIRTUALIZATION_INSTANCE_ALREADY_EXISTS 9921L
 
-// DNS_ERROR_VIRTUALIZATION_INSTANCE_DOES_NOT_EXIST	0x000026c2
+// DNS_ERROR_VIRTUALIZATION_INSTANCE_DOES_NOT_EXIST    0x000026c2
 //
 // MessageId: DNS_ERROR_VIRTUALIZATION_INSTANCE_DOES_NOT_EXIST
 //
@@ -22159,7 +22333,7 @@
 //
 #define DNS_ERROR_VIRTUALIZATION_INSTANCE_DOES_NOT_EXIST 9922L
 
-// DNS_ERROR_VIRTUALIZATION_TREE_LOCKED	0x000026c3
+// DNS_ERROR_VIRTUALIZATION_TREE_LOCKED        0x000026c3
 //
 // MessageId: DNS_ERROR_VIRTUALIZATION_TREE_LOCKED
 //
@@ -22169,7 +22343,7 @@
 //
 #define DNS_ERROR_VIRTUALIZATION_TREE_LOCKED 9923L
 
-// DNS_ERROR_INVAILD_VIRTUALIZATION_INSTANCE_NAME	0x000026c4
+// DNS_ERROR_INVAILD_VIRTUALIZATION_INSTANCE_NAME      0x000026c4
 //
 // MessageId: DNS_ERROR_INVAILD_VIRTUALIZATION_INSTANCE_NAME
 //
@@ -22179,7 +22353,7 @@
 //
 #define DNS_ERROR_INVAILD_VIRTUALIZATION_INSTANCE_NAME 9924L
 
-// DNS_ERROR_DEFAULT_VIRTUALIZATION_INSTANCE	0x000026c5
+// DNS_ERROR_DEFAULT_VIRTUALIZATION_INSTANCE   0x000026c5
 //
 // MessageId: DNS_ERROR_DEFAULT_VIRTUALIZATION_INSTANCE
 //
@@ -26659,6 +26833,60 @@
 //
 #define ERROR_PRI_MERGE_WRITE_FILE_FAILED 15152L
 
+//
+// MessageId: ERROR_PRI_MERGE_MULTIPLE_PACKAGE_FAMILIES_NOT_ALLOWED
+//
+// MessageText:
+//
+// Packages for a PRI file merge must all be from the same package family.
+//
+#define ERROR_PRI_MERGE_MULTIPLE_PACKAGE_FAMILIES_NOT_ALLOWED 15153L
+
+//
+// MessageId: ERROR_PRI_MERGE_MULTIPLE_MAIN_PACKAGES_NOT_ALLOWED
+//
+// MessageText:
+//
+// Packages for a PRI file merge must not include multiple main packages.
+//
+#define ERROR_PRI_MERGE_MULTIPLE_MAIN_PACKAGES_NOT_ALLOWED 15154L
+
+//
+// MessageId: ERROR_PRI_MERGE_BUNDLE_PACKAGES_NOT_ALLOWED
+//
+// MessageText:
+//
+// Packages for a PRI file merge must not include bundle packages.
+//
+#define ERROR_PRI_MERGE_BUNDLE_PACKAGES_NOT_ALLOWED 15155L
+
+//
+// MessageId: ERROR_PRI_MERGE_MAIN_PACKAGE_REQUIRED
+//
+// MessageText:
+//
+// Packages for a PRI file merge must include one main package.
+//
+#define ERROR_PRI_MERGE_MAIN_PACKAGE_REQUIRED 15156L
+
+//
+// MessageId: ERROR_PRI_MERGE_RESOURCE_PACKAGE_REQUIRED
+//
+// MessageText:
+//
+// Packages for a PRI file merge must include at least one resource package.
+//
+#define ERROR_PRI_MERGE_RESOURCE_PACKAGE_REQUIRED 15157L
+
+//
+// MessageId: ERROR_PRI_MERGE_INVALID_FILE_NAME
+//
+// MessageText:
+//
+// Invalid name supplied for a canonical merged PRI file.
+//
+#define ERROR_PRI_MERGE_INVALID_FILE_NAME 15158L
+
 
 ///////////////////////////////////////////////////
 //                                               //
@@ -27275,6 +27503,51 @@
 // This app package type is not supported on this filesystem
 //
 #define ERROR_PACKAGE_NOT_SUPPORTED_ON_FILESYSTEM 15635L
+
+//
+// MessageId: ERROR_PACKAGE_MOVE_BLOCKED_BY_STREAMING
+//
+// MessageText:
+//
+// Package move operation is blocked until the application has finished streaming
+//
+#define ERROR_PACKAGE_MOVE_BLOCKED_BY_STREAMING 15636L
+
+//
+// MessageId: ERROR_INSTALL_OPTIONAL_PACKAGE_APPLICATIONID_NOT_UNIQUE
+//
+// MessageText:
+//
+// A main or another optional app package has the same application ID as this optional package.  Change the application ID for the optional package to avoid conflicts.
+//
+#define ERROR_INSTALL_OPTIONAL_PACKAGE_APPLICATIONID_NOT_UNIQUE 15637L
+
+//
+// MessageId: ERROR_PACKAGE_STAGING_ONHOLD
+//
+// MessageText:
+//
+// This staging session has been held to allow another staging operation to be prioritized.
+//
+#define ERROR_PACKAGE_STAGING_ONHOLD     15638L
+
+//
+// MessageId: ERROR_INSTALL_INVALID_RELATED_SET_UPDATE
+//
+// MessageText:
+//
+// A related set cannot be updated because the updated set is invalid. All packages in the related set must be updated at the same time.
+//
+#define ERROR_INSTALL_INVALID_RELATED_SET_UPDATE 15639L
+
+//
+// MessageId: ERROR_INSTALL_OPTIONAL_PACKAGE_REQUIRES_MAIN_PACKAGE_FULLTRUST_CAPABILITY
+//
+// MessageText:
+//
+// An optional package with a FullTrust entry point requires the main package to have the runFullTrust capability.
+//
+#define ERROR_INSTALL_OPTIONAL_PACKAGE_REQUIRES_MAIN_PACKAGE_FULLTRUST_CAPABILITY 15640L
 
 //////////////////////////
 //                      //
@@ -31745,6 +32018,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The APPX_KEY_INFO structure used to encrypt or decrypt the package contains invalid data.
 //
 #define APPX_E_INVALID_KEY_INFO          _HRESULT_TYPEDEF_(0x8008020AL)
+
+//
+// MessageId: APPX_E_INVALID_CONTENTGROUPMAP
+//
+// MessageText:
+//
+// The Appx package's content group map is invalid.
+//
+#define APPX_E_INVALID_CONTENTGROUPMAP   _HRESULT_TYPEDEF_(0x8008020BL)
 
 //
 // Codes 0x0300-0x030f are reserved for background task error codes.
@@ -39653,6 +39935,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 //
 #define WER_E_INSUFFICIENT_CONSENT       _HRESULT_TYPEDEF_(0x801B8006L)
 
+//
+// MessageId: WER_E_TOO_HEAVY
+//
+// MessageText:
+//
+// Report aborted due to performance criteria.
+//
+#define WER_E_TOO_HEAVY                  _HRESULT_TYPEDEF_(0x801B8007L)
+
 // ***********************
 // FACILITY_USERMODE_FILTER_MANAGER
 // ***********************
@@ -44034,6 +44325,171 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define TPM_E_PCP_VALIDATION_FAILED      _HRESULT_TYPEDEF_(0x8029040CL)
 
 //
+// MessageId: TPM_E_PCP_WRONG_PARENT
+//
+// MessageText:
+//
+// An attempt was made to import or load a key under an incorrect storage parent.
+//
+#define TPM_E_PCP_WRONG_PARENT           _HRESULT_TYPEDEF_(0x8029040EL)
+
+//
+// MessageId: TPM_E_KEY_NOT_LOADED
+//
+// MessageText:
+//
+// The TPM key is not loaded.
+//
+#define TPM_E_KEY_NOT_LOADED             _HRESULT_TYPEDEF_(0x8029040FL)
+
+//
+// MessageId: TPM_E_NO_KEY_CERTIFICATION
+//
+// MessageText:
+//
+// The TPM key certification has not been generated.
+//
+#define TPM_E_NO_KEY_CERTIFICATION       _HRESULT_TYPEDEF_(0x80290410L)
+
+//
+// MessageId: TPM_E_KEY_NOT_FINALIZED
+//
+// MessageText:
+//
+// The TPM key is not yet finalized.
+//
+#define TPM_E_KEY_NOT_FINALIZED          _HRESULT_TYPEDEF_(0x80290411L)
+
+//
+// MessageId: TPM_E_ATTESTATION_CHALLENGE_NOT_SET
+//
+// MessageText:
+//
+// The TPM attestation challenge is not set.
+//
+#define TPM_E_ATTESTATION_CHALLENGE_NOT_SET _HRESULT_TYPEDEF_(0x80290412L)
+
+//
+// MessageId: TPM_E_NOT_PCR_BOUND
+//
+// MessageText:
+//
+// The TPM PCR info is not available.
+//
+#define TPM_E_NOT_PCR_BOUND              _HRESULT_TYPEDEF_(0x80290413L)
+
+//
+// MessageId: TPM_E_KEY_ALREADY_FINALIZED
+//
+// MessageText:
+//
+// The TPM key is already finalized.
+//
+#define TPM_E_KEY_ALREADY_FINALIZED      _HRESULT_TYPEDEF_(0x80290414L)
+
+//
+// MessageId: TPM_E_KEY_USAGE_POLICY_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The TPM key usage policy is not supported.
+//
+#define TPM_E_KEY_USAGE_POLICY_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80290415L)
+
+//
+// MessageId: TPM_E_KEY_USAGE_POLICY_INVALID
+//
+// MessageText:
+//
+// The TPM key usage policy is invalid.
+//
+#define TPM_E_KEY_USAGE_POLICY_INVALID   _HRESULT_TYPEDEF_(0x80290416L)
+
+//
+// MessageId: TPM_E_SOFT_KEY_ERROR
+//
+// MessageText:
+//
+// There was a problem with the software key being imported into the TPM.
+//
+#define TPM_E_SOFT_KEY_ERROR             _HRESULT_TYPEDEF_(0x80290417L)
+
+//
+// MessageId: TPM_E_KEY_NOT_AUTHENTICATED
+//
+// MessageText:
+//
+// The TPM key is not authenticated.
+//
+#define TPM_E_KEY_NOT_AUTHENTICATED      _HRESULT_TYPEDEF_(0x80290418L)
+
+//
+// MessageId: TPM_E_PCP_KEY_NOT_AIK
+//
+// MessageText:
+//
+// The TPM key is not an AIK.
+//
+#define TPM_E_PCP_KEY_NOT_AIK            _HRESULT_TYPEDEF_(0x80290419L)
+
+//
+// MessageId: TPM_E_KEY_NOT_SIGNING_KEY
+//
+// MessageText:
+//
+// The TPM key is not a signing key.
+//
+#define TPM_E_KEY_NOT_SIGNING_KEY        _HRESULT_TYPEDEF_(0x8029041AL)
+
+//
+// MessageId: TPM_E_LOCKED_OUT
+//
+// MessageText:
+//
+// The TPM is locked out.
+//
+#define TPM_E_LOCKED_OUT                 _HRESULT_TYPEDEF_(0x8029041BL)
+
+//
+// MessageId: TPM_E_CLAIM_TYPE_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The claim type requested is not supported.
+//
+#define TPM_E_CLAIM_TYPE_NOT_SUPPORTED   _HRESULT_TYPEDEF_(0x8029041CL)
+
+//
+// MessageId: TPM_E_VERSION_NOT_SUPPORTED
+//
+// MessageText:
+//
+// TPM version is not supported.
+//
+#define TPM_E_VERSION_NOT_SUPPORTED      _HRESULT_TYPEDEF_(0x8029041DL)
+
+//
+// MessageId: TPM_E_BUFFER_LENGTH_MISMATCH
+//
+// MessageText:
+//
+// The buffer lengths do not match.
+//
+#define TPM_E_BUFFER_LENGTH_MISMATCH     _HRESULT_TYPEDEF_(0x8029041EL)
+
+//
+// Misc error codes in TPM code {0x0500..0x05ff}
+//
+//
+// MessageId: TPM_E_ZERO_EXHAUST_ENABLED
+//
+// MessageText:
+//
+// TPM related network operations are blocked as Zero Exhaust mode is enabled on client.
+//
+#define TPM_E_ZERO_EXHAUST_ENABLED       _HRESULT_TYPEDEF_(0x80290500L)
+
+//
 // If the application is designed to use TCG defined TPM return codes
 // then undefine the Windows defined codes for the same symbols. The application
 // declares usage of TCG return codes by defining WIN_OMIT_TSS_TPM_RETURN_CODES
@@ -48048,13 +48504,22 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define ERROR_HV_INVALID_CPU_GROUP_STATE _NDIS_ERROR_TYPEDEF_(0xC0350070L)
 
 //
+// MessageId: ERROR_HV_OPERATION_FAILED
+//
+// MessageText:
+//
+// The requested operation failed.
+//
+#define ERROR_HV_OPERATION_FAILED        _NDIS_ERROR_TYPEDEF_(0xC0350071L)
+
+//
 // MessageId: ERROR_HV_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE
 //
 // MessageText:
 //
 // The hypervisor could not perform the operation because it is not allowed with nested virtualization active.
 //
-#define ERROR_HV_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE _NDIS_ERROR_TYPEDEF_(0xC0350071L)
+#define ERROR_HV_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE _NDIS_ERROR_TYPEDEF_(0xC0350072L)
 
 //
 // MessageId: ERROR_HV_NOT_PRESENT
@@ -48605,6 +49070,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The Compute System with the specified identifier did already stop.
 //
 #define ERROR_VMCOMPUTE_SYSTEM_ALREADY_STOPPED _NDIS_ERROR_TYPEDEF_(0xC0370110L)
+
+//
+// MessageId: ERROR_VMCOMPUTE_PROTOCOL_ERROR
+//
+// MessageText:
+//
+// A communication protocol error has occurred between the Hyper-V Host and Guest Compute Service.
+//
+#define ERROR_VMCOMPUTE_PROTOCOL_ERROR   _NDIS_ERROR_TYPEDEF_(0xC0370111L)
 
 //
 // Virtual networking errors (0x0200-0x02ff)
@@ -52007,6 +52481,51 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define STATEREPOSITORY_E_TRANSACTION_REQUIRED _HRESULT_TYPEDEF_(0x8067000BL)
 
 //
+// MessageId: STATEREPOSITORY_E_BUSY_TIMEOUT_EXCEEDED
+//
+// MessageText:
+//
+// The database file is locked. The request has exceeded the allowed threshold.
+//
+#define STATEREPOSITORY_E_BUSY_TIMEOUT_EXCEEDED _HRESULT_TYPEDEF_(0x8067000CL)
+
+//
+// MessageId: STATEREPOSITORY_E_BUSY_RECOVERY_TIMEOUT_EXCEEDED
+//
+// MessageText:
+//
+// The database file is locked because another process is busy recovering the database. The request has exceeded the allowed threshold.
+//
+#define STATEREPOSITORY_E_BUSY_RECOVERY_TIMEOUT_EXCEEDED _HRESULT_TYPEDEF_(0x8067000DL)
+
+//
+// MessageId: STATEREPOSITORY_E_LOCKED_TIMEOUT_EXCEEDED
+//
+// MessageText:
+//
+// A table in the database is locked. The request has exceeded the allowed threshold.
+//
+#define STATEREPOSITORY_E_LOCKED_TIMEOUT_EXCEEDED _HRESULT_TYPEDEF_(0x8067000EL)
+
+//
+// MessageId: STATEREPOSITORY_E_LOCKED_SHAREDCACHE_TIMEOUT_EXCEEDED
+//
+// MessageText:
+//
+// The shared cache for the database is locked by another connection. The request has exceeded the allowed threshold.
+//
+#define STATEREPOSITORY_E_LOCKED_SHAREDCACHE_TIMEOUT_EXCEEDED _HRESULT_TYPEDEF_(0x8067000FL)
+
+//
+// MessageId: STATEREPOSITORY_E_SERVICE_STOP_IN_PROGRESS
+//
+// MessageText:
+//
+// The StateRepository service Stop event is in progress.
+//
+#define STATEREPOSITORY_E_SERVICE_STOP_IN_PROGRESS _HRESULT_TYPEDEF_(0x80670010L)
+
+//
 // Spaceport errors
 //
 // Success
@@ -52261,6 +52780,33 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The requested object type cannot be assigned to a storage tier.
 //
 #define ERROR_TIERING_CANNOT_PIN_OBJECT  _HRESULT_TYPEDEF_(0x80830007L)
+
+//
+// MessageId: ERROR_TIERING_FILE_IS_NOT_PINNED
+//
+// MessageText:
+//
+// The requested file is not pinned to a tier.
+//
+#define ERROR_TIERING_FILE_IS_NOT_PINNED _HRESULT_TYPEDEF_(0x80830008L)
+
+//
+// MessageId: ERROR_NOT_A_TIERED_VOLUME
+//
+// MessageText:
+//
+// The volume is not a tiered volume.
+//
+#define ERROR_NOT_A_TIERED_VOLUME        _HRESULT_TYPEDEF_(0x80830009L)
+
+//
+// MessageId: ERROR_ATTRIBUTE_NOT_PRESENT
+//
+// MessageText:
+//
+// The requested attribute is not present on the specified file or directory.
+//
+#define ERROR_ATTRIBUTE_NOT_PRESENT      _HRESULT_TYPEDEF_(0x8083000AL)
 
 //
 // Embedded Security Core
@@ -52682,6 +53228,24 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 //
 #define DXGI_ERROR_HW_PROTECTION_OUTOFMEMORY _HRESULT_TYPEDEF_(0x887A0030L)
 
+//
+// MessageId: DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION
+//
+// MessageText:
+//
+// Creating this device would violate the process's dynamic code policy.
+//
+#define DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION _HRESULT_TYPEDEF_(0x887A0031L)
+
+//
+// MessageId: DXGI_ERROR_NON_COMPOSITED_UI
+//
+// MessageText:
+//
+// The operation failed because the compositor is not in control of the output.
+//
+#define DXGI_ERROR_NON_COMPOSITED_UI     _HRESULT_TYPEDEF_(0x887A0032L)
+
 
 //
 // DXGI errors that are internal to the Desktop Window Manager
@@ -52722,6 +53286,47 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The present succeeded but the caller should present again on the next V-sync, even if there are no changes to the content.
 //
 #define DXGI_STATUS_PRESENT_REQUIRED     _HRESULT_TYPEDEF_(0x087A002FL)
+
+
+//
+// DXGI errors that are produced by the D3D Shader Cache component
+//
+
+//
+// MessageId: DXGI_ERROR_CACHE_CORRUPT
+//
+// MessageText:
+//
+// The cache is corrupt and either could not be opened or could not be reset.
+//
+#define DXGI_ERROR_CACHE_CORRUPT         _HRESULT_TYPEDEF_(0x887A0033L)
+
+//
+// MessageId: DXGI_ERROR_CACHE_FULL
+//
+// MessageText:
+//
+// This entry would cause the cache to exceed its quota. On a load operation, this may indicate exceeding the maximum in-memory size.
+//
+#define DXGI_ERROR_CACHE_FULL            _HRESULT_TYPEDEF_(0x887A0034L)
+
+//
+// MessageId: DXGI_ERROR_CACHE_HASH_COLLISION
+//
+// MessageText:
+//
+// A cache entry was found, but the key provided does not match the key stored in the entry.
+//
+#define DXGI_ERROR_CACHE_HASH_COLLISION  _HRESULT_TYPEDEF_(0x887A0035L)
+
+//
+// MessageId: DXGI_ERROR_ALREADY_EXISTS
+//
+// MessageText:
+//
+// The desired element already exists.
+//
+#define DXGI_ERROR_ALREADY_EXISTS        _HRESULT_TYPEDEF_(0x887A0036L)
 
 
 //
@@ -58298,5 +58903,50 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The escalation working directory for the requested escalation could not be created because it already exists
 //
 #define UTC_E_ESCALATION_DIRECTORY_ALREADY_EXISTS _HRESULT_TYPEDEF_(0x87C5102FL)
+
+//
+// MessageId: UTC_E_TIME_TRIGGER_ON_START_INVALID
+//
+// MessageText:
+//
+// Time triggers cannot be used on a transition originating from the "_start" state
+//
+#define UTC_E_TIME_TRIGGER_ON_START_INVALID _HRESULT_TYPEDEF_(0x87C51030L)
+
+//
+// MessageId: UTC_E_TIME_TRIGGER_ONLY_VALID_ON_SINGLE_TRANSITION
+//
+// MessageText:
+//
+// Time triggers can only be attached to a single transition
+//
+#define UTC_E_TIME_TRIGGER_ONLY_VALID_ON_SINGLE_TRANSITION _HRESULT_TYPEDEF_(0x87C51031L)
+
+//
+// MessageId: UTC_E_TIME_TRIGGER_INVALID_TIME_RANGE
+//
+// MessageText:
+//
+// Time trigger duration must fall within an inclusive range of one second and 15 minutes
+//
+#define UTC_E_TIME_TRIGGER_INVALID_TIME_RANGE _HRESULT_TYPEDEF_(0x87C51032L)
+
+//
+// MessageId: UTC_E_MULTIPLE_TIME_TRIGGER_ON_SINGLE_STATE
+//
+// MessageText:
+//
+// Only one Time Trigger is allowed per state
+//
+#define UTC_E_MULTIPLE_TIME_TRIGGER_ON_SINGLE_STATE _HRESULT_TYPEDEF_(0x87C51033L)
+
+//
+// MessageId: UTC_E_BINARY_MISSING
+//
+// MessageText:
+//
+// A RunExeWithArgs action contains a binary which is not present on the targeted device.
+//
+#define UTC_E_BINARY_MISSING             _HRESULT_TYPEDEF_(0x87C51034L)
 
 #endif//_WINERROR_

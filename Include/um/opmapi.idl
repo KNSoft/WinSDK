@@ -211,16 +211,6 @@ typedef enum _OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL
     OPM_TYPE_ENFORCEMENT_HDCP_FORCE_ULONG                 = 0x7fffffff  
 } OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL; 
 
-// (deprecated - use OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL)
-typedef enum _OPM_HDCP_WITH_TYPE_ENFORCEMENT_PROTECTION_LEVEL
-{
-    OPM_HDCP_WITH_TYPE_ENFORCEMENT_OFF = 0,
-    OPM_HDCP_WITH_TYPE_ENFORCEMENT_ON = 1,    //Allow all HDCP versions.
-    OPM_HDCP_WITH_TYPE_1_ENFORCEMENT_ON = 2,  //Allow HDCP versions 2.2+
-    OPM_HDCP_WITH_TYPE_ENFORCEMENT_FORCE_ULONG = 0x7fffffff
-
-} OPM_HDCP_WITH_TYPE_ENFORCEMENT_PROTECTION_LEVEL;
-
 enum 
 {
     OPM_CGMSA_OFF                                           = 0x00,
@@ -251,7 +241,6 @@ enum
     OPM_PROTECTION_TYPE_HDCP                        = 0x00000008,
     OPM_PROTECTION_TYPE_DPCP                        = 0x00000010,
     OPM_PROTECTION_TYPE_TYPE_ENFORCEMENT_HDCP       = 0x00000020,
-    OPM_PROTECTION_TYPE_HDCP_TYPE_ENFORCEMENT       = 0x00000020 // (deprecated)
 };
 
 enum
@@ -603,6 +592,13 @@ cpp_quote( "    _In_ HMONITOR hMonitor,                                         
 cpp_quote( "    _In_ OPM_VIDEO_OUTPUT_SEMANTICS vos,                                                    " )
 cpp_quote( "    _Out_ ULONG* pulNumVideoOutputs,                                                        " )
 cpp_quote( "    _Outptr_result_buffer_(*pulNumVideoOutputs) IOPMVideoOutput*** pppOPMVideoOutputArray       " )
+cpp_quote( "    );                                                                                      " )
+
+cpp_quote( "STDAPI OPMGetVideoOutputForTarget(                                                          " )
+cpp_quote( "    _In_ LUID* pAdapterLuid,                                                                " )
+cpp_quote( "    _In_ ULONG VidPnTarget,                                                                 " )
+cpp_quote( "    _In_ OPM_VIDEO_OUTPUT_SEMANTICS vos,                                                    " )
+cpp_quote( "    _COM_Outptr_ IOPMVideoOutput** ppOPMVideoOutput                                         " )
 cpp_quote( "    );                                                                                      " )
 
 cpp_quote("#ifndef DO_NOT_USE_DIRECTX_OR_DXVA2")

@@ -19,7 +19,13 @@ Revision History:
 #define _EVNTPROV_H_
 
 #pragma once
+
 #include <winapifamily.h>
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#pragma warning(disable:4820) // padding added
+#endif
 
 #ifndef _EVNT_SOURCE_
 #ifdef _NTDLLBUILD_
@@ -618,7 +624,9 @@ EventDescOrKeyword(
 }
 #endif
 
-
+#if _MSC_VER >= 1200
+#pragma warning(pop)
 #endif
 
+#endif
 

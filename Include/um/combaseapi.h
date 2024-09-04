@@ -15,12 +15,16 @@
 #include <apisetcconv.h>
 
 /* APISET_NAME: api-ms-win-core-com-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_COM_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
+//TODO version number should be bumped when _APISET_TARGET_VERSION_WIN10_RS2 becomes available
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
+#define _APISET_COM_VER 0x0102
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_COM_VER 0x0101
 #elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN8
 #define _APISET_COM_VER 0x0100
@@ -363,10 +367,10 @@ typedef enum tagREGCLS
                                 // different apartments. Without other flags, behavior
                                 // will retain REGCLS_SINGLEUSE semantics in that only
                                 // one instance can be generated.
-#endif 
+#endif
 } REGCLS;
 
- 
+
 /* here is where we pull in the MIDL generated headers for the interfaces */
 typedef interface    IRpcStubBuffer     IRpcStubBuffer;
 typedef interface    IRpcChannelBuffer  IRpcChannelBuffer;
@@ -395,12 +399,12 @@ typedef enum tagCOINITBASE
 //
 extern "C++"
 {
-    template<typename T> _Post_equal_to_(pp) _Post_satisfies_(return == pp) void** IID_PPV_ARGS_Helper(T** pp) 
+    template<typename T> _Post_equal_to_(pp) _Post_satisfies_(return == pp) void** IID_PPV_ARGS_Helper(T** pp)
     {
 #pragma prefast(suppress: 6269, "Tool issue with unused static_cast")
         static_cast<IUnknown*>(*pp);    // make sure everyone derives from IUnknown
         return reinterpret_cast<void**>(pp);
-    }    
+    }
 }
 
 #endif // defined(__cplusplus) && !defined(CINTERFACE)
@@ -444,7 +448,7 @@ CreateStreamOnHGlobal(
     _Outptr_ LPSTREAM FAR * ppstm
     );
 
-                    
+
 _Check_return_ WINOLEAPI
 GetHGlobalFromStream(
     _In_ LPSTREAM pstm,
@@ -510,7 +514,7 @@ CoGetCallerTID(
 #pragma region Application or OneCore Family
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
- 
+
 WINOLEAPI
 CoGetCurrentLogicalThreadId(
     _Out_ GUID * pguid
@@ -643,7 +647,7 @@ CoAllowUnmarshalerCLSID(
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
-#endif 
+#endif
 
 #pragma region Application or OneCore Family
 
@@ -854,7 +858,7 @@ CoGetStandardMarshal(
     );
 
 
-                    
+
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
@@ -1142,7 +1146,7 @@ CoRegisterActivationFilter(
 
 
 #if (_WIN32_WINNT >= 0x0602)
-  
+
 #pragma region Application or OneCore Family
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
@@ -1164,15 +1168,15 @@ CoCreateInstanceFromApp(
 #endif
 
 
-#pragma region Application or OneCore Family
+#pragma region Not Desktop or OneCore Family
 
-#if WINAPI_PARTITION_APP && !WINAPI_PARTITION_DESKTOP
+#if WINAPI_PARTITION_APP && !(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 __inline _Check_return_ HRESULT CoCreateInstance(
-    _In_     REFCLSID rclsid, 
+    _In_     REFCLSID rclsid,
     _In_opt_ LPUNKNOWN pUnkOuter,
-    _In_     DWORD dwClsContext, 
-    _In_     REFIID riid, 
+    _In_     DWORD dwClsContext,
+    _In_     REFIID riid,
     _COM_Outptr_ _At_(*ppv, _Post_readable_size_(_Inexpressible_(varies))) LPVOID FAR* ppv)
 {
     MULTI_QI    OneQI;
@@ -1210,7 +1214,7 @@ __inline _Check_return_ HRESULT CoCreateInstanceEx(
     return CoCreateInstanceFromApp(Clsid, punkOuter, dwClsCtx, pServerInfo, dwCount, pResults);
 }
 
-#endif // WINAPI_PARTITION_APP && !WINAPI_PARTITION_DESKTOP
+#endif // WINAPI_PARTITION_APP && !(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 /* Call related APIs */
@@ -1472,7 +1476,7 @@ CoInvalidateRemoteMachineBindings(
 
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
-  
+
 #pragma region Application or OneCore Family
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
@@ -1505,7 +1509,7 @@ RoGetAgileReference(
 #pragma region Application or OneCore Family
 
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
- 
+
 /* the server dlls must define their DllGetClassObject and DllCanUnloadNow
  * to match these; the typedefs are located here to ensure all are changed at
  * the same time.
@@ -1537,13 +1541,37 @@ WINOLEAPI_(void)
 CoTaskMemFree(
     _Pre_maybenull_ __drv_freesMem(Mem) _Post_invalid_ LPVOID pv
     );
- 
+
+
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Desktop or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_COM_VER >= 0x0102)
+
+WINOLEAPI
+CoFileTimeNow(
+    _Out_ FILETIME FAR * lpFileTime
+    );
+
+_Check_return_ WINOLEAPI
+CLSIDFromProgIDEx(
+    _In_ LPCOLESTR lpszProgID,
+    _Out_ LPCLSID lpclsid
+    );
+
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_COM_VER >= 0x0102)
+
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
 
 #ifndef RC_INVOKED
 #include <poppack.h>
 #endif // RC_INVOKED
-
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
 
 #endif     // __COMBASEAPI_H__

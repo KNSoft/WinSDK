@@ -5,8 +5,10 @@
 // ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
 // THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
-//  
+//
 // Copyright (c) Microsoft Corporation. All rights reserved.
+//
+// http://go.microsoft.com/fwlink/?LinkID=615560
 //-------------------------------------------------------------------------------------
 
 #pragma once
@@ -15,10 +17,13 @@
 #error DirectX Math requires C++
 #endif
 
-#define DIRECTX_MATH_VERSION 309
+#define DIRECTX_MATH_VERSION 310
 
+#if defined(_MSC_VER) && (_MSC_VER < 1800)
+#error DirectX Math Visual C++ 2013 or later.
+#endif
 
-#if defined(_MSC_VER) && !defined(_M_ARM) && !defined(_M_ARM64) && (!_MANAGED) && (!_M_CEE) && (!defined(_M_IX86_FP) || (_M_IX86_FP > 1)) && !defined(_XM_NO_INTRINSICS_) && !defined(_XM_VECTORCALL_)
+#if defined(_MSC_VER) && !defined(_M_ARM) && !defined(_M_ARM64) && !defined(_M_HYBRID_X86_ARM64) && (!_MANAGED) && (!_M_CEE) && (!defined(_M_IX86_FP) || (_M_IX86_FP > 1)) && !defined(_XM_NO_INTRINSICS_) && !defined(_XM_VECTORCALL_)
 #if ((_MSC_FULL_VER >= 170065501) && (_MSC_VER < 1800)) || (_MSC_FULL_VER >= 180020418)
 #define _XM_VECTORCALL_ 1
 #endif
@@ -36,9 +41,11 @@
 #define XM_CTOR_DEFAULT =default;
 #endif
 
-#if defined(_MSC_VER) && (_MSC_VER < 1900)
+#if defined(_MSC_VER) && (_MSC_FULL_VER < 190023506)
+#define XM_CONST const
 #define XM_CONSTEXPR
 #else
+#define XM_CONST constexpr
 #define XM_CONSTEXPR constexpr
 #endif
 
@@ -50,14 +57,9 @@
 #define _XM_F16C_INTRINSICS_
 #endif
 
-#ifdef _XM_F16C_INTRINSICS_
-#if defined(_MSC_VER) && (_MSC_VER < 1700)
-#error DirectX Math use of F16C intrinsics requires Visual C++ 2012 or later.
-#endif
-#ifndef _XM_AVX_INTRINSICS_
+#if defined(_XM_F16C_INTRINSICS_) && !defined(_XM_AVX_INTRINSICS_)
 #define _XM_AVX_INTRINSICS_
 #endif
-#endif // _XM_F16C_INTRINSICS_
 
 #if !defined(_XM_AVX_INTRINSICS_) && defined(__AVX__) && !defined(_XM_NO_INTRINSICS_)
 #define _XM_AVX_INTRINSICS_
@@ -67,14 +69,18 @@
 #define _XM_SSE4_INTRINSICS_
 #endif
 
-#if defined(_XM_SSE4_INTRINSICS_) && !defined(_XM_SSE_INTRINSICS_)
+#if defined(_XM_SSE4_INTRINSICS_) && !defined(_XM_SSE3_INTRINSICS_)
+#define _XM_SSE3_INTRINSICS_
+#endif
+
+#if defined(_XM_SSE3_INTRINSICS_) && !defined(_XM_SSE_INTRINSICS_)
 #define _XM_SSE_INTRINSICS_
 #endif
 
 #if !defined(_XM_ARM_NEON_INTRINSICS_) && !defined(_XM_SSE_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-#if defined(_M_IX86) || defined(_M_X64)
+#if (defined(_M_IX86) || defined(_M_X64)) && !defined(_M_HYBRID_X86_ARM64)
 #define _XM_SSE_INTRINSICS_
-#elif defined(_M_ARM) || defined(_M_ARM64)
+#elif defined(_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 #define _XM_ARM_NEON_INTRINSICS_
 #elif !defined(_XM_NO_INTRINSICS_)
 #error DirectX Math does not support this target
@@ -89,51 +95,40 @@
 #include <malloc.h>
 #pragma warning(pop)
 
-
-#if defined(_XM_SSE_INTRINSICS_)
-#ifndef _XM_NO_INTRINSICS_
-#include <xmmintrin.h>
-#include <emmintrin.h>
-#endif
-#elif defined(_XM_ARM_NEON_INTRINSICS_)
 #ifndef _XM_NO_INTRINSICS_
 #pragma warning(push)
 #pragma warning(disable : 4987)
 // C4987: Off by default noise
 #include <intrin.h>
 #pragma warning(pop)
-#ifdef _M_ARM64
+
+#ifdef _XM_SSE_INTRINSICS_
+#include <xmmintrin.h>
+#include <emmintrin.h>
+
+#ifdef _XM_SSE3_INTRINSICS_
+#include <pmmintrin.h>
+#endif
+
+#ifdef _XM_SSE4_INTRINSICS_
+#include <smmintrin.h>
+#endif
+
+#ifdef _XM_AVX_INTRINSICS_
+#include <immintrin.h>
+#endif
+
+#elif defined(_XM_ARM_NEON_INTRINSICS_)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 #include <arm64_neon.h>
 #else
 #include <arm_neon.h>
 #endif
 #endif
-#endif
-
-#if defined(_XM_SSE4_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-#pragma warning(push)
-#pragma warning(disable : 4987)
-// C4987: Off by default noise
-#include <intrin.h>
-#pragma warning(pop)
-#include <smmintrin.h>
-#endif
-
-#if defined(_XM_AVX_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-#include <immintrin.h>
-#endif
+#endif // !_XM_NO_INTRINSICS_
 
 #include <sal.h>
 #include <assert.h>
-
-#ifndef _XM_NO_ROUNDF_
-#ifdef _MSC_VER
-#include <yvals.h>
-#if defined(_CPPLIB_VER) && ( _CPPLIB_VER < 610 )
-#define _XM_NO_ROUNDF_
-#endif
-#endif
-#endif
 
 #pragma warning(push)
 #pragma warning(disable : 4005 4668)
@@ -146,23 +141,6 @@
  * Conditional intrinsics
  *
  ****************************************************************************/
-
-
-#if defined(_XM_ARM_NEON_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-
-#if defined(_MSC_VER) && (_MSC_FULL_VER != 170051221) && (_MSC_FULL_VER < 170065500)
-#define XM_VMULQ_N_F32( a, b ) vmulq_f32( (a), vdupq_n_f32( (b) ) )
-#define XM_VMLAQ_N_F32( a, b, c ) vmlaq_f32( (a), (b), vdupq_n_f32( (c) ) )
-#define XM_VMULQ_LANE_F32( a, b, c ) vmulq_f32( (a), vdupq_lane_f32( (b), (c) ) )
-#define XM_VMLAQ_LANE_F32( a, b, c, d ) vmlaq_f32( (a), (b), vdupq_lane_f32( (c), (d) ) )
-#else
-#define XM_VMULQ_N_F32( a, b ) vmulq_n_f32( (a), (b) )
-#define XM_VMLAQ_N_F32( a, b, c ) vmlaq_n_f32( (a), (b), (c) )
-#define XM_VMULQ_LANE_F32( a, b, c ) vmulq_lane_f32( (a), (b), (c) )
-#define XM_VMLAQ_LANE_F32( a, b, c, d ) vmlaq_lane_f32( (a), (b), (c), (d) )
-#endif
-
-#endif // _XM_ARM_NEON_INTRINSICS_ && !_XM_NO_INTRINSICS_
 
 #if defined(_XM_SSE_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
 
@@ -215,37 +193,37 @@ namespace DirectX
 #undef XM_CACHE_LINE_SIZE
 #endif
 
-const float XM_PI           = 3.141592654f;
-const float XM_2PI          = 6.283185307f;
-const float XM_1DIVPI       = 0.318309886f;
-const float XM_1DIV2PI      = 0.159154943f;
-const float XM_PIDIV2       = 1.570796327f;
-const float XM_PIDIV4       = 0.785398163f;
+XM_CONST float XM_PI        = 3.141592654f;
+XM_CONST float XM_2PI       = 6.283185307f;
+XM_CONST float XM_1DIVPI    = 0.318309886f;
+XM_CONST float XM_1DIV2PI   = 0.159154943f;
+XM_CONST float XM_PIDIV2    = 1.570796327f;
+XM_CONST float XM_PIDIV4    = 0.785398163f;
 
-const uint32_t XM_SELECT_0          = 0x00000000;
-const uint32_t XM_SELECT_1          = 0xFFFFFFFF;
+XM_CONST uint32_t XM_SELECT_0   = 0x00000000;
+XM_CONST uint32_t XM_SELECT_1   = 0xFFFFFFFF;
 
-const uint32_t XM_PERMUTE_0X        = 0;
-const uint32_t XM_PERMUTE_0Y        = 1;
-const uint32_t XM_PERMUTE_0Z        = 2;
-const uint32_t XM_PERMUTE_0W        = 3;
-const uint32_t XM_PERMUTE_1X        = 4;
-const uint32_t XM_PERMUTE_1Y        = 5;
-const uint32_t XM_PERMUTE_1Z        = 6;
-const uint32_t XM_PERMUTE_1W        = 7;
+XM_CONST uint32_t XM_PERMUTE_0X = 0;
+XM_CONST uint32_t XM_PERMUTE_0Y = 1;
+XM_CONST uint32_t XM_PERMUTE_0Z = 2;
+XM_CONST uint32_t XM_PERMUTE_0W = 3;
+XM_CONST uint32_t XM_PERMUTE_1X = 4;
+XM_CONST uint32_t XM_PERMUTE_1Y = 5;
+XM_CONST uint32_t XM_PERMUTE_1Z = 6;
+XM_CONST uint32_t XM_PERMUTE_1W = 7;
 
-const uint32_t XM_SWIZZLE_X         = 0;
-const uint32_t XM_SWIZZLE_Y         = 1;
-const uint32_t XM_SWIZZLE_Z         = 2;
-const uint32_t XM_SWIZZLE_W         = 3;
+XM_CONST uint32_t XM_SWIZZLE_X  = 0;
+XM_CONST uint32_t XM_SWIZZLE_Y  = 1;
+XM_CONST uint32_t XM_SWIZZLE_Z  = 2;
+XM_CONST uint32_t XM_SWIZZLE_W  = 3;
 
-const uint32_t XM_CRMASK_CR6        = 0x000000F0;
-const uint32_t XM_CRMASK_CR6TRUE    = 0x00000080;
-const uint32_t XM_CRMASK_CR6FALSE   = 0x00000020;
-const uint32_t XM_CRMASK_CR6BOUNDS  = XM_CRMASK_CR6FALSE;
+XM_CONST uint32_t XM_CRMASK_CR6         = 0x000000F0;
+XM_CONST uint32_t XM_CRMASK_CR6TRUE     = 0x00000080;
+XM_CONST uint32_t XM_CRMASK_CR6FALSE    = 0x00000020;
+XM_CONST uint32_t XM_CRMASK_CR6BOUNDS   = XM_CRMASK_CR6FALSE;
 
+XM_CONST size_t XM_CACHE_LINE_SIZE = 64;
 
-const size_t XM_CACHE_LINE_SIZE = 64;
 
 /****************************************************************************
  *
@@ -308,10 +286,7 @@ struct __vector4
 #endif // _XM_NO_INTRINSICS_
 
 //------------------------------------------------------------------------------
-typedef uint32_t XM_DEPRECATED __vector4i[4];
-
-//------------------------------------------------------------------------------
-// Vector intrinsic: Four 32 bit floating point components aligned on a 16 byte 
+// Vector intrinsic: Four 32 bit floating point components aligned on a 16 byte
 // boundary and mapped to hardware vector registers
 #if defined(_XM_SSE_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
 typedef __m128 XMVECTOR;
@@ -329,14 +304,14 @@ typedef const XMVECTOR& FXMVECTOR;
 #endif
 
 // Fix-up for (4th) XMVECTOR parameter to pass in-register for ARM, ARM64, and x64 vector call; by reference otherwise
-#if ( defined(_M_ARM) || defined(_M_ARM64) || (_XM_VECTORCALL_ && !defined(_M_IX86) ) ) && !defined(_XM_NO_INTRINSICS_)
+#if ( defined(_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || (_XM_VECTORCALL_ && !defined(_M_IX86) ) ) && !defined(_XM_NO_INTRINSICS_)
 typedef const XMVECTOR GXMVECTOR;
 #else
 typedef const XMVECTOR& GXMVECTOR;
 #endif
 
 // Fix-up for (5th & 6th) XMVECTOR parameter to pass in-register for ARM64 and vector call; by reference otherwise
-#if ( defined(_M_ARM64) || _XM_VECTORCALL_ ) && !defined(_XM_NO_INTRINSICS_)
+#if ( defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || _XM_VECTORCALL_ ) && !defined(_XM_NO_INTRINSICS_)
 typedef const XMVECTOR HXMVECTOR;
 #else
 typedef const XMVECTOR& HXMVECTOR;
@@ -436,7 +411,7 @@ XMVECTOR    XM_CALLCONV     operator/ (FXMVECTOR V, float S);
 struct XMMATRIX;
 
 // Fix-up for (1st) XMMATRIX parameter to pass in-register for ARM64 and vector call; by reference otherwise
-#if ( defined(_M_ARM64) || _XM_VECTORCALL_ ) && !defined(_XM_NO_INTRINSICS_)
+#if ( defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || _XM_VECTORCALL_ ) && !defined(_XM_NO_INTRINSICS_)
 typedef const XMMATRIX FXMMATRIX;
 #else
 typedef const XMMATRIX& FXMMATRIX;
@@ -1029,6 +1004,7 @@ XMVECTOR    XM_CALLCONV     XMVectorXorInt(FXMVECTOR V1, FXMVECTOR V2);
 
 XMVECTOR    XM_CALLCONV     XMVectorNegate(FXMVECTOR V);
 XMVECTOR    XM_CALLCONV     XMVectorAdd(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR    XM_CALLCONV     XMVectorSum(FXMVECTOR V);
 XMVECTOR    XM_CALLCONV     XMVectorAddAngles(FXMVECTOR V1, FXMVECTOR V2);
 XMVECTOR    XM_CALLCONV     XMVectorSubtract(FXMVECTOR V1, FXMVECTOR V2);
 XMVECTOR    XM_CALLCONV     XMVectorSubtractAngles(FXMVECTOR V1, FXMVECTOR V2);
@@ -1202,21 +1178,21 @@ XMFLOAT3*   XM_CALLCONV     XMVector3TransformNormalStream(_Out_writes_bytes_(si
                                                            _In_ size_t OutputStride,
                                                            _In_reads_bytes_(sizeof(XMFLOAT3)+InputStride*(VectorCount-1)) const XMFLOAT3* pInputStream,
                                                            _In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
-XMVECTOR    XM_CALLCONV     XMVector3Project(FXMVECTOR V, float ViewportX, float ViewportY, float ViewportWidth, float ViewportHeight, float ViewportMinZ, float ViewportMaxZ, 
+XMVECTOR    XM_CALLCONV     XMVector3Project(FXMVECTOR V, float ViewportX, float ViewportY, float ViewportWidth, float ViewportHeight, float ViewportMinZ, float ViewportMaxZ,
                                              FXMMATRIX Projection, CXMMATRIX View, CXMMATRIX World);
 XMFLOAT3*   XM_CALLCONV     XMVector3ProjectStream(_Out_writes_bytes_(sizeof(XMFLOAT3)+OutputStride*(VectorCount-1)) XMFLOAT3* pOutputStream,
                                                    _In_ size_t OutputStride,
                                                    _In_reads_bytes_(sizeof(XMFLOAT3)+InputStride*(VectorCount-1)) const XMFLOAT3* pInputStream,
-                                                   _In_ size_t InputStride, _In_ size_t VectorCount, 
-                                                   _In_ float ViewportX, _In_ float ViewportY, _In_ float ViewportWidth, _In_ float ViewportHeight, _In_ float ViewportMinZ, _In_ float ViewportMaxZ, 
+                                                   _In_ size_t InputStride, _In_ size_t VectorCount,
+                                                   _In_ float ViewportX, _In_ float ViewportY, _In_ float ViewportWidth, _In_ float ViewportHeight, _In_ float ViewportMinZ, _In_ float ViewportMaxZ,
                                                    _In_ FXMMATRIX Projection, _In_ CXMMATRIX View, _In_ CXMMATRIX World);
-XMVECTOR    XM_CALLCONV     XMVector3Unproject(FXMVECTOR V, float ViewportX, float ViewportY, float ViewportWidth, float ViewportHeight, float ViewportMinZ, float ViewportMaxZ, 
+XMVECTOR    XM_CALLCONV     XMVector3Unproject(FXMVECTOR V, float ViewportX, float ViewportY, float ViewportWidth, float ViewportHeight, float ViewportMinZ, float ViewportMaxZ,
                                                FXMMATRIX Projection, CXMMATRIX View, CXMMATRIX World);
 XMFLOAT3*   XM_CALLCONV     XMVector3UnprojectStream(_Out_writes_bytes_(sizeof(XMFLOAT3)+OutputStride*(VectorCount-1)) XMFLOAT3* pOutputStream,
                                                      _In_ size_t OutputStride,
                                                      _In_reads_bytes_(sizeof(XMFLOAT3)+InputStride*(VectorCount-1)) const XMFLOAT3* pInputStream,
-                                                     _In_ size_t InputStride, _In_ size_t VectorCount, 
-                                                     _In_ float ViewportX, _In_ float ViewportY, _In_ float ViewportWidth, _In_ float ViewportHeight, _In_ float ViewportMinZ, _In_ float ViewportMaxZ, 
+                                                     _In_ size_t InputStride, _In_ size_t VectorCount,
+                                                     _In_ float ViewportX, _In_ float ViewportY, _In_ float ViewportWidth, _In_ float ViewportHeight, _In_ float ViewportMinZ, _In_ float ViewportMaxZ,
                                                      _In_ FXMMATRIX Projection, _In_ CXMMATRIX View, _In_ CXMMATRIX World);
 
 /****************************************************************************
@@ -1302,9 +1278,9 @@ XMMATRIX    XM_CALLCONV     XMMatrixRotationRollPitchYawFromVector(FXMVECTOR Ang
 XMMATRIX    XM_CALLCONV     XMMatrixRotationNormal(FXMVECTOR NormalAxis, float Angle);
 XMMATRIX    XM_CALLCONV     XMMatrixRotationAxis(FXMVECTOR Axis, float Angle);
 XMMATRIX    XM_CALLCONV     XMMatrixRotationQuaternion(FXMVECTOR Quaternion);
-XMMATRIX    XM_CALLCONV     XMMatrixTransformation2D(FXMVECTOR ScalingOrigin, float ScalingOrientation, FXMVECTOR Scaling, 
+XMMATRIX    XM_CALLCONV     XMMatrixTransformation2D(FXMVECTOR ScalingOrigin, float ScalingOrientation, FXMVECTOR Scaling,
                                                      FXMVECTOR RotationOrigin, float Rotation, GXMVECTOR Translation);
-XMMATRIX    XM_CALLCONV     XMMatrixTransformation(FXMVECTOR ScalingOrigin, FXMVECTOR ScalingOrientationQuaternion, FXMVECTOR Scaling, 
+XMMATRIX    XM_CALLCONV     XMMatrixTransformation(FXMVECTOR ScalingOrigin, FXMVECTOR ScalingOrientationQuaternion, FXMVECTOR Scaling,
                                                    GXMVECTOR RotationOrigin, HXMVECTOR RotationQuaternion, HXMVECTOR Translation);
 XMMATRIX    XM_CALLCONV     XMMatrixAffineTransformation2D(FXMVECTOR Scaling, FXMVECTOR RotationOrigin, float Rotation, FXMVECTOR Translation);
 XMMATRIX    XM_CALLCONV     XMMatrixAffineTransformation(FXMVECTOR Scaling, FXMVECTOR RotationOrigin, FXMVECTOR RotationQuaternion, GXMVECTOR Translation);
@@ -1568,6 +1544,14 @@ template<uint32_t PermuteX, uint32_t PermuteY, uint32_t PermuteZ, uint32_t Permu
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<0,1,2,3>(FXMVECTOR V1, FXMVECTOR V2) { (V2); return V1; }
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<4,5,6,7>(FXMVECTOR V1, FXMVECTOR V2) { (V1); return V2; }
 
+#if defined(_XM_SSE_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<0,1,4,5>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_movelh_ps(V1,V2); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<6,7,2,3>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_movehl_ps(V1,V2); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<0,4,1,5>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_unpacklo_ps(V1,V2); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<2,6,3,7>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_unpackhi_ps(V1,V2); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<2,3,6,7>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_castpd_ps(_mm_unpackhi_pd(_mm_castps_pd(V1), _mm_castps_pd(V2))); }
+#endif
+
 #if defined(_XM_SSE4_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<4,1,2,3>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_blend_ps(V1,V2,0x1); }
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorPermute<0,5,2,3>(FXMVECTOR V1, FXMVECTOR V2) { return _mm_blend_ps(V1,V2,0x2); }
@@ -1648,7 +1632,14 @@ template<uint32_t SwizzleX, uint32_t SwizzleY, uint32_t SwizzleZ, uint32_t Swizz
 // Specialized swizzles
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<0,1,2,3>(FXMVECTOR V) { return V; }
 
-#if defined(_XM_SSE4_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
+#if defined(_XM_SSE_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<0,1,0,1>(FXMVECTOR V) { return _mm_movelh_ps(V,V); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<2,3,2,3>(FXMVECTOR V) { return _mm_movehl_ps(V,V); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<0,0,1,1>(FXMVECTOR V) { return _mm_unpacklo_ps(V,V); }
+template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<2,2,3,3>(FXMVECTOR V) { return _mm_unpackhi_ps(V,V); }
+#endif
+
+#if defined(_XM_SSE3_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<0,0,2,2>(FXMVECTOR V) { return _mm_moveldup_ps(V); }
 template<> inline XMVECTOR      XM_CALLCONV     XMVectorSwizzle<1,1,3,3>(FXMVECTOR V) { return _mm_movehdup_ps(V); }
 #endif
@@ -1724,12 +1715,12 @@ template<uint32_t VSLeftRotateElements, uint32_t Select0, uint32_t Select1, uint
  *
  ****************************************************************************/
 
-// The purpose of the following global constants is to prevent redundant 
+// The purpose of the following global constants is to prevent redundant
 // reloading of the constants when they are referenced by more than one
 // separate inline math routine called within the same function.  Declaring
 // a constant locally within a routine is sufficient to prevent redundant
 // reloads of that constant when that single routine is called multiple
-// times in a function, but if the constant is used (and declared) in a 
+// times in a function, but if the constant is used (and declared) in a
 // separate math routine it would be reloaded.
 
 #ifndef XMGLOBALCONST

@@ -51,6 +51,7 @@ cpp_quote("#define CONTEXT_MENU_MEDIA          11")
 cpp_quote("//;begin_internal")
 cpp_quote("#define CONTEXT_MENU_ENTITY         12")
 cpp_quote("#define CONTEXT_MENU_PDF            13")
+cpp_quote("#define CONTEXT_MENU_DISABLEDFLASH  14")
 cpp_quote("//;end_internal")
 
 cpp_quote("#define MENUEXT_SHOWDIALOG           0x1")

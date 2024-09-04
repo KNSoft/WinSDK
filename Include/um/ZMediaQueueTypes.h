@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -381,9 +381,9 @@ typedef struct _ZMEDIAQUEUE_NOTIFICATIONDATA
     {
     ZMEDIAQUEUE queue;
     ZMEDIAQUEUE_NOTIFICATION notifyCode;
-    size_t idxItem1;
-    size_t idxItem2;
-    size_t param1;
+    UINT idxItem1;
+    UINT idxItem2;
+    UINT param1;
     } 	ZMEDIAQUEUE_NOTIFICATIONDATA;
 
 typedef 

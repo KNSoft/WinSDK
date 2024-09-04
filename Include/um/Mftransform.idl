@@ -178,7 +178,8 @@ cpp_quote( "#define MFT_STREAMS_UNLIMITED       0xFFFFFFFF" )
 cpp_quote( "#define MFT_OUTPUT_BOUND_LOWER_UNBOUNDED MINLONGLONG" )
 cpp_quote( "#define MFT_OUTPUT_BOUND_UPPER_UNBOUNDED MAXLONGLONG" )
 
-typedef enum _MFT_MESSAGE_TYPE {
+
+typedef [v1_enum] enum _MFT_MESSAGE_TYPE {
     //
     // commands - must be acted on
     //
@@ -465,8 +466,38 @@ interface IMFTransform : IUnknown
 
 };
 
+
+
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
+
+
+//
+// to be implemented if Devicesource needs to load device MFT, which is the
+// first component to process the samples from the source.It can also be used
+// to snoop on property commands flowing through the pipeline just before they
+// are sent to the source.
+//
+///////////////////////////////////////////////////////////////////////////////
+//
+// Internal MF Interface to get/set media type from/to device directly
+//
+///////////////////////////////////////////////////////////////////////////////
+typedef enum _DeviceStreamState{
+    DeviceStreamState_Stop = 0,
+    DeviceStreamState_Pause,
+    DeviceStreamState_Run,
+    DeviceStreamState_Disabled
+}DeviceStreamState, *PDeviceStreamState;
+
+
+// MEDeviceStreamCreated
+// Type: UINT32
+// {0252a1cf-3540-43b4-9164-d72eb405fa40}
+/// <summary>
+// Custom event to indicate device stream has been created
+/// </summary>
+cpp_quote("EXTERN_GUID(MEDeviceStreamCreated, 0x0252a1cf, 0x3540, 0x43b4, 0x91, 0x64, 0xd7, 0x2e, 0xb4, 0x05, 0xfa, 0x40);")
 
 cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN7) ")
 
@@ -513,6 +544,7 @@ cpp_quote( "#undef ProcessOutput          " )
 cpp_quote( "#endif" )
 
 
+
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -552,8 +584,161 @@ cpp_quote( "EXTERN_C const DECLSPEC_SELECTANY GUID MF_SA_REQUIRED_SAMPLE_COUNT =
 // MFT_MESSAGE_NOTIFY_END_STREAMING to MFT
 cpp_quote(" EXTERN_C const DECLSPEC_SELECTANY GUID MFT_END_STREAMING_AWARE = { 0x70fbc845,  0xb07e, 0x4089, { 0xb0, 0x64, 0x39, 0x9d, 0xc6, 0x11, 0xf, 0x29 } }; ")
 
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+// MF_SA_AUDIO_ENDPOINT_AWARE  {C0381701-805C-42B2-AC8D-E2B4BF21F4F8}
+// Data type: BOOL
+// If present and set to a nonzero value, indicates that this decoder 
+// transform is audio endpoint device-aware and can accept the audio 
+// endpoint ID via the MFT_AUDIO_DECODER_AUDIO_ENDPOINT_ID attribute.
+cpp_quote(" EXTERN_C const DECLSPEC_SELECTANY GUID MF_SA_AUDIO_ENDPOINT_AWARE = { 0xc0381701, 0x805c, 0x42b2,{ 0xac, 0x8d, 0xe2, 0xb4, 0xbf, 0x21, 0xf4, 0xf8 } }; ")
+
+// MFT_AUDIO_DECODER_AUDIO_ENDPOINT_ID  {C7CCDD6E-5398-4695-8BE7-51B3E95111BD}
+// Data type: LPCWSTR
+// If set on the transform to a nonzero value, indicates that the data from 
+// this audio decoder transform will be rendered on the audio endpoint
+// device specified by the null-terminated wide-character string.
+cpp_quote(" EXTERN_C const DECLSPEC_SELECTANY GUID MFT_AUDIO_DECODER_AUDIO_ENDPOINT_ID = { 0xc7ccdd6e, 0x5398, 0x4695,{ 0x8b, 0xe7, 0x51, 0xb3, 0xe9, 0x51, 0x11, 0xbd } }; ")
+
+// MFT_AUDIO_DECODER_SPATIAL_METADATA_CLIENT  {05987DF4-1270-4999-925F-8E939A7C0AF7}
+// Data type: IUnknown pointer
+// If present and set to a nonzero value, indicates that this audio decoder 
+// will expect metadata items collections to be activated using the specified
+// audio metadata client, specified by the ISpatialAudioMetadataClient interface.
+cpp_quote(" EXTERN_C const DECLSPEC_SELECTANY GUID MFT_AUDIO_DECODER_SPATIAL_METADATA_CLIENT = { 0x5987df4, 0x1270, 0x4999,{ 0x92, 0x5f, 0x8e, 0x93, 0x9a, 0x7c, 0xa, 0xf7 } }; ")
+
+#endif //(NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
+
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
+
+[
+    object,
+    uuid(D818FBD8-FC46-42F2-87AC-1EA2D1F9BF32),
+    local
+]
+interface IMFDeviceTransform : IUnknown
+{
+    HRESULT InitializeTransform(
+        [in, annotation("_In_")] IMFAttributes* pAttributes
+        );
+
+    HRESULT GetInputAvailableType(
+        [in, annotation("_In_")] DWORD dwInputStreamID,
+        [in, annotation("_In_")] DWORD dwTypeIndex,
+        [out, annotation("_COM_Outptr_")] IMFMediaType** pMediaType
+        );
+
+    HRESULT GetInputCurrentType(
+        [in, annotation("_In_")] DWORD dwInputStreamID,
+        [out, annotation("_COM_Outptr_")] IMFMediaType** pMediaType
+        );
+
+    HRESULT GetInputStreamAttributes(
+        [in, annotation("_In_")] DWORD dwInputStreamID,
+        [out, annotation("_COM_Outptr_")] IMFAttributes** ppAttributes
+        );
+
+    HRESULT GetOutputAvailableType(
+        [in, annotation("_In_")] DWORD dwOutputStreamID,
+        [in, annotation("_In_")] DWORD dwTypeIndex,
+        [out, annotation("_COM_Outptr_")] IMFMediaType** pMediaType
+        );
+
+    HRESULT GetOutputCurrentType(
+        [in, annotation("_In_")] DWORD dwOutputStreamID,
+        [out, annotation("_COM_Outptr_")] IMFMediaType** pMediaType
+        );
+
+    HRESULT GetOutputStreamAttributes(
+        [in, annotation("_In_")] DWORD dwOutputStreamID,
+        [out, annotation("_COM_Outptr_")] IMFAttributes** ppAttributes
+        );
+
+    HRESULT GetStreamCount(
+        [out, annotation("_Out_")] DWORD* pcInputStreams,
+        [out, annotation("_Out_")] DWORD* pcOutputStreams
+        );
+
+    HRESULT GetStreamIDs(
+        [in, annotation("_In_")] DWORD dwInputIDArraySize,
+        [out, annotation("_Out_")] DWORD* pdwInputStreamIds,
+        [in, annotation("_In_")] DWORD dwOutputIDArraySize,
+        [out, annotation("_Out_")] DWORD* pdwOutputStreamIds
+        );
+
+    HRESULT ProcessEvent(
+        [in, annotation("_In_")] DWORD dwInputStreamID,
+        [in, annotation("_In_")] IMFMediaEvent* pEvent
+        );
+
+    HRESULT ProcessInput(
+        [in, annotation("_In_")] DWORD dwInputStreamID,
+        [in, annotation("_In_")] IMFSample* pSample,
+        [in, annotation("_In_")] DWORD dwFlags
+        );
+
+    HRESULT ProcessMessage(
+        [in, annotation("_In_")] MFT_MESSAGE_TYPE eMessage,
+        [in, annotation("_In_")] ULONG_PTR ulParam
+        );
+
+    HRESULT ProcessOutput(
+        [in, annotation("_In_")] DWORD dwFlags,
+        [in, annotation("_In_")] DWORD cOutputBufferCount,
+        [in, out, annotation("_Inout_"), size_is(cOutputBufferCount)] MFT_OUTPUT_DATA_BUFFER* pOutputSample,
+        [out, annotation("_Out_")] DWORD* pdwStatus
+        );
+
+    HRESULT SetInputStreamState(
+        [in, annotation("_In_")] DWORD dwStreamID,
+        [in, annotation("_In_")] IMFMediaType *pMediaType,
+        [in, annotation("_In_")] DeviceStreamState value,
+        [in, annotation("_In_")] DWORD dwFlags
+        );
+
+    HRESULT GetInputStreamState(
+        [in, annotation("_In_")] DWORD dwStreamID,
+        [out, annotation("_Out_")] DeviceStreamState *value
+        );
+
+    HRESULT SetOutputStreamState(
+        [in, annotation("_In_")] DWORD dwStreamID,
+        [in, annotation("_In_")] IMFMediaType *pMediaType,
+        [in, annotation("_In_")] DeviceStreamState value,
+        [in, annotation("_In_")] DWORD dwFlags
+        );
+
+    HRESULT GetOutputStreamState(
+        [in, annotation("_In_")] DWORD dwStreamID,
+        [out, annotation("_Out_")] DeviceStreamState *value
+        );
+
+    HRESULT GetInputStreamPreferredState(
+        [in, annotation("_In_")] DWORD dwStreamID,
+        [out, annotation("_Out_")] DeviceStreamState *value,
+        [out, annotation("_COM_Outptr_")] IMFMediaType** ppMediaType
+        );
+
+    HRESULT FlushInputStream(
+        [in, annotation("_In_")] DWORD dwStreamIndex,
+        [in, annotation("_In_")] DWORD dwFlags
+        );
+
+    HRESULT FlushOutputStream(
+        [in, annotation("_In_")] DWORD dwStreamIndex,
+        [in, annotation("_In_")] DWORD dwFlags
+        );
+
+
+};
+
+cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD ) ")
 
 cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN8) ")
 
@@ -827,6 +1012,7 @@ cpp_quote( "EXTERN_C const DECLSPEC_SELECTANY GUID MFT_CODEC_MERIT_Attribute = {
 // only by devproxy based HW MFTs.
 // {111EA8CD-B62A-4bdb-89F6-67FFCDC2458B}
 cpp_quote( "EXTERN_C const DECLSPEC_SELECTANY GUID MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE = { 0x111ea8cd, 0xb62a, 0x4bdb, { 0x89, 0xf6, 0x67, 0xff, 0xcd, 0xc2, 0x45, 0x8b } };" )
+
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion

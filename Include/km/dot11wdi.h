@@ -153,6 +153,9 @@ extern "C" {
 #define WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED                       126
 #define WDI_SET_FAST_BSS_TRANSITION_PARAMETERS                      127
 #define WDI_SET_NEIGHBOR_REPORT_ENTRIES                             128
+#define WDI_INDICATION_ADAPTER_STATE                                129
+#define WDI_GET_SUPPORTED_DEVICE_SERVICES                           130
+#define WDI_DEVICE_SERVICE_COMMAND                                  131
 
 // Special codes
 /*++
@@ -522,6 +525,16 @@ void
     );
 typedef MINIPORT_WDI_TX_TAL_QUEUE_IN_ORDER (*MINIPORT_WDI_TX_TAL_QUEUE_IN_ORDER_HANDLER);
 
+typedef
+void
+(MINIPORT_WDI_TX_SUSPECT_FRAME_LIST_ABORT)(
+    _In_ TAL_TXRX_HANDLE MiniportTalTxRxContext,
+    _In_ UINT64 SuspectFrameContext,
+    _In_ UINT16 NumSuspectFrames,
+    _In_reads_(NumSuspectFrames) PNET_BUFFER_LIST* SuspectFrameList
+    );
+typedef MINIPORT_WDI_TX_SUSPECT_FRAME_LIST_ABORT (*MINIPORT_WDI_TX_SUSPECT_FRAME_LIST_ABORT_HANDLER);
+
 /*************************************************************************
 *
 *       TxRx WDI Common API
@@ -589,6 +602,18 @@ void
     _Out_ PUINT16 pQueueLength
     );
 typedef NDIS_WDI_TX_QUERY_RA_TID_STATE (*NDIS_WDI_TX_QUERY_RA_TID_STATE_HANDLER);
+
+typedef
+void
+(NDIS_WDI_TX_QUERY_SUSPECT_FRAME_COMPLETE_STATUS)(
+    _In_ NDIS_HANDLE NdisMiniportDataPathHandle,
+    _In_ UINT64 SuspectFrameContext,
+    _In_ PNET_BUFFER_LIST pNBL,
+    _Out_ BOOLEAN* pIsTransferCompleteNeeded,
+    _Out_ BOOLEAN* pIsSendCompleteNeeded,
+    _Out_ NDIS_STATUS * pWifiStatus
+    );
+typedef NDIS_WDI_TX_QUERY_SUSPECT_FRAME_COMPLETE_STATUS (*NDIS_WDI_TX_QUERY_SUSPECT_FRAME_COMPLETE_STATUS_HANDLER);
 
 /*************************************************************************
 *
@@ -892,42 +917,47 @@ typedef NDIS_WDI_PEER_DELETE_IND (*NDIS_WDI_PEER_DELETE_IND_HANDLER);
 #define NDIS_OBJECT_TYPE_WDI_DATA_API         0xC2
 
 #define NDIS_OBJECT_TYPE_WDI_DATA_API_REVISION_1       1
+#define NDIS_OBJECT_TYPE_WDI_DATA_API_REVISION_2       2
 
 typedef struct _NDIS_WDI_DATA_API
 {
     NDIS_OBJECT_HEADER                       Header;
 
 
-    NDIS_WDI_TX_DEQUEUE_IND_HANDLER                 TxDequeueIndication;
-    NDIS_WDI_TX_TRANSFER_COMPLETE_IND_HANDLER       TxTransferCompleteIndication;
-    NDIS_WDI_TX_SEND_COMPLETE_IND_HANDLER           TxSendCompleteIndication;
-    NDIS_WDI_TX_QUERY_RA_TID_STATE_HANDLER          TxQueryRATIDState;
-    NDIS_WDI_TX_SEND_PAUSE_IND_HANDLER              TxSendPauseIndication;
-    NDIS_WDI_TX_SEND_RESTART_IND_HANDLER            TxSendRestartIndication;
-    NDIS_WDI_TX_RELEASE_FRAMES_IND_HANDLER          TxReleaseFrameIndication;
-    NDIS_WDI_TX_INJECT_FRAME_IND_HANDLER            TxInjectFrameIndication;
-    NDIS_WDI_TX_ABORT_CONFIRM_HANDLER               TxAbortConfirm;
+    NDIS_WDI_TX_DEQUEUE_IND_HANDLER                         TxDequeueIndication;
+    NDIS_WDI_TX_TRANSFER_COMPLETE_IND_HANDLER               TxTransferCompleteIndication;
+    NDIS_WDI_TX_SEND_COMPLETE_IND_HANDLER                   TxSendCompleteIndication;
+    NDIS_WDI_TX_QUERY_RA_TID_STATE_HANDLER                  TxQueryRATIDState;
+    NDIS_WDI_TX_SEND_PAUSE_IND_HANDLER                      TxSendPauseIndication;
+    NDIS_WDI_TX_SEND_RESTART_IND_HANDLER                    TxSendRestartIndication;
+    NDIS_WDI_TX_RELEASE_FRAMES_IND_HANDLER                  TxReleaseFrameIndication;
+    NDIS_WDI_TX_INJECT_FRAME_IND_HANDLER                    TxInjectFrameIndication;
+    NDIS_WDI_TX_ABORT_CONFIRM_HANDLER                       TxAbortConfirm;
 
-    NDIS_WDI_RX_INORDER_DATA_IND_HANDLER            RxInorderDataIndication;
-    NDIS_WDI_RX_STOP_CONFIRM_HANDLER                RxStopConfirm;
-    NDIS_WDI_RX_FLUSH_CONFIRM_HANDLER               RxFlushConfirm;
+    NDIS_WDI_RX_INORDER_DATA_IND_HANDLER                    RxInorderDataIndication;
+    NDIS_WDI_RX_STOP_CONFIRM_HANDLER                        RxStopConfirm;
+    NDIS_WDI_RX_FLUSH_CONFIRM_HANDLER                       RxFlushConfirm;
 
-    NDIS_WDI_PEER_CREATE_IND_HANDLER                PeerCreateIndication;
-    NDIS_WDI_PEER_DELETE_IND_HANDLER                PeerDeleteIndication;
+    NDIS_WDI_PEER_CREATE_IND_HANDLER                        PeerCreateIndication;
+    NDIS_WDI_PEER_DELETE_IND_HANDLER                        PeerDeleteIndication;
 
-    NDIS_WDI_ALLOCATE_WDI_FRAME_METADATA_HANDLER    AllocateWiFiFrameMetaData;
-    NDIS_WDI_FREE_WDI_FRAME_METADATA_HANDLER        FreeWiFiFrameMetaData;
+    NDIS_WDI_ALLOCATE_WDI_FRAME_METADATA_HANDLER            AllocateWiFiFrameMetaData;
+    NDIS_WDI_FREE_WDI_FRAME_METADATA_HANDLER                FreeWiFiFrameMetaData;
+
+    NDIS_WDI_TX_QUERY_SUSPECT_FRAME_COMPLETE_STATUS_HANDLER TxQuerySuspectFrameCompleteStatus;
 
 } NDIS_WDI_DATA_API, *PNDIS_WDI_DATA_API;
 
 #define NDIS_SIZEOF_WDI_DATA_API_REVISION_1      \
     RTL_SIZEOF_THROUGH_FIELD(NDIS_WDI_DATA_API, FreeWiFiFrameMetaData)
-
+#define NDIS_SIZEOF_WDI_DATA_API_REVISION_2      \
+    RTL_SIZEOF_THROUGH_FIELD(NDIS_WDI_DATA_API, TxQuerySuspectFrameCompleteStatus)
 
 
 #define NDIS_OBJECT_TYPE_MINIPORT_WDI_DATA_HANDLERS        0xC1
 
 #define NDIS_OBJECT_TYPE_MINIPORT_WDI_DATA_HANDLERS_REVISION_1       1
+#define NDIS_OBJECT_TYPE_MINIPORT_WDI_DATA_HANDLERS_REVISION_2       2
 
 typedef struct _NDIS_MINIPORT_WDI_DATA_HANDLERS
 {
@@ -959,10 +989,15 @@ typedef struct _NDIS_MINIPORT_WDI_DATA_HANDLERS
     MINIPORT_WDI_TAL_TXRX_RESET_PORT_HANDLER          TalTxRxResetPortHandler;
     MINIPORT_WDI_TAL_TXRX_PEER_CONFIG_HANDLER         TalTxRxPeerConfigHandler;
     MINIPORT_WDI_TAL_TXRX_PEER_DELETE_CONFIRM_HANDLER TalTxRxPeerDeleteConfirmHandler;
+
+    MINIPORT_WDI_TX_SUSPECT_FRAME_LIST_ABORT_HANDLER  TxSuspectFrameAbortHandler;
 } NDIS_MINIPORT_WDI_DATA_HANDLERS, *PNDIS_MINIPORT_WDI_DATA_HANDLERS;
 
 #define NDIS_SIZEOF_MINIPORT_WDI_DATA_HANDLERS_REVISION_1      \
 RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_WDI_DATA_HANDLERS, TalTxRxPeerDeleteConfirmHandler)
+
+#define NDIS_SIZEOF_MINIPORT_WDI_DATA_HANDLERS_REVISION_2      \
+RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_WDI_DATA_HANDLERS, TxSuspectFrameAbortHandler)
 
 typedef 
 NDIS_STATUS
@@ -1217,7 +1252,13 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 1.0.21 compliant drivers
 #define WDI_VERSION_1_0_21                  ((1 << 16) | (0 << 8) | 0x15)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_1_0_21
+// For 1.1.0 compliant drivers
+#define WDI_VERSION_1_1_0                   ((1 << 16) | (1 << 8) | 0x0)
+
+// For 1.1.4 compliant drivers
+#define WDI_VERSION_1_1_4                   ((1 << 16) | (1 << 8) | 0x4)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_4
 
 #ifndef NDIS_EXPORT
 #  define NDIS_EXPORT
@@ -1443,6 +1484,12 @@ NdisMDeregisterWdiMiniportDriver(
 #define OID_WDI_SET_NEIGHBOR_REPORT_ENTRIES \
     WDI_DEFINE_OID(WDI_SET_NEIGHBOR_REPORT_ENTRIES)
 
+#define OID_WDI_GET_SUPPORTED_DEVICE_SERVICES \
+    WDI_DEFINE_OID(WDI_GET_SUPPORTED_DEVICE_SERVICES)
+
+#define OID_WDI_DEVICE_SERVICE_COMMAND \
+    WDI_DEFINE_OID(WDI_DEVICE_SERVICE_COMMAND)
+
 #define NDIS_STATUS_WDI_INDICATION_DISCONNECT_COMPLETE    \
     WDI_DEFINE_INDICATION(WDI_INDICATION_DISCONNECT_COMPLETE)
 
@@ -1574,6 +1621,9 @@ NdisMDeregisterWdiMiniportDriver(
 
 #define NDIS_STATUS_WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED \
     WDI_DEFINE_INDICATION(WDI_INDICATION_FT_ASSOC_PARAMS_NEEDED)
+
+#define NDIS_STATUS_WDI_INDICATION_ADAPTER_STATE   \
+    WDI_DEFINE_INDICATION(WDI_INDICATION_ADAPTER_STATE)
 
 // Special codes
 /*++

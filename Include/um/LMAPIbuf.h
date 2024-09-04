@@ -29,13 +29,12 @@ Notes:
 #endif
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 //
 // Function Prototypes
@@ -86,19 +85,24 @@ NetapipBufferAllocate (                 // Internal Function
     _Outptr_result_bytebuffer_(ByteCount) LPVOID * Buffer
     );
 
-
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Desktop Family or OneCore Family Or Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
+
+_Success_( return == 0 )
+NET_API_STATUS NET_API_FUNCTION
+NetApiBufferFree (
+    _Frees_ptr_opt_ LPVOID Buffer
+    );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
+#pragma endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif // _LMAPIBUF_

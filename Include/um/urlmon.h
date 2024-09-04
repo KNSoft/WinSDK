@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -574,8 +574,16 @@ STDAPI RegisterFormatEnumerator(_In_ LPBC pBC, _In_ IEnumFORMATETC *pEFetc, DWOR
 STDAPI RevokeFormatEnumerator(_In_ LPBC pBC, _In_ IEnumFORMATETC *pEFetc);                            
 STDAPI RegisterMediaTypeClass(_In_ LPBC pBC, _In_ _In_range_(>, 0) UINT ctypes, _In_reads_(ctypes) const LPCSTR* rgszTypes, _In_reads_(ctypes)  CLSID *rgclsID, DWORD reserved);    
 STDAPI FindMediaTypeClass(_In_ LPBC pBC, _In_ LPCSTR szType, _Out_ CLSID *pclsID, DWORD reserved);                          
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 STDAPI UrlMkSetSessionOption(DWORD dwOption, _In_reads_bytes_opt_(dwBufferLength) LPVOID pBuffer, DWORD dwBufferLength, _Reserved_ DWORD dwReserved);       
 STDAPI UrlMkGetSessionOption(DWORD dwOption, _Out_writes_bytes_to_opt_(dwBufferLength,*pdwBufferLengthOut) LPVOID pBuffer, DWORD dwBufferLength, _Out_ DWORD *pdwBufferLengthOut, _Reserved_ DWORD dwReserved);       
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 STDAPI FindMimeFromData(                                                                                                                  
     _In_opt_                     LPBC    pBC,                   // bind context - can be NULL                                                 
     _In_opt_                     LPCWSTR pwzUrl,                // url - can be null                                                          
@@ -1525,7 +1533,8 @@ enum tagBINDSTATUS
         BINDSTATUS_RESERVED_F	= ( BINDSTATUS_RESERVED_E + 1 ) ,
         BINDSTATUS_RESERVED_10	= ( BINDSTATUS_RESERVED_F + 1 ) ,
         BINDSTATUS_RESERVED_11	= ( BINDSTATUS_RESERVED_10 + 1 ) ,
-        BINDSTATUS_LAST_PRIVATE	= BINDSTATUS_RESERVED_11
+        BINDSTATUS_RESERVED_12	= ( BINDSTATUS_RESERVED_11 + 1 ) ,
+        BINDSTATUS_LAST_PRIVATE	= BINDSTATUS_RESERVED_12
     } 	BINDSTATUS;
 
 
@@ -8210,7 +8219,8 @@ EXTERN_C const IID IID_IInternetHostSecurityManager;
 #define URLACTION_SCRIPT_XSSFILTER                             0x00001409
 #define URLACTION_SCRIPT_NAVIGATE                              0x0000140A
 #define URLACTION_PLUGGABLE_PROTOCOL_XHR                       0x0000140B
-#define URLACTION_SCRIPT_CURR_MAX                              0x0000140B
+#define URLACTION_ALLOW_VBSCRIPT_IE                            0x0000140C
+#define URLACTION_SCRIPT_CURR_MAX                              0x0000140C
 #define URLACTION_SCRIPT_MAX                                   0x000015ff
 
 #define URLACTION_HTML_MIN                                     0x00001600

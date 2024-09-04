@@ -102,38 +102,23 @@ DEFINE_GUID(GUID_BLUETOOTH_HCI_VENDOR_EVENT,            0x547247e6, 0x45bb, 0x4c
 DEFINE_GUID(Bluetooth_Base_UUID,   0x00000000, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
 
 //
-// UUID for the root of the browse group list
+// Creates the 128-bit UUID from a short id by using the Bluetooth base UUID
+// {<short id>-0000-1000-8000-00805F9B34FB}
 //
+#define DEFINE_BLUETOOTH_UUID128(name,shortId) \
+    DEFINE_GUID(name,shortId,0x0000,0x1000,0x80,0x00,0x00,0x80,0x5F,0x9B,0x34,0xFB)
 
-DEFINE_GUID(SDP_PROTOCOL_UUID,    0x00000001, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UDP_PROTOCOL_UUID,    0x00000002, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(RFCOMM_PROTOCOL_UUID, 0x00000003, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(TCP_PROTOCOL_UUID,    0x00000004, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(TCSBIN_PROTOCOL_UUID, 0x00000005, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(TCSAT_PROTOCOL_UUID,  0x00000006, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(OBEX_PROTOCOL_UUID,   0x00000008, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(IP_PROTOCOL_UUID,     0x00000009, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(FTP_PROTOCOL_UUID,    0x0000000A, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HTTP_PROTOCOL_UUID,   0x0000000C, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(WSP_PROTOCOL_UUID,    0x0000000E, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(BNEP_PROTOCOL_UUID,   0x0000000F, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UPNP_PROTOCOL_UUID,   0x00000010, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HID_PROTOCOL_UUID,    0x00000011, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HCCC_PROTOCOL_UUID,   0x00000012, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HCDC_PROTOCOL_UUID,   0x00000014, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HN_PROTOCOL_UUID,     0x00000016, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AVCTP_PROTOCOL_UUID,  0x00000017, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AVDTP_PROTOCOL_UUID,  0x00000019, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(CMPT_PROTOCOL_UUID,   0x0000001B, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UDI_C_PLANE_PROTOCOL_UUID, 0x0000001D, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(L2CAP_PROTOCOL_UUID,  0x00000100, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
 
+//
+// UUIDs for the Protocol Identifiers, Service Discovery Assigned Numbers
+//
 #define SDP_PROTOCOL_UUID16                 (0x0001)
 #define UDP_PROTOCOL_UUID16                 (0x0002)
 #define RFCOMM_PROTOCOL_UUID16              (0x0003)
 #define TCP_PROTOCOL_UUID16                 (0x0004)
 #define TCSBIN_PROTOCOL_UUID16              (0x0005)
 #define TCSAT_PROTOCOL_UUID16               (0x0006)
+#define ATT_PROTOCOL_UUID16                 (0x0007)
 #define OBEX_PROTOCOL_UUID16                (0x0008)
 #define IP_PROTOCOL_UUID16                  (0x0009)
 #define FTP_PROTOCOL_UUID16                 (0x000A)
@@ -151,80 +136,37 @@ DEFINE_GUID(L2CAP_PROTOCOL_UUID,  0x00000100, 0x0000, 0x1000, 0x80, 0x00, 0x00, 
 #define UDI_C_PLANE_PROTOCOL_UUID16         (0x001D)
 #define L2CAP_PROTOCOL_UUID16               (0x0100)
 
-DEFINE_GUID(ServiceDiscoveryServerServiceClassID_UUID, 0x00001000, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(BrowseGroupDescriptorServiceClassID_UUID,  0x00001001, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(PublicBrowseGroupServiceClass_UUID,        0x00001002, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(SerialPortServiceClass_UUID,               0x00001101, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(LANAccessUsingPPPServiceClass_UUID,        0x00001102, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(DialupNetworkingServiceClass_UUID,         0x00001103, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(IrMCSyncServiceClass_UUID,                 0x00001104, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(OBEXObjectPushServiceClass_UUID,           0x00001105, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(OBEXFileTransferServiceClass_UUID,         0x00001106, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(IrMCSyncCommandServiceClass_UUID,          0x00001107, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HeadsetServiceClass_UUID,                  0x00001108, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(CordlessTelephonyServiceClass_UUID,        0x00001109, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AudioSourceServiceClass_UUID,              0x0000110A, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AudioSinkServiceClass_UUID,                0x0000110B, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AVRemoteControlTargetServiceClass_UUID,    0x0000110C, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AdvancedAudioDistributionServiceClass_UUID,0x0000110D, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AVRemoteControlServiceClass_UUID,          0x0000110E, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AVRemoteControlControllerServiceClass_UUID,0x0000110F, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(IntercomServiceClass_UUID,                 0x00001110, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(FaxServiceClass_UUID,                      0x00001111, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HeadsetAudioGatewayServiceClass_UUID,      0x00001112, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(WAPServiceClass_UUID,                      0x00001113, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(WAPClientServiceClass_UUID,                0x00001114, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(PANUServiceClass_UUID,                     0x00001115, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(NAPServiceClass_UUID,                      0x00001116, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(GNServiceClass_UUID,                       0x00001117, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(DirectPrintingServiceClass_UUID,           0x00001118, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ReferencePrintingServiceClass_UUID,        0x00001119, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ImagingServiceClass_UUID,                  0x0000111A, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ImagingResponderServiceClass_UUID,         0x0000111B, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ImagingAutomaticArchiveServiceClass_UUID,  0x0000111C, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ImagingReferenceObjectsServiceClass_UUID,  0x0000111D, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HandsfreeServiceClass_UUID,                0x0000111E, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HandsfreeAudioGatewayServiceClass_UUID,    0x0000111F, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(DirectPrintingReferenceObjectsServiceClass_UUID,
-                                                       0x00001120, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ReflectedUIServiceClass_UUID,              0x00001121, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(BasicPringingServiceClass_UUID,            0x00001122, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(PrintingStatusServiceClass_UUID,           0x00001123, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HumanInterfaceDeviceServiceClass_UUID,     0x00001124, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HardcopyCableReplacementServiceClass_UUID, 0x00001125, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HCRPrintServiceClass_UUID,                 0x00001126, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(HCRScanServiceClass_UUID,                  0x00001127, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(CommonISDNAccessServiceClass_UUID,         0x00001128, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(VideoConferencingGWServiceClass_UUID,      0x00001129, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UDIMTServiceClass_UUID,                    0x0000112A, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UDITAServiceClass_UUID,                    0x0000112B, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(AudioVideoServiceClass_UUID,               0x0000112C, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-
-DEFINE_GUID(SimAccessServiceClass_UUID,                0x0000112D, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(PhonebookAccessPceServiceClass_UUID,       0x0000112E, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(PhonebookAccessPseServiceClass_UUID,       0x0000112F, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(PnPInformationServiceClass_UUID,           0x00001200, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(GenericNetworkingServiceClass_UUID,        0x00001201, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(GenericFileTransferServiceClass_UUID,      0x00001202, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(GenericAudioServiceClass_UUID,             0x00001203, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(GenericTelephonyServiceClass_UUID,         0x00001204, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UPnpServiceClass_UUID,                     0x00001205, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(UPnpIpServiceClass_UUID,                   0x00001206, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ESdpUpnpIpPanServiceClass_UUID,            0x00001300, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ESdpUpnpIpLapServiceClass_UUID,            0x00001301, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(ESdpUpnpL2capServiceClass_UUID,            0x00001302, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(VideoSourceServiceClass_UUID,              0x00001303, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(VideoSinkServiceClass_UUID,                0x00001304, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
-DEFINE_GUID(VideoDistributionServiceClass_UUID,        0x00001305, 0x0000, 0x1000, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB);
+DEFINE_BLUETOOTH_UUID128(SDP_PROTOCOL_UUID,         SDP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(UDP_PROTOCOL_UUID,         UDP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(RFCOMM_PROTOCOL_UUID,      RFCOMM_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(TCP_PROTOCOL_UUID,         TCP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(TCSBIN_PROTOCOL_UUID,      TCSBIN_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(TCSAT_PROTOCOL_UUID,       TCSAT_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(ATT_PROTOCOL_UUID,         ATT_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(OBEX_PROTOCOL_UUID,        OBEX_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(IP_PROTOCOL_UUID,          IP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(FTP_PROTOCOL_UUID,         FTP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(HTTP_PROTOCOL_UUID,        HTTP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(WSP_PROTOCOL_UUID,         WSP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(BNEP_PROTOCOL_UUID,        BNEP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(UPNP_PROTOCOL_UUID,        UPNP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(HID_PROTOCOL_UUID,         HID_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(HCCC_PROTOCOL_UUID,        HCCC_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(HCDC_PROTOCOL_UUID,        HCDC_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(HCN_PROTOCOL_UUID,         HCN_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(AVCTP_PROTOCOL_UUID,       AVCTP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(AVDTP_PROTOCOL_UUID,       AVDTP_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(CMPT_PROTOCOL_UUID,        CMPT_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(UDI_C_PLANE_PROTOCOL_UUID, UDI_C_PLANE_PROTOCOL_UUID16);
+DEFINE_BLUETOOTH_UUID128(L2CAP_PROTOCOL_UUID,       L2CAP_PROTOCOL_UUID16);
 
 //
-// Fixing typos introduced in previous releases
+// UUIDs for Service Class IDs, Service Discovery Assigned Numbers
 //
-#define BasicPrintingServiceClass_UUID BasicPringingServiceClass_UUID
-
 #define ServiceDiscoveryServerServiceClassID_UUID16     (0x1000)
 #define BrowseGroupDescriptorServiceClassID_UUID16      (0x1001)
 #define PublicBrowseGroupServiceClassID_UUID16          (0x1002)
+
 #define SerialPortServiceClassID_UUID16                 (0x1101)
 #define LANAccessUsingPPPServiceClassID_UUID16          (0x1102)
 #define DialupNetworkingServiceClassID_UUID16           (0x1103)
@@ -233,11 +175,10 @@ DEFINE_GUID(VideoDistributionServiceClass_UUID,        0x00001305, 0x0000, 0x100
 #define OBEXFileTransferServiceClassID_UUID16           (0x1106)
 #define IrMcSyncCommandServiceClassID_UUID16            (0x1107)
 #define HeadsetServiceClassID_UUID16                    (0x1108)
-#define CordlessServiceClassID_UUID16                   (0x1109)
+#define CordlessTelephonyServiceClassID_UUID16          (0x1109)
 #define AudioSourceServiceClassID_UUID16                (0x110A)
-#define AudioSinkSourceServiceClassID_UUID16            (0x110B)
+#define AudioSinkServiceClassID_UUID16                  (0x110B)
 #define AVRemoteControlTargetServiceClassID_UUID16      (0x110C)
-#define AdvancedAudioDistributionServiceClassID_UUID16  (0x110D)
 #define AVRemoteControlServiceClassID_UUID16            (0x110E)
 #define AVRemoteControlControllerServiceClass_UUID16    (0x110F)
 #define IntercomServiceClassID_UUID16                   (0x1110)
@@ -250,7 +191,6 @@ DEFINE_GUID(VideoDistributionServiceClass_UUID,        0x00001305, 0x0000, 0x100
 #define GNServiceClassID_UUID16                         (0x1117)
 #define DirectPrintingServiceClassID_UUID16             (0x1118)
 #define ReferencePrintingServiceClassID_UUID16          (0x1119)
-#define ImagingServiceClassID_UUID16                    (0x111A)
 #define ImagingResponderServiceClassID_UUID16           (0x111B)
 #define ImagingAutomaticArchiveServiceClassID_UUID16    (0x111C)
 #define ImagingReferenceObjectsServiceClassID_UUID16    (0x111D)
@@ -259,29 +199,190 @@ DEFINE_GUID(VideoDistributionServiceClass_UUID,        0x00001305, 0x0000, 0x100
 #define DirectPrintingReferenceObjectsServiceClassID_UUID16 \
                                                         (0x1120)
 #define ReflectsUIServiceClassID_UUID16                 (0x1121)
-#define BasicPrintingServiceClassID_UUID16              (0x1122)
 #define PrintingStatusServiceClassID_UUID16             (0x1123)
 #define HumanInterfaceDeviceServiceClassID_UUID16       (0x1124)
-#define HardcopyCableReplacementServiceClassID_UUID16   (0x1125)
 #define HCRPrintServiceClassID_UUID16                   (0x1126)
 #define HCRScanServiceClassID_UUID16                    (0x1127)
-#define CommonISDNAccessServiceClass_UUID16             (0x1128)
-#define VideoConferencingGWServiceClass_UUID16          (0x1129)
-#define UDIMTServiceClass_UUID16                        (0x112A)
-#define UDITAServiceClass_UUID16                        (0x112B)
-#define AudioVideoServiceClass_UUID16                   (0x112C)
+#define CommonISDNAccessServiceClassID_UUID16           (0x1128)
+#define VideoConferencingGWServiceClassID_UUID16        (0x1129)
+#define UDIMTServiceClassID_UUID16                      (0x112A)
+#define UDITAServiceClassID_UUID16                      (0x112B)
+#define AudioVideoServiceClassID_UUID16                 (0x112C)
+#define SimAccessServiceClassID_UUID16                  (0x112D)
+#define PhonebookAccessPceServiceClassID_UUID16         (0x112E)
+#define PhonebookAccessPseServiceClassID_UUID16         (0x112F)
+
+#define HeadsetHSServiceClassID_UUID16                  (0x1131)
+#define MessageAccessServerServiceClassID_UUID16        (0x1132)
+#define MessageNotificationServerServiceClassID_UUID16  (0x1133)
+
+#define GNSSServerServiceClassID_UUID16                 (0x1136)
+#define ThreeDimensionalDisplayServiceClassID_UUID16    (0x1137)
+#define ThreeDimensionalGlassesServiceClassID_UUID16    (0x1138)
+
+#define MPSServiceClassID_UUID16                        (0x113B)
+#define CTNAccessServiceClassID_UUID16                  (0x113C)
+#define CTNNotificationServiceClassID_UUID16            (0x113D)
 
 #define PnPInformationServiceClassID_UUID16             (0x1200)
 #define GenericNetworkingServiceClassID_UUID16          (0x1201)
 #define GenericFileTransferServiceClassID_UUID16        (0x1202)
 #define GenericAudioServiceClassID_UUID16               (0x1203)
 #define GenericTelephonyServiceClassID_UUID16           (0x1204)
+#define UPnpServiceClassID_UUID16                       (0x1205)
+#define UPnpIpServiceClassID_UUID16                     (0x1206)
+
+#define ESdpUpnpIpPanServiceClassID_UUID16              (0x1300)
+#define ESdpUpnpIpLapServiceClassID_UUID16              (0x1301)
+#define ESdpUpnpL2capServiceClassID_UUID16              (0x1302)
+#define VideoSourceServiceClassID_UUID16                (0x1303)
+#define VideoSinkServiceClassID_UUID16                  (0x1304)
+
+#define HealthDeviceProfileSourceServiceClassID_UUID16  (0x1401)
+#define HealthDeviceProfileSinkServiceClassID_UUID16    (0x1402)
+
+DEFINE_BLUETOOTH_UUID128(ServiceDiscoveryServerServiceClassID_UUID,         ServiceDiscoveryServerServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(BrowseGroupDescriptorServiceClassID_UUID,          BrowseGroupDescriptorServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(PublicBrowseGroupServiceClass_UUID,                PublicBrowseGroupServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(SerialPortServiceClass_UUID,                       SerialPortServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(LANAccessUsingPPPServiceClass_UUID,                LANAccessUsingPPPServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(DialupNetworkingServiceClass_UUID,                 DialupNetworkingServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(IrMCSyncServiceClass_UUID,                         IrMCSyncServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(OBEXObjectPushServiceClass_UUID,                   OBEXObjectPushServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(OBEXFileTransferServiceClass_UUID,                 OBEXFileTransferServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(IrMCSyncCommandServiceClass_UUID,                  IrMcSyncCommandServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HeadsetServiceClass_UUID,                          HeadsetServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(CordlessTelephonyServiceClass_UUID,                CordlessTelephonyServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(AudioSourceServiceClass_UUID,                      AudioSourceServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(AudioSinkServiceClass_UUID,                        AudioSinkServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(AVRemoteControlTargetServiceClass_UUID,            AVRemoteControlTargetServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(AVRemoteControlServiceClass_UUID,                  AVRemoteControlServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(AVRemoteControlControllerServiceClass_UUID,        AVRemoteControlControllerServiceClass_UUID16);
+DEFINE_BLUETOOTH_UUID128(IntercomServiceClass_UUID,                         IntercomServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(FaxServiceClass_UUID,                              FaxServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HeadsetAudioGatewayServiceClass_UUID,              HeadsetAudioGatewayServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(WAPServiceClass_UUID,                              WAPServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(WAPClientServiceClass_UUID,                        WAPClientServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(PANUServiceClass_UUID,                             PANUServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(NAPServiceClass_UUID,                              NAPServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(GNServiceClass_UUID,                               GNServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(DirectPrintingServiceClass_UUID,                   DirectPrintingServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ReferencePrintingServiceClass_UUID,                ReferencePrintingServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ImagingResponderServiceClass_UUID,                 ImagingResponderServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ImagingAutomaticArchiveServiceClass_UUID,          ImagingAutomaticArchiveServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ImagingReferenceObjectsServiceClass_UUID,          ImagingReferenceObjectsServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HandsfreeServiceClass_UUID,                        HandsfreeServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HandsfreeAudioGatewayServiceClass_UUID,            HandsfreeAudioGatewayServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(DirectPrintingReferenceObjectsServiceClass_UUID,   DirectPrintingReferenceObjectsServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ReflectedUIServiceClass_UUID,                      ReflectsUIServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(PrintingStatusServiceClass_UUID,                   PrintingStatusServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HumanInterfaceDeviceServiceClass_UUID,             HumanInterfaceDeviceServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HCRPrintServiceClass_UUID,                         HCRPrintServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HCRScanServiceClass_UUID,                          HCRScanServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(CommonISDNAccessServiceClass_UUID,                 CommonISDNAccessServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(VideoConferencingGWServiceClass_UUID,              VideoConferencingGWServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(UDIMTServiceClass_UUID,                            UDIMTServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(UDITAServiceClass_UUID,                            UDITAServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(AudioVideoServiceClass_UUID,                       AudioVideoServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(SimAccessServiceClass_UUID,                        SimAccessServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(PhonebookAccessPceServiceClass_UUID,               PhonebookAccessPceServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(PhonebookAccessPseServiceClass_UUID,               PhonebookAccessPseServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(HeadsetHSServiceClass_UUID,                        HeadsetHSServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(MessageAccessServerServiceClass_UUID,              MessageAccessServerServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(MessageNotificationServerServiceClass_UUID,        MessageNotificationServerServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(GNSSServerServiceClass_UUID,                       GNSSServerServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ThreeDimensionalDisplayServiceClass_UUID,          ThreeDimensionalDisplayServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ThreeDimensionalGlassesServiceClass_UUID,          ThreeDimensionalGlassesServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(MPSServiceClass_UUID,                              MPSServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(CTNAccessServiceClass_UUID,                        CTNAccessServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(CTNNotificationServiceClass_UUID,                  CTNNotificationServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(PnPInformationServiceClass_UUID,                   PnPInformationServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(GenericNetworkingServiceClass_UUID,                GenericNetworkingServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(GenericFileTransferServiceClass_UUID,              GenericFileTransferServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(GenericAudioServiceClass_UUID,                     GenericAudioServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(GenericTelephonyServiceClass_UUID,                 GenericTelephonyServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(UPnpServiceClass_UUID,                             UPnpServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(UPnpIpServiceClass_UUID,                           UPnpIpServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(ESdpUpnpIpPanServiceClass_UUID,                    ESdpUpnpIpPanServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ESdpUpnpIpLapServiceClass_UUID,                    ESdpUpnpIpLapServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ESdpUpnpL2capServiceClass_UUID,                    ESdpUpnpL2capServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(VideoSourceServiceClass_UUID,                      VideoSourceServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(VideoSinkServiceClass_UUID,                        VideoSinkServiceClassID_UUID16);
+
+DEFINE_BLUETOOTH_UUID128(HealthDeviceProfileSourceServiceClass_UUID,        HealthDeviceProfileSourceServiceClassID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HealthDeviceProfileSinkServiceClass_UUID,          HealthDeviceProfileSinkServiceClassID_UUID16);
+
+//
+// UUIDs for SIG defined profiles, Service Discovery Assigned Numbers
+//
+#define AdvancedAudioDistributionProfileID_UUID16       (0x110D)
+#define ImagingServiceProfileID_UUID16                  (0x111A)
+#define BasicPrintingProfileID_UUID16                   (0x1122)
+#define HardcopyCableReplacementProfileID_UUID16        (0x1125)
+#define PhonebookAccessProfileID_UUID16                 (0x1130)
+#define MessageAccessProfileID_UUID16                   (0x1134)
+#define GNSSProfileID_UUID16                            (0x1135)
+#define ThreeDimensionalSynchronizationProfileID_UUID16 (0x1139)
+#define MPSProfileID_UUID16                             (0x113A)
+#define CTNProfileID_UUID16                             (0x113E)
+#define VideoDistributionProfileID_UUID16               (0x1305)
+#define HealthDeviceProfileID_UUID16                    (0x1400)
+
+DEFINE_BLUETOOTH_UUID128(AdvancedAudioDistributionProfile_UUID,             AdvancedAudioDistributionProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ImagingServiceProfile_UUID,                        ImagingServiceProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(BasicPrintingProfile_UUID,                         BasicPrintingProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HardcopyCableReplacementProfile_UUID,              HardcopyCableReplacementProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(PhonebookAccessProfile_UUID,                       PhonebookAccessProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(MessageAccessProfile_UUID,                         MessageAccessProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(GNSSProfile_UUID,                                  GNSSProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(ThreeDimensionalSynchronizationProfile_UUID,       ThreeDimensionalSynchronizationProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(MPSProfile_UUID,                                   MPSProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(CTNProfile_UUID,                                   CTNProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(VideoDistributionProfile_UUID,                     VideoDistributionProfileID_UUID16);
+DEFINE_BLUETOOTH_UUID128(HealthDeviceProfile_UUID,                          HealthDeviceProfileID_UUID16);
 
 //
 // The SIG renamed the uuid for VideoConferencingServiceClass
 //
 #define VideoConferencingServiceClass_UUID              AVRemoteControlControllerServiceClass_UUID
 #define VideoConferencingServiceClassID_UUID16          AVRemoteControlControllerServiceClass_UUID16
+
+//
+// Fixing typos introduced in previous releases
+//
+#define HN_PROTOCOL_UUID HCN_PROTOCOL_UUID
+#define BasicPringingServiceClass_UUID BasicPrintingProfile_UUID
+
+//
+// Fixing naming inconsistencies in UUID16 list
+//
+#define CommonISDNAccessServiceClass_UUID16                 CommonISDNAccessServiceClassID_UUID16
+#define VideoConferencingGWServiceClass_UUID16              VideoConferencingGWServiceClassID_UUID16
+#define UDIMTServiceClass_UUID16                            UDIMTServiceClassID_UUID16
+#define UDITAServiceClass_UUID16                            UDITAServiceClassID_UUID16
+#define AudioVideoServiceClass_UUID16                       AudioVideoServiceClassID_UUID16
+
+//
+// Fixing naming inconsistencies in profile list
+//
+#define CordlessServiceClassID_UUID16                       CordlessTelephonyServiceClassID_UUID16
+#define AudioSinkSourceServiceClassID_UUID16                AudioSinkServiceClassID_UUID16
+#define AdvancedAudioDistributionServiceClassID_UUID16      AdvancedAudioDistributionProfileID_UUID16
+#define ImagingServiceClassID_UUID16                        ImagingServiceProfileID_UUID16
+#define BasicPrintingServiceClassID_UUID16                  BasicPrintingProfileID_UUID16
+#define HardcopyCableReplacementServiceClassID_UUID16       HardcopyCableReplacementProfileID_UUID16
+
+#define AdvancedAudioDistributionServiceClass_UUID          AdvancedAudioDistributionProfile_UUID 
+#define ImagingServiceClass_UUID                            ImagingServiceProfile_UUID
+#define BasicPrintingServiceClass_UUID                      BasicPrintingProfile_UUID
+#define HardcopyCableReplacementServiceClass_UUID           HardcopyCableReplacementProfile_UUID
+#define VideoDistributionServiceClass_UUID                  VideoDistributionProfile_UUID
 
 #endif //  NO_GUID_DEFS
 
@@ -340,7 +441,9 @@ DEFINE_GUID(VideoDistributionServiceClass_UUID,        0x00001305, 0x0000, 0x100
 #define BTH_MFG_SYMBOL_TECHNOLOGIES (42)
 #define BTH_MFG_TENOVIS        (43)
 #define BTH_MFG_MACRONIX_INTERNATIONAL (44)
+#define BTH_MFG_APPLE          (76)
 #define BTH_MFG_NORDIC_SEMICONDUCTORS_ASA (89)
+#define BTH_MFG_ARUBA_NETWORKS (283)
 #define BTH_MFG_INTERNAL_USE    (65535)
 
 typedef ULONGLONG BTH_ADDR, *PBTH_ADDR;
@@ -692,11 +795,25 @@ typedef UCHAR BTHSTATUS, *PBTHSTATUS;
 #define BDIF_LE_RANDOM_ADDRESS_TYPE \
                                 (0x00100000)
 
-#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD) // >= WIN10
+#if (NTDDI_VERSION >= NTDDI_WIN10) // >= WIN10
 
 #define BDIF_LE_DISCOVERABLE    (0x00200000)
 #define BDIF_LE_NAME            (0x00400000)
 #define BDIF_LE_VISIBLE         (0x00800000)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) // >= WIN10_RS2
+
+#define BDIF_LE_CONNECTED       (0x01000000)
+#define BDIF_LE_CONNECTABLE     (0x02000000)
+#define BDIF_CONNECTION_INBOUND (0x04000000)
+
+#define BDIF_VALID_FLAGS \
+    (BDIF_ADDRESS | BDIF_COD | BDIF_NAME | BDIF_PAIRED | BDIF_PERSONAL | \
+     BDIF_CONNECTED | BDIF_SHORT_NAME | BDIF_VISIBLE | BDIF_RSSI | BDIF_EIR | BDIF_SSP_PAIRED | BDIF_SSP_MITM_PROTECTED | \
+     BDIF_BR | BDIF_LE | BDIF_LE_PAIRED | BDIF_LE_PERSONAL | BDIF_LE_MITM_PROTECTED | BDIF_LE_PRIVACY_ENABLED | BDIF_LE_RANDOM_ADDRESS_TYPE | \
+     BDIF_LE_DISCOVERABLE | BDIF_LE_NAME | BDIF_LE_VISIBLE | BDIF_LE_CONNECTED | BDIF_LE_CONNECTABLE | BDIF_CONNECTION_INBOUND)
+
+#else
 
 #define BDIF_VALID_FLAGS                                                    \
     (BDIF_ADDRESS | BDIF_COD | BDIF_NAME | BDIF_PAIRED | BDIF_PERSONAL |    \
@@ -704,12 +821,14 @@ typedef UCHAR BTHSTATUS, *PBTHSTATUS;
      BDIF_BR | BDIF_LE | BDIF_LE_PAIRED | BDIF_LE_PERSONAL | BDIF_LE_MITM_PROTECTED | BDIF_LE_PRIVACY_ENABLED | BDIF_LE_RANDOM_ADDRESS_TYPE | \
      BDIF_LE_DISCOVERABLE | BDIF_LE_NAME | BDIF_LE_VISIBLE)
 
+#endif // >= WIN10_RS2
+
 #else
 
 #define BDIF_VALID_FLAGS                                                    \
     (BDIF_ADDRESS | BDIF_COD | BDIF_NAME | BDIF_PAIRED | BDIF_PERSONAL |    \
      BDIF_CONNECTED | BDIF_SHORT_NAME | BDIF_VISIBLE | BDIF_RSSI | BDIF_EIR | BDIF_SSP_PAIRED | BDIF_SSP_MITM_PROTECTED | \
-     BDIF_BR | BDIF_LE | BDIF_LE_PAIRED | BDIF_LE_PERSONAL |BDIF_LE_MITM_PROTECTED | BDIF_LE_PRIVACY_ENABLED | BDIF_LE_RANDOM_ADDRESS_TYPE)
+     BDIF_BR | BDIF_LE | BDIF_LE_PAIRED | BDIF_LE_PERSONAL | BDIF_LE_MITM_PROTECTED | BDIF_LE_PRIVACY_ENABLED | BDIF_LE_RANDOM_ADDRESS_TYPE)
 
 #endif // >= WIN10
 

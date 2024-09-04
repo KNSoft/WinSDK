@@ -31,6 +31,7 @@
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 /* APISET_NAME: api-ms-win-core-winrt-registration-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -2217,7 +2217,7 @@ EXTERN_C const IID IID_IMultiLanguage;
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcSrcSize,
             /* [annotation][out] */ 
-            _Out_writes_bytes_opt_(*pcDstSize)  BYTE *pDstStr,
+            _Out_writes_bytes_to_opt_(*pcDstSize, *pcDstSize)  BYTE *pDstStr,
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcDstSize) = 0;
         
@@ -2230,7 +2230,7 @@ EXTERN_C const IID IID_IMultiLanguage;
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcSrcSize,
             /* [annotation][out] */ 
-            _Out_writes_opt_(*pcDstSize)  WCHAR *pDstStr,
+            _Out_writes_to_opt_(*pcDstSize, *pcDstSize)  WCHAR *pDstStr,
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcDstSize) = 0;
         
@@ -2243,7 +2243,7 @@ EXTERN_C const IID IID_IMultiLanguage;
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcSrcSize,
             /* [annotation][out] */ 
-            _Out_writes_bytes_opt_(*pcDstSize)  CHAR *pDstStr,
+            _Out_writes_bytes_to_opt_(*pcDstSize, *pcDstSize)  CHAR *pDstStr,
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcDstSize) = 0;
         
@@ -2342,7 +2342,7 @@ EXTERN_C const IID IID_IMultiLanguage;
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcSrcSize,
             /* [annotation][out] */ 
-            _Out_writes_bytes_opt_(*pcDstSize)  BYTE *pDstStr,
+            _Out_writes_bytes_to_opt_(*pcDstSize, *pcDstSize)  BYTE *pDstStr,
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcDstSize);
         
@@ -2356,7 +2356,7 @@ EXTERN_C const IID IID_IMultiLanguage;
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcSrcSize,
             /* [annotation][out] */ 
-            _Out_writes_opt_(*pcDstSize)  WCHAR *pDstStr,
+            _Out_writes_to_opt_(*pcDstSize, *pcDstSize)  WCHAR *pDstStr,
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcDstSize);
         
@@ -2370,7 +2370,7 @@ EXTERN_C const IID IID_IMultiLanguage;
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcSrcSize,
             /* [annotation][out] */ 
-            _Out_writes_bytes_opt_(*pcDstSize)  CHAR *pDstStr,
+            _Out_writes_bytes_to_opt_(*pcDstSize, *pcDstSize)  CHAR *pDstStr,
             /* [annotation][out][in] */ 
             _Inout_opt_  UINT *pcDstSize);
         
@@ -4188,9 +4188,9 @@ STDAPI Rfc1766ToLcidW(_Out_ LCID *pLocale, _In_ LPCWSTR pszRfc1766);
 #endif                                                                        
                                                                               
 STDAPI IsConvertINetStringAvailable(DWORD dwSrcEncoding, DWORD dwDstEncoding);
-STDAPI ConvertINetString(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwSrcEncoding, _In_ DWORD dwDstEncoding, _In_reads_bytes_opt_(*lpnSrcSize) LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnSrcSize, _Out_writes_bytes_opt_(*lpnDstSize) LPSTR lpDstStr, _Inout_opt_ LPINT lpnDstSize); 
-STDAPI ConvertINetMultiByteToUnicode(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_opt_ LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnMultiCharCount, _Out_writes_opt_(*lpnWideCharCount) LPWSTR lpDstStr, _Inout_opt_ LPINT lpnWideCharCount); 
-STDAPI ConvertINetUnicodeToMultiByte(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_opt_ LPCWSTR lpSrcStr, _Inout_opt_ LPINT lpnWideCharCount, _Out_writes_bytes_opt_(*lpnMultiCharCount) LPSTR lpDstStr, _Inout_opt_ LPINT lpnMultiCharCount); 
+STDAPI ConvertINetString(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwSrcEncoding, _In_ DWORD dwDstEncoding, _In_reads_bytes_opt_(*lpnSrcSize) LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnSrcSize, _Out_writes_bytes_to_opt_(*lpnDstSize, *lpnDstSize) LPSTR lpDstStr, _Inout_opt_ LPINT lpnDstSize); 
+STDAPI ConvertINetMultiByteToUnicode(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_reads_bytes_opt_(*lpnMultiCharCount) LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnMultiCharCount, _Out_writes_to_opt_(*lpnWideCharCount, *lpnWideCharCount) LPWSTR lpDstStr, _Inout_opt_ LPINT lpnWideCharCount); 
+STDAPI ConvertINetUnicodeToMultiByte(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_reads_opt_(*lpnWideCharCount) LPCWSTR lpSrcStr, _Inout_opt_ LPINT lpnWideCharCount, _Out_writes_bytes_to_opt_(*lpnMultiCharCount, *lpnMultiCharCount) LPSTR lpDstStr, _Inout_opt_ LPINT lpnMultiCharCount); 
                                                                               
 #endif // _MLANG_H_API_DEF_                                                   
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */

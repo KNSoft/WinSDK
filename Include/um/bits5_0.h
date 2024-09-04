@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -132,7 +132,9 @@ enum __MIDL___MIDL_itf_bits5_0_0000_0000_0002
         BITS_JOB_PROPERTY_DYNAMIC_CONTENT	= 3,
         BITS_JOB_PROPERTY_HIGH_PERFORMANCE	= 4,
         BITS_JOB_PROPERTY_MAX_DOWNLOAD_SIZE	= 5,
-        BITS_JOB_PROPERTY_USE_STORED_CREDENTIALS	= 7
+        BITS_JOB_PROPERTY_USE_STORED_CREDENTIALS	= 7,
+        BITS_JOB_PROPERTY_MINIMUM_NOTIFICATION_INTERVAL_MS	= 9,
+        BITS_JOB_PROPERTY_ON_DEMAND_MODE	= 10
     } 	BITS_JOB_PROPERTY_ID;
 
 typedef /* [public][public][public][switch_type] */ union __MIDL___MIDL_itf_bits5_0_0000_0000_0003
@@ -819,6 +821,7 @@ BackgroundCopyManager5_0;
 /* interface __MIDL_itf_bits5_0_0000_0003 */
 /* [local] */ 
 
+#include "bits10_1.h"
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 

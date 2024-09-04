@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -1738,6 +1738,7 @@ enum CLCTL_CODES
         CLCTL_FSWITNESS_RELEASE_LOCK	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 25 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_NETNAME_CREDS_NOTIFYCAM	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 26 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_NOTIFY_QUORUM_STATUS	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 31 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_NOTIFY_MONITOR_SHUTTING_DOWN	= ( ( ( ( 0x1 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 32 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_GET_OPERATION_CONTEXT	= ( ( ( ( 0x1 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 2106 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_NOTIFY_OWNER_CHANGE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 2120 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_VALIDATE_CHANGE_GROUP	= ( ( ( ( 0x1 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 2121 )  << 2 )  )  | ( 0 << 22 )  ) 
@@ -1908,7 +1909,8 @@ enum CLUSCTL_RESOURCE_TYPE_CODES
         CLUSCTL_CLOUD_WITNESS_RESOURCE_TYPE_VALIDATE_CREDENTIALS	= ( ( CLUS_OBJECT_RESOURCE_TYPE << 24 )  | CLCTL_CLOUD_WITNESS_RESOURCE_TYPE_VALIDATE_CREDENTIALS ) ,
         CLUSCTL_CLOUD_WITNESS_RESOURCE_TYPE_VALIDATE_CREDENTIALS_WITH_KEY	= ( ( CLUS_OBJECT_RESOURCE_TYPE << 24 )  | CLCTL_CLOUD_WITNESS_RESOURCE_TYPE_VALIDATE_CREDENTIALS_WITH_KEY ) ,
         CLUSCTL_RESOURCE_TYPE_PREPARE_UPGRADE	= ( ( CLUS_OBJECT_RESOURCE_TYPE << 24 )  | CLCTL_RESOURCE_PREPARE_UPGRADE ) ,
-        CLUSCTL_RESOURCE_TYPE_UPGRADE_COMPLETED	= ( ( CLUS_OBJECT_RESOURCE_TYPE << 24 )  | CLCTL_RESOURCE_UPGRADE_COMPLETED ) 
+        CLUSCTL_RESOURCE_TYPE_UPGRADE_COMPLETED	= ( ( CLUS_OBJECT_RESOURCE_TYPE << 24 )  | CLCTL_RESOURCE_UPGRADE_COMPLETED ) ,
+        CLUSCTL_RESOURCE_TYPE_NOTIFY_MONITOR_SHUTTING_DOWN	= ( ( CLUS_OBJECT_RESOURCE_TYPE << 24 )  | CLCTL_NOTIFY_MONITOR_SHUTTING_DOWN ) 
     } 	CLUSCTL_RESOURCE_TYPE_CODES;
 
 typedef 

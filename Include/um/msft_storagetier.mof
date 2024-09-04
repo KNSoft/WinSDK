@@ -41,6 +41,9 @@ class MSFT_StorageTier : MSFT_StorageObject {
     UInt16 MediaType;
 
     [Read]
+    UInt16 TierClass;
+
+    [Read]
     UInt16 FaultDomainAwareness;
 
     [Read]
@@ -265,6 +268,9 @@ class MSFT_StorageTier : MSFT_StorageObject {
     //
 
     UInt32 SetAttributes2(
+
+        [In]
+        UInt16 ProvisioningType,
 
         [In]
         UInt16 MediaType,

@@ -8,7 +8,7 @@
 //
 //  File:       objbase.h
 //
-//  Contents:   Component object model defintions.
+//  Contents:   Component object model definitions.
 //
 //----------------------------------------------------------------------------
 
@@ -43,10 +43,10 @@ typedef enum tagCOINIT
 
 
 // interface marshaling definitions
-#define MARSHALINTERFACE_MIN 500 // minimum number of bytes for interface marshl
+#define MARSHALINTERFACE_MIN 500 // minimum number of bytes for interface marshal
 
 
-/*  flags for internet asyncronous and layout docfile */
+/*  flags for internet asynchronous and layout docfile */
 #define ASYNC_MODE_COMPATIBILITY    0x00000001L
 #define ASYNC_MODE_DEFAULT          0x00000000L
 
@@ -68,7 +68,7 @@ BOOL _fastcall wIsEqualGUID(REFGUID rguid1, REFGUID rguid2);
 #endif  // _OLE32_
 
 
-#pragma region Desktop Family
+#pragma region Desktop Partition
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 /****** STD Object API Prototypes *****************************************/
@@ -201,7 +201,7 @@ _Check_return_ WINOLEAPI StgOpenLayoutDocfile(_In_ _Null_terminated_ OLECHAR con
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family
+#pragma region Desktop Partition
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 WINOLEAPI  CoInstall(
@@ -214,8 +214,8 @@ WINOLEAPI  CoInstall(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Applicaiton Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_FAMILY_PC_APP)
+#pragma region PC Application Partition
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 
 //
 //  Moniker APIs
@@ -245,10 +245,10 @@ _Check_return_ WINOLEAPI  CreateAntiMoniker(_Outptr_ LPMONIKER FAR* ppmk);
 _Check_return_ WINOLEAPI  CreatePointerMoniker(_In_opt_ LPUNKNOWN punk, _Outptr_ LPMONIKER FAR* ppmk);
 _Check_return_ WINOLEAPI  CreateObjrefMoniker(_In_opt_ LPUNKNOWN punk, _Outptr_ LPMONIKER FAR * ppmk);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_FAMILY_PC_APP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 
-#pragma region Desktop Family
+#pragma region Desktop Partition
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 _Check_return_ WINOLEAPI  GetRunningObjectTable( _In_ DWORD reserved, _Outptr_ LPRUNNINGOBJECTTABLE FAR* pprot);
@@ -259,11 +259,11 @@ _Check_return_ WINOLEAPI  GetRunningObjectTable( _In_ DWORD reserved, _Outptr_ L
 #include <urlmon.h>
 #include <propidl.h>
 
-#pragma region Desktop Family
+#pragma region Desktop Partition
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 //
-// Standard Progress Indicator impolementation
+// Standard Progress Indicator implementation
 //
 WINOLEAPI CreateStdProgressIndicator(_In_ HWND hwndParent,
                                    _In_ LPCOLESTR pszTitle,

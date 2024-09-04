@@ -47,6 +47,7 @@ typedef struct FWPS_ACTION0_
    FWP_ACTION_TYPE type;
    // LUID of the callout if FWP_ACTION_FLAG_CALLOUT is set in the action type.
    // Otherwise, it's ignored.
+   // This calloutId field can be used for bitmapIndex, in which case, type is set to FWP_ACTION_BITMAP_INDEX_SET
    UINT32 calloutId;
 } FWPS_ACTION0;
 
@@ -58,6 +59,8 @@ cpp_quote("#define FWPS_FILTER_FLAG_PERMIT_IF_CALLOUT_UNREGISTERED   (0x0002)")
 cpp_quote("#define FWPS_FILTER_FLAG_OR_CONDITIONS   (0x0004)")
 // The filter references a provider context for IPsec security realm Id
 cpp_quote("#define FWPS_FILTER_FLAG_HAS_SECURITY_REALM_PROVIDER_CONTEXT (0x0008)")
+// The filter is in silent mode
+cpp_quote("#define FWPS_FILTER_FLAG_SILENT_MODE     (0x0010)")
 
 
 typedef struct FWPM_PROVIDER_CONTEXT0_ FWPM_PROVIDER_CONTEXT0;

@@ -149,7 +149,7 @@ DEFINE_GUID(WHEA_MSCHECK_GUID,
 //
 // This is the start of the Microsoft specific extensions to the Common Platform
 // Error Record specification. This is in accordance with Appendix N, section
-// 2.3 of the Unified Extensible Firware Interface specification, which allows
+// 2.3 of the Unified Extensible Firmware Interface specification, which allows
 // the specification of non-standard section bodies.
 //
 

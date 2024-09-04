@@ -79,6 +79,70 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
             [out, retval, iid_is(riid)] void** asyncOperation);
     }
 
+    [uuid(c1c03933-b398-4d93-b0fd-2972adf802c2)]
+    interface IProtectionPolicyManagerInterop3 : IInspectable
+    {
+        HRESULT RequestAccessWithBehaviorForWindowAsync(
+            [in] HWND appWindow,
+            [in] HSTRING sourceIdentity,
+            [in] HSTRING targetIdentity,
+            [in] IUnknown* auditInfoUnk, // ProtectionPolicyAuditInfo
+            [in] HSTRING messageFromApp,
+            [in] UINT32 behavior,
+            [in] REFIID riid,
+            [out, retval, iid_is(riid)] void** asyncOperation);
+
+        HRESULT RequestAccessForAppWithBehaviorForWindowAsync(
+            [in] HWND appWindow,
+            [in] HSTRING sourceIdentity,
+            [in] HSTRING appPackageFamilyName,
+            [in] IUnknown* auditInfoUnk, // ProtectionPolicyAuditInfo
+            [in] HSTRING messageFromApp,
+            [in] UINT32 behavior,
+            [in] REFIID riid,
+            [out, retval, iid_is(riid)] void** asyncOperation);
+
+        //
+        // StorageItem access variants below.
+        //
+
+        HRESULT RequestAccessToFilesForAppForWindowAsync(
+            [in] HWND appWindow,
+            [in] IUnknown* sourceItemListUnk, // IIterable<Windows.Storage.IStorageItem*>* sourceItemList
+            [in] HSTRING appPackageFamilyName,
+            [in] IUnknown* auditInfoUnk, // ProtectionPolicyAuditInfo
+            [in] REFIID riid,
+            [out, retval, iid_is(riid)] void** asyncOperation);
+
+        HRESULT RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(
+            [in] HWND appWindow,
+            [in] IUnknown* sourceItemListUnk, // IIterable<Windows.Storage.IStorageItem*>* sourceItemList
+            [in] HSTRING appPackageFamilyName,
+            [in] IUnknown* auditInfoUnk, // ProtectionPolicyAuditInfo
+            [in] HSTRING messageFromApp,
+            [in] UINT32 behavior,
+            [in] REFIID riid,
+            [out, retval, iid_is(riid)] void** asyncOperation);
+
+        HRESULT RequestAccessToFilesForProcessForWindowAsync(
+            [in] HWND appWindow,
+            [in] IUnknown* sourceItemListUnk, // IIterable<Windows.Storage.IStorageItem*>* sourceItemList
+            [in] UINT32 processId,
+            [in] IUnknown* auditInfoUnk, // ProtectionPolicyAuditInfo
+            [in] REFIID riid,
+            [out, retval, iid_is(riid)] void** asyncOperation);
+
+        HRESULT RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(
+            [in] HWND appWindow,
+            [in] IUnknown* sourceItemListUnk, // IIterable<Windows.Storage.IStorageItem*>* sourceItemList
+            [in] UINT32 processId,
+            [in] IUnknown* auditInfoUnk, // ProtectionPolicyAuditInfo
+            [in] HSTRING messageFromApp,
+            [in] UINT32 behavior,
+            [in] REFIID riid,
+            [out, retval, iid_is(riid)] void** asyncOperation);
+    }
+
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion
 

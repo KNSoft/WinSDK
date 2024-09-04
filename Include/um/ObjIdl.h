@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -4258,8 +4258,9 @@ enum tagEOLE_AUTHENTICATION_CAPABILITIES
         EOAC_DYNAMIC	= 0x10,
         EOAC_REQUIRE_FULLSIC	= 0x200,
         EOAC_AUTO_IMPERSONATE	= 0x400,
+        EOAC_DISABLE_AAA	= 0x1000,
         EOAC_NO_CUSTOM_MARSHAL	= 0x2000,
-        EOAC_DISABLE_AAA	= 0x1000
+        EOAC_RESERVED1	= 0x4000
     } 	EOLE_AUTHENTICATION_CAPABILITIES;
 
 #define	COLE_DEFAULT_PRINCIPAL	( ( OLECHAR * )( INT_PTR  )-1 )
@@ -4736,7 +4737,8 @@ enum tagGLOBALOPT_PROPERTIES
         COMGLB_APPID	= 2,
         COMGLB_RPC_THREADPOOL_SETTING	= 3,
         COMGLB_RO_SETTINGS	= 4,
-        COMGLB_UNMARSHALING_POLICY	= 5
+        COMGLB_UNMARSHALING_POLICY	= 5,
+        COMGLB_PROPERTIES_RESERVED1	= 6
     } 	GLOBALOPT_PROPERTIES;
 
 typedef 

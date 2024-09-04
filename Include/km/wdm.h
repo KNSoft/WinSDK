@@ -395,6 +395,23 @@ typedef enum _KPROFILE_SOURCE {
     ProfileMaximum
 } KPROFILE_SOURCE;
 
+//
+// Define global triage information for DPC watchdog profile
+//
+
+#define DPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK_SIGNATURE   0xAEBECEDE
+#define DPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK_REVISION_1  0x1
+#define DPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK_VER_1_SIZE  \
+        RTL_SIZEOF_THROUGH_FIELD(DPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK, DpcWatchdogProfileLength)
+
+typedef struct _DPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK {
+    ULONG Signature;
+    USHORT Revision;
+    USHORT Size;
+    USHORT DpcWatchdogProfileOffset;
+    ULONG DpcWatchdogProfileLength;
+} DPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK, *PDPC_WATCHDOG_GLOBAL_TRIAGE_BLOCK;
+
 
 
 //
@@ -1313,7 +1330,7 @@ __writefsdword (
 #endif // !defined(_M_CEE_PURE)
 
 
-#if !defined(_MANAGED)
+#if !defined(_MANAGED) && !defined(_M_HYBRID_X86_ARM64)
 VOID
 _mm_pause (
     VOID
@@ -1323,7 +1340,7 @@ _mm_pause (
 
 #define YieldProcessor _mm_pause
 
-#endif // !defined(_MANAGED)
+#endif // !defined(_MANAGED) && !defined(_M_HYBRID_X86_ARM64)
 
 #ifdef __cplusplus
 }
@@ -1945,6 +1962,7 @@ _mm_clflush (
 
 
 
+
 VOID
 _ReadWriteBarrier (
     VOID
@@ -1960,9 +1978,11 @@ _ReadWriteBarrier (
 
 
 
+
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
+
 
 
 
@@ -1970,6 +1990,7 @@ VOID
 __faststorefence (
     VOID
     );
+
 
 
 
@@ -2015,7 +2036,9 @@ _m_prefetchw (
 
 
 
+
 #pragma intrinsic(__faststorefence)
+
 
 
 
@@ -2488,7 +2511,9 @@ typedef XSAVE_FORMAT XMM_SAVE_AREA32, *PXMM_SAVE_AREA32;
 
 
 
+
 #endif // _AMD64_
+
 
 
 
@@ -3161,25 +3186,15 @@ YieldProcessor (
 #endif // _ARM_
 
 
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
-#ifdef _ARM64_
 
-
-#if defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#if !defined(_M_CEE_PURE)
+#if !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #include <intrin.h>
 
-#if !defined(_M_CEE_PURE)
-
-#pragma intrinsic(__getReg)
-#pragma intrinsic(__getCallerReg)
-#pragma intrinsic(__getRegFp)
-#pragma intrinsic(__getCallerRegFp)
-
-#pragma intrinsic(__setReg)
-#pragma intrinsic(__setCallerReg)
-#pragma intrinsic(__setRegFp)
-#pragma intrinsic(__setCallerRegFp)
+#if defined(_M_ARM64)
 
 #pragma intrinsic(__readx18byte)
 #pragma intrinsic(__readx18word)
@@ -3200,42 +3215,6 @@ YieldProcessor (
 #pragma intrinsic(__incx18word)
 #pragma intrinsic(__incx18dword)
 #pragma intrinsic(__incx18qword)
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-//
-// Memory barriers and prefetch intrinsics.
-//
-
-#pragma intrinsic(__yield)
-#pragma intrinsic(__prefetch)
-
-#pragma intrinsic(__dmb)
-#pragma intrinsic(__dsb)
-#pragma intrinsic(__isb)
-
-#pragma intrinsic(_ReadWriteBarrier)
-#pragma intrinsic(_WriteBarrier)
-
-FORCEINLINE
-VOID
-YieldProcessor (
-    VOID
-    )
-{
-    __dmb(_ARM64_BARRIER_ISHST);
-    __yield();
-}
-
-#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
-#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
-
-#define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
-#define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
 
 //
 // Define bit test intrinsics.
@@ -3571,6 +3550,52 @@ YieldProcessor (
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrementNoFence64((LONG64 *)a)
 
+#endif // defined(_M_ARM64)
+
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+
+#pragma intrinsic(__getReg)
+#pragma intrinsic(__getCallerReg)
+#pragma intrinsic(__getRegFp)
+#pragma intrinsic(__getCallerRegFp)
+
+#pragma intrinsic(__setReg)
+#pragma intrinsic(__setCallerReg)
+#pragma intrinsic(__setRegFp)
+#pragma intrinsic(__setCallerRegFp)
+
+//
+// Memory barriers and prefetch intrinsics.
+//
+
+#pragma intrinsic(__yield)
+#pragma intrinsic(__prefetch)
+
+#pragma intrinsic(__dmb)
+#pragma intrinsic(__dsb)
+#pragma intrinsic(__isb)
+
+#pragma intrinsic(_ReadWriteBarrier)
+#pragma intrinsic(_WriteBarrier)
+
+#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
+#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
+#define PrefetchForWrite(p)         __prefetch((const void *) (p))
+#define ReadForWriteAccess(p)       (*(p))
+
+#define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
+#define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
+
+FORCEINLINE
+VOID
+YieldProcessor (
+    VOID
+    )
+{
+    __dmb(_ARM64_BARRIER_ISHST);
+    __yield();
+}
+
 //
 // Define accessors for volatile loads and stores.
 //
@@ -3816,6 +3841,7 @@ WriteNoFence64 (
 // identification and performance counters.
 //
 
+// op0=2/3 encodings, use with _Read/WriteStatusReg
 #define ARM64_SYSREG(op0, op1, crn, crm, op2) \
         ( ((op0 & 1) << 14) | \
           ((op1 & 7) << 11) | \
@@ -3823,6 +3849,14 @@ WriteNoFence64 (
           ((crm & 15) << 3) | \
           ((op2 & 7) << 0) )
 
+// op0=1 encodings, use with __sys
+#define ARM64_SYSINSTR(op0, op1, crn, crm, op2) \
+        ( ((op1 & 7) << 11) | \
+          ((crn & 15) << 7) | \
+          ((crm & 15) << 3) | \
+          ((op2 & 7) << 0) )
+
+#define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
 #define ARM64_PMXEVCNTR_EL0     ARM64_SYSREG(3,3, 9,13,2)  // Event Count Register [CP15_PMXEVCNTR]
@@ -3855,7 +3889,22 @@ ReadTimeStampCounter(
     VOID
     )
 {
+
+#if defined(_M_HYBRID_X86_ARM64)
+
+    //
+    // For guest code, the rdtsc instruction is implemented in terms of CNTVCT.
+    // Use the same implementation for consistency.
+    //
+
+    return (ULONG64)_ReadStatusReg(ARM64_CNTVCT);
+
+#else
+
     return (ULONG64)_ReadStatusReg(ARM64_PMCCNTR_EL0);
+
+#endif
+
 }
 
 FORCEINLINE
@@ -3883,13 +3932,15 @@ ReadPMC (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
-#ifdef __cplusplus
-}
-#endif
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+
+#endif // !defined(RC_INVOKED) && !defined(MIDL_PASS)
+
+#else // defined(_M_CEE_PURE)
+
+#include <intrin.h>
 
 #endif // !defined(_M_CEE_PURE)
-
-#endif // defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #if defined(_M_CEE_PURE)
 FORCEINLINE
@@ -3902,8 +3953,7 @@ YieldProcessor (
 #endif
 
 
-
-#if defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)
+#if (defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)) && defined(_ARM64_)
 
 #define KI_USER_SHARED_DATA 0xFFFFF78000000000UI64
 
@@ -3924,11 +3974,11 @@ YieldProcessor (
 #endif
 
 
-#endif // _ARM64_
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
 
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
-#if defined(_M_AMD64) || defined(_M_IX86) || defined(_M_CEE_PURE)
+#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64)) || defined(_M_CEE_PURE)
 
 #ifdef __cplusplus
 extern "C" {
@@ -4056,7 +4106,7 @@ ReadAcquire (
     return Value;
 }
 
-FORCEINLINE
+CFORCEINLINE
 LONG
 ReadNoFence (
     _In_ _Interlocked_operand_ LONG const volatile *Source
@@ -4110,7 +4160,7 @@ ReadAcquire64 (
     return Value;
 }
 
-FORCEINLINE
+CFORCEINLINE
 LONG64
 ReadNoFence64 (
     _In_ _Interlocked_operand_ LONG64 const volatile *Source
@@ -4633,7 +4683,7 @@ ReadPointerAcquire (
     return (PVOID)ReadAcquire((PLONG)Source);
 }
 
-FORCEINLINE
+CFORCEINLINE
 PVOID
 ReadPointerNoFence (
     _In_ _Interlocked_operand_ PVOID const volatile *Source
@@ -4731,7 +4781,7 @@ ReadPointerAcquire (
     return (PVOID)ReadAcquire64((PLONG64)Source);
 }
 
-FORCEINLINE
+CFORCEINLINE
 PVOID
 ReadPointerNoFence (
     _In_ _Interlocked_operand_ PVOID const volatile *Source
@@ -4863,9 +4913,9 @@ __int2c (
 
 #endif // defined(_M_AMD64)
 
-#elif defined(_X86_)
+#elif defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)
 
-#if defined(_M_IX86)
+#if defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 #if _MSC_FULL_VER >= 140030222
 
@@ -4930,9 +4980,9 @@ __break(
 
 #endif // defined(_M_IA64)
 
-#elif defined(_ARM64_)
+#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 void
 __break(
@@ -4947,7 +4997,7 @@ __break(
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 #elif defined(_ARM_)
 
@@ -5351,20 +5401,21 @@ typedef struct _SE_IMPERSONATION_STATE {
 
 typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 
-#define OWNER_SECURITY_INFORMATION       (0x00000001L)
-#define GROUP_SECURITY_INFORMATION       (0x00000002L)
-#define DACL_SECURITY_INFORMATION        (0x00000004L)
-#define SACL_SECURITY_INFORMATION        (0x00000008L)
-#define LABEL_SECURITY_INFORMATION       (0x00000010L)
-#define ATTRIBUTE_SECURITY_INFORMATION   (0x00000020L)
-#define SCOPE_SECURITY_INFORMATION       (0x00000040L)
-#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION (0x00000080L) 
-#define BACKUP_SECURITY_INFORMATION      (0x00010000L)
+#define OWNER_SECURITY_INFORMATION                  (0x00000001L)
+#define GROUP_SECURITY_INFORMATION                  (0x00000002L)
+#define DACL_SECURITY_INFORMATION                   (0x00000004L)
+#define SACL_SECURITY_INFORMATION                   (0x00000008L)
+#define LABEL_SECURITY_INFORMATION                  (0x00000010L)
+#define ATTRIBUTE_SECURITY_INFORMATION              (0x00000020L)
+#define SCOPE_SECURITY_INFORMATION                  (0x00000040L)
+#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION    (0x00000080L) 
+#define ACCESS_FILTER_SECURITY_INFORMATION          (0x00000100L)
+#define BACKUP_SECURITY_INFORMATION                 (0x00010000L)
 
-#define PROTECTED_DACL_SECURITY_INFORMATION     (0x80000000L)
-#define PROTECTED_SACL_SECURITY_INFORMATION     (0x40000000L)
-#define UNPROTECTED_DACL_SECURITY_INFORMATION   (0x20000000L)
-#define UNPROTECTED_SACL_SECURITY_INFORMATION   (0x10000000L)
+#define PROTECTED_DACL_SECURITY_INFORMATION         (0x80000000L)
+#define PROTECTED_SACL_SECURITY_INFORMATION         (0x40000000L)
+#define UNPROTECTED_DACL_SECURITY_INFORMATION       (0x20000000L)
+#define UNPROTECTED_SACL_SECURITY_INFORMATION       (0x10000000L)
 
 
 #ifndef _NTLSA_IFS_
@@ -6050,6 +6101,9 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_DEVICE_TRUST_ENV           0x00000056
 #define FILE_DEVICE_UCM                 0x00000057
 #define FILE_DEVICE_UCMTCPCI            0x00000058
+#define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
+#define FILE_DEVICE_NVDIMM              0x0000005a
+#define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -6219,6 +6273,10 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #endif
 
+//
+// N.B. FILE_ATTRIBUTE_VIRTUAL is synthesized by LuaFV and not persisted
+//      on disk by NTFS. See FILE_ATTRIBUTE_VALID_SET_FLAGS below.
+//
 #define FILE_ATTRIBUTE_VIRTUAL              0x00010000  
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
@@ -6233,15 +6291,46 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #endif
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+
+#define FILE_ATTRIBUTE_PINNED               0x00080000  
+#define FILE_ATTRIBUTE_UNPINNED             0x00100000  
+
+//
+// This attribute only appears in directory enumeration classes (FILE_DIRECTORY_INFORMATION,
+// FILE_BOTH_DIR_INFORMATION, etc.).  When this attribute is set, it means that the file or
+// directory has no physical representation on the local system; the item is virtual.  Opening the
+// item will be more expensive than normal, e.g. it will cause at least some of it to be fetched
+// from a remote store.
+//
+#define FILE_ATTRIBUTE_RECALL_ON_OPEN       0x00040000  
+
+//
+// When this attribute is set, it means that the file or directory is not fully present locally.
+// For a file that means that not all of its data is on local storage (e.g. it is sparse with some
+// data still in remote storage).  For a directory it means that some of the directory contents are
+// being virtualized from another location.  Reading the file / enumerating the directory will be
+// more expensive than normal, e.g. it will cause at least some of the file/directory content to be
+// fetched from a remote store.  Only kernel-mode callers can set this bit.
+//
+#define FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS 0x00400000 
+
+#endif
+
 #if (_WIN32_WINNT < _WIN32_WINNT_WIN8)
 
 #define FILE_ATTRIBUTE_VALID_FLAGS          0x00007fb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x000031a7
 
-#else
+#elif (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS2)
 
 #define FILE_ATTRIBUTE_VALID_FLAGS          0x0002ffb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x000231a7
+
+#else
+
+#define FILE_ATTRIBUTE_VALID_FLAGS          0x005affb7
+#define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x001a31a7
 
 #endif
 
@@ -6552,6 +6641,8 @@ typedef enum _FILE_INFORMATION_CLASS {
     FileDispositionInformationEx,            // 64
     FileRenameInformationEx,                 // 65
     FileRenameInformationExBypassAccessCheck, // 66
+    FileDesiredStorageClassInformation,      // 67
+    FileStatInformation,                     // 68
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
 
@@ -7027,18 +7118,25 @@ typedef struct _IO_ERROR_LOG_MESSAGE {
 
 #define REG_OPTION_OPEN_LINK        (0x00000008L)   // Open symbolic link
 
+#define REG_OPTION_DONT_VIRTUALIZE  (0x00000010L)   // Disable Open/Read/Write
+                                                    // virtualization for this
+                                                    // open and the resulting
+                                                    // handle.
+
 #define REG_LEGAL_OPTION            \
                 (REG_OPTION_RESERVED            |\
                  REG_OPTION_NON_VOLATILE        |\
                  REG_OPTION_VOLATILE            |\
                  REG_OPTION_CREATE_LINK         |\
                  REG_OPTION_BACKUP_RESTORE      |\
-                 REG_OPTION_OPEN_LINK)
+                 REG_OPTION_OPEN_LINK           |\
+                 REG_OPTION_DONT_VIRTUALIZE)
 
 #define REG_OPEN_LEGAL_OPTION       \
                 (REG_OPTION_RESERVED            |\
                  REG_OPTION_BACKUP_RESTORE      |\
-                 REG_OPTION_OPEN_LINK)
+                 REG_OPTION_OPEN_LINK           |\
+                 REG_OPTION_DONT_VIRTUALIZE)
 
 //
 // Key creation/open disposition
@@ -7079,6 +7177,7 @@ typedef struct _IO_ERROR_LOG_MESSAGE {
 // Unload Flags
 //
 #define REG_FORCE_UNLOAD            1
+#define REG_UNLOAD_LEGAL_FLAGS      (REG_FORCE_UNLOAD)
 
 //
 // Notify filter values
@@ -7166,6 +7265,7 @@ typedef struct _KEY_SET_VIRTUALIZATION_INFORMATION {
     ULONG   Reserved                : 29;
 } KEY_SET_VIRTUALIZATION_INFORMATION, *PKEY_SET_VIRTUALIZATION_INFORMATION;
 
+
 typedef enum _KEY_SET_INFORMATION_CLASS {
     KeyWriteTimeInformation,
     KeyWow64FlagsInformation,
@@ -7173,6 +7273,7 @@ typedef enum _KEY_SET_INFORMATION_CLASS {
     KeySetVirtualizationInformation,
     KeySetDebugInformation,
     KeySetHandleTagsInformation,
+    KeySetLayerInformation,
     MaxKeySetInfoClass  // MaxKeySetInfoClass should always be the last enum
 } KEY_SET_INFORMATION_CLASS;
 
@@ -7605,79 +7706,92 @@ DEFINE_GUID(GUID_EXECUTION_REQUIRED_REQUEST_TIMEOUT, 0x3166bc41, 0x7e98, 0x4e03,
 // Specifies the subgroup which will contain all of the video
 // settings for a single policy.
 //
+// {7516b95f-f776-4464-8c53-06167f40cc99}
+//
 DEFINE_GUID( GUID_VIDEO_SUBGROUP, 0x7516B95F, 0xF776, 0x4464, 0x8C, 0x53, 0x06, 0x16, 0x7F, 0x40, 0xCC, 0x99 );
 
 //
 // Specifies (in seconds) how long we wait after the last user input has been
-// recieved before we power off the video.
+// received before we power off the video.
+//
+// {3c0bc021-c8a8-4e07-a973-6b14cbcb2b7e}
 //
 DEFINE_GUID( GUID_VIDEO_POWERDOWN_TIMEOUT, 0x3C0BC021, 0xC8A8, 0x4E07, 0xA9, 0x73, 0x6B, 0x14, 0xCB, 0xCB, 0x2B, 0x7E );
 
 //
 // Specifies whether adaptive display dimming is turned on or off.
-// 82DBCF2D-CD67-40C5-BFDC-9F1A5CCD4663
 //
 // N.B. This setting is DEPRECATED in Windows 8.1
+//
+// {82DBCF2D-CD67-40C5-BFDC-9F1A5CCD4663}
 //
 DEFINE_GUID( GUID_VIDEO_ANNOYANCE_TIMEOUT, 0x82DBCF2D, 0xCD67, 0x40C5, 0xBF, 0xDC, 0x9F, 0x1A, 0x5C, 0xCD, 0x46, 0x63 );
 
 //
 // Specifies how much adaptive dim time out will be increased by.
-// EED904DF-B142-4183-B10B-5A1197A37864
 //
 // N.B. This setting is DEPRECATED in Windows 8.1
+//
+// {EED904DF-B142-4183-B10B-5A1197A37864}
 //
 DEFINE_GUID( GUID_VIDEO_ADAPTIVE_PERCENT_INCREASE, 0xEED904DF, 0xB142, 0x4183, 0xB1, 0x0B, 0x5A, 0x11, 0x97, 0xA3, 0x78, 0x64 );
 
 //
 // Specifies (in seconds) how long we wait after the last user input has been
-// recieved before we dim the video.
+// received before we dim the video.
+//
+// {17aaa29b-8b43-4b94-aafe-35f64daaf1ee}
 //
 DEFINE_GUID( GUID_VIDEO_DIM_TIMEOUT, 0x17aaa29b, 0x8b43, 0x4b94, 0xaa, 0xfe, 0x35, 0xf6, 0x4d, 0xaa, 0xf1, 0xee);
 
 //
 // Specifies if the operating system should use adaptive timers (based on
-// previous behavior) to power down the video,
+// previous behavior) to power down the video.
+//
+// {90959d22-d6a1-49b9-af93-bce885ad335b}
 //
 DEFINE_GUID( GUID_VIDEO_ADAPTIVE_POWERDOWN, 0x90959D22, 0xD6A1, 0x49B9, 0xAF, 0x93, 0xBC, 0xE8, 0x85, 0xAD, 0x33, 0x5B );
 
 //
-// Specifies a maximum power consumption level.
-//
-DEFINE_GUID(GUID_DISK_MAX_POWER, 0x51dea550, 0xbb38, 0x4bc4, 0x99, 0x1b, 0xea, 0xcf, 0x37, 0xbe, 0x5e, 0xc8);
-
-//
 // Specifies if the monitor is currently being powered or not.
-// 02731015-4510-4526-99E6-E5A17EBD1AEA
+//
+// {02731015-4510-4526-99E6-E5A17EBD1AEA}
 //
 DEFINE_GUID( GUID_MONITOR_POWER_ON, 0x02731015, 0x4510, 0x4526, 0x99, 0xE6, 0xE5, 0xA1, 0x7E, 0xBD, 0x1A, 0xEA );
 
 //
-// Monitor brightness policy when in normal state
+// Monitor brightness policy when in normal state.
+//
 // {aded5e82-b909-4619-9949-f5d71dac0bcb}
+//
 DEFINE_GUID(GUID_DEVICE_POWER_POLICY_VIDEO_BRIGHTNESS, 0xaded5e82L, 0xb909, 0x4619, 0x99, 0x49, 0xf5, 0xd7, 0x1d, 0xac, 0x0b, 0xcb);
 
 //
+// Monitor brightness policy when in dim state.
 //
-// Monitor brightness policy when in dim state
 // {f1fbfde2-a960-4165-9f88-50667911ce96}
+//
 DEFINE_GUID(GUID_DEVICE_POWER_POLICY_VIDEO_DIM_BRIGHTNESS, 0xf1fbfde2, 0xa960, 0x4165, 0x9f, 0x88, 0x50, 0x66, 0x79, 0x11, 0xce, 0x96);
 
 //
-// Current Monitor brightness
+// Current monitor brightness.
+//
 // {8ffee2c6-2d01-46be-adb9-398addc5b4ff}
+//
 DEFINE_GUID(GUID_VIDEO_CURRENT_MONITOR_BRIGHTNESS, 0x8ffee2c6, 0x2d01, 0x46be, 0xad, 0xb9, 0x39, 0x8a, 0xdd, 0xc5, 0xb4, 0xff);
-
 
 //
 // Specifies if the operating system should use ambient light sensor to change
-// disply brightness adatively.
+// adaptively the display's brightness.
+//
 // {FBD9AA66-9553-4097-BA44-ED6E9D65EAB8}
+//
 DEFINE_GUID(GUID_VIDEO_ADAPTIVE_DISPLAY_BRIGHTNESS, 0xFBD9AA66, 0x9553, 0x4097, 0xBA, 0x44, 0xED, 0x6E, 0x9D, 0x65, 0xEA, 0xB8);
 
 //
 // Specifies a change in the current monitor's display state.
-// 6fe69556-704a-47a0-8f24-c28d936fda47
+//
+// {6fe69556-704a-47a0-8f24-c28d936fda47}
 //
 DEFINE_GUID(GUID_CONSOLE_DISPLAY_STATE, 0x6fe69556, 0x704a, 0x47a0, 0x8f, 0x24, 0xc2, 0x8d, 0x93, 0x6f, 0xda, 0x47);
 
@@ -7695,6 +7809,7 @@ DEFINE_GUID( GUID_ALLOW_DISPLAY_REQUIRED, 0xA9CEB8DA, 0xCD46, 0x44FB, 0xA9, 0x8B
 // effectively disables this feature.
 //
 // {8EC4B3A5-6868-48c2-BE75-4F3044BE88A7}
+//
 DEFINE_GUID(GUID_VIDEO_CONSOLE_LOCK_TIMEOUT, 0x8ec4b3a5, 0x6868, 0x48c2, 0xbe, 0x75, 0x4f, 0x30, 0x44, 0xbe, 0x88, 0xa7);
 
 
@@ -7711,6 +7826,13 @@ DEFINE_GUID(GUID_ADAPTIVE_POWER_BEHAVIOR_SUBGROUP, 0x8619b916, 0xe004, 0x4dd8, 0
 // {5ADBBFBC-074E-4da1-BA38-DB8B36B2C8F3}
 DEFINE_GUID(GUID_NON_ADAPTIVE_INPUT_TIMEOUT, 0x5adbbfbc, 0x74e, 0x4da1, 0xba, 0x38, 0xdb, 0x8b, 0x36, 0xb2, 0xc8, 0xf3);
 
+//
+// Specifies a change in the input controller(s) global system's state:
+// e.g. enabled, suppressed, filtered.
+//
+// {0E98FAE9-F45A-4DE1-A757-6031F197F6EA}
+DEFINE_GUID(GUID_ADAPTIVE_INPUT_CONTROLLER_STATE, 0xe98fae9, 0xf45a, 0x4de1, 0xa7, 0x57, 0x60, 0x31, 0xf1, 0x97, 0xf6, 0xea);
+
 // Harddisk settings
 // -----------------
 //
@@ -7718,6 +7840,11 @@ DEFINE_GUID(GUID_NON_ADAPTIVE_INPUT_TIMEOUT, 0x5adbbfbc, 0x74e, 0x4da1, 0xba, 0x
 // settings for a single policy.
 //
 DEFINE_GUID( GUID_DISK_SUBGROUP, 0x0012EE47, 0x9041, 0x4B5D, 0x9B, 0x77, 0x53, 0x5F, 0xBA, 0x8B, 0x14, 0x42 );
+
+//
+// Specifies a maximum power consumption level.
+//
+DEFINE_GUID(GUID_DISK_MAX_POWER, 0x51dea550, 0xbb38, 0x4bc4, 0x99, 0x1b, 0xea, 0xcf, 0x37, 0xbe, 0x5e, 0xc8);
 
 //
 // Specifies (in seconds) how long we wait after the last disk access
@@ -8039,7 +8166,7 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MAXIMUM, 0xBC5038F7, 0x23E0, 0x4960, 0x96, 
 //
 // Specifies a percentage (between 0 and 100) that the processor frequency
 // should never go above for Processor Power Efficiency Class 1.
-// For example, if this value is set to 80, then the processor frequency will 
+// For example, if this value is set to 80, then the processor frequency will
 // never be throttled above 80 percent of its maximum frequency by the system.
 //
 // {bc5038f7-23e0-4960-96da-33abaf5935ed}
@@ -8065,6 +8192,18 @@ DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MINIMUM, 0x893DEE8E, 0x2BEF, 0x41E0, 0x89, 
 // {893dee8e-2bef-41e0-89c6-b55d0929964d}
 //
 DEFINE_GUID( GUID_PROCESSOR_THROTTLE_MINIMUM_1, 0x893DEE8E, 0x2BEF, 0x41E0, 0x89, 0xC6, 0xB5, 0x5D, 0x09, 0x29, 0x96, 0x4D );
+
+//
+// Specifies the maximum processor frequency (expresssed in MHz).
+//
+
+// {75B0AE3F-BCE0-45a7-8C89-C9611C25E100}
+DEFINE_GUID(GUID_PROCESSOR_FREQUENCY_LIMIT,
+0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x00);
+
+// {75B0AE3F-BCE0-45a7-8C89-C9611C25E101}
+DEFINE_GUID(GUID_PROCESSOR_FREQUENCY_LIMIT_1,
+0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x01);
 
 //
 // Specifies whether throttle states are allowed to be used even when
@@ -8270,7 +8409,7 @@ DEFINE_GUID(GUID_PROCESSOR_PERF_AUTONOMOUS_ACTIVITY_WINDOW,
 // Specifies whether the processor should perform duty cycling.
 //
 // {4E4450B3-6179-4e91-B8F1-5BB9938F81A1}
-DEFINE_GUID(GUID_PROCESSOR_DUTY_CYCLING, 
+DEFINE_GUID(GUID_PROCESSOR_DUTY_CYCLING,
 0x4e4450b3, 0x6179, 0x4e91, 0xb8, 0xf1, 0x5b, 0xb9, 0x93, 0x8f, 0x81, 0xa1);
 
 #define PROCESSOR_DUTY_CYCLING_DISABLED 0
@@ -8372,7 +8511,7 @@ DEFINE_GUID( GUID_PROCESSOR_CORE_PARKING_DECREASE_POLICY, 0x71021b41, 0xc749, 0x
 DEFINE_GUID( GUID_PROCESSOR_CORE_PARKING_MAX_CORES, 0xea062031, 0x0e34, 0x4ff1, 0x9b, 0x6d, 0xeb, 0x10, 0x59, 0x33, 0x40, 0x28);
 
 //
-// Specifies, on a per processor group basis, the maximum number of cores that 
+// Specifies, on a per processor group basis, the maximum number of cores that
 // can be kept unparked for Processor Power Efficiency Class 1.
 //
 // {ea062031-0e34-4ff1-9b6d-eb1059334029}
@@ -8568,7 +8707,7 @@ DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT, 0x0822df31, 0x9c83, 0x441c, 0xa0,
 DEFINE_GUID( GUID_PROCESSOR_PERF_LATENCY_HINT_PERF, 0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x71);
 
 //
-// Specifies the processor performance state in response to latency sensitivity 
+// Specifies the processor performance state in response to latency sensitivity
 // hints for Processor Power Efficiency Class 1.
 //
 // {619b7505-003b-4e82-b7a6-4dd29c300972}
@@ -8701,6 +8840,16 @@ DEFINE_GUID( GUID_CONNECTIVITY_IN_STANDBY, 0xF15576E8, 0x98B7, 0x4186, 0xB9, 0x4
 
 #define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0
 #define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1
+#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED_LID_CLOSE 2
+
+//
+// Specifies the mode for disconnected standby. 
+// 
+// 68AFB2D9-EE95-47A8-8F50-4115088073B1
+DEFINE_GUID( GUID_DISCONNECTED_STANDBY_MODE, 0x68AFB2D9, 0xEE95, 0x47A8, 0x8F, 0x50, 0x41, 0x15, 0x08, 0x80, 0x73, 0xB1 );
+
+#define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0
+#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1 
 
 // AC/DC power source
 // ------------------
@@ -9154,6 +9303,10 @@ typedef enum {
     ThermalStandby,
     SystemHiberFileType,
     PhysicalPowerButtonPress,
+    QueryPotentialDripsConstraint,
+    EnergyTrackerCreate,
+    EnergyTrackerQuery,
+    UpdateBlackBoxRecorder,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -9241,6 +9394,11 @@ typedef enum {
     MonitorRequestReasonResumeS4,
     MonitorRequestReasonTerminal,
     MonitorRequestReasonPdcSignal,
+    MonitorRequestReasonAcDcDisplayBurstSuppressed,
+    MonitorRequestReasonSystemStateEntered, // When CS exit happens because system
+                                            // transition to S4/S5, please note this
+                                            // reason is different than ReasonSxTransition.
+    MonitorRequestReasonWinrt,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -9567,6 +9725,7 @@ typedef enum _CM_ERROR_CONTROL_TYPE {
 
 
 
+
 //
 // Resource List definitions
 //
@@ -9602,12 +9761,15 @@ typedef int CM_RESOURCE_TYPE;
 #define CmResourceTypeDeviceSpecific      5   // ResType_ClassSpecific (0xFFFF)
 #define CmResourceTypeBusNumber           6   // ResType_BusNumber (0x0006)
 #define CmResourceTypeMemoryLarge         7   // ResType_MemLarge (0x0007)
+
 #define CmResourceTypeNonArbitrated     128   // Not arbitrated if 0x80 bit set
 #define CmResourceTypeConfigData        128   // ResType_Reserved (0x8000)
 #define CmResourceTypeDevicePrivate     129   // ResType_DevicePrivate (0x8001)
 #define CmResourceTypePcCardConfig      130   // ResType_PcCardConfig (0x8002)
 #define CmResourceTypeMfCardConfig      131   // ResType_MfCardConfig (0x8003)
 #define CmResourceTypeConnection        132   // ResType_Connection (0x8004)
+
+
 
 //
 // Defines the ShareDisposition in the RESOURCE_DESCRIPTOR
@@ -9619,6 +9781,8 @@ typedef enum _CM_SHARE_DISPOSITION {
     CmResourceShareDriverExclusive,
     CmResourceShareShared
 } CM_SHARE_DISPOSITION;
+
+
 
 //
 // Define the bit masks for Flags when type is CmResourceTypeInterrupt
@@ -9646,6 +9810,8 @@ typedef enum _CM_SHARE_DISPOSITION {
 
 #define CM_RESOURCE_INTERRUPT_MESSAGE_TOKEN   ((ULONG)-2)
 
+
+
 //
 // Define the bit masks for Flags when type is CmResourceTypeMemory
 // or CmResourceTypeMemoryLarge
@@ -9664,6 +9830,8 @@ typedef enum _CM_SHARE_DISPOSITION {
 #define CM_RESOURCE_MEMORY_BAR                              0x0080
 
 #define CM_RESOURCE_MEMORY_COMPAT_FOR_INACCESSIBLE_RANGE    0x0100
+
+
 
 //
 // Define the bit masks exclusive to type CmResourceTypeMemoryLarge.
@@ -9750,6 +9918,7 @@ typedef enum _CM_SHARE_DISPOSITION {
 // flags back to the top of the structure (common to all members of the
 // union).
 //
+
 
 
 #include "pshpack4.h"
@@ -9914,6 +10083,8 @@ typedef struct _CM_PARTIAL_RESOURCE_DESCRIPTOR {
     } u;
 } CM_PARTIAL_RESOURCE_DESCRIPTOR, *PCM_PARTIAL_RESOURCE_DESCRIPTOR;
 #include "poppack.h"
+
+
 
 //
 // A Partial Resource List is what can be found in the ARC firmware
@@ -10787,46 +10958,53 @@ RtlAssert(
 //       for compatibility with previous handling of the
 //       STATUS_STACK_BUFFER_OVERRUN exception status code.
 //
-
-#define FAST_FAIL_LEGACY_GS_VIOLATION          0
-#define FAST_FAIL_VTGUARD_CHECK_FAILURE        1
-#define FAST_FAIL_STACK_COOKIE_CHECK_FAILURE   2
-#define FAST_FAIL_CORRUPT_LIST_ENTRY           3
-#define FAST_FAIL_INCORRECT_STACK              4
-#define FAST_FAIL_INVALID_ARG                  5
-#define FAST_FAIL_GS_COOKIE_INIT               6
-#define FAST_FAIL_FATAL_APP_EXIT               7
-#define FAST_FAIL_RANGE_CHECK_FAILURE          8
-#define FAST_FAIL_UNSAFE_REGISTRY_ACCESS       9
-#define FAST_FAIL_GUARD_ICALL_CHECK_FAILURE    10
-#define FAST_FAIL_GUARD_WRITE_CHECK_FAILURE    11
-#define FAST_FAIL_INVALID_FIBER_SWITCH         12
-#define FAST_FAIL_INVALID_SET_OF_CONTEXT       13
-#define FAST_FAIL_INVALID_REFERENCE_COUNT      14
-#define FAST_FAIL_INVALID_JUMP_BUFFER          18
-#define FAST_FAIL_MRDATA_MODIFIED              19
-#define FAST_FAIL_CERTIFICATION_FAILURE        20
-#define FAST_FAIL_INVALID_EXCEPTION_CHAIN      21
-#define FAST_FAIL_CRYPTO_LIBRARY               22
-#define FAST_FAIL_INVALID_CALL_IN_DLL_CALLOUT  23
-#define FAST_FAIL_INVALID_IMAGE_BASE           24
-#define FAST_FAIL_DLOAD_PROTECTION_FAILURE     25
-#define FAST_FAIL_UNSAFE_EXTENSION_CALL        26
-#define FAST_FAIL_DEPRECATED_SERVICE_INVOKED   27
-#define FAST_FAIL_INVALID_BUFFER_ACCESS        28
-#define FAST_FAIL_INVALID_BALANCED_TREE        29
-#define FAST_FAIL_INVALID_NEXT_THREAD          30
-#define FAST_FAIL_GUARD_ICALL_CHECK_SUPPRESSED 31         // Telemetry, nonfatal
-#define FAST_FAIL_APCS_DISABLED                32
-#define FAST_FAIL_INVALID_IDLE_STATE           33
-#define FAST_FAIL_MRDATA_PROTECTION_FAILURE    34
-#define FAST_FAIL_UNEXPECTED_HEAP_EXCEPTION    35
-#define FAST_FAIL_INVALID_LOCK_STATE           36
-#define FAST_FAIL_GUARD_JUMPTABLE              37         // Known to compiler, must retain value 37
-#define FAST_FAIL_INVALID_LONGJUMP_TARGET      38
-#define FAST_FAIL_INVALID_DISPATCH_CONTEXT     39
-#define FAST_FAIL_INVALID_THREAD               40
-#define FAST_FAIL_INVALID_FAST_FAIL_CODE       0xFFFFFFFF
+#define FAST_FAIL_LEGACY_GS_VIOLATION               0
+#define FAST_FAIL_VTGUARD_CHECK_FAILURE             1
+#define FAST_FAIL_STACK_COOKIE_CHECK_FAILURE        2
+#define FAST_FAIL_CORRUPT_LIST_ENTRY                3
+#define FAST_FAIL_INCORRECT_STACK                   4
+#define FAST_FAIL_INVALID_ARG                       5
+#define FAST_FAIL_GS_COOKIE_INIT                    6
+#define FAST_FAIL_FATAL_APP_EXIT                    7
+#define FAST_FAIL_RANGE_CHECK_FAILURE               8
+#define FAST_FAIL_UNSAFE_REGISTRY_ACCESS            9
+#define FAST_FAIL_GUARD_ICALL_CHECK_FAILURE         10
+#define FAST_FAIL_GUARD_WRITE_CHECK_FAILURE         11
+#define FAST_FAIL_INVALID_FIBER_SWITCH              12
+#define FAST_FAIL_INVALID_SET_OF_CONTEXT            13
+#define FAST_FAIL_INVALID_REFERENCE_COUNT           14
+#define FAST_FAIL_INVALID_JUMP_BUFFER               18
+#define FAST_FAIL_MRDATA_MODIFIED                   19
+#define FAST_FAIL_CERTIFICATION_FAILURE             20
+#define FAST_FAIL_INVALID_EXCEPTION_CHAIN           21
+#define FAST_FAIL_CRYPTO_LIBRARY                    22
+#define FAST_FAIL_INVALID_CALL_IN_DLL_CALLOUT       23
+#define FAST_FAIL_INVALID_IMAGE_BASE                24
+#define FAST_FAIL_DLOAD_PROTECTION_FAILURE          25
+#define FAST_FAIL_UNSAFE_EXTENSION_CALL             26
+#define FAST_FAIL_DEPRECATED_SERVICE_INVOKED        27
+#define FAST_FAIL_INVALID_BUFFER_ACCESS             28
+#define FAST_FAIL_INVALID_BALANCED_TREE             29
+#define FAST_FAIL_INVALID_NEXT_THREAD               30
+#define FAST_FAIL_GUARD_ICALL_CHECK_SUPPRESSED      31         // Telemetry, nonfatal
+#define FAST_FAIL_APCS_DISABLED                     32
+#define FAST_FAIL_INVALID_IDLE_STATE                33
+#define FAST_FAIL_MRDATA_PROTECTION_FAILURE         34
+#define FAST_FAIL_UNEXPECTED_HEAP_EXCEPTION         35
+#define FAST_FAIL_INVALID_LOCK_STATE                36
+#define FAST_FAIL_GUARD_JUMPTABLE                   37         // Known to compiler, must retain value 37
+#define FAST_FAIL_INVALID_LONGJUMP_TARGET           38
+#define FAST_FAIL_INVALID_DISPATCH_CONTEXT          39
+#define FAST_FAIL_INVALID_THREAD                    40
+#define FAST_FAIL_INVALID_SYSCALL_NUMBER            41         // Telemetry, nonfatal
+#define FAST_FAIL_INVALID_FILE_OPERATION            42         // Telemetry, nonfatal
+#define FAST_FAIL_LPAC_ACCESS_DENIED                43         // Telemetry, nonfatal
+#define FAST_FAIL_GUARD_SS_FAILURE                  44
+#define FAST_FAIL_LOADER_CONTINUITY_FAILURE         45         // Telemetry, nonfatal
+#define FAST_FAIL_GUARD_EXPORT_SUPPRESSION_FAILURE  46
+#define FAST_FAIL_INVALID_CONTROL_STACK             47
+#define FAST_FAIL_SET_CONTEXT_DENIED                48
+#define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
 
@@ -10839,6 +11017,7 @@ __fastfail(
 #pragma intrinsic(__fastfail)
 
 #endif
+
 
 
 
@@ -11302,6 +11481,8 @@ AppendTailList(
 }
 
 #endif // NO_KERNEL_LIST_ENTRY_CHECKS
+
+
 
 FORCEINLINE
 PSINGLE_LIST_ENTRY
@@ -12554,7 +12735,7 @@ RtlLargeIntegerSubtract (
 // Extended large integer magic divide - 64-bits / 32-bits -> 64-bits
 //
 
-#if (defined(_AMD64_) || defined(_ARM64_)) && !defined(_M_CEE_PURE)
+#if (defined(_AMD64_) || defined(_ARM64_) || defined(_M_HYBRID_X86_ARM64)) && !defined(_M_CEE_PURE)
 
 DECLSPEC_DEPRECATED_DDK         // Use native __int64 math
 __drv_preferredFunction("compiler support for 64 bit", "Obsolete")
@@ -12590,7 +12771,7 @@ RtlExtendedMagicDivide (
 
 #endif // defined(_AMD64_) || defined(_ARM64_)
 
-#if defined(_X86_) || defined(_ARM_) || defined(_IA64_)
+#if (defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)) || defined(_ARM_) || defined(_IA64_)
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 DECLSPEC_DEPRECATED_DDK         // Use native __int64 math
@@ -12608,7 +12789,7 @@ RtlExtendedMagicDivide (
 #endif // defined(_X86_) || defined(_ARM_) || defined(_IA64_)
 
 
-#if defined(_AMD64_) || defined(_ARM_) || defined(_ARM64_) || defined(_IA64_)
+#if defined(_AMD64_) || defined(_ARM_) || defined(_ARM64_) || defined(_IA64_) || defined(_CHPE_X86_ARM64_)
 
 
 //
@@ -12871,7 +13052,7 @@ RtlLargeIntegerArithmeticShift (
 
 #endif // !defined(MIDL_PASS)
 
-
+ 
 //
 //  Time conversion routines
 //
@@ -14187,7 +14368,8 @@ RtlQueryValidationRunlevel (
 //
 
 #define CTMF_INCLUDE_APPCONTAINER   0x00000001UL
-#define CTMF_VALID_FLAGS            (CTMF_INCLUDE_APPCONTAINER)
+#define CTMF_INCLUDE_LPAC           0x00000002UL
+#define CTMF_VALID_FLAGS            (CTMF_INCLUDE_APPCONTAINER | CTMF_INCLUDE_LPAC)
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -14269,6 +14451,7 @@ RtlOsDeploymentState(
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
 _Check_return_
 NTSYSAPI
 SIZE_T
@@ -15626,7 +15809,7 @@ typedef KDEFERRED_ROUTINE *PKDEFERRED_ROUTINE;
 // is greater than the maximum target depth, or current DPC request rate is
 // less the minimum target rate, then a DPC interrupt is requested on the
 // host processor and the DPC will be processed when the interrupt occurs.
-// Otherwise, no DPC interupt is requested and the DPC execution will be
+// Otherwise, no DPC interrupt is requested and the DPC execution will be
 // delayed until the DPC queue depth is greater that the target depth or the
 // minimum DPC rate is less than the target rate.
 //
@@ -15639,13 +15822,13 @@ typedef KDEFERRED_ROUTINE *PKDEFERRED_ROUTINE;
 // Interrupt occurs.  Otherwise, the DPC execution will be delayed on the target
 // processor until the DPC queue depth on the target processor is greater that
 // the maximum target depth or the minimum DPC rate on the target processor is
-// less than the target mimimum rate.
+// less than the target minimum rate.
 //
 // If the DPC is being queued to the current processor and the DPC is not of
 // low importance, the current DPC queue depth is greater than the maximum
 // target depth, or the minimum DPC rate is less than the minimum target rate,
 // then a DPC interrupt is request on the current processor and the DPV will
-// be processed when the interrupt occurs. Otherwise, no DPC interupt is
+// be processed when the interrupt occurs. Otherwise, no DPC interrupt is
 // requested and the DPC execution will be delayed until the DPC queue depth
 // is greater that the target depth or the minimum DPC rate is less than the
 // target rate.
@@ -15659,7 +15842,7 @@ typedef enum _KDPC_IMPORTANCE {
 } KDPC_IMPORTANCE;
 
 //
-// Define DPC type indicies.
+// Define DPC type indices.
 //
 
 #define DPC_NORMAL 0
@@ -15706,7 +15889,7 @@ typedef struct _KDPC {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -15724,7 +15907,7 @@ typedef struct _KDPC {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -15742,7 +15925,7 @@ typedef struct _KDPC {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -15760,7 +15943,7 @@ typedef struct _KDPC {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -15979,8 +16162,8 @@ typedef struct _DISPATCHER_HEADER {
                 } DUMMYSTRUCTNAME;
             } DUMMYUNIONNAME;
 
-            UCHAR Timer2Reserved1;
-            UCHAR Timer2Reserved2;
+            UCHAR Timer2ComponentId;
+            UCHAR Timer2RelativeId;
         } DUMMYSTRUCTNAME3;
 
         struct {                            // Queue
@@ -16923,6 +17106,7 @@ __writecr8 (
 
 
 
+
 #if defined(_AMD64_) && !defined(DSF_DRIVER)
 
 //
@@ -17139,6 +17323,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
 
 
 
+
 __forceinline
 UCHAR
 READ_PORT_UCHAR (
@@ -17319,11 +17504,13 @@ WRITE_PORT_BUFFER_ULONG (
 
 
 
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif
+
 
 
 
@@ -17499,7 +17686,7 @@ KeRestoreFloatingPointState (
 
 
 //
-// Platform specific kernel fucntions to raise and lower IRQL.
+// Platform specific kernel functions to raise and lower IRQL.
 //
 
 
@@ -17611,7 +17798,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -17694,10 +17881,10 @@ extern "C" {
 //       compiler barrier to ensure that the compiler does not
 //       re-order the I/O accesses with other accesses and a data
 //       synchronization barrier to ensure that any side effects of
-//       the access have started (but not necessairly completed).
+//       the access have started (but not necessarily completed).
 //
 //  The READ/WRITE_PORT_* calls manipulate I/O registers in PORT
-//  space.  The ARM architecture doesn't have a seperate I/O space.
+//  space.  The ARM architecture doesn't have a separate I/O space.
 //  These operations bugcheck so as to identify incorrect code.
 //
 
@@ -18393,7 +18580,7 @@ KeRestoreFloatingPointState (
 
 
 //
-// Platform specific kernel fucntions to raise and lower IRQL.
+// Platform specific kernel functions to raise and lower IRQL.
 //
 
 
@@ -18489,7 +18676,7 @@ extern "C" {
 //       compiler barrier to ensure that the compiler does not
 //       re-order the I/O accesses with other accesses and a data
 //       synchronization barrier to ensure that any side effects of
-//       the access have started (but not necessairly completed).
+//       the access have started (but not necessarily completed).
 //
 //  The READ/WRITE_PORT_* calls manipulate I/O registers in PORT
 //  space.  The ARM architecture doesn't have a seperate I/O space.
@@ -19288,7 +19475,7 @@ KeRestoreFloatingPointState (
 
 
 //
-// Platform specific kernel fucntions to raise and lower IRQL.
+// Platform specific kernel functions to raise and lower IRQL.
 //
 
 
@@ -20866,7 +21053,7 @@ typedef struct _KDPC_WATCHDOG_INFORMATION {
 } KDPC_WATCHDOG_INFORMATION, *PKDPC_WATCHDOG_INFORMATION;
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
-_IRQL_requires_(DISPATCH_LEVEL)
+_IRQL_requires_min_(DISPATCH_LEVEL)
 NTKERNELAPI
 NTSTATUS
 KeQueryDpcWatchdogInformation (
@@ -21685,7 +21872,7 @@ KeQueryAuxiliaryCounterFrequency (
 
 
 typedef struct _KWAIT_CHAIN {
-    SINGLE_LIST_ENTRY Head;
+    PVOID Head;
 } KWAIT_CHAIN, *PKWAIT_CHAIN;
 
 //
@@ -23295,8 +23482,8 @@ typedef struct _ERESOURCE {
         };
     };
 
-    KWAIT_CHAIN SharedWaiters;
-    __volatile PKEVENT ExclusiveWaiters;
+    PVOID SharedWaiters;
+    PVOID ExclusiveWaiters;
 
     //
     // If the resource is owned exclusive, OwnerEntry contains the
@@ -23333,6 +23520,7 @@ typedef struct _ERESOURCE {
 #define ResourceNeverExclusive          0x0010
 #define ResourceReleaseByOtherThread    0x0020
 #define ResourceOwnedExclusive          0x0080
+
 
 #define RESOURCE_HASH_TABLE_SIZE 64
 
@@ -24706,7 +24894,7 @@ typedef struct _REG_CREATE_KEY_INFORMATION_V1 {
     PUNICODE_STRING     RemainingName;// the true path left to parse
     ULONG               Wow64Flags;   // Wow64 specific flags gotten from DesiredAccess input
     ULONG               Attributes;   // ObjectAttributes->Attributes
-    KPROCESSOR_MODE     CheckAccessMode;  // mode used for the securiry checks
+    KPROCESSOR_MODE     CheckAccessMode;  // mode used for the security checks
 
 } REG_CREATE_KEY_INFORMATION_V1, REG_OPEN_KEY_INFORMATION_V1,*PREG_CREATE_KEY_INFORMATION_V1, *PREG_OPEN_KEY_INFORMATION_V1;
 
@@ -24718,7 +24906,7 @@ typedef struct _REG_POST_OPERATION_INFORMATION {
     PVOID               PreInformation; // new to Windows Vista; identical with the pre information that was sent
                                         // in the pre notification
     NTSTATUS            ReturnStatus;   // new to Windows Vista; callback can now change the outcome of the operation
-                                        // during post by returning the new staus here
+                                        // during post by returning the new status here
     PVOID               CallContext;    // new to Windows Vista
     PVOID               ObjectContext;  // new to Windows Vista
     PVOID               Reserved;       // new to Windows Vista
@@ -27755,7 +27943,7 @@ typedef struct _DRIVER_OBJECT {
     UNICODE_STRING DriverName;
 
     //
-    // The following section is for registry support.  Thise is a pointer
+    // The following section is for registry support.  This is a pointer
     // to the path to the hardware information in the registry
     //
 
@@ -27968,7 +28156,7 @@ typedef struct DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT) _IRP {
     } AssociatedIrp;
 
     //
-    // Thread list entry - allows queueing the IRP to the thread pending I/O
+    // Thread list entry - allows queuing the IRP to the thread pending I/O
     // request packet list.
     //
 
@@ -27981,7 +28169,7 @@ typedef struct DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT) _IRP {
     IO_STATUS_BLOCK IoStatus;
 
     //
-    // Requestor mode - mode of the original requestor of this operation.
+    // Requester mode - mode of the original requester of this operation.
     //
 
     KPROCESSOR_MODE RequestorMode;
@@ -28300,6 +28488,14 @@ typedef IO_COMPLETION_ROUTINE *PIO_COMPLETION_ROUTINE;
 #define SL_RESTART_SCAN                 0x01
 #define SL_RETURN_SINGLE_ENTRY          0x02
 #define SL_INDEX_SPECIFIED              0x04
+#define SL_RETURN_ON_DISK_ENTRIES_ONLY  0x08
+
+//
+// SL_RETURN_ON_DISK_ENTRIES_ONLY - Instructs any filters that perform
+// directory virtualization or just-in-time expansion to simply pass the
+// request through to the file system and return entries that are currently
+// on disk.
+//
 
 //
 // NotifyDirectory (IRP_MJ_DIRECTORY_CONTROL)
@@ -28401,7 +28597,8 @@ typedef _Struct_size_bytes_(Size) struct _DEVICE_CAPABILITIES {
     ULONG NoDisplayInUI:1;
     ULONG Reserved1:1;
     ULONG WakeFromInterrupt:1;
-    ULONG Reserved:12;
+    ULONG SecureDevice:1;
+    ULONG Reserved:11;
 
     ULONG Address;
     ULONG UINumber;
@@ -29611,7 +29808,7 @@ typedef struct _IO_CONNECT_INTERRUPT_LINE_BASED_PARAMETERS {
     //     interrupts, however it can also be used without a spin lock to
     //     block this ISR from directly preempting or being directly preempted
     //     by some other ISR.  If this parameter is omitted then the IRQL of
-    //     the interrupt being connected is used as the sychronization IRQL,
+    //     the interrupt being connected is used as the synchronization IRQL,
     //     both in the case where the caller provides a spin lock and in the
     //     case where the spin lock is omitted.
     //
@@ -30614,7 +30811,7 @@ IoSetCancelRoutine(
 //     Irp - Pointer to the I/O Request Packet itself.
 //
 //     CancelRoutine - Address of the cancel routine that is to be invoked
-//         if the IRP is cancelled.
+//         if the IRP is canceled.
 //
 // Return Value:
 //
@@ -31507,8 +31704,8 @@ IoFreeErrorLogEntry(
 // IoInitializeCsq. Then in the dispatch routine when the driver wants to
 // insert an IRP into the queue it calls IoCsqInsertIrp. When the driver wants
 // to remove something from the queue it calls IoCsqRemoveIrp. Note that Insert
-// can fail if the IRP was cancelled in the meantime. Remove can also fail if
-// the IRP was already cancelled.
+// can fail if the IRP was canceled in the meantime. Remove can also fail if
+// the IRP was already canceled.
 //
 // There are typically two modes where drivers queue IRPs. These two modes are
 // covered by the cancel safe queue API set.
@@ -31729,7 +31926,7 @@ IoCsqRemoveNextIrp(
 //
 // This routine is called from timeout or DPCs.
 // The context is presumably part of the DPC or timer context.
-// If succesfull returns the IRP associated with context.
+// If successful returns the IRP associated with context.
 //
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
@@ -31927,7 +32124,7 @@ IoGetContainerInformation (
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 
-typedef NTSTATUS (*PIO_CONTAINER_NOTIFICATION_FUNCTION)();
+typedef NTSTATUS (*PIO_CONTAINER_NOTIFICATION_FUNCTION)(VOID);
 
 typedef
 NTSTATUS
@@ -32038,7 +32235,7 @@ typedef enum _TRACE_INFORMATION_CLASS {
     DiskIoNotifyRoutinesClass,
     TraceInformationClassReserved1,
     FltIoNotifyRoutinesClass,
-    TraceInformationClassReserved2, 
+    TraceInformationClassReserved2,
     WdfNotifyRoutinesClass,
     MaxTraceInformationClass
 } TRACE_INFORMATION_CLASS;
@@ -32054,7 +32251,7 @@ WmiQueryTraceInformation (
     _Out_opt_ PULONG RequiredLength,
     _In_opt_ PVOID Buffer
     );
-#endif 
+#endif
 
 #define TRACE_INFORMATION_CLASS_DEFINE
 #endif // TRACE_INFORMATION_CLASS_DEFINE
@@ -32074,7 +32271,7 @@ typedef
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _IRQL_requires_same_
 VOID
-NTAPI 
+NTAPI
 ETWENABLECALLBACK (
     _In_ LPCGUID SourceId,
     _In_ ULONG ControlCode,
@@ -32555,6 +32752,38 @@ typedef struct _REENUMERATE_SELF_INTERFACE_STANDARD {
     //
     PREENUMERATE_SELF SurpriseRemoveAndReenumerateSelf;
 } REENUMERATE_SELF_INTERFACE_STANDARD, *PREENUMERATE_SELF_INTERFACE_STANDARD;
+
+//
+// Interface to query the extended address for a device on the bus.
+//
+
+typedef
+VOID
+(*PQUERYEXTENDEDADDRESS)(
+    _In_ PVOID Context,
+    _Out_ PULONG64 ExtendedAddress
+    );
+
+typedef struct _PNP_EXTENDED_ADDRESS_INTERFACE {
+
+    //
+    // generic interface header
+    //
+
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    //
+    // query extended address interface pointer.
+    //
+
+    PQUERYEXTENDEDADDRESS QueryExtendedAddress;
+} PNP_EXTENDED_ADDRESS_INTERFACE, *PPNP_EXTENDED_ADDRESS_INTERFACE;
+
+#define PNP_EXTENDED_ADDRESS_INTERFACE_VERSION 0x1
 
 //
 // D3Cold Support Interface
@@ -33575,7 +33804,6 @@ typedef struct _CRASHDUMP_FUNCTIONS_INTERFACE {
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #define DEVICE_RESET_INTERFACE_VERSION  1
-#define DEVICE_RESET_IGNORE_OPEN_HANDLES 0x1
 
 //
 // Define an enum for various reset types supported.
@@ -33633,6 +33861,43 @@ typedef struct _DEVICE_RESET_INTERFACE_STANDARD {
 } DEVICE_RESET_INTERFACE_STANDARD, *PDEVICE_RESET_INTERFACE_STANDARD;
 
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#define SECURE_DRIVER_INTERFACE_VERSION 1
+
+typedef
+_IRQL_requires_same_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Function_class_(SECURE_DRIVER_PROCESS_REFERENCE)
+PEPROCESS
+SECURE_DRIVER_PROCESS_REFERENCE (
+    _In_ PVOID InterfaceContext
+    );
+
+typedef SECURE_DRIVER_PROCESS_REFERENCE *PSECURE_DRIVER_PROCESS_REFERENCE;
+
+typedef
+_IRQL_requires_same_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Function_class_(SECURE_DRIVER_PROCESS_DEREFERENCE)
+VOID
+SECURE_DRIVER_PROCESS_DEREFERENCE (
+    _In_ PVOID InterfaceContext,
+    _In_ PEPROCESS Process
+    );
+
+typedef SECURE_DRIVER_PROCESS_DEREFERENCE *PSECURE_DRIVER_PROCESS_DEREFERENCE;
+
+typedef struct _SECURE_DRIVER_INTERFACE {
+    INTERFACE InterfaceHeader;
+    PSECURE_DRIVER_PROCESS_REFERENCE ProcessReference;
+    PSECURE_DRIVER_PROCESS_DEREFERENCE ProcessDereference;
+    ULONG Reserved;
+} SECURE_DRIVER_INTERFACE, *PSECURE_DRIVER_INTERFACE;
+
+#endif
+
 //
 // Define the device description structure.
 //
@@ -35190,6 +35455,31 @@ PoDeleteThermalRequest (
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+typedef
+_Function_class_(PO_FX_DRIPS_WATCHDOG_CALLBACK)
+_IRQL_requires_max_(APC_LEVEL)
+VOID
+PO_FX_DRIPS_WATCHDOG_CALLBACK (
+    _In_ PVOID Context,
+    _In_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_ ULONG UniqueId
+);
+
+typedef PO_FX_DRIPS_WATCHDOG_CALLBACK
+    *PPO_FX_DRIPS_WATCHDOG_CALLBACK;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+VOID
+PoFxRegisterDripsWatchdogCallback (
+    _In_ POHANDLE Handle,
+    _In_ PPO_FX_DRIPS_WATCHDOG_CALLBACK Callback,
+    _In_ BOOLEAN IncludeChildDevices,
+    _In_opt_ PDRIVER_OBJECT MatchingDriverObject
+    );
+#endif
+
 //
 // Object Manager types
 //
@@ -35252,7 +35542,7 @@ ObReferenceObjectSafeWithTag (
 NTKERNELAPI
 NTSTATUS
 ObCloseHandle (
-    _In_ HANDLE Handle,
+    _In_ _Post_ptr_invalid_ HANDLE Handle,
     _In_ KPROCESSOR_MODE PreviousMode
     );
 #endif
@@ -35510,7 +35800,9 @@ ObUnRegisterCallbacks (
 
 NTKERNELAPI
 USHORT
-ObGetFilterVersion ();
+ObGetFilterVersion (
+    VOID
+    );
 #endif
 
 #ifndef _PCI_X_
@@ -35661,7 +35953,7 @@ typedef struct _PCI_COMMON_CONFIG {
 
 #endif
 
-#define PCI_COMMON_HDR_LENGTH (FIELD_OFFSET (PCI_COMMON_CONFIG, DeviceSpecific))
+#define PCI_COMMON_HDR_LENGTH (UFIELD_OFFSET (PCI_COMMON_CONFIG, DeviceSpecific))
 #define PCI_EXTENDED_CONFIG_LENGTH          0x1000
 
 
@@ -36019,9 +36311,9 @@ typedef struct _PCI_EXPRESS_ARI_CAPABILITY {
 
 typedef union _VIRTUAL_CHANNEL_CAPABILITIES1 {
     struct {
-        ULONG ExtendedVCCount:2;
+        ULONG ExtendedVCCount:3;
         ULONG RsvdP1:1;
-        ULONG LowPriorityExtendedVCCount:2;
+        ULONG LowPriorityExtendedVCCount:3;
         ULONG RsvdP2:1;
         ULONG ReferenceClock:2;
         ULONG PortArbitrationTableEntrySize:2;
@@ -36907,10 +37199,10 @@ typedef struct _PCI_EXPRESS_SRIOV_CAPABILITY {
 //
 // ---
 //
-//      All resources comsumed by a PCI device start as unitialized
+//      All resources consumed by a PCI device start as uninitialized
 //      under NT.  An uninitialized memory or I/O base address can be
-//      determined by checking it's corrisponding enabled bit in the
-//      PCI_COMMON_CONFIG.Command value.  An InterruptLine is unitialized
+//      determined by checking it's corresponding enabled bit in the
+//      PCI_COMMON_CONFIG.Command value.  An InterruptLine is uninitialized
 //      if it contains the value of -1.
 //
 
@@ -38130,6 +38422,20 @@ ZwOpenEvent (
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+ZwQueryInformationByName (
+    _In_ POBJECT_ATTRIBUTES ObjectAttributes,
+    _Out_ PIO_STATUS_BLOCK IoStatusBlock,
+    _Out_writes_bytes_(Length) PVOID FileInformation,
+    _In_ ULONG Length,
+    _In_ FILE_INFORMATION_CLASS FileInformationClass
+    );
+#endif
+
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
@@ -38348,7 +38654,7 @@ typedef CLS_RECORD_TYPE CLFS_RECORD_TYPE, *PCLFS_RECORD_TYPE, **PPCLFS_RECORD_TY
 //
 // CLS_CONTEXT_MODE
 //
-// The context mode specifies the dirction and access methods used to scan the
+// The context mode specifies the direction and access methods used to scan the
 // log file. 
 //
 
@@ -38401,7 +38707,7 @@ typedef struct _CLFS_NODE_ID
 //  CLS_WRITE_ENTRY
 //
 // Write entry specifying the contents of a user buffer and length that are
-// marshalled in the space reservation and append interface of the CLS API.
+// marshaled in the space reservation and append interface of the CLS API.
 //
 
 typedef struct _CLS_WRITE_ENTRY
@@ -38441,7 +38747,7 @@ typedef GUID CLFS_LOG_ID;
 typedef struct _CLS_INFORMATION
 {
     LONGLONG TotalAvailable;                            // Total log data space available.
-    LONGLONG CurrentAvailable;                          // Useable space in the log file.
+    LONGLONG CurrentAvailable;                          // Usable space in the log file.
     LONGLONG TotalReservation;                       // Space reserved for UNDO's (aggregate for physical log)
     ULONGLONG BaseFileSize;                             // Size of the base log file.
     ULONGLONG ContainerSize;                            // Uniform size of log containers.
@@ -38550,7 +38856,7 @@ typedef struct _CLFS_PHYSICAL_LSN_INFORMATION
 //
 // CLS_CONTAINER_STATE
 //
-// At any point in time a container could be inactive or unitialized, active,
+// At any point in time a container could be inactive or uninitialized, active,
 // pending deletion from the list of free containers, pending archival, or 
 // pending deletion while waiting to be archived.
 //
@@ -38877,7 +39183,7 @@ typedef CLFS_ARCHIVE_DESCRIPTOR *PCLFS_ARCHIVE_DESCRIPTOR, **PPCLFS_ARCHIVE_DESC
 //
 // CLFS_ALLOCATION_ROUTINE
 //
-// Allocate a blocks for marshalled reads or writes
+// Allocate a blocks for marshaled reads or writes
 //
 
 typedef PVOID (* CLFS_BLOCK_ALLOCATION) (ULONG cbBufferLength, PVOID pvUserContext);
@@ -40050,7 +40356,7 @@ NTSTATUS ClfsSetLogFileInformation (
 // ClfsReadRestartArea
 //
 // Read the last restart area successfully written to a physical or 
-// client log stream given a marshalling context.
+// client log stream given a marshaling context.
 //------------------------------------------------------------------------------
 
 CLFSUSER_API
@@ -40086,7 +40392,7 @@ NTSTATUS ClfsReadPreviousRestartArea (
 // ClfsWriteRestartArea
 //
 // Write a new restart area to a physical or client log stream given a
-// a marshalling context.
+// a marshaling context.
 //------------------------------------------------------------------------------
 
 CLFSUSER_API
@@ -40143,7 +40449,7 @@ NTSTATUS  ClfsCloseLogFileObject (_In_ PLOG_FILE_OBJECT plfoLog);
 //------------------------------------------------------------------------------
 // ClfsCreateMarshallingArea
 //
-// Initalize a marshalling area for a physical or client log
+// Initialize a marshaling area for a physical or client log
 // file stream given log file object pointer.
 //------------------------------------------------------------------------------
 
@@ -40164,7 +40470,7 @@ NTSTATUS ClfsCreateMarshallingArea (
 //------------------------------------------------------------------------------
 // ClfsDeleteMarshallingArea
 //
-// Delete a marshalling area for a physical or client log
+// Delete a marshaling area for a physical or client log
 // file stream.
 //------------------------------------------------------------------------------
 
@@ -40222,7 +40528,7 @@ NTSTATUS ClfsReserveAndAppendLogAligned (
 //------------------------------------------------------------------------------
 // ClfsAlignReservedLog
 //
-// Given a valid marshalling context, allocate an aggregate number of reserved
+// Given a valid marshaling context, allocate an aggregate number of reserved
 // records and bytes.
 //------------------------------------------------------------------------------
 
@@ -40239,7 +40545,7 @@ NTSTATUS ClfsAlignReservedLog (
 //------------------------------------------------------------------------------
 // ClfsAllocReservedLog
 //
-// Given a valid marshalling context, allocate an aggregate number of reserved
+// Given a valid marshaling context, allocate an aggregate number of reserved
 // records and bytes.
 //------------------------------------------------------------------------------
 
@@ -40271,7 +40577,7 @@ NTSTATUS ClfsFreeReservedLog (
 //------------------------------------------------------------------------------
 // ClfsFlushBuffers
 // 
-// Append all buffers in the marshalling area up to the flush queue and flush
+// Append all buffers in the marshaling area up to the flush queue and flush
 // all buffers up to the disk.
 //------------------------------------------------------------------------------
 
@@ -40283,7 +40589,7 @@ NTSTATUS ClfsFlushBuffers (_In_ PVOID pvMarshalContext);
 //------------------------------------------------------------------------------
 // ClfsFlushToLsn
 // 
-// Flush all buffers in the marshalling area up to a target LSN to the flush
+// Flush all buffers in the marshaling area up to a target LSN to the flush
 // queue and flush all buffers up to the target LSN to the disk.
 //------------------------------------------------------------------------------
 
@@ -40321,7 +40627,7 @@ NTSTATUS ClfsReadLogRecord (
 //------------------------------------------------------------------------------
 // ClfsReadNextLogRecord
 //
-// Read the next log record from a given marshalling context.
+// Read the next log record from a given marshaling context.
 //------------------------------------------------------------------------------
 
 CLFSUSER_API

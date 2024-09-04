@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -125,6 +125,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                interface IDiagnosticsSettings;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                interface IDiagnosticsSettingsStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_FWD_DEFINED__
@@ -333,18 +373,18 @@ enum SetAccountPictureResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0001 */
 /* [local] */ 
@@ -379,18 +419,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0002 */
 /* [local] */ 
@@ -438,18 +478,18 @@ enum SetImageFeedResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0003 */
 /* [local] */ 
@@ -484,18 +524,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0004 */
 /* [local] */ 
@@ -533,18 +573,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0005 */
 /* [local] */ 
@@ -579,18 +619,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0006 */
 /* [local] */ 
@@ -625,18 +665,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0007 */
 /* [local] */ 
@@ -671,18 +711,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0008 */
 /* [local] */ 
@@ -717,18 +757,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0009 */
 /* [local] */ 
@@ -763,18 +803,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0010 */
 /* [local] */ 
@@ -809,18 +849,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0011 */
 /* [local] */ 
@@ -855,18 +895,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0012 */
 /* [local] */ 
@@ -901,18 +941,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0013 */
 /* [local] */ 
@@ -947,18 +987,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0014 */
 /* [local] */ 
@@ -1013,18 +1053,18 @@ interface IUriRuntimeClass;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0015 */
 /* [local] */ 
@@ -1059,18 +1099,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0016 */
 /* [local] */ 
@@ -1105,18 +1145,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0017 */
 /* [local] */ 
@@ -1151,18 +1191,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0018 */
 /* [local] */ 
@@ -1278,12 +1318,25 @@ typedef enum __x_ABI_CWindows_CSystem_CUserProfile_CSetImageFeedResult __x_ABI_C
 
 
 
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace System {
 namespace UserProfile {
 class AdvertisingManagerForUser;
+} /*UserProfile*/
+} /*System*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace UserProfile {
+class DiagnosticsSettings;
 } /*UserProfile*/
 } /*System*/
 } /*Windows*/
@@ -1404,21 +1457,23 @@ extern "C" {
 
 
 
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0019 */
 /* [local] */ 
@@ -1540,18 +1595,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CU
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0021 */
 /* [local] */ 
@@ -1712,18 +1767,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSet
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0023 */
 /* [local] */ 
@@ -1845,18 +1900,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CU
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0025 */
 /* [local] */ 
@@ -2541,9 +2596,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManage
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0029 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IFirstSignInSettings[] = L"Windows.System.UserProfile.IFirstSignInSettings";
-#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IDiagnosticsSettings[] = L"Windows.System.UserProfile.IDiagnosticsSettings";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0029 */
@@ -2553,6 +2608,302 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0029_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::UserProfile::IDiagnosticsSettings */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace UserProfile {
+                    
+                    MIDL_INTERFACE("E5E9ECCD-2711-44E0-973C-491D78048D24")
+                    IDiagnosticsSettings : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanUseDiagnosticsToTailorExperiences( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IDiagnosticsSettings = __uuidof(IDiagnosticsSettings);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanUseDiagnosticsToTailorExperiences )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_get_CanUseDiagnosticsToTailorExperiences(This,value)	\
+    ( (This)->lpVtbl -> get_CanUseDiagnosticsToTailorExperiences(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_get_User(This,value)	\
+    ( (This)->lpVtbl -> get_User(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0030 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IDiagnosticsSettingsStatics[] = L"Windows.System.UserProfile.IDiagnosticsSettingsStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0030 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0030_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::UserProfile::IDiagnosticsSettingsStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace UserProfile {
+                    
+                    MIDL_INTERFACE("72D2E80F-5390-4793-990B-3CCC7D6AC9C8")
+                    IDiagnosticsSettingsStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefault( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::UserProfile::IDiagnosticsSettings **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetForUser( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::UserProfile::IDiagnosticsSettings **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IDiagnosticsSettingsStatics = __uuidof(IDiagnosticsSettingsStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefault )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForUser )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_GetDefault(This,value)	\
+    ( (This)->lpVtbl -> GetDefault(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_GetForUser(This,user,value)	\
+    ( (This)->lpVtbl -> GetForUser(This,user,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettingsStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0031 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IFirstSignInSettings[] = L"Windows.System.UserProfile.IFirstSignInSettings";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__
@@ -2665,7 +3016,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettin
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0030 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0032 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_INTERFACE_DEFINED__)
@@ -2673,13 +3024,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0030 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_INTERFACE_DEFINED__
@@ -2802,7 +3153,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettin
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIFirstSignInSettingsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0031 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0033 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_INTERFACE_DEFINED__)
@@ -2810,13 +3161,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0031 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_INTERFACE_DEFINED__
@@ -2989,7 +3340,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPref
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIGlobalizationPreferencesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0032 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0034 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_INTERFACE_DEFINED__)
@@ -2997,13 +3348,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0032 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_INTERFACE_DEFINED__
@@ -3138,7 +3489,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFe
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenImageFeedStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0033 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0035 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics_INTERFACE_DEFINED__)
@@ -3146,13 +3497,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0033 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics_INTERFACE_DEFINED__
@@ -3309,7 +3660,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0034 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0036 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__)
@@ -3317,13 +3668,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0034 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__
@@ -3606,7 +3957,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationSt
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0035 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettings_INTERFACE_DEFINED__)
@@ -3614,13 +3965,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0035 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettings_INTERFACE_DEFINED__
@@ -3757,7 +4108,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePerson
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0036 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0038 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettingsStatics_INTERFACE_DEFINED__)
@@ -3765,13 +4116,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettingsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0036 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettingsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettingsStatics_INTERFACE_DEFINED__
@@ -3904,7 +4255,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePerson
 #endif 	/* ____x_ABI_CWindows_CSystem_CUserProfile_CIUserProfilePersonalizationSettingsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0037 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0039 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_System_UserProfile_AdvertisingManager_DEFINED
@@ -3914,6 +4265,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_System_UserProfile_AdvertisingManagerForUser_DEFINED
 #define RUNTIMECLASS_Windows_System_UserProfile_AdvertisingManagerForUser_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_AdvertisingManagerForUser[] = L"Windows.System.UserProfile.AdvertisingManagerForUser";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_UserProfile_DiagnosticsSettings_DEFINED
+#define RUNTIMECLASS_Windows_System_UserProfile_DiagnosticsSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_DiagnosticsSettings[] = L"Windows.System.UserProfile.DiagnosticsSettings";
 #endif
 #ifndef RUNTIMECLASS_Windows_System_UserProfile_FirstSignInSettings_DEFINED
 #define RUNTIMECLASS_Windows_System_UserProfile_FirstSignInSettings_DEFINED
@@ -3937,13 +4292,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0037 */
+/* interface __MIDL_itf_windows2Esystem2Euserprofile_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Euserprofile_0000_0039_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

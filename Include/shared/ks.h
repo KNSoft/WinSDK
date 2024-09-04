@@ -2038,6 +2038,7 @@ typedef struct {
 
 //
 //End of MDL caching related definitions		
+#define KSSTREAM_HEADER_OPTIONSF_SECUREBUFFERTRANSFER 0x00040000
 #define KSSTREAM_HEADER_OPTIONSF_LOOPEDDATA         0x80000000
 
 typedef struct {
@@ -6071,7 +6072,7 @@ NTSTATUS
 NTAPI
 _KsEdit(
     _In_ KSOBJECT_BAG ObjectBag,
-    _Inout_ PVOID* PointerToPointerToItem,
+    _At_(*PointerToPointerToItem, _Pre_maybenull_  _Pre_readable_byte_size_(OldSize)) _Outptr_result_bytebuffer_(NewSize) PVOID* PointerToPointerToItem,
     _In_ ULONG NewSize,
     _In_ ULONG OldSize,
     _In_ ULONG Tag

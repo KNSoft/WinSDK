@@ -123,6 +123,10 @@ typedef struct _VHF_CONFIG {
     PEVT_VHF_ASYNC_OPERATION            EvtVhfAsyncOperationGetInputReport;
     PEVT_VHF_CLEANUP                    EvtVhfCleanup;
 
+    USHORT                              HardwareIDsLength;
+    _Field_size_bytes_full_(HardwareIDsLength)
+    PWSTR                               HardwareIDs;
+
 } VHF_CONFIG, *PVHF_CONFIG;
 
 FORCEINLINE

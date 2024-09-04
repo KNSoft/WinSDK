@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -481,7 +481,6 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.Graphics.DirectX.Direct3D11.h"
 #include "Windows.Graphics.Imaging.h"
-#include "Windows.Media.Core.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -532,18 +531,18 @@ interface IBackgroundAudioTrack;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3971 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4591 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3971 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3971_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3971_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4591_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0001 */
 /* [local] */ 
@@ -578,18 +577,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3972 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4592 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3972 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3972_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3972_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4592_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0002 */
 /* [local] */ 
@@ -648,18 +647,18 @@ interface IEmbeddedAudioTrack;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3973 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4593 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3973 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3973_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3973_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4593_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0003 */
 /* [local] */ 
@@ -694,18 +693,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3974 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4594 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3974 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3974_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3974_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4594_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0004 */
 /* [local] */ 
@@ -764,18 +763,18 @@ interface IMediaClip;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3975 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4595 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3975 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3975_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3975_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4595_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0005 */
 /* [local] */ 
@@ -810,18 +809,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3976 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4596 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3976 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3976_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3976_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4596_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0006 */
 /* [local] */ 
@@ -880,18 +879,18 @@ interface IMediaOverlay;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3977 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3977 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3977_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3977_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0007 */
 /* [local] */ 
@@ -926,18 +925,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3978 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3978 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3978_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3978_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0008 */
 /* [local] */ 
@@ -996,18 +995,18 @@ interface IMediaOverlayLayer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3979 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4599 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3979 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3979_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3979_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4599_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0009 */
 /* [local] */ 
@@ -1042,18 +1041,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3980 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3980 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3980_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3980_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0010 */
 /* [local] */ 
@@ -1088,18 +1087,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3981 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3981 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3981_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3981_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0011 */
 /* [local] */ 
@@ -1134,18 +1133,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3982 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3982 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3982_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3982_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0012 */
 /* [local] */ 
@@ -1180,18 +1179,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3983 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4603 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3983 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3983_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3983_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4603_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0013 */
 /* [local] */ 
@@ -1226,18 +1225,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3984 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4604 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3984 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3984_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3984_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4604_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0014 */
 /* [local] */ 
@@ -1272,18 +1271,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3985 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3985 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3985_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3985_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0015 */
 /* [local] */ 
@@ -1318,18 +1317,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3986 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3986 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3986_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3986_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0016 */
 /* [local] */ 
@@ -1364,18 +1363,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3987 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3987 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3987_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3987_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0017 */
 /* [local] */ 
@@ -1410,18 +1409,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3988 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3988 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3988_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3988_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0018 */
 /* [local] */ 
@@ -1456,18 +1455,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3989 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3989 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3989_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3989_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0019 */
 /* [local] */ 
@@ -1502,18 +1501,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3990 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3990 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3990_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3990_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0020 */
 /* [local] */ 
@@ -1548,18 +1547,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3991 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3991 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3991_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3991_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0021 */
 /* [local] */ 
@@ -1594,18 +1593,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3992 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3992 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3992_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3992_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0022 */
 /* [local] */ 
@@ -1640,18 +1639,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3993 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3993 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3993_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3993_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0023 */
 /* [local] */ 
@@ -1710,18 +1709,18 @@ interface IMediaComposition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3994 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3994 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3994_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3994_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0024 */
 /* [local] */ 
@@ -1756,18 +1755,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3995 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3995 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3995_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3995_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0025 */
 /* [local] */ 
@@ -1802,18 +1801,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3996 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3996 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3996_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3996_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0026 */
 /* [local] */ 
@@ -1848,18 +1847,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3997 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3997 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3997_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3997_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0027 */
 /* [local] */ 
@@ -1894,18 +1893,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3998 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3998 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3998_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3998_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0028 */
 /* [local] */ 
@@ -1940,18 +1939,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3999 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3999 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3999_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_3999_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0029 */
 /* [local] */ 
@@ -1986,18 +1985,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4000 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4000 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4000_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0030 */
 /* [local] */ 
@@ -2045,18 +2044,18 @@ interface IAudioEffectDefinition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4001 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4001 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0031 */
 /* [local] */ 
@@ -2091,18 +2090,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4002 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4002 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0032 */
 /* [local] */ 
@@ -2137,18 +2136,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4003 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4003 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0033 */
 /* [local] */ 
@@ -2183,18 +2182,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4004 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4004 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0034 */
 /* [local] */ 
@@ -2242,18 +2241,18 @@ interface IVideoEffectDefinition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4005 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4005 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0035 */
 /* [local] */ 
@@ -2288,18 +2287,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4006 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4006 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0036 */
 /* [local] */ 
@@ -2334,18 +2333,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4007 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4007 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0037 */
 /* [local] */ 
@@ -2380,18 +2379,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4008 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4008 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0038 */
 /* [local] */ 
@@ -2450,18 +2449,18 @@ interface IRandomAccessStreamWithContentType;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4009 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4009 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0039 */
 /* [local] */ 
@@ -2496,18 +2495,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4010 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4010 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0040 */
 /* [local] */ 
@@ -2553,18 +2552,18 @@ struct TimeSpan;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4011 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4011 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0041 */
 /* [local] */ 
@@ -2599,18 +2598,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4012 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4012 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0042 */
 /* [local] */ 
@@ -2645,18 +2644,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4013 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4013 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0043 */
 /* [local] */ 
@@ -2691,18 +2690,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4014 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4014 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0044 */
 /* [local] */ 
@@ -2737,18 +2736,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0045 */
 /* [local] */ 
@@ -2783,18 +2782,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0046 */
 /* [local] */ 
@@ -2829,18 +2828,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0047 */
 /* [local] */ 
@@ -2888,18 +2887,18 @@ enum TranscodeFailureReason;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0048 */
 /* [local] */ 
@@ -2934,18 +2933,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0049 */
 /* [local] */ 
@@ -2980,18 +2979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0050 */
 /* [local] */ 
@@ -3284,18 +3283,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0051 */
 /* [local] */ 
@@ -3470,18 +3469,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEditing__CBackgroundAudi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0053 */
 /* [local] */ 
@@ -3622,18 +3621,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEditing__CBackgroundAudi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0055 */
 /* [local] */ 
@@ -3808,18 +3807,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEditing__CEmbeddedAudioT
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0057 */
 /* [local] */ 
@@ -3960,18 +3959,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEditing__CEmbeddedAudioT
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0058_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0059 */
 /* [local] */ 
@@ -4146,18 +4145,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEditing__CMediaClip;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0061 */
 /* [local] */ 
@@ -4298,18 +4297,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEditing__CMediaClip;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0062_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0063 */
 /* [local] */ 
@@ -4484,18 +4483,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEditing__CMediaOverlay;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0064_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0065 */
 /* [local] */ 
@@ -4636,18 +4635,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEditing__CMediaOverlay;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0066_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0067 */
 /* [local] */ 
@@ -4822,18 +4821,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEditing__CMediaOverlayLa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0068_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0069 */
 /* [local] */ 
@@ -4974,18 +4973,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEditing__CMediaOverlayLa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0070_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0071 */
 /* [local] */ 
@@ -5168,18 +5167,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEditing__CBackgroundAu
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0072_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0073 */
 /* [local] */ 
@@ -5362,18 +5361,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEditing__CEmbeddedAudi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0074_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0075 */
 /* [local] */ 
@@ -5556,18 +5555,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEditing__CMediaClip;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0076_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0077 */
 /* [local] */ 
@@ -5750,18 +5749,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEditing__CMediaOverlay
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0078_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0079 */
 /* [local] */ 
@@ -5944,18 +5943,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEditing__CMediaOverlay
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0080_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0081 */
 /* [local] */ 
@@ -6220,18 +6219,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CEditing__CBackgroundAudioT
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0082_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0083 */
 /* [local] */ 
@@ -6496,18 +6495,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CEditing__CMediaClip;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0084_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0085 */
 /* [local] */ 
@@ -6772,18 +6771,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CEditing__CMediaOverlay;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0086_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0087 */
 /* [local] */ 
@@ -7048,18 +7047,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLaye
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0088_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0089 */
 /* [local] */ 
@@ -7181,18 +7180,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CEd
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0090_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0091 */
 /* [local] */ 
@@ -7353,18 +7352,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CEditing__CBackgrou
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0092_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0093 */
 /* [local] */ 
@@ -7486,18 +7485,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CEd
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0094_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0095 */
 /* [local] */ 
@@ -7658,18 +7657,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaCli
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0096_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0097 */
 /* [local] */ 
@@ -7791,18 +7790,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CEd
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0098_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eediting2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eediting_0000_0099 */
 /* [local] */ 

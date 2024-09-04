@@ -540,6 +540,11 @@ DWORD
     OUT PBOOL ReturnedAsynchronously
     );
 
+#define CLUS_RESDLL_OPEN_DONT_DELETE_TEMP_DISK 0x00000002
+
+#define RESTYPE_MONITOR_SHUTTING_DOWN_NODE_STOP         0x00000001
+#define RESTYPE_MONITOR_SHUTTING_DOWN_CLUSSVC_CRASH     0x00000002
+
 #endif //CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD
 
 
@@ -833,6 +838,17 @@ DWORD
     _In_ BOOL active
     );
 
+#define LOCKED_MODE_FLAGS_DONT_REMOVE_FROM_MOVE_QUEUE 0x00000001
+
+typedef
+DWORD
+(_stdcall *PSET_RESOURCE_LOCKED_MODE_EX_ROUTINE) (
+    _In_ RESOURCE_HANDLE ResourceHandle,
+    _In_ BOOL LockedModeEnabled,
+    _In_ DWORD LockedModeReason,
+    _In_ DWORD LockedModeFlags
+);
+
 typedef struct CLRES_CALLBACK_FUNCTION_TABLE {
     PLOG_EVENT_ROUTINE                                                         LogEvent;
     PSET_RESOURCE_STATUS_ROUTINE_EX                                            SetResourceStatusEx;
@@ -847,6 +863,7 @@ typedef struct CLRES_CALLBACK_FUNCTION_TABLE {
     PCHANGE_RESOURCE_PROCESS_FOR_DUMPS                                         ChangeResourceProcessForDumps;
     PCHANGE_RES_TYPE_PROCESS_FOR_DUMPS                                         ChangeResTypeProcessForDumps;
     PSET_INTERNAL_STATE                                                        SetInternalState;
+    PSET_RESOURCE_LOCKED_MODE_EX_ROUTINE                                       SetResourceLockedModeEx;
 }CLRES_CALLBACK_FUNCTION_TABLE, *PCLRES_CALLBACK_FUNCTION_TABLE;
 
 typedef

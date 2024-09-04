@@ -9,7 +9,7 @@ Module Name:
 Abstract:
 
     RAS specific error codes
-    
+
 --*/
 
 #ifndef _RASERROR_H_
@@ -139,7 +139,7 @@ Abstract:
 #define ERROR_PORT_NOT_FOUND                 (RASBASE+15)
 /*
  * The specified port was not found.%0
- */ 
+ */
 
 #define ERROR_ASYNC_REQUEST_PENDING          (RASBASE+16)
 /*
@@ -154,7 +154,7 @@ Abstract:
 #define ERROR_PORT_NOT_OPEN                  (RASBASE+18)
 /*
  * The specified port is not open.%0
- */ 
+ */
 
 #define ERROR_PORT_DISCONNECTED              (RASBASE+19)
 /*
@@ -176,7 +176,7 @@ Abstract:
 #define ERROR_CANNOT_OPEN_PHONEBOOK          (RASBASE+21)
 /*
  * The system could not open the phone book file.%0
- */ 
+ */
 
 #define ERROR_CANNOT_LOAD_PHONEBOOK          (RASBASE+22)
 /*
@@ -218,7 +218,7 @@ Abstract:
 #define ERROR_DISCONNECTION                  (RASBASE+28)
 /*
  * The connection was terminated by the remote computer before it could be completed.%0
- */ 
+ */
 
 #define ERROR_REMOTE_DISCONNECTION           (RASBASE+29)
 /*
@@ -242,7 +242,7 @@ Abstract:
 
 #define ERROR_PORT_NOT_AVAILABLE             (RASBASE+33)
 /*
- * The modem (or other connecting device) is already in use or is not configured properly.%0 
+ * The modem (or other connecting device) is already in use or is not configured properly.%0
  */
 
 #if (WINVER < 0x600)
@@ -1076,7 +1076,7 @@ Abstract:
 #define ERROR_CANNOT_DO_CUSTOMDIAL           (RASBASE+155)
 /*
  * The system cannot perform automated dial because this connection has a custom dialer specified.%0
- */ 
+ */
 
 #define ERROR_DIAL_ALREADY_IN_PROGRESS       (RASBASE+156)
 /*
@@ -1203,7 +1203,7 @@ Abstract:
 #define ERROR_TEMPFAILURE                    (RASBASE+174)
 /*
  * The connection attempt failed because of a temporary failure.  Try connecting again.%0
- */ 
+ */
 
 #define ERROR_BLOCKED                        (RASBASE+175)
 /*
@@ -1487,7 +1487,7 @@ Abstract:
 
 #define ERROR_EAPTLS_CACHE_CREDENTIALS_INVALID   (RASBASE+226)
 /*
-* EAPTLS validation of the cached credentials failed. Please discard 
+* EAPTLS validation of the cached credentials failed. Please discard
 * cached credentials.
 */
 
@@ -1540,7 +1540,7 @@ Abstract:
 
 #define ERROR_NOT_NAP_CAPABLE             (RASBASE+236)
 /*
-* The Network Access Protection (NAP) health state of the computer cannot be determined. Contact your administrator to verify that the NAP enforcement client is enabled, the NAP Agent service is running, and NAP is enforced in the Protected Extensible Authentication Protocol (PEAP) properties of the remote access connection.  
+* The Network Access Protection (NAP) health state of the computer cannot be determined. Contact your administrator to verify that the NAP enforcement client is enabled, the NAP Agent service is running, and NAP is enforced in the Protected Extensible Authentication Protocol (PEAP) properties of the remote access connection.
 */
 
 #endif
@@ -1594,7 +1594,7 @@ Abstract:
 
 #define ERROR_INVALID_PREFERENCES           (RASBASE+246)
 /*
-* Either VPN Destination preference is not selected by the user or it is no longer valid. 
+* Either VPN Destination preference is not selected by the user or it is no longer valid.
 */
 
 #define ERROR_EAPTLS_SCARD_CACHE_CREDENTIALS_INVALID (RASBASE+247)
@@ -1613,72 +1613,72 @@ Abstract:
 
 #define ERROR_EAP_METHOD_NOT_INSTALLED            (RASBASE+250)
 /*
-* The Extensible Authentication Protocol type required for authentication of the remote access connection is not installed on your computer. 
+* The Extensible Authentication Protocol type required for authentication of the remote access connection is not installed on your computer.
 */
 
 #define ERROR_EAP_METHOD_DOES_NOT_SUPPORT_SSO     (RASBASE+251)
 /*
-* The Extensible Authentication Protocol type configured on the remote access connection does not support single sign-on. 
+* The Extensible Authentication Protocol type configured on the remote access connection does not support single sign-on.
 */
 
 #define ERROR_EAP_METHOD_OPERATION_NOT_SUPPORTED  (RASBASE+252)
 /*
-* The Extensible Authentication Protocol type configured on the remote access connection does not support the requested operation. 
+* The Extensible Authentication Protocol type configured on the remote access connection does not support the requested operation.
 */
 
 #define ERROR_EAP_USER_CERT_INVALID               (RASBASE+253)
 /*
-* The remote access connection completed, but authentication failed because the certificate that authenticates the client to the server is not valid. Ensure that the certificate used for authentication is valid. 
+* The remote access connection completed, but authentication failed because the certificate that authenticates the client to the server is not valid. Ensure that the certificate used for authentication is valid.
 */
 
 #define ERROR_EAP_USER_CERT_EXPIRED               (RASBASE+254)
 /*
-* The remote access connection completed, but authentication failed because the certificate that authenticates the client to the server is expired. Renew the certificate. 
+* The remote access connection completed, but authentication failed because the certificate that authenticates the client to the server is expired. Renew the certificate.
 */
 
 #define ERROR_EAP_USER_CERT_REVOKED               (RASBASE+255)
 /*
-* The remote access connection completed, but authentication failed because the certificate that authenticates the client to the server is revoked. 
+* The remote access connection completed, but authentication failed because the certificate that authenticates the client to the server is revoked.
 */
 
 #define ERROR_EAP_USER_CERT_OTHER_ERROR           (RASBASE+256)
 /*
-* The remote access connection completed, but authentication failed because of an error in the certificate that authenticates the client to the server. 
+* The remote access connection completed, but authentication failed because of an error in the certificate that authenticates the client to the server.
 */
 
 #define ERROR_EAP_SERVER_CERT_INVALID             (RASBASE+257)
 /*
-* The remote access connection completed, but authentication failed because the certificate that the client uses to authenticate the server is not valid. 
+* The remote access connection completed, but authentication failed because the certificate that the client uses to authenticate the server is not valid.
 */
 
 #define ERROR_EAP_SERVER_CERT_EXPIRED             (RASBASE+258)
 /*
-* The remote access connection completed, but authentication failed because the certificate that the client uses to authenticate the server is expired. 
+* The remote access connection completed, but authentication failed because the certificate that the client uses to authenticate the server is expired.
 */
 
 #define ERROR_EAP_SERVER_CERT_REVOKED             (RASBASE+259)
 /*
-* The remote access connection completed, but authentication failed because the certificate that the client uses to authenticate the server is revoked. 
+* The remote access connection completed, but authentication failed because the certificate that the client uses to authenticate the server is revoked.
 */
 
 #define ERROR_EAP_SERVER_CERT_OTHER_ERROR         (RASBASE+260)
 /*
-* The remote access connection completed, but authentication failed because of an error in the certificate that the client uses to authenticate the server. 
+* The remote access connection completed, but authentication failed because of an error in the certificate that the client uses to authenticate the server.
 */
 
 #define ERROR_EAP_USER_ROOT_CERT_NOT_FOUND        (RASBASE+261)
 /*
-* The remote access connection completed, but authentication failed because a trusted root certificate that validates the user certificate was not found in the Trusted Root Certification Authorities certificate store. 
+* The remote access connection completed, but authentication failed because a trusted root certificate that validates the user certificate was not found in the Trusted Root Certification Authorities certificate store.
 */
 
 #define ERROR_EAP_USER_ROOT_CERT_INVALID          (RASBASE+262)
 /*
-* The remote access connection completed, but authentication failed because the trusted root certificate that is used to validate the user certificate is not valid. 
+* The remote access connection completed, but authentication failed because the trusted root certificate that is used to validate the user certificate is not valid.
 */
 
 #define ERROR_EAP_USER_ROOT_CERT_EXPIRED          (RASBASE+263)
 /*
-* The remote access connection completed, but authentication failed because the certificate in the Trusted Root Certification Authorities certificate store that authenticates the user certificate is expired. Renew the certificate. 
+* The remote access connection completed, but authentication failed because the certificate in the Trusted Root Certification Authorities certificate store that authenticates the user certificate is expired. Renew the certificate.
 */
 
 #define ERROR_EAP_SERVER_ROOT_CERT_NOT_FOUND      (RASBASE+264)
@@ -1688,12 +1688,12 @@ Abstract:
 
 #define ERROR_EAP_SERVER_ROOT_CERT_INVALID        (RASBASE+265)
 /*
-* The remote zccess connection completed, but authentication failed because the certificate in the Trusted Root Certification Authorities certificate store that validates the server certificate is not valid. 
+* The remote zccess connection completed, but authentication failed because the certificate in the Trusted Root Certification Authorities certificate store that validates the server certificate is not valid.
 */
 
 #define ERROR_EAP_SERVER_ROOT_CERT_NAME_REQUIRED  (RASBASE+266)
 /*
-* The remote access connection completed, but authentication failed because the certificate on the server computer does not have a server name specified. 
+* The remote access connection completed, but authentication failed because the certificate on the server computer does not have a server name specified.
 */
 
 #define ERROR_PEAP_IDENTITY_MISMATCH               (RASBASE+267)
@@ -1713,7 +1713,7 @@ Abstract:
 
 #define ERROR_IKEV2_PSK_INTERFACE_ALREADY_EXISTS   (RASBASE+270)
 /*
-* The Interface  could not be enabled as more than one  interface with same destination has been created with authentication method as Pre Shared Key. Change the destination/auth method and enable the interface.
+* The Interface  could not be enabled as more than one interface with same destination has been created with authentication method as Pre Shared Key. Change the destination/auth method and enable the interface.
 */
 
 #define ERROR_INVALID_DESTINATION_IP               (RASBASE+271)
@@ -1734,6 +1734,20 @@ Abstract:
 
 #define RASBASEEND                                 (RASBASE+272)
 
+#define ERROR_VPN_PLUGIN_GENERIC                   (RASBASE+273)
+/*
+* Couldn't connect to the VPN.
+*/
+
+#define ERROR_SSO_CERT_MISSING                     (RASBASE+274)
+/*
+* Couldn't connect because we couldn't find a certificate for single sign-on. Please contact your support person.
+*/
+
+#define ERROR_DEVICE_COMPLIANCE                    (RASBASE+275)
+/*
+* Couldn't connect because there was a problem with device compliance.
+*/
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

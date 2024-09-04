@@ -43,6 +43,7 @@ typedef enum _CRASHER_EXCEPTION_CODE
     ResourceManagement          = 0x1000F700,
     CaptureService              = 0x1000F800,
     WaitForShellReady           = 0x1000F900,
+    AudioRouting                = 0x1000FA00,
     NonResponsiveProcess        = 0xC0000194,
     SickApplication             = 0x66888866
 } CRASHER_EXCEPTION_CODE;
@@ -133,11 +134,11 @@ __inline HRESULT GenerateKernelBugCheckEx(
     _tcsncpy_s(request.CallingFunctionName, _countof(request.CallingFunctionName), pszCallingFunctionName, _TRUNCATE);
     _tcsncpy_s(request.CallingModuleName, _countof(request.CallingModuleName), pszModuleName, _TRUNCATE);
     _tcsncpy_s(request.PrimaryBugcheckCodeFriendlyName, _countof(request.PrimaryBugcheckCodeFriendlyName), pszBugcheckCodeFriendlyName, _TRUNCATE);
-    request.BugCheckCodes[0] = (ULONG_PTR)dwCode;
-    request.BugCheckCodes[1] = (ULONG_PTR)dwParameter1;
-    request.BugCheckCodes[2] = (ULONG_PTR)dwParameter2;
-    request.BugCheckCodes[3] = (ULONG_PTR)dwParameter3;
-    request.BugCheckCodes[4] = (ULONG_PTR)dwParameter4;
+    request.BugCheckCodes[0] = (ULONG64)dwCode;
+    request.BugCheckCodes[1] = (ULONG64)dwParameter1;
+    request.BugCheckCodes[2] = (ULONG64)dwParameter2;
+    request.BugCheckCodes[3] = (ULONG64)dwParameter3;
+    request.BugCheckCodes[4] = (ULONG64)dwParameter4;
 
     // open handle to driver
     hDriver = CreateFileW(SV_USR_NAME, GENERIC_READ|GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);

@@ -474,12 +474,12 @@ EXTERN_GUID(IID_ICLRProbingAssemblyEnum, 0xd0c5fb1f, 0x416b, 0x4f97, 0x81, 0xf4,
 EXTERN_GUID(IID_ICLRHostBindingPolicyManager, 0x4b3545e7, 0x1856, 0x48c9, 0xa8, 0xba, 0x24, 0xb2, 0x1a, 0x75, 0x3c, 0x09);
 EXTERN_GUID(IID_ITypeNameBuilder, 0xB81FF171, 0x20F3, 0x11d2, 0x8d, 0xcc, 0x00, 0xa0, 0xc9, 0xb0, 0x05, 0x23);
 EXTERN_GUID(IID_ITypeNameFactory, 0xB81FF171, 0x20F3, 0x11d2, 0x8d, 0xcc, 0x00, 0xa0, 0xc9, 0xb0, 0x05, 0x21);
-STDAPI GetCORSystemDirectory(LPWSTR pbuffer, DWORD  cchBuffer, DWORD* dwLength);
-STDAPI GetCORVersion(LPWSTR pbBuffer, DWORD cchBuffer, DWORD* dwLength);
-STDAPI GetFileVersion(LPCWSTR szFilename, LPWSTR szBuffer, DWORD cchBuffer, DWORD* dwLength);
-STDAPI GetCORRequiredVersion(LPWSTR pbuffer, DWORD cchBuffer, DWORD* dwLength);
-STDAPI GetRequestedRuntimeInfo(LPCWSTR pExe, LPCWSTR pwszVersion, LPCWSTR pConfigurationFile, DWORD startupFlags, DWORD runtimeInfoFlags, LPWSTR pDirectory, DWORD dwDirectory, DWORD *dwDirectoryLength, LPWSTR pVersion, DWORD cchBuffer, DWORD* dwlength);
-STDAPI GetRequestedRuntimeVersion(LPWSTR pExe, LPWSTR pVersion, DWORD cchBuffer, DWORD* dwLength);
+STDAPI GetCORSystemDirectory(__out_ecount_part(cchBuffer, *pdwLength) LPWSTR pbuffer, DWORD  cchBuffer, __out DWORD* dwLength);
+STDAPI GetCORVersion(__out_ecount_part(cchBuffer, *pdwLength) LPWSTR pbBuffer, DWORD cchBuffer, __out DWORD* dwLength);
+STDAPI GetFileVersion(LPCWSTR szFilename, __out_ecount_part(cchBuffer, *pdwLength) LPWSTR szBuffer, DWORD cchBuffer, __out DWORD* dwLength);
+STDAPI GetCORRequiredVersion(__out_ecount_part(cchBuffer, *pdwLength) LPWSTR pbuffer, DWORD cchBuffer, __out DWORD* dwLength);
+STDAPI GetRequestedRuntimeInfo(LPCWSTR pExe, LPCWSTR pwszVersion, LPCWSTR pConfigurationFile, DWORD startupFlags, DWORD runtimeInfoFlags, __out_ecount_opt(dwDirectory) LPWSTR pDirectory, DWORD dwDirectory, __out_opt DWORD *dwDirectoryLength, __out_ecount_opt(cchBuffer) LPWSTR pVersion, DWORD cchBuffer, __out_opt DWORD* dwlength);
+STDAPI GetRequestedRuntimeVersion(__in LPWSTR pExe, __out_ecount_part(cchBuffer, *pdwLength) LPWSTR pVersion, DWORD cchBuffer, __out DWORD* dwLength);
 STDAPI CorBindToRuntimeHost(LPCWSTR pwszVersion, LPCWSTR pwszBuildFlavor, LPCWSTR pwszHostConfigFile, VOID* pReserved, DWORD startupFlags, REFCLSID rclsid, REFIID riid, LPVOID FAR *ppv);
 STDAPI CorBindToRuntimeEx(LPCWSTR pwszVersion, LPCWSTR pwszBuildFlavor, DWORD startupFlags, REFCLSID rclsid, REFIID riid, LPVOID FAR *ppv);
 STDAPI CorBindToRuntimeByCfg(IStream* pCfgStream, DWORD reserved, DWORD startupFlags, REFCLSID rclsid,REFIID riid, LPVOID FAR* ppv);
@@ -492,12 +492,12 @@ STDAPI LoadLibraryShim(LPCWSTR szDllName, LPCWSTR szVersion, LPVOID pvReserved, 
 STDAPI CallFunctionShim(LPCWSTR szDllName, LPCSTR szFunctionName, LPVOID lpvArgument1, LPVOID lpvArgument2, LPCWSTR szVersion, LPVOID pvReserved);
 STDAPI GetRealProcAddress(LPCSTR pwszProcName, VOID** ppv);
 void STDMETHODCALLTYPE CorExitProcess(int exitCode);
-STDAPI LoadStringRC(UINT iResouceID, LPWSTR szBuffer, int iMax, int bQuiet);
-STDAPI LoadStringRCEx(LCID lcid, UINT iResouceID, LPWSTR szBuffer, int iMax, int bQuiet, int *pcwchUsed);
+STDAPI LoadStringRC(UINT iResouceID, __out_ecount(iMax) LPWSTR szBuffer, int iMax, int bQuiet);
+STDAPI LoadStringRCEx(LCID lcid, UINT iResouceID, __out_ecount(iMax) LPWSTR szBuffer, int iMax, int bQuiet, int *pcwchUsed);
 typedef HRESULT (__stdcall *FLockClrVersionCallback) ();
 STDAPI LockClrVersion(FLockClrVersionCallback hostCallback,FLockClrVersionCallback *pBeginHostSetup,FLockClrVersionCallback *pEndHostSetup);
 STDAPI CreateDebuggingInterfaceFromVersion(int iDebuggerVersion, LPCWSTR szDebuggeeVersion, IUnknown ** ppCordb);
-STDAPI GetVersionFromProcess(HANDLE hProcess, LPWSTR pVersion, DWORD cchBuffer, DWORD* dwLength);
+STDAPI GetVersionFromProcess(HANDLE hProcess, __out_ecount_part(cchBuffer, *pdwLength) LPWSTR pVersion, DWORD cchBuffer, __out DWORD* dwLength);
 typedef /* [public] */ 
 enum __MIDL___MIDL_itf_mscoree_0000_0001
     {	HOST_TYPE_DEFAULT	= 0,
@@ -543,7 +543,7 @@ enum __MIDL___MIDL_itf_mscoree_0000_0004
 	RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG	= 0x40
     } 	RUNTIME_INFO_FLAGS;
 
-STDAPI GetRequestedRuntimeVersionForCLSID(REFCLSID rclsid, LPWSTR pVersion, DWORD cchBuffer, DWORD* dwLength, CLSID_RESOLUTION_FLAGS dwResolutionFlags);
+STDAPI GetRequestedRuntimeVersionForCLSID(REFCLSID rclsid, __out_ecount_opt(cchBuffer) LPWSTR pVersion, DWORD cchBuffer, __out_opt DWORD* dwLength, CLSID_RESOLUTION_FLAGS dwResolutionFlags);
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mscoree_0000_v0_0_c_ifspec;
@@ -2518,7 +2518,7 @@ HRESULT STDMETHODCALLTYPE IHostMalloc_DebugAlloc_Proxy(
     IHostMalloc * This,
     /* [in] */ SIZE_T cbSize,
     /* [in] */ EMemoryCriticalLevel eCriticalLevel,
-    /* [in] */ char *pszFileName,
+    /* [in] */ __in char *pszFileName,
     /* [in] */ int iLineNo,
     /* [out] */ void **ppMem);
 
@@ -4835,7 +4835,7 @@ EXTERN_C const IID IID_ICLRDebugManager;
 HRESULT STDMETHODCALLTYPE ICLRDebugManager_BeginConnection_Proxy( 
     ICLRDebugManager * This,
     /* [in] */ CONNID dwConnectionId,
-    /* [string][in] */ wchar_t *szConnectionName);
+    /* [string][in] */ __in wchar_t *szConnectionName);
 
 
 void __RPC_STUB ICLRDebugManager_BeginConnection_Stub(
@@ -7189,7 +7189,7 @@ EXTERN_C const IID IID_ICLRReferenceAssemblyEnum;
 HRESULT STDMETHODCALLTYPE ICLRReferenceAssemblyEnum_Get_Proxy( 
     ICLRReferenceAssemblyEnum * This,
     /* [in] */ DWORD dwIndex,
-    /* [size_is][out] */ LPWSTR pwzBuffer,
+    /* [size_is][out] */ __out_ecount_full(*pcchBufferSize) LPWSTR pwzBuffer,
     /* [out][in] */ DWORD *pcchBufferSize);
 
 
@@ -7285,7 +7285,7 @@ EXTERN_C const IID IID_ICLRProbingAssemblyEnum;
 HRESULT STDMETHODCALLTYPE ICLRProbingAssemblyEnum_Get_Proxy( 
     ICLRProbingAssemblyEnum * This,
     /* [in] */ DWORD dwIndex,
-    /* [size_is][out] */ LPWSTR pwzBuffer,
+    /* [size_is][out] */ __out_ecount_full(*pcchBufferSize) LPWSTR pwzBuffer,
     /* [out][in] */ DWORD *pcchBufferSize);
 
 
@@ -7501,7 +7501,7 @@ HRESULT STDMETHODCALLTYPE ICLRAssemblyIdentityManager_GetBindingIdentityFromFile
     ICLRAssemblyIdentityManager * This,
     /* [in] */ LPCWSTR pwzFilePath,
     /* [in] */ DWORD dwFlags,
-    /* [size_is][out] */ LPWSTR pwzBuffer,
+    /* [size_is][out] */ __out_ecount_full(*pcchBufferSize) LPWSTR pwzBuffer,
     /* [out][in] */ DWORD *pcchBufferSize);
 
 
@@ -7516,7 +7516,7 @@ HRESULT STDMETHODCALLTYPE ICLRAssemblyIdentityManager_GetBindingIdentityFromStre
     ICLRAssemblyIdentityManager * This,
     /* [in] */ IStream *pStream,
     /* [in] */ DWORD dwFlags,
-    /* [size_is][out] */ LPWSTR pwzBuffer,
+    /* [size_is][out] */ __out_ecount_full(*pcchBufferSize) LPWSTR pwzBuffer,
     /* [out][in] */ DWORD *pcchBufferSize);
 
 
@@ -7734,7 +7734,7 @@ HRESULT STDMETHODCALLTYPE ICLRHostBindingPolicyManager_EvaluatePolicy_Proxy(
     /* [in] */ LPCWSTR pwzReferenceIdentity,
     /* [in] */ BYTE *pbApplicationPolicy,
     /* [in] */ DWORD cbAppPolicySize,
-    /* [size_is][out] */ LPWSTR pwzPostPolicyReferenceIdentity,
+    /* [size_is][out] */ __out_ecount_full(*pcchPostPolicyReferenceIdentity) LPWSTR pwzPostPolicyReferenceIdentity,
     /* [out][in] */ DWORD *pcchPostPolicyReferenceIdentity,
     /* [out] */ DWORD *pdwPoliciesApplied);
 

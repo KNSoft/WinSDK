@@ -1,5 +1,4 @@
  
- 
 /********************************************************************************
 *                                                                               *
 * processtopologyapi.h -- ApiSet Contract for api-ms-win-core-processtopology-l1 *
@@ -21,6 +20,7 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-processtopology-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

@@ -2071,7 +2071,7 @@ typedef enum {
 #define JET_sesparamTransactionLevel		4099	//	Retrieves (read-only, no set) the current number of nested levels of transactions begun.  0 = not in a transaction.
 #define JET_sesparamOperationContext		4100	//	a client context that the engine uses to track and trace operations (such as IOs)
 #define JET_sesparamCorrelationID			4101	//	an ID that is logged in traces and can be used by clients to correlate ESE actions with their activity
-#define JET_sesparamMaxValueInvalid			4102	//	This is not a valid session parameter. It can change from release to release!
+#define JET_sesparamMaxValueInvalid			4103	//	This is not a valid session parameter. It can change from release to release!
 
 typedef struct {
 	unsigned long	ulUserID;
@@ -3009,7 +3009,6 @@ typedef struct {
 #define JET_errDisabledFunctionality		-112  /* You are running MinESE, that does not have all features compiled in.  This functionality is only supported in a full version of ESE. */
 #define JET_errUnloadableOSFunctionality	-113  /* The desired OS functionality could not be located and loaded / linked. */
 
-
 //	BUFFER MANAGER errors
 //
 #define JET_errDatabaseBufferDependenciesCorrupted	-255	/* Buffer dependencies improperly set. Recovery failure */
@@ -3253,6 +3252,8 @@ typedef struct {
 #define JET_errDatabaseUnavailable			-1091 /* This database cannot be used because it encountered a fatal error */
 #define JET_errInstanceUnavailableDueToFatalLogDiskFull	-1092 /* This instance cannot be used because it encountered a log-disk-full error performing an operation (likely transaction rollback) that could not tolerate failure */
 #define JET_errInvalidSesparamId			-1093 /* This JET_sesparam* identifier is not known to the ESE engine. */
+
+#define JET_errTooManyRecords				-1094 /* There are too many records to enumerate, switch to an API that handles 64-bit numbers */
 
 #define JET_errOutOfSessions  				-1101 /* Out of sessions */
 #define JET_errWriteConflict				-1102 /* Write lock failed due to outstanding write lock */
@@ -6522,6 +6523,7 @@ JetIndexRecordCount(
 	_In_ JET_TABLEID		tableid,
 	_Out_ unsigned long *	pcrec,
 	_In_ unsigned long		crecMax );
+
 
 JET_ERR JET_API
 JetRetrieveKey(

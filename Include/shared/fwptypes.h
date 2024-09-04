@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -121,6 +121,8 @@ enum FWP_DATA_TYPE_
         FWP_TOKEN_ACCESS_INFORMATION_TYPE	= ( FWP_TOKEN_INFORMATION_TYPE + 1 ) ,
         FWP_UNICODE_STRING_TYPE	= ( FWP_TOKEN_ACCESS_INFORMATION_TYPE + 1 ) ,
         FWP_BYTE_ARRAY6_TYPE	= ( FWP_UNICODE_STRING_TYPE + 1 ) ,
+        FWP_BITMAP_INDEX_TYPE	= ( FWP_BYTE_ARRAY6_TYPE + 1 ) ,
+        FWP_BITMAP_ARRAY64_TYPE	= ( FWP_BITMAP_INDEX_TYPE + 1 ) ,
         FWP_SINGLE_DATA_TYPE_MAX	= 0xff,
         FWP_V4_ADDR_MASK	= ( FWP_SINGLE_DATA_TYPE_MAX + 1 ) ,
         FWP_V6_ADDR_MASK	= ( FWP_V4_ADDR_MASK + 1 ) ,
@@ -128,6 +130,13 @@ enum FWP_DATA_TYPE_
         FWP_DATA_TYPE_MAX	= ( FWP_RANGE_TYPE + 1 ) 
     } 	FWP_DATA_TYPE;
 
+typedef struct FWP_BITMAP_ARRAY64_
+    {
+    UINT8 bitmapArray64[ 8 ];
+    } 	FWP_BITMAP_ARRAY64;
+
+#define FWP_BYTEMAP_ARRAY64_SIZE 8
+#define FWP_BITMAP_ARRAY64_SIZE 64
 typedef struct FWP_BYTE_ARRAY6_
     {
     UINT8 byteArray6[ 6 ];
@@ -177,6 +186,7 @@ typedef struct FWP_VALUE0_
         /* [case()][unique] */ FWP_BYTE_BLOB *tokenAccessInformation;
         /* [case()][string] */ LPWSTR unicodeString;
         /* [case()][unique] */ FWP_BYTE_ARRAY6 *byteArray6;
+        /* [case()][unique] */ FWP_BITMAP_ARRAY64 *bitmapArray64;
         } 	;
     } 	FWP_VALUE0;
 
@@ -195,7 +205,8 @@ enum FWP_MATCH_TYPE_
         FWP_MATCH_EQUAL_CASE_INSENSITIVE	= ( FWP_MATCH_FLAGS_NONE_SET + 1 ) ,
         FWP_MATCH_NOT_EQUAL	= ( FWP_MATCH_EQUAL_CASE_INSENSITIVE + 1 ) ,
         FWP_MATCH_PREFIX	= ( FWP_MATCH_NOT_EQUAL + 1 ) ,
-        FWP_MATCH_TYPE_MAX	= ( FWP_MATCH_PREFIX + 1 ) 
+        FWP_MATCH_NOT_PREFIX	= ( FWP_MATCH_PREFIX + 1 ) ,
+        FWP_MATCH_TYPE_MAX	= ( FWP_MATCH_NOT_PREFIX + 1 ) 
     } 	FWP_MATCH_TYPE;
 
 typedef struct FWP_V4_ADDR_AND_MASK_
@@ -243,6 +254,7 @@ typedef struct FWP_CONDITION_VALUE0_
         /* [case()][unique] */ FWP_BYTE_BLOB *tokenAccessInformation;
         /* [case()][string] */ LPWSTR unicodeString;
         /* [case()][unique] */ FWP_BYTE_ARRAY6 *byteArray6;
+        /* [case()][unique] */ FWP_BITMAP_ARRAY64 *bitmapArray64;
         /* [case()][unique] */ FWP_V4_ADDR_AND_MASK *v4AddrMask;
         /* [case()][unique] */ FWP_V6_ADDR_AND_MASK *v6AddrMask;
         /* [case()][unique] */ FWP_RANGE0 *rangeValue;
@@ -294,6 +306,7 @@ typedef UINT32 FWP_ACTION_TYPE;
 #define FWP_ACTION_CONTINUE (0x00000006 | FWP_ACTION_FLAG_NON_TERMINATING)
 #define FWP_ACTION_NONE (0x00000007)
 #define FWP_ACTION_NONE_NO_MATCH (0x00000008)
+#define FWP_ACTION_BITMAP_INDEX_SET (0x00000009)
 #define FWP_CONDITION_FLAG_IS_LOOPBACK              (0x00000001)
 #define FWP_CONDITION_FLAG_IS_IPSEC_SECURED         (0x00000002)
 #define FWP_CONDITION_FLAG_IS_REAUTHORIZE           (0x00000004)
@@ -331,6 +344,11 @@ typedef UINT32 FWP_ACTION_TYPE;
 #define FWP_CONDITION_REAUTHORIZE_REASON_SOCKET_PROPERTY_CHANGED   (0x00000080)
 #define FWP_CONDITION_REAUTHORIZE_REASON_NEW_INBOUND_MCAST_BCAST_PACKET   (0x00000100)
 #define FWP_CONDITION_REAUTHORIZE_REASON_EDP_POLICY_CHANGED        (0x00000200)
+#define FWP_CONDITION_REAUTHORIZE_REASON_LOCAL_ADDRESS_UNI_FILTERS_CHANGED     (0x00000400)
+#define FWP_CONDITION_REAUTHORIZE_REASON_REMOTE_ADDRESS_UNI_FILTERS_CHANGED    (0x00000800)
+#define FWP_CONDITION_REAUTHORIZE_REASON_LOCAL_PORT_UNI_FILTERS_CHANGED        (0x00001000)
+#define FWP_CONDITION_REAUTHORIZE_REASON_REMOTE_PORT_UNI_FILTERS_CHANGED       (0x00002000)
+#define FWP_CONDITION_REAUTHORIZE_REASON_PROXY_HANDLE_CHANGED                  (0x00004000)
 #define FWP_CONDITION_SOCKET_PROPERTY_FLAG_IS_SYSTEM_PORT_RPC      (0x00000001)
 #define FWP_CONDITION_SOCKET_PROPERTY_FLAG_ALLOW_EDGE_TRAFFIC      (0x00000002)
 #define FWP_CONDITION_SOCKET_PROPERTY_FLAG_DENY_EDGE_TRAFFIC       (0x00000004)

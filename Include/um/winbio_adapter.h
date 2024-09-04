@@ -359,6 +359,32 @@ typedef HRESULT
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// Additional methods available in V4.0 and later
+//
+typedef HRESULT
+(WINAPI *PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_reads_bytes_opt_(RawBufferSize) PUCHAR RawBufferAddress,
+    _In_ SIZE_T RawBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_reads_bytes_opt_(SecureBufferSize) PUCHAR SecureBufferAddress,
+    _In_ SIZE_T SecureBufferSize,
+    _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
+    _In_ SIZE_T MetadataBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    );
+
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Sensor Adapter interface table.
@@ -375,6 +401,10 @@ typedef HRESULT
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #define WINBIO_SENSOR_INTERFACE_VERSION_3    WINBIO_MAKE_INTERFACE_VERSION(3,0)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define WINBIO_SENSOR_INTERFACE_VERSION_4    WINBIO_MAKE_INTERFACE_VERSION(4,0)
 #endif
 
 typedef struct _WINBIO_SENSOR_INTERFACE {
@@ -424,6 +454,14 @@ typedef struct _WINBIO_SENSOR_INTERFACE {
     PIBIO_SENSOR_QUERY_CALIBRATION_FORMATS_FN   QueryCalibrationFormats;
     PIBIO_SENSOR_SET_CALIBRATION_FORMAT_FN      SetCalibrationFormat;
     PIBIO_SENSOR_ACCEPT_CALIBRATION_DATA_FN     AcceptCalibrationData;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+    //
+    // V4.0 methods begin here...
+    //
+    PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN     AsyncImportRawBuffer;
+    PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN  AsyncImportSecureBuffer;
 #endif
 
 } WINBIO_SENSOR_INTERFACE, *PWINBIO_SENSOR_INTERFACE;
@@ -1022,6 +1060,78 @@ WbioSensorAcceptCalibrationData(
                                             Pipeline,
                                             CalibrationBuffer,
                                             CalibrationBufferSize
+                                            );
+    }
+}
+//-----------------------------------------------------------------------------
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// V4.0 methods begin here...
+//
+
+inline HRESULT
+WbioSensorAsyncImportRawBuffer(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_reads_bytes_opt_(RawBufferSize) PUCHAR RawBufferAddress,
+    _In_ SIZE_T RawBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->SensorInterface->AsyncImportRawBuffer))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->SensorInterface->AsyncImportRawBuffer(
+                                            Pipeline,
+                                            RawBufferAddress,
+                                            RawBufferSize,
+                                            ResultBufferAddress,
+                                            ResultBufferSize
+                                            );
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioSensorAsyncImportSecureBuffer(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_reads_bytes_opt_(SecureBufferSize) PUCHAR SecureBufferAddress,
+    _In_ SIZE_T SecureBufferSize,
+    _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
+    _In_ SIZE_T MetadataBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->SensorInterface->AsyncImportSecureBuffer))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->SensorInterface->AsyncImportSecureBuffer(
+                                            Pipeline,
+                                            SecureBufferAddress,
+                                            SecureBufferSize,
+                                            MetadataBufferAddress,
+                                            MetadataBufferSize,
+                                            ResultBufferAddress,
+                                            ResultBufferSize
                                             );
     }
 }
@@ -2733,6 +2843,40 @@ typedef HRESULT
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// Additional methods available in V5.0 and later
+//
+typedef HRESULT
+(WINAPI *PIBIO_STORAGE_GET_USER_STATE_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _Out_ PULONGLONG CurrentState,
+    _Out_ PULONGLONG NextState
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_STORAGE_INCREMENT_USER_STATE_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_STORAGE_UPDATE_RECORD_BEGIN_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _In_ WINBIO_BIOMETRIC_SUBTYPE SubFactor,
+    _Out_ PWINBIO_STORAGE_RECORD RecordContents
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_STORAGE_UPDATE_RECORD_COMMIT_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_STORAGE_RECORD RecordContents
+    );
+
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Storage Adapter interface table.
@@ -2753,6 +2897,10 @@ typedef HRESULT
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 #define WINBIO_STORAGE_INTERFACE_VERSION_4  WINBIO_MAKE_INTERFACE_VERSION(4,0)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define WINBIO_STORAGE_INTERFACE_VERSION_5  WINBIO_MAKE_INTERFACE_VERSION(5,0)
 #endif
 
 typedef struct _WINBIO_STORAGE_INTERFACE {
@@ -2812,6 +2960,16 @@ typedef struct _WINBIO_STORAGE_INTERFACE {
     // Additional methods available in V4.0 and later
     //
     PIBIO_STORAGE_NOTIFY_DATABASE_CHANGE_FN     NotifyDatabaseChange;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+    //
+    // Additional methods available in V5.0 and later
+    //
+    PIBIO_STORAGE_GET_USER_STATE_FN             GetUserState;
+    PIBIO_STORAGE_INCREMENT_USER_STATE_FN       IncrementUserState;
+    PIBIO_STORAGE_UPDATE_RECORD_BEGIN_FN        UpdateRecordBegin;
+    PIBIO_STORAGE_UPDATE_RECORD_COMMIT_FN       UpdateRecordCommit;
 #endif
 
 } WINBIO_STORAGE_INTERFACE, *PWINBIO_STORAGE_INTERFACE;
@@ -3526,12 +3684,125 @@ WbioStorageNotifyDatabaseChange(
     {
         return Pipeline->StorageInterface->NotifyDatabaseChange(
                                                 Pipeline,
-                                                RecordsAdded);
+                                                RecordsAdded
+                                                );
     }
 }
 //-----------------------------------------------------------------------------
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// V5.0 methods begin here...
+//
+
+inline HRESULT
+WbioStorageGetUserState(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _Out_ PULONGLONG CurrentState,
+    _Out_ PULONGLONG NextState
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->StorageInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->StorageInterface->GetUserState))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->StorageInterface->GetUserState(
+                                                Pipeline,
+                                                Identity,
+                                                CurrentState,
+                                                NextState
+                                                );
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioStorageIncrementUserState(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->StorageInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->StorageInterface->IncrementUserState))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->StorageInterface->IncrementUserState(
+                                                Pipeline,
+                                                Identity
+                                                );
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioStorageUpdateRecordBegin(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _In_ WINBIO_BIOMETRIC_SUBTYPE SubFactor,
+    _Out_ PWINBIO_STORAGE_RECORD RecordContents
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->StorageInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->StorageInterface->UpdateRecordBegin))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->StorageInterface->UpdateRecordBegin(
+                                                Pipeline,
+                                                Identity,
+                                                SubFactor,
+                                                RecordContents
+                                                );
+    }
+}
+
+inline HRESULT
+WbioStorageUpdateRecordCommit(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_STORAGE_RECORD RecordContents
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->StorageInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->StorageInterface->UpdateRecordCommit))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->StorageInterface->UpdateRecordCommit(
+                                                Pipeline,
+                                                RecordContents
+                                                );
+    }
+}
+//-----------------------------------------------------------------------------
+#endif
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
@@ -3603,6 +3874,66 @@ typedef HRESULT
 
 #endif  // NTDDI_VERSION >= NTDDI_WIN10_RS1
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+//
+// Methods available in V5.0 and later
+//
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_VSM_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_ GUID SecureBufferIdentifier,
+    _In_ GUID SecureScenarioIdentifier,
+    _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
+    _In_ SIZE_T MetadataBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_BEGIN_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ SIZE_T RequiredCapacity,
+    _Out_ PSIZE_T MaxBufferSize
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_NEXT_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_reads_bytes_(BufferSize) PUCHAR BufferAddress,
+    _In_ SIZE_T BufferSize
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_END_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ SIZE_T AllocationSize,
+    _Out_ PVOID *Address
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_FREE_MEMORY_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PVOID Address
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_GET_PROPERTY_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ WINBIO_PROPERTY_TYPE PropertyType,
+    _In_ WINBIO_PROPERTY_ID PropertyId,
+    _In_opt_ WINBIO_IDENTITY *Identity,
+    _In_opt_ WINBIO_BIOMETRIC_SUBTYPE SubFactor,
+    _Outptr_result_bytebuffer_maybenull_(*PropertyBufferSize) PVOID *PropertyBuffer,
+    _Out_opt_ SIZE_T *PropertyBufferSize
+    );
+
+#endif  // NTDDI_VERSION >= NTDDI_WIN10_RS2
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -3618,6 +3949,10 @@ typedef HRESULT
 #define WINBIO_FRAMEWORK_INTERFACE_VERSION_4_0  WINBIO_MAKE_INTERFACE_VERSION(4,0)
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0  WINBIO_MAKE_INTERFACE_VERSION(5,0)
+#endif
+
 typedef struct _WINBIO_FRAMEWORK_INTERFACE {
     WINBIO_ADAPTER_INTERFACE_VERSION            Version;
     WINBIO_ADAPTER_TYPE                         Type;
@@ -3631,7 +3966,9 @@ typedef struct _WINBIO_FRAMEWORK_INTERFACE {
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
     //
-    // V4.1 methods begin here...
+    // V4.0 methods begin here...
+    //
+    // (Forwarding functions...)
     //
     PIBIO_STORAGE_ATTACH_FN                     VsmStorageAttach;
     PIBIO_STORAGE_DETACH_FN                     VsmStorageDetach;
@@ -3646,6 +3983,10 @@ typedef struct _WINBIO_FRAMEWORK_INTERFACE {
     PIBIO_STORAGE_ACTIVATE_FN                   VsmStorageActivate;
     PIBIO_STORAGE_DEACTIVATE_FN                 VsmStorageDeactivate;
     PIBIO_STORAGE_QUERY_EXTENDED_INFO_FN        VsmStorageQueryExtendedInfo;
+
+    //
+    // (Upcalls...)
+    //
     PIBIO_FRAMEWORK_VSM_CACHE_CLEAR_FN          VsmStorageCacheClear;
     PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_BEGIN_FN   VsmStorageCacheImportBegin;
     PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_NEXT_FN    VsmStorageCacheImportNext;
@@ -3653,6 +3994,38 @@ typedef struct _WINBIO_FRAMEWORK_INTERFACE {
     PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_BEGIN_FN   VsmStorageCacheExportBegin;
     PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_NEXT_FN    VsmStorageCacheExportNext;
     PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_END_FN     VsmStorageCacheExportEnd;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+    //
+    // V5.0 methods begin here...
+    //
+    // (Forwarding functions...)
+    //
+    PIBIO_SENSOR_ATTACH_FN                                      VsmSensorAttach;
+    PIBIO_SENSOR_DETACH_FN                                      VsmSensorDetach;
+    PIBIO_SENSOR_CLEAR_CONTEXT_FN                               VsmSensorClearContext;
+    PIBIO_SENSOR_PUSH_DATA_TO_ENGINE_FN                         VsmSensorPushDataToEngine;
+    PIBIO_SENSOR_NOTIFY_POWER_CHANGE_FN                         VsmSensorNotifyPowerChange;
+    PIBIO_SENSOR_PIPELINE_INIT_FN                               VsmSensorPipelineInit;
+    PIBIO_SENSOR_PIPELINE_CLEANUP_FN                            VsmSensorPipelineCleanup;
+    PIBIO_SENSOR_ACTIVATE_FN                                    VsmSensorActivate;
+    PIBIO_SENSOR_DEACTIVATE_FN                                  VsmSensorDeactivate;
+    PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN                     VsmSensorAsyncImportRawBuffer;
+    PIBIO_FRAMEWORK_VSM_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN    VsmSensorAsyncImportSecureBuffer;
+
+    PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_BEGIN_FN         VsmStorageRecordMigrateBegin;
+    PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_NEXT_FN          VsmStorageRecordMigrateNext;
+    PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_END_FN           VsmStorageRecordMigrateEnd;
+    PIBIO_STORAGE_GET_USER_STATE_FN                             VsmStorageGetUserState;
+    PIBIO_STORAGE_INCREMENT_USER_STATE_FN                       VsmStorageIncrementUserState;
+
+    //
+    // (Upcalls...)
+    //
+    PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN                  AllocateMemory;
+    PIBIO_FRAMEWORK_FREE_MEMORY_FN                      FreeMemory;
+    PIBIO_FRAMEWORK_GET_PROPERTY_FN                     GetProperty;
 #endif
 
 } WINBIO_FRAMEWORK_INTERFACE, *PWINBIO_FRAMEWORK_INTERFACE;
@@ -4355,6 +4728,610 @@ WbioFrameworkVsmStorageCacheExportEnd(
 //-----------------------------------------------------------------------------
 
 #endif  // NTDDI_VERSION >= NTDDI_WIN10_RS1
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+inline HRESULT
+WbioFrameworkVsmSensorAttach(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorAttach))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorAttach(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensoreDetach(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorDetach))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorDetach(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorClearContext(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorClearContext))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorClearContext(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+// PUSH DATA TO ENGINE GOES HERE...
+
+
+inline HRESULT
+WbioFrameworkVsmSensorNotifyPowerChange(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ ULONG PowerEventType
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorNotifyPowerChange))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorNotifyPowerChange(
+                                                    Pipeline,
+                                                    PowerEventType
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorPipelineInit(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorPipelineInit))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorPipelineInit(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorPipelineCleanup(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorPipelineCleanup))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorPipelineCleanup(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorActivate(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorActivate))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorActivate(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorDeactivate(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorDeactivate))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorDeactivate(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorAsyncImportRawBuffer(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_reads_bytes_opt_(RawBufferSize) PUCHAR RawBufferAddress,
+    _In_ SIZE_T RawBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorAsyncImportRawBuffer))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorAsyncImportRawBuffer(
+                                                    Pipeline,
+                                                    RawBufferAddress,
+                                                    RawBufferSize,
+                                                    ResultBufferAddress,
+                                                    ResultBufferSize
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmSensorAsyncImportSecureBuffer(
+    _Inout_ PWINBIO_PIPELINE Pipeline, 
+    _In_ GUID SecureBufferIdentifier,
+    _In_ GUID SecureScenarioIdentifier,
+    _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
+    _In_ SIZE_T MetadataBufferSize, 
+    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
+    _Out_opt_ SIZE_T *ResultBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorAsyncImportSecureBuffer))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorAsyncImportSecureBuffer(
+                                                    Pipeline,
+                                                    SecureBufferIdentifier,
+                                                    SecureScenarioIdentifier,
+                                                    MetadataBufferAddress,
+                                                    MetadataBufferSize,
+                                                    ResultBufferAddress,
+                                                    ResultBufferSize
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmStorageRecordMigrateBegin(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ SIZE_T RequiredCapacity,
+    _Out_ PSIZE_T MaxBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmStorageRecordMigrateBegin))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmStorageRecordMigrateBegin(
+                                                    Pipeline,
+                                                    RequiredCapacity,
+                                                    MaxBufferSize
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmStorageRecordMigrateNext(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_reads_bytes_(BufferSize) PUCHAR BufferAddress,
+    _In_ SIZE_T BufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmStorageRecordMigrateNext))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmStorageRecordMigrateNext(
+                                                    Pipeline,
+                                                    BufferAddress,
+                                                    BufferSize
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmStorageRecordMigrateEnd(
+    _Inout_ PWINBIO_PIPELINE Pipeline
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmStorageRecordMigrateEnd))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmStorageRecordMigrateEnd(Pipeline);
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmStorageGetUserState(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _Out_ PULONGLONG CurrentState,
+    _Out_ PULONGLONG NextState
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmStorageGetUserState))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmStorageGetUserState(
+                                                    Pipeline,
+                                                    Identity,
+                                                    CurrentState,
+                                                    NextState
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkVsmStorageIncrementUserState(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmStorageIncrementUserState))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmStorageIncrementUserState(
+                                                    Pipeline,
+                                                    Identity
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkAllocateMemory(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ SIZE_T AllocationSize,
+    _Out_ PVOID *Address
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->AllocateMemory))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->AllocateMemory(
+                                                    Pipeline,
+                                                    AllocationSize,
+                                                    Address
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkFreeMemory(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PVOID Address
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->FreeMemory))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->FreeMemory(
+                                                    Pipeline,
+                                                    Address
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkGetProperty(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ WINBIO_PROPERTY_TYPE PropertyType,
+    _In_ WINBIO_PROPERTY_ID PropertyId,
+    _In_opt_ WINBIO_IDENTITY *Identity,
+    _In_opt_ WINBIO_BIOMETRIC_SUBTYPE SubFactor,
+    _Outptr_result_bytebuffer_maybenull_(*PropertyBufferSize)PVOID *PropertyBuffer,
+    _Out_opt_ SIZE_T *PropertyBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->GetProperty))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->GetProperty(
+                                                    Pipeline,
+                                                    PropertyType,
+                                                    PropertyId,
+                                                    Identity,
+                                                    SubFactor,
+                                                    PropertyBuffer,
+                                                    PropertyBufferSize
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
 
 #ifdef __cplusplus
 } // extern "C"

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -986,11 +986,16 @@ EXTERN_C const IID IID_IClassFactory2;
             /* [out] */ __RPC__deref_out_opt BSTR *pBstrKey) = 0;
         
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE CreateInstanceLic( 
-            /* [in] */ IUnknown *pUnkOuter,
-            /* [in] */ IUnknown *pUnkReserved,
-            /* [in] */ REFIID riid,
-            /* [in] */ BSTR bstrKey,
-            /* [iid_is][out] */ PVOID *ppvObj) = 0;
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *pUnkOuter,
+            /* [annotation][in] */ 
+            _Reserved_  IUnknown *pUnkReserved,
+            /* [annotation][in] */ 
+            __RPC__in  REFIID riid,
+            /* [annotation][in] */ 
+            __RPC__in  BSTR bstrKey,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out_opt  PVOID *ppvObj) = 0;
         
     };
     
@@ -1037,11 +1042,16 @@ EXTERN_C const IID IID_IClassFactory2;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *CreateInstanceLic )( 
             IClassFactory2 * This,
-            /* [in] */ IUnknown *pUnkOuter,
-            /* [in] */ IUnknown *pUnkReserved,
-            /* [in] */ REFIID riid,
-            /* [in] */ BSTR bstrKey,
-            /* [iid_is][out] */ PVOID *ppvObj);
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *pUnkOuter,
+            /* [annotation][in] */ 
+            _Reserved_  IUnknown *pUnkReserved,
+            /* [annotation][in] */ 
+            __RPC__in  REFIID riid,
+            /* [annotation][in] */ 
+            __RPC__in  BSTR bstrKey,
+            /* [annotation][iid_is][out] */ 
+            __RPC__deref_out_opt  PVOID *ppvObj);
         
         END_INTERFACE
     } IClassFactory2Vtbl;
@@ -6738,11 +6748,16 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
 
 /* [local] */ HRESULT STDMETHODCALLTYPE IClassFactory2_CreateInstanceLic_Proxy( 
     IClassFactory2 * This,
-    /* [in] */ IUnknown *pUnkOuter,
-    /* [in] */ IUnknown *pUnkReserved,
-    /* [in] */ REFIID riid,
-    /* [in] */ BSTR bstrKey,
-    /* [iid_is][out] */ PVOID *ppvObj);
+    /* [annotation][in] */ 
+    _In_opt_  IUnknown *pUnkOuter,
+    /* [annotation][in] */ 
+    _Reserved_  IUnknown *pUnkReserved,
+    /* [annotation][in] */ 
+    __RPC__in  REFIID riid,
+    /* [annotation][in] */ 
+    __RPC__in  BSTR bstrKey,
+    /* [annotation][iid_is][out] */ 
+    __RPC__deref_out_opt  PVOID *ppvObj);
 
 
 /* [call_as] */ HRESULT STDMETHODCALLTYPE IClassFactory2_CreateInstanceLic_Stub( 

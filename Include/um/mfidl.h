@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -760,6 +760,27 @@ typedef interface IMFNetCrossOriginSupport IMFNetCrossOriginSupport;
 #endif 	/* __IMFNetCrossOriginSupport_FWD_DEFINED__ */
 
 
+#ifndef __IMFHttpDownloadRequest_FWD_DEFINED__
+#define __IMFHttpDownloadRequest_FWD_DEFINED__
+typedef interface IMFHttpDownloadRequest IMFHttpDownloadRequest;
+
+#endif 	/* __IMFHttpDownloadRequest_FWD_DEFINED__ */
+
+
+#ifndef __IMFHttpDownloadSession_FWD_DEFINED__
+#define __IMFHttpDownloadSession_FWD_DEFINED__
+typedef interface IMFHttpDownloadSession IMFHttpDownloadSession;
+
+#endif 	/* __IMFHttpDownloadSession_FWD_DEFINED__ */
+
+
+#ifndef __IMFHttpDownloadSessionProvider_FWD_DEFINED__
+#define __IMFHttpDownloadSessionProvider_FWD_DEFINED__
+typedef interface IMFHttpDownloadSessionProvider IMFHttpDownloadSessionProvider;
+
+#endif 	/* __IMFHttpDownloadSessionProvider_FWD_DEFINED__ */
+
+
 #ifndef __IMFMediaSource2_FWD_DEFINED__
 #define __IMFMediaSource2_FWD_DEFINED__
 typedef interface IMFMediaSource2 IMFMediaSource2;
@@ -786,6 +807,20 @@ typedef interface IMFSensorDevice IMFSensorDevice;
 typedef interface IMFSensorGroup IMFSensorGroup;
 
 #endif 	/* __IMFSensorGroup_FWD_DEFINED__ */
+
+
+#ifndef __IMFSensorStream_FWD_DEFINED__
+#define __IMFSensorStream_FWD_DEFINED__
+typedef interface IMFSensorStream IMFSensorStream;
+
+#endif 	/* __IMFSensorStream_FWD_DEFINED__ */
+
+
+#ifndef __IMFSensorTransformFactory_FWD_DEFINED__
+#define __IMFSensorTransformFactory_FWD_DEFINED__
+typedef interface IMFSensorTransformFactory IMFSensorTransformFactory;
+
+#endif 	/* __IMFSensorTransformFactory_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -1069,13 +1104,17 @@ STDAPI MFCreateMediaSession(
     IMFAttributes* pConfiguration,
     _Outptr_ IMFMediaSession** ppMediaSession
     );
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region PC Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 STDAPI MFCreatePMPMediaSession(
     DWORD dwCreationFlags,
     IMFAttributes *pConfiguration,
     _Outptr_ IMFMediaSession** ppMediaSession,
     _Outptr_opt_ IMFActivate **ppEnablerActivate
     );
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
@@ -1866,8 +1905,8 @@ EXTERN_GUID( MF_SOURCE_STREAM_SUPPORTS_HW_CONNECTION, 0xa38253aa, 0x6314, 0x42fd
 #endif // (WINVER >= _WIN32_WINNT_WIN8) 
 
 #if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0004_v0_0_c_ifspec;
@@ -1966,7 +2005,7 @@ EXTERN_C const IID IID_IMFClockConsumer;
 /* interface __MIDL_itf_mfidl_0000_0005 */
 /* [local] */ 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 #pragma region Application Family
@@ -3908,8 +3947,8 @@ EXTERN_GUID( MF_TOPOLOGY_START_TIME_ON_PRESENTATION_SWITCH, 0xc8cc113f, 0x7951, 
 EXTERN_GUID( MF_DISABLE_LOCALLY_REGISTERED_PLUGINS, 0x66b16da9, 0xadd4, 0x47e0, 0xa1, 0x6b, 0x5a, 0xf1, 0xfb, 0x48, 0x36, 0x34);
 EXTERN_GUID( MF_LOCAL_PLUGIN_CONTROL_POLICY, 0xd91b0085, 0xc86d, 0x4f81, 0x88, 0x22, 0x8c, 0x68, 0xe1, 0xd7, 0xfa, 0x04);
 #endif // (WINVER >= _WIN32_WINNT_WIN8) 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region PC Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 STDAPI MFCreateTopology(
     _Outptr_ IMFTopology ** ppTopo );
 typedef 
@@ -3922,6 +3961,10 @@ enum MF_TOPOLOGY_TYPE
         MF_TOPOLOGY_MAX	= 0xffffffff
     } 	MF_TOPOLOGY_TYPE;
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0017_v0_0_c_ifspec;
@@ -4502,9 +4545,17 @@ EXTERN_GUID( MF_TOPONODE_NOSHUTDOWN_ON_REMOVE, 0x14932f9c, 0x9087, 0x4bb4, 0x84,
 EXTERN_GUID( MF_TOPONODE_RATELESS, 0x14932f9d, 0x9087, 0x4bb4, 0x84, 0x12, 0x51, 0x67, 0x14, 0x5c, 0xbe, 0x04);
 EXTERN_GUID( MF_TOPONODE_DISABLE_PREROLL, 0x14932f9e, 0x9087, 0x4bb4, 0x84, 0x12, 0x51, 0x67, 0x14, 0x5c, 0xbe, 0x04);
 EXTERN_GUID( MF_TOPONODE_PRIMARYOUTPUT, 0x6304ef99, 0x16b2, 0x4ebe, 0x9d, 0x67, 0xe4, 0xc5, 0x39, 0xb3, 0xa2, 0x59);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region PC Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 STDAPI MFCreateTopologyNode(
     MF_TOPOLOGY_TYPE NodeType,
     _Outptr_ IMFTopologyNode ** ppNode );
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 #if (WINVER >= _WIN32_WINNT_WIN7) 
 STDAPI MFGetTopoNodeCurrentType(
     IMFTopologyNode* pNode,
@@ -4996,12 +5047,12 @@ EXTERN_C const IID IID_IMFPresentationClock;
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region PC Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 STDAPI MFCreatePresentationClock(
     _Outptr_ IMFPresentationClock** ppPresentationClock
     );
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
@@ -5132,18 +5183,10 @@ EXTERN_C const IID IID_IMFPresentationTimeSource;
 /* interface __MIDL_itf_mfidl_0000_0022 */
 /* [local] */ 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
-#pragma endregion
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 STDAPI
 MFCreateSystemTimeSource(
     _Outptr_ IMFPresentationTimeSource** ppSystemTimeSource
     );
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0022_v0_0_c_ifspec;
@@ -5298,6 +5341,9 @@ EXTERN_GUID( MF_PD_PREFERRED_LANGUAGE, 0x6c990d3A, 0xbb8e, 0x477a, 0x85, 0x98, 0
 EXTERN_GUID(MF_PD_PLAYBACK_BOUNDARY_TIME, 0x6c990d3b, 0xbb8e, 0x477a, 0x85, 0x98, 0xd, 0x5d, 0x96, 0xfc, 0xd8, 0x8a );
 EXTERN_GUID( MF_PD_AUDIO_ISVARIABLEBITRATE, 0x33026ee0, 0xe387, 0x4582, 0xae, 0x0a, 0x34, 0xa2, 0xad, 0x3b, 0xaa, 0x18 );
 #endif // (WINVER >= _WIN32_WINNT_WIN7) 
+#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
+DEFINE_GUID( MF_PD_ADAPTIVE_STREAMING, 0xEA0D5D97, 0x29F9, 0x488B, 0xAE, 0x6B, 0x7D, 0x6B, 0x41, 0x36, 0x11, 0x2B);
+#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0023_v0_0_c_ifspec;
@@ -6511,10 +6557,18 @@ MFCreateAudioRenderer(
     IMFAttributes* pAudioAttributes,
     _Outptr_ IMFMediaSink** ppSink
     );
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region PC Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 STDAPI
 MFCreateAudioRendererActivate( 
     _Outptr_ IMFActivate ** ppActivate 
     );
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 EXTERN_GUID( MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS, 0xede4b5e0, 0xf805, 0x4d6c, 0x99, 0xb3, 0xdb, 0x01, 0xbf, 0x95, 0xdf, 0xab);
 #define    MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_CROSSPROCESS          0x00000001
 #define    MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_NOPERSIST          0x00000002
@@ -9827,7 +9881,7 @@ extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0049_v0_0_s_ifspec;
 #define __IMFRealTimeClientEx_INTERFACE_DEFINED__
 
 /* interface IMFRealTimeClientEx */
-/* [local][uuid][object] */ 
+/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID_IMFRealTimeClientEx;
@@ -9839,20 +9893,15 @@ EXTERN_C const IID IID_IMFRealTimeClientEx;
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE RegisterThreadsEx( 
-            /* [annotation][out][in] */ 
-            _Inout_  DWORD *pdwTaskIndex,
-            /* [annotation][in] */ 
-            _In_  LPCWSTR wszClassName,
-            /* [annotation][in] */ 
-            _In_  LONG lBasePriority) = 0;
+            /* [out][in] */ __RPC__inout DWORD *pdwTaskIndex,
+            /* [in] */ __RPC__in LPCWSTR wszClassName,
+            /* [in] */ LONG lBasePriority) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE UnregisterThreads( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetWorkQueueEx( 
-            /* [annotation][in] */ 
-            _In_  DWORD dwMultithreadedWorkQueueId,
-            /* [annotation][in] */ 
-            _In_  LONG lWorkItemBasePriority) = 0;
+            /* [in] */ DWORD dwMultithreadedWorkQueueId,
+            /* [in] */ LONG lWorkItemBasePriority) = 0;
         
     };
     
@@ -9864,35 +9913,30 @@ EXTERN_C const IID IID_IMFRealTimeClientEx;
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IMFRealTimeClientEx * This,
-            /* [in] */ REFIID riid,
+            __RPC__in IMFRealTimeClientEx * This,
+            /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IMFRealTimeClientEx * This);
+            __RPC__in IMFRealTimeClientEx * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            IMFRealTimeClientEx * This);
+            __RPC__in IMFRealTimeClientEx * This);
         
         HRESULT ( STDMETHODCALLTYPE *RegisterThreadsEx )( 
-            IMFRealTimeClientEx * This,
-            /* [annotation][out][in] */ 
-            _Inout_  DWORD *pdwTaskIndex,
-            /* [annotation][in] */ 
-            _In_  LPCWSTR wszClassName,
-            /* [annotation][in] */ 
-            _In_  LONG lBasePriority);
+            __RPC__in IMFRealTimeClientEx * This,
+            /* [out][in] */ __RPC__inout DWORD *pdwTaskIndex,
+            /* [in] */ __RPC__in LPCWSTR wszClassName,
+            /* [in] */ LONG lBasePriority);
         
         HRESULT ( STDMETHODCALLTYPE *UnregisterThreads )( 
-            IMFRealTimeClientEx * This);
+            __RPC__in IMFRealTimeClientEx * This);
         
         HRESULT ( STDMETHODCALLTYPE *SetWorkQueueEx )( 
-            IMFRealTimeClientEx * This,
-            /* [annotation][in] */ 
-            _In_  DWORD dwMultithreadedWorkQueueId,
-            /* [annotation][in] */ 
-            _In_  LONG lWorkItemBasePriority);
+            __RPC__in IMFRealTimeClientEx * This,
+            /* [in] */ DWORD dwMultithreadedWorkQueueId,
+            /* [in] */ LONG lWorkItemBasePriority);
         
         END_INTERFACE
     } IMFRealTimeClientExVtbl;
@@ -17226,9 +17270,540 @@ EXTERN_C const IID IID_IMFNetCrossOriginSupport;
 /* [local] */ 
 
 EXTERN_GUID(MFNETSOURCE_CROSS_ORIGIN_SUPPORT, 0x9842207c, 0xb02c, 0x4271, 0xa2, 0xfc, 0x72, 0xe4, 0x93, 0x8, 0xe5, 0xc2);
+
+
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0103_v0_0_s_ifspec;
+
+#ifndef __IMFHttpDownloadRequest_INTERFACE_DEFINED__
+#define __IMFHttpDownloadRequest_INTERFACE_DEFINED__
+
+/* interface IMFHttpDownloadRequest */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFHttpDownloadRequest;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("F779FDDF-26E7-4270-8A8B-B983D1859DE0")
+    IMFHttpDownloadRequest : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE AddHeader( 
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szHeader) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE BeginSendRequest( 
+            /* [annotation][size_is][in] */ 
+            _In_reads_opt_(cbPayload)  const BYTE *pbPayload,
+            /* [annotation][in] */ 
+            _In_  ULONG cbPayload,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncCallback *pCallback,
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *punkState) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE EndSendRequest( 
+            /* [annotation][in] */ 
+            _In_  IMFAsyncResult *pResult) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE BeginReceiveResponse( 
+            /* [annotation][in] */ 
+            _In_  IMFAsyncCallback *pCallback,
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *punkState) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE EndReceiveResponse( 
+            /* [annotation][in] */ 
+            _In_  IMFAsyncResult *pResult) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE BeginReadPayload( 
+            /* [annotation][size_is][out] */ 
+            _Out_writes_(cb)  BYTE *pb,
+            /* [annotation][in] */ 
+            _In_  ULONG cb,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncCallback *pCallback,
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *punkState) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE EndReadPayload( 
+            /* [annotation][in] */ 
+            _In_  IMFAsyncResult *pResult,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwOffset,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcbRead) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE QueryHeader( 
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szHeaderName,
+            /* [annotation][in] */ 
+            _In_  DWORD dwIndex,
+            /* [annotation][out] */ 
+            _Outptr_  LPWSTR *ppszHeaderValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetURL( 
+            /* [annotation][out] */ 
+            _Outptr_  LPWSTR *ppszURL) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE HasNullSourceOrigin( 
+            /* [annotation][out] */ 
+            _Out_  BOOL *pfNullSourceOrigin) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetTimeSeekResult( 
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwStartTime,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwStopTime,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwDuration) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetHttpStatus( 
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwHttpStatus) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetAtEndOfPayload( 
+            /* [annotation][out] */ 
+            _Out_  BOOL *pfAtEndOfPayload) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetTotalLength( 
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwTotalLength) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetRangeEndOffset( 
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwRangeEnd) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFHttpDownloadRequestVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFHttpDownloadRequest * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFHttpDownloadRequest * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFHttpDownloadRequest * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddHeader )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szHeader);
+        
+        HRESULT ( STDMETHODCALLTYPE *BeginSendRequest )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][size_is][in] */ 
+            _In_reads_opt_(cbPayload)  const BYTE *pbPayload,
+            /* [annotation][in] */ 
+            _In_  ULONG cbPayload,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncCallback *pCallback,
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *punkState);
+        
+        HRESULT ( STDMETHODCALLTYPE *EndSendRequest )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncResult *pResult);
+        
+        HRESULT ( STDMETHODCALLTYPE *BeginReceiveResponse )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncCallback *pCallback,
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *punkState);
+        
+        HRESULT ( STDMETHODCALLTYPE *EndReceiveResponse )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncResult *pResult);
+        
+        HRESULT ( STDMETHODCALLTYPE *BeginReadPayload )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][size_is][out] */ 
+            _Out_writes_(cb)  BYTE *pb,
+            /* [annotation][in] */ 
+            _In_  ULONG cb,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncCallback *pCallback,
+            /* [annotation][in] */ 
+            _In_opt_  IUnknown *punkState);
+        
+        HRESULT ( STDMETHODCALLTYPE *EndReadPayload )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][in] */ 
+            _In_  IMFAsyncResult *pResult,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwOffset,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcbRead);
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryHeader )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szHeaderName,
+            /* [annotation][in] */ 
+            _In_  DWORD dwIndex,
+            /* [annotation][out] */ 
+            _Outptr_  LPWSTR *ppszHeaderValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetURL )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Outptr_  LPWSTR *ppszURL);
+        
+        HRESULT ( STDMETHODCALLTYPE *HasNullSourceOrigin )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Out_  BOOL *pfNullSourceOrigin);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTimeSeekResult )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwStartTime,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwStopTime,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwDuration);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetHttpStatus )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwHttpStatus);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAtEndOfPayload )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Out_  BOOL *pfAtEndOfPayload);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTotalLength )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwTotalLength);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRangeEndOffset )( 
+            IMFHttpDownloadRequest * This,
+            /* [annotation][out] */ 
+            _Out_  QWORD *pqwRangeEnd);
+        
+        HRESULT ( STDMETHODCALLTYPE *Close )( 
+            IMFHttpDownloadRequest * This);
+        
+        END_INTERFACE
+    } IMFHttpDownloadRequestVtbl;
+
+    interface IMFHttpDownloadRequest
+    {
+        CONST_VTBL struct IMFHttpDownloadRequestVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFHttpDownloadRequest_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFHttpDownloadRequest_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFHttpDownloadRequest_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFHttpDownloadRequest_AddHeader(This,szHeader)	\
+    ( (This)->lpVtbl -> AddHeader(This,szHeader) ) 
+
+#define IMFHttpDownloadRequest_BeginSendRequest(This,pbPayload,cbPayload,pCallback,punkState)	\
+    ( (This)->lpVtbl -> BeginSendRequest(This,pbPayload,cbPayload,pCallback,punkState) ) 
+
+#define IMFHttpDownloadRequest_EndSendRequest(This,pResult)	\
+    ( (This)->lpVtbl -> EndSendRequest(This,pResult) ) 
+
+#define IMFHttpDownloadRequest_BeginReceiveResponse(This,pCallback,punkState)	\
+    ( (This)->lpVtbl -> BeginReceiveResponse(This,pCallback,punkState) ) 
+
+#define IMFHttpDownloadRequest_EndReceiveResponse(This,pResult)	\
+    ( (This)->lpVtbl -> EndReceiveResponse(This,pResult) ) 
+
+#define IMFHttpDownloadRequest_BeginReadPayload(This,pb,cb,pCallback,punkState)	\
+    ( (This)->lpVtbl -> BeginReadPayload(This,pb,cb,pCallback,punkState) ) 
+
+#define IMFHttpDownloadRequest_EndReadPayload(This,pResult,pqwOffset,pcbRead)	\
+    ( (This)->lpVtbl -> EndReadPayload(This,pResult,pqwOffset,pcbRead) ) 
+
+#define IMFHttpDownloadRequest_QueryHeader(This,szHeaderName,dwIndex,ppszHeaderValue)	\
+    ( (This)->lpVtbl -> QueryHeader(This,szHeaderName,dwIndex,ppszHeaderValue) ) 
+
+#define IMFHttpDownloadRequest_GetURL(This,ppszURL)	\
+    ( (This)->lpVtbl -> GetURL(This,ppszURL) ) 
+
+#define IMFHttpDownloadRequest_HasNullSourceOrigin(This,pfNullSourceOrigin)	\
+    ( (This)->lpVtbl -> HasNullSourceOrigin(This,pfNullSourceOrigin) ) 
+
+#define IMFHttpDownloadRequest_GetTimeSeekResult(This,pqwStartTime,pqwStopTime,pqwDuration)	\
+    ( (This)->lpVtbl -> GetTimeSeekResult(This,pqwStartTime,pqwStopTime,pqwDuration) ) 
+
+#define IMFHttpDownloadRequest_GetHttpStatus(This,pdwHttpStatus)	\
+    ( (This)->lpVtbl -> GetHttpStatus(This,pdwHttpStatus) ) 
+
+#define IMFHttpDownloadRequest_GetAtEndOfPayload(This,pfAtEndOfPayload)	\
+    ( (This)->lpVtbl -> GetAtEndOfPayload(This,pfAtEndOfPayload) ) 
+
+#define IMFHttpDownloadRequest_GetTotalLength(This,pqwTotalLength)	\
+    ( (This)->lpVtbl -> GetTotalLength(This,pqwTotalLength) ) 
+
+#define IMFHttpDownloadRequest_GetRangeEndOffset(This,pqwRangeEnd)	\
+    ( (This)->lpVtbl -> GetRangeEndOffset(This,pqwRangeEnd) ) 
+
+#define IMFHttpDownloadRequest_Close(This)	\
+    ( (This)->lpVtbl -> Close(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFHttpDownloadRequest_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFHttpDownloadSession_INTERFACE_DEFINED__
+#define __IMFHttpDownloadSession_INTERFACE_DEFINED__
+
+/* interface IMFHttpDownloadSession */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFHttpDownloadSession;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("71FA9A2C-53CE-4662-A132-1A7E8CBF62DB")
+    IMFHttpDownloadSession : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE SetServer( 
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szServerName,
+            /* [annotation][in] */ 
+            _In_  DWORD nPort) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CreateRequest( 
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szObjectName,
+            /* [annotation][in] */ 
+            _In_  BOOL fBypassProxyCache,
+            /* [annotation][in] */ 
+            _In_  BOOL fSecure,
+            /* [annotation][in] */ 
+            _In_opt_  LPCWSTR szVerb,
+            /* [annotation][in] */ 
+            _In_opt_  LPCWSTR szReferrer,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFHttpDownloadRequest **ppRequest) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Close( void) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFHttpDownloadSessionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFHttpDownloadSession * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFHttpDownloadSession * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFHttpDownloadSession * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetServer )( 
+            IMFHttpDownloadSession * This,
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szServerName,
+            /* [annotation][in] */ 
+            _In_  DWORD nPort);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateRequest )( 
+            IMFHttpDownloadSession * This,
+            /* [annotation][in] */ 
+            _In_  LPCWSTR szObjectName,
+            /* [annotation][in] */ 
+            _In_  BOOL fBypassProxyCache,
+            /* [annotation][in] */ 
+            _In_  BOOL fSecure,
+            /* [annotation][in] */ 
+            _In_opt_  LPCWSTR szVerb,
+            /* [annotation][in] */ 
+            _In_opt_  LPCWSTR szReferrer,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFHttpDownloadRequest **ppRequest);
+        
+        HRESULT ( STDMETHODCALLTYPE *Close )( 
+            IMFHttpDownloadSession * This);
+        
+        END_INTERFACE
+    } IMFHttpDownloadSessionVtbl;
+
+    interface IMFHttpDownloadSession
+    {
+        CONST_VTBL struct IMFHttpDownloadSessionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFHttpDownloadSession_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFHttpDownloadSession_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFHttpDownloadSession_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFHttpDownloadSession_SetServer(This,szServerName,nPort)	\
+    ( (This)->lpVtbl -> SetServer(This,szServerName,nPort) ) 
+
+#define IMFHttpDownloadSession_CreateRequest(This,szObjectName,fBypassProxyCache,fSecure,szVerb,szReferrer,ppRequest)	\
+    ( (This)->lpVtbl -> CreateRequest(This,szObjectName,fBypassProxyCache,fSecure,szVerb,szReferrer,ppRequest) ) 
+
+#define IMFHttpDownloadSession_Close(This)	\
+    ( (This)->lpVtbl -> Close(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFHttpDownloadSession_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFHttpDownloadSessionProvider_INTERFACE_DEFINED__
+#define __IMFHttpDownloadSessionProvider_INTERFACE_DEFINED__
+
+/* interface IMFHttpDownloadSessionProvider */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFHttpDownloadSessionProvider;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("1B4CF4B9-3A16-4115-839D-03CC5C99DF01")
+    IMFHttpDownloadSessionProvider : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE CreateHttpDownloadSession( 
+            /* [annotation][in] */ 
+            _In_  LPCWSTR wszScheme,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFHttpDownloadSession **ppDownloadSession) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFHttpDownloadSessionProviderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFHttpDownloadSessionProvider * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFHttpDownloadSessionProvider * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFHttpDownloadSessionProvider * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateHttpDownloadSession )( 
+            IMFHttpDownloadSessionProvider * This,
+            /* [annotation][in] */ 
+            _In_  LPCWSTR wszScheme,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFHttpDownloadSession **ppDownloadSession);
+        
+        END_INTERFACE
+    } IMFHttpDownloadSessionProviderVtbl;
+
+    interface IMFHttpDownloadSessionProvider
+    {
+        CONST_VTBL struct IMFHttpDownloadSessionProviderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFHttpDownloadSessionProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFHttpDownloadSessionProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFHttpDownloadSessionProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFHttpDownloadSessionProvider_CreateHttpDownloadSession(This,wszScheme,ppDownloadSession)	\
+    ( (This)->lpVtbl -> CreateHttpDownloadSession(This,wszScheme,ppDownloadSession) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFHttpDownloadSessionProvider_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mfidl_0000_0106 */
+/* [local] */ 
+
+EXTERN_GUID(MFNETSOURCE_HTTP_DOWNLOAD_SESSION_PROVIDER, 0x7d55081e, 0x307d, 0x4d6d, 0xa6, 0x63, 0xa9, 0x3b, 0xe9, 0x7c, 0x4b, 0x5c);
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 #pragma endregion
-#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
+#if (WINVER >= _WIN32_WINNT_WIN10) 
 typedef 
 enum MF_MEDIASOURCE_STATUS_INFO
     {
@@ -17237,11 +17812,29 @@ enum MF_MEDIASOURCE_STATUS_INFO
     } 	MF_MEDIASOURCE_STATUS_INFO;
 
 EXTERN_GUID(MF_SD_MEDIASOURCE_STATUS, 0x1913678b, 0xfc0f, 0x44da, 0x8f, 0x43, 0x1b, 0xa3, 0xb5, 0x26, 0xf4, 0xae);
+typedef 
+enum _MFVideoSphericalFormat
+    {
+        MFVideoSphericalFormat_Unsupported	= 0,
+        MFVideoSphericalFormat_Equirectangular	= 1
+    } 	MFVideoSphericalFormat;
+
+typedef struct _MF_VIDEO_SPHERICAL_VIEWDIRECTION
+    {
+    int iHeading;
+    int iPitch;
+    int iRoll;
+    } 	MF_VIDEO_SPHERICAL_VIEWDIRECTION;
+
+#define MF_UNKNOWN_DURATION 0
+EXTERN_GUID(MF_SD_VIDEO_SPHERICAL, 0xa51da449, 0x3fdc, 0x478c, 0xbc, 0xb5, 0x30, 0xbe, 0x76, 0x59, 0x5f, 0x55);
+EXTERN_GUID(MF_SD_VIDEO_SPHERICAL_FORMAT, 0x4a8fc407, 0x6ea1, 0x46c8, 0xb5, 0x67, 0x69, 0x71, 0xd4, 0xa1, 0x39, 0xc3);
+EXTERN_GUID(MF_SD_VIDEO_SPHERICAL_INITIAL_VIEWDIRECTION, 0x11d25a49, 0xbb62, 0x467f, 0x9d, 0xb1, 0xc1, 0x71, 0x65, 0x71, 0x6c, 0x49);
 EXTERN_GUID(MF_MEDIASOURCE_EXPOSE_ALL_STREAMS, 0xe7f250b8, 0x8fd9, 0x4a09, 0xb6, 0xc1, 0x6a, 0x31, 0x5c, 0x7c, 0x72, 0xe);
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0106_v0_0_s_ifspec;
 
 #ifndef __IMFMediaSource2_INTERFACE_DEFINED__
 #define __IMFMediaSource2_INTERFACE_DEFINED__
@@ -17583,24 +18176,34 @@ EXTERN_C const IID IID_IMFMediaStream2;
 #endif 	/* __IMFMediaStream2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfidl_0000_0105 */
+/* interface __MIDL_itf_mfidl_0000_0108 */
 /* [local] */ 
 
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 #if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+EXTERN_GUID(MF_ST_MEDIASOURCE_COLLECTION, 0x616DE972, 0x83AD, 0x4950, 0x81, 0x70, 0x63, 0x0D, 0x19, 0xCB, 0xE3, 0x07);
+EXTERN_GUID(MF_DEVICESTREAM_FILTER_KSCONTROL, 0x46783CCA, 0x3DF5, 0x4923, 0xA9, 0xEF, 0x36, 0xB7, 0x22, 0x3E, 0xDD, 0xE0);
+EXTERN_GUID(MF_DEVICESTREAM_PIN_KSCONTROL, 0xEF3EF9A7, 0x87F2, 0x48CA, 0xBE, 0x02, 0x67, 0x48, 0x78, 0x91, 0x8E, 0x98);
+EXTERN_GUID(MF_DEVICESTREAM_SOURCE_ATTRIBUTES, 0x2F8CB617, 0x361B, 0x434F, 0x85, 0xEA, 0x99, 0xA0, 0x3E, 0x1C, 0xE4, 0xE0);
+EXTERN_GUID( MF_DEVICESTREAM_FRAMESERVER_HIDDEN, 0xF402567B, 0x4D91, 0x4179, 0x96, 0xD1, 0x74, 0xC8, 0x48, 0x0C, 0x20, 0x34);
+EXTERN_GUID( MF_STF_VERSION_INFO, 0x6770BD39, 0xEF82, 0x44EE, 0xA4, 0x9B, 0x93, 0x4B, 0xEB, 0x24, 0xAE, 0xF7);
+EXTERN_GUID( MF_STF_VERSION_DATE, 0x31A165D5, 0xDF67, 0x4095, 0x8E, 0x44, 0x88, 0x68, 0xFC, 0x20, 0xDB, 0xFD);
+EXTERN_GUID( MF_DEVICESTREAM_REQUIRED_CAPABILITIES, 0x6D8B957E, 0x7CF6, 0x43F4, 0xAF, 0x56, 0x9C, 0x0E, 0x1E, 0x4F, 0xCB, 0xE1);
+EXTERN_GUID( MF_DEVICESTREAM_REQUIRED_SDDL, 0x331AE85D, 0xC0D3, 0x49BA, 0x83, 0xBA, 0x82, 0xA1, 0x2D, 0x63, 0xCD, 0xD6);
 typedef /* [public][public] */ 
-enum __MIDL___MIDL_itf_mfidl_0000_0105_0001
+enum __MIDL___MIDL_itf_mfidl_0000_0108_0001
     {
         MFSensorDeviceType_Unknown	= 0,
         MFSensorDeviceType_Device	= ( MFSensorDeviceType_Unknown + 1 ) ,
         MFSensorDeviceType_MediaSource	= ( MFSensorDeviceType_Device + 1 ) ,
-        MFSensorDeviceType_FrameProvider	= ( MFSensorDeviceType_MediaSource + 1 ) 
+        MFSensorDeviceType_FrameProvider	= ( MFSensorDeviceType_MediaSource + 1 ) ,
+        MFSensorDeviceType_SensorTransform	= ( MFSensorDeviceType_FrameProvider + 1 ) 
     } 	MFSensorDeviceType;
 
 typedef /* [public][public][public] */ 
-enum __MIDL___MIDL_itf_mfidl_0000_0105_0002
+enum __MIDL___MIDL_itf_mfidl_0000_0108_0002
     {
         MFSensorStreamType_Unknown	= 0,
         MFSensorStreamType_Input	= ( MFSensorStreamType_Unknown + 1 ) ,
@@ -17608,7 +18211,7 @@ enum __MIDL___MIDL_itf_mfidl_0000_0105_0002
     } 	MFSensorStreamType;
 
 typedef /* [public][public][public] */ 
-enum __MIDL___MIDL_itf_mfidl_0000_0105_0003
+enum __MIDL___MIDL_itf_mfidl_0000_0108_0003
     {
         MFSensorDeviceMode_Controller	= 0,
         MFSensorDeviceMode_Shared	= ( MFSensorDeviceMode_Controller + 1 ) 
@@ -17616,8 +18219,8 @@ enum __MIDL___MIDL_itf_mfidl_0000_0105_0003
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0108_v0_0_s_ifspec;
 
 #ifndef __IMFSensorDevice_INTERFACE_DEFINED__
 #define __IMFSensorDevice_INTERFACE_DEFINED__
@@ -17995,7 +18598,518 @@ EXTERN_C const IID IID_IMFSensorGroup;
 #endif 	/* __IMFSensorGroup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfidl_0000_0107 */
+#ifndef __IMFSensorStream_INTERFACE_DEFINED__
+#define __IMFSensorStream_INTERFACE_DEFINED__
+
+/* interface IMFSensorStream */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorStream;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("E9A42171-C56E-498A-8B39-EDA5A070B7FC")
+    IMFSensorStream : public IMFAttributes
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetMediaTypeCount( 
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMediaType( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **ppMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CloneSensorStream( 
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorStream **ppStream) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorStreamVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorStream * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorStream * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorStream * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetItem )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [full][out][in] */ PROPVARIANT *pValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetItemType )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ MF_ATTRIBUTE_TYPE *pType);
+        
+        HRESULT ( STDMETHODCALLTYPE *CompareItem )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            REFPROPVARIANT Value,
+            /* [out] */ BOOL *pbResult);
+        
+        HRESULT ( STDMETHODCALLTYPE *Compare )( 
+            IMFSensorStream * This,
+            IMFAttributes *pTheirs,
+            MF_ATTRIBUTES_MATCH_TYPE MatchType,
+            /* [out] */ BOOL *pbResult);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUINT32 )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ UINT32 *punValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUINT64 )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ UINT64 *punValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDouble )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ double *pfValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetGUID )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ GUID *pguidValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStringLength )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ UINT32 *pcchLength);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetString )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [size_is][out] */ LPWSTR pwszValue,
+            UINT32 cchBufSize,
+            /* [full][out][in] */ UINT32 *pcchLength);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAllocatedString )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [size_is][size_is][out] */ LPWSTR *ppwszValue,
+            /* [out] */ UINT32 *pcchLength);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetBlobSize )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [out] */ UINT32 *pcbBlobSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetBlob )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [size_is][out] */ UINT8 *pBuf,
+            UINT32 cbBufSize,
+            /* [full][out][in] */ UINT32 *pcbBlobSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAllocatedBlob )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [size_is][size_is][out] */ UINT8 **ppBuf,
+            /* [out] */ UINT32 *pcbSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUnknown )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            REFIID riid,
+            /* [iid_is][out] */ LPVOID *ppv);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetItem )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            REFPROPVARIANT Value);
+        
+        HRESULT ( STDMETHODCALLTYPE *DeleteItem )( 
+            IMFSensorStream * This,
+            REFGUID guidKey);
+        
+        HRESULT ( STDMETHODCALLTYPE *DeleteAllItems )( 
+            IMFSensorStream * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetUINT32 )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            UINT32 unValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetUINT64 )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            UINT64 unValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetDouble )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            double fValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetGUID )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            REFGUID guidValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetString )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [string][in] */ LPCWSTR wszValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetBlob )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [size_is][in] */ const UINT8 *pBuf,
+            UINT32 cbBufSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetUnknown )( 
+            IMFSensorStream * This,
+            REFGUID guidKey,
+            /* [in] */ IUnknown *pUnknown);
+        
+        HRESULT ( STDMETHODCALLTYPE *LockStore )( 
+            IMFSensorStream * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *UnlockStore )( 
+            IMFSensorStream * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCount )( 
+            IMFSensorStream * This,
+            /* [out] */ UINT32 *pcItems);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetItemByIndex )( 
+            IMFSensorStream * This,
+            UINT32 unIndex,
+            /* [out] */ GUID *pguidKey,
+            /* [full][out][in] */ PROPVARIANT *pValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *CopyAllItems )( 
+            IMFSensorStream * This,
+            /* [in] */ IMFAttributes *pDest);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMediaTypeCount )( 
+            IMFSensorStream * This,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMediaType )( 
+            IMFSensorStream * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **ppMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *CloneSensorStream )( 
+            IMFSensorStream * This,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorStream **ppStream);
+        
+        END_INTERFACE
+    } IMFSensorStreamVtbl;
+
+    interface IMFSensorStream
+    {
+        CONST_VTBL struct IMFSensorStreamVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorStream_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorStream_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorStream_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorStream_GetItem(This,guidKey,pValue)	\
+    ( (This)->lpVtbl -> GetItem(This,guidKey,pValue) ) 
+
+#define IMFSensorStream_GetItemType(This,guidKey,pType)	\
+    ( (This)->lpVtbl -> GetItemType(This,guidKey,pType) ) 
+
+#define IMFSensorStream_CompareItem(This,guidKey,Value,pbResult)	\
+    ( (This)->lpVtbl -> CompareItem(This,guidKey,Value,pbResult) ) 
+
+#define IMFSensorStream_Compare(This,pTheirs,MatchType,pbResult)	\
+    ( (This)->lpVtbl -> Compare(This,pTheirs,MatchType,pbResult) ) 
+
+#define IMFSensorStream_GetUINT32(This,guidKey,punValue)	\
+    ( (This)->lpVtbl -> GetUINT32(This,guidKey,punValue) ) 
+
+#define IMFSensorStream_GetUINT64(This,guidKey,punValue)	\
+    ( (This)->lpVtbl -> GetUINT64(This,guidKey,punValue) ) 
+
+#define IMFSensorStream_GetDouble(This,guidKey,pfValue)	\
+    ( (This)->lpVtbl -> GetDouble(This,guidKey,pfValue) ) 
+
+#define IMFSensorStream_GetGUID(This,guidKey,pguidValue)	\
+    ( (This)->lpVtbl -> GetGUID(This,guidKey,pguidValue) ) 
+
+#define IMFSensorStream_GetStringLength(This,guidKey,pcchLength)	\
+    ( (This)->lpVtbl -> GetStringLength(This,guidKey,pcchLength) ) 
+
+#define IMFSensorStream_GetString(This,guidKey,pwszValue,cchBufSize,pcchLength)	\
+    ( (This)->lpVtbl -> GetString(This,guidKey,pwszValue,cchBufSize,pcchLength) ) 
+
+#define IMFSensorStream_GetAllocatedString(This,guidKey,ppwszValue,pcchLength)	\
+    ( (This)->lpVtbl -> GetAllocatedString(This,guidKey,ppwszValue,pcchLength) ) 
+
+#define IMFSensorStream_GetBlobSize(This,guidKey,pcbBlobSize)	\
+    ( (This)->lpVtbl -> GetBlobSize(This,guidKey,pcbBlobSize) ) 
+
+#define IMFSensorStream_GetBlob(This,guidKey,pBuf,cbBufSize,pcbBlobSize)	\
+    ( (This)->lpVtbl -> GetBlob(This,guidKey,pBuf,cbBufSize,pcbBlobSize) ) 
+
+#define IMFSensorStream_GetAllocatedBlob(This,guidKey,ppBuf,pcbSize)	\
+    ( (This)->lpVtbl -> GetAllocatedBlob(This,guidKey,ppBuf,pcbSize) ) 
+
+#define IMFSensorStream_GetUnknown(This,guidKey,riid,ppv)	\
+    ( (This)->lpVtbl -> GetUnknown(This,guidKey,riid,ppv) ) 
+
+#define IMFSensorStream_SetItem(This,guidKey,Value)	\
+    ( (This)->lpVtbl -> SetItem(This,guidKey,Value) ) 
+
+#define IMFSensorStream_DeleteItem(This,guidKey)	\
+    ( (This)->lpVtbl -> DeleteItem(This,guidKey) ) 
+
+#define IMFSensorStream_DeleteAllItems(This)	\
+    ( (This)->lpVtbl -> DeleteAllItems(This) ) 
+
+#define IMFSensorStream_SetUINT32(This,guidKey,unValue)	\
+    ( (This)->lpVtbl -> SetUINT32(This,guidKey,unValue) ) 
+
+#define IMFSensorStream_SetUINT64(This,guidKey,unValue)	\
+    ( (This)->lpVtbl -> SetUINT64(This,guidKey,unValue) ) 
+
+#define IMFSensorStream_SetDouble(This,guidKey,fValue)	\
+    ( (This)->lpVtbl -> SetDouble(This,guidKey,fValue) ) 
+
+#define IMFSensorStream_SetGUID(This,guidKey,guidValue)	\
+    ( (This)->lpVtbl -> SetGUID(This,guidKey,guidValue) ) 
+
+#define IMFSensorStream_SetString(This,guidKey,wszValue)	\
+    ( (This)->lpVtbl -> SetString(This,guidKey,wszValue) ) 
+
+#define IMFSensorStream_SetBlob(This,guidKey,pBuf,cbBufSize)	\
+    ( (This)->lpVtbl -> SetBlob(This,guidKey,pBuf,cbBufSize) ) 
+
+#define IMFSensorStream_SetUnknown(This,guidKey,pUnknown)	\
+    ( (This)->lpVtbl -> SetUnknown(This,guidKey,pUnknown) ) 
+
+#define IMFSensorStream_LockStore(This)	\
+    ( (This)->lpVtbl -> LockStore(This) ) 
+
+#define IMFSensorStream_UnlockStore(This)	\
+    ( (This)->lpVtbl -> UnlockStore(This) ) 
+
+#define IMFSensorStream_GetCount(This,pcItems)	\
+    ( (This)->lpVtbl -> GetCount(This,pcItems) ) 
+
+#define IMFSensorStream_GetItemByIndex(This,unIndex,pguidKey,pValue)	\
+    ( (This)->lpVtbl -> GetItemByIndex(This,unIndex,pguidKey,pValue) ) 
+
+#define IMFSensorStream_CopyAllItems(This,pDest)	\
+    ( (This)->lpVtbl -> CopyAllItems(This,pDest) ) 
+
+
+#define IMFSensorStream_GetMediaTypeCount(This,pdwCount)	\
+    ( (This)->lpVtbl -> GetMediaTypeCount(This,pdwCount) ) 
+
+#define IMFSensorStream_GetMediaType(This,dwIndex,ppMediaType)	\
+    ( (This)->lpVtbl -> GetMediaType(This,dwIndex,ppMediaType) ) 
+
+#define IMFSensorStream_CloneSensorStream(This,ppStream)	\
+    ( (This)->lpVtbl -> CloneSensorStream(This,ppStream) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorStream_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFSensorTransformFactory_INTERFACE_DEFINED__
+#define __IMFSensorTransformFactory_INTERFACE_DEFINED__
+
+/* interface IMFSensorTransformFactory */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorTransformFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("EED9C2EE-66B4-4F18-A697-AC7D3960215C")
+    IMFSensorTransformFactory : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetFactoryAttributes( 
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFAttributes **ppAttributes) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InitializeFactory( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwMaxTransformCount,
+            /* [annotation][in] */ 
+            _In_  IMFCollection *pSensorDevices,
+            /* [annotation][in] */ 
+            _In_opt_  IMFAttributes *pAttributes) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetTransformCount( 
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetTransformInformation( 
+            /* [annotation][in] */ 
+            _In_  DWORD TransformIndex,
+            /* [annotation][out] */ 
+            _Out_  GUID *pguidTransformId,
+            /* [annotation][out] */ 
+            _COM_Outptr_result_maybenull_  IMFAttributes **ppAttributes,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFCollection **ppStreamInformation) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CreateTransform( 
+            /* [annotation][in] */ 
+            _In_  REFGUID guidSensorTransformID,
+            /* [annotation][in] */ 
+            _In_opt_  IMFAttributes *pAttributes,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFDeviceTransform **ppDeviceMFT) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorTransformFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorTransformFactory * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorTransformFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorTransformFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetFactoryAttributes )( 
+            IMFSensorTransformFactory * This,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFAttributes **ppAttributes);
+        
+        HRESULT ( STDMETHODCALLTYPE *InitializeFactory )( 
+            IMFSensorTransformFactory * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwMaxTransformCount,
+            /* [annotation][in] */ 
+            _In_  IMFCollection *pSensorDevices,
+            /* [annotation][in] */ 
+            _In_opt_  IMFAttributes *pAttributes);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTransformCount )( 
+            IMFSensorTransformFactory * This,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTransformInformation )( 
+            IMFSensorTransformFactory * This,
+            /* [annotation][in] */ 
+            _In_  DWORD TransformIndex,
+            /* [annotation][out] */ 
+            _Out_  GUID *pguidTransformId,
+            /* [annotation][out] */ 
+            _COM_Outptr_result_maybenull_  IMFAttributes **ppAttributes,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFCollection **ppStreamInformation);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateTransform )( 
+            IMFSensorTransformFactory * This,
+            /* [annotation][in] */ 
+            _In_  REFGUID guidSensorTransformID,
+            /* [annotation][in] */ 
+            _In_opt_  IMFAttributes *pAttributes,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFDeviceTransform **ppDeviceMFT);
+        
+        END_INTERFACE
+    } IMFSensorTransformFactoryVtbl;
+
+    interface IMFSensorTransformFactory
+    {
+        CONST_VTBL struct IMFSensorTransformFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorTransformFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorTransformFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorTransformFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorTransformFactory_GetFactoryAttributes(This,ppAttributes)	\
+    ( (This)->lpVtbl -> GetFactoryAttributes(This,ppAttributes) ) 
+
+#define IMFSensorTransformFactory_InitializeFactory(This,dwMaxTransformCount,pSensorDevices,pAttributes)	\
+    ( (This)->lpVtbl -> InitializeFactory(This,dwMaxTransformCount,pSensorDevices,pAttributes) ) 
+
+#define IMFSensorTransformFactory_GetTransformCount(This,pdwCount)	\
+    ( (This)->lpVtbl -> GetTransformCount(This,pdwCount) ) 
+
+#define IMFSensorTransformFactory_GetTransformInformation(This,TransformIndex,pguidTransformId,ppAttributes,ppStreamInformation)	\
+    ( (This)->lpVtbl -> GetTransformInformation(This,TransformIndex,pguidTransformId,ppAttributes,ppStreamInformation) ) 
+
+#define IMFSensorTransformFactory_CreateTransform(This,guidSensorTransformID,pAttributes,ppDeviceMFT)	\
+    ( (This)->lpVtbl -> CreateTransform(This,guidSensorTransformID,pAttributes,ppDeviceMFT) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorTransformFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mfidl_0000_0112 */
 /* [local] */ 
 
 STDAPI
@@ -18003,13 +19117,22 @@ MFCreateSensorGroup(
     _In_z_ LPCWSTR SensorGroupSymbolicLink,
     _COM_Outptr_ IMFSensorGroup** ppSensorGroup
     );
+
+STDAPI
+MFCreateSensorStream(
+    _In_ DWORD StreamId,
+    _In_opt_ IMFAttributes* pAttributes,
+    _In_ IMFCollection* pMediaTypeCollection,
+    _COM_Outptr_ IMFSensorStream** ppStream
+    );
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0112_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

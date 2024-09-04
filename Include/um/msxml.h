@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -358,17 +358,11 @@ extern RPC_IF_HANDLE __MIDL_itf_msxml_0000_0000_v0_0_s_ifspec;
 /* library MSXML */
 /* [version][lcid][helpstring][uuid] */ 
 
-//+-------------------------------------------------------------------------
 //
 //  Microsoft Windows
 //  Copyright (C) Microsoft Corporation, 1998.
 //
 //--------------------------------------------------------------------------
-#include <winapifamily.h>
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-#pragma region Desktop Family
-#pragma endregion
 #pragma region Desktop Family
 #pragma endregion
 
@@ -408,11 +402,6 @@ enum tagDOMNodeType
         NODE_NOTATION	= ( NODE_DOCUMENT_FRAGMENT + 1 ) 
     } 	DOMNodeType;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
-#include <winapifamily.h>
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 //+-------------------------------------------------------------------------
 //
 //  Microsoft Windows
@@ -421,11 +410,7 @@ enum tagDOMNodeType
 //--------------------------------------------------------------------------
 #pragma region Desktop Family
 #pragma endregion
-#pragma region Desktop Family
-#pragma endregion
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
 
 
 
@@ -653,7 +638,7 @@ EXTERN_C const IID IID_IXMLDOMNode;
             /* [retval][out] */ VARIANT_BOOL *hasChild) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_ownerDocument( 
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument) = 0;
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE cloneNode( 
             /* [in] */ VARIANT_BOOL deep,
@@ -847,7 +832,7 @@ EXTERN_C const IID IID_IXMLDOMNode;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMNode * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMNode * This,
@@ -1014,8 +999,8 @@ EXTERN_C const IID IID_IXMLDOMNode;
 #define IXMLDOMNode_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMNode_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMNode_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMNode_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -1230,7 +1215,7 @@ EXTERN_C const IID IID_IXMLDOMDocumentFragment;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMDocumentFragment * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMDocumentFragment * This,
@@ -1397,8 +1382,8 @@ EXTERN_C const IID IID_IXMLDOMDocumentFragment;
 #define IXMLDOMDocumentFragment_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMDocumentFragment_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMDocumentFragment_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMDocumentFragment_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -1568,7 +1553,7 @@ EXTERN_C const IID IID_IXMLDOMDocument;
             /* [retval][out] */ VARIANT_BOOL *isSuccessful) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE save( 
-            /* [in] */ VARIANT desination) = 0;
+            /* [in] */ VARIANT destination) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_validateOnParse( 
             /* [out][retval] */ VARIANT_BOOL *isValidating) = 0;
@@ -1727,7 +1712,7 @@ EXTERN_C const IID IID_IXMLDOMDocument;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMDocument * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMDocument * This,
@@ -1918,7 +1903,7 @@ EXTERN_C const IID IID_IXMLDOMDocument;
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *save )( 
             IXMLDOMDocument * This,
-            /* [in] */ VARIANT desination);
+            /* [in] */ VARIANT destination);
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_validateOnParse )( 
             IXMLDOMDocument * This,
@@ -2040,8 +2025,8 @@ EXTERN_C const IID IID_IXMLDOMDocument;
 #define IXMLDOMDocument_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMDocument_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMDocument_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMDocument_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -2170,8 +2155,8 @@ EXTERN_C const IID IID_IXMLDOMDocument;
 #define IXMLDOMDocument_loadXML(This,bstrXML,isSuccessful)	\
     ( (This)->lpVtbl -> loadXML(This,bstrXML,isSuccessful) ) 
 
-#define IXMLDOMDocument_save(This,desination)	\
-    ( (This)->lpVtbl -> save(This,desination) ) 
+#define IXMLDOMDocument_save(This,destination)	\
+    ( (This)->lpVtbl -> save(This,destination) ) 
 
 #define IXMLDOMDocument_get_validateOnParse(This,isValidating)	\
     ( (This)->lpVtbl -> get_validateOnParse(This,isValidating) ) 
@@ -2790,7 +2775,7 @@ EXTERN_C const IID IID_IXMLDOMCharacterData;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMCharacterData * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMCharacterData * This,
@@ -2995,8 +2980,8 @@ EXTERN_C const IID IID_IXMLDOMCharacterData;
 #define IXMLDOMCharacterData_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMCharacterData_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMCharacterData_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMCharacterData_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -3245,7 +3230,7 @@ EXTERN_C const IID IID_IXMLDOMAttribute;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMAttribute * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMAttribute * This,
@@ -3424,8 +3409,8 @@ EXTERN_C const IID IID_IXMLDOMAttribute;
 #define IXMLDOMAttribute_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMAttribute_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMAttribute_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMAttribute_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -3682,7 +3667,7 @@ EXTERN_C const IID IID_IXMLDOMElement;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMElement * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMElement * This,
@@ -3890,8 +3875,8 @@ EXTERN_C const IID IID_IXMLDOMElement;
 #define IXMLDOMElement_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMElement_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMElement_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMElement_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -4138,7 +4123,7 @@ EXTERN_C const IID IID_IXMLDOMText;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMText * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMText * This,
@@ -4348,8 +4333,8 @@ EXTERN_C const IID IID_IXMLDOMText;
 #define IXMLDOMText_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMText_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMText_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMText_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -4593,7 +4578,7 @@ EXTERN_C const IID IID_IXMLDOMComment;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMComment * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMComment * This,
@@ -4798,8 +4783,8 @@ EXTERN_C const IID IID_IXMLDOMComment;
 #define IXMLDOMComment_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMComment_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMComment_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMComment_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -5049,7 +5034,7 @@ EXTERN_C const IID IID_IXMLDOMProcessingInstruction;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMProcessingInstruction * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMProcessingInstruction * This,
@@ -5228,8 +5213,8 @@ EXTERN_C const IID IID_IXMLDOMProcessingInstruction;
 #define IXMLDOMProcessingInstruction_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMProcessingInstruction_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMProcessingInstruction_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMProcessingInstruction_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -5454,7 +5439,7 @@ EXTERN_C const IID IID_IXMLDOMCDATASection;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMCDATASection * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMCDATASection * This,
@@ -5664,8 +5649,8 @@ EXTERN_C const IID IID_IXMLDOMCDATASection;
 #define IXMLDOMCDATASection_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMCDATASection_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMCDATASection_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMCDATASection_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -5919,7 +5904,7 @@ EXTERN_C const IID IID_IXMLDOMDocumentType;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMDocumentType * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMDocumentType * This,
@@ -6098,8 +6083,8 @@ EXTERN_C const IID IID_IXMLDOMDocumentType;
 #define IXMLDOMDocumentType_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMDocumentType_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMDocumentType_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMDocumentType_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -6330,7 +6315,7 @@ EXTERN_C const IID IID_IXMLDOMNotation;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMNotation * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMNotation * This,
@@ -6505,8 +6490,8 @@ EXTERN_C const IID IID_IXMLDOMNotation;
 #define IXMLDOMNotation_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMNotation_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMNotation_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMNotation_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -6737,7 +6722,7 @@ EXTERN_C const IID IID_IXMLDOMEntity;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMEntity * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMEntity * This,
@@ -6916,8 +6901,8 @@ EXTERN_C const IID IID_IXMLDOMEntity;
 #define IXMLDOMEntity_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMEntity_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMEntity_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMEntity_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -7142,7 +7127,7 @@ EXTERN_C const IID IID_IXMLDOMEntityReference;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXMLDOMEntityReference * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXMLDOMEntityReference * This,
@@ -7309,8 +7294,8 @@ EXTERN_C const IID IID_IXMLDOMEntityReference;
 #define IXMLDOMEntityReference_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXMLDOMEntityReference_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXMLDOMEntityReference_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXMLDOMEntityReference_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 
@@ -7759,7 +7744,7 @@ EXTERN_C const IID IID_IXTLRuntime;
         
         /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ownerDocument )( 
             IXTLRuntime * This,
-            /* [retval][out] */ IXMLDOMDocument **DOMDocument);
+            /* [retval][out] */ IXMLDOMDocument **XMLDOMDocument);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *cloneNode )( 
             IXTLRuntime * This,
@@ -7978,8 +7963,8 @@ EXTERN_C const IID IID_IXTLRuntime;
 #define IXTLRuntime_hasChildNodes(This,hasChild)	\
     ( (This)->lpVtbl -> hasChildNodes(This,hasChild) ) 
 
-#define IXTLRuntime_get_ownerDocument(This,DOMDocument)	\
-    ( (This)->lpVtbl -> get_ownerDocument(This,DOMDocument) ) 
+#define IXTLRuntime_get_ownerDocument(This,XMLDOMDocument)	\
+    ( (This)->lpVtbl -> get_ownerDocument(This,XMLDOMDocument) ) 
 
 #define IXTLRuntime_cloneNode(This,deep,cloneRoot)	\
     ( (This)->lpVtbl -> cloneNode(This,deep,cloneRoot) ) 

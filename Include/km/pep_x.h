@@ -406,7 +406,7 @@ typedef enum _PEP_DEVICE_ACCEPTANCE_TYPE {
 #endif
 
 // END_PEPFX
-#if (NTDDI_VERSION <= NTDDI_WIN10_RS1) //ABRACADABRA_NTDDI_WIN10_RS1
+#if (NTDDI_VERSION <= NTDDI_WIN10_RS2) //ABRACADABRA_NTDDI_WIN10_RS2
 
 #define PepDeviceAcceptedMini PepDeviceAccepted
 
@@ -696,6 +696,12 @@ typedef PEPCALLBACKPOWERONCRASHDUMPDEVICE *PPEPCALLBACKPOWERONCRASHDUMPDEVICE;
 #define PEP_NOTIFY_PPM_PARK_SELECTION_V2                0x1F // PEPFX
 #define PEP_NOTIFY_PPM_PARK_MASK                        0x20 // PEPFX
 #define PEP_NOTIFY_PPM_PERF_CHECK_COMPLETE              0x21 // PEPFX
+#define PEP_NOTIFY_PPM_LPI_SUPPORTED                    0x22 // PEPFX
+#define PEP_NOTIFY_PPM_LPI_PROCESSOR_STATES             0x23 // PEPFX
+#define PEP_NOTIFY_PPM_LPI_COORDINATED_STATES           0x24 // PEPFX
+#define PEP_NOTIFY_PPM_LPI_PRE_EXECUTE                  0x25 // PEPFX
+#define PEP_NOTIFY_PPM_LPI_COMPLETE                     0x26 // PEPFX
+
 // BEGIN_PEPFX
 typedef struct _PEP_PREPARE_DEVICE {
     PCUNICODE_STRING DeviceId;
@@ -1382,6 +1388,110 @@ typedef struct _PEP_PPM_QUERY_COORDINATED_DEPENDENCY {
     // BEGIN_PEPFX
     _Field_size_part_(DependencySize, DependencySizeUsed) PEP_COORDINATED_DEPENDENCY_OPTION Options[ANYSIZE_ARRAY];
 } PEP_PPM_QUERY_COORDINATED_DEPENDENCY, *PPEP_PPM_QUERY_COORDINATED_DEPENDENCY;
+
+typedef struct _PEP_PPM_LPI_SUPPORTED {
+    BOOLEAN OverrideLpiStates;
+} PEP_PPM_LPI_SUPPORTED, *PPEP_PPM_LPI_SUPPORTED;
+
+typedef struct _PEP_PPM_LPI_REGISTER {
+    UCHAR               AddressSpaceID;
+    UCHAR               BitWidth;
+    UCHAR               BitOffset;
+    UCHAR               AccessSize;
+    PHYSICAL_ADDRESS    Address;
+} PEP_PPM_LPI_REGISTER, *PPEP_PPM_LPI_REGISTER;    
+
+typedef struct _PEP_PPM_PROCESSOR_LPI_STATE {
+    ULONG MinResidency;
+    ULONG WakeupLatency;
+    union {
+        ULONG AsUlong;
+        struct {
+            ULONG Enabled                :1;
+            ULONG Reserved               :31;
+        };
+    } Flags;
+    union {
+        ULONG AsUlong;
+        struct {
+            ULONG CoreContextLost        :1;
+            ULONG TraceContextLost       :1;
+            ULONG GICR                   :1;
+            ULONG GICD                   :1;
+            ULONG Reserved               :28;
+        } Arm;
+    } ArchContextFlags;
+    ULONG ResidencyCounterFrequency;
+    PEP_PPM_LPI_REGISTER EntryMethod;
+    PEP_PPM_LPI_REGISTER ResidencyCounter;
+    PEP_PPM_LPI_REGISTER UsageCounter;
+    PWSTR StateName;
+} PEP_PPM_PROCESSOR_LPI_STATE, *PPEP_PPM_PROCESSOR_LPI_STATE;
+
+typedef struct _PEP_PPM_LPI_PROCESSOR_STATES {
+    ULONG Count;
+    PEP_PPM_PROCESSOR_LPI_STATE LpiStates[ANYSIZE_ARRAY];
+} PEP_PPM_LPI_PROCESSOR_STATES, *PPEP_PPM_LPI_PROCESSOR_STATES;
+
+typedef struct _PEP_PPM_LPI_COORDINATED_DEPENDENCY {
+    // END_PEPFX
+    union {
+        PEPHANDLE TargetProcessor; // PEPFX
+        PVOID KernelContext;
+    };
+    // BEGIN_PEPFX
+    ULONG OptionCount;
+    PULONG Options;
+} PEP_PPM_LPI_COORDINATED_DEPENDENCY, *PPEP_PPM_LPI_COORDINATED_DEPENDENCY;
+
+typedef struct _PEP_PPM_COORDINATED_LPI_STATE {
+    ULONG MinResidency;
+    ULONG WakeupLatency;
+    union {
+        ULONG AsUlong;
+        struct {
+            ULONG Enabled                :1;
+            ULONG Reserved               :31;
+        };
+    } Flags;
+    union {
+        ULONG AsUlong;
+        struct {
+            ULONG CoreContextLost        :1;
+            ULONG TraceContextLost       :1;
+            ULONG GICR                   :1;
+            ULONG GICD                   :1;
+            ULONG Reserved               :28;
+        } Arm;
+    } ArchContextFlags;
+    ULONG ResidencyCounterFrequency;
+    BOOLEAN IntegerEntryMethod;
+    union {
+        PEP_PPM_LPI_REGISTER AsRegister;
+        ULONG64 AsInteger;
+    } EntryMethod;
+    PEP_PPM_LPI_REGISTER ResidencyCounter;
+    PEP_PPM_LPI_REGISTER UsageCounter;
+    PWSTR StateName;
+    ULONG DependencyCount;
+    PPEP_PPM_LPI_COORDINATED_DEPENDENCY Dependencies;
+} PEP_PPM_COORDINATED_LPI_STATE, *PPEP_PPM_COORDINATED_LPI_STATE;
+
+typedef struct _PEP_PPM_LPI_COORDINATED_STATES {
+    ULONG Count;
+    PEP_PPM_COORDINATED_LPI_STATE LpiStates[ANYSIZE_ARRAY];
+} PEP_PPM_LPI_COORDINATED_STATES, *PPEP_PPM_LPI_COORDINATED_STATES;
+
+typedef struct _PEP_PPM_LPI_PRE_EXECUTE {
+    NTSTATUS Status;
+    ULONG CoordinatedStateCount;
+    _Field_size_(CoordinatedStateCount) PULONG CoordinatedStates;
+} PEP_PPM_LPI_PRE_EXECUTE, *PPEP_PPM_LPI_PRE_EXECUTE;
+
+typedef struct _PEP_PPM_LPI_COMPLETE {
+    ULONG CoordinatedStateCount;
+    _Field_size_(CoordinatedStateCount) PULONG CoordinatedStates;
+} PEP_PPM_LPI_COMPLETE, *PPEP_PPM_LPI_COMPLETE;
 
 // END_PEPFX
 

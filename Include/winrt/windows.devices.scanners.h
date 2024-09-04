@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -284,18 +284,18 @@ interface IImageScannerScanResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0001 */
 /* [local] */ 
@@ -330,18 +330,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0002 */
 /* [local] */ 
@@ -376,18 +376,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0003 */
 /* [local] */ 
@@ -446,18 +446,18 @@ interface IImageScanner;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0004 */
 /* [local] */ 
@@ -492,18 +492,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0005 */
 /* [local] */ 
@@ -562,18 +562,18 @@ interface IImageScannerPreviewResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0006 */
 /* [local] */ 
@@ -608,18 +608,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0007 */
 /* [local] */ 
@@ -674,18 +674,18 @@ interface IStorageFile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0008 */
 /* [local] */ 
@@ -720,18 +720,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0009 */
 /* [local] */ 
@@ -766,18 +766,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0010 */
 /* [local] */ 
@@ -1112,18 +1112,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0011 */
 /* [local] */ 
@@ -1245,18 +1245,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CDevices__CS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0013 */
 /* [local] */ 
@@ -1378,18 +1378,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0015 */
 /* [local] */ 
@@ -1570,18 +1570,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CDevices__CScan
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0017 */
 /* [local] */ 
@@ -1703,18 +1703,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0019 */
 /* [local] */ 
@@ -1875,18 +1875,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CScanners__CImage
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0021 */
 /* [local] */ 
@@ -2008,18 +2008,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_3147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Escanners2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Escanners_0000_0023 */
 /* [local] */ 

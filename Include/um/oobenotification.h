@@ -40,6 +40,7 @@
 #endif // defined(_CONTRACT_GEN)
 
 /* APISET_NAME: api-ms-win-oobe-notification-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

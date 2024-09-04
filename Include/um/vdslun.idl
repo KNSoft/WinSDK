@@ -76,6 +76,8 @@ typedef enum _VDS_STORAGE_BUS_TYPE
     VDSBusTypeFileBackedVirtual  = 0x0F,
     VDSBusTypeSpaces        = 0x10,
     VDSBusTypeNVMe          = 0x11,
+    VDSBusTypeScm           = 0x12,
+    VDSBusTypeUfs           = 0x13,
 
     VDSBusTypeMaxReserved   = 0x7F
 } VDS_STORAGE_BUS_TYPE;

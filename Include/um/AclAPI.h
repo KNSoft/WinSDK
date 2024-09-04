@@ -1,6 +1,6 @@
 /*++ BUILD Version: 0001    // Increment this if a change has global effects
 
-Copyright (c) 1993-1999, Microsoft Corporation
+Copyright (c) Microsoft Corporation. All rights reserved.
 
 Module Name:
 
@@ -18,9 +18,6 @@ Abstract:
 
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 
 #include <windows.h>
 #include <accctrl.h>
@@ -28,6 +25,9 @@ Abstract:
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //
 // Progress Function:
@@ -49,7 +49,6 @@ typedef VOID (*FN_PROGRESS) (
     _In_ PVOID                      Args,           // Caller specific data
     _In_ BOOL                       SecuritySet     // Whether security was set
     );
-
 
 WINADVAPI
 DWORD
@@ -98,7 +97,7 @@ GetExplicitEntriesFromAclW(
 #define GetExplicitEntriesFromAcl  GetExplicitEntriesFromAclA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -154,8 +153,8 @@ GetAuditedPermissionsFromAclW(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 DWORD
@@ -246,7 +245,7 @@ SetSecurityInfo(
     _In_opt_ PACL                  pSacl
     );
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -710,6 +709,9 @@ GetMultipleTrusteeW(
 #define GetMultipleTrustee  GetMultipleTrusteeA
 #endif // !UNICODE
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
 //
 // Temporary requirement for the technology preview, no longer required
 //
@@ -719,9 +721,6 @@ GetMultipleTrusteeW(
 }
 #endif
 
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
 
 #endif // __ACCESS_CONTROL_API__
 

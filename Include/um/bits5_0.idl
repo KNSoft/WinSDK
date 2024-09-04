@@ -90,20 +90,26 @@ typedef enum
   BITS_JOB_PROPERTY_MAX_DOWNLOAD_SIZE = 5,
 
   // ID for marking the BITS job to use stored or automatic credentials.
-  BITS_JOB_PROPERTY_USE_STORED_CREDENTIALS = 7
+  BITS_JOB_PROPERTY_USE_STORED_CREDENTIALS = 7,
+
+  // ID for setting the minimum notification interval for job modifications (in milliseconds).
+  BITS_JOB_PROPERTY_MINIMUM_NOTIFICATION_INTERVAL_MS = 9,
+
+  // ID for configuring the BITS job to transfer data only when the application explicitly asks for it.
+  BITS_JOB_PROPERTY_ON_DEMAND_MODE = 10,
 }
 BITS_JOB_PROPERTY_ID;
 
 
 typedef [switch_type(BITS_JOB_PROPERTY_ID)] union
 {
-    [case( BITS_JOB_PROPERTY_ID_COST_FLAGS, 6, 8 )]
+    [case( BITS_JOB_PROPERTY_ID_COST_FLAGS, 6, 8, BITS_JOB_PROPERTY_MINIMUM_NOTIFICATION_INTERVAL_MS )]
         DWORD Dword;
 
     [case( BITS_JOB_PROPERTY_NOTIFICATION_CLSID )]
         GUID ClsID;
 
-    [case(BITS_JOB_PROPERTY_DYNAMIC_CONTENT, BITS_JOB_PROPERTY_HIGH_PERFORMANCE)]
+    [case( BITS_JOB_PROPERTY_DYNAMIC_CONTENT, BITS_JOB_PROPERTY_HIGH_PERFORMANCE, BITS_JOB_PROPERTY_ON_DEMAND_MODE )]
         BOOL Enable;
 
     [case( BITS_JOB_PROPERTY_MAX_DOWNLOAD_SIZE )]
@@ -237,6 +243,9 @@ library BackgroundCopyManager5_0
   interface IEnumBitsPeerCacheRecords;
   interface IEnumBitsPeers;
 }
+
+// Intentionally skipping bits10_0.h (which is internal only)
+cpp_quote("#include \"bits10_1.h\"")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion

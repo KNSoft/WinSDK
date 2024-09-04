@@ -451,7 +451,11 @@ BOOLAPI InternetWriteFileExW(
 #define INTERNET_OPTION_ENCODE_FALLBACK_FOR_REDIRECT_URI 174
 #define INTERNET_OPTION_EDGE_COOKIES_TEMP            175
 #define INTERNET_OPTION_OPT_IN_WEAK_SIGNATURE        176
-#define INTERNET_LAST_OPTION_INTERNAL           INTERNET_OPTION_OPT_IN_WEAK_SIGNATURE
+#define INTERNET_OPTION_PARSE_LINE_FOLDING           177
+#define INTERNET_OPTION_FORCE_DECODE                 178
+#define INTERNET_OPTION_COOKIES_APPLY_HOST_ONLY      179
+#define INTERNET_OPTION_EDGE_MODE                    180
+#define INTERNET_LAST_OPTION_INTERNAL           INTERNET_OPTION_TOKEN_BINDING_PUBLIC_KEY
 
 #define INTERNET_OPTION_OFFLINE_TIMEOUT INTERNET_OPTION_DISCONNECTED_TIMEOUT
 #define INTERNET_OPTION_LINE_STATE      INTERNET_OPTION_CONNECTED_STATE
@@ -624,6 +628,8 @@ INTERNETAPI_(int)   FindP3PPolicySymbol(_In_ const char *pszSymbol);
 
 #define HTTP_ADDREQ_FLAG_RESPONSE_HEADERS 0x02000000
 
+#define HTTP_ADDREQ_FLAG_ALLOW_EMPTY_VALUES 0x04000000
+
 INTERNETAPI_(DWORD)
 HttpGetServerCredentials(
     _In_ PWSTR pwszUrl,
@@ -716,11 +722,15 @@ typedef struct _COOKIE_DLG_INFO {
 #define COOKIE_OP_3RD_PARTY     0x20
 
 
+
+#define INTERNET_COOKIE_PERSISTENT_HOST_ONLY     0x00010000
 // INTERNET_COOKIE_RESTRICTED_ZONE is the same as INTERNET_FLAG_RESTRICTED_ZONE
-#define INTERNET_COOKIE_RESTRICTED_ZONE   0x00020000
-#define INTERNET_COOKIE_ALL_COOKIES       0x20000000
-#define INTERNET_COOKIE_NO_CALLBACK       0x40000000
-#define INTERNET_COOKIE_ECTX_3RDPARTY     0x80000000
+#define INTERNET_COOKIE_RESTRICTED_ZONE          0x00020000
+#define INTERNET_COOKIE_EDGE_COOKIES             0x00040000
+
+#define INTERNET_COOKIE_ALL_COOKIES              0x20000000
+#define INTERNET_COOKIE_NO_CALLBACK              0x40000000
+#define INTERNET_COOKIE_ECTX_3RDPARTY            0x80000000
 
 #define COOKIE_ALLOWED_SET_FLAGS        ( INTERNET_COOKIE_THIRD_PARTY     | \
                                           INTERNET_COOKIE_PROMPT_REQUIRED | \
@@ -728,20 +738,23 @@ typedef struct _COOKIE_DLG_INFO {
                                           INTERNET_COOKIE_NON_SCRIPT      | \
                                           INTERNET_COOKIE_RESTRICTED_ZONE | \
                                           INTERNET_COOKIE_NO_CALLBACK     | \
-                                          INTERNET_COOKIE_APPLY_HOST_ONLY   \
+                                          INTERNET_COOKIE_APPLY_HOST_ONLY | \
+                                          INTERNET_COOKIE_EDGE_COOKIES      \
                                         )
 
-#define COOKIE_ALLOWED_COOKIE_FLAGS     ( INTERNET_COOKIE_IS_SECURE       | \
-                                          INTERNET_COOKIE_IS_SESSION      | \
-                                          INTERNET_COOKIE_IS_RESTRICTED   | \
-                                          INTERNET_COOKIE_HTTPONLY        | \
-                                          INTERNET_COOKIE_HOST_ONLY         \
+#define COOKIE_ALLOWED_COOKIE_FLAGS     ( INTERNET_COOKIE_IS_SECURE         | \
+                                          INTERNET_COOKIE_IS_SESSION        | \
+                                          INTERNET_COOKIE_IS_RESTRICTED     | \
+                                          INTERNET_COOKIE_HTTPONLY          | \
+                                          INTERNET_COOKIE_HOST_ONLY         | \
+                                          INTERNET_COOKIE_HOST_ONLY_APPLIED   \
                                         )
 
 #define COOKIE_ALLOWED_GET_FLAGS        ( INTERNET_COOKIE_NON_SCRIPT      | \
                                           INTERNET_COOKIE_THIRD_PARTY     | \
                                           INTERNET_FLAG_RESTRICTED_ZONE   | \
-                                          INTERNET_COOKIE_ALL_COOKIES       \
+                                          INTERNET_COOKIE_ALL_COOKIES     | \
+                                          INTERNET_COOKIE_EDGE_COOKIES      \
                                         )
 //
 // DAV Detection
@@ -774,7 +787,6 @@ BOOLAPI HttpCheckDavComplianceW(
 #define ERROR_INTERNET_SOURCE_PORT_IN_USE       (INTERNET_ERROR_BASE + 58)
 #define ERROR_INTERNET_INSECURE_FALLBACK_REQUIRED (INTERNET_ERROR_BASE + 59)
 #define ERROR_INTERNET_PROXY_ALERT              (INTERNET_ERROR_BASE + 61)
-
 //
 // Error code for WP.
 //
@@ -813,6 +825,7 @@ BOOLAPI HttpCheckDavComplianceW(
 #define COOKIE_REJECTED_CACHE_ENTRY     0x00008000
 #define PRIVACY_MODE_CACHE_ENTRY        0x00020000
 #define XDR_CACHE_ENTRY                 0x00040000
+#define IMMUTABLE_CACHE_ENTRY           0x00080000
 #define PENDING_DELETE_CACHE_ENTRY      0x00400000
 #define OTHER_USER_CACHE_ENTRY          0x00800000
 #define PRIVACY_IMPACTED_CACHE_ENTRY    0x02000000
@@ -834,6 +847,7 @@ BOOLAPI HttpCheckDavComplianceW(
   | COOKIE_DOWNGRADED_CACHE_ENTRY \
   | COOKIE_REJECTED_CACHE_ENTRY \
   | SHORTPATH_CACHE_ENTRY \
+  | IMMUTABLE_CACHE_ENTRY \
   )
 
 #define CACHEGROUP_FLAG_VALID               0x00000007
@@ -2190,6 +2204,19 @@ BOOLAPI HttpWebSocketQueryCloseStatus(
     _Out_writes_bytes_to_opt_(dwReasonLength, *pdwReasonLengthConsumed) PVOID pvReason,
     _In_range_(0, HTTP_WEB_SOCKET_MAX_CLOSE_REASON_LENGTH) DWORD dwReasonLength,
     _Out_range_(0, HTTP_WEB_SOCKET_MAX_CLOSE_REASON_LENGTH) DWORD *pdwReasonLengthConsumed);
+
+
+STDAPI_(DWORD)
+InternetConvertUrlFromWireToWideChar(
+    _In_reads_(cchUrl) PCSTR pcszUrl,
+    _In_ DWORD cchUrl,
+    _In_ PCWSTR pcwszBaseUrl,
+    _In_ DWORD dwCodePageHost,
+    _In_ DWORD dwCodePagePath,
+    _In_ BOOL fEncodePathExtra,
+    _In_ DWORD dwCodePageExtra,
+    _Outptr_result_z_ PWSTR *ppwszConvertedUrl
+);
 
 
 #if defined(__cplusplus)

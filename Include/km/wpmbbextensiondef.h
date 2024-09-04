@@ -286,6 +286,7 @@ typedef struct {
 #define WWAN_ERR_3GPP_OPERATOR_BARRED                     0x00000008
 #define WWAN_ERR_3GPP_INSUFFICIENT_RESOURCES              0x0000001a
 #define WWAN_ERR_3GPP_INVALID_APN                         0x0000001b
+#define WWAN_ERR_3GPP_UNKNOWN_PDP_ADDRESS_TYPE            0x0000001c
 #define WWAN_ERR_3GPP_AUTH_FAILURE                        0x0000001d
 #define WWAN_ERR_3GPP_ACTIVATION_REJECT                   0x0000001e
 #define WWAN_ERR_3GPP_ACTIVATION_REJECT_UNSPECIFIED       0x0000001f

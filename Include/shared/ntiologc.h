@@ -73,18 +73,18 @@ Revision History:
 //
 // Define the facility codes
 //
-#define FACILITY_RPC_STUBS               0x3
 #define FACILITY_RPC_RUNTIME             0x2
-#define FACILITY_MCA_ERROR_CODE          0x5
+#define FACILITY_RPC_STUBS               0x3
 #define FACILITY_IO_ERROR_CODE           0x4
+#define FACILITY_MCA_ERROR_CODE          0x5
 
 
 //
 // Define the severity codes
 //
-#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_SUCCESS          0x0
 #define STATUS_SEVERITY_INFORMATIONAL    0x1
+#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_ERROR            0x3
 
 
@@ -1499,6 +1499,15 @@ Revision History:
 // Firmware update for Adapter %1 is completed.
 //
 #define IO_WARNING_ADAPTER_FIRMWARE_UPDATED ((NTSTATUS)0x400400A0L)
+
+//
+// MessageId: IO_ERROR_DUMP_CREATION_ERROR
+//
+// MessageText:
+//
+// Dump file creation failed due to error during dump creation.
+//
+#define IO_ERROR_DUMP_CREATION_ERROR     ((NTSTATUS)0xC00400A1L)
 
 #endif /* _NTIOLOGC_ */
 

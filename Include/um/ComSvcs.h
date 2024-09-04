@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -16849,7 +16849,7 @@ EXTERN_C const IID IID_IMTSActivity;
 
 
 typedef /* [public][helpcontext][helpstring] */ 
-enum __MIDL___MIDL_itf_autosvcs_0001_0148_0001
+enum __MIDL___MIDL_itf_autosvcs_0001_0150_0001
     {
         mtsErrCtxAborted	= 0x8004e002,
         mtsErrCtxAborting	= 0x8004e003,
@@ -16881,14 +16881,14 @@ enum __MIDL___MIDL_itf_autosvcs_0001_0148_0001
 
 
 typedef /* [public] */ 
-enum __MIDL___MIDL_itf_autosvcs_0001_0157_0001
+enum __MIDL___MIDL_itf_autosvcs_0001_0159_0001
     {
         LockSetGet	= 0,
         LockMethod	= ( LockSetGet + 1 ) 
     } 	LockModes;
 
 typedef /* [public] */ 
-enum __MIDL___MIDL_itf_autosvcs_0001_0157_0002
+enum __MIDL___MIDL_itf_autosvcs_0001_0159_0002
     {
         Standard	= 0,
         Process	= ( Standard + 1 ) 

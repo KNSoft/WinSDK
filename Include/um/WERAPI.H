@@ -87,36 +87,16 @@ typedef HANDLE HREPORT;
 #define WER_FAULT_REPORTING_DURABLE                 1024
 
 //
-// Maximum length of the report event name
-//
-#define WER_MAX_EVENT_NAME_LENGTH 64
-
-//
-// Maximum length of the name of a signature element
-//
-#define WER_MAX_SIGNATURE_NAME_LENGTH 128
-
-//
 // This is the maximum length of any created URL
 // NOTE: This constant is obsolete since Win9.
 //
 #define WER_MAX_TOTAL_PARAM_LENGTH      1720
 
 //
-// This is the maximum length of any parameter including the NULL character
-//
-#define WER_MAX_PARAM_LENGTH            (MAX_PATH)
-
-//
 // Number of extra modules that we can select to get extra data in the minidump
 //
 #define WER_MAX_PREFERRED_MODULES           128
 #define WER_MAX_PREFERRED_MODULES_BUFFER    256
-
-//
-// Maximum number of parameters for a report
-//
-#define WER_MAX_PARAM_COUNT 10
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
@@ -166,6 +146,8 @@ typedef HANDLE HREPORT;
 #define WER_E_NOT_FOUND                     (HRESULT_FROM_WIN32(ERROR_NOT_FOUND))
 #define WER_E_LENGTH_EXCEEDED               (HRESULT_FROM_WIN32(ERROR_PARAMETER_QUOTA_EXCEEDED))
 #define WER_E_INVALID_STATE                 (HRESULT_FROM_WIN32(ERROR_INVALID_STATE))
+#define WER_E_MISSING_DUMP                  (HRESULT_FROM_WIN32(ERROR_MISSING_SYSTEMFILE))
+#define WER_E_CABBING_FAILURE               (HRESULT_FROM_WIN32(ERROR_GEN_FAILURE))
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
@@ -280,6 +262,7 @@ typedef enum _WER_REPORT_TYPE
 //
 #define WER_FILE_DELETE_WHEN_DONE       1  // Delete the file once WER is done
 #define WER_FILE_ANONYMOUS_DATA         2  // This file does not contain any PII
+#define WER_FILE_COMPRESSED             4  // This file has been compressed using SQS
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
@@ -545,18 +528,42 @@ WerReportCloseHandle(
     _In_ HREPORT hReportHandle
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
 
 //
 // ++++++++++++++++++++++++++ Registration APIs ++++++++++++++++++++++++++++++++++++++
 //
 
-#define WER_MAX_REGISTERED_ENTRIES 512
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
-
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+#define WER_MAX_REGISTERED_ENTRIES 512
+#define WER_MAX_REGISTERED_METADATA 8
+#define WER_MAX_REGISTERED_DUMPCOLLECTION 4
+
+#define WER_METADATA_KEY_MAX_LENGTH 64
+#define WER_METADATA_VALUE_MAX_LENGTH 128
+
+//
+// Maximum length of the name of a signature element
+//
+#define WER_MAX_SIGNATURE_NAME_LENGTH 128
+
+//
+// Maximum length of the report event name
+//
+#define WER_MAX_EVENT_NAME_LENGTH 64
+
+//
+// This is the maximum length of any parameter including the NULL character
+//
+#define WER_MAX_PARAM_LENGTH            (MAX_PATH)
+
+//
+// Maximum number of parameters for a report
+//
+#define WER_MAX_PARAM_COUNT 10
 
 HRESULT
 WINAPI
@@ -583,6 +590,39 @@ HRESULT
 WINAPI
 WerUnregisterMemoryBlock(
     _In_ PVOID pvAddress
+    );
+    
+STDAPI
+WerRegisterExcludedMemoryBlock(
+    _In_ const void* address,
+    _In_ DWORD size
+    );
+
+STDAPI
+WerUnregisterExcludedMemoryBlock(
+    _In_ const void* address
+    );
+    
+STDAPI
+WerRegisterCustomMetadata(
+    _In_ PCWSTR key,
+    _In_ PCWSTR value
+    );
+
+STDAPI
+WerUnregisterCustomMetadata(
+    _In_ PCWSTR key
+    );
+    
+STDAPI
+WerRegisterAdditionalProcess(
+    _In_ DWORD processId,
+    _In_ DWORD captureExtraInfoForThreadId
+    );
+    
+STDAPI
+WerUnregisterAdditionalProcess(
+    _In_ DWORD processId
     );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
@@ -696,7 +736,7 @@ HRESULT
     _In_ PVOID pContext,
     _In_ const PWER_RUNTIME_EXCEPTION_INFORMATION pExceptionInformation,
     _Out_ PBOOL pbIsCustomDebugger,
-    _Out_writes_(*pchName) PWSTR pwszDebuggerLaunch,
+    _Out_writes_(*pchDebuggerLaunch) PWSTR pwszDebuggerLaunch,
     _Inout_ PDWORD  pchDebuggerLaunch,
     _Out_ PBOOL pbIsDebuggerAutolaunch
     );
@@ -704,8 +744,8 @@ HRESULT
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //
 // ++++++++++++++++++++++++++ Report Enumeration APIs ++++++++++++++++++++++++++
@@ -765,33 +805,44 @@ typedef struct _WER_REPORT_SIGNATURE
 
 /*++
 
-WER_REPORT_METADATA_V1
+WER_REPORT_METADATA_V2
 
 Structure Description:
-    This structure is a static-length structure that contains the watson report
-    signature (event name and the bucket parameters), the bucket id (a hash of
-    the parameter values and the event name), the locally unique report id,
-    the creation time and the size of the report.  This structure is intended
-    for report enumeration and display to users who wish to track their
-    telemetry and crash reports.
+    This structure includes WER_REPORT_METADATA_V1 along with new fields to hold
+    Cab Id and all the file names included in the report.
 
 Members:
-    Signature - A structure containing the signature of the watson report.
-    BucketId - A hash of the signature.  Can be used to cross reference
-               with other crash reports with the same signature.
-    ReportId - A locally unique identifier for the report.
-    CreationTime - A UTC time stamp of when the report was created.
-    SizeInBytes - Total size, in bytes, of all the files in the report folder.
-
+    Signature          - See WER_REPORT_METADATA_V1.Signature for explanation.
+    BucketId           - See WER_REPORT_METADATA_V1.BucketId for explanation.
+    ReportId           - See WER_REPORT_METADATA_V1.ReportId for explanation.
+    CreationTime       - See WER_REPORT_METADATA_V1.CreationTime for explanation.
+    SizeInBytes        - See WER_REPORT_METADATA_V1.SizeInBytes for explanation.
+    CabId              - Cab id of the report if present. (E.g: 125446340080)
+    ReportStatus       - The detailed status of the report. Useful for tracing the steps a report
+                         has gone through during submission attempt.
+    ReportIntegratorId - The report integrator id of the report.
+    NumberOfFiles      - The number of files included in the WER report.
+    SizeOfFileNames    - Total size of the file name, in count of WCHARS, including terminating character 
+                         for each name and one more in the end.
+    FileNames          - A pointer to hold the names of the files included in the report. It is expected
+                         to be in the following format: 
+                            "FileName001\0FileName002\0FileName003\0\0"
 --*/
-typedef struct _WER_REPORT_METADATA_V1
+
+typedef struct _WER_REPORT_METADATA_V2
 {
     WER_REPORT_SIGNATURE Signature;
     GUID BucketId;
     GUID ReportId;
     FILETIME CreationTime;
     ULONGLONG SizeInBytes;
-} WER_REPORT_METADATA_V1, *PWER_REPORT_METADATA_V1;
+    WCHAR CabId[MAX_PATH];
+    DWORD ReportStatus;
+    GUID ReportIntegratorId;
+    DWORD NumberOfFiles;
+    DWORD SizeOfFileNames;
+    WCHAR* FileNames;
+} WER_REPORT_METADATA_V2, *PWER_REPORT_METADATA_V2;
 
 __control_entrypoint(DllExport)
 HRESULT
@@ -822,6 +873,30 @@ WerStoreGetNextReportKey(
 
 __control_entrypoint(DllExport)
 HRESULT
+WerStoreQueryReportMetadataV2(
+    _In_ HREPORTSTORE hReportStore,
+    _In_ PCWSTR pszReportKey,
+    _Out_ PWER_REPORT_METADATA_V2 pReportMetadata
+    );
+
+__control_entrypoint(DllExport)
+VOID
+WerFreeString(
+    _In_ PCWSTR pwszStr
+    );
+
+__control_entrypoint(DllExport)
+HRESULT
+WerStorePurge();
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
+__control_entrypoint(DllExport)
+HRESULT
 WerStoreGetReportCount(
     _In_ HREPORTSTORE hReportStore,
     _Out_ DWORD* pdwReportCount
@@ -833,6 +908,36 @@ WerStoreGetSizeOnDisk(
     _In_ HREPORTSTORE hReportStore,
     _Out_ ULONGLONG* pqwSizeInBytes
     );
+
+/*++
+
+WER_REPORT_METADATA_V1
+
+Structure Description:
+    This structure is a static-length structure that contains the watson report
+    signature (event name and the bucket parameters), the bucket id (a hash of
+    the parameter values and the event name), the locally unique report id,
+    the creation time and the size of the report.  This structure is intended
+    for report enumeration and display to users who wish to track their
+    telemetry and crash reports.
+
+Members:
+    Signature - A structure containing the signature of the watson report.
+    BucketId - A hash of the signature.  Can be used to cross reference
+               with other crash reports with the same signature.
+    ReportId - A locally unique identifier for the report.
+    CreationTime - A UTC time stamp of when the report was created.
+    SizeInBytes - Total size, in bytes, of all the files in the report folder.
+
+--*/
+typedef struct _WER_REPORT_METADATA_V1
+{
+    WER_REPORT_SIGNATURE Signature;
+    GUID BucketId;
+    GUID ReportId;
+    FILETIME CreationTime;
+    ULONGLONG SizeInBytes;
+} WER_REPORT_METADATA_V1, *PWER_REPORT_METADATA_V1;
 
 __control_entrypoint(DllExport)
 HRESULT

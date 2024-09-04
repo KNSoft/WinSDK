@@ -263,11 +263,25 @@ Author:
 #define TIMER_AUXILIARY 0x00100000
 
 //
+// Set to indicate that a timer does not require calls to initialize after
+// being stopped.
+//
+
+#define TIMER_SINGLE_INIT 0x00200000
+
+//
+// Set to indicate that a timer arms against its counter. Timers which set
+// this flag _must_ provide a method to query their counter.
+//
+
+#define TIMER_REQUIRES_ABSOLUTE_ARMING 0x00400000
+
+//
 // Defines the total valid timer capability flags. Timer plugins must not set
 // flags outside this mask, as they are reserved for future use.
 //
 
-#define TIMER_VALID_CAPABILITIES 0x001FFFFF
+#define TIMER_VALID_CAPABILITIES 0x007FFFFF
 
 // end_ntoshvp
 
@@ -1748,5 +1762,4 @@ Return Value:
     complete.
 
 --*/
-
 

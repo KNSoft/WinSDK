@@ -28,70 +28,71 @@ Revision History:
 #endif  
 #pragma warning(disable:4201) // nameless struct/union  
 
-#define WWAN_ERROR_UNSUPPORTED_FIRMWARE     0xf0f0f000
-#define WWAN_ERROR_COM_PORT_CONFLICT        0xf0f0f001
-#define WWAN_ERROR_RESOURCE_CONFLICT_OTHER  0xf0f0ffff
+#define WWAN_ERROR_UNSUPPORTED_FIRMWARE                         0xf0f0f000
+#define WWAN_ERROR_COM_PORT_CONFLICT                            0xf0f0f001
+#define WWAN_ERROR_RESOURCE_CONFLICT_OTHER                      0xf0f0ffff
 
 typedef ULONG WWAN_STATUS;
 
-#define WWAN_STATUS_SUCCESS         STATUS_SUCCESS
-#define WWAN_STATUS_BUSY            0xC0040002
-#define WWAN_STATUS_FAILURE         0xC0040003
-#define WWAN_STATUS_SIM_NOT_INSERTED        0xC0040004
-#define WWAN_STATUS_BAD_SIM         0xC0040005
-#define WWAN_STATUS_PIN_REQUIRED        0xC0040006
-#define WWAN_STATUS_PIN_DISABLED        0x40040007
-#define WWAN_STATUS_NOT_REGISTERED          0x40040008
-#define WWAN_STATUS_PROVIDERS_NOT_FOUND     0x40040009
-#define WWAN_STATUS_NO_DEVICE_SUPPORT           0xC004000a
-#define WWAN_STATUS_PROVIDER_NOT_VISIBLE    0x4004000b
-#define WWAN_STATUS_DATA_CLASS_NOT_AVAILABLE    0x4004000c
-#define WWAN_STATUS_PACKET_SVC_DETACHED     0xC004000d
-#define WWAN_STATUS_MAX_ACTIVATED_CONTEXTS  0xC004000e
-#define WWAN_STATUS_NOT_INITIALIZED         0xC004000f
-#define WWAN_STATUS_VOICE_CALL_IN_PROGRESS  0x40040010
-#define WWAN_STATUS_CONTEXT_NOT_ACTIVATED   0xC0040011
-#define WWAN_STATUS_SERVICE_NOT_ACTIVATED   0xC0040012
-#define WWAN_STATUS_INVALID_ACCESS_STRING   0xC0040013
-#define WWAN_STATUS_INVALID_USER_NAME_PWD   0xC0040014
-#define WWAN_STATUS_RADIO_POWER_OFF     0xC0040015
-#define WWAN_STATUS_INVALID_PARAMETERS      0xC0040016
-#define WWAN_STATUS_READ_FAILURE        0xC0040017
-#define WWAN_STATUS_WRITE_FAILURE       0xC0040018
-#define WWAN_STATUS_DENIED_POLICY       0xC0040019
-#define WWAN_STATUS_INVALID_DEVICE_SERVICE_OPERATION  0xC004001a
-#define WWAN_STATUS_MORE_DATA           0xC004001b
-#define WWAN_STATUS_INTER_RESOURCE_CONFLICT   0xC004001c
-#define WWAN_STATUS_PREFERREDMEDIA_NOT_AVAILABLE        0xC004001d
-#define WWAN_STATUS_MEDIA_PREF_CONFLICT                 0xC004001e
-#define WWAN_STATUS_MEDIA_PREF_SOME_SERVICES_UNSUPPORTED    0xC004001f
+#define WWAN_STATUS_SUCCESS                                     STATUS_SUCCESS
+#define WWAN_STATUS_BUSY                                        0xC0040002
+#define WWAN_STATUS_FAILURE                                     0xC0040003
+#define WWAN_STATUS_SIM_NOT_INSERTED                            0xC0040004
+#define WWAN_STATUS_BAD_SIM                                     0xC0040005
+#define WWAN_STATUS_PIN_REQUIRED                                0xC0040006
+#define WWAN_STATUS_PIN_DISABLED                                0x40040007
+#define WWAN_STATUS_NOT_REGISTERED                              0x40040008
+#define WWAN_STATUS_PROVIDERS_NOT_FOUND                         0x40040009
+#define WWAN_STATUS_NO_DEVICE_SUPPORT                           0xC004000a
+#define WWAN_STATUS_PROVIDER_NOT_VISIBLE                        0x4004000b
+#define WWAN_STATUS_DATA_CLASS_NOT_AVAILABLE                    0x4004000c
+#define WWAN_STATUS_PACKET_SVC_DETACHED                         0xC004000d
+#define WWAN_STATUS_MAX_ACTIVATED_CONTEXTS                      0xC004000e
+#define WWAN_STATUS_NOT_INITIALIZED                             0xC004000f
+#define WWAN_STATUS_VOICE_CALL_IN_PROGRESS                      0x40040010
+#define WWAN_STATUS_CONTEXT_NOT_ACTIVATED                       0xC0040011
+#define WWAN_STATUS_SERVICE_NOT_ACTIVATED                       0xC0040012
+#define WWAN_STATUS_INVALID_ACCESS_STRING                       0xC0040013
+#define WWAN_STATUS_INVALID_USER_NAME_PWD                       0xC0040014
+#define WWAN_STATUS_RADIO_POWER_OFF                             0xC0040015
+#define WWAN_STATUS_INVALID_PARAMETERS                          0xC0040016
+#define WWAN_STATUS_READ_FAILURE                                0xC0040017
+#define WWAN_STATUS_WRITE_FAILURE                               0xC0040018
+#define WWAN_STATUS_DENIED_POLICY                               0xC0040019
+#define WWAN_STATUS_INVALID_DEVICE_SERVICE_OPERATION            0xC004001a
+#define WWAN_STATUS_MORE_DATA                                   0xC004001b
+#define WWAN_STATUS_INTER_RESOURCE_CONFLICT                     0xC004001c
+#define WWAN_STATUS_PREFERREDMEDIA_NOT_AVAILABLE                0xC004001d
+#define WWAN_STATUS_MEDIA_PREF_CONFLICT                         0xC004001e
+#define WWAN_STATUS_MEDIA_PREF_SOME_SERVICES_UNSUPPORTED        0xC004001f
+#define WWAN_STATUS_NOT_SUPPORTED                               0xC0040020
 
 //SMS specific error codes
-#define WWAN_STATUS_SMS_OPERATION_NOT_ALLOWED   0xC0040100
-#define WWAN_STATUS_SMS_MEMORY_FAILURE      0xC0040101
-#define WWAN_STATUS_SMS_INVALID_MEMORY_INDEX    0xC0040102
-#define WWAN_STATUS_SMS_UNKNOWN_SMSC_ADDRESS    0xC0040103
-#define WWAN_STATUS_SMS_NETWORK_TIMEOUT     0xC0040104
-#define WWAN_STATUS_SMS_MEMORY_FULL     0xC0040105
-#define WWAN_STATUS_SMS_UNKNOWN_ERROR       0xC0040106
-#define WWAN_STATUS_SMS_FILTER_NOT_SUPPORTED    0xC0040107
-#define WWAN_STATUS_SMS_MORE_DATA       0x40040108
-#define WWAN_STATUS_SMS_LANG_NOT_SUPPORTED      0xC0040109
-#define WWAN_STATUS_SMS_ENCODING_NOT_SUPPORTED      0xC004010A
-#define WWAN_STATUS_SMS_FORMAT_NOT_SUPPORTED        0xC004010B
+#define WWAN_STATUS_SMS_OPERATION_NOT_ALLOWED                   0xC0040100
+#define WWAN_STATUS_SMS_MEMORY_FAILURE                          0xC0040101
+#define WWAN_STATUS_SMS_INVALID_MEMORY_INDEX                    0xC0040102
+#define WWAN_STATUS_SMS_UNKNOWN_SMSC_ADDRESS                    0xC0040103
+#define WWAN_STATUS_SMS_NETWORK_TIMEOUT                         0xC0040104
+#define WWAN_STATUS_SMS_MEMORY_FULL                             0xC0040105
+#define WWAN_STATUS_SMS_UNKNOWN_ERROR                           0xC0040106
+#define WWAN_STATUS_SMS_FILTER_NOT_SUPPORTED                    0xC0040107
+#define WWAN_STATUS_SMS_MORE_DATA                               0x40040108
+#define WWAN_STATUS_SMS_LANG_NOT_SUPPORTED                      0xC0040109
+#define WWAN_STATUS_SMS_ENCODING_NOT_SUPPORTED                  0xC004010A
+#define WWAN_STATUS_SMS_FORMAT_NOT_SUPPORTED                    0xC004010B
 
 //Authentication Algorithm specific error codes
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WIN8 || NTDDI_VERSION >= NTDDI_WIN8 || NDIS_SUPPORT_NDIS630 )
-#define WWAN_STATUS_AUTH_INCORRECT_AUTN   0xC0040200
-#define WWAN_STATUS_AUTH_SYNC_FAILURE      0xC0040201
-#define WWAN_STATUS_AUTH_AMF_NOT_SET    0xC0040202
+#define WWAN_STATUS_AUTH_INCORRECT_AUTN                         0xC0040200
+#define WWAN_STATUS_AUTH_SYNC_FAILURE                           0xC0040201
+#define WWAN_STATUS_AUTH_AMF_NOT_SET                            0xC0040202
 #endif
 
 //Low-Level UICC Access specific error codes
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS1 || NDIS_SUPPORT_NDIS660 )
-#define WWAN_STATUS_UICC_NO_LOGICAL_CHANNELS   0xC0040300
-#define WWAN_STATUS_UICC_SELECT_FAILED      0xC0040301
-#define WWAN_STATUS_UICC_INVALID_LOGICAL_CHANNEL    0xC0040302
+#define WWAN_STATUS_UICC_NO_LOGICAL_CHANNELS                    0xC0040300
+#define WWAN_STATUS_UICC_SELECT_FAILED                          0xC0040301
+#define WWAN_STATUS_UICC_INVALID_LOGICAL_CHANNEL                0xC0040302
 #endif
 
 typedef enum _WWAN_STRUCT_TYPE {
@@ -115,6 +116,9 @@ typedef enum _WWAN_STRUCT_TYPE {
     WwanStructRegistrationState,
     WwanStructSignalState,
     WwanStructUiccTerminalCapability,
+    WwanStructSarConfig,
+    WwanStructContextV2,
+    WwanStructNetworkBlacklistProvider,
     WwanStructMax
 } WWAN_STRUCT_TYPE, *PWWAN_STRUCT_TYPE;
 
@@ -203,6 +207,7 @@ typedef struct _WWAN_LIST_HEADER {
 
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS1 || NDIS_SUPPORT_NDIS660 )
 #define WWAN_ATR_MAX_LEN                36
+#define WWAN_UICC_STATUS_LEN            2
 #endif
 
 typedef enum _WWAN_ASYNC_GETSET_TYPE {
@@ -260,6 +265,23 @@ typedef enum _WWAN_ASYNC_GETSET_TYPE {
     WwanAsyncUiccSetTerminalCapability,
     WwanAsyncGetPsMediaConfig,
     WwanAsyncSetPsMediaConfig,
+    WwanAsyncGetSarConfig,
+    WwanAsyncSetSarConfig,
+    WwanAsyncGetSarTransmissionStatus,
+    WwanAsyncSetSarTransmissionStatus,
+    WwanAsyncGetNetworkBlacklist,
+    WwanAsyncSetNetworkBlacklist,
+    WwanAsyncGetLteAttachConfig,
+    WwanAsyncSetLteAttachConfig,
+    WwanAsyncGetLteAttachStatus,
+    WwanAsyncSetLteAttachStatus,
+    WwanAsyncGetProvisionedContextsV2,
+    WwanAsyncSetProvisionedContextV2,
+    WwanAsyncGetSysCap,
+    WwanAsyncGetDeviceCapsEx,
+    WwanAsyncGetUiccSlotMapping,
+    WwanAsyncSetUiccSlotMapping,
+    WwanAsyncGetUiccSlotInfo,
     WWAN_ASYNC_GETSET_TYPE_MAX
 } WWAN_ASYNC_GETSET_TYPE, *PWWAN_ASYNC_GETSET_TYPE;
 
@@ -348,6 +370,9 @@ typedef ULONG WWAN_VERSION;         /* A value specifies the version. */
      ((_MAJOR_) > WWAN_MAJOR_VERSION_2))
 
 #define WWAN_DRIVER_CAPS_NONE       0x00000000
+//Work around for GetD3ColdCapability of UDE and can be removed once UDE supports GetD3ColdCapability
+#define WWAN_DRIVER_CAPS_UDE        0x00000001
+
 
 typedef struct _WWAN_DRIVER_CAPS {
     ULONG ulMajorVersion;
@@ -471,6 +496,7 @@ typedef struct _WWAN_DEVICE_CAPS {
 } WWAN_DEVICE_CAPS, *PWWAN_DEVICE_CAPS;
 
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WINTHRESHOLD || NDIS_SUPPORT_NDIS650 )
+// Leftover from TH1 for MBIM2.0/VoiceExtension. Should not be used.
 typedef struct _WWAN_DEVICE_CAPS_EX2 {
     WWAN_DEVICE_TYPE    WwanDeviceType;
     WWAN_CELLULAR_CLASS WwanCellularClass;
@@ -494,6 +520,43 @@ typedef struct _WWAN_DEVICE_CAPS_EX2 {
 } WWAN_DEVICE_CAPS_EX2, *PWWAN_DEVICE_CAPS_EX2;
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670)
+// Bits for WWAN_DEVICE_CAPS_EX::WwanOptionalServiceCaps
+// Each bit corresponds to an optional service that a miniport may or may not support.
+// A bit set indicates that the corresponding optional service is supported.
+// A bit cleared indicates that the corresponding optional service is not supported.
+// All currently undefined bits must be cleared by miniport.
+#define WWAN_OPTIONAL_SERVICE_CAPS_NONE                             0x00000000
+#define WWAN_OPTIONAL_SERVICE_CAPS_LTE_ATTACH                       0x00000001
+#define WWAN_OPTIONAL_SERVICE_CAPS_PROVISIONED_CONTEXT_MGMT         0x00000002
+#define WWAN_OPTIONAL_SERVICE_CAPS_MULTI_SIM                        0x00000004
+#define WWAN_OPTIONAL_SERVICE_CAPS_SAR                              0x00000008
+#define WWAN_OPTIONAL_SERVICE_CAPS_NETWORK_BLACKLIST                0x00000010
+
+typedef struct _WWAN_DEVICE_CAPS_EX {
+    WWAN_DEVICE_TYPE    WwanDeviceType;
+    WWAN_CELLULAR_CLASS WwanCellularClass;
+    WWAN_VOICE_CLASS    WwanVoiceClass;
+    WWAN_SIM_CLASS      WwanSimClass;
+    ULONG               WwanDataClass;
+    WCHAR               CustomDataClass[WWAN_CUSTOM_DATA_CLASS_LEN];
+    ULONG               WwanGsmBandClass;
+    ULONG               WwanCdmaBandClass;
+    WCHAR               CustomBandClass[WWAN_CUSTOM_BAND_CLASS_LEN];
+    ULONG               WwanSmsCaps;
+    ULONG               WwanControlCaps;
+    WCHAR               DeviceId[WWAN_DEVICEID_LEN];
+    WCHAR               Manufacturer[WWAN_MANUFACTURER_LEN];
+    WCHAR               Model[WWAN_MODEL_LEN];
+    WCHAR               FirmwareInfo[WWAN_FIRMWARE_LEN];
+    ULONG               MaxActivatedContexts;
+    ULONG               WwanAuthAlgoCaps;
+    ULONG               ExecutorIndex;
+    ULONG               WwanOptionalServiceCaps;    // a bitmap of optional service capability
+    WWAN_LIST_HEADER    CellularClassListHeader;
+} WWAN_DEVICE_CAPS_EX, *PWWAN_DEVICE_CAPS_EX;
+#endif
+
 typedef enum _WWAN_READY_STATE {
     WwanReadyStateOff = 0,              /* stack is off                    */
     WwanReadyStateInitialized,          /* ready to power up and register  */
@@ -503,7 +566,7 @@ typedef enum _WWAN_READY_STATE {
     WwanReadyStateNotActivated,         /* Device not activated (CDMA)     */
     WwanReadyStateDeviceLocked,         /* Device is locked        */
 #if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS1 || NDIS_SUPPORT_NDIS660 )
-    WwanReadyStateNoEsimProfile,
+    WwanReadyStateNoEsimProfile,        /* SIM is ready but does not have any enabled profiles */
 #endif
     WwanReadyStateMax
 } WWAN_READY_STATE, *PWWAN_READY_STATE;
@@ -947,6 +1010,8 @@ typedef struct _WWAN_CONTEXT_STATE {
 #endif
 } WWAN_CONTEXT_STATE, *PWWAN_CONTEXT_STATE;
 
+// Context type for provisioned contexts stored in modem
+// Not every type is currently supported for provisioned contexts
 typedef enum _WWAN_CONTEXT_TYPE {
     WwanContextTypeNone = 0,
     WwanContextTypeInternet,
@@ -955,32 +1020,151 @@ typedef enum _WWAN_CONTEXT_TYPE {
     WwanContextTypeVideoShare,
     WwanContextTypeCustom,
     WwanContextTypePurchase,
+    WwanContextTypeMms,
+    WwanContextTypeIms,
+    WwanContextTypeAdmin,
+    WwanContextTypeApp,
+    WwanContextTypeXcap,
+    WwanContextTypeTethering,
+    WwanContextTypeEmergencyCall,
+    WwanContextTypeLteAttach,
     WwanContextTypeMax
 } WWAN_CONTEXT_TYPE, *PWWAN_CONTEXT_TYPE;
 
 #define WWAN_CONTEXT_ID_APPEND              0xffffffff
 
+
+#if ( NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
+
+typedef enum _WWAN_CONTEXT_ROAMING_CONTROL
+{
+    WwanContextRoamingControlHomeOnly          = 0,
+    WwanContextRoamingControlPartnerOnly,
+    WwanContextRoamingControlNonPartnerOnly,
+    WwanContextRoamingControlHomeAndPartner,
+    WwanContextRoamingControlHomeAndNonPartner,
+    WwanContextRoamingControlPartnerAndNonPartner,
+    WwanContextRoamingControlAllowAll,
+    WwanContextRoamingControlMaximum
+} WWAN_CONTEXT_ROAMING_CONTROL, *PWWAN_CONTEXT_ROAMING_CONTROL;
+
+typedef enum _WWAN_CONTEXT_MEDIA_TYPE
+{
+    WwanContextMediaTypeCellularOnly            = 0,
+    WwanContextMediaTypeWifiOnly,
+    WwanContextMediaTypeAll,
+    WwanContextMediaTypeMaximum
+} WWAN_CONTEXT_MEDIA_TYPE, *PWWAN_CONTEXT_MEDIA_TYPE;
+
+typedef enum _WWAN_CONTEXT_ENABLE
+{
+    WwanContextDisabled                         = 0,
+    WwanContextEnabled,
+    WwanContextEnableMaximum
+} WWAN_CONTEXT_ENABLE, *PWWAN_CONTEXT_ENABLE;
+
+typedef enum _WWAN_CONTEXT_OPERATIONS
+{
+    WwanContextOperationDefault                 = 0,
+    WwanContextOperationDelete,
+    WwanContextOperationRestoreFactory,
+    WwanContextOperationMaximum
+} WWAN_CONTEXT_OPERATIONS, *PWWAN_CONTEXT_OPERATIONS;
+
+typedef enum _WWAN_CONTEXT_LTE_ATTACH_ROAMING_CONTROL
+{
+    WwanContextLteAttachRoamingControlHome      = 0,
+    WwanContextLteAttachRoamingControlPartner,
+    WwanContextLteAttachRoamingControlNonPartner,
+    WwanContextLteAttachRoamingControlMaximum
+} WWAN_CONTEXT_LTE_ATTACH_ROAMING_CONTROL, *PWWAN_CONTEXT_LTE_ATTACH_ROAMING_CONTROL;
+
+typedef enum _WWAN_LTE_ATTACH_CONTEXT_MODE
+{
+    WwanLteAttachContextModeNetwork             = 0,
+    WwanLteAttachContextModeDevice,
+    WwanLteAttachContextModeMaximum
+} WWAN_LTE_ATTACH_CONTEXT_MODE, *PWWAN_LTE_ATTACH_CONTEXT_MODE;
+
+typedef enum _WWAN_CONTEXT_LTE_ATTACH_STATE
+{
+    WwanContextLteAttachStateDetached          = 0,
+    WwanContextLteAttachStateAttached,
+    WwanContextLteAttachStateMaximum
+} WWAN_CONTEXT_LTE_ATTACH_STATE, *PWWAN_CONTEXT_LTE_ATTACH_STATE;
+
+#endif  // ( NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
+
 typedef struct _WWAN_CONTEXT {
-    ULONG       ContextId;
-    WWAN_CONTEXT_TYPE   ContextType;
-    WCHAR       AccessString [WWAN_ACCESSSTRING_LEN];
-    WCHAR       UserName [WWAN_USERNAME_LEN];
-    WCHAR       Password [WWAN_PASSWORD_LEN];
-    WWAN_COMPRESSION    Compression;
-    WWAN_AUTH_PROTOCOL  AuthType;
+    ULONG                               ContextId;
+    WWAN_CONTEXT_TYPE                   ContextType;
+    WCHAR                               AccessString [WWAN_ACCESSSTRING_LEN];
+    WCHAR                               UserName [WWAN_USERNAME_LEN];
+    WCHAR                               Password [WWAN_PASSWORD_LEN];
+    WWAN_COMPRESSION                    Compression;
+    WWAN_AUTH_PROTOCOL                  AuthType;
 } WWAN_CONTEXT, *PWWAN_CONTEXT;
 
 typedef struct _WWAN_SET_CONTEXT
 {
-    ULONG               ContextId;
-    WWAN_CONTEXT_TYPE       ContextType;
-    WCHAR                     AccessString[WWAN_ACCESSSTRING_LEN];
-    WCHAR                     UserName[WWAN_USERNAME_LEN];
-    WCHAR                     Password[WWAN_PASSWORD_LEN];
-    WWAN_COMPRESSION        Compression;
-    WWAN_AUTH_PROTOCOL      AuthType;
-    WCHAR               ProviderId[WWAN_PROVIDERID_LEN];
+    ULONG                               ContextId;
+    WWAN_CONTEXT_TYPE                   ContextType;
+    WCHAR                               AccessString[WWAN_ACCESSSTRING_LEN];
+    WCHAR                               UserName[WWAN_USERNAME_LEN];
+    WCHAR                               Password[WWAN_PASSWORD_LEN];
+    WWAN_COMPRESSION                    Compression;
+    WWAN_AUTH_PROTOCOL                  AuthType;
+    WCHAR                               ProviderId[WWAN_PROVIDERID_LEN];
 } WWAN_SET_CONTEXT, *PWWAN_SET_CONTEXT;
+
+#if ( NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
+
+// goes with STRUCT_TYPE WwanStructContextV2
+typedef struct _WWAN_CONTEXT_V2 {
+    WWAN_CONTEXT                        basicInfo;
+    WWAN_IP_TYPE                        IPType;
+    WWAN_CONTEXT_ENABLE                 Enable;
+    WWAN_CONTEXT_ROAMING_CONTROL        Roaming;
+    WWAN_CONTEXT_MEDIA_TYPE             MediaType;
+    WWAN_CONFIGURATION_SOURCE           Source;
+    WWAN_LTE_ATTACH_CONTEXT_MODE        LteAttachContextMode;
+} WWAN_CONTEXT_V2, *PWWAN_CONTEXT_V2;
+
+typedef struct _WWAN_SET_CONTEXT_V2
+{
+    WWAN_SET_CONTEXT                    basicInfo;
+    WWAN_CONTEXT_OPERATIONS             Operation;
+    WWAN_IP_TYPE                        IPType;
+    WWAN_CONTEXT_ENABLE                 Enable;
+    WWAN_CONTEXT_ROAMING_CONTROL        Roaming;
+    WWAN_CONTEXT_MEDIA_TYPE             MediaType;
+    WWAN_CONFIGURATION_SOURCE           Source;
+    WWAN_LTE_ATTACH_CONTEXT_MODE        ContextMode;
+} WWAN_SET_CONTEXT_V2, *PWWAN_SET_CONTEXT_V2;
+
+#ifndef TotalRoamingConditions
+#define TotalRoamingConditions 3    // counting for home, partner, non-partner
+#endif
+
+typedef struct _WWAN_SET_LTE_ATTACH
+{
+    WWAN_SET_CONTEXT_V2 SetContextArray[TotalRoamingConditions];
+} WWAN_SET_LTE_ATTACH, *PWWAN_SET_LTE_ATTACH;
+
+typedef struct _WWAN_LTE_ATTACH_STATUS
+{
+    WWAN_CONTEXT_LTE_ATTACH_STATE      LteAttachState;
+    WWAN_IP_TYPE                       IPType;
+    WWAN_CONTEXT                       basicInfo;
+} WWAN_LTE_ATTACH_STATUS, *PWWAN_LTE_ATTACH_STATUS;
+
+typedef struct _WWAN_LTE_ATTACH_CONFIG
+{
+    ULONG           ElementCount;
+    WWAN_CONTEXT_V2 LteContextArray[TotalRoamingConditions];
+} WWAN_LTE_ATTACH_CONFIG, *PWWAN_LTE_ATTACH_CONFIG;
+
+#endif  // ( NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
 
 typedef enum _WWAN_SMS_FORMAT {
     WwanSmsFormatPdu = 0,
@@ -1435,9 +1619,10 @@ typedef struct _WWAN_UICC_RESPONSE {
 } WWAN_UICC_RESPONSE, *PWWAN_UICC_RESPONSE;
 
 typedef struct _WWAN_SYS_CAPS_INFO {
-    ULONG NumberOfExecutors;
-    ULONG NumberOfSlots;
-    ULONG Concurrency;
+    ULONG       NumberOfExecutors;
+    ULONG       NumberOfSlots;
+    ULONG       Concurrency;
+    ULONG64     ModemID;
 } WWAN_SYS_CAPS_INFO, *PWWAN_SYS_CAPS_INFO;
 
 typedef struct _WWAN_MBIM_VERSION
@@ -1450,7 +1635,8 @@ typedef struct _WWAN_DEVICE_SLOT_MAPPING_INFO {
 } WWAN_DEVICE_SLOT_MAPPING_INFO, *PWWAN_DEVICE_SLOT_MAPPING_INFO;
 
 typedef enum _WWAN_UICCSLOT_STATE {
-    WwanUiccSlotStateOffEmpty   = 0,
+    WwanUiccSlotStateUnknown   = 0,
+    WwanUiccSlotStateOffEmpty,
     WwanUiccSlotStateOff,
     WwanUiccSlotStateEmpty,
     WwanUiccSlotStateNotReady,
@@ -1541,7 +1727,7 @@ typedef struct _WWAN_SET_UICC_OPEN_CHANNEL {
 } WWAN_SET_UICC_OPEN_CHANNEL, *PWWAN_SET_UICC_OPEN_CHANNEL;
 
 typedef struct _WWAN_UICC_OPEN_CHANNEL_INFO {
-    ULONG       Status;
+    BYTE        Status[WWAN_UICC_STATUS_LEN];
     ULONG       Channel;
     ULONG       ResponseLength;
     BYTE        Response[ANYSIZE_ARRAY];
@@ -1554,7 +1740,7 @@ typedef struct _WWAN_SET_UICC_CLOSE_CHANNEL {
 } WWAN_SET_UICC_CLOSE_CHANNEL, *PWWAN_SET_UICC_CLOSE_CHANNEL;
 
 typedef struct _WWAN_UICC_CLOSE_CHANNEL_INFO {
-    ULONG       Status;
+    BYTE        Status[WWAN_UICC_STATUS_LEN];
 } WWAN_UICC_CLOSE_CHANNEL_INFO, *PWWAN_UICC_CLOSE_CHANNEL_INFO;
 
 typedef enum _WWAN_UICC_SECURE_MESSAGING {
@@ -1578,7 +1764,7 @@ typedef struct _WWAN_SET_UICC_APDU {
 } WWAN_SET_UICC_APDU, *PWWAN_SET_UICC_APDU;
 
 typedef struct _WWAN_UICC_APDU_INFO {
-    ULONG       Status;
+    BYTE        Status[WWAN_UICC_STATUS_LEN];
     ULONG       ResponseLength;
     BYTE        Response[ANYSIZE_ARRAY];
 } WWAN_UICC_APDU_INFO, *PWWAN_UICC_APDU_INFO;
@@ -1620,6 +1806,92 @@ typedef struct _WWAN_PS_MEDIA_CONFIG {
 } WWAN_PS_MEDIA_CONFIG_ITEM, *PWWAN_PS_MEDIA_CONFIG_ITEM;
 
 #endif
+
+#if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
+
+typedef enum _WWAN_SAR_BACKOFF_STATE {
+    WwanSarBackoffStatusDisabled = 0,
+    WwanSarBackoffStatusEnabled
+} WWAN_SAR_BACKOFF_STATE, *PWWAN_SAR_BACKOFF_STATE;
+
+typedef enum _WWAN_SAR_CONTROL_MODE {
+    WwanSarControlModeDevice = 0,
+    WwanSarControlModeOS
+} WWAN_SAR_CONTROL_MODE, *PWWAN_SAR_CONTROL_MODE;
+
+typedef struct _WWAN_SAR_CONFIG_INDICES {
+    ULONG SarAntennaIndex;
+    ULONG SarBackoffIndex;
+} WWAN_SAR_CONFIG_INDICES, *PWWAN_SAR_CONFIG_INDICES;
+
+typedef enum _WWAN_SAR_WIFI_HARDWARE_INTEGRATION {
+    WwanSarWifiHardwareNotIntegrated = 0,
+    WwanSarWifiHardwareIntegrated
+} WWAN_SAR_WIFI_HARDWARE_INTEGRATION, *PWWAN_SAR_WIFI_HARDWARE_INTEGRATION;
+
+typedef struct _WWAN_SET_SAR_CONFIG {
+    WWAN_SAR_CONTROL_MODE              SarMode;
+    WWAN_SAR_BACKOFF_STATE             SarBackoffStatus;
+    WWAN_LIST_HEADER                   SarConfigIndexListHeader;
+} WWAN_SET_SAR_CONFIG, *PWWAN_SET_SAR_CONFIG;
+
+typedef struct _WWAN_SAR_CONFIG_INFO {
+    WWAN_SAR_CONTROL_MODE              SarMode;
+    WWAN_SAR_BACKOFF_STATE             SarBackoffStatus;
+    WWAN_SAR_WIFI_HARDWARE_INTEGRATION SarWifiIntegration;
+    WWAN_LIST_HEADER                   SarConfigIndexListHeader;
+} WWAN_SAR_CONFIG_INFO, *PWWAN_SAR_CONFIG_INFO;
+
+typedef enum _WWAN_SAR_TRANSMISSION_STATUS_NOTIFICATION_STATE {
+    WwanTransmissionNotificationDisabled = 0,
+    WwanTransmissionNotificationEnabled
+} WWAN_SAR_TRANSMISSION_STATUS_NOTIFICATION_STATE, *PWWAN_SAR_TRANSMISSION_STATUS_NOTIFICATION_STATE;
+
+typedef enum _WWAN_SAR_TRANSMISSION_STATUS {
+    WwanTransmissionStateInactive = 0,
+    WwanTransmissionStateActive
+} WWAN_SAR_TRANSMISSION_STATUS, *PWWAN_SAR_TRANSMISSION_STATUS;
+
+typedef struct _WWAN_SET_SAR_TRANSMISSION_STATUS {
+    WWAN_SAR_TRANSMISSION_STATUS_NOTIFICATION_STATE ChannelNotification;
+    ULONG                                           HysteresisTimer;
+} WWAN_SET_SAR_TRANSMISSION_STATUS, *PWWAN_SET_SAR_TRANSMISSION_STATUS;
+
+typedef struct _WWAN_SAR_TRANSMISSION_STATUS_INFO {
+    WWAN_SAR_TRANSMISSION_STATUS_NOTIFICATION_STATE ChannelNotification;
+    WWAN_SAR_TRANSMISSION_STATUS                    TransmissionStatus;
+    ULONG                                           HysteresisTimer;
+} WWAN_SAR_TRANSMISSION_STATUS_INFO, *PWWAN_SAR_TRANSMISSION_STATUS_INFO;
+
+typedef enum _WWAN_NETWORK_BLACKLIST_TYPE
+{
+    WwanNetworkBlacklistTypeSIM         = 0,
+    WwanNetworkBlacklistTypeNetwork,
+    WwanNetworkBlacklistTypeMaximum
+} WWAN_NETWORK_BLACKLIST_TYPE;
+
+typedef struct _WWAN_NETWORK_BLACKLIST_PROVIDER
+{
+    ULONG                                           MCC;
+    ULONG                                           MNC;
+    WWAN_NETWORK_BLACKLIST_TYPE                     NetworkBlacklistType;
+} WWAN_NETWORK_BLACKLIST_PROVIDER, *PWWAN_NETWORK_BLACKLIST_PROVIDER;
+
+typedef enum _WWAN_NETWORK_BLACKLIST_STATE
+{
+    WwanNetworkBlacklistStateNotActuated            = 0,
+    WwanNetworkBlacklistSIMProviderActuated,
+    WwanNetworkBlacklistNetworkProviderActuated,
+    WwanNetworkBlacklistStateMaximum
+} WWAN_NETWORK_BLACKLIST_STATE;
+
+typedef struct _WWAN_NETWORK_BLACKLIST_INFO
+{
+    WWAN_NETWORK_BLACKLIST_STATE                BlacklistState;
+    WWAN_LIST_HEADER                            BlacklistProviderList;
+} WWAN_NETWORK_BLACKLIST_INFO, *PWWAN_NETWORK_BLACKLIST_INFO;
+
+#endif // ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
 
 #if _MSC_VER >= 1200  
 #pragma warning(pop)  

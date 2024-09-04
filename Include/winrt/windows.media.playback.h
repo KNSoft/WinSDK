@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -235,13 +235,6 @@ typedef interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlay
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_FWD_DEFINED__ */
 
 
-#ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__ */
-
-
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs;
@@ -343,6 +336,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface ICurrentMediaPlaybackItemChangedEventArgs2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak_FWD_DEFINED__
@@ -785,6 +798,13 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerShuffleReceivedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem;
@@ -823,6 +843,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlaybackItem3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemError_FWD_DEFINED__
@@ -985,6 +1025,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlaybackList3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession;
@@ -1005,6 +1065,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlaybackSession2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource;
@@ -1023,6 +1103,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlaybackSphericalVideoProjection;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMetadataTrackList_FWD_DEFINED__
@@ -1123,6 +1223,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                interface IMediaPlayer5;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_FWD_DEFINED__
@@ -1391,9 +1511,7 @@ namespace ABI {
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.Devices.Enumeration.h"
-#include "Windows.Media.h"
 #include "Windows.Media.Casting.h"
-#include "Windows.Media.Core.h"
 #include "Windows.UI.Composition.h"
 
 #ifdef __cplusplus
@@ -1445,18 +1563,18 @@ interface IMediaBreak;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3956 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4575 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3956 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4575 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3956_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3956_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4575_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4575_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0001 */
 /* [local] */ 
@@ -1491,18 +1609,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3957 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4576 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3957 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4576 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3957_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3957_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4576_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0002 */
 /* [local] */ 
@@ -1561,18 +1679,18 @@ interface IMediaPlaybackItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3958 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4577 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3958 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4577 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3958_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3958_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4577_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0003 */
 /* [local] */ 
@@ -1607,18 +1725,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3959 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4578 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3959 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4578 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3959_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3959_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4578_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0004 */
 /* [local] */ 
@@ -1677,18 +1795,18 @@ interface IPlaybackMediaMarker;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3960 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4579 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3960 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4579 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3960_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3960_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4579_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0005 */
 /* [local] */ 
@@ -1723,18 +1841,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3961 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4580 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3961 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3961_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3961_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4580_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0006 */
 /* [local] */ 
@@ -1769,18 +1887,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3962 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4581 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3962 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3962_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3962_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4581_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0007 */
 /* [local] */ 
@@ -1815,18 +1933,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3963 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4582 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3963 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3963_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3963_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4582_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0008 */
 /* [local] */ 
@@ -1861,18 +1979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3964 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4583 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3964 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3964_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3964_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4583_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0009 */
 /* [local] */ 
@@ -1907,18 +2025,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3965 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4584 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3965 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3965_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3965_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4584_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0010 */
 /* [local] */ 
@@ -1953,18 +2071,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3966 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4585 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3966 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3966_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3966_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4585_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0011 */
 /* [local] */ 
@@ -2023,18 +2141,18 @@ interface IMediaPlayerDataReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3967 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4586 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3967 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3967_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3967_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4586_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0012 */
 /* [local] */ 
@@ -2117,18 +2235,18 @@ interface IMediaBreakEndedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3968 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4587 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3968 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3968_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3968_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4587_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0013 */
 /* [local] */ 
@@ -2187,18 +2305,18 @@ interface IMediaBreakSeekedOverEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3969 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4588 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3969 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3969_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3969_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4588_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0014 */
 /* [local] */ 
@@ -2257,18 +2375,18 @@ interface IMediaBreakSkippedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3970 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4589 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3970 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3970_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3970_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4589_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0015 */
 /* [local] */ 
@@ -2327,18 +2445,18 @@ interface IMediaBreakStartedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3971 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4590 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3971 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3971_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3971_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4590_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0016 */
 /* [local] */ 
@@ -2400,18 +2518,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3972 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4591 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3972 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3972_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3972_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4591_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0017 */
 /* [local] */ 
@@ -2494,18 +2612,18 @@ interface IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3973 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4592 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3973 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3973_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3973_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4592_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0018 */
 /* [local] */ 
@@ -2564,18 +2682,18 @@ interface IMediaPlaybackCommandManagerFastForwardReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3974 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4593 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3974 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3974_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3974_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4593_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0019 */
 /* [local] */ 
@@ -2634,18 +2752,18 @@ interface IMediaPlaybackCommandManagerNextReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3975 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4594 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3975 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3975_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3975_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4594_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0020 */
 /* [local] */ 
@@ -2704,18 +2822,18 @@ interface IMediaPlaybackCommandManagerPauseReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3976 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4595 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3976 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3976_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3976_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4595_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0021 */
 /* [local] */ 
@@ -2774,18 +2892,18 @@ interface IMediaPlaybackCommandManagerPlayReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3977 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4596 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3977 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3977_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3977_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4596_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0022 */
 /* [local] */ 
@@ -2844,18 +2962,18 @@ interface IMediaPlaybackCommandManagerPositionReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3978 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3978 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3978_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3978_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0023 */
 /* [local] */ 
@@ -2914,18 +3032,18 @@ interface IMediaPlaybackCommandManagerPreviousReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3979 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3979 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3979_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3979_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0024 */
 /* [local] */ 
@@ -2984,18 +3102,18 @@ interface IMediaPlaybackCommandManagerRateReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3980 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4599 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3980 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3980_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3980_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4599_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0025 */
 /* [local] */ 
@@ -3054,18 +3172,18 @@ interface IMediaPlaybackCommandManagerRewindReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3981 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3981 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3981_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3981_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0026 */
 /* [local] */ 
@@ -3124,18 +3242,18 @@ interface IMediaPlaybackCommandManagerShuffleReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3982 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3982 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3982_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3982_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0027 */
 /* [local] */ 
@@ -3194,18 +3312,18 @@ interface IMediaPlaybackCommandManagerCommandBehavior;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3983 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3983 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3983_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3983_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0028 */
 /* [local] */ 
@@ -3229,65 +3347,6 @@ typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandMa
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_USE */
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Foundation {
-namespace Collections {
-interface IVectorChangedEventArgs;
-} /*Collections*/
-} /*Foundation*/
-} /*Windows*/
-}
-#endif
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0028 */
-/* [local] */ 
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0028_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3984 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3984 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3984_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3984_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0029 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE
-#define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("2dd51918-4525-5be5-a6c1-409bc72863a6"))
-ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem*,ABI::Windows::Foundation::Collections::IVectorChangedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Playback::MediaPlaybackItem*, ABI::Windows::Media::Playback::IMediaPlaybackItem*>,ABI::Windows::Foundation::Collections::IVectorChangedEventArgs*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs>"; }
-};
-typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem*,ABI::Windows::Foundation::Collections::IVectorChangedEventArgs*> __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_t;
-#define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__
-#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_t
-
-/* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
-#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3336,7 +3395,7 @@ interface ICurrentMediaPlaybackItemChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0029 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0028 */
 /* [local] */ 
 
 
@@ -3344,23 +3403,23 @@ interface ICurrentMediaPlaybackItemChangedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3985 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3985 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3985_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3985_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_USE
@@ -3407,30 +3466,30 @@ interface IMediaPlaybackItemFailedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0030 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0029 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3986 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3986 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3986_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3986_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_USE
@@ -3477,30 +3536,30 @@ interface IMediaPlaybackItemOpenedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0031 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0030 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3987 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3987 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3987_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3987_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4605 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_USE
@@ -3547,30 +3606,30 @@ interface IMediaPlaybackSession;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0032 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0031 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3988 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3988 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3988_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3988_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_USE
@@ -3617,30 +3676,30 @@ interface ITimedMetadataTrack;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0033 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0032 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3989 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3989 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3989_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3989_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataTrack_USE
@@ -3664,29 +3723,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CCore__CTimedMetadataTrack_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0034 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3990 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3990 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3990_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3990_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4608 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataTrack_USE
@@ -3710,29 +3769,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CMedia__CCore__CTimedMetadataTrack_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0035 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0034 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3991 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3991 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3991_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3991_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4609 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_USE
@@ -3790,30 +3849,30 @@ interface ITimedMetadataPresentationModeChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0036 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0035 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3992 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3992 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3992_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3992_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_USE
@@ -3860,30 +3919,30 @@ interface IMediaPlayer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0037 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0036 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3993 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3993 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3993_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3993_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_USE
@@ -3930,30 +3989,30 @@ interface IMediaPlayerFailedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0038 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0037 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3994 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3994 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3994_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3994_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_USE
@@ -4000,30 +4059,30 @@ interface IMediaPlayerRateChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0039 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0038 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3995 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3995 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3995_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3995_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_USE
@@ -4070,30 +4129,30 @@ interface IPlaybackMediaMarkerReachedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0039 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3996 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3996 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3996_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3996_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_USE
@@ -4117,29 +4176,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0041 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3997 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3997 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3997_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3997_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -4163,29 +4222,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0042 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3998 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3998 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3998_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3998_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -4209,29 +4268,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0043 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3999 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3999 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3999_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_3999_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -4255,29 +4314,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0044 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0043 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4000 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4000 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4000_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -4301,29 +4360,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0045 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0044 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4001 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4001 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4001_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
@@ -4347,29 +4406,29 @@ extern "C" {
 #endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0046 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4002 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4002 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4002_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
@@ -4393,29 +4452,29 @@ extern "C" {
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0047 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4003 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4003 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4003_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
@@ -4439,29 +4498,29 @@ extern "C" {
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0048 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4004 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4004 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4004_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4622 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
@@ -4495,30 +4554,30 @@ struct TimeSpan;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0049 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0048 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4005 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4005 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4005_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
@@ -4540,6 +4599,65 @@ typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Wi
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+namespace Collections {
+interface IVectorChangedEventArgs;
+} /*Collections*/
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0049 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0049_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4624 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4624 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0050 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2dd51918-4525-5be5-a6c1-409bc72863a6"))
+ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem*,ABI::Windows::Foundation::Collections::IVectorChangedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Playback::MediaPlaybackItem*, ABI::Windows::Media::Playback::IMediaPlaybackItem*>,ABI::Windows::Foundation::Collections::IVectorChangedEventArgs*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem*,ABI::Windows::Foundation::Collections::IVectorChangedEventArgs*> __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -4575,18 +4693,18 @@ interface IMediaTrack;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4006 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4006 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0051 */
 /* [local] */ 
@@ -4621,18 +4739,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4007 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4007 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0052 */
 /* [local] */ 
@@ -4667,18 +4785,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4008 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4008 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0053 */
 /* [local] */ 
@@ -4724,18 +4842,18 @@ class VideoTrack;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4009 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4009 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0054 */
 /* [local] */ 
@@ -4770,18 +4888,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4010 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4010 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0055 */
 /* [local] */ 
@@ -4816,18 +4934,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4011 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4011 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0056 */
 /* [local] */ 
@@ -4851,6 +4969,201 @@ typedef IVectorView<ABI::Windows::Media::Core::VideoTrack*> __FIVectorView_1_Win
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CCore__CVideoTrack_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0056 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0056_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4631 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4631 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0057 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_UINT32_USE
+#define DEF___FIReference_1_UINT32_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3"))
+IReference<UINT32> : IReference_impl<UINT32> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<UInt32>"; }
+};
+typedef IReference<UINT32> __FIReference_1_UINT32_t;
+#define ____FIReference_1_UINT32_FWD_DEFINED__
+#define __FIReference_1_UINT32 ABI::Windows::Foundation::__FIReference_1_UINT32_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_UINT32_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+struct MediaTimeRange;
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0057 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0057_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4632 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4632 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0058 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CMediaTimeRange_USE
+#define DEF___FIIterator_1_Windows__CMedia__CMediaTimeRange_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("29b8d190-5e46-5873-afc0-8f2f40fbe8fd"))
+IIterator<struct ABI::Windows::Media::MediaTimeRange> : IIterator_impl<struct ABI::Windows::Media::MediaTimeRange> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.MediaTimeRange>"; }
+};
+typedef IIterator<struct ABI::Windows::Media::MediaTimeRange> __FIIterator_1_Windows__CMedia__CMediaTimeRange_t;
+#define ____FIIterator_1_Windows__CMedia__CMediaTimeRange_FWD_DEFINED__
+#define __FIIterator_1_Windows__CMedia__CMediaTimeRange ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CMediaTimeRange_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CMedia__CMediaTimeRange_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0058 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0058_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4633 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4633 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0059 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CMediaTimeRange_USE
+#define DEF___FIIterable_1_Windows__CMedia__CMediaTimeRange_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("268204e2-9d52-5e7b-a54b-869c63defc8e"))
+IIterable<struct ABI::Windows::Media::MediaTimeRange> : IIterable_impl<struct ABI::Windows::Media::MediaTimeRange> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.MediaTimeRange>"; }
+};
+typedef IIterable<struct ABI::Windows::Media::MediaTimeRange> __FIIterable_1_Windows__CMedia__CMediaTimeRange_t;
+#define ____FIIterable_1_Windows__CMedia__CMediaTimeRange_FWD_DEFINED__
+#define __FIIterable_1_Windows__CMedia__CMediaTimeRange ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CMediaTimeRange_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CMedia__CMediaTimeRange_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0059 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0059_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4634 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4634 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0060 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CMediaTimeRange_USE
+#define DEF___FIVectorView_1_Windows__CMedia__CMediaTimeRange_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2628205b-a57a-5179-92e6-9b6e13cb8d0d"))
+IVectorView<struct ABI::Windows::Media::MediaTimeRange> : IVectorView_impl<struct ABI::Windows::Media::MediaTimeRange> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Media.MediaTimeRange>"; }
+};
+typedef IVectorView<struct ABI::Windows::Media::MediaTimeRange> __FIVectorView_1_Windows__CMedia__CMediaTimeRange_t;
+#define ____FIVectorView_1_Windows__CMedia__CMediaTimeRange_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CMedia__CMediaTimeRange ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaTimeRange_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CMediaTimeRange_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -4858,6 +5171,12 @@ extern "C" {
 #if !defined(__windows2Edevices2Eenumeration_h__)
 #include <Windows.Devices.Enumeration.h>
 #endif // !defined(__windows2Edevices2Eenumeration_h__)
+#if !defined(__windows2Efoundation2Enumerics_h__)
+#include <Windows.Foundation.Numerics.h>
+#endif // !defined(__windows2Efoundation2Enumerics_h__)
+#if !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)
+#include <Windows.Graphics.DirectX.Direct3D11.h>
+#endif // !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)
 #if !defined(__windows2Emedia_h__)
 #include <Windows.Media.h>
 #endif // !defined(__windows2Emedia_h__)
@@ -4921,6 +5240,10 @@ class Deferral;
 
 
 #if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion;
+
+#endif
+#if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 #endif
@@ -4941,6 +5264,7 @@ class Uri;
 } /*Windows*/
 }
 #endif
+
 
 #ifdef __cplusplus
 namespace ABI {
@@ -4991,11 +5315,25 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaPlaybackType __x_ABI_CWindows_CMedia_
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CStereoscopicVideoPackingMode __x_ABI_CWindows_CMedia_CMediaProperties_CStereoscopicVideoPackingMode;
 
 
 #endif /* end if !defined(__cplusplus) */
 
+
+#endif
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CMedia_CMediaTimeRange __x_ABI_CWindows_CMedia_CMediaTimeRange;
 
 #endif
 #ifdef __cplusplus
@@ -5080,6 +5418,16 @@ class Compositor;
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CMedia_CPlayback_CAutoLoadedDisplayPropertyKind __x_ABI_CWindows_CMedia_CPlayback_CAutoLoadedDisplayPropertyKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CMedia_CPlayback_CFailedMediaStreamKind __x_ABI_CWindows_CMedia_CPlayback_CFailedMediaStreamKind;
 
 
@@ -5101,6 +5449,16 @@ typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaBreakInsertionMethod __x_AB
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaCommandEnablingRule __x_ABI_CWindows_CMedia_CPlayback_CMediaCommandEnablingRule;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemChangedReason __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemChangedReason;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -5170,6 +5528,16 @@ typedef enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlayerState __x_ABI_CWindow
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CMedia_CPlayback_CStereoscopicVideoRenderMode __x_ABI_CWindows_CMedia_CPlayback_CStereoscopicVideoRenderMode;
 
 
@@ -5187,6 +5555,12 @@ typedef enum __x_ABI_CWindows_CMedia_CPlayback_CTimedMetadataTrackPresentationMo
 
 
 #endif
+
+
+
+
+
+
 
 
 
@@ -5247,6 +5621,17 @@ namespace ABI {
 namespace Windows {
 namespace Media {
 namespace Playback {
+class MediaPlaybackSphericalVideoProjection;
+} /*Playback*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Playback {
 class MediaPlaybackVideoTrackList;
 } /*Playback*/
 } /*Media*/
@@ -5277,13 +5662,31 @@ class PlaybackMediaMarkerSequence;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0056 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0060 */
 /* [local] */ 
 
 
 
 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Numerics {
+                
+                typedef struct Quaternion Quaternion;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -5338,6 +5741,7 @@ extern "C" {
 
 
 
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -5378,9 +5782,43 @@ namespace ABI {
         namespace Media {
             namespace MediaProperties {
                 
+                typedef enum SphericalVideoFrameFormat SphericalVideoFrameFormat;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                
                 typedef enum StereoscopicVideoPackingMode StereoscopicVideoPackingMode;
                 
             } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            
+            typedef struct MediaTimeRange MediaTimeRange;
+            
         } /* end namespace */
     } /* end namespace */
 } /* end namespace */
@@ -5397,6 +5835,24 @@ extern "C" {
 
 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
+                typedef enum AutoLoadedDisplayPropertyKind AutoLoadedDisplayPropertyKind;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -5443,6 +5899,24 @@ namespace ABI {
             namespace Playback {
                 
                 typedef enum MediaCommandEnablingRule MediaCommandEnablingRule;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
+                typedef enum MediaPlaybackItemChangedReason MediaPlaybackItemChangedReason;
                 
             } /* end namespace */
         } /* end namespace */
@@ -5568,6 +6042,24 @@ namespace ABI {
         namespace Media {
             namespace Playback {
                 
+                typedef enum SphericalVideoProjectionMode SphericalVideoProjectionMode;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
                 typedef enum StereoscopicVideoRenderMode StereoscopicVideoRenderMode;
                 
             } /* end namespace */
@@ -5620,23 +6112,29 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0056_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4012 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4012 */
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0060_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4012_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CPlayback__CMediaBreak
@@ -5644,13 +6142,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4012_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0057 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__
@@ -5794,35 +6292,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CPlayback__CMediaBreak;
 #endif 	/* ____FIIterator_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0058 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CPlayback__CMediaBreak */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0058 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4013 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4013 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4013_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CPlayback__CMediaBreak
@@ -5830,13 +6328,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4013_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0059 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__
@@ -5946,35 +6444,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CPlayback__CMediaBreak;
 #endif 	/* ____FIIterable_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0060 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CPlayback__CMediaBreak */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0060 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4014 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4014 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4014_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CPlayback__CMediaPlaybackItem
@@ -5982,13 +6480,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4014_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0061 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
@@ -6132,35 +6630,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CPlayback__CMediaPlayback
 #endif 	/* ____FIIterator_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0062 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CPlayback__CMediaPlaybackItem */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0062 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4015 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4015_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0063 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem
@@ -6168,13 +6666,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4015_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0063 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
@@ -6284,35 +6782,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CPlayback__CMediaPlayback
 #endif 	/* ____FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0064 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0064 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4016 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4016_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0065 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker
@@ -6320,13 +6818,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4016_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0065 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker_INTERFACE_DEFINED__
@@ -6470,35 +6968,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CPlayback__CPlaybackMedia
 #endif 	/* ____FIIterator_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0066 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0066 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4017 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4017_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0067 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker
@@ -6506,13 +7004,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4017_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0067 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker_INTERFACE_DEFINED__
@@ -6622,35 +7120,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CPlayback__CPlaybackMedia
 #endif 	/* ____FIIterable_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0068 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CPlayback__CPlaybackMediaMarker */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0068 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4018 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4018_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0069 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem
@@ -6658,13 +7156,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4018_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0069 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
@@ -6816,35 +7314,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlayba
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0070 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0070 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4019 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4019_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0071 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem
@@ -6852,13 +7350,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4019_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0071 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
@@ -7092,35 +7590,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CPlayback__CMediaPlaybackIt
 #endif 	/* ____FIVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0072 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0072 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4020 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4020_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0073 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0077 */
 /* [local] */ 
 
 #ifndef DEF___FVectorChangedEventHandler_1_Windows__CMedia__CPlayback__CMediaPlaybackItem
@@ -7129,14 +7627,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4020_v0_0_s_i
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0073 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0077 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____FVectorChangedEventHandler_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____FVectorChangedEventHandler_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
@@ -7225,35 +7723,35 @@ EXTERN_C const IID IID___FVectorChangedEventHandler_1_Windows__CMedia__CPlayback
 #endif 	/* ____FVectorChangedEventHandler_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0074 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0078 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FVectorChangedEventHandler_1_Windows__CMedia__CPlayback__CMediaPlaybackItem */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0074 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4021 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4021_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0075 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0079 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem
@@ -7261,13 +7759,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4021_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0075 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__
@@ -7389,35 +7887,35 @@ EXTERN_C const IID IID___FIObservableVector_1_Windows__CMedia__CPlayback__CMedia
 #endif 	/* ____FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0076 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0080 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0076 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4022 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4022_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0077 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak
@@ -7425,13 +7923,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4022_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0077 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__
@@ -7583,35 +8081,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak;
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0078 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0082 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0078 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4023 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4023_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0079 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0083 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs
@@ -7619,13 +8117,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4023_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0079 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -7714,35 +8212,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlay
 #endif 	/* ____FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0080 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0084 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0080 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4024 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4024_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0081 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs
@@ -7750,13 +8248,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4024_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0081 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_INTERFACE_DEFINED__
@@ -7845,35 +8343,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0082 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0086 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0082 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4025 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4025_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0083 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs
@@ -7881,13 +8379,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4025_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0083 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__
@@ -7976,35 +8474,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0084 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0088 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0084 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4026 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4026_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0085 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs
@@ -8012,13 +8510,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4026_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0085 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_INTERFACE_DEFINED__
@@ -8107,35 +8605,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0086 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0090 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0086 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4027 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4027_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0087 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0091 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs
@@ -8143,13 +8641,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4027_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0087 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_INTERFACE_DEFINED__
@@ -8238,35 +8736,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0088 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0092 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0088 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4028 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4028_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0089 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0093 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable
@@ -8274,13 +8772,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4028_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0089 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_INTERFACE_DEFINED__
@@ -8369,35 +8867,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0090 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0094 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0090 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4029 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4029_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0091 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0095 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
@@ -8405,13 +8903,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4029_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0091 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__
@@ -8500,35 +8998,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0092 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0096 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0092 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4030 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4030_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0093 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0097 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs
@@ -8536,13 +9034,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4030_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0093 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__
@@ -8631,35 +9129,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0094 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0098 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0094 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4031 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4031_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0095 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0099 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs
@@ -8667,13 +9165,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4031_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0095 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__
@@ -8762,35 +9260,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0096 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0100 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0096 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4032 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4032_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0097 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0101 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs
@@ -8798,13 +9296,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4032_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0097 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__
@@ -8893,35 +9391,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0102 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4033 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4033_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0099 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0103 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs
@@ -8929,13 +9427,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4033_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__
@@ -9024,35 +9522,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0104 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4034 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4034_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0101 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0105 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs
@@ -9060,13 +9558,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4034_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__
@@ -9155,35 +9653,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0106 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4035 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4035_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0103 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0107 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs
@@ -9191,13 +9689,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4035_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0103 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__
@@ -9286,35 +9784,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0104 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0108 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0104 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0108_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4036 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4036_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0105 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0109 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs
@@ -9322,13 +9820,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4036_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0105 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__
@@ -9417,35 +9915,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0106 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0110 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0106 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0110_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4037 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4037_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0107 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0111 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs
@@ -9453,13 +9951,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4037_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0107 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__
@@ -9548,35 +10046,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0108 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0112 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0108 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0112_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4038 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4038_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0109 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0113 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs
@@ -9584,13 +10082,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4038_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0109 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__
@@ -9679,35 +10177,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0110 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0114 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0110 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4039 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4039_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0111 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0115 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable
@@ -9715,13 +10213,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4039_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0111 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_INTERFACE_DEFINED__
@@ -9810,166 +10308,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0112 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0116 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0112 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0116_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4040 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4040_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0113 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0113 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0113_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__
-
-/* interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs */
-/* [unique][uuid][object] */ 
-
-
-
-/* interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs */
-/* [unique][uuid][object] */ 
-
-
-EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("2dd51918-4525-5be5-a6c1-409bc72863a6")
-    __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Media::Playback::IMediaPlaybackItem *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::Collections::IVectorChangedEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgsVtbl;
-
-    interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4663 */
 
 
 
 
-#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__ */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4663_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0114 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs */
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0114 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0114_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4041 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4041 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4041_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0115 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0117 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs
@@ -9977,13 +10344,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4041_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0115 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__
@@ -10072,35 +10439,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0116 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0118 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0116 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0118_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4042 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4042_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4664 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0117 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0119 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs
@@ -10108,13 +10475,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4042_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0117 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0119_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__
@@ -10203,35 +10570,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0118 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0120 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0118 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0120_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4043 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4043_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4665 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0119 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0121 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs
@@ -10239,13 +10606,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4043_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0119 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__
@@ -10334,35 +10701,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0120 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0122 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0120 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0122_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4044 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4044_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4666 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0121 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0123 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable
@@ -10370,13 +10737,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4044_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0121 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_INTERFACE_DEFINED__
@@ -10465,35 +10832,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0122 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0124 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0122 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0124_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4045 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4045_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4667 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0123 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0125 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs
@@ -10501,13 +10868,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4045_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0123 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__
@@ -10596,35 +10963,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0124 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0126 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0124 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0126_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4046 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4046 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4046_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4668 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0125 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0127 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable
@@ -10632,13 +10999,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4046_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0125 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_INTERFACE_DEFINED__
@@ -10727,35 +11094,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0126 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0128 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0126 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0128_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4047 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4047 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4047_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0127 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0129 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs
@@ -10763,13 +11130,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4047_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0127 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_INTERFACE_DEFINED__
@@ -10858,35 +11225,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0128 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0130 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0128 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0130_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4048 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4048 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4048_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0129 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0131 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs
@@ -10894,13 +11261,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4048_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0129 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__
@@ -10989,35 +11356,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0130 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0132 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0130 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0132_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4049 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4049 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4049_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4671 */
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0131 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0133 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs
@@ -11025,13 +11392,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4049_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0131 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__
@@ -11120,11 +11487,25 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMedi
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0132 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0134 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CPlayback_CAutoLoadedDisplayPropertyKind
+    {
+        AutoLoadedDisplayPropertyKind_None	= 0,
+        AutoLoadedDisplayPropertyKind_MusicOrVideo	= 1,
+        AutoLoadedDisplayPropertyKind_Music	= 2,
+        AutoLoadedDisplayPropertyKind_Video	= 3
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -11159,6 +11540,20 @@ enum __x_ABI_CWindows_CMedia_CPlayback_CMediaCommandEnablingRule
         MediaCommandEnablingRule_Auto	= 0,
         MediaCommandEnablingRule_Always	= 1,
         MediaCommandEnablingRule_Never	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemChangedReason
+    {
+        MediaPlaybackItemChangedReason_InitialItem	= 0,
+        MediaPlaybackItemChangedReason_EndOfStream	= 1,
+        MediaPlaybackItemChangedReason_Error	= 2,
+        MediaPlaybackItemChangedReason_AppRequested	= 3
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -11262,6 +11657,18 @@ enum __x_ABI_CWindows_CMedia_CPlayback_CMediaPlayerState
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode
+    {
+        SphericalVideoProjectionMode_Spherical	= 0,
+        SphericalVideoProjectionMode_Flat	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CMedia_CPlayback_CStereoscopicVideoRenderMode
     {
         StereoscopicVideoRenderMode_Mono	= 0,
@@ -11289,8 +11696,31 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIBackgroundMediaPlayerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0132 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0134 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
+                /* [v1_enum] */ 
+                enum AutoLoadedDisplayPropertyKind
+                    {
+                        AutoLoadedDisplayPropertyKind_None	= 0,
+                        AutoLoadedDisplayPropertyKind_MusicOrVideo	= 1,
+                        AutoLoadedDisplayPropertyKind_Music	= 2,
+                        AutoLoadedDisplayPropertyKind_Video	= 3
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -11348,6 +11778,29 @@ namespace ABI {
                         MediaCommandEnablingRule_Auto	= 0,
                         MediaCommandEnablingRule_Always	= 1,
                         MediaCommandEnablingRule_Never	= 2
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
+                /* [v1_enum] */ 
+                enum MediaPlaybackItemChangedReason
+                    {
+                        MediaPlaybackItemChangedReason_InitialItem	= 0,
+                        MediaPlaybackItemChangedReason_EndOfStream	= 1,
+                        MediaPlaybackItemChangedReason_Error	= 2,
+                        MediaPlaybackItemChangedReason_AppRequested	= 3
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -11514,6 +11967,27 @@ namespace ABI {
             namespace Playback {
                 
                 /* [v1_enum] */ 
+                enum SphericalVideoProjectionMode
+                    {
+                        SphericalVideoProjectionMode_Spherical	= 0,
+                        SphericalVideoProjectionMode_Flat	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Playback {
+                
+                /* [v1_enum] */ 
                 enum StereoscopicVideoRenderMode
                     {
                         StereoscopicVideoRenderMode_Mono	= 0,
@@ -11552,8 +12026,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIBackgroundMediaPlayerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIBackgroundMediaPlayerStatics_INTERFACE_DEFINED__
@@ -11758,7 +12232,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIBackgroundMediaPlayer
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIBackgroundMediaPlayerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0133 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__)
@@ -11766,13 +12240,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0133 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__
@@ -11905,7 +12379,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackI
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0134 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0136 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_ICurrentMediaPlaybackItemChangedEventArgs2[] = L"Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0136 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0136_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Playback {
+                    
+                    MIDL_INTERFACE("1D80A51E-996E-40A9-BE48-E66EC90B2B7D")
+                    ICurrentMediaPlaybackItemChangedEventArgs2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Reason( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Playback::MediaPlaybackItemChangedReason *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICurrentMediaPlaybackItemChangedEventArgs2 = __uuidof(ICurrentMediaPlaybackItemChangedEventArgs2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Reason )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CPlayback_CMediaPlaybackItemChangedReason *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_get_Reason(This,value)	\
+    ( (This)->lpVtbl -> get_Reason(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CICurrentMediaPlaybackItemChangedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak_INTERFACE_DEFINED__)
@@ -11913,13 +12524,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0134 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak_INTERFACE_DEFINED__
@@ -12092,7 +12703,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreak_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0135 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakEndedEventArgs_INTERFACE_DEFINED__)
@@ -12100,13 +12711,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakEndedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0135 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakEndedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakEndedEventArgs_INTERFACE_DEFINED__
@@ -12229,7 +12840,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakEndedEventA
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakEndedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0136 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0139 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakFactory_INTERFACE_DEFINED__)
@@ -12237,13 +12848,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0136 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakFactory_INTERFACE_DEFINED__
@@ -12382,7 +12993,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakFactory;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0137 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0140 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakManager_INTERFACE_DEFINED__)
@@ -12390,13 +13001,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0137 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakManager_INTERFACE_DEFINED__
@@ -12635,7 +13246,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakManager;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0138 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0141 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSchedule_INTERFACE_DEFINED__)
@@ -12643,13 +13254,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSchedule_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0138 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0141_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSchedule_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSchedule_INTERFACE_DEFINED__
@@ -12864,7 +13475,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSchedule;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSchedule_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0139 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0142 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__)
@@ -12872,13 +13483,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0139 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__
@@ -13021,7 +13632,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSeekedOverE
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSeekedOverEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0140 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0143 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSkippedEventArgs_INTERFACE_DEFINED__)
@@ -13029,13 +13640,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSkippedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0140 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSkippedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSkippedEventArgs_INTERFACE_DEFINED__
@@ -13158,7 +13769,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSkippedEven
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakSkippedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0141 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakStartedEventArgs_INTERFACE_DEFINED__)
@@ -13166,13 +13777,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakStartedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0141 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakStartedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakStartedEventArgs_INTERFACE_DEFINED__
@@ -13295,7 +13906,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakStartedEven
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaBreakStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0142 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0145 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaEnginePlaybackSource_INTERFACE_DEFINED__)
@@ -13303,13 +13914,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaEnginePlaybackSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0142 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0145_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaEnginePlaybackSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaEnginePlaybackSource_INTERFACE_DEFINED__
@@ -13442,7 +14053,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaEnginePlaybackSo
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaEnginePlaybackSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0143 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0146 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaItemDisplayProperties_INTERFACE_DEFINED__)
@@ -13450,13 +14061,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaItemDisplayProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0143 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0146_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaItemDisplayProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaItemDisplayProperties_INTERFACE_DEFINED__
@@ -13637,7 +14248,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaItemDisplayPrope
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaItemDisplayProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0144 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0147 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManager_INTERFACE_DEFINED__)
@@ -13645,13 +14256,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0144 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0147 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0147_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManager_INTERFACE_DEFINED__
@@ -14114,7 +14725,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0145 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0148 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__)
@@ -14122,13 +14733,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0145 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0148 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0148_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__
@@ -14281,7 +14892,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0146 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0149 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerCommandBehavior_INTERFACE_DEFINED__)
@@ -14289,13 +14900,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerCommandBehavior_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0146 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0149_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerCommandBehavior_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerCommandBehavior_INTERFACE_DEFINED__
@@ -14470,7 +15081,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerCommandBehavior_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0147 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0150 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__)
@@ -14478,13 +15089,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0147 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0150 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__
@@ -14627,7 +15238,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerFastForwardReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0148 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__)
@@ -14635,13 +15246,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0148 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__
@@ -14784,7 +15395,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerNextReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0149 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__)
@@ -14792,13 +15403,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0149 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__
@@ -14941,7 +15552,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPauseReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0150 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0153 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__)
@@ -14949,13 +15560,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0150 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__
@@ -15098,7 +15709,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPlayReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0151 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__)
@@ -15106,13 +15717,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0151 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__
@@ -15265,7 +15876,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPositionReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0152 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__)
@@ -15273,13 +15884,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0152 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__
@@ -15422,7 +16033,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerPreviousReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0153 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__)
@@ -15430,13 +16041,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0153 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__
@@ -15589,7 +16200,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRateReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0154 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__)
@@ -15597,13 +16208,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0154 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__
@@ -15746,7 +16357,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerRewindReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0155 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0158 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__)
@@ -15754,13 +16365,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0155 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__
@@ -15913,21 +16524,139 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandM
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackCommandManagerShuffleReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0156 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4672 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4672 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0160 */
 /* [local] */ 
 
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0160 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0160_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2dd51918-4525-5be5-a6c1-409bc72863a6")
+    __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Playback::IMediaPlaybackItem *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::Collections::IVectorChangedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0161 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackItem___F__CIVectorChangedEventArgs */
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackItem[] = L"Windows.Media.Playback.IMediaPlaybackItem";
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0156 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_INTERFACE_DEFINED__
@@ -16146,7 +16875,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0157 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2_INTERFACE_DEFINED__)
@@ -16154,13 +16883,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0157 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2_INTERFACE_DEFINED__
@@ -16343,7 +17072,184 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0158 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0163 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackItem3[] = L"Windows.Media.Playback.IMediaPlaybackItem3";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0163 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0163_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Playback::IMediaPlaybackItem3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Playback {
+                    
+                    MIDL_INTERFACE("0D328220-B80A-4D09-9FF8-F87094A1C831")
+                    IMediaPlaybackItem3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsDisabledInPlaybackList( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsDisabledInPlaybackList( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TotalDownloadProgress( 
+                            /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AutoLoadedDisplayProperties( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Playback::AutoLoadedDisplayPropertyKind *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AutoLoadedDisplayProperties( 
+                            /* [in] */ ABI::Windows::Media::Playback::AutoLoadedDisplayPropertyKind value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaPlaybackItem3 = __uuidof(IMediaPlaybackItem3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsDisabledInPlaybackList )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsDisabledInPlaybackList )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TotalDownloadProgress )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AutoLoadedDisplayProperties )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CPlayback_CAutoLoadedDisplayPropertyKind *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AutoLoadedDisplayProperties )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3 * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CPlayback_CAutoLoadedDisplayPropertyKind value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_get_IsDisabledInPlaybackList(This,value)	\
+    ( (This)->lpVtbl -> get_IsDisabledInPlaybackList(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_put_IsDisabledInPlaybackList(This,value)	\
+    ( (This)->lpVtbl -> put_IsDisabledInPlaybackList(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_get_TotalDownloadProgress(This,value)	\
+    ( (This)->lpVtbl -> get_TotalDownloadProgress(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_get_AutoLoadedDisplayProperties(This,value)	\
+    ( (This)->lpVtbl -> get_AutoLoadedDisplayProperties(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_put_AutoLoadedDisplayProperties(This,value)	\
+    ( (This)->lpVtbl -> put_AutoLoadedDisplayProperties(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItem3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemError_INTERFACE_DEFINED__)
@@ -16351,13 +17257,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemError_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0158 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemError_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemError_INTERFACE_DEFINED__
@@ -16490,7 +17396,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemErro
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemError_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0159 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory_INTERFACE_DEFINED__)
@@ -16498,13 +17404,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0159 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory_INTERFACE_DEFINED__
@@ -16629,7 +17535,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFact
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0160 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory2_INTERFACE_DEFINED__)
@@ -16637,13 +17543,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0160 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory2_INTERFACE_DEFINED__
@@ -16786,7 +17692,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFact
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFactory2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0161 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__)
@@ -16794,13 +17700,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0161 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__
@@ -16933,7 +17839,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFail
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0162 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__)
@@ -16941,13 +17847,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0162 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__
@@ -17070,7 +17976,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemOpen
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemOpenedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0163 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0169 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemStatics_INTERFACE_DEFINED__)
@@ -17078,13 +17984,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0163 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0169_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemStatics_INTERFACE_DEFINED__
@@ -17209,7 +18115,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemStat
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackItemStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0164 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0170 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList_INTERFACE_DEFINED__)
@@ -17217,13 +18123,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0164 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList_INTERFACE_DEFINED__
@@ -17504,7 +18410,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0165 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0171 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2_INTERFACE_DEFINED__)
@@ -17512,13 +18418,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0165 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0171_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2_INTERFACE_DEFINED__
@@ -17691,7 +18597,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0166 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0172 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackList3[] = L"Windows.Media.Playback.IMediaPlaybackList3";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0172 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0172_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Playback::IMediaPlaybackList3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Playback {
+                    
+                    MIDL_INTERFACE("DD24BBA9-BC47-4463-AA90-C18B7E5FFDE1")
+                    IMediaPlaybackList3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxPlayedItemsToKeepOpen( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT32 **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MaxPlayedItemsToKeepOpen( 
+                            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaPlaybackList3 = __uuidof(IMediaPlaybackList3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxPlayedItemsToKeepOpen )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT32 **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_MaxPlayedItemsToKeepOpen )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3 * This,
+            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_get_MaxPlayedItemsToKeepOpen(This,value)	\
+    ( (This)->lpVtbl -> get_MaxPlayedItemsToKeepOpen(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_put_MaxPlayedItemsToKeepOpen(This,value)	\
+    ( (This)->lpVtbl -> put_MaxPlayedItemsToKeepOpen(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackList3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_INTERFACE_DEFINED__)
@@ -17699,13 +18752,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0166 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_INTERFACE_DEFINED__
@@ -18218,7 +19271,296 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0167 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0174 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackSession2[] = L"Windows.Media.Playback.IMediaPlaybackSession2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0174 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0174_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Playback::IMediaPlaybackSession2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Playback {
+                    
+                    MIDL_INTERFACE("F8BA7C79-1FC8-4097-AD70-C0FA18CC0050")
+                    IMediaPlaybackSession2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE add_BufferedRangesChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_BufferedRangesChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_PlayedRangesChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_PlayedRangesChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_SeekableRangesChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_SeekableRangesChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_SupportedPlaybackRatesChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_SupportedPlaybackRatesChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SphericalVideoProjection( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsMirroring( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsMirroring( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetBufferedRanges( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaTimeRange **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetPlayedRanges( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaTimeRange **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetSeekableRanges( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaTimeRange **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsSupportedPlaybackRateRange( 
+                            /* [in] */ DOUBLE rate1,
+                            /* [in] */ DOUBLE rate2,
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaPlaybackSession2 = __uuidof(IMediaPlaybackSession2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_BufferedRangesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_BufferedRangesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_PlayedRangesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_PlayedRangesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_SeekableRangesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_SeekableRangesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_SupportedPlaybackRatesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_SupportedPlaybackRatesChanged )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SphericalVideoProjection )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsMirroring )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsMirroring )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ boolean value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetBufferedRanges )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaTimeRange **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPlayedRanges )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaTimeRange **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSeekableRanges )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CMediaTimeRange **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsSupportedPlaybackRateRange )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2 * This,
+            /* [in] */ DOUBLE rate1,
+            /* [in] */ DOUBLE rate2,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_add_BufferedRangesChanged(This,value,token)	\
+    ( (This)->lpVtbl -> add_BufferedRangesChanged(This,value,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_remove_BufferedRangesChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_BufferedRangesChanged(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_add_PlayedRangesChanged(This,value,token)	\
+    ( (This)->lpVtbl -> add_PlayedRangesChanged(This,value,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_remove_PlayedRangesChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_PlayedRangesChanged(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_add_SeekableRangesChanged(This,value,token)	\
+    ( (This)->lpVtbl -> add_SeekableRangesChanged(This,value,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_remove_SeekableRangesChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_SeekableRangesChanged(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_add_SupportedPlaybackRatesChanged(This,value,token)	\
+    ( (This)->lpVtbl -> add_SupportedPlaybackRatesChanged(This,value,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_remove_SupportedPlaybackRatesChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_SupportedPlaybackRatesChanged(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_get_SphericalVideoProjection(This,value)	\
+    ( (This)->lpVtbl -> get_SphericalVideoProjection(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_get_IsMirroring(This,value)	\
+    ( (This)->lpVtbl -> get_IsMirroring(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_put_IsMirroring(This,value)	\
+    ( (This)->lpVtbl -> put_IsMirroring(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_GetBufferedRanges(This,value)	\
+    ( (This)->lpVtbl -> GetBufferedRanges(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_GetPlayedRanges(This,value)	\
+    ( (This)->lpVtbl -> GetPlayedRanges(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_GetSeekableRanges(This,value)	\
+    ( (This)->lpVtbl -> GetSeekableRanges(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_IsSupportedPlaybackRateRange(This,rate1,rate2,value)	\
+    ( (This)->lpVtbl -> IsSupportedPlaybackRateRange(This,rate1,rate2,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSession2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0175 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_INTERFACE_DEFINED__)
@@ -18226,13 +19568,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0167 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0175_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_INTERFACE_DEFINED__
@@ -18345,7 +19687,234 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0168 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0176 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlaybackSphericalVideoProjection[] = L"Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0176 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0176_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Playback {
+                    
+                    MIDL_INTERFACE("D405B37C-6F0E-4661-B8EE-D487BA9752D5")
+                    IMediaPlaybackSphericalVideoProjection : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsEnabled( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsEnabled( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FrameFormat( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::MediaProperties::SphericalVideoFrameFormat *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_FrameFormat( 
+                            /* [in] */ ABI::Windows::Media::MediaProperties::SphericalVideoFrameFormat value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HorizontalFieldOfViewInDegrees( 
+                            /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_HorizontalFieldOfViewInDegrees( 
+                            /* [in] */ DOUBLE value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ViewOrientation( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Numerics::Quaternion *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ViewOrientation( 
+                            /* [in] */ ABI::Windows::Foundation::Numerics::Quaternion value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProjectionMode( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Playback::SphericalVideoProjectionMode *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ProjectionMode( 
+                            /* [in] */ ABI::Windows::Media::Playback::SphericalVideoProjectionMode value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaPlaybackSphericalVideoProjection = __uuidof(IMediaPlaybackSphericalVideoProjection);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsEnabled )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsEnabled )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FrameFormat )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_FrameFormat )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HorizontalFieldOfViewInDegrees )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_HorizontalFieldOfViewInDegrees )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [in] */ DOUBLE value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ViewOrientation )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ViewOrientation )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProjectionMode )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ProjectionMode )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CPlayback_CSphericalVideoProjectionMode value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjectionVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_get_IsEnabled(This,value)	\
+    ( (This)->lpVtbl -> get_IsEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_put_IsEnabled(This,value)	\
+    ( (This)->lpVtbl -> put_IsEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_get_FrameFormat(This,value)	\
+    ( (This)->lpVtbl -> get_FrameFormat(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_put_FrameFormat(This,value)	\
+    ( (This)->lpVtbl -> put_FrameFormat(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_get_HorizontalFieldOfViewInDegrees(This,value)	\
+    ( (This)->lpVtbl -> get_HorizontalFieldOfViewInDegrees(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_put_HorizontalFieldOfViewInDegrees(This,value)	\
+    ( (This)->lpVtbl -> put_HorizontalFieldOfViewInDegrees(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_get_ViewOrientation(This,value)	\
+    ( (This)->lpVtbl -> get_ViewOrientation(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_put_ViewOrientation(This,value)	\
+    ( (This)->lpVtbl -> put_ViewOrientation(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_get_ProjectionMode(This,value)	\
+    ( (This)->lpVtbl -> get_ProjectionMode(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_put_ProjectionMode(This,value)	\
+    ( (This)->lpVtbl -> put_ProjectionMode(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackSphericalVideoProjection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0177 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMetadataTrackList_INTERFACE_DEFINED__)
@@ -18353,13 +19922,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMetadataTrackList_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0168 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0177_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMetadataTrackList_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMetadataTrackList_INTERFACE_DEFINED__
@@ -18518,7 +20087,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMet
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlaybackTimedMetadataTrackList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0169 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0178 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer_INTERFACE_DEFINED__)
@@ -18526,13 +20095,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0169 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer_INTERFACE_DEFINED__
@@ -19081,7 +20650,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0170 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0179 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer2_INTERFACE_DEFINED__)
@@ -19089,13 +20658,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0170 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0179_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer2_INTERFACE_DEFINED__
@@ -19258,7 +20827,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0171 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0180 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer3_INTERFACE_DEFINED__)
@@ -19266,13 +20835,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0171 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer3_INTERFACE_DEFINED__
@@ -19605,7 +21174,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer3;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0172 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0181 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4_INTERFACE_DEFINED__)
@@ -19613,13 +21182,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0172 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0181 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0181_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4_INTERFACE_DEFINED__
@@ -19754,7 +21323,210 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0173 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0182 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Playback_IMediaPlayer5[] = L"Windows.Media.Playback.IMediaPlayer5";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0182 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0182_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Playback::IMediaPlayer5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Playback {
+                    
+                    MIDL_INTERFACE("CFE537FD-F86A-4446-BF4D-C8E792B7B4B3")
+                    IMediaPlayer5 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE add_VideoFrameAvailable( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable *value,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_VideoFrameAvailable( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsVideoFrameServerEnabled( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsVideoFrameServerEnabled( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CopyFrameToVideoSurface( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *destination) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CopyFrameToVideoSurfaceWithTargetRectangle( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *destination,
+                            /* [in] */ ABI::Windows::Foundation::Rect targetRectangle) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CopyFrameToStereoscopicVideoSurfaces( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *destinationLeftEye,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *destinationRightEye) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaPlayer5 = __uuidof(IMediaPlayer5);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_VideoFrameAvailable )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_VideoFrameAvailable )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsVideoFrameServerEnabled )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsVideoFrameServerEnabled )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ boolean value);
+        
+        HRESULT ( STDMETHODCALLTYPE *CopyFrameToVideoSurface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface *destination);
+        
+        HRESULT ( STDMETHODCALLTYPE *CopyFrameToVideoSurfaceWithTargetRectangle )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface *destination,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CRect targetRectangle);
+        
+        HRESULT ( STDMETHODCALLTYPE *CopyFrameToStereoscopicVideoSurfaces )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface *destinationLeftEye,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface *destinationRightEye);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_add_VideoFrameAvailable(This,value,token)	\
+    ( (This)->lpVtbl -> add_VideoFrameAvailable(This,value,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_remove_VideoFrameAvailable(This,token)	\
+    ( (This)->lpVtbl -> remove_VideoFrameAvailable(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_get_IsVideoFrameServerEnabled(This,value)	\
+    ( (This)->lpVtbl -> get_IsVideoFrameServerEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_put_IsVideoFrameServerEnabled(This,value)	\
+    ( (This)->lpVtbl -> put_IsVideoFrameServerEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_CopyFrameToVideoSurface(This,destination)	\
+    ( (This)->lpVtbl -> CopyFrameToVideoSurface(This,destination) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_CopyFrameToVideoSurfaceWithTargetRectangle(This,destination,targetRectangle)	\
+    ( (This)->lpVtbl -> CopyFrameToVideoSurfaceWithTargetRectangle(This,destination,targetRectangle) ) 
+
+#define __x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_CopyFrameToStereoscopicVideoSurfaces(This,destinationLeftEye,destinationRightEye)	\
+    ( (This)->lpVtbl -> CopyFrameToStereoscopicVideoSurfaces(This,destinationLeftEye,destinationRightEye) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayer5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0183 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__)
@@ -19762,13 +21534,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0173 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0183 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0183_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -19891,7 +21663,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceiv
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0174 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0184 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects_INTERFACE_DEFINED__)
@@ -19899,13 +21671,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0174 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects_INTERFACE_DEFINED__
@@ -20040,7 +21812,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0175 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0185 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects2_INTERFACE_DEFINED__)
@@ -20048,13 +21820,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0175 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0185_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects2_INTERFACE_DEFINED__
@@ -20181,7 +21953,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerEffects2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0176 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0186 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerFailedEventArgs_INTERFACE_DEFINED__)
@@ -20189,13 +21961,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerFailedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0176 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerFailedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerFailedEventArgs_INTERFACE_DEFINED__
@@ -20338,7 +22110,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerFailedEven
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0177 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0187 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__)
@@ -20346,13 +22118,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0177 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0187_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__
@@ -20475,7 +22247,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerRateChange
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerRateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0178 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0188 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource_INTERFACE_DEFINED__)
@@ -20483,13 +22255,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0178 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0188 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0188_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource_INTERFACE_DEFINED__
@@ -20652,7 +22424,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0179 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0189 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource2_INTERFACE_DEFINED__)
@@ -20660,13 +22432,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0179 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0189 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0189_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource2_INTERFACE_DEFINED__
@@ -20799,7 +22571,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSource2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0180 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0190 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSurface_INTERFACE_DEFINED__)
@@ -20807,13 +22579,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSurface_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0180 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0190 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0190_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSurface_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSurface_INTERFACE_DEFINED__
@@ -20956,7 +22728,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSurface;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIMediaPlayerSurface_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0181 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0191 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarker_INTERFACE_DEFINED__)
@@ -20964,13 +22736,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0181 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0191 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0191_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarker_INTERFACE_DEFINED__
@@ -21113,7 +22885,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarker;
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0182 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0192 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerFactory_INTERFACE_DEFINED__)
@@ -21121,13 +22893,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0182 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerFactory_INTERFACE_DEFINED__
@@ -21268,7 +23040,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerFa
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0183 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0193 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__)
@@ -21276,13 +23048,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0183 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0193_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__
@@ -21405,7 +23177,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerRe
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerReachedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0184 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0194 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerSequence_INTERFACE_DEFINED__)
@@ -21413,13 +23185,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerSequence_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0184 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0194_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerSequence_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerSequence_INTERFACE_DEFINED__
@@ -21560,7 +23332,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerSe
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CIPlaybackMediaMarkerSequence_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0185 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0195 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CPlayback_CITimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__)
@@ -21568,13 +23340,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CPlayback_CITimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0185 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0195 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0195_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CPlayback_CITimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CPlayback_CITimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__
@@ -21717,7 +23489,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CPlayback_CITimedMetadataPresenta
 #endif 	/* ____x_ABI_CWindows_CMedia_CPlayback_CITimedMetadataPresentationModeChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0186 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0196 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_Playback_BackgroundMediaPlayer_DEFINED
@@ -21836,6 +23608,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSession_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackSession[] = L"Windows.Media.Playback.MediaPlaybackSession";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_DEFINED
+#define RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackSphericalVideoProjection[] = L"Windows.Media.Playback.MediaPlaybackSphericalVideoProjection";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackTimedMetadataTrackList_DEFINED
 #define RUNTIMECLASS_Windows_Media_Playback_MediaPlaybackTimedMetadataTrackList_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Playback_MediaPlaybackTimedMetadataTrackList[] = L"Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList";
@@ -21882,13 +23658,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0186 */
+/* interface __MIDL_itf_windows2Emedia2Eplayback_0000_0196 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eplayback_0000_0196_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

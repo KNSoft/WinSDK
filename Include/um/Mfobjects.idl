@@ -11,23 +11,12 @@ cpp_quote("#include <winapifamily.h>")
 import "unknwn.idl";
 import "propsys.idl";
 import "mediaobj.idl";
+import "mmreg.h"; // for WAVEFORMATEX
 
 #ifndef __QWORD_DEFINED
 #define __QWORD_DEFINED
 typedef ULONGLONG QWORD;
 #endif  // __QWORD_DEFINED
-
-//
-// This line enforces non-idl files to include the standard definition of
-// WAVEFORMATEX as opposed to the below definition.
-// Without this line every non-idl file would have to explicitly include mmreg.h
-//
-cpp_quote( "#include <mmreg.h>" )
-
-//
-// Include this for marshallable definition of WAVEFORMATEX
-//
-#include <mmreg.h>
 
 #pragma region Application Family
 cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
@@ -1553,29 +1542,30 @@ interface IMFDXGIBuffer :  IUnknown
 
 [
     object,
-    uuid(44ae0fa8-ea31-4109-8d2e-4cae4997c555),
-    local
+    uuid(44ae0fa8-ea31-4109-8d2e-4cae4997c555)
 ]
 interface IMFMediaType : IMFAttributes
 {
     HRESULT GetMajorType(
-        [out, annotation("_Out_")] GUID* pguidMajorType
+        [out] GUID* pguidMajorType
         );
 
     HRESULT IsCompressedFormat(
-        [out, annotation("_Out_")] BOOL* pfCompressed
+        [out] BOOL* pfCompressed
         );
 
     HRESULT IsEqual(
         [in] IMFMediaType* pIMediaType,
-        [out, annotation("_Out_")] DWORD* pdwFlags
+        [out] DWORD* pdwFlags
         );
 
+    [local]
     HRESULT GetRepresentation(
         [in] GUID guidRepresentation,
         [out, annotation("_Out_")] LPVOID* ppvRepresentation
         );
 
+    [local]
     HRESULT FreeRepresentation(
         [in] GUID guidRepresentation,
         [in] LPVOID pvRepresentation
@@ -1679,10 +1669,15 @@ cpp_quote("")
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+
 //
 // New version of MFT_REGISTER_TYPE_INFO for MF
 //
 
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 typedef struct 
 {
@@ -1690,7 +1685,7 @@ typedef struct
     GUID    guidSubtype;
 } MFT_REGISTER_TYPE_INFO;
 
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
 
 //////////////////////////////////////////////////////////////////////////////
@@ -4598,3 +4593,95 @@ cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WIN7) ")
 
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WIN10_RS2)")
+
+[
+    object,
+    local,
+    uuid(CE8BD576-E440-43B3-BE34-1E53F565F7E8),
+    helpstring("IMFMuxStreamAttributesManager Interface"),
+    pointer_default(unique)    
+]
+/// <summary>
+///    The IMFMuxStreamAttributesManager interface
+/// </summary>
+interface IMFMuxStreamAttributesManager : IUnknown
+{
+    HRESULT GetStreamCount(
+        [annotation("_Out_")] DWORD* pdwMuxStreamCount
+    );
+
+    HRESULT GetAttributes(
+        [annotation("_In_")] DWORD dwMuxStreamIndex,
+        [annotation("_COM_Outptr_")] IMFAttributes **ppStreamAttributes
+    );
+}
+
+[
+    object,
+    local,
+    uuid(505A2C72-42F7-4690-AEAB-8F513D0FFDB8),
+    helpstring("IMFMuxStreamMediaTypeManager Interface"),
+    pointer_default(unique)  
+]
+/// <summary>
+///    The IMFMuxStreamMediaTypeManager interface
+/// </summary>
+interface IMFMuxStreamMediaTypeManager : IUnknown
+{
+    HRESULT GetStreamCount(
+        [annotation("_Out_")] DWORD* pdwMuxStreamCount
+    );
+
+    HRESULT GetMediaType(
+        [annotation("_In_")] DWORD dwMuxStreamIndex,
+        [annotation("_COM_Outptr_")] IMFMediaType** ppMediaType
+    );
+
+    HRESULT GetStreamConfigurationCount(
+        [annotation("_Out_")] DWORD *pdwCount
+    );
+
+    HRESULT AddStreamConfiguration(
+        [annotation("_In_")] ULONGLONG ullStreamMask
+    );
+
+    HRESULT RemoveStreamConfiguration(
+        [annotation("_In_")] ULONGLONG ullStreamMask
+    );
+
+    HRESULT GetStreamConfiguration(
+        [annotation("_In_")] DWORD ulIndex,
+        [annotation("_Out_")] ULONGLONG *pullStreamMask
+    );
+}
+
+[
+    object,
+    local,
+    uuid(74ABBC19-B1CC-4E41-BB8B-9D9B86A8F6CA),
+    helpstring("IMFMuxStreamSampleManager Interface"),
+    pointer_default(unique)  
+]
+/// <summary>
+///    The IMFMuxStreamSampleManager interface
+/// </summary>
+interface IMFMuxStreamSampleManager : IUnknown
+{
+    HRESULT GetStreamCount(
+        [annotation("_Out_")] DWORD* pdwMuxStreamCount
+    );
+
+    HRESULT GetSample(
+        [annotation("_In_")] DWORD dwMuxStreamIndex,
+        [annotation("_COM_Outptr_")] IMFSample** ppSample
+    );
+
+    ULONGLONG GetStreamConfiguration();
+}
+
+cpp_quote("#endif // (WINVER >=_WIN32_WINNT_WIN10_RS2)")    
+cpp_quote("#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+#pragma endregion

@@ -75,13 +75,8 @@ void *__cdecl operator new(size_t, const std::nothrow_t&)
 	_THROW0();
 
 #if     _MSC_VER >= 1200
-#if     defined(_WIN64)
 void __cdecl operator delete(void *,
 	const std::nothrow_t&) _THROW0();
-#else
-inline void __cdecl operator delete(void * pv, const std::nothrow_t&)
-    {::delete(pv);}
-#endif
 #endif
 #endif  /* __NOTHROW_T_DEFINED */
 

@@ -1120,6 +1120,7 @@ TraceLoggingPackedMetadataEx(inType, outType, "name", "description", tags)
 TraceLoggingPackedStruct(fieldCount, "name", "description", tags)
 TraceLoggingPackedStructArray(fieldCount, "name", "description", tags)
 TraceLoggingPackedData(pbData, cbData)
+TraceLoggingPackedDataEx(pbData, cbData, dataDescType)
 
 The name parameter must be a string literal (not a variable) and must not
 contain any '\0' characters. For TraceLoggingPackedField and
@@ -1167,7 +1168,10 @@ the same, but it begins an array of structures (which also counts as one
 logical field).
 
 The TraceLoggingPackedData macro adds data directly into the event payload
-without adding a field to the event's type.
+without adding a field to the event's type. The TraceLoggingPackedDataEx macro
+is the same, but it allows you to specify a non-default value to use in the
+EVENT_DATA_DESCRIPTOR Type field (for custom communication with low-level ETW
+processing).
 
 These macros can be combined in various ways to express TraceLogging field
 structures not otherwise possible. Possible scenarios include:
@@ -1345,7 +1349,8 @@ Notes on serializing data:
 #define TraceLoggingPackedMetadataEx(inType, outType, name, ...)        _TlgArg(, inType, outType, 1, _TlgPM, 0,     0, name, __VA_ARGS__)
 #define TraceLoggingPackedStruct(fieldCount, name, ...)                 _TlgArg(, _TlgInSTRUCT,,, _TlgStruct,, fieldCount, name, __VA_ARGS__)
 #define TraceLoggingPackedStructArray(fieldCount, name, ...)            _TlgArg(, _TlgInSTRUCT|TlgInVcount,,, _TlgStruct,, fieldCount, name, __VA_ARGS__)
-#define TraceLoggingPackedData(pbData, cbData)                          _TlgArg(,,,, _TlgPD, pbData, cbData)
+#define TraceLoggingPackedData(pbData, cbData)                          _TlgArg(0           ,,,, _TlgPD, pbData, cbData)
+#define TraceLoggingPackedDataEx(pbData, cbData, dataDescType)          _TlgArg(dataDescType,,,, _TlgPD, pbData, cbData)
 
 /*
 Wrapper macros for binary data referenced by a structure (advanced scenarios).
@@ -2136,7 +2141,7 @@ TraceLoggingSetInformation will use GetProcAddress (user-mode) or
 MmGetSystemRoutineAddress (kernel-mode) in an attempt to locate the API.
 
 If TLG_HAVE_EVENT_SET_INFORMATION is set to 0, TraceLoggingSetInformation(...)
-will no nothing and will always return a NOT_SUPPORTED error.
+will do nothing and will always return a NOT_SUPPORTED error.
 
 If TLG_HAVE_EVENT_SET_INFORMATION is set to 1 and the
 TLG_EVENT_SET_INFORMATION macro is defined,
@@ -3129,20 +3134,24 @@ _TlgDesc: Event description. Desc is the description. Emitted into the PDB.
 #define _TlgDataDescCreate(n, args) _TlgapplyArgs(_TlgDataDescCreate, n, args)
 #define _TlgDataDescCreate_imp(n, data_type, in_type, out_type, has_out, dim, value, cVals, name, desc, tags, has_tags) \
     _TlgDataDescCreate##dim(n, data_type, value, cVals)
-#define _TlgDataDescCreate_TlgAuto(   n, data_type, value, cVals)  _TlgCreateAuto(           &_TlgData[_TlgIdx++], (value)),
-#define _TlgDataDescCreate_TlgS(      n, data_type, value, cVals)  _TlgCreateDesc<data_type>(&_TlgData[_TlgIdx++], (value)),
-#define _TlgDataDescCreate_TlgP(      n, data_type, value, cVals)  _TlgCreateDesc<data_type>(&_TlgData[_TlgIdx++], (value)),
-#define _TlgDataDescCreate_TlgSid(    n, data_type, value, cVals)  _TlgCreateSid(            &_TlgData[_TlgIdx++], (value)),
-#define _TlgDataDescCreate_TlgSz(     n, data_type, value, cVals)  _TlgCreateSz(             &_TlgData[_TlgIdx++], (value)),
-#define _TlgDataDescCreate_TlgWsz(    n, data_type, value, cVals)  _TlgCreateWsz(            &_TlgData[_TlgIdx++], (value)),
+#define _TlgDataDescCreate_TlgAuto(   n, data_type, value, cVals)  _TlgCreateAuto(           &_TlgData[_TlgIdx], (value)), _TlgIdx += 1,
+#define _TlgDataDescCreate_TlgS(      n, data_type, value, cVals)  _TlgCreateDesc<data_type>(&_TlgData[_TlgIdx], (value)), _TlgIdx += 1,
+#define _TlgDataDescCreate_TlgP(      n, data_type, value, cVals)  _TlgCreateDesc<data_type>(&_TlgData[_TlgIdx], (value)), _TlgIdx += 1,
+#define _TlgDataDescCreate_TlgSid(    n, data_type, value, cVals)  _TlgCreateSid(            &_TlgData[_TlgIdx], (value)), _TlgIdx += 1,
+#define _TlgDataDescCreate_TlgSz(     n, data_type, value, cVals)  _TlgCreateSz(             &_TlgData[_TlgIdx], (value)), _TlgIdx += 1,
+#define _TlgDataDescCreate_TlgWsz(    n, data_type, value, cVals)  _TlgCreateWsz(            &_TlgData[_TlgIdx], (value)), _TlgIdx += 1,
 #define _TlgDataDescCreate_TlgString( n, data_type, value, cVals)  _TlgCreateString<data_type>(&_TlgData[_TlgIdx], (value)), _TlgIdx += 2,
-#define _TlgDataDescCreate_TlgA(      n, data_type, value, cVals)  _TlgCreateArray(          &_TlgData[_TlgIdx],   (value), (cVals),  sizeof(data_type)),_TlgIdx += 2,
-#define _TlgDataDescCreate_TlgB(      n, data_type, value, cVals)  _TlgCreateBinary(         &_TlgData[_TlgIdx],   (value), (cVals)), _TlgIdx += 2,
-#define _TlgDataDescCreate_TlgCS(     n, data_type, value, cVals)  _TlgCreateBinary(         &_TlgData[_TlgIdx],   (value), (cVals) * sizeof(data_type)),_TlgIdx += 2,
-#define _TlgDataDescCreate_TlgFA(     n, data_type, value, cVals)  _TlgCreateFixedArray(     &_TlgData[_TlgIdx++], (value), (cVals),  sizeof(data_type)),
-#define _TlgDataDescCreate_TlgPF(     n, data_type, value, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx++], (value), (cVals)),
+#define _TlgDataDescCreate_TlgA(      n, data_type, value, cVals)  _TlgCreateArray(          &_TlgData[_TlgIdx], (value), (cVals),  sizeof(data_type)), _TlgIdx += 2,
+#define _TlgDataDescCreate_TlgB(      n, data_type, value, cVals)  _TlgCreateBinary(         &_TlgData[_TlgIdx], (value), (cVals)), _TlgIdx += 2,
+#define _TlgDataDescCreate_TlgCS(     n, data_type, value, cVals)  _TlgCreateBinary(         &_TlgData[_TlgIdx], (value), (cVals) * sizeof(data_type)), _TlgIdx += 2,
+#define _TlgDataDescCreate_TlgFA(     n, data_type, value, cVals)  _TlgCreateFixedArray(     &_TlgData[_TlgIdx], (value), (cVals),  sizeof(data_type)), _TlgIdx += 1,
+#define _TlgDataDescCreate_TlgPF(     n, data_type, value, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx], (value), (cVals)), _TlgIdx += 1,
 #define _TlgDataDescCreate_TlgPM(     n, data_type, value, cVals)
-#define _TlgDataDescCreate_TlgPD(     n, data_type, value, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx++], (value), (cVals)),
+#define _TlgDataDescCreate_TlgPD(     n, data_type, value, cVals)  \
+    _TlgData[_TlgIdx].Ptr = (ULONGLONG)(ULONG_PTR)(value), \
+    _TlgData[_TlgIdx].Size = (cVals), \
+    _TlgData[_TlgIdx].Reserved = (data_type), \
+    _TlgIdx += 1,
 #define _TlgDataDescCreate_TlgCustom( n, data_type, value, cVals)  _TlgCreateBinary(         &_TlgData[_TlgIdx],   (value), (cVals)), _TlgIdx += 2,
 #define _TlgDataDescCreate_TlgStruct( n, data_type, value, cVals)  _TlgStructSizeMustBeLessThan128<cVals>(),
 #define _TlgDataDescCreate_TlgChannel(n, data_type, value, cVals)
@@ -3184,19 +3193,23 @@ _TlgDesc: Event description. Desc is the description. Emitted into the PDB.
 #define _TlgDataDescCreate(n, args) _TlgapplyArgs(_TlgDataDescCreate, n, args)
 #define _TlgDataDescCreate_imp(n, data_type, in_type, out_type, has_out, dim, value, cVals, name, desc, tags, has_tags) \
     _TlgDataDescCreate##dim(n, data_type, cVals)
-#define _TlgDataDescCreate_TlgS(      n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx++], &_TlgTemp##n, sizeof(data_type));
-#define _TlgDataDescCreate_TlgP(      n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx++],  _TlgTemp##n, sizeof(data_type));
-#define _TlgDataDescCreate_TlgSid(    n, data_type, cVals)  _TlgCreateSid(&_TlgData[_TlgIdx++], _TlgTemp##n);
-#define _TlgDataDescCreate_TlgSz(     n, data_type, cVals)  _TlgCreateSz( &_TlgData[_TlgIdx++], _TlgTemp##n);
-#define _TlgDataDescCreate_TlgWsz(    n, data_type, cVals)  _TlgCreateWsz(&_TlgData[_TlgIdx++], _TlgTemp##n);
+#define _TlgDataDescCreate_TlgS(      n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx], &_TlgTemp##n, sizeof(data_type)); _TlgIdx += 1;
+#define _TlgDataDescCreate_TlgP(      n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx],  _TlgTemp##n, sizeof(data_type)); _TlgIdx += 1;
+#define _TlgDataDescCreate_TlgSid(    n, data_type, cVals)  _TlgCreateSid(&_TlgData[_TlgIdx], _TlgTemp##n); _TlgIdx += 1;
+#define _TlgDataDescCreate_TlgSz(     n, data_type, cVals)  _TlgCreateSz( &_TlgData[_TlgIdx], _TlgTemp##n); _TlgIdx += 1;
+#define _TlgDataDescCreate_TlgWsz(    n, data_type, cVals)  _TlgCreateWsz(&_TlgData[_TlgIdx], _TlgTemp##n); _TlgIdx += 1;
 #define _TlgDataDescCreate_TlgString( n, data_type, cVals)  _TlgCreateBinary(&_TlgData[_TlgIdx], _TlgTemp##n->Buffer, _TlgTemp##n->Length); _TlgIdx += 2;
 #define _TlgDataDescCreate_TlgA(      n, data_type, cVals)  _TlgCreateArray(&_TlgData[_TlgIdx], _TlgTemp##n, &_TlgCnt##n, sizeof(data_type)); _TlgIdx += 2;
 #define _TlgDataDescCreate_TlgB(      n, data_type, cVals)  _TlgCreateBinary(&_TlgData[_TlgIdx], _TlgTemp##n, _TlgCnt##n); _TlgIdx += 2;
 #define _TlgDataDescCreate_TlgCS(     n, data_type, cVals)  _TlgCreateBinary(&_TlgData[_TlgIdx], _TlgTemp##n, _TlgCnt##n); _TlgIdx += 2;
-#define _TlgDataDescCreate_TlgFA(     n, data_type, cVals)  _TlgCreateFixedArray(&_TlgData[_TlgIdx++], _TlgTemp##n, (cVals), sizeof(data_type));
-#define _TlgDataDescCreate_TlgPF(     n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx++], _TlgTemp##n, (cVals));
+#define _TlgDataDescCreate_TlgFA(     n, data_type, cVals)  _TlgCreateFixedArray(&_TlgData[_TlgIdx], _TlgTemp##n, (cVals), sizeof(data_type)); _TlgIdx += 1;
+#define _TlgDataDescCreate_TlgPF(     n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx], _TlgTemp##n, (cVals)); _TlgIdx += 1;
 #define _TlgDataDescCreate_TlgPM(     n, data_type, cVals)
-#define _TlgDataDescCreate_TlgPD(     n, data_type, cVals)  EventDataDescCreate(&_TlgData[_TlgIdx++], _TlgTemp##n, (cVals));
+#define _TlgDataDescCreate_TlgPD(     n, data_type, cVals)  \
+    _TlgData[_TlgIdx].Ptr = (ULONGLONG)(ULONG_PTR)_TlgTemp##n; \
+    _TlgData[_TlgIdx].Size = (cVals); \
+    _TlgData[_TlgIdx].Reserved = (data_type); \
+    _TlgIdx += 1;
 #define _TlgDataDescCreate_TlgCustom( n, data_type, cVals)  _TlgCreateBinary(&_TlgData[_TlgIdx], _TlgTemp##n, _TlgCnt##n); _TlgIdx += 2;
 #define _TlgDataDescCreate_TlgStruct( n, data_type, cVals)
 #define _TlgDataDescCreate_TlgChannel(n, data_type, cVals)

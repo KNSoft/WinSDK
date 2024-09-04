@@ -911,6 +911,8 @@ typedef enum _WLAN_NOTIFICATION_MSM {
     wlan_notification_msm_peer_leave,
     wlan_notification_msm_adapter_removal,
     wlan_notification_msm_adapter_operation_mode_change,
+    wlan_notification_msm_link_degraded,
+    wlan_notification_msm_link_improved,
     wlan_notification_msm_end
 } WLAN_NOTIFICATION_MSM, *PWLAN_NOTIFICATION_MSM;
 
@@ -1106,6 +1108,19 @@ _WLAN_SECURABLE_OBJECT
     WLAN_SECURABLE_OBJECT_COUNT
 }
 WLAN_SECURABLE_OBJECT, *PWLAN_SECURABLE_OBJECT;
+
+// Data structure used for querying supported WLAN Device Services
+typedef struct _WLAN_DEVICE_SERVICE_GUID_LIST {
+    DWORD dwNumberOfItems;
+    DWORD dwIndex;
+
+#ifdef __midl
+    [unique, size_is(dwNumberOfItems)] GUID DeviceService[*];
+#else
+    GUID DeviceService[1];
+#endif
+
+} WLAN_DEVICE_SERVICE_GUID_LIST, *PWLAN_DEVICE_SERVICE_GUID_LIST;
 
 //
 // WiFi Direct Definitions
@@ -1937,6 +1952,20 @@ DEFINE_GUID(
     );
 
 //
+// ASP Infra Device Interface GUID
+//
+// {FF823995-7A72-4C80-8757-C67EE13D1A49}
+//
+// Description: Wi-Fi Direct Device Nodes will expose a device
+// interface identified by this GUID.
+//
+DEFINE_GUID(
+    GUID_DEVINTERFACE_ASP_INFRA_DEVICE,
+    0xff823995, 0x7a72, 0x4c80, 0x87, 0x57, 0xc6, 0x7e, 0xe1, 0x3d, 0x1a, 0x49
+    );
+
+
+//
 // Wi-Fi Direct Property Key Definitions
 // These properties are exposed through Wi-Fi Direct Device Nodes when
 // created through the inbox Windows pairing experience.
@@ -2065,7 +2094,7 @@ DEFINE_DEVPROPKEY(
 // Property: DEVPKEY_WiFiDirect_Services
 // Description: A value indicating services supported by the Wi Fi Direct device.
 // Type: DEVPROP_TYPE_STRING_LIST
-// Availability: If Miracast capable, set to string indicating Miracast service or empty
+// Availability: If Miracast capable or advertising well-known service such as WSB, else empty
 //
 DEFINE_DEVPROPKEY(
     DEVPKEY_WiFiDirect_Services,
@@ -2125,6 +2154,133 @@ DEFINE_DEVPROPKEY(
     DEVPKEY_WiFiDirect_IsRecentlyAssociated,
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x0E
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_Service_Aeps
+// Description: A value indicating AEP Service IDs of services supported by the Wi-Fi Direct device.
+// Type: DEVPROP_TYPE_STRING_LIST
+// Availability: If advertising well-known service such as WSB, else empty
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_Service_Aeps,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x0F
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_NoAutoProject
+// Description: A value indicating if WFDSConMgr initiated the association so hotplug auto-project should not be used.
+//              When true, WFDSConMgr is responsible for calling StartMiracastDisplayDevice
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: If WFDSConMgr initiated the association, set to DEVPROP_TRUE,
+//               otherwise set to DEVPROP_FALSE,
+//               or empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_NoMiracastAutoProject,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x10
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_IsInfraCastSupported
+// Description: A value indicating if the remote Miracast Sink supports infrastructure connections
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: If remote device is a Miracast sink and supports infrastructure connections, then this is set to DEVPROP_TRUE,
+//               otherwise set to DEVPROP_FALSE, or empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_IsInfraCastSupported,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x11
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_IsInfraCastStreamSecuritySupported
+// Description: A value indicating if the remote Miracast Sink supports stream security
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: If remote device is a Miracast sink and supports stream security, then this is set to DEVPROP_TRUE,
+//               otherwise set to DEVPROP_FALSE, or empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_IsInfraCastStreamSecuritySupported,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x12
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_InfraCastAccessPointBssid
+// Description: A value indicating the BSSID of the Access Point the Miracast Sink is connected to, if the network is secure.
+// Type: DEVPROP_TYPE_BINARY
+// Binary Data: DOT11_MAC_ADDRESS (UCHAR[6])
+// Availability: If the Miracast Sink connection to an Access Point is secure, this value is set else is empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_InfraCastAccessPointBssid,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x13
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_InfraCastSinkHostName
+// Description: A value indicating the BSSID of the Access Point the Miracast Sink is connected to, if the network is secure.
+// Type: DEVPROP_TYPE_STRING
+// Availability: If the Miracast Sink support connection over infrastructure, this value is set else is empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_InfraCastSinkHostName,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x14
+    );
+
+//
+// Parameter: DEVPKEY_InfraCast_ChallengeAep
+// Description: Tells InfraCast DAF provider which challenge is supposed to be used next
+// Type: DEVPROP_TYPE_STRING
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_InfraCast_ChallengeAep,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x15
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_IsDMGCapable
+// Description: Indicates that the device was discovered over a Directional Multi-Gigabit (802.11ad) interface
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: Always
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_IsDMGCapable,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x16
+    );
+
+//
+// Parameter: DEVPKEY_InfraCast_DevnodeAep
+// Description: Tells InfraCast DAF provider which AEP it needs to take offline when the association is closed
+// Type: DEVPROP_TYPE_STRING
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_InfraCast_DevnodeAep,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x17
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_FoundWsbService
+// Description: A value indicating if this device was found with the WSB service. Persisted in the AEP store
+//              so that challenges can add the WSB hash to the query if the device previously had the WSB service.
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: If WSB service was found during discovery, set to DEVPROP_TRUE,
+//               otherwise set to DEVPROP_FALSE,
+//               or empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_FoundWsbService,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x18
     );
 
 //

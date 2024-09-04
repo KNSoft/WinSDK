@@ -81,6 +81,13 @@ typedef UINT32 TBS_HANDLE;
 #define TBS_OWNERAUTH_TYPE_USER         3
 #define TBS_OWNERAUTH_TYPE_ENDORSEMENT  4
 
+//
+// TPM 2.0 OwnerAuth types
+//
+
+#define TBS_OWNERAUTH_TYPE_ENDORSEMENT_20  12
+#define TBS_OWNERAUTH_TYPE_STORAGE_20      13
+
 typedef struct tdTBS_CONTEXT_PARAMS
 {
     UINT32 version;

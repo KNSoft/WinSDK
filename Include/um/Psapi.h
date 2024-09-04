@@ -113,6 +113,10 @@ EnumProcesses (
 
 #define GetProcessMemoryInfo        K32GetProcessMemoryInfo
 #define GetModuleInformation        K32GetModuleInformation
+#define GetModuleBaseNameA          K32GetModuleBaseNameA
+#define GetModuleBaseNameW          K32GetModuleBaseNameW
+#define GetModuleFileNameExA        K32GetModuleFileNameExA
+#define GetModuleFileNameExW        K32GetModuleFileNameExW
 
 #endif
 
@@ -140,6 +144,12 @@ EnumProcessModulesEx(
     _Out_  LPDWORD lpcbNeeded,
     _In_  DWORD dwFilterFlag
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 DWORD
 WINAPI
@@ -197,12 +207,6 @@ GetModuleFileNameExW(
 #else
 #define GetModuleFileNameEx  GetModuleFileNameExA
 #endif // !UNICODE
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 typedef struct _MODULEINFO {
     LPVOID lpBaseOfDll;

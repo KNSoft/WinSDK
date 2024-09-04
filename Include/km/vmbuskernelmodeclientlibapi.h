@@ -1457,7 +1457,8 @@ VmbPacketGetPointer(
 /// through the lifetime of the transaction.
 ///
 /// See also \ref VmbPacketSendWithExternalMdl and \ref VmbChannelSendSynchronousRequest
-/// for sending packets in different ways.
+/// and \ref VmbPacketSendWithExternalPfns for sending packets
+/// in different ways.
 ///
 /// \param PacketObject This is a handle to the \ref VMBPACKET object.
 /// \param PacketBuf Buffer containing the "command" packet which will be sent
@@ -1537,6 +1538,50 @@ VmbPacketSendWithExternalMdl(
     _In_                            UINT32                 MdlLength,
     _In_                            UINT32                 Flags
     );
+
+/// \page VmbPacketSendWithExternalPfns 
+/// VmbPacketSendWithExternalPfns This function sends the data 
+/// in PacketBuf and ExternalDataPfn, associating it with the 
+/// \ref VMBPACKET object, which will represent the packet 
+/// through the lifetime of the transaction. 
+///
+/// This function is different from \ref VmbPacketSend in that it allows passing a
+/// array of PFNs (Page Frame Numbers, effectively Physical 
+/// addresses) 
+///
+/// \param PacketObject This is a handle to the \ref VMBPACKET object.
+/// \param PacketBuf Buffer containing the "command" packet which will be sent
+///     through the VMBus ring buffer.
+/// \param BufSize Size in bytes of the buffer pointed to by PacketBuf.
+/// \param ExternalDataPfns Optional array of Physical Frame 
+///     nubmers describing a data buffer associated with 
+///     the packet.
+/// \param PfnLength The number of Pfns to send from 
+///     ExternalDataPfns. The final referenced array index will
+///     be  ExternalDataPfns[PfnLength-1] inclusive
+/// \param Flags \parblock Any pertinent flags:
+///
+/// \ref VMBUS_CHANNEL_FORMAT_FLAG_WAIT_FOR_COMPLETION indicates that this packet
+/// cannot be considered complete and its resources cannot be released until a
+/// completion packet comes back from the opposite endpoint. Must be set.
+///
+/// \ref VMBUS_CHANNEL_FORMAT_FLAG_PAGED_BUFFER indicates that the inline buffer is
+/// paged and must be treated accordingly (copied before entering DPC level).
+/// Note that probing user-mode buffers or handling access violations is the
+/// responsibility of the caller.
+/// \endparblock
+///
+/// \returns NT Status code.
+NTSTATUS
+VmbPacketSendWithExternalPfns(
+    _In_ __drv_aliasesMem           VMBPACKET              PacketObject,
+    _In_reads_bytes_(BufferLength)  PVOID                  Buffer,
+    _In_                            UINT32                 BufferLength,
+    _In_reads_(PfnLength)           PPFN_NUMBER            ExternalDataPfns,
+    _In_                            UINT32                 PfnLength,
+    _In_                            UINT32                 Flags
+    );
+
 
 /// \page VmbChannelSendSynchronousRequest VmbChannelSendSynchronousRequest
 /// Sends a packet to the opposite endpoint and waits for a response.
@@ -1718,7 +1763,9 @@ typedef EVT_VMB_PACKET_COMPLETION_ROUTINE *PFN_VMB_PACKET_COMPLETION_ROUTINE;
 
 /// \page VmbPacketSetCompletionRoutine VmbPacketSetCompletionRoutine
 /// Sets the completion routine for a packet object. See \ref VmbPacketSend
-/// and \ref VmbPacketSendWithExternalMdl.  See also \ref EvtVmbPacketCompletionRoutine.
+/// and \ref VmbPacketSendWithExternalMdl and \ref 
+/// VmbPacketSendWithExternalPfns.  See also \ref 
+/// EvtVmbPacketCompletionRoutine. 
 ///
 /// \param PacketObject The packet object.
 /// \param CompletionRoutine Function to call when the packet is complete.

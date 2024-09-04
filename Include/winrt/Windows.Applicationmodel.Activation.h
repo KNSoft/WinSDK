@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -51,6 +51,13 @@ typedef interface __FIEventHandler_1_Windows__CApplicationModel__CActivation__CB
 typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable __FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_FWD_DEFINED__
@@ -378,6 +385,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMessageActivatedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IContactPanelActivatedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPickerActivatedEventArgs_FWD_DEFINED__
@@ -820,6 +847,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenCallActivatedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IPickerReturnedActivatedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs;
@@ -1140,6 +1187,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCommandActivatedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IWalletActionActivatedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs;
@@ -1160,17 +1227,38 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IWebAuthenticationBrokerContinuationEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.Appointments.AppointmentsProvider.h"
-#include "Windows.ApplicationModel.Calls.h"
+#include "Windows.ApplicationModel.Contacts.h"
 #include "Windows.ApplicationModel.Contacts.Provider.h"
 #include "Windows.ApplicationModel.DataTransfer.ShareTarget.h"
 #include "Windows.ApplicationModel.Search.h"
 #include "Windows.ApplicationModel.UserDataAccounts.Provider.h"
+#include "Windows.ApplicationModel.Wallet.h"
 #include "Windows.Devices.Printers.Extensions.h"
 #include "Windows.Media.SpeechRecognition.h"
 #include "Windows.Security.Authentication.Web.Provider.h"
@@ -1225,18 +1313,18 @@ interface IBackgroundActivatedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0001 */
 /* [local] */ 
@@ -1298,18 +1386,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002 */
 /* [local] */ 
@@ -1333,6 +1421,76 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Activation::SplashScr
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+class BackgroundTaskRegistrationGroup;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Background {
+interface IBackgroundTaskRegistrationGroup;
+} /*Background*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d4f89768-688f-59ec-bf24-c2af6a310fa4"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*,ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs*, ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup*,ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs*> __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1370,7 +1528,7 @@ interface IActivatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003 */
 /* [local] */ 
 
 
@@ -1378,23 +1536,23 @@ interface IActivatedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE
@@ -1428,30 +1586,30 @@ struct DateTime;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
@@ -1475,29 +1633,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -1521,29 +1679,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -1567,29 +1725,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -1613,29 +1771,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3114 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3114_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4664 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -1659,29 +1817,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3115 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3115_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4665 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
@@ -1705,29 +1863,29 @@ extern "C" {
 #endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3116 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3116_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4666 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
@@ -1751,29 +1909,29 @@ extern "C" {
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3117 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3117_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4667 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
@@ -1797,29 +1955,29 @@ extern "C" {
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3118 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3118_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4668 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
@@ -1853,30 +2011,30 @@ interface IStorageItem;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3119 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3119_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE
@@ -1900,29 +2058,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3120 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3120_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE
@@ -1946,29 +2104,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3121 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3121_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4671 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CStorage__CIStorageItem_USE
@@ -2011,30 +2169,30 @@ interface IStorageFile;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3122 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3122_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4672 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CStorage__CStorageFile_USE
@@ -2058,29 +2216,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CStorage__CStorageFile_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3123 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3123_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4673 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4673_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CStorage__CStorageFile_USE
@@ -2104,29 +2262,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CStorage__CStorageFile_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3124 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3124_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4674 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CStorage__CStorageFile_USE
@@ -2173,30 +2331,30 @@ interface IShownTileNotification;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3125 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3125_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4675 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4675_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification_USE
@@ -2220,29 +2378,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3126 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3126_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4676 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4676_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification_USE
@@ -2266,29 +2424,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3127 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3127_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4677 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4677_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_USE
@@ -2341,6 +2499,9 @@ extern "C" {
 #if !defined(__windows2Eapplicationmodel2Euserdataaccounts2Eprovider_h__)
 #include <Windows.ApplicationModel.UserDataAccounts.Provider.h>
 #endif // !defined(__windows2Eapplicationmodel2Euserdataaccounts2Eprovider_h__)
+#if !defined(__windows2Eapplicationmodel2Ewallet_h__)
+#include <Windows.ApplicationModel.Wallet.h>
+#endif // !defined(__windows2Eapplicationmodel2Ewallet_h__)
 #if !defined(__windows2Edevices2Eenumeration_h__)
 #include <Windows.Devices.Enumeration.h>
 #endif // !defined(__windows2Edevices2Eenumeration_h__)
@@ -2350,6 +2511,9 @@ extern "C" {
 #if !defined(__windows2Emedia2Espeechrecognition_h__)
 #include <Windows.Media.SpeechRecognition.h>
 #endif // !defined(__windows2Emedia2Espeechrecognition_h__)
+#if !defined(__windows2Esecurity2Eauthentication2Eweb_h__)
+#include <Windows.Security.Authentication.Web.h>
+#endif // !defined(__windows2Esecurity2Eauthentication2Eweb_h__)
 #if !defined(__windows2Esecurity2Eauthentication2Eweb2Eprovider_h__)
 #include <Windows.Security.Authentication.Web.Provider.h>
 #endif // !defined(__windows2Esecurity2Eauthentication2Eweb2Eprovider_h__)
@@ -2461,6 +2625,18 @@ namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Contacts {
+class ContactPanel;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
 namespace Provider {
 class ContactPickerUI;
 } /*Provider*/
@@ -2497,6 +2673,16 @@ class SearchPaneQueryLinguisticDetails;
 #endif
 
 
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CWallet_CWalletActionKind __x_ABI_CWindows_CApplicationModel_CWallet_CWalletActionKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2583,6 +2769,20 @@ class SpeechRecognitionResult;
 }
 #endif
 
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace Web {
+class WebAuthenticationResult;
+} /*Web*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
 
 #ifdef __cplusplus
 namespace ABI {
@@ -2750,6 +2950,10 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CActivation_CApplicationExecutio
 
 
 
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2855,6 +3059,17 @@ namespace Windows {
 namespace ApplicationModel {
 namespace Activation {
 class ContactMessageActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
+class ContactPanelActivatedEventArgs;
 } /*Activation*/
 } /*ApplicationModel*/
 } /*Windows*/
@@ -3030,6 +3245,28 @@ namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Activation {
+class LockScreenComponentActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
+class PickerReturnedActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
 class Print3DWorkflowActivatedEventArgs;
 } /*Activation*/
 } /*ApplicationModel*/
@@ -3151,7 +3388,29 @@ namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Activation {
+class WalletActionActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
 class WebAccountProviderActivatedEventArgs;
+} /*Activation*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Activation {
+class WebAuthenticationBrokerContinuationEventArgs;
 } /*Activation*/
 } /*ApplicationModel*/
 } /*Windows*/
@@ -3159,7 +3418,7 @@ class WebAccountProviderActivatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022 */
 /* [local] */ 
 
 
@@ -3173,6 +3432,25 @@ class WebAccountProviderActivatedEventArgs;
 
 
 
+
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Wallet {
+                
+                typedef enum WalletActionKind WalletActionKind;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -3225,6 +3503,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 
@@ -3327,23 +3606,27 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0021_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3128 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3128 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3128_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4678 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4678_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs
@@ -3351,13 +3634,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
@@ -3446,40 +3729,11 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CApplicationModel__CActivatio
 #endif 	/* ____FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0024 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0023_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3129 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3129 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3129_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0024 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable
-#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0024 */
@@ -3489,6 +3743,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4679 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4679 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4679_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_INTERFACE_DEFINED__
@@ -3577,40 +3860,11 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CActi
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0026 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0025_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3130 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3130 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_3130_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0026 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0026 */
@@ -3620,6 +3874,166 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0026_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4680 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4680 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4680_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d4f89768-688f-59ec-bf24-c2af6a310fa4")
+    __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTaskRegistrationGroup *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4681 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4681 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation2Eidl_0000_4681_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
@@ -3708,7 +4122,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCore
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -3737,9 +4151,12 @@ enum __x_ABI_CWindows_CApplicationModel_CActivation_CActivationKind
         ActivationKind_LockScreenCall	= 15,
         ActivationKind_VoiceCommand	= 16,
         ActivationKind_LockScreen	= 17,
+        ActivationKind_PickerReturned	= 1000,
+        ActivationKind_WalletAction	= 1001,
         ActivationKind_PickFileContinuation	= 1002,
         ActivationKind_PickSaveFileContinuation	= 1003,
         ActivationKind_PickFolderContinuation	= 1004,
+        ActivationKind_WebAuthenticationBrokerContinuation	= 1005,
         ActivationKind_WebAccountProvider	= 1006,
         ActivationKind_ComponentUI	= 1007,
         ActivationKind_ProtocolForResults	= 1009,
@@ -3748,7 +4165,9 @@ enum __x_ABI_CWindows_CApplicationModel_CActivation_CActivationKind
         ActivationKind_DialReceiver	= 1012,
         ActivationKind_DevicePairing	= 1013,
         ActivationKind_UserDataAccountsProvider	= 1014,
-        ActivationKind_FilePickerExperience	= 1015
+        ActivationKind_FilePickerExperience	= 1015,
+        ActivationKind_LockScreenComponent	= 1016,
+        ActivationKind_ContactPanel	= 1017
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3773,7 +4192,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -3804,9 +4223,12 @@ namespace ABI {
                         ActivationKind_LockScreenCall	= 15,
                         ActivationKind_VoiceCommand	= 16,
                         ActivationKind_LockScreen	= 17,
+                        ActivationKind_PickerReturned	= 1000,
+                        ActivationKind_WalletAction	= 1001,
                         ActivationKind_PickFileContinuation	= 1002,
                         ActivationKind_PickSaveFileContinuation	= 1003,
                         ActivationKind_PickFolderContinuation	= 1004,
+                        ActivationKind_WebAuthenticationBrokerContinuation	= 1005,
                         ActivationKind_WebAccountProvider	= 1006,
                         ActivationKind_ComponentUI	= 1007,
                         ActivationKind_ProtocolForResults	= 1009,
@@ -3815,7 +4237,9 @@ namespace ABI {
                         ActivationKind_DialReceiver	= 1012,
                         ActivationKind_DevicePairing	= 1013,
                         ActivationKind_UserDataAccountsProvider	= 1014,
-                        ActivationKind_FilePickerExperience	= 1015
+                        ActivationKind_FilePickerExperience	= 1015,
+                        ActivationKind_LockScreenComponent	= 1016,
+                        ActivationKind_ContactPanel	= 1017
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -3851,8 +4275,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_INTERFACE_DEFINED__
@@ -3995,7 +4419,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIActivate
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_INTERFACE_DEFINED__)
@@ -4003,13 +4427,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_INTERFACE_DEFINED__
@@ -4132,7 +4556,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIActivate
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIApplicationViewActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4140,13 +4564,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIApplicationViewActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIApplicationViewActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIApplicationViewActivatedEventArgs_INTERFACE_DEFINED__
@@ -4269,7 +4693,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIApplicat
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIApplicationViewActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4277,13 +4701,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderActivatedEventArgs_INTERFACE_DEFINED__
@@ -4406,7 +4830,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderAddAppointmentActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4414,13 +4838,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderAddAppointmentActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderAddAppointmentActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderAddAppointmentActivatedEventArgs_INTERFACE_DEFINED__
@@ -4543,7 +4967,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderAddAppointmentActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderRemoveAppointmentActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4551,13 +4975,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderRemoveAppointmentActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderRemoveAppointmentActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderRemoveAppointmentActivatedEventArgs_INTERFACE_DEFINED__
@@ -4680,7 +5104,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderRemoveAppointmentActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderReplaceAppointmentActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4688,13 +5112,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderReplaceAppointmentActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderReplaceAppointmentActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderReplaceAppointmentActivatedEventArgs_INTERFACE_DEFINED__
@@ -4817,7 +5241,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderReplaceAppointmentActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4825,13 +5249,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs_INTERFACE_DEFINED__
@@ -4974,7 +5398,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_INTERFACE_DEFINED__)
@@ -4982,13 +5406,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_INTERFACE_DEFINED__
@@ -5121,7 +5545,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIAppointm
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5129,13 +5553,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__
@@ -5258,7 +5682,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIBackgrou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5266,13 +5690,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_INTERFACE_DEFINED__
@@ -5395,7 +5819,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CICachedFi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CICachedFileUpdaterActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CICameraSettingsActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5403,13 +5827,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CICameraSettingsActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CICameraSettingsActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CICameraSettingsActivatedEventArgs_INTERFACE_DEFINED__
@@ -5542,7 +5966,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CICameraSe
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CICameraSettingsActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5550,13 +5974,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactActivatedEventArgs_INTERFACE_DEFINED__
@@ -5679,7 +6103,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactA
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactCallActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5687,13 +6111,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactCallActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactCallActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactCallActivatedEventArgs_INTERFACE_DEFINED__
@@ -5836,7 +6260,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactC
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactCallActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMapActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5844,13 +6268,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMapActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMapActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMapActivatedEventArgs_INTERFACE_DEFINED__
@@ -5983,7 +6407,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactM
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMapActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMessageActivatedEventArgs_INTERFACE_DEFINED__)
@@ -5991,13 +6415,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMessageActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMessageActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMessageActivatedEventArgs_INTERFACE_DEFINED__
@@ -6140,7 +6564,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactM
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactMessageActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Activation_IContactPanelActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Activation {
+                    
+                    MIDL_INTERFACE("52BB63E4-D3D4-4B63-8051-4AF2082CAB80")
+                    IContactPanelActivatedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContactPanel( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactPanel **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Contact( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContact **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactPanelActivatedEventArgs = __uuidof(IContactPanelActivatedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContactPanel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Contact )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_get_ContactPanel(This,value)	\
+    ( (This)->lpVtbl -> get_ContactPanel(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_get_Contact(This,value)	\
+    ( (This)->lpVtbl -> get_Contact(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPanelActivatedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPickerActivatedEventArgs_INTERFACE_DEFINED__)
@@ -6148,13 +6719,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPickerActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPickerActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPickerActivatedEventArgs_INTERFACE_DEFINED__
@@ -6277,7 +6848,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactP
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPickerActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPostActivatedEventArgs_INTERFACE_DEFINED__)
@@ -6285,13 +6856,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPostActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPostActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPostActivatedEventArgs_INTERFACE_DEFINED__
@@ -6434,7 +7005,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactP
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactPostActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactVideoCallActivatedEventArgs_INTERFACE_DEFINED__)
@@ -6442,13 +7013,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactVideoCallActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactVideoCallActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactVideoCallActivatedEventArgs_INTERFACE_DEFINED__
@@ -6591,7 +7162,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContactV
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactVideoCallActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactsProviderActivatedEventArgs_INTERFACE_DEFINED__)
@@ -6599,13 +7170,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContactsProviderActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactsProviderActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactsProviderActivatedEventArgs_INTERFACE_DEFINED__
@@ -6728,7 +7299,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContacts
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContactsProviderActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContinuationActivatedEventArgs_INTERFACE_DEFINED__)
@@ -6736,13 +7307,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIContinuationActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIContinuationActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIContinuationActivatedEventArgs_INTERFACE_DEFINED__
@@ -6865,7 +7436,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIContinua
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIContinuationActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIDeviceActivatedEventArgs_INTERFACE_DEFINED__)
@@ -6873,13 +7444,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIDeviceActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIDeviceActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIDeviceActivatedEventArgs_INTERFACE_DEFINED__
@@ -7012,7 +7583,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIDeviceAc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIDeviceActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIDevicePairingActivatedEventArgs_INTERFACE_DEFINED__)
@@ -7020,13 +7591,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIDevicePairingActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIDevicePairingActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIDevicePairingActivatedEventArgs_INTERFACE_DEFINED__
@@ -7149,7 +7720,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIDevicePa
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIDevicePairingActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIDialReceiverActivatedEventArgs_INTERFACE_DEFINED__)
@@ -7157,13 +7728,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIDialReceiverActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIDialReceiverActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIDialReceiverActivatedEventArgs_INTERFACE_DEFINED__
@@ -7286,7 +7857,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIDialRece
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIDialReceiverActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgs_INTERFACE_DEFINED__)
@@ -7294,13 +7865,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgs_INTERFACE_DEFINED__
@@ -7433,7 +8004,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileActi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithCallerPackageFamilyName_INTERFACE_DEFINED__)
@@ -7441,13 +8012,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithCallerPackageFamilyName_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithCallerPackageFamilyName_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithCallerPackageFamilyName_INTERFACE_DEFINED__
@@ -7570,7 +8141,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileActi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithCallerPackageFamilyName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithNeighboringFiles_INTERFACE_DEFINED__)
@@ -7578,13 +8149,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithNeighboringFiles_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithNeighboringFiles_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithNeighboringFiles_INTERFACE_DEFINED__
@@ -7707,7 +8278,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileActi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileActivatedEventArgsWithNeighboringFiles_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs_INTERFACE_DEFINED__)
@@ -7715,13 +8286,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs_INTERFACE_DEFINED__
@@ -7844,7 +8415,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpen
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs2_INTERFACE_DEFINED__)
@@ -7852,13 +8423,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs2_INTERFACE_DEFINED__
@@ -7981,7 +8552,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpen
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerActivatedEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerContinuationEventArgs_INTERFACE_DEFINED__)
@@ -7989,13 +8560,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerContinuationEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerContinuationEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerContinuationEventArgs_INTERFACE_DEFINED__
@@ -8118,7 +8689,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpen
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileOpenPickerContinuationEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs_INTERFACE_DEFINED__)
@@ -8126,13 +8697,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs_INTERFACE_DEFINED__
@@ -8255,7 +8826,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileSave
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs2_INTERFACE_DEFINED__)
@@ -8263,13 +8834,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs2_INTERFACE_DEFINED__
@@ -8402,7 +8973,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileSave
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerActivatedEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerContinuationEventArgs_INTERFACE_DEFINED__)
@@ -8410,13 +8981,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerContinuationEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerContinuationEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerContinuationEventArgs_INTERFACE_DEFINED__
@@ -8539,7 +9110,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFileSave
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFileSavePickerContinuationEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFolderPickerContinuationEventArgs_INTERFACE_DEFINED__)
@@ -8547,13 +9118,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIFolderPickerContinuationEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIFolderPickerContinuationEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIFolderPickerContinuationEventArgs_INTERFACE_DEFINED__
@@ -8676,7 +9247,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIFolderPi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIFolderPickerContinuationEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs_INTERFACE_DEFINED__)
@@ -8684,13 +9255,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs_INTERFACE_DEFINED__
@@ -8823,7 +9394,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CILaunchAc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs2_INTERFACE_DEFINED__)
@@ -8831,13 +9402,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs2_INTERFACE_DEFINED__
@@ -8960,7 +9531,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CILaunchAc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CILaunchActivatedEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenActivatedEventArgs_INTERFACE_DEFINED__)
@@ -8968,13 +9539,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenActivatedEventArgs_INTERFACE_DEFINED__
@@ -9097,7 +9668,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CILockScre
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenCallActivatedEventArgs_INTERFACE_DEFINED__)
@@ -9105,13 +9676,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenCallActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenCallActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenCallActivatedEventArgs_INTERFACE_DEFINED__
@@ -9234,7 +9805,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CILockScre
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CILockScreenCallActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Activation_IPickerReturnedActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Activation {
+                    
+                    MIDL_INTERFACE("360DEFB9-A9D3-4984-A4ED-9EC734604921")
+                    IPickerReturnedActivatedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PickerOperationId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPickerReturnedActivatedEventArgs = __uuidof(IPickerReturnedActivatedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PickerOperationId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_get_PickerOperationId(This,value)	\
+    ( (This)->lpVtbl -> get_PickerOperationId(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIPickerReturnedActivatedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_INTERFACE_DEFINED__)
@@ -9242,13 +9950,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_INTERFACE_DEFINED__
@@ -9371,7 +10079,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrelaunchActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPrint3DWorkflowActivatedEventArgs_INTERFACE_DEFINED__)
@@ -9379,13 +10087,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPrint3DWorkflowActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrint3DWorkflowActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrint3DWorkflowActivatedEventArgs_INTERFACE_DEFINED__
@@ -9508,7 +10216,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIPrint3DW
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrint3DWorkflowActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPrintTaskSettingsActivatedEventArgs_INTERFACE_DEFINED__)
@@ -9516,13 +10224,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIPrintTaskSettingsActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrintTaskSettingsActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrintTaskSettingsActivatedEventArgs_INTERFACE_DEFINED__
@@ -9645,7 +10353,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIPrintTas
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIPrintTaskSettingsActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgs_INTERFACE_DEFINED__)
@@ -9653,13 +10361,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgs_INTERFACE_DEFINED__
@@ -9782,7 +10490,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIProtocol
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_INTERFACE_DEFINED__)
@@ -9790,13 +10498,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_INTERFACE_DEFINED__
@@ -9929,7 +10637,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIProtocol
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolForResultsActivatedEventArgs_INTERFACE_DEFINED__)
@@ -9937,13 +10645,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolForResultsActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolForResultsActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolForResultsActivatedEventArgs_INTERFACE_DEFINED__
@@ -10066,7 +10774,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIProtocol
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIProtocolForResultsActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIRestrictedLaunchActivatedEventArgs_INTERFACE_DEFINED__)
@@ -10074,13 +10782,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIRestrictedLaunchActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIRestrictedLaunchActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIRestrictedLaunchActivatedEventArgs_INTERFACE_DEFINED__
@@ -10203,7 +10911,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIRestrict
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIRestrictedLaunchActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgs_INTERFACE_DEFINED__)
@@ -10211,13 +10919,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgs_INTERFACE_DEFINED__
@@ -10350,7 +11058,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CISearchAc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgsWithLinguisticDetails_INTERFACE_DEFINED__)
@@ -10358,13 +11066,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgsWithLinguisticDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgsWithLinguisticDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgsWithLinguisticDetails_INTERFACE_DEFINED__
@@ -10487,7 +11195,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CISearchAc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CISearchActivatedEventArgsWithLinguisticDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIShareTargetActivatedEventArgs_INTERFACE_DEFINED__)
@@ -10495,13 +11203,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIShareTargetActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIShareTargetActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIShareTargetActivatedEventArgs_INTERFACE_DEFINED__
@@ -10624,7 +11332,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIShareTar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIShareTargetActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CISplashScreen_INTERFACE_DEFINED__)
@@ -10632,13 +11340,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CISplashScreen_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CISplashScreen_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CISplashScreen_INTERFACE_DEFINED__
@@ -10783,7 +11491,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CISplashSc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CISplashScreen_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CITileActivatedInfo_INTERFACE_DEFINED__)
@@ -10791,13 +11499,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CITileActivatedInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CITileActivatedInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CITileActivatedInfo_INTERFACE_DEFINED__
@@ -10920,7 +11628,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CITileActi
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CITileActivatedInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIToastNotificationActivatedEventArgs_INTERFACE_DEFINED__)
@@ -10928,13 +11636,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIToastNotificationActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIToastNotificationActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIToastNotificationActivatedEventArgs_INTERFACE_DEFINED__
@@ -11067,7 +11775,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIToastNot
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIToastNotificationActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIUserDataAccountProviderActivatedEventArgs_INTERFACE_DEFINED__)
@@ -11075,13 +11783,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIUserDataAccountProviderActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIUserDataAccountProviderActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIUserDataAccountProviderActivatedEventArgs_INTERFACE_DEFINED__
@@ -11204,7 +11912,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIUserData
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIUserDataAccountProviderActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIViewSwitcherProvider_INTERFACE_DEFINED__)
@@ -11212,13 +11920,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIViewSwitcherProvider_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIViewSwitcherProvider_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIViewSwitcherProvider_INTERFACE_DEFINED__
@@ -11341,7 +12049,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIViewSwit
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIViewSwitcherProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCommandActivatedEventArgs_INTERFACE_DEFINED__)
@@ -11349,13 +12057,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCommandActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCommandActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCommandActivatedEventArgs_INTERFACE_DEFINED__
@@ -11478,7 +12186,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCom
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIVoiceCommandActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0086 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Activation_IWalletActionActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0086 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0086_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Activation::IWalletActionActivatedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Activation {
+                    
+                    MIDL_INTERFACE("FCFC027B-1A1A-4D22-923F-AE6F45FA52D9")
+                    IWalletActionActivatedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ItemId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ActionKind( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::ApplicationModel::Wallet::WalletActionKind *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ActionId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IWalletActionActivatedEventArgs = __uuidof(IWalletActionActivatedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ItemId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ActionKind )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CWallet_CWalletActionKind *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ActionId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_get_ItemId(This,value)	\
+    ( (This)->lpVtbl -> get_ItemId(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_get_ActionKind(This,value)	\
+    ( (This)->lpVtbl -> get_ActionKind(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_get_ActionId(This,value)	\
+    ( (This)->lpVtbl -> get_ActionId(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIWalletActionActivatedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_INTERFACE_DEFINED__)
@@ -11486,13 +12351,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_INTERFACE_DEFINED__
@@ -11615,7 +12480,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccou
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAccountProviderActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0088 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Activation_IWebAuthenticationBrokerContinuationEventArgs[] = L"Windows.ApplicationModel.Activation.IWebAuthenticationBrokerContinuationEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0088 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0088_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Activation {
+                    
+                    MIDL_INTERFACE("75DDA3D4-7714-453D-B7FF-B95E3A1709DA")
+                    IWebAuthenticationBrokerContinuationEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_WebAuthenticationResult( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Authentication::Web::IWebAuthenticationResult **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IWebAuthenticationBrokerContinuationEventArgs = __uuidof(IWebAuthenticationBrokerContinuationEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_WebAuthenticationResult )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CIWebAuthenticationResult **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_get_WebAuthenticationResult(This,result)	\
+    ( (This)->lpVtbl -> get_WebAuthenticationResult(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CActivation_CIWebAuthenticationBrokerContinuationEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0089 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_AppointmentsProviderAddAppointmentActivatedEventArgs_DEFINED
@@ -11661,6 +12663,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_ContactMessageActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Activation_ContactMessageActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_ContactMessageActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.ContactMessageActivatedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_ContactPanelActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_ContactPanelActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_ContactPanelActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.ContactPanelActivatedEventArgs";
 #endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_ContactPickerActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Activation_ContactPickerActivatedEventArgs_DEFINED
@@ -11722,6 +12728,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Activation_LockScreenCallActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_LockScreenCallActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.LockScreenCallActivatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_LockScreenComponentActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_LockScreenComponentActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_LockScreenComponentActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.LockScreenComponentActivatedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_PickerReturnedActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_PickerReturnedActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_PickerReturnedActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.PickerReturnedActivatedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_Print3DWorkflowActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Activation_Print3DWorkflowActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_Print3DWorkflowActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.Print3DWorkflowActivatedEventArgs";
@@ -11770,19 +12784,27 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Activation_VoiceCommandActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_VoiceCommandActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_WalletActionActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_WalletActionActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_WalletActionActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.WalletActionActivatedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_WebAccountProviderActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Activation_WebAccountProviderActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_WebAccountProviderActivatedEventArgs[] = L"Windows.ApplicationModel.Activation.WebAccountProviderActivatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Activation_WebAuthenticationBrokerContinuationEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Activation_WebAuthenticationBrokerContinuationEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Activation_WebAuthenticationBrokerContinuationEventArgs[] = L"Windows.ApplicationModel.Activation.WebAuthenticationBrokerContinuationEventArgs";
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eactivation_0000_0089_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

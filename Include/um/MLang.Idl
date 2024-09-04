@@ -477,7 +477,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
             [in]  DWORD                                             dwDstEncoding,
             [in, annotation("_In_reads_bytes_opt_(*pcSrcSize)")]  BYTE   *pSrcStr,
             [in,out, annotation("_Inout_opt_")]  UINT               *pcSrcSize,
-            [out, annotation("_Out_writes_bytes_opt_(*pcDstSize)")]  BYTE *pDstStr,
+            [out, annotation("_Out_writes_bytes_to_opt_(*pcDstSize, *pcDstSize)")]  BYTE *pDstStr,
             [in,out, annotation("_Inout_opt_")]  UINT               *pcDstSize
         );
 
@@ -487,7 +487,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
             [in]  DWORD                                                 dwEncoding,
             [in, annotation("_In_reads_bytes_opt_(*pcSrcSize)")]  CHAR       *pSrcStr,
             [in,out, annotation("_Inout_opt_")]  UINT                   *pcSrcSize,
-            [out, annotation("_Out_writes_opt_(*pcDstSize)")]  WCHAR    *pDstStr,
+            [out, annotation("_Out_writes_to_opt_(*pcDstSize, *pcDstSize)")]  WCHAR    *pDstStr,
             [in,out, annotation("_Inout_opt_")]  UINT                   *pcDstSize
         );
 
@@ -497,7 +497,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
             [in]  DWORD                                                 dwEncoding,
             [in, annotation("_In_reads_opt_(*pcSrcSize)")]  WCHAR      *pSrcStr,
             [in,out, annotation("_Inout_opt_")]  UINT                   *pcSrcSize,
-            [out, annotation("_Out_writes_bytes_opt_(*pcDstSize)")]  CHAR     *pDstStr,
+            [out, annotation("_Out_writes_bytes_to_opt_(*pcDstSize, *pcDstSize)")]  CHAR     *pDstStr,
             [in,out, annotation("_Inout_opt_")]  UINT                   *pcDstSize
         );
 
@@ -965,9 +965,9 @@ cpp_quote("#define Rfc1766ToLcid        Rfc1766ToLcidA                          
 cpp_quote("#endif                                                                        ")
 cpp_quote("                                                                              ")
 cpp_quote("STDAPI IsConvertINetStringAvailable(DWORD dwSrcEncoding, DWORD dwDstEncoding);")
-cpp_quote("STDAPI ConvertINetString(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwSrcEncoding, _In_ DWORD dwDstEncoding, _In_reads_bytes_opt_(*lpnSrcSize) LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnSrcSize, _Out_writes_bytes_opt_(*lpnDstSize) LPSTR lpDstStr, _Inout_opt_ LPINT lpnDstSize); ")
-cpp_quote("STDAPI ConvertINetMultiByteToUnicode(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_opt_ LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnMultiCharCount, _Out_writes_opt_(*lpnWideCharCount) LPWSTR lpDstStr, _Inout_opt_ LPINT lpnWideCharCount); ")
-cpp_quote("STDAPI ConvertINetUnicodeToMultiByte(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_opt_ LPCWSTR lpSrcStr, _Inout_opt_ LPINT lpnWideCharCount, _Out_writes_bytes_opt_(*lpnMultiCharCount) LPSTR lpDstStr, _Inout_opt_ LPINT lpnMultiCharCount); ")
+cpp_quote("STDAPI ConvertINetString(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwSrcEncoding, _In_ DWORD dwDstEncoding, _In_reads_bytes_opt_(*lpnSrcSize) LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnSrcSize, _Out_writes_bytes_to_opt_(*lpnDstSize, *lpnDstSize) LPSTR lpDstStr, _Inout_opt_ LPINT lpnDstSize); ")
+cpp_quote("STDAPI ConvertINetMultiByteToUnicode(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_reads_bytes_opt_(*lpnMultiCharCount) LPCSTR lpSrcStr, _Inout_opt_ LPINT lpnMultiCharCount, _Out_writes_to_opt_(*lpnWideCharCount, *lpnWideCharCount) LPWSTR lpDstStr, _Inout_opt_ LPINT lpnWideCharCount); ")
+cpp_quote("STDAPI ConvertINetUnicodeToMultiByte(_Inout_opt_ LPDWORD lpdwMode, _In_ DWORD dwEncoding, _In_reads_opt_(*lpnWideCharCount) LPCWSTR lpSrcStr, _Inout_opt_ LPINT lpnWideCharCount, _Out_writes_bytes_to_opt_(*lpnMultiCharCount, *lpnMultiCharCount) LPSTR lpDstStr, _Inout_opt_ LPINT lpnMultiCharCount); ")
 cpp_quote("                                                                              ")
 cpp_quote("#endif // _MLANG_H_API_DEF_                                                   ")
 

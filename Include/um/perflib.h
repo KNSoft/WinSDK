@@ -156,7 +156,7 @@ typedef struct _PERF_COUNTERSET_INSTANCE {
     ULONG  InstanceNameSize;
 } PERF_COUNTERSET_INSTANCE, * PPERF_COUNTERSET_INSTANCE;
 
-// PERF_COUNTER_IDENTITY structure is used in customized notification callback. Wheneven PERFLIB V2
+// PERF_COUNTER_IDENTITY structure is used in customized notification callback. Whenever PERFLIB V2
 // invokes customized notification callback, it passes wnode datablock (which contains WNODE_HEADER
 // structure followed by other binary data) that contains the information providers can use.
 //
@@ -456,7 +456,7 @@ typedef struct _STRING_BUFFER_HEADER {
 The PERF_STRING_COUNTER_HEADER structure is part of the
 PERF_STRING_BUFFER_HEADER block.
 
-The dwOffset field is a byte offset from the the start of the
+The dwOffset field is a byte offset from the start of the
 PERF_STRING_BUFFER_HEADER block to the nul-terminated utf-16le data. The
 dwOffset field can be 0xffffffff to indicate that the string is not present
 (i.e. that the value of the string is NULL).

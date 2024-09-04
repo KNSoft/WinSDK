@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -65,6 +65,20 @@ typedef interface __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapRout
 typedef interface __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView;
 
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet;
+
+#endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet;
+
+#endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__ */
 
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_FWD_DEFINED__
@@ -177,6 +191,13 @@ typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps_
 typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs_FWD_DEFINED__
@@ -531,6 +552,78 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapBillboard;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapBillboardFactory;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapBillboardStatics;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera;
@@ -577,6 +670,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapContextRequestedEventArgs;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_FWD_DEFINED__
@@ -673,6 +790,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapControl5;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_FWD_DEFINED__
@@ -913,6 +1054,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics4_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapControlStatics5;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_FWD_DEFINED__
@@ -1683,6 +1848,54 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapStyleSheet;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapStyleSheetStatics;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs;
@@ -2159,18 +2372,18 @@ interface IMapElement;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4769 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5446 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4769 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5446 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4769_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4769_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5446_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5446_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0001 */
 /* [local] */ 
@@ -2205,18 +2418,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4770 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5447 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4770 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5447 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4770_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4770_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5447_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5447_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0002 */
 /* [local] */ 
@@ -2283,18 +2496,18 @@ interface IMapRouteView;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4771 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5448 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4771 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5448 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4771_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4771_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5448_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5448_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0003 */
 /* [local] */ 
@@ -2329,18 +2542,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4772 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5449 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4772 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5449 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4772_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4772_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5449_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5449_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004 */
 /* [local] */ 
@@ -2364,6 +2577,130 @@ typedef IIterable<ABI::Windows::UI::Xaml::Controls::Maps::MapRouteView*> __FIIte
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Controls {
+namespace Maps {
+class MapStyleSheet;
+} /*Maps*/
+} /*Controls*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Controls {
+namespace Maps {
+interface IMapStyleSheet;
+} /*Maps*/
+} /*Controls*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5450 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5450 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5450_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5450_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_USE
+#define DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e6c727e5-6a18-5333-aa6a-266e8c8bdd51"))
+IIterator<ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet*, ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Xaml.Controls.Maps.MapStyleSheet>"; }
+};
+typedef IIterator<ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet*> __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_t;
+#define ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5451 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5451 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5451_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5451_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_USE
+#define DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("05483d88-841c-5a0e-b9c7-5d828d9f2aff"))
+IIterable<ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet*, ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Xaml.Controls.Maps.MapStyleSheet>"; }
+};
+typedef IIterable<ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet*> __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_t;
+#define ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_FWD_DEFINED__
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2397,30 +2734,30 @@ interface IMapTileSource;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4773 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4773 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5452 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4773_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4773_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5452 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5452_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5452_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE
@@ -2444,29 +2781,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4774 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4774 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5453 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4774_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4774_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5453 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5453_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5453_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE
@@ -2490,29 +2827,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4775 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4775 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5454 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4775_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4775_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5454 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5454_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5454_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_USE
@@ -2536,29 +2873,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4776 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4776 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5455 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4776_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4776_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5455 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5455_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5455_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_USE
@@ -2582,29 +2919,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4777 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4777 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5456 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4777_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4777_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5456 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5456_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5456_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE
@@ -2628,29 +2965,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4778 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4778 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5457 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4778_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4778_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5457 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5457_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5457_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_USE
@@ -2674,29 +3011,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4779 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4779 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5458 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4779_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4779_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5458 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5458_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5458_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_USE
@@ -2720,29 +3057,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4780 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4780 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5459 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4780_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4780_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5459 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5459_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5459_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_USE
@@ -2797,30 +3134,30 @@ interface IStreetsidePanorama;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4781 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4781 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5460 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4781_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4781_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5460 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5460_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5460_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_USE
@@ -2844,29 +3181,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4782 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4782 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5461 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4782_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4782_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5461 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5461_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5461_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_USE
@@ -2952,7 +3289,7 @@ interface IMapTileBitmapRequestedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016 */
 /* [local] */ 
 
 
@@ -2960,23 +3297,23 @@ interface IMapTileBitmapRequestedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4783 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4783 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5462 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4783_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4783_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5462 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5462_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5462_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_USE
@@ -3062,7 +3399,7 @@ interface IMapTileUriRequestedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017 */
 /* [local] */ 
 
 
@@ -3070,23 +3407,23 @@ interface IMapTileUriRequestedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4784 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4784 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5463 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4784_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4784_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5463 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5463_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5463_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_USE
@@ -3141,30 +3478,30 @@ interface ILocalMapTileDataSource;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4785 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4785 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5464 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4785_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4785_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5464 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5464_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5464_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_USE
@@ -3221,7 +3558,7 @@ interface IMapControl;
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019 */
 /* [local] */ 
 
 
@@ -3229,23 +3566,23 @@ interface IInspectable;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4786 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4786 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5465 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4786_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4786_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5465 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5465_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5465_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable_USE
@@ -3300,30 +3637,30 @@ interface IMapActualCameraChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4787 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4787 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5466 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4787_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4787_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5466 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5466_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5466_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_USE
@@ -3378,30 +3715,30 @@ interface IMapActualCameraChangingEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4788 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4788 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5467 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4788_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4788_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5467 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5467_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5467_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_USE
@@ -3423,6 +3760,84 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,A
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Controls {
+namespace Maps {
+class MapContextRequestedEventArgs;
+} /*Maps*/
+} /*Controls*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Controls {
+namespace Maps {
+interface IMapContextRequestedEventArgs;
+} /*Maps*/
+} /*Controls*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5468 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5468 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5468_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5468_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e5239641-ba1f-5d89-aae1-c7b499a47b0c"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,ABI::Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*, ABI::Windows::UI::Xaml::Controls::Maps::IMapControl*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs*, ABI::Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Controls::Maps::MapControl*,ABI::Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3456,30 +3871,30 @@ interface IMapControlBusinessLandmarkClickEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4789 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4789 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5469 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4789_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4789_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5469 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5469_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5469_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs_USE
@@ -3534,30 +3949,30 @@ interface IMapControlBusinessLandmarkPointerEnteredEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4790 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4790 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5470 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4790_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4790_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5470 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5470_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5470_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs_USE
@@ -3612,30 +4027,30 @@ interface IMapControlBusinessLandmarkPointerExitedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4791 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4791 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5471 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4791_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4791_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5471 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5471_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5471_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerExitedEventArgs_USE
@@ -3690,30 +4105,30 @@ interface IMapControlBusinessLandmarkRightTappedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4792 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4792 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5472 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4792_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4792_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5472 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5472_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5472_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkRightTappedEventArgs_USE
@@ -3768,30 +4183,30 @@ interface IMapControlTransitFeatureClickEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4793 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4793 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5473 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4793_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4793_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5473 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5473_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5473_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureClickEventArgs_USE
@@ -3846,30 +4261,30 @@ interface IMapControlTransitFeaturePointerEnteredEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4794 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4794 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5474 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4794_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4794_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5474 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5474_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5474_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerEnteredEventArgs_USE
@@ -3924,30 +4339,30 @@ interface IMapControlTransitFeaturePointerExitedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4795 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4795 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5475 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4795_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4795_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5475 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5475_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5475_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerExitedEventArgs_USE
@@ -4002,30 +4417,30 @@ interface IMapControlTransitFeatureRightTappedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4796 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4796 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5476 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4796_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4796_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5476 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5476_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5476_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureRightTappedEventArgs_USE
@@ -4080,30 +4495,30 @@ interface IMapCustomExperienceChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4797 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4797 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5477 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4797_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4797_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5477 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5477_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5477_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_USE
@@ -4158,30 +4573,30 @@ interface IMapElementClickEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4798 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4798 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5478 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4798_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4798_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5478 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5478_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5478_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_USE
@@ -4236,30 +4651,30 @@ interface IMapElementPointerEnteredEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4799 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4799 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5479 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4799_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4799_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5479 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5479_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5479_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_USE
@@ -4314,30 +4729,30 @@ interface IMapElementPointerExitedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4800 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4800 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5480 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4800_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4800_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5480 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5480_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5480_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_USE
@@ -4392,30 +4807,30 @@ interface IMapInputEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4801 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4801 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5481 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4801_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4801_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5481 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5481_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5481_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_USE
@@ -4470,30 +4885,30 @@ interface IMapRightTappedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4802 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4802 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5482 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4802_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4802_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5482 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5482_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5482_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs_USE
@@ -4548,30 +4963,30 @@ interface IMapTargetCameraChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4803 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4803 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5483 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4803_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4803_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5483 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5483_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5483_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE
@@ -4626,30 +5041,30 @@ interface IMapScene;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4804 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4804 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5484 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4804_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4804_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5484 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5484_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5484_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE
@@ -4673,29 +5088,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4805 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4805 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5485 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4805_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4805_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5485 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5485_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5485_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -4719,29 +5134,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4806 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4806 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5486 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4806_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4806_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5486 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5486_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5486_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -4765,29 +5180,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4807 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4807 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5487 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4807_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4807_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5487 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5487_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5487_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -4811,29 +5226,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4808 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4808 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5488 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4808_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4808_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5488 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5488_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5488_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_HSTRING_USE
@@ -4857,29 +5272,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4809 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4809 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5489 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4809_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4809_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5489 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5489_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5489_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_HSTRING_USE
@@ -4926,30 +5341,30 @@ interface IDependencyObject;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4810 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4810 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5490 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4810_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4810_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5490 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5490_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5490_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CDependencyObject_USE
@@ -4973,29 +5388,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CDependencyObject_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4811 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4811 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5491 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4811_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4811_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5491 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5491_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5491_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CDependencyObject_USE
@@ -5019,29 +5434,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CDependencyObject_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4812 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4812 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5492 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4812_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4812_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5492 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5492_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5492_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CDependencyObject_USE
@@ -5065,29 +5480,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CDependencyObject_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4813 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4813 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5493 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4813_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4813_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5493 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5493_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5493_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CDependencyObject_USE
@@ -5123,30 +5538,30 @@ struct Thickness;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4814 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4814 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5494 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4814_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4814_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5494 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5494_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5494_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CUI__CXaml__CThickness_USE
@@ -5170,29 +5585,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CUI__CXaml__CThickness_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4815 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4815 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5495 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4815_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4815_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5495 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5495_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5495_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -5216,29 +5631,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4816 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4816 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5496 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4816_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4816_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5496 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5496_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5496_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -5262,29 +5677,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4817 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4817 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5497 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4817_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4817_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5497 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5497_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5497_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double_USE
@@ -5335,30 +5750,30 @@ interface ILocalLocation;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4818 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4818 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5498 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4818_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4818_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5498 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5498_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5498_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation_USE
@@ -5382,29 +5797,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4819 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4819 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5499 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4819_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4819_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5499 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5499_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5499_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation_USE
@@ -5428,29 +5843,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4820 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4820 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5500 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4820_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4820_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5500 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5500_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5500_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation_USE
@@ -5474,29 +5889,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CServices__CMaps__CLocalSearch__CLocalLocation_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4821 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4821 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5501 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4821_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4821_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5501 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5501_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5501_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -5520,29 +5935,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4822 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4822 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5502 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4822_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4822_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5502 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5502_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5502_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -5566,29 +5981,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4823 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4823 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5503 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4823_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4823_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5503 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5503_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5503_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -5612,29 +6027,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4824 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4824 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5504 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4824_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4824_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5504 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5504_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5504_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -5681,30 +6096,30 @@ interface IGeopath;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4825 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4825 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5505 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4825_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4825_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5505 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5505_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5505_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath_USE
@@ -5728,29 +6143,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopath_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4826 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4826 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5506 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4826_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4826_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5506 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5506_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5506_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath_USE
@@ -5774,29 +6189,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopath_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4827 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4827 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5507 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4827_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4827_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5507 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5507_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5507_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath_USE
@@ -5820,29 +6235,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CGeolocation__CGeopath_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4828 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4828 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5508 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4828_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4828_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5508 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5508_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5508_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CDevices__CGeolocation__CGeopath_USE
@@ -5889,30 +6304,30 @@ interface IGeopoint;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4829 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4829 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5509 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4829_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4829_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5509 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5509_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5509_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_USE
@@ -5936,29 +6351,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CDevices__CGeolocation__CGeopoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4830 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4830 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5510 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4830_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4830_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5510 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5510_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5510_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint_USE
@@ -6008,6 +6423,16 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CGeolocation_CAltitudeReferenceSystem __x_ABI_CWindows_CDevices_CGeolocation_CAltitudeReferenceSystem;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -6152,6 +6577,16 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapPanInteractionMode _
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapProjection __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapProjection;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle;
 
 
@@ -6240,6 +6675,27 @@ typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange __x
 
 
 
+
+
+
+
+
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Controls {
+namespace Maps {
+class MapBillboard;
+} /*Maps*/
+} /*Controls*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -6437,9 +6893,27 @@ class StreetsideExperience;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065 */
 /* [local] */ 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Geolocation {
+                
+                typedef enum AltitudeReferenceSystem AltitudeReferenceSystem;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 #ifdef __cplusplus
@@ -6661,6 +7135,28 @@ namespace ABI {
                 namespace Controls {
                     namespace Maps {
                         
+                        typedef enum MapProjection MapProjection;
+                        
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        
                         typedef enum MapStyle MapStyle;
                         
                     } /* end namespace */
@@ -6810,23 +7306,29 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0062_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4831 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4831 */
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5511 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4831_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4831_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5511 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5511_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5511_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement
@@ -6834,13 +7336,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4831
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
@@ -6984,35 +7486,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMa
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4832 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4832 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5512 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4832_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4832_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5512 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5512_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5512_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement
@@ -7020,13 +7522,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4832
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
@@ -7136,35 +7638,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMa
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4833 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4833 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5513 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4833_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4833_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5513 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5513_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5513_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView
@@ -7172,13 +7674,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4833
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
@@ -7322,35 +7824,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMa
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4834 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4834 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5514 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4834_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4834_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5514 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5514_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5514_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView
@@ -7358,13 +7860,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4834
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
@@ -7474,35 +7976,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMa
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4835 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4835 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5515 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4835_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4835_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5515 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5515_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5515_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet
+#define DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e6c727e5-6a18-5333-aa6a-266e8c8bdd51")
+    __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheetVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheetVtbl;
+
+    interface __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheetVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5516 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5516 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5516_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5516_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet
+#define DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("05483d88-841c-5a0e-b9c7-5d828d9f2aff")
+    __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheetVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheetVtbl;
+
+    interface __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheetVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5517 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5517 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5517_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5517_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource
@@ -7510,13 +8350,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4835
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
@@ -7660,35 +8500,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMa
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4836 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4836 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5518 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4836_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4836_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5518 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5518_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5518_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource
@@ -7696,13 +8536,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4836
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
@@ -7812,35 +8652,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMa
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4837 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4837 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5519 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4837_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4837_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5519 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5519_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5519_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement
@@ -7848,13 +8688,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4837
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
@@ -8006,35 +8846,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__C
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4838 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4838 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5520 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4838_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4838_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5520 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5520_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5520_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView
@@ -8042,13 +8882,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4838
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
@@ -8200,35 +9040,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__C
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4839 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4839 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5521 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4839_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4839_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5521 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5521_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5521_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource
@@ -8236,13 +9076,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4839
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
@@ -8394,35 +9234,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__C
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4840 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4840 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5522 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4840_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4840_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5522 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5522_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5522_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement
@@ -8430,13 +9270,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4840
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__
@@ -8670,35 +9510,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapE
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4841 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4841 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5523 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4841_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4841_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5523 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5523_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5523_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView
@@ -8706,13 +9546,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4841
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__
@@ -8946,35 +9786,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapR
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapRouteView */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4842 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4842 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5524 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4842_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4842_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5524 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5524_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5524_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource
@@ -8982,13 +9822,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4842
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__
@@ -9222,35 +10062,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapT
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4843 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4843 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5525 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4843_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4843_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5525 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5525_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5525_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama
@@ -9259,14 +10099,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4843
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_INTERFACE_DEFINED__
@@ -9355,35 +10195,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml_
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4844 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4844 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5526 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4844_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4844_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5526 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5526_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5526_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama
@@ -9391,13 +10231,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4844
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_INTERFACE_DEFINED__
@@ -9527,35 +10367,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMap
 #endif 	/* ____FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4845 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4845 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5527 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4845_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4845_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5527 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5527_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5527_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs
@@ -9563,13 +10403,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4845
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__
@@ -9658,35 +10498,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4846 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4846 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5528 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4846_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4846_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5528 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5528_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5528_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs
@@ -9694,13 +10534,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4846
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
@@ -9789,35 +10629,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4847 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4847 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5529 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4847_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4847_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5529 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5529_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5529_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs
@@ -9825,13 +10665,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4847
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
@@ -9920,35 +10760,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4848 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4848 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5530 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4848_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4848_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5530 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5530_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5530_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable
@@ -9956,13 +10796,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4848
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable_INTERFACE_DEFINED__
@@ -10051,35 +10891,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4849 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4849 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5531 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4849_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4849_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5531 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5531_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5531_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs
@@ -10087,13 +10927,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4849
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_INTERFACE_DEFINED__
@@ -10182,35 +11022,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4850 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4850 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5532 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4850_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4850_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5532 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5532_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5532_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs
@@ -10218,13 +11058,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4850
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_INTERFACE_DEFINED__
@@ -10313,35 +11153,166 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4851 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4851 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5533 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4851_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4851_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5533 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5533_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5533_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e5239641-ba1f-5d89-aae1-c7b499a47b0c")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapControl *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5534 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5534 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5534_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5534_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs
@@ -10349,13 +11320,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4851
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__
@@ -10444,35 +11415,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkClickEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4852 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4852 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5535 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4852_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4852_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5535 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5535_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5535_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs
@@ -10480,13 +11451,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4852
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -10575,35 +11546,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerEnteredEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4853 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4853 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5536 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4853_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4853_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5536 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5536_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5536_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerExitedEventArgs
@@ -10611,13 +11582,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4853
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__
@@ -10706,35 +11677,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkPointerExitedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4854 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4854 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5537 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4854_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4854_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5537 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5537_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5537_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkRightTappedEventArgs
@@ -10742,13 +11713,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4854
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__
@@ -10837,35 +11808,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlBusinessLandmarkRightTappedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4855 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4855 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5538 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4855_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4855_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5538 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5538_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5538_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureClickEventArgs
@@ -10873,13 +11844,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4855
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__
@@ -10968,35 +11939,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureClickEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4856 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4856 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5539 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4856_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4856_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5539 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5539_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5539_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerEnteredEventArgs
@@ -11004,13 +11975,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4856
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -11099,35 +12070,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerEnteredEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4857 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4857 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5540 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4857_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4857_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5540 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5540_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5540_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerExitedEventArgs
@@ -11135,13 +12106,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4857
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__
@@ -11230,35 +12201,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeaturePointerExitedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4858 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4858 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5541 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4858_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4858_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5541 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5541_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5541_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureRightTappedEventArgs
@@ -11266,13 +12237,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4858
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__
@@ -11361,35 +12332,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapControlTransitFeatureRightTappedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4859 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4859 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5542 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4859_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4859_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5542 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5542_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5542_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs
@@ -11397,13 +12368,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4859
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__
@@ -11492,35 +12463,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4860 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4860 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5543 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4860_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4860_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5543 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5543_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5543_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs
@@ -11528,13 +12499,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4860
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_INTERFACE_DEFINED__
@@ -11623,35 +12594,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4861 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4861 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5544 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4861_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4861_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5544 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5544_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5544_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs
@@ -11659,13 +12630,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4861
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -11754,35 +12725,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4862 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4862 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5545 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4862_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4862_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5545 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5545_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5545_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs
@@ -11790,13 +12761,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4862
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_INTERFACE_DEFINED__
@@ -11885,35 +12856,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4863 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4863 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5546 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4863_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4863_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5546 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5546_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5546_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs
@@ -11921,13 +12892,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4863
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_INTERFACE_DEFINED__
@@ -12016,35 +12987,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4864 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4864 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5547 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4864_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4864_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5547 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5547_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5547_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs
@@ -12052,13 +13023,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4864
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs_INTERFACE_DEFINED__
@@ -12147,35 +13118,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4865 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4865 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5548 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4865_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4865_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5548 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5548_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5548_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs
@@ -12183,13 +13154,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4865
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
@@ -12278,35 +13249,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4866 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4866 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5549 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4866_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4866_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5549 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5549_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_5549_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs
@@ -12314,13 +13285,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps2Eidl_0000_4866
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
@@ -12409,7 +13380,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CControls__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -12512,6 +13483,18 @@ enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapPanInteractionMode
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapProjection
+    {
+        MapProjection_WebMercator	= 0,
+        MapProjection_Globe	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle
     {
         MapStyle_None	= 0,
@@ -12520,7 +13503,8 @@ enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle
         MapStyle_AerialWithRoads	= 3,
         MapStyle_Terrain	= 4,
         MapStyle_Aerial3D	= 5,
-        MapStyle_Aerial3DWithRoads	= 6
+        MapStyle_Aerial3DWithRoads	= 6,
+        MapStyle_Custom	= 7
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -12576,7 +13560,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -12774,6 +13758,31 @@ namespace ABI {
                     namespace Maps {
                         
                         /* [v1_enum] */ 
+                        enum MapProjection
+                            {
+                                MapProjection_WebMercator	= 0,
+                                MapProjection_Globe	= 1
+                            } ;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        
+                        /* [v1_enum] */ 
                         enum MapStyle
                             {
                                 MapStyle_None	= 0,
@@ -12782,7 +13791,8 @@ namespace ABI {
                                 MapStyle_AerialWithRoads	= 3,
                                 MapStyle_Terrain	= 4,
                                 MapStyle_Aerial3D	= 5,
-                                MapStyle_Aerial3DWithRoads	= 6
+                                MapStyle_Aerial3DWithRoads	= 6,
+                                MapStyle_Custom	= 7
                             } ;
                     } /* end namespace */
                 } /* end namespace */
@@ -12898,8 +13908,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_INTERFACE_DEFINED__
@@ -13038,7 +14048,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTil
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_INTERFACE_DEFINED__)
@@ -13046,13 +14056,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_INTERFACE_DEFINED__
@@ -13183,7 +14193,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTil
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_INTERFACE_DEFINED__)
@@ -13191,13 +14201,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_INTERFACE_DEFINED__
@@ -13386,7 +14396,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileD
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_INTERFACE_DEFINED__)
@@ -13394,13 +14404,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_INTERFACE_DEFINED__
@@ -13547,7 +14557,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileD
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_INTERFACE_DEFINED__)
@@ -13555,13 +14565,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_INTERFACE_DEFINED__
@@ -13720,7 +14730,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTile
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_INTERFACE_DEFINED__)
@@ -13728,13 +14738,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_INTERFACE_DEFINED__
@@ -13881,7 +14891,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTile
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs_INTERFACE_DEFINED__)
@@ -13889,13 +14899,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs_INTERFACE_DEFINED__
@@ -14022,7 +15032,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCam
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs2_INTERFACE_DEFINED__)
@@ -14030,13 +15040,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs2_INTERFACE_DEFINED__
@@ -14163,7 +15173,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCam
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangedEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs_INTERFACE_DEFINED__)
@@ -14171,13 +15181,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs_INTERFACE_DEFINED__
@@ -14304,7 +15314,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCam
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs2_INTERFACE_DEFINED__)
@@ -14312,13 +15322,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs2_INTERFACE_DEFINED__
@@ -14445,7 +15455,532 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCam
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapActualCameraChangingEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapBillboard[] = L"Windows.UI.Xaml.Controls.Maps.IMapBillboard";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboard */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("1694259D-0AE2-4F42-A02E-292CA835D39D")
+                            IMapBillboard : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Location( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint **value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Location( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint *value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NormalizedAnchorPoint( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Point *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_NormalizedAnchorPoint( 
+                                    /* [in] */ ABI::Windows::Foundation::Point value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Image( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference **value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Image( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference *value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CollisionBehaviorDesired( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_CollisionBehaviorDesired( 
+                                    /* [in] */ ABI::Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ReferenceCamera( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapBillboard = __uuidof(IMapBillboard);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Location )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Location )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NormalizedAnchorPoint )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CPoint *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_NormalizedAnchorPoint )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CPoint value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Image )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Image )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CollisionBehaviorDesired )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapElementCollisionBehavior *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_CollisionBehaviorDesired )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapElementCollisionBehavior value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ReferenceCamera )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_get_Location(This,value)	\
+    ( (This)->lpVtbl -> get_Location(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_put_Location(This,value)	\
+    ( (This)->lpVtbl -> put_Location(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_get_NormalizedAnchorPoint(This,value)	\
+    ( (This)->lpVtbl -> get_NormalizedAnchorPoint(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_put_NormalizedAnchorPoint(This,value)	\
+    ( (This)->lpVtbl -> put_NormalizedAnchorPoint(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_get_Image(This,value)	\
+    ( (This)->lpVtbl -> get_Image(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_put_Image(This,value)	\
+    ( (This)->lpVtbl -> put_Image(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_get_CollisionBehaviorDesired(This,value)	\
+    ( (This)->lpVtbl -> get_CollisionBehaviorDesired(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_put_CollisionBehaviorDesired(This,value)	\
+    ( (This)->lpVtbl -> put_CollisionBehaviorDesired(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_get_ReferenceCamera(This,value)	\
+    ( (This)->lpVtbl -> get_ReferenceCamera(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapBillboardFactory[] = L"Windows.UI.Xaml.Controls.Maps.IMapBillboardFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("BE45A4C5-8F09-4B86-AE28-783740EB8B31")
+                            IMapBillboardFactory : public IInspectable
+                            {
+                            public:
+                                virtual HRESULT STDMETHODCALLTYPE CreateInstanceFromCamera( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera *camera,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboard **instance) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapBillboardFactory = __uuidof(IMapBillboardFactory);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateInstanceFromCamera )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera *camera,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard **instance);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_CreateInstanceFromCamera(This,camera,instance)	\
+    ( (This)->lpVtbl -> CreateInstanceFromCamera(This,camera,instance) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapBillboardStatics[] = L"Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("FDF839FE-E1F7-4FB0-8887-7DA68C647333")
+                            IMapBillboardStatics : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LocationProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NormalizedAnchorPointProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CollisionBehaviorDesiredProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapBillboardStatics = __uuidof(IMapBillboardStatics);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LocationProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NormalizedAnchorPointProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CollisionBehaviorDesiredProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_get_LocationProperty(This,value)	\
+    ( (This)->lpVtbl -> get_LocationProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_get_NormalizedAnchorPointProperty(This,value)	\
+    ( (This)->lpVtbl -> get_NormalizedAnchorPointProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_get_CollisionBehaviorDesiredProperty(This,value)	\
+    ( (This)->lpVtbl -> get_CollisionBehaviorDesiredProperty(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_INTERFACE_DEFINED__)
@@ -14453,13 +15988,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_INTERFACE_DEFINED__
@@ -14676,7 +16211,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_INTERFACE_DEFINED__)
@@ -14684,13 +16219,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_INTERFACE_DEFINED__
@@ -14869,7 +16404,168 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFac
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapContextRequestedEventArgs[] = L"Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("FDD1B423-C961-4DF2-BB57-82EE0F0BB591")
+                            IMapContextRequestedEventArgs : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Point *value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Location( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MapElements( 
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapContextRequestedEventArgs = __uuidof(IMapContextRequestedEventArgs);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CPoint *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Location )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MapElements )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_get_Location(This,value)	\
+    ( (This)->lpVtbl -> get_Location(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_get_MapElements(This,value)	\
+    ( (This)->lpVtbl -> get_MapElements(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapContextRequestedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_INTERFACE_DEFINED__)
@@ -14877,13 +16573,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_INTERFACE_DEFINED__
@@ -15646,7 +17342,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_INTERFACE_DEFINED__)
@@ -15654,13 +17350,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_INTERFACE_DEFINED__
@@ -16291,7 +17987,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_INTERFACE_DEFINED__)
@@ -16299,13 +17995,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_INTERFACE_DEFINED__
@@ -16444,7 +18140,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_INTERFACE_DEFINED__)
@@ -16452,13 +18148,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_INTERFACE_DEFINED__
@@ -16627,7 +18323,294 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapControl5[] = L"Windows.UI.Xaml.Controls.Maps.IMapControl5";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapControl5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("DD9B0FFD-7823-46A2-82C9-65DDAC4F365F")
+                            IMapControl5 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MapProjection( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapProjection *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_MapProjection( 
+                                    /* [in] */ ABI::Windows::UI::Xaml::Controls::Maps::MapProjection value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StyleSheet( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StyleSheet( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet *value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ViewPadding( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Thickness *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ViewPadding( 
+                                    /* [in] */ ABI::Windows::UI::Xaml::Thickness value) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE add_MapContextRequested( 
+                                    /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs *value,
+                                    /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE remove_MapContextRequested( 
+                                    /* [in] */ EventRegistrationToken token) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE FindMapElementsAtOffsetWithRadius( 
+                                    /* [in] */ ABI::Windows::Foundation::Point offset,
+                                    /* [in] */ DOUBLE radius,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE GetLocationFromOffsetWithReferenceSystem( 
+                                    /* [in] */ ABI::Windows::Foundation::Point offset,
+                                    /* [in] */ ABI::Windows::Devices::Geolocation::AltitudeReferenceSystem desiredReferenceSystem,
+                                    /* [out] */ __RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint **location) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE StartContinuousPan( 
+                                    /* [in] */ DOUBLE horizontalPixelsPerSecond,
+                                    /* [in] */ DOUBLE verticalPixelsPerSecond) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE StopContinuousPan( void) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE TryPanAsync( 
+                                    /* [in] */ DOUBLE horizontalPixels,
+                                    /* [in] */ DOUBLE verticalPixels,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE TryPanToAsync( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint *location,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **returnValue) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapControl5 = __uuidof(IMapControl5);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MapProjection )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapProjection *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_MapProjection )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapProjection value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StyleSheet )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_StyleSheet )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ViewPadding )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CThickness *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ViewPadding )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CThickness value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_MapContextRequested )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs *value,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_MapContextRequested )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindMapElementsAtOffsetWithRadius )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CPoint offset,
+            /* [in] */ DOUBLE radius,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetLocationFromOffsetWithReferenceSystem )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CPoint offset,
+            /* [in] */ __x_ABI_CWindows_CDevices_CGeolocation_CAltitudeReferenceSystem desiredReferenceSystem,
+            /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint **location);
+        
+        HRESULT ( STDMETHODCALLTYPE *StartContinuousPan )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ DOUBLE horizontalPixelsPerSecond,
+            /* [in] */ DOUBLE verticalPixelsPerSecond);
+        
+        HRESULT ( STDMETHODCALLTYPE *StopContinuousPan )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryPanAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ DOUBLE horizontalPixels,
+            /* [in] */ DOUBLE verticalPixels,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryPanToAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint *location,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **returnValue);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_get_MapProjection(This,value)	\
+    ( (This)->lpVtbl -> get_MapProjection(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_put_MapProjection(This,value)	\
+    ( (This)->lpVtbl -> put_MapProjection(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_get_StyleSheet(This,value)	\
+    ( (This)->lpVtbl -> get_StyleSheet(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_put_StyleSheet(This,value)	\
+    ( (This)->lpVtbl -> put_StyleSheet(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_get_ViewPadding(This,value)	\
+    ( (This)->lpVtbl -> get_ViewPadding(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_put_ViewPadding(This,value)	\
+    ( (This)->lpVtbl -> put_ViewPadding(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_add_MapContextRequested(This,value,token)	\
+    ( (This)->lpVtbl -> add_MapContextRequested(This,value,token) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_remove_MapContextRequested(This,token)	\
+    ( (This)->lpVtbl -> remove_MapContextRequested(This,token) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_FindMapElementsAtOffsetWithRadius(This,offset,radius,returnValue)	\
+    ( (This)->lpVtbl -> FindMapElementsAtOffsetWithRadius(This,offset,radius,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_GetLocationFromOffsetWithReferenceSystem(This,offset,desiredReferenceSystem,location)	\
+    ( (This)->lpVtbl -> GetLocationFromOffsetWithReferenceSystem(This,offset,desiredReferenceSystem,location) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_StartContinuousPan(This,horizontalPixelsPerSecond,verticalPixelsPerSecond)	\
+    ( (This)->lpVtbl -> StartContinuousPan(This,horizontalPixelsPerSecond,verticalPixelsPerSecond) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_StopContinuousPan(This)	\
+    ( (This)->lpVtbl -> StopContinuousPan(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_TryPanAsync(This,horizontalPixels,verticalPixels,returnValue)	\
+    ( (This)->lpVtbl -> TryPanAsync(This,horizontalPixels,verticalPixels,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_TryPanToAsync(This,location,returnValue)	\
+    ( (This)->lpVtbl -> TryPanToAsync(This,location,returnValue) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__)
@@ -16635,13 +18618,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__
@@ -16768,7 +18751,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBu
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkClickEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__)
@@ -16776,13 +18759,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -16909,7 +18892,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBu
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerEnteredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__)
@@ -16917,13 +18900,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__
@@ -17050,7 +19033,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBu
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkPointerExitedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__)
@@ -17058,13 +19041,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__
@@ -17191,7 +19174,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBu
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlBusinessLandmarkRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper_INTERFACE_DEFINED__)
@@ -17199,13 +19182,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper_INTERFACE_DEFINED__
@@ -17410,7 +19393,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper2_INTERFACE_DEFINED__)
@@ -17418,13 +19401,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper2_INTERFACE_DEFINED__
@@ -17629,7 +19612,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelper2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelperFactory_INTERFACE_DEFINED__)
@@ -17637,13 +19620,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelperFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelperFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelperFactory_INTERFACE_DEFINED__
@@ -17772,7 +19755,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlDataHelperFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_INTERFACE_DEFINED__)
@@ -17780,13 +19763,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_INTERFACE_DEFINED__
@@ -18151,7 +20134,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics2_INTERFACE_DEFINED__)
@@ -18159,13 +20142,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics2_INTERFACE_DEFINED__
@@ -18372,7 +20355,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics4_INTERFACE_DEFINED__)
@@ -18380,13 +20363,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics4_INTERFACE_DEFINED__
@@ -18523,7 +20506,168 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapControlStatics5[] = L"Windows.UI.Xaml.Controls.Maps.IMapControlStatics5";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapControlStatics5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("09626F00-B7DD-4189-A7F7-830C412DEEA3")
+                            IMapControlStatics5 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MapProjectionProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StyleSheetProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ViewPaddingProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapControlStatics5 = __uuidof(IMapControlStatics5);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MapProjectionProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StyleSheetProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ViewPaddingProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_get_MapProjectionProperty(This,value)	\
+    ( (This)->lpVtbl -> get_MapProjectionProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_get_StyleSheetProperty(This,value)	\
+    ( (This)->lpVtbl -> get_StyleSheetProperty(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_get_ViewPaddingProperty(This,value)	\
+    ( (This)->lpVtbl -> get_ViewPaddingProperty(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__)
@@ -18531,13 +20675,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__
@@ -18684,7 +20828,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureClickEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__)
@@ -18692,13 +20836,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -18845,7 +20989,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerEnteredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__)
@@ -18853,13 +20997,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__
@@ -19006,7 +21150,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeaturePointerExitedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__)
@@ -19014,13 +21158,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__
@@ -19167,7 +21311,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlTransitFeatureRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience_INTERFACE_DEFINED__)
@@ -19175,13 +21319,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience_INTERFACE_DEFINED__
@@ -19298,7 +21442,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExp
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__)
@@ -19306,13 +21450,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__
@@ -19429,7 +21573,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExp
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_INTERFACE_DEFINED__)
@@ -19437,13 +21581,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_INTERFACE_DEFINED__
@@ -19574,7 +21718,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExp
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement_INTERFACE_DEFINED__)
@@ -19582,13 +21726,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement_INTERFACE_DEFINED__
@@ -19745,7 +21889,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement2_INTERFACE_DEFINED__)
@@ -19753,13 +21897,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement2_INTERFACE_DEFINED__
@@ -19896,7 +22040,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement2;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_INTERFACE_DEFINED__)
@@ -19904,13 +22048,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_INTERFACE_DEFINED__
@@ -20057,7 +22201,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementCl
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementClickEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_INTERFACE_DEFINED__)
@@ -20065,13 +22209,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_INTERFACE_DEFINED__
@@ -20202,7 +22346,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__)
@@ -20210,13 +22354,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__
@@ -20363,7 +22507,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerEnteredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerExitedEventArgs_INTERFACE_DEFINED__)
@@ -20371,13 +22515,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerExitedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerExitedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerExitedEventArgs_INTERFACE_DEFINED__
@@ -20524,7 +22668,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementPointerExitedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics_INTERFACE_DEFINED__)
@@ -20532,13 +22676,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics_INTERFACE_DEFINED__
@@ -20675,7 +22819,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics2_INTERFACE_DEFINED__)
@@ -20683,13 +22827,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics2_INTERFACE_DEFINED__
@@ -20816,7 +22960,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon_INTERFACE_DEFINED__)
@@ -20824,13 +22968,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon_INTERFACE_DEFINED__
@@ -21027,7 +23171,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon2_INTERFACE_DEFINED__)
@@ -21035,13 +23179,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon2_INTERFACE_DEFINED__
@@ -21178,7 +23322,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon2;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIcon2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics_INTERFACE_DEFINED__)
@@ -21186,13 +23330,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics_INTERFACE_DEFINED__
@@ -21339,7 +23483,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStati
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics2_INTERFACE_DEFINED__)
@@ -21347,13 +23491,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics2_INTERFACE_DEFINED__
@@ -21480,7 +23624,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStati
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapIconStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapInputEventArgs_INTERFACE_DEFINED__)
@@ -21488,13 +23632,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapInputEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapInputEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapInputEventArgs_INTERFACE_DEFINED__
@@ -21631,7 +23775,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapInputEven
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapInputEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControl_INTERFACE_DEFINED__)
@@ -21639,13 +23783,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControl_INTERFACE_DEFINED__
@@ -21812,7 +23956,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsCont
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControlStatics_INTERFACE_DEFINED__)
@@ -21820,13 +23964,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControlStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControlStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControlStatics_INTERFACE_DEFINED__
@@ -21973,7 +24117,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsCont
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapItemsControlStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon_INTERFACE_DEFINED__)
@@ -21981,13 +24125,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon_INTERFACE_DEFINED__
@@ -22204,7 +24348,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon2_INTERFACE_DEFINED__)
@@ -22212,13 +24356,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon2_INTERFACE_DEFINED__
@@ -22345,7 +24489,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon2;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygon2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygonStatics_INTERFACE_DEFINED__)
@@ -22353,13 +24497,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygonStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygonStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygonStatics_INTERFACE_DEFINED__
@@ -22506,7 +24650,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygonSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolygonStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolyline_INTERFACE_DEFINED__)
@@ -22514,13 +24658,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolyline_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolyline_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolyline_INTERFACE_DEFINED__
@@ -22717,7 +24861,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolyline;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolyline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolylineStatics_INTERFACE_DEFINED__)
@@ -22725,13 +24869,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolylineStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolylineStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolylineStatics_INTERFACE_DEFINED__
@@ -22868,7 +25012,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolylineS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapPolylineStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRightTappedEventArgs_INTERFACE_DEFINED__)
@@ -22876,13 +25020,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRightTappedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRightTappedEventArgs_INTERFACE_DEFINED__
@@ -23019,7 +25163,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRightTapp
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView_INTERFACE_DEFINED__)
@@ -23027,13 +25171,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView_INTERFACE_DEFINED__
@@ -23200,7 +25344,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_INTERFACE_DEFINED__)
@@ -23208,13 +25352,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_INTERFACE_DEFINED__
@@ -23347,7 +25491,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_INTERFACE_DEFINED__)
@@ -23355,13 +25499,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_INTERFACE_DEFINED__
@@ -23510,7 +25654,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_INTERFACE_DEFINED__)
@@ -23518,13 +25662,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_INTERFACE_DEFINED__
@@ -23769,7 +25913,367 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapStyleSheet[] = L"Windows.UI.Xaml.Controls.Maps.IMapStyleSheet";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("AE54B2BF-8991-42ED-8D58-20473DEEDE1D")
+                            IMapStyleSheet : public IInspectable
+                            {
+                            public:
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapStyleSheet = __uuidof(IMapStyleSheet);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapStyleSheetStatics[] = L"Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Maps {
+                            
+                            MIDL_INTERFACE("ABBD00AD-0A1C-4335-82F4-61D936AA197D")
+                            IMapStyleSheetStatics : public IInspectable
+                            {
+                            public:
+                                virtual HRESULT STDMETHODCALLTYPE Aerial( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE AerialWithOverlay( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE RoadLight( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE RoadDark( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE RoadHighContrastLight( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE RoadHighContrastDark( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE Combine( 
+                                    /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet *styleSheets,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE ParseFromJson( 
+                                    /* [in] */ __RPC__in HSTRING styleAsJson,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE TryParseFromJson( 
+                                    /* [in] */ __RPC__in HSTRING styleAsJson,
+                                    /* [out] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet **styleSheet,
+                                    /* [out][retval] */ __RPC__out boolean *returnValue) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IMapStyleSheetStatics = __uuidof(IMapStyleSheetStatics);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Aerial )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *AerialWithOverlay )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *RoadLight )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *RoadDark )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *RoadHighContrastLight )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *RoadHighContrastDark )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *Combine )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet *styleSheets,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *ParseFromJson )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [in] */ __RPC__in HSTRING styleAsJson,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryParseFromJson )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
+            /* [in] */ __RPC__in HSTRING styleAsJson,
+            /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet **styleSheet,
+            /* [out][retval] */ __RPC__out boolean *returnValue);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Aerial(This,returnValue)	\
+    ( (This)->lpVtbl -> Aerial(This,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_AerialWithOverlay(This,returnValue)	\
+    ( (This)->lpVtbl -> AerialWithOverlay(This,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadLight(This,returnValue)	\
+    ( (This)->lpVtbl -> RoadLight(This,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadDark(This,returnValue)	\
+    ( (This)->lpVtbl -> RoadDark(This,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadHighContrastLight(This,returnValue)	\
+    ( (This)->lpVtbl -> RoadHighContrastLight(This,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadHighContrastDark(This,returnValue)	\
+    ( (This)->lpVtbl -> RoadHighContrastDark(This,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Combine(This,styleSheets,returnValue)	\
+    ( (This)->lpVtbl -> Combine(This,styleSheets,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_ParseFromJson(This,styleAsJson,returnValue)	\
+    ( (This)->lpVtbl -> ParseFromJson(This,styleAsJson,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_TryParseFromJson(This,styleAsJson,styleSheet,returnValue)	\
+    ( (This)->lpVtbl -> TryParseFromJson(This,styleAsJson,styleSheet,returnValue) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__)
@@ -23777,13 +26281,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__
@@ -23910,7 +26414,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCam
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0210 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs2_INTERFACE_DEFINED__)
@@ -23918,13 +26422,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0210 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0193_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0210_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0210_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs2_INTERFACE_DEFINED__
@@ -24051,7 +26555,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCam
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTargetCameraChangedEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0211 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_INTERFACE_DEFINED__)
@@ -24059,13 +26563,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0211 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0194_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0211_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0211_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_INTERFACE_DEFINED__
@@ -24212,7 +26716,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitma
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0212 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral_INTERFACE_DEFINED__)
@@ -24220,13 +26724,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0212 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0195_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0212_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0212_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral_INTERFACE_DEFINED__
@@ -24351,7 +26855,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitma
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0213 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__)
@@ -24359,13 +26863,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0213 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0213_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0213_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__
@@ -24522,7 +27026,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitma
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0214 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_INTERFACE_DEFINED__)
@@ -24530,13 +27034,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0214 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0214_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0214_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_INTERFACE_DEFINED__
@@ -24653,7 +27157,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0215 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_INTERFACE_DEFINED__)
@@ -24661,13 +27165,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0215 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0215_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0215_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_INTERFACE_DEFINED__
@@ -24798,7 +27302,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0216 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_INTERFACE_DEFINED__)
@@ -24806,13 +27310,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0216 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0216_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0216_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_INTERFACE_DEFINED__
@@ -25149,7 +27653,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0217 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_INTERFACE_DEFINED__)
@@ -25157,13 +27661,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0217 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0217_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0217_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_INTERFACE_DEFINED__
@@ -25370,7 +27874,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0218 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_INTERFACE_DEFINED__)
@@ -25378,13 +27882,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0218 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0218_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0218_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_INTERFACE_DEFINED__
@@ -25611,7 +28115,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0219 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_INTERFACE_DEFINED__)
@@ -25619,13 +28123,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0219 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0219_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0219_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_INTERFACE_DEFINED__
@@ -25772,7 +28276,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0220 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral_INTERFACE_DEFINED__)
@@ -25780,13 +28284,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0220 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0220_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0220_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral_INTERFACE_DEFINED__
@@ -25911,7 +28415,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0221 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_INTERFACE_DEFINED__)
@@ -25919,13 +28423,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0221 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0221_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0221_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_INTERFACE_DEFINED__
@@ -26082,7 +28586,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0222 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_INTERFACE_DEFINED__)
@@ -26090,13 +28594,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0222 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0222_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0222_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_INTERFACE_DEFINED__
@@ -26333,7 +28837,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideEx
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0223 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_INTERFACE_DEFINED__)
@@ -26341,13 +28845,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0223 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0223_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0223_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_INTERFACE_DEFINED__
@@ -26494,7 +28998,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideEx
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0224 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanorama_INTERFACE_DEFINED__)
@@ -26502,13 +29006,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanorama_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0224 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0224_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0224_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanorama_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanorama_INTERFACE_DEFINED__
@@ -26635,7 +29139,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanorama_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0225 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_INTERFACE_DEFINED__)
@@ -26643,13 +29147,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0225 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0225_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0225_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_INTERFACE_DEFINED__
@@ -26792,7 +29296,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0226 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_CustomMapTileDataSource_DEFINED
@@ -26815,9 +29319,17 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapActualCameraChangingEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapActualCameraChangingEventArgs[] = L"Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapBillboard_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapBillboard_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapBillboard[] = L"Windows.UI.Xaml.Controls.Maps.MapBillboard";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapCamera_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapCamera_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapCamera[] = L"Windows.UI.Xaml.Controls.Maps.MapCamera";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapContextRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapContextRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapContextRequestedEventArgs[] = L"Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapControl_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapControl_DEFINED
@@ -26915,6 +29427,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapScene_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapScene[] = L"Windows.UI.Xaml.Controls.Maps.MapScene";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapStyleSheet_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapStyleSheet_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapStyleSheet[] = L"Windows.UI.Xaml.Controls.Maps.MapStyleSheet";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapTargetCameraChangedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Controls_Maps_MapTargetCameraChangedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Maps_MapTargetCameraChangedEventArgs[] = L"Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs";
@@ -26961,13 +29477,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0226 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0226_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Emaps_0000_0226_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

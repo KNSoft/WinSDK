@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -1169,7 +1169,7 @@ enum OPC_SIGNATURE_VALIDATION_RESULT
     } 	OPC_SIGNATURE_VALIDATION_RESULT;
 
 typedef /* [public][public][public][public][public][public][public][public] */ 
-enum __MIDL___MIDL_itf_msopc_0001_0074_0001
+enum __MIDL___MIDL_itf_msopc_0001_0076_0001
     {
         OPC_CANONICALIZATION_NONE	= 0,
         OPC_CANONICALIZATION_C14N	= 1,
@@ -1177,21 +1177,21 @@ enum __MIDL___MIDL_itf_msopc_0001_0074_0001
     } 	OPC_CANONICALIZATION_METHOD;
 
 typedef /* [public][public][public] */ 
-enum __MIDL___MIDL_itf_msopc_0001_0074_0002
+enum __MIDL___MIDL_itf_msopc_0001_0076_0002
     {
         OPC_RELATIONSHIP_SELECT_BY_ID	= 0,
         OPC_RELATIONSHIP_SELECT_BY_TYPE	= 1
     } 	OPC_RELATIONSHIP_SELECTOR;
 
 typedef /* [public][public][public] */ 
-enum __MIDL___MIDL_itf_msopc_0001_0074_0003
+enum __MIDL___MIDL_itf_msopc_0001_0076_0003
     {
         OPC_RELATIONSHIP_SIGN_USING_SELECTORS	= 0,
         OPC_RELATIONSHIP_SIGN_PART	= 1
     } 	OPC_RELATIONSHIPS_SIGNING_OPTION;
 
 typedef /* [public][public][public] */ 
-enum __MIDL___MIDL_itf_msopc_0001_0074_0004
+enum __MIDL___MIDL_itf_msopc_0001_0076_0004
     {
         OPC_CERTIFICATE_IN_CERTIFICATE_PART	= 0,
         OPC_CERTIFICATE_IN_SIGNATURE_PART	= 1,
@@ -1199,7 +1199,7 @@ enum __MIDL___MIDL_itf_msopc_0001_0074_0004
     } 	OPC_CERTIFICATE_EMBEDDING_OPTION;
 
 typedef /* [public][public][public][public] */ 
-enum __MIDL___MIDL_itf_msopc_0001_0074_0005
+enum __MIDL___MIDL_itf_msopc_0001_0076_0005
     {
         OPC_SIGNATURE_TIME_FORMAT_MILLISECONDS	= 0,
         OPC_SIGNATURE_TIME_FORMAT_SECONDS	= 1,

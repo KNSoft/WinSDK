@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -146,6 +146,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CText_CITextDocument_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CText_CITextDocument2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CITextDocument2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CText_CITextDocument2 __x_ABI_CWindows_CUI_CText_CITextDocument2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                interface ITextDocument2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CText_CITextDocument2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CText_CITextParagraphFormat __x_ABI_CWindows_CUI_CText_CITextParagraphFormat;
@@ -251,18 +271,18 @@ enum UnderlineType;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Etext_0000_0001 */
 /* [local] */ 
@@ -515,6 +535,16 @@ typedef enum __x_ABI_CWindows_CUI_CText_CTabLeader __x_ABI_CWindows_CUI_CText_CT
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CUI_CText_CTextDecorations __x_ABI_CWindows_CUI_CText_CTextDecorations;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CUI_CText_CTextGetOptions __x_ABI_CWindows_CUI_CText_CTextGetOptions;
 
 
@@ -584,12 +614,24 @@ typedef struct __x_ABI_CWindows_CUI_CText_CFontWeight __x_ABI_CWindows_CUI_CText
 
 
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Text {
 class FontWeights;
+} /*Text*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Text {
+class RichEditTextDocument;
 } /*Text*/
 } /*UI*/
 } /*Windows*/
@@ -1018,6 +1060,24 @@ namespace ABI {
         namespace UI {
             namespace Text {
                 
+                typedef enum TextDecorations TextDecorations;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                
                 typedef enum TextGetOptions TextGetOptions;
                 
             } /* end namespace */
@@ -1146,21 +1206,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eui2Etext2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Etext_0000_0002 */
 /* [local] */ 
@@ -1659,6 +1720,30 @@ enum __x_ABI_CWindows_CUI_CText_CTabLeader
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CText_CTextDecorations
+    {
+        TextDecorations_None	= 0,
+        TextDecorations_Underline	= 0x1,
+        TextDecorations_Strikethrough	= 0x2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#else
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Text {
+enum TextDecorations;
+DEFINE_ENUM_FLAG_OPERATORS(TextDecorations)
+} /*Text*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CText_CTextGetOptions
     {
         TextGetOptions_None	= 0,
@@ -1668,7 +1753,8 @@ enum __x_ABI_CWindows_CUI_CText_CTextGetOptions
         TextGetOptions_AllowFinalEop	= 0x8,
         TextGetOptions_NoHidden	= 0x20,
         TextGetOptions_IncludeNumbering	= 0x40,
-        TextGetOptions_FormatRtf	= 0x2000
+        TextGetOptions_FormatRtf	= 0x2000,
+        TextGetOptions_UseLf	= 0x1000000
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -2404,6 +2490,28 @@ namespace ABI {
             namespace Text {
                 
                 /* [v1_enum] */ 
+                enum TextDecorations
+                    {
+                        TextDecorations_None	= 0,
+                        TextDecorations_Underline	= 0x1,
+                        TextDecorations_Strikethrough	= 0x2
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                
+                /* [v1_enum] */ 
                 enum TextGetOptions
                     {
                         TextGetOptions_None	= 0,
@@ -2413,7 +2521,8 @@ namespace ABI {
                         TextGetOptions_AllowFinalEop	= 0x8,
                         TextGetOptions_NoHidden	= 0x20,
                         TextGetOptions_IncludeNumbering	= 0x40,
-                        TextGetOptions_FormatRtf	= 0x2000
+                        TextGetOptions_FormatRtf	= 0x2000,
+                        TextGetOptions_UseLf	= 0x1000000
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -4260,9 +4369,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument;
 /* interface __MIDL_itf_windows2Eui2Etext_0000_0008 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_ITextParagraphFormat[] = L"Windows.UI.Text.ITextParagraphFormat";
-#endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_ITextDocument2[] = L"Windows.UI.Text.ITextDocument2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Etext_0000_0008 */
@@ -4272,6 +4381,173 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0008_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CText_CITextDocument2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Text::ITextDocument2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Text {
+                    
+                    MIDL_INTERFACE("F2311112-8C89-49C9-9118-F057CBB814EE")
+                    ITextDocument2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AlignmentIncludesTrailingWhitespace( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AlignmentIncludesTrailingWhitespace( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IgnoreTrailingCharacterSpacing( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IgnoreTrailingCharacterSpacing( 
+                            /* [in] */ boolean value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ITextDocument2 = __uuidof(ITextDocument2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CText_CITextDocument2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AlignmentIncludesTrailingWhitespace )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AlignmentIncludesTrailingWhitespace )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IgnoreTrailingCharacterSpacing )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IgnoreTrailingCharacterSpacing )( 
+            __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument2 * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CText_CITextDocument2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CText_CITextDocument2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CText_CITextDocument2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_get_AlignmentIncludesTrailingWhitespace(This,value)	\
+    ( (This)->lpVtbl -> get_AlignmentIncludesTrailingWhitespace(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_put_AlignmentIncludesTrailingWhitespace(This,value)	\
+    ( (This)->lpVtbl -> put_AlignmentIncludesTrailingWhitespace(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_get_IgnoreTrailingCharacterSpacing(This,value)	\
+    ( (This)->lpVtbl -> get_IgnoreTrailingCharacterSpacing(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument2_put_IgnoreTrailingCharacterSpacing(This,value)	\
+    ( (This)->lpVtbl -> put_IgnoreTrailingCharacterSpacing(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0009 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_ITextParagraphFormat[] = L"Windows.UI.Text.ITextParagraphFormat";
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0009 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0009_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__
@@ -4880,7 +5156,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextParagraphFormat;
 #endif 	/* ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Etext_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0010 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CText_CITextRange_INTERFACE_DEFINED__)
@@ -4888,13 +5164,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextRange_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Etext_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextRange_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextRange_INTERFACE_DEFINED__
@@ -5603,7 +5879,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextRange;
 #endif 	/* ____x_ABI_CWindows_CUI_CText_CITextRange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Etext_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0011 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CText_CITextSelection_INTERFACE_DEFINED__)
@@ -5611,13 +5887,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextSelection_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Etext_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0011 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0011_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextSelection_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextSelection_INTERFACE_DEFINED__
@@ -5862,12 +6138,16 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextSelection;
 #endif 	/* ____x_ABI_CWindows_CUI_CText_CITextSelection_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Etext_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0012 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Text_FontWeights_DEFINED
 #define RUNTIMECLASS_Windows_UI_Text_FontWeights_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_FontWeights[] = L"Windows.UI.Text.FontWeights";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Text_RichEditTextDocument_DEFINED
+#define RUNTIMECLASS_Windows_UI_Text_RichEditTextDocument_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Text_RichEditTextDocument[] = L"Windows.UI.Text.RichEditTextDocument";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Text_TextConstants_DEFINED
 #define RUNTIMECLASS_Windows_UI_Text_TextConstants_DEFINED
@@ -5875,13 +6155,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Etext_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Etext_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Etext_0000_0012_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

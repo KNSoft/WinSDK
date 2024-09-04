@@ -91,6 +91,23 @@ extern "C" {
 
 #include <nldef.h>
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+typedef enum _TCPSTATE {
+    TCPSTATE_CLOSED,
+    TCPSTATE_LISTEN,
+    TCPSTATE_SYN_SENT,
+    TCPSTATE_SYN_RCVD,
+    TCPSTATE_ESTABLISHED,
+    TCPSTATE_FIN_WAIT_1,
+    TCPSTATE_FIN_WAIT_2,
+    TCPSTATE_CLOSE_WAIT,
+    TCPSTATE_CLOSING,
+    TCPSTATE_LAST_ACK,
+    TCPSTATE_TIME_WAIT,
+    TCPSTATE_MAX
+} TCPSTATE;
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
 #ifndef _TRANSPORT_SETTING_COMMON_
 #define _TRANSPORT_SETTING_COMMON_
 
@@ -115,7 +132,7 @@ struct tcp_keepalive {
 };
 
 //
-// Argument structures for SIO_QUERY_TRANSPORT_SETTING and
+// Argument structures for SIO_APPLY_TRANSPORT_SETTING and
 // SIO_QUERY_TRANSPORT_SETTING.
 //
 typedef enum
@@ -152,7 +169,7 @@ typedef struct _REAL_TIME_NOTIFICATION_SETTING_OUTPUT
 typedef struct _ASSOCIATE_NAMERES_CONTEXT_INPUT
 {
     TRANSPORT_SETTING_ID TransportSettingId;
-    
+
     //
     // Stores Handle as UINT64 to keep size consistent accross 32-bit and
     // 64-bit processes.
@@ -161,7 +178,7 @@ typedef struct _ASSOCIATE_NAMERES_CONTEXT_INPUT
 } ASSOCIATE_NAMERES_CONTEXT_INPUT, *PASSOCIATE_NAMERES_CONTEXT_INPUT;
 
 //
-// New WSAIoctl Options
+// WSAIoctl Options
 //
 #define SIO_RCVALL                          _WSAIOW(IOC_VENDOR,1)
 #define SIO_RCVALL_MCAST                    _WSAIOW(IOC_VENDOR,2)
@@ -174,15 +191,17 @@ typedef struct _ASSOCIATE_NAMERES_CONTEXT_INPUT
 #define SIO_INDEX_MCASTIF                   _WSAIOW(IOC_VENDOR,9)
 #define SIO_INDEX_ADD_MCAST                 _WSAIOW(IOC_VENDOR,10)
 #define SIO_INDEX_DEL_MCAST                 _WSAIOW(IOC_VENDOR,11)
-//      SIO_UDP_CONNRESET                   _WSAIOW(IOC_VENDOR,12)
 #define SIO_RCVALL_MCAST_IF                 _WSAIOW(IOC_VENDOR,13)
 #define SIO_RCVALL_IF                       _WSAIOW(IOC_VENDOR,14)
 #define SIO_LOOPBACK_FAST_PATH              _WSAIOW(IOC_VENDOR,16)
 #define SIO_TCP_INITIAL_RTO                 _WSAIOW(IOC_VENDOR,17)
 #define SIO_APPLY_TRANSPORT_SETTING         _WSAIOW(IOC_VENDOR,19)
 #define SIO_QUERY_TRANSPORT_SETTING         _WSAIOW(IOC_VENDOR,20)
-#define SIO_TCP_SET_ICW                         _WSAIOW(IOC_VENDOR,22)
-#define SIO_TCP_SET_ACK_FREQUENCY               _WSAIOW(IOC_VENDOR,23)
+#define SIO_TCP_SET_ICW                     _WSAIOW(IOC_VENDOR,22)
+#define SIO_TCP_SET_ACK_FREQUENCY           _WSAIOW(IOC_VENDOR,23)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define SIO_TCP_INFO                        _WSAIORW(IOC_VENDOR,39)
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
 
 
 //
@@ -262,6 +281,33 @@ typedef struct _TCP_ACK_FREQUENCY_PARAMETERS {
 
 } TCP_ACK_FREQUENCY_PARAMETERS, *PTCP_ACK_FREQUENCY_PARAMETERS;
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// Output for SIO_TCP_INFO.
+//
+typedef struct _TCP_INFO_v0 {
+    TCPSTATE State;
+    ULONG Mss;
+    ULONG64 ConnectionTimeMs;
+    BOOLEAN TimestampsEnabled;
+    ULONG RttUs;
+    ULONG MinRttUs;
+    ULONG BytesInFlight;
+    ULONG Cwnd;
+    ULONG SndWnd;
+    ULONG RcvWnd;
+    ULONG RcvBuf;
+    ULONG64 BytesOut;
+    ULONG64 BytesIn;
+    ULONG BytesReordered;
+    ULONG BytesRetrans;
+    ULONG FastRetrans;
+    ULONG DupAcksIn;
+    ULONG TimeoutEpisodes;
+    UCHAR SynRetrans;
+} TCP_INFO_v0, *PTCP_INFO_v0;
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
 //
 // TCP/UDP port management definitions.
 //
@@ -320,7 +366,6 @@ typedef struct {
 #define SIO_QUERY_WFP_CONNECTION_REDIRECT_RECORDS  _WSAIOW(IOC_VENDOR, 220)
 #define SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT  _WSAIOW(IOC_VENDOR, 221)
 #define SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS    _WSAIOW(IOC_VENDOR, 222)
-
 
 //
 // iSCSI IOCTLS
@@ -918,13 +963,16 @@ IN4_IS_UNALIGNED_ADDR_6TO4ELIGIBLE(_In_ CONST IN_ADDR UNALIGNED *a)
 
 MSTCPIP_INLINE
 BOOLEAN
-IN6_PREFIX_EQUAL(_In_ CONST IN6_ADDR *a, _In_ CONST IN6_ADDR *b, _In_ UINT8 len)
+IN6_PREFIX_EQUAL(
+    _In_ CONST IN6_ADDR *a,
+    _In_ CONST IN6_ADDR *b,
+    _In_ _In_range_(0, (sizeof(IN6_ADDR) * 8)) UINT8 len
+    )
 {
     UINT8 Bytes = len / 8;
     UINT8 Bits = len % 8;
     UINT8 Mask = 0xff << (8 - Bits);
 
-    ASSERT(len <= (sizeof(IN6_ADDR) * 8));
     return (BOOLEAN)
         (((memcmp(a, b, Bytes)) == 0) &&
          ((Bits == 0) ||

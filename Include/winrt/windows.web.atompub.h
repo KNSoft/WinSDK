@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -238,18 +238,18 @@ interface IResourceCollection;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4745 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4745 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4745_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4745_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0001 */
 /* [local] */ 
@@ -284,18 +284,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4746 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4746 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4746_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4746_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0002 */
 /* [local] */ 
@@ -354,18 +354,18 @@ interface IWorkspace;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4747 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4747 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4747_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4747_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0003 */
 /* [local] */ 
@@ -400,18 +400,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4748 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4748 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4748_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4748_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0004 */
 /* [local] */ 
@@ -446,18 +446,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4749 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4749 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4749_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4749_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0005 */
 /* [local] */ 
@@ -492,18 +492,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4750 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4750 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4750_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4750_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0006 */
 /* [local] */ 
@@ -575,18 +575,18 @@ struct RetrievalProgress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4751 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4751 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4751_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4751_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0007 */
 /* [local] */ 
@@ -621,18 +621,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4752 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4752 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4752_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4752_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0008 */
 /* [local] */ 
@@ -667,18 +667,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4753 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4753 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4753_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4753_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0009 */
 /* [local] */ 
@@ -726,18 +726,18 @@ interface IInputStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4754 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4754 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4754_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4754_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0010 */
 /* [local] */ 
@@ -772,18 +772,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4755 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4755 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4755_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4755_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0011 */
 /* [local] */ 
@@ -818,18 +818,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4756 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4756 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4756_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4756_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0012 */
 /* [local] */ 
@@ -888,18 +888,18 @@ interface ISyndicationItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4757 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4757 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4757_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4757_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0013 */
 /* [local] */ 
@@ -934,18 +934,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4758 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4758 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4758_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4758_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0014 */
 /* [local] */ 
@@ -980,18 +980,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4759 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4759 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3210_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4759_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4759_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0015 */
 /* [local] */ 
@@ -1039,18 +1039,18 @@ struct TransferProgress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4760 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4760 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3211_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4760_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4760_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0016 */
 /* [local] */ 
@@ -1085,18 +1085,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4761 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4761 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3212_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4761_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4761_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0017 */
 /* [local] */ 
@@ -1131,18 +1131,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4762 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4762 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3213_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4762_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4762_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0018 */
 /* [local] */ 
@@ -1177,18 +1177,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4763 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4763 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3214_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4763_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4763_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0019 */
 /* [local] */ 
@@ -1223,18 +1223,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3215 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4764 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3215 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4764 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3215_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4764_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4764_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0020 */
 /* [local] */ 
@@ -1269,18 +1269,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3216 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4765 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3216 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4765 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3216_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4765_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4765_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0021 */
 /* [local] */ 
@@ -1339,18 +1339,18 @@ interface ISyndicationCategory;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3217 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4766 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3217 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4766 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3217_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4766_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4766_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0022 */
 /* [local] */ 
@@ -1385,18 +1385,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3218 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4767 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3218 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4767 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3218_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4767_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4767_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0023 */
 /* [local] */ 
@@ -1431,18 +1431,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3219 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4768 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3219 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4768 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3219_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4768_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4768_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0024 */
 /* [local] */ 
@@ -1477,18 +1477,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3220 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4769 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3220 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4769 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3220_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4769_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4769_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0025 */
 /* [local] */ 
@@ -1523,18 +1523,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3221 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4770 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3221 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4770 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3221_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4770_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4770_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0026 */
 /* [local] */ 
@@ -1569,18 +1569,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3222 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4771 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3222 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4771 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3222_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4771_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4771_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0027 */
 /* [local] */ 
@@ -1720,18 +1720,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3223 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4772 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3223 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4772 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3223_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3223_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4772_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4772_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0028 */
 /* [local] */ 
@@ -1906,18 +1906,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CAtomPub__CResourceCollecti
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3224 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4773 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3224 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4773 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3224_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3224_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4773_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4773_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0030 */
 /* [local] */ 
@@ -2058,18 +2058,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CAtomPub__CResourceCollecti
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3225 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4774 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3225 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4774 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3225_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3225_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4774_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4774_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0032 */
 /* [local] */ 
@@ -2244,18 +2244,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CAtomPub__CWorkspace;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3226 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4775 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3226 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4775 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3226_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3226_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4775_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4775_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0034 */
 /* [local] */ 
@@ -2396,18 +2396,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CAtomPub__CWorkspace;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3227 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4776 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3227 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4776 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3227_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3227_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4776_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4776_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0036 */
 /* [local] */ 
@@ -2590,18 +2590,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CAtomPub__CResourceCollec
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3228 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4777 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3228 */
+/* interface __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4777 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3228_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_3228_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4777_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Eatompub2Eidl_0000_4777_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Eatompub_0000_0038 */
 /* [local] */ 

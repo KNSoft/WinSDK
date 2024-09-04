@@ -35,7 +35,7 @@
       <containerRef id="WDI_TLV_P2P_SERVICE_NAME_HASH" name="ServiceNameHash" optional="true" type="ServiceNameHashContainer" multiContainer="true" />
       <containerRef id="WDI_TLV_VENDOR_SPECIFIC_IE" name="VendorIEs" type="ByteBlob" optional="true" />
       <containerRef id="WDI_TLV_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY" name="ServiceInformationDiscoveryEntry" optional="true" type="ServiceInformationDiscoveryEntryContainer" multiContainer="true" />
-      <containerRef id="WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY" name="ASP2ServiceInformationDiscoveryEntry" optional="true" type="ASP2ServiceInformationDiscoveryEntryContainer" multiContainer="true" versionAdded="WDI_VERSION_1_0_20" />
+      <containerRef id="WDI_TLV_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY" name="ASP2ServiceInformationDiscoveryEntry" optional="true" type="ASP2ServiceInformationDiscoveryEntryContainerV1_0_20" multiContainer="true" versionAdded="WDI_VERSION_1_0_20" versionRemoved="WDI_VERSION_1_1_4" />
       <containerRef id="WDI_TLV_P2P_INCLUDE_LISTEN_CHANNEL" name="bIncludeListenChannel" type="BOOLContainer" optional="true" versionAdded="WDI_VERSION_1_0_20" />
     </message>
     <message commandId="WDI_TASK_P2P_DISCOVER" type="WDI_TASK_P2P_DISCOVER_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
@@ -368,6 +368,7 @@
     <message commandId="WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL" type="WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL_PARAMETERS" description="Operating channel indicated after joining/starting a P2P Group" direction="FromIhv">
       <containerRef id="WDI_TLV_P2P_CHANNEL_NUMBER" name="Channel" type="WFDChannelContainer" />
       <containerRef id="WDI_TLV_P2P_CHANNEL_INDICATE_REASON" name="IndicateReason" type="WFDChannelIndicateReasonContainer" />
+      <containerRef id="WDI_TLV_AP_BAND_INFORMATION" name="APBandInformation" type="APBandInformationContainer" versionAdded="WDI_VERSION_1_1_4"/>
     </message>
 
     <message commandId="WDI_INDICATION_P2P_OPERATING_CHANNEL_ATTRIBUTES" type="WDI_INDICATION_P2P_OPERATING_CHANNEL_ATTRIBUTES_PARAMETERS" description="Operating channel attributes indicated during initialization, and on changes" direction="FromIhv" >
@@ -548,6 +549,20 @@
     </message>
 
     <message commandId ="WDI_SET_NEIGHBOR_REPORT_ENTRIES" type ="WDI_SET_NEIGHBOR_REPORT_ENTRIES_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
+
+    <message commandId ="WDI_GET_SUPPORTED_DEVICE_SERVICES" type="WDI_GET_SUPPORTED_DEVICE_SERVICES_INPUTS" description="No TLV data needed, header is sufficient" direction="ToIhv" />
+    <message commandId ="WDI_GET_SUPPORTED_DEVICE_SERVICES" type="WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS" description="Parameters for WDI_GET_SUPPORTED_DEVICE_SERVICES" direction="FromIhv" >
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_GUID_LIST" name="DeviceServiceGUIDList" type="GuidListContainer" />
+    </message>
+
+    <message commandId ="WDI_DEVICE_SERVICE_COMMAND" type="WDI_DEVICE_SERVICE_COMMAND_INPUTS" description="Input parameters for WDI_DEVICE_SERVICE_COMMAND" direction="ToIhv" >
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_GUID" name="DeviceServiceGUID" type="GuidContainer" />
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE" name="Opcode" type="UINT32Container" />
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB" name="Params" type="ByteBlob" multiContainer="true" optional="true" />
+    </message>
+    <message commandId ="WDI_DEVICE_SERVICE_COMMAND" type="WDI_DEVICE_SERVICE_COMMAND_PARAMETERS" description="Parameters for WDI_DEVICE_SERVICE_COMMAND" direction="FromIhv" >
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB" name="Params" type="ByteBlob" multiContainer="true" optional="true" />
+    </message>
 
     <message commandId="WDI_TEST_TASK" type="WDI_TASK_TEST_PARAMETERS" description="this is just a test" direction="Both">
       <!--Same Id, Optional Current, Optional Old, Multi Old, Multi Current" -->
@@ -831,11 +846,13 @@
       <containerRef id="WDI_TLV_P2P_SERVICE_NAME" name="ServiceName" type="ByteBlob" />
       <containerRef id="WDI_TLV_P2P_SERVICE_NAME_HASH" name="ServiceNameHash" type="ServiceNameHashContainer" />
       <containerRef id="WDI_TLV_P2P_SERVICE_INFORMATION" name="ServiceInformation" type="ByteBlob" optional="true" />
-      <containerRef id="WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR" name="ServiceUpdateIndicator" type="UINT16Container" optional="true" />
-      <containerRef id="WDI_TLV_P2P_SERVICE_TRANSACTION_ID" name="ServiceTransactionId" type="UINT8Container" optional="true" />
+      <containerRef id="WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR" name="ServiceUpdateIndicator" type="UINT16Container" versionAdded="WDI_VERSION_1_1_4" />
+      <containerRef id="WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR" name="ServiceUpdateIndicator" type="UINT16Container" optional="true" versionRemoved="WDI_VERSION_1_1_4" />
+      <containerRef id="WDI_TLV_P2P_SERVICE_TRANSACTION_ID" name="ServiceTransactionId" type="UINT8Container" versionAdded="WDI_VERSION_1_1_4" />
+      <containerRef id="WDI_TLV_P2P_SERVICE_TRANSACTION_ID" name="ServiceTransactionId" type="UINT8Container" optional="true" versionRemoved="WDI_VERSION_1_1_4" />
     </aggregateContainer>
 
-    <aggregateContainer name="ASP2ServiceInformationDiscoveryEntryContainer" type="WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER" description="Container for ASP2 service information discovery entry.">
+    <aggregateContainer name="ASP2ServiceInformationDiscoveryEntryContainerV1_0_20" type="WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20" description="Container for ASP2 service information discovery entry.">
       <containerRef id="WDI_TLV_P2P_SERVICE_NAME" name="ServiceName" type="ByteBlob" />
       <containerRef id="WDI_TLV_P2P_INSTANCE_NAME" name="InstanceName" type="ByteBlob" />
       <containerRef id="WDI_TLV_P2P_SERVICE_INFORMATION" name="ServiceInformation" type="ByteBlob" optional="true" />
@@ -860,7 +877,7 @@
       <containerRef id="WDI_TLV_P2P_CONFIG_METHODS" name="ConfigurationMethods" type="UINT16Container" />
     </aggregateContainer>
 
-    <aggregateContainer name="ASP2AdvertisedServiceEntry" type="WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER" description="Container for ASP2 advertised service entry.">
+    <aggregateContainer name="ASP2AdvertisedServiceEntryV1_0_20" type="WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20" description="Container for ASP2 advertised service entry.">
       <containerRef id="WDI_TLV_P2P_SERVICE_TYPE" name="ServiceType" type="ByteBlob" />
       <containerRef id="WDI_TLV_P2P_SERVICE_TYPE_HASH" name="ServiceTypeHash" type="ServiceNameHashContainer" />
       <containerRef id="WDI_TLV_P2P_INSTANCE_NAME" name="InstanceName" type="ByteBlob" />
@@ -878,8 +895,8 @@
 
     <aggregateContainer name="P2PAdvertisedServices" type="WDI_P2P_ADVERTISED_SERVICES_CONTAINER" description="Container for advertised services.">
       <containerRef id="WDI_TLV_P2P_ADVERTISED_SERVICE_ENTRY" name="ServiceEntry" type="P2PAdvertisedServiceEntry" multiContainer="true" optional="true" />
-      <containerRef id="WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY" name="ASP2ServiceEntry" type="ASP2AdvertisedServiceEntry" multiContainer="true" optional="true" versionAdded="WDI_VERSION_1_0_20" />
-      <containerRef id="WDI_TLV_P2P_ADVERTISED_PREFIX_ENTRY" name="ServicePrefix" type="P2PAdvertisedPrefixEntry" multiContainer="true" optional="true" />
+      <containerRef id="WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY" name="ASP2ServiceEntry" type="ASP2AdvertisedServiceEntryV1_0_20" multiContainer="true" optional="true" versionAdded="WDI_VERSION_1_0_20" versionRemoved="WDI_VERSION_1_1_4" />
+      <containerRef id="WDI_TLV_P2P_ADVERTISED_PREFIX_ENTRY" name="ServicePrefix" type="P2PAdvertisedPrefixEntry" multiContainer="true" optional="true" versionRemoved="WDI_VERSION_1_1_4" />
       <containerRef id="WDI_TLV_P2P_SERVICE_UPDATE_INDICATOR" name="ServiceUpdateIndicator" type="UINT16Container" />
     </aggregateContainer>
 
@@ -923,6 +940,11 @@
     <aggregateContainer name="ScanBandChannelListContainer" type="WDI_BAND_CHANNEL_LIST_CONTAINER" description="Container for band + channel information">
       <containerRef id="WDI_TLV_BANDID" name="BandID" type="BandIDContainer" />
       <containerRef id="WDI_TLV_CHANNEL_INFO_LIST" name="ChannelList" type="ChannelListContainer" />
+    </aggregateContainer>
+
+    <aggregateContainer name="APBandInformationContainer" type="WDI_AP_BAND_INFORMATION_CONTAINER" description="Container for AP band + channel information">
+      <containerRef id="WDI_TLV_BANDID" name="BandID" type="BandIDContainer" />
+      <containerRef id="WDI_TLV_OPERATING_IN_PBSS" name="IsPCPinPBSS" type="UINT8Container" />
     </aggregateContainer>
 
     <container name="SignalInfoContainer" type="WDI_SIGNAL_INFO_CONTAINER" description="Container for signal information">
@@ -1515,7 +1537,8 @@
       <containerRef id="WDI_TLV_AUTHENTICATION_RESPONSE_FRAME" name="AuthenticationResponseFrame" type="ByteBlob" optional="true" />      
       <containerRef id="WDI_TLV_BEACON_PROBE_RESPONSE" name="BeaconProbeResponse" type="ByteBlob" optional="true" />
       <containerRef id="WDI_TLV_ETHERTYPE_ENCAP_TABLE" name="EthertypeEncapTable" type="EtherTypeEncapContainer" optional="true" />
-      <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyTypeList" type="PhyTypeListContainer" optional="true" />      
+      <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyTypeList" type="PhyTypeListContainer" versionAdded="WDI_VERSION_1_1_4" />
+      <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyTypeList" type="PhyTypeListContainer" optional="true" versionRemoved="WDI_VERSION_1_1_4" />
     </aggregateContainer>
 
     <container name="TkipMicFailureParametersContainer" type="WDI_TKIP_MIC_FAILURE_PARAMETERS_CONTAINER" description="Container for TKIP MIC failure parameters.">
@@ -1591,7 +1614,8 @@
     <aggregateContainer name="SsidOffloadContainer" description="container for SSID offload" type="WDI_SSID_OFFLOAD_CONTAINER">
       <containerRef id="WDI_TLV_SSID" name="SsidToScan" type="WiFiSSID" />
       <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" />
-      <containerRef id="WDI_TLV_CHANNEL_LIST" name="ChannellHintList" type="ChannelMappingContainer" />    	
+      <containerRef id="WDI_TLV_CHANNEL_LIST" name="ChannellHintList" type="ChannelMappingContainer" />
+      <containerRef id="WDI_TLV_IS_DIRECTED_PROBE_FOR_HIDDEN_PERMITTED" name="IsDirectedProbeForHiddenPermitted" type="BOOLContainer" optional="true" versionAdded="WDI_VERSION_1_1_0" />
     </aggregateContainer>
 
     <aggregateContainer name="NetworkListOffloadContainer" type="WDI_NETWORK_LIST_OFFLOAD_INFO" description="Container for Network List offload Information">
@@ -1643,6 +1667,15 @@
       <containerRef id="WDI_TLV_COUNTRY_REGION_LIST" name="CountryRegionList" type="CountryRegionListContainer" />
       <containerRef id="WDI_TLV_P2P_CHANNEL_ENTRY_LIST" name="ChannelEntries" type="P2PChannelEntriesListContainer" multiContainer="true" />
     </aggregateContainer>
+
+    <!-- DeviceServices -->
+    <container name="GuidContainer" description="Container for a Guid" type="WDI_GUID_CONTAINER">
+      <groupRef ref="GuidStruct" name="Guid" description="A GUID struct."/>
+    </container>
+
+    <container name="GuidListContainer" description="Container for a list of GUIDs" type="WDI_GUID_LIST_CONTAINER" isCollection="true">
+      <namedType name="Guid" type="GUID" description="A GUID."/>
+    </container>
 
     <!-- Test -->
     <container name="Test" description="Test container" type="TEST_CONTAINER">
@@ -1840,7 +1873,7 @@
 
     <propertyGroup name="BSSEntryChannelInfoStruct" type="WDI_BSS_ENTRY_CHANNEL_INFO" description="Structure definition for BSS Entry Channel Information.">
       <namedType type="WDI_CHANNEL_NUMBER" name="ChannelNumber" description="The logical channel number on which the peer was discovered" />
-      <uint32 name="BandId" description="Band ID for the given BSS entry." />
+      <namedType type="WDI_BAND_ID" name="BandId" description="Band ID for the given BSS entry." />
     </propertyGroup>
     
     <propertyGroup name="BSSEntryAgeInfoStruct" type="WDI_BSS_ENTRY_AGE_INFO" description="Structure definition for BSS Entry age Information.">
@@ -2170,7 +2203,7 @@
     </propertyGroup>
     
     <propertyGroup name="BandCapabilitiesStruct" type="WDI_BAND_CAPABILITIES" description="Structure definition for BSS Entry Channel Information.">
-      <uint32 name="BandID" description="Identifier for this band " />
+      <namedType type="WDI_BAND_ID" name="BandID" description="Identifier for this band " />
       <bool name="BandState" description="Whether or not this band is enabled" />
     </propertyGroup>
 
@@ -2383,7 +2416,7 @@
     
     <propertyGroup name="SendActionFrameRequestParamsStruct" type="WDI_ACTION_FRAME_REQUEST_PARAMETERS" description="Structure definition for Action Frame Request Send Parameters.">
       <namedType type="WDI_CHANNEL_NUMBER" name="ChannelNumber" description="The channel number to send this action frame on" />
-      <uint32 name="BandId" description="The band ID to send this action frame on" />
+      <namedType type="WDI_BAND_ID" name="BandId" description="The band ID to send this action frame on" />
       <namedType name="DestinationAddress" type="WDI_MAC_ADDRESS" description="Destination address to send this action frame on" />
       <uint32 name="SendTimeout" description="Maximum time, in milliseconds to send this action frame" />
       <uint32 name="PostACKDwellTime" description="Time to remain on listen channel, in milliseconds after the incoming packet is acknowledged" />
@@ -2488,6 +2521,10 @@
       <uint16 name="TcpDestPort" description="TCP dest port" />
     </propertyGroup>  
     <!-- WOL -->
+
+    <propertyGroup name="GuidStruct" type="WDI_GUID" description="struct for a GUID" >
+      <namedType name="Guid" type="GUID" description="A GUID entry" />
+    </propertyGroup>
 
   </propertyGroups>  
 

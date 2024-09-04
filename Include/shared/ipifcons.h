@@ -19,8 +19,8 @@ Abstract:
 #endif
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 
 #ifdef __cplusplus
@@ -30,7 +30,7 @@ extern "C" {
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
 // Media types                                                              //
-//                                                                          //  
+//                                                                          //
 // These are enumerated values of the ifType object defined in MIB-II's     //
 // ifTable.  They are registered with IANA which publishes this list        //
 // periodically, in either the Assigned Numbers RFC, or some derivative     //
@@ -241,20 +241,11 @@ extern "C" {
 #define IF_TYPE_WWANPP                  243 // WWAN devices based on GSM technology
 #define IF_TYPE_WWANPP2                 244 // WWAN devices based on CDMA technology
 #define IF_TYPE_IEEE802154              259 // IEEE 802.15.4 WPAN interface
+#define IF_TYPE_XBOX_WIRELESS           281
 
-#define MAX_IF_TYPE                     259
+#define MAX_IF_TYPE                     281
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 typedef ULONG IFTYPE;
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
@@ -362,7 +353,7 @@ typedef enum _INTERNAL_IF_OPER_STATUS {
 #endif
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #endif //__ROUTING_IPIFCONS_H__

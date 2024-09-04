@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -521,18 +521,18 @@ interface IPasswordCredential;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0001 */
 /* [local] */ 
@@ -567,18 +567,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0002 */
 /* [local] */ 
@@ -637,18 +637,18 @@ interface IWebAccount;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0003 */
 /* [local] */ 
@@ -683,18 +683,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0004 */
 /* [local] */ 
@@ -729,18 +729,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0005 */
 /* [local] */ 
@@ -775,18 +775,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0006 */
 /* [local] */ 
@@ -821,18 +821,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0007 */
 /* [local] */ 
@@ -867,18 +867,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0008 */
 /* [local] */ 
@@ -937,18 +937,18 @@ interface IKeyCredentialAttestationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0009 */
 /* [local] */ 
@@ -983,18 +983,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0010 */
 /* [local] */ 
@@ -1053,18 +1053,18 @@ interface IKeyCredentialOperationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0011 */
 /* [local] */ 
@@ -1099,18 +1099,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0012 */
 /* [local] */ 
@@ -1169,18 +1169,18 @@ interface IKeyCredentialRetrievalResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0013 */
 /* [local] */ 
@@ -1215,18 +1215,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0014 */
 /* [local] */ 
@@ -1261,18 +1261,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0015 */
 /* [local] */ 
@@ -1307,18 +1307,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0016 */
 /* [local] */ 
@@ -1377,18 +1377,18 @@ interface IWebAccountProvider;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0017 */
 /* [local] */ 
@@ -1423,18 +1423,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0018 */
 /* [local] */ 
@@ -1469,18 +1469,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0019 */
 /* [local] */ 
@@ -1515,18 +1515,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0020 */
 /* [local] */ 
@@ -1561,18 +1561,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0021 */
 /* [local] */ 
@@ -1607,18 +1607,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0022 */
 /* [local] */ 
@@ -1653,18 +1653,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0023 */
 /* [local] */ 
@@ -1699,18 +1699,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0024 */
 /* [local] */ 
@@ -1758,18 +1758,18 @@ interface IRandomAccessStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0025 */
 /* [local] */ 
@@ -1804,18 +1804,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0026 */
 /* [local] */ 
@@ -1853,18 +1853,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0027 */
 /* [local] */ 
@@ -1899,18 +1899,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0028 */
 /* [local] */ 
@@ -1945,18 +1945,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0029 */
 /* [local] */ 
@@ -1991,18 +1991,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0030 */
 /* [local] */ 
@@ -2037,18 +2037,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0031 */
 /* [local] */ 
@@ -2083,18 +2083,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0032 */
 /* [local] */ 
@@ -2129,18 +2129,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0033 */
 /* [local] */ 
@@ -2175,18 +2175,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0034 */
 /* [local] */ 
@@ -2486,18 +2486,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0035 */
 /* [local] */ 
@@ -2672,18 +2672,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CCredentials__CPasswor
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0037 */
 /* [local] */ 
@@ -2824,18 +2824,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CCredentials__CPasswor
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0039 */
 /* [local] */ 
@@ -3010,18 +3010,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CCredentials__CWebAcco
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0041 */
 /* [local] */ 
@@ -3162,18 +3162,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CCredentials__CWebAcco
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0043 */
 /* [local] */ 
@@ -3356,18 +3356,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CCredentials__CPassw
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0045 */
 /* [local] */ 
@@ -3550,18 +3550,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAc
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0047 */
 /* [local] */ 
@@ -3683,18 +3683,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0049 */
 /* [local] */ 
@@ -3855,18 +3855,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0051 */
 /* [local] */ 
@@ -3988,18 +3988,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0053 */
 /* [local] */ 
@@ -4160,18 +4160,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CCredentials__CK
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0055 */
 /* [local] */ 
@@ -4293,18 +4293,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0057 */
 /* [local] */ 
@@ -4465,18 +4465,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CCredentials__CK
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0058_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0059 */
 /* [local] */ 
@@ -4598,18 +4598,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0061 */
 /* [local] */ 
@@ -4770,18 +4770,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CCredentials__CK
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0062_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0063 */
 /* [local] */ 
@@ -4903,18 +4903,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0064_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0065 */
 /* [local] */ 
@@ -5075,18 +5075,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CCredentials__CW
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0066_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0067 */
 /* [local] */ 
@@ -5208,18 +5208,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0068_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecredentials2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecredentials_0000_0069 */
 /* [local] */ 

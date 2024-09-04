@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -839,18 +839,18 @@ interface ISyndicationNode;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0001 */
 /* [local] */ 
@@ -885,18 +885,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0002 */
 /* [local] */ 
@@ -955,18 +955,18 @@ interface ISyndicationAttribute;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0003 */
 /* [local] */ 
@@ -1001,18 +1001,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0004 */
 /* [local] */ 
@@ -1071,18 +1071,18 @@ interface ISyndicationCategory;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4699 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4699_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0005 */
 /* [local] */ 
@@ -1117,18 +1117,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4700 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4700 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4700_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4700_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0006 */
 /* [local] */ 
@@ -1187,18 +1187,18 @@ interface ISyndicationItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4701 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4701 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4701_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4701_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0007 */
 /* [local] */ 
@@ -1233,18 +1233,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4702 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4702 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4702_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4702_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0008 */
 /* [local] */ 
@@ -1303,18 +1303,18 @@ interface ISyndicationLink;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4703 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4703 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4703_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4703_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0009 */
 /* [local] */ 
@@ -1349,18 +1349,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4704 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4704 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4704_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4704_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0010 */
 /* [local] */ 
@@ -1419,18 +1419,18 @@ interface ISyndicationPerson;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4705 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4705 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4705_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4705_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0011 */
 /* [local] */ 
@@ -1465,18 +1465,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4706 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4706 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4706_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4706_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0012 */
 /* [local] */ 
@@ -1511,18 +1511,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4707 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4707 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4707_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4707_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0013 */
 /* [local] */ 
@@ -1557,18 +1557,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4708 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4708 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4708_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4708_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0014 */
 /* [local] */ 
@@ -1603,18 +1603,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4709 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4709 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4709_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4709_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0015 */
 /* [local] */ 
@@ -1649,18 +1649,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4710 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4710 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4710_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4710_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0016 */
 /* [local] */ 
@@ -1695,18 +1695,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4711 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4711 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4711_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4711_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0017 */
 /* [local] */ 
@@ -1741,18 +1741,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4712 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4712 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4712_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4712_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0018 */
 /* [local] */ 
@@ -1787,18 +1787,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4713 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4713 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4713_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4713_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0019 */
 /* [local] */ 
@@ -1833,18 +1833,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4714 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4714 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4714_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4714_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0020 */
 /* [local] */ 
@@ -1879,18 +1879,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4715 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4715 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4715_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4715_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0021 */
 /* [local] */ 
@@ -1925,18 +1925,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4716 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4716 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4716_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4716_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0022 */
 /* [local] */ 
@@ -1971,18 +1971,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4717 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4717 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4717_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4717_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0023 */
 /* [local] */ 
@@ -2017,18 +2017,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4718 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4718 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4718_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4718_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0024 */
 /* [local] */ 
@@ -2076,18 +2076,18 @@ struct TransferProgress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4719 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4719 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4719_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4719_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0025 */
 /* [local] */ 
@@ -2122,18 +2122,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4720 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4720 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4720_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4720_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0026 */
 /* [local] */ 
@@ -2168,18 +2168,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4721 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4721 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4721_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4721_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0027 */
 /* [local] */ 
@@ -2240,18 +2240,18 @@ struct RetrievalProgress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4722 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4722 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4722_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4722_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0028 */
 /* [local] */ 
@@ -2286,18 +2286,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4723 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4723 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4723_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4723_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0029 */
 /* [local] */ 
@@ -2332,18 +2332,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4724 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4724 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4724_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4724_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0030 */
 /* [local] */ 
@@ -2402,18 +2402,18 @@ interface IServiceDocument;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4725 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4725 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4725_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4725_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0031 */
 /* [local] */ 
@@ -2448,18 +2448,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4726 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4726 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4726_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4726_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0032 */
 /* [local] */ 
@@ -2494,18 +2494,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4727 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4727 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4727_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4727_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0033 */
 /* [local] */ 
@@ -2564,18 +2564,18 @@ interface ISyndicationFeed;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4728 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4728 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4728_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4728_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0034 */
 /* [local] */ 
@@ -2610,18 +2610,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4729 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4729 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4729_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4729_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0035 */
 /* [local] */ 
@@ -2656,18 +2656,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4730 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4730 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4730_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4730_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0036 */
 /* [local] */ 
@@ -2702,18 +2702,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4731 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4731 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4731_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4731_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0037 */
 /* [local] */ 
@@ -2748,18 +2748,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4732 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4732 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4732_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4732_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0038 */
 /* [local] */ 
@@ -2794,18 +2794,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4733 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4733 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4733_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4733_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0039 */
 /* [local] */ 
@@ -2840,18 +2840,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4734 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4734 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4734_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4734_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0040 */
 /* [local] */ 
@@ -2886,18 +2886,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4735 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4735 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4735_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4735_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0041 */
 /* [local] */ 
@@ -2932,18 +2932,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4736 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4736 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4736_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4736_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0042 */
 /* [local] */ 
@@ -3271,18 +3271,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4737 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4737 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4737_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4737_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0043 */
 /* [local] */ 
@@ -3457,18 +3457,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CSyndication__CISyndication
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4738 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4738 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4738_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4738_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0045 */
 /* [local] */ 
@@ -3609,18 +3609,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CSyndication__CISyndication
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4739 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4739 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4739_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4739_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0047 */
 /* [local] */ 
@@ -3795,18 +3795,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CSyndication__CSyndicationA
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3191 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4740 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3191 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4740 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4740_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4740_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0049 */
 /* [local] */ 
@@ -3947,18 +3947,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CSyndication__CSyndicationA
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3192 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4741 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3192 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4741 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4741_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4741_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0051 */
 /* [local] */ 
@@ -4133,18 +4133,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CSyndication__CSyndicationC
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3193 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4742 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3193 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4742 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3193_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4742_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4742_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0053 */
 /* [local] */ 
@@ -4285,18 +4285,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CSyndication__CSyndicationC
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3194 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4743 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3194 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4743 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3194_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4743_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4743_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0055 */
 /* [local] */ 
@@ -4471,18 +4471,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CSyndication__CSyndicationI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3195 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4744 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3195 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4744 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3195_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4744_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4744_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0057 */
 /* [local] */ 
@@ -4623,18 +4623,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CSyndication__CSyndicationI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0058_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4745 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4745 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4745_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4745_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0059 */
 /* [local] */ 
@@ -4809,18 +4809,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CSyndication__CSyndicationL
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4746 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4746 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4746_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4746_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0061 */
 /* [local] */ 
@@ -4961,18 +4961,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CSyndication__CSyndicationL
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0062_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4747 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4747 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4747_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4747_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0063 */
 /* [local] */ 
@@ -5147,18 +5147,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CWeb__CSyndication__CSyndicationP
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0064_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4748 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4748 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4748_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4748_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0065 */
 /* [local] */ 
@@ -5299,18 +5299,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CWeb__CSyndication__CSyndicationP
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0066_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4749 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4749 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4749_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4749_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0067 */
 /* [local] */ 
@@ -5493,18 +5493,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CSyndication__CISyndicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0068_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4750 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4750 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4750_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4750_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0069 */
 /* [local] */ 
@@ -5687,18 +5687,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CSyndication__CSyndicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0070_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4751 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4751 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4751_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4751_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0071 */
 /* [local] */ 
@@ -5881,18 +5881,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CSyndication__CSyndicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0072_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4752 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4752 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4752_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4752_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0073 */
 /* [local] */ 
@@ -6075,18 +6075,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CSyndication__CSyndicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0074_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4753 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4753 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4753_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4753_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0075 */
 /* [local] */ 
@@ -6269,18 +6269,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CSyndication__CSyndicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0076_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4754 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4754 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4754_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4754_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0077 */
 /* [local] */ 
@@ -6463,18 +6463,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CWeb__CSyndication__CSyndicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0078_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4755 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4755 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4755_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4755_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0079 */
 /* [local] */ 
@@ -6739,18 +6739,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CWeb__CSyndication__CISyndicationNo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0080_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4756 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4756 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4756_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4756_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0081 */
 /* [local] */ 
@@ -7015,18 +7015,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CWeb__CSyndication__CSyndicationAtt
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0082_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4757 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4757 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4757_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4757_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0083 */
 /* [local] */ 
@@ -7291,18 +7291,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CWeb__CSyndication__CSyndicationCat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0084_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4758 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4758 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4758_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4758_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0085 */
 /* [local] */ 
@@ -7567,18 +7567,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CWeb__CSyndication__CSyndicationIte
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0086_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4759 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4759 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3210_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4759_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4759_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0087 */
 /* [local] */ 
@@ -7843,18 +7843,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CWeb__CSyndication__CSyndicationLin
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0088_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4760 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4760 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3211_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4760_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4760_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0089 */
 /* [local] */ 
@@ -8119,18 +8119,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CWeb__CSyndication__CSyndicationPer
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0090_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4761 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4761 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3212_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4761_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4761_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0091 */
 /* [local] */ 
@@ -8252,18 +8252,18 @@ EXTERN_C const IID IID___FIAsyncActionProgressHandler_1_Windows__CWeb__CSyndicat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0092_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4762 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4762 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3213_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4762_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4762_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0093 */
 /* [local] */ 
@@ -8385,18 +8385,18 @@ EXTERN_C const IID IID___FIAsyncActionWithProgressCompletedHandler_1_Windows__CW
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0094_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4763 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4763 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3214_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4763_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4763_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0095 */
 /* [local] */ 
@@ -8575,18 +8575,18 @@ EXTERN_C const IID IID___FIAsyncActionWithProgress_1_Windows__CWeb__CSyndication
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0096_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3215 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4764 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3215 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4764 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3215_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4764_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4764_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0097 */
 /* [local] */ 
@@ -8708,18 +8708,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CStorage__CS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0098_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3216 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4765 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3216 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4765 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3216_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4765_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4765_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0099 */
 /* [local] */ 
@@ -8841,18 +8841,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0100_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3217 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4766 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3217 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4766 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3217_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4766_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4766_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0101 */
 /* [local] */ 
@@ -9033,18 +9033,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CStorage__CStre
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0102_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3218 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4767 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3218 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4767 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3218_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4767_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4767_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0103 */
 /* [local] */ 
@@ -9166,18 +9166,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CWeb__CAtomP
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0104_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3219 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4768 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3219 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4768 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3219_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4768_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4768_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0105 */
 /* [local] */ 
@@ -9299,18 +9299,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0106_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3220 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4769 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3220 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4769 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3220_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4769_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4769_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0107 */
 /* [local] */ 
@@ -9491,18 +9491,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CWeb__CAtomPub_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0108_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0108_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3221 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4770 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3221 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4770 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3221_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4770_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4770_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0109 */
 /* [local] */ 
@@ -9624,18 +9624,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CWeb__CSyndi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0110_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0110_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3222 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4771 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3222 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4771 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3222_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4771_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4771_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0111 */
 /* [local] */ 
@@ -9757,18 +9757,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0112_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0112_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3223 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4772 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3223 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4772 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3223_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3223_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4772_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4772_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0113 */
 /* [local] */ 
@@ -9949,18 +9949,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CWeb__CSyndicat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0114_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3224 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4773 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3224 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4773 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3224_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3224_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4773_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4773_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0115 */
 /* [local] */ 
@@ -10082,18 +10082,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CWeb__CSyndi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0116_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0116_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3225 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4774 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3225 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4774 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3225_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3225_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4774_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4774_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0117 */
 /* [local] */ 
@@ -10215,18 +10215,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0118_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0118_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3226 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4775 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3226 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4775 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3226_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3226_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4775_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4775_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0119 */
 /* [local] */ 
@@ -10407,18 +10407,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CWeb__CSyndicat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0120_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0120_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3227 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4776 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3227 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4776 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3227_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3227_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4776_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4776_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0121 */
 /* [local] */ 
@@ -10540,18 +10540,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CWeb__CSyndi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0122_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0122_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3228 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4777 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3228 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4777 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3228_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3228_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4777_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4777_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0123 */
 /* [local] */ 
@@ -10673,18 +10673,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0124_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication_0000_0124_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3229 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4778 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3229 */
+/* interface __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4778 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3229_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_3229_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4778_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eweb2Esyndication2Eidl_0000_4778_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eweb2Esyndication_0000_0125 */
 /* [local] */ 

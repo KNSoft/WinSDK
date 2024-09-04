@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -220,6 +220,126 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CIProcessMemoryUsageReport_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface ISystemCpuUsage;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface ISystemCpuUsageReport;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface ISystemDiagnosticInfo;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface ISystemDiagnosticInfoStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface ISystemMemoryUsage;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Diagnostics {
+                interface ISystemMemoryUsageReport;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -275,18 +395,18 @@ interface IProcessDiagnosticInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0001 */
 /* [local] */ 
@@ -321,18 +441,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0002 */
 /* [local] */ 
@@ -367,18 +487,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0003 */
 /* [local] */ 
@@ -417,6 +537,12 @@ typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundati
 typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
 
 #endif
+
+
+
+
+
+
 
 
 
@@ -490,6 +616,61 @@ class ProcessMemoryUsageReport;
 } /*Windows*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace Diagnostics {
+class SystemCpuUsage;
+} /*Diagnostics*/
+} /*System*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace Diagnostics {
+class SystemCpuUsageReport;
+} /*Diagnostics*/
+} /*System*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace Diagnostics {
+class SystemDiagnosticInfo;
+} /*Diagnostics*/
+} /*System*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace Diagnostics {
+class SystemMemoryUsage;
+} /*Diagnostics*/
+} /*System*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace Diagnostics {
+class SystemMemoryUsageReport;
+} /*Diagnostics*/
+} /*System*/
+} /*Windows*/
+}
+#endif
 
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0003 */
@@ -537,21 +718,27 @@ extern "C" {
 
 
 
+
+
+
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0004 */
 /* [local] */ 
@@ -726,18 +913,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSystem__CDiagnostics__CProcessDi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0006 */
 /* [local] */ 
@@ -878,18 +1065,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSystem__CDiagnostics__CProcessDi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0008 */
 /* [local] */ 
@@ -2398,6 +2585,878 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CIProcessMemoryUsag
 /* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017 */
 /* [local] */ 
 
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_ISystemCpuUsage[] = L"Windows.System.Diagnostics.ISystemCpuUsage";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Diagnostics::ISystemCpuUsage */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Diagnostics {
+                    
+                    MIDL_INTERFACE("6037B3AC-02D6-4234-8362-7FE3ADC81F5F")
+                    ISystemCpuUsage : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetReport( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemCpuUsageReport **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISystemCpuUsage = __uuidof(ISystemCpuUsage);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetReport )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_GetReport(This,value)	\
+    ( (This)->lpVtbl -> GetReport(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0018 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_ISystemCpuUsageReport[] = L"Windows.System.Diagnostics.ISystemCpuUsageReport";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0018 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0018_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Diagnostics::ISystemCpuUsageReport */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Diagnostics {
+                    
+                    MIDL_INTERFACE("2C26D0B2-9483-4F62-AB57-82B29D9719B8")
+                    ISystemCpuUsageReport : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_KernelTime( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UserTime( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IdleTime( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISystemCpuUsageReport = __uuidof(ISystemCpuUsageReport);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReportVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_KernelTime )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UserTime )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IdleTime )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReportVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReportVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_get_KernelTime(This,value)	\
+    ( (This)->lpVtbl -> get_KernelTime(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_get_UserTime(This,value)	\
+    ( (This)->lpVtbl -> get_UserTime(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_get_IdleTime(This,value)	\
+    ( (This)->lpVtbl -> get_IdleTime(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsageReport_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0019 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_ISystemDiagnosticInfo[] = L"Windows.System.Diagnostics.ISystemDiagnosticInfo";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0019 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0019_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Diagnostics::ISystemDiagnosticInfo */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Diagnostics {
+                    
+                    MIDL_INTERFACE("A290FE05-DFF3-407F-9A1B-0B2B317CA800")
+                    ISystemDiagnosticInfo : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MemoryUsage( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemMemoryUsage **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CpuUsage( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemCpuUsage **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISystemDiagnosticInfo = __uuidof(ISystemDiagnosticInfo);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MemoryUsage )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CpuUsage )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CDiagnostics_CISystemCpuUsage **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_get_MemoryUsage(This,value)	\
+    ( (This)->lpVtbl -> get_MemoryUsage(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_get_CpuUsage(This,value)	\
+    ( (This)->lpVtbl -> get_CpuUsage(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0020 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_ISystemDiagnosticInfoStatics[] = L"Windows.System.Diagnostics.ISystemDiagnosticInfoStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0020 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0020_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Diagnostics::ISystemDiagnosticInfoStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Diagnostics {
+                    
+                    MIDL_INTERFACE("D404AC21-FC7D-45F0-9A3F-39203AED9F7E")
+                    ISystemDiagnosticInfoStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetForCurrentSystem( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemDiagnosticInfo **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISystemDiagnosticInfoStatics = __uuidof(ISystemDiagnosticInfoStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForCurrentSystem )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfo **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_GetForCurrentSystem(This,value)	\
+    ( (This)->lpVtbl -> GetForCurrentSystem(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemDiagnosticInfoStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0021 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_ISystemMemoryUsage[] = L"Windows.System.Diagnostics.ISystemMemoryUsage";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0021 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0021_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Diagnostics::ISystemMemoryUsage */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Diagnostics {
+                    
+                    MIDL_INTERFACE("17FFC595-1702-49CF-AA27-2F0A32591404")
+                    ISystemMemoryUsage : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetReport( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::Diagnostics::ISystemMemoryUsageReport **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISystemMemoryUsage = __uuidof(ISystemMemoryUsage);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetReport )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_GetReport(This,value)	\
+    ( (This)->lpVtbl -> GetReport(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0022 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Diagnostics_ISystemMemoryUsageReport[] = L"Windows.System.Diagnostics.ISystemMemoryUsageReport";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0022 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0022_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Diagnostics::ISystemMemoryUsageReport */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Diagnostics {
+                    
+                    MIDL_INTERFACE("38663C87-2A9F-403A-BD19-2CF3E8169500")
+                    ISystemMemoryUsageReport : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TotalPhysicalSizeInBytes( 
+                            /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AvailableSizeInBytes( 
+                            /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CommittedSizeInBytes( 
+                            /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISystemMemoryUsageReport = __uuidof(ISystemMemoryUsageReport);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReportVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TotalPhysicalSizeInBytes )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AvailableSizeInBytes )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CommittedSizeInBytes )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReportVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReportVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_get_TotalPhysicalSizeInBytes(This,value)	\
+    ( (This)->lpVtbl -> get_TotalPhysicalSizeInBytes(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_get_AvailableSizeInBytes(This,value)	\
+    ( (This)->lpVtbl -> get_AvailableSizeInBytes(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_get_CommittedSizeInBytes(This,value)	\
+    ( (This)->lpVtbl -> get_CommittedSizeInBytes(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CDiagnostics_CISystemMemoryUsageReport_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0023 */
+/* [local] */ 
+
 #ifndef RUNTIMECLASS_Windows_System_Diagnostics_ProcessCpuUsage_DEFINED
 #define RUNTIMECLASS_Windows_System_Diagnostics_ProcessCpuUsage_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_ProcessCpuUsage[] = L"Windows.System.Diagnostics.ProcessCpuUsage";
@@ -2426,15 +3485,35 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_System_Diagnostics_ProcessMemoryUsageReport_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_ProcessMemoryUsageReport[] = L"Windows.System.Diagnostics.ProcessMemoryUsageReport";
 #endif
+#ifndef RUNTIMECLASS_Windows_System_Diagnostics_SystemCpuUsage_DEFINED
+#define RUNTIMECLASS_Windows_System_Diagnostics_SystemCpuUsage_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_SystemCpuUsage[] = L"Windows.System.Diagnostics.SystemCpuUsage";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_Diagnostics_SystemCpuUsageReport_DEFINED
+#define RUNTIMECLASS_Windows_System_Diagnostics_SystemCpuUsageReport_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_SystemCpuUsageReport[] = L"Windows.System.Diagnostics.SystemCpuUsageReport";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_Diagnostics_SystemDiagnosticInfo_DEFINED
+#define RUNTIMECLASS_Windows_System_Diagnostics_SystemDiagnosticInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_SystemDiagnosticInfo[] = L"Windows.System.Diagnostics.SystemDiagnosticInfo";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_Diagnostics_SystemMemoryUsage_DEFINED
+#define RUNTIMECLASS_Windows_System_Diagnostics_SystemMemoryUsage_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_SystemMemoryUsage[] = L"Windows.System.Diagnostics.SystemMemoryUsage";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_Diagnostics_SystemMemoryUsageReport_DEFINED
+#define RUNTIMECLASS_Windows_System_Diagnostics_SystemMemoryUsageReport_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Diagnostics_SystemMemoryUsageReport[] = L"Windows.System.Diagnostics.SystemMemoryUsageReport";
+#endif
 
 
-/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017 */
+/* interface __MIDL_itf_windows2Esystem2Ediagnostics_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Ediagnostics_0000_0023_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

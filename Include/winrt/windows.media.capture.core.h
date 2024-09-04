@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -193,18 +193,18 @@ interface IVariablePhotoSequenceCapture;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0001 */
 /* [local] */ 
@@ -239,18 +239,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0002 */
 /* [local] */ 
@@ -288,18 +288,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0003 */
 /* [local] */ 
@@ -362,18 +362,18 @@ interface IVariablePhotoCapturedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0004 */
 /* [local] */ 
@@ -408,18 +408,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0005 */
 /* [local] */ 
@@ -514,18 +514,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0006 */
 /* [local] */ 
@@ -647,18 +647,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CCa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0008 */
 /* [local] */ 
@@ -819,18 +819,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CCapture__CCore__CV
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0010 */
 /* [local] */ 
@@ -950,18 +950,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CCapture__CCore_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Ecapture2Ecore2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Ecapture2Ecore_0000_0012 */
 /* [local] */ 

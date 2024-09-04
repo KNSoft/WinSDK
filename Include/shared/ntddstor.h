@@ -182,6 +182,11 @@ extern "C" {
 
 #define IOCTL_STORAGE_GET_DEVICE_NUMBER       CTL_CODE(IOCTL_STORAGE_BASE, 0x0420, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
+//
+// This IOCTL includes the same information as IOCTL_STORAGE_GET_DEVICE_NUMBER, plus the device GUID.
+//
+#define IOCTL_STORAGE_GET_DEVICE_NUMBER_EX    CTL_CODE(IOCTL_STORAGE_BASE, 0x0421, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
 
 #define IOCTL_STORAGE_PREDICT_FAILURE         CTL_CODE(IOCTL_STORAGE_BASE, 0x0440, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_STORAGE_FAILURE_PREDICTION_CONFIG CTL_CODE(IOCTL_STORAGE_BASE, 0x0441, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -354,6 +359,111 @@ typedef struct _STORAGE_DEVICE_NUMBER {
 
     ULONG       PartitionNumber;
 } STORAGE_DEVICE_NUMBER, *PSTORAGE_DEVICE_NUMBER;
+
+typedef struct _STORAGE_DEVICE_NUMBERS {
+
+    ULONG NumberOfDevices;
+
+    STORAGE_DEVICE_NUMBER Devices[ANYSIZE_ARRAY];
+
+} STORAGE_DEVICE_NUMBERS, *PSTORAGE_DEVICE_NUMBERS;
+
+//
+// IOCTL_STORAGE_GET_DEVICE_NUMBER_EX
+//
+// input - none
+//
+// output - STORAGE_DEVICE_NUMBER_EX structure
+//
+
+//
+// Possible flags that can be set in Flags field of
+// STORAGE_DEVICE_NUMBER_EX structure defined below
+//
+
+//
+// This flag indicates that deviceguid is randomly created because a deviceguid conflict was observed
+//
+#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT 0x1
+
+//
+// This flag indicates that deviceguid is randomly created because the HW ID was not available
+//
+#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID   0x2
+
+//
+// This flag indicates that deviceguid is created from the scsi page83 data. 
+// If this flag is not set this implies it's created from serial number or is randomly generated.
+//
+#define STORAGE_DEVICE_FLAGS_PAGE_83_DEVICEGUID                0x4
+
+typedef struct _STORAGE_DEVICE_NUMBER_EX {
+
+    //
+    // Sizeof(STORAGE_DEVICE_NUMBER_EX).
+    //
+
+    ULONG       Version;
+
+    //
+    // Total size of the structure, including any additional data. Currently
+    // this will always be the same as sizeof(STORAGE_DEVICE_NUMBER_EX).
+    //
+
+    ULONG       Size;
+
+    //
+    // Flags - this shall be a combination of STORAGE_DEVICE_FLAGS_XXX flags
+    // that gives more information about the members of this structure.
+    //
+
+    ULONG       Flags;
+
+    //
+    // The FILE_DEVICE_XXX type for this device. This IOCTL is only
+    // supported for disk devices.
+    //
+
+    DEVICE_TYPE DeviceType;
+
+    //
+    // The number of this device.
+    //
+
+    ULONG       DeviceNumber;
+
+    //
+    // A globally-unique identification number for this device.
+    // A GUID of {0} indicates that a GUID could not be generated. The GUID
+    // is based on hardware information that doesn't change with firmware updates
+    // (for instance, serial number can be used to form the GUID, but not the firmware
+    // revision). The device GUID remains the same across reboots.
+    //
+    // In general, if a device exposes a globally unique identifier, the storage driver
+    // will use that identifier to form the GUID. Otherwise, the storage driver will combine
+    // the device's vendor ID, product ID and serial number to create the GUID.
+    //
+    // If a storage driver detects two devices with the same hardware information (which is
+    // an indication of a problem with the device), the driver will generate a random GUID for
+    // one of the two devices. When handling IOCTL_STORAGE_GET_DEVICE_NUMBER_EX for the device
+    // with the random GUID, the driver will add STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT
+    // to the Flags member of this structure.
+    //
+    // If a storage device does not provide any identifying information, the driver will generate a random
+    // GUID and add STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID to the Flags member of this structure.
+    //
+    // A random GUID is not persisted and will not be the same after a reboot.
+    //
+
+    GUID        DeviceGuid;
+
+    //
+    // If the device is partitionable, the partition number of the device.
+    // Otherwise -1.
+    //
+
+    ULONG       PartitionNumber;
+} STORAGE_DEVICE_NUMBER_EX, *PSTORAGE_DEVICE_NUMBER_EX;
 
 
 //
@@ -569,6 +679,7 @@ typedef enum _STORAGE_BUS_TYPE {
     BusTypeSpaces,
     BusTypeNvme,
     BusTypeSCM,
+    BusTypeUfs,
     BusTypeMax,
     BusTypeMaxReserved = 0x7F
 } STORAGE_BUS_TYPE, *PSTORAGE_BUS_TYPE;
@@ -729,6 +840,7 @@ typedef enum _STORAGE_PROPERTY_ID {
     StorageDeviceResiliencyProperty,
     StorageDeviceMediumProductType,
     StorageAdapterRpmbProperty,
+    StorageAdapterCryptoProperty,
 // end_winioctl
     StorageDeviceTieringProperty,
     StorageDeviceFaultDomainProperty,
@@ -745,6 +857,7 @@ typedef enum _STORAGE_PROPERTY_ID {
     StorageDeviceManagementStatus,
     StorageAdapterSerialNumberProperty,
     StorageDeviceLocationProperty,
+    StorageDeviceNumaProperty
 } STORAGE_PROPERTY_ID, *PSTORAGE_PROPERTY_ID;
 
 //
@@ -940,7 +1053,7 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_ADAPTER_DESCRIPTOR {
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 #define NO_SRBTYPE_ADAPTER_DESCRIPTOR_SIZE  \
-    FIELD_OFFSET(STORAGE_ADAPTER_DESCRIPTOR, SrbType)
+    UFIELD_OFFSET(STORAGE_ADAPTER_DESCRIPTOR, SrbType)
 
 #if !defined(SRB_TYPE_SCSI_REQUEST_BLOCK)
 #define SRB_TYPE_SCSI_REQUEST_BLOCK         0
@@ -1379,6 +1492,116 @@ typedef struct _STORAGE_RPMB_DESCRIPTOR {
 
 } STORAGE_RPMB_DESCRIPTOR, *PSTORAGE_RPMB_DESCRIPTOR;
 
+//
+// Output buffer for StorageAdapterCryptoProperty & PropertyStandardQuery
+//
+
+typedef enum _STORAGE_CRYPTO_ALGORITHM_ID {
+    
+    StorageCryptoAlgorithmUnknown = 0,
+    StorageCryptoAlgorithmXTSAES = 1,
+    StorageCryptoAlgorithmBitlockerAESCBC,
+    StorageCryptoAlgorithmAESECB,
+    StorageCryptoAlgorithmESSIVAESCBC,
+    StorageCryptoAlgorithmMax
+
+} STORAGE_CRYPTO_ALGORITHM_ID, *PSTORAGE_CRYPTO_ALGORITHM_ID;
+
+typedef enum _STORAGE_CRYPTO_KEY_SIZE {
+    
+    StorageCryptoKeySizeUnknown = 0,
+    StorageCryptoKeySize128Bits = 1,
+    StorageCryptoKeySize192Bits,
+    StorageCryptoKeySize256Bits,
+    StorageCryptoKeySize512Bits
+
+} STORAGE_CRYPTO_KEY_SIZE, *PSTORAGE_CRYPTO_KEY_SIZE;
+
+#define STORAGE_CRYPTO_CAPABILITY_VERSION_1           1
+
+typedef struct _STORAGE_CRYPTO_CAPABILITY {
+
+    //
+    // To enable versioning of this structure. This shall bet set
+    // to STORAGE_CRYPTO_CAPABILITY_VERSION_1
+    //
+
+    ULONG Version;
+
+    //
+    // Size of this structure. This shall be set to
+    // sizeof(STORAGE_CRYPTO_CAPABILITY)
+    //
+
+    ULONG Size;
+
+    //
+    // The index for this crypto capability
+    //
+
+    ULONG CryptoCapabilityIndex;
+
+    //
+    // Supported algorithm for this crypto capability
+    //
+
+    STORAGE_CRYPTO_ALGORITHM_ID AlgorithmId;
+
+    //
+    // The supported key size for this algorithm
+    //
+
+    STORAGE_CRYPTO_KEY_SIZE KeySize;
+
+    //
+    // Bitmask for the supported sizes of encryptable data blocks. When bit
+    // j is set (j=0...7), a data unit size of 512*2^j bytes is supported.
+    // Bit 0 represents 512 bytes, 1 represents 1 KB, bit 7 represents 64 KB
+    //
+
+    ULONG DataUnitSizeBitmask;
+
+} STORAGE_CRYPTO_CAPABILITY, *PSTORAGE_CRYPTO_CAPABILITY;
+
+#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_1           1
+
+typedef struct _STORAGE_CRYPTO_DESCRIPTOR {
+
+    //
+    // Keep compatible with STORAGE_DESCRIPTOR_HEADER
+    // Shall be set to STORAGE_CRYPTO_DESCRIPTOR_VERSION_1
+    //
+
+    ULONG Version;
+
+    //
+    // Keep compatible with STORAGE_DESCRIPTOR_HEADER
+    // Shall be set to sizeof(STORAGE_CRYPTO_DESCRIPTOR)
+    //
+
+    ULONG Size;
+
+    //
+    // The number of keys the crypto engine in the adapter supports
+    //
+
+    ULONG NumKeysSupported;
+
+    //
+    // The number of crypto capability entries. This outlines the
+    // crypto configurations the adapter supports
+    //
+
+    ULONG NumCryptoCapabilities;
+
+    //
+    // Array of Crypto Capabilities
+    //
+
+    _Field_size_(NumCryptoCapabilities) STORAGE_CRYPTO_CAPABILITY CryptoCapabilities[ANYSIZE_ARRAY];
+
+} STORAGE_CRYPTO_DESCRIPTOR, *PSTORAGE_CRYPTO_DESCRIPTOR;
+
 // end_winioctl
 // begin_winioctl
 
@@ -1399,10 +1622,21 @@ typedef struct _STORAGE_RPMB_DESCRIPTOR {
 typedef enum _STORAGE_TIER_MEDIA_TYPE {
 
     StorageTierMediaTypeUnspecified = 0,
-    StorageTierMediaTypeDisk,
-    StorageTierMediaTypeSsd
+    StorageTierMediaTypeDisk        = 1,
+    StorageTierMediaTypeSsd         = 2,
+    StorageTierMediaTypeScm         = 4,
+    StorageTierMediaTypeMax
 
 } STORAGE_TIER_MEDIA_TYPE, *PSTORAGE_TIER_MEDIA_TYPE;
+
+typedef enum _STORAGE_TIER_CLASS {
+
+    StorageTierClassUnspecified = 0,
+    StorageTierClassCapacity,
+    StorageTierClassPerformance,
+    StorageTierClassMax
+
+} STORAGE_TIER_CLASS, *PSTORAGE_TIER_CLASS;
 
 typedef struct _STORAGE_TIER {
 
@@ -1441,6 +1675,12 @@ typedef struct _STORAGE_TIER {
     //
 
     STORAGE_TIER_MEDIA_TYPE MediaType;
+
+    //
+    // Classification of the tier
+    //
+
+    STORAGE_TIER_CLASS Class;
 
 } STORAGE_TIER, *PSTORAGE_TIER;
 
@@ -1899,6 +2139,7 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR {
 #define STORAGE_ATTRIBUTE_DYNAMIC_PERSISTENCE       0x04
 #define STORAGE_ATTRIBUTE_VOLATILE                  0x08
 #define STORAGE_ATTRIBUTE_ASYNC_EVENT_NOTIFICATION  0x10
+#define STORAGE_ATTRIBUTE_PERF_SIZE_INDEPENDENT	    0x20
 
 //
 // Constants for StorageDeviceManagementStatus
@@ -1947,7 +2188,8 @@ typedef enum _STORAGE_OPERATIONAL_STATUS_REASON {
     DiskOpReasonInvalidFirmware,
     DiskOpReasonHealthCheck,
     DiskOpReasonLostDataPersistence,
-    DiskOpReasonDisabledByPlatform
+    DiskOpReasonDisabledByPlatform,
+    DiskOpReasonMax
 } STORAGE_OPERATIONAL_STATUS_REASON, *PSTORAGE_OPERATIONAL_STATUS_REASON;
 
 typedef struct _STORAGE_OPERATIONAL_REASON {
@@ -1986,7 +2228,7 @@ typedef struct _STORAGE_OPERATIONAL_REASON {
 
 #define STORAGE_DEVICE_MAX_OPERATIONAL_STATUS    16
 
-typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
+typedef struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
 
     //
     // Sizeof() of this structure serves
@@ -2032,7 +2274,7 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
     // Additional reasons. There are NumberOfAdditionalReasons valid elements in the array.
     //
 
-    _Field_size_(NumberOfAdditionalReasons) STORAGE_OPERATIONAL_REASON AdditionalReasons[ANYSIZE_ARRAY];
+    STORAGE_OPERATIONAL_REASON AdditionalReasons[ANYSIZE_ARRAY];
 
 } STORAGE_DEVICE_MANAGEMENT_STATUS, *PSTORAGE_DEVICE_MANAGEMENT_STATUS;
 
@@ -2051,9 +2293,9 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_MANAGEMENT_STATUS {
 #define STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH (128)
 
 typedef _Struct_size_bytes_(Size) struct _STORAGE_ADAPTER_SERIAL_NUMBER {
-    
+
     ULONG Version;
-    
+
     ULONG Size;
 
     //
@@ -2117,6 +2359,22 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_DEVICE_LOCATION_DESCRIPTOR {
 
 } STORAGE_DEVICE_LOCATION_DESCRIPTOR, *PSTORAGE_DEVICE_LOCATION_DESCRIPTOR;
 
+//
+// Output buffer for StorageDeviceNumaProperty.
+//
+// If the query for this property is successful, then the caller should
+// validate the NumaNode field before using it to optimize any operations.
+// That is, the caller should ensure the NumaNode value is less than or equal
+// to the system's highest NUMA node value and the NumaNode value is not equal
+// to STORAGE_DEVICE_NUMA_NODE_UNKNOWN.
+//
+typedef struct _STORAGE_DEVICE_NUMA_PROPERTY {
+    ULONG Version;
+    ULONG Size;
+    ULONG NumaNode;
+} STORAGE_DEVICE_NUMA_PROPERTY, *PSTORAGE_DEVICE_NUMA_PROPERTY;
+
+#define STORAGE_DEVICE_NUMA_NODE_UNKNOWN MAXULONG
 
 //
 // IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES
@@ -2639,7 +2897,7 @@ typedef struct _DEVICE_STORAGE_ADDRESS_RANGE {
 typedef struct _DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT {
 
     ULONG                      Version;                    // The version of this structure.
-    
+
     ULONG                      Flags;                      // Additional information about the output.
 
     ULONG                      TotalNumberOfRanges;        // The number of ranges that would be necessary to fulfill the request.
@@ -2651,7 +2909,7 @@ typedef struct _DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT {
     ULONG                      NumberOfRangesReturned;     // Number of entries in Ranges. If the buffer provided by the caller
                                                            // isn't large enough to hold all the requested ranges, the device
                                                            // returns STATUS_BUFFER_OVERFLOW in IoStatus.Status.
-                                                           
+
     DEVICE_STORAGE_ADDRESS_RANGE Ranges[ANYSIZE_ARRAY];
 
 } DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT, *PDEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT;
@@ -3705,6 +3963,11 @@ typedef _Struct_size_bytes_(Size) struct _STORAGE_COUNTERS {
 // This is used in "Flags" field of data structures for firmware upgrade request.
 //
 #define STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER                     0x00000001
+
+//
+// Indicate that current FW image segment is the last one.
+//
+#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_LAST_SEGMENT                   0x00000002
 
 //
 // Indicate that the existing firmware in slot should be activated.

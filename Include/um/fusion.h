@@ -841,9 +841,9 @@ void __RPC_STUB IAssemblyName_Finalize_Stub(
 
 HRESULT STDMETHODCALLTYPE IAssemblyName_GetDisplayName_Proxy( 
     IAssemblyName * This,
-    /* [out] */ LPOLESTR szDisplayName,
-    /* [out][in] */ LPDWORD pccDisplayName,
-    /* [in] */ DWORD dwDisplayFlags);
+    /* [out] */ __out_ecount(*pccDisplayName) LPOLESTR szDisplayName,
+    /* [out][in] */ __inout LPDWORD pccDisplayName,
+    /* [in] */ __in DWORD dwDisplayFlags);
 
 
 void __RPC_STUB IAssemblyName_GetDisplayName_Stub(
@@ -874,8 +874,8 @@ void __RPC_STUB IAssemblyName_Reserved_Stub(
 
 HRESULT STDMETHODCALLTYPE IAssemblyName_GetName_Proxy( 
     IAssemblyName * This,
-    /* [out][in] */ LPDWORD lpcwBuffer,
-    /* [out] */ WCHAR *pwzName);
+    /* [out][in] */ __inout LPDWORD lpcwBuffer,
+    /* [out] */ __out_ecount(*lpcwBuffer) WCHAR *pwzName);
 
 
 void __RPC_STUB IAssemblyName_GetName_Stub(
@@ -1280,7 +1280,7 @@ STDAPI CreateInstallReferenceEnum(IInstallReferenceEnum **ppRefEnum, IAssemblyNa
 STDAPI CreateAssemblyEnum(IAssemblyEnum **pEnum, IUnknown *pUnkReserved, IAssemblyName *pName, DWORD dwFlags, LPVOID pvReserved);      
 STDAPI CreateAssemblyNameObject(LPASSEMBLYNAME *ppAssemblyNameObj, LPCWSTR szAssemblyName, DWORD dwFlags, LPVOID pvReserved);             
 STDAPI CreateAssemblyCache(IAssemblyCache **ppAsmCache, DWORD dwReserved); 
-STDAPI GetCachePath(ASM_CACHE_FLAGS dwCacheFlags, LPWSTR pwzCachePath, PDWORD pcchPath); 
+STDAPI GetCachePath(__in ASM_CACHE_FLAGS dwCacheFlags, __out_ecount(*pcchPath) LPWSTR pwzCachePath, __inout PDWORD pcchPath); 
 STDAPI GetAssemblyIdentityFromFile(LPCWSTR pwzFilePAth, REFIID riid, IUnknown **ppIdentity); 
 STDAPI ClearDownloadCache();
 

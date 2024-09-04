@@ -6,10 +6,16 @@
            xmlns:t="http://schemas.microsoft.com/appx/manifest/types"
            xmlns:f="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
            xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+           xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+           xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
+           xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
            >
 
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/types"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/foundation/windows10"/>
+  <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"/>
+  <xs:import namespace="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"/>
+  <xs:import namespace="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"/>
 
   <xs:attribute name="Scale" type="t:ST_Scale_All"/>
   <xs:attribute name="DXFeatureLevel" type="t:ST_DXFeatureLevel"/>
@@ -140,9 +146,17 @@
       </xs:element>
       <xs:element name="SupportedFileTypes" type="CT_FTASupportedFileTypes"/>
       <xs:element ref="FileTypeAssociationSupportedVerbsChoice" minOccurs="0"/>
+      <xs:element ref="uap4:KindMap" minOccurs="0"/>
+      <xs:element ref="rescap3:MigrationProgIds" minOccurs="0"/>
+      <xs:element ref="desktop2:ThumbnailHandler" minOccurs="0"/>
+      <xs:element ref="desktop2:DesktopPreviewHandler" minOccurs="0"/>
+      <xs:element ref="desktop2:DesktopPropertyHandler" minOccurs="0"/>
+      <xs:element ref="desktop2:OleClass" minOccurs="0"/>
     </xs:all>
     <xs:attribute name="Name" type="t:ST_FTAName" use="required"/>
     <xs:attribute name="DesiredView" type="t:ST_DesiredView" use="optional"/>
+    <xs:attribute ref="desktop2:UseUrl" use="optional"/>
+    <xs:attribute ref="desktop2:AllowSilentDefaultTakeOver" use="optional"/>
   </xs:complexType>
 
   <xs:element name="FileTypeAssociationSupportedVerbsChoice" abstract="true"/>
@@ -154,6 +168,7 @@
           <xs:simpleContent>
             <xs:extension base="t:ST_FileType">
               <xs:attribute name="ContentType" type="t:ST_ContentType" use="optional"/>
+              <xs:attributeGroup ref="uap4:ShellNewAttributes"/>
             </xs:extension>
           </xs:simpleContent>
         </xs:complexType>
@@ -165,6 +180,7 @@
     <xs:all>
       <xs:element name="Logo" type="t:ST_ImageFile" minOccurs="0"/>
       <xs:element name="DisplayName" type="t:ST_DisplayName" minOccurs="0"/>
+      <xs:element ref="rescap3:MigrationProgIds" minOccurs="0"/>
     </xs:all>
     <xs:attribute name="Name" type="t:ST_Protocol_2010_v2" use="required"/>
     <xs:attribute name="DesiredView" type="t:ST_DesiredView" use="optional"/>
@@ -258,6 +274,7 @@
   <xs:complexType name="CT_AppService">
     <xs:attribute name="Name" type="t:ST_AppServiceName" use="required"/>
     <xs:attribute name="ServerName" type="t:ST_AsciiWindowsId" use="optional"/>
+    <xs:attribute ref="uap4:SupportsMultipleInstances" use="optional"/>
   </xs:complexType>
 
   <xs:complexType name="CT_MediaPlayback">

@@ -21,6 +21,7 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-threadpool-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

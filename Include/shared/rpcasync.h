@@ -30,8 +30,9 @@ Abstract:
 extern "C" {
 #endif
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 
 #if defined(_KRPCENV_)
 
@@ -176,15 +177,6 @@ typedef struct _RPC_ASYNC_STATE {
 
 #define RpcAsyncGetCallHandle(pAsync) (((PRPC_ASYNC_STATE) pAsync)->RuntimeInfo)
 
-RPCRTAPI
-_Must_inspect_result_
-RPC_STATUS
-RPC_ENTRY
-RpcAsyncInitializeHandle (
-    _Out_writes_bytes_(Size) PRPC_ASYNC_STATE pAsync,
-    _In_ unsigned int     Size
-    );
-
 #if !defined(_KRPCENV_)
 RPCRTAPI
 _Must_inspect_result_
@@ -194,6 +186,15 @@ RpcAsyncRegisterInfo (
     _In_ PRPC_ASYNC_STATE pAsync
     ) ;
 #endif
+
+RPCRTAPI
+_Must_inspect_result_
+RPC_STATUS
+RPC_ENTRY
+RpcAsyncInitializeHandle (
+    _Out_writes_bytes_(Size) PRPC_ASYNC_STATE pAsync,
+    _In_ unsigned int     Size
+    );
 
 RPCRTAPI
 _Must_inspect_result_
@@ -376,6 +377,12 @@ RPC_ENTRY
 RpcErrorClearInformation (
     void
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #endif // !RPC_NO_WINDOWS_H || _KRPCENV_ || _WINBASE_
 
@@ -686,6 +693,13 @@ RpcServerUnsubscribeForNotification (
 #endif // _KRPCENV_
  
 #if (NTDDI_VERSION >= NTDDI_VISTA)  
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 RPC_STATUS 
 RPC_ENTRY 
@@ -703,6 +717,14 @@ RpcBindingUnbind (
     );
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
+
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 #endif // (NTDDI_VERSION >= NTDDI_WINXP)
 //
 // Internal APIs

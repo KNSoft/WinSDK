@@ -994,6 +994,50 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         );
 
 
+    //
+    // Method: SetProperties
+    //
+
+    UInt32 SetProperties(
+
+        [In]
+        UInt16 ProvisioningType,
+
+        [In]
+        UInt64 AllocationUnitSize,
+
+        [In]
+        UInt16 MediaType,
+
+        [In]
+        UInt16 FaultDomainAwareness,
+
+        [In]
+        UInt16 ColumnIsolation,
+
+        [In]
+        String ResiliencySettingName,
+
+        [In]
+        UInt16 PhysicalDiskRedundancy,
+
+        [In]
+        UInt16 NumberOfDataCopies,
+
+        [In]
+        UInt16 NumberOfGroups,
+
+        [In]
+        UInt16 NumberOfColumns,
+
+        [In]
+        UInt64 Interleave,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+        );
+
+
     [Description(
         "Attaches a Storage Spaces based virtual disk to the system. This operation is similar "
         "to Show and Hide, however there is no need for target and initiator configuration "

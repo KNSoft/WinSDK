@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -51,6 +51,20 @@ typedef interface __FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoMode _
 typedef interface __FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode __FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode;
 
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule;
+
+#endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule;
+
+#endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__ */
 
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange_FWD_DEFINED__
@@ -200,6 +214,13 @@ typedef interface __FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_FWD_DEFINED__ */
 
 
+#ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule;
+
+#endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__ */
+
+
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange __FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange;
@@ -263,6 +284,20 @@ typedef interface __FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMod
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__ */
+
+
 #ifndef ____FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_FWD_DEFINED__
 #define ____FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_FWD_DEFINED__
 typedef interface __FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode __FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode;
@@ -296,6 +331,13 @@ typedef interface __FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices
 typedef interface __FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs __FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CICallControlEventHandler_FWD_DEFINED__
@@ -498,6 +540,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController4_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAdvancedVideoCaptureDeviceController5;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController;
@@ -516,6 +578,86 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAudioDeviceModule;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAudioDeviceModuleNotificationEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAudioDeviceModulesManager;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IAudioDeviceModulesManagerFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CICallControl_FWD_DEFINED__
@@ -958,6 +1100,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IModuleCommandResult;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl __x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl;
@@ -1138,6 +1300,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                interface IVideoDeviceControllerGetDevicePropertyResult;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl __x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl;
@@ -1263,18 +1445,18 @@ enum AdvancedPhotoMode;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3963 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4572 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3963 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4572 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3963_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3963_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4572_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4572_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices_0000_0001 */
 /* [local] */ 
@@ -1309,18 +1491,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3964 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4573 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3964 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4573 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3964_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3964_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4573_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4573_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices_0000_0002 */
 /* [local] */ 
@@ -1344,13 +1526,24 @@ typedef IIterable<enum ABI::Windows::Media::Devices::AdvancedPhotoMode> __FIIter
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+class AudioDeviceModule;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace Media {
 namespace Devices {
-enum AutoFocusRange;
+interface IAudioDeviceModule;
 } /*Devices*/
 } /*Media*/
 } /*Windows*/
@@ -1368,20 +1561,125 @@ enum AutoFocusRange;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3965 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4574 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3965 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4574 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3965_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3965_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4574_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4574_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Edevices_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE
+#define DEF___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b4cbbfb7-9851-56c9-839d-a10a8b1bb234"))
+IIterator<ABI::Windows::Media::Devices::AudioDeviceModule*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::AudioDeviceModule*, ABI::Windows::Media::Devices::IAudioDeviceModule*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Media.Devices.AudioDeviceModule>"; }
+};
+typedef IIterator<ABI::Windows::Media::Devices::AudioDeviceModule*> __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_t;
+#define ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0003 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4575 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4575 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4575_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4575_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0004 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE
+#define DEF___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("7eeb51c3-d70e-548a-85c2-3cf71b4a124c"))
+IIterable<ABI::Windows::Media::Devices::AudioDeviceModule*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::AudioDeviceModule*, ABI::Windows::Media::Devices::IAudioDeviceModule*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Media.Devices.AudioDeviceModule>"; }
+};
+typedef IIterable<ABI::Windows::Media::Devices::AudioDeviceModule*> __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_t;
+#define ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+enum AutoFocusRange;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0004 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0004_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4576 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4576 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4576_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange_USE
@@ -1405,29 +1703,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0003 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3966 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3966 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4577 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3966_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3966_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4577 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4577_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange_USE
@@ -1463,30 +1761,30 @@ enum CaptureSceneMode;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0004 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3967 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3967 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4578 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3967_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3967_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4578 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4578_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE
@@ -1510,29 +1808,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0005 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3968 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3968 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4579 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3968_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3968_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4579 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4579_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE
@@ -1568,30 +1866,30 @@ enum FocusMode;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0006 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0008 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3969 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3969 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3969_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3969_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4580 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4580_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusMode_USE
@@ -1615,29 +1913,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0007 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3970 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3970 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3970_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3970_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4581 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4581_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CFocusMode_USE
@@ -1673,30 +1971,30 @@ enum FocusPreset;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0008 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0010 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3971 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3971 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3971_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3971_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4582 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4582_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusPreset_USE
@@ -1720,29 +2018,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusPreset_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0009 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3972 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3972 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3972_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3972_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4583 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4583_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CFocusPreset_USE
@@ -1778,30 +2076,30 @@ enum HdrVideoMode;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0010 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0012 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3973 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3973 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3973_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3973_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4584 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4584_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode_USE
@@ -1825,29 +2123,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0011 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3974 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3974 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3974_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3974_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4585 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4585_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode_USE
@@ -1883,30 +2181,30 @@ enum IsoSpeedPreset;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0012 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0014 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3975 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3975 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3975_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3975_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4586 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4586_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset_USE
@@ -1930,29 +2228,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0013 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3976 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3976 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3976_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3976_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4587 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4587_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset_USE
@@ -1988,30 +2286,30 @@ enum ManualFocusDistance;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0014 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0016 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3977 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3977 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3977_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3977_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4588 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4588_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance_USE
@@ -2035,29 +2333,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0015 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0017 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3978 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3978 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3978_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3978_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4589 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4589_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CManualFocusDistance_USE
@@ -2093,30 +2391,30 @@ enum OpticalImageStabilizationMode;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0016 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0018 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3979 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3979 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3979_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3979_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4590 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4590_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_USE
@@ -2140,29 +2438,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0017 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0019 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3980 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3980 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3980_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3980_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4591 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4591_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_USE
@@ -2209,30 +2507,30 @@ interface IRegionOfInterest;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0018 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0020 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3981 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3981 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3981_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3981_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4592 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4592_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest_USE
@@ -2256,29 +2554,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0019 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3982 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3982 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3982_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3982_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4593 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4593_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_USE
@@ -2314,30 +2612,30 @@ enum ZoomTransitionMode;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0020 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0022 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3983 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3983 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3983_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3983_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4594 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4594_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE
@@ -2361,29 +2659,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0021 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3984 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3984 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3984_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3984_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4595 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4595_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE
@@ -2407,29 +2705,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0022 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3985 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3985 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3985_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3985_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4596 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4596_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_USE
@@ -2453,29 +2751,75 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0023 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3986 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3986 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3986_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3986_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4597 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4597_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0026 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE
+#define DEF___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b9f55617-48ec-5ad7-95ca-33395284f28b"))
+IVectorView<ABI::Windows::Media::Devices::AudioDeviceModule*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::AudioDeviceModule*, ABI::Windows::Media::Devices::IAudioDeviceModule*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Media.Devices.AudioDeviceModule>"; }
+};
+typedef IVectorView<ABI::Windows::Media::Devices::AudioDeviceModule*> __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t;
+#define ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0026 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0026_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4598 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4598 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4598_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_USE
@@ -2499,29 +2843,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0024 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0027 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3987 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3987 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3987_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3987_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4599 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4599_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE
@@ -2545,29 +2889,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0025 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3988 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3988 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3988_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3988_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4600 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4600_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusMode_USE
@@ -2591,29 +2935,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0026 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3989 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3989 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3989_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3989_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4601 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4601_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset_USE
@@ -2637,29 +2981,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0027 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0030 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3990 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3990 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3990_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3990_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4602 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4602_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode_USE
@@ -2683,29 +3027,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0028 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3991 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3991 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3991_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3991_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset_USE
@@ -2729,29 +3073,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0029 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0032 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3992 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3992 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3992_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3992_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance_USE
@@ -2775,29 +3119,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0030 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3993 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3993 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3993_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3993_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4605 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_USE
@@ -2821,29 +3165,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0031 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0034 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3994 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3994 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3994_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3994_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE
@@ -2865,31 +3209,147 @@ typedef IVectorView<enum ABI::Windows::Media::Devices::ZoomTransitionMode> __FIV
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+class ModuleCommandResult;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+interface IModuleCommandResult;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0032 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3995 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0035_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3995 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3995_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3995_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0036 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cb786404-f2e8-5e0b-bf12-39e31483cfae"))
+IAsyncOperationCompletedHandler<ABI::Windows::Media::Devices::ModuleCommandResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::ModuleCommandResult*, ABI::Windows::Media::Devices::IModuleCommandResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Media.Devices.ModuleCommandResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Media::Devices::ModuleCommandResult*> __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0036 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0036_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4608 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4608 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0037 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2e1f3d72-a58d-5b0a-b42d-3660c04cfeeb"))
+IAsyncOperation<ABI::Windows::Media::Devices::ModuleCommandResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::ModuleCommandResult*, ABI::Windows::Media::Devices::IModuleCommandResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Media.Devices.ModuleCommandResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Media::Devices::ModuleCommandResult*> __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t;
+#define ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0037 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0037_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4609 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4609 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE
@@ -2913,29 +3373,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0033 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0038 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3996 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3996 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3996_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3996_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CMedia__CDevices__CManualFocusDistance_USE
@@ -2971,30 +3431,30 @@ enum MediaCaptureFocusState;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0034 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0039 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3997 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3997 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3997_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3997_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CMedia__CDevices__CMediaCaptureFocusState_USE
@@ -3043,7 +3503,7 @@ interface IDefaultAudioDeviceChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0035 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0040 */
 /* [local] */ 
 
 
@@ -3051,23 +3511,23 @@ interface IDefaultAudioDeviceChangedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3998 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3998 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3998_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3998_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_USE
@@ -3102,29 +3562,29 @@ class DefaultAudioRenderDeviceChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0036 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3999 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3999 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3999_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_3999_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_USE
@@ -3146,31 +3606,125 @@ typedef ITypedEventHandler<IInspectable*,ABI::Windows::Media::Devices::DefaultAu
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+class AudioDeviceModulesManager;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+interface IAudioDeviceModulesManager;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+class AudioDeviceModuleNotificationEventArgs;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
+interface IAudioDeviceModuleNotificationEventArgs;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0037 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0037_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4000 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0042_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4000 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4000_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0043 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b2f6b1fd-7092-5724-b2ce-91b1176e80e1"))
+ITypedEventHandler<ABI::Windows::Media::Devices::AudioDeviceModulesManager*,ABI::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::AudioDeviceModulesManager*, ABI::Windows::Media::Devices::IAudioDeviceModulesManager*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs*, ABI::Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Media::Devices::AudioDeviceModulesManager*,ABI::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs*> __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0043 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0043_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4615 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4615 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT32_USE
@@ -3206,30 +3760,30 @@ interface IMediaEncodingProperties;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0038 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0044 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4001 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4001 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4001_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_USE
@@ -3253,29 +3807,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0039 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4002 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4002 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4002_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_USE
@@ -3299,29 +3853,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4003 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4003 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4003_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_USE
@@ -3356,6 +3910,9 @@ extern "C" {
 #if !defined(__windows2Emedia2Emediaproperties_h__)
 #include <Windows.Media.MediaProperties.h>
 #endif // !defined(__windows2Emedia2Emediaproperties_h__)
+#if !defined(__windows2Estorage2Estreams_h__)
+#include <Windows.Storage.Streams.h>
+#endif // !defined(__windows2Estorage2Estreams_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
@@ -3434,6 +3991,7 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaThumbnailFormat __x_
 
 
 #endif
+
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -3607,7 +4165,37 @@ typedef enum __x_ABI_CWindows_CMedia_CDevices_CRegionOfInterestType __x_ABI_CWin
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CMedia_CDevices_CSendCommandStatus __x_ABI_CWindows_CMedia_CDevices_CSendCommandStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CMedia_CDevices_CTelephonyKey __x_ABI_CWindows_CMedia_CDevices_CTelephonyKey;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerGetDevicePropertyStatus __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerGetDevicePropertyStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -3624,6 +4212,9 @@ typedef enum __x_ABI_CWindows_CMedia_CDevices_CZoomTransitionMode __x_ABI_CWindo
 
 
 #endif
+
+
+
 
 
 
@@ -3948,6 +4539,17 @@ namespace ABI {
 namespace Windows {
 namespace Media {
 namespace Devices {
+class VideoDeviceControllerGetDevicePropertyResult;
+} /*Devices*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Devices {
 class WhiteBalanceControl;
 } /*Devices*/
 } /*Media*/
@@ -3978,7 +4580,7 @@ class ZoomSettings;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0041 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0047 */
 /* [local] */ 
 
 
@@ -4088,6 +4690,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 #ifdef __cplusplus
 
@@ -4403,7 +5006,61 @@ namespace ABI {
         namespace Media {
             namespace Devices {
                 
+                typedef enum SendCommandStatus SendCommandStatus;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
                 typedef enum TelephonyKey TelephonyKey;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
+                typedef enum VideoDeviceControllerGetDevicePropertyStatus VideoDeviceControllerGetDevicePropertyStatus;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
+                typedef enum VideoDeviceControllerSetDevicePropertyStatus VideoDeviceControllerSetDevicePropertyStatus;
                 
             } /* end namespace */
         } /* end namespace */
@@ -4477,23 +5134,26 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0041_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4004 */
 
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4004 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4004_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoMode
@@ -4501,13 +5161,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4004_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0042 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__
@@ -4651,35 +5311,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoM
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0043 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0049 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CAdvancedPhotoMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0043 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4005 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4005 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4005_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode
@@ -4687,13 +5347,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4005_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0044 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__
@@ -4803,35 +5463,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoM
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0045 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0051 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CAdvancedPhotoMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0045 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4006 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4006 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4006_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0052 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule
+#define DEF___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0052 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0052_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b4cbbfb7-9851-56c9-839d-a10a8b1bb234")
+    __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceModule **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Media::Devices::IAudioDeviceModule **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl;
+
+    interface __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0053 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0053_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4622 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4622 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0054 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule
+#define DEF___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0054 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0054_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("7eeb51c3-d70e-548a-85c2-3cf71b4a124c")
+    __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CMedia__CDevices__CAudioDeviceModule **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl;
+
+    interface __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0055 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0055 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0055_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4623 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4623 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange
@@ -4839,13 +5837,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4006_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0046 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__
@@ -4989,35 +5987,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0047 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0057 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CAutoFocusRange */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0047 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4007 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4007 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4007_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4624 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange
@@ -5025,13 +6023,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4007_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0048 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__
@@ -5141,35 +6139,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0049 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0059 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CAutoFocusRange */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0049 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4008 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4008 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4008_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode
@@ -5177,13 +6175,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4008_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0050 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
@@ -5327,35 +6325,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMo
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0051 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0061 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CCaptureSceneMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0051 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4009 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4009 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4009_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMode
@@ -5363,13 +6361,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4009_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0052 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
@@ -5479,35 +6477,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMo
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0053 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0063 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CCaptureSceneMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0053 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4010 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4010 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4010_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0064 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusMode
@@ -5515,13 +6513,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4010_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0054 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__
@@ -5665,35 +6663,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CFocusMode;
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0055 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0065 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0055 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4011 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4011 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4011_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CFocusMode
@@ -5701,13 +6699,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4011_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0056 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__
@@ -5817,35 +6815,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CFocusMode;
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0057 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CFocusMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0057 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4012 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4012 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4012_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusPreset
@@ -5853,13 +6851,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4012_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0058 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__
@@ -6003,35 +7001,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CFocusPreset;
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0059 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0069 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CFocusPreset */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0059 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4013 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4013 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4013_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0070 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CFocusPreset
@@ -6039,13 +7037,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4013_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0060 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__
@@ -6155,35 +7153,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CFocusPreset;
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0061 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0071 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CFocusPreset */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0061 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4014 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4014 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4014_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode
@@ -6191,13 +7189,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4014_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0062 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__
@@ -6341,35 +7339,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode;
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0063 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0073 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CHdrVideoMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0063 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4015 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4015_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0074 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode
@@ -6377,13 +7375,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4015_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0064 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__
@@ -6493,35 +7491,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode;
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0065 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0075 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CHdrVideoMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0065 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4016 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4016_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0076 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset
@@ -6529,13 +7527,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4016_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0066 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__
@@ -6679,35 +7677,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0067 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0077 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CIsoSpeedPreset */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0067 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4017 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4017_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0078 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset
@@ -6715,13 +7713,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4017_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0068 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__
@@ -6831,35 +7829,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0069 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0079 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CIsoSpeedPreset */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0069 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4018 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4018_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0080 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance
@@ -6867,13 +7865,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4018_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0070 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
@@ -7017,35 +8015,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CManualFocusDis
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0071 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0081 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CManualFocusDistance */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0071 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4019 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4019_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0082 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CManualFocusDistance
@@ -7053,13 +8051,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4019_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0072 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
@@ -7169,35 +8167,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CManualFocusDis
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0073 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0083 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CManualFocusDistance */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0073 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4020 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4020_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0074 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0084 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode
@@ -7205,13 +8203,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4020_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0074 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__
@@ -7355,35 +8353,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__COpticalImageSt
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0075 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0085 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0075 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4021 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4021_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0076 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0086 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode
@@ -7391,13 +8389,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4021_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0076 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__
@@ -7507,35 +8505,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__COpticalImageSt
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0077 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0087 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0077 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4022 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4022_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0078 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0088 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest
@@ -7543,13 +8541,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4022_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0078 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest_INTERFACE_DEFINED__
@@ -7693,35 +8691,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CRegionOfIntere
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0079 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0089 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CRegionOfInterest */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0079 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4023 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4023_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0080 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0090 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest
@@ -7729,13 +8727,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4023_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0080 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_INTERFACE_DEFINED__
@@ -7845,35 +8843,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CRegionOfIntere
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0081 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0091 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0081 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4024 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4024_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0082 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0092 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode
@@ -7881,13 +8879,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4024_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0082 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
@@ -8031,35 +9029,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CDevices__CZoomTransition
 #endif 	/* ____FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0083 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0093 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CMedia__CDevices__CZoomTransitionMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0083 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0093_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4025 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4025_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0084 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0094 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode
@@ -8067,13 +9065,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4025_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0084 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
@@ -8183,35 +9181,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CDevices__CZoomTransition
 #endif 	/* ____FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0085 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0095 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CMedia__CDevices__CZoomTransitionMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0085 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0095_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4026 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4026_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0086 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0096 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode
@@ -8219,13 +9217,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4026_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0086 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__
@@ -8377,35 +9375,229 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhot
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0087 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0097 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CAdvancedPhotoMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0087 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0097_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4027 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4027_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0088 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0098 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule
+#define DEF___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0098 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0098_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b9f55617-48ec-5ad7-95ca-33395284f28b")
+    __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceModule **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Devices::IAudioDeviceModule *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Media::Devices::IAudioDeviceModule **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl;
+
+    interface __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModuleVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0099 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0099 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0099_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4645 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4645 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0100 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange
@@ -8413,13 +9605,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4027_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0088 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__
@@ -8571,35 +9763,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRan
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0089 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0101 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CAutoFocusRange */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0089 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0101_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4028 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4028_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0090 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0102 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode
@@ -8607,13 +9799,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4028_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0090 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
@@ -8765,35 +9957,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CCaptureScene
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0091 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0103 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CCaptureSceneMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0091 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0103_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4029 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4029_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0092 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0104 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusMode
@@ -8801,13 +9993,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4029_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0092 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__
@@ -8959,35 +10151,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CFocusMode;
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CFocusMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0093 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0105 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0093 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0105_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4030 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4030_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0094 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0106 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset
@@ -8995,13 +10187,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4030_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0094 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__
@@ -9153,35 +10345,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset;
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0095 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0107 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CFocusPreset */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0095 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0107_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4031 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4031_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0096 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0108 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode
@@ -9189,13 +10381,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4031_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0096 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__
@@ -9347,35 +10539,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0097 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0109 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CHdrVideoMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0097 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0109_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4032 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4032_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0098 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0110 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset
@@ -9383,13 +10575,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4032_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__
@@ -9541,35 +10733,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPres
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0111 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CIsoSpeedPreset */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0111_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4033 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4033_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0100 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0112 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance
@@ -9577,13 +10769,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4033_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
@@ -9735,35 +10927,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CManualFocusD
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0113 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CManualFocusDistance */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0113_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4034 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4034_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0102 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0114 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode
@@ -9771,13 +10963,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4034_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__
@@ -9929,35 +11121,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__COpticalImage
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0103 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0115 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__COpticalImageStabilizationMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0103 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0115_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4035 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4035_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0104 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0116 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode
@@ -9965,13 +11157,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4035_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0104 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__
@@ -10123,35 +11315,340 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransiti
 #endif 	/* ____FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0105 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0117 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CMedia__CDevices__CZoomTransitionMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0105 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0117_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4036 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4036_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0106 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0118 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0118 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0118_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("cb786404-f2e8-5e0b-bf12-39e31483cfae")
+    __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResultVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0119 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0119 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0119_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0120 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult
+#define DEF___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0120 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0120_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2e1f3d72-a58d-5b0a-b42d-3660c04cfeeb")
+    __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IModuleCommandResult **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CMedia__CDevices__CModuleCommandResult **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResultVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0121 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0121 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0121_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4656 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4656 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0122 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode
@@ -10159,13 +11656,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4036_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0106 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__
@@ -10275,35 +11772,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CMedia__CDevices__CCaptureSceneM
 #endif 	/* ____FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0107 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0123 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CMedia__CDevices__CCaptureSceneMode */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0107 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0123_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4037 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4037_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0108 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0124 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CMedia__CDevices__CManualFocusDistance
@@ -10311,13 +11808,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4037_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0108 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0124_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__
@@ -10427,35 +11924,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CMedia__CDevices__CManualFocusDi
 #endif 	/* ____FIReference_1_Windows__CMedia__CDevices__CManualFocusDistance_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0109 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0125 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CMedia__CDevices__CManualFocusDistance */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0109 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0125_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4038 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4038_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0110 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0126 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CMedia__CDevices__CMediaCaptureFocusState
@@ -10463,13 +11960,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4038_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0110 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CMedia__CDevices__CMediaCaptureFocusState_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CMedia__CDevices__CMediaCaptureFocusState_INTERFACE_DEFINED__
@@ -10579,35 +12076,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CMedia__CDevices__CMediaCaptureF
 #endif 	/* ____FIReference_1_Windows__CMedia__CDevices__CMediaCaptureFocusState_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0111 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0127 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CMedia__CDevices__CMediaCaptureFocusState */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0111 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0127_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4039 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4039_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0112 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0128 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs
@@ -10615,13 +12112,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4039_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0112 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_INTERFACE_DEFINED__
@@ -10710,35 +12207,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDe
 #endif 	/* ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0113 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0129 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0113 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0129_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4040 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4040_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0114 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0130 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs
@@ -10746,13 +12243,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4040_v0_0_s_if
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0114 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0130_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_INTERFACE_DEFINED__
@@ -10841,11 +12338,142 @@ EXTERN_C const IID IID___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDe
 #endif 	/* ____FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0115 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0131 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0131 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0131_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4661 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4661 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0132 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0132 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0132_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b2f6b1fd-7092-5724-b2ce-91b1176e80e1")
+    __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Devices::IAudioDeviceModulesManager *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0133 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs */
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -11104,6 +12732,18 @@ enum __x_ABI_CWindows_CMedia_CDevices_CRegionOfInterestType
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CDevices_CSendCommandStatus
+    {
+        SendCommandStatus_Success	= 0,
+        SendCommandStatus_DeviceNotAvailable	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CMedia_CDevices_CTelephonyKey
     {
         TelephonyKey_D0	= 0,
@@ -11130,6 +12770,39 @@ enum __x_ABI_CWindows_CMedia_CDevices_CTelephonyKey
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerGetDevicePropertyStatus
+    {
+        VideoDeviceControllerGetDevicePropertyStatus_Success	= 0,
+        VideoDeviceControllerGetDevicePropertyStatus_UnknownFailure	= 1,
+        VideoDeviceControllerGetDevicePropertyStatus_BufferTooSmall	= 2,
+        VideoDeviceControllerGetDevicePropertyStatus_NotSupported	= 3,
+        VideoDeviceControllerGetDevicePropertyStatus_DeviceNotAvailable	= 4,
+        VideoDeviceControllerGetDevicePropertyStatus_MaxPropertyValueSizeTooSmall	= 5,
+        VideoDeviceControllerGetDevicePropertyStatus_MaxPropertyValueSizeRequired	= 6
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus
+    {
+        VideoDeviceControllerSetDevicePropertyStatus_Success	= 0,
+        VideoDeviceControllerSetDevicePropertyStatus_UnknownFailure	= 1,
+        VideoDeviceControllerSetDevicePropertyStatus_NotSupported	= 2,
+        VideoDeviceControllerSetDevicePropertyStatus_InvalidValue	= 3,
+        VideoDeviceControllerSetDevicePropertyStatus_DeviceNotAvailable	= 4,
+        VideoDeviceControllerSetDevicePropertyStatus_NotInControl	= 5
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CMedia_CDevices_CZoomTransitionMode
     {
         ZoomTransitionMode_Auto	= 0,
@@ -11141,7 +12814,7 @@ enum __x_ABI_CWindows_CMedia_CDevices_CZoomTransitionMode
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0115 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0133 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -11559,6 +13232,27 @@ namespace ABI {
             namespace Devices {
                 
                 /* [v1_enum] */ 
+                enum SendCommandStatus
+                    {
+                        SendCommandStatus_Success	= 0,
+                        SendCommandStatus_DeviceNotAvailable	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
+                /* [v1_enum] */ 
                 enum TelephonyKey
                     {
                         TelephonyKey_D0	= 0,
@@ -11594,6 +13288,57 @@ namespace ABI {
             namespace Devices {
                 
                 /* [v1_enum] */ 
+                enum VideoDeviceControllerGetDevicePropertyStatus
+                    {
+                        VideoDeviceControllerGetDevicePropertyStatus_Success	= 0,
+                        VideoDeviceControllerGetDevicePropertyStatus_UnknownFailure	= 1,
+                        VideoDeviceControllerGetDevicePropertyStatus_BufferTooSmall	= 2,
+                        VideoDeviceControllerGetDevicePropertyStatus_NotSupported	= 3,
+                        VideoDeviceControllerGetDevicePropertyStatus_DeviceNotAvailable	= 4,
+                        VideoDeviceControllerGetDevicePropertyStatus_MaxPropertyValueSizeTooSmall	= 5,
+                        VideoDeviceControllerGetDevicePropertyStatus_MaxPropertyValueSizeRequired	= 6
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
+                /* [v1_enum] */ 
+                enum VideoDeviceControllerSetDevicePropertyStatus
+                    {
+                        VideoDeviceControllerSetDevicePropertyStatus_Success	= 0,
+                        VideoDeviceControllerSetDevicePropertyStatus_UnknownFailure	= 1,
+                        VideoDeviceControllerSetDevicePropertyStatus_NotSupported	= 2,
+                        VideoDeviceControllerSetDevicePropertyStatus_InvalidValue	= 3,
+                        VideoDeviceControllerSetDevicePropertyStatus_DeviceNotAvailable	= 4,
+                        VideoDeviceControllerSetDevicePropertyStatus_NotInControl	= 5
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Devices {
+                
+                /* [v1_enum] */ 
                 enum ZoomTransitionMode
                     {
                         ZoomTransitionMode_Auto	= 0,
@@ -11610,8 +13355,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CICallControlEventHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CICallControlEventHandler_INTERFACE_DEFINED__
@@ -12011,7 +13756,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventHa
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0119 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoCaptureSettings_INTERFACE_DEFINED__)
@@ -12019,13 +13764,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoCaptureSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0119 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoCaptureSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoCaptureSettings_INTERFACE_DEFINED__
@@ -12158,7 +13903,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoCaptureSe
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoCaptureSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0120 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoControl_INTERFACE_DEFINED__)
@@ -12166,13 +13911,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0120 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoControl_INTERFACE_DEFINED__
@@ -12325,7 +14070,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedPhotoControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0121 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0139 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController_INTERFACE_DEFINED__)
@@ -12333,13 +14078,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0121 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController_INTERFACE_DEFINED__
@@ -12476,7 +14221,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDe
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0122 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0140 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController2_INTERFACE_DEFINED__)
@@ -12484,13 +14229,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0122 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController2_INTERFACE_DEFINED__
@@ -12733,7 +14478,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDe
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0123 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0141 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController3_INTERFACE_DEFINED__)
@@ -12741,13 +14486,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0123 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0141_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController3_INTERFACE_DEFINED__
@@ -12890,7 +14635,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDe
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0124 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0142 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController4_INTERFACE_DEFINED__)
@@ -12898,13 +14643,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0124 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController4_INTERFACE_DEFINED__
@@ -13077,7 +14822,206 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDe
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0125 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0143 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAdvancedVideoCaptureDeviceController5[] = L"Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0143 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0143_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("33512B17-B9CB-4A23-B875-F9EAAB535492")
+                    IAdvancedVideoCaptureDeviceController5 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDevicePropertyById( 
+                            /* [in] */ __RPC__in HSTRING propertyId,
+                            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *maxPropertyValueSize,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SetDevicePropertyById( 
+                            /* [in] */ __RPC__in HSTRING propertyId,
+                            /* [in] */ __RPC__in_opt IInspectable *propertyValue,
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDevicePropertyByExtendedId( 
+                            /* [in] */ UINT32 __extendedPropertyIdSize,
+                            /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+                            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *maxPropertyValueSize,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SetDevicePropertyByExtendedId( 
+                            /* [in] */ UINT32 __extendedPropertyIdSize,
+                            /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+                            /* [in] */ UINT32 __propertyValueSize,
+                            /* [in][size_is] */ __RPC__in_ecount_full(__propertyValueSize) BYTE *propertyValue,
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAdvancedVideoCaptureDeviceController5 = __uuidof(IAdvancedVideoCaptureDeviceController5);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDevicePropertyById )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [in] */ __RPC__in HSTRING propertyId,
+            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *maxPropertyValueSize,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetDevicePropertyById )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [in] */ __RPC__in HSTRING propertyId,
+            /* [in] */ __RPC__in_opt IInspectable *propertyValue,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDevicePropertyByExtendedId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [in] */ UINT32 __extendedPropertyIdSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+            /* [in] */ __RPC__in_opt __FIReference_1_UINT32 *maxPropertyValueSize,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetDevicePropertyByExtendedId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5 * This,
+            /* [in] */ UINT32 __extendedPropertyIdSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__extendedPropertyIdSize) BYTE *extendedPropertyId,
+            /* [in] */ UINT32 __propertyValueSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__propertyValueSize) BYTE *propertyValue,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerSetDevicePropertyStatus *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_GetDevicePropertyById(This,propertyId,maxPropertyValueSize,value)	\
+    ( (This)->lpVtbl -> GetDevicePropertyById(This,propertyId,maxPropertyValueSize,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_SetDevicePropertyById(This,propertyId,propertyValue,value)	\
+    ( (This)->lpVtbl -> SetDevicePropertyById(This,propertyId,propertyValue,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_GetDevicePropertyByExtendedId(This,__extendedPropertyIdSize,extendedPropertyId,maxPropertyValueSize,value)	\
+    ( (This)->lpVtbl -> GetDevicePropertyByExtendedId(This,__extendedPropertyIdSize,extendedPropertyId,maxPropertyValueSize,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_SetDevicePropertyByExtendedId(This,__extendedPropertyIdSize,extendedPropertyId,__propertyValueSize,propertyValue,value)	\
+    ( (This)->lpVtbl -> SetDevicePropertyByExtendedId(This,__extendedPropertyIdSize,extendedPropertyId,__propertyValueSize,propertyValue,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAdvancedVideoCaptureDeviceController5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_INTERFACE_DEFINED__)
@@ -13085,13 +15029,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0125 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_INTERFACE_DEFINED__
@@ -13244,7 +15188,653 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0126 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0145 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAudioDeviceModule[] = L"Windows.Media.Devices.IAudioDeviceModule";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0145 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0145_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IAudioDeviceModule */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("86CFAC36-47C1-4B33-9852-8773EC4BE123")
+                    IAudioDeviceModule : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ClassId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DisplayName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InstanceId( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MajorVersion( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MinorVersion( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SendCommandAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IBuffer *Command,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAudioDeviceModule = __uuidof(IAudioDeviceModule);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ClassId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DisplayName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InstanceId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MajorVersion )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinorVersion )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SendCommandAsync )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer *Command,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_get_ClassId(This,value)	\
+    ( (This)->lpVtbl -> get_ClassId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_get_DisplayName(This,value)	\
+    ( (This)->lpVtbl -> get_DisplayName(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_get_InstanceId(This,value)	\
+    ( (This)->lpVtbl -> get_InstanceId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_get_MajorVersion(This,value)	\
+    ( (This)->lpVtbl -> get_MajorVersion(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_get_MinorVersion(This,value)	\
+    ( (This)->lpVtbl -> get_MinorVersion(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_SendCommandAsync(This,Command,operation)	\
+    ( (This)->lpVtbl -> SendCommandAsync(This,Command,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0146 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAudioDeviceModuleNotificationEventArgs[] = L"Windows.Media.Devices.IAudioDeviceModuleNotificationEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0146 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0146_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("E3E3CCAF-224C-48BE-956B-9A13134E96E8")
+                    IAudioDeviceModuleNotificationEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Module( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceModule **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NotificationData( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAudioDeviceModuleNotificationEventArgs = __uuidof(IAudioDeviceModuleNotificationEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Module )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModule **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NotificationData )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_get_Module(This,value)	\
+    ( (This)->lpVtbl -> get_Module(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_get_NotificationData(This,value)	\
+    ( (This)->lpVtbl -> get_NotificationData(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModuleNotificationEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0147 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAudioDeviceModulesManager[] = L"Windows.Media.Devices.IAudioDeviceModulesManager";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0147 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0147_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IAudioDeviceModulesManager */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("6AA40C4D-960A-4D1C-B318-0022604547ED")
+                    IAudioDeviceModulesManager : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE add_ModuleNotificationReceived( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_ModuleNotificationReceived( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FindAllById( 
+                            /* [in] */ __RPC__in HSTRING moduleId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule **modules) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FindAll( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule **modules) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAudioDeviceModulesManager = __uuidof(IAudioDeviceModulesManager);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_ModuleNotificationReceived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_ModuleNotificationReceived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAllById )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [in] */ __RPC__in HSTRING moduleId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule **modules);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAll )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule **modules);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_add_ModuleNotificationReceived(This,handler,token)	\
+    ( (This)->lpVtbl -> add_ModuleNotificationReceived(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_remove_ModuleNotificationReceived(This,token)	\
+    ( (This)->lpVtbl -> remove_ModuleNotificationReceived(This,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_FindAllById(This,moduleId,modules)	\
+    ( (This)->lpVtbl -> FindAllById(This,moduleId,modules) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_FindAll(This,modules)	\
+    ( (This)->lpVtbl -> FindAll(This,modules) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0148 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IAudioDeviceModulesManagerFactory[] = L"Windows.Media.Devices.IAudioDeviceModulesManagerFactory";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0148 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0148_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IAudioDeviceModulesManagerFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("8DB03670-E64D-4773-96C0-BC7EBF0E063F")
+                    IAudioDeviceModulesManagerFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Create( 
+                            /* [in] */ __RPC__in HSTRING deviceId,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Devices::IAudioDeviceModulesManager **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAudioDeviceModulesManagerFactory = __uuidof(IAudioDeviceModulesManagerFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManager **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactoryVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_Create(This,deviceId,result)	\
+    ( (This)->lpVtbl -> Create(This,deviceId,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIAudioDeviceModulesManagerFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0149 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CICallControl_INTERFACE_DEFINED__)
@@ -13252,13 +15842,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CICallControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0126 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0149_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CICallControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CICallControl_INTERFACE_DEFINED__
@@ -13557,7 +16147,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CICallControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CICallControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0127 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0150 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CICallControlStatics_INTERFACE_DEFINED__)
@@ -13565,13 +16155,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CICallControlStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0127 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0150 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CICallControlStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CICallControlStatics_INTERFACE_DEFINED__
@@ -13706,7 +16296,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CICallControlStatics;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CICallControlStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0128 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIDefaultAudioDeviceChangedEventArgs_INTERFACE_DEFINED__)
@@ -13714,13 +16304,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIDefaultAudioDeviceChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0128 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIDefaultAudioDeviceChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIDefaultAudioDeviceChangedEventArgs_INTERFACE_DEFINED__
@@ -13853,7 +16443,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIDefaultAudioDeviceChan
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIDefaultAudioDeviceChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0129 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIDialRequestedEventArgs_INTERFACE_DEFINED__)
@@ -13861,13 +16451,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIDialRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0129 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIDialRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIDialRequestedEventArgs_INTERFACE_DEFINED__
@@ -13998,7 +16588,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIDialRequestedEventArgs
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIDialRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0130 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0153 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIExposureCompensationControl_INTERFACE_DEFINED__)
@@ -14006,13 +16596,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIExposureCompensationControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0130 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIExposureCompensationControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIExposureCompensationControl_INTERFACE_DEFINED__
@@ -14187,7 +16777,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIExposureCompensationCo
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIExposureCompensationControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0131 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIExposureControl_INTERFACE_DEFINED__)
@@ -14195,13 +16785,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIExposureControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0131 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIExposureControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIExposureControl_INTERFACE_DEFINED__
@@ -14398,7 +16988,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIExposureControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIExposureControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0132 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIExposurePriorityVideoControl_INTERFACE_DEFINED__)
@@ -14406,13 +16996,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIExposurePriorityVideoControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0132 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIExposurePriorityVideoControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIExposurePriorityVideoControl_INTERFACE_DEFINED__
@@ -14555,7 +17145,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIExposurePriorityVideoC
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIExposurePriorityVideoControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0133 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIFlashControl_INTERFACE_DEFINED__)
@@ -14563,13 +17153,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIFlashControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0133 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIFlashControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIFlashControl_INTERFACE_DEFINED__
@@ -14792,7 +17382,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIFlashControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIFlashControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0134 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIFlashControl2_INTERFACE_DEFINED__)
@@ -14800,13 +17390,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIFlashControl2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0134 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIFlashControl2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIFlashControl2_INTERFACE_DEFINED__
@@ -14949,7 +17539,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIFlashControl2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIFlashControl2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0135 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0158 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIFocusControl_INTERFACE_DEFINED__)
@@ -14957,13 +17547,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIFocusControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0135 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIFocusControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIFocusControl_INTERFACE_DEFINED__
@@ -15194,7 +17784,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIFocusControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIFocusControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0136 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0159 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIFocusControl2_INTERFACE_DEFINED__)
@@ -15202,13 +17792,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIFocusControl2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0136 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0159 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0159_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIFocusControl2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIFocusControl2_INTERFACE_DEFINED__
@@ -15421,7 +18011,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIFocusControl2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIFocusControl2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0137 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0160 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIFocusSettings_INTERFACE_DEFINED__)
@@ -15429,13 +18019,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIFocusSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0137 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIFocusSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIFocusSettings_INTERFACE_DEFINED__
@@ -15668,7 +18258,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIFocusSettings;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIFocusSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0138 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIHdrVideoControl_INTERFACE_DEFINED__)
@@ -15676,13 +18266,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIHdrVideoControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0138 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIHdrVideoControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIHdrVideoControl_INTERFACE_DEFINED__
@@ -15835,7 +18425,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIHdrVideoControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIHdrVideoControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0139 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl_INTERFACE_DEFINED__)
@@ -15843,13 +18433,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0139 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl_INTERFACE_DEFINED__
@@ -16004,7 +18594,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0140 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0163 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl2_INTERFACE_DEFINED__)
@@ -16012,13 +18602,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0140 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0163 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0163_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl2_INTERFACE_DEFINED__
@@ -16203,7 +18793,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIIsoSpeedControl2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0141 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIKeypadPressedEventArgs_INTERFACE_DEFINED__)
@@ -16211,13 +18801,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIKeypadPressedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0141 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIKeypadPressedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIKeypadPressedEventArgs_INTERFACE_DEFINED__
@@ -16340,7 +18930,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIKeypadPressedEventArgs
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIKeypadPressedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0142 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoControl_INTERFACE_DEFINED__)
@@ -16348,13 +18938,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0142 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoControl_INTERFACE_DEFINED__
@@ -16559,7 +19149,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0143 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoSequenceControl_INTERFACE_DEFINED__)
@@ -16567,13 +19157,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoSequenceControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0143 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoSequenceControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoSequenceControl_INTERFACE_DEFINED__
@@ -16848,7 +19438,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoSequenceCon
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CILowLagPhotoSequenceControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0144 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControl_INTERFACE_DEFINED__)
@@ -16856,13 +19446,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0144 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControl_INTERFACE_DEFINED__
@@ -17033,7 +19623,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0145 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControlCapabilities_INTERFACE_DEFINED__)
@@ -17041,13 +19631,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControlCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0145 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControlCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControlCapabilities_INTERFACE_DEFINED__
@@ -17220,7 +19810,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControlCapa
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceControlCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0146 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0169 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceController_INTERFACE_DEFINED__)
@@ -17228,13 +19818,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceController_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0146 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0169_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceController_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceController_INTERFACE_DEFINED__
@@ -17385,7 +19975,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceController;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0147 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0170 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics_INTERFACE_DEFINED__)
@@ -17393,13 +19983,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0147 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics_INTERFACE_DEFINED__
@@ -17610,7 +20200,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIMediaDeviceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0148 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0171 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IModuleCommandResult[] = L"Windows.Media.Devices.IModuleCommandResult";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0171 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0171_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IModuleCommandResult */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("520D1EB4-1374-4C7D-B1E4-39DCDF3EAE4E")
+                    IModuleCommandResult : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Devices::SendCommandStatus *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Result( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IModuleCommandResult = __uuidof(IModuleCommandResult);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CDevices_CSendCommandStatus *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Result )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResultVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_get_Status(This,value)	\
+    ( (This)->lpVtbl -> get_Status(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_get_Result(This,value)	\
+    ( (This)->lpVtbl -> get_Result(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIModuleCommandResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0172 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_INTERFACE_DEFINED__)
@@ -17618,13 +20355,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0148 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_INTERFACE_DEFINED__
@@ -17777,7 +20514,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizat
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIOpticalImageStabilizationControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0149 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIPhotoConfirmationControl_INTERFACE_DEFINED__)
@@ -17785,13 +20522,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIPhotoConfirmationControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0149 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIPhotoConfirmationControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIPhotoConfirmationControl_INTERFACE_DEFINED__
@@ -17954,7 +20691,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIPhotoConfirmationContr
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIPhotoConfirmationControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0150 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0174 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventArgs_INTERFACE_DEFINED__)
@@ -17962,13 +20699,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0150 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventArgs_INTERFACE_DEFINED__
@@ -18089,7 +20826,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventAr
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIRedialRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0151 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0175 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest_INTERFACE_DEFINED__)
@@ -18097,13 +20834,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0151 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0175_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest_INTERFACE_DEFINED__
@@ -18296,7 +21033,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0152 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0176 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest2_INTERFACE_DEFINED__)
@@ -18304,13 +21041,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0152 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest2_INTERFACE_DEFINED__
@@ -18483,7 +21220,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIRegionOfInterest2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0153 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0177 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIRegionsOfInterestControl_INTERFACE_DEFINED__)
@@ -18491,13 +21228,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIRegionsOfInterestControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0153 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0177_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIRegionsOfInterestControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIRegionsOfInterestControl_INTERFACE_DEFINED__
@@ -18686,7 +21423,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIRegionsOfInterestContr
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIRegionsOfInterestControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0154 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0178 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CISceneModeControl_INTERFACE_DEFINED__)
@@ -18694,13 +21431,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CISceneModeControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0154 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CISceneModeControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CISceneModeControl_INTERFACE_DEFINED__
@@ -18845,7 +21582,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CISceneModeControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CISceneModeControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0155 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0179 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CITorchControl_INTERFACE_DEFINED__)
@@ -18853,13 +21590,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CITorchControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0155 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0179_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CITorchControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CITorchControl_INTERFACE_DEFINED__
@@ -19032,7 +21769,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CITorchControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CITorchControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0156 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0180 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController_INTERFACE_DEFINED__)
@@ -19040,13 +21777,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0156 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController_INTERFACE_DEFINED__
@@ -19293,7 +22030,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0157 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0181 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Devices_IVideoDeviceControllerGetDevicePropertyResult[] = L"Windows.Media.Devices.IVideoDeviceControllerGetDevicePropertyResult";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0181 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0181_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Devices {
+                    
+                    MIDL_INTERFACE("C5D88395-6ED5-4790-8B5D-0EF13935D0F8")
+                    IVideoDeviceControllerGetDevicePropertyResult : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Value( 
+                            /* [out][retval] */ __RPC__deref_out_opt IInspectable **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IVideoDeviceControllerGetDevicePropertyResult = __uuidof(IVideoDeviceControllerGetDevicePropertyResult);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CDevices_CVideoDeviceControllerGetDevicePropertyStatus *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult * This,
+            /* [out][retval] */ __RPC__deref_out_opt IInspectable **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResultVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_get_Status(This,value)	\
+    ( (This)->lpVtbl -> get_Status(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIVideoDeviceControllerGetDevicePropertyResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0182 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_INTERFACE_DEFINED__)
@@ -19301,13 +22185,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0157 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0182 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0182_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_INTERFACE_DEFINED__
@@ -19504,7 +22388,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIWhiteBalanceControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0158 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0183 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIZoomControl_INTERFACE_DEFINED__)
@@ -19512,13 +22396,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIZoomControl_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0158 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0183 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0183_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIZoomControl_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIZoomControl_INTERFACE_DEFINED__
@@ -19691,7 +22575,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIZoomControl;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIZoomControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0159 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0184 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIZoomControl2_INTERFACE_DEFINED__)
@@ -19699,13 +22583,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIZoomControl2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0159 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIZoomControl2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIZoomControl2_INTERFACE_DEFINED__
@@ -19848,7 +22732,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIZoomControl2;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIZoomControl2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0160 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0185 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CDevices_CIZoomSettings_INTERFACE_DEFINED__)
@@ -19856,13 +22740,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CDevices_CIZoomSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0160 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0185_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CDevices_CIZoomSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CDevices_CIZoomSettings_INTERFACE_DEFINED__
@@ -20015,7 +22899,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CDevices_CIZoomSettings;
 #endif 	/* ____x_ABI_CWindows_CMedia_CDevices_CIZoomSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0161 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0186 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_Devices_AdvancedPhotoCaptureSettings_DEFINED
@@ -20029,6 +22913,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Media_Devices_AudioDeviceController_DEFINED
 #define RUNTIMECLASS_Windows_Media_Devices_AudioDeviceController_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_AudioDeviceController[] = L"Windows.Media.Devices.AudioDeviceController";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Devices_AudioDeviceModule_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_AudioDeviceModule_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_AudioDeviceModule[] = L"Windows.Media.Devices.AudioDeviceModule";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Devices_AudioDeviceModuleNotificationEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_AudioDeviceModuleNotificationEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_AudioDeviceModuleNotificationEventArgs[] = L"Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Devices_AudioDeviceModulesManager_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_AudioDeviceModulesManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_AudioDeviceModulesManager[] = L"Windows.Media.Devices.AudioDeviceModulesManager";
 #endif
 #ifndef RUNTIMECLASS_Windows_Media_Devices_CallControl_DEFINED
 #define RUNTIMECLASS_Windows_Media_Devices_CallControl_DEFINED
@@ -20102,6 +22998,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_Devices_MediaDeviceControlCapabilities_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_MediaDeviceControlCapabilities[] = L"Windows.Media.Devices.MediaDeviceControlCapabilities";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_Devices_ModuleCommandResult_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_ModuleCommandResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_ModuleCommandResult[] = L"Windows.Media.Devices.ModuleCommandResult";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_Devices_OpticalImageStabilizationControl_DEFINED
 #define RUNTIMECLASS_Windows_Media_Devices_OpticalImageStabilizationControl_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_OpticalImageStabilizationControl[] = L"Windows.Media.Devices.OpticalImageStabilizationControl";
@@ -20134,6 +23034,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_Devices_VideoDeviceController_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_VideoDeviceController[] = L"Windows.Media.Devices.VideoDeviceController";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_Devices_VideoDeviceControllerGetDevicePropertyResult_DEFINED
+#define RUNTIMECLASS_Windows_Media_Devices_VideoDeviceControllerGetDevicePropertyResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_VideoDeviceControllerGetDevicePropertyResult[] = L"Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_Devices_WhiteBalanceControl_DEFINED
 #define RUNTIMECLASS_Windows_Media_Devices_WhiteBalanceControl_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Devices_WhiteBalanceControl[] = L"Windows.Media.Devices.WhiteBalanceControl";
@@ -20148,13 +23052,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0161 */
+/* interface __MIDL_itf_windows2Emedia2Edevices_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Edevices_0000_0186_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

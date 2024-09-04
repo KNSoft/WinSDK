@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -77,6 +77,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIAnalyticsVersionInfo_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                interface IEducationSettingsStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_FWD_DEFINED__
@@ -199,6 +219,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                interface ISharedModeSettingsStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo __x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo;
@@ -274,18 +314,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0001 */
 /* [local] */ 
@@ -320,18 +360,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0002 */
 /* [local] */ 
@@ -366,18 +406,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0003 */
 /* [local] */ 
@@ -412,18 +452,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0004 */
 /* [local] */ 
@@ -458,18 +498,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0005 */
 /* [local] */ 
@@ -537,6 +577,8 @@ typedef enum __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource __x_A
 
 
 #endif
+
+
 
 
 
@@ -653,6 +695,8 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
+
 
 
 
@@ -995,9 +1039,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIAnalyticsVersionInfo;
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0007 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IHardwareIdentificationStatics[] = L"Windows.System.Profile.IHardwareIdentificationStatics";
-#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IEducationSettingsStatics[] = L"Windows.System.Profile.IEducationSettingsStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0007 */
@@ -1007,6 +1051,143 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0007_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Profile::IEducationSettingsStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Profile {
+                    
+                    MIDL_INTERFACE("FC53F0EF-4D3E-4E13-9B23-505F4D091E92")
+                    IEducationSettingsStatics : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsEducationEnvironment( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IEducationSettingsStatics = __uuidof(IEducationSettingsStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsEducationEnvironment )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_get_IsEducationEnvironment(This,value)	\
+    ( (This)->lpVtbl -> get_IsEducationEnvironment(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIEducationSettingsStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0008 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IHardwareIdentificationStatics[] = L"Windows.System.Profile.IHardwareIdentificationStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0008 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0008_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__
@@ -1131,7 +1312,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificatio
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIHardwareIdentificationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0008 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0009 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CIHardwareToken_INTERFACE_DEFINED__)
@@ -1139,13 +1320,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIHardwareToken_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0008 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0009 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0009_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIHardwareToken_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIHardwareToken_INTERFACE_DEFINED__
@@ -1288,7 +1469,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIHardwareToken;
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIHardwareToken_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0009 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0010 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_INTERFACE_DEFINED__)
@@ -1296,13 +1477,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0009 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_INTERFACE_DEFINED__
@@ -1635,7 +1816,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoProper
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIKnownRetailInfoPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0010 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0011 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_INTERFACE_DEFINED__)
@@ -1643,13 +1824,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0010 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0011 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0011_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_INTERFACE_DEFINED__
@@ -1806,7 +1987,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAn
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIPlatformDiagnosticsAndUsageDataSettingsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0011 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0012 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CIRetailInfoStatics_INTERFACE_DEFINED__)
@@ -1814,13 +1995,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIRetailInfoStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0011 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CIRetailInfoStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CIRetailInfoStatics_INTERFACE_DEFINED__
@@ -1953,7 +2134,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIRetailInfoStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CIRetailInfoStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0012 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0013 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics_INTERFACE_DEFINED__)
@@ -1961,13 +2142,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0012 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0013 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics_INTERFACE_DEFINED__
@@ -2090,7 +2271,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsSta
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0013 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0014 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_ISharedModeSettingsStatics2[] = L"Windows.System.Profile.ISharedModeSettingsStatics2";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0014 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0014_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::Profile::ISharedModeSettingsStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                namespace Profile {
+                    
+                    MIDL_INTERFACE("608988A4-CCF1-4EE8-A5E2-FD6A1D0CFAC8")
+                    ISharedModeSettingsStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ShouldAvoidLocalStorage( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISharedModeSettingsStatics2 = __uuidof(ISharedModeSettingsStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ShouldAvoidLocalStorage )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_get_ShouldAvoidLocalStorage(This,value)	\
+    ( (This)->lpVtbl -> get_ShouldAvoidLocalStorage(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CISharedModeSettingsStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0015 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_INTERFACE_DEFINED__)
@@ -2098,13 +2416,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0013 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_INTERFACE_DEFINED__
@@ -2237,7 +2555,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationI
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0014 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_INTERFACE_DEFINED__)
@@ -2245,13 +2563,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0014 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_INTERFACE_DEFINED__
@@ -2386,7 +2704,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationS
 #endif 	/* ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0015 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0017 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_System_Profile_AnalyticsInfo_DEFINED
@@ -2396,6 +2714,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_System_Profile_AnalyticsVersionInfo_DEFINED
 #define RUNTIMECLASS_Windows_System_Profile_AnalyticsVersionInfo_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_AnalyticsVersionInfo[] = L"Windows.System.Profile.AnalyticsVersionInfo";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_Profile_EducationSettings_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_EducationSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_EducationSettings[] = L"Windows.System.Profile.EducationSettings";
 #endif
 #ifndef RUNTIMECLASS_Windows_System_Profile_HardwareIdentification_DEFINED
 #define RUNTIMECLASS_Windows_System_Profile_HardwareIdentification_DEFINED
@@ -2431,13 +2753,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0015 */
+/* interface __MIDL_itf_windows2Esystem2Eprofile_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eprofile_0000_0017_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

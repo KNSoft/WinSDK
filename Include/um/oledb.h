@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -12459,7 +12459,7 @@ void __RPC_STUB ITransactionObject_RemoteGetTransactionObject_Stub(
 #pragma warning(push)
 #pragma warning(disable:4820) 
 #pragma warning(disable:4001) 
-#pragma region Desktop Family
+#pragma region Application Family or OneCore Family
 typedef 
 enum _SE_OBJECT_TYPE
     {

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -60,11 +60,10 @@ namespace ABI {
 
 
 /* header files for imported files */
-#include "oaidl.h"
 #include "inspectable.h"
-#include "activation.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.ApplicationModel.Core.h"
 #include "Windows.UI.Core.CoreWindowFactory.h"
 
 #ifdef __cplusplus
@@ -75,12 +74,17 @@ extern "C"{
 /* interface __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0000 */
 /* [local] */ 
 
-#pragma warning(push)
-#pragma warning(disable:4668) 
-#pragma warning(disable:4001) 
-#pragma once
-#pragma warning(pop)
-#pragma region Initialize With Window Factory
+#if defined(__cplusplus)
+}
+#endif // defined(__cplusplus)
+#include <Windows.Foundation.h>
+#if !defined(__windows2Eui2Ecore_h__)
+#include <Windows.UI.Core.h>
+#endif // !defined(__windows2Eui2Ecore_h__)
+#if defined(__cplusplus)
+extern "C" {
+#endif // defined(__cplusplus)
+
 #if !defined(____x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetWindowWithWindowFactory_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Infrastructure_ISetWindowWithWindowFactory[] = L"Windows.ApplicationModel.Infrastructure.ISetWindowWithWindowFactory";
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetWindowWithWindowFactory_INTERFACE_DEFINED__) */
@@ -91,6 +95,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0000_v0_0_s_ifspec;
 
@@ -98,12 +103,12 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitf
 #define ____x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetWindowWithWindowFactory_INTERFACE_DEFINED__
 
 /* interface __x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetWindowWithWindowFactory */
-/* [object][uuid] */ 
+/* [uuid][object] */ 
 
 
 
 /* interface ABI::Windows::ApplicationModel::Infrastructure::ISetWindowWithWindowFactory */
-/* [object][uuid] */ 
+/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetWindowWithWindowFactory;
@@ -216,20 +221,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetW
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CInfrastructure_CISetWindowWithWindowFactory_INTERFACE_DEFINED__ */
 
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0001 */
-/* [local] */ 
-
-#pragma endregion Initialize With Window Factory
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0001 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Einfrastructure2Einitfactory_0000_0001_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

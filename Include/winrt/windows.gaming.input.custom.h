@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -102,6 +102,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Gaming {
+            namespace Input {
+                namespace Custom {
+                    interface IGameControllerFactoryManagerStatics2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_FWD_DEFINED__
@@ -212,6 +234,50 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerProvider_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Gaming {
+            namespace Input {
+                namespace Custom {
+                    interface IHidGameControllerInputSink;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Gaming {
+            namespace Input {
+                namespace Custom {
+                    interface IHidGameControllerProvider;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerInputSink_FWD_DEFINED__
@@ -333,18 +399,18 @@ struct GipFirmwareUpdateProgress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0001 */
 /* [local] */ 
@@ -379,18 +445,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0002 */
 /* [local] */ 
@@ -425,18 +491,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0003 */
 /* [local] */ 
@@ -531,6 +597,9 @@ typedef struct __x_ABI_CWindows_CGaming_CInput_CCustom_CGipFirmwareUpdateProgres
 
 
 
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -538,6 +607,19 @@ namespace Gaming {
 namespace Input {
 namespace Custom {
 class GipGameControllerProvider;
+} /*Custom*/
+} /*Input*/
+} /*Gaming*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Gaming {
+namespace Input {
+namespace Custom {
+class HidGameControllerProvider;
 } /*Custom*/
 } /*Input*/
 } /*Gaming*/
@@ -695,21 +777,24 @@ extern "C" {
 
 
 
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0004 */
 /* [local] */ 
@@ -831,18 +916,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CGaming__CIn
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0006 */
 /* [local] */ 
@@ -964,18 +1049,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0008 */
 /* [local] */ 
@@ -1700,9 +1785,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerF
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0011 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_Input_Custom_IGameControllerInputSink[] = L"Windows.Gaming.Input.Custom.IGameControllerInputSink";
-#endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_Input_Custom_IGameControllerFactoryManagerStatics2[] = L"Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics2";
+#endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0011 */
@@ -1712,6 +1797,149 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0011_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Gaming {
+                namespace Input {
+                    namespace Custom {
+                        
+                        MIDL_INTERFACE("EACE5644-19DF-4115-B32A-2793E2AEA3BB")
+                        IGameControllerFactoryManagerStatics2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE TryGetFactoryControllerFromGameController( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Gaming::Input::Custom::ICustomGameControllerFactory *factory,
+                                /* [in] */ __RPC__in_opt ABI::Windows::Gaming::Input::IGameController *gameController,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Gaming::Input::IGameController **factoryController) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IGameControllerFactoryManagerStatics2 = __uuidof(IGameControllerFactoryManagerStatics2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetFactoryControllerFromGameController )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGaming_CInput_CCustom_CICustomGameControllerFactory *factory,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGaming_CInput_CIGameController *gameController,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGaming_CInput_CIGameController **factoryController);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_TryGetFactoryControllerFromGameController(This,factory,gameController,factoryController)	\
+    ( (This)->lpVtbl -> TryGetFactoryControllerFromGameController(This,factory,gameController,factoryController) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerFactoryManagerStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_Input_Custom_IGameControllerInputSink[] = L"Windows.Gaming.Input.Custom.IGameControllerInputSink";
+#endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__
@@ -1846,7 +2074,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerI
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerInputSink_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerProvider_INTERFACE_DEFINED__)
@@ -1854,13 +2082,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerProvider_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerProvider_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerProvider_INTERFACE_DEFINED__
@@ -2025,7 +2253,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerP
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGameControllerProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipFirmwareUpdateResult_INTERFACE_DEFINED__)
@@ -2033,13 +2261,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipFirmwareUpdateResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipFirmwareUpdateResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipFirmwareUpdateResult_INTERFACE_DEFINED__
@@ -2184,7 +2412,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGipFirmwareUpda
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipFirmwareUpdateResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerInputSink_INTERFACE_DEFINED__)
@@ -2192,13 +2420,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerInputSink_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerInputSink_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerInputSink_INTERFACE_DEFINED__
@@ -2347,7 +2575,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControll
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerInputSink_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerProvider_INTERFACE_DEFINED__)
@@ -2355,13 +2583,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerProvider_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerProvider_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerProvider_INTERFACE_DEFINED__
@@ -2524,7 +2752,343 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControll
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIGipGameControllerProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_Input_Custom_IHidGameControllerInputSink[] = L"Windows.Gaming.Input.Custom.IHidGameControllerInputSink";
+#endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Gaming::Input::Custom::IHidGameControllerInputSink */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Gaming {
+                namespace Input {
+                    namespace Custom {
+                        
+                        MIDL_INTERFACE("F754C322-182D-40E4-A126-FCEE4FFA1E31")
+                        IHidGameControllerInputSink : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE OnInputReportReceived( 
+                                /* [in] */ UINT64 timestamp,
+                                /* [in] */ BYTE reportId,
+                                /* [in] */ UINT32 __reportBufferSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__reportBufferSize) BYTE *reportBuffer) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IHidGameControllerInputSink = __uuidof(IHidGameControllerInputSink);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSinkVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnInputReportReceived )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink * This,
+            /* [in] */ UINT64 timestamp,
+            /* [in] */ BYTE reportId,
+            /* [in] */ UINT32 __reportBufferSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__reportBufferSize) BYTE *reportBuffer);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSinkVtbl;
+
+    interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSinkVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_OnInputReportReceived(This,timestamp,reportId,__reportBufferSize,reportBuffer)	\
+    ( (This)->lpVtbl -> OnInputReportReceived(This,timestamp,reportId,__reportBufferSize,reportBuffer) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerInputSink_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_Input_Custom_IHidGameControllerProvider[] = L"Windows.Gaming.Input.Custom.IHidGameControllerProvider";
+#endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Gaming::Input::Custom::IHidGameControllerProvider */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Gaming {
+                namespace Input {
+                    namespace Custom {
+                        
+                        MIDL_INTERFACE("95CE3AF4-ABF0-4B68-A081-3B7DE73FF0E7")
+                        IHidGameControllerProvider : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UsageId( 
+                                /* [out][retval] */ __RPC__out UINT16 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UsagePage( 
+                                /* [out][retval] */ __RPC__out UINT16 *value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetFeatureReport( 
+                                /* [in] */ BYTE reportId,
+                                /* [in] */ UINT32 __reportBufferSize,
+                                /* [out][size_is] */ __RPC__out_ecount_full(__reportBufferSize) BYTE *reportBuffer) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SendFeatureReport( 
+                                /* [in] */ BYTE reportId,
+                                /* [in] */ UINT32 __reportBufferSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__reportBufferSize) BYTE *reportBuffer) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SendOutputReport( 
+                                /* [in] */ BYTE reportId,
+                                /* [in] */ UINT32 __reportBufferSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__reportBufferSize) BYTE *reportBuffer) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IHidGameControllerProvider = __uuidof(IHidGameControllerProvider);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProviderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UsageId )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [out][retval] */ __RPC__out UINT16 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UsagePage )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [out][retval] */ __RPC__out UINT16 *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetFeatureReport )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [in] */ BYTE reportId,
+            /* [in] */ UINT32 __reportBufferSize,
+            /* [out][size_is] */ __RPC__out_ecount_full(__reportBufferSize) BYTE *reportBuffer);
+        
+        HRESULT ( STDMETHODCALLTYPE *SendFeatureReport )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [in] */ BYTE reportId,
+            /* [in] */ UINT32 __reportBufferSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__reportBufferSize) BYTE *reportBuffer);
+        
+        HRESULT ( STDMETHODCALLTYPE *SendOutputReport )( 
+            __RPC__in __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider * This,
+            /* [in] */ BYTE reportId,
+            /* [in] */ UINT32 __reportBufferSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__reportBufferSize) BYTE *reportBuffer);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProviderVtbl;
+
+    interface __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProviderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_get_UsageId(This,value)	\
+    ( (This)->lpVtbl -> get_UsageId(This,value) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_get_UsagePage(This,value)	\
+    ( (This)->lpVtbl -> get_UsagePage(This,value) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_GetFeatureReport(This,reportId,__reportBufferSize,reportBuffer)	\
+    ( (This)->lpVtbl -> GetFeatureReport(This,reportId,__reportBufferSize,reportBuffer) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_SendFeatureReport(This,reportId,__reportBufferSize,reportBuffer)	\
+    ( (This)->lpVtbl -> SendFeatureReport(This,reportId,__reportBufferSize,reportBuffer) ) 
+
+#define __x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_SendOutputReport(This,reportId,__reportBufferSize,reportBuffer)	\
+    ( (This)->lpVtbl -> SendOutputReport(This,reportId,__reportBufferSize,reportBuffer) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIHidGameControllerProvider_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0019 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerInputSink_INTERFACE_DEFINED__)
@@ -2532,13 +3096,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerInputSink_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerInputSink_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerInputSink_INTERFACE_DEFINED__
@@ -2669,7 +3233,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControl
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerInputSink_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0020 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerProvider_INTERFACE_DEFINED__)
@@ -2677,13 +3241,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerProvider_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0020_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerProvider_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerProvider_INTERFACE_DEFINED__
@@ -2810,7 +3374,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControl
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CCustom_CIXusbGameControllerProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0021 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Gaming_Input_Custom_GameControllerFactoryManager_DEFINED
@@ -2825,19 +3389,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Gaming_Input_Custom_GipGameControllerProvider_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Gaming_Input_Custom_GipGameControllerProvider[] = L"Windows.Gaming.Input.Custom.GipGameControllerProvider";
 #endif
+#ifndef RUNTIMECLASS_Windows_Gaming_Input_Custom_HidGameControllerProvider_DEFINED
+#define RUNTIMECLASS_Windows_Gaming_Input_Custom_HidGameControllerProvider_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Gaming_Input_Custom_HidGameControllerProvider[] = L"Windows.Gaming.Input.Custom.HidGameControllerProvider";
+#endif
 #ifndef RUNTIMECLASS_Windows_Gaming_Input_Custom_XusbGameControllerProvider_DEFINED
 #define RUNTIMECLASS_Windows_Gaming_Input_Custom_XusbGameControllerProvider_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Gaming_Input_Custom_XusbGameControllerProvider[] = L"Windows.Gaming.Input.Custom.XusbGameControllerProvider";
 #endif
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Ecustom_0000_0021_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

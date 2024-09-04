@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -295,6 +295,13 @@ typedef interface IUIAutomationTextRange2 IUIAutomationTextRange2;
 #endif 	/* __IUIAutomationTextRange2_FWD_DEFINED__ */
 
 
+#ifndef __IUIAutomationTextRange3_FWD_DEFINED__
+#define __IUIAutomationTextRange3_FWD_DEFINED__
+typedef interface IUIAutomationTextRange3 IUIAutomationTextRange3;
+
+#endif 	/* __IUIAutomationTextRange3_FWD_DEFINED__ */
+
+
 #ifndef __IUIAutomationTextRangeArray_FWD_DEFINED__
 #define __IUIAutomationTextRangeArray_FWD_DEFINED__
 typedef interface IUIAutomationTextRangeArray IUIAutomationTextRangeArray;
@@ -442,6 +449,13 @@ typedef interface IUIAutomationElement6 IUIAutomationElement6;
 #endif 	/* __IUIAutomationElement6_FWD_DEFINED__ */
 
 
+#ifndef __IUIAutomationElement7_FWD_DEFINED__
+#define __IUIAutomationElement7_FWD_DEFINED__
+typedef interface IUIAutomationElement7 IUIAutomationElement7;
+
+#endif 	/* __IUIAutomationElement7_FWD_DEFINED__ */
+
+
 #ifndef __IUIAutomationProxyFactory_FWD_DEFINED__
 #define __IUIAutomationProxyFactory_FWD_DEFINED__
 typedef interface IUIAutomationProxyFactory IUIAutomationProxyFactory;
@@ -542,6 +556,7 @@ extern "C"{
 
 enum TreeScope
     {
+        TreeScope_None	= 0,
         TreeScope_Element	= 0x1,
         TreeScope_Children	= 0x2,
         TreeScope_Descendants	= 0x4,
@@ -560,6 +575,13 @@ enum AutomationElementMode
     {
         AutomationElementMode_None	= 0,
         AutomationElementMode_Full	= ( AutomationElementMode_None + 1 ) 
+    } ;
+
+enum TreeTraversalOptions
+    {
+        TreeTraversalOptions_Default	= 0,
+        TreeTraversalOptions_PostOrder	= 0x1,
+        TreeTraversalOptions_LastToFirstOrder	= 0x2
     } ;
 #endif
 struct ExtendedProperty
@@ -739,6 +761,8 @@ const long UIA_DropTarget_DroppedEventId	=	20031;
 const long UIA_TextEdit_TextChangedEventId	=	20032;
 
 const long UIA_TextEdit_ConversionTargetChangedEventId	=	20033;
+
+const long UIA_ChangesEventId	=	20034;
 
 #endif /* __UIA_EventIds_MODULE_DEFINED__ */
 
@@ -1070,6 +1094,22 @@ const long UIA_LocalizedLandmarkTypePropertyId	=	30158;
 
 const long UIA_FullDescriptionPropertyId	=	30159;
 
+const long UIA_FillColorPropertyId	=	30160;
+
+const long UIA_OutlineColorPropertyId	=	30161;
+
+const long UIA_FillTypePropertyId	=	30162;
+
+const long UIA_VisualEffectsPropertyId	=	30163;
+
+const long UIA_OutlineThicknessPropertyId	=	30164;
+
+const long UIA_CenterPointPropertyId	=	30165;
+
+const long UIA_RotationPropertyId	=	30166;
+
+const long UIA_SizePropertyId	=	30167;
+
 #endif /* __UIA_PropertyIds_MODULE_DEFINED__ */
 
 
@@ -1159,6 +1199,14 @@ const long UIA_SelectionActiveEndAttributeId	=	40037;
 const long UIA_CaretPositionAttributeId	=	40038;
 
 const long UIA_CaretBidiModeAttributeId	=	40039;
+
+const long UIA_LineSpacingAttributeId	=	40040;
+
+const long UIA_BeforeParagraphSpacingAttributeId	=	40041;
+
+const long UIA_AfterParagraphSpacingAttributeId	=	40042;
+
+const long UIA_SayAsInterpretAsAttributeId	=	40043;
 
 #endif /* __UIA_TextAttributeIds_MODULE_DEFINED__ */
 
@@ -1308,6 +1356,8 @@ const long AnnotationType_DataValidationError	=	60021;
 
 const long AnnotationType_CircularReferenceError	=	60022;
 
+const long AnnotationType_Mathematics	=	60023;
+
 #endif /* __UIA_AnnotationTypes_MODULE_DEFINED__ */
 
 
@@ -1385,6 +1435,18 @@ const long UIA_SearchLandmarkTypeId	=	80004;
 const long UIA_SummaryChangeId	=	90000;
 
 #endif /* __UIA_ChangeIds_MODULE_DEFINED__ */
+
+
+#ifndef __UIA_MetadataIds_MODULE_DEFINED__
+#define __UIA_MetadataIds_MODULE_DEFINED__
+
+
+/* module UIA_MetadataIds */
+/* [dllname] */ 
+
+const long UIA_SayAsInterpretAsMetadataId	=	100000;
+
+#endif /* __UIA_MetadataIds_MODULE_DEFINED__ */
 
 #ifndef __IUIAutomationElement_INTERFACE_DEFINED__
 #define __IUIAutomationElement_INTERFACE_DEFINED__
@@ -6824,6 +6886,264 @@ EXTERN_C const IID IID_IUIAutomationTextRange2;
 
 
 #endif 	/* __IUIAutomationTextRange2_INTERFACE_DEFINED__ */
+
+
+#ifndef __IUIAutomationTextRange3_INTERFACE_DEFINED__
+#define __IUIAutomationTextRange3_INTERFACE_DEFINED__
+
+/* interface IUIAutomationTextRange3 */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IUIAutomationTextRange3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("6A315D69-5512-4C2E-85F0-53FCE6DD4BC2")
+    IUIAutomationTextRange3 : public IUIAutomationTextRange2
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetEnclosingElementBuildCache( 
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **enclosingElement) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetChildrenBuildCache( 
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **children) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetAttributeValues( 
+            /* [size_is][in] */ __RPC__in_ecount_full(attributeIdCount) const TEXTATTRIBUTEID *attributeIds,
+            /* [in] */ int attributeIdCount,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *attributeValues) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IUIAutomationTextRange3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IUIAutomationTextRange3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IUIAutomationTextRange3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Clone )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationTextRange **clonedRange);
+        
+        HRESULT ( STDMETHODCALLTYPE *Compare )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ __RPC__in_opt IUIAutomationTextRange *range,
+            /* [retval][out] */ __RPC__out BOOL *areSame);
+        
+        HRESULT ( STDMETHODCALLTYPE *CompareEndpoints )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ enum TextPatternRangeEndpoint srcEndPoint,
+            /* [in] */ __RPC__in_opt IUIAutomationTextRange *range,
+            /* [in] */ enum TextPatternRangeEndpoint targetEndPoint,
+            /* [retval][out] */ __RPC__out int *compValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *ExpandToEnclosingUnit )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ enum TextUnit textUnit);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAttribute )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ TEXTATTRIBUTEID attr,
+            /* [in] */ VARIANT val,
+            /* [in] */ BOOL backward,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationTextRange **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindText )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ __RPC__in BSTR text,
+            /* [in] */ BOOL backward,
+            /* [in] */ BOOL ignoreCase,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationTextRange **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAttributeValue )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ TEXTATTRIBUTEID attr,
+            /* [retval][out] */ __RPC__out VARIANT *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetBoundingRectangles )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *boundingRects);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetEnclosingElement )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **enclosingElement);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetText )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ int maxLength,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *text);
+        
+        HRESULT ( STDMETHODCALLTYPE *Move )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ enum TextUnit unit,
+            /* [in] */ int count,
+            /* [retval][out] */ __RPC__out int *moved);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveEndpointByUnit )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ enum TextPatternRangeEndpoint endpoint,
+            /* [in] */ enum TextUnit unit,
+            /* [in] */ int count,
+            /* [retval][out] */ __RPC__out int *moved);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveEndpointByRange )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ enum TextPatternRangeEndpoint srcEndPoint,
+            /* [in] */ __RPC__in_opt IUIAutomationTextRange *range,
+            /* [in] */ enum TextPatternRangeEndpoint targetEndPoint);
+        
+        HRESULT ( STDMETHODCALLTYPE *Select )( 
+            __RPC__in IUIAutomationTextRange3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddToSelection )( 
+            __RPC__in IUIAutomationTextRange3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveFromSelection )( 
+            __RPC__in IUIAutomationTextRange3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *ScrollIntoView )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ BOOL alignToTop);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetChildren )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **children);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowContextMenu )( 
+            __RPC__in IUIAutomationTextRange3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetEnclosingElementBuildCache )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **enclosingElement);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetChildrenBuildCache )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **children);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAttributeValues )( 
+            __RPC__in IUIAutomationTextRange3 * This,
+            /* [size_is][in] */ __RPC__in_ecount_full(attributeIdCount) const TEXTATTRIBUTEID *attributeIds,
+            /* [in] */ int attributeIdCount,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *attributeValues);
+        
+        END_INTERFACE
+    } IUIAutomationTextRange3Vtbl;
+
+    interface IUIAutomationTextRange3
+    {
+        CONST_VTBL struct IUIAutomationTextRange3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IUIAutomationTextRange3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IUIAutomationTextRange3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IUIAutomationTextRange3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IUIAutomationTextRange3_Clone(This,clonedRange)	\
+    ( (This)->lpVtbl -> Clone(This,clonedRange) ) 
+
+#define IUIAutomationTextRange3_Compare(This,range,areSame)	\
+    ( (This)->lpVtbl -> Compare(This,range,areSame) ) 
+
+#define IUIAutomationTextRange3_CompareEndpoints(This,srcEndPoint,range,targetEndPoint,compValue)	\
+    ( (This)->lpVtbl -> CompareEndpoints(This,srcEndPoint,range,targetEndPoint,compValue) ) 
+
+#define IUIAutomationTextRange3_ExpandToEnclosingUnit(This,textUnit)	\
+    ( (This)->lpVtbl -> ExpandToEnclosingUnit(This,textUnit) ) 
+
+#define IUIAutomationTextRange3_FindAttribute(This,attr,val,backward,found)	\
+    ( (This)->lpVtbl -> FindAttribute(This,attr,val,backward,found) ) 
+
+#define IUIAutomationTextRange3_FindText(This,text,backward,ignoreCase,found)	\
+    ( (This)->lpVtbl -> FindText(This,text,backward,ignoreCase,found) ) 
+
+#define IUIAutomationTextRange3_GetAttributeValue(This,attr,value)	\
+    ( (This)->lpVtbl -> GetAttributeValue(This,attr,value) ) 
+
+#define IUIAutomationTextRange3_GetBoundingRectangles(This,boundingRects)	\
+    ( (This)->lpVtbl -> GetBoundingRectangles(This,boundingRects) ) 
+
+#define IUIAutomationTextRange3_GetEnclosingElement(This,enclosingElement)	\
+    ( (This)->lpVtbl -> GetEnclosingElement(This,enclosingElement) ) 
+
+#define IUIAutomationTextRange3_GetText(This,maxLength,text)	\
+    ( (This)->lpVtbl -> GetText(This,maxLength,text) ) 
+
+#define IUIAutomationTextRange3_Move(This,unit,count,moved)	\
+    ( (This)->lpVtbl -> Move(This,unit,count,moved) ) 
+
+#define IUIAutomationTextRange3_MoveEndpointByUnit(This,endpoint,unit,count,moved)	\
+    ( (This)->lpVtbl -> MoveEndpointByUnit(This,endpoint,unit,count,moved) ) 
+
+#define IUIAutomationTextRange3_MoveEndpointByRange(This,srcEndPoint,range,targetEndPoint)	\
+    ( (This)->lpVtbl -> MoveEndpointByRange(This,srcEndPoint,range,targetEndPoint) ) 
+
+#define IUIAutomationTextRange3_Select(This)	\
+    ( (This)->lpVtbl -> Select(This) ) 
+
+#define IUIAutomationTextRange3_AddToSelection(This)	\
+    ( (This)->lpVtbl -> AddToSelection(This) ) 
+
+#define IUIAutomationTextRange3_RemoveFromSelection(This)	\
+    ( (This)->lpVtbl -> RemoveFromSelection(This) ) 
+
+#define IUIAutomationTextRange3_ScrollIntoView(This,alignToTop)	\
+    ( (This)->lpVtbl -> ScrollIntoView(This,alignToTop) ) 
+
+#define IUIAutomationTextRange3_GetChildren(This,children)	\
+    ( (This)->lpVtbl -> GetChildren(This,children) ) 
+
+
+#define IUIAutomationTextRange3_ShowContextMenu(This)	\
+    ( (This)->lpVtbl -> ShowContextMenu(This) ) 
+
+
+#define IUIAutomationTextRange3_GetEnclosingElementBuildCache(This,cacheRequest,enclosingElement)	\
+    ( (This)->lpVtbl -> GetEnclosingElementBuildCache(This,cacheRequest,enclosingElement) ) 
+
+#define IUIAutomationTextRange3_GetChildrenBuildCache(This,cacheRequest,children)	\
+    ( (This)->lpVtbl -> GetChildrenBuildCache(This,cacheRequest,children) ) 
+
+#define IUIAutomationTextRange3_GetAttributeValues(This,attributeIds,attributeIdCount,attributeValues)	\
+    ( (This)->lpVtbl -> GetAttributeValues(This,attributeIds,attributeIdCount,attributeValues) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IUIAutomationTextRange3_INTERFACE_DEFINED__ */
 
 
 #ifndef __IUIAutomationTextRangeArray_INTERFACE_DEFINED__
@@ -13074,6 +13394,943 @@ EXTERN_C const IID IID_IUIAutomationElement6;
 
 
 #endif 	/* __IUIAutomationElement6_INTERFACE_DEFINED__ */
+
+
+#ifndef __IUIAutomationElement7_INTERFACE_DEFINED__
+#define __IUIAutomationElement7_INTERFACE_DEFINED__
+
+/* interface IUIAutomationElement7 */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IUIAutomationElement7;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("204e8572-cfc3-4c11-b0c8-7da7420750b7")
+    IUIAutomationElement7 : public IUIAutomationElement6
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE FindFirstWithOptions( 
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FindAllWithOptions( 
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FindFirstWithOptionsBuildCache( 
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FindAllWithOptionsBuildCache( 
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetCurrentMetadataValue( 
+            /* [in] */ int targetId,
+            /* [in] */ METADATAID metadataId,
+            /* [retval][out] */ __RPC__out VARIANT *returnVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IUIAutomationElement7Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IUIAutomationElement7 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IUIAutomationElement7 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetFocus )( 
+            __RPC__in IUIAutomationElement7 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *runtimeId);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindFirst )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAll )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindFirstBuildCache )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAllBuildCache )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *BuildUpdatedCache )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **updatedElement);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentPropertyValue )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PROPERTYID propertyId,
+            /* [retval][out] */ __RPC__out VARIANT *retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentPropertyValueEx )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PROPERTYID propertyId,
+            /* [in] */ BOOL ignoreDefaultValue,
+            /* [retval][out] */ __RPC__out VARIANT *retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCachedPropertyValue )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PROPERTYID propertyId,
+            /* [retval][out] */ __RPC__out VARIANT *retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCachedPropertyValueEx )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PROPERTYID propertyId,
+            /* [in] */ BOOL ignoreDefaultValue,
+            /* [retval][out] */ __RPC__out VARIANT *retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentPatternAs )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PATTERNID patternId,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [retval][iid_is][out] */ __RPC__deref_out_opt void **patternObject);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCachedPatternAs )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PATTERNID patternId,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [retval][iid_is][out] */ __RPC__deref_out_opt void **patternObject);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentPattern )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PATTERNID patternId,
+            /* [retval][out] */ __RPC__deref_out_opt IUnknown **patternObject);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCachedPattern )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ PATTERNID patternId,
+            /* [retval][out] */ __RPC__deref_out_opt IUnknown **patternObject);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCachedParent )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **parent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCachedChildren )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **children);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentProcessId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentControlType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out CONTROLTYPEID *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentLocalizedControlType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentName )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAcceleratorKey )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAccessKey )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentHasKeyboardFocus )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsKeyboardFocusable )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsEnabled )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAutomationId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentClassName )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentHelpText )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentCulture )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsControlElement )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsContentElement )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsPassword )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentNativeWindowHandle )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt UIA_HWND *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentItemType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsOffscreen )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentOrientation )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out enum OrientationType *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentFrameworkId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsRequiredForForm )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentItemStatus )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentBoundingRectangle )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out RECT *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentLabeledBy )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAriaRole )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAriaProperties )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsDataValidForForm )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentControllerFor )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentDescribedBy )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentFlowsTo )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentProviderDescription )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedProcessId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedControlType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out CONTROLTYPEID *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedLocalizedControlType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedName )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAcceleratorKey )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAccessKey )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedHasKeyboardFocus )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsKeyboardFocusable )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsEnabled )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAutomationId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedClassName )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedHelpText )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedCulture )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsControlElement )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsContentElement )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsPassword )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedNativeWindowHandle )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt UIA_HWND *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedItemType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsOffscreen )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedOrientation )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out enum OrientationType *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedFrameworkId )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsRequiredForForm )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedItemStatus )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedBoundingRectangle )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out RECT *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedLabeledBy )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAriaRole )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAriaProperties )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsDataValidForForm )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedControllerFor )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedDescribedBy )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedFlowsTo )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedProviderDescription )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetClickablePoint )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [out] */ __RPC__out POINT *clickable,
+            /* [retval][out] */ __RPC__out BOOL *gotClickable);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentOptimizeForVisualContent )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedOptimizeForVisualContent )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentLiveSetting )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out enum LiveSetting *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedLiveSetting )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out enum LiveSetting *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentFlowsFrom )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedFlowsFrom )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowContextMenu )( 
+            __RPC__in IUIAutomationElement7 * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentIsPeripheral )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedIsPeripheral )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out BOOL *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentPositionInSet )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentSizeOfSet )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentLevel )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAnnotationTypes )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentAnnotationObjects )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedPositionInSet )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedSizeOfSet )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedLevel )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAnnotationTypes )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedAnnotationObjects )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentLandmarkType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out LANDMARKTYPEID *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentLocalizedLandmarkType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedLandmarkType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__out LANDMARKTYPEID *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedLocalizedLandmarkType )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentFullDescription )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CachedFullDescription )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *retVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindFirstWithOptions )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAllWithOptions )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindFirstWithOptionsBuildCache )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElement **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAllWithOptionsBuildCache )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ enum TreeScope scope,
+            /* [in] */ __RPC__in_opt IUIAutomationCondition *condition,
+            /* [in] */ __RPC__in_opt IUIAutomationCacheRequest *cacheRequest,
+            /* [in] */ enum TreeTraversalOptions traversalOptions,
+            /* [in] */ __RPC__in_opt IUIAutomationElement *root,
+            /* [retval][out] */ __RPC__deref_out_opt IUIAutomationElementArray **found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCurrentMetadataValue )( 
+            __RPC__in IUIAutomationElement7 * This,
+            /* [in] */ int targetId,
+            /* [in] */ METADATAID metadataId,
+            /* [retval][out] */ __RPC__out VARIANT *returnVal);
+        
+        END_INTERFACE
+    } IUIAutomationElement7Vtbl;
+
+    interface IUIAutomationElement7
+    {
+        CONST_VTBL struct IUIAutomationElement7Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IUIAutomationElement7_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IUIAutomationElement7_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IUIAutomationElement7_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IUIAutomationElement7_SetFocus(This)	\
+    ( (This)->lpVtbl -> SetFocus(This) ) 
+
+#define IUIAutomationElement7_GetRuntimeId(This,runtimeId)	\
+    ( (This)->lpVtbl -> GetRuntimeId(This,runtimeId) ) 
+
+#define IUIAutomationElement7_FindFirst(This,scope,condition,found)	\
+    ( (This)->lpVtbl -> FindFirst(This,scope,condition,found) ) 
+
+#define IUIAutomationElement7_FindAll(This,scope,condition,found)	\
+    ( (This)->lpVtbl -> FindAll(This,scope,condition,found) ) 
+
+#define IUIAutomationElement7_FindFirstBuildCache(This,scope,condition,cacheRequest,found)	\
+    ( (This)->lpVtbl -> FindFirstBuildCache(This,scope,condition,cacheRequest,found) ) 
+
+#define IUIAutomationElement7_FindAllBuildCache(This,scope,condition,cacheRequest,found)	\
+    ( (This)->lpVtbl -> FindAllBuildCache(This,scope,condition,cacheRequest,found) ) 
+
+#define IUIAutomationElement7_BuildUpdatedCache(This,cacheRequest,updatedElement)	\
+    ( (This)->lpVtbl -> BuildUpdatedCache(This,cacheRequest,updatedElement) ) 
+
+#define IUIAutomationElement7_GetCurrentPropertyValue(This,propertyId,retVal)	\
+    ( (This)->lpVtbl -> GetCurrentPropertyValue(This,propertyId,retVal) ) 
+
+#define IUIAutomationElement7_GetCurrentPropertyValueEx(This,propertyId,ignoreDefaultValue,retVal)	\
+    ( (This)->lpVtbl -> GetCurrentPropertyValueEx(This,propertyId,ignoreDefaultValue,retVal) ) 
+
+#define IUIAutomationElement7_GetCachedPropertyValue(This,propertyId,retVal)	\
+    ( (This)->lpVtbl -> GetCachedPropertyValue(This,propertyId,retVal) ) 
+
+#define IUIAutomationElement7_GetCachedPropertyValueEx(This,propertyId,ignoreDefaultValue,retVal)	\
+    ( (This)->lpVtbl -> GetCachedPropertyValueEx(This,propertyId,ignoreDefaultValue,retVal) ) 
+
+#define IUIAutomationElement7_GetCurrentPatternAs(This,patternId,riid,patternObject)	\
+    ( (This)->lpVtbl -> GetCurrentPatternAs(This,patternId,riid,patternObject) ) 
+
+#define IUIAutomationElement7_GetCachedPatternAs(This,patternId,riid,patternObject)	\
+    ( (This)->lpVtbl -> GetCachedPatternAs(This,patternId,riid,patternObject) ) 
+
+#define IUIAutomationElement7_GetCurrentPattern(This,patternId,patternObject)	\
+    ( (This)->lpVtbl -> GetCurrentPattern(This,patternId,patternObject) ) 
+
+#define IUIAutomationElement7_GetCachedPattern(This,patternId,patternObject)	\
+    ( (This)->lpVtbl -> GetCachedPattern(This,patternId,patternObject) ) 
+
+#define IUIAutomationElement7_GetCachedParent(This,parent)	\
+    ( (This)->lpVtbl -> GetCachedParent(This,parent) ) 
+
+#define IUIAutomationElement7_GetCachedChildren(This,children)	\
+    ( (This)->lpVtbl -> GetCachedChildren(This,children) ) 
+
+#define IUIAutomationElement7_get_CurrentProcessId(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentProcessId(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentControlType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentControlType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentLocalizedControlType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentLocalizedControlType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentName(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentName(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAcceleratorKey(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAcceleratorKey(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAccessKey(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAccessKey(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentHasKeyboardFocus(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentHasKeyboardFocus(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsKeyboardFocusable(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsKeyboardFocusable(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsEnabled(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsEnabled(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAutomationId(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAutomationId(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentClassName(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentClassName(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentHelpText(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentHelpText(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentCulture(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentCulture(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsControlElement(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsControlElement(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsContentElement(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsContentElement(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsPassword(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsPassword(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentNativeWindowHandle(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentNativeWindowHandle(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentItemType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentItemType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsOffscreen(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsOffscreen(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentOrientation(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentOrientation(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentFrameworkId(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentFrameworkId(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsRequiredForForm(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsRequiredForForm(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentItemStatus(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentItemStatus(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentBoundingRectangle(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentBoundingRectangle(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentLabeledBy(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentLabeledBy(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAriaRole(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAriaRole(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAriaProperties(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAriaProperties(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentIsDataValidForForm(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsDataValidForForm(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentControllerFor(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentControllerFor(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentDescribedBy(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentDescribedBy(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentFlowsTo(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentFlowsTo(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentProviderDescription(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentProviderDescription(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedProcessId(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedProcessId(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedControlType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedControlType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedLocalizedControlType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedLocalizedControlType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedName(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedName(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAcceleratorKey(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAcceleratorKey(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAccessKey(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAccessKey(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedHasKeyboardFocus(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedHasKeyboardFocus(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsKeyboardFocusable(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsKeyboardFocusable(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsEnabled(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsEnabled(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAutomationId(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAutomationId(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedClassName(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedClassName(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedHelpText(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedHelpText(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedCulture(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedCulture(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsControlElement(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsControlElement(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsContentElement(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsContentElement(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsPassword(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsPassword(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedNativeWindowHandle(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedNativeWindowHandle(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedItemType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedItemType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsOffscreen(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsOffscreen(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedOrientation(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedOrientation(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedFrameworkId(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedFrameworkId(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsRequiredForForm(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsRequiredForForm(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedItemStatus(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedItemStatus(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedBoundingRectangle(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedBoundingRectangle(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedLabeledBy(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedLabeledBy(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAriaRole(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAriaRole(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAriaProperties(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAriaProperties(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsDataValidForForm(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsDataValidForForm(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedControllerFor(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedControllerFor(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedDescribedBy(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedDescribedBy(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedFlowsTo(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedFlowsTo(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedProviderDescription(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedProviderDescription(This,retVal) ) 
+
+#define IUIAutomationElement7_GetClickablePoint(This,clickable,gotClickable)	\
+    ( (This)->lpVtbl -> GetClickablePoint(This,clickable,gotClickable) ) 
+
+
+#define IUIAutomationElement7_get_CurrentOptimizeForVisualContent(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentOptimizeForVisualContent(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedOptimizeForVisualContent(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedOptimizeForVisualContent(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentLiveSetting(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentLiveSetting(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedLiveSetting(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedLiveSetting(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentFlowsFrom(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentFlowsFrom(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedFlowsFrom(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedFlowsFrom(This,retVal) ) 
+
+
+#define IUIAutomationElement7_ShowContextMenu(This)	\
+    ( (This)->lpVtbl -> ShowContextMenu(This) ) 
+
+#define IUIAutomationElement7_get_CurrentIsPeripheral(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentIsPeripheral(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedIsPeripheral(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedIsPeripheral(This,retVal) ) 
+
+
+#define IUIAutomationElement7_get_CurrentPositionInSet(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentPositionInSet(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentSizeOfSet(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentSizeOfSet(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentLevel(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentLevel(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAnnotationTypes(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAnnotationTypes(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentAnnotationObjects(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentAnnotationObjects(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedPositionInSet(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedPositionInSet(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedSizeOfSet(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedSizeOfSet(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedLevel(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedLevel(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAnnotationTypes(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAnnotationTypes(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedAnnotationObjects(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedAnnotationObjects(This,retVal) ) 
+
+
+#define IUIAutomationElement7_get_CurrentLandmarkType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentLandmarkType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CurrentLocalizedLandmarkType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentLocalizedLandmarkType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedLandmarkType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedLandmarkType(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedLocalizedLandmarkType(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedLocalizedLandmarkType(This,retVal) ) 
+
+
+#define IUIAutomationElement7_get_CurrentFullDescription(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentFullDescription(This,retVal) ) 
+
+#define IUIAutomationElement7_get_CachedFullDescription(This,retVal)	\
+    ( (This)->lpVtbl -> get_CachedFullDescription(This,retVal) ) 
+
+
+#define IUIAutomationElement7_FindFirstWithOptions(This,scope,condition,traversalOptions,root,found)	\
+    ( (This)->lpVtbl -> FindFirstWithOptions(This,scope,condition,traversalOptions,root,found) ) 
+
+#define IUIAutomationElement7_FindAllWithOptions(This,scope,condition,traversalOptions,root,found)	\
+    ( (This)->lpVtbl -> FindAllWithOptions(This,scope,condition,traversalOptions,root,found) ) 
+
+#define IUIAutomationElement7_FindFirstWithOptionsBuildCache(This,scope,condition,cacheRequest,traversalOptions,root,found)	\
+    ( (This)->lpVtbl -> FindFirstWithOptionsBuildCache(This,scope,condition,cacheRequest,traversalOptions,root,found) ) 
+
+#define IUIAutomationElement7_FindAllWithOptionsBuildCache(This,scope,condition,cacheRequest,traversalOptions,root,found)	\
+    ( (This)->lpVtbl -> FindAllWithOptionsBuildCache(This,scope,condition,cacheRequest,traversalOptions,root,found) ) 
+
+#define IUIAutomationElement7_GetCurrentMetadataValue(This,targetId,metadataId,returnVal)	\
+    ( (This)->lpVtbl -> GetCurrentMetadataValue(This,targetId,metadataId,returnVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IUIAutomationElement7_INTERFACE_DEFINED__ */
 
 
 #ifndef __IUIAutomationProxyFactory_INTERFACE_DEFINED__

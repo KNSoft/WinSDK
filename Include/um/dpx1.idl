@@ -36,6 +36,9 @@ typedef enum
     DPX_RESUME_UNTIL_DOWNLOAD = 0x0001,    // proceed until download is needed, then stop
                                           //   (can then use download provider directly)
     DPX_RESUME_AND_DOWNLOAD_FALLBACK = 0x0002, // perform end to end extraction and use only fallbacks
+    DPX_RESUME_UNTIL_DOWNLOAD_NO_CLONE = 0x0003, // proceed until download is needed, then stop
+                                                 //   (can then use download provider directly)
+                                                 //   don't clone files from local machine
 }
 DPX_RESUME_TYPE;
 
@@ -116,6 +119,8 @@ cpp_quote( "#define DPX_COMPRESSED_FILE_HEADER_XPRESS_HUFF {'D', 'C', 'X', '\x01
 #define DPX_XPRESS_HUFF_BLOCK_SIZE (1024 * 1024)
 cpp_quote( "#define DPX_XPRESS_HUFF_BLOCK_SIZE (1024 * 1024)" )
 
+#define DPX_OPTION_TELEMETRY_CORRELATION_VECTOR L"Telemetry_correlation_vector"
+cpp_quote("#define DPX_OPTION_TELEMETRY_CORRELATION_VECTOR L\"Telemetry_correlation_vector\"")
 
 [ uuid( ddc1b711-0e55-452f-838e-d1505b866e2b ), object, pointer_default( unique ) ]
 interface IDpxJob : IUnknown
@@ -478,6 +483,12 @@ interface IDpxFile : IUnknown
 
 }
 
+[ uuid( c249cc11-c1f5-428e-acbf-e1b78b30b971 ), object, pointer_default( unique ) ]
+interface IDpxFile2 : IDpxFile
+{
+    HRESULT GetSize( [out] UINT64* pSize );
+}
+
 
 [ uuid( ddc1b715-0e55-452f-838e-d1505b866e2b ), object, pointer_default( unique ) ]
 interface IDpxContainerDirectoryEntry : IUnknown
@@ -707,6 +718,30 @@ interface IDpxContainer2 : IDpxEncryptedContainer
         [in] UINT PredecessorFilePathsCount,
         [in, size_is( PredecessorFilePathsCount )] PredecessorFilePathInfo PredecessorFilePaths[],
         [out] IDpxContainer2 ** ppContainer
+        );
+}
+
+//
+// Add a peer to this container.
+// Peers contain equivalent content, but the content may be
+// stored differently.  All peers are processed together when evaluating
+// download options.
+//
+[ uuid( 582f768c-fe7d-4bf5-b0b8-3ab01d53b0d0 ), object, pointer_default(unique) ]
+interface IDpxContainer3 : IDpxContainer2
+{
+    HRESULT AddPeerContainer(
+        [in] LPCWSTR ContainerPath,
+        [out] IDpxContainer3 ** ppContainer
+        );
+        
+    HRESULT IsPeer(
+        [in] IDpxContainer3 * ppOtherContainer,
+        [out] BOOL *pIsPeer
+        );
+        
+    HRESULT GetPeerGroupId(
+        [out] UINT64* pnPeerGroupId
         );
 }
 

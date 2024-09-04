@@ -376,7 +376,9 @@ typedef enum _POWER_DATA_ACCESSOR {
         // Used by enumeration engine.
         //
 
-        ACCESS_PROFILE
+        ACCESS_PROFILE,
+        ACCESS_OVERLAY_SCHEME,
+        ACCESS_ACTIVE_OVERLAY_SCHEME,
 
 } POWER_DATA_ACCESSOR, *PPOWER_DATA_ACCESSOR;
 

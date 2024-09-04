@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -51,6 +51,13 @@ typedef interface IRadialControllerInterop IRadialControllerInterop;
 typedef interface IRadialControllerConfigurationInterop IRadialControllerConfigurationInterop;
 
 #endif 	/* __IRadialControllerConfigurationInterop_FWD_DEFINED__ */
+
+
+#ifndef __IRadialControllerIndependentInputSourceInterop_FWD_DEFINED__
+#define __IRadialControllerIndependentInputSourceInterop_FWD_DEFINED__
+typedef interface IRadialControllerIndependentInputSourceInterop IRadialControllerIndependentInputSourceInterop;
+
+#endif 	/* __IRadialControllerIndependentInputSourceInterop_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -305,10 +312,137 @@ EXTERN_C const IID IID_IRadialControllerConfigurationInterop;
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 #endif //(NTDDI_VERSION >= NTDDI_WIN10_RS1)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_radialcontrollerinterop_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_radialcontrollerinterop_0000_0002_v0_0_s_ifspec;
+
+#ifndef __IRadialControllerIndependentInputSourceInterop_INTERFACE_DEFINED__
+#define __IRadialControllerIndependentInputSourceInterop_INTERFACE_DEFINED__
+
+/* interface IRadialControllerIndependentInputSourceInterop */
+/* [local][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IRadialControllerIndependentInputSourceInterop;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("3D577EFF-4CEE-11E6-B535-001BDC06AB3B")
+    IRadialControllerIndependentInputSourceInterop : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE CreateForWindow( 
+            /* [annotation][in] */ 
+            _In_  HWND hwnd,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppv) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IRadialControllerIndependentInputSourceInteropVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IRadialControllerIndependentInputSourceInterop * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IRadialControllerIndependentInputSourceInterop * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IRadialControllerIndependentInputSourceInterop * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            IRadialControllerIndependentInputSourceInterop * This,
+            /* [out] */ ULONG *iidCount,
+            /* [size_is][size_is][out] */ IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            IRadialControllerIndependentInputSourceInterop * This,
+            /* [out] */ HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            IRadialControllerIndependentInputSourceInterop * This,
+            /* [out] */ TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateForWindow )( 
+            IRadialControllerIndependentInputSourceInterop * This,
+            /* [annotation][in] */ 
+            _In_  HWND hwnd,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppv);
+        
+        END_INTERFACE
+    } IRadialControllerIndependentInputSourceInteropVtbl;
+
+    interface IRadialControllerIndependentInputSourceInterop
+    {
+        CONST_VTBL struct IRadialControllerIndependentInputSourceInteropVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IRadialControllerIndependentInputSourceInterop_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IRadialControllerIndependentInputSourceInterop_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IRadialControllerIndependentInputSourceInterop_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IRadialControllerIndependentInputSourceInterop_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define IRadialControllerIndependentInputSourceInterop_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define IRadialControllerIndependentInputSourceInterop_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define IRadialControllerIndependentInputSourceInterop_CreateForWindow(This,hwnd,riid,ppv)	\
+    ( (This)->lpVtbl -> CreateForWindow(This,hwnd,riid,ppv) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IRadialControllerIndependentInputSourceInterop_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_radialcontrollerinterop_0000_0003 */
+/* [local] */ 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#endif //(NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_radialcontrollerinterop_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_radialcontrollerinterop_0000_0003_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

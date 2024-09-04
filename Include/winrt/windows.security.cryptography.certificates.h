@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -53,6 +53,20 @@ typedef interface __FIIterable_1_Windows__CSecurity__CCryptography__CCertificate
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_FWD_DEFINED__ */
 
 
+#ifndef ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#endif 	/* ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#endif 	/* ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__ */
+
+
 #ifndef ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_FWD_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_FWD_DEFINED__
 typedef interface __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult;
@@ -88,6 +102,13 @@ typedef interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertifica
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_FWD_DEFINED__ */
 
 
+#ifndef ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#endif 	/* ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__ */
+
+
 #ifndef ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult;
@@ -107,6 +128,13 @@ typedef interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertifica
 typedef interface __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate;
 
 #endif 	/* ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_FWD_DEFINED__ */
+
+
+#ifndef ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+typedef interface __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#endif 	/* ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__ */
 
 
 #ifndef ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_FWD_DEFINED__
@@ -312,6 +340,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Cryptography {
+                namespace Certificates {
+                    interface ICertificateExtension;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory;
@@ -464,6 +514,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Cryptography {
+                namespace Certificates {
+                    interface ICertificateRequestProperties4;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore_FWD_DEFINED__
@@ -972,6 +1044,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Cryptography {
+                namespace Certificates {
+                    interface ISubjectAlternativeNameInfo2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager;
@@ -1098,18 +1192,18 @@ interface ICertificate;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0001 */
 /* [local] */ 
@@ -1144,18 +1238,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0002 */
 /* [local] */ 
@@ -1179,6 +1273,19 @@ typedef IIterable<ABI::Windows::Security::Cryptography::Certificates::Certificat
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Cryptography {
+namespace Certificates {
+class CertificateExtension;
+} /*Certificates*/
+} /*Cryptography*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
 
 #ifdef __cplusplus
 namespace ABI {
@@ -1186,7 +1293,7 @@ namespace Windows {
 namespace Security {
 namespace Cryptography {
 namespace Certificates {
-enum ChainValidationResult;
+interface ICertificateExtension;
 } /*Certificates*/
 } /*Cryptography*/
 } /*Security*/
@@ -1205,20 +1312,127 @@ enum ChainValidationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#define DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5e5af982-332d-54ec-8e54-e62c1a1eace9"))
+IIterator<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*, ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Security.Cryptography.Certificates.CertificateExtension>"; }
+};
+typedef IIterator<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t;
+#define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4611 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4611 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#define DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1bdd7127-73b3-5192-8bde-20c136281260"))
+IIterable<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*, ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Security.Cryptography.Certificates.CertificateExtension>"; }
+};
+typedef IIterable<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t;
+#define ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Cryptography {
+namespace Certificates {
+enum ChainValidationResult;
+} /*Certificates*/
+} /*Cryptography*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4612 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4612 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE
@@ -1242,29 +1456,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3070 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3070_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE
@@ -1315,30 +1529,30 @@ interface ICmsSignerInfo;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3071 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3071_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_USE
@@ -1362,29 +1576,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3072 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3072_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_USE
@@ -1408,29 +1622,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3073 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3073_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE
@@ -1454,29 +1668,75 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3074 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3074_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#define DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("43857453-e7b1-5cba-9730-5ea4ddebdd95"))
+IVectorView<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*, ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Security.Cryptography.Certificates.CertificateExtension>"; }
+};
+typedef IVectorView<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t;
+#define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4618 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4618 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE
@@ -1500,29 +1760,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3075 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3075_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_USE
@@ -1546,29 +1806,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3076 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3076_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE
@@ -1592,29 +1852,75 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3077 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3077_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014 */
+/* [local] */ 
+
+#ifndef DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#define DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("4c2523e8-9773-50fe-b870-483fd8b906dc"))
+IVector<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*, ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVector`1<Windows.Security.Cryptography.Certificates.CertificateExtension>"; }
+};
+typedef IVector<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension*> __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t;
+#define ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_FWD_DEFINED__
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_USE */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4622 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4622 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE
@@ -1638,29 +1944,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3078 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3078_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE
@@ -1684,29 +1990,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4624 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_USE
@@ -1757,30 +2063,30 @@ interface ICertificateChain;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_USE
@@ -1804,29 +2110,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3081 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_USE
@@ -1864,30 +2170,30 @@ enum SignatureValidationResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_USE
@@ -1911,29 +2217,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_USE
@@ -1957,29 +2263,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -2003,29 +2309,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
@@ -2049,29 +2355,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_HSTRING_USE
@@ -2095,29 +2401,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
@@ -2141,29 +2447,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_HSTRING_USE
@@ -2187,29 +2493,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_HSTRING_USE
@@ -2245,30 +2551,30 @@ interface IBuffer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -2292,29 +2598,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -2338,29 +2644,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -2384,29 +2690,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -2537,6 +2843,8 @@ typedef enum __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CSignatureVa
 
 
 #endif
+
+
 
 
 
@@ -2745,7 +3053,7 @@ class UserCertificateStore;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031 */
 /* [local] */ 
 
 
@@ -2967,23 +3275,25 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0027_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3094 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate
@@ -2991,13 +3301,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
@@ -3141,35 +3451,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CCryptography__CCertif
 #endif 	/* ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate
@@ -3177,13 +3487,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
@@ -3293,35 +3603,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CCryptography__CCertif
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#define DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5e5af982-332d-54ec-8e54-e62c1a1eace9")
+    __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl;
+
+    interface __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4642 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4642 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#define DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("1bdd7127-73b3-5192-8bde-20c136281260")
+    __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl;
+
+    interface __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4643 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4643 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult
@@ -3329,13 +3977,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
@@ -3479,35 +4127,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CCryptography__CCertif
 #endif 	/* ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult
@@ -3515,13 +4163,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
@@ -3631,35 +4279,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CCryptography__CCertif
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo
@@ -3667,13 +4315,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__
@@ -3817,35 +4465,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CCryptography__CCertif
 #endif 	/* ____FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo
@@ -3853,13 +4501,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__
@@ -3969,35 +4617,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CCryptography__CCertif
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate
@@ -4005,13 +4653,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
@@ -4163,35 +4811,229 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CCryptography__CCert
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#define DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("43857453-e7b1-5cba-9730-5ea4ddebdd95")
+    __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl;
+
+    interface __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4649 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4649 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult
@@ -4199,13 +5041,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
@@ -4357,35 +5199,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CCryptography__CCert
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo
@@ -4393,13 +5235,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__
@@ -4551,35 +5393,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CCryptography__CCert
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate
@@ -4587,13 +5429,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
@@ -4827,35 +5669,311 @@ EXTERN_C const IID IID___FIVector_1_Windows__CSecurity__CCryptography__CCertific
 #endif 	/* ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058 */
+/* [local] */ 
+
+#ifndef DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#define DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058_v0_0_s_ifspec;
+
+#ifndef ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+#define ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__
+
+/* interface __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4c2523e8-9773-50fe-b870-483fd8b906dc")
+    __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetView( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension **view) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetAt( 
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension *item) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension *item) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
+            /* [in] */ unsigned int index) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Append( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension *item) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
+            /* [in] */ unsigned int count,
+            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetView )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension **view);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension *item);
+        
+        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension *item);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int index);
+        
+        HRESULT ( STDMETHODCALLTYPE *Append )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension *item);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
+            __RPC__in __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension * This,
+            /* [in] */ unsigned int count,
+            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **value);
+        
+        END_INTERFACE
+    } __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl;
+
+    interface __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension
+    {
+        CONST_VTBL struct __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtensionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4653 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4653 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult
@@ -4863,13 +5981,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__
@@ -5103,35 +6221,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CSecurity__CCryptography__CCertific
 #endif 	/* ____FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate
@@ -5140,14 +6258,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
@@ -5236,35 +6354,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate
@@ -5272,13 +6390,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__
@@ -5408,35 +6526,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity_
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain
@@ -5445,14 +6563,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_INTERFACE_DEFINED__
@@ -5541,35 +6659,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain
@@ -5577,13 +6695,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_INTERFACE_DEFINED__
@@ -5713,35 +6831,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CCryptography__C
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult
@@ -5750,14 +6868,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_INTERFACE_DEFINED__
@@ -5846,35 +6964,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult
@@ -5882,13 +7000,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates2Ei
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_INTERFACE_DEFINED__
@@ -6018,7 +7136,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CCryptography__C
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CSignatureValidationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -6173,7 +7291,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -6385,8 +7503,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate_INTERFACE_DEFINED__
@@ -6665,7 +7783,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate2_INTERFACE_DEFINED__)
@@ -6673,13 +7791,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate2_INTERFACE_DEFINED__
@@ -6854,7 +7972,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate3_INTERFACE_DEFINED__)
@@ -6862,13 +7980,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate3_INTERFACE_DEFINED__
@@ -7013,7 +8131,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificate3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateChain_INTERFACE_DEFINED__)
@@ -7021,13 +8139,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateChain_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateChain_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateChain_INTERFACE_DEFINED__
@@ -7176,7 +8294,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateChain_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics_INTERFACE_DEFINED__)
@@ -7184,13 +8302,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics_INTERFACE_DEFINED__
@@ -7353,7 +8471,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics2_INTERFACE_DEFINED__)
@@ -7361,13 +8479,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics2_INTERFACE_DEFINED__
@@ -7516,7 +8634,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics3_INTERFACE_DEFINED__)
@@ -7524,13 +8642,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics3_INTERFACE_DEFINED__
@@ -7661,7 +8779,210 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateEnrollmentManagerStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Cryptography_Certificates_ICertificateExtension[] = L"Windows.Security.Cryptography.Certificates.ICertificateExtension";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Cryptography {
+                    namespace Certificates {
+                        
+                        MIDL_INTERFACE("84CF0656-A9E6-454D-8E45-2EA7C4BCD53B")
+                        ICertificateExtension : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ObjectId( 
+                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ObjectId( 
+                                /* [in] */ __RPC__in HSTRING value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCritical( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsCritical( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE EncodeValue( 
+                                /* [in] */ __RPC__in HSTRING value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Value( 
+                                /* [out] */ __RPC__out UINT32 *__valueSize,
+                                /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) BYTE **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Value( 
+                                /* [in] */ UINT32 __valueSize,
+                                /* [in][size_is] */ __RPC__in_ecount_full(__valueSize) BYTE *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ICertificateExtension = __uuidof(ICertificateExtension);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtensionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ObjectId )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ObjectId )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCritical )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsCritical )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [in] */ boolean value);
+        
+        HRESULT ( STDMETHODCALLTYPE *EncodeValue )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [out] */ __RPC__out UINT32 *__valueSize,
+            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) BYTE **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Value )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension * This,
+            /* [in] */ UINT32 __valueSize,
+            /* [in][size_is] */ __RPC__in_ecount_full(__valueSize) BYTE *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtensionVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtensionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_get_ObjectId(This,value)	\
+    ( (This)->lpVtbl -> get_ObjectId(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_put_ObjectId(This,value)	\
+    ( (This)->lpVtbl -> put_ObjectId(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_get_IsCritical(This,value)	\
+    ( (This)->lpVtbl -> get_IsCritical(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_put_IsCritical(This,value)	\
+    ( (This)->lpVtbl -> put_IsCritical(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_EncodeValue(This,value)	\
+    ( (This)->lpVtbl -> EncodeValue(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_get_Value(This,__valueSize,value)	\
+    ( (This)->lpVtbl -> get_Value(This,__valueSize,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_put_Value(This,__valueSize,value)	\
+    ( (This)->lpVtbl -> put_Value(This,__valueSize,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_INTERFACE_DEFINED__)
@@ -7669,13 +8990,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_INTERFACE_DEFINED__
@@ -7802,7 +9123,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateKeyUsages_INTERFACE_DEFINED__)
@@ -7810,13 +9131,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateKeyUsages_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateKeyUsages_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateKeyUsages_INTERFACE_DEFINED__
@@ -8091,7 +9412,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateKeyUsages_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery_INTERFACE_DEFINED__)
@@ -8099,13 +9420,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery_INTERFACE_DEFINED__
@@ -8314,7 +9635,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery2_INTERFACE_DEFINED__)
@@ -8322,13 +9643,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery2_INTERFACE_DEFINED__
@@ -8503,7 +9824,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateQuery2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties_INTERFACE_DEFINED__)
@@ -8511,13 +9832,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties_INTERFACE_DEFINED__
@@ -8812,7 +10133,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties2_INTERFACE_DEFINED__)
@@ -8820,13 +10141,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties2_INTERFACE_DEFINED__
@@ -9001,7 +10322,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties3_INTERFACE_DEFINED__)
@@ -9009,13 +10330,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties3_INTERFACE_DEFINED__
@@ -9234,7 +10555,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Cryptography_Certificates_ICertificateRequestProperties4[] = L"Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Cryptography {
+                    namespace Certificates {
+                        
+                        MIDL_INTERFACE("4E429AD2-1C61-4FEA-B8FE-135FB19CDCE4")
+                        ICertificateRequestProperties4 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SuppressedDefaults( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SubjectAlternativeName( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Extensions( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ICertificateRequestProperties4 = __uuidof(ICertificateRequestProperties4);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SuppressedDefaults )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SubjectAlternativeName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Extensions )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_get_SuppressedDefaults(This,value)	\
+    ( (This)->lpVtbl -> get_SuppressedDefaults(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_get_SubjectAlternativeName(This,value)	\
+    ( (This)->lpVtbl -> get_SubjectAlternativeName(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_get_Extensions(This,value)	\
+    ( (This)->lpVtbl -> get_Extensions(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateRequestProperties4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore_INTERFACE_DEFINED__)
@@ -9242,13 +10722,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore_INTERFACE_DEFINED__
@@ -9383,7 +10863,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore2_INTERFACE_DEFINED__)
@@ -9391,13 +10871,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore2_INTERFACE_DEFINED__
@@ -9522,7 +11002,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStore2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics_INTERFACE_DEFINED__)
@@ -9530,13 +11010,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics_INTERFACE_DEFINED__
@@ -9705,7 +11185,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics2_INTERFACE_DEFINED__)
@@ -9713,13 +11193,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics2_INTERFACE_DEFINED__
@@ -9846,7 +11326,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateStoresStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainBuildingParameters_INTERFACE_DEFINED__)
@@ -9854,13 +11334,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainBuildingParameters_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainBuildingParameters_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainBuildingParameters_INTERFACE_DEFINED__
@@ -10095,7 +11575,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainBuildingParameters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainValidationParameters_INTERFACE_DEFINED__)
@@ -10103,13 +11583,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainValidationParameters_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainValidationParameters_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainValidationParameters_INTERFACE_DEFINED__
@@ -10264,7 +11744,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIChainValidationParameters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignature_INTERFACE_DEFINED__)
@@ -10272,13 +11752,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignature_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignature_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignature_INTERFACE_DEFINED__
@@ -10435,7 +11915,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureFactory_INTERFACE_DEFINED__)
@@ -10443,13 +11923,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureFactory_INTERFACE_DEFINED__
@@ -10576,7 +12056,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureStatics_INTERFACE_DEFINED__)
@@ -10584,13 +12064,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureStatics_INTERFACE_DEFINED__
@@ -10721,7 +12201,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsAttachedSignatureStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignature_INTERFACE_DEFINED__)
@@ -10729,13 +12209,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignature_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignature_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignature_INTERFACE_DEFINED__
@@ -10882,7 +12362,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureFactory_INTERFACE_DEFINED__)
@@ -10890,13 +12370,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureFactory_INTERFACE_DEFINED__
@@ -11023,7 +12503,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureStatics_INTERFACE_DEFINED__)
@@ -11031,13 +12511,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureStatics_INTERFACE_DEFINED__
@@ -11168,7 +12648,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsDetachedSignatureStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsSignerInfo_INTERFACE_DEFINED__)
@@ -11176,13 +12656,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsSignerInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsSignerInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsSignerInfo_INTERFACE_DEFINED__
@@ -11347,7 +12827,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsSignerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsTimestampInfo_INTERFACE_DEFINED__)
@@ -11355,13 +12835,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsTimestampInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsTimestampInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsTimestampInfo_INTERFACE_DEFINED__
@@ -11506,7 +12986,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICmsTimestampInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics_INTERFACE_DEFINED__)
@@ -11514,13 +12994,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics_INTERFACE_DEFINED__
@@ -11715,7 +13195,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics2_INTERFACE_DEFINED__)
@@ -11723,13 +13203,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics2_INTERFACE_DEFINED__
@@ -11864,7 +13344,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAlgorithmNamesStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics_INTERFACE_DEFINED__)
@@ -11872,13 +13352,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics_INTERFACE_DEFINED__
@@ -12017,7 +13497,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics2_INTERFACE_DEFINED__)
@@ -12025,13 +13505,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics2_INTERFACE_DEFINED__
@@ -12160,7 +13640,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyAttestationHelperStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics_INTERFACE_DEFINED__)
@@ -12168,13 +13648,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics_INTERFACE_DEFINED__
@@ -12319,7 +13799,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics2_INTERFACE_DEFINED__)
@@ -12327,13 +13807,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics2_INTERFACE_DEFINED__
@@ -12458,7 +13938,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIKeyStorageProviderNamesStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIPfxImportParameters_INTERFACE_DEFINED__)
@@ -12466,13 +13946,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIPfxImportParameters_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIPfxImportParameters_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIPfxImportParameters_INTERFACE_DEFINED__
@@ -12727,7 +14207,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIPfxImportParameters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIStandardCertificateStoreNamesStatics_INTERFACE_DEFINED__)
@@ -12735,13 +14215,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIStandardCertificateStoreNamesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIStandardCertificateStoreNamesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIStandardCertificateStoreNamesStatics_INTERFACE_DEFINED__
@@ -12886,7 +14366,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIStandardCertificateStoreNamesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo_INTERFACE_DEFINED__)
@@ -12894,13 +14374,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo_INTERFACE_DEFINED__
@@ -13075,7 +14555,206 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0112 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Cryptography_Certificates_ISubjectAlternativeNameInfo2[] = L"Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0112 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0112_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Cryptography {
+                    namespace Certificates {
+                        
+                        MIDL_INTERFACE("437A78C6-1C51-41EA-B34A-3D654398A370")
+                        ISubjectAlternativeNameInfo2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_EmailNames( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IPAddresses( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Urls( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DnsNames( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DistinguishedNames( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PrincipalNames( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Extension( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISubjectAlternativeNameInfo2 = __uuidof(ISubjectAlternativeNameInfo2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_EmailNames )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IPAddresses )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Urls )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DnsNames )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DistinguishedNames )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PrincipalNames )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Extension )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CICertificateExtension **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_EmailNames(This,value)	\
+    ( (This)->lpVtbl -> get_EmailNames(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_IPAddresses(This,value)	\
+    ( (This)->lpVtbl -> get_IPAddresses(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_Urls(This,value)	\
+    ( (This)->lpVtbl -> get_Urls(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_DnsNames(This,value)	\
+    ( (This)->lpVtbl -> get_DnsNames(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_DistinguishedNames(This,value)	\
+    ( (This)->lpVtbl -> get_DistinguishedNames(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_PrincipalNames(This,value)	\
+    ( (This)->lpVtbl -> get_PrincipalNames(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_get_Extension(This,value)	\
+    ( (This)->lpVtbl -> get_Extension(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CISubjectAlternativeNameInfo2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_INTERFACE_DEFINED__)
@@ -13083,13 +14762,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_INTERFACE_DEFINED__
@@ -13276,7 +14955,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager2_INTERFACE_DEFINED__)
@@ -13284,13 +14963,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager2_INTERFACE_DEFINED__
@@ -13421,7 +15100,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateEnrollmentManager2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateStore_INTERFACE_DEFINED__)
@@ -13429,13 +15108,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateStore_INTERFACE_DEFINED__
@@ -13584,7 +15263,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CI
 #endif 	/* ____x_ABI_CWindows_CSecurity_CCryptography_CCertificates_CIUserCertificateStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0116 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Security_Cryptography_Certificates_Certificate_DEFINED
@@ -13598,6 +15277,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Security_Cryptography_Certificates_CertificateEnrollmentManager_DEFINED
 #define RUNTIMECLASS_Windows_Security_Cryptography_Certificates_CertificateEnrollmentManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Cryptography_Certificates_CertificateEnrollmentManager[] = L"Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_Security_Cryptography_Certificates_CertificateExtension_DEFINED
+#define RUNTIMECLASS_Windows_Security_Cryptography_Certificates_CertificateExtension_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Cryptography_Certificates_CertificateExtension[] = L"Windows.Security.Cryptography.Certificates.CertificateExtension";
 #endif
 #ifndef RUNTIMECLASS_Windows_Security_Cryptography_Certificates_CertificateKeyUsages_DEFINED
 #define RUNTIMECLASS_Windows_Security_Cryptography_Certificates_CertificateKeyUsages_DEFINED
@@ -13677,13 +15360,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101 */
+/* interface __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Ecryptography2Ecertificates_0000_0116_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

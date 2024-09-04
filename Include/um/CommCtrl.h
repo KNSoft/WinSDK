@@ -217,7 +217,6 @@ typedef struct tagCOLORSCHEME {
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 #define CCM_SETWINDOWTHEME      (CCM_FIRST + 0xb)
 #define CCM_DPISCALE            (CCM_FIRST + 0xc) // wParam == Awareness
-
 #endif
 
 // for tooltips

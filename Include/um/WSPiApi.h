@@ -101,7 +101,7 @@ __inline
 char *
 WINAPI
 WspiapiStrdup (
-        _In_  const char *                    pszString)
+        _In_z_ const char *                   pszString)
 /*++
 
 Routine Description
@@ -138,8 +138,8 @@ __inline
 BOOL
 WINAPI
 WspiapiParseV4Address (
-    _In_  const char *                    pszAddress,
-    _Out_ PDWORD                          pdwAddress)
+    _In_z_ const char *                   pszAddress,
+    _Out_  PDWORD                         pdwAddress)
 /*++
 
 Routine Description
@@ -241,11 +241,11 @@ __inline
 int
 WINAPI
 WspiapiQueryDNS(
-    _In_  const char                      *pszNodeName,
-    _In_  int                             iSocketType,
-    _In_  int                             iProtocol,  
-    _In_  WORD                            wPort,      
-    _Out_ char                            pszAlias[NI_MAXHOST],
+    _In_z_ const char                     *pszNodeName,
+    _In_   int                            iSocketType,
+    _In_   int                            iProtocol,  
+    _In_   WORD                           wPort,      
+    _Out_writes_bytes_(NI_MAXHOST) char   pszAlias[NI_MAXHOST],
     _Outptr_ struct addrinfo           **pptResult)
 /*++
 
@@ -274,7 +274,7 @@ Return Value
     *pptNext    = NULL;
     pszAlias[0] = '\0';
 
-#pragma warning(suppress: 4996)
+#pragma warning(suppress: 4996 38026)
     ptHost = gethostbyname(pszNodeName);
     if (ptHost)
     {
@@ -320,11 +320,11 @@ __inline
 int
 WINAPI
 WspiapiLookupNode(
-    _In_  const char                      *pszNodeName,
-    _In_  int                             iSocketType,
-    _In_  int                             iProtocol,  
-    _In_  WORD                            wPort,      
-    _In_  BOOL                            bAI_CANONNAME,
+    _In_z_ const char                     *pszNodeName,
+    _In_   int                            iSocketType,
+    _In_   int                            iProtocol,
+    _In_   WORD                           wPort,
+    _In_   BOOL                           bAI_CANONNAME,
     _Outptr_ struct addrinfo           **pptResult)
 /*++
 
@@ -820,7 +820,7 @@ Return Value
         else
         {
             // return node name corresponding to address.
-#pragma warning(suppress: 4996)
+#pragma warning(suppress: 4996 38026)
             ptHost = gethostbyaddr((char *) &tAddress, sizeof(struct in_addr), AF_INET);
             if (ptHost && ptHost->h_name)
             {
@@ -915,6 +915,7 @@ Return Value
     
     // we overwrite rgtGlobal only if all routines exist in library.
     WSPIAPI_FUNCTION        rgtLocal[]      = WSPIAPI_FUNCTION_ARRAY;
+    __analysis_assume((sizeof(rgtLocal)/sizeof(WSPIAPI_FUNCTION)) == iNumGlobal);
     FARPROC                 fScratch        = NULL;
     int                     i               = 0;
     

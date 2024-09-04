@@ -20,6 +20,11 @@ Abstract:
 
 #pragma once
 
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#pragma warning(disable:4820) /* padding added */
+#endif
+
 #if defined(_WINNT_) || defined(WINNT)
 
 #if !defined(NO_ETW_APP_DEPRECATION_WARNINGS)
@@ -106,6 +111,21 @@ DEFINE_GUID ( /* 0811c1af-7a07-4a06-82ed-869455cdf713 */
     0x4a06,
     0x82, 0xed, 0x86, 0x94, 0x55, 0xcd, 0xf7, 0x13
   );
+
+
+//
+// PrivateLoggerNotificationGuid
+// Used for private cross-process logger notifications.
+//
+
+DEFINE_GUID ( /* 3595ab5c-042a-4c8e-b942-2d059bfeb1b1 */
+    PrivateLoggerNotificationGuid,
+    0x3595ab5c,
+    0x042a,
+    0x4c8e,
+    0xb9, 0x42, 0x2d, 0x05, 0x9b, 0xfe, 0xb1, 0xb1
+  );
+
 
 #define KERNEL_LOGGER_NAMEW         L"NT Kernel Logger"
 #define GLOBAL_LOGGER_NAMEW         L"GlobalLogger"
@@ -689,7 +709,7 @@ typedef struct _TRACE_LOGFILE_HEADER {
         struct {
             ULONG   StartBuffers;       // Count of buffers written at start.
             ULONG   PointerSize;        // Size of pointer type in bits
-            ULONG   EventsLost;         // Events losts during log session
+            ULONG   EventsLost;         // Events lost during log session
             ULONG   CpuSpeedInMHz;      // Cpu Speed in MHz
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME2;
@@ -732,7 +752,7 @@ typedef struct _TRACE_LOGFILE_HEADER32 {
         struct {
             ULONG   StartBuffers;       // Count of buffers written at start.
             ULONG   PointerSize;        // Size of pointer type in bits
-            ULONG   EventsLost;         // Events losts during log session
+            ULONG   EventsLost;         // Events lost during log session
             ULONG   CpuSpeedInMHz;      // Cpu Speed in MHz
         };
     };
@@ -775,7 +795,7 @@ typedef struct _TRACE_LOGFILE_HEADER64 {
         struct {
             ULONG   StartBuffers;       // Count of buffers written at start.
             ULONG   PointerSize;        // Size of pointer type in bits
-            ULONG   EventsLost;         // Events losts during log session
+            ULONG   EventsLost;         // Events lost during log session
             ULONG   CpuSpeedInMHz;      // Cpu Speed in MHz
         };
     };
@@ -824,7 +844,12 @@ typedef struct EVENT_INSTANCE_INFO {
 #if _MSC_VER >= 1200
 #pragma warning(push)
 #endif
+
+typedef struct _EVENT_FILTER_DESCRIPTOR
+               EVENT_FILTER_DESCRIPTOR, *PEVENT_FILTER_DESCRIPTOR;
+
 #pragma warning (disable:4201) /* nonstandard extension used : nameless struct/union */
+#pragma warning (disable:4214) /* nonstandard extension used : bit field other than int */
 
 typedef struct _EVENT_TRACE_PROPERTIES {
     WNODE_HEADER Wnode;
@@ -853,6 +878,50 @@ typedef struct _EVENT_TRACE_PROPERTIES {
     ULONG LogFileNameOffset;            // Offset to LogFileName
     ULONG LoggerNameOffset;             // Offset to LoggerName
 } EVENT_TRACE_PROPERTIES, *PEVENT_TRACE_PROPERTIES;
+
+typedef struct _EVENT_TRACE_PROPERTIES_V2 {
+    WNODE_HEADER Wnode;                  // Always have WNODE_FLAG_VERSIONED_PROPERTIES.
+    //
+    // data provided by caller
+    ULONG BufferSize;                    // buffer size for logging (kbytes)
+    ULONG MinimumBuffers;                // minimum to preallocate
+    ULONG MaximumBuffers;                // maximum buffers allowed
+    ULONG MaximumFileSize;               // maximum logfile size (in MBytes)
+    ULONG LogFileMode;                   // sequential, circular
+    ULONG FlushTimer;                    // buffer flush timer, in seconds
+    ULONG EnableFlags;                   // trace enable flags
+    union {
+        LONG  AgeLimit;                  // unused
+        LONG  FlushThreshold;            // Number of buffers to fill before flushing
+    } DUMMYUNIONNAME;
+
+    // data returned to caller
+    ULONG NumberOfBuffers;               // no of buffers in use
+    ULONG FreeBuffers;                   // no of buffers free
+    ULONG EventsLost;                    // event records lost
+    ULONG BuffersWritten;                // no of buffers written to file
+    ULONG LogBuffersLost;                // no of logfile write failures
+    ULONG RealTimeBuffersLost;           // no of rt delivery failures
+    HANDLE LoggerThreadId;               // thread id of Logger
+    ULONG LogFileNameOffset;             // Offset to LogFileName
+    ULONG LoggerNameOffset;              // Offset to LoggerName
+
+    // V2 data
+    union {
+        struct {
+            ULONG VersionNumber : 8;     // Should be set to 2 for this version.
+        } DUMMYSTRUCTNAME;
+        ULONG V2Control;
+    } DUMMYUNIONNAME2;
+    ULONG FilterDescCount;               // Number of filters
+    PEVENT_FILTER_DESCRIPTOR FilterDesc; // Only applicable for Private Loggers
+    union {
+        struct {
+            ULONG Wow : 1; // Logger was started by a WOW64 process (output only).
+        } DUMMYSTRUCTNAME;
+        ULONG64 V2Options;
+    } DUMMYUNIONNAME3;
+} EVENT_TRACE_PROPERTIES_V2, *PEVENT_TRACE_PROPERTIES_V2;
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)
@@ -1058,7 +1127,7 @@ struct _EVENT_TRACE_LOGFILEW {
     ULONG                   Filled;
     ULONG                   EventsLost;
     //
-    // following needs to be propaged to each buffer
+    // following needs to be propagated to each buffer
     //
     union {
         // Callback with EVENT_TRACE
@@ -1093,7 +1162,7 @@ struct _EVENT_TRACE_LOGFILEA {
     ULONG                   Filled;
     ULONG                   EventsLost;
     //
-    // following needs to be propaged to each buffer
+    // following needs to be propagated to each buffer
     //
     union {
         PEVENT_CALLBACK         EventCallback;  // callback for every event
@@ -1431,9 +1500,6 @@ EnableTrace (
 
 #endif // _APISET_EVENTING
 
-typedef struct _EVENT_FILTER_DESCRIPTOR
-               EVENT_FILTER_DESCRIPTOR, *PEVENT_FILTER_DESCRIPTOR;
-
 #ifndef _APISET_EVENTING
 
 #pragma region Application Family or OneCore Family
@@ -1524,6 +1590,8 @@ typedef enum _TRACE_QUERY_INFO_CLASS {
     TraceGroupQueryInfo,
     TraceDisallowListQuery,
     TraceCompressionInfo,
+    TracePeriodicCaptureStateListInfo,
+    TracePeriodicCaptureStateInfo,
     MaxTraceSetInfoClass
 } TRACE_QUERY_INFO_CLASS, TRACE_INFO_CLASS;
 
@@ -1566,6 +1634,12 @@ typedef struct _TRACE_VERSION_INFO {
     UINT EtwTraceProcessingVersion;
     UINT Reserved;
 } TRACE_VERSION_INFO, *PTRACE_VERSION_INFO;
+
+typedef struct _TRACE_PERIODIC_CAPTURE_STATE_INFO {
+    ULONG CaptureStateFrequencyInSeconds;
+    USHORT ProviderCount;
+    USHORT Reserved;
+} TRACE_PERIODIC_CAPTURE_STATE_INFO, *PTRACE_PERIODIC_CAPTURE_STATE_INFO;
 
 #ifndef _APISET_EVENTING
 
@@ -1955,4 +2029,9 @@ TraceMessageVa (
 #endif // !_EVNTRACE_KERNEL_MODE
 
 #endif // WINNT
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
+
 #endif /* _EVNTRACE_ */

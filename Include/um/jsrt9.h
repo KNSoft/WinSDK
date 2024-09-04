@@ -371,7 +371,7 @@
     /// <summary>
     ///     Create runtime with highest version present on the machine at runtime.
     /// </summary>
-    __declspec(deprecated("JsRuntimeVersionEdge is frozen at runtime version 11 when including the jscript9-mode JavaScript Runtime header.  To opt into true edge-mode, define USE_EDGEMODE_JSRT before including jsrt.h.  For more information, go to http://go.microsoft.com/fwlink/?LinkId=522493")) const JsRuntimeVersion JsRuntimeVersionEdge = (JsRuntimeVersion)-1;
+    __declspec(deprecated("JsRuntimeVersionEdge is frozen at runtime version 11 when including the jscript9-mode JavaScript Runtime header.  To opt into true edge-mode, define USE_EDGEMODE_JSRT before including jsrt.h.  For more information, go to https://go.microsoft.com/fwlink/?LinkId=522493")) const JsRuntimeVersion JsRuntimeVersionEdge = (JsRuntimeVersion)-1;
 
     /// <summary>
     ///     Creates a new runtime.

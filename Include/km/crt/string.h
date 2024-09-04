@@ -82,11 +82,13 @@ __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(char *, __RETURN_POLICY_DST, __EMPTY_DEC
 _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL strcpy_s(_Out_writes_z_(_SizeInBytes) char * _Dst, _In_ rsize_t _SizeInBytes, _In_z_ const char * _Src);
 #endif
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, strcpy_s, _Deref_post_z_ char, _Dest, _In_z_ const char *, _Source)
+#pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(char *, __RETURN_POLICY_DST, __EMPTY_DECLSPEC, strcpy, _Out_writes_z_(_String_length_(_Source) + 1), char, _Dest, _In_z_ const char *, _Source)
 #if __STDC_WANT_SECURE_LIB__
 _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL strcat_s(_Inout_updates_z_(_SizeInBytes) char * _Dst, _In_ rsize_t _SizeInBytes, _In_z_ const char * _Src);
 #endif
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, strcat_s, _Deref_prepost_z_ char, _Dest, _In_z_ const char *, _Source)
+#pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(char *, __RETURN_POLICY_DST, __EMPTY_DECLSPEC, strcat, _Inout_updates_z_(_String_length_(_Dest) + _String_length_(_Source) + 1), char, _Dest, _In_z_ const char *, _Source)
         _Check_return_ int     __cdecl strcmp(_In_z_ const char * _Str1, _In_z_ const char * _Str2);
         size_t  __cdecl strlen(_In_z_ const char * _Str);
@@ -267,6 +269,7 @@ _Check_return_ _CRTIMP wchar_t * __cdecl _wcsdup(_In_z_ const wchar_t * _Str);
 _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL wcscat_s(_Inout_updates_z_(_SizeInWords) wchar_t * _Dst, _In_ rsize_t _SizeInWords, _In_z_ const wchar_t * _Src);
 #endif
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, wcscat_s, _Deref_prepost_z_ wchar_t, _Dest, _In_z_ const wchar_t *, _Source)
+#pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(wchar_t *, __RETURN_POLICY_DST, _CRTIMP, wcscat, _Inout_updates_z_(_String_length_(_Dest) + _String_length_(_Source) + 1), wchar_t, _Dest, _In_z_ const wchar_t *, _Source)
 _Check_return_ 
 _When_(return != 0, _Ret_range_(_Str, _Str+_String_length_(_Str)-1))
@@ -276,6 +279,7 @@ _Check_return_ _CRTIMP int __cdecl wcscmp(_In_z_ const wchar_t * _Str1, _In_z_ c
 _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL wcscpy_s(_Out_writes_z_(_SizeInWords) wchar_t * _Dst, _In_ rsize_t _SizeInWords, _In_z_ const wchar_t * _Src);
 #endif
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, wcscpy_s, wchar_t, _Dest, _In_z_ const wchar_t *, _Source)
+#pragma prefast (suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(wchar_t *, __RETURN_POLICY_DST, _CRTIMP, wcscpy, _Out_writes_z_(_String_length_(_Source) + 1), wchar_t, _Dest, _In_z_ const wchar_t *, _Source)
 _Check_return_ _CRTIMP size_t __cdecl wcscspn(_In_z_ const wchar_t * _Str, _In_z_ const wchar_t * _Control);
 _CRTIMP size_t __cdecl wcslen(_In_z_ const wchar_t * _Str);

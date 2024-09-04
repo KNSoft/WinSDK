@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -51,6 +51,13 @@ typedef interface IProtectionPolicyManagerInterop IProtectionPolicyManagerIntero
 typedef interface IProtectionPolicyManagerInterop2 IProtectionPolicyManagerInterop2;
 
 #endif 	/* __IProtectionPolicyManagerInterop2_FWD_DEFINED__ */
+
+
+#ifndef __IProtectionPolicyManagerInterop3_FWD_DEFINED__
+#define __IProtectionPolicyManagerInterop3_FWD_DEFINED__
+typedef interface IProtectionPolicyManagerInterop3 IProtectionPolicyManagerInterop3;
+
+#endif 	/* __IProtectionPolicyManagerInterop3_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -394,7 +401,236 @@ EXTERN_C const IID IID_IProtectionPolicyManagerInterop2;
 #endif 	/* __IProtectionPolicyManagerInterop2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_efswrtinterop_0000_0002 */
+#ifndef __IProtectionPolicyManagerInterop3_INTERFACE_DEFINED__
+#define __IProtectionPolicyManagerInterop3_INTERFACE_DEFINED__
+
+/* interface IProtectionPolicyManagerInterop3 */
+/* [object][uuid] */ 
+
+
+EXTERN_C const IID IID_IProtectionPolicyManagerInterop3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c1c03933-b398-4d93-b0fd-2972adf802c2")
+    IProtectionPolicyManagerInterop3 : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE RequestAccessWithBehaviorForWindowAsync( 
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in HSTRING sourceIdentity,
+            /* [in] */ __RPC__in HSTRING targetIdentity,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RequestAccessForAppWithBehaviorForWindowAsync( 
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in HSTRING sourceIdentity,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForAppForWindowAsync( 
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync( 
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForProcessForWindowAsync( 
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ UINT32 processId,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync( 
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ UINT32 processId,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IProtectionPolicyManagerInterop3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessWithBehaviorForWindowAsync )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in HSTRING sourceIdentity,
+            /* [in] */ __RPC__in HSTRING targetIdentity,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessForAppWithBehaviorForWindowAsync )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in HSTRING sourceIdentity,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForAppForWindowAsync )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForProcessForWindowAsync )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ UINT32 processId,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync )( 
+            __RPC__in IProtectionPolicyManagerInterop3 * This,
+            /* [in] */ __RPC__in HWND appWindow,
+            /* [in] */ __RPC__in_opt IUnknown *sourceItemListUnk,
+            /* [in] */ UINT32 processId,
+            /* [in] */ __RPC__in_opt IUnknown *auditInfoUnk,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ UINT32 behavior,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [iid_is][retval][out] */ __RPC__deref_out_opt void **asyncOperation);
+        
+        END_INTERFACE
+    } IProtectionPolicyManagerInterop3Vtbl;
+
+    interface IProtectionPolicyManagerInterop3
+    {
+        CONST_VTBL struct IProtectionPolicyManagerInterop3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IProtectionPolicyManagerInterop3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IProtectionPolicyManagerInterop3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IProtectionPolicyManagerInterop3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IProtectionPolicyManagerInterop3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define IProtectionPolicyManagerInterop3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define IProtectionPolicyManagerInterop3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define IProtectionPolicyManagerInterop3_RequestAccessWithBehaviorForWindowAsync(This,appWindow,sourceIdentity,targetIdentity,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation)	\
+    ( (This)->lpVtbl -> RequestAccessWithBehaviorForWindowAsync(This,appWindow,sourceIdentity,targetIdentity,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation) ) 
+
+#define IProtectionPolicyManagerInterop3_RequestAccessForAppWithBehaviorForWindowAsync(This,appWindow,sourceIdentity,appPackageFamilyName,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation)	\
+    ( (This)->lpVtbl -> RequestAccessForAppWithBehaviorForWindowAsync(This,appWindow,sourceIdentity,appPackageFamilyName,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation) ) 
+
+#define IProtectionPolicyManagerInterop3_RequestAccessToFilesForAppForWindowAsync(This,appWindow,sourceItemListUnk,appPackageFamilyName,auditInfoUnk,riid,asyncOperation)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForAppForWindowAsync(This,appWindow,sourceItemListUnk,appPackageFamilyName,auditInfoUnk,riid,asyncOperation) ) 
+
+#define IProtectionPolicyManagerInterop3_RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(This,appWindow,sourceItemListUnk,appPackageFamilyName,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(This,appWindow,sourceItemListUnk,appPackageFamilyName,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation) ) 
+
+#define IProtectionPolicyManagerInterop3_RequestAccessToFilesForProcessForWindowAsync(This,appWindow,sourceItemListUnk,processId,auditInfoUnk,riid,asyncOperation)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForProcessForWindowAsync(This,appWindow,sourceItemListUnk,processId,auditInfoUnk,riid,asyncOperation) ) 
+
+#define IProtectionPolicyManagerInterop3_RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(This,appWindow,sourceItemListUnk,processId,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(This,appWindow,sourceItemListUnk,processId,auditInfoUnk,messageFromApp,behavior,riid,asyncOperation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IProtectionPolicyManagerInterop3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_efswrtinterop_0000_0003 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
@@ -402,8 +638,8 @@ EXTERN_C const IID IID_IProtectionPolicyManagerInterop2;
 #endif //(NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_efswrtinterop_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_efswrtinterop_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_efswrtinterop_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_efswrtinterop_0000_0003_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

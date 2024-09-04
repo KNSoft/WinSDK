@@ -350,11 +350,12 @@ interface IEnumBackgroundCopyJobs : IUnknown
     HRESULT GetCount( [out] ULONG *puCount );
 }
 
-cpp_quote("#define   BG_NOTIFY_JOB_TRANSFERRED    0x0001")
-cpp_quote("#define   BG_NOTIFY_JOB_ERROR          0x0002")
-cpp_quote("#define   BG_NOTIFY_DISABLE            0x0004")
-cpp_quote("#define   BG_NOTIFY_JOB_MODIFICATION   0x0008")
-cpp_quote("#define   BG_NOTIFY_FILE_TRANSFERRED   0x0010")  
+cpp_quote("#define   BG_NOTIFY_JOB_TRANSFERRED         0x0001")
+cpp_quote("#define   BG_NOTIFY_JOB_ERROR               0x0002")
+cpp_quote("#define   BG_NOTIFY_DISABLE                 0x0004")
+cpp_quote("#define   BG_NOTIFY_JOB_MODIFICATION        0x0008")
+cpp_quote("#define   BG_NOTIFY_FILE_TRANSFERRED        0x0010")  
+cpp_quote("#define   BG_NOTIFY_FILE_RANGES_TRANSFERRED 0x0020")  
 
 // ==============================================
 // IBackgroundCallback Interface

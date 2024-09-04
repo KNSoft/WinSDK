@@ -914,7 +914,13 @@ GetConsoleWindow(
 
 #endif /* _WIN32_WINNT >= 0x0500 */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
 #if(_WIN32_WINNT >= 0x0501)
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 DWORD
@@ -922,6 +928,12 @@ APIENTRY
 GetConsoleProcessList(
     _Out_writes_(dwProcessCount) LPDWORD lpdwProcessList,
     _In_ DWORD dwProcessCount);
+
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 //
 // Aliasing apis.
@@ -1039,10 +1051,10 @@ GetConsoleAliasExesW(
 #define GetConsoleAliasExes  GetConsoleAliasExesA
 #endif // !UNICODE
 
-#endif /* _WIN32_WINNT >= 0x0501 */
-
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
+
+#endif /* _WIN32_WINNT >= 0x0501 */
 
 
 #if _MSC_VER >= 1200

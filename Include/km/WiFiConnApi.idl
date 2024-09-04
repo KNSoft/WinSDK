@@ -941,7 +941,7 @@ interface IWiFiCertificateList : IUnknown
     HRESULT Size([out, retval] DWORD* pdwSize);
     
     [helpstring("Returns the handle to the in memory cert store. Only valid if this is a filtered certificate list. The handle is valid for the lifetime of this IWiFiCertificateList object.")]
-    HRESULT GetCertStoreHandle([out, retval] DWORD* ppCertStoreHandle);
+    HRESULT GetCertStoreHandle([out, retval] INT64* ppCertStoreHandle);
 };
 
 [object, oleautomation, uuid(AF7FEAD8-C340-4607-8894-6D6F0E5EDDCD)]

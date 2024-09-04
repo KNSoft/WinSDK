@@ -19,8 +19,8 @@ Abstract:
 #pragma once
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 
 #include <ifdef.h>
@@ -36,7 +36,7 @@ typedef struct _MIB_IFNUMBER
 
 
 //
-// $REVIEW: This has always been defined as 8.  However, this is not 
+// $REVIEW: This has always been defined as 8.  However, this is not
 // sufficient for all media types.
 //
 #define MAXLEN_PHYSADDR 8
@@ -81,7 +81,7 @@ typedef struct _MIB_IFTABLE {
                            ((X) * sizeof(MIB_IFROW)) + ALIGN_SIZE)
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #endif // _IFMIB_

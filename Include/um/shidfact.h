@@ -15,7 +15,7 @@
 
 #ifdef __cplusplus
 
-#include <shobjidl.h>     // for IDelegateFolder
+#include <shobjidl_core.h>  // for IDelegateFolder
 #include <propvarutil.h>  // for PropVariantToVariant
 
 template <class T, DWORD dwMagic>

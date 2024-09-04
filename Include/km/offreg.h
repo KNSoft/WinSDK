@@ -208,6 +208,13 @@ OREnumValue (
     );
 
 DWORD
+ORAPI
+ORRenameKey (
+    _In_ ORHKEY Handle,
+    _In_ PCWSTR lpNewName
+    );
+
+DWORD
 ORStart(
     VOID
     );

@@ -22,12 +22,12 @@
 #if !defined(_M_CEE_PURE)
 #if defined(_M_IX86) || defined(_M_X64) || defined(_M_ARM) || defined(_M_ARM64)
 
-#if defined(_M_IX86) || defined(_M_X64)
+#if (defined(_M_IX86) || defined(_M_X64)) && !defined(_CHPE_ONLY_)
 #include <immintrin.h>
 #include <ammintrin.h>
 #endif /* _M_IX86 || _M_X64 */
 
-#if defined(_M_IX86)
+#if defined(_M_IX86) && !defined(_CHPE_ONLY_)
 #include <mm3dnow.h>
 #endif /* _M_IX86 */
 
@@ -36,7 +36,7 @@
 #include <armintr.h>
 #endif /* _M_ARM */
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 #include <arm64_neon.h>
 #include <arm64intr.h>
 #endif /* _M_ARM64 */
@@ -85,7 +85,7 @@ extern "C" {
 
 #define __MACHINEZ(X)       /* NOTHING */
 
-#if !defined(_M_IX86)
+#if !defined(_M_IX86) || defined(_CHPE_ONLY_)
 #undef __MACHINEX86
 #define __MACHINEX86        __MACHINEZ
 #endif
@@ -95,7 +95,7 @@ extern "C" {
 #define __MACHINEX64        __MACHINEZ
 #endif
 
-#if !(defined(_M_IX86) || defined(_M_X64))
+#if !(defined(_M_IX86) || defined(_M_X64)) || defined(_CHPE_ONLY_)
 #undef __MACHINEX86_X64
 #define __MACHINEX86_X64    __MACHINEZ
 #endif
@@ -110,22 +110,22 @@ extern "C" {
 #define __MACHINEARM        __MACHINEZ
 #endif
 
-#if !defined(_M_ARM64)
+#if !(defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
 #undef  __MACHINEARM64
 #define __MACHINEARM64      __MACHINEZ
 #endif
 
-#if !(defined(_M_ARM) || defined(_M_ARM64))
+#if !(defined(_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
 #undef __MACHINEARM_ARM64
 #define __MACHINEARM_ARM64  __MACHINEZ
 #endif
 
-#if !(defined(_M_ARM) || defined(_M_X64) || defined(_M_ARM64))
+#if !(defined(_M_ARM) || defined(_M_X64) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
 #undef __MACHINEARM_64
 #define __MACHINEARM_64     __MACHINEZ
 #endif
 
-#if !(defined(_M_X64) || defined(_M_ARM64))
+#if !(defined(_M_X64) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
 #undef __MACHINEARM64_X64
 #define __MACHINEARM64_X64     __MACHINEZ
 #endif

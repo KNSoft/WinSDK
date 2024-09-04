@@ -4295,6 +4295,12 @@ SetupDefaultQueueCallbackW(
 #define FLG_ADDREG_TYPE_DWORD       ( 0x00010000 | FLG_ADDREG_BINVALUETYPE )
 #define FLG_ADDREG_TYPE_NONE        ( 0x00020000 | FLG_ADDREG_BINVALUETYPE )
 
+#if _SETUPAPI_VER >= _WIN32_WINNT_WIN10
+
+#define FLG_ADDREG_TYPE_QWORD       ( 0x000B0000 | FLG_ADDREG_BINVALUETYPE )
+
+#endif // _SETUPAPI_VER >= _WIN32_WINNT_WIN10
+
 //
 // Flags for DelReg section lines in INF.  The corresponding value
 // is <Operation> in the extended DelReg line format given below:
@@ -4337,6 +4343,12 @@ SetupDefaultQueueCallbackW(
 #define FLG_DELREG_MULTI_SZ_DELSTRING ( FLG_DELREG_TYPE_MULTI_SZ | FLG_ADDREG_DELREG_BIT | 0x00000002 ) // 0x00018002
 
 #endif // _SETUPAPI_VER >= _WIN32_WINNT_WINXP
+
+#if _SETUPAPI_VER >= _WIN32_WINNT_WIN10
+
+#define FLG_DELREG_TYPE_QWORD       FLG_ADDREG_TYPE_QWORD       // 0x000B0001
+
+#endif // _SETUPAPI_VER >= _WIN32_WINNT_WIN10
 
 //
 // Flags for BitReg section lines in INF.

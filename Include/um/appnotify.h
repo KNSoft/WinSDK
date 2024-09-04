@@ -20,6 +20,7 @@
 #endif
 
 /* APISET_NAME: api-ms-win-core-psm-appnotify-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

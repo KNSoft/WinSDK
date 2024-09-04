@@ -29,6 +29,7 @@ midl_pragma warning( disable: 2362 )   // This is only expected to go downlevel 
 cpp_quote("#ifndef _INC_UIAUTOMATIONCOREAPI")
 enum TreeScope
 {
+    TreeScope_None =          0x0,
     TreeScope_Element =       0x1,
     TreeScope_Children =      0x2,
     TreeScope_Descendants =   0x4,
@@ -48,12 +49,34 @@ enum AutomationElementMode
     AutomationElementMode_None,
     AutomationElementMode_Full
 };
+
+// Option groups (flags):
+// 1) Traversal order (preorder, postorder): says when nodes should be tested against search
+//    conditions (on enter, on leave).
+// 2) Visit order: defines in which order relatives are visited. Relatives include children
+//    and siblings. Visit orders are relative to parents. From the child perspective First to
+//    Last means 'visit the next sibling from the child' while Last to First means 'visit the
+//    previous sibling from the child'.
+enum TreeTraversalOptions
+{
+    // Default traversal options are:
+    // 1) Preorder,
+    // 2) Visit children from first to last.
+    TreeTraversalOptions_Default            = 0x0,
+
+    // Traversal order: Postorder 
+    TreeTraversalOptions_PostOrder          = 0x1,
+
+    // Visit order: Visit children from last to first.
+    TreeTraversalOptions_LastToFirstOrder   = 0x2
+};
 cpp_quote("#endif")
 
 struct ExtendedProperty {
     BSTR PropertyName;
     BSTR PropertyValue;
 };
+
 
 typedef void * UIA_HWND;
 
@@ -142,6 +165,7 @@ library UIAutomationClient
         const long UIA_DropTarget_DroppedEventId                         = 20031;
         const long UIA_TextEdit_TextChangedEventId                       = 20032;
         const long UIA_TextEdit_ConversionTargetChangedEventId           = 20033;
+        const long UIA_ChangesEventId                                    = 20034;
 };
 
     [dllname("<no entry points>")]
@@ -307,7 +331,14 @@ library UIAutomationClient
         const long UIA_LandmarkTypePropertyId                         = 30157;
         const long UIA_LocalizedLandmarkTypePropertyId                = 30158;
         const long UIA_FullDescriptionPropertyId                      = 30159;
-
+        const long UIA_FillColorPropertyId                            = 30160;
+        const long UIA_OutlineColorPropertyId                         = 30161;
+        const long UIA_FillTypePropertyId                             = 30162;
+        const long UIA_VisualEffectsPropertyId                        = 30163;
+        const long UIA_OutlineThicknessPropertyId                     = 30164;
+        const long UIA_CenterPointPropertyId                          = 30165;
+        const long UIA_RotationPropertyId                             = 30166;
+        const long UIA_SizePropertyId                                 = 30167;
     }
 
     [dllname("<no entry points>")]
@@ -353,6 +384,10 @@ library UIAutomationClient
         const long UIA_SelectionActiveEndAttributeId         = 40037;
         const long UIA_CaretPositionAttributeId              = 40038;
         const long UIA_CaretBidiModeAttributeId              = 40039;
+        const long UIA_LineSpacingAttributeId                = 40040;
+        const long UIA_BeforeParagraphSpacingAttributeId     = 40041;
+        const long UIA_AfterParagraphSpacingAttributeId      = 40042;
+        const long UIA_SayAsInterpretAsAttributeId           = 40043;
     }
 
     [dllname("<no entry points>")]
@@ -427,6 +462,8 @@ library UIAutomationClient
         const long AnnotationType_AdvancedProofingIssue  = 60020;
         const long AnnotationType_DataValidationError    = 60021;
         const long AnnotationType_CircularReferenceError = 60022;
+        const long AnnotationType_Mathematics            = 60023;
+
     };
 
     [dllname("<no entry points>")]
@@ -465,6 +502,12 @@ library UIAutomationClient
     module UIA_ChangeIds
     {
         const long UIA_SummaryChangeId = 90000;
+    };
+
+    [dllname("<no entry points>")]
+    module UIA_MetadataIds
+    {
+        const long UIA_SayAsInterpretAsMetadataId = 100000;
     };
 
     interface IUIAutomationElement;
@@ -1284,6 +1327,26 @@ library UIAutomationClient
     interface IUIAutomationTextRange2 : IUIAutomationTextRange
     {
         HRESULT ShowContextMenu ( );
+    }
+
+    //
+    // IUIAutomationTextRange3 
+    //
+    [object, uuid(6A315D69-5512-4C2E-85F0-53FCE6DD4BC2), pointer_default(unique)]
+    interface IUIAutomationTextRange3 : IUIAutomationtextRange2
+    {
+        HRESULT GetEnclosingElementBuildCache(
+            [in] IUIAutomationCacheRequest* cacheRequest,
+            [out, retval] IUIAutomationElement** enclosingElement);
+
+        HRESULT GetChildrenBuildCache(
+            [in] IUIAutomationCacheRequest* cacheRequest,
+            [out, retval] IUIAutomationElementArray** children);
+
+        HRESULT GetAttributeValues(
+            [in, size_is(attributeIdCount)] const TEXTATTRIBUTEID* attributeIds,
+            [in] int attributeIdCount,
+            [out, retval] SAFEARRAY(VARIANT)* attributeValues);
     }
 
     //
@@ -2110,6 +2173,47 @@ library UIAutomationClient
     }
 
     //
+    //  IUIAutomationElement7
+    //
+    [object, uuid(204e8572-cfc3-4c11-b0c8-7da7420750b7), pointer_default(unique)]
+    interface IUIAutomationElement7 : IUIAutomationElement6
+    {
+        HRESULT FindFirstWithOptions(
+            [in] enum TreeScope scope,
+            [in] IUIAutomationCondition * condition,
+            [in] enum TreeTraversalOptions traversalOptions,
+            [in] IUIAutomationElement * root,
+            [out, retval] IUIAutomationElement ** found);
+
+        HRESULT FindAllWithOptions(
+            [in] enum TreeScope scope,
+            [in] IUIAutomationCondition * condition,
+            [in] enum TreeTraversalOptions traversalOptions,
+            [in] IUIAutomationElement * root,
+            [out, retval] IUIAutomationElementArray ** found);
+
+        HRESULT FindFirstWithOptionsBuildCache(
+            [in] enum TreeScope scope,
+            [in] IUIAutomationCondition * condition,
+            [in] IUIAutomationCacheRequest * cacheRequest,
+            [in] enum TreeTraversalOptions traversalOptions,
+            [in] IUIAutomationElement * root,
+            [out, retval] IUIAutomationElement ** found);
+
+        HRESULT FindAllWithOptionsBuildCache(
+            [in] enum TreeScope scope,
+            [in] IUIAutomationCondition * condition,
+            [in] IUIAutomationCacheRequest * cacheRequest,
+            [in] enum TreeTraversalOptions traversalOptions,
+            [in] IUIAutomationElement * root,
+            [out, retval] IUIAutomationElementArray ** found);
+
+        HRESULT GetCurrentMetadataValue(
+            [in] int targetId,
+            [in] METADATAID metadataId,
+            [out, retval] VARIANT* returnVal);
+    }
+
     //  IUIAutomationElementArray
     //
     [object, uuid(14314595-b4bc-4055-95f2-58f2e42c9855), pointer_default(unique)]

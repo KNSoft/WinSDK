@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -396,6 +396,20 @@ typedef interface __FIIterable_1_Windows__CFoundation__CUri __FIIterable_1_Windo
 #endif 	/* ____FIIterable_1_Windows__CFoundation__CUri_FWD_DEFINED__ */
 
 
+#ifndef ____FIIterator_1_boolean_FWD_DEFINED__
+#define ____FIIterator_1_boolean_FWD_DEFINED__
+typedef interface __FIIterator_1_boolean __FIIterator_1_boolean;
+
+#endif 	/* ____FIIterator_1_boolean_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_boolean_FWD_DEFINED__
+#define ____FIIterable_1_boolean_FWD_DEFINED__
+typedef interface __FIIterable_1_boolean __FIIterable_1_boolean;
+
+#endif 	/* ____FIIterable_1_boolean_FWD_DEFINED__ */
+
+
 #ifndef ____FIMapChangedEventArgs_1_HSTRING_FWD_DEFINED__
 #define ____FIMapChangedEventArgs_1_HSTRING_FWD_DEFINED__
 typedef interface __FIMapChangedEventArgs_1_HSTRING __FIMapChangedEventArgs_1_HSTRING;
@@ -604,6 +618,13 @@ typedef interface __FIVectorView_1_Windows__CFoundation__CPoint __FIVectorView_1
 typedef interface __FIVectorView_1_Windows__CFoundation__CUri __FIVectorView_1_Windows__CFoundation__CUri;
 
 #endif 	/* ____FIVectorView_1_Windows__CFoundation__CUri_FWD_DEFINED__ */
+
+
+#ifndef ____FIVectorView_1_boolean_FWD_DEFINED__
+#define ____FIVectorView_1_boolean_FWD_DEFINED__
+typedef interface __FIVectorView_1_boolean __FIVectorView_1_boolean;
+
+#endif 	/* ____FIVectorView_1_boolean_FWD_DEFINED__ */
 
 
 #ifndef ____FIVector_1_double_FWD_DEFINED__
@@ -3999,25 +4020,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0056_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0052 */
 /* [local] */ 
 
-#ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
-#define DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#ifndef DEF___FIIterator_1_boolean_USE
+#define DEF___FIIterator_1_boolean_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("60141efb-f2f9-5377-96fd-f8c60d9558b5"))
-IMapChangedEventArgs<HSTRING> : IMapChangedEventArgs_impl<HSTRING> {
+struct __declspec(uuid("740a0296-a535-572a-bf0b-17c18ff71fe6"))
+IIterator<bool> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapChangedEventArgs`1<String>"; }
+return L"Windows.Foundation.Collections.IIterator`1<Boolean>"; }
 };
-typedef IMapChangedEventArgs<HSTRING> __FIMapChangedEventArgs_1_HSTRING_t;
-#define ____FIMapChangedEventArgs_1_HSTRING_FWD_DEFINED__
-#define __FIMapChangedEventArgs_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapChangedEventArgs_1_HSTRING_t
+typedef IIterator<bool> __FIIterator_1_boolean_t;
+#define ____FIIterator_1_boolean_FWD_DEFINED__
+#define __FIIterator_1_boolean ABI::Windows::Foundation::Collections::__FIIterator_1_boolean_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
+#endif /* DEF___FIIterator_1_boolean_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0052 */
@@ -4045,25 +4066,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0057_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0053 */
 /* [local] */ 
 
-#ifndef DEF___FIMapView_2_GUID_IInspectable_USE
-#define DEF___FIMapView_2_GUID_IInspectable_USE
+#ifndef DEF___FIIterable_1_boolean_USE
+#define DEF___FIIterable_1_boolean_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e"))
-IMapView<GUID,IInspectable*> : IMapView_impl<GUID,IInspectable*> {
+struct __declspec(uuid("30160817-1d7d-54e9-99db-d7636266a476"))
+IIterable<bool> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapView`2<Guid, Object>"; }
+return L"Windows.Foundation.Collections.IIterable`1<Boolean>"; }
 };
-typedef IMapView<GUID,IInspectable*> __FIMapView_2_GUID_IInspectable_t;
-#define ____FIMapView_2_GUID_IInspectable_FWD_DEFINED__
-#define __FIMapView_2_GUID_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t
+typedef IIterable<bool> __FIIterable_1_boolean_t;
+#define ____FIIterable_1_boolean_FWD_DEFINED__
+#define __FIIterable_1_boolean ABI::Windows::Foundation::Collections::__FIIterable_1_boolean_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMapView_2_GUID_IInspectable_USE */
+#endif /* DEF___FIIterable_1_boolean_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0053 */
@@ -4091,25 +4112,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0058_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0054 */
 /* [local] */ 
 
-#ifndef DEF___FIMapView_2_HSTRING_HSTRING_USE
-#define DEF___FIMapView_2_HSTRING_HSTRING_USE
+#ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#define DEF___FIMapChangedEventArgs_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede"))
-IMapView<HSTRING,HSTRING> : IMapView_impl<HSTRING,HSTRING> {
+struct __declspec(uuid("60141efb-f2f9-5377-96fd-f8c60d9558b5"))
+IMapChangedEventArgs<HSTRING> : IMapChangedEventArgs_impl<HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapView`2<String, String>"; }
+return L"Windows.Foundation.Collections.IMapChangedEventArgs`1<String>"; }
 };
-typedef IMapView<HSTRING,HSTRING> __FIMapView_2_HSTRING_HSTRING_t;
-#define ____FIMapView_2_HSTRING_HSTRING_FWD_DEFINED__
-#define __FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t
+typedef IMapChangedEventArgs<HSTRING> __FIMapChangedEventArgs_1_HSTRING_t;
+#define ____FIMapChangedEventArgs_1_HSTRING_FWD_DEFINED__
+#define __FIMapChangedEventArgs_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapChangedEventArgs_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMapView_2_HSTRING_HSTRING_USE */
+#endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0054 */
@@ -4137,25 +4158,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0059_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0055 */
 /* [local] */ 
 
-#ifndef DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING_USE
-#define DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING_USE
+#ifndef DEF___FIMapView_2_GUID_IInspectable_USE
+#define DEF___FIMapView_2_GUID_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("2843d34f-d3e5-5fca-9fdc-b568dd5c1e64"))
-IMapView<HSTRING,__FIVectorView_1_HSTRING*> : IMapView_impl<HSTRING,__FIVectorView_1_HSTRING*> {
+struct __declspec(uuid("e4d2c732-bbc1-5ef4-869f-5007ceb55f6e"))
+IMapView<GUID,IInspectable*> : IMapView_impl<GUID,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapView`2<String, Windows.Foundation.Collections.IVectorView`1<String>>"; }
+return L"Windows.Foundation.Collections.IMapView`2<Guid, Object>"; }
 };
-typedef IMapView<HSTRING,__FIVectorView_1_HSTRING*> __FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t;
-#define ____FIMapView_2_HSTRING___FIVectorView_1_HSTRING_FWD_DEFINED__
-#define __FIMapView_2_HSTRING___FIVectorView_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t
+typedef IMapView<GUID,IInspectable*> __FIMapView_2_GUID_IInspectable_t;
+#define ____FIMapView_2_GUID_IInspectable_FWD_DEFINED__
+#define __FIMapView_2_GUID_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING_USE */
+#endif /* DEF___FIMapView_2_GUID_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0055 */
@@ -4183,25 +4204,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0060_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0056 */
 /* [local] */ 
 
-#ifndef DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE
-#define DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE
+#ifndef DEF___FIMapView_2_HSTRING_HSTRING_USE
+#define DEF___FIMapView_2_HSTRING_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("153f9c9c-d22a-5c9e-9c74-8b85c908b000"))
-IMapView<HSTRING,__FIVector_1_HSTRING*> : IMapView_impl<HSTRING,__FIVector_1_HSTRING*> {
+struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede"))
+IMapView<HSTRING,HSTRING> : IMapView_impl<HSTRING,HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapView`2<String, Windows.Foundation.Collections.IVector`1<String>>"; }
+return L"Windows.Foundation.Collections.IMapView`2<String, String>"; }
 };
-typedef IMapView<HSTRING,__FIVector_1_HSTRING*> __FIMapView_2_HSTRING___FIVector_1_HSTRING_t;
-#define ____FIMapView_2_HSTRING___FIVector_1_HSTRING_FWD_DEFINED__
-#define __FIMapView_2_HSTRING___FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVector_1_HSTRING_t
+typedef IMapView<HSTRING,HSTRING> __FIMapView_2_HSTRING_HSTRING_t;
+#define ____FIMapView_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE */
+#endif /* DEF___FIMapView_2_HSTRING_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0056 */
@@ -4229,25 +4250,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0061_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0057 */
 /* [local] */ 
 
-#ifndef DEF___FIMapView_2_IInspectable_IInspectable_USE
-#define DEF___FIMapView_2_IInspectable_IInspectable_USE
+#ifndef DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING_USE
+#define DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("efe76d10-cb60-50ad-8a4f-6885cd6212a1"))
-IMapView<IInspectable*,IInspectable*> : IMapView_impl<IInspectable*,IInspectable*> {
+struct __declspec(uuid("2843d34f-d3e5-5fca-9fdc-b568dd5c1e64"))
+IMapView<HSTRING,__FIVectorView_1_HSTRING*> : IMapView_impl<HSTRING,__FIVectorView_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapView`2<Object, Object>"; }
+return L"Windows.Foundation.Collections.IMapView`2<String, Windows.Foundation.Collections.IVectorView`1<String>>"; }
 };
-typedef IMapView<IInspectable*,IInspectable*> __FIMapView_2_IInspectable_IInspectable_t;
-#define ____FIMapView_2_IInspectable_IInspectable_FWD_DEFINED__
-#define __FIMapView_2_IInspectable_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_IInspectable_IInspectable_t
+typedef IMapView<HSTRING,__FIVectorView_1_HSTRING*> __FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t;
+#define ____FIMapView_2_HSTRING___FIVectorView_1_HSTRING_FWD_DEFINED__
+#define __FIMapView_2_HSTRING___FIVectorView_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMapView_2_IInspectable_IInspectable_USE */
+#endif /* DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0057 */
@@ -4275,25 +4296,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0062_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0058 */
 /* [local] */ 
 
-#ifndef DEF___FIMap_2_GUID_IInspectable_USE
-#define DEF___FIMap_2_GUID_IInspectable_USE
+#ifndef DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE
+#define DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c"))
-IMap<GUID,IInspectable*> : IMap_impl<GUID,IInspectable*> {
+struct __declspec(uuid("153f9c9c-d22a-5c9e-9c74-8b85c908b000"))
+IMapView<HSTRING,__FIVector_1_HSTRING*> : IMapView_impl<HSTRING,__FIVector_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMap`2<Guid, Object>"; }
+return L"Windows.Foundation.Collections.IMapView`2<String, Windows.Foundation.Collections.IVector`1<String>>"; }
 };
-typedef IMap<GUID,IInspectable*> __FIMap_2_GUID_IInspectable_t;
-#define ____FIMap_2_GUID_IInspectable_FWD_DEFINED__
-#define __FIMap_2_GUID_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t
+typedef IMapView<HSTRING,__FIVector_1_HSTRING*> __FIMapView_2_HSTRING___FIVector_1_HSTRING_t;
+#define ____FIMapView_2_HSTRING___FIVector_1_HSTRING_FWD_DEFINED__
+#define __FIMapView_2_HSTRING___FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVector_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMap_2_GUID_IInspectable_USE */
+#endif /* DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0058 */
@@ -4321,25 +4342,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0063_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0059 */
 /* [local] */ 
 
-#ifndef DEF___FIMap_2_HSTRING_HSTRING_USE
-#define DEF___FIMap_2_HSTRING_HSTRING_USE
+#ifndef DEF___FIMapView_2_IInspectable_IInspectable_USE
+#define DEF___FIMapView_2_IInspectable_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c"))
-IMap<HSTRING,HSTRING> : IMap_impl<HSTRING,HSTRING> {
+struct __declspec(uuid("efe76d10-cb60-50ad-8a4f-6885cd6212a1"))
+IMapView<IInspectable*,IInspectable*> : IMapView_impl<IInspectable*,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMap`2<String, String>"; }
+return L"Windows.Foundation.Collections.IMapView`2<Object, Object>"; }
 };
-typedef IMap<HSTRING,HSTRING> __FIMap_2_HSTRING_HSTRING_t;
-#define ____FIMap_2_HSTRING_HSTRING_FWD_DEFINED__
-#define __FIMap_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_HSTRING_t
+typedef IMapView<IInspectable*,IInspectable*> __FIMapView_2_IInspectable_IInspectable_t;
+#define ____FIMapView_2_IInspectable_IInspectable_FWD_DEFINED__
+#define __FIMapView_2_IInspectable_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_IInspectable_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMap_2_HSTRING_HSTRING_USE */
+#endif /* DEF___FIMapView_2_IInspectable_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0059 */
@@ -4367,25 +4388,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0064_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0060 */
 /* [local] */ 
 
-#ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
-#define DEF___FIMap_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIMap_2_GUID_IInspectable_USE
+#define DEF___FIMap_2_GUID_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca"))
-IMap<HSTRING,IInspectable*> : IMap_impl<HSTRING,IInspectable*> {
+struct __declspec(uuid("5ee3189c-7dbf-5998-ad07-5414fb82567c"))
+IMap<GUID,IInspectable*> : IMap_impl<GUID,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMap`2<String, Object>"; }
+return L"Windows.Foundation.Collections.IMap`2<Guid, Object>"; }
 };
-typedef IMap<HSTRING,IInspectable*> __FIMap_2_HSTRING_IInspectable_t;
-#define ____FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t
+typedef IMap<GUID,IInspectable*> __FIMap_2_GUID_IInspectable_t;
+#define ____FIMap_2_GUID_IInspectable_FWD_DEFINED__
+#define __FIMap_2_GUID_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIMap_2_GUID_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0060 */
@@ -4413,25 +4434,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0065_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0061 */
 /* [local] */ 
 
-#ifndef DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE
-#define DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE
+#ifndef DEF___FIMap_2_HSTRING_HSTRING_USE
+#define DEF___FIMap_2_HSTRING_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("e475ca9d-6afb-5992-993e-53e6ef7a9ecd"))
-IMap<HSTRING,__FIVector_1_HSTRING*> : IMap_impl<HSTRING,__FIVector_1_HSTRING*> {
+struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c"))
+IMap<HSTRING,HSTRING> : IMap_impl<HSTRING,HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMap`2<String, Windows.Foundation.Collections.IVector`1<String>>"; }
+return L"Windows.Foundation.Collections.IMap`2<String, String>"; }
 };
-typedef IMap<HSTRING,__FIVector_1_HSTRING*> __FIMap_2_HSTRING___FIVector_1_HSTRING_t;
-#define ____FIMap_2_HSTRING___FIVector_1_HSTRING_FWD_DEFINED__
-#define __FIMap_2_HSTRING___FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t
+typedef IMap<HSTRING,HSTRING> __FIMap_2_HSTRING_HSTRING_t;
+#define ____FIMap_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIMap_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE */
+#endif /* DEF___FIMap_2_HSTRING_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0061 */
@@ -4459,25 +4480,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0066_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0062 */
 /* [local] */ 
 
-#ifndef DEF___FIMap_2_IInspectable_IInspectable_USE
-#define DEF___FIMap_2_IInspectable_IInspectable_USE
+#ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
+#define DEF___FIMap_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("f5f69427-55ed-5512-8429-d4f6626dfcdd"))
-IMap<IInspectable*,IInspectable*> : IMap_impl<IInspectable*,IInspectable*> {
+struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca"))
+IMap<HSTRING,IInspectable*> : IMap_impl<HSTRING,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMap`2<Object, Object>"; }
+return L"Windows.Foundation.Collections.IMap`2<String, Object>"; }
 };
-typedef IMap<IInspectable*,IInspectable*> __FIMap_2_IInspectable_IInspectable_t;
-#define ____FIMap_2_IInspectable_IInspectable_FWD_DEFINED__
-#define __FIMap_2_IInspectable_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_IInspectable_IInspectable_t
+typedef IMap<HSTRING,IInspectable*> __FIMap_2_HSTRING_IInspectable_t;
+#define ____FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIMap_2_IInspectable_IInspectable_USE */
+#endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0062 */
@@ -4505,25 +4526,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0067_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0063 */
 /* [local] */ 
 
-#ifndef DEF___FMapChangedEventHandler_2_HSTRING_HSTRING_USE
-#define DEF___FMapChangedEventHandler_2_HSTRING_HSTRING_USE
+#ifndef DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE
+#define DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("e2663f37-2e1b-500c-ad68-c3ed7a8f74c8"))
-MapChangedEventHandler<HSTRING,HSTRING> : MapChangedEventHandler_impl<HSTRING,HSTRING> {
+struct __declspec(uuid("e475ca9d-6afb-5992-993e-53e6ef7a9ecd"))
+IMap<HSTRING,__FIVector_1_HSTRING*> : IMap_impl<HSTRING,__FIVector_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, String>"; }
+return L"Windows.Foundation.Collections.IMap`2<String, Windows.Foundation.Collections.IVector`1<String>>"; }
 };
-typedef MapChangedEventHandler<HSTRING,HSTRING> __FMapChangedEventHandler_2_HSTRING_HSTRING_t;
-#define ____FMapChangedEventHandler_2_HSTRING_HSTRING_FWD_DEFINED__
-#define __FMapChangedEventHandler_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_HSTRING_t
+typedef IMap<HSTRING,__FIVector_1_HSTRING*> __FIMap_2_HSTRING___FIVector_1_HSTRING_t;
+#define ____FIMap_2_HSTRING___FIVector_1_HSTRING_FWD_DEFINED__
+#define __FIMap_2_HSTRING___FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FMapChangedEventHandler_2_HSTRING_HSTRING_USE */
+#endif /* DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0063 */
@@ -4551,25 +4572,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0068_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0064 */
 /* [local] */ 
 
-#ifndef DEF___FIObservableMap_2_HSTRING_HSTRING_USE
-#define DEF___FIObservableMap_2_HSTRING_HSTRING_USE
+#ifndef DEF___FIMap_2_IInspectable_IInspectable_USE
+#define DEF___FIMap_2_IInspectable_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("1e036276-2f60-55f6-b7f3-f86079e6900b"))
-IObservableMap<HSTRING,HSTRING> : IObservableMap_impl<HSTRING,HSTRING> {
+struct __declspec(uuid("f5f69427-55ed-5512-8429-d4f6626dfcdd"))
+IMap<IInspectable*,IInspectable*> : IMap_impl<IInspectable*,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IObservableMap`2<String, String>"; }
+return L"Windows.Foundation.Collections.IMap`2<Object, Object>"; }
 };
-typedef IObservableMap<HSTRING,HSTRING> __FIObservableMap_2_HSTRING_HSTRING_t;
-#define ____FIObservableMap_2_HSTRING_HSTRING_FWD_DEFINED__
-#define __FIObservableMap_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_HSTRING_t
+typedef IMap<IInspectable*,IInspectable*> __FIMap_2_IInspectable_IInspectable_t;
+#define ____FIMap_2_IInspectable_IInspectable_FWD_DEFINED__
+#define __FIMap_2_IInspectable_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_IInspectable_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIObservableMap_2_HSTRING_HSTRING_USE */
+#endif /* DEF___FIMap_2_IInspectable_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0064 */
@@ -4597,25 +4618,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0069_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0065 */
 /* [local] */ 
 
-#ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
-#define DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#ifndef DEF___FMapChangedEventHandler_2_HSTRING_HSTRING_USE
+#define DEF___FMapChangedEventHandler_2_HSTRING_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1"))
-MapChangedEventHandler<HSTRING,IInspectable*> : MapChangedEventHandler_impl<HSTRING,IInspectable*> {
+struct __declspec(uuid("e2663f37-2e1b-500c-ad68-c3ed7a8f74c8"))
+MapChangedEventHandler<HSTRING,HSTRING> : MapChangedEventHandler_impl<HSTRING,HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, Object>"; }
+return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, String>"; }
 };
-typedef MapChangedEventHandler<HSTRING,IInspectable*> __FMapChangedEventHandler_2_HSTRING_IInspectable_t;
-#define ____FMapChangedEventHandler_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FMapChangedEventHandler_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_IInspectable_t
+typedef MapChangedEventHandler<HSTRING,HSTRING> __FMapChangedEventHandler_2_HSTRING_HSTRING_t;
+#define ____FMapChangedEventHandler_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FMapChangedEventHandler_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FMapChangedEventHandler_2_HSTRING_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0065 */
@@ -4643,25 +4664,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0070_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0066 */
 /* [local] */ 
 
-#ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
-#define DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIObservableMap_2_HSTRING_HSTRING_USE
+#define DEF___FIObservableMap_2_HSTRING_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec"))
-IObservableMap<HSTRING,IInspectable*> : IObservableMap_impl<HSTRING,IInspectable*> {
+struct __declspec(uuid("1e036276-2f60-55f6-b7f3-f86079e6900b"))
+IObservableMap<HSTRING,HSTRING> : IObservableMap_impl<HSTRING,HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IObservableMap`2<String, Object>"; }
+return L"Windows.Foundation.Collections.IObservableMap`2<String, String>"; }
 };
-typedef IObservableMap<HSTRING,IInspectable*> __FIObservableMap_2_HSTRING_IInspectable_t;
-#define ____FIObservableMap_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIObservableMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_IInspectable_t
+typedef IObservableMap<HSTRING,HSTRING> __FIObservableMap_2_HSTRING_HSTRING_t;
+#define ____FIObservableMap_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIObservableMap_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIObservableMap_2_HSTRING_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0066 */
@@ -4689,25 +4710,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0071_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0067 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_IInspectable_USE
-#define DEF___FIVectorView_1_IInspectable_USE
+#ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#define DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("a6487363-b074-5c60-ab16-866dce4ee54d"))
-IVectorView<IInspectable*> : IVectorView_impl<IInspectable*> {
+struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1"))
+MapChangedEventHandler<HSTRING,IInspectable*> : MapChangedEventHandler_impl<HSTRING,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Object>"; }
+return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, Object>"; }
 };
-typedef IVectorView<IInspectable*> __FIVectorView_1_IInspectable_t;
-#define ____FIVectorView_1_IInspectable_FWD_DEFINED__
-#define __FIVectorView_1_IInspectable ABI::Windows::Foundation::Collections::__FIVectorView_1_IInspectable_t
+typedef MapChangedEventHandler<HSTRING,IInspectable*> __FMapChangedEventHandler_2_HSTRING_IInspectable_t;
+#define ____FMapChangedEventHandler_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_IInspectable_USE */
+#endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0067 */
@@ -4735,25 +4756,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0072_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0068 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_IInspectable_USE
-#define DEF___FIVector_1_IInspectable_USE
+#ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#define DEF___FIObservableMap_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("b32bdca4-5e52-5b27-bc5d-d66a1a268c2a"))
-IVector<IInspectable*> : IVector_impl<IInspectable*> {
+struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec"))
+IObservableMap<HSTRING,IInspectable*> : IObservableMap_impl<HSTRING,IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Object>"; }
+return L"Windows.Foundation.Collections.IObservableMap`2<String, Object>"; }
 };
-typedef IVector<IInspectable*> __FIVector_1_IInspectable_t;
-#define ____FIVector_1_IInspectable_FWD_DEFINED__
-#define __FIVector_1_IInspectable ABI::Windows::Foundation::Collections::__FIVector_1_IInspectable_t
+typedef IObservableMap<HSTRING,IInspectable*> __FIObservableMap_2_HSTRING_IInspectable_t;
+#define ____FIObservableMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIObservableMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_IInspectable_USE */
+#endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0068 */
@@ -4781,25 +4802,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0073_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0069 */
 /* [local] */ 
 
-#ifndef DEF___FVectorChangedEventHandler_1_IInspectable_USE
-#define DEF___FVectorChangedEventHandler_1_IInspectable_USE
+#ifndef DEF___FIVectorView_1_IInspectable_USE
+#define DEF___FIVectorView_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("b423a801-d35e-56b9-813b-00889536cb98"))
-VectorChangedEventHandler<IInspectable*> : VectorChangedEventHandler_impl<IInspectable*> {
+struct __declspec(uuid("a6487363-b074-5c60-ab16-866dce4ee54d"))
+IVectorView<IInspectable*> : IVectorView_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.VectorChangedEventHandler`1<Object>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Object>"; }
 };
-typedef VectorChangedEventHandler<IInspectable*> __FVectorChangedEventHandler_1_IInspectable_t;
-#define ____FVectorChangedEventHandler_1_IInspectable_FWD_DEFINED__
-#define __FVectorChangedEventHandler_1_IInspectable ABI::Windows::Foundation::Collections::__FVectorChangedEventHandler_1_IInspectable_t
+typedef IVectorView<IInspectable*> __FIVectorView_1_IInspectable_t;
+#define ____FIVectorView_1_IInspectable_FWD_DEFINED__
+#define __FIVectorView_1_IInspectable ABI::Windows::Foundation::Collections::__FIVectorView_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FVectorChangedEventHandler_1_IInspectable_USE */
+#endif /* DEF___FIVectorView_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0069 */
@@ -4827,25 +4848,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0074_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0070 */
 /* [local] */ 
 
-#ifndef DEF___FIObservableVector_1_IInspectable_USE
-#define DEF___FIObservableVector_1_IInspectable_USE
+#ifndef DEF___FIVector_1_IInspectable_USE
+#define DEF___FIVector_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("7b81c56a-0985-518d-baa9-0da9ae009f65"))
-IObservableVector<IInspectable*> : IObservableVector_impl<IInspectable*> {
+struct __declspec(uuid("b32bdca4-5e52-5b27-bc5d-d66a1a268c2a"))
+IVector<IInspectable*> : IVector_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IObservableVector`1<Object>"; }
+return L"Windows.Foundation.Collections.IVector`1<Object>"; }
 };
-typedef IObservableVector<IInspectable*> __FIObservableVector_1_IInspectable_t;
-#define ____FIObservableVector_1_IInspectable_FWD_DEFINED__
-#define __FIObservableVector_1_IInspectable ABI::Windows::Foundation::Collections::__FIObservableVector_1_IInspectable_t
+typedef IVector<IInspectable*> __FIVector_1_IInspectable_t;
+#define ____FIVector_1_IInspectable_FWD_DEFINED__
+#define __FIVector_1_IInspectable ABI::Windows::Foundation::Collections::__FIVector_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIObservableVector_1_IInspectable_USE */
+#endif /* DEF___FIVector_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0070 */
@@ -4873,25 +4894,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0075_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0071 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_byte_USE
-#define DEF___FIVectorView_1_byte_USE
+#ifndef DEF___FVectorChangedEventHandler_1_IInspectable_USE
+#define DEF___FVectorChangedEventHandler_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("6d05fb29-7885-544e-9382-a1ad391a3fa4"))
-IVectorView<byte> : IVectorView_impl<byte> {
+struct __declspec(uuid("b423a801-d35e-56b9-813b-00889536cb98"))
+VectorChangedEventHandler<IInspectable*> : VectorChangedEventHandler_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<UInt8>"; }
+return L"Windows.Foundation.Collections.VectorChangedEventHandler`1<Object>"; }
 };
-typedef IVectorView<byte> __FIVectorView_1_byte_t;
-#define ____FIVectorView_1_byte_FWD_DEFINED__
-#define __FIVectorView_1_byte ABI::Windows::Foundation::Collections::__FIVectorView_1_byte_t
+typedef VectorChangedEventHandler<IInspectable*> __FVectorChangedEventHandler_1_IInspectable_t;
+#define ____FVectorChangedEventHandler_1_IInspectable_FWD_DEFINED__
+#define __FVectorChangedEventHandler_1_IInspectable ABI::Windows::Foundation::Collections::__FVectorChangedEventHandler_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_byte_USE */
+#endif /* DEF___FVectorChangedEventHandler_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0071 */
@@ -4919,25 +4940,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0076_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0072 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_double_USE
-#define DEF___FIVectorView_1_double_USE
+#ifndef DEF___FIObservableVector_1_IInspectable_USE
+#define DEF___FIObservableVector_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("af7586a8-6b21-5f61-bff1-1b682293ad96"))
-IVectorView<double> : IVectorView_impl<double> {
+struct __declspec(uuid("7b81c56a-0985-518d-baa9-0da9ae009f65"))
+IObservableVector<IInspectable*> : IObservableVector_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Double>"; }
+return L"Windows.Foundation.Collections.IObservableVector`1<Object>"; }
 };
-typedef IVectorView<double> __FIVectorView_1_double_t;
-#define ____FIVectorView_1_double_FWD_DEFINED__
-#define __FIVectorView_1_double ABI::Windows::Foundation::Collections::__FIVectorView_1_double_t
+typedef IObservableVector<IInspectable*> __FIObservableVector_1_IInspectable_t;
+#define ____FIObservableVector_1_IInspectable_FWD_DEFINED__
+#define __FIObservableVector_1_IInspectable ABI::Windows::Foundation::Collections::__FIObservableVector_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_double_USE */
+#endif /* DEF___FIObservableVector_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0072 */
@@ -4965,25 +4986,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0077_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0073 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_float_USE
-#define DEF___FIVectorView_1_float_USE
+#ifndef DEF___FIVectorView_1_byte_USE
+#define DEF___FIVectorView_1_byte_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("7bca64fd-150c-5d50-b56b-9f4f474c5930"))
-IVectorView<float> : IVectorView_impl<float> {
+struct __declspec(uuid("6d05fb29-7885-544e-9382-a1ad391a3fa4"))
+IVectorView<byte> : IVectorView_impl<byte> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Single>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<UInt8>"; }
 };
-typedef IVectorView<float> __FIVectorView_1_float_t;
-#define ____FIVectorView_1_float_FWD_DEFINED__
-#define __FIVectorView_1_float ABI::Windows::Foundation::Collections::__FIVectorView_1_float_t
+typedef IVectorView<byte> __FIVectorView_1_byte_t;
+#define ____FIVectorView_1_byte_FWD_DEFINED__
+#define __FIVectorView_1_byte ABI::Windows::Foundation::Collections::__FIVectorView_1_byte_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_float_USE */
+#endif /* DEF___FIVectorView_1_byte_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0073 */
@@ -5011,25 +5032,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0078_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0074 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_GUID_USE
-#define DEF___FIVectorView_1_GUID_USE
+#ifndef DEF___FIVectorView_1_double_USE
+#define DEF___FIVectorView_1_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("9520e64b-15b2-52a6-98ed-3191fa6cf68a"))
-IVectorView<GUID> : IVectorView_impl<GUID> {
+struct __declspec(uuid("af7586a8-6b21-5f61-bff1-1b682293ad96"))
+IVectorView<double> : IVectorView_impl<double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Guid>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Double>"; }
 };
-typedef IVectorView<GUID> __FIVectorView_1_GUID_t;
-#define ____FIVectorView_1_GUID_FWD_DEFINED__
-#define __FIVectorView_1_GUID ABI::Windows::Foundation::Collections::__FIVectorView_1_GUID_t
+typedef IVectorView<double> __FIVectorView_1_double_t;
+#define ____FIVectorView_1_double_FWD_DEFINED__
+#define __FIVectorView_1_double ABI::Windows::Foundation::Collections::__FIVectorView_1_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_GUID_USE */
+#endif /* DEF___FIVectorView_1_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0074 */
@@ -5057,25 +5078,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0079_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0075 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_int_USE
-#define DEF___FIVectorView_1_int_USE
+#ifndef DEF___FIVectorView_1_float_USE
+#define DEF___FIVectorView_1_float_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("8d720cdf-3934-5d3f-9a55-40e8063b086a"))
-IVectorView<int> : IVectorView_impl<int> {
+struct __declspec(uuid("7bca64fd-150c-5d50-b56b-9f4f474c5930"))
+IVectorView<float> : IVectorView_impl<float> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Int32>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Single>"; }
 };
-typedef IVectorView<int> __FIVectorView_1_int_t;
-#define ____FIVectorView_1_int_FWD_DEFINED__
-#define __FIVectorView_1_int ABI::Windows::Foundation::Collections::__FIVectorView_1_int_t
+typedef IVectorView<float> __FIVectorView_1_float_t;
+#define ____FIVectorView_1_float_FWD_DEFINED__
+#define __FIVectorView_1_float ABI::Windows::Foundation::Collections::__FIVectorView_1_float_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_int_USE */
+#endif /* DEF___FIVectorView_1_float_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0075 */
@@ -5103,25 +5124,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0080_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0076 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_UINT32_USE
-#define DEF___FIVectorView_1_UINT32_USE
+#ifndef DEF___FIVectorView_1_GUID_USE
+#define DEF___FIVectorView_1_GUID_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("e5ce1a07-8d33-5007-ba64-7d2508ccf85c"))
-IVectorView<UINT32> : IVectorView_impl<UINT32> {
+struct __declspec(uuid("9520e64b-15b2-52a6-98ed-3191fa6cf68a"))
+IVectorView<GUID> : IVectorView_impl<GUID> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<UInt32>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Guid>"; }
 };
-typedef IVectorView<UINT32> __FIVectorView_1_UINT32_t;
-#define ____FIVectorView_1_UINT32_FWD_DEFINED__
-#define __FIVectorView_1_UINT32 ABI::Windows::Foundation::Collections::__FIVectorView_1_UINT32_t
+typedef IVectorView<GUID> __FIVectorView_1_GUID_t;
+#define ____FIVectorView_1_GUID_FWD_DEFINED__
+#define __FIVectorView_1_GUID ABI::Windows::Foundation::Collections::__FIVectorView_1_GUID_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_UINT32_USE */
+#endif /* DEF___FIVectorView_1_GUID_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0076 */
@@ -5149,25 +5170,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0081_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0077 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
-#define DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIVectorView_1_int_USE
+#define DEF___FIVectorView_1_int_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("172a655b-b3b8-5eae-bc2e-a6a1f1708b4b"))
-IVectorView<__FIMapView_2_HSTRING_IInspectable*> : IVectorView_impl<__FIMapView_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("8d720cdf-3934-5d3f-9a55-40e8063b086a"))
+IVectorView<int> : IVectorView_impl<int> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Collections.IMapView`2<String, Object>>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Int32>"; }
 };
-typedef IVectorView<__FIMapView_2_HSTRING_IInspectable*> __FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t;
-#define ____FIVectorView_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIVectorView_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t
+typedef IVectorView<int> __FIVectorView_1_int_t;
+#define ____FIVectorView_1_int_FWD_DEFINED__
+#define __FIVectorView_1_int ABI::Windows::Foundation::Collections::__FIVectorView_1_int_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIVectorView_1_int_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0077 */
@@ -5195,25 +5216,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0082_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0078 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_Windows__CFoundation__CDateTime_USE
-#define DEF___FIVectorView_1_Windows__CFoundation__CDateTime_USE
+#ifndef DEF___FIVectorView_1_UINT32_USE
+#define DEF___FIVectorView_1_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("135a5f72-a818-54a8-b955-dff2593a3bf5"))
-IVectorView<struct ABI::Windows::Foundation::DateTime> : IVectorView_impl<struct ABI::Windows::Foundation::DateTime> {
+struct __declspec(uuid("e5ce1a07-8d33-5007-ba64-7d2508ccf85c"))
+IVectorView<UINT32> : IVectorView_impl<UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.DateTime>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<UInt32>"; }
 };
-typedef IVectorView<struct ABI::Windows::Foundation::DateTime> __FIVectorView_1_Windows__CFoundation__CDateTime_t;
-#define ____FIVectorView_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
-#define __FIVectorView_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CDateTime_t
+typedef IVectorView<UINT32> __FIVectorView_1_UINT32_t;
+#define ____FIVectorView_1_UINT32_FWD_DEFINED__
+#define __FIVectorView_1_UINT32 ABI::Windows::Foundation::Collections::__FIVectorView_1_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_Windows__CFoundation__CDateTime_USE */
+#endif /* DEF___FIVectorView_1_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0078 */
@@ -5241,25 +5262,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0083_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0079 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_USE
-#define DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_USE
+#ifndef DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("b1f00d3b-1f06-5117-93ea-2a0d79116701"))
-IVectorView<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry*> : IVectorView_impl<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry*> {
+struct __declspec(uuid("172a655b-b3b8-5eae-bc2e-a6a1f1708b4b"))
+IVectorView<__FIMapView_2_HSTRING_IInspectable*> : IVectorView_impl<__FIMapView_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.IWwwFormUrlDecoderEntry>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Collections.IMapView`2<String, Object>>"; }
 };
-typedef IVectorView<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry*> __FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t;
-#define ____FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_FWD_DEFINED__
-#define __FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t
+typedef IVectorView<__FIMapView_2_HSTRING_IInspectable*> __FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIVectorView_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIVectorView_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_USE */
+#endif /* DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0079 */
@@ -5287,25 +5308,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0084_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0080 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_Windows__CFoundation__CPoint_USE
-#define DEF___FIVectorView_1_Windows__CFoundation__CPoint_USE
+#ifndef DEF___FIVectorView_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIVectorView_1_Windows__CFoundation__CDateTime_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad"))
-IVectorView<struct ABI::Windows::Foundation::Point> : IVectorView_impl<struct ABI::Windows::Foundation::Point> {
+struct __declspec(uuid("135a5f72-a818-54a8-b955-dff2593a3bf5"))
+IVectorView<struct ABI::Windows::Foundation::DateTime> : IVectorView_impl<struct ABI::Windows::Foundation::DateTime> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Point>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.DateTime>"; }
 };
-typedef IVectorView<struct ABI::Windows::Foundation::Point> __FIVectorView_1_Windows__CFoundation__CPoint_t;
-#define ____FIVectorView_1_Windows__CFoundation__CPoint_FWD_DEFINED__
-#define __FIVectorView_1_Windows__CFoundation__CPoint ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CPoint_t
+typedef IVectorView<struct ABI::Windows::Foundation::DateTime> __FIVectorView_1_Windows__CFoundation__CDateTime_t;
+#define ____FIVectorView_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CDateTime_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_Windows__CFoundation__CPoint_USE */
+#endif /* DEF___FIVectorView_1_Windows__CFoundation__CDateTime_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0080 */
@@ -5333,25 +5354,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0085_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0081 */
 /* [local] */ 
 
-#ifndef DEF___FIVectorView_1_Windows__CFoundation__CUri_USE
-#define DEF___FIVectorView_1_Windows__CFoundation__CUri_USE
+#ifndef DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_USE
+#define DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50"))
-IVectorView<ABI::Windows::Foundation::Uri*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
+struct __declspec(uuid("b1f00d3b-1f06-5117-93ea-2a0d79116701"))
+IVectorView<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry*> : IVectorView_impl<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Uri>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.IWwwFormUrlDecoderEntry>"; }
 };
-typedef IVectorView<ABI::Windows::Foundation::Uri*> __FIVectorView_1_Windows__CFoundation__CUri_t;
-#define ____FIVectorView_1_Windows__CFoundation__CUri_FWD_DEFINED__
-#define __FIVectorView_1_Windows__CFoundation__CUri ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t
+typedef IVectorView<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry*> __FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t;
+#define ____FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVectorView_1_Windows__CFoundation__CUri_USE */
+#endif /* DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0081 */
@@ -5379,25 +5400,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0086_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0082 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_double_USE
-#define DEF___FIVector_1_double_USE
+#ifndef DEF___FIVectorView_1_Windows__CFoundation__CPoint_USE
+#define DEF___FIVectorView_1_Windows__CFoundation__CPoint_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("f452d23c-bf05-5f3e-88e7-d17a6716b911"))
-IVector<double> : IVector_impl<double> {
+struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad"))
+IVectorView<struct ABI::Windows::Foundation::Point> : IVectorView_impl<struct ABI::Windows::Foundation::Point> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Double>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Point>"; }
 };
-typedef IVector<double> __FIVector_1_double_t;
-#define ____FIVector_1_double_FWD_DEFINED__
-#define __FIVector_1_double ABI::Windows::Foundation::Collections::__FIVector_1_double_t
+typedef IVectorView<struct ABI::Windows::Foundation::Point> __FIVectorView_1_Windows__CFoundation__CPoint_t;
+#define ____FIVectorView_1_Windows__CFoundation__CPoint_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CFoundation__CPoint ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CPoint_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_double_USE */
+#endif /* DEF___FIVectorView_1_Windows__CFoundation__CPoint_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0082 */
@@ -5425,25 +5446,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0087_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0083 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_float_USE
-#define DEF___FIVector_1_float_USE
+#ifndef DEF___FIVectorView_1_Windows__CFoundation__CUri_USE
+#define DEF___FIVectorView_1_Windows__CFoundation__CUri_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("61cf693f-db4c-579f-b905-5dd3d23cfd4d"))
-IVector<float> : IVector_impl<float> {
+struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50"))
+IVectorView<ABI::Windows::Foundation::Uri*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Single>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Uri>"; }
 };
-typedef IVector<float> __FIVector_1_float_t;
-#define ____FIVector_1_float_FWD_DEFINED__
-#define __FIVector_1_float ABI::Windows::Foundation::Collections::__FIVector_1_float_t
+typedef IVectorView<ABI::Windows::Foundation::Uri*> __FIVectorView_1_Windows__CFoundation__CUri_t;
+#define ____FIVectorView_1_Windows__CFoundation__CUri_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CFoundation__CUri ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_float_USE */
+#endif /* DEF___FIVectorView_1_Windows__CFoundation__CUri_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0083 */
@@ -5471,25 +5492,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0088_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0084 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_GUID_USE
-#define DEF___FIVector_1_GUID_USE
+#ifndef DEF___FIVectorView_1_boolean_USE
+#define DEF___FIVectorView_1_boolean_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("482e676d-b913-5ec1-afa8-5f96922e94ae"))
-IVector<GUID> : IVector_impl<GUID> {
+struct __declspec(uuid("243a09cb-6f40-56af-a442-fe81431fbef5"))
+IVectorView<bool> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Guid>"; }
+return L"Windows.Foundation.Collections.IVectorView`1<Boolean>"; }
 };
-typedef IVector<GUID> __FIVector_1_GUID_t;
-#define ____FIVector_1_GUID_FWD_DEFINED__
-#define __FIVector_1_GUID ABI::Windows::Foundation::Collections::__FIVector_1_GUID_t
+typedef IVectorView<bool> __FIVectorView_1_boolean_t;
+#define ____FIVectorView_1_boolean_FWD_DEFINED__
+#define __FIVectorView_1_boolean ABI::Windows::Foundation::Collections::__FIVectorView_1_boolean_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_GUID_USE */
+#endif /* DEF___FIVectorView_1_boolean_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0084 */
@@ -5517,25 +5538,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0089_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0085 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_int_USE
-#define DEF___FIVector_1_int_USE
+#ifndef DEF___FIVector_1_double_USE
+#define DEF___FIVector_1_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905fe"))
-IVector<int> : IVector_impl<int> {
+struct __declspec(uuid("f452d23c-bf05-5f3e-88e7-d17a6716b911"))
+IVector<double> : IVector_impl<double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Int32>"; }
+return L"Windows.Foundation.Collections.IVector`1<Double>"; }
 };
-typedef IVector<int> __FIVector_1_int_t;
-#define ____FIVector_1_int_FWD_DEFINED__
-#define __FIVector_1_int ABI::Windows::Foundation::Collections::__FIVector_1_int_t
+typedef IVector<double> __FIVector_1_double_t;
+#define ____FIVector_1_double_FWD_DEFINED__
+#define __FIVector_1_double ABI::Windows::Foundation::Collections::__FIVector_1_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_int_USE */
+#endif /* DEF___FIVector_1_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0085 */
@@ -5563,25 +5584,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0090_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0086 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_UINT32_USE
-#define DEF___FIVector_1_UINT32_USE
+#ifndef DEF___FIVector_1_float_USE
+#define DEF___FIVector_1_float_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("534832ed-2a03-5604-890d-5a928cd427b9"))
-IVector<UINT32> : IVector_impl<UINT32> {
+struct __declspec(uuid("61cf693f-db4c-579f-b905-5dd3d23cfd4d"))
+IVector<float> : IVector_impl<float> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<UInt32>"; }
+return L"Windows.Foundation.Collections.IVector`1<Single>"; }
 };
-typedef IVector<UINT32> __FIVector_1_UINT32_t;
-#define ____FIVector_1_UINT32_FWD_DEFINED__
-#define __FIVector_1_UINT32 ABI::Windows::Foundation::Collections::__FIVector_1_UINT32_t
+typedef IVector<float> __FIVector_1_float_t;
+#define ____FIVector_1_float_FWD_DEFINED__
+#define __FIVector_1_float ABI::Windows::Foundation::Collections::__FIVector_1_float_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_UINT32_USE */
+#endif /* DEF___FIVector_1_float_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0086 */
@@ -5609,25 +5630,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0091_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0087 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_Windows__CFoundation__CDateTime_USE
-#define DEF___FIVector_1_Windows__CFoundation__CDateTime_USE
+#ifndef DEF___FIVector_1_GUID_USE
+#define DEF___FIVector_1_GUID_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("94390dc5-e442-5870-88b6-007e232f902c"))
-IVector<struct ABI::Windows::Foundation::DateTime> : IVector_impl<struct ABI::Windows::Foundation::DateTime> {
+struct __declspec(uuid("482e676d-b913-5ec1-afa8-5f96922e94ae"))
+IVector<GUID> : IVector_impl<GUID> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.Foundation.DateTime>"; }
+return L"Windows.Foundation.Collections.IVector`1<Guid>"; }
 };
-typedef IVector<struct ABI::Windows::Foundation::DateTime> __FIVector_1_Windows__CFoundation__CDateTime_t;
-#define ____FIVector_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
-#define __FIVector_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CDateTime_t
+typedef IVector<GUID> __FIVector_1_GUID_t;
+#define ____FIVector_1_GUID_FWD_DEFINED__
+#define __FIVector_1_GUID ABI::Windows::Foundation::Collections::__FIVector_1_GUID_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_Windows__CFoundation__CDateTime_USE */
+#endif /* DEF___FIVector_1_GUID_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0087 */
@@ -5655,25 +5676,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0092_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0088 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_Windows__CFoundation__CPoint_USE
-#define DEF___FIVector_1_Windows__CFoundation__CPoint_USE
+#ifndef DEF___FIVector_1_int_USE
+#define DEF___FIVector_1_int_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("c0d513a9-ec4a-5a5d-b6d5-b707defdb9f7"))
-IVector<struct ABI::Windows::Foundation::Point> : IVector_impl<struct ABI::Windows::Foundation::Point> {
+struct __declspec(uuid("b939af5b-b45d-5489-9149-61442c1905fe"))
+IVector<int> : IVector_impl<int> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.Foundation.Point>"; }
+return L"Windows.Foundation.Collections.IVector`1<Int32>"; }
 };
-typedef IVector<struct ABI::Windows::Foundation::Point> __FIVector_1_Windows__CFoundation__CPoint_t;
-#define ____FIVector_1_Windows__CFoundation__CPoint_FWD_DEFINED__
-#define __FIVector_1_Windows__CFoundation__CPoint ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CPoint_t
+typedef IVector<int> __FIVector_1_int_t;
+#define ____FIVector_1_int_FWD_DEFINED__
+#define __FIVector_1_int ABI::Windows::Foundation::Collections::__FIVector_1_int_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_Windows__CFoundation__CPoint_USE */
+#endif /* DEF___FIVector_1_int_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0088 */
@@ -5701,25 +5722,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0093_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0089 */
 /* [local] */ 
 
-#ifndef DEF___FIVector_1_Windows__CFoundation__CUri_USE
-#define DEF___FIVector_1_Windows__CFoundation__CUri_USE
+#ifndef DEF___FIVector_1_UINT32_USE
+#define DEF___FIVector_1_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("0d82bd8d-fe62-5d67-a7b9-7886dd75bc4e"))
-IVector<ABI::Windows::Foundation::Uri*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
+struct __declspec(uuid("534832ed-2a03-5604-890d-5a928cd427b9"))
+IVector<UINT32> : IVector_impl<UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.Foundation.Uri>"; }
+return L"Windows.Foundation.Collections.IVector`1<UInt32>"; }
 };
-typedef IVector<ABI::Windows::Foundation::Uri*> __FIVector_1_Windows__CFoundation__CUri_t;
-#define ____FIVector_1_Windows__CFoundation__CUri_FWD_DEFINED__
-#define __FIVector_1_Windows__CFoundation__CUri ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t
+typedef IVector<UINT32> __FIVector_1_UINT32_t;
+#define ____FIVector_1_UINT32_FWD_DEFINED__
+#define __FIVector_1_UINT32 ABI::Windows::Foundation::Collections::__FIVector_1_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIVector_1_Windows__CFoundation__CUri_USE */
+#endif /* DEF___FIVector_1_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0089 */
@@ -5747,25 +5768,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0094_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0090 */
 /* [local] */ 
 
-#ifndef DEF___FIEventHandler_1_IInspectable_USE
-#define DEF___FIEventHandler_1_IInspectable_USE
+#ifndef DEF___FIVector_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIVector_1_Windows__CFoundation__CDateTime_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
-IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> {
+struct __declspec(uuid("94390dc5-e442-5870-88b6-007e232f902c"))
+IVector<struct ABI::Windows::Foundation::DateTime> : IVector_impl<struct ABI::Windows::Foundation::DateTime> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.EventHandler`1<Object>"; }
+return L"Windows.Foundation.Collections.IVector`1<Windows.Foundation.DateTime>"; }
 };
-typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
-#define ____FIEventHandler_1_IInspectable_FWD_DEFINED__
-#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
+typedef IVector<struct ABI::Windows::Foundation::DateTime> __FIVector_1_Windows__CFoundation__CDateTime_t;
+#define ____FIVector_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIVector_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CDateTime_t
 
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIEventHandler_1_IInspectable_USE */
+#endif /* DEF___FIVector_1_Windows__CFoundation__CDateTime_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0090 */
@@ -5793,25 +5814,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0095_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0091 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncActionProgressHandler_1_double_USE
-#define DEF___FIAsyncActionProgressHandler_1_double_USE
+#ifndef DEF___FIVector_1_Windows__CFoundation__CPoint_USE
+#define DEF___FIVector_1_Windows__CFoundation__CPoint_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("44825c7c-0da9-5691-b2b4-914f231eeced"))
-IAsyncActionProgressHandler<double> : IAsyncActionProgressHandler_impl<double> {
+struct __declspec(uuid("c0d513a9-ec4a-5a5d-b6d5-b707defdb9f7"))
+IVector<struct ABI::Windows::Foundation::Point> : IVector_impl<struct ABI::Windows::Foundation::Point> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncActionProgressHandler`1<Double>"; }
+return L"Windows.Foundation.Collections.IVector`1<Windows.Foundation.Point>"; }
 };
-typedef IAsyncActionProgressHandler<double> __FIAsyncActionProgressHandler_1_double_t;
-#define ____FIAsyncActionProgressHandler_1_double_FWD_DEFINED__
-#define __FIAsyncActionProgressHandler_1_double ABI::Windows::Foundation::__FIAsyncActionProgressHandler_1_double_t
+typedef IVector<struct ABI::Windows::Foundation::Point> __FIVector_1_Windows__CFoundation__CPoint_t;
+#define ____FIVector_1_Windows__CFoundation__CPoint_FWD_DEFINED__
+#define __FIVector_1_Windows__CFoundation__CPoint ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CPoint_t
 
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncActionProgressHandler_1_double_USE */
+#endif /* DEF___FIVector_1_Windows__CFoundation__CPoint_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0091 */
@@ -5839,25 +5860,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0096_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0092 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_double_USE
-#define DEF___FIAsyncActionWithProgressCompletedHandler_1_double_USE
+#ifndef DEF___FIVector_1_Windows__CFoundation__CUri_USE
+#define DEF___FIVector_1_Windows__CFoundation__CUri_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
-namespace ABI { namespace Windows { namespace Foundation {
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
-struct __declspec(uuid("94d64ac6-4491-53ef-8be8-36481f3ff1e8"))
-IAsyncActionWithProgressCompletedHandler<double> : IAsyncActionWithProgressCompletedHandler_impl<double> {
+struct __declspec(uuid("0d82bd8d-fe62-5d67-a7b9-7886dd75bc4e"))
+IVector<ABI::Windows::Foundation::Uri*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<Double>"; }
+return L"Windows.Foundation.Collections.IVector`1<Windows.Foundation.Uri>"; }
 };
-typedef IAsyncActionWithProgressCompletedHandler<double> __FIAsyncActionWithProgressCompletedHandler_1_double_t;
-#define ____FIAsyncActionWithProgressCompletedHandler_1_double_FWD_DEFINED__
-#define __FIAsyncActionWithProgressCompletedHandler_1_double ABI::Windows::Foundation::__FIAsyncActionWithProgressCompletedHandler_1_double_t
+typedef IVector<ABI::Windows::Foundation::Uri*> __FIVector_1_Windows__CFoundation__CUri_t;
+#define ____FIVector_1_Windows__CFoundation__CUri_FWD_DEFINED__
+#define __FIVector_1_Windows__CFoundation__CUri ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t
 
-/* ABI */ } /* Windows */ } /* Foundation */ }
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_double_USE */
+#endif /* DEF___FIVector_1_Windows__CFoundation__CUri_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0092 */
@@ -5885,25 +5906,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0097_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0093 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncActionWithProgress_1_double_USE
-#define DEF___FIAsyncActionWithProgress_1_double_USE
+#ifndef DEF___FIEventHandler_1_IInspectable_USE
+#define DEF___FIEventHandler_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("4f1430a6-a825-56ca-b047-1a9bad52ba67"))
-IAsyncActionWithProgress<double> : IAsyncActionWithProgress_impl<double> {
+struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
+IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncActionWithProgress`1<Double>"; }
+return L"Windows.Foundation.EventHandler`1<Object>"; }
 };
-typedef IAsyncActionWithProgress<double> __FIAsyncActionWithProgress_1_double_t;
-#define ____FIAsyncActionWithProgress_1_double_FWD_DEFINED__
-#define __FIAsyncActionWithProgress_1_double ABI::Windows::Foundation::__FIAsyncActionWithProgress_1_double_t
+typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
+#define ____FIEventHandler_1_IInspectable_FWD_DEFINED__
+#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncActionWithProgress_1_double_USE */
+#endif /* DEF___FIEventHandler_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0093 */
@@ -5931,25 +5952,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0098_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0094 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncActionProgressHandler_1_UINT64_USE
-#define DEF___FIAsyncActionProgressHandler_1_UINT64_USE
+#ifndef DEF___FIAsyncActionProgressHandler_1_double_USE
+#define DEF___FIAsyncActionProgressHandler_1_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("55e233ca-f243-5ae2-853b-f9cc7c0ae0cf"))
-IAsyncActionProgressHandler<UINT64> : IAsyncActionProgressHandler_impl<UINT64> {
+struct __declspec(uuid("44825c7c-0da9-5691-b2b4-914f231eeced"))
+IAsyncActionProgressHandler<double> : IAsyncActionProgressHandler_impl<double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncActionProgressHandler`1<UInt64>"; }
+return L"Windows.Foundation.AsyncActionProgressHandler`1<Double>"; }
 };
-typedef IAsyncActionProgressHandler<UINT64> __FIAsyncActionProgressHandler_1_UINT64_t;
-#define ____FIAsyncActionProgressHandler_1_UINT64_FWD_DEFINED__
-#define __FIAsyncActionProgressHandler_1_UINT64 ABI::Windows::Foundation::__FIAsyncActionProgressHandler_1_UINT64_t
+typedef IAsyncActionProgressHandler<double> __FIAsyncActionProgressHandler_1_double_t;
+#define ____FIAsyncActionProgressHandler_1_double_FWD_DEFINED__
+#define __FIAsyncActionProgressHandler_1_double ABI::Windows::Foundation::__FIAsyncActionProgressHandler_1_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncActionProgressHandler_1_UINT64_USE */
+#endif /* DEF___FIAsyncActionProgressHandler_1_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0094 */
@@ -5977,25 +5998,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0099_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0095 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE
-#define DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE
+#ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_double_USE
+#define DEF___FIAsyncActionWithProgressCompletedHandler_1_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("e6ff857b-f160-571a-a934-2c61f98c862d"))
-IAsyncActionWithProgressCompletedHandler<UINT64> : IAsyncActionWithProgressCompletedHandler_impl<UINT64> {
+struct __declspec(uuid("94d64ac6-4491-53ef-8be8-36481f3ff1e8"))
+IAsyncActionWithProgressCompletedHandler<double> : IAsyncActionWithProgressCompletedHandler_impl<double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<UInt64>"; }
+return L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<Double>"; }
 };
-typedef IAsyncActionWithProgressCompletedHandler<UINT64> __FIAsyncActionWithProgressCompletedHandler_1_UINT64_t;
-#define ____FIAsyncActionWithProgressCompletedHandler_1_UINT64_FWD_DEFINED__
-#define __FIAsyncActionWithProgressCompletedHandler_1_UINT64 ABI::Windows::Foundation::__FIAsyncActionWithProgressCompletedHandler_1_UINT64_t
+typedef IAsyncActionWithProgressCompletedHandler<double> __FIAsyncActionWithProgressCompletedHandler_1_double_t;
+#define ____FIAsyncActionWithProgressCompletedHandler_1_double_FWD_DEFINED__
+#define __FIAsyncActionWithProgressCompletedHandler_1_double ABI::Windows::Foundation::__FIAsyncActionWithProgressCompletedHandler_1_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE */
+#endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0095 */
@@ -6023,25 +6044,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0100_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0096 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncActionWithProgress_1_UINT64_USE
-#define DEF___FIAsyncActionWithProgress_1_UINT64_USE
+#ifndef DEF___FIAsyncActionWithProgress_1_double_USE
+#define DEF___FIAsyncActionWithProgress_1_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("43f713d0-c49d-5e55-aebf-af395768351e"))
-IAsyncActionWithProgress<UINT64> : IAsyncActionWithProgress_impl<UINT64> {
+struct __declspec(uuid("4f1430a6-a825-56ca-b047-1a9bad52ba67"))
+IAsyncActionWithProgress<double> : IAsyncActionWithProgress_impl<double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncActionWithProgress`1<UInt64>"; }
+return L"Windows.Foundation.IAsyncActionWithProgress`1<Double>"; }
 };
-typedef IAsyncActionWithProgress<UINT64> __FIAsyncActionWithProgress_1_UINT64_t;
-#define ____FIAsyncActionWithProgress_1_UINT64_FWD_DEFINED__
-#define __FIAsyncActionWithProgress_1_UINT64 ABI::Windows::Foundation::__FIAsyncActionWithProgress_1_UINT64_t
+typedef IAsyncActionWithProgress<double> __FIAsyncActionWithProgress_1_double_t;
+#define ____FIAsyncActionWithProgress_1_double_FWD_DEFINED__
+#define __FIAsyncActionWithProgress_1_double ABI::Windows::Foundation::__FIAsyncActionWithProgress_1_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncActionWithProgress_1_UINT64_USE */
+#endif /* DEF___FIAsyncActionWithProgress_1_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0096 */
@@ -6069,25 +6090,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0101_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0097 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64_USE
-#define DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64_USE
+#ifndef DEF___FIAsyncActionProgressHandler_1_UINT64_USE
+#define DEF___FIAsyncActionProgressHandler_1_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("14da7de7-40df-5d4c-823f-cf310625ad39"))
-IAsyncOperationProgressHandler<HSTRING,UINT64> : IAsyncOperationProgressHandler_impl<HSTRING,UINT64> {
+struct __declspec(uuid("55e233ca-f243-5ae2-853b-f9cc7c0ae0cf"))
+IAsyncActionProgressHandler<UINT64> : IAsyncActionProgressHandler_impl<UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationProgressHandler`2<String, UInt64>"; }
+return L"Windows.Foundation.AsyncActionProgressHandler`1<UInt64>"; }
 };
-typedef IAsyncOperationProgressHandler<HSTRING,UINT64> __FIAsyncOperationProgressHandler_2_HSTRING_UINT64_t;
-#define ____FIAsyncOperationProgressHandler_2_HSTRING_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationProgressHandler_2_HSTRING_UINT64 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_HSTRING_UINT64_t
+typedef IAsyncActionProgressHandler<UINT64> __FIAsyncActionProgressHandler_1_UINT64_t;
+#define ____FIAsyncActionProgressHandler_1_UINT64_FWD_DEFINED__
+#define __FIAsyncActionProgressHandler_1_UINT64 ABI::Windows::Foundation::__FIAsyncActionProgressHandler_1_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64_USE */
+#endif /* DEF___FIAsyncActionProgressHandler_1_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0097 */
@@ -6115,25 +6136,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0102_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0098 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_USE
-#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_USE
+#ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE
+#define DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("bd75eebe-e7b5-5af6-8415-a4b9c9045202"))
-IAsyncOperationWithProgressCompletedHandler<HSTRING,UINT64> : IAsyncOperationWithProgressCompletedHandler_impl<HSTRING,UINT64> {
+struct __declspec(uuid("e6ff857b-f160-571a-a934-2c61f98c862d"))
+IAsyncActionWithProgressCompletedHandler<UINT64> : IAsyncActionWithProgressCompletedHandler_impl<UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<String, UInt64>"; }
+return L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<UInt64>"; }
 };
-typedef IAsyncOperationWithProgressCompletedHandler<HSTRING,UINT64> __FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_t;
-#define ____FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_t
+typedef IAsyncActionWithProgressCompletedHandler<UINT64> __FIAsyncActionWithProgressCompletedHandler_1_UINT64_t;
+#define ____FIAsyncActionWithProgressCompletedHandler_1_UINT64_FWD_DEFINED__
+#define __FIAsyncActionWithProgressCompletedHandler_1_UINT64 ABI::Windows::Foundation::__FIAsyncActionWithProgressCompletedHandler_1_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_USE */
+#endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0098 */
@@ -6161,25 +6182,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0103_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0099 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64_USE
-#define DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64_USE
+#ifndef DEF___FIAsyncActionWithProgress_1_UINT64_USE
+#define DEF___FIAsyncActionWithProgress_1_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("c8bbcb29-6b64-5ce2-a831-038f6e02199e"))
-IAsyncOperationWithProgress<HSTRING,UINT64> : IAsyncOperationWithProgress_impl<HSTRING,UINT64> {
+struct __declspec(uuid("43f713d0-c49d-5e55-aebf-af395768351e"))
+IAsyncActionWithProgress<UINT64> : IAsyncActionWithProgress_impl<UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperationWithProgress`2<String, UInt64>"; }
+return L"Windows.Foundation.IAsyncActionWithProgress`1<UInt64>"; }
 };
-typedef IAsyncOperationWithProgress<HSTRING,UINT64> __FIAsyncOperationWithProgress_2_HSTRING_UINT64_t;
-#define ____FIAsyncOperationWithProgress_2_HSTRING_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationWithProgress_2_HSTRING_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_HSTRING_UINT64_t
+typedef IAsyncActionWithProgress<UINT64> __FIAsyncActionWithProgress_1_UINT64_t;
+#define ____FIAsyncActionWithProgress_1_UINT64_FWD_DEFINED__
+#define __FIAsyncActionWithProgress_1_UINT64 ABI::Windows::Foundation::__FIAsyncActionWithProgress_1_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64_USE */
+#endif /* DEF___FIAsyncActionWithProgress_1_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0099 */
@@ -6207,25 +6228,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0104_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0100 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
-#define DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
+#ifndef DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64_USE
+#define DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("ea0fe405-d432-5ac7-9ef8-5a65e1f97d7e"))
-IAsyncOperationProgressHandler<UINT32,UINT32> : IAsyncOperationProgressHandler_impl<UINT32,UINT32> {
+struct __declspec(uuid("14da7de7-40df-5d4c-823f-cf310625ad39"))
+IAsyncOperationProgressHandler<HSTRING,UINT64> : IAsyncOperationProgressHandler_impl<HSTRING,UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationProgressHandler`2<UInt32, UInt32>"; }
+return L"Windows.Foundation.AsyncOperationProgressHandler`2<String, UInt64>"; }
 };
-typedef IAsyncOperationProgressHandler<UINT32,UINT32> __FIAsyncOperationProgressHandler_2_UINT32_UINT32_t;
-#define ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_FWD_DEFINED__
-#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_UINT32_UINT32_t
+typedef IAsyncOperationProgressHandler<HSTRING,UINT64> __FIAsyncOperationProgressHandler_2_HSTRING_UINT64_t;
+#define ____FIAsyncOperationProgressHandler_2_HSTRING_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationProgressHandler_2_HSTRING_UINT64 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_HSTRING_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE */
+#endif /* DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0100 */
@@ -6253,25 +6274,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0105_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0101 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
-#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74"))
-IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32> : IAsyncOperationWithProgressCompletedHandler_impl<UINT32,UINT32> {
+struct __declspec(uuid("bd75eebe-e7b5-5af6-8415-a4b9c9045202"))
+IAsyncOperationWithProgressCompletedHandler<HSTRING,UINT64> : IAsyncOperationWithProgressCompletedHandler_impl<HSTRING,UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<UInt32, UInt32>"; }
+return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<String, UInt64>"; }
 };
-typedef IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32> __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t;
-#define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_FWD_DEFINED__
-#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t
+typedef IAsyncOperationWithProgressCompletedHandler<HSTRING,UINT64> __FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_t;
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE */
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0101 */
@@ -6299,25 +6320,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0106_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0102 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
-#define DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
+#ifndef DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64_USE
+#define DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("eccb574a-c684-5572-a679-6b0842cfb57f"))
-IAsyncOperationWithProgress<UINT32,UINT32> : IAsyncOperationWithProgress_impl<UINT32,UINT32> {
+struct __declspec(uuid("c8bbcb29-6b64-5ce2-a831-038f6e02199e"))
+IAsyncOperationWithProgress<HSTRING,UINT64> : IAsyncOperationWithProgress_impl<HSTRING,UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperationWithProgress`2<UInt32, UInt32>"; }
+return L"Windows.Foundation.IAsyncOperationWithProgress`2<String, UInt64>"; }
 };
-typedef IAsyncOperationWithProgress<UINT32,UINT32> __FIAsyncOperationWithProgress_2_UINT32_UINT32_t;
-#define ____FIAsyncOperationWithProgress_2_UINT32_UINT32_FWD_DEFINED__
-#define __FIAsyncOperationWithProgress_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_UINT32_UINT32_t
+typedef IAsyncOperationWithProgress<HSTRING,UINT64> __FIAsyncOperationWithProgress_2_HSTRING_UINT64_t;
+#define ____FIAsyncOperationWithProgress_2_HSTRING_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationWithProgress_2_HSTRING_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_HSTRING_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE */
+#endif /* DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0102 */
@@ -6345,25 +6366,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0107_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0103 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64_USE
-#define DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64_USE
+#ifndef DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
+#define DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c"))
-IAsyncOperationProgressHandler<UINT64,UINT64> : IAsyncOperationProgressHandler_impl<UINT64,UINT64> {
+struct __declspec(uuid("ea0fe405-d432-5ac7-9ef8-5a65e1f97d7e"))
+IAsyncOperationProgressHandler<UINT32,UINT32> : IAsyncOperationProgressHandler_impl<UINT32,UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationProgressHandler`2<UInt64, UInt64>"; }
+return L"Windows.Foundation.AsyncOperationProgressHandler`2<UInt32, UInt32>"; }
 };
-typedef IAsyncOperationProgressHandler<UINT64,UINT64> __FIAsyncOperationProgressHandler_2_UINT64_UINT64_t;
-#define ____FIAsyncOperationProgressHandler_2_UINT64_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationProgressHandler_2_UINT64_UINT64 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_UINT64_UINT64_t
+typedef IAsyncOperationProgressHandler<UINT32,UINT32> __FIAsyncOperationProgressHandler_2_UINT32_UINT32_t;
+#define ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_FWD_DEFINED__
+#define __FIAsyncOperationProgressHandler_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_UINT32_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64_USE */
+#endif /* DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0103 */
@@ -6391,25 +6412,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0108_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0104 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_USE
-#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_USE
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f"))
-IAsyncOperationWithProgressCompletedHandler<UINT64,UINT64> : IAsyncOperationWithProgressCompletedHandler_impl<UINT64,UINT64> {
+struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74"))
+IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32> : IAsyncOperationWithProgressCompletedHandler_impl<UINT32,UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<UInt64, UInt64>"; }
+return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<UInt32, UInt32>"; }
 };
-typedef IAsyncOperationWithProgressCompletedHandler<UINT64,UINT64> __FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_t;
-#define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_t
+typedef IAsyncOperationWithProgressCompletedHandler<UINT32,UINT32> __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t;
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_FWD_DEFINED__
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_USE */
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0104 */
@@ -6437,25 +6458,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0109_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0105 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64_USE
-#define DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64_USE
+#ifndef DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
+#define DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c"))
-IAsyncOperationWithProgress<UINT64,UINT64> : IAsyncOperationWithProgress_impl<UINT64,UINT64> {
+struct __declspec(uuid("eccb574a-c684-5572-a679-6b0842cfb57f"))
+IAsyncOperationWithProgress<UINT32,UINT32> : IAsyncOperationWithProgress_impl<UINT32,UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperationWithProgress`2<UInt64, UInt64>"; }
+return L"Windows.Foundation.IAsyncOperationWithProgress`2<UInt32, UInt32>"; }
 };
-typedef IAsyncOperationWithProgress<UINT64,UINT64> __FIAsyncOperationWithProgress_2_UINT64_UINT64_t;
-#define ____FIAsyncOperationWithProgress_2_UINT64_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationWithProgress_2_UINT64_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_UINT64_UINT64_t
+typedef IAsyncOperationWithProgress<UINT32,UINT32> __FIAsyncOperationWithProgress_2_UINT32_UINT32_t;
+#define ____FIAsyncOperationWithProgress_2_UINT32_UINT32_FWD_DEFINED__
+#define __FIAsyncOperationWithProgress_2_UINT32_UINT32 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_UINT32_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64_USE */
+#endif /* DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0105 */
@@ -6483,25 +6504,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0110_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0106 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationProgressHandler_2_boolean_double_USE
-#define DEF___FIAsyncOperationProgressHandler_2_boolean_double_USE
+#ifndef DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64_USE
+#define DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("cadf3784-1200-5633-8280-163849914ab3"))
-IAsyncOperationProgressHandler<bool,double> : IAsyncOperationProgressHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>,double> {
+struct __declspec(uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c"))
+IAsyncOperationProgressHandler<UINT64,UINT64> : IAsyncOperationProgressHandler_impl<UINT64,UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationProgressHandler`2<Boolean, Double>"; }
+return L"Windows.Foundation.AsyncOperationProgressHandler`2<UInt64, UInt64>"; }
 };
-typedef IAsyncOperationProgressHandler<bool,double> __FIAsyncOperationProgressHandler_2_boolean_double_t;
-#define ____FIAsyncOperationProgressHandler_2_boolean_double_FWD_DEFINED__
-#define __FIAsyncOperationProgressHandler_2_boolean_double ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_boolean_double_t
+typedef IAsyncOperationProgressHandler<UINT64,UINT64> __FIAsyncOperationProgressHandler_2_UINT64_UINT64_t;
+#define ____FIAsyncOperationProgressHandler_2_UINT64_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationProgressHandler_2_UINT64_UINT64 ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_UINT64_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationProgressHandler_2_boolean_double_USE */
+#endif /* DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0106 */
@@ -6529,25 +6550,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0111_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0107 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_USE
-#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_USE
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("0ec5345b-b37a-5cd5-83d7-9590cdf445b5"))
-IAsyncOperationWithProgressCompletedHandler<bool,double> : IAsyncOperationWithProgressCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>,double> {
+struct __declspec(uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f"))
+IAsyncOperationWithProgressCompletedHandler<UINT64,UINT64> : IAsyncOperationWithProgressCompletedHandler_impl<UINT64,UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<Boolean, Double>"; }
+return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<UInt64, UInt64>"; }
 };
-typedef IAsyncOperationWithProgressCompletedHandler<bool,double> __FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_t;
-#define ____FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_FWD_DEFINED__
-#define __FIAsyncOperationWithProgressCompletedHandler_2_boolean_double ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_t
+typedef IAsyncOperationWithProgressCompletedHandler<UINT64,UINT64> __FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_t;
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_USE */
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0107 */
@@ -6575,25 +6596,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0112_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0108 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationWithProgress_2_boolean_double_USE
-#define DEF___FIAsyncOperationWithProgress_2_boolean_double_USE
+#ifndef DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64_USE
+#define DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("af873c66-2df0-5a95-ab54-25634da3ffa9"))
-IAsyncOperationWithProgress<bool,double> : IAsyncOperationWithProgress_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>,double> {
+struct __declspec(uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c"))
+IAsyncOperationWithProgress<UINT64,UINT64> : IAsyncOperationWithProgress_impl<UINT64,UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperationWithProgress`2<Boolean, Double>"; }
+return L"Windows.Foundation.IAsyncOperationWithProgress`2<UInt64, UInt64>"; }
 };
-typedef IAsyncOperationWithProgress<bool,double> __FIAsyncOperationWithProgress_2_boolean_double_t;
-#define ____FIAsyncOperationWithProgress_2_boolean_double_FWD_DEFINED__
-#define __FIAsyncOperationWithProgress_2_boolean_double ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_boolean_double_t
+typedef IAsyncOperationWithProgress<UINT64,UINT64> __FIAsyncOperationWithProgress_2_UINT64_UINT64_t;
+#define ____FIAsyncOperationWithProgress_2_UINT64_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationWithProgress_2_UINT64_UINT64 ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_UINT64_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationWithProgress_2_boolean_double_USE */
+#endif /* DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0108 */
@@ -6621,25 +6642,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0113_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0109 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_GUID_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_GUID_USE
+#ifndef DEF___FIAsyncOperationProgressHandler_2_boolean_double_USE
+#define DEF___FIAsyncOperationProgressHandler_2_boolean_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("5233899b-ba7e-504f-bb83-ceebac62decf"))
-IAsyncOperationCompletedHandler<GUID> : IAsyncOperationCompletedHandler_impl<GUID> {
+struct __declspec(uuid("cadf3784-1200-5633-8280-163849914ab3"))
+IAsyncOperationProgressHandler<bool,double> : IAsyncOperationProgressHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>,double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Guid>"; }
+return L"Windows.Foundation.AsyncOperationProgressHandler`2<Boolean, Double>"; }
 };
-typedef IAsyncOperationCompletedHandler<GUID> __FIAsyncOperationCompletedHandler_1_GUID_t;
-#define ____FIAsyncOperationCompletedHandler_1_GUID_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_GUID ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_GUID_t
+typedef IAsyncOperationProgressHandler<bool,double> __FIAsyncOperationProgressHandler_2_boolean_double_t;
+#define ____FIAsyncOperationProgressHandler_2_boolean_double_FWD_DEFINED__
+#define __FIAsyncOperationProgressHandler_2_boolean_double ABI::Windows::Foundation::__FIAsyncOperationProgressHandler_2_boolean_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_GUID_USE */
+#endif /* DEF___FIAsyncOperationProgressHandler_2_boolean_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0109 */
@@ -6667,25 +6688,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0114_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0110 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_GUID_USE
-#define DEF___FIAsyncOperation_1_GUID_USE
+#ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_USE
+#define DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("6607bc41-294b-5975-9c3f-4b49836d0916"))
-IAsyncOperation<GUID> : IAsyncOperation_impl<GUID> {
+struct __declspec(uuid("0ec5345b-b37a-5cd5-83d7-9590cdf445b5"))
+IAsyncOperationWithProgressCompletedHandler<bool,double> : IAsyncOperationWithProgressCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>,double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Guid>"; }
+return L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<Boolean, Double>"; }
 };
-typedef IAsyncOperation<GUID> __FIAsyncOperation_1_GUID_t;
-#define ____FIAsyncOperation_1_GUID_FWD_DEFINED__
-#define __FIAsyncOperation_1_GUID ABI::Windows::Foundation::__FIAsyncOperation_1_GUID_t
+typedef IAsyncOperationWithProgressCompletedHandler<bool,double> __FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_t;
+#define ____FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_FWD_DEFINED__
+#define __FIAsyncOperationWithProgressCompletedHandler_2_boolean_double ABI::Windows::Foundation::__FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_GUID_USE */
+#endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0110 */
@@ -6713,25 +6734,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0115_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0111 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
+#ifndef DEF___FIAsyncOperationWithProgress_2_boolean_double_USE
+#define DEF___FIAsyncOperationWithProgress_2_boolean_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41"))
-IAsyncOperationCompletedHandler<HSTRING> : IAsyncOperationCompletedHandler_impl<HSTRING> {
+struct __declspec(uuid("af873c66-2df0-5a95-ab54-25634da3ffa9"))
+IAsyncOperationWithProgress<bool,double> : IAsyncOperationWithProgress_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>,double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<String>"; }
+return L"Windows.Foundation.IAsyncOperationWithProgress`2<Boolean, Double>"; }
 };
-typedef IAsyncOperationCompletedHandler<HSTRING> __FIAsyncOperationCompletedHandler_1_HSTRING_t;
-#define ____FIAsyncOperationCompletedHandler_1_HSTRING_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_HSTRING_t
+typedef IAsyncOperationWithProgress<bool,double> __FIAsyncOperationWithProgress_2_boolean_double_t;
+#define ____FIAsyncOperationWithProgress_2_boolean_double_FWD_DEFINED__
+#define __FIAsyncOperationWithProgress_2_boolean_double ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_boolean_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE */
+#endif /* DEF___FIAsyncOperationWithProgress_2_boolean_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0111 */
@@ -6759,25 +6780,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0116_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0112 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_HSTRING_USE
-#define DEF___FIAsyncOperation_1_HSTRING_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_GUID_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_GUID_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79"))
-IAsyncOperation<HSTRING> : IAsyncOperation_impl<HSTRING> {
+struct __declspec(uuid("5233899b-ba7e-504f-bb83-ceebac62decf"))
+IAsyncOperationCompletedHandler<GUID> : IAsyncOperationCompletedHandler_impl<GUID> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<String>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Guid>"; }
 };
-typedef IAsyncOperation<HSTRING> __FIAsyncOperation_1_HSTRING_t;
-#define ____FIAsyncOperation_1_HSTRING_FWD_DEFINED__
-#define __FIAsyncOperation_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t
+typedef IAsyncOperationCompletedHandler<GUID> __FIAsyncOperationCompletedHandler_1_GUID_t;
+#define ____FIAsyncOperationCompletedHandler_1_GUID_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_GUID ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_GUID_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_HSTRING_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_GUID_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0112 */
@@ -6805,25 +6826,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0117_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0113 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE
+#ifndef DEF___FIAsyncOperation_1_GUID_USE
+#define DEF___FIAsyncOperation_1_GUID_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d"))
-IAsyncOperationCompletedHandler<IInspectable*> : IAsyncOperationCompletedHandler_impl<IInspectable*> {
+struct __declspec(uuid("6607bc41-294b-5975-9c3f-4b49836d0916"))
+IAsyncOperation<GUID> : IAsyncOperation_impl<GUID> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Object>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Guid>"; }
 };
-typedef IAsyncOperationCompletedHandler<IInspectable*> __FIAsyncOperationCompletedHandler_1_IInspectable_t;
-#define ____FIAsyncOperationCompletedHandler_1_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_IInspectable_t
+typedef IAsyncOperation<GUID> __FIAsyncOperation_1_GUID_t;
+#define ____FIAsyncOperation_1_GUID_FWD_DEFINED__
+#define __FIAsyncOperation_1_GUID ABI::Windows::Foundation::__FIAsyncOperation_1_GUID_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE */
+#endif /* DEF___FIAsyncOperation_1_GUID_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0113 */
@@ -6851,25 +6872,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0118_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0114 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_IInspectable_USE
-#define DEF___FIAsyncOperation_1_IInspectable_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f"))
-IAsyncOperation<IInspectable*> : IAsyncOperation_impl<IInspectable*> {
+struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41"))
+IAsyncOperationCompletedHandler<HSTRING> : IAsyncOperationCompletedHandler_impl<HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Object>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<String>"; }
 };
-typedef IAsyncOperation<IInspectable*> __FIAsyncOperation_1_IInspectable_t;
-#define ____FIAsyncOperation_1_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperation_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t
+typedef IAsyncOperationCompletedHandler<HSTRING> __FIAsyncOperationCompletedHandler_1_HSTRING_t;
+#define ____FIAsyncOperationCompletedHandler_1_HSTRING_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_IInspectable_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0114 */
@@ -6897,25 +6918,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0119_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0115 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_int_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_int_USE
+#ifndef DEF___FIAsyncOperation_1_HSTRING_USE
+#define DEF___FIAsyncOperation_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("d60cae9d-88cb-59f1-8576-3fba44796be8"))
-IAsyncOperationCompletedHandler<int> : IAsyncOperationCompletedHandler_impl<int> {
+struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79"))
+IAsyncOperation<HSTRING> : IAsyncOperation_impl<HSTRING> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Int32>"; }
+return L"Windows.Foundation.IAsyncOperation`1<String>"; }
 };
-typedef IAsyncOperationCompletedHandler<int> __FIAsyncOperationCompletedHandler_1_int_t;
-#define ____FIAsyncOperationCompletedHandler_1_int_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_int ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_int_t
+typedef IAsyncOperation<HSTRING> __FIAsyncOperation_1_HSTRING_t;
+#define ____FIAsyncOperation_1_HSTRING_FWD_DEFINED__
+#define __FIAsyncOperation_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_int_USE */
+#endif /* DEF___FIAsyncOperation_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0115 */
@@ -6943,25 +6964,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0120_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0116 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_int_USE
-#define DEF___FIAsyncOperation_1_int_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("968b9665-06ed-5774-8f53-8edeabd5f7b5"))
-IAsyncOperation<int> : IAsyncOperation_impl<int> {
+struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d"))
+IAsyncOperationCompletedHandler<IInspectable*> : IAsyncOperationCompletedHandler_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Int32>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Object>"; }
 };
-typedef IAsyncOperation<int> __FIAsyncOperation_1_int_t;
-#define ____FIAsyncOperation_1_int_FWD_DEFINED__
-#define __FIAsyncOperation_1_int ABI::Windows::Foundation::__FIAsyncOperation_1_int_t
+typedef IAsyncOperationCompletedHandler<IInspectable*> __FIAsyncOperationCompletedHandler_1_IInspectable_t;
+#define ____FIAsyncOperationCompletedHandler_1_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_int_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0116 */
@@ -6989,25 +7010,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0121_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0117 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___z__zint64_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___z__zint64_USE
+#ifndef DEF___FIAsyncOperation_1_IInspectable_USE
+#define DEF___FIAsyncOperation_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("d3ef5872-7d4e-59bb-95ed-79fe0f0dbe89"))
-IAsyncOperationCompletedHandler<__int64> : IAsyncOperationCompletedHandler_impl<__int64> {
+struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f"))
+IAsyncOperation<IInspectable*> : IAsyncOperation_impl<IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Int64>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Object>"; }
 };
-typedef IAsyncOperationCompletedHandler<__int64> __FIAsyncOperationCompletedHandler_1___z__zint64_t;
-#define ____FIAsyncOperationCompletedHandler_1___z__zint64_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___z__zint64 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___z__zint64_t
+typedef IAsyncOperation<IInspectable*> __FIAsyncOperation_1_IInspectable_t;
+#define ____FIAsyncOperation_1_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperation_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___z__zint64_USE */
+#endif /* DEF___FIAsyncOperation_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0117 */
@@ -7035,25 +7056,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0122_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0118 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___z__zint64_USE
-#define DEF___FIAsyncOperation_1___z__zint64_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_int_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_int_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("cc468085-4bef-5584-907c-9223d2679019"))
-IAsyncOperation<__int64> : IAsyncOperation_impl<__int64> {
+struct __declspec(uuid("d60cae9d-88cb-59f1-8576-3fba44796be8"))
+IAsyncOperationCompletedHandler<int> : IAsyncOperationCompletedHandler_impl<int> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Int64>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Int32>"; }
 };
-typedef IAsyncOperation<__int64> __FIAsyncOperation_1___z__zint64_t;
-#define ____FIAsyncOperation_1___z__zint64_FWD_DEFINED__
-#define __FIAsyncOperation_1___z__zint64 ABI::Windows::Foundation::__FIAsyncOperation_1___z__zint64_t
+typedef IAsyncOperationCompletedHandler<int> __FIAsyncOperationCompletedHandler_1_int_t;
+#define ____FIAsyncOperationCompletedHandler_1_int_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_int ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_int_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___z__zint64_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_int_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0118 */
@@ -7081,25 +7102,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0123_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0119 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_UINT32_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_UINT32_USE
+#ifndef DEF___FIAsyncOperation_1_int_USE
+#define DEF___FIAsyncOperation_1_int_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4"))
-IAsyncOperationCompletedHandler<UINT32> : IAsyncOperationCompletedHandler_impl<UINT32> {
+struct __declspec(uuid("968b9665-06ed-5774-8f53-8edeabd5f7b5"))
+IAsyncOperation<int> : IAsyncOperation_impl<int> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<UInt32>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Int32>"; }
 };
-typedef IAsyncOperationCompletedHandler<UINT32> __FIAsyncOperationCompletedHandler_1_UINT32_t;
-#define ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_UINT32_t
+typedef IAsyncOperation<int> __FIAsyncOperation_1_int_t;
+#define ____FIAsyncOperation_1_int_FWD_DEFINED__
+#define __FIAsyncOperation_1_int ABI::Windows::Foundation::__FIAsyncOperation_1_int_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_UINT32_USE */
+#endif /* DEF___FIAsyncOperation_1_int_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0119 */
@@ -7127,25 +7148,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0124_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0120 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_UINT32_USE
-#define DEF___FIAsyncOperation_1_UINT32_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___z__zint64_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___z__zint64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("ef60385f-be78-584b-aaef-7829ada2b0de"))
-IAsyncOperation<UINT32> : IAsyncOperation_impl<UINT32> {
+struct __declspec(uuid("d3ef5872-7d4e-59bb-95ed-79fe0f0dbe89"))
+IAsyncOperationCompletedHandler<__int64> : IAsyncOperationCompletedHandler_impl<__int64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<UInt32>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Int64>"; }
 };
-typedef IAsyncOperation<UINT32> __FIAsyncOperation_1_UINT32_t;
-#define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
-#define __FIAsyncOperation_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperation_1_UINT32_t
+typedef IAsyncOperationCompletedHandler<__int64> __FIAsyncOperationCompletedHandler_1___z__zint64_t;
+#define ____FIAsyncOperationCompletedHandler_1___z__zint64_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___z__zint64 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___z__zint64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_UINT32_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___z__zint64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0120 */
@@ -7173,25 +7194,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0125_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0121 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_UINT64_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_UINT64_USE
+#ifndef DEF___FIAsyncOperation_1___z__zint64_USE
+#define DEF___FIAsyncOperation_1___z__zint64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("ee8aeb02-fb00-51fa-8f57-32583ea241f9"))
-IAsyncOperationCompletedHandler<UINT64> : IAsyncOperationCompletedHandler_impl<UINT64> {
+struct __declspec(uuid("cc468085-4bef-5584-907c-9223d2679019"))
+IAsyncOperation<__int64> : IAsyncOperation_impl<__int64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<UInt64>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Int64>"; }
 };
-typedef IAsyncOperationCompletedHandler<UINT64> __FIAsyncOperationCompletedHandler_1_UINT64_t;
-#define ____FIAsyncOperationCompletedHandler_1_UINT64_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_UINT64 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_UINT64_t
+typedef IAsyncOperation<__int64> __FIAsyncOperation_1___z__zint64_t;
+#define ____FIAsyncOperation_1___z__zint64_FWD_DEFINED__
+#define __FIAsyncOperation_1___z__zint64 ABI::Windows::Foundation::__FIAsyncOperation_1___z__zint64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_UINT64_USE */
+#endif /* DEF___FIAsyncOperation_1___z__zint64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0121 */
@@ -7219,25 +7240,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0126_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0122 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_UINT64_USE
-#define DEF___FIAsyncOperation_1_UINT64_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_UINT32_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("2a70d630-0767-5f0a-a1c2-deb08126e26e"))
-IAsyncOperation<UINT64> : IAsyncOperation_impl<UINT64> {
+struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4"))
+IAsyncOperationCompletedHandler<UINT32> : IAsyncOperationCompletedHandler_impl<UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<UInt64>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<UInt32>"; }
 };
-typedef IAsyncOperation<UINT64> __FIAsyncOperation_1_UINT64_t;
-#define ____FIAsyncOperation_1_UINT64_FWD_DEFINED__
-#define __FIAsyncOperation_1_UINT64 ABI::Windows::Foundation::__FIAsyncOperation_1_UINT64_t
+typedef IAsyncOperationCompletedHandler<UINT32> __FIAsyncOperationCompletedHandler_1_UINT32_t;
+#define ____FIAsyncOperationCompletedHandler_1_UINT32_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_UINT64_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0122 */
@@ -7265,25 +7286,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0127_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0123 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIAsyncOperation_1_UINT32_USE
+#define DEF___FIAsyncOperation_1_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("89981889-1207-5ae6-9b28-ccc58f3aac6e"))
-IAsyncOperationCompletedHandler<__FIMapView_2_HSTRING_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIMapView_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("ef60385f-be78-584b-aaef-7829ada2b0de"))
+IAsyncOperation<UINT32> : IAsyncOperation_impl<UINT32> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IMapView`2<String, Object>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<UInt32>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_t
+typedef IAsyncOperation<UINT32> __FIAsyncOperation_1_UINT32_t;
+#define ____FIAsyncOperation_1_UINT32_FWD_DEFINED__
+#define __FIAsyncOperation_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperation_1_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIAsyncOperation_1_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0123 */
@@ -7311,25 +7332,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0128_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0124 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_USE
-#define DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_UINT64_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("5dcbee48-9965-51da-a461-177c885be7e5"))
-IAsyncOperation<__FIMapView_2_HSTRING_IInspectable*> : IAsyncOperation_impl<__FIMapView_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("ee8aeb02-fb00-51fa-8f57-32583ea241f9"))
+IAsyncOperationCompletedHandler<UINT64> : IAsyncOperationCompletedHandler_impl<UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IMapView`2<String, Object>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<UInt64>"; }
 };
-typedef IAsyncOperation<__FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t;
-#define ____FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t
+typedef IAsyncOperationCompletedHandler<UINT64> __FIAsyncOperationCompletedHandler_1_UINT64_t;
+#define ____FIAsyncOperationCompletedHandler_1_UINT64_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_UINT64 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0124 */
@@ -7357,25 +7378,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0129_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0125 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIAsyncOperation_1_UINT64_USE
+#define DEF___FIAsyncOperation_1_UINT64_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("7344f356-8399-5756-a2f8-abd50c4146ff"))
-IAsyncOperationCompletedHandler<__FIMap_2_HSTRING_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIMap_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("2a70d630-0767-5f0a-a1c2-deb08126e26e"))
+IAsyncOperation<UINT64> : IAsyncOperation_impl<UINT64> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IMap`2<String, Object>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<UInt64>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIMap_2_HSTRING_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_t
+typedef IAsyncOperation<UINT64> __FIAsyncOperation_1_UINT64_t;
+#define ____FIAsyncOperation_1_UINT64_FWD_DEFINED__
+#define __FIAsyncOperation_1_UINT64 ABI::Windows::Foundation::__FIAsyncOperation_1_UINT64_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIAsyncOperation_1_UINT64_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0125 */
@@ -7403,25 +7424,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0130_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0126 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_USE
-#define DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("127e39c7-07c1-58e5-b48e-3a4729839fec"))
-IAsyncOperation<__FIMap_2_HSTRING_IInspectable*> : IAsyncOperation_impl<__FIMap_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("89981889-1207-5ae6-9b28-ccc58f3aac6e"))
+IAsyncOperationCompletedHandler<__FIMapView_2_HSTRING_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIMapView_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IMap`2<String, Object>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IMapView`2<String, Object>>"; }
 };
-typedef IAsyncOperation<__FIMap_2_HSTRING_IInspectable*> __FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t;
-#define ____FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t
+typedef IAsyncOperationCompletedHandler<__FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0126 */
@@ -7449,25 +7470,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0131_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0127 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE
+#ifndef DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("7c7899be-5f2e-5bf3-ade5-ad98b772c7cd"))
-IAsyncOperationCompletedHandler<__FIVectorView_1_HSTRING*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_HSTRING*> {
+struct __declspec(uuid("5dcbee48-9965-51da-a461-177c885be7e5"))
+IAsyncOperation<__FIMapView_2_HSTRING_IInspectable*> : IAsyncOperation_impl<__FIMapView_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<String>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IMapView`2<String, Object>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIVectorView_1_HSTRING*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_t
+typedef IAsyncOperation<__FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE */
+#endif /* DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0127 */
@@ -7495,25 +7516,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0132_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0128 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE
-#define DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("2f92b529-119b-575a-a419-3904b4e41af2"))
-IAsyncOperation<__FIVectorView_1_HSTRING*> : IAsyncOperation_impl<__FIVectorView_1_HSTRING*> {
+struct __declspec(uuid("7344f356-8399-5756-a2f8-abd50c4146ff"))
+IAsyncOperationCompletedHandler<__FIMap_2_HSTRING_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIMap_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<String>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IMap`2<String, Object>>"; }
 };
-typedef IAsyncOperation<__FIVectorView_1_HSTRING*> __FIAsyncOperation_1___FIVectorView_1_HSTRING_t;
-#define ____FIAsyncOperation_1___FIVectorView_1_HSTRING_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIVectorView_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t
+typedef IAsyncOperationCompletedHandler<__FIMap_2_HSTRING_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0128 */
@@ -7541,25 +7562,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0133_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0129 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_USE
+#ifndef DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_USE
+#define DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("261a9d81-f58f-5283-9461-ca3e31c1123c"))
-IAsyncOperationCompletedHandler<__FIVectorView_1_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_IInspectable*> {
+struct __declspec(uuid("127e39c7-07c1-58e5-b48e-3a4729839fec"))
+IAsyncOperation<__FIMap_2_HSTRING_IInspectable*> : IAsyncOperation_impl<__FIMap_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Object>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IMap`2<String, Object>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIVectorView_1_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_t
+typedef IAsyncOperation<__FIMap_2_HSTRING_IInspectable*> __FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t;
+#define ____FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_USE */
+#endif /* DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0129 */
@@ -7587,25 +7608,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0134_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0130 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable_USE
-#define DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("d671d332-22aa-5597-8dcc-2459eab49418"))
-IAsyncOperation<__FIVectorView_1_IInspectable*> : IAsyncOperation_impl<__FIVectorView_1_IInspectable*> {
+struct __declspec(uuid("7c7899be-5f2e-5bf3-ade5-ad98b772c7cd"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_HSTRING*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Object>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<String>>"; }
 };
-typedef IAsyncOperation<__FIVectorView_1_IInspectable*> __FIAsyncOperation_1___FIVectorView_1_IInspectable_t;
-#define ____FIAsyncOperation_1___FIVectorView_1_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIVectorView_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_IInspectable_t
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_HSTRING*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0130 */
@@ -7633,25 +7654,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0135_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0131 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("55772f29-da64-5c87-871c-074337a84573"))
-IAsyncOperationCompletedHandler<__FIVectorView_1_UINT32*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_UINT32*> {
+struct __declspec(uuid("2f92b529-119b-575a-a419-3904b4e41af2"))
+IAsyncOperation<__FIVectorView_1_HSTRING*> : IAsyncOperation_impl<__FIVectorView_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<UInt32>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<String>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIVectorView_1_UINT32*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_t
+typedef IAsyncOperation<__FIVectorView_1_HSTRING*> __FIAsyncOperation_1___FIVectorView_1_HSTRING_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_HSTRING_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0131 */
@@ -7679,25 +7700,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0136_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0132 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE
-#define DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("52c56f3c-713a-5162-9e62-362ce7ed53be"))
-IAsyncOperation<__FIVectorView_1_UINT32*> : IAsyncOperation_impl<__FIVectorView_1_UINT32*> {
+struct __declspec(uuid("261a9d81-f58f-5283-9461-ca3e31c1123c"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<UInt32>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Object>>"; }
 };
-typedef IAsyncOperation<__FIVectorView_1_UINT32*> __FIAsyncOperation_1___FIVectorView_1_UINT32_t;
-#define ____FIAsyncOperation_1___FIVectorView_1_UINT32_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIVectorView_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_UINT32_t
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0132 */
@@ -7725,25 +7746,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0137_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0133 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("a782a13a-16a0-5326-b985-c4ca49e54e77"))
-IAsyncOperationCompletedHandler<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("d671d332-22aa-5597-8dcc-2459eab49418"))
+IAsyncOperation<__FIVectorView_1_IInspectable*> : IAsyncOperation_impl<__FIVectorView_1_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Collections.IMapView`2<String, Object>>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Object>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t
+typedef IAsyncOperation<__FIVectorView_1_IInspectable*> __FIAsyncOperation_1___FIVectorView_1_IInspectable_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0133 */
@@ -7771,25 +7792,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0138_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0134 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
-#define DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("fc227365-219d-5d59-8b5b-58eb0a91ca0a"))
-IAsyncOperation<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> : IAsyncOperation_impl<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> {
+struct __declspec(uuid("55772f29-da64-5c87-871c-074337a84573"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_UINT32*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_UINT32*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Collections.IMapView`2<String, Object>>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<UInt32>>"; }
 };
-typedef IAsyncOperation<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t;
-#define ____FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_UINT32*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0134 */
@@ -7817,25 +7838,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0139_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0135 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_USE
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("fae4b396-97c8-5cc3-bf88-ea3098edf6b2"))
-IAsyncOperationCompletedHandler<__FIVector_1_HSTRING*> : IAsyncOperationCompletedHandler_impl<__FIVector_1_HSTRING*> {
+struct __declspec(uuid("52c56f3c-713a-5162-9e62-362ce7ed53be"))
+IAsyncOperation<__FIVectorView_1_UINT32*> : IAsyncOperation_impl<__FIVectorView_1_UINT32*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVector`1<String>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<UInt32>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIVector_1_HSTRING*> __FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_t
+typedef IAsyncOperation<__FIVectorView_1_UINT32*> __FIAsyncOperation_1___FIVectorView_1_UINT32_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_UINT32_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_UINT32 ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_UINT32_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_USE */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0135 */
@@ -7863,25 +7884,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0140_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0136 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIVector_1_HSTRING_USE
-#define DEF___FIAsyncOperation_1___FIVector_1_HSTRING_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("92b02cd3-aa6e-573d-bc03-8d2309cba3eb"))
-IAsyncOperation<__FIVector_1_HSTRING*> : IAsyncOperation_impl<__FIVector_1_HSTRING*> {
+struct __declspec(uuid("a782a13a-16a0-5326-b985-c4ca49e54e77"))
+IAsyncOperationCompletedHandler<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVector`1<String>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Collections.IMapView`2<String, Object>>>"; }
 };
-typedef IAsyncOperation<__FIVector_1_HSTRING*> __FIAsyncOperation_1___FIVector_1_HSTRING_t;
-#define ____FIAsyncOperation_1___FIVector_1_HSTRING_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIVector_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIVector_1_HSTRING_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0136 */
@@ -7909,25 +7930,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0141_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0137 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
-#define DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c"))
-IReference<struct ABI::Windows::Foundation::DateTime> : IReference_impl<struct ABI::Windows::Foundation::DateTime> {
+struct __declspec(uuid("fc227365-219d-5d59-8b5b-58eb0a91ca0a"))
+IAsyncOperation<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> : IAsyncOperation_impl<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Windows.Foundation.DateTime>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Collections.IMapView`2<String, Object>>>"; }
 };
-typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Windows__CFoundation__CDateTime_t;
-#define ____FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
-#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t
+typedef IAsyncOperation<__FIVectorView_1___FIMapView_2_HSTRING_IInspectable*> __FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0137 */
@@ -7955,25 +7976,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0142_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0138 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("c4225d5e-1b7c-571e-9b88-2ab2eefa8c8f"))
-IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CDateTime*> : IAsyncOperationCompletedHandler_impl<__FIReference_1_Windows__CFoundation__CDateTime*> {
+struct __declspec(uuid("fae4b396-97c8-5cc3-bf88-ea3098edf6b2"))
+IAsyncOperationCompletedHandler<__FIVector_1_HSTRING*> : IAsyncOperationCompletedHandler_impl<__FIVector_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.IReference`1<Windows.Foundation.DateTime>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVector`1<String>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CDateTime*> __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_t
+typedef IAsyncOperationCompletedHandler<__FIVector_1_HSTRING*> __FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0138 */
@@ -8001,25 +8022,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0143_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0139 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_USE
-#define DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_USE
+#ifndef DEF___FIAsyncOperation_1___FIVector_1_HSTRING_USE
+#define DEF___FIAsyncOperation_1___FIVector_1_HSTRING_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("2025b34f-4214-56ab-abfe-2fbe6595da9d"))
-IAsyncOperation<__FIReference_1_Windows__CFoundation__CDateTime*> : IAsyncOperation_impl<__FIReference_1_Windows__CFoundation__CDateTime*> {
+struct __declspec(uuid("92b02cd3-aa6e-573d-bc03-8d2309cba3eb"))
+IAsyncOperation<__FIVector_1_HSTRING*> : IAsyncOperation_impl<__FIVector_1_HSTRING*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.IReference`1<Windows.Foundation.DateTime>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVector`1<String>>"; }
 };
-typedef IAsyncOperation<__FIReference_1_Windows__CFoundation__CDateTime*> __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_t;
-#define ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_t
+typedef IAsyncOperation<__FIVector_1_HSTRING*> __FIAsyncOperation_1___FIVector_1_HSTRING_t;
+#define ____FIAsyncOperation_1___FIVector_1_HSTRING_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVector_1_HSTRING ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_USE */
+#endif /* DEF___FIAsyncOperation_1___FIVector_1_HSTRING_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0139 */
@@ -8047,25 +8068,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0144_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0140 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
-#define DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800"))
-IReference<struct ABI::Windows::Foundation::TimeSpan> : IReference_impl<struct ABI::Windows::Foundation::TimeSpan> {
+struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c"))
+IReference<struct ABI::Windows::Foundation::DateTime> : IReference_impl<struct ABI::Windows::Foundation::DateTime> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>"; }
+return L"Windows.Foundation.IReference`1<Windows.Foundation.DateTime>"; }
 };
-typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Windows__CFoundation__CTimeSpan_t;
-#define ____FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
-#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t
+typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Windows__CFoundation__CDateTime_t;
+#define ____FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+#endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0140 */
@@ -8093,25 +8114,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0145_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0141 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
-#define DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("e137b677-bfef-54b0-b200-95c5c2902a25"))
-IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CTimeSpan*> : IAsyncOperationCompletedHandler_impl<__FIReference_1_Windows__CFoundation__CTimeSpan*> {
+struct __declspec(uuid("c4225d5e-1b7c-571e-9b88-2ab2eefa8c8f"))
+IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CDateTime*> : IAsyncOperationCompletedHandler_impl<__FIReference_1_Windows__CFoundation__CDateTime*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.IReference`1<Windows.Foundation.DateTime>>"; }
 };
-typedef IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CTimeSpan*> __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_t
+typedef IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CDateTime*> __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0141 */
@@ -8139,25 +8160,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0146_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0142 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
-#define DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#ifndef DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("24a901ad-910f-5c0f-b23c-67007577a558"))
-IAsyncOperation<__FIReference_1_Windows__CFoundation__CTimeSpan*> : IAsyncOperation_impl<__FIReference_1_Windows__CFoundation__CTimeSpan*> {
+struct __declspec(uuid("2025b34f-4214-56ab-abfe-2fbe6595da9d"))
+IAsyncOperation<__FIReference_1_Windows__CFoundation__CDateTime*> : IAsyncOperation_impl<__FIReference_1_Windows__CFoundation__CDateTime*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.IReference`1<Windows.Foundation.DateTime>>"; }
 };
-typedef IAsyncOperation<__FIReference_1_Windows__CFoundation__CTimeSpan*> __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_t;
-#define ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
-#define __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_t
+typedef IAsyncOperation<__FIReference_1_Windows__CFoundation__CDateTime*> __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_t;
+#define ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+#endif /* DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0142 */
@@ -8185,25 +8206,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0147_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0143 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_USE
+#ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#define DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("ad46f1cc-2bb0-585c-9885-03c2780d4d58"))
-IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Uri*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
+struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800"))
+IReference<struct ABI::Windows::Foundation::TimeSpan> : IReference_impl<struct ABI::Windows::Foundation::TimeSpan> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Uri>"; }
+return L"Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>"; }
 };
-typedef IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Uri*> __FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_t;
-#define ____FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_t
+typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Windows__CFoundation__CTimeSpan_t;
+#define ____FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_USE */
+#endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0143 */
@@ -8231,25 +8252,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0148_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0144 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_Windows__CFoundation__CUri_USE
-#define DEF___FIAsyncOperation_1_Windows__CFoundation__CUri_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("641cb9dd-a28d-59e2-b8db-a227eda6cf2e"))
-IAsyncOperation<ABI::Windows::Foundation::Uri*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
+struct __declspec(uuid("e137b677-bfef-54b0-b200-95c5c2902a25"))
+IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CTimeSpan*> : IAsyncOperationCompletedHandler_impl<__FIReference_1_Windows__CFoundation__CTimeSpan*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Uri>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>>"; }
 };
-typedef IAsyncOperation<ABI::Windows::Foundation::Uri*> __FIAsyncOperation_1_Windows__CFoundation__CUri_t;
-#define ____FIAsyncOperation_1_Windows__CFoundation__CUri_FWD_DEFINED__
-#define __FIAsyncOperation_1_Windows__CFoundation__CUri ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t
+typedef IAsyncOperationCompletedHandler<__FIReference_1_Windows__CFoundation__CTimeSpan*> __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_Windows__CFoundation__CUri_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0144 */
@@ -8277,25 +8298,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0149_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0145 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#ifndef DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#define DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
-IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
+struct __declspec(uuid("24a901ad-910f-5c0f-b23c-67007577a558"))
+IAsyncOperation<__FIReference_1_Windows__CFoundation__CTimeSpan*> : IAsyncOperation_impl<__FIReference_1_Windows__CFoundation__CTimeSpan*> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>>"; }
 };
-typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
-#define ____FIAsyncOperationCompletedHandler_1_boolean_FWD_DEFINED__
-#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
+typedef IAsyncOperation<__FIReference_1_Windows__CFoundation__CTimeSpan*> __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_t;
+#define ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
+#endif /* DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0145 */
@@ -8323,25 +8344,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0150_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0146 */
 /* [local] */ 
 
-#ifndef DEF___FIAsyncOperation_1_boolean_USE
-#define DEF___FIAsyncOperation_1_boolean_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
-IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
+struct __declspec(uuid("ad46f1cc-2bb0-585c-9885-03c2780d4d58"))
+IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Uri*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Uri>"; }
 };
-typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
-#define ____FIAsyncOperation_1_boolean_FWD_DEFINED__
-#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Uri*> __FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIAsyncOperation_1_boolean_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0146 */
@@ -8369,25 +8390,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0151_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0147 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_byte_USE
-#define DEF___FIReference_1_byte_USE
+#ifndef DEF___FIAsyncOperation_1_Windows__CFoundation__CUri_USE
+#define DEF___FIAsyncOperation_1_Windows__CFoundation__CUri_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("e5198cc8-2873-55f5-b0a1-84ff9e4aad62"))
-IReference<byte> : IReference_impl<byte> {
+struct __declspec(uuid("641cb9dd-a28d-59e2-b8db-a227eda6cf2e"))
+IAsyncOperation<ABI::Windows::Foundation::Uri*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Foundation::Uri*, ABI::Windows::Foundation::IUriRuntimeClass*>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<UInt8>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Uri>"; }
 };
-typedef IReference<byte> __FIReference_1_byte_t;
-#define ____FIReference_1_byte_FWD_DEFINED__
-#define __FIReference_1_byte ABI::Windows::Foundation::__FIReference_1_byte_t
+typedef IAsyncOperation<ABI::Windows::Foundation::Uri*> __FIAsyncOperation_1_Windows__CFoundation__CUri_t;
+#define ____FIAsyncOperation_1_Windows__CFoundation__CUri_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CFoundation__CUri ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_byte_USE */
+#endif /* DEF___FIAsyncOperation_1_Windows__CFoundation__CUri_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0147 */
@@ -8415,25 +8436,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0152_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0148 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_double_USE
-#define DEF___FIReference_1_double_USE
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2"))
-IReference<double> : IReference_impl<double> {
+struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
+IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Double>"; }
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; }
 };
-typedef IReference<double> __FIReference_1_double_t;
-#define ____FIReference_1_double_FWD_DEFINED__
-#define __FIReference_1_double ABI::Windows::Foundation::__FIReference_1_double_t
+typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
+#define ____FIAsyncOperationCompletedHandler_1_boolean_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_double_USE */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0148 */
@@ -8461,25 +8482,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0153_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0149 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_float_USE
-#define DEF___FIReference_1_float_USE
+#ifndef DEF___FIAsyncOperation_1_boolean_USE
+#define DEF___FIAsyncOperation_1_boolean_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("719cc2ba-3e76-5def-9f1a-38d85a145ea8"))
-IReference<float> : IReference_impl<float> {
+struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
+IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Single>"; }
+return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; }
 };
-typedef IReference<float> __FIReference_1_float_t;
-#define ____FIReference_1_float_FWD_DEFINED__
-#define __FIReference_1_float ABI::Windows::Foundation::__FIReference_1_float_t
+typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
+#define ____FIAsyncOperation_1_boolean_FWD_DEFINED__
+#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_float_USE */
+#endif /* DEF___FIAsyncOperation_1_boolean_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0149 */
@@ -8507,25 +8528,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0154_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0150 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_GUID_USE
-#define DEF___FIReference_1_GUID_USE
+#ifndef DEF___FIReference_1_byte_USE
+#define DEF___FIReference_1_byte_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("7d50f649-632c-51f9-849a-ee49428933ea"))
-IReference<GUID> : IReference_impl<GUID> {
+struct __declspec(uuid("e5198cc8-2873-55f5-b0a1-84ff9e4aad62"))
+IReference<byte> : IReference_impl<byte> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Guid>"; }
+return L"Windows.Foundation.IReference`1<UInt8>"; }
 };
-typedef IReference<GUID> __FIReference_1_GUID_t;
-#define ____FIReference_1_GUID_FWD_DEFINED__
-#define __FIReference_1_GUID ABI::Windows::Foundation::__FIReference_1_GUID_t
+typedef IReference<byte> __FIReference_1_byte_t;
+#define ____FIReference_1_byte_FWD_DEFINED__
+#define __FIReference_1_byte ABI::Windows::Foundation::__FIReference_1_byte_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_GUID_USE */
+#endif /* DEF___FIReference_1_byte_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0150 */
@@ -8553,25 +8574,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0155_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0151 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_short_USE
-#define DEF___FIReference_1_short_USE
+#ifndef DEF___FIReference_1_double_USE
+#define DEF___FIReference_1_double_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("6ec9e41b-6709-5647-9918-a1270110fc4e"))
-IReference<short> : IReference_impl<short> {
+struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2"))
+IReference<double> : IReference_impl<double> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Int16>"; }
+return L"Windows.Foundation.IReference`1<Double>"; }
 };
-typedef IReference<short> __FIReference_1_short_t;
-#define ____FIReference_1_short_FWD_DEFINED__
-#define __FIReference_1_short ABI::Windows::Foundation::__FIReference_1_short_t
+typedef IReference<double> __FIReference_1_double_t;
+#define ____FIReference_1_double_FWD_DEFINED__
+#define __FIReference_1_double ABI::Windows::Foundation::__FIReference_1_double_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_short_USE */
+#endif /* DEF___FIReference_1_double_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0151 */
@@ -8599,25 +8620,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0156_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0152 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_int_USE
-#define DEF___FIReference_1_int_USE
+#ifndef DEF___FIReference_1_float_USE
+#define DEF___FIReference_1_float_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4"))
-IReference<int> : IReference_impl<int> {
+struct __declspec(uuid("719cc2ba-3e76-5def-9f1a-38d85a145ea8"))
+IReference<float> : IReference_impl<float> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Int32>"; }
+return L"Windows.Foundation.IReference`1<Single>"; }
 };
-typedef IReference<int> __FIReference_1_int_t;
-#define ____FIReference_1_int_FWD_DEFINED__
-#define __FIReference_1_int ABI::Windows::Foundation::__FIReference_1_int_t
+typedef IReference<float> __FIReference_1_float_t;
+#define ____FIReference_1_float_FWD_DEFINED__
+#define __FIReference_1_float ABI::Windows::Foundation::__FIReference_1_float_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_int_USE */
+#endif /* DEF___FIReference_1_float_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0152 */
@@ -8645,25 +8666,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0157_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0153 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1___z__zint64_USE
-#define DEF___FIReference_1___z__zint64_USE
+#ifndef DEF___FIReference_1_GUID_USE
+#define DEF___FIReference_1_GUID_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("4dda9e24-e69f-5c6a-a0a6-93427365af2a"))
-IReference<__int64> : IReference_impl<__int64> {
+struct __declspec(uuid("7d50f649-632c-51f9-849a-ee49428933ea"))
+IReference<GUID> : IReference_impl<GUID> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<Int64>"; }
+return L"Windows.Foundation.IReference`1<Guid>"; }
 };
-typedef IReference<__int64> __FIReference_1___z__zint64_t;
-#define ____FIReference_1___z__zint64_FWD_DEFINED__
-#define __FIReference_1___z__zint64 ABI::Windows::Foundation::__FIReference_1___z__zint64_t
+typedef IReference<GUID> __FIReference_1_GUID_t;
+#define ____FIReference_1_GUID_FWD_DEFINED__
+#define __FIReference_1_GUID ABI::Windows::Foundation::__FIReference_1_GUID_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1___z__zint64_USE */
+#endif /* DEF___FIReference_1_GUID_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0153 */
@@ -8691,25 +8712,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0158_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0154 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_UINT32_USE
-#define DEF___FIReference_1_UINT32_USE
+#ifndef DEF___FIReference_1_short_USE
+#define DEF___FIReference_1_short_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3"))
-IReference<UINT32> : IReference_impl<UINT32> {
+struct __declspec(uuid("6ec9e41b-6709-5647-9918-a1270110fc4e"))
+IReference<short> : IReference_impl<short> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<UInt32>"; }
+return L"Windows.Foundation.IReference`1<Int16>"; }
 };
-typedef IReference<UINT32> __FIReference_1_UINT32_t;
-#define ____FIReference_1_UINT32_FWD_DEFINED__
-#define __FIReference_1_UINT32 ABI::Windows::Foundation::__FIReference_1_UINT32_t
+typedef IReference<short> __FIReference_1_short_t;
+#define ____FIReference_1_short_FWD_DEFINED__
+#define __FIReference_1_short ABI::Windows::Foundation::__FIReference_1_short_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_UINT32_USE */
+#endif /* DEF___FIReference_1_short_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0154 */
@@ -8737,25 +8758,25 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0159_v0_0_s_ifspec
 /* interface __MIDL_itf_windows2Efoundation_0000_0155 */
 /* [local] */ 
 
-#ifndef DEF___FIReference_1_UINT64_USE
-#define DEF___FIReference_1_UINT64_USE
+#ifndef DEF___FIReference_1_int_USE
+#define DEF___FIReference_1_int_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("6755e376-53bb-568b-a11d-17239868309e"))
-IReference<UINT64> : IReference_impl<UINT64> {
+struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4"))
+IReference<int> : IReference_impl<int> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IReference`1<UInt64>"; }
+return L"Windows.Foundation.IReference`1<Int32>"; }
 };
-typedef IReference<UINT64> __FIReference_1_UINT64_t;
-#define ____FIReference_1_UINT64_FWD_DEFINED__
-#define __FIReference_1_UINT64 ABI::Windows::Foundation::__FIReference_1_UINT64_t
+typedef IReference<int> __FIReference_1_int_t;
+#define ____FIReference_1_int_FWD_DEFINED__
+#define __FIReference_1_int ABI::Windows::Foundation::__FIReference_1_int_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FIReference_1_UINT64_USE */
+#endif /* DEF___FIReference_1_int_USE */
 
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0155 */
@@ -8781,6 +8802,144 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0160_v0_0_c_ifspec
 extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0160_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Efoundation_0000_0156 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1___z__zint64_USE
+#define DEF___FIReference_1___z__zint64_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4dda9e24-e69f-5c6a-a0a6-93427365af2a"))
+IReference<__int64> : IReference_impl<__int64> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Int64>"; }
+};
+typedef IReference<__int64> __FIReference_1___z__zint64_t;
+#define ____FIReference_1___z__zint64_FWD_DEFINED__
+#define __FIReference_1___z__zint64 ABI::Windows::Foundation::__FIReference_1___z__zint64_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1___z__zint64_USE */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0156 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0156_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0161 */
+
+
+
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0161 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0161_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0157 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_UINT32_USE
+#define DEF___FIReference_1_UINT32_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3"))
+IReference<UINT32> : IReference_impl<UINT32> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<UInt32>"; }
+};
+typedef IReference<UINT32> __FIReference_1_UINT32_t;
+#define ____FIReference_1_UINT32_FWD_DEFINED__
+#define __FIReference_1_UINT32 ABI::Windows::Foundation::__FIReference_1_UINT32_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_UINT32_USE */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0157 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0157_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0162 */
+
+
+
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0162 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0162_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0158 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_UINT64_USE
+#define DEF___FIReference_1_UINT64_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("6755e376-53bb-568b-a11d-17239868309e"))
+IReference<UINT64> : IReference_impl<UINT64> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<UInt64>"; }
+};
+typedef IReference<UINT64> __FIReference_1_UINT64_t;
+#define ____FIReference_1_UINT64_FWD_DEFINED__
+#define __FIReference_1_UINT64 ABI::Windows::Foundation::__FIReference_1_UINT64_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_UINT64_USE */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0158 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0158_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0163 */
+
+
+
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0163 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0163_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0159 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CPoint_USE
@@ -8814,30 +8973,30 @@ struct Rect;
 #endif
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0156 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0159 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0159_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0161 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0161 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0164 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0161_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0164 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0157 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0164_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0160 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CRect_USE
@@ -8861,29 +9020,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CFoundation__CRect_USE */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0157 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0160 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0160_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0162 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0162 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0165 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0162_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0165 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0158 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0165_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0161 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_boolean_USE
@@ -8907,29 +9066,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0158 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0161 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0161_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0163 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0163 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0166 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0163_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0166 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0159 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0166_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0162 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_IInspectable_USE
@@ -8963,30 +9122,30 @@ interface IMemoryBufferReference;
 #endif
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0159 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0162 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0162_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0164 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0164 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0167 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0164_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0167 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0160 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0167_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0163 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_USE
@@ -9134,7 +9293,7 @@ class WwwFormUrlDecoderEntry;
 #endif
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0160 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0163 */
 /* [local] */ 
 
 
@@ -9254,23 +9413,23 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0163_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0165 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0165 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0168 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0165_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0168 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0161 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0168_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0164 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_byte
@@ -9278,13 +9437,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0165_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0161 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_byte_INTERFACE_DEFINED__
 #define ____FIIterator_1_byte_INTERFACE_DEFINED__
@@ -9428,35 +9587,35 @@ EXTERN_C const IID IID___FIIterator_1_byte;
 #endif 	/* ____FIIterator_1_byte_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0162 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0165 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_byte */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0162 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0165_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0166 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0166 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0169 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0166_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0169 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0163 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0169_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0166 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_byte
@@ -9464,13 +9623,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0166_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0163 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_byte_INTERFACE_DEFINED__
 #define ____FIIterable_1_byte_INTERFACE_DEFINED__
@@ -9580,35 +9739,35 @@ EXTERN_C const IID IID___FIIterable_1_byte;
 #endif 	/* ____FIIterable_1_byte_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0164 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0167 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_byte */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0164 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0167_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0167 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0167 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0170 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0167_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0170 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0165 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0170_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0168 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_double
@@ -9616,13 +9775,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0167_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0165 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_double_INTERFACE_DEFINED__
 #define ____FIIterator_1_double_INTERFACE_DEFINED__
@@ -9766,35 +9925,35 @@ EXTERN_C const IID IID___FIIterator_1_double;
 #endif 	/* ____FIIterator_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0166 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0169 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0166 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0169_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0168 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0168 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0171 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0168_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0171 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0167 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0171_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0170 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_double
@@ -9802,13 +9961,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0168_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0167 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_double_INTERFACE_DEFINED__
 #define ____FIIterable_1_double_INTERFACE_DEFINED__
@@ -9918,35 +10077,35 @@ EXTERN_C const IID IID___FIIterable_1_double;
 #endif 	/* ____FIIterable_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0168 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0171 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0168 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0171_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0169 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0169 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0172 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0169_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0172 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0169 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0172_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0172 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_float
@@ -9954,13 +10113,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0169_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0169 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_float_INTERFACE_DEFINED__
 #define ____FIIterator_1_float_INTERFACE_DEFINED__
@@ -10104,35 +10263,35 @@ EXTERN_C const IID IID___FIIterator_1_float;
 #endif 	/* ____FIIterator_1_float_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0170 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0173 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_float */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0170 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0173_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0170 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0170 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0173 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0170_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0173 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0171 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0173_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0174 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_float
@@ -10140,13 +10299,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0170_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0171 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_float_INTERFACE_DEFINED__
 #define ____FIIterable_1_float_INTERFACE_DEFINED__
@@ -10256,35 +10415,35 @@ EXTERN_C const IID IID___FIIterable_1_float;
 #endif 	/* ____FIIterable_1_float_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0172 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0175 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_float */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0172 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0175_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0171 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0171 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0174 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0171_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0174 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0173 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0174_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0176 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_GUID
@@ -10292,13 +10451,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0171_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0173 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_GUID_INTERFACE_DEFINED__
 #define ____FIIterator_1_GUID_INTERFACE_DEFINED__
@@ -10442,35 +10601,35 @@ EXTERN_C const IID IID___FIIterator_1_GUID;
 #endif 	/* ____FIIterator_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0174 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0177 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0174 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0177_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0172 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0172 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0175 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0172_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0175 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0175 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0175_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0178 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_GUID
@@ -10478,13 +10637,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0172_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0175 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_GUID_INTERFACE_DEFINED__
 #define ____FIIterable_1_GUID_INTERFACE_DEFINED__
@@ -10594,35 +10753,35 @@ EXTERN_C const IID IID___FIIterable_1_GUID;
 #endif 	/* ____FIIterable_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0176 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0179 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0176 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0179_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0173 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0173 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0176 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0173_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0176 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0177 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0176_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0180 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING
@@ -10630,13 +10789,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0173_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0177 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
@@ -10780,35 +10939,35 @@ EXTERN_C const IID IID___FIIterator_1_HSTRING;
 #endif 	/* ____FIIterator_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0178 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0181 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0178 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0181 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0181_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0174 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0174 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0177 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0174_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0177 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0179 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0177_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0182 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING
@@ -10816,13 +10975,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0174_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0179 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0182 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0182_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
@@ -10932,35 +11091,35 @@ EXTERN_C const IID IID___FIIterable_1_HSTRING;
 #endif 	/* ____FIIterable_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0180 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0183 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0180 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0183 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0183_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0175 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0175 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0178 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0175_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0178 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0181 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0178_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0184 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_IInspectable
@@ -10968,13 +11127,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0175_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0181 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterator_1_IInspectable_INTERFACE_DEFINED__
@@ -11118,35 +11277,35 @@ EXTERN_C const IID IID___FIIterator_1_IInspectable;
 #endif 	/* ____FIIterator_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0182 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0185 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0182 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0185_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0176 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0176 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0179 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0176_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0179 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0183 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0179_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0186 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_IInspectable
@@ -11154,13 +11313,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0176_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0183 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterable_1_IInspectable_INTERFACE_DEFINED__
@@ -11270,35 +11429,35 @@ EXTERN_C const IID IID___FIIterable_1_IInspectable;
 #endif 	/* ____FIIterable_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0184 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0187 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0184 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0187_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0177 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0177 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0180 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0177_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0180 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0185 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0180_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0188 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_int
@@ -11306,13 +11465,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0177_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0185 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0188 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0188_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_int_INTERFACE_DEFINED__
 #define ____FIIterator_1_int_INTERFACE_DEFINED__
@@ -11456,35 +11615,35 @@ EXTERN_C const IID IID___FIIterator_1_int;
 #endif 	/* ____FIIterator_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0186 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0189 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0186 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0189 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0189_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0178 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0178 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0181 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0178_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0181 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0187 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0181_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0190 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_int
@@ -11492,13 +11651,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0178_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0187 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0190 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0190_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_int_INTERFACE_DEFINED__
 #define ____FIIterable_1_int_INTERFACE_DEFINED__
@@ -11608,35 +11767,35 @@ EXTERN_C const IID IID___FIIterable_1_int;
 #endif 	/* ____FIIterable_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0188 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0191 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0188 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0191 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0191_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0179 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0179 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0182 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0179_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0182 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0189 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0182_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0192 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_UINT32
@@ -11644,13 +11803,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0179_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0189 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_UINT32_INTERFACE_DEFINED__
 #define ____FIIterator_1_UINT32_INTERFACE_DEFINED__
@@ -11794,35 +11953,35 @@ EXTERN_C const IID IID___FIIterator_1_UINT32;
 #endif 	/* ____FIIterator_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0190 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0193 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0190 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0193_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0180 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0180 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0183 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0180_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0183 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0191 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0183_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0194 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_UINT32
@@ -11830,13 +11989,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0180_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0191 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0194_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_UINT32_INTERFACE_DEFINED__
 #define ____FIIterable_1_UINT32_INTERFACE_DEFINED__
@@ -11946,35 +12105,35 @@ EXTERN_C const IID IID___FIIterable_1_UINT32;
 #endif 	/* ____FIIterable_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0192 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0195 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0192 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0195 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0195_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0181 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0181 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0184 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0181_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0184 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0193 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0184_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0196 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CPoint
@@ -11982,13 +12141,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0181_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0193 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0196 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0193_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0196_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -12132,35 +12291,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CFoundation__CPoint;
 #endif 	/* ____FIIterator_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0194 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0197 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0194 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0197 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0194_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0197_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0197_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0182 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0182 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0185 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0182_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0185 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0195 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0185_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0198 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CPoint
@@ -12168,13 +12327,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0182_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0195 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0198 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0195_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0198_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -12284,35 +12443,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CFoundation__CPoint;
 #endif 	/* ____FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0196 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0199 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0196 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0199 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0199_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0183 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0183 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0186 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0183_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0186 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0197 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0186_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0200 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIIterable_1_Windows__CFoundation__CPoint
@@ -12320,13 +12479,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0183_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0197 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0200 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0200_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -12470,35 +12629,35 @@ EXTERN_C const IID IID___FIIterator_1___FIIterable_1_Windows__CFoundation__CPoin
 #endif 	/* ____FIIterator_1___FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0198 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0201 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIIterable_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0198 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0201 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0201_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0184 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0184 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0187 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0184_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0187 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0199 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0187_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0202 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIIterable_1_Windows__CFoundation__CPoint
@@ -12506,13 +12665,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0184_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0199 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0202 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0202_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -12622,35 +12781,35 @@ EXTERN_C const IID IID___FIIterable_1___FIIterable_1_Windows__CFoundation__CPoin
 #endif 	/* ____FIIterable_1___FIIterable_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0200 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0203 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIIterable_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0200 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0203 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0203_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0185 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0185 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0188 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0185_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0188 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0201 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0188_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0204 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_GUID_IInspectable
@@ -12658,13 +12817,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0185_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0201 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0204 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0204_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
@@ -12784,35 +12943,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_GUID_IInspectable;
 #endif 	/* ____FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0202 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0205 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_GUID_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0202 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0205 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0205_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0186 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0186 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0189 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0186_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0189 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0203 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0189_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0206 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_GUID_IInspectable
@@ -12820,13 +12979,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0186_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0203 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0206 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0206_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0206_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
@@ -12970,35 +13129,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_GUID_IInspectable;
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0204 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0207 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_GUID_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0204 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0207 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0207_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0207_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0187 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0187 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0190 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0187_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0190 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0205 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0190_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0208 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_GUID_IInspectable
@@ -13006,13 +13165,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0187_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0205 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0208 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0208_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0208_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__
@@ -13122,35 +13281,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_GUID_IInspectable;
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_GUID_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0206 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0209 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_GUID_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0206 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0209 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0209_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0209_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0188 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0188 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0191 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0188_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0191 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0207 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0191_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0210 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING
@@ -13158,13 +13317,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0188_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0207 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0210 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0210_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0210_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -13284,35 +13443,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_HSTRING;
 #endif 	/* ____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0208 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0211 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0208 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0211 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0211_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0211_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0189 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0189 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0192 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0189_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0192 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0209 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0192_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0212 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING
@@ -13320,13 +13479,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0189_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0209 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0212 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0212_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0212_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -13470,35 +13629,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING;
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0210 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0213 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0210 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0213 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0210_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0213_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0213_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0190 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0190 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0193 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0190_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0193 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0211 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0193_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0214 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING
@@ -13506,13 +13665,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0190_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0211 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0214 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0211_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0214_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0214_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -13622,35 +13781,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING;
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0212 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0215 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0212 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0215 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0212_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0215_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0215_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0191 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0191 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0194 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0191_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0194 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0213 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0194_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0216 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable
@@ -13658,13 +13817,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0191_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0213 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0216 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0213_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0216_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0216_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -13784,35 +13943,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_IInspectable;
 #endif 	/* ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0214 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0217 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0214 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0217 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0214_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0217_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0217_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0192 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0192 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0195 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0192_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0195 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0215 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0195_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0218 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable
@@ -13820,13 +13979,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0192_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0215 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0218 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0215_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0218_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0218_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -13970,35 +14129,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable;
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0216 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0219 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0216 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0219 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0216_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0219_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0219_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0193 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0193 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0196 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0193_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0196 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0217 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0196_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0220 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
@@ -14006,13 +14165,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0193_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0217 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0220 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0217_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0220_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0220_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -14122,35 +14281,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable;
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0218 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0221 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0218 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0221 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0218_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0221_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0221_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0194 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0194 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0197 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0194_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0197 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0219 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0197_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0197_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0222 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_HSTRING
@@ -14158,13 +14317,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0194_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0219 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0222 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0219_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0222_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0222_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -14316,35 +14475,35 @@ EXTERN_C const IID IID___FIVectorView_1_HSTRING;
 #endif 	/* ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0220 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0223 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0220 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0223 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0220_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0223_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0223_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0195 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0195 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0198 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0195_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0198 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0221 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0198_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0224 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING
@@ -14352,13 +14511,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0195_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0221 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0224 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0221_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0224_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0224_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -14478,35 +14637,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING;
 #endif 	/* ____FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0222 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0225 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0222 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0225 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0222_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0225_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0225_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0196 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0196 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0199 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0196_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0199 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0223 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0199_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0226 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING
@@ -14514,13 +14673,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0196_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0223 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0226 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0223_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0223_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0226_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0226_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -14664,35 +14823,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0224 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0227 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0224 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0227 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0224_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0224_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0227_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0227_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0197 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0197 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0200 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0197_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0200 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0225 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0200_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0228 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING
@@ -14700,13 +14859,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0197_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0225 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0228 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0225_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0225_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0228_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0228_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -14816,35 +14975,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0226 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0229 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0226 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0229 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0226_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0226_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0229_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0229_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0198 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0198 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0201 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0198_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0201 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0227 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0201_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0230 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_HSTRING
@@ -14852,13 +15011,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0198_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0227 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0230 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0227_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0227_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0230_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0230_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -15092,35 +15251,35 @@ EXTERN_C const IID IID___FIVector_1_HSTRING;
 #endif 	/* ____FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0228 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0231 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0228 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0231 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0228_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0228_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0231_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0231_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0199 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0199 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0202 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0199_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0202 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0229 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0202_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0232 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING
@@ -15128,13 +15287,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0199_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0229 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0232 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0229_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0229_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0232_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0232_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -15254,35 +15413,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING;
 #endif 	/* ____FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0230 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0233 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0230 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0233 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0230_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0230_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0233_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0233_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0200 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0200 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0203 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0200_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0203 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0231 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0203_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0234 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING
@@ -15290,13 +15449,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0200_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0231 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0234 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0231_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0231_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0234_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0234_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -15440,35 +15599,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HS
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0232 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0235 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0232 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0235 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0232_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0232_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0235_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0235_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0201 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0201 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0204 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0201_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0204 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0233 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0204_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0236 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING
@@ -15476,13 +15635,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0201_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0233 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0236 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0233_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0233_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0236_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0236_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -15592,35 +15751,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HS
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0234 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0237 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0234 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0237 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0234_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0234_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0237_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0237_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0202 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0202 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0205 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0202_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0205 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0235 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0205_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0238 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_IInspectable_IInspectable
@@ -15628,13 +15787,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0202_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0235 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0238 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0235_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0235_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0238_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0238_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__
@@ -15754,35 +15913,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_IInspectable_IInspectable;
 #endif 	/* ____FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0236 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0239 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_IInspectable_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0236 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0239 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0236_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0236_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0239_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0239_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0203 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0203 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0206 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0203_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0206 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0237 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0206_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0206_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0240 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_IInspectable_IInspectable
@@ -15790,13 +15949,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0203_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0237 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0240 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0237_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0237_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0240_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0240_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__
@@ -15940,35 +16099,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_IInspectable_IInspectab
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0238 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0241 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_IInspectable_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0238 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0241 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0238_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0238_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0241_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0241_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0204 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0204 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0207 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0204_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0207 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0239 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0207_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0207_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0242 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_IInspectable_IInspectable
@@ -15976,13 +16135,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0204_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0239 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0242 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0239_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0239_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0242_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0242_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__
@@ -16092,35 +16251,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_IInspectable_IInspectab
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_IInspectable_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0240 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0243 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_IInspectable_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0240 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0243 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0240_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0240_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0243_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0243_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0205 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0205 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0208 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0205_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0208 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0241 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0208_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0208_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0244 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable
@@ -16128,13 +16287,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0205_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0241 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0244 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0241_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0241_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0244_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0244_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -16280,35 +16439,35 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_IInspectable;
 #endif 	/* ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0242 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0245 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0242 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0245 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0242_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0242_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0245_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0245_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0206 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0206 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0209 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0206_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0209 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0243 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0209_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0209_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0246 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIMapView_2_HSTRING_IInspectable
@@ -16316,13 +16475,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0206_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0243 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0246 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0243_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0243_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0246_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0246_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -16466,35 +16625,35 @@ EXTERN_C const IID IID___FIIterator_1___FIMapView_2_HSTRING_IInspectable;
 #endif 	/* ____FIIterator_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0244 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0247 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0244 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0247 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0244_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0244_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0247_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0247_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0207 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0207 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0210 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0207_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0210 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0245 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0210_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0210_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0248 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIMapView_2_HSTRING_IInspectable
@@ -16502,13 +16661,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0207_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0245 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0248 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0245_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0245_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0248_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0248_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -16618,35 +16777,35 @@ EXTERN_C const IID IID___FIIterable_1___FIMapView_2_HSTRING_IInspectable;
 #endif 	/* ____FIIterable_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0246 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0249 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0246 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0249 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0246_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0246_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0249_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0249_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0208 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0208 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0211 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0208_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0211 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0247 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0211_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0211_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0250 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CDateTime
@@ -16654,13 +16813,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0208_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0247 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0250 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0247_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0247_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0250_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0250_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -16804,35 +16963,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CFoundation__CDateTime;
 #endif 	/* ____FIIterator_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0248 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0251 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0248 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0251 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0248_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0248_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0251_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0251_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0209 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0209 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0212 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0209_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0212 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0249 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0212_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0212_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0252 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CDateTime
@@ -16840,13 +16999,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0209_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0249 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0252 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0249_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0249_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0252_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0252_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -16956,35 +17115,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CFoundation__CDateTime;
 #endif 	/* ____FIIterable_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0250 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0253 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0250 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0253 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0250_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0250_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0253_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0253_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0210 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0210 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0213 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0210_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0213 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0251 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0213_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0213_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0254 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry
@@ -16992,13 +17151,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0210_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0251 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0254 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0251_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0251_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0254_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0254_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
@@ -17142,35 +17301,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderE
 #endif 	/* ____FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0252 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0255 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0252 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0255 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0252_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0252_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0255_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0255_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0211 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0211 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0214 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0211_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0214 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0253 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0214_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0214_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0256 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry
@@ -17178,13 +17337,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0211_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0253 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0256 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0253_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0253_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0256_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0256_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
@@ -17294,35 +17453,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderE
 #endif 	/* ____FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0254 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0257 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0254 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0257 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0254_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0254_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0257_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0257_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0212 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0212 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0215 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0212_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0215 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0255 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0215_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0215_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0258 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CTimeSpan
@@ -17330,13 +17489,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0212_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0255 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0258 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0255_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0255_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0258_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0258_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
@@ -17480,35 +17639,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CFoundation__CTimeSpan;
 #endif 	/* ____FIIterator_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0256 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0259 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CTimeSpan */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0256 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0259 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0256_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0256_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0259_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0259_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0213 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0213 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0216 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0213_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0216 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0257 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0216_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0216_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0260 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CTimeSpan
@@ -17516,13 +17675,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0213_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0257 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0260 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0257_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0257_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0260_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0260_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
@@ -17632,35 +17791,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CFoundation__CTimeSpan;
 #endif 	/* ____FIIterable_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0258 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0261 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CTimeSpan */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0258 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0261 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0258_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0258_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0261_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0261_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0214 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0214 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0217 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0214_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0217 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0259 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0217_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0217_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0262 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CUri
@@ -17668,13 +17827,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0214_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0259 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0262 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0259_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0259_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0262_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0262_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
@@ -17818,35 +17977,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CFoundation__CUri;
 #endif 	/* ____FIIterator_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0260 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0263 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CUri */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0260 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0263 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0260_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0260_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0263_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0263_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0215 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0215 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0218 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0215_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0218 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0261 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0218_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0218_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0264 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CUri
@@ -17854,13 +18013,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0215_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0261 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0264 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0261_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0261_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0264_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0264_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
@@ -17970,35 +18129,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CFoundation__CUri;
 #endif 	/* ____FIIterable_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0262 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0265 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CUri */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0262 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0265 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0262_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0262_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0265_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0265_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0216 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0216 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0219 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0216_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0219 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0263 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0219_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0219_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0266 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_boolean
+#define DEF___FIIterator_1_boolean
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0266 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0266_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0266_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_boolean_INTERFACE_DEFINED__
+#define ____FIIterator_1_boolean_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_boolean */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_boolean */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_boolean;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("740a0296-a535-572a-bf0b-17c18ff71fe6")
+    __FIIterator_1_boolean : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__out boolean *current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) boolean *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_booleanVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_boolean * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_boolean * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [retval][out] */ __RPC__out boolean *current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_boolean * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) boolean *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_booleanVtbl;
+
+    interface __FIIterator_1_boolean
+    {
+        CONST_VTBL struct __FIIterator_1_booleanVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_boolean_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_boolean_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_boolean_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_boolean_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_boolean_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0267 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_boolean */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0267 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0267_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0267_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0220 */
+
+
+
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0220 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0220_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0220_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0268 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_boolean
+#define DEF___FIIterable_1_boolean
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0268 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0268_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0268_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_boolean_INTERFACE_DEFINED__
+#define ____FIIterable_1_boolean_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_boolean */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_boolean */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_boolean;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("30160817-1d7d-54e9-99db-d7636266a476")
+    __FIIterable_1_boolean : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_boolean **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_booleanVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_boolean * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_boolean * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_boolean * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_boolean * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_boolean * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_boolean * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_boolean * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_boolean **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_booleanVtbl;
+
+    interface __FIIterable_1_boolean
+    {
+        CONST_VTBL struct __FIIterable_1_booleanVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_boolean_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_boolean_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0269 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_boolean */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0269 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0269_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0269_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0221 */
+
+
+
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0221 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0221_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0221_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0270 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING
@@ -18006,13 +18503,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0216_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0263 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0270 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0263_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0263_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0270_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0270_v0_0_s_ifspec;
 
 #ifndef ____FIMapChangedEventArgs_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIMapChangedEventArgs_1_HSTRING_INTERFACE_DEFINED__
@@ -18132,35 +18629,35 @@ EXTERN_C const IID IID___FIMapChangedEventArgs_1_HSTRING;
 #endif 	/* ____FIMapChangedEventArgs_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0264 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0271 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0264 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0271 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0264_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0264_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0271_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0271_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0217 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0217 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0222 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0217_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0222 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0265 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0222_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0222_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0272 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_GUID_IInspectable
@@ -18168,13 +18665,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0217_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0265 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0272 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0265_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0265_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0272_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0272_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_GUID_IInspectable_INTERFACE_DEFINED__
 #define ____FIMapView_2_GUID_IInspectable_INTERFACE_DEFINED__
@@ -18320,35 +18817,35 @@ EXTERN_C const IID IID___FIMapView_2_GUID_IInspectable;
 #endif 	/* ____FIMapView_2_GUID_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0266 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0273 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_GUID_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0266 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0273 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0266_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0266_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0273_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0273_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0218 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0218 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0223 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0218_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0223 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0267 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0223_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0223_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0274 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_HSTRING
@@ -18356,13 +18853,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0218_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0267 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0274 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0267_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0267_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0274_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0274_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -18508,35 +19005,35 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_HSTRING;
 #endif 	/* ____FIMapView_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0268 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0275 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0268 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0275 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0268_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0268_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0275_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0275_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0219 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0219 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0224 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0219_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0224 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0269 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0224_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0224_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0276 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING
@@ -18544,13 +19041,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0219_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0269 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0276 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0269_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0269_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0276_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0276_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -18696,35 +19193,35 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING___FIVectorView_1_HSTRING;
 #endif 	/* ____FIMapView_2_HSTRING___FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0270 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0277 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0270 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0277 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0270_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0270_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0277_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0277_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0220 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0220 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0225 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0220_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0225 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0271 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0225_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0225_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0278 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING
@@ -18732,13 +19229,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0220_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0271 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0278 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0271_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0271_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0278_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0278_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -18884,35 +19381,35 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING___FIVector_1_HSTRING;
 #endif 	/* ____FIMapView_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0272 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0279 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0272 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0279 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0272_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0272_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0279_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0279_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0221 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0221 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0226 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0221_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0226 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0273 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0226_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0226_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0280 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_IInspectable_IInspectable
@@ -18920,13 +19417,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0221_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0273 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0280 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0273_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0273_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0280_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0280_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_IInspectable_IInspectable_INTERFACE_DEFINED__
 #define ____FIMapView_2_IInspectable_IInspectable_INTERFACE_DEFINED__
@@ -19072,35 +19569,35 @@ EXTERN_C const IID IID___FIMapView_2_IInspectable_IInspectable;
 #endif 	/* ____FIMapView_2_IInspectable_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0274 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0281 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_IInspectable_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0274 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0281 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0274_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0274_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0281_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0281_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0222 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0222 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0227 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0222_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0227 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0275 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0227_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0227_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0282 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_GUID_IInspectable
@@ -19108,13 +19605,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0222_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0275 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0282 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0275_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0275_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0282_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0282_v0_0_s_ifspec;
 
 #ifndef ____FIMap_2_GUID_IInspectable_INTERFACE_DEFINED__
 #define ____FIMap_2_GUID_IInspectable_INTERFACE_DEFINED__
@@ -19290,35 +19787,35 @@ EXTERN_C const IID IID___FIMap_2_GUID_IInspectable;
 #endif 	/* ____FIMap_2_GUID_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0276 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0283 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMap_2_GUID_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0276 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0283 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0276_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0276_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0283_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0283_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0223 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0223 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0228 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0223_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0223_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0228 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0277 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0228_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0228_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0284 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_HSTRING
@@ -19326,13 +19823,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0223_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0277 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0284 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0277_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0277_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0284_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0284_v0_0_s_ifspec;
 
 #ifndef ____FIMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FIMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -19508,35 +20005,35 @@ EXTERN_C const IID IID___FIMap_2_HSTRING_HSTRING;
 #endif 	/* ____FIMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0278 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0285 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMap_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0278 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0285 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0278_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0278_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0285_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0285_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0224 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0224 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0229 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0224_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0224_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0229 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0279 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0229_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0229_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0286 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable
@@ -19544,13 +20041,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0224_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0279 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0286 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0279_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0279_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0286_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0286_v0_0_s_ifspec;
 
 #ifndef ____FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -19726,35 +20223,35 @@ EXTERN_C const IID IID___FIMap_2_HSTRING_IInspectable;
 #endif 	/* ____FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0280 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0287 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMap_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0280 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0287 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0280_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0280_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0287_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0287_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0225 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0225 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0230 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0225_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0225_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0230 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0281 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0230_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0230_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0288 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING___FIVector_1_HSTRING
@@ -19762,13 +20259,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0225_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0281 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0288 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0281_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0281_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0288_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0288_v0_0_s_ifspec;
 
 #ifndef ____FIMap_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIMap_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -19944,35 +20441,35 @@ EXTERN_C const IID IID___FIMap_2_HSTRING___FIVector_1_HSTRING;
 #endif 	/* ____FIMap_2_HSTRING___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0282 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0289 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMap_2_HSTRING___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0282 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0289 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0282_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0282_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0289_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0289_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0226 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0226 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0231 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0226_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0226_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0231 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0283 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0231_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0231_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0290 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_IInspectable_IInspectable
@@ -19980,13 +20477,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0226_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0283 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0290 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0283_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0283_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0290_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0290_v0_0_s_ifspec;
 
 #ifndef ____FIMap_2_IInspectable_IInspectable_INTERFACE_DEFINED__
 #define ____FIMap_2_IInspectable_IInspectable_INTERFACE_DEFINED__
@@ -20162,35 +20659,35 @@ EXTERN_C const IID IID___FIMap_2_IInspectable_IInspectable;
 #endif 	/* ____FIMap_2_IInspectable_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0284 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0291 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMap_2_IInspectable_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0284 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0291 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0284_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0284_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0291_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0291_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0227 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0227 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0232 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0227_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0227_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0232 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0285 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0232_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0232_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0292 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_HSTRING
@@ -20200,15 +20697,15 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0227_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0285 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0292 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0285_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0285_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0292_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0292_v0_0_s_ifspec;
 
 #ifndef ____FMapChangedEventHandler_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FMapChangedEventHandler_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -20297,35 +20794,35 @@ EXTERN_C const IID IID___FMapChangedEventHandler_2_HSTRING_HSTRING;
 #endif 	/* ____FMapChangedEventHandler_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0286 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0293 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0286 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0293 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0286_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0286_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0293_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0293_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0228 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0228 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0233 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0228_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0228_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0233 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0287 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0233_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0233_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0294 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_HSTRING
@@ -20333,13 +20830,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0228_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0287 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0294 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0287_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0287_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0294_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0294_v0_0_s_ifspec;
 
 #ifndef ____FIObservableMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 #define ____FIObservableMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__
@@ -20461,35 +20958,35 @@ EXTERN_C const IID IID___FIObservableMap_2_HSTRING_HSTRING;
 #endif 	/* ____FIObservableMap_2_HSTRING_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0288 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0295 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIObservableMap_2_HSTRING_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0288 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0295 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0288_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0288_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0295_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0295_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0229 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0229 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0234 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0229_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0229_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0234 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0289 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0234_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0234_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0296 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable
@@ -20499,15 +20996,15 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0229_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0289 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0296 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0289_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0289_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0296_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0296_v0_0_s_ifspec;
 
 #ifndef ____FMapChangedEventHandler_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FMapChangedEventHandler_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -20596,35 +21093,35 @@ EXTERN_C const IID IID___FMapChangedEventHandler_2_HSTRING_IInspectable;
 #endif 	/* ____FMapChangedEventHandler_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0290 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0297 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0290 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0297 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0290_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0290_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0297_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0297_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0230 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0230 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0235 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0230_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0230_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0235 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0291 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0235_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0235_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0298 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable
@@ -20632,13 +21129,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0230_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0291 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0298 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0291_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0291_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0298_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0298_v0_0_s_ifspec;
 
 #ifndef ____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -20760,35 +21257,35 @@ EXTERN_C const IID IID___FIObservableMap_2_HSTRING_IInspectable;
 #endif 	/* ____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0292 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0299 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIObservableMap_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0292 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0299 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0292_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0292_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0299_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0299_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0231 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0231 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0236 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0231_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0231_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0236 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0293 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0236_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0236_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0300 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_IInspectable
@@ -20796,13 +21293,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0231_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0293 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0300 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0293_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0293_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0300_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0300_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIVectorView_1_IInspectable_INTERFACE_DEFINED__
@@ -20954,35 +21451,35 @@ EXTERN_C const IID IID___FIVectorView_1_IInspectable;
 #endif 	/* ____FIVectorView_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0294 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0301 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0294 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0301 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0294_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0294_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0301_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0301_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0232 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0232 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0237 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0232_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0232_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0237 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0295 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0237_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0237_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0302 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_IInspectable
@@ -20990,13 +21487,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0232_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0295 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0302 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0295_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0295_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0302_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0302_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIVector_1_IInspectable_INTERFACE_DEFINED__
@@ -21230,35 +21727,35 @@ EXTERN_C const IID IID___FIVector_1_IInspectable;
 #endif 	/* ____FIVector_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0296 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0303 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0296 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0303 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0296_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0296_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0303_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0303_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0233 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0233 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0238 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0233_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0233_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0238 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0297 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0238_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0238_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0304 */
 /* [local] */ 
 
 #ifndef DEF___FVectorChangedEventHandler_1_IInspectable
@@ -21267,14 +21764,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0233_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0297 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0304 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0297_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0297_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0304_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0304_v0_0_s_ifspec;
 
 #ifndef ____FVectorChangedEventHandler_1_IInspectable_INTERFACE_DEFINED__
 #define ____FVectorChangedEventHandler_1_IInspectable_INTERFACE_DEFINED__
@@ -21363,35 +21860,35 @@ EXTERN_C const IID IID___FVectorChangedEventHandler_1_IInspectable;
 #endif 	/* ____FVectorChangedEventHandler_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0298 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0305 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FVectorChangedEventHandler_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0298 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0305 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0298_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0298_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0305_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0305_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0234 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0234 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0239 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0234_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0234_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0239 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0299 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0239_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0239_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0306 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableVector_1_IInspectable
@@ -21399,13 +21896,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0234_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0299 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0306 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0299_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0299_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0306_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0306_v0_0_s_ifspec;
 
 #ifndef ____FIObservableVector_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIObservableVector_1_IInspectable_INTERFACE_DEFINED__
@@ -21527,35 +22024,35 @@ EXTERN_C const IID IID___FIObservableVector_1_IInspectable;
 #endif 	/* ____FIObservableVector_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0300 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0307 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIObservableVector_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0300 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0307 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0300_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0300_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0307_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0307_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0235 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0235 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0240 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0235_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0235_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0240 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0301 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0240_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0240_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0308 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_byte
@@ -21563,13 +22060,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0235_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0301 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0308 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0301_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0301_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0308_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0308_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_byte_INTERFACE_DEFINED__
 #define ____FIVectorView_1_byte_INTERFACE_DEFINED__
@@ -21721,35 +22218,35 @@ EXTERN_C const IID IID___FIVectorView_1_byte;
 #endif 	/* ____FIVectorView_1_byte_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0302 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0309 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_byte */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0302 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0309 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0302_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0302_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0309_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0309_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0236 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0236 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0241 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0236_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0236_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0241 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0303 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0241_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0241_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0310 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_double
@@ -21757,13 +22254,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0236_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0303 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0310 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0303_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0303_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0310_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0310_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_double_INTERFACE_DEFINED__
 #define ____FIVectorView_1_double_INTERFACE_DEFINED__
@@ -21915,35 +22412,35 @@ EXTERN_C const IID IID___FIVectorView_1_double;
 #endif 	/* ____FIVectorView_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0304 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0311 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0304 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0311 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0304_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0304_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0311_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0311_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0237 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0237 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0242 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0237_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0237_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0242 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0305 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0242_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0242_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0312 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_float
@@ -21951,13 +22448,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0237_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0305 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0312 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0305_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0305_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0312_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0312_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_float_INTERFACE_DEFINED__
 #define ____FIVectorView_1_float_INTERFACE_DEFINED__
@@ -22109,35 +22606,35 @@ EXTERN_C const IID IID___FIVectorView_1_float;
 #endif 	/* ____FIVectorView_1_float_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0306 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0313 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_float */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0306 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0313 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0306_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0306_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0313_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0313_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0238 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0238 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0243 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0238_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0238_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0243 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0307 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0243_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0243_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0314 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_GUID
@@ -22145,13 +22642,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0238_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0307 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0314 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0307_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0307_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0314_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0314_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_GUID_INTERFACE_DEFINED__
 #define ____FIVectorView_1_GUID_INTERFACE_DEFINED__
@@ -22303,35 +22800,35 @@ EXTERN_C const IID IID___FIVectorView_1_GUID;
 #endif 	/* ____FIVectorView_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0308 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0315 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0308 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0315 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0308_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0308_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0315_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0315_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0239 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0239 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0244 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0239_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0239_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0244 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0309 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0244_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0244_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0316 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_int
@@ -22339,13 +22836,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0239_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0309 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0316 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0309_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0309_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0316_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0316_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_int_INTERFACE_DEFINED__
 #define ____FIVectorView_1_int_INTERFACE_DEFINED__
@@ -22497,35 +22994,35 @@ EXTERN_C const IID IID___FIVectorView_1_int;
 #endif 	/* ____FIVectorView_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0310 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0317 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0310 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0317 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0310_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0310_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0317_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0317_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0240 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0240 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0245 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0240_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0240_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0245 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0311 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0245_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0245_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0318 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_UINT32
@@ -22533,13 +23030,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0240_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0311 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0318 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0311_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0311_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0318_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0318_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_UINT32_INTERFACE_DEFINED__
 #define ____FIVectorView_1_UINT32_INTERFACE_DEFINED__
@@ -22691,35 +23188,35 @@ EXTERN_C const IID IID___FIVectorView_1_UINT32;
 #endif 	/* ____FIVectorView_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0312 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0319 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0312 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0319 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0312_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0312_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0319_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0319_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0241 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0241 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0246 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0241_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0241_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0246 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0313 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0246_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0246_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0320 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable
@@ -22727,13 +23224,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0241_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0313 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0320 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0313_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0313_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0320_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0320_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -22885,35 +23382,35 @@ EXTERN_C const IID IID___FIVectorView_1___FIMapView_2_HSTRING_IInspectable;
 #endif 	/* ____FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0314 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0321 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0314 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0321 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0314_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0314_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0321_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0321_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0242 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0242 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0247 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0242_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0242_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0247 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0315 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0247_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0247_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0322 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CFoundation__CDateTime
@@ -22921,13 +23418,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0242_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0315 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0322 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0315_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0315_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0322_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0322_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -23079,35 +23576,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CFoundation__CDateTime;
 #endif 	/* ____FIVectorView_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0316 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0323 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0316 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0323 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0316_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0316_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0323_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0323_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0243 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0243 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0248 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0243_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0243_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0248 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0317 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0248_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0248_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0324 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry
@@ -23115,13 +23612,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0243_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0317 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0324 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0317_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0317_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0324_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0324_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
@@ -23273,35 +23770,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecode
 #endif 	/* ____FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0318 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0325 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0318 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0325 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0318_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0318_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0325_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0325_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0244 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0244 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0249 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0244_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0244_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0249 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0319 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0249_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0249_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0326 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CFoundation__CPoint
@@ -23309,13 +23806,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0244_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0319 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0326 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0319_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0319_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0326_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0326_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -23467,35 +23964,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CFoundation__CPoint;
 #endif 	/* ____FIVectorView_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0320 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0327 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0320 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0327 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0320_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0320_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0327_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0327_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0245 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0245 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0250 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0245_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0245_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0250 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0321 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0250_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0250_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0328 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CFoundation__CUri
@@ -23503,13 +24000,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0245_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0321 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0328 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0321_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0321_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0328_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0328_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
@@ -23661,35 +24158,229 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CFoundation__CUri;
 #endif 	/* ____FIVectorView_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0322 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0329 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CFoundation__CUri */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0322 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0329 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0322_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0322_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0329_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0329_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0246 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0246 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0251 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0246_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0246_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0251 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0323 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0251_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0251_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0330 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_boolean
+#define DEF___FIVectorView_1_boolean
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0330 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0330_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0330_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_boolean_INTERFACE_DEFINED__
+#define ____FIVectorView_1_boolean_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_boolean */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_boolean */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_boolean;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("243a09cb-6f40-56af-a442-fe81431fbef5")
+    __FIVectorView_1_boolean : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__out boolean *item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ boolean item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) boolean *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_booleanVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_boolean * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_boolean * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__out boolean *item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [in] */ boolean item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_boolean * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) boolean *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_booleanVtbl;
+
+    interface __FIVectorView_1_boolean
+    {
+        CONST_VTBL struct __FIVectorView_1_booleanVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_boolean_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_boolean_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_boolean_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_boolean_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_boolean_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_boolean_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_boolean_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_boolean_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_boolean_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_boolean_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_boolean_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0331 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_boolean */
+
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0331 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0331_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0252 */
+
+
+
+
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0252 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0252_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0252_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0332 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_double
@@ -23697,13 +24388,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0246_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0323 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0332 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0323_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0323_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0332_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_double_INTERFACE_DEFINED__
 #define ____FIVector_1_double_INTERFACE_DEFINED__
@@ -23937,35 +24628,35 @@ EXTERN_C const IID IID___FIVector_1_double;
 #endif 	/* ____FIVector_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0324 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0333 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0324 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0333 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0333_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0247 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0247 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0253 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0247_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0247_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0253 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0325 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0253_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0253_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0334 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_float
@@ -23973,13 +24664,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0247_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0325 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0334 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0334_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_float_INTERFACE_DEFINED__
 #define ____FIVector_1_float_INTERFACE_DEFINED__
@@ -24213,35 +24904,35 @@ EXTERN_C const IID IID___FIVector_1_float;
 #endif 	/* ____FIVector_1_float_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0326 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0335 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_float */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0326 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0335 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0335_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0248 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0248 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0254 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0248_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0248_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0254 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0327 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0254_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0254_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0336 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_GUID
@@ -24249,13 +24940,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0248_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0327 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0336 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0336_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_GUID_INTERFACE_DEFINED__
 #define ____FIVector_1_GUID_INTERFACE_DEFINED__
@@ -24489,35 +25180,35 @@ EXTERN_C const IID IID___FIVector_1_GUID;
 #endif 	/* ____FIVector_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0328 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0337 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0328 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0337 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0337_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0249 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0249 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0255 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0249_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0249_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0255 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0329 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0255_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0255_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0338 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_int
@@ -24525,13 +25216,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0249_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0329 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0338 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0338_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_int_INTERFACE_DEFINED__
 #define ____FIVector_1_int_INTERFACE_DEFINED__
@@ -24765,35 +25456,35 @@ EXTERN_C const IID IID___FIVector_1_int;
 #endif 	/* ____FIVector_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0330 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0339 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0330 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0339 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0339_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0250 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0250 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0256 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0250_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0250_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0256 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0331 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0256_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0256_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0340 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_UINT32
@@ -24801,13 +25492,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0250_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0331 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0340 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0340_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_UINT32_INTERFACE_DEFINED__
 #define ____FIVector_1_UINT32_INTERFACE_DEFINED__
@@ -25041,35 +25732,35 @@ EXTERN_C const IID IID___FIVector_1_UINT32;
 #endif 	/* ____FIVector_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0332 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0341 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0332 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0341 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0341_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0251 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0251 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0257 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0251_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0251_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0257 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0333 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0257_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0257_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0342 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CFoundation__CDateTime
@@ -25077,13 +25768,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0251_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0333 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0342 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0342_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -25317,35 +26008,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CFoundation__CDateTime;
 #endif 	/* ____FIVector_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0334 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0343 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0334 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0343 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0343_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0252 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0252 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0258 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0252_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0252_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0258 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0335 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0258_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0258_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0344 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CFoundation__CPoint
@@ -25353,13 +26044,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0252_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0335 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0344 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0344_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -25593,35 +26284,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CFoundation__CPoint;
 #endif 	/* ____FIVector_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0336 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0345 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0336 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0345 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0345_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0253 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0253 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0259 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0253_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0253_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0259 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0337 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0259_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0259_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0346 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CFoundation__CUri
@@ -25629,13 +26320,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0253_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0337 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0346 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0346_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
@@ -25869,35 +26560,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CFoundation__CUri;
 #endif 	/* ____FIVector_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0338 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0347 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CFoundation__CUri */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0338 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0347 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0347_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0254 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0254 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0260 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0254_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0254_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0260 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0339 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0260_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0260_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0348 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_IInspectable
@@ -25905,13 +26596,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0254_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0339 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0348 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0348_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
@@ -26000,35 +26691,35 @@ EXTERN_C const IID IID___FIEventHandler_1_IInspectable;
 #endif 	/* ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0340 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0349 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0340 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0349 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0349_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0255 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0255 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0261 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0255_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0255_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0261 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0341 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0261_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0261_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0350 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionProgressHandler_1_double
@@ -26037,14 +26728,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0255_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0341 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0350 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0350_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncActionProgressHandler_1_double_INTERFACE_DEFINED__
 #define ____FIAsyncActionProgressHandler_1_double_INTERFACE_DEFINED__
@@ -26133,35 +26824,35 @@ EXTERN_C const IID IID___FIAsyncActionProgressHandler_1_double;
 #endif 	/* ____FIAsyncActionProgressHandler_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0342 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0351 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncActionProgressHandler_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0342 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0351 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0351_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0256 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0256 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0262 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0256_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0256_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0262 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0343 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0262_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0262_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0352 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_double
@@ -26170,14 +26861,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0256_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0343 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0352 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0352_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncActionWithProgressCompletedHandler_1_double_INTERFACE_DEFINED__
 #define ____FIAsyncActionWithProgressCompletedHandler_1_double_INTERFACE_DEFINED__
@@ -26266,35 +26957,35 @@ EXTERN_C const IID IID___FIAsyncActionWithProgressCompletedHandler_1_double;
 #endif 	/* ____FIAsyncActionWithProgressCompletedHandler_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0344 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0353 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0344 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0353 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0353_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0257 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0257 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0263 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0257_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0257_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0263 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0345 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0263_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0263_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0354 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionWithProgress_1_double
@@ -26302,13 +26993,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0257_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0345 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0354 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0354_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncActionWithProgress_1_double_INTERFACE_DEFINED__
 #define ____FIAsyncActionWithProgress_1_double_INTERFACE_DEFINED__
@@ -26456,35 +27147,35 @@ EXTERN_C const IID IID___FIAsyncActionWithProgress_1_double;
 #endif 	/* ____FIAsyncActionWithProgress_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0346 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0355 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncActionWithProgress_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0346 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0355 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0355_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0258 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0258 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0264 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0258_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0258_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0264 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0347 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0264_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0264_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0356 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionProgressHandler_1_UINT64
@@ -26493,14 +27184,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0258_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0347 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0356 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0356_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncActionProgressHandler_1_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncActionProgressHandler_1_UINT64_INTERFACE_DEFINED__
@@ -26589,35 +27280,35 @@ EXTERN_C const IID IID___FIAsyncActionProgressHandler_1_UINT64;
 #endif 	/* ____FIAsyncActionProgressHandler_1_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0348 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0357 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncActionProgressHandler_1_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0348 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0357 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0357_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0259 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0259 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0265 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0259_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0259_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0265 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0349 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0265_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0265_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0358 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64
@@ -26626,14 +27317,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0259_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0349 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0358 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0358_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0358_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncActionWithProgressCompletedHandler_1_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncActionWithProgressCompletedHandler_1_UINT64_INTERFACE_DEFINED__
@@ -26722,35 +27413,35 @@ EXTERN_C const IID IID___FIAsyncActionWithProgressCompletedHandler_1_UINT64;
 #endif 	/* ____FIAsyncActionWithProgressCompletedHandler_1_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0350 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0359 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncActionWithProgressCompletedHandler_1_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0350 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0359 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0350_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0359_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0359_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0260 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0260 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0266 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0260_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0260_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0266 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0351 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0266_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0266_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0360 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncActionWithProgress_1_UINT64
@@ -26758,13 +27449,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0260_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0351 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0360 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0351_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0360_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0360_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncActionWithProgress_1_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncActionWithProgress_1_UINT64_INTERFACE_DEFINED__
@@ -26912,35 +27603,35 @@ EXTERN_C const IID IID___FIAsyncActionWithProgress_1_UINT64;
 #endif 	/* ____FIAsyncActionWithProgress_1_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0352 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0361 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncActionWithProgress_1_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0352 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0361 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0352_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0352_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0361_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0361_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0261 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0261 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0267 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0261_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0261_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0267 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0353 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0267_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0267_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0362 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64
@@ -26949,14 +27640,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0261_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0353 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0362 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0353_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0353_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0362_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0362_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationProgressHandler_2_HSTRING_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationProgressHandler_2_HSTRING_UINT64_INTERFACE_DEFINED__
@@ -27045,35 +27736,35 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_HSTRING_UINT64;
 #endif 	/* ____FIAsyncOperationProgressHandler_2_HSTRING_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0354 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0363 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationProgressHandler_2_HSTRING_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0354 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0363 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0354_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0354_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0363_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0262 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0262 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0268 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0262_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0262_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0268 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0355 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0268_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0268_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0364 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64
@@ -27082,14 +27773,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0262_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0355 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0364 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0355_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0355_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0364_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_INTERFACE_DEFINED__
@@ -27178,35 +27869,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_
 #endif 	/* ____FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0356 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0365 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_HSTRING_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0356 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0365 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0356_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0356_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0365_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0263 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0263 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0269 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0263_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0263_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0269 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0357 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0269_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0269_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0366 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64
@@ -27214,13 +27905,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0263_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0357 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0366 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0357_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0357_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0366_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgress_2_HSTRING_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgress_2_HSTRING_UINT64_INTERFACE_DEFINED__
@@ -27370,35 +28061,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_HSTRING_UINT64;
 #endif 	/* ____FIAsyncOperationWithProgress_2_HSTRING_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0358 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0367 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgress_2_HSTRING_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0358 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0367 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0358_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0358_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0367_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0264 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0264 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0270 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0264_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0264_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0270 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0359 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0270_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0270_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0368 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32
@@ -27407,14 +28098,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0264_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0359 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0368 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0359_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0359_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0368_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
@@ -27503,35 +28194,35 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_UINT32_UINT32;
 #endif 	/* ____FIAsyncOperationProgressHandler_2_UINT32_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0360 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0369 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationProgressHandler_2_UINT32_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0360 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0369 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0360_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0360_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0369_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0265 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0265 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0271 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0265_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0265_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0271 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0361 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0271_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0271_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0370 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32
@@ -27540,14 +28231,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0265_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0361 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0370 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0361_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0361_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0370_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_INTERFACE_DEFINED__
@@ -27636,35 +28327,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_U
 #endif 	/* ____FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0362 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0371 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT32_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0362 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0371 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0362_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0362_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0371_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0266 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0266 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0272 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0266_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0266_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0272 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0363 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0272_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0272_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0372 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32
@@ -27672,13 +28363,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0266_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0363 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0372 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0363_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0363_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0372_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgress_2_UINT32_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgress_2_UINT32_UINT32_INTERFACE_DEFINED__
@@ -27828,35 +28519,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_UINT32_UINT32;
 #endif 	/* ____FIAsyncOperationWithProgress_2_UINT32_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0364 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0373 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgress_2_UINT32_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0364 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0373 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0364_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0364_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0373_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0267 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0267 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0273 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0267_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0267_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0273 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0365 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0273_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0273_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0374 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64
@@ -27865,14 +28556,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0267_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0365 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0374 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0365_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0374_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationProgressHandler_2_UINT64_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationProgressHandler_2_UINT64_UINT64_INTERFACE_DEFINED__
@@ -27961,35 +28652,35 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_UINT64_UINT64;
 #endif 	/* ____FIAsyncOperationProgressHandler_2_UINT64_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0366 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0375 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationProgressHandler_2_UINT64_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0366 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0375 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0366_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0375_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0268 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0268 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0274 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0268_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0268_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0274 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0367 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0274_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0274_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0376 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64
@@ -27998,14 +28689,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0268_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0367 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0376 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0367_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0376_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_INTERFACE_DEFINED__
@@ -28094,35 +28785,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_U
 #endif 	/* ____FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0368 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0377 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_UINT64_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0368 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0377 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0368_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0377_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0269 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0269 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0275 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0269_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0269_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0275 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0369 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0275_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0275_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0378 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64
@@ -28130,13 +28821,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0269_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0369 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0378 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0369_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0378_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgress_2_UINT64_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgress_2_UINT64_UINT64_INTERFACE_DEFINED__
@@ -28286,35 +28977,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_UINT64_UINT64;
 #endif 	/* ____FIAsyncOperationWithProgress_2_UINT64_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0370 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0379 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgress_2_UINT64_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0370 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0379 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0370_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0379_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0270 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0270 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0276 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0270_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0270_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0276 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0371 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0276_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0276_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0380 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationProgressHandler_2_boolean_double
@@ -28323,14 +29014,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0270_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0371 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0380 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0371_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0371_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0380_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationProgressHandler_2_boolean_double_INTERFACE_DEFINED__
 #define ____FIAsyncOperationProgressHandler_2_boolean_double_INTERFACE_DEFINED__
@@ -28419,35 +29110,35 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_boolean_double;
 #endif 	/* ____FIAsyncOperationProgressHandler_2_boolean_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0372 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0381 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationProgressHandler_2_boolean_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0372 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0381 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0372_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0372_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0381_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0271 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0271 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0277 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0271_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0271_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0277 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0373 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0277_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0277_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0382 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double
@@ -28456,14 +29147,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0271_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0373 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0382 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0373_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0373_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0382_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_INTERFACE_DEFINED__
@@ -28552,35 +29243,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_boolean_
 #endif 	/* ____FIAsyncOperationWithProgressCompletedHandler_2_boolean_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0374 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0383 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgressCompletedHandler_2_boolean_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0374 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0383 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0374_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0374_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0383_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0272 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0272 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0278 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0272_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0272_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0278 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0375 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0278_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0278_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0384 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationWithProgress_2_boolean_double
@@ -28588,13 +29279,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0272_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0375 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0384 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0375_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0375_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0384_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationWithProgress_2_boolean_double_INTERFACE_DEFINED__
 #define ____FIAsyncOperationWithProgress_2_boolean_double_INTERFACE_DEFINED__
@@ -28744,35 +29435,35 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_boolean_double;
 #endif 	/* ____FIAsyncOperationWithProgress_2_boolean_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0376 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0385 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationWithProgress_2_boolean_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0376 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0385 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0376_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0376_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0385_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0385_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0273 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0273 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0279 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0273_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0273_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0279 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0377 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0279_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0279_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0386 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_GUID
@@ -28781,14 +29472,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0273_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0377 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0386 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0377_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0377_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0386_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0386_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_GUID_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_GUID_INTERFACE_DEFINED__
@@ -28877,35 +29568,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_GUID;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0378 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0387 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0378 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0387 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0378_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0378_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0387_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0387_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0274 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0274 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0280 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0274_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0274_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0280 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0379 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0280_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0280_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0388 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_GUID
@@ -28913,13 +29604,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0274_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0379 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0388 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0379_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0379_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0388_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0388_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_GUID_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_GUID_INTERFACE_DEFINED__
@@ -29049,35 +29740,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_GUID;
 #endif 	/* ____FIAsyncOperation_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0380 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0389 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0380 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0389 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0380_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0380_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0389_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0389_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0275 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0275 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0281 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0275_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0275_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0281 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0381 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0281_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0281_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0390 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING
@@ -29086,14 +29777,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0275_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0381 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0390 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0381_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0381_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0390_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0390_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__
@@ -29182,35 +29873,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_HSTRING;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0382 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0391 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0382 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0391 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0382_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0382_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0391_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0391_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0276 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0276 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0282 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0276_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0276_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0282 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0383 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0282_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0282_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0392 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_HSTRING
@@ -29218,13 +29909,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0276_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0383 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0392 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0383_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0383_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0392_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0392_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_HSTRING_INTERFACE_DEFINED__
@@ -29354,35 +30045,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_HSTRING;
 #endif 	/* ____FIAsyncOperation_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0384 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0393 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0384 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0393 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0384_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0384_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0393_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0393_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0277 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0277 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0283 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0277_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0277_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0283 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0385 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0283_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0283_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0394 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_IInspectable
@@ -29391,14 +30082,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0277_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0385 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0394 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0385_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0385_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0394_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0394_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_IInspectable_INTERFACE_DEFINED__
@@ -29487,35 +30178,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_IInspectable;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0386 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0395 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0386 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0395 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0386_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0386_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0395_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0395_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0278 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0278 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0284 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0278_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0278_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0284 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0387 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0284_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0284_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0396 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_IInspectable
@@ -29523,13 +30214,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0278_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0387 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0396 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0387_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0387_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0396_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0396_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_IInspectable_INTERFACE_DEFINED__
@@ -29659,35 +30350,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_IInspectable;
 #endif 	/* ____FIAsyncOperation_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0388 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0397 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0388 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0397 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0388_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0388_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0397_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0397_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0279 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0279 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0285 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0279_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0279_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0285 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0389 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0285_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0285_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0398 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_int
@@ -29696,14 +30387,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0279_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0389 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0398 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0389_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0389_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0398_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0398_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_int_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_int_INTERFACE_DEFINED__
@@ -29792,35 +30483,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_int;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0390 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0399 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0390 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0399 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0390_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0390_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0399_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0399_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0280 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0280 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0286 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0280_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0280_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0286 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0391 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0286_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0286_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0400 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_int
@@ -29828,13 +30519,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0280_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0391 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0400 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0391_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0391_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0400_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0400_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_int_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_int_INTERFACE_DEFINED__
@@ -29964,35 +30655,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_int;
 #endif 	/* ____FIAsyncOperation_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0392 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0401 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0392 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0401 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0392_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0392_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0401_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0401_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0281 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0281 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0287 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0281_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0281_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0287 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0393 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0287_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0287_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0402 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___z__zint64
@@ -30001,14 +30692,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0281_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0393 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0402 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0393_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0393_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0402_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0402_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___z__zint64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___z__zint64_INTERFACE_DEFINED__
@@ -30097,35 +30788,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___z__zint64;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___z__zint64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0394 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0403 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___z__zint64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0394 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0403 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0394_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0394_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0403_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0403_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0282 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0282 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0288 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0282_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0282_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0288 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0395 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0288_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0288_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0404 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___z__zint64
@@ -30133,13 +30824,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0282_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0395 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0404 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0395_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0395_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0404_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0404_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___z__zint64_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___z__zint64_INTERFACE_DEFINED__
@@ -30269,35 +30960,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___z__zint64;
 #endif 	/* ____FIAsyncOperation_1___z__zint64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0396 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0405 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___z__zint64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0396 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0405 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0396_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0396_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0405_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0405_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0283 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0283 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0289 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0283_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0283_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0289 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0397 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0289_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0289_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0406 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_UINT32
@@ -30306,14 +30997,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0283_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0397 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0406 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0397_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0397_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0406_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0406_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__
@@ -30402,35 +31093,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_UINT32;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0398 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0407 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0398 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0407 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0398_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0398_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0407_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0407_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0284 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0284 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0290 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0284_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0284_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0290 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0399 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0290_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0290_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0408 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_UINT32
@@ -30438,13 +31129,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0284_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0399 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0408 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0399_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0399_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0408_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0408_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__
@@ -30574,35 +31265,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_UINT32;
 #endif 	/* ____FIAsyncOperation_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0400 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0409 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0400 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0409 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0400_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0400_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0409_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0409_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0285 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0285 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0291 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0285_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0285_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0291 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0401 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0291_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0291_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0410 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_UINT64
@@ -30611,14 +31302,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0285_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0401 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0410 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0401_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0401_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0410_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0410_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_UINT64_INTERFACE_DEFINED__
@@ -30707,35 +31398,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_UINT64;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0402 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0411 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0402 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0411 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0402_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0402_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0411_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0411_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0286 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0286 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0292 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0286_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0286_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0292 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0403 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0292_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0292_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0412 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_UINT64
@@ -30743,13 +31434,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0286_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0403 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0412 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0403_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0403_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0412_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0412_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_UINT64_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_UINT64_INTERFACE_DEFINED__
@@ -30879,35 +31570,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_UINT64;
 #endif 	/* ____FIAsyncOperation_1_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0404 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0413 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0404 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0413 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0404_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0404_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0413_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0413_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0287 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0287 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0293 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0287_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0287_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0293 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0405 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0293_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0293_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0414 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable
@@ -30916,14 +31607,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0287_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0405 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0414 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0405_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0405_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0414_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0414_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -31012,35 +31703,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRIN
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0406 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0415 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0406 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0415 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0406_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0406_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0415_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0415_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0288 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0288 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0294 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0288_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0288_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0294 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0407 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0294_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0294_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0416 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable
@@ -31048,13 +31739,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0288_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0407 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0416 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0407_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0407_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0416_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0416_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -31184,35 +31875,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable;
 #endif 	/* ____FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0408 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0417 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0408 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0417 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0408_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0408_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0417_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0417_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0289 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0289 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0295 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0289_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0289_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0295 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0409 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0295_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0295_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0418 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable
@@ -31221,14 +31912,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0289_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0409 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0418 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0409_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0409_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0418_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0418_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -31317,35 +32008,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_II
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0410 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0419 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMap_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0410 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0419 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0410_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0410_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0419_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0419_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0290 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0290 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0296 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0290_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0290_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0296 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0411 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0296_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0296_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0420 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable
@@ -31353,13 +32044,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0290_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0411 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0420 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0411_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0411_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0420_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0420_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -31489,35 +32180,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable;
 #endif 	/* ____FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0412 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0421 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0412 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0421 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0412_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0412_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0421_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0421_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0291 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0291 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0297 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0291_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0291_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0297 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0413 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0297_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0297_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0422 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING
@@ -31526,14 +32217,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0291_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0413 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0422 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0413_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0413_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0422_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0422_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -31622,35 +32313,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HST
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0414 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0423 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0414 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0423 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0414_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0414_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0423_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0423_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0292 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0292 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0298 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0292_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0292_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0298 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0415 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0298_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0298_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0424 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING
@@ -31658,13 +32349,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0292_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0415 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0424 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0415_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0415_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0424_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0424_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_HSTRING_INTERFACE_DEFINED__
@@ -31794,35 +32485,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_HSTRING;
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0416 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0425 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0416 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0425 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0416_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0416_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0425_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0425_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0293 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0293 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0299 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0293_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0293_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0299 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0417 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0299_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0299_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0426 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable
@@ -31831,14 +32522,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0293_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0417 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0426 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0417_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0417_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0426_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0426_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_INTERFACE_DEFINED__
@@ -31927,35 +32618,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IIn
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0418 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0427 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0418 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0427 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0418_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0418_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0427_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0427_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0294 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0294 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0300 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0294_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0294_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0300 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0419 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0300_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0300_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0428 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable
@@ -31963,13 +32654,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0294_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0419 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0428 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0419_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0419_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0428_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0428_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_IInspectable_INTERFACE_DEFINED__
@@ -32099,35 +32790,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_IInspectable;
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0420 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0429 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0420 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0429 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0420_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0420_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0429_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0429_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0295 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0295 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0301 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0295_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0295_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0301 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0421 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0301_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0301_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0430 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32
@@ -32136,14 +32827,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0295_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0421 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0430 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0421_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0421_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0430_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0430_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_INTERFACE_DEFINED__
@@ -32232,35 +32923,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UIN
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0422 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0431 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0422 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0431 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0422_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0422_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0431_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0431_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0296 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0296 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0302 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0296_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0296_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0302 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0423 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0302_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0302_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0432 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_UINT32
@@ -32268,13 +32959,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0296_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0423 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0432 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0423_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0423_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0432_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0432_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_UINT32_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_UINT32_INTERFACE_DEFINED__
@@ -32404,35 +33095,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_UINT32;
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0424 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0433 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0424 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0433 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0424_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0424_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0433_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0433_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0297 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0297 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0303 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0297_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0297_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0303 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0425 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0303_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0303_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0434 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable
@@ -32441,14 +33132,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0297_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0425 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0434 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0425_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0425_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0434_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0434_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -32537,35 +33228,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1___F
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0426 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0435 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0426 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0435 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0426_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0426_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0435_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0435_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0298 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0298 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0304 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0298_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0298_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0304 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0427 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0304_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0304_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0436 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable
@@ -32573,13 +33264,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0298_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0427 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0436 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0427_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0427_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0436_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0436_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
@@ -32709,35 +33400,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRI
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0428 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0437 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0428 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0437 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0428_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0428_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0437_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0437_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0299 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0299 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0305 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0299_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0299_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0305 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0429 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0305_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0305_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0438 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING
@@ -32746,14 +33437,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0299_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0429 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0438 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0429_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0429_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0438_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0438_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -32842,35 +33533,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0430 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0439 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0430 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0439 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0430_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0430_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0439_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0439_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0300 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0300 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0306 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0300_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0300_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0306 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0431 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0306_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0306_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0440 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVector_1_HSTRING
@@ -32878,13 +33569,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0300_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0431 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0440 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0431_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0431_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0440_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0440_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVector_1_HSTRING_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVector_1_HSTRING_INTERFACE_DEFINED__
@@ -33014,35 +33705,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVector_1_HSTRING;
 #endif 	/* ____FIAsyncOperation_1___FIVector_1_HSTRING_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0432 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0441 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVector_1_HSTRING */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0432 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0441 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0432_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0432_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0441_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0441_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0301 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0301 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0307 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0301_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0301_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0307 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0433 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0307_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0307_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0442 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime
@@ -33050,13 +33741,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0301_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0433 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0442 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0433_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0433_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0442_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0442_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -33166,35 +33857,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CDateTime;
 #endif 	/* ____FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0434 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0443 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0434 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0443 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0434_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0434_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0443_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0443_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0302 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0302 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0308 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0302_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0302_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0308 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0435 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0308_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0308_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0444 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime
@@ -33203,14 +33894,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0302_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0435 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0444 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0435_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0435_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0444_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0444_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -33299,35 +33990,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIReference_1_Wind
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0436 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0445 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0436 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0445 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0436_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0436_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0445_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0445_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0303 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0303 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0309 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0303_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0303_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0309 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0437 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0309_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0309_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0446 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime
@@ -33335,13 +34026,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0303_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0437 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0446 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0437_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0437_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0446_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0446_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__
@@ -33471,35 +34162,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIReference_1_Windows__CFoundation
 #endif 	/* ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0438 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0447 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CDateTime */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0438 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0447 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0438_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0438_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0447_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0447_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0304 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0304 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0310 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0304_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0304_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0310 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0439 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0310_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0310_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0448 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan
@@ -33507,13 +34198,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0304_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0439 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0448 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0439_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0439_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0448_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0448_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
@@ -33623,35 +34314,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CTimeSpan;
 #endif 	/* ____FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0440 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0449 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0440 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0449 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0440_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0440_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0449_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0449_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0305 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0305 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0311 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0305_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0305_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0311 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0441 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0311_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0311_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0450 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan
@@ -33660,14 +34351,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0305_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0441 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0450 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0441_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0441_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0450_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0450_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
@@ -33756,35 +34447,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIReference_1_Wind
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0442 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0451 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIReference_1_Windows__CFoundation__CTimeSpan */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0442 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0451 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0442_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0442_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0451_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0451_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0306 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0306 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0312 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0306_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0306_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0312 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0443 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0312_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0312_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0452 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan
@@ -33792,13 +34483,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0306_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0443 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0452 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0443_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0443_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0452_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0452_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__
@@ -33928,35 +34619,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIReference_1_Windows__CFoundation
 #endif 	/* ____FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0444 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0453 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIReference_1_Windows__CFoundation__CTimeSpan */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0444 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0453 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0444_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0444_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0453_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0453_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0307 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0307 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0313 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0307_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0307_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0313 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0445 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0313_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0313_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0454 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri
@@ -33965,14 +34656,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0307_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0445 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0454 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0445_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0445_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0454_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0454_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
@@ -34061,35 +34752,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CFoundation
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0446 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0455 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CFoundation__CUri */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0446 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0455 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0446_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0446_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0455_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0455_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0308 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0308 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0314 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0308_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0308_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0314 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0447 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0314_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0314_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0456 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CFoundation__CUri
@@ -34097,13 +34788,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0308_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0447 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0456 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0447_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0447_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0456_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0456_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__
@@ -34233,35 +34924,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CFoundation__CUri;
 #endif 	/* ____FIAsyncOperation_1_Windows__CFoundation__CUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0448 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0457 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CFoundation__CUri */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0448 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0457 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0448_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0448_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0457_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0457_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0309 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0309 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0315 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0309_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0309_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0315 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0449 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0315_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0315_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0458 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean
@@ -34270,14 +34961,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0309_v0_0_s_ifspec
 
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0449 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0458 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0449_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0449_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0458_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0458_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__
@@ -34366,35 +35057,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_boolean;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_boolean_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0450 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0459 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0450 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0459 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0450_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0450_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0459_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0459_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0310 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0310 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0316 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0310_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0310_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0316 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0451 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0316_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0316_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0460 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean
@@ -34402,13 +35093,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0310_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0451 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0460 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0451_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0451_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0460_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0460_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__
@@ -34538,35 +35229,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_boolean;
 #endif 	/* ____FIAsyncOperation_1_boolean_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0452 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0461 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_boolean */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0452 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0461 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0452_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0452_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0461_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0461_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0311 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0311 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0317 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0311_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0311_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0317 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0453 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0317_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0317_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0462 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_byte
@@ -34574,13 +35265,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0311_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0453 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0462 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0453_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0453_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0462_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0462_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_byte_INTERFACE_DEFINED__
 #define ____FIReference_1_byte_INTERFACE_DEFINED__
@@ -34690,35 +35381,35 @@ EXTERN_C const IID IID___FIReference_1_byte;
 #endif 	/* ____FIReference_1_byte_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0454 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0463 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_byte */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0454 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0463 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0454_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0454_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0463_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0463_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0312 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0312 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0318 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0312_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0312_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0318 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0455 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0318_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0318_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0464 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double
@@ -34726,13 +35417,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0312_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0455 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0464 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0455_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0455_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0464_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0464_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_double_INTERFACE_DEFINED__
 #define ____FIReference_1_double_INTERFACE_DEFINED__
@@ -34842,35 +35533,35 @@ EXTERN_C const IID IID___FIReference_1_double;
 #endif 	/* ____FIReference_1_double_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0456 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0465 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_double */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0456 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0465 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0456_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0456_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0465_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0465_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0313 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0313 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0319 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0313_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0313_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0319 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0457 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0319_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0319_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0466 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_float
@@ -34878,13 +35569,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0313_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0457 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0466 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0457_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0457_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0466_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0466_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_float_INTERFACE_DEFINED__
 #define ____FIReference_1_float_INTERFACE_DEFINED__
@@ -34994,35 +35685,35 @@ EXTERN_C const IID IID___FIReference_1_float;
 #endif 	/* ____FIReference_1_float_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0458 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0467 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_float */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0458 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0467 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0458_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0458_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0467_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0467_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0314 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0314 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0320 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0314_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0314_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0320 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0459 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0320_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0320_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0468 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_GUID
@@ -35030,13 +35721,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0314_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0459 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0468 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0459_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0459_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0468_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0468_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_GUID_INTERFACE_DEFINED__
 #define ____FIReference_1_GUID_INTERFACE_DEFINED__
@@ -35146,35 +35837,35 @@ EXTERN_C const IID IID___FIReference_1_GUID;
 #endif 	/* ____FIReference_1_GUID_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0460 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0469 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_GUID */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0460 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0469 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0460_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0460_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0469_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0469_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0315 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0315 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0321 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0315_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0315_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0321 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0461 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0321_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0321_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0470 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_short
@@ -35182,13 +35873,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0315_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0461 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0470 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0461_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0461_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0470_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0470_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_short_INTERFACE_DEFINED__
 #define ____FIReference_1_short_INTERFACE_DEFINED__
@@ -35298,35 +35989,35 @@ EXTERN_C const IID IID___FIReference_1_short;
 #endif 	/* ____FIReference_1_short_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0462 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0471 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_short */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0462 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0471 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0462_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0462_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0471_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0471_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0316 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0316 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0322 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0316_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0316_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0322 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0463 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0322_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0322_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0472 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_int
@@ -35334,13 +36025,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0316_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0463 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0472 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0463_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0463_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0472_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0472_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_int_INTERFACE_DEFINED__
 #define ____FIReference_1_int_INTERFACE_DEFINED__
@@ -35450,35 +36141,35 @@ EXTERN_C const IID IID___FIReference_1_int;
 #endif 	/* ____FIReference_1_int_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0464 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0473 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_int */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0464 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0473 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0464_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0464_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0473_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0473_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0317 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0317 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0323 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0317_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0317_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0323 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0465 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0323_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0323_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0474 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1___z__zint64
@@ -35486,13 +36177,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0317_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0465 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0474 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0465_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0465_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0474_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0474_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1___z__zint64_INTERFACE_DEFINED__
 #define ____FIReference_1___z__zint64_INTERFACE_DEFINED__
@@ -35602,35 +36293,35 @@ EXTERN_C const IID IID___FIReference_1___z__zint64;
 #endif 	/* ____FIReference_1___z__zint64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0466 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0475 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1___z__zint64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0466 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0475 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0466_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0466_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0475_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0475_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0318 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0318 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0324 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0318_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0318_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0324 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0467 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0324_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0324_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0476 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT32
@@ -35638,13 +36329,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0318_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0467 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0476 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0467_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0467_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0476_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0476_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_UINT32_INTERFACE_DEFINED__
 #define ____FIReference_1_UINT32_INTERFACE_DEFINED__
@@ -35754,35 +36445,35 @@ EXTERN_C const IID IID___FIReference_1_UINT32;
 #endif 	/* ____FIReference_1_UINT32_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0468 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0477 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_UINT32 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0468 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0477 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0468_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0468_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0477_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0477_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0319 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0319 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0325 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0319_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0319_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0325 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0469 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0325_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0325_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0478 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT64
@@ -35790,13 +36481,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0319_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0469 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0478 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0469_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0469_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0478_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0478_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_UINT64_INTERFACE_DEFINED__
 #define ____FIReference_1_UINT64_INTERFACE_DEFINED__
@@ -35906,35 +36597,35 @@ EXTERN_C const IID IID___FIReference_1_UINT64;
 #endif 	/* ____FIReference_1_UINT64_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0470 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0479 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_UINT64 */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0470 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0479 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0470_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0470_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0479_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0479_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0320 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0320 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0326 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0320_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0320_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0326 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0471 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0326_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0326_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0480 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CPoint
@@ -35942,13 +36633,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0320_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0471 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0480 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0471_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0471_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0480_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0480_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
@@ -36058,35 +36749,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CPoint;
 #endif 	/* ____FIReference_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0472 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0481 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CFoundation__CPoint */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0472 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0481 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0472_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0472_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0481_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0481_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0321 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0321 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0327 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0321_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0321_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0327 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0473 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0327_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0327_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0482 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CRect
@@ -36094,13 +36785,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0321_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0473 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0482 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0473_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0473_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0482_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0482_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__
@@ -36210,35 +36901,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CRect;
 #endif 	/* ____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0474 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0483 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CFoundation__CRect */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0474 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0483 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0474_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0474_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0483_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0483_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0322 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0322 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0328 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0322_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0322_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0328 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0475 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0328_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0328_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0484 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_boolean
@@ -36246,13 +36937,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0322_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0475 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0484 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0475_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0475_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0484_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0484_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_boolean_INTERFACE_DEFINED__
 #define ____FIReference_1_boolean_INTERFACE_DEFINED__
@@ -36362,35 +37053,35 @@ EXTERN_C const IID IID___FIReference_1_boolean;
 #endif 	/* ____FIReference_1_boolean_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0476 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0485 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_boolean */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0476 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0485 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0476_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0476_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0485_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0485_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0323 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0323 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0329 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0323_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0323_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0329 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0477 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0329_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0329_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0486 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_IInspectable
@@ -36398,13 +37089,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0323_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0477 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0486 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0477_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0477_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0486_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0486_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_IInspectable_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_IInspectable_IInspectable_INTERFACE_DEFINED__
@@ -36493,35 +37184,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_IInspectable_IInspectable;
 #endif 	/* ____FITypedEventHandler_2_IInspectable_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0478 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0487 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_IInspectable_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0478 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0487 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0478_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0478_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0487_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0487_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0324 */
-
-
-
-
-/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0330 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0324_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Efoundation2Eidl_0000_0330 */
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0479 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0330_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0330_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Efoundation_0000_0488 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable
@@ -36529,13 +37220,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation2Eidl_0000_0324_v0_0_s_ifspec
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0479 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0488 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0479_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0479_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0488_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0488_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_INTERFACE_DEFINED__
@@ -36624,7 +37315,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CFoundation__CIMemoryBuf
 #endif 	/* ____FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0480 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0489 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -36717,7 +37408,7 @@ struct __x_ABI_CWindows_CFoundation_CTimeSpan
 #endif
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0480 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0489 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -36870,8 +37561,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0480_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0480_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0489_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0489_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIAsyncActionCompletedHandler_INTERFACE_DEFINED__
@@ -37065,7 +37756,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIDeferralCompletedHandler;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIDeferralCompletedHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0482 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0491 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_INTERFACE_DEFINED__)
@@ -37073,13 +37764,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0482 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0491 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0482_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0482_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0491_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0491_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_INTERFACE_DEFINED__
@@ -37192,7 +37883,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CCollections_CIPropertySet;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0483 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0492 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIAsyncAction_INTERFACE_DEFINED__)
@@ -37200,13 +37891,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIAsyncAction_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0483 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0492 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0483_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0483_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0492_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0492_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIAsyncAction_INTERFACE_DEFINED__
@@ -37345,7 +38036,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIAsyncAction;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIAsyncAction_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0484 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0493 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIClosable_INTERFACE_DEFINED__)
@@ -37353,13 +38044,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIClosable_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0484 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0493 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0484_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0484_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0493_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0493_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIClosable_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIClosable_INTERFACE_DEFINED__
@@ -37478,7 +38169,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIClosable;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIClosable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0485 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0494 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIDeferral_INTERFACE_DEFINED__)
@@ -37486,13 +38177,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0485 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0494 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0485_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0485_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0494_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0494_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIDeferral_INTERFACE_DEFINED__
@@ -37611,7 +38302,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIDeferral;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0486 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0495 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIDeferralFactory_INTERFACE_DEFINED__)
@@ -37619,13 +38310,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIDeferralFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0486 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0495 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0486_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0486_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0495_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0495_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIDeferralFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIDeferralFactory_INTERFACE_DEFINED__
@@ -37748,7 +38439,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIDeferralFactory;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIDeferralFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0487 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0496 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__)
@@ -37756,13 +38447,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0487 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0496 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0487_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0487_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0496_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0496_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__
@@ -37885,7 +38576,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIGetActivationFactory;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0488 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0497 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIMemoryBuffer_INTERFACE_DEFINED__)
@@ -37893,13 +38584,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIMemoryBuffer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0488 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0497 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0488_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0488_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0497_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0497_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_INTERFACE_DEFINED__
@@ -38020,7 +38711,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIMemoryBuffer;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0489 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0498 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIMemoryBufferFactory_INTERFACE_DEFINED__)
@@ -38028,13 +38719,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIMemoryBufferFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0489 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0498 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0489_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0489_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0498_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0498_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIMemoryBufferFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIMemoryBufferFactory_INTERFACE_DEFINED__
@@ -38157,7 +38848,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIMemoryBufferFactory;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIMemoryBufferFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0490 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0499 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIMemoryBufferReference_INTERFACE_DEFINED__)
@@ -38165,13 +38856,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIMemoryBufferReference_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0490 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0499 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0490_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0490_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0499_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0499_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIMemoryBufferReference_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIMemoryBufferReference_INTERFACE_DEFINED__
@@ -38314,7 +39005,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIMemoryBufferReference;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIMemoryBufferReference_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0491 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0500 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIPropertyValue_INTERFACE_DEFINED__)
@@ -38322,13 +39013,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIPropertyValue_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0491 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0500 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0491_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0491_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0500_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0500_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIPropertyValue_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIPropertyValue_INTERFACE_DEFINED__
@@ -38867,7 +39558,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIPropertyValue;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIPropertyValue_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0492 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0501 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIPropertyValueStatics_INTERFACE_DEFINED__)
@@ -38875,13 +39566,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIPropertyValueStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0492 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0501 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0492_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0492_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0501_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0501_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIPropertyValueStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIPropertyValueStatics_INTERFACE_DEFINED__
@@ -39496,7 +40187,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIPropertyValueStatics;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIPropertyValueStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0493 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0502 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIStringable_INTERFACE_DEFINED__)
@@ -39504,13 +40195,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIStringable_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0493 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0502 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0493_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0493_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0502_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0502_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIStringable_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIStringable_INTERFACE_DEFINED__
@@ -39631,7 +40322,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIStringable;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIStringable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0494 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0503 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIUriEscapeStatics_INTERFACE_DEFINED__)
@@ -39639,13 +40330,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIUriEscapeStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0494 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0503 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0494_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0494_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0503_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0503_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriEscapeStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriEscapeStatics_INTERFACE_DEFINED__
@@ -39780,7 +40471,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIUriEscapeStatics;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIUriEscapeStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0495 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0504 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_INTERFACE_DEFINED__)
@@ -39788,13 +40479,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0495 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0504 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0495_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0495_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0504_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0504_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_INTERFACE_DEFINED__
@@ -40079,7 +40770,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0496 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0505 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory_INTERFACE_DEFINED__)
@@ -40087,13 +40778,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0496 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0505 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0496_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0496_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0505_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0505_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory_INTERFACE_DEFINED__
@@ -40230,7 +40921,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIUriRuntimeClassFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0497 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0506 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri_INTERFACE_DEFINED__)
@@ -40238,13 +40929,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0497 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0506 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0497_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0497_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0506_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0506_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri_INTERFACE_DEFINED__
@@ -40375,7 +41066,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsolut
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIUriRuntimeClassWithAbsoluteCanonicalUri_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0498 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0507 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__)
@@ -40383,13 +41074,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0498 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0507 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0498_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0498_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0507_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0507_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__
@@ -40520,7 +41211,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry;
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderEntry_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0499 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0508 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass_INTERFACE_DEFINED__)
@@ -40528,13 +41219,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0499 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0508 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0499_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0499_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0508_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0508_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass_INTERFACE_DEFINED__
@@ -40657,7 +41348,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeCl
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClass_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0500 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0509 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClassFactory_INTERFACE_DEFINED__)
@@ -40665,13 +41356,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClassFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0500 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0509 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0500_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0500_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0509_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0509_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClassFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClassFactory_INTERFACE_DEFINED__
@@ -40794,7 +41485,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeCl
 #endif 	/* ____x_ABI_CWindows_CFoundation_CIWwwFormUrlDecoderRuntimeClassFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0501 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0510 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Foundation_Collections_PropertySet_DEFINED
@@ -40835,13 +41526,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Efoundation_0000_0501 */
+/* interface __MIDL_itf_windows2Efoundation_0000_0510 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0501_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0501_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0510_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Efoundation_0000_0510_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

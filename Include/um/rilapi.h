@@ -150,6 +150,11 @@ HRESULT RIL_ResetModem(HRIL hRil, LPVOID lpContext, RILRESETMODEMKIND dwResetKin
     // In: RILRESETMODEMKIND
     // Async out: none (status only)
 
+HRESULT RIL_ResetModem_V2(HRIL hRil, LPVOID lpContext, const RILRESETMODEMPARAMS *params);
+    // RIL_COMMAND_RESETMODEM
+    // In: RILRESETMODEMPARAMS
+    // Async out: none (status only)
+
 //////////////////////////////////////////////////
 // UICC Slots and Cards
 //////////////////////////////////////////////////

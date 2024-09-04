@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -191,6 +191,27 @@ typedef interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialControlle
 typedef interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_FWD_DEFINED__
@@ -548,6 +569,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IPointerPointProperties2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CIPointerPointStatics __x_ABI_CWindows_CUI_CInput_CIPointerPointStatics;
@@ -648,6 +689,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialController_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialController2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialController2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialController2 __x_ABI_CWindows_CUI_CInput_CIRadialController2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialController2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialController2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs;
@@ -668,6 +729,86 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerButtonClickedEventArgs2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerButtonHoldingEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerButtonPressedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerButtonReleasedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration;
@@ -686,6 +827,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerConfiguration2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurationStatics_FWD_DEFINED__
@@ -726,6 +887,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerControlAcquiredEventArgs2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu_FWD_DEFINED__
@@ -788,6 +969,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerMenuItemStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs;
@@ -806,6 +1007,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerRotationChangedEventArgs2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact_FWD_DEFINED__
@@ -848,6 +1069,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerScreenContactContinuedEventArgs2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerScreenContactEndedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs;
@@ -866,6 +1127,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                interface IRadialControllerScreenContactStartedEventArgs2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics_FWD_DEFINED__
@@ -933,6 +1214,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
+#include "Windows.Devices.Haptics.h"
 #include "Windows.Devices.Input.h"
 #include "Windows.Storage.Streams.h"
 
@@ -985,18 +1267,18 @@ interface IPointerPoint;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0001 */
 /* [local] */ 
@@ -1031,18 +1313,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0002 */
 /* [local] */ 
@@ -1101,18 +1383,18 @@ interface IRadialControllerMenuItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0003 */
 /* [local] */ 
@@ -1147,18 +1429,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4603 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4603_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0004 */
 /* [local] */ 
@@ -1206,18 +1488,18 @@ enum RadialControllerSystemMenuItemKind;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4604 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4604_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0005 */
 /* [local] */ 
@@ -1252,18 +1534,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0006 */
 /* [local] */ 
@@ -1298,18 +1580,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0007 */
 /* [local] */ 
@@ -1344,18 +1626,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0008 */
 /* [local] */ 
@@ -1390,18 +1672,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0009 */
 /* [local] */ 
@@ -1436,18 +1718,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0010 */
 /* [local] */ 
@@ -1530,18 +1812,18 @@ interface IEdgeGestureEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0011 */
 /* [local] */ 
@@ -1624,18 +1906,18 @@ interface ICrossSlidingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0012 */
 /* [local] */ 
@@ -1694,18 +1976,18 @@ interface IDraggingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0013 */
 /* [local] */ 
@@ -1764,18 +2046,18 @@ interface IHoldingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0014 */
 /* [local] */ 
@@ -1834,18 +2116,18 @@ interface IManipulationCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0015 */
 /* [local] */ 
@@ -1904,18 +2186,18 @@ interface IManipulationInertiaStartingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0016 */
 /* [local] */ 
@@ -1974,18 +2256,18 @@ interface IManipulationStartedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0017 */
 /* [local] */ 
@@ -2044,18 +2326,18 @@ interface IManipulationUpdatedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0018 */
 /* [local] */ 
@@ -2114,18 +2396,18 @@ interface IRightTappedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0019 */
 /* [local] */ 
@@ -2184,18 +2466,18 @@ interface ITappedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0020 */
 /* [local] */ 
@@ -2257,18 +2539,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0021 */
 /* [local] */ 
@@ -2327,18 +2609,18 @@ interface IRadialControllerButtonClickedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput_0000_0022 */
 /* [local] */ 
@@ -2367,6 +2649,216 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Input {
+class RadialControllerButtonHoldingEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+interface IRadialControllerButtonHoldingEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0022 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4622 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4622 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0023 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4c44f2ff-3a4a-51ba-a01f-9f2002471f59"))
+ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windows::UI::Input::RadialControllerButtonHoldingEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::RadialController*, ABI::Windows::UI::Input::IRadialController*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::RadialControllerButtonHoldingEventArgs*, ABI::Windows::UI::Input::IRadialControllerButtonHoldingEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windows::UI::Input::RadialControllerButtonHoldingEventArgs*> __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+class RadialControllerButtonPressedEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+interface IRadialControllerButtonPressedEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0023 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0023_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4623 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4623 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0024 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("660bee4a-4fed-5a62-aa5d-8113b477bc69"))
+ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windows::UI::Input::RadialControllerButtonPressedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::RadialController*, ABI::Windows::UI::Input::IRadialController*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::RadialControllerButtonPressedEventArgs*, ABI::Windows::UI::Input::IRadialControllerButtonPressedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windows::UI::Input::RadialControllerButtonPressedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+class RadialControllerButtonReleasedEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+interface IRadialControllerButtonReleasedEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0024 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4624 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4624 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0025 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c22ff62c-c642-5d50-9340-fe163122720c"))
+ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windows::UI::Input::RadialControllerButtonReleasedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::RadialController*, ABI::Windows::UI::Input::IRadialController*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::RadialControllerButtonReleasedEventArgs*, ABI::Windows::UI::Input::IRadialControllerButtonReleasedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Input::RadialController*,ABI::Windows::UI::Input::RadialControllerButtonReleasedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
 class RadialControllerControlAcquiredEventArgs;
 } /*Input*/
 } /*UI*/
@@ -2387,30 +2879,30 @@ interface IRadialControllerControlAcquiredEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0022 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0025 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_USE
@@ -2457,30 +2949,30 @@ interface IRadialControllerRotationChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0026 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_USE
@@ -2527,30 +3019,30 @@ interface IRadialControllerScreenContactContinuedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0027 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3081 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_USE
@@ -2597,30 +3089,30 @@ interface IRadialControllerScreenContactStartedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0028 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_USE
@@ -2644,29 +3136,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_USE
@@ -2736,7 +3228,7 @@ interface IKeyEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0030 */
 /* [local] */ 
 
 
@@ -2744,23 +3236,23 @@ interface IKeyEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_USE
@@ -2782,10 +3274,59 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::KeyboardDeliveryInterceptor*
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0031 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0031_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4631 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4631 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0032 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_float_USE
+#define DEF___FIReference_1_float_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("719cc2ba-3e76-5def-9f1a-38d85a145ea8"))
+IReference<float> : IReference_impl<float> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Single>"; }
+};
+typedef IReference<float> __FIReference_1_float_t;
+#define ____FIReference_1_float_FWD_DEFINED__
+#define __FIReference_1_float ABI::Windows::Foundation::__FIReference_1_float_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_float_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Edevices2Ehaptics_h__)
+#include <Windows.Devices.Haptics.h>
+#endif // !defined(__windows2Edevices2Ehaptics_h__)
 #if !defined(__windows2Edevices2Einput_h__)
 #include <Windows.Devices.Input.h>
 #endif // !defined(__windows2Edevices2Einput_h__)
@@ -2798,6 +3339,18 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Haptics {
+class SimpleHapticsController;
+} /*Haptics*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2828,6 +3381,16 @@ typedef struct __x_ABI_CWindows_CFoundation_CPoint __x_ABI_CWindows_CFoundation_
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+class Uri;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2946,6 +3509,16 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CManipulationVelocities __x_ABI_CWind
 
 
 
+
+
+
+
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3012,10 +3585,22 @@ class RadialControllerScreenContact;
 } /*Windows*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+class RadialControllerScreenContactEndedEventArgs;
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0028 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0032 */
 /* [local] */ 
+
 
 
 
@@ -3068,6 +3653,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 #ifdef __cplusplus
@@ -3284,23 +3870,33 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0028_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3085 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3085 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0029 */
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4632 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4632 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CPointerPoint
@@ -3308,13 +3904,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3085_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
@@ -3458,35 +4054,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CPointerPoint;
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CPointerPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CPointerPoint
@@ -3494,13 +4090,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3086_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
@@ -3610,35 +4206,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CPointerPoint;
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CPointerPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CRadialControllerMenuItem
@@ -3646,13 +4242,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3087_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
@@ -3796,35 +4392,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CRadialControllerMen
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CRadialControllerMenuItem */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CRadialControllerMenuItem
@@ -3832,13 +4428,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3088_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
@@ -3948,35 +4544,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CRadialControllerMen
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CRadialControllerMenuItem */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind
@@ -3984,13 +4580,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3089_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind_INTERFACE_DEFINED__
@@ -4134,35 +4730,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CRadialControllerSys
 #endif 	/* ____FIIterator_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind
@@ -4170,13 +4766,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3090_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind_INTERFACE_DEFINED__
@@ -4286,35 +4882,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CRadialControllerSys
 #endif 	/* ____FIIterable_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CRadialControllerSystemMenuItemKind */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CPointerPoint
@@ -4322,13 +4918,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3091_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
@@ -4480,35 +5076,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CPointerPoint;
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CPointerPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CRadialControllerMenuItem
@@ -4516,13 +5112,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3092_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
@@ -4674,35 +5270,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CRadialControllerM
 #endif 	/* ____FIVectorView_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CRadialControllerMenuItem */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CInput__CPointerPoint
@@ -4710,13 +5306,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3093_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__
@@ -4950,35 +5546,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CInput__CPointerPoint;
 #endif 	/* ____FIVector_1_Windows__CUI__CInput__CPointerPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CInput__CPointerPoint */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem
@@ -4986,13 +5582,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3094_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__
@@ -5226,35 +5822,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CInput__CRadialControllerMenuI
 #endif 	/* ____FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0052 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs
@@ -5262,13 +5858,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3095_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_INTERFACE_DEFINED__
@@ -5357,35 +5953,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGestur
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0054 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs
@@ -5393,13 +5989,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3096_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_INTERFACE_DEFINED__
@@ -5488,35 +6084,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs
@@ -5524,13 +6120,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3097_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_INTERFACE_DEFINED__
@@ -5619,35 +6215,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs
@@ -5655,13 +6251,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3098_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_INTERFACE_DEFINED__
@@ -5750,35 +6346,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs
@@ -5786,13 +6382,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3099_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_INTERFACE_DEFINED__
@@ -5881,35 +6477,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs
@@ -5917,13 +6513,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3100_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__
@@ -6012,35 +6608,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs
@@ -6048,13 +6644,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3101_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_INTERFACE_DEFINED__
@@ -6143,35 +6739,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0063 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs
@@ -6179,13 +6775,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3102_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_INTERFACE_DEFINED__
@@ -6274,35 +6870,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0065 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs
@@ -6310,13 +6906,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3103_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_INTERFACE_DEFINED__
@@ -6405,35 +7001,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0067 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs
@@ -6441,13 +7037,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3104_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_INTERFACE_DEFINED__
@@ -6536,35 +7132,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRec
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0069 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable
@@ -6572,13 +7168,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3105_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_INTERFACE_DEFINED__
@@ -6667,35 +7263,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0071 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs
@@ -6703,13 +7299,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3106_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__
@@ -6798,35 +7394,428 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0073 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0077 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0077 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0077_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4c44f2ff-3a4a-51ba-a01f-9f2002471f59")
+    __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialController *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialControllerButtonHoldingEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialController *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0078 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0078 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0078_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0079 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0079 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0079_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("660bee4a-4fed-5a62-aa5d-8113b477bc69")
+    __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialController *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialControllerButtonPressedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialController *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0080 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0080 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0080_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4656 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4656 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0081 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0081 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0081_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c22ff62c-c642-5d50-9340-fe163122720c")
+    __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialController *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialControllerButtonReleasedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialController *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0082 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0082 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0082_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4657 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4657 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0083 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs
@@ -6834,13 +7823,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3107_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__
@@ -6929,35 +7918,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0084 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0075 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs
@@ -6965,13 +7954,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3108_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__
@@ -7060,35 +8049,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0086 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0077 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs
@@ -7096,13 +8085,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3109_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__
@@ -7191,35 +8180,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0088 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0079 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs
@@ -7227,13 +8216,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3110_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__
@@ -7322,35 +8311,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0090 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Einput2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0081 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0091 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable
@@ -7358,13 +8347,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Eidl_0000_3111_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_INTERFACE_DEFINED__
@@ -7453,7 +8442,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CRadialCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0092 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -7639,7 +8628,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CICrossSlidingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0092 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -7920,8 +8909,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CICrossSlidingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CICrossSlidingEventArgs_INTERFACE_DEFINED__
@@ -8064,7 +9053,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CICrossSlidingEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CICrossSlidingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIDraggingEventArgs_INTERFACE_DEFINED__)
@@ -8072,13 +9061,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIDraggingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIDraggingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIDraggingEventArgs_INTERFACE_DEFINED__
@@ -8221,7 +9210,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIDraggingEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIDraggingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIEdgeGesture_INTERFACE_DEFINED__)
@@ -8229,13 +9218,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIEdgeGesture_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIEdgeGesture_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIEdgeGesture_INTERFACE_DEFINED__
@@ -8414,7 +9403,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIEdgeGesture;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIEdgeGesture_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIEdgeGestureEventArgs_INTERFACE_DEFINED__)
@@ -8422,13 +9411,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIEdgeGestureEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIEdgeGestureEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIEdgeGestureEventArgs_INTERFACE_DEFINED__
@@ -8551,7 +9540,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIEdgeGestureEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIEdgeGestureEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIEdgeGestureStatics_INTERFACE_DEFINED__)
@@ -8559,13 +9548,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIEdgeGestureStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIEdgeGestureStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIEdgeGestureStatics_INTERFACE_DEFINED__
@@ -8688,7 +9677,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIEdgeGestureStatics;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIEdgeGestureStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIGestureRecognizer_INTERFACE_DEFINED__)
@@ -8696,13 +9685,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIGestureRecognizer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIGestureRecognizer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIGestureRecognizer_INTERFACE_DEFINED__
@@ -9415,7 +10404,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIGestureRecognizer;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIGestureRecognizer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIHoldingEventArgs_INTERFACE_DEFINED__)
@@ -9423,13 +10412,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIHoldingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIHoldingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIHoldingEventArgs_INTERFACE_DEFINED__
@@ -9572,7 +10561,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIHoldingEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIHoldingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor_INTERFACE_DEFINED__)
@@ -9580,13 +10569,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor_INTERFACE_DEFINED__
@@ -9763,7 +10752,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0100 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptorStatics_INTERFACE_DEFINED__)
@@ -9771,13 +10760,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptorStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptorStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptorStatics_INTERFACE_DEFINED__
@@ -9900,7 +10889,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptor
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIKeyboardDeliveryInterceptorStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationCompletedEventArgs_INTERFACE_DEFINED__)
@@ -9908,13 +10897,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationCompletedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIManipulationCompletedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIManipulationCompletedEventArgs_INTERFACE_DEFINED__
@@ -10067,7 +11056,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIManipulationCompletedEventA
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIManipulationCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__)
@@ -10075,13 +11064,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__
@@ -10244,7 +11233,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIManipulationInertiaStarting
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIManipulationInertiaStartingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationStartedEventArgs_INTERFACE_DEFINED__)
@@ -10252,13 +11241,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationStartedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIManipulationStartedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIManipulationStartedEventArgs_INTERFACE_DEFINED__
@@ -10401,7 +11390,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIManipulationStartedEventArg
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIManipulationStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -10409,13 +11398,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIManipulationUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIManipulationUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIManipulationUpdatedEventArgs_INTERFACE_DEFINED__
@@ -10578,7 +11567,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIManipulationUpdatedEventArg
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIManipulationUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIMouseWheelParameters_INTERFACE_DEFINED__)
@@ -10586,13 +11575,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIMouseWheelParameters_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIMouseWheelParameters_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIMouseWheelParameters_INTERFACE_DEFINED__
@@ -10785,7 +11774,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIMouseWheelParameters;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIMouseWheelParameters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPoint_INTERFACE_DEFINED__)
@@ -10793,13 +11782,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPoint_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPoint_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerPoint_INTERFACE_DEFINED__
@@ -10992,7 +11981,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerPoint;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPoint_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties_INTERFACE_DEFINED__)
@@ -11000,13 +11989,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties_INTERFACE_DEFINED__
@@ -11367,7 +12356,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerPointProperties;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0108 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IPointerPointProperties2[] = L"Windows.UI.Input.IPointerPointProperties2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0108 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0108_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IPointerPointProperties2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("22C3433A-C83B-41C0-A296-5E232D64D6AF")
+                    IPointerPointProperties2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ZDistance( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_float **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPointerPointProperties2 = __uuidof(IPointerPointProperties2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ZDistance )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_float **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_get_ZDistance(This,value)	\
+    ( (This)->lpVtbl -> get_ZDistance(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPointProperties2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_INTERFACE_DEFINED__)
@@ -11375,13 +12501,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_INTERFACE_DEFINED__
@@ -11546,7 +12672,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerPointStatics;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPointStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointTransform_INTERFACE_DEFINED__)
@@ -11554,13 +12680,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerPointTransform_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerPointTransform_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerPointTransform_INTERFACE_DEFINED__
@@ -11709,7 +12835,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerPointTransform;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerPointTransform_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettings_INTERFACE_DEFINED__)
@@ -11717,13 +12843,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettings_INTERFACE_DEFINED__
@@ -11876,7 +13002,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSetting
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettingsStatics_INTERFACE_DEFINED__)
@@ -11884,13 +13010,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettingsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettingsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettingsStatics_INTERFACE_DEFINED__
@@ -12013,7 +13139,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSetting
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIPointerVisualizationSettingsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialController_INTERFACE_DEFINED__)
@@ -12021,13 +13147,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialController_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialController_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialController_INTERFACE_DEFINED__
@@ -12344,7 +13470,200 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialController;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialController_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0114 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialController2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialController2[] = L"Windows.UI.Input.IRadialController2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialController2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0114 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0114_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialController2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialController2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialController2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialController2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialController2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EFF-4CEE-11E6-B535-001BDC06AB3B")
+                    IRadialController2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE add_ButtonPressed( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_ButtonPressed( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_ButtonHolding( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_ButtonHolding( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_ButtonReleased( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_ButtonReleased( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialController2 = __uuidof(IRadialController2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialController2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_ButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_ButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_ButtonHolding )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_ButtonHolding )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_ButtonReleased )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_ButtonReleased )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialController2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialController2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialController2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialController2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_add_ButtonPressed(This,handler,token)	\
+    ( (This)->lpVtbl -> add_ButtonPressed(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_remove_ButtonPressed(This,token)	\
+    ( (This)->lpVtbl -> remove_ButtonPressed(This,token) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_add_ButtonHolding(This,handler,token)	\
+    ( (This)->lpVtbl -> add_ButtonHolding(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_remove_ButtonHolding(This,token)	\
+    ( (This)->lpVtbl -> remove_ButtonHolding(This,token) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_add_ButtonReleased(This,handler,token)	\
+    ( (This)->lpVtbl -> add_ButtonReleased(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialController2_remove_ButtonReleased(This,token)	\
+    ( (This)->lpVtbl -> remove_ButtonReleased(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialController2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__)
@@ -12352,13 +13671,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__
@@ -12481,7 +13800,585 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClick
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0116 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerButtonClickedEventArgs2[] = L"Windows.UI.Input.IRadialControllerButtonClickedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0116 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0116_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerButtonClickedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EF3-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerButtonClickedEventArgs2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerButtonClickedEventArgs2 = __uuidof(IRadialControllerButtonClickedEventArgs2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonClickedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0117 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerButtonHoldingEventArgs[] = L"Windows.UI.Input.IRadialControllerButtonHoldingEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0117 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0117_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerButtonHoldingEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EEE-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerButtonHoldingEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Contact( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerButtonHoldingEventArgs = __uuidof(IRadialControllerButtonHoldingEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Contact )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_get_Contact(This,value)	\
+    ( (This)->lpVtbl -> get_Contact(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonHoldingEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0118 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerButtonPressedEventArgs[] = L"Windows.UI.Input.IRadialControllerButtonPressedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0118 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0118_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerButtonPressedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EED-4CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerButtonPressedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Contact( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerButtonPressedEventArgs = __uuidof(IRadialControllerButtonPressedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Contact )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_get_Contact(This,value)	\
+    ( (This)->lpVtbl -> get_Contact(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonPressedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0119 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerButtonReleasedEventArgs[] = L"Windows.UI.Input.IRadialControllerButtonReleasedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0119 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0119_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerButtonReleasedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EEF-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerButtonReleasedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Contact( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerScreenContact **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerButtonReleasedEventArgs = __uuidof(IRadialControllerButtonReleasedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Contact )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_get_Contact(This,value)	\
+    ( (This)->lpVtbl -> get_Contact(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerButtonReleasedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0120 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_INTERFACE_DEFINED__)
@@ -12489,13 +14386,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0120_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_INTERFACE_DEFINED__
@@ -12638,7 +14535,174 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurati
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0121 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerConfiguration2[] = L"Windows.UI.Input.IRadialControllerConfiguration2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0121 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0121_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerConfiguration2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EF7-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerConfiguration2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ActiveControllerWhenMenuIsSuppressed( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::IRadialController *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ActiveControllerWhenMenuIsSuppressed( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::IRadialController **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsMenuSuppressed( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsMenuSuppressed( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerConfiguration2 = __uuidof(IRadialControllerConfiguration2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ActiveControllerWhenMenuIsSuppressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CIRadialController *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ActiveControllerWhenMenuIsSuppressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIRadialController **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsMenuSuppressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsMenuSuppressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_put_ActiveControllerWhenMenuIsSuppressed(This,value)	\
+    ( (This)->lpVtbl -> put_ActiveControllerWhenMenuIsSuppressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_get_ActiveControllerWhenMenuIsSuppressed(This,value)	\
+    ( (This)->lpVtbl -> get_ActiveControllerWhenMenuIsSuppressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_put_IsMenuSuppressed(This,value)	\
+    ( (This)->lpVtbl -> put_IsMenuSuppressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_get_IsMenuSuppressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsMenuSuppressed(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfiguration2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0122 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurationStatics_INTERFACE_DEFINED__)
@@ -12646,13 +14710,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurationStatics_INTERFACE_DEFINED__
@@ -12775,7 +14839,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurati
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerConfigurationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__)
@@ -12783,13 +14847,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__
@@ -12912,7 +14976,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcqu
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0124 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerControlAcquiredEventArgs2[] = L"Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0124 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0124_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EF4-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerControlAcquiredEventArgs2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsButtonPressed( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerControlAcquiredEventArgs2 = __uuidof(IRadialControllerControlAcquiredEventArgs2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_get_IsButtonPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsButtonPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerControlAcquiredEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0125 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu_INTERFACE_DEFINED__)
@@ -12920,13 +15131,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu_INTERFACE_DEFINED__
@@ -13099,7 +15310,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenu_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0126 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem_INTERFACE_DEFINED__)
@@ -13107,13 +15318,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem_INTERFACE_DEFINED__
@@ -13278,7 +15489,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics_INTERFACE_DEFINED__)
@@ -13286,13 +15497,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics_INTERFACE_DEFINED__
@@ -13433,7 +15644,168 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemSta
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0128 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerMenuItemStatics2[] = L"Windows.UI.Input.IRadialControllerMenuItemStatics2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0128 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0128_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerMenuItemStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("0CBB70BE-7E3E-48BD-BE04-2C7FCAA9C1FF")
+                    IRadialControllerMenuItemStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateFromFontGlyph( 
+                            /* [in] */ __RPC__in HSTRING displayText,
+                            /* [in] */ __RPC__in HSTRING glyph,
+                            /* [in] */ __RPC__in HSTRING fontFamily,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerMenuItem **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateFromFontGlyphWithUri( 
+                            /* [in] */ __RPC__in HSTRING displayText,
+                            /* [in] */ __RPC__in HSTRING glyph,
+                            /* [in] */ __RPC__in HSTRING fontFamily,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *fontUri,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::IRadialControllerMenuItem **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerMenuItemStatics2 = __uuidof(IRadialControllerMenuItemStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateFromFontGlyph )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This,
+            /* [in] */ __RPC__in HSTRING displayText,
+            /* [in] */ __RPC__in HSTRING glyph,
+            /* [in] */ __RPC__in HSTRING fontFamily,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateFromFontGlyphWithUri )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2 * This,
+            /* [in] */ __RPC__in HSTRING displayText,
+            /* [in] */ __RPC__in HSTRING glyph,
+            /* [in] */ __RPC__in HSTRING fontFamily,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *fontUri,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItem **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_CreateFromFontGlyph(This,displayText,glyph,fontFamily,result)	\
+    ( (This)->lpVtbl -> CreateFromFontGlyph(This,displayText,glyph,fontFamily,result) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_CreateFromFontGlyphWithUri(This,displayText,glyph,fontFamily,fontUri,result)	\
+    ( (This)->lpVtbl -> CreateFromFontGlyphWithUri(This,displayText,glyph,fontFamily,fontUri,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerMenuItemStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0129 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__)
@@ -13441,13 +15813,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__
@@ -13580,7 +15952,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationCha
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0130 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerRotationChangedEventArgs2[] = L"Windows.UI.Input.IRadialControllerRotationChangedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0130 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0130_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerRotationChangedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EEC-4CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerRotationChangedEventArgs2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsButtonPressed( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerRotationChangedEventArgs2 = __uuidof(IRadialControllerRotationChangedEventArgs2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_get_IsButtonPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsButtonPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerRotationChangedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0131 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact_INTERFACE_DEFINED__)
@@ -13588,13 +16107,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact_INTERFACE_DEFINED__
@@ -13727,7 +16246,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenConta
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0132 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__)
@@ -13735,13 +16254,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0132_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__
@@ -13864,7 +16383,301 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenConta
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0133 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerScreenContactContinuedEventArgs2[] = L"Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0133 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0133_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EF1-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerScreenContactContinuedEventArgs2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsButtonPressed( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerScreenContactContinuedEventArgs2 = __uuidof(IRadialControllerScreenContactContinuedEventArgs2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_get_IsButtonPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsButtonPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactContinuedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0134 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerScreenContactEndedEventArgs[] = L"Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0134 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0134_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EF2-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerScreenContactEndedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsButtonPressed( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerScreenContactEndedEventArgs = __uuidof(IRadialControllerScreenContactEndedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_get_IsButtonPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsButtonPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactEndedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__)
@@ -13872,13 +16685,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__
@@ -14001,7 +16814,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenConta
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0136 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_IRadialControllerScreenContactStartedEventArgs2[] = L"Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0136 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0136_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("3D577EF0-3CEE-11E6-B535-001BDC06AB3B")
+                    IRadialControllerScreenContactStartedEventArgs2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsButtonPressed( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRadialControllerScreenContactStartedEventArgs2 = __uuidof(IRadialControllerScreenContactStartedEventArgs2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsButtonPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_get_IsButtonPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsButtonPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerScreenContactStartedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics_INTERFACE_DEFINED__)
@@ -14009,13 +16969,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics_INTERFACE_DEFINED__
@@ -14148,7 +17108,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRadialControllerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CIRightTappedEventArgs_INTERFACE_DEFINED__)
@@ -14156,13 +17116,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CIRightTappedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CIRightTappedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CIRightTappedEventArgs_INTERFACE_DEFINED__
@@ -14295,7 +17255,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CIRightTappedEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CIRightTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0139 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITappedEventArgs_INTERFACE_DEFINED__)
@@ -14303,13 +17263,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITappedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CITappedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CITappedEventArgs_INTERFACE_DEFINED__
@@ -14452,7 +17412,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITappedEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CITappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0140 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Input_CrossSlidingEventArgs_DEFINED
@@ -14523,6 +17483,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonClickedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerButtonClickedEventArgs[] = L"Windows.UI.Input.RadialControllerButtonClickedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonHoldingEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonHoldingEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerButtonHoldingEventArgs[] = L"Windows.UI.Input.RadialControllerButtonHoldingEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonPressedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonPressedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerButtonPressedEventArgs[] = L"Windows.UI.Input.RadialControllerButtonPressedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonReleasedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_RadialControllerButtonReleasedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerButtonReleasedEventArgs[] = L"Windows.UI.Input.RadialControllerButtonReleasedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Input_RadialControllerConfiguration_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_RadialControllerConfiguration_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerConfiguration[] = L"Windows.UI.Input.RadialControllerConfiguration";
@@ -14551,6 +17523,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Input_RadialControllerScreenContactContinuedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerScreenContactContinuedEventArgs[] = L"Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_RadialControllerScreenContactEndedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_RadialControllerScreenContactEndedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerScreenContactEndedEventArgs[] = L"Windows.UI.Input.RadialControllerScreenContactEndedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Input_RadialControllerScreenContactStartedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_RadialControllerScreenContactStartedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_RadialControllerScreenContactStartedEventArgs[] = L"Windows.UI.Input.RadialControllerScreenContactStartedEventArgs";
@@ -14565,13 +17541,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Einput_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput_0000_0140_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

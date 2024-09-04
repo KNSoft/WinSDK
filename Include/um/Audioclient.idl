@@ -8,29 +8,18 @@ cpp_quote("#include <winapifamily.h>")
 
 import "wtypes.idl";
 import "unknwn.idl";  // for IUnknown
-
-cpp_quote("#if 0")  // Ignore our definition in the .H file
-typedef [restricted, hidden] struct WAVEFORMATEX
-{
-    WORD    wFormatTag;        /* format type */
-    WORD    nChannels;         /* number of channels (i.e. mono, stereo...) */
-    DWORD   nSamplesPerSec;    /* sample rate */
-    DWORD   nAvgBytesPerSec;   /* for buffer estimation */
-    WORD    nBlockAlign;       /* block size of data */
-    WORD    wBitsPerSample;    /* Number of bits per sample of mono data */
-    WORD    cbSize;            /* The count in bytes of the size of
-                                    extra information (after cbSize) */
-} WAVEFORMATEX;
-cpp_quote("#else")
-cpp_quote("#include <mmreg.h>")
-cpp_quote("#endif")
+import "mmreg.h"; // for WAVEFORMATEX
 
 cpp_quote("#if 0")
 typedef [restricted, hidden] LONGLONG REFERENCE_TIME;
 cpp_quote("#else")
+
+cpp_quote("#ifndef _SkipIksIncludes_")
 cpp_quote("#define _IKsControl_")
 cpp_quote("#include <ks.h>")
 cpp_quote("#include <ksmedia.h>")
+cpp_quote("#endif")
+
 cpp_quote("#endif")
 
 
@@ -1096,13 +1085,6 @@ interface IAudioClock : IUnknown
 
 }; // IAudioClock
 
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
-#pragma endregion
-
-#pragma region Desktop Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
-
-
 //-----------------------------------------------------------------------------
 // Description: IAudioClock2 interface
 //
@@ -1171,13 +1153,6 @@ interface IAudioClockAdjustment : IUnknown
     //
     HRESULT SetSampleRate([in, annotation("_In_")] float flSampleRate);
 }; // IAudioClockAdjustment
-
-
-cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
-#pragma endregion
-
-#pragma region Application Family
-cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 //-----------------------------------------------------------------------------
 // Description: ISimpleAudioVolume interface
@@ -1572,6 +1547,9 @@ cpp_quote("#define AUDCLNT_E_ENGINE_FORMAT_LOCKED         AUDCLNT_ERR(0x029)")
 cpp_quote("#define AUDCLNT_S_BUFFER_EMPTY                 AUDCLNT_SUCCESS(0x001)")
 cpp_quote("#define AUDCLNT_S_THREAD_ALREADY_REGISTERED    AUDCLNT_SUCCESS(0x002)")
 cpp_quote("#define AUDCLNT_S_POSITION_STALLED             AUDCLNT_SUCCESS(0x003)")
+
+// NOTE! error codes of 0x100 and above a reserved for SpatialAudioClient. AUDCLNT_ERR(0x100) to AUDCLNT_ERR(0x1FF)
+// NOTE! error codes of 0x200 and above a reserved for SpatialAudioMetadataClient. AUDCLNT_ERR(0x200) to AUDCLNT_ERR(0x2FF)
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion

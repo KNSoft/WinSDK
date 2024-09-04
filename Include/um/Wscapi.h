@@ -116,6 +116,8 @@ STDAPI WscGetSecurityProviderHealth(DWORD Providers,
 
 HRESULT wscShowAMSCN(_In_ DWORD InputFlags, _Out_opt_ PDWORD pdwResultFlags);
 
+HRESULT wscLaunchAdminMakeDefaultUI(_In_z_ PCWSTR pwszProductName);
+
 // The WscQueryAntiMalwareUri function attempts to call the Windows Store API to retrieve the uri for the antimalware page. 
 // If the call succeeds, the uri for invoking the store is returned, and will be used to redirect the user to the Windows 
 // store for purchases. If the uri cannot be retrieved, the handler functions in wscui.cpl will fall back to sending users to 

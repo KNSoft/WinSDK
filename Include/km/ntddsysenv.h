@@ -114,7 +114,7 @@ typedef XVARIABLE_NAME SYSENV_VARIABLE_NAME, *PSYSENV_VARIABLE_NAME;
 //
 //     Otherwise, SYSENV_VARIABLE_NAME structures will be returned.
 //
-//     The ocation of next entry is determined by the NextEntryOffset
+//     The location of next entry is determined by the NextEntryOffset
 //
 
 //

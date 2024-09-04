@@ -18,7 +18,13 @@ Environment:
 
 #pragma once
 
+#include <usbfnbase.h>
 #include <initguid.h>
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Device interfaces
+//
 
 // {EC0A1CC9-4294-43FB-BF37-B850CE95F337}
 DEFINE_GUID(GUID_DEVINTERFACE_CHARGING_ARBITRATION, 0xec0a1cc9, 0x4294, 0x43fb, 0xbf, 0x37, 0xb8, 0x50, 0xce, 0x95, 0xf3, 0x37);
@@ -34,19 +40,39 @@ DEFINE_GUID(GUID_DEVINTERFACE_CONFIGURABLE_USBFN_CHARGER, 0x7158c35c, 0xc1bc, 0x
 // {3612B1C8-3633-47D3-8AF5-00A4DFA04793}
 DEFINE_GUID(GUID_DEVINTERFACE_CONFIGURABLE_WIRELESS_CHARGER, 0x3612b1c8, 0x3633, 0x47d3, 0x8a, 0xf5, 0x0, 0xa4, 0xdf, 0xa0, 0x47, 0x93);
 
+////////////////////////////////////////////////////////////////////////////////
 //
 // IoControl definitions
 //
 
 #define IOCTL_CAD_DISABLE_CHARGING                  CTL_CODE(FILE_DEVICE_BATTERY, 0x120, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
+//
+// Received by CAD.
+// Issued to query known power sources and their properties.
+//
+
 #define IOCTL_CAD_GET_CHARGING_STATUS_COMPLETE      CTL_CODE(FILE_DEVICE_BATTERY, 0x122, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
 // 0x123 entry is reserved - do not use
 
+//
+// Issued by power source, limited to Wireless charger
+// Received by CAD.
+// Issued to advertise power source properties.
+//
+// Note - IOCTL_CAD_POWER_SOURCE_UPDATE_EX should be preferred over this IOCL.
+//
+
 #define IOCTL_INTERNAL_CAD_POWER_SOURCE_UPDATE      CTL_CODE(FILE_DEVICE_BATTERY, 0x130, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
 #define IOCTL_CAD_GET_BATTERY_PROVISIONING_STATUS   CTL_CODE(FILE_DEVICE_BATTERY, 0x131, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+
+//
+// Issued by power source such as USB, Wireless charger, etc.
+// Received by CAD.
+// Issued to advertise power source properties.
+//
 
 #define IOCTL_CAD_POWER_SOURCE_UPDATE_EX            CTL_CODE(FILE_DEVICE_BATTERY, 0x132, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
@@ -58,6 +84,7 @@ DEFINE_GUID(GUID_DEVINTERFACE_CONFIGURABLE_WIRELESS_CHARGER, 0x3612b1c8, 0x3633,
 
 #define IOCTL_INTERNAL_CONFIGURE_CHARGER_PROPERTY   CTL_CODE(FILE_DEVICE_BATTERY, 0x140, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
+////////////////////////////////////////////////////////////////////////////////
 //
 // Type Definitions
 //
@@ -73,9 +100,7 @@ typedef enum _POWERSOURCEID {
 } POWERSOURCEID, *PPOWERSOURCEID;
 
 //
-// These structures are used as an output argument to
-// IOCTL_CAD_GET_CHARGING_STATUS_COMPLETE. The CAD returns the current
-// charging status using this structure.
+// IOCTL_CAD_GET_CHARGING_STATUS_COMPLETE response.
 //
 
 typedef struct _POWERSOURCESTATUS {
@@ -93,11 +118,16 @@ typedef struct _POWERSOURCESTATUS {
     ULONG MaxChargeCurrent;
 
     //
-    // Power source specific information
-    // USB: port type
+    // Power source specific information:
+    //
+    // PowerSourceId        | PowerSourceInformation
+    // ---------------------|-----------------------
+    // PowerSourceUsbfn     | USBFN_PORT_TYPE
+    // PowerSourceUsbTypeC  | USBFN_PORT_TYPE
+    // <other values>       | <undefined>
     //
 
-    PVOID PowerSourceInformation;
+    ULONG PowerSourceInformation;
 
     //
     // Set to true if the power source is available (attached)
@@ -142,16 +172,17 @@ typedef struct _CHARGINGSTATUSCOMPLETE {
 } CHARGINGSTATUSCOMPLETE, *PCHARGINGSTATUSCOMPLETE;
 
 //
-// The following two structs are input arguments to
-// IOCTL_INTERNAL_CAD_POWER_SOURCE_UPDATE.
-// The power source sends either of the structures with all the fields populated
-// to inform the CAD of a change in its charging state.
+// IOCTL_INTERNAL_CAD_POWER_SOURCE_UPDATE payload.
 //
 
 typedef struct _POWERSOURCEUPDATE
 {
     //
-    // Identifies the source of the IOCTL
+    // Identifies the source of the IOCTL.
+    //
+    // N.B. This can never be PowerSourceUsbfn or PowerSourceUsbTypeC as USB
+    //      drivers have moved to using the new IOCTL_CAD_POWER_SOURCE_UPDATE_EX
+    //      API.
     //
 
     POWERSOURCEID PowerSourceId;
@@ -170,9 +201,12 @@ typedef struct _POWERSOURCEUPDATE
     BOOLEAN PowerSourceAvailableStatus;
 
     //
-    // Optional power source specific information. This value is provided to
-    // callers via the IOCTL_CAD_GET_CHARGING_STATUS unmodified. The CAD driver
-    // itself does nothing with this parameter.
+    // Power source specific information.
+    //
+    // N.B. On 64-bit systems, the high order 32-bits are always reset and must
+    //      be unused. In other words, this value must not exceed 0xffffffff.
+    //      This is to ensure semantic compatibility with 32-bit applications on
+    //      64-bit systems.
     //
 
     PVOID PowerSourceInformation;
@@ -200,10 +234,10 @@ typedef struct _POWERSOURCEUPDATEEX {
 } POWERSOURCEUPDATEEX, *PPOWERSOURCEUPDATEEX;
 
 //
+// IOCTL_CAD_POWER_SOURCE_UPDATE_EX payload.
+//
 // This type describes dynamic properties of a power source, this is a new and
 // improved variant of POWERSOURCEUPDATE and POWERSOURCEUPDATEEX.
-//
-// IOCTL_CAD_POWER_SOURCE_UPDATE_EX payload.
 //
 
 typedef struct _CAD_POWER_SOURCE_INFO {
@@ -293,11 +327,10 @@ typedef struct _CAD_POWER_SOURCE_INFO_USB {
     ULONGLONG PortId;
 
     //
-    // Opaque data passed to CAD by USB Fn stack, this normally contains USB
-    // port type information that CAD does not attempt to interpret.
+    // USB port type information, provided by the USB stack.
     //
 
-    PVOID PowerSourceInformation;
+    USBFN_PORT_TYPE PowerSourceInformation;
 
     //
     // Represents OEM proprietary charger type when not GUID_EMPTY, this value
@@ -372,4 +405,3 @@ typedef struct _CONFIGURABLE_CHARGER_PROPERTY_HEADER {
     //
 
 } CONFIGURABLE_CHARGER_PROPERTY_HEADER, *PCONFIGURABLE_CHARGER_PROPERTY_HEADER;
-

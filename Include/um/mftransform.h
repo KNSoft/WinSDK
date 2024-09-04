@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -44,6 +44,13 @@
 typedef interface IMFTransform IMFTransform;
 
 #endif 	/* __IMFTransform_FWD_DEFINED__ */
+
+
+#ifndef __IMFDeviceTransform_FWD_DEFINED__
+#define __IMFDeviceTransform_FWD_DEFINED__
+typedef interface IMFDeviceTransform IMFDeviceTransform;
+
+#endif 	/* __IMFDeviceTransform_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -137,7 +144,7 @@ enum _MFT_DRAIN_TYPE
 #define MFT_STREAMS_UNLIMITED       0xFFFFFFFF
 #define MFT_OUTPUT_BOUND_LOWER_UNBOUNDED MINLONGLONG
 #define MFT_OUTPUT_BOUND_UPPER_UNBOUNDED MAXLONGLONG
-typedef 
+typedef /* [v1_enum] */ 
 enum _MFT_MESSAGE_TYPE
     {
         MFT_MESSAGE_COMMAND_FLUSH	= 0,
@@ -580,6 +587,18 @@ EXTERN_C const IID IID_IMFTransform;
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
+typedef 
+enum _DeviceStreamState
+    {
+        DeviceStreamState_Stop	= 0,
+        DeviceStreamState_Pause	= ( DeviceStreamState_Stop + 1 ) ,
+        DeviceStreamState_Run	= ( DeviceStreamState_Pause + 1 ) ,
+        DeviceStreamState_Disabled	= ( DeviceStreamState_Run + 1 ) 
+    } 	DeviceStreamState;
+
+typedef enum _DeviceStreamState *PDeviceStreamState;
+
+EXTERN_GUID(MEDeviceStreamCreated, 0x0252a1cf, 0x3540, 0x43b4, 0x91, 0x64, 0xd7, 0x2e, 0xb4, 0x05, 0xfa, 0x40);
 #if (WINVER >= _WIN32_WINNT_WIN7) 
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
@@ -627,8 +646,455 @@ EXTERN_C const DECLSPEC_SELECTANY PROPERTYKEY MFPKEY_MULTICHANNEL_CHANNEL_MASK  
 EXTERN_C const DECLSPEC_SELECTANY GUID MF_SA_D3D_AWARE = { 0xeaa35c29,  0x775e, 0x488e, { 0x9b, 0x61, 0xb3, 0x28, 0x3e, 0x49, 0x58, 0x3b } }; 
 EXTERN_C const DECLSPEC_SELECTANY GUID MF_SA_REQUIRED_SAMPLE_COUNT = { 0x18802c61, 0x324b, 0x4952, { 0xab, 0xd0, 0x17, 0x6f, 0xf5, 0xc6, 0x96, 0xff } };
  EXTERN_C const DECLSPEC_SELECTANY GUID MFT_END_STREAMING_AWARE = { 0x70fbc845,  0xb07e, 0x4089, { 0xb0, 0x64, 0x39, 0x9d, 0xc6, 0x11, 0xf, 0x29 } }; 
+ EXTERN_C const DECLSPEC_SELECTANY GUID MF_SA_AUDIO_ENDPOINT_AWARE = { 0xc0381701, 0x805c, 0x42b2,{ 0xac, 0x8d, 0xe2, 0xb4, 0xbf, 0x21, 0xf4, 0xf8 } }; 
+ EXTERN_C const DECLSPEC_SELECTANY GUID MFT_AUDIO_DECODER_AUDIO_ENDPOINT_ID = { 0xc7ccdd6e, 0x5398, 0x4695,{ 0x8b, 0xe7, 0x51, 0xb3, 0xe9, 0x51, 0x11, 0xbd } }; 
+ EXTERN_C const DECLSPEC_SELECTANY GUID MFT_AUDIO_DECODER_SPATIAL_METADATA_CLIENT = { 0x5987df4, 0x1270, 0x4999,{ 0x92, 0x5f, 0x8e, 0x93, 0x9a, 0x7c, 0xa, 0xf7 } }; 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
+#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
+
+
+extern RPC_IF_HANDLE __MIDL_itf_mftransform_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mftransform_0000_0001_v0_0_s_ifspec;
+
+#ifndef __IMFDeviceTransform_INTERFACE_DEFINED__
+#define __IMFDeviceTransform_INTERFACE_DEFINED__
+
+/* interface IMFDeviceTransform */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFDeviceTransform;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("D818FBD8-FC46-42F2-87AC-1EA2D1F9BF32")
+    IMFDeviceTransform : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE InitializeTransform( 
+            /* [annotation][in] */ 
+            _In_  IMFAttributes *pAttributes) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetInputAvailableType( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][in] */ 
+            _In_  DWORD dwTypeIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetInputCurrentType( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetInputStreamAttributes( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFAttributes **ppAttributes) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetOutputAvailableType( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputStreamID,
+            /* [annotation][in] */ 
+            _In_  DWORD dwTypeIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetOutputCurrentType( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetOutputStreamAttributes( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFAttributes **ppAttributes) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetStreamCount( 
+            /* [annotation][out] */ 
+            _Out_  DWORD *pcInputStreams,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pcOutputStreams) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetStreamIDs( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputIDArraySize,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwInputStreamIds,
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputIDArraySize,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwOutputStreamIds) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ProcessEvent( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFMediaEvent *pEvent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ProcessInput( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFSample *pSample,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ProcessMessage( 
+            /* [annotation][in] */ 
+            _In_  MFT_MESSAGE_TYPE eMessage,
+            /* [annotation][in] */ 
+            _In_  ULONG_PTR ulParam) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ProcessOutput( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags,
+            /* [annotation][in] */ 
+            _In_  DWORD cOutputBufferCount,
+            /* [size_is][annotation][out][in] */ 
+            _Inout_  MFT_OUTPUT_DATA_BUFFER *pOutputSample,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwStatus) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetInputStreamState( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFMediaType *pMediaType,
+            /* [annotation][in] */ 
+            _In_  DeviceStreamState value,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetInputStreamState( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][out] */ 
+            _Out_  DeviceStreamState *value) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetOutputStreamState( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFMediaType *pMediaType,
+            /* [annotation][in] */ 
+            _In_  DeviceStreamState value,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetOutputStreamState( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][out] */ 
+            _Out_  DeviceStreamState *value) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetInputStreamPreferredState( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][out] */ 
+            _Out_  DeviceStreamState *value,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **ppMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FlushInputStream( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamIndex,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE FlushOutputStream( 
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamIndex,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFDeviceTransformVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFDeviceTransform * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFDeviceTransform * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFDeviceTransform * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InitializeTransform )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  IMFAttributes *pAttributes);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetInputAvailableType )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][in] */ 
+            _In_  DWORD dwTypeIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetInputCurrentType )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetInputStreamAttributes )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFAttributes **ppAttributes);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetOutputAvailableType )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputStreamID,
+            /* [annotation][in] */ 
+            _In_  DWORD dwTypeIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetOutputCurrentType )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **pMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetOutputStreamAttributes )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputStreamID,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFAttributes **ppAttributes);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamCount )( 
+            IMFDeviceTransform * This,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pcInputStreams,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pcOutputStreams);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamIDs )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputIDArraySize,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwInputStreamIds,
+            /* [annotation][in] */ 
+            _In_  DWORD dwOutputIDArraySize,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwOutputStreamIds);
+        
+        HRESULT ( STDMETHODCALLTYPE *ProcessEvent )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFMediaEvent *pEvent);
+        
+        HRESULT ( STDMETHODCALLTYPE *ProcessInput )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwInputStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFSample *pSample,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags);
+        
+        HRESULT ( STDMETHODCALLTYPE *ProcessMessage )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  MFT_MESSAGE_TYPE eMessage,
+            /* [annotation][in] */ 
+            _In_  ULONG_PTR ulParam);
+        
+        HRESULT ( STDMETHODCALLTYPE *ProcessOutput )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags,
+            /* [annotation][in] */ 
+            _In_  DWORD cOutputBufferCount,
+            /* [size_is][annotation][out][in] */ 
+            _Inout_  MFT_OUTPUT_DATA_BUFFER *pOutputSample,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwStatus);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetInputStreamState )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFMediaType *pMediaType,
+            /* [annotation][in] */ 
+            _In_  DeviceStreamState value,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetInputStreamState )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][out] */ 
+            _Out_  DeviceStreamState *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetOutputStreamState )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][in] */ 
+            _In_  IMFMediaType *pMediaType,
+            /* [annotation][in] */ 
+            _In_  DeviceStreamState value,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetOutputStreamState )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][out] */ 
+            _Out_  DeviceStreamState *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetInputStreamPreferredState )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamID,
+            /* [annotation][out] */ 
+            _Out_  DeviceStreamState *value,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFMediaType **ppMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *FlushInputStream )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamIndex,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags);
+        
+        HRESULT ( STDMETHODCALLTYPE *FlushOutputStream )( 
+            IMFDeviceTransform * This,
+            /* [annotation][in] */ 
+            _In_  DWORD dwStreamIndex,
+            /* [annotation][in] */ 
+            _In_  DWORD dwFlags);
+        
+        END_INTERFACE
+    } IMFDeviceTransformVtbl;
+
+    interface IMFDeviceTransform
+    {
+        CONST_VTBL struct IMFDeviceTransformVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFDeviceTransform_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFDeviceTransform_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFDeviceTransform_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFDeviceTransform_InitializeTransform(This,pAttributes)	\
+    ( (This)->lpVtbl -> InitializeTransform(This,pAttributes) ) 
+
+#define IMFDeviceTransform_GetInputAvailableType(This,dwInputStreamID,dwTypeIndex,pMediaType)	\
+    ( (This)->lpVtbl -> GetInputAvailableType(This,dwInputStreamID,dwTypeIndex,pMediaType) ) 
+
+#define IMFDeviceTransform_GetInputCurrentType(This,dwInputStreamID,pMediaType)	\
+    ( (This)->lpVtbl -> GetInputCurrentType(This,dwInputStreamID,pMediaType) ) 
+
+#define IMFDeviceTransform_GetInputStreamAttributes(This,dwInputStreamID,ppAttributes)	\
+    ( (This)->lpVtbl -> GetInputStreamAttributes(This,dwInputStreamID,ppAttributes) ) 
+
+#define IMFDeviceTransform_GetOutputAvailableType(This,dwOutputStreamID,dwTypeIndex,pMediaType)	\
+    ( (This)->lpVtbl -> GetOutputAvailableType(This,dwOutputStreamID,dwTypeIndex,pMediaType) ) 
+
+#define IMFDeviceTransform_GetOutputCurrentType(This,dwOutputStreamID,pMediaType)	\
+    ( (This)->lpVtbl -> GetOutputCurrentType(This,dwOutputStreamID,pMediaType) ) 
+
+#define IMFDeviceTransform_GetOutputStreamAttributes(This,dwOutputStreamID,ppAttributes)	\
+    ( (This)->lpVtbl -> GetOutputStreamAttributes(This,dwOutputStreamID,ppAttributes) ) 
+
+#define IMFDeviceTransform_GetStreamCount(This,pcInputStreams,pcOutputStreams)	\
+    ( (This)->lpVtbl -> GetStreamCount(This,pcInputStreams,pcOutputStreams) ) 
+
+#define IMFDeviceTransform_GetStreamIDs(This,dwInputIDArraySize,pdwInputStreamIds,dwOutputIDArraySize,pdwOutputStreamIds)	\
+    ( (This)->lpVtbl -> GetStreamIDs(This,dwInputIDArraySize,pdwInputStreamIds,dwOutputIDArraySize,pdwOutputStreamIds) ) 
+
+#define IMFDeviceTransform_ProcessEvent(This,dwInputStreamID,pEvent)	\
+    ( (This)->lpVtbl -> ProcessEvent(This,dwInputStreamID,pEvent) ) 
+
+#define IMFDeviceTransform_ProcessInput(This,dwInputStreamID,pSample,dwFlags)	\
+    ( (This)->lpVtbl -> ProcessInput(This,dwInputStreamID,pSample,dwFlags) ) 
+
+#define IMFDeviceTransform_ProcessMessage(This,eMessage,ulParam)	\
+    ( (This)->lpVtbl -> ProcessMessage(This,eMessage,ulParam) ) 
+
+#define IMFDeviceTransform_ProcessOutput(This,dwFlags,cOutputBufferCount,pOutputSample,pdwStatus)	\
+    ( (This)->lpVtbl -> ProcessOutput(This,dwFlags,cOutputBufferCount,pOutputSample,pdwStatus) ) 
+
+#define IMFDeviceTransform_SetInputStreamState(This,dwStreamID,pMediaType,value,dwFlags)	\
+    ( (This)->lpVtbl -> SetInputStreamState(This,dwStreamID,pMediaType,value,dwFlags) ) 
+
+#define IMFDeviceTransform_GetInputStreamState(This,dwStreamID,value)	\
+    ( (This)->lpVtbl -> GetInputStreamState(This,dwStreamID,value) ) 
+
+#define IMFDeviceTransform_SetOutputStreamState(This,dwStreamID,pMediaType,value,dwFlags)	\
+    ( (This)->lpVtbl -> SetOutputStreamState(This,dwStreamID,pMediaType,value,dwFlags) ) 
+
+#define IMFDeviceTransform_GetOutputStreamState(This,dwStreamID,value)	\
+    ( (This)->lpVtbl -> GetOutputStreamState(This,dwStreamID,value) ) 
+
+#define IMFDeviceTransform_GetInputStreamPreferredState(This,dwStreamID,value,ppMediaType)	\
+    ( (This)->lpVtbl -> GetInputStreamPreferredState(This,dwStreamID,value,ppMediaType) ) 
+
+#define IMFDeviceTransform_FlushInputStream(This,dwStreamIndex,dwFlags)	\
+    ( (This)->lpVtbl -> FlushInputStream(This,dwStreamIndex,dwFlags) ) 
+
+#define IMFDeviceTransform_FlushOutputStream(This,dwStreamIndex,dwFlags)	\
+    ( (This)->lpVtbl -> FlushOutputStream(This,dwStreamIndex,dwFlags) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFDeviceTransform_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mftransform_0000_0002 */
+/* [local] */ 
+
+#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD ) 
 #if (WINVER >= _WIN32_WINNT_WIN8) 
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
@@ -731,8 +1197,8 @@ typedef struct _MFT_STREAM_STATE_PARAM *PMFT_STREAM_STATE_PARAM;
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mftransform_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mftransform_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mftransform_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mftransform_0000_0002_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -210,6 +210,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    interface IStoreConfigurationStatics4;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo;
@@ -320,12 +342,35 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewSkuInfo_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    interface IWebAuthenticationCoreManagerHelper;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.Storage.Streams.h"
+#include "Windows.Security.Authentication.Web.Core.h"
+#include "Windows.UI.Xaml.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -380,18 +425,18 @@ interface IStorePreviewProductInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5382 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5382 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5382_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0001 */
 /* [local] */ 
@@ -426,18 +471,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5383 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5383 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5383_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0002 */
 /* [local] */ 
@@ -500,18 +545,18 @@ interface IStorePreviewSkuInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5384 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5384 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5384_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0003 */
 /* [local] */ 
@@ -546,18 +591,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5385 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5385 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5385_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5385_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0004 */
 /* [local] */ 
@@ -607,18 +652,18 @@ enum StoreSystemFeature;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5386 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5386 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5386_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5386_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0005 */
 /* [local] */ 
@@ -653,18 +698,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5387 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5387 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5387_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5387_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0006 */
 /* [local] */ 
@@ -699,18 +744,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5388 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5388 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5388_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5388_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0007 */
 /* [local] */ 
@@ -745,18 +790,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5389 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5389 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5389_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5389_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0008 */
 /* [local] */ 
@@ -791,18 +836,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5390 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5390 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5390_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5390_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0009 */
 /* [local] */ 
@@ -865,18 +910,18 @@ interface IStorePreviewPurchaseResults;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5391 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5391 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5391_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5391_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0010 */
 /* [local] */ 
@@ -911,18 +956,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5392 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5392 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5392_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5392_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0011 */
 /* [local] */ 
@@ -957,18 +1002,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5393 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5393 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5393_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5393_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0012 */
 /* [local] */ 
@@ -1003,18 +1048,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5394 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5394 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5394_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5394_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0013 */
 /* [local] */ 
@@ -1049,18 +1094,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5395 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5395 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5395_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5395_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0014 */
 /* [local] */ 
@@ -1095,18 +1140,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5396 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5396 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5396_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5396_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0015 */
 /* [local] */ 
@@ -1141,18 +1186,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5397 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5397 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5397_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5397_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0016 */
 /* [local] */ 
@@ -1200,18 +1245,18 @@ interface IRandomAccessStreamReference;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5398 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5398 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5398_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5398_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0017 */
 /* [local] */ 
@@ -1246,18 +1291,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5399 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5399 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5399_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5399_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018 */
 /* [local] */ 
@@ -1281,16 +1326,149 @@ typedef IAsyncOperation<ABI::Windows::Storage::Streams::IRandomAccessStreamRefer
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace Web {
+namespace Core {
+class WebTokenRequestResult;
+} /*Core*/
+} /*Web*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace Web {
+namespace Core {
+interface IWebTokenRequestResult;
+} /*Core*/
+} /*Web*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5400 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5400 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5400_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5400_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("deb54b22-70f2-55ab-97c0-6cbdc5ddb6f0"))
+IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult*, ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequestResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Security.Authentication.Web.Core.WebTokenRequestResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult*> __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5401 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5401 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5401_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5401_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("0a815852-7c44-5674-b3d2-fa2e4c1e46c9"))
+IAsyncOperation<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult*, ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequestResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Security.Authentication.Web.Core.WebTokenRequestResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult*> __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t;
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Esecurity2Eauthentication2Eweb2Ecore_h__)
+#include <Windows.Security.Authentication.Web.Core.h>
+#endif // !defined(__windows2Esecurity2Eauthentication2Eweb2Ecore_h__)
+#if !defined(__windows2Esecurity2Ecredentials_h__)
+#include <Windows.Security.Credentials.h>
+#endif // !defined(__windows2Esecurity2Ecredentials_h__)
 #if !defined(__windows2Estorage2Estreams_h__)
 #include <Windows.Storage.Streams.h>
 #endif // !defined(__windows2Estorage2Estreams_h__)
 #if !defined(__windows2Esystem_h__)
 #include <Windows.System.h>
 #endif // !defined(__windows2Esystem_h__)
+#if !defined(__windows2Eui2Examl_h__)
+#include <Windows.UI.Xaml.h>
+#endif // !defined(__windows2Eui2Examl_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
@@ -1301,9 +1479,49 @@ typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundati
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace Web {
+namespace Core {
+class WebTokenRequest;
+} /*Core*/
+} /*Web*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Credentials {
+class WebAccount;
+} /*Credentials*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
 namespace System {
 class User;
 } /*System*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+class UIElement;
+} /*Xaml*/
+} /*UI*/
 } /*Windows*/
 }
 #endif
@@ -1343,6 +1561,8 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CStoreSystemFeat
 
 
 
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1358,7 +1578,7 @@ class StoreHardwareManufacturerInfo;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020 */
 /* [local] */ 
 
 
@@ -1377,6 +1597,9 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
+
+
 
 
 #ifdef __cplusplus
@@ -1446,23 +1669,25 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0018_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3129 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5402 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3129_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5402 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5402_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5402_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo
@@ -1470,13 +1695,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
@@ -1620,35 +1845,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CStore__CPrevi
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3130 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5403 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3130_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5403 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5403_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5403_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo
@@ -1656,13 +1881,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
@@ -1772,35 +1997,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CStore__CPrevi
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3131 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5404 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3131_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5404 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5404_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5404_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo
@@ -1808,13 +2033,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__
@@ -1958,35 +2183,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CStore__CPrevi
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3132 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5405 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3132_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5405 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5405_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5405_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo
@@ -1994,13 +2219,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__
@@ -2110,35 +2335,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CStore__CPrevi
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3133 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5406 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3133_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5406 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5406_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5406_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature
@@ -2146,13 +2371,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
@@ -2296,35 +2521,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CStore__CPrevi
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3134 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5407 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3134_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5407 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5407_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5407_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature
@@ -2332,13 +2557,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
@@ -2448,35 +2673,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CStore__CPrevi
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3135 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5408 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3135_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5408 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5408_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5408_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo
@@ -2484,13 +2709,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
@@ -2642,35 +2867,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CStore__CPre
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3136 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5409 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3136_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5409 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5409_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5409_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo
@@ -2678,13 +2903,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__
@@ -2836,35 +3061,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CStore__CPre
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewSkuInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3137 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5410 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3137_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5410 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5410_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5410_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature
@@ -2872,13 +3097,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
@@ -3030,35 +3255,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CStore__CPre
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3138 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5411 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3138_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5411 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5411_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5411_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults
@@ -3067,14 +3292,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults_INTERFACE_DEFINED__
@@ -3163,35 +3388,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3139 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5412 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3139_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5412 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5412_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5412_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults
@@ -3199,13 +3424,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults_INTERFACE_DEFINED__
@@ -3335,35 +3560,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CStore__
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewPurchaseResults */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3140 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5413 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3140_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5413 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5413_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5413_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo
@@ -3372,14 +3597,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
@@ -3468,35 +3693,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3141 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5414 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3141_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5414 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5414_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5414_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo
@@ -3504,13 +3729,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__
@@ -3640,35 +3865,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStorePreviewProductInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3142 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5415 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3142_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5415 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5415_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5415_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature
@@ -3677,14 +3902,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
@@ -3773,35 +3998,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3143 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5416 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_3143_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5416 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5416_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0000_5416_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature
@@ -3809,13 +4034,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview2Eidl_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__
@@ -3945,7 +4170,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStore__CPreview__CStoreSystemFeature_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -4038,7 +4263,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -4146,8 +4371,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_INTERFACE_DEFINED__
@@ -4336,7 +4561,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics2_INTERFACE_DEFINED__)
@@ -4344,13 +4569,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics2_INTERFACE_DEFINED__
@@ -4485,7 +4710,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics3_INTERFACE_DEFINED__)
@@ -4493,13 +4718,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics3_INTERFACE_DEFINED__
@@ -4698,7 +4923,224 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics4[] = L"Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics4";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Store {
+                    namespace Preview {
+                        
+                        MIDL_INTERFACE("20FF56D2-4EE3-4CF0-9B12-552C03310F75")
+                        IStoreConfigurationStatics4 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE GetStoreWebAccountId( 
+                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetStoreWebAccountIdForUser( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetEnterpriseStoreWebAccountId( 
+                                /* [in] */ __RPC__in HSTRING webAccountId) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetEnterpriseStoreWebAccountIdForUser( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                /* [in] */ __RPC__in HSTRING webAccountId) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetEnterpriseStoreWebAccountId( 
+                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetEnterpriseStoreWebAccountIdForUser( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE ShouldRestrictToEnterpriseStoreOnly( 
+                                /* [out][retval] */ __RPC__out boolean *result) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE ShouldRestrictToEnterpriseStoreOnlyForUser( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                /* [out][retval] */ __RPC__out boolean *result) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IStoreConfigurationStatics4 = __uuidof(IStoreConfigurationStatics4);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStoreWebAccountId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStoreWebAccountIdForUser )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetEnterpriseStoreWebAccountId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [in] */ __RPC__in HSTRING webAccountId);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetEnterpriseStoreWebAccountIdForUser )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [in] */ __RPC__in HSTRING webAccountId);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetEnterpriseStoreWebAccountId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetEnterpriseStoreWebAccountIdForUser )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShouldRestrictToEnterpriseStoreOnly )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [out][retval] */ __RPC__out boolean *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShouldRestrictToEnterpriseStoreOnlyForUser )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__out boolean *result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetStoreWebAccountId(This,result)	\
+    ( (This)->lpVtbl -> GetStoreWebAccountId(This,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetStoreWebAccountIdForUser(This,user,result)	\
+    ( (This)->lpVtbl -> GetStoreWebAccountIdForUser(This,user,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_SetEnterpriseStoreWebAccountId(This,webAccountId)	\
+    ( (This)->lpVtbl -> SetEnterpriseStoreWebAccountId(This,webAccountId) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_SetEnterpriseStoreWebAccountIdForUser(This,user,webAccountId)	\
+    ( (This)->lpVtbl -> SetEnterpriseStoreWebAccountIdForUser(This,user,webAccountId) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetEnterpriseStoreWebAccountId(This,result)	\
+    ( (This)->lpVtbl -> GetEnterpriseStoreWebAccountId(This,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_GetEnterpriseStoreWebAccountIdForUser(This,user,result)	\
+    ( (This)->lpVtbl -> GetEnterpriseStoreWebAccountIdForUser(This,user,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_ShouldRestrictToEnterpriseStoreOnly(This,result)	\
+    ( (This)->lpVtbl -> ShouldRestrictToEnterpriseStoreOnly(This,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_ShouldRestrictToEnterpriseStoreOnlyForUser(This,user,result)	\
+    ( (This)->lpVtbl -> ShouldRestrictToEnterpriseStoreOnlyForUser(This,user,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_INTERFACE_DEFINED__)
@@ -4706,13 +5148,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_INTERFACE_DEFINED__
@@ -4867,7 +5309,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreview_INTERFACE_DEFINED__)
@@ -4875,13 +5317,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreview_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreview_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreview_INTERFACE_DEFINED__
@@ -5020,7 +5462,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreview_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewProductInfo_INTERFACE_DEFINED__)
@@ -5028,13 +5470,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewProductInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewProductInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewProductInfo_INTERFACE_DEFINED__
@@ -5199,7 +5641,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewProductInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewPurchaseResults_INTERFACE_DEFINED__)
@@ -5207,13 +5649,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewPurchaseResults_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewPurchaseResults_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewPurchaseResults_INTERFACE_DEFINED__
@@ -5338,7 +5780,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewPurchaseResults_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewSkuInfo_INTERFACE_DEFINED__)
@@ -5346,13 +5788,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewSkuInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewSkuInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewSkuInfo_INTERFACE_DEFINED__
@@ -5557,7 +5999,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStor
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStorePreviewSkuInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0059 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IWebAuthenticationCoreManagerHelper[] = L"Windows.ApplicationModel.Store.Preview.IWebAuthenticationCoreManagerHelper";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0059 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0059_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Store {
+                    namespace Preview {
+                        
+                        MIDL_INTERFACE("06A50525-E715-4123-9276-9D6F865BA55F")
+                        IWebAuthenticationCoreManagerHelper : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE RequestTokenWithUIElementHostingAsync( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *request,
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *uiElement,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult **asyncInfo) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE RequestTokenWithUIElementHostingAndWebAccountAsync( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *request,
+                                /* [in] */ __RPC__in_opt ABI::Windows::Security::Credentials::IWebAccount *webAccount,
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *uiElement,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult **asyncInfo) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IWebAuthenticationCoreManagerHelper = __uuidof(IWebAuthenticationCoreManagerHelper);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelperVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestTokenWithUIElementHostingAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CCore_CIWebTokenRequest *request,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *uiElement,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult **asyncInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestTokenWithUIElementHostingAndWebAccountAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CAuthentication_CWeb_CCore_CIWebTokenRequest *request,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount *webAccount,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *uiElement,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult **asyncInfo);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelperVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelperVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_RequestTokenWithUIElementHostingAsync(This,request,uiElement,asyncInfo)	\
+    ( (This)->lpVtbl -> RequestTokenWithUIElementHostingAsync(This,request,uiElement,asyncInfo) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_RequestTokenWithUIElementHostingAndWebAccountAsync(This,request,webAccount,uiElement,asyncInfo)	\
+    ( (This)->lpVtbl -> RequestTokenWithUIElementHostingAndWebAccountAsync(This,request,webAccount,uiElement,asyncInfo) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebAuthenticationCoreManagerHelper_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0060 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_StoreConfiguration_DEFINED
@@ -5584,15 +6185,19 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_StorePreviewSkuInfo_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_StorePreviewSkuInfo[] = L"Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_WebAuthenticationCoreManagerHelper_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_WebAuthenticationCoreManagerHelper_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_WebAuthenticationCoreManagerHelper[] = L"Windows.ApplicationModel.Store.Preview.WebAuthenticationCoreManagerHelper";
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Epreview_0000_0060_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

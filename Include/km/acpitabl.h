@@ -190,7 +190,7 @@ ULONG           flags;                  // This is the last field if the table R
 GEN_ADDR        reset_reg;
 UCHAR           reset_val;              // This is the last field if the table Revision is 2
 USHORT          arm_boot_arch;          // Pending ECR (expected to be in Revision 5.0b)
-UCHAR           reserved4;
+UCHAR           minor_version_number;
 PHYSICAL_ADDRESS x_firmware_ctrl;
 PHYSICAL_ADDRESS x_dsdt;
 GEN_ADDR        x_pm1a_evt_blk;
@@ -562,7 +562,7 @@ typedef struct _ACPI_MSCT_ENTRY {
 #define         FADT_FORCE_APIC_PHYSICAL_DESTINATION_MODE       (1 << FADT_FORCE_APIC_PHYSICAL_DESTINATION_MODE_BIT)
 
 //
-// If set, this flag indicates that the plaform lacks ACPI hardware, i.e., the
+// If set, this flag indicates that the platform lacks ACPI hardware, i.e., the
 // ACPI driver should operate in hardware reduced ACPI mode.
 //
 
@@ -1207,7 +1207,7 @@ typedef struct _SERIAL_PORT_REDIRECTION_TABLE {
     UCHAR               StopBits;               // 1 = 1 stop bit
                                                 // 0, 2-255 = reserved
 
-    UCHAR               FlowControl;            // 0 = Hadware Flow Control
+    UCHAR               FlowControl;            // 0 = Hardware Flow Control
                                                 // 1 - 255 = reserved.
 
     UCHAR               TerminalType;           // The terminal protocol the BIOS was using for
@@ -1243,7 +1243,7 @@ typedef struct _SERIAL_PORT_REDIRECTION_TABLE {
                                                 // bits 1-31 reserved.
 
     UCHAR               PciSegment;             // PCI segment number.  For systems w/ < 255 PCI
-                                                // busses, this number must be 0.
+                                                // buses, this number must be 0.
 
     UCHAR               Reserved1[4];           // should be 0
 
@@ -1723,6 +1723,279 @@ typedef struct _WAE_DESCRIPTION_TABLE {
 C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 
 //
+// IORT table definitions.
+//
+
+#define IORT_SIGNATURE          0x54524f49      // "IORT"
+#define IORT_MIN_SIZE           0x30
+
+//
+// Node types.
+//
+
+#define IORT_NODE_TYPE_ITS_GROUP 0
+#define IORT_NODE_TYPE_NAMED_COMPONENT 1
+#define IORT_NODE_TYPE_ROOT_COMPLEX 2
+#define IORT_NODE_TYPE_SMMUV1V2 3
+#define IORT_NODE_TYPE_SMMUV3 4
+
+#define IORT_SMMUV2_NODE_REVISION 0
+#define IORT_TYPE_GENERIC_SMMUV1 0
+#define IORT_TYPE_GENERIC_SMMUV2 1
+#define IORT_TYPE_ARM_CORELINK_MMU400 2
+#define IORT_TYPE_ARM_CORELINK_MMU500 3
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#endif
+
+#pragma warning(disable: 4214) // nonstandard extension used : bit field types other than int
+#pragma warning(disable: 4201) // nonstandard extension used : nameless struct/union
+
+//
+// Top-level IORT table
+//
+
+typedef struct _IORT {
+    DESCRIPTION_HEADER  Header;
+    ULONG NodeCount;
+    ULONG NodeArrayOffset;
+    UCHAR Reserved[4];
+
+    //
+    // Optional padding
+    //
+
+
+    //
+    // Array of IORT nodes
+    //
+
+} IORT, *PIORT;
+
+//
+// Common shared header for all IORT nodes.
+//
+
+typedef struct _IORT_NODE_HEADER {
+    UCHAR Type;
+    USHORT Length;
+    UCHAR Revision;
+    UCHAR Reserved[4];
+    ULONG IdMappingCount;
+    ULONG IdMappingArrayOffset;
+} IORT_NODE_HEADER, *PIORT_NODE_HEADER;
+
+//
+// IORT ID mapping.
+//
+
+typedef struct _IORT_IDMAPPING {
+    ULONG InputBase;
+    ULONG IdCount;
+    ULONG OutputBase;
+    ULONG OutputNodeOffset;
+
+    union {
+        ULONG AsULONG;
+        struct {
+            ULONG SingleMapping : 1;
+            ULONG Reserved : 31;
+        } DUMMYSTRUCTNAME;
+
+    } Flags;
+
+} IORT_IDMAPPING, *PIORT_IDMAPPING;
+
+//
+// SMMU v2 interrupt definition.
+//
+
+typedef union _IORT_SMMUV2_INTERRUPT {
+    ULONGLONG AsULONGLONG;
+
+    struct {
+        ULONG Gsiv;
+
+        union {
+
+            ULONG AsULONG;
+
+            struct {
+                ULONG InterruptFlags : 1;
+                ULONG Reserved : 31;
+            } DUMMYSTRUCTNAME;
+
+        } Flags;
+
+    } DUMMYSTRUCTNAME;
+
+} IORT_SMMUV2_INTERRUPT, *PIORT_SMMUV2_INTERRUPT;
+
+typedef struct _IORT_SMMUV2_NODE {
+    IORT_NODE_HEADER Header;
+    ULONGLONG BaseAddress;
+    ULONGLONG Span;
+    ULONG Model;
+    ULONG Flags;
+    ULONG GlobalInterruptArrayOffset;
+    ULONG ContextInterruptCount;
+    ULONG ContextInterruptArrayOffset;
+    ULONG PmuInterruptCount;
+    ULONG PmuInterruptArrayOffset;
+    ULONG NSgIrptGsiv;
+
+    union {
+
+        ULONG AsULONG;
+
+        struct {
+            ULONG DvmSupported : 1;
+            ULONG CoherentPageTableWalk : 1;
+            ULONG Reserved : 30;
+        } DUMMYSTRUCTNAME;
+
+    } NsgIrptFlags;
+
+    ULONG NSgCfgIrptGsiv;
+
+    union {
+
+        ULONG AsULONG;
+
+        struct {
+            ULONG InterruptFlags : 1;
+            ULONG Reserved : 31;
+        } DUMMYSTRUCTNAME;
+
+    } NSgCfgIrptFlags;
+
+    //
+    // Context interrupt array (IORT_SMMUV2_INTERRUPTs)
+    //
+
+    IORT_SMMUV2_INTERRUPT ContextInterruptArray[ANYSIZE_ARRAY];
+
+    //
+    // PMU Interrupt array (IORT_SMMUV2_INTERRUPTs)
+    //
+
+    //
+    // ID mapping array (IORT_SMMUV2_INTERRUPTs)
+    //
+} IORT_SMMUV2_NODE, *PIORT_SMMUV2_NODE;
+
+typedef struct _IORT_SMMUV3_NODE {
+    IORT_NODE_HEADER Header;
+    ULONGLONG BaseAddress;
+
+    union {
+
+        ULONG AsULONG;
+
+        struct {
+            ULONG CohaccOverride : 1;
+            ULONG HttuOverride : 2;
+            ULONG Reserved : 29;
+        } DUMMYSTRUCTNAME;
+
+    } Flags;
+
+    UCHAR Reserved[4];
+    ULONGLONG VatosAddress;
+    ULONG Model;
+    ULONG EventGsiv;
+    ULONG PriGsiv;
+    ULONG GerrGsiv;
+    ULONG SyncGsiv;
+
+    //
+    // ID mapping array
+    //
+
+} IORT_SMMUV3_NODE, *PIORT_SMMUV3_NODE;
+
+//
+// Memory access properties.
+//
+
+typedef union _IORT_NODE_MEMORY_ATTRIBUTES {
+    ULONGLONG AsULONGLONG;
+
+    struct {
+        ULONG Cca;
+
+        union {
+            UCHAR AsUCHAR;
+
+            struct {
+                UCHAR Transient : 1;
+                UCHAR WriteAllocate : 1;
+                UCHAR ReadAllocate : 1;
+                UCHAR Aho : 1;
+                UCHAR Reserved : 4;
+            } DUMMYSTRUCTNAME;
+
+        } Ah;
+        
+        UCHAR Reserved[2];
+
+        union {
+            ULONG AsULONG;
+
+            struct {
+                ULONG Cpm : 1;
+        ULONG Dacs : 1;
+        ULONG Reserved : 30;
+            } DUMMYSTRUCTNAME;
+
+        } Maf;
+
+    } DUMMYSTRUCTNAME;
+
+} IORT_NODE_MEMORY_ATTRIBUTES, *PIORT_NODE_MEMORY_ATTRIBUTES;
+
+typedef struct _IORT_ITS_GROUP_NODE {
+    IORT_NODE_HEADER Header;
+    ULONG ItsCount;
+    ULONG ItsArray[ANYSIZE_ARRAY];
+} IORT_ITS_GROUP_NODE, *PIORT_ITS_GROUP_NODE;
+
+// 
+typedef struct _IORT_NAMED_COMPONENT_NODE {
+    IORT_NODE_HEADER Header;
+    UCHAR Reserved[4]; // Defined as node flags in the spec but reserved.
+    IORT_NODE_MEMORY_ATTRIBUTES MemoryProperties;
+    UCHAR MemoryAccessWidth;
+    UCHAR DeviceName[ANYSIZE_ARRAY];
+
+    //
+    // Padding
+    //
+
+    //
+    // Array of ID mappings
+    //
+} IORT_NAMED_COMPONENT_NODE, *PIORT_NAMED_COMPONENT_NODE;
+
+typedef struct _IORT_ROOT_COMPLEX_NODE {
+
+    IORT_NODE_HEADER Header;
+    IORT_NODE_MEMORY_ATTRIBUTES MemoryProperties;
+    ULONG AtsAttribute;
+    ULONG PciSegmentNumber;
+
+    //
+    // Id mappings
+    //
+
+} IORT_ROOT_COMPLEX_NODE, *PIORT_ROOT_COMPLEX_NODE;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
+
+//
 // DMA remapping reporting table.
 //
 
@@ -2067,10 +2340,17 @@ typedef struct _IVMD_BLOCK {
 } IVMD_BLOCK, *PIVMD_BLOCK;
 
 //
+// Input Output Remapping Table
+//
+
+#define IORT_SIGNATURE 0x54524f49       // "IORT"
+
+//
 // Secure Device Table
 //
 
 #define SDEV_SIGNATURE  0x56454453      // "SDEV"
+#define SDEV_SECURE_ACPI_TYPE 0
 #define SDEV_SECURE_PCI_TYPE 1
 
 typedef struct _SDEV_ENTRY_HEADER {
@@ -2087,6 +2367,14 @@ typedef struct _SDEV_SECURE_PCI_INFO_ENTRY {
     USHORT VendorInfoOffset;
     USHORT VendorInfoLength;
 } SDEV_SECURE_PCI_INFO_ENTRY, *PSDEV_SECURE_PCI_INFO_ENTRY;
+
+typedef struct _SDEV_SECURE_ACPI_INFO_ENTRY {
+    SDEV_ENTRY_HEADER Header;
+    USHORT IdentifierOffset;
+    USHORT IdentifierLength;
+    USHORT VendorInfoOffset;
+    USHORT VendorInfoLength;
+} SDEV_SECURE_ACPI_INFO_ENTRY, *PSDEV_SECURE_ACPI_INFO_ENTRY;
 
 typedef struct _SDEV {
     DESCRIPTION_HEADER Header;
@@ -2246,7 +2534,7 @@ typedef struct _PCC_TABLE    {
 
     } Flags;
     ULONG64 Reserved;
-    PCC_SUBSPACE_HEADER Subspaces;      // packed list of susbspaces
+    PCC_SUBSPACE_HEADER Subspaces;      // packed list of subspaces
 } PCC_TABLE, *PPCC_TABLE;
 
 //
@@ -2275,6 +2563,22 @@ typedef struct _BGRT_TABLE {
 } BGRT_TABLE, *PBGRT_TABLE;
 
 #define BGRT_SIGNATURE 0x54524742 // "BGRT"
+
+//
+// Boot Background Resource Table
+//
+
+typedef struct _BBRT_TABLE {
+    DESCRIPTION_HEADER Header;
+    ULONG Background;
+    ULONG Foreground;
+} BBRT_TABLE, *PBBRT_TABLE;
+
+#define BBRT_SIGNATURE 0x54524242 // "BBRT"
+
+//
+// Generic Timer Description Table
+//
 
 #define GTDT_SIGNATURE 0x54445447 // "GTDT"
 
@@ -2584,7 +2888,7 @@ typedef enum _TPM20_START_METHOD {
 } TPM20_START_METHOD, *PTPM20_START_METHOD;
 
 //
-// ACPI Physical Location Descriptor
+// ACPI Physical Location Descriptor, Revision 1
 // (per ACPI 3.0 spec, section 6.1.6)
 //
 
@@ -2612,6 +2916,11 @@ typedef struct _ACPI_PLD_BUFFER {
     UINT32 Reserved:14;
 } ACPI_PLD_BUFFER, *PACPI_PLD_BUFFER;
 
+//
+// ACPI Physical Location Descriptor, Revision 2
+// (per ACPI 4.0 spec, section 6.1.6; now ACPI 6.0 spec, section 6.1.8)
+//
+
 typedef struct _ACPI_PLD_V2_BUFFER {
     UINT32 Revision:7;
     UINT32 IgnoreColor:1;
@@ -2637,16 +2946,17 @@ typedef struct _ACPI_PLD_V2_BUFFER {
     UINT32 Rotation:4;
     UINT32 Order:5;
     UINT32 Reserved:4;
-
-    //
-    // _PLD v2 definition fields.
-    //
-
-    USHORT VerticalOffset;
-    USHORT HorizontalOffset;
+    UINT32 VerticalOffset:16;
+    UINT32 HorizontalOffset:16;
 } ACPI_PLD_V2_BUFFER, *PACPI_PLD_V2_BUFFER;
 
-//Panel surface bits 67:69
+// Color bits 8:31 (Red 8:15, Green 16:23, Blue 24:31)
+#define ACPI_PLD_MAKE_COLOR(r, g, b) ((UINT32)(((r) & 0xFF) | (((g) & 0xFF) << 8) | (((b) & 0xFF) << 16)))
+#define ACPI_PLD_COLOR_RED(c)        ((BYTE)(((c) >>  0) & 0xFF))
+#define ACPI_PLD_COLOR_GREEN(c)      ((BYTE)(((c) >>  8) & 0xFF))
+#define ACPI_PLD_COLOR_BLUE(c)       ((BYTE)(((c) >> 16) & 0xFF))
+
+// Panel surface bits 67:69
 enum AcpiPldPanel
 {
     AcpiPldPanelTop     = 0,
@@ -2658,7 +2968,7 @@ enum AcpiPldPanel
     AcpiPldPanelUnknown = 6,
 };
 
-//Vertical position 70:71
+// Vertical position 70:71
 enum AcpiPldVPos
 {
     AcpiPldVPosUpper    = 0,
@@ -2666,12 +2976,39 @@ enum AcpiPldVPos
     AcpiPldVPosLower    = 2,
 };
 
-//Horizontal position 72:73
+// Horizontal position 72:73
 enum AcpiPldHPos
 {
     AcpiPldHPosLeft     = 0,
     AcpiPldHPosCenter   = 1,
     AcpiPldHPosRight    = 2,
+};
+
+// Shape bits 74:77
+enum AcpiPldShape
+{
+    AcpiPldShapeRound     = 0,
+    AcpiPldShapeOval      = 1,
+    AcpiPldShapeSquare    = 2,
+    AcpiPldShapeVRect     = 3,
+    AcpiPldShapeHRect     = 4,
+    AcpiPldShapeVTrap     = 5,
+    AcpiPldShapeHTrap     = 6,
+    AcpiPldShapeUnknown   = 7,
+    AcpiPldShapeChamfered = 8,
+};
+
+// Rotation bits 115:118
+enum AcpiPldRotation
+{
+    AcpiPldRotation0      = 0,
+    AcpiPldRotation45     = 1,
+    AcpiPldRotation90     = 2,
+    AcpiPldRotation135    = 3,
+    AcpiPldRotation180    = 4,
+    AcpiPldRotation225    = 5,
+    AcpiPldRotation270    = 6,
+    AcpiPldRotation315    = 7,
 };
 
 //
@@ -3042,6 +3379,50 @@ typedef struct _WSMT {
     DESCRIPTION_HEADER Header;
     WSMT_PROTECTION_FLAGS ProtectionFlags;
 } WSMT, *PWSMT;
+
+//
+// LPIT ACPI Table definition
+//
+
+#define LPIT_SIGNATURE 0x5449504C // "LPIT"
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#endif
+
+#pragma warning(disable: 4201) // nonstandard extension used : nameless struct/union
+#pragma warning(disable: 4214) // nonstandard extension used : bit field types other than int
+
+typedef union _LPI_STATE_FLAGS {
+    struct {
+        ULONG Disabled:1;
+        ULONG CounterUnavailable:1;
+        ULONG Reserved:30;
+    };
+    ULONG AsUlong;
+} LPI_STATE_FLAGS, *PLPI_STATE_FLAGS;
+
+typedef struct _LPI_STATE_DESCRIPTOR {
+    ULONG Type;
+    ULONG Length;
+    USHORT UniqueId;
+    UCHAR Reserved[2];
+    LPI_STATE_FLAGS Flags;
+    GEN_ADDR EntryTrigger;
+    ULONG Residency;
+    ULONG Latency;
+    GEN_ADDR ResidencyCounter;
+    ULONGLONG ResidencyCounterFrequency;
+} LPI_STATE_DESCRIPTOR, *PLPI_STATE_DESCRIPTOR;
+
+typedef struct _LPIT {
+    DESCRIPTION_HEADER Header;
+    LPI_STATE_DESCRIPTOR LpiStates[ANYSIZE_ARRAY];
+} LPIT, *PLPIT;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
 
 //
 // Resume normal structure packing

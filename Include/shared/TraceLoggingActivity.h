@@ -533,7 +533,7 @@ protected:
         _TLG_ASSERT(m_State == Created, "_TlgActivityBase::PushThreadActivityId called from invalid state.");
         _TLG_ASSERT(!m_HasRelatedId, "_TlgActivityBase::RelatedActivity was already set.");
         m_CapturedRelatedId = m_Id;
-        EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_CapturedRelatedId);
+        ::EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_CapturedRelatedId);
         m_HasRelatedId = true;
     }
 
@@ -546,7 +546,7 @@ protected:
         _TLG_ASSERT(m_State == Started, "_TlgActivityBase::PopThreadActivityId called from invalid state.");
         if (m_HasRelatedId)
         {
-            EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_CapturedRelatedId);
+            ::EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_CapturedRelatedId);
 
             /*
             If this assertion fails, it means that your thread activity's ID was corrupted.
@@ -687,7 +687,7 @@ private:
         void
     {
         (void)Derived;
-        EventActivityIdControl(EVENT_ACTIVITY_CTRL_CREATE_ID, &ChildActivityId);
+        ::EventActivityIdControl(EVENT_ACTIVITY_CTRL_CREATE_ID, &ChildActivityId);
     }
 };
 
@@ -748,7 +748,7 @@ public:
     template<typename ActivityTy>
     void SetRelatedActivity(_In_ const ActivityTy& relatedActivity)
     {
-        SetRelatedId(*relatedActivity.Id());
+        BaseTy::SetRelatedId(*relatedActivity.Id());
     }
 
     /*
@@ -757,7 +757,7 @@ public:
     */
     void SetRelatedActivityId(_In_ const GUID& relatedActivityId)
     {
-        SetRelatedId(relatedActivityId);
+        BaseTy::SetRelatedId(relatedActivityId);
     }
 
     /*
@@ -767,7 +767,7 @@ public:
     void SetRelatedActivityId(_In_ const GUID* relatedActivityId)
     {
         _TLG_ASSERT(relatedActivityId != NULL, "TraceLoggingActivity SetRelatedActivity called with NULL id.");
-        SetRelatedId(*relatedActivityId);
+        BaseTy::SetRelatedId(*relatedActivityId);
     }
 };
 
@@ -788,12 +788,12 @@ class TraceLoggingThreadActivity
 
     void OnStarted()
     {
-        PushThreadActivityId();
+        BaseTy::PushThreadActivityId();
     }
 
     void OnStopped()
     {
-        PopThreadActivityId();
+        BaseTy::PopThreadActivityId();
     }
 
 public:
@@ -840,19 +840,19 @@ public:
         : m_ActivityId(activityId)
         , m_SavedActivityId(activityId)
     {
-        EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_SavedActivityId);
+        ::EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_SavedActivityId);
     }
 
     explicit TraceLoggingThreadActivityIdSetter(_In_ const GUID* activityId)
         : m_ActivityId(*activityId)
         , m_SavedActivityId(*activityId)
     {
-        EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_SavedActivityId);
+        ::EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_SavedActivityId);
     }
 
     ~TraceLoggingThreadActivityIdSetter()
     {
-        EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_SavedActivityId);
+        ::EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_SET_ID, &m_SavedActivityId);
         _TLG_ASSERT(_TlgGuidEqual(m_ActivityId, m_SavedActivityId), "TraceLoggingThreadActivityIdSetter current id does not match set id!");
     }
 };

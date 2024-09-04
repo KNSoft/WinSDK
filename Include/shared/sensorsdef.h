@@ -460,8 +460,17 @@ typedef struct SENSOR_VALUE_PAIR
 // This list contains the contains a sensors properties and their values
 typedef struct SENSOR_COLLECTION_LIST
 {
+#ifndef __midl
+    _Field_range_(>, SENSOR_COLLECTION_LIST_HEADER_SIZE)
+#endif
     ULONG AllocatedSizeInBytes; // Size of structure
+#ifndef __midl
+    _Field_range_(<=, (AllocatedSizeInBytes - SENSOR_COLLECTION_LIST_HEADER_SIZE) / sizeof(SENSOR_VALUE_PAIR))
+#endif
     ULONG Count;                // Number of total elements populated
+#ifndef __midl
+    _Field_size_bytes_(AllocatedSizeInBytes - SENSOR_COLLECTION_LIST_HEADER_SIZE)
+#endif
     SENSOR_VALUE_PAIR List[1];  // Variable sized buffer, first element is a placeholder and may not reflect actual size
 } SENSOR_COLLECTION_LIST, *PSENSOR_COLLECTION_LIST;
 
@@ -469,8 +478,17 @@ typedef struct SENSOR_COLLECTION_LIST
 // not the property values
 typedef struct SENSOR_PROPERTY_LIST
 {
+#ifndef __midl
+    _Field_range_(>, SENSOR_PROPERTY_LIST_HEADER_SIZE)
+#endif
     ULONG AllocatedSizeInBytes; // Size of structure
+#ifndef __midl
+    _Field_range_(<=, (AllocatedSizeInBytes - SENSOR_PROPERTY_LIST_HEADER_SIZE) / sizeof(PROPERTYKEY))
+#endif
     ULONG Count;                // Number of total elements populated
+#ifndef __midl
+    _Field_size_bytes_(AllocatedSizeInBytes - SENSOR_PROPERTY_LIST_HEADER_SIZE)
+#endif
     PROPERTYKEY List[1];        // Variable sized buffer, first element is a placeholder and may not reflect actual size
 } SENSOR_PROPERTY_LIST, *PSENSOR_PROPERTY_LIST;
 
@@ -485,7 +503,7 @@ static const ULONG SENSOR_COLLECTION_LIST_HEADER_SIZE =
 VOID
 FORCEINLINE
 SENSOR_COLLECTION_LIST_INIT(
-    _Out_writes_bytes_(CollectionListSize) PSENSOR_COLLECTION_LIST pCollectionList,
+    _Out_writes_bytes_(CollectionListSize) _Post_satisfies_(pCollectionList->AllocatedSizeInBytes == CollectionListSize) PSENSOR_COLLECTION_LIST pCollectionList,
     _In_ _Pre_satisfies_(SENSOR_COLLECTION_LIST_HEADER_SIZE <= CollectionListSize) ULONG CollectionListSize
     )
 {
@@ -500,7 +518,7 @@ SENSOR_COLLECTION_LIST_INIT(
     pCollectionList->Count = 0;
 }
 
-_Ret_range_(>=, SENSOR_COLLECTION_LIST_HEADER_SIZE)
+_Ret_range_(==, SENSOR_COLLECTION_LIST_HEADER_SIZE + sizeof(SENSOR_VALUE_PAIR) * Count)
 ULONG
 FORCEINLINE
 SENSOR_COLLECTION_LIST_SIZE(
@@ -557,7 +575,7 @@ SENSOR_PROPERTY_LIST_INIT(
     pPropertyList->Count = 0;
 }
 
-_Ret_range_(>= , SENSOR_PROPERTY_LIST_HEADER_SIZE)
+_Ret_range_(== , SENSOR_PROPERTY_LIST_HEADER_SIZE + sizeof(PROPERTYKEY) * Count)
 ULONG
 FORCEINLINE
 SENSOR_PROPERTY_LIST_SIZE(

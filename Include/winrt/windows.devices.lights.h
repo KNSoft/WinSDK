@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -176,18 +176,18 @@ interface ILamp;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Elights_0000_0001 */
 /* [local] */ 
@@ -222,18 +222,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Elights_0000_0002 */
 /* [local] */ 
@@ -292,18 +292,18 @@ interface ILampAvailabilityChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Elights_0000_0003 */
 /* [local] */ 
@@ -372,18 +372,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Elights_0000_0004 */
 /* [local] */ 
@@ -505,18 +505,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Elights_0000_0006 */
 /* [local] */ 
@@ -677,18 +677,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CLights__CLamp;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0343 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Elights2Eidl_0000_0343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Elights_0000_0008 */
 /* [local] */ 

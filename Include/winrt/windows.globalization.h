@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -248,6 +248,24 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            interface ICurrencyIdentifiersStatics2;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CIGeographicRegion_FWD_DEFINED__
@@ -535,18 +553,18 @@ interface IJapanesePhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0001 */
 /* [local] */ 
@@ -581,18 +599,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0002 */
 /* [local] */ 
@@ -647,18 +665,18 @@ interface ILanguage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0003 */
 /* [local] */ 
@@ -693,18 +711,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0004 */
 /* [local] */ 
@@ -739,18 +757,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0005 */
 /* [local] */ 
@@ -785,18 +803,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0006 */
 /* [local] */ 
@@ -831,18 +849,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0337 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0007 */
 /* [local] */ 
@@ -877,18 +895,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0008 */
 /* [local] */ 
@@ -923,18 +941,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0009 */
 /* [local] */ 
@@ -969,18 +987,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0010 */
 /* [local] */ 
@@ -1025,6 +1043,7 @@ typedef enum __x_ABI_CWindows_CGlobalization_CDayOfWeek __x_ABI_CWindows_CGlobal
 
 
 #endif
+
 
 
 
@@ -1123,21 +1142,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0011 */
 /* [local] */ 
@@ -1312,18 +1332,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGlobalization__CJapanesePhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0013 */
 /* [local] */ 
@@ -1464,18 +1484,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGlobalization__CJapanesePhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0343 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0015 */
 /* [local] */ 
@@ -1650,18 +1670,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGlobalization__CLanguage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0344 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0017 */
 /* [local] */ 
@@ -1802,18 +1822,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGlobalization__CLanguage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0345 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0345_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0019 */
 /* [local] */ 
@@ -1996,18 +2016,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGlobalization__CJapanesePhonem
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0346 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0346 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0346_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0021 */
 /* [local] */ 
@@ -2190,18 +2210,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGlobalization__CLanguage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0347 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Eglobalization2Eidl_0000_0347 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Eidl_0000_0347_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0023 */
 /* [local] */ 
@@ -6454,9 +6474,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStat
 /* interface __MIDL_itf_windows2Eglobalization_0000_0033 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_IGeographicRegion[] = L"Windows.Globalization.IGeographicRegion";
-#endif /* !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_ICurrencyIdentifiersStatics2[] = L"Windows.Globalization.ICurrencyIdentifiersStatics2";
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eglobalization_0000_0033 */
@@ -6466,6 +6486,141 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0033_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Globalization::ICurrencyIdentifiersStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Globalization {
+                
+                MIDL_INTERFACE("1814797F-C3B2-4C33-9591-980011950D37")
+                ICurrencyIdentifiersStatics2 : public IInspectable
+                {
+                public:
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BYN( 
+                        /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_ICurrencyIdentifiersStatics2 = __uuidof(ICurrencyIdentifiersStatics2);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BYN )( 
+            __RPC__in __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_get_BYN(This,value)	\
+    ( (This)->lpVtbl -> get_BYN(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGlobalization_CICurrencyIdentifiersStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eglobalization_0000_0034 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_IGeographicRegion[] = L"Windows.Globalization.IGeographicRegion";
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eglobalization_0000_0034 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__
@@ -6646,7 +6801,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIGeographicRegion;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CIGeographicRegion_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0034 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0035 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegionFactory_INTERFACE_DEFINED__)
@@ -6654,13 +6809,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegionFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0034 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CIGeographicRegionFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CIGeographicRegionFactory_INTERFACE_DEFINED__
@@ -6783,7 +6938,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIGeographicRegionFactory
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CIGeographicRegionFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0035 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0036 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegionStatics_INTERFACE_DEFINED__)
@@ -6791,13 +6946,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CIGeographicRegionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0035 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CIGeographicRegionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CIGeographicRegionStatics_INTERFACE_DEFINED__
@@ -6920,7 +7075,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIGeographicRegionStatics
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CIGeographicRegionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0036 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CIJapanesePhoneme_INTERFACE_DEFINED__)
@@ -6928,13 +7083,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CIJapanesePhoneme_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0036 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CIJapanesePhoneme_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CIJapanesePhoneme_INTERFACE_DEFINED__
@@ -7075,7 +7230,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIJapanesePhoneme;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CIJapanesePhoneme_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0037 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0038 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyzerStatics_INTERFACE_DEFINED__)
@@ -7083,13 +7238,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyzerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0037 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyzerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyzerStatics_INTERFACE_DEFINED__
@@ -7226,7 +7381,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyze
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CIJapanesePhoneticAnalyzerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0038 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CILanguage_INTERFACE_DEFINED__)
@@ -7234,13 +7389,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0038 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguage_INTERFACE_DEFINED__
@@ -7391,7 +7546,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguage;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CILanguage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0039 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_INTERFACE_DEFINED__)
@@ -7399,13 +7554,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0039 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_INTERFACE_DEFINED__
@@ -7528,7 +7683,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtag
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CILanguageExtensionSubtags_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0040 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CILanguageFactory_INTERFACE_DEFINED__)
@@ -7536,13 +7691,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguageFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0040 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguageFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguageFactory_INTERFACE_DEFINED__
@@ -7665,7 +7820,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguageFactory;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CILanguageFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0041 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CILanguageStatics_INTERFACE_DEFINED__)
@@ -7673,13 +7828,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguageStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0041 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguageStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguageStatics_INTERFACE_DEFINED__
@@ -7812,7 +7967,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguageStatics;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CILanguageStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0042 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0043 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CILanguageStatics2_INTERFACE_DEFINED__)
@@ -7820,13 +7975,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CILanguageStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0042 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CILanguageStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CILanguageStatics2_INTERFACE_DEFINED__
@@ -7949,7 +8104,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CILanguageStatics2;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CILanguageStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0043 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0044 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics_INTERFACE_DEFINED__)
@@ -7957,13 +8112,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0043 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics_INTERFACE_DEFINED__
@@ -8434,7 +8589,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifier
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0044 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics2_INTERFACE_DEFINED__)
@@ -8442,13 +8597,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0044 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics2_INTERFACE_DEFINED__
@@ -8679,7 +8834,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifier
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CINumeralSystemIdentifiersStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0045 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0046 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar_INTERFACE_DEFINED__)
@@ -8687,13 +8842,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0045 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar_INTERFACE_DEFINED__
@@ -8846,7 +9001,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar;
 #endif 	/* ____x_ABI_CWindows_CGlobalization_CITimeZoneOnCalendar_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0046 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0047 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Globalization_ApplicationLanguages_DEFINED
@@ -8891,13 +9046,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eglobalization_0000_0046 */
+/* interface __MIDL_itf_windows2Eglobalization_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization_0000_0047_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

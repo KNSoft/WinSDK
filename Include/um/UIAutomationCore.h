@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -55,6 +55,13 @@ typedef interface IAccessibleEx IAccessibleEx;
 typedef interface IRawElementProviderSimple2 IRawElementProviderSimple2;
 
 #endif 	/* __IRawElementProviderSimple2_FWD_DEFINED__ */
+
+
+#ifndef __IRawElementProviderSimple3_FWD_DEFINED__
+#define __IRawElementProviderSimple3_FWD_DEFINED__
+typedef interface IRawElementProviderSimple3 IRawElementProviderSimple3;
+
+#endif 	/* __IRawElementProviderSimple3_FWD_DEFINED__ */
 
 
 #ifndef __IRawElementProviderFragmentRoot_FWD_DEFINED__
@@ -543,6 +550,37 @@ enum WindowInteractionState
         WindowInteractionState_NotResponding	= 4
     } ;
 
+enum SayAsInterpretAs
+    {
+        SayAsInterpretAs_None	= 0,
+        SayAsInterpretAs_Spell	= 1,
+        SayAsInterpretAs_Cardinal	= 2,
+        SayAsInterpretAs_Ordinal	= 3,
+        SayAsInterpretAs_Number	= 4,
+        SayAsInterpretAs_Date	= 5,
+        SayAsInterpretAs_Time	= 6,
+        SayAsInterpretAs_Telephone	= 7,
+        SayAsInterpretAs_Currency	= 8,
+        SayAsInterpretAs_Net	= 9,
+        SayAsInterpretAs_Url	= 10,
+        SayAsInterpretAs_Address	= 11,
+        SayAsInterpretAs_Alphanumeric	= 12,
+        SayAsInterpretAs_Name	= 13,
+        SayAsInterpretAs_Media	= 14,
+        SayAsInterpretAs_Date_MonthDayYear	= 15,
+        SayAsInterpretAs_Date_DayMonthYear	= 16,
+        SayAsInterpretAs_Date_YearMonthDay	= 17,
+        SayAsInterpretAs_Date_YearMonth	= 18,
+        SayAsInterpretAs_Date_MonthYear	= 19,
+        SayAsInterpretAs_Date_DayMonth	= 20,
+        SayAsInterpretAs_Date_MonthDay	= 21,
+        SayAsInterpretAs_Date_Year	= 22,
+        SayAsInterpretAs_Time_HoursMinutesSeconds12	= 23,
+        SayAsInterpretAs_Time_HoursMinutes12	= 24,
+        SayAsInterpretAs_Time_HoursMinutesSeconds24	= 25,
+        SayAsInterpretAs_Time_HoursMinutes24	= 26
+    } ;
+
 enum TextUnit
     {
         TextUnit_Character	= 0,
@@ -638,12 +676,21 @@ enum CapStyle
         CapStyle_Other	= -1
     } ;
 
+enum FillType
+    {
+        FillType_None	= 0,
+        FillType_Color	= 1,
+        FillType_Gradient	= 2,
+        FillType_Picture	= 3,
+        FillType_Pattern	= 4
+    } ;
+
 enum FlowDirections
     {
         FlowDirections_Default	= 0,
-        FlowDirections_RightToLeft	= 1,
-        FlowDirections_BottomToTop	= 2,
-        FlowDirections_Vertical	= 4
+        FlowDirections_RightToLeft	= 0x1,
+        FlowDirections_BottomToTop	= 0x2,
+        FlowDirections_Vertical	= 0x4
     } ;
 
 enum HorizontalTextAlignment
@@ -685,6 +732,16 @@ enum TextDecorationLineStyle
         TextDecorationLineStyle_ThickLongDash	= 18,
         TextDecorationLineStyle_Other	= -1
     } ;
+
+enum VisualEffects
+    {
+        VisualEffects_None	= 0,
+        VisualEffects_Shadow	= ( 1 << 0 ) ,
+        VisualEffects_Reflection	= ( 1 << 1 ) ,
+        VisualEffects_Glow	= ( 1 << 2 ) ,
+        VisualEffects_SoftEdges	= ( 1 << 3 ) ,
+        VisualEffects_Bevel	= ( 1 << 4 ) 
+    } ;
 typedef int PROPERTYID;
 
 typedef int PATTERNID;
@@ -696,6 +753,8 @@ typedef int TEXTATTRIBUTEID;
 typedef int CONTROLTYPEID;
 
 typedef int LANDMARKTYPEID;
+
+typedef int METADATAID;
 
 struct UiaRect
     {
@@ -1155,6 +1214,128 @@ EXTERN_C const IID IID_IRawElementProviderSimple2;
 
 
 #endif 	/* __IRawElementProviderSimple2_INTERFACE_DEFINED__ */
+
+
+#ifndef __IRawElementProviderSimple3_INTERFACE_DEFINED__
+#define __IRawElementProviderSimple3_INTERFACE_DEFINED__
+
+/* interface IRawElementProviderSimple3 */
+/* [oleautomation][unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IRawElementProviderSimple3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("fcf5d820-d7ec-4613-bdf6-42a84ce7daaf")
+    IRawElementProviderSimple3 : public IRawElementProviderSimple2
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetMetadataValue( 
+            /* [in] */ int targetId,
+            /* [in] */ METADATAID metadataId,
+            /* [retval][out] */ __RPC__out VARIANT *returnVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IRawElementProviderSimple3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IRawElementProviderSimple3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IRawElementProviderSimple3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IRawElementProviderSimple3 * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProviderOptions )( 
+            __RPC__in IRawElementProviderSimple3 * This,
+            /* [retval][out] */ __RPC__out enum ProviderOptions *pRetVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPatternProvider )( 
+            __RPC__in IRawElementProviderSimple3 * This,
+            /* [in] */ PATTERNID patternId,
+            /* [retval][out] */ __RPC__deref_out_opt IUnknown **pRetVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPropertyValue )( 
+            __RPC__in IRawElementProviderSimple3 * This,
+            /* [in] */ PROPERTYID propertyId,
+            /* [retval][out] */ __RPC__out VARIANT *pRetVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HostRawElementProvider )( 
+            __RPC__in IRawElementProviderSimple3 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **pRetVal);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowContextMenu )( 
+            __RPC__in IRawElementProviderSimple3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMetadataValue )( 
+            __RPC__in IRawElementProviderSimple3 * This,
+            /* [in] */ int targetId,
+            /* [in] */ METADATAID metadataId,
+            /* [retval][out] */ __RPC__out VARIANT *returnVal);
+        
+        END_INTERFACE
+    } IRawElementProviderSimple3Vtbl;
+
+    interface IRawElementProviderSimple3
+    {
+        CONST_VTBL struct IRawElementProviderSimple3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IRawElementProviderSimple3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IRawElementProviderSimple3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IRawElementProviderSimple3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IRawElementProviderSimple3_get_ProviderOptions(This,pRetVal)	\
+    ( (This)->lpVtbl -> get_ProviderOptions(This,pRetVal) ) 
+
+#define IRawElementProviderSimple3_GetPatternProvider(This,patternId,pRetVal)	\
+    ( (This)->lpVtbl -> GetPatternProvider(This,patternId,pRetVal) ) 
+
+#define IRawElementProviderSimple3_GetPropertyValue(This,propertyId,pRetVal)	\
+    ( (This)->lpVtbl -> GetPropertyValue(This,propertyId,pRetVal) ) 
+
+#define IRawElementProviderSimple3_get_HostRawElementProvider(This,pRetVal)	\
+    ( (This)->lpVtbl -> get_HostRawElementProvider(This,pRetVal) ) 
+
+
+#define IRawElementProviderSimple3_ShowContextMenu(This)	\
+    ( (This)->lpVtbl -> ShowContextMenu(This) ) 
+
+
+#define IRawElementProviderSimple3_GetMetadataValue(This,targetId,metadataId,returnVal)	\
+    ( (This)->lpVtbl -> GetMetadataValue(This,targetId,metadataId,returnVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IRawElementProviderSimple3_INTERFACE_DEFINED__ */
 
 
 #ifndef __IRawElementProviderFragmentRoot_INTERFACE_DEFINED__

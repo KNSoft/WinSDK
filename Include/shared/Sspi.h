@@ -364,6 +364,7 @@ typedef struct _SecBufferDesc {
 #define SECBUFFER_TOKEN_BINDING                 21  // Supported Token Binding protocol version and key parameters
 #define SECBUFFER_PRESHARED_KEY                 22  // Preshared key
 #define SECBUFFER_PRESHARED_KEY_IDENTITY        23  // Preshared key identity
+#define SECBUFFER_DTLS_MTU                      24  // DTLS path MTU setting
 
 
 #define SECBUFFER_ATTRMASK                      0xF0000000
@@ -437,6 +438,10 @@ typedef struct _SEC_PRESHAREDKEY_IDENTITY {
     unsigned short KeyIdentitySize;             // Size in bytes of the PSK Identity
     unsigned char  KeyIdentity[ANYSIZE_ARRAY];  // PSK Identity
 } SEC_PRESHAREDKEY_IDENTITY, *PSEC_PRESHAREDKEY_IDENTITY;
+
+typedef struct _SEC_DTLS_MTU {
+    unsigned short PathMTU;                     // Path MTU for the connection
+} SEC_DTLS_MTU, *PSEC_DTLS_MTU;
 
 
 //
@@ -1169,10 +1174,10 @@ AcquireCredentialsHandleW(
     _In_      LPWSTR pszPackage,                  // Name of package
 #endif
     _In_      unsigned long fCredentialUse,       // Flags indicating use
-    _In_opt_  void * pvLogonId,           // Pointer to logon ID
-    _In_opt_  void * pAuthData,           // Package specific data
+    _In_opt_  void * pvLogonId,                   // Pointer to logon ID
+    _In_opt_  void * pAuthData,                   // Package specific data
     _In_opt_  SEC_GET_KEY_FN pGetKeyFn,           // Pointer to GetKey() func
-    _In_opt_  void * pvGetKeyArgument,    // Value to pass to GetKey()
+    _In_opt_  void * pvGetKeyArgument,            // Value to pass to GetKey()
     _Out_     PCredHandle phCredential,           // (out) Cred Handle
     _Out_opt_ PTimeStamp ptsExpiry                // (out) Lifetime (optional)
     );
@@ -1201,10 +1206,10 @@ AcquireCredentialsHandleA(
     _In_opt_  LPSTR pszPrincipal,                 // Name of principal
     _In_      LPSTR pszPackage,                   // Name of package
     _In_      unsigned long fCredentialUse,       // Flags indicating use
-    _In_opt_  void * pvLogonId,           // Pointer to logon ID
-    _In_opt_  void * pAuthData,           // Package specific data
+    _In_opt_  void * pvLogonId,                   // Pointer to logon ID
+    _In_opt_  void * pAuthData,                   // Package specific data
     _In_opt_  SEC_GET_KEY_FN pGetKeyFn,           // Pointer to GetKey() func
-    _In_opt_  void * pvGetKeyArgument,    // Value to pass to GetKey()
+    _In_opt_  void * pvGetKeyArgument,            // Value to pass to GetKey()
     _Out_     PCredHandle phCredential,           // (out) Cred Handle
     _Out_opt_ PTimeStamp ptsExpiry                // (out) Lifetime (optional)
     );
@@ -1222,8 +1227,8 @@ typedef SECURITY_STATUS
     PTimeStamp);
 
 #ifdef UNICODE
-#  define AcquireCredentialsHandle AcquireCredentialsHandleW            // ntifs
-#  define ACQUIRE_CREDENTIALS_HANDLE_FN ACQUIRE_CREDENTIALS_HANDLE_FN_W // ntifs
+#  define AcquireCredentialsHandle AcquireCredentialsHandleW                  // ntifs
+#  define ACQUIRE_CREDENTIALS_HANDLE_FN ACQUIRE_CREDENTIALS_HANDLE_FN_W       // ntifs
 #else
 #  define AcquireCredentialsHandle AcquireCredentialsHandleA
 #  define ACQUIRE_CREDENTIALS_HANDLE_FN ACQUIRE_CREDENTIALS_HANDLE_FN_A
@@ -3080,15 +3085,20 @@ typedef struct _SEC_WINNT_AUTH_PACKED_CREDENTIALS {
 } SEC_WINNT_AUTH_PACKED_CREDENTIALS, *PSEC_WINNT_AUTH_PACKED_CREDENTIALS;
 
 // {28BFC32F-10F6-4738-98D1-1AC061DF716A}
-static const GUID SEC_WINNT_AUTH_DATA_TYPE_PASSWORD =
+EXTERN_C __declspec(selectany) const GUID SEC_WINNT_AUTH_DATA_TYPE_PASSWORD =
    { 0x28bfc32f, 0x10f6, 0x4738, { 0x98, 0xd1, 0x1a, 0xc0, 0x61, 0xdf, 0x71, 0x6a } };
 
 // {235F69AD-73FB-4dbc-8203-0629E739339B}
-static const GUID SEC_WINNT_AUTH_DATA_TYPE_CERT =
+EXTERN_C __declspec(selectany) const GUID SEC_WINNT_AUTH_DATA_TYPE_CERT =
    { 0x235f69ad, 0x73fb, 0x4dbc, { 0x82, 0x3, 0x6, 0x29, 0xe7, 0x39, 0x33, 0x9b } };
 
+// {7CB72412-1016-491A-8C87-4D2AA1B7DD3A}
+EXTERN_C __declspec(selectany) const GUID SEC_WINNT_AUTH_DATA_TYPE_CREDMAN_CERT =
+   { 0x7cb72412, 0x1016, 0x491a, { 0x8c, 0x87, 0x4d, 0x2a, 0xa1, 0xb7, 0xdd, 0x3a } };
+
+
 // {10A47879-5EBF-4B85-BD8D-C21BB4F49C8A}
-static const GUID SEC_WINNT_AUTH_DATA_TYPE_NGC =
+EXTERN_C __declspec(selectany) const GUID SEC_WINNT_AUTH_DATA_TYPE_NGC =
    { 0x10a47879, 0x5ebf, 0x4b85, { 0xbd, 0x8d, 0xc2, 0x1b, 0xb4, 0xf4, 0x9c, 0x8a } };
 
 typedef struct _SEC_WINNT_AUTH_DATA_PASSWORD {
@@ -3100,11 +3110,11 @@ typedef struct _SEC_WINNT_AUTH_DATA_PASSWORD {
 //
 // {68FD9879-079C-4dfe-8281-578AADC1C100}
 
-static const GUID SEC_WINNT_AUTH_DATA_TYPE_CSP_DATA =
+EXTERN_C __declspec(selectany) const GUID SEC_WINNT_AUTH_DATA_TYPE_CSP_DATA =
    { 0x68fd9879, 0x79c, 0x4dfe, { 0x82, 0x81, 0x57, 0x8a, 0xad, 0xc1, 0xc1, 0x0 } };
 
 // {B86C4FF3-49D7-4DC4-B560-B1163685B236}
-static const GUID SEC_WINNT_AUTH_DATA_TYPE_SMARTCARD_CONTEXTS = 
+EXTERN_C __declspec(selectany) const GUID SEC_WINNT_AUTH_DATA_TYPE_SMARTCARD_CONTEXTS = 
    { 0xb86c4ff3, 0x49d7, 0x4dc4, { 0xb5, 0x60, 0xb1, 0x16, 0x36, 0x85, 0xb2, 0x36 } };
 
 typedef struct _SEC_WINNT_AUTH_CERTIFICATE_DATA {
@@ -3194,11 +3204,11 @@ typedef struct _SEC_WINNT_CREDUI_CONTEXT
 } SEC_WINNT_CREDUI_CONTEXT, *PSEC_WINNT_CREDUI_CONTEXT;
 
 // {3C3E93D9-D96B-49b5-94A7-458592088337}
-static const GUID CREDUIWIN_STRUCTURE_TYPE_SSPIPFC  =
+EXTERN_C __declspec(selectany) const GUID CREDUIWIN_STRUCTURE_TYPE_SSPIPFC  =
 { 0x3c3e93d9, 0xd96b, 0x49b5, { 0x94, 0xa7, 0x45, 0x85, 0x92, 0x8, 0x83, 0x37 } };
 
 // {C2FFFE6F-503D-4c3d-A95E-BCE821213D44}
-static const GUID SSPIPFC_STRUCTURE_TYPE_CREDUI_CONTEXT =
+EXTERN_C __declspec(selectany) const GUID SSPIPFC_STRUCTURE_TYPE_CREDUI_CONTEXT =
 { 0xc2fffe6f, 0x503d, 0x4c3d, { 0xa9, 0x5e, 0xbc, 0xe8, 0x21, 0x21, 0x3d, 0x44 } };
 
 typedef struct _SEC_WINNT_AUTH_PACKED_CREDENTIALS_EX {

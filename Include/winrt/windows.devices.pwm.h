@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -148,6 +148,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Pwm {
+                interface IPwmControllerStatics3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPwm_CIPwmPin __x_ABI_CWindows_CDevices_CPwm_CIPwmPin;
@@ -173,7 +193,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.Devices.Pwm.Provider.h"
+#include "Windows.Devices.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -224,18 +244,18 @@ interface IPwmController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0373 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0373_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0001 */
 /* [local] */ 
@@ -270,18 +290,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0374 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0374_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0002 */
 /* [local] */ 
@@ -316,18 +336,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0375 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0375_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0003 */
 /* [local] */ 
@@ -362,18 +382,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0376 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0376_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0004 */
 /* [local] */ 
@@ -408,18 +428,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0377 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0377_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0005 */
 /* [local] */ 
@@ -454,18 +474,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0378 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0378_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0006 */
 /* [local] */ 
@@ -500,18 +520,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0379 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0379_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0007 */
 /* [local] */ 
@@ -539,6 +559,9 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Edevices_h__)
+#include <Windows.Devices.h>
+#endif // !defined(__windows2Edevices_h__)
 #if !defined(__windows2Edevices2Epwm2Eprovider_h__)
 #include <Windows.Devices.Pwm.Provider.h>
 #endif // !defined(__windows2Edevices2Epwm2Eprovider_h__)
@@ -557,6 +580,7 @@ typedef enum __x_ABI_CWindows_CDevices_CPwm_CPwmPulsePolarity __x_ABI_CWindows_C
 
 
 #endif
+
 
 
 
@@ -602,21 +626,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0380 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0380_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0008 */
 /* [local] */ 
@@ -791,18 +816,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CPwm__CPwmController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0381 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0381_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0010 */
 /* [local] */ 
@@ -943,18 +968,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CPwm__CPwmController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0382 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0382 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0382_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0012 */
 /* [local] */ 
@@ -1137,18 +1162,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CPwm__CPwmController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0383 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0383 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0383_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0014 */
 /* [local] */ 
@@ -1270,18 +1295,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0384 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0384 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0384_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0016 */
 /* [local] */ 
@@ -1442,18 +1467,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmControl
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0385 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0385 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0385_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0385_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0018 */
 /* [local] */ 
@@ -1575,18 +1600,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0386 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0386 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0386_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eidl_0000_0386_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0020 */
 /* [local] */ 
@@ -1816,7 +1841,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CIPwmController;
                         
                         virtual HRESULT STDMETHODCALLTYPE SetDesiredFrequency( 
                             /* [in] */ DOUBLE desiredFrequency,
-                            /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            /* [out][retval] */ __RPC__out DOUBLE *result) = 0;
                         
                         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MinFrequency( 
                             /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
@@ -1881,7 +1906,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CIPwmController;
         HRESULT ( STDMETHODCALLTYPE *SetDesiredFrequency )( 
             __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmController * This,
             /* [in] */ DOUBLE desiredFrequency,
-            /* [out][retval] */ __RPC__out DOUBLE *value);
+            /* [out][retval] */ __RPC__out DOUBLE *result);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinFrequency )( 
             __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmController * This,
@@ -1935,8 +1960,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CIPwmController;
 #define __x_ABI_CWindows_CDevices_CPwm_CIPwmController_get_ActualFrequency(This,value)	\
     ( (This)->lpVtbl -> get_ActualFrequency(This,value) ) 
 
-#define __x_ABI_CWindows_CDevices_CPwm_CIPwmController_SetDesiredFrequency(This,desiredFrequency,value)	\
-    ( (This)->lpVtbl -> SetDesiredFrequency(This,desiredFrequency,value) ) 
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmController_SetDesiredFrequency(This,desiredFrequency,result)	\
+    ( (This)->lpVtbl -> SetDesiredFrequency(This,desiredFrequency,result) ) 
 
 #define __x_ABI_CWindows_CDevices_CPwm_CIPwmController_get_MinFrequency(This,value)	\
     ( (This)->lpVtbl -> get_MinFrequency(This,value) ) 
@@ -2237,9 +2262,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics2;
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0024 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Pwm_IPwmPin[] = L"Windows.Devices.Pwm.IPwmPin";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Pwm_IPwmControllerStatics3[] = L"Windows.Devices.Pwm.IPwmControllerStatics3";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Edevices2Epwm_0000_0024 */
@@ -2249,6 +2274,167 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0024_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Pwm::IPwmControllerStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Pwm {
+                    
+                    MIDL_INTERFACE("B2581871-0229-4344-AE3F-9B7CD0E66B94")
+                    IPwmControllerStatics3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorFromFriendlyName( 
+                            /* [in] */ __RPC__in HSTRING friendlyName,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FromIdAsync( 
+                            /* [in] */ __RPC__in HSTRING deviceId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPwmControllerStatics3 = __uuidof(IPwmControllerStatics3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelector )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorFromFriendlyName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [in] */ __RPC__in HSTRING friendlyName,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *FromIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3 * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_GetDeviceSelector(This,result)	\
+    ( (This)->lpVtbl -> GetDeviceSelector(This,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_GetDeviceSelectorFromFriendlyName(This,friendlyName,result)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorFromFriendlyName(This,friendlyName,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_FromIdAsync(This,deviceId,operation)	\
+    ( (This)->lpVtbl -> FromIdAsync(This,deviceId,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPwm_CIPwmControllerStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epwm_0000_0025 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Pwm_IPwmPin[] = L"Windows.Devices.Pwm.IPwmPin";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epwm_0000_0025 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__
@@ -2437,7 +2623,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CIPwmPin;
 #endif 	/* ____x_ABI_CWindows_CDevices_CPwm_CIPwmPin_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm_0000_0025 */
+/* interface __MIDL_itf_windows2Edevices2Epwm_0000_0026 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Devices_Pwm_PwmController_DEFINED
@@ -2450,15 +2636,25 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm_0000_0025 */
+/* interface __MIDL_itf_windows2Edevices2Epwm_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm_0000_0026_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
+
+unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
+void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
+
+unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
+void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
 
 /* end of Additional Prototypes */
 

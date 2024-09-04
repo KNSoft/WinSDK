@@ -232,6 +232,10 @@ typedef struct _DXGK_VIDEO_OUTPUT_CAPABILITIES {
     BOOLEAN SupportsSdtvModes;
 } DXGK_VIDEO_OUTPUT_CAPABILITIES, *PDXGK_VIDEO_OUTPUT_CAPABILITIES;
 
+typedef struct _DXGK_INTEGRATED_DISPLAY_CHILD {
+    D3DKMDT_VIDEO_OUTPUT_TECHNOLOGY InterfaceTechnology;
+    USHORT                          DescriptorLength;
+} DXGK_INTEGRATED_DISPLAY_CHILD, *PDXGK_INTEGRATED_DISPLAY_CHILD;
 
 typedef struct _DXGK_CHILD_CAPABILITIES {
 
@@ -252,15 +256,26 @@ typedef struct _DXGK_CHILD_CAPABILITIES {
             UINT MustBeZero;
         }
         Other;
+
+        //
+        // If (CHILD_DESCRIPTOR::ChildDeviceType == TypeIntegratedDisplay)
+        //
+
+        DXGK_INTEGRATED_DISPLAY_CHILD   IntegratedDisplayChild;
     } Type;
 
     DXGK_CHILD_DEVICE_HPD_AWARENESS HpdAwareness;
 } DXGK_CHILD_CAPABILITIES, *PDXGK_CHILD_CAPABILITIES;
 
+// We don't want to add anything in the Type union which would increase the 
+// size beyond the original DXGK_VIDEO_OUTPUT_CAPABILITIES unexpectedly so assert it.
+static_assert( FIELD_OFFSET( DXGK_CHILD_CAPABILITIES, HpdAwareness ) == 12, "Type field has changed size" );
+
 typedef enum _DXGK_CHILD_DEVICE_TYPE {
    TypeUninitialized,
    TypeVideoOutput,
-   TypeOther
+   TypeOther,
+   TypeIntegratedDisplay
 } DXGK_CHILD_DEVICE_TYPE, *PDXGK_CHILD_DEVICE_TYPE;
 
 //
@@ -1365,6 +1380,34 @@ NTSTATUS
 
 #endif // DXGKDDI_INTERFACE_VERSION
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef enum _DXGK_FRAMEBUFFER_STATE {
+    FrameBufferStateUnknown = 0,
+    FrameBufferStateInitializedByFirmware = 1,
+    FrameBufferStateInitializedByDriver = 2,
+} DXGK_FRAMEBUFFER_STATE;
+
+typedef struct _DXGK_DISPLAY_OWNERSHIP_FLAGS {
+    union {
+        struct {
+            DXGK_FRAMEBUFFER_STATE FrameBufferState : 4;
+        };
+        UINT Value;
+    };
+} DXGK_DISPLAY_OWNERSHIP_FLAGS, *PDXGK_DISPLAY_OWNERSHIP_FLAGS;
+
+typedef
+_Function_class_DXGK_(DXGKCB_ACQUIRE_POST_DISPLAY_OWNERSHIP2)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY *DXGKCB_ACQUIRE_POST_DISPLAY_OWNERSHIP2)(
+    _In_ HANDLE DeviceHandle,
+    _Out_ PDXGK_DISPLAY_INFORMATION DisplayInfo,
+    _Out_ PDXGK_DISPLAY_OWNERSHIP_FLAGS Flags
+);
+
+#endif // DXGKDDI_INTERFACE_VERSION
 
 typedef struct _DXGKRNL_INTERFACE {
     ULONG                                   Size;
@@ -1433,6 +1476,15 @@ typedef struct _DXGKRNL_INTERFACE {
     DXGKCB_DXGKCB_MITIGATEDRANGEUPDATE      DxgkCbMitigatedRangeUpdate;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+    DXGKCB_INVALIDATEHWCONTEXT              DxgkCbInvalidateHwContext;
+    DXGKCB_INDICATE_CONNECTOR_CHANGE        DxgkCbIndicateConnectorChange;
+    DXGKCB_UNBLOCKUEFIFRAMEBUFFERRANGES     DxgkCbUnblockUEFIFrameBufferRanges;
+    DXGKCB_ACQUIRE_POST_DISPLAY_OWNERSHIP2  DxgkCbAcquirePostDisplayOwnership2;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 } DXGKRNL_INTERFACE, *PDXGKRNL_INTERFACE;
 
@@ -1639,6 +1691,50 @@ DXGKDDI_LINK_DEVICE(
     INOUT_PLINKED_DEVICE      LinkedDevice
     );
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGK_PRE_START_INFO {
+    union {
+        struct {
+            UINT    ReservedIn;
+        };
+        UINT Input;
+    };
+    union {
+        struct {
+            UINT    SupportPreserveBootDisplay  : 1;
+            UINT    IsUEFIFrameBufferCpuAccessibleDuringStartup : 1;
+            UINT    ReservedOut                 :30;
+        };
+        UINT Output;
+    };
+} DXGK_PRE_START_INFO, *PDXGK_PRE_START_INFO;
+typedef _Inout_    PDXGK_PRE_START_INFO    IN_OUT_PDXGK_PRE_START_INFO;
+
+typedef
+    _Check_return_
+_Function_class_DXGK_(DXGKDDI_EXCHANGEPRESTARTINFO)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_EXCHANGEPRESTARTINFO(
+    IN_CONST_HANDLE             hAdapter,
+    IN_OUT_PDXGK_PRE_START_INFO pPreStartInfo
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY(
+    IN_CONST_HANDLE                                 hAdapter,
+    IN  D3DDDI_VIDEO_PRESENT_TARGET_ID              TargetId,
+    IN  DXGK_COLORIMETRY                            AdjustedColorimetry
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 //
 //     Function pointer typedefs
 //
@@ -1660,6 +1756,10 @@ typedef DXGKDDI_UNLOAD                          *PDXGKDDI_UNLOAD;
 typedef DXGKDDI_QUERY_INTERFACE                 *PDXGKDDI_QUERY_INTERFACE;
 typedef DXGKDDI_CONTROL_ETW_LOGGING             *PDXGKDDI_CONTROL_ETW_LOGGING;
 typedef DXGKDDI_LINK_DEVICE                     *PDXGKDDI_LINK_DEVICE;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+typedef DXGKDDI_EXCHANGEPRESTARTINFO            *PDXGKDDI_EXCHANGEPRESTARTINFO;
+typedef DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY    *PDXGKDDI_SETTARGETADJUSTEDCOLORIMETRY;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -1990,6 +2090,43 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
     PDXGKDDI_CONTROLMODEBEHAVIOR            DxgkDdiControlModeBehavior;
     PDXGKDDI_UPDATEMONITORLINKINFO          DxgkDdiUpdateMonitorLinkInfo;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+    //
+    // Hardware context scheduling support.
+    //
+
+    PDXGKDDI_CREATEHWCONTEXT                DxgkDdiCreateHwContext;
+    PDXGKDDI_DESTROYHWCONTEXT               DxgkDdiDestroyHwContext;
+
+    PDXGKDDI_CREATEHWQUEUE                  DxgkDdiCreateHwQueue;
+    PDXGKDDI_DESTROYHWQUEUE                 DxgkDdiDestroyHwQueue;
+
+    PDXGKDDI_SUBMITCOMMANDTOHWQUEUE         DxgkDdiSubmitCommandToHwQueue;
+    PDXGKDDI_SWITCHTOHWCONTEXTLIST          DxgkDdiSwitchToHwContextList;
+
+    PDXGKDDI_RESETHWENGINE                  DxgkDdiResetHwEngine;
+
+    PDXGKDDI_CREATEPERIODICFRAMENOTIFICATION    DxgkDdiCreatePeriodicFrameNotification;
+    PDXGKDDI_DESTROYPERIODICFRAMENOTIFICATION   DxgkDdiDestroyPeriodicFrameNotification;
+
+    PDXGKDDI_SETTIMINGSFROMVIDPN            DxgkDdiSetTimingsFromVidPn;
+
+    PDXGKDDI_SETTARGETGAMMA                 DxgkDdiSetTargetGamma;
+    PDXGKDDI_SETTARGETCONTENTTYPE           DxgkDdiSetTargetContentType;
+    PDXGKDDI_SETTARGETANALOGCOPYPROTECTION  DxgkDdiSetTargetAnalogCopyProtection;
+    PDXGKDDI_SETTARGETADJUSTEDCOLORIMETRY   DxgkDdiSetTargetAdjustedColorimetry;
+
+    PDXGKDDI_DISPLAYDETECTCONTROL           DxgkDdiDisplayDetectControl;
+    PDXGKDDI_QUERYCONNECTIONCHANGE          DxgkDdiQueryConnectionChange;
+
+    PDXGKDDI_EXCHANGEPRESTARTINFO           DxgkDdiExchangePreStartInfo;
+
+    PDXGKDDI_GETMULTIPLANEOVERLAYCAPS       DxgkDdiGetMultiPlaneOverlayCaps;
+    PDXGKDDI_GETPOSTCOMPOSITIONCAPS         DxgkDdiGetPostCompositionCaps;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 } DRIVER_INITIALIZATION_DATA, *PDRIVER_INITIALIZATION_DATA;
 
@@ -2439,6 +2576,14 @@ DlUnmapMemory(
 // {462BC153-40EB-484A-8168-9972E3CD5AEF}
 DEFINE_GUID(GUID_DXGKDDI_GPU_PARTITION_INTERFACE, 0x462bc153, 0x40eb, 0x484a, 0x81, 0x68, 0x99, 0x72, 0xe3, 0xcd, 0x5a, 0xef);
 
+// must be the same as flexiov.h #define IOV_FLAG_ACS_CAPABLE 0x080
+#define DXGK_VIRTUALIZED_ACS_CAPABLE 0x80 
+// must be the same as flexiov.h #define IOV_FLAG_UNIQUE_RID_PER_VF 0x100
+#define DXGK_VIRTUALIZED_UNIQUE_RID 0x100 
+// must be the same as flexiov.h #define IOV_FLAG_HOST_VIRTUAL_DEVICE 0x800
+#define DXGK_VIRTUALIZED_HOST_VIRTUAL_DEVICE 0x800 
+
+
 typedef struct _DXGKARG_GETGPUPARTITIONINFO
 {
     _Inout_ ULONG  NumGpuPartitionOptions;
@@ -2478,6 +2623,7 @@ typedef struct _DXGK_VGPU_PROFILE_CAPABILITY
 typedef struct _DXGKARG_GETVIRTUALGPUPROFILE
 {
     ULONG  PartitionCount;
+    ULONG  VirtualizationFlags;
     DXGK_VGPU_PROFILE_CAPABILITY ProfileCapability[DXGK_VGPU_CAPABILITY_MAX];
 } DXGKARG_GETVIRTUALGPUPROFILE, *PDXGKARG_GETVIRTUALGPUPROFILE;
 
@@ -2556,8 +2702,8 @@ typedef struct _DXGK_VIRTUALGPUSEGMENTINFO
     ULONG  DriverSegmentId;
     UINT64 Size;
     UINT   Alignment;
-    UINT64 MinSegmenfOffset;
-    UINT64 MaxSegmenfOffset;
+    UINT64 MinSegmentOffset;
+    UINT64 MaxSegmentOffset;
     UINT   PrivateDriverData;
 } DXGK_VIRTUALGPUSEGMENTINFO, *PDXGK_VIRTUALGPUSEGMENTINFO;
 

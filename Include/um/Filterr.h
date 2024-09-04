@@ -30,16 +30,16 @@
 //
 // Define the facility codes
 //
-#define FACILITY_WINDOWS                 0x8
 #define FACILITY_ITF                     0x4
+#define FACILITY_WINDOWS                 0x8
 
 
 //
 // Define the severity codes
 //
 #define STATUS_SEVERITY_SUCCESS          0x0
-#define STATUS_SEVERITY_COFAIL           0x3
 #define STATUS_SEVERITY_COERROR          0x2
+#define STATUS_SEVERITY_COFAIL           0x3
 
 
 //

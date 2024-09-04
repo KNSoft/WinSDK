@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -208,18 +208,18 @@ interface IEasComplianceResults;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0001 */
 /* [local] */ 
@@ -254,18 +254,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0002 */
 /* [local] */ 
@@ -609,18 +609,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0003 */
 /* [local] */ 
@@ -742,18 +742,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eexchangeactivesyncprovisioning_0000_0005 */
 /* [local] */ 

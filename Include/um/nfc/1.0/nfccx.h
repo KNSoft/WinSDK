@@ -679,6 +679,56 @@ NfcCxUnregisterSequenceHandler(
     return ((PFN_NFCCXUNREGISTERSEQUENCEHANDLER) NfccxFunctions[NfcCxUnregisterSequenceHandlerTableIndex])(NfccxDriverGlobals, Device, Sequence);
 }
 
+//
+// NFCCX Function: NfcCxReleaseHardwareControl
+//
+typedef
+_Must_inspect_result_
+WDFAPI
+NTSTATUS
+(*PFN_NFCCXRELEASEHARDWARECONTROL)(
+    _In_
+    PNFCCX_DRIVER_GLOBALS DriverGlobals,
+    _In_
+    WDFDEVICE Device
+    );
+
+_Must_inspect_result_
+NTSTATUS
+FORCEINLINE
+NfcCxReleaseHardwareControl(
+    _In_
+    WDFDEVICE Device
+    )
+{
+    return ((PFN_NFCCXRELEASEHARDWARECONTROL) NfccxFunctions[NfcCxReleaseHardwareControlTableIndex])(NfccxDriverGlobals, Device);
+}
+
+//
+// NFCCX Function: NfcCxReacquireHardwareControl
+//
+typedef
+_Must_inspect_result_
+WDFAPI
+NTSTATUS
+(*PFN_NFCCXREACQUIREHARDWARECONTROL)(
+    _In_
+    PNFCCX_DRIVER_GLOBALS DriverGlobals,
+    _In_
+    WDFDEVICE Device
+    );
+
+_Must_inspect_result_
+NTSTATUS
+FORCEINLINE
+NfcCxReacquireHardwareControl(
+    _In_
+    WDFDEVICE Device
+    )
+{
+    return ((PFN_NFCCXREACQUIREHARDWARECONTROL) NfccxFunctions[NfcCxReacquireHardwareControlTableIndex])(NfccxDriverGlobals, Device);
+}
+
 
 
 WDF_EXTERN_C_END

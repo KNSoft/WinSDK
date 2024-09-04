@@ -57,9 +57,25 @@ typedef int PSTIME_FLAGS;
 // Initialize a propvariant
 PSSTDAPI InitPropVariantFromResource(_In_ HINSTANCE hinst, _In_ UINT id, _Out_ PROPVARIANT *ppropvar);
 PSSTDAPI InitPropVariantFromBuffer(_In_reads_bytes_(cb) const void *pv, _In_ UINT cb, _Out_ PROPVARIANT *ppropvar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 PSSTDAPI InitPropVariantFromCLSID(_In_ REFCLSID clsid, _Out_ PROPVARIANT *ppropvar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 PSSTDAPI InitPropVariantFromGUIDAsString(_In_ REFGUID guid, _Out_ PROPVARIANT *ppropvar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 PSSTDAPI InitPropVariantFromFileTime(_In_ const FILETIME *pftIn, _Out_ PROPVARIANT *ppropvar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 PSSTDAPI InitPropVariantFromPropVariantVectorElem(_In_ REFPROPVARIANT propvarIn, _In_ ULONG iElem, _Out_ PROPVARIANT *ppropvar);
 PSSTDAPI InitPropVariantVectorFromPropVariant(_In_ REFPROPVARIANT propvarSingle, _Out_ PROPVARIANT *ppropvarVector);
 PSSTDAPI InitPropVariantFromStrRet(_Inout_ STRRET *pstrret, _In_opt_ PCUITEMID_CHILD pidl, _Out_ PROPVARIANT *ppropvar);
@@ -98,9 +114,17 @@ PSSTDAPI_(ULONG)     PropVariantToUInt32WithDefault(_In_ REFPROPVARIANT propvarI
 PSSTDAPI_(LONGLONG)  PropVariantToInt64WithDefault(_In_ REFPROPVARIANT propvarIn, _In_ LONGLONG llDefault);
 PSSTDAPI_(ULONGLONG) PropVariantToUInt64WithDefault(_In_ REFPROPVARIANT propvarIn, _In_ ULONGLONG ullDefault);
 PSSTDAPI_(DOUBLE)    PropVariantToDoubleWithDefault(_In_ REFPROPVARIANT propvarIn, _In_ DOUBLE dblDefault);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 PSSTDAPI_(PCWSTR)    PropVariantToStringWithDefault(_In_ REFPROPVARIANT propvarIn, _In_opt_ LPCWSTR pszDefault);
 
 PSSTDAPI             PropVariantToBoolean(_In_ REFPROPVARIANT propvarIn, _Out_ BOOL *pfRet);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 PSSTDAPI             PropVariantToInt16(_In_ REFPROPVARIANT propvarIn, _Out_ SHORT *piRet);
 PSSTDAPI             PropVariantToUInt16(_In_ REFPROPVARIANT propvarIn, _Out_ USHORT *puiRet);
 PSSTDAPI             PropVariantToInt32(_In_ REFPROPVARIANT propvarIn, _Out_ LONG *plRet);
@@ -110,9 +134,17 @@ PSSTDAPI             PropVariantToUInt64(_In_ REFPROPVARIANT propvarIn, _Out_ UL
 PSSTDAPI             PropVariantToDouble(_In_ REFPROPVARIANT propvarIn, _Out_ DOUBLE *pdblRet);
 PSSTDAPI             PropVariantToBuffer(_In_ REFPROPVARIANT propvar, _Out_writes_bytes_(cb) void *pv, _In_ UINT cb);
 PSSTDAPI             PropVariantToString(_In_ REFPROPVARIANT propvar, _Out_writes_(cch) PWSTR psz, _In_ UINT cch);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 PSSTDAPI             PropVariantToGUID(_In_ REFPROPVARIANT propvar, _Out_ GUID *pguid);
 _Check_return_ PSSTDAPI PropVariantToStringAlloc(_In_ REFPROPVARIANT propvar, _Outptr_result_nullonfailure_ PWSTR *ppszOut);
 _Check_return_ PSSTDAPI PropVariantToBSTR(_In_ REFPROPVARIANT propvar, _Outptr_result_nullonfailure_ BSTR *pbstrOut);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 _Check_return_ PSSTDAPI PropVariantToStrRet(_In_ REFPROPVARIANT propvar, _Out_ STRRET *pstrret);
 PSSTDAPI             PropVariantToFileTime(_In_ REFPROPVARIANT propvar, _In_ PSTIME_FLAGS pstfOut, _Out_ FILETIME* pftOut);
 #ifdef __cplusplus
@@ -201,12 +233,6 @@ PSSTDAPI_(int) PropVariantCompareEx(_In_ REFPROPVARIANT propvar1, _In_ REFPROPVA
 int PropVariantCompare(_In_ REFPROPVARIANT propvar1, _In_ REFPROPVARIANT propvar2);
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
-#pragma endregion
-
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-
 enum tagPROPVAR_CHANGE_FLAGS
 {
     PVCHF_DEFAULT           = 0x00000000,
@@ -224,6 +250,10 @@ PSSTDAPI PropVariantChangeType(_Out_ PROPVARIANT *ppropvarDest, _In_ REFPROPVARI
 // Conversions
 PSSTDAPI PropVariantToVariant(_In_ const PROPVARIANT *pPropVar, _Out_ VARIANT *pVar);
 PSSTDAPI VariantToPropVariant(_In_ const VARIANT* pVar, _Out_ PROPVARIANT* pPropVar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 // Stg functions
 _Check_return_ PSSTDAPI StgSerializePropVariant(
@@ -254,7 +284,15 @@ BOOL IsVarTypeInteger(_In_ VARTYPE vt);
 
 // Initialize a VARIANT
 PSSTDAPI InitVariantFromResource(_In_ HINSTANCE hinst, _In_ UINT id, _Out_ VARIANT *pvar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 PSSTDAPI InitVariantFromBuffer(_In_reads_bytes_(cb) const void *pv, _In_ UINT cb, _Out_ VARIANT *pvar);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 PSSTDAPI InitVariantFromGUIDAsString(_In_ REFGUID guid, _Out_ VARIANT *pvar);
 PSSTDAPI InitVariantFromFileTime(_In_ const FILETIME *pft, _Out_ VARIANT *pvar);
 PSSTDAPI InitVariantFromFileTimeArray(_In_reads_opt_(cElems) const FILETIME *prgft, _In_ ULONG cElems, _Out_ VARIANT *pvar);
@@ -305,7 +343,15 @@ PSSTDAPI              VariantToInt64(_In_ REFVARIANT varIn, _Out_ LONGLONG *pllR
 PSSTDAPI              VariantToUInt64(_In_ REFVARIANT varIn, _Out_ ULONGLONG *pullRet);
 PSSTDAPI              VariantToDouble(_In_ REFVARIANT varIn, _Out_ DOUBLE *pdblRet);
 PSSTDAPI              VariantToBuffer(_In_ REFVARIANT varIn, _Out_writes_bytes_(cb) void *pv, _In_ UINT cb);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 PSSTDAPI              VariantToGUID(_In_ REFVARIANT varIn, _Out_ GUID *pguid);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 PSSTDAPI              VariantToString(_In_ REFVARIANT varIn, _Out_writes_(cchBuf) PWSTR pszBuf, _In_ UINT cchBuf);
 _Check_return_ PSSTDAPI VariantToStringAlloc(_In_ REFVARIANT varIn, _Outptr_result_nullonfailure_ PWSTR *ppszBuf);
 PSSTDAPI              VariantToDosDateTime(_In_ REFVARIANT varIn, _Out_ WORD *pwDate, _Out_ WORD *pwTime);

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -53,6 +53,13 @@ typedef interface __FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__C
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_FWD_DEFINED__ */
 
 
+#ifndef ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_FWD_DEFINED__
+#define ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_FWD_DEFINED__
+typedef interface __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType;
+
+#endif 	/* ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_FWD_DEFINED__ */
+
+
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
@@ -86,6 +93,13 @@ typedef interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive
 typedef interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_FWD_DEFINED__
@@ -132,6 +146,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSource3;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings;
@@ -152,6 +188,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceCorrelatedTimes;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_FWD_DEFINED__
@@ -176,6 +234,72 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceCreationResult2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDiagnostics;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
@@ -196,6 +320,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_FWD_DEFINED__
@@ -220,6 +366,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDownloadCompletedEventArgs2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs;
@@ -240,6 +408,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDownloadFailedEventArgs2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedDeferral_FWD_DEFINED__
@@ -286,6 +476,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDownloadRequestedEventArgs2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult;
@@ -328,6 +540,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    interface IAdaptiveMediaSourceDownloadStatistics;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_FWD_DEFINED__
@@ -434,18 +668,18 @@ interface IAdaptiveMediaSourceCreationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0001 */
 /* [local] */ 
@@ -480,18 +714,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002 */
 /* [local] */ 
@@ -515,6 +749,67 @@ typedef IAsyncOperation<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaS
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+enum AdaptiveMediaSourceResourceType;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4636 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4636 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_USE
+#define DEF___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("74c8c3aa-de03-5bf0-aae8-aa8b692066b3"))
+IReference<enum ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType> : IReference_impl<enum ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceResourceType>"; }
+};
+typedef IReference<enum ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType> __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_t;
+#define ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_FWD_DEFINED__
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType ABI::Windows::Foundation::__FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -571,7 +866,7 @@ interface IAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003 */
 /* [local] */ 
 
 
@@ -579,23 +874,23 @@ interface IAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4023 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4023_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_USE
@@ -646,30 +941,30 @@ interface IAdaptiveMediaSourceDownloadCompletedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4024 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4024_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_USE
@@ -720,30 +1015,30 @@ interface IAdaptiveMediaSourceDownloadFailedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4025 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4025_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_USE
@@ -794,30 +1089,30 @@ interface IAdaptiveMediaSourceDownloadRequestedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4026 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4026_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_USE
@@ -868,30 +1163,30 @@ interface IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4027 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4027_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_USE
@@ -913,31 +1208,133 @@ typedef ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMed
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+class AdaptiveMediaSourceDiagnostics;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+interface IAdaptiveMediaSourceDiagnostics;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+class AdaptiveMediaSourceDiagnosticAvailableEventArgs;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+interface IAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4028 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4028_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("fd4ce6b5-7c3b-58f4-9efc-1d9ee6a09d21"))
+ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnostics*,ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnosticAvailableEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnostics*, ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnostics*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnosticAvailableEventArgs*, ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnosticAvailableEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnostics*,ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnosticAvailableEventArgs*> __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4643 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4643 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_UINT32_USE
@@ -961,29 +1358,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4029 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4029_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_UINT32_USE
@@ -1007,29 +1404,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4030 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4030_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_UINT32_USE
@@ -1053,29 +1450,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4031 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4031_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT32_USE
@@ -1098,30 +1495,87 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_UINT32_USE */
 
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+struct TimeSpan;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011 */
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4032 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4032_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#define DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800"))
+IReference<struct ABI::Windows::Foundation::TimeSpan> : IReference_impl<struct ABI::Windows::Foundation::TimeSpan> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.Foundation.TimeSpan>"; }
+};
+typedef IReference<struct ABI::Windows::Foundation::TimeSpan> __FIReference_1_Windows__CFoundation__CTimeSpan_t;
+#define ____FIReference_1_Windows__CFoundation__CTimeSpan_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CTimeSpan ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4648 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4648 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double_USE
@@ -1144,30 +1598,133 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_double_USE */
 
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+struct DateTime;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012 */
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4033 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4033_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#define DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c"))
+IReference<struct ABI::Windows::Foundation::DateTime> : IReference_impl<struct ABI::Windows::Foundation::DateTime> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.Foundation.DateTime>"; }
+};
+typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Windows__CFoundation__CDateTime_t;
+#define ____FIReference_1_Windows__CFoundation__CDateTime_FWD_DEFINED__
+#define __FIReference_1_Windows__CFoundation__CDateTime ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4650 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4650 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_int_USE
+#define DEF___FIReference_1_int_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4"))
+IReference<int> : IReference_impl<int> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Int32>"; }
+};
+typedef IReference<int> __FIReference_1_int_t;
+#define ____FIReference_1_int_FWD_DEFINED__
+#define __FIReference_1_int ABI::Windows::Foundation::__FIReference_1_int_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_int_USE */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4651 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4651 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT64_USE
@@ -1205,6 +1762,11 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
+
+#endif
+
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
 
@@ -1259,6 +1821,26 @@ typedef enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceCr
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDiagnosticType __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDiagnosticType;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDownloadBitrateChangedReason __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDownloadBitrateChangedReason;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceResourceType __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceResourceType;
 
 
@@ -1272,6 +1854,14 @@ typedef enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceRe
 
 
 
+
+
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1279,6 +1869,19 @@ namespace Media {
 namespace Streaming {
 namespace Adaptive {
 class AdaptiveMediaSourceAdvancedSettings;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+class AdaptiveMediaSourceCorrelatedTimes;
 } /*Adaptive*/
 } /*Streaming*/
 } /*Media*/
@@ -1311,10 +1914,40 @@ class AdaptiveMediaSourceDownloadResult;
 } /*Windows*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace Streaming {
+namespace Adaptive {
+class AdaptiveMediaSourceDownloadStatistics;
+} /*Adaptive*/
+} /*Streaming*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018 */
 /* [local] */ 
+
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct DateTime DateTime;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 #ifdef __cplusplus
@@ -1368,6 +2001,46 @@ namespace ABI {
             namespace Streaming {
                 namespace Adaptive {
                     
+                    typedef enum AdaptiveMediaSourceDiagnosticType AdaptiveMediaSourceDiagnosticType;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    
+                    typedef enum AdaptiveMediaSourceDownloadBitrateChangedReason AdaptiveMediaSourceDownloadBitrateChangedReason;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    
                     typedef enum AdaptiveMediaSourceResourceType AdaptiveMediaSourceResourceType;
                     
                 } /* end namespace */
@@ -1387,23 +2060,31 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0013_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4034 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4034 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4652 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4652 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult
@@ -1412,14 +2093,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__
@@ -1508,35 +2189,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CSt
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4035 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4035_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult
@@ -1544,13 +2225,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__
@@ -1680,35 +2361,187 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdapti
 #endif 	/* ____FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4036 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4036_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType
+#define DEF___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023_v0_0_s_ifspec;
+
+#ifndef ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_INTERFACE_DEFINED__
+#define ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_INTERFACE_DEFINED__
+
+/* interface __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("74c8c3aa-de03-5bf0-aae8-aa8b692066b3")
+    __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Value( 
+            /* [retval][out] */ __RPC__out enum ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType *value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceTypeVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )( 
+            __RPC__in __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType * This,
+            /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceResourceType *value);
+        
+        END_INTERFACE
+    } __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceTypeVtbl;
+
+    interface __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType
+    {
+        CONST_VTBL struct __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceTypeVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs
@@ -1716,13 +2549,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__
@@ -1811,35 +2644,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAda
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4037 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4037_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs
@@ -1847,13 +2680,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__
@@ -1942,35 +2775,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAda
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4038 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4038_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs
@@ -1978,13 +2811,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__
@@ -2073,35 +2906,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAda
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4039 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4039_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs
@@ -2109,13 +2942,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__
@@ -2204,35 +3037,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAda
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4040 */
-
-
-
-
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4040_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
@@ -2240,13 +3073,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_40
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__
@@ -2335,11 +3168,142 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAda
 #endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4660 */
+
+
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4660 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("fd4ce6b5-7c3b-58f4-9efc-1d9ee6a09d21")
+    __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnostics *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnosticAvailableEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs */
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -2353,6 +3317,41 @@ enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceCreationSt
         AdaptiveMediaSourceCreationStatus_UnsupportedManifestVersion	= 4,
         AdaptiveMediaSourceCreationStatus_UnsupportedManifestProfile	= 5,
         AdaptiveMediaSourceCreationStatus_UnknownFailure	= 6
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDiagnosticType
+    {
+        AdaptiveMediaSourceDiagnosticType_ManifestUnchangedUponReload	= 0,
+        AdaptiveMediaSourceDiagnosticType_ManifestMismatchUponReload	= 1,
+        AdaptiveMediaSourceDiagnosticType_ManifestSignaledEndOfLiveEventUponReload	= 2,
+        AdaptiveMediaSourceDiagnosticType_MediaSegmentSkipped	= 3,
+        AdaptiveMediaSourceDiagnosticType_ResourceNotFound	= 4,
+        AdaptiveMediaSourceDiagnosticType_ResourceTimedOut	= 5,
+        AdaptiveMediaSourceDiagnosticType_ResourceParsingError	= 6,
+        AdaptiveMediaSourceDiagnosticType_BitrateDisabled	= 7
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDownloadBitrateChangedReason
+    {
+        AdaptiveMediaSourceDownloadBitrateChangedReason_SufficientInboundBitsPerSecond	= 0,
+        AdaptiveMediaSourceDownloadBitrateChangedReason_InsufficientInboundBitsPerSecond	= 1,
+        AdaptiveMediaSourceDownloadBitrateChangedReason_LowBufferLevel	= 2,
+        AdaptiveMediaSourceDownloadBitrateChangedReason_PositionChanged	= 3,
+        AdaptiveMediaSourceDownloadBitrateChangedReason_TrackSelectionChanged	= 4,
+        AdaptiveMediaSourceDownloadBitrateChangedReason_DesiredBitratesChanged	= 5,
+        AdaptiveMediaSourceDownloadBitrateChangedReason_ErrorInPreviousBitrate	= 6
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -2377,7 +3376,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -2417,6 +3416,63 @@ namespace ABI {
                 namespace Adaptive {
                     
                     /* [v1_enum] */ 
+                    enum AdaptiveMediaSourceDiagnosticType
+                        {
+                            AdaptiveMediaSourceDiagnosticType_ManifestUnchangedUponReload	= 0,
+                            AdaptiveMediaSourceDiagnosticType_ManifestMismatchUponReload	= 1,
+                            AdaptiveMediaSourceDiagnosticType_ManifestSignaledEndOfLiveEventUponReload	= 2,
+                            AdaptiveMediaSourceDiagnosticType_MediaSegmentSkipped	= 3,
+                            AdaptiveMediaSourceDiagnosticType_ResourceNotFound	= 4,
+                            AdaptiveMediaSourceDiagnosticType_ResourceTimedOut	= 5,
+                            AdaptiveMediaSourceDiagnosticType_ResourceParsingError	= 6,
+                            AdaptiveMediaSourceDiagnosticType_BitrateDisabled	= 7
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    
+                    /* [v1_enum] */ 
+                    enum AdaptiveMediaSourceDownloadBitrateChangedReason
+                        {
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_SufficientInboundBitsPerSecond	= 0,
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_InsufficientInboundBitsPerSecond	= 1,
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_LowBufferLevel	= 2,
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_PositionChanged	= 3,
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_TrackSelectionChanged	= 4,
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_DesiredBitratesChanged	= 5,
+                            AdaptiveMediaSourceDownloadBitrateChangedReason_ErrorInPreviousBitrate	= 6
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Streaming {
+                namespace Adaptive {
+                    
+                    /* [v1_enum] */ 
                     enum AdaptiveMediaSourceResourceType
                         {
                             AdaptiveMediaSourceResourceType_Manifest	= 0,
@@ -2436,8 +3492,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_INTERFACE_DEFINED__
@@ -2822,7 +3878,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource2_INTERFACE_DEFINED__)
@@ -2830,13 +3886,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource2_INTERFACE_DEFINED__
@@ -2961,7 +4017,196 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSource3[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("BA7023FD-C334-461B-A36E-C99F54F7174A")
+                        IAdaptiveMediaSource3 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MinLiveOffset( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxSeekableWindowSize( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DesiredSeekableWindowSize( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DesiredSeekableWindowSize( 
+                                /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Diagnostics( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnostics **value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetCorrelatedTimes( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCorrelatedTimes **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSource3 = __uuidof(IAdaptiveMediaSource3);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinLiveOffset )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxSeekableWindowSize )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DesiredSeekableWindowSize )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DesiredSeekableWindowSize )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CTimeSpan *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Diagnostics )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCorrelatedTimes )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_get_MinLiveOffset(This,value)	\
+    ( (This)->lpVtbl -> get_MinLiveOffset(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_get_MaxSeekableWindowSize(This,value)	\
+    ( (This)->lpVtbl -> get_MaxSeekableWindowSize(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_get_DesiredSeekableWindowSize(This,value)	\
+    ( (This)->lpVtbl -> get_DesiredSeekableWindowSize(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_put_DesiredSeekableWindowSize(This,value)	\
+    ( (This)->lpVtbl -> put_DesiredSeekableWindowSize(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_get_Diagnostics(This,value)	\
+    ( (This)->lpVtbl -> get_Diagnostics(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_GetCorrelatedTimes(This,value)	\
+    ( (This)->lpVtbl -> GetCorrelatedTimes(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSource3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_INTERFACE_DEFINED__)
@@ -2969,13 +4214,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_INTERFACE_DEFINED__
@@ -3150,7 +4395,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceAdvancedSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceCorrelatedTimes[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCorrelatedTimes";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCorrelatedTimes */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("05108787-E032-48E1-AB8D-002B0B3051DF")
+                        IAdaptiveMediaSourceCorrelatedTimes : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PresentationTimeStamp( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProgramDateTime( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceCorrelatedTimes = __uuidof(IAdaptiveMediaSourceCorrelatedTimes);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PresentationTimeStamp )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProgramDateTime )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimesVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_get_PresentationTimeStamp(This,value)	\
+    ( (This)->lpVtbl -> get_PresentationTimeStamp(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_get_ProgramDateTime(This,value)	\
+    ( (This)->lpVtbl -> get_ProgramDateTime(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCorrelatedTimes_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__)
@@ -3158,13 +4562,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__
@@ -3309,7 +4713,516 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0042 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceCreationResult2[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceCreationResult2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0042 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0042_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCreationResult2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("1C3243BF-1C44-404B-A201-DF45AC7898E8")
+                        IAdaptiveMediaSourceCreationResult2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExtendedError( 
+                                /* [out][retval] */ __RPC__out HRESULT *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceCreationResult2 = __uuidof(IAdaptiveMediaSourceCreationResult2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2 * This,
+            /* [out][retval] */ __RPC__out HRESULT *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_get_ExtendedError(This,value)	\
+    ( (This)->lpVtbl -> get_ExtendedError(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceCreationResult2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0043 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDiagnosticAvailableEventArgs[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0043 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0043_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnosticAvailableEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("3AF64F06-6D9C-494A-B7A9-B3A5DEE6AD68")
+                        IAdaptiveMediaSourceDiagnosticAvailableEventArgs : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DiagnosticType( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnosticType *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RequestId( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_int **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SegmentId( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT64 **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResourceType( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResourceUri( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResourceByteRangeOffset( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT64 **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResourceByteRangeLength( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT64 **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Bitrate( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT32 **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDiagnosticAvailableEventArgs = __uuidof(IAdaptiveMediaSourceDiagnosticAvailableEventArgs);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DiagnosticType )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDiagnosticType *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RequestId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_int **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SegmentId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT64 **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResourceType )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceResourceType **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResourceUri )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResourceByteRangeOffset )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT64 **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResourceByteRangeLength )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT64 **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Bitrate )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_UINT32 **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_DiagnosticType(This,value)	\
+    ( (This)->lpVtbl -> get_DiagnosticType(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_RequestId(This,value)	\
+    ( (This)->lpVtbl -> get_RequestId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_SegmentId(This,value)	\
+    ( (This)->lpVtbl -> get_SegmentId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_ResourceType(This,value)	\
+    ( (This)->lpVtbl -> get_ResourceType(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_ResourceUri(This,value)	\
+    ( (This)->lpVtbl -> get_ResourceUri(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_ResourceByteRangeOffset(This,value)	\
+    ( (This)->lpVtbl -> get_ResourceByteRangeOffset(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_ResourceByteRangeLength(This,value)	\
+    ( (This)->lpVtbl -> get_ResourceByteRangeLength(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_get_Bitrate(This,value)	\
+    ( (This)->lpVtbl -> get_Bitrate(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticAvailableEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0044 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDiagnostics[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnostics";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0044 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0044_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDiagnostics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("9B24EE68-962E-448C-AEBF-B29B56098E23")
+                        IAdaptiveMediaSourceDiagnostics : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE add_DiagnosticAvailable( 
+                                /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs *handler,
+                                /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE remove_DiagnosticAvailable( 
+                                /* [in] */ EventRegistrationToken token) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDiagnostics = __uuidof(IAdaptiveMediaSourceDiagnostics);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_DiagnosticAvailable )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_DiagnosticAvailable )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticsVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnosticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_add_DiagnosticAvailable(This,handler,token)	\
+    ( (This)->lpVtbl -> add_DiagnosticAvailable(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_remove_DiagnosticAvailable(This,token)	\
+    ( (This)->lpVtbl -> remove_DiagnosticAvailable(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDiagnostics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__)
@@ -3317,13 +5230,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__
@@ -3458,7 +5371,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0046 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0046 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0046_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("F3F1F444-96AE-4DE0-B540-2B3246E6968C")
+                        IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Reason( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadBitrateChangedReason *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 = __uuidof(IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Reason )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CAdaptiveMediaSourceDownloadBitrateChangedReason *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_get_Reason(This,value)	\
+    ( (This)->lpVtbl -> get_Reason(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadBitrateChangedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__)
@@ -3466,13 +5518,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__
@@ -3637,7 +5689,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0048 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDownloadCompletedEventArgs2[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadCompletedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0048 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0048_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadCompletedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("704744C4-964A-40E4-AF95-9177DD6DFA00")
+                        IAdaptiveMediaSourceDownloadCompletedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RequestId( 
+                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Statistics( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadStatistics **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDownloadCompletedEventArgs2 = __uuidof(IAdaptiveMediaSourceDownloadCompletedEventArgs2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RequestId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out INT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Statistics )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_get_RequestId(This,value)	\
+    ( (This)->lpVtbl -> get_RequestId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_get_Statistics(This,value)	\
+    ( (This)->lpVtbl -> get_Statistics(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadCompletedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__)
@@ -3645,13 +5856,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__
@@ -3816,7 +6027,176 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0050 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDownloadFailedEventArgs2[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadFailedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0050 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0050_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadFailedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("70919568-967C-4986-90C5-C6FC4B31E2D8")
+                        IAdaptiveMediaSourceDownloadFailedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RequestId( 
+                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExtendedError( 
+                                /* [out][retval] */ __RPC__out HRESULT *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Statistics( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadStatistics **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDownloadFailedEventArgs2 = __uuidof(IAdaptiveMediaSourceDownloadFailedEventArgs2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RequestId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out INT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out HRESULT *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Statistics )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_get_RequestId(This,value)	\
+    ( (This)->lpVtbl -> get_RequestId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_get_ExtendedError(This,value)	\
+    ( (This)->lpVtbl -> get_ExtendedError(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_get_Statistics(This,value)	\
+    ( (This)->lpVtbl -> get_Statistics(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadFailedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedDeferral_INTERFACE_DEFINED__)
@@ -3824,13 +6204,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedDeferral_INTERFACE_DEFINED__
@@ -3953,7 +6333,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__)
@@ -3961,13 +6341,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__
@@ -4142,7 +6522,156 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0053 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDownloadRequestedEventArgs2[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadRequestedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0053_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadRequestedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("B37D8BFE-AA44-4D82-825B-611DE3BCFECB")
+                        IAdaptiveMediaSourceDownloadRequestedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RequestId( 
+                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDownloadRequestedEventArgs2 = __uuidof(IAdaptiveMediaSourceDownloadRequestedEventArgs2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RequestId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This,
+            /* [out][retval] */ __RPC__out INT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_get_RequestId(This,value)	\
+    ( (This)->lpVtbl -> get_RequestId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadRequestedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_INTERFACE_DEFINED__)
@@ -4150,13 +6679,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_INTERFACE_DEFINED__
@@ -4371,7 +6900,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult2_INTERFACE_DEFINED__)
@@ -4379,13 +6908,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult2_INTERFACE_DEFINED__
@@ -4540,7 +7069,176 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadResult2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0056 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Streaming_Adaptive_IAdaptiveMediaSourceDownloadStatistics[] = L"Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadStatistics";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0056 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0056_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownloadStatistics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Streaming {
+                    namespace Adaptive {
+                        
+                        MIDL_INTERFACE("A306CEFB-E96A-4DFF-A9B8-1AE08C01AE98")
+                        IAdaptiveMediaSourceDownloadStatistics : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContentBytesReceivedCount( 
+                                /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TimeToHeadersReceived( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TimeToFirstByteReceived( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TimeToLastByteReceived( 
+                                /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAdaptiveMediaSourceDownloadStatistics = __uuidof(IAdaptiveMediaSourceDownloadStatistics);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatisticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContentBytesReceivedCount )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TimeToHeadersReceived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TimeToFirstByteReceived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TimeToLastByteReceived )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CTimeSpan **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatisticsVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatisticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_get_ContentBytesReceivedCount(This,value)	\
+    ( (This)->lpVtbl -> get_ContentBytesReceivedCount(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_get_TimeToHeadersReceived(This,value)	\
+    ( (This)->lpVtbl -> get_TimeToHeadersReceived(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_get_TimeToFirstByteReceived(This,value)	\
+    ( (This)->lpVtbl -> get_TimeToFirstByteReceived(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_get_TimeToLastByteReceived(This,value)	\
+    ( (This)->lpVtbl -> get_TimeToLastByteReceived(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceDownloadStatistics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__)
@@ -4548,13 +7246,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__
@@ -4699,7 +7397,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceStatics_INTERFACE_DEFINED__)
@@ -4707,13 +7405,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceStatics_INTERFACE_DEFINED__
@@ -4900,7 +7598,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMe
 #endif 	/* ____x_ABI_CWindows_CMedia_CStreaming_CAdaptive_CIAdaptiveMediaSourceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0059 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSource_DEFINED
@@ -4911,9 +7609,21 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceAdvancedSettings_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceAdvancedSettings[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceCorrelatedTimes_DEFINED
+#define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceCorrelatedTimes_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceCorrelatedTimes[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCorrelatedTimes";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceCreationResult_DEFINED
 #define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceCreationResult_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceCreationResult[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDiagnosticAvailableEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDiagnosticAvailableEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDiagnosticAvailableEventArgs[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDiagnostics_DEFINED
+#define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDiagnostics_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDiagnostics[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics";
 #endif
 #ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadBitrateChangedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadBitrateChangedEventArgs_DEFINED
@@ -4939,19 +7649,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadResult_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadResult[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadResult";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadStatistics_DEFINED
+#define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadStatistics_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourceDownloadStatistics[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadStatistics";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourcePlaybackBitrateChangedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourcePlaybackBitrateChangedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_Streaming_Adaptive_AdaptiveMediaSourcePlaybackBitrateChangedEventArgs[] = L"Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs";
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Estreaming2Eadaptive_0000_0059_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

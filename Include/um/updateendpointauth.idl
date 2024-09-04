@@ -24,9 +24,6 @@ cpp_quote("// Windows Update Agent authentication client plug-in interfaces.")
 cpp_quote("// --------------------------------------------------------------------------------")
 cpp_quote("// GUIDS")
 cpp_quote("// --------------------------------------------------------------------------------")
-cpp_quote("// {1c72ac05-f0ca-49fd-91a4-fed81a9341b9}")
-cpp_quote("DEFINE_GUID(IID_UpdateEndpointProvider,0x1c72ac05,0xf0ca,0x49fd,0x91,0xa4,0xfe,0xd8,0x1a,0x93,0x41,0xb9);")
-cpp_quote("// {b18a7c5a-22cc-4390-8e14-da1ab61367d6}")
 cpp_quote("DEFINE_GUID(IID_UpdateEndpointAuthProvider,0xb18a7c5a,0x22cc,0x4390,0x8e,0x14,0xda,0x1a,0xb6,0x13,0x67,0xd6);")
 cpp_quote("// {60214134-6c24-4b5d-9766-c03e6b0a82a9}")
 cpp_quote("DEFINE_GUID(IID_UpdateEndpointAuthToken,0x60214134,0x6c24,0x4b5d,0x97,0x66,0xc0,0x3e,0x6b,0x0a,0x82,0xa9);")
@@ -54,7 +51,6 @@ typedef [public] enum tagUpdateEndpointAuthTokenType{
 typedef [public] enum tagEndpointType{
     [helpstring("ClientServer")]         uetClientServer,
     [helpstring("Reporting")]            uetReporting,
-    [helpstring("WUASelfUpdate")]        uetWuaSelfUpdate,
     [helpstring("Regulation")]           uetRegulation,
     [helpstring("SimpleTargeting")]      uetSimpleTargeting,
     [helpstring("SecuredClientServer")]  uetSecuredClientServer,
@@ -77,28 +73,6 @@ typedef [public] struct tagUpdateEndpointProxySettings {
 
 //////////////////////////////////////////////////////////////////////////////
 // Endpoint interfaces
-
-[
-    object,
-    uuid(1c72ac05-f0ca-49fd-91a4-fed81a9341b9),
-    pointer_default(unique),
-    local
-]
-interface IUpdateEndpointProvider: IUnknown
-{
-    [
-        helpstring(
-            "Requests an endpoint using the provided credentials.")
-    ]
-    HRESULT GetServiceEndpoint(
-                [in]  GUID                         serviceId,
-                [in]  UpdateEndpointType           endpointType,
-                [in]  UpdateEndpointProxySettings  proxySettings,
-                [in]  HANDLE_PTR                   hUserToken,
-                [in]  BOOL                         fRefreshOnline,
-                [out] BSTR*                        pbstrEndpointLoc);
-
-} // interface IUpdateEndpointProvider
 
 [
     object,
@@ -224,4 +198,3 @@ interface IADFSToken: IUnknown
         [in] BSTR realm, // The endpoint for which the token is being requested for
         [out, retval] BSTR *token);
 } // interface IADFSToken
-

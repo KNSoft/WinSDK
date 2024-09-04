@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -96,6 +96,24 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CIColorHelperStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CIColorHelperStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CIColorHelperStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CIColorHelperStatics2 __x_ABI_CWindows_CUI_CIColorHelperStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            interface IColorHelperStatics2;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CIColorHelperStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CIColors_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CIColors_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CIColors __x_ABI_CWindows_CUI_CIColors;
@@ -174,18 +192,18 @@ struct Color;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui_0000_0001 */
 /* [local] */ 
@@ -220,18 +238,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui_0000_0002 */
 /* [local] */ 
@@ -266,18 +284,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui_0000_0003 */
 /* [local] */ 
@@ -312,6 +330,7 @@ extern "C" {
 typedef struct __x_ABI_CWindows_CUI_CColor __x_ABI_CWindows_CUI_CColor;
 
 #endif
+
 
 
 
@@ -362,21 +381,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui_0000_0004 */
 /* [local] */ 
@@ -551,18 +571,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CColor;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui_0000_0006 */
 /* [local] */ 
@@ -703,18 +723,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CColor;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eui2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui_0000_0008 */
 /* [local] */ 
@@ -1142,9 +1162,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CIColorHelperStatics;
 /* interface __MIDL_itf_windows2Eui_0000_0011 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_IColors[] = L"Windows.UI.IColors";
-#endif /* !defined(____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CIColorHelperStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_IColorHelperStatics2[] = L"Windows.UI.IColorHelperStatics2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CIColorHelperStatics2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui_0000_0011 */
@@ -1154,6 +1174,143 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0011_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CIColorHelperStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CIColorHelperStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CIColorHelperStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::IColorHelperStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CIColorHelperStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                
+                MIDL_INTERFACE("24D9AF02-6EB0-4B94-855C-FCF0818D9A16")
+                IColorHelperStatics2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ToDisplayName( 
+                        /* [in] */ ABI::Windows::UI::Color color,
+                        /* [out][retval] */ __RPC__deref_out_opt HSTRING *returnValue) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IColorHelperStatics2 = __uuidof(IColorHelperStatics2);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CIColorHelperStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *ToDisplayName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CIColorHelperStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CColor color,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *returnValue);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CIColorHelperStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CIColorHelperStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CIColorHelperStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CIColorHelperStatics2_ToDisplayName(This,color,returnValue)	\
+    ( (This)->lpVtbl -> ToDisplayName(This,color,returnValue) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CIColorHelperStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui_0000_0012 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_IColors[] = L"Windows.UI.IColors";
+#endif /* !defined(____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui_0000_0012 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__
@@ -1264,7 +1421,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CIColors;
 #endif 	/* ____x_ABI_CWindows_CUI_CIColors_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui_0000_0012 */
+/* interface __MIDL_itf_windows2Eui_0000_0013 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CIColorsStatics_INTERFACE_DEFINED__)
@@ -1272,13 +1429,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CIColorsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui_0000_0012 */
+/* interface __MIDL_itf_windows2Eui_0000_0013 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CIColorsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CIColorsStatics_INTERFACE_DEFINED__
@@ -2799,7 +2956,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CIColorsStatics;
 #endif 	/* ____x_ABI_CWindows_CUI_CIColorsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui_0000_0013 */
+/* interface __MIDL_itf_windows2Eui_0000_0014 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_ColorHelper_DEFINED
@@ -2812,15 +2969,25 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui_0000_0013 */
+/* interface __MIDL_itf_windows2Eui_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui_0000_0014_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
+
+unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
+void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
+
+unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
+void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
 
 /* end of Additional Prototypes */
 

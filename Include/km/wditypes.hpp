@@ -334,7 +334,24 @@
 #define WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY               0x12E
 #define WDI_TLV_CIPHER_KEY_GCMP_KEY                             0x12F
 #define WDI_TLV_SUPPORTED_GUIDS                                 0x130
-
+#define WDI_TLV_IS_DIRECTED_PROBE_FOR_HIDDEN_PERMITTED          0x131
+#define WDI_TLV_P2P_DISCOVERED_ASP2_SERVICE_ENTRY               0x132
+#define WDI_TLV_P2P_ASP2_CCEX_INFO                              0x133
+#define WDI_TLV_P2P_ASP2_CURRENT_SESSION_ID                     0x134
+#define WDI_TLV_ADAPTER_STATE                                   0x135
+#define WDI_TLV_P2P_ASP2_CONNECTION_TYPES                       0x136
+#define WDI_TLV_STA_BSSID                                       0x137
+#define WDI_TLV_CONNECTED_AP_BSSID                              0x138
+#define WDI_TLV_P2P_ASP2_INFRASTRUCTURE_IPV4_ADDRESS            0x139
+#define WDI_TLV_P2P_ASP2_INFRASTRUCTURE_IPV6_ADDRESS            0x13A
+#define WDI_TLV_P2P_SESSION_ID                                  0x13B
+#define WDI_TLV_P2P_SESSION_ADDRESS                             0x13C
+#define WDI_TLV_AP_BAND_INFORMATION                             0x13D
+#define WDI_TLV_OPERATING_IN_PBSS                               0x13E
+#define WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE                    0x13F
+#define WDI_TLV_DEVICE_SERVICE_PARAMS_GUID                      0x140
+#define WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB                 0x141
+#define WDI_TLV_DEVICE_SERVICE_GUID_LIST                        0x142
 
 #define WDI_TEST_TASK                                           0xFFE0
 #define WDI_TLV_TEST1                                           0xFFE1
@@ -723,8 +740,6 @@ typedef enum _WDI_CAN_SUSTAIN_AP_REASON
     WDI_CAN_SUSTAIN_AP_REASON_IHV_END = 0xFFFFFFFF
 } WDI_CAN_SUSTAIN_AP_REASON;
 
-typedef UINT32 WDI_BAND_ID;
-
 typedef enum _WDI_ANQP_QUERY_STATUS
 {
     WDI_ANQP_QUERY_STATUS_SUCCESS = 0,
@@ -853,13 +868,21 @@ typedef struct _WDI_BYTE4 {
 #define WDI_WAKE_REASON_CODE_GTK_HANDSHAKE_REQUEST     (0x1020)
 
 //
-//This value is reserved for WDI_BAND_ID_ANY. A valid band_id should not use this.
+// Band IDs
 //
-#define WDI_BAND_ID_ANY    (0xFFFFFFFF)
-#define WDI_BAND_ID_2400   1
-#define WDI_BAND_ID_5000   2
-#define WDI_BAND_ID_60000  3
-#define WDI_BAND_ID_900    4
+typedef enum _WDI_BAND_ID
+{
+    WDI_BAND_ID_UNKNOWN = 0,
+    WDI_BAND_ID_2400 = 1,
+    WDI_BAND_ID_5000 = 2,
+    WDI_BAND_ID_60000 = 3,
+    WDI_BAND_ID_900 = 4,
+
+    WDI_BAND_ID_IHV_CUSTOM_START = 0x80000000,
+    WDI_BAND_ID_IHV_CUSTOM_END = 0x81000000,
+    WDI_BAND_ID_ANY = 0xFFFFFFFF                    // This value is reserved. A valid band_id should not use this.
+} WDI_BAND_ID;
+
 
 typedef UINT32 WDI_BAND_COMMON_FREQUENCY;
 

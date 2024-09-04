@@ -142,6 +142,37 @@ enum WindowInteractionState
     WindowInteractionState_NotResponding = 4
 };
 
+enum SayAsInterpretAs
+{
+    SayAsInterpretAs_None = 0,                          // <say-as interpret-as="none">x</say-as>
+    SayAsInterpretAs_Spell = 1,                         // <say-as interpret-as="spell">x</say-as>
+    SayAsInterpretAs_Cardinal = 2,                      // <say-as interpret-as="cardinal">x</say-as>
+    SayAsInterpretAs_Ordinal = 3,                       // <say-as interpret-as="Ordinal">x</say-as>
+    SayAsInterpretAs_Number = 4,                        // <say-as interpret-as="Number">x</say-as>
+    SayAsInterpretAs_Date = 5,                          // <say-as interpret-as="Date">x</say-as>
+    SayAsInterpretAs_Time = 6,                          // <say-as interpret-as="Time">x</say-as>
+    SayAsInterpretAs_Telephone = 7,                     // <say-as interpret-as="Telephone">x</say-as>
+    SayAsInterpretAs_Currency = 8,                      // <say-as interpret-as="Currency">x</say-as>
+    SayAsInterpretAs_Net = 9,                           // <say-as interpret-as="Net">x</say-as>
+    SayAsInterpretAs_Url = 10,                          // <say-as interpret-as="Url">x</say-as>
+    SayAsInterpretAs_Address = 11,                      // <say-as interpret-as="Address">x</say-as>
+    SayAsInterpretAs_Alphanumeric = 12,                 // <say-as interpret-as="Alphanumeric">x</say-as>
+    SayAsInterpretAs_Name = 13,                         // <say-as interpret-as="Name">x</say-as>
+    SayAsInterpretAs_Media = 14,                        // <say-as interpret-as="Media">x</say-as>
+    SayAsInterpretAs_Date_MonthDayYear = 15,            // <say-as interpret-as="Date" format="mdy">x</say-as>
+    SayAsInterpretAs_Date_DayMonthYear = 16,            // <say-as interpret-as="Date" format="dmy">x</say-as>
+    SayAsInterpretAs_Date_YearMonthDay = 17,            // <say-as interpret-as="Date" format="ymd">x</say-as>
+    SayAsInterpretAs_Date_YearMonth = 18,               // <say-as interpret-as="Date" format="ym">x</say-as>
+    SayAsInterpretAs_Date_MonthYear = 19,               // <say-as interpret-as="Date" format="my">x</say-as>
+    SayAsInterpretAs_Date_DayMonth = 20,                // <say-as interpret-as="Date" format="dm">x</say-as>
+    SayAsInterpretAs_Date_MonthDay = 21,                // <say-as interpret-as="Date" format="md">x</say-as>
+    SayAsInterpretAs_Date_Year = 22,                    // <say-as interpret-as="Date" format="y">x</say-as>
+    SayAsInterpretAs_Time_HoursMinutesSeconds12 = 23,   // <say-as interpret-as="Time" format="hms12">x</say-as>
+    SayAsInterpretAs_Time_HoursMinutes12 = 24,          // <say-as interpret-as="Time" format="hm12">x</say-as>
+    SayAsInterpretAs_Time_HoursMinutesSeconds24 = 25,   // <say-as interpret-as="Time" format="hms24">x</say-as>
+    SayAsInterpretAs_Time_HoursMinutes24 = 26           // <say-as interpret-as="Time" format="hm24">x</say-as>
+};
+
 // Text enums
 
 enum TextUnit
@@ -241,12 +272,21 @@ enum CapStyle
     CapStyle_Other = -1
 };
 
+enum FillType
+{
+    FillType_None = 0,
+    FillType_Color = 1,
+    FillType_Gradient = 2,
+    FillType_Picture = 3,
+    FillType_Pattern = 4
+};
+
 enum FlowDirections
 {
-    FlowDirections_Default = 0,
-    FlowDirections_RightToLeft = 1,
-    FlowDirections_BottomToTop = 2,
-    FlowDirections_Vertical = 4
+    FlowDirections_Default              = 0,
+    FlowDirections_RightToLeft          = 0x1,
+    FlowDirections_BottomToTop          = 0x2,
+    FlowDirections_Vertical             = 0x4,
 };
 
 enum HorizontalTextAlignment
@@ -289,6 +329,16 @@ enum TextDecorationLineStyle
     TextDecorationLineStyle_Other = -1,
 };
 
+enum VisualEffects
+{
+    VisualEffects_None          = 0,
+    VisualEffects_Shadow        = (1 << 0),
+    VisualEffects_Reflection    = (1 << 1),
+    VisualEffects_Glow          = (1 << 2),
+    VisualEffects_SoftEdges     = (1 << 3),
+    VisualEffects_Bevel         = (1 << 4),
+};
+
 // Types...
 
 typedef int PROPERTYID;
@@ -297,6 +347,8 @@ typedef int EVENTID;
 typedef int TEXTATTRIBUTEID;
 typedef int CONTROLTYPEID;
 typedef int LANDMARKTYPEID;
+typedef int METADATAID;
+
 
 struct UiaRect
 {
@@ -412,6 +464,19 @@ library UIA
     interface IRawElementProviderSimple2 : IRawElementProviderSimple
     {
         HRESULT ShowContextMenu ();
+    }
+
+    //
+    //  IRawElementProviderSimple3
+    //
+    [object, uuid(fcf5d820-d7ec-4613-bdf6-42a84ce7daaf), pointer_default(unique), oleautomation]
+    interface IRawElementProviderSimple3 : IRawElementProviderSimple2
+    {
+        HRESULT GetMetadataValue(
+            [in] int targetId,
+            [in] METADATAID metadataId,
+            [out, retval] VARIANT* returnVal
+        );
     }
 
     interface IRawElementProviderFragmentRoot;

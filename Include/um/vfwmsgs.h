@@ -1493,5 +1493,14 @@
 //
 #define VFW_E_DVD_CHAPTER_DOES_NOT_EXIST ((HRESULT)0x80040315L)
 
+//
+// MessageId: VFW_S_DVD_RENDER_STATUS
+//
+// MessageText:
+//
+// The operation succeeded but some streams were not rendered.%0
+//
+#define VFW_S_DVD_RENDER_STATUS          ((HRESULT)0x00040320L)
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion

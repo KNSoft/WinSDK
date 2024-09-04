@@ -146,6 +146,10 @@ Abstract:
 #define NTDDI_WIN10                         0x0A000000  /* ABRACADABRA_THRESHOLD */
 #define NTDDI_WIN10_TH2                     0x0A000001  /* ABRACADABRA_WIN10_TH2 */
 #define NTDDI_WIN10_RS1                     0x0A000002  /* ABRACADABRA_WIN10_RS1 */
+#define NTDDI_WIN10_RS2                     0x0A000003  /* ABRACADABRA_WIN10_RS2 */
+
+
+#define WDK_NTDDI_VERSION                   NTDDI_WIN10_RS2
 
 //
 // masks for version macros
@@ -211,12 +215,18 @@ Abstract:
 
 #ifndef NTDDI_VERSION
 #ifdef _WIN32_WINNT
+#if (_WIN32_WINNT <= _WIN32_WINNT_WINBLUE)
 // set NTDDI_VERSION based on _WIN32_WINNT
 #define NTDDI_VERSION   NTDDI_VERSION_FROM_WIN32_WINNT(_WIN32_WINNT)
+#elif (_WIN32_WINNT >= _WIN32_WINNT_WIN10)
+// set NTDDI_VERSION to default to WDK_NTDDI_VERSION
+#define NTDDI_VERSION   WDK_NTDDI_VERSION 
+#endif // (_WIN32_WINNT <= _WIN32_WINNT_WINBLUE)
 #else
-#define NTDDI_VERSION   0x0A000002
-#endif
-#endif
+// set NTDDI_VERSION to default to latest if _WIN32_WINNT isn't set
+#define NTDDI_VERSION   0x0A000003
+#endif // _WIN32_WINNT
+#endif // NTDDI_VERSION
 
 #ifndef WINVER
 #ifdef _WIN32_WINNT

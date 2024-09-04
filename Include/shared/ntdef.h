@@ -181,7 +181,7 @@ Abstract:
 
 //
 // Define PROBE_ALIGNMENT32 to be the same as PROBE_ALIGNMENT on x86, so that
-// code hosting x86 under WoW can handle x86's maximum garanteed alignment.
+// code hosting x86 under WoW can handle x86's maximum guaranteed alignment.
 //
 
 #define PROBE_ALIGNMENT32( _s ) TYPE_ALIGNMENT( ULONG )
@@ -344,6 +344,14 @@ Abstract:
 #define DECLSPEC_GUARD_SUPPRESS  __declspec(guard(suppress))
 #else
 #define DECLSPEC_GUARD_SUPPRESS
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_GUEST
+#if _M_HYBRID
+#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#else
+#define DECLSPEC_CHPE_GUEST
 #endif
 #endif
 
@@ -908,6 +916,8 @@ typedef enum {
 
 // end_winnt
 
+// begin_ntoshvp
+
 //
 // Logical Data Type - These are 32-bit logical values.
 //
@@ -915,9 +925,12 @@ typedef enum {
 typedef ULONG LOGICAL;
 typedef ULONG *PLOGICAL;
 
+// end_ntoshvp
+
 // begin_ntndis begin_windbgkd
 // begin_ntoshvp
 // begin_wudfwdm
+// begin_sdfwdm
 //
 // NTSTATUS
 //
@@ -932,7 +945,7 @@ typedef CONST NTSTATUS *PCNTSTATUS;
 #endif // _WIN32_WINNT >= 0x0600
 
 //
-//  Status values are 32 bit values layed out as follows:
+//  Status values are 32 bit values laid out as follows:
 //
 //   3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
 //   1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
@@ -993,6 +1006,7 @@ typedef CONST NTSTATUS *PCNTSTATUS;
 #define NT_ERROR(Status) ((((ULONG)(Status)) >> 30) == 3)
 #endif
 
+// end_sdfwdm
 // end_wudfwdm
 // end_ntoshvp
 // end_windbgkd
@@ -1091,6 +1105,8 @@ typedef LONGLONG USN;
 
 #if defined(MIDL_PASS)
 typedef struct _LARGE_INTEGER {
+    LONGLONG QuadPart;
+} LARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _LARGE_INTEGER {
     struct {
@@ -1101,14 +1117,16 @@ typedef union _LARGE_INTEGER {
         ULONG LowPart;
         LONG HighPart;
     } u;
-#endif //MIDL_PASS
     LONGLONG QuadPart;
 } LARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef LARGE_INTEGER *PLARGE_INTEGER;
 
 #if defined(MIDL_PASS)
 typedef struct _ULARGE_INTEGER {
+    ULONGLONG QuadPart;
+} ULARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _ULARGE_INTEGER {
     struct {
@@ -1119,9 +1137,9 @@ typedef union _ULARGE_INTEGER {
         ULONG LowPart;
         ULONG HighPart;
     } u;
-#endif //MIDL_PASS
     ULONGLONG QuadPart;
 } ULARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef ULARGE_INTEGER *PULARGE_INTEGER;
 
@@ -1130,6 +1148,7 @@ typedef ULARGE_INTEGER *PULARGE_INTEGER;
 //
 
 typedef LONG_PTR RTL_REFERENCE_COUNT, *PRTL_REFERENCE_COUNT;
+typedef LONG RTL_REFERENCE_COUNT32, *PRTL_REFERENCE_COUNT32;
 
 // end_ntminiport end_ntndis end_ntminitape
 // end_ntoshvp
@@ -1150,6 +1169,7 @@ typedef DWORDLONG *PDWORDLONG;
 
 // end_winnt
 
+// begin_sdfwdm
 // begin_ntminiport begin_ntndis
 // begin_wudfwdm
 // begin_ntoshvp
@@ -1163,6 +1183,7 @@ typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS;
 // end_ntoshvp
 // end_wudfwdm
 // end_ntminiport end_ntndis
+// end_sdfwdm
 
 // begin_winnt
 
@@ -1173,7 +1194,8 @@ typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS;
 
 #if defined(MIDL_PASS) || defined(RC_INVOKED) || defined(_M_CEE_PURE) \
     || defined(_68K_) || defined(_MPPC_) \
-    || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)
+    || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64) \
+    || defined(_M_HYBRID_X86_ARM64)
 
 //
 // Midl does not understand inline assembler. Therefore, the Rtl functions
@@ -1559,7 +1581,7 @@ typedef struct _SINGLE_LIST_ENTRY {
 // begin_wudfpwdm
 
 //
-// Balanced tree node (AVL or RB) structure definitinon.
+// Balanced tree node (AVL or RB) structure definition.
 //
 
 #pragma warning(push)
@@ -1638,6 +1660,25 @@ ListEntry64To32(
     l32->Blink = (ULONG)l64->Blink;
 }
 #endif
+
+//
+// The WNF state name is the fixed-length binary that uniquely identifies the
+// state. Clients should treat it as opaque data of a fixed size and
+// use provided API to manipulate state names.
+//
+// This is being moved from ntexapi_h.h -- so for now it is defined in both places.
+//
+
+#ifndef _DEFINED__WNF_STATE_NAME
+#define _DEFINED__WNF_STATE_NAME
+typedef struct _WNF_STATE_NAME {
+    ULONG Data[2];
+} WNF_STATE_NAME;
+
+typedef struct _WNF_STATE_NAME* PWNF_STATE_NAME;
+typedef const struct _WNF_STATE_NAME* PCWNF_STATE_NAME;
+#endif
+
 
 typedef struct _STRING32 {
     USHORT   Length;
@@ -1849,7 +1890,8 @@ typedef struct  _OBJECTID {     // size is 20
 //
 //  RTL_CONTAINS_FIELD usage:
 //
-//      if (RTL_CONTAINS_FIELD(pBlock, pBlock->cbSize, dwMumble)) { // safe to use pBlock->dwMumble
+//      if (RTL_CONTAINS_FIELD(pBlock, pBlock->cbSize, dwMumble))
+//          // safe to use pBlock->dwMumble
 //
 #define RTL_CONTAINS_FIELD(Struct, Size, Field) \
     ( (((PCHAR)(&(Struct)->Field)) + sizeof((Struct)->Field)) <= (((PCHAR)(Struct))+(Size)) )
@@ -1886,7 +1928,7 @@ typedef struct  _OBJECTID {     // size is 20
 // pointer_to_array_of_char RtlpNumberOf(reference_to_array_of_T);
 //
 // We never even call RtlpNumberOf, we just take the size of dereferencing its return type.
-// We do not even implement RtlpNumberOf, we just decare it.
+// We do not even implement RtlpNumberOf, we just declare it.
 //
 // Attempts to pass pointers instead of arrays to this macro result in compile time errors.
 // That is the point.
@@ -2318,6 +2360,10 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 #define PRODUCT_PRO_FOR_EDUCATION_N                 0x000000A5
 #define PRODUCT_AZURE_SERVER_CORE                   0x000000A8
 #define PRODUCT_AZURE_NANO_SERVER                   0x000000A9
+#define PRODUCT_ENTERPRISEG                         0x000000AB
+#define PRODUCT_ENTERPRISEGN                        0x000000AC
+#define PRODUCT_CLOUD                               0x000000B2
+#define PRODUCT_CLOUDN                              0x000000B3
 
 #define PRODUCT_UNLICENSED                          0xABCDABCD
 
@@ -2961,7 +3007,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 #else // lint
 
 // Note: lint -e530 says don't complain about uninitialized variables for
-// this varible.  Error 527 has to do with unreachable code.
+// this variable.  Error 527 has to do with unreachable code.
 // -restore restores checking to the -save state
 
 #define UNREFERENCED_PARAMETER(P)          \
@@ -3021,7 +3067,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 // Moved here from objbase.w.
 
 // Templates are defined here in order to avoid a dependency on C++ <type_traits> header file,
-// or on compiler-specific contructs.
+// or on compiler-specific constructs.
 extern "C++" {
 
     template <size_t S>

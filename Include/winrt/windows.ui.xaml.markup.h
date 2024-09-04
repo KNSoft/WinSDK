@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -193,6 +193,50 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Markup {
+                    interface IXamlMarkupHelper;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Markup {
+                    interface IXamlMarkupHelperStatics;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember;
@@ -349,18 +393,18 @@ interface IRandomAccessStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5380 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4713_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4713_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5380_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0001 */
 /* [local] */ 
@@ -395,18 +439,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5381 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4714_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4714_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5381_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0002 */
 /* [local] */ 
@@ -441,18 +485,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4715 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5382 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4715 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5382 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4715_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4715_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5382_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0003 */
 /* [local] */ 
@@ -487,18 +531,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4716 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5383 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4716 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5383 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4716_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_4716_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup2Eidl_0000_5383_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0004 */
 /* [local] */ 
@@ -628,6 +672,8 @@ typedef struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CXmlnsDefinition __x_ABI_CWind
 
 
 
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -648,6 +694,19 @@ namespace UI {
 namespace Xaml {
 namespace Markup {
 class XamlBindingHelper;
+} /*Markup*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Markup {
+class XamlMarkupHelper;
 } /*Markup*/
 } /*Xaml*/
 } /*UI*/
@@ -834,6 +893,8 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
+
 
 
 
@@ -2159,9 +2220,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperSta
 /* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0011 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlMember[] = L"Windows.UI.Xaml.Markup.IXamlMember";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlMarkupHelper[] = L"Windows.UI.Xaml.Markup.IXamlMarkupHelper";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0011 */
@@ -2171,6 +2232,274 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0011_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Markup::IXamlMarkupHelper */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Markup {
+                        
+                        MIDL_INTERFACE("D0E6673C-5342-44EF-85A7-ED327A739D9A")
+                        IXamlMarkupHelper : public IInspectable
+                        {
+                        public:
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IXamlMarkupHelper = __uuidof(IXamlMarkupHelper);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelper_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlMarkupHelperStatics[] = L"Windows.UI.Xaml.Markup.IXamlMarkupHelperStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Markup {
+                        
+                        MIDL_INTERFACE("C9BC3725-F34F-445C-81A2-6B72A5E8F072")
+                        IXamlMarkupHelperStatics : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE UnloadObject( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *element) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IXamlMarkupHelperStatics = __uuidof(IXamlMarkupHelperStatics);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *UnloadObject )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *element);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_UnloadObject(This,element)	\
+    ( (This)->lpVtbl -> UnloadObject(This,element) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMarkupHelperStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlMember[] = L"Windows.UI.Xaml.Markup.IXamlMember";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__
@@ -2369,7 +2698,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_INTERFACE_DEFINED__)
@@ -2377,13 +2706,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_INTERFACE_DEFINED__
@@ -2534,7 +2863,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReader_INTERFACE_DEFINED__)
@@ -2542,13 +2871,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReader_INTERFACE_DEFINED__
@@ -2663,7 +2992,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReader;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_INTERFACE_DEFINED__)
@@ -2671,13 +3000,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_INTERFACE_DEFINED__
@@ -2816,7 +3145,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0017 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__)
@@ -2824,13 +3153,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__
@@ -3133,7 +3462,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0018 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Markup_XamlBinaryWriter_DEFINED
@@ -3144,19 +3473,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Markup_XamlBindingHelper_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Markup_XamlBindingHelper[] = L"Windows.UI.Xaml.Markup.XamlBindingHelper";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Markup_XamlMarkupHelper_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Markup_XamlMarkupHelper_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Markup_XamlMarkupHelper[] = L"Windows.UI.Xaml.Markup.XamlMarkupHelper";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Markup_XamlReader_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Markup_XamlReader_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Markup_XamlReader[] = L"Windows.UI.Xaml.Markup.XamlReader";
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0018 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emarkup_0000_0018_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

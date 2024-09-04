@@ -24,7 +24,8 @@ typedef enum
     AA_AUTH_COOKIE,
     AA_AUTH_DIGEST,
     AA_AUTH_ORGID,
-    AA_AUTH_CONID,  // auth by reverse connect ID
+    AA_AUTH_CONID,      // auth by reverse connect ID
+    AA_AUTH_SSPI_NTLM,  // SSPI Auth for HTML5 client
     AA_AUTH_MAX,
 } AAAuthSchemes;
 

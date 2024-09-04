@@ -189,7 +189,7 @@ Revision History:
 
 //
 // Define PROBE_ALIGNMENT32 to be the same as PROBE_ALIGNMENT on x86, so that
-// code hosting x86 under WoW can handle x86's maximum garanteed alignment.
+// code hosting x86 under WoW can handle x86's maximum guaranteed alignment.
 //
 
 #define PROBE_ALIGNMENT32( _s ) TYPE_ALIGNMENT( ULONG )
@@ -341,6 +341,14 @@ Revision History:
 #define DECLSPEC_GUARD_SUPPRESS  __declspec(guard(suppress))
 #else
 #define DECLSPEC_GUARD_SUPPRESS
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_GUEST
+#if _M_HYBRID
+#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#else
+#define DECLSPEC_CHPE_GUEST
 #endif
 #endif
 
@@ -878,6 +886,8 @@ typedef LONGLONG USN;
 
 #if defined(MIDL_PASS)
 typedef struct _LARGE_INTEGER {
+    LONGLONG QuadPart;
+} LARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _LARGE_INTEGER {
     struct {
@@ -888,14 +898,16 @@ typedef union _LARGE_INTEGER {
         ULONG LowPart;
         LONG HighPart;
     } u;
-#endif //MIDL_PASS
     LONGLONG QuadPart;
 } LARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef LARGE_INTEGER *PLARGE_INTEGER;
 
 #if defined(MIDL_PASS)
 typedef struct _ULARGE_INTEGER {
+    ULONGLONG QuadPart;
+} ULARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _ULARGE_INTEGER {
     struct {
@@ -906,9 +918,9 @@ typedef union _ULARGE_INTEGER {
         ULONG LowPart;
         ULONG HighPart;
     } u;
-#endif //MIDL_PASS
     ULONGLONG QuadPart;
 } ULARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef ULARGE_INTEGER *PULARGE_INTEGER;
 
@@ -917,6 +929,7 @@ typedef ULARGE_INTEGER *PULARGE_INTEGER;
 //
 
 typedef LONG_PTR RTL_REFERENCE_COUNT, *PRTL_REFERENCE_COUNT;
+typedef LONG RTL_REFERENCE_COUNT32, *PRTL_REFERENCE_COUNT32;
 
 
 //
@@ -986,7 +999,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 #else // lint
 
 // Note: lint -e530 says don't complain about uninitialized variables for
-// this varible.  Error 527 has to do with unreachable code.
+// this variable.  Error 527 has to do with unreachable code.
 // -restore restores checking to the -save state
 
 #define UNREFERENCED_PARAMETER(P)          \
@@ -1046,7 +1059,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 // Moved here from objbase.w.
 
 // Templates are defined here in order to avoid a dependency on C++ <type_traits> header file,
-// or on compiler-specific contructs.
+// or on compiler-specific constructs.
 extern "C++" {
 
     template <size_t S>
@@ -1561,6 +1574,7 @@ typedef enum _STORAGE_BUS_TYPE {
     BusTypeSpaces,
     BusTypeNvme,
     BusTypeSCM,
+    BusTypeUfs,
     BusTypeMax,
     BusTypeMaxReserved = 0x7F
 } STORAGE_BUS_TYPE, *PSTORAGE_BUS_TYPE;
@@ -1934,6 +1948,8 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 //
 #define SRB_FUNCTION_STORAGE_REQUEST_BLOCK  0x28
 
+#define SRB_FUNCTION_CRYPTO_OPERATION   0x29
+
 //
 // SRB Status
 //
@@ -2231,6 +2247,7 @@ typedef struct SRB_ALIGN _SRBEX_DATA_PNP {
 
 #define REQUEST_INFO_NO_FILE_OBJECT_FLAG            0x00000040
 #define REQUEST_INFO_VOLSNAP_IO_FLAG                0x00000080
+#define REQUEST_INFO_STREAM_FLAG                    0x00000100
 
 #endif //(NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
@@ -4858,6 +4875,7 @@ typedef struct _INQUIRYDATA {
 #define OPTICAL_CARD_READER_WRITER_DEVICE 0x0F
 #define BRIDGE_CONTROLLER_DEVICE        0x10
 #define OBJECT_BASED_STORAGE_DEVICE     0x11    // OSD
+#define UNKNOWN_OR_NO_DEVICE            0x1F    // Unknown or no device type
 #define LOGICAL_UNIT_NOT_PRESENT_DEVICE 0x7F
 
 #define DEVICE_QUALIFIER_ACTIVE         0x00

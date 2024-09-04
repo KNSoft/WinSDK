@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -119,6 +119,7 @@ typedef interface IChannelAudioVolume IChannelAudioVolume;
 /* header files for imported files */
 #include "wtypes.h"
 #include "unknwn.h"
+#include "mmreg.h"
 #include "AudioSessionTypes.h"
 
 #ifdef __cplusplus
@@ -131,27 +132,14 @@ extern "C"{
 
 #include <winapifamily.h>
 #if 0
-typedef /* [hidden][restricted] */ struct WAVEFORMATEX
-    {
-    WORD wFormatTag;
-    WORD nChannels;
-    DWORD nSamplesPerSec;
-    DWORD nAvgBytesPerSec;
-    WORD nBlockAlign;
-    WORD wBitsPerSample;
-    WORD cbSize;
-    } 	WAVEFORMATEX;
-
-#else
-#include <mmreg.h>
-#endif
-#if 0
 typedef /* [hidden][restricted] */ LONGLONG REFERENCE_TIME;
 
 #else
+#ifndef _SkipIksIncludes_
 #define _IKsControl_
 #include <ks.h>
 #include <ksmedia.h>
+#endif
 #endif
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
@@ -1314,18 +1302,6 @@ EXTERN_C const IID IID_IAudioClock;
 #endif 	/* __IAudioClock_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_audioclient_0000_0006 */
-/* [local] */ 
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
-#pragma endregion
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-
-
-extern RPC_IF_HANDLE __MIDL_itf_audioclient_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_audioclient_0000_0006_v0_0_s_ifspec;
-
 #ifndef __IAudioClock2_INTERFACE_DEFINED__
 #define __IAudioClock2_INTERFACE_DEFINED__
 
@@ -1493,18 +1469,6 @@ EXTERN_C const IID IID_IAudioClockAdjustment;
 
 #endif 	/* __IAudioClockAdjustment_INTERFACE_DEFINED__ */
 
-
-/* interface __MIDL_itf_audioclient_0000_0008 */
-/* [local] */ 
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
-
-
-extern RPC_IF_HANDLE __MIDL_itf_audioclient_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_audioclient_0000_0008_v0_0_s_ifspec;
 
 #ifndef __ISimpleAudioVolume_INTERFACE_DEFINED__
 #define __ISimpleAudioVolume_INTERFACE_DEFINED__

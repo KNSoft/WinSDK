@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -123,6 +123,20 @@ typedef interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialP
 #endif 	/* ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__ */
+
+
 #ifndef ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_FWD_DEFINED__
 #define ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_FWD_DEFINED__
 typedef interface __FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum __FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum;
@@ -142,6 +156,34 @@ typedef interface __FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundi
 typedef interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_FWD_DEFINED__
@@ -358,6 +400,166 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntity;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityAddedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityRemovedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityStore;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityStoreStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityUpdatedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialEntityWatcher;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation;
@@ -458,6 +660,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialStageFrameOfReference;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialStageFrameOfReferenceStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference __x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference;
@@ -536,18 +778,18 @@ interface ISpatialAnchor;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0001 */
 /* [local] */ 
@@ -582,18 +824,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0002 */
 /* [local] */ 
@@ -628,18 +870,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0003 */
 /* [local] */ 
@@ -698,18 +940,18 @@ interface ISpatialBoundingVolume;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0004 */
 /* [local] */ 
@@ -744,18 +986,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0005 */
 /* [local] */ 
@@ -790,18 +1032,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0006 */
 /* [local] */ 
@@ -836,18 +1078,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0007 */
 /* [local] */ 
@@ -882,18 +1124,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0008 */
 /* [local] */ 
@@ -952,18 +1194,18 @@ interface ISpatialAnchorStore;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0009 */
 /* [local] */ 
@@ -998,18 +1240,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0010 */
 /* [local] */ 
@@ -1057,18 +1299,18 @@ enum SpatialPerceptionAccessStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0011 */
 /* [local] */ 
@@ -1103,18 +1345,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0012 */
 /* [local] */ 
@@ -1138,13 +1380,24 @@ typedef IAsyncOperation<enum ABI::Windows::Perception::Spatial::SpatialPerceptio
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialStageFrameOfReference;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
 
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace Perception {
 namespace Spatial {
-struct SpatialBoundingFrustum;
+interface ISpatialStageFrameOfReference;
 } /*Spatial*/
 } /*Perception*/
 } /*Windows*/
@@ -1162,20 +1415,125 @@ struct SpatialBoundingFrustum;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial_0000_0013 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("fbb7e9fb-e49a-54e1-8c83-d1a87e4d2304"))
+IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference*, ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Perception.Spatial.SpatialStageFrameOfReference>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference*> __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0013 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0013_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4618 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4618 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0014 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_USE
+#define DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b4d8b1bf-1d66-5458-a5df-3f4f6c366c58"))
+IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference*, ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Perception.Spatial.SpatialStageFrameOfReference>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference*> __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t;
+#define ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+struct SpatialBoundingFrustum;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0014 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0014_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4619 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4619 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_USE
@@ -1211,30 +1569,30 @@ struct SpatialBoundingOrientedBox;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0013 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0015 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3124 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3124_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrientedBox_USE
@@ -1281,30 +1639,30 @@ interface ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0014 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0016 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3125 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3125_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_USE
@@ -1331,6 +1689,289 @@ namespace ABI {
 namespace Windows {
 namespace Perception {
 namespace Spatial {
+class SpatialEntityWatcher;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+interface ISpatialEntityWatcher;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+interface IInspectable;
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0017 */
+/* [local] */ 
+
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4622 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4622 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0018 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("50171823-30a9-5938-9f3b-358d86169f2e"))
+ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*, ABI::Windows::Perception::Spatial::ISpatialEntityWatcher*>,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Perception.Spatial.SpatialEntityWatcher, Object>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,IInspectable*> __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t;
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialEntityAddedEventArgs;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+interface ISpatialEntityAddedEventArgs;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0018 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0018_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4623 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4623 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0019 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f8edae01-6a30-52cc-b543-8abdb26529b4"))
+ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,ABI::Windows::Perception::Spatial::SpatialEntityAddedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*, ABI::Windows::Perception::Spatial::ISpatialEntityWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityAddedEventArgs*, ABI::Windows::Perception::Spatial::ISpatialEntityAddedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityAddedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,ABI::Windows::Perception::Spatial::SpatialEntityAddedEventArgs*> __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialEntityRemovedEventArgs;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+interface ISpatialEntityRemovedEventArgs;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0019 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0019_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4624 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4624 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0020 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("36f982ad-eaa2-5263-861e-2acf030c9e17"))
+ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,ABI::Windows::Perception::Spatial::SpatialEntityRemovedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*, ABI::Windows::Perception::Spatial::ISpatialEntityWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityRemovedEventArgs*, ABI::Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityRemovedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,ABI::Windows::Perception::Spatial::SpatialEntityRemovedEventArgs*> __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialEntityUpdatedEventArgs;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+interface ISpatialEntityUpdatedEventArgs;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0020 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0020_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4625 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4625 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0021 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a15fd0c0-8a0a-5a7d-897a-f206cc509190"))
+ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,ABI::Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*, ABI::Windows::Perception::Spatial::ISpatialEntityWatcher*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs*, ABI::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Perception.Spatial.SpatialEntityWatcher, Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher*,ABI::Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs*> __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
 class SpatialLocator;
 } /*Spatial*/
 } /*Perception*/
@@ -1350,34 +1991,31 @@ interface ISpatialLocator;
 }
 #endif
 
-interface IInspectable;
 
-
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0015 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0021 */
 /* [local] */ 
 
 
 
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0021_v0_0_s_ifspec;
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0015_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3126 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3126_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_USE
@@ -1424,30 +2062,30 @@ interface ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0016 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0022 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3127 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3127_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_USE
@@ -1471,29 +2109,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0017 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3128 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3128_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -1517,29 +2155,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0018 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3129 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3129_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -1575,30 +2213,30 @@ struct Matrix4x4;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0019 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0025 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3130 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3130_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CNumerics__CMatrix4x4_USE
@@ -1622,29 +2260,397 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CFoundation__CNumerics__CMatrix4x4_USE */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0020 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0026 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3131 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3131_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0027 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20"))
+IKeyValuePair<HSTRING,IInspectable*> : IKeyValuePair_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Object>"; }
+};
+typedef IKeyValuePair<HSTRING,IInspectable*> __FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define ____FIKeyValuePair_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0027 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4632 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4632 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0028 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8"))
+IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; }
+};
+typedef IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0028 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4633 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4633 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204"))
+IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; }
+};
+typedef IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0029 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0029_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4634 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4634 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0030 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIMapView_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e"))
+IMapView<HSTRING,IInspectable*> : IMapView_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapView`2<String, Object>"; }
+};
+typedef IMapView<HSTRING,IInspectable*> __FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0030 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4635 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4635 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
+#define DEF___FIMap_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca"))
+IMap<HSTRING,IInspectable*> : IMap_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMap`2<String, Object>"; }
+};
+typedef IMap<HSTRING,IInspectable*> __FIMap_2_HSTRING_IInspectable_t;
+#define ____FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0031 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0031_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4636 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4636 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0032 */
+/* [local] */ 
+
+#ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#define DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("60141efb-f2f9-5377-96fd-f8c60d9558b5"))
+IMapChangedEventArgs<HSTRING> : IMapChangedEventArgs_impl<HSTRING> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapChangedEventArgs`1<String>"; }
+};
+typedef IMapChangedEventArgs<HSTRING> __FIMapChangedEventArgs_1_HSTRING_t;
+#define ____FIMapChangedEventArgs_1_HSTRING_FWD_DEFINED__
+#define __FIMapChangedEventArgs_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapChangedEventArgs_1_HSTRING_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0032 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4637 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4637 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0033 */
+/* [local] */ 
+
+#ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#define DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1"))
+MapChangedEventHandler<HSTRING,IInspectable*> : MapChangedEventHandler_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, Object>"; }
+};
+typedef MapChangedEventHandler<HSTRING,IInspectable*> __FMapChangedEventHandler_2_HSTRING_IInspectable_t;
+#define ____FMapChangedEventHandler_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0033 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0033_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4638 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4638 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0034 */
+/* [local] */ 
+
+#ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#define DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec"))
+IObservableMap<HSTRING,IInspectable*> : IObservableMap_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IObservableMap`2<String, Object>"; }
+};
+typedef IObservableMap<HSTRING,IInspectable*> __FIObservableMap_2_HSTRING_IInspectable_t;
+#define ____FIObservableMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIObservableMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0034 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0034_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4639 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4639 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double_USE
@@ -1666,6 +2672,52 @@ typedef IReference<double> __FIReference_1_double_t;
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_double_USE */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0035 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0035_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4640 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4640 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0036 */
+/* [local] */ 
+
+#ifndef DEF___FIEventHandler_1_IInspectable_USE
+#define DEF___FIEventHandler_1_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
+IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.EventHandler`1<Object>"; }
+};
+typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
+#define ____FIEventHandler_1_IInspectable_FWD_DEFINED__
+#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIEventHandler_1_IInspectable_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -1679,9 +2731,25 @@ extern "C" {
 #if !defined(__windows2Estorage2Estreams_h__)
 #include <Windows.Storage.Streams.h>
 #endif // !defined(__windows2Estorage2Estreams_h__)
+#if !defined(__windows2Esystem2Eremotesystems_h__)
+#include <Windows.System.RemoteSystems.h>
+#endif // !defined(__windows2Esystem2Eremotesystems_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+namespace Collections {
+class ValueSet;
+} /*Collections*/
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
+
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4 __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4;
 
@@ -1710,10 +2778,52 @@ class PerceptionTimestamp;
 
 
 
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+namespace RemoteSystems {
+class RemoteSystemSession;
+} /*RemoteSystems*/
+} /*System*/
+} /*Windows*/
+}
+#endif
+
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialEntityWatcherStatus __x_ABI_CWindows_CPerception_CSpatial_CSpatialEntityWatcherStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialLocatability __x_ABI_CWindows_CPerception_CSpatial_CSpatialLocatability;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialLookDirectionRange __x_ABI_CWindows_CPerception_CSpatial_CSpatialLookDirectionRange;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialMovementRange __x_ABI_CWindows_CPerception_CSpatial_CSpatialMovementRange;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -1756,12 +2866,39 @@ typedef struct __x_ABI_CWindows_CPerception_CSpatial_CSpatialBoundingSphere __x_
 
 
 
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace Perception {
 namespace Spatial {
 class SpatialCoordinateSystem;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialEntity;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialEntityStore;
 } /*Spatial*/
 } /*Perception*/
 } /*Windows*/
@@ -1802,8 +2939,10 @@ class SpatialStationaryFrameOfReference;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0021 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0036 */
 /* [local] */ 
+
+
 
 
 #ifdef __cplusplus
@@ -1881,6 +3020,25 @@ extern "C" {
 
 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
+                typedef enum SpatialEntityWatcherStatus SpatialEntityWatcherStatus;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -1890,6 +3048,42 @@ namespace ABI {
             namespace Spatial {
                 
                 typedef enum SpatialLocatability SpatialLocatability;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
+                typedef enum SpatialLookDirectionRange SpatialLookDirectionRange;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
+                typedef enum SpatialMovementRange SpatialMovementRange;
                 
             } /* end namespace */
         } /* end namespace */
@@ -2001,23 +3195,28 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0021_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3132 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3132 */
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0036_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3132_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor
@@ -2025,13 +3224,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3132_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0022 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 #define ____FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
@@ -2151,35 +3350,35 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial
 #endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0023 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0023 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3133 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3133_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor
@@ -2187,13 +3386,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3133_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0024 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
@@ -2337,35 +3536,35 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CPerce
 #endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0025 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0025 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3134 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3134_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor
@@ -2373,13 +3572,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3134_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0026 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
@@ -2489,35 +3688,35 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerce
 #endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0027 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0027 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3135 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3135_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume
@@ -2525,13 +3724,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3135_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0028 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume_INTERFACE_DEFINED__
@@ -2675,35 +3874,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CPerception__CSpatial__CSpatialBo
 #endif 	/* ____FIIterator_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0029 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0029 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3136 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3136_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume
@@ -2711,13 +3910,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3136_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0030 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume_INTERFACE_DEFINED__
@@ -2827,35 +4026,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CPerception__CSpatial__CSpatialBo
 #endif 	/* ____FIIterable_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0031 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CPerception__CSpatial__CSpatialBoundingVolume */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0031 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3137 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3137_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor
@@ -2863,13 +4062,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3137_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0032 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 #define ____FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
@@ -3015,35 +4214,35 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSp
 #endif 	/* ____FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0033 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0033 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3138 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3138_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor
@@ -3052,14 +4251,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3138_v0_0
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0034 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0049 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
@@ -3148,35 +4347,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRIN
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0035 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0035 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3139 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3139_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor
@@ -3184,13 +4383,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3139_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0036 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
@@ -3320,35 +4519,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerc
 #endif 	/* ____FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0037 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0052 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0037 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3140 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3140_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorStore
@@ -3357,14 +4556,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3140_v0_0
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0038 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0053 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_INTERFACE_DEFINED__
@@ -3453,35 +4652,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CPerception
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0039 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0054 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorStore */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0039 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3141 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3141_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore
@@ -3489,13 +4688,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3141_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0040 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_INTERFACE_DEFINED__
@@ -3625,35 +4824,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpa
 #endif 	/* ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0041 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0041 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3142 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3142_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus
@@ -3662,14 +4861,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3142_v0_0
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0042 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0057 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_INTERFACE_DEFINED__
@@ -3758,35 +4957,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CPerception
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0043 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0043 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3143 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3143_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus
@@ -3794,13 +4993,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3143_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0044 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_INTERFACE_DEFINED__
@@ -3930,35 +5129,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpa
 #endif 	/* ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0045 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0045 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3144 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3144_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0061 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0061 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0061_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("fbb7e9fb-e49a-54e1-8c83-d1a87e4d2304")
+    __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReferenceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReferenceVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReferenceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0062 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0062 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0062_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4654 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4654 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0063 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference
+#define DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0063 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0063_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b4d8b1bf-1d66-5458-a5df-3f4f6c366c58")
+    __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReferenceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReferenceVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReferenceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0064 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0064 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0064_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum
@@ -3966,13 +5470,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3144_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0046 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_INTERFACE_DEFINED__
@@ -4082,35 +5586,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CPerception__CSpatial__CSpatialB
 #endif 	/* ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0047 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0047 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3145 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3145_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrientedBox
@@ -4118,13 +5622,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3145_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0048 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrientedBox_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrientedBox_INTERFACE_DEFINED__
@@ -4234,35 +5738,35 @@ EXTERN_C const IID IID___FIReference_1_Windows__CPerception__CSpatial__CSpatialB
 #endif 	/* ____FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrientedBox_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0049 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingOrientedBox */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0049 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3146 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3146_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs
@@ -4270,13 +5774,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3146_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0050 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__
@@ -4365,35 +5869,559 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0051 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0051 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3147 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3147_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0071 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0071 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0071_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("50171823-30a9-5938-9f3b-358d86169f2e")
+    __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectableVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectableVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectableVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0072 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0072 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0072_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4659 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4659 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0073 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0073 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0073_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f8edae01-6a30-52cc-b543-8abdb26529b4")
+    __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityAddedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0074 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0074 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0074_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4660 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4660 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0075 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0075 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0075_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("36f982ad-eaa2-5263-861e-2acf030c9e17")
+    __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0076 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0076 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0076_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4661 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4661 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0077 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0077 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0077_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a15fd0c0-8a0a-5a7d-897a-f206cc509190")
+    __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0078 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0078 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0078_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4662 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4662 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0079 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable
@@ -4401,13 +6429,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3147_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0052 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_INTERFACE_DEFINED__
@@ -4496,35 +6524,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0053 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0080 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0053 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3148 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3148_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs
@@ -4532,13 +6560,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Eidl_0000_3148_v0_0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0054 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__
@@ -4627,11 +6655,27 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CPerception__CSpatial__C
 #endif 	/* ____FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0055 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0082 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialEntityWatcherStatus
+    {
+        SpatialEntityWatcherStatus_Created	= 0,
+        SpatialEntityWatcherStatus_Started	= 1,
+        SpatialEntityWatcherStatus_EnumerationCompleted	= 2,
+        SpatialEntityWatcherStatus_Stopping	= 3,
+        SpatialEntityWatcherStatus_Stopped	= 4,
+        SpatialEntityWatcherStatus_Aborted	= 5
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -4643,6 +6687,30 @@ enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialLocatability
         SpatialLocatability_PositionalTrackingActivating	= 2,
         SpatialLocatability_PositionalTrackingActive	= 3,
         SpatialLocatability_PositionalTrackingInhibited	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialLookDirectionRange
+    {
+        SpatialLookDirectionRange_ForwardOnly	= 0,
+        SpatialLookDirectionRange_Omnidirectional	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialMovementRange
+    {
+        SpatialMovementRange_NoMovement	= 0,
+        SpatialMovementRange_Bounded	= 1
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -4699,8 +6767,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0055 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0082 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
+                /* [v1_enum] */ 
+                enum SpatialEntityWatcherStatus
+                    {
+                        SpatialEntityWatcherStatus_Created	= 0,
+                        SpatialEntityWatcherStatus_Started	= 1,
+                        SpatialEntityWatcherStatus_EnumerationCompleted	= 2,
+                        SpatialEntityWatcherStatus_Stopping	= 3,
+                        SpatialEntityWatcherStatus_Stopped	= 4,
+                        SpatialEntityWatcherStatus_Aborted	= 5
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -4717,6 +6810,48 @@ namespace ABI {
                         SpatialLocatability_PositionalTrackingActivating	= 2,
                         SpatialLocatability_PositionalTrackingActive	= 3,
                         SpatialLocatability_PositionalTrackingInhibited	= 4
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
+                /* [v1_enum] */ 
+                enum SpatialLookDirectionRange
+                    {
+                        SpatialLookDirectionRange_ForwardOnly	= 0,
+                        SpatialLookDirectionRange_Omnidirectional	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
+                /* [v1_enum] */ 
+                enum SpatialMovementRange
+                    {
+                        SpatialMovementRange_NoMovement	= 0,
+                        SpatialMovementRange_Bounded	= 1
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -4836,8 +6971,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor_INTERFACE_DEFINED__
@@ -4992,7 +7127,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor;
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0056 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__)
@@ -5000,13 +7135,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0056 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__
@@ -5129,7 +7264,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2;
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0057 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_INTERFACE_DEFINED__)
@@ -5137,13 +7272,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0057 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_INTERFACE_DEFINED__
@@ -5266,7 +7401,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorMana
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0058 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__)
@@ -5274,13 +7409,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0058 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__
@@ -5403,7 +7538,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorRawC
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorRawCoordinateSystemAdjustedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0059 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStatics_INTERFACE_DEFINED__)
@@ -5411,13 +7546,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0059 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStatics_INTERFACE_DEFINED__
@@ -5572,7 +7707,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStat
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0060 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStore_INTERFACE_DEFINED__)
@@ -5580,13 +7715,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0060 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStore_INTERFACE_DEFINED__
@@ -5741,7 +7876,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStor
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0061 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorTransferManagerStatics_INTERFACE_DEFINED__)
@@ -5749,13 +7884,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorTransferManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0061 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorTransferManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorTransferManagerStatics_INTERFACE_DEFINED__
@@ -5904,7 +8039,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorTran
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorTransferManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0062 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolume_INTERFACE_DEFINED__)
@@ -5912,13 +8047,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolume_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0062 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolume_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolume_INTERFACE_DEFINED__
@@ -6031,7 +8166,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVo
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolume_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0063 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolumeStatics_INTERFACE_DEFINED__)
@@ -6039,13 +8174,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolumeStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0063 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolumeStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolumeStatics_INTERFACE_DEFINED__
@@ -6214,7 +8349,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVo
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialBoundingVolumeStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0064 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem_INTERFACE_DEFINED__)
@@ -6222,13 +8357,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0064 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem_INTERFACE_DEFINED__
@@ -6353,7 +8488,1279 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinate
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0065 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0092 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntity[] = L"Windows.Perception.Spatial.ISpatialEntity";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0092 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0092_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntity */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("166DE955-E1EB-454C-BA08-E6C0668DDC65")
+                    ISpatialEntity : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Anchor( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialAnchor **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Properties( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntity = __uuidof(ISpatialEntity);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Anchor )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Properties )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_get_Anchor(This,value)	\
+    ( (This)->lpVtbl -> get_Anchor(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_get_Properties(This,value)	\
+    ( (This)->lpVtbl -> get_Properties(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0093 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityAddedEventArgs[] = L"Windows.Perception.Spatial.ISpatialEntityAddedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0093 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0093_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityAddedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("A397F49B-156A-4707-AC2C-D31D570ED399")
+                    ISpatialEntityAddedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Entity( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityAddedEventArgs = __uuidof(ISpatialEntityAddedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Entity )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_get_Entity(This,value)	\
+    ( (This)->lpVtbl -> get_Entity(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityAddedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0094 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityFactory[] = L"Windows.Perception.Spatial.ISpatialEntityFactory";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0094 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0094_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("E1F1E325-349F-4225-A2F3-4B01C15FE056")
+                    ISpatialEntityFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateWithSpatialAnchor( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialAnchor *spatialAnchor,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateWithSpatialAnchorAndProperties( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialAnchor *spatialAnchor,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet *propertySet,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityFactory = __uuidof(ISpatialEntityFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateWithSpatialAnchor )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor *spatialAnchor,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateWithSpatialAnchorAndProperties )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor *spatialAnchor,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet *propertySet,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactoryVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_CreateWithSpatialAnchor(This,spatialAnchor,value)	\
+    ( (This)->lpVtbl -> CreateWithSpatialAnchor(This,spatialAnchor,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_CreateWithSpatialAnchorAndProperties(This,spatialAnchor,propertySet,value)	\
+    ( (This)->lpVtbl -> CreateWithSpatialAnchorAndProperties(This,spatialAnchor,propertySet,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0095 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityRemovedEventArgs[] = L"Windows.Perception.Spatial.ISpatialEntityRemovedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0095 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0095_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("91741800-536D-4E9F-ABF6-415B5444D651")
+                    ISpatialEntityRemovedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Entity( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityRemovedEventArgs = __uuidof(ISpatialEntityRemovedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Entity )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_get_Entity(This,value)	\
+    ( (This)->lpVtbl -> get_Entity(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityRemovedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0096 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityStore[] = L"Windows.Perception.Spatial.ISpatialEntityStore";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0096 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0096_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityStore */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("329788BA-E513-4F06-889D-1BE30ECF43E6")
+                    ISpatialEntityStore : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE SaveAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntity *entity,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RemoveAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialEntity *entity,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateEntityWatcher( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntityWatcher **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityStore = __uuidof(ISpatialEntityStore);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveAsync )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity *entity,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveAsync )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity *entity,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateEntityWatcher )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_SaveAsync(This,entity,action)	\
+    ( (This)->lpVtbl -> SaveAsync(This,entity,action) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_RemoveAsync(This,entity,action)	\
+    ( (This)->lpVtbl -> RemoveAsync(This,entity,action) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_CreateEntityWatcher(This,value)	\
+    ( (This)->lpVtbl -> CreateEntityWatcher(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0097 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityStoreStatics[] = L"Windows.Perception.Spatial.ISpatialEntityStoreStatics";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0097 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0097_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityStoreStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("6B4B389E-7C50-4E92-8A62-4D1D4B7CCD3E")
+                    ISpatialEntityStoreStatics : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryGetForRemoteSystemSession( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::System::RemoteSystems::IRemoteSystemSession *session,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntityStore **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityStoreStatics = __uuidof(ISpatialEntityStoreStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSupported )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetForRemoteSystemSession )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CRemoteSystems_CIRemoteSystemSession *session,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStore **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStaticsVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_get_IsSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_TryGetForRemoteSystemSession(This,session,value)	\
+    ( (This)->lpVtbl -> TryGetForRemoteSystemSession(This,session,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityStoreStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0098 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityUpdatedEventArgs[] = L"Windows.Perception.Spatial.ISpatialEntityUpdatedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0098 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0098_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("E5671766-627B-43CB-A49F-B3BE6D47DEED")
+                    ISpatialEntityUpdatedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Entity( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialEntity **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityUpdatedEventArgs = __uuidof(ISpatialEntityUpdatedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Entity )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntity **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_get_Entity(This,value)	\
+    ( (This)->lpVtbl -> get_Entity(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityUpdatedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0099 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialEntityWatcher[] = L"Windows.Perception.Spatial.ISpatialEntityWatcher";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0099 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0099_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialEntityWatcher */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("B3B85FA0-6D5E-4BBC-805D-5FE5B9BA1959")
+                    ISpatialEntityWatcher : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Perception::Spatial::SpatialEntityWatcherStatus *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_Added( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_Added( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_Updated( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_Updated( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_Removed( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_Removed( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_EnumerationCompleted( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_EnumerationCompleted( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE Start( void) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE Stop( void) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialEntityWatcher = __uuidof(ISpatialEntityWatcher);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcherVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CPerception_CSpatial_CSpatialEntityWatcherStatus *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_Added )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_Added )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_Updated )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_Updated )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_Removed )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_Removed )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_EnumerationCompleted )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_EnumerationCompleted )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *Start )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Stop )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher * This);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcherVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcherVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_get_Status(This,value)	\
+    ( (This)->lpVtbl -> get_Status(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_add_Added(This,handler,token)	\
+    ( (This)->lpVtbl -> add_Added(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_remove_Added(This,token)	\
+    ( (This)->lpVtbl -> remove_Added(This,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_add_Updated(This,handler,token)	\
+    ( (This)->lpVtbl -> add_Updated(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_remove_Updated(This,token)	\
+    ( (This)->lpVtbl -> remove_Updated(This,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_add_Removed(This,handler,token)	\
+    ( (This)->lpVtbl -> add_Removed(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_remove_Removed(This,token)	\
+    ( (This)->lpVtbl -> remove_Removed(This,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_add_EnumerationCompleted(This,handler,token)	\
+    ( (This)->lpVtbl -> add_EnumerationCompleted(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_remove_EnumerationCompleted(This,token)	\
+    ( (This)->lpVtbl -> remove_EnumerationCompleted(This,token) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_Start(This)	\
+    ( (This)->lpVtbl -> Start(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_Stop(This)	\
+    ( (This)->lpVtbl -> Stop(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0100 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__)
@@ -6361,13 +9768,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0065 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__
@@ -6540,7 +9947,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation;
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0066 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_INTERFACE_DEFINED__)
@@ -6548,13 +9955,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0066 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_INTERFACE_DEFINED__
@@ -6839,7 +10246,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator;
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0067 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorAttachedFrameOfReference_INTERFACE_DEFINED__)
@@ -6847,13 +10254,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorAttachedFrameOfReference_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0067 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorAttachedFrameOfReference_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorAttachedFrameOfReference_INTERFACE_DEFINED__
@@ -7040,7 +10447,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorAtt
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorAttachedFrameOfReference_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0068 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__)
@@ -7048,13 +10455,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0068 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__
@@ -7187,7 +10594,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorPos
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorPositionalTrackingDeactivatingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0069 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorStatics_INTERFACE_DEFINED__)
@@ -7195,13 +10602,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0069 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorStatics_INTERFACE_DEFINED__
@@ -7324,7 +10731,359 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorSta
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocatorStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0070 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0105 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialStageFrameOfReference[] = L"Windows.Perception.Spatial.ISpatialStageFrameOfReference";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0105 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0105_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("7A8A3464-AD0D-4590-AB86-33062B674926")
+                    ISpatialStageFrameOfReference : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CoordinateSystem( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MovementRange( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Perception::Spatial::SpatialMovementRange *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LookDirectionRange( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Perception::Spatial::SpatialLookDirectionRange *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetCoordinateSystemAtCurrentLocation( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialLocator *locator,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryGetMovementBounds( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem *coordinateSystem,
+                            /* [out] */ __RPC__out UINT32 *__valueSize,
+                            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) ABI::Windows::Foundation::Numerics::Vector3 **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialStageFrameOfReference = __uuidof(ISpatialStageFrameOfReference);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CoordinateSystem )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MovementRange )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CPerception_CSpatial_CSpatialMovementRange *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LookDirectionRange )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CPerception_CSpatial_CSpatialLookDirectionRange *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCoordinateSystemAtCurrentLocation )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator *locator,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetMovementBounds )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialCoordinateSystem *coordinateSystem,
+            /* [out] */ __RPC__out UINT32 *__valueSize,
+            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) __x_ABI_CWindows_CFoundation_CNumerics_CVector3 **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_get_CoordinateSystem(This,value)	\
+    ( (This)->lpVtbl -> get_CoordinateSystem(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_get_MovementRange(This,value)	\
+    ( (This)->lpVtbl -> get_MovementRange(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_get_LookDirectionRange(This,value)	\
+    ( (This)->lpVtbl -> get_LookDirectionRange(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_GetCoordinateSystemAtCurrentLocation(This,locator,result)	\
+    ( (This)->lpVtbl -> GetCoordinateSystemAtCurrentLocation(This,locator,result) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_TryGetMovementBounds(This,coordinateSystem,__valueSize,value)	\
+    ( (This)->lpVtbl -> TryGetMovementBounds(This,coordinateSystem,__valueSize,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0106 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics[] = L"Windows.Perception.Spatial.ISpatialStageFrameOfReferenceStatics";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0106 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0106_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    
+                    MIDL_INTERFACE("F78D5C4D-A0A4-499C-8D91-A8C965D40654")
+                    ISpatialStageFrameOfReferenceStatics : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_CurrentChanged( 
+                            /* [in] */ __RPC__in_opt __FIEventHandler_1_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *cookie) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_CurrentChanged( 
+                            /* [in] */ EventRegistrationToken cookie) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestNewStageAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpatialStageFrameOfReferenceStatics = __uuidof(ISpatialStageFrameOfReferenceStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReference **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_CurrentChanged )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [in] */ __RPC__in_opt __FIEventHandler_1_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *cookie);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_CurrentChanged )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [in] */ EventRegistrationToken cookie);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestNewStageAsync )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStaticsVtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_get_Current(This,value)	\
+    ( (This)->lpVtbl -> get_Current(This,value) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_add_CurrentChanged(This,handler,cookie)	\
+    ( (This)->lpVtbl -> add_CurrentChanged(This,handler,cookie) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_remove_CurrentChanged(This,cookie)	\
+    ( (This)->lpVtbl -> remove_CurrentChanged(This,cookie) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_RequestNewStageAsync(This,result)	\
+    ( (This)->lpVtbl -> RequestNewStageAsync(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStageFrameOfReferenceStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_INTERFACE_DEFINED__)
@@ -7332,13 +11091,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0070 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_INTERFACE_DEFINED__
@@ -7461,7 +11220,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialStationary
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CISpatialStationaryFrameOfReference_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0071 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0108 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchor_DEFINED
@@ -7492,6 +11251,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Perception_Spatial_SpatialCoordinateSystem_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialCoordinateSystem[] = L"Windows.Perception.Spatial.SpatialCoordinateSystem";
 #endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntity_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntity_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialEntity[] = L"Windows.Perception.Spatial.SpatialEntity";
+#endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityAddedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityAddedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialEntityAddedEventArgs[] = L"Windows.Perception.Spatial.SpatialEntityAddedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityRemovedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityRemovedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialEntityRemovedEventArgs[] = L"Windows.Perception.Spatial.SpatialEntityRemovedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityStore_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityStore_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialEntityStore[] = L"Windows.Perception.Spatial.SpatialEntityStore";
+#endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityUpdatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityUpdatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialEntityUpdatedEventArgs[] = L"Windows.Perception.Spatial.SpatialEntityUpdatedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityWatcher_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialEntityWatcher_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialEntityWatcher[] = L"Windows.Perception.Spatial.SpatialEntityWatcher";
+#endif
 #ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialLocation_DEFINED
 #define RUNTIMECLASS_Windows_Perception_Spatial_SpatialLocation_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialLocation[] = L"Windows.Perception.Spatial.SpatialLocation";
@@ -7508,19 +11291,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Perception_Spatial_SpatialLocatorPositionalTrackingDeactivatingEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialLocatorPositionalTrackingDeactivatingEventArgs[] = L"Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialStageFrameOfReference_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialStageFrameOfReference_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialStageFrameOfReference[] = L"Windows.Perception.Spatial.SpatialStageFrameOfReference";
+#endif
 #ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialStationaryFrameOfReference_DEFINED
 #define RUNTIMECLASS_Windows_Perception_Spatial_SpatialStationaryFrameOfReference_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialStationaryFrameOfReference[] = L"Windows.Perception.Spatial.SpatialStationaryFrameOfReference";
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0071 */
+/* interface __MIDL_itf_windows2Eperception2Espatial_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial_0000_0108_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

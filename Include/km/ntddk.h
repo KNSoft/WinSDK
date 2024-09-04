@@ -39,6 +39,8 @@ Revision History:
 #pragma warning(disable:4115) // named type definition in parentheses
 #pragma warning(disable:4201) // nameless struct/union
 #pragma warning(disable:4214) // bit field types other than int
+#pragma warning(disable:4625) // copy constructor was implicitly defined as deleted
+#pragma warning(disable:4626) // assignment operator was implicitly defined as deleted
 #pragma warning(disable:4668) // #if not_defined treated as #if 0
 #pragma warning(disable:4820) // padding added
 
@@ -185,7 +187,7 @@ extern POBJECT_TYPE *PsSiloContextNonPagedType;
 
 #if !defined(MIDL_PASS) && defined(_M_IX86)
 
-#if !defined(_M_CEE_PURE)
+#if !defined(_M_CEE_PURE) && !defined(_M_HYBRID_X86_ARM64)
 
 #pragma prefast(push)
 #pragma warning(push)
@@ -206,7 +208,9 @@ MemoryBarrier (
 #pragma warning(pop)
 #pragma prefast(pop)
 
-#endif /* _M_CEE_PURE */
+#endif /* !_M_CEE_PURE || !_M_HYBRID_X86_ARM64*/
+
+#if !defined(_M_HYBRID_X86_ARM64)
 
 //
 // Define constants for use with _mm_prefetch.
@@ -267,6 +271,8 @@ __rdtsc (
 #pragma intrinsic(__rdtsc)
 
 #endif // !defined(_MANAGED)
+
+#endif // !defined(_M_HYBRID_X86_ARM64)
 
 
 
@@ -876,9 +882,9 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 #endif // _ARM_
 
 
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
-#ifdef _ARM64_
-
+#if defined(_ARM64_)
 //
 // Size of kernel mode stack.
 //
@@ -904,6 +910,8 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 
 #define KERNEL_MCA_EXCEPTION_STACK_SIZE 0x2000
 
+#endif
+
 //
 // The following values specify the type of access in the first parameter
 // of the exception record whan the exception code specifies an access
@@ -913,6 +921,20 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 #define EXCEPTION_READ_FAULT 0          // exception caused by a read
 #define EXCEPTION_WRITE_FAULT 1         // exception caused by a write
 #define EXCEPTION_EXECUTE_FAULT 8       // exception caused by an instruction fetch
+
+
+
+//
+// Define initial Cpsr/Fpscr value
+//
+
+#define INITIAL_CPSR 0x10
+#define INITIAL_FPSCR 0
+
+
+
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+
 
 
 //
@@ -925,19 +947,31 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 
 
 
-#define CONTEXT_CONTROL (CONTEXT_ARM64 | 0x1L)
-#define CONTEXT_INTEGER (CONTEXT_ARM64 | 0x2L)
-#define CONTEXT_FLOATING_POINT  (CONTEXT_ARM64 | 0x4L)
-#define CONTEXT_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x8L)
+#define CONTEXT_ARM64_CONTROL (CONTEXT_ARM64 | 0x1L)
+#define CONTEXT_ARM64_INTEGER (CONTEXT_ARM64 | 0x2L)
+#define CONTEXT_ARM64_FLOATING_POINT  (CONTEXT_ARM64 | 0x4L)
+#define CONTEXT_ARM64_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x8L)
 
-#define CONTEXT_FULL (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT)
+#define CONTEXT_ARM64_FULL (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT)
+#define CONTEXT_ARM64_ALL  (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT | CONTEXT_ARM64_DEBUG_REGISTERS)
 
-#define CONTEXT_ALL (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS)
+#if defined(_ARM64_)
 
-#define CONTEXT_EXCEPTION_ACTIVE 0x08000000L
-#define CONTEXT_SERVICE_ACTIVE 0x10000000L
-#define CONTEXT_EXCEPTION_REQUEST 0x40000000L
+#define CONTEXT_CONTROL CONTEXT_ARM64_CONTROL
+#define CONTEXT_INTEGER CONTEXT_ARM64_INTEGER
+#define CONTEXT_FLOATING_POINT CONTEXT_ARM64_FLOATING_POINT
+#define CONTEXT_DEBUG_REGISTERS CONTEXT_ARM64_DEBUG_REGISTERS
+#define CONTEXT_FULL CONTEXT_ARM64_FULL
+#define CONTEXT_ALL CONTEXT_ARM64_ALL
+
+#define CONTEXT_EXCEPTION_ACTIVE    0x08000000L
+#define CONTEXT_SERVICE_ACTIVE      0x10000000L
+#define CONTEXT_EXCEPTION_REQUEST   0x40000000L
 #define CONTEXT_EXCEPTION_REPORTING 0x80000000L
+
+#endif
+
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_X86_)
 
 //
 // This flag is set by the unwinder if it has unwound to a call
@@ -949,16 +983,11 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 #define CONTEXT_UNWOUND_TO_CALL 0x20000000
 #define CONTEXT_RET_TO_GUEST    0x04000000
 
+#endif
+
 
 
 #endif // !defined(RC_INVOKED)
-
-//
-// Define initial Cpsr/Fpscr value
-//
-
-#define INITIAL_CPSR 0x10
-#define INITIAL_FPSCR 0
 
 
 
@@ -1002,7 +1031,7 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 //      DBGWCR.
 //
 
-typedef union _NEON128 {
+typedef union _ARM64_NT_NEON128 {
     struct {
         ULONGLONG Low;
         LONGLONG High;
@@ -1011,9 +1040,27 @@ typedef union _NEON128 {
     float S[4];
     USHORT H[8];
     UCHAR B[16];
-} NEON128, *PNEON128;
+} ARM64_NT_NEON128, *PARM64_NT_NEON128;
 
-typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
+#if defined(_ARM64_)
+
+typedef ARM64_NT_NEON128 NEON128, *PNEON128;
+
+#endif
+
+#if defined(_ARM64_)
+
+#pragma push_macro("_ARM64_NT_CONTEXT")
+#undef _ARM64_NT_CONTEXT
+#define _ARM64_NT_CONTEXT _CONTEXT
+
+#pragma push_macro("ARM64_NT_NEON128")
+#undef ARM64_NT_NEON128
+#define ARM64_NT_NEON128 NEON128
+
+#endif
+
+typedef struct DECLSPEC_ALIGN(16) _ARM64_NT_CONTEXT {
 
     //
     // Control flags.
@@ -1069,7 +1116,7 @@ typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
     // Floating Point/NEON Registers
     //
 
-    /* +0x110 */ NEON128 V[32];
+    /* +0x110 */ ARM64_NT_NEON128 V[32];
     /* +0x310 */ ULONG Fpcr;
     /* +0x314 */ ULONG Fpsr;
 
@@ -1083,11 +1130,21 @@ typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
     /* +0x380 */ ULONG64 Wvr[ARM64_MAX_WATCHPOINTS];
     /* +0x390 */
 
-} CONTEXT, *PCONTEXT;
+} ARM64_NT_CONTEXT, *PARM64_NT_CONTEXT;
+
+#if defined(_ARM64_)
+
+#undef ARM64_NT_NEON128
+#pragma pop_macro("ARM64_NT_NEON128")
+
+#undef _ARM64_NT_CONTEXT
+#pragma pop_macro("_ARM64_NT_CONTEXT")
+
+typedef ARM64_NT_CONTEXT CONTEXT, *PCONTEXT;
+
+#endif
 
 
-
-#endif // _ARM64_
 
 
 
@@ -2518,7 +2575,7 @@ RtlIsGenericTableEmptyAvl (
 
 #endif // RTL_USE_AVL_TABLES
 
-
+ 
 //
 //  Define the splay links and the associated manipuliation macros and
 //  routines.  Note that the splay_links should be an opaque type.
@@ -2812,7 +2869,7 @@ RtlRealPredecessor (
     );
 #endif
 
-
+ 
 //
 //  Define the generic table package.  Note a generic table should really
 //  be an opaque type.  We provide routines to manipulate the structure.
@@ -3743,7 +3800,7 @@ RtlUpcaseUnicodeString(
 #endif
 
 #if !defined(MIDL_PASS)
-#if defined(_AMD64_) || defined(_ARM_) || defined(_ARM64_) || defined(_IA64_)
+#if defined(_AMD64_) || defined(_ARM_) || defined(_ARM64_) || defined(_IA64_) || defined(_CHPE_X86_ARM64_)
 //
 // Large Integer divide - 64-bits / 64-bits -> 64-bits
 //
@@ -3977,6 +4034,102 @@ RtlGetNtProductType(
     );
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS1
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSYSAPI
+PCWSTR
+NTAPI
+RtlGetNtSystemRoot (
+    VOID
+    );
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
+
+//
+// Flush routines for DAX mapped files
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) && defined(_AMD64_)
+typedef struct _NV_MEMORY_RANGE {
+    VOID *BaseAddress;
+    SIZE_T Length;
+} NV_MEMORY_RANGE, *PNV_MEMORY_RANGE;
+
+//
+// Flags for RtlFlushNonVolatileMemory and RtlFlushNonVolatileMemoryRanges
+//
+
+#define FLUSH_NV_MEMORY_IN_FLAG_NO_DRAIN    (0x00000001)
+
+//
+// Default token is used to call the flush and drain routines without the
+// RtlGetNonVolatileToken call, for callers who know the details about the
+// region they are flushing.
+//
+
+#define FLUSH_NV_MEMORY_DEFAULT_TOKEN       (ULONG_PTR)(-1)
+
+_IRQL_requires_max_(APC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlGetNonVolatileToken (
+    _In_reads_bytes_(Size) PVOID NvBuffer,
+    _In_ SIZE_T Size,
+    _Outptr_ PVOID *NvToken
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlFreeNonVolatileToken (
+    _In_ PVOID NvToken
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlFlushNonVolatileMemory (
+    _In_ PVOID NvToken,
+    _In_reads_bytes_(Size) PVOID NvBuffer,
+    _In_ SIZE_T Size,
+    _In_ ULONG Flags
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlDrainNonVolatileFlush (
+    _In_ PVOID NvToken
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlWriteNonVolatileMemory (
+    _In_ PVOID NvToken,
+    _Out_writes_bytes_(Size) VOID UNALIGNED *NvDestination,
+    _In_reads_bytes_(Size) VOID UNALIGNED *Source,
+    _In_ SIZE_T Size,
+    _In_ ULONG Flags
+    );
+
+_IRQL_requires_max_(DPC_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlFlushNonVolatileMemoryRanges (
+    _In_ PVOID NvToken,
+    _In_reads_(NumRanges) PNV_MEMORY_RANGE NvRanges,
+    _In_ SIZE_T NumRanges,
+    _In_ ULONG Flags
+    );
+#endif // (NTDDI_VERSION >= NTDDI_RS2) && defined(_AMD64_)
+
 //
 // Define the various device type values.  Note that values used by Microsoft
 // Corporation are in the range 0-32767, and 32768-65535 are reserved for use
@@ -4065,6 +4218,9 @@ RtlGetNtProductType(
 #define FILE_DEVICE_TRUST_ENV           0x00000056
 #define FILE_DEVICE_UCM                 0x00000057
 #define FILE_DEVICE_UCMTCPCI            0x00000058
+#define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
+#define FILE_DEVICE_NVDIMM              0x0000005a
+#define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -4551,6 +4707,9 @@ typedef enum _PROCESSINFOCLASS {
     ProcessSubsystemProcess                      = 68,
     ProcessInPrivate                             = 70,
     ProcessRaiseUMExceptionOnInvalidHandleClose  = 71,
+    ProcessSubsystemInformation                  = 75,
+    ProcessWin32kSyscallFilterInformation        = 79,
+    ProcessEnergyTrackingState                   = 82,
     MaxProcessInfoClass                             // MaxProcessInfoClass should always be the last enum
 } PROCESSINFOCLASS;
 
@@ -4597,7 +4756,8 @@ typedef enum _THREADINFOCLASS {
     ThreadSuspendCount              = 35,
     ThreadActualGroupAffinity       = 41,
     ThreadDynamicCodePolicyInfo     = 42,
-    MaxThreadInfoClass              = 45,
+    ThreadSubsystemInformation      = 45,
+    MaxThreadInfoClass              = 48,
 } THREADINFOCLASS;
 
 #define THREAD_CSWITCH_PMU_DISABLE  FALSE
@@ -4670,7 +4830,7 @@ typedef struct _PROCESS_EXTENDED_BASIC_INFORMATION {
             ULONG IsBackground : 1;
             ULONG IsStronglyNamed : 1;
             ULONG IsSecureProcess : 1;
-            ULONG IsPicoProcess : 1;
+            ULONG IsSubsystemProcess : 1;
             ULONG SpareBits : 23;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
@@ -4965,7 +5125,8 @@ typedef struct _PROCESS_MITIGATION_DYNAMIC_CODE_POLICY {
         struct {
             ULONG ProhibitDynamicCode : 1;
             ULONG AllowThreadOptOut : 1;
-            ULONG ReservedFlags : 30;
+            ULONG AllowRemoteDowngrade : 1;
+            ULONG ReservedFlags : 29;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_DYNAMIC_CODE_POLICY, *PPROCESS_MITIGATION_DYNAMIC_CODE_POLICY;
@@ -4975,7 +5136,9 @@ typedef struct _PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY {
         ULONG Flags;
         struct {
             ULONG EnableControlFlowGuard : 1;
-            ULONG ReservedFlags : 31;
+            ULONG EnableExportSuppression : 1;
+            ULONG StrictMode : 1;
+            ULONG ReservedFlags : 29;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY, *PPROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY;
@@ -5120,6 +5283,59 @@ typedef struct _KERNEL_USER_TIMES {
     LARGE_INTEGER UserTime;
 } KERNEL_USER_TIMES;
 typedef KERNEL_USER_TIMES *PKERNEL_USER_TIMES;
+
+//
+// Process/Thread subsystem information
+//  NtQueryInformationProcess using ProcessSubsystemInformation
+//  NtQueryInformationThread using ThreadSubsystemInformation
+//
+
+typedef enum _SUBSYSTEM_INFORMATION_TYPE {
+    SubsystemInformationTypeWin32 = 0,
+    SubsystemInformationTypeWSL = 1,
+    MaxSubsystemInformationType
+} SUBSYSTEM_INFORMATION_TYPE, *PSUBSYSTEM_INFORMATION_TYPE;
+
+//
+// Process resource throttling information
+//  NtQueryInformationProcess using ProcessActivityThrottleState
+//
+
+typedef enum _ACTIVITY_THROTTLE_STATE {
+    ActivityThrottleStateSystemManaged = 0,
+    ActivityThrottleStateForceOn = 1,
+    ActivityThrottleStateForceOff = 2,
+    MaxActivityThrottleState
+} ACTIVITY_THROTTLE_STATE, *PACTIVITY_THROTTLE_STATE;
+
+//
+// Process resource throttling policy
+//  NtQueryInformationProcess using ProcessActivityThrottlePolicy
+//
+
+typedef enum _ACTIVITY_THROTTLE_POLICY_OP {
+    ActivityThrottlePolicyDisable = 0,
+    ActivityThrottlePolicyEnable = 1,
+    ActivityThrottlePolicyDefault = 2,
+    MaxActivityThrottlePolicy
+} ACTIVITY_THROTTLE_POLICY_OP, *PACTIVITY_THROTTLE_POLICY_OP;
+
+//
+// Flags for ACTIVITY_THROTTLE_POLICY PolicyFlags
+//
+
+#define ACTIVITY_THROTTLE_EXECUTIONSPEED 0x1
+#define ACTIVITY_THROTTLE_DELAYTIMERS 0x2
+#define ACTIVITY_THROTTLE_ALL ((ACTIVITY_THROTTLE_EXECUTIONSPEED | \
+                                ACTIVITY_THROTTLE_DELAYTIMERS))
+
+#define ACTIVITY_THROTTLE_POLICY_VERSION 1
+
+typedef struct _ACTIVITY_THROTTLE_POLICY {
+    ULONG Version;
+    ACTIVITY_THROTTLE_POLICY_OP Operation;
+    ULONG PolicyFlags;
+} ACTIVITY_THROTTLE_POLICY, *PACTIVITY_THROTTLE_POLICY;
 
 
 __kernel_entry NTSYSCALLAPI
@@ -5656,13 +5872,12 @@ typedef struct _KTRAP_FRAME {
 
 //
 // First parameter, page fault address, context record address if user APC
-// bypass, or time stamp value.
+// bypass.
 //
 
     union {
         ULONG64 FaultAddress;
         ULONG64 ContextRecord;
-        ULONG64 TimeStampCKCL;
     };
 
 //
@@ -5730,7 +5945,6 @@ typedef struct _KTRAP_FRAME {
     union {
         ULONG64 ErrorCode;
         ULONG64 ExceptionFrame;
-        ULONG64 TimeStampKlog;
     };
 
     ULONG64 Rip;
@@ -5963,7 +6177,7 @@ KeGetCurrentProcessorNumber (
 
 
 //
-// Platform specific kernel fucntions to raise and lower IRQL.
+// Platform specific kernel functions to raise and lower IRQL.
 //
 
 
@@ -5991,7 +6205,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -6019,7 +6233,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -6507,7 +6721,7 @@ KeGetCurrentProcessorNumber (
 
 
 //
-// Platform specific kernel fucntions to raise and lower IRQL.
+// Platform specific kernel functions to raise and lower IRQL.
 //
 
 
@@ -6535,7 +6749,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -6563,7 +6777,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -6993,7 +7207,7 @@ KeGetCurrentProcessorNumber (
 
 
 //
-// Platform specific kernel fucntions to raise and lower IRQL.
+// Platform specific kernel functions to raise and lower IRQL.
 //
 
 
@@ -7021,7 +7235,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -7049,7 +7263,7 @@ Arguments:
 
 Return Value:
 
-    The previous IRQL is retured as the function value.
+    The previous IRQL is returned as the function value.
 
 --*/
 
@@ -7430,6 +7644,9 @@ typedef struct _KUSER_SHARED_DATA {
 
     //
     // Copy of system root in unicode.
+    //
+    // N.B. This field must be accessed via the RtlGetNtSystemRoot API for 
+    //      an accurate result.
     //
 
     WCHAR NtSystemRoot[260];
@@ -7998,54 +8215,6 @@ C_ASSERT(sizeof(KUSER_SHARED_DATA) == 0x708);
 #ifdef _MAC
 #pragma warning(default:4121)
 #endif
-
-//
-// Define data shared between kernel and user mode per each Silo.
-//
-// N.B. User mode has read only access to this data
-//
-
-typedef struct _SILO_USER_SHARED_DATA {
-
-    //
-    // ID corresponding to the silo's service session (historically this
-    // was Session 0).
-    //
-
-    ULONG ServiceSessionId;
-
-    //
-    // Current console session Id.
-    //
-
-    ULONG ActiveConsoleId;
-
-    //
-    // Client id of the process having the focus in the current
-    // active console session id.
-    //
-
-    LONGLONG ConsoleSessionForegroundProcessId;
-
-    //
-    // e.g. WinNt, LanManNt, Server
-    //
-
-    NT_PRODUCT_TYPE NtProductType;
-
-    //
-    // Suite support
-    //
-
-    ULONG SuiteMask;
-
-    //
-    // Determines whether or not this sku supports multiple sessions
-    // 
-
-    BOOLEAN IsMultiSessionSku;
-
-} SILO_USER_SHARED_DATA, *PSILO_USER_SHARED_DATA;
 
 #define CmResourceTypeMaximum             8
 //
@@ -9000,6 +9169,11 @@ typedef struct _PHYSICAL_MEMORY_RANGE {
 } PHYSICAL_MEMORY_RANGE, *PPHYSICAL_MEMORY_RANGE;
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define MM_ADD_PHYSICAL_MEMORY_ALREADY_ZEROED       0x1
+#endif
+
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9058,6 +9232,9 @@ MmGetPhysicalMemoryRanges (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+
+#define MM_SYSTEM_PARTITION_OBJECT                  NULL
+#define MM_CURRENT_PROCESS_PARTITION_OBJECT         ((PVOID) MAXULONG_PTR)
 
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
@@ -9450,7 +9627,8 @@ typedef struct _PS_CREATE_NOTIFY_INFO {
         _In_ ULONG Flags;
         struct {
             _In_ ULONG FileOpenNameAvailable : 1;
-            _In_ ULONG Reserved : 31; 
+            _In_ ULONG IsSubsystemProcess : 1;
+            _In_ ULONG Reserved : 30;
         };
     };
     _In_ HANDLE ParentProcessId;
@@ -9497,6 +9675,21 @@ PsSetCreateProcessNotifyRoutineEx (
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+typedef enum _PSCREATEPROCESSNOTIFYTYPE {
+    PsCreateProcessNotifySubsystems = 0
+} PSCREATEPROCESSNOTIFYTYPE;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PsSetCreateProcessNotifyRoutineEx2 (
+    _In_ PSCREATEPROCESSNOTIFYTYPE NotifyType,
+    _In_ PVOID NotifyInformation,
+    _In_ BOOLEAN Remove
+    );
+#endif
+
 typedef
 VOID
 (*PCREATE_THREAD_NOTIFY_ROUTINE)(
@@ -9516,7 +9709,8 @@ PsSetCreateThreadNotifyRoutine(
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 typedef enum _PSCREATETHREADNOTIFYTYPE {
-    PsCreateThreadNotifyNonSystem = 0
+    PsCreateThreadNotifyNonSystem = 0,
+    PsCreateThreadNotifySubsystems = 1
 } PSCREATETHREADNOTIFYTYPE;
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -9634,6 +9828,7 @@ PsIsCurrentThreadPrefetching (
     );
 #endif
 
+
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
@@ -9642,6 +9837,16 @@ PsGetProcessCreateTimeQuadPart(
     _In_ PEPROCESS Process
     );
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+ULONGLONG
+PsGetProcessStartKey(
+    _In_ PEPROCESS Process
+    );
+#endif
+
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9768,12 +9973,14 @@ PsGetEffectiveServerSilo(
     _In_ PESILO Silo
     );
 
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 PESILO
 PsAttachSiloToCurrentThread(
     _In_ PESILO Silo
     );
 
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 VOID
 PsDetachSiloFromCurrentThread(
@@ -9806,6 +10013,7 @@ PsGetCurrentServerSilo(
     VOID
     );
 
+DECLSPEC_DEPRECATED_DDK
 NTKERNELAPI
 PUNICODE_STRING
 PsGetCurrentServerSiloName(
@@ -10169,7 +10377,7 @@ typedef struct _CONFIGURATION_INFORMATION {
 
     //
     // These next two fields indicate ownership of one of the two IO address
-    // spaces that are used by WD1003-compatable disk controllers.
+    // spaces that are used by WD1003-compatible disk controllers.
     //
 
     BOOLEAN AtDiskPrimaryAddressClaimed;    // 0x1F0 - 0x1FF
@@ -10915,6 +11123,19 @@ NTSTATUS
 IoGetIrpExtraCreateParameter(
     _In_ PIRP Irp,
     _Outptr_result_maybenull_ struct _ECP_LIST **ExtraCreateParameter
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+NTKERNELAPI
+NTSTATUS
+IoQueryInformationByName (
+    _In_ POBJECT_ATTRIBUTES ObjectAttributes,
+    _Out_ PIO_STATUS_BLOCK IoStatusBlock,
+    _Out_writes_bytes_(Length) PVOID FileInformation,
+    _In_ ULONG Length,
+    _In_ FILE_INFORMATION_CLASS FileInformationClass,
+    _In_opt_ PIO_DRIVER_CREATE_CONTEXT DriverContext
     );
 #endif
 
@@ -11937,6 +12158,8 @@ typedef enum _HAL_QUERY_INFORMATION_CLASS {
     HalQueryProcessorEfficiencyInformation,
     HalQueryAcpiWakeAlarmSystemPowerStateInformation,
     HalQueryProfileNumberOfCounters,
+    HalQueryHyperlaunchEntrypoint,
+    HalHardwareWatchdogInformation,
     // information levels >= 0x8000000 reserved for OEM use
 } HAL_QUERY_INFORMATION_CLASS, *PHAL_QUERY_INFORMATION_CLASS;
 
@@ -11959,6 +12182,8 @@ typedef enum _HAL_SET_INFORMATION_CLASS {
     HalSetChannelPowerInformation,
     HalI386ExceptionChainTerminatorInformation, // Set x86 SEHOP exception chain terminator
     HalSetResetParkDisposition,        // Set whether to park processors on reset (LOGICAL)
+    HalSetPsciSuspendMode,
+    HalSetHvciEnabled,
 //    HalRegisterPlatformServicesInterface,
 } HAL_SET_INFORMATION_CLASS, *PHAL_SET_INFORMATION_CLASS;
 
@@ -12190,7 +12415,7 @@ typedef enum {
     KdNameSpaceNone,
 
     //
-    // Maxmimum namespace enumerator.
+    // Maximum namespace enumerator.
     //
 
     KdNameSpaceMax,
@@ -12217,6 +12442,7 @@ typedef struct _DEBUG_TRANSPORT_DATA {
 #define DBG_DEVICE_FLAG_HAL_SCRATCH_ALLOCATED 0x01
 #define DBG_DEVICE_FLAG_BARS_MAPPED           0x02
 #define DBG_DEVICE_FLAG_SCRATCH_ALLOCATED     0x04
+#define DBG_DEVICE_FLAG_UNCACHED_MEMORY       0x08
 
 typedef struct _DEBUG_DEVICE_DESCRIPTOR {
     ULONG     Bus;
@@ -12641,13 +12867,13 @@ typedef struct _HAL_ERROR_INFO {
     ULONG     McaPreviousEventsCount;  // Flag indicating previous or early-boot MCA event logs.
     ULONG     McaCorrectedEventsCount; // Number of corrected MCA events since boot.      approx.
     ULONG     McaKernelDeliveryFails;  // Number of Kernel callback failures.             approx.
-    ULONG     McaDriverDpcQueueFails;  // Number of OEM MCA Driver Dpc queueing failures. approx.
+    ULONG     McaDriverDpcQueueFails;  // Number of OEM MCA Driver Dpc queuing failures. approx.
     ULONG     McaReserved;
     ULONG     CmcMaxSize;              // Maximum size of a Corrected Machine  Check record
     ULONG     CmcPollingInterval;      // In units of seconds
     ULONG     CmcInterruptsCount;      // Number of CMC interrupts.                       approx.
     ULONG     CmcKernelDeliveryFails;  // Number of Kernel callback failures.             approx.
-    ULONG     CmcDriverDpcQueueFails;  // Number of OEM CMC Driver Dpc queueing failures. approx.
+    ULONG     CmcDriverDpcQueueFails;  // Number of OEM CMC Driver Dpc queuing failures. approx.
     ULONG     CmcGetStateFails;        // Number of failures in getting  the log from FW.
     ULONG     CmcClearStateFails;      // Number of failures in clearing the log from FW.
     ULONG     CmcReserved;
@@ -12656,7 +12882,7 @@ typedef struct _HAL_ERROR_INFO {
     ULONG     CpePollingInterval;      // In units of seconds
     ULONG     CpeInterruptsCount;      // Number of CPE interrupts.                       approx.
     ULONG     CpeKernelDeliveryFails;  // Number of Kernel callback failures.             approx.
-    ULONG     CpeDriverDpcQueueFails;  // Number of OEM CPE Driver Dpc queueing failures. approx.
+    ULONG     CpeDriverDpcQueueFails;  // Number of OEM CPE Driver Dpc queuing failures. approx.
     ULONG     CpeGetStateFails;        // Number of failures in getting  the log from FW.
     ULONG     CpeClearStateFails;      // Number of failures in clearing the log from FW.
     ULONG     CpeInterruptSources;     // Number of SAPIC Platform Interrupt Sources
@@ -12735,14 +12961,14 @@ typedef struct _HAL_PLATFORM_INFORMATION {
 
 
 //
-// These platform flags are carried over from the IPPT table
+// Non-deprecated platform flags are carried over from the IPPT table
 // definition if appropriate.
 //
 
-#define HAL_PLATFORM_DISABLE_WRITE_COMBINING      0x01L
-#define HAL_PLATFORM_DISABLE_PTCG                 0x04L
-#define HAL_PLATFORM_DISABLE_UC_MAIN_MEMORY       0x08L
-#define HAL_PLATFORM_ENABLE_WRITE_COMBINING_MMIO  0x10L
+#define HAL_PLATFORM_DISABLE_WRITE_COMBINING      0x01L     // Deprecated
+#define HAL_PLATFORM_DISABLE_PTCG                 0x04L     // Deprecated
+#define HAL_PLATFORM_DISABLE_UC_MAIN_MEMORY       0x08L     // Deprecated
+#define HAL_PLATFORM_ENABLE_WRITE_COMBINING_MMIO  0x10L     // Deprecated
 #define HAL_PLATFORM_ACPI_TABLES_CACHED           0x20L
 
 
@@ -12949,14 +13175,14 @@ Physical Counter Resource Descriptor Types:
 
     Describes the format of a physical counter resource.
 
-    PhysicalCounterResourceTypeSingle - The decriptor specifies a single
-        physical counter in the the u.CounterIndex member.
+    PhysicalCounterResourceTypeSingle - The descriptor specifies a single
+        physical counter in the u.CounterIndex member.
 
     PhysicalCounterResourceTypeRange - The descriptor specifies a range of
         counter indices in the u.Range member.
 
     PhysicalCounterResourceTypeExtendedConfiguration - The descriptor specifies
-        an extended counter configuration register address in in the
+        an extended counter configuration register address in the
         u.ExtendedRegisterAddress member. Only used on Intel NetBurst systems.
 
     PhysicalCounterResourceTypeOverflow - The descriptor specifies a counter
@@ -16310,7 +16536,7 @@ CPER_FIELD_CHECK(WHEA_FIRMWARE_ERROR_RECORD_REFERENCE, FirmwareRecordId, 8,  8);
 //
 // This is the start of the Microsoft specific extensions to the Common Platform
 // Error Record specification. This is in accordance with Appendix N, section
-// 2.3 of the Unified Extensible Firware Interface specification, which allows
+// 2.3 of the Unified Extensible Firmware Interface specification, which allows
 // the specification of non-standard section bodies.
 //
 
@@ -16433,7 +16659,7 @@ typedef union _WHEA_ARM_PROCESSOR_ERROR_INFORMATION_VALID_BITS {
         USHORT Flags:1;
         USHORT ErrorInformation:1;
         USHORT VirtualFaultAddress:1;
-        USHORT PhysicalFaultAddresss:1;
+        USHORT PhysicalFaultAddress:1;
         USHORT Reserved:11;
     } DUMMYSTRUCTNAME;
     USHORT AsUSHORT;
@@ -16520,7 +16746,7 @@ typedef struct _WHEA_ARM_BUS_ERROR {
     UCHAR Corrected:1;
     UCHAR PrecisePC:1;
     UCHAR RestartablePC:1;
-    UCHAR PariticpationType:2;
+    UCHAR ParticipationType:2;
     UCHAR TimeOut:1;
     UCHAR AddressSpace:2;
     USHORT MemoryAccessAttributes:9;
@@ -16544,7 +16770,7 @@ typedef struct _WHEA_ARM_PROCESSOR_ERROR_INFORMATION {
     UCHAR Flags;
     ULONGLONG ErrorInformation;
     ULONGLONG VirtualFaultAddress;
-    ULONGLONG PhysicalFaultAddresss;
+    ULONGLONG PhysicalFaultAddress;
 } WHEA_ARM_PROCESSOR_ERROR_INFORMATION, *PWHEA_ARM_PROCESSOR_ERROR_INFORMATION;
 
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, Version,                 0,   1);
@@ -16555,7 +16781,7 @@ CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, MultipleError,           
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, Flags,                   7,   1);
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, ErrorInformation,        8,   8);
 CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, VirtualFaultAddress,    16,   8);
-CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, PhysicalFaultAddresss,  24,   8);
+CPER_FIELD_CHECK(WHEA_ARM_PROCESSOR_ERROR_INFORMATION, PhysicalFaultAddress,  24,   8);
 
 //------------------------------------------------------ WHEA_ARM_PROCESSOR_ERROR_CONTEXT_INFORMATION_HEADER
 
@@ -16871,7 +17097,7 @@ DEFINE_GUID(WHEA_MSCHECK_GUID,
 //
 // This is the start of the Microsoft specific extensions to the Common Platform
 // Error Record specification. This is in accordance with Appendix N, section
-// 2.3 of the Unified Extensible Firware Interface specification, which allows
+// 2.3 of the Unified Extensible Firmware Interface specification, which allows
 // the specification of non-standard section bodies.
 //
 

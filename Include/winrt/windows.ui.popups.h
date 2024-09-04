@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -245,18 +245,18 @@ interface IUICommand;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0001 */
 /* [local] */ 
@@ -291,18 +291,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0002 */
 /* [local] */ 
@@ -337,18 +337,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0003 */
 /* [local] */ 
@@ -383,18 +383,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0004 */
 /* [local] */ 
@@ -429,18 +429,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0005 */
 /* [local] */ 
@@ -475,18 +475,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0006 */
 /* [local] */ 
@@ -678,18 +678,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0337 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0007 */
 /* [local] */ 
@@ -864,18 +864,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CPopups__CIUICommand;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0009 */
 /* [local] */ 
@@ -1016,18 +1016,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CPopups__CIUICommand;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0011 */
 /* [local] */ 
@@ -1210,18 +1210,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CPopups__CIUICommand;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0013 */
 /* [local] */ 
@@ -1486,18 +1486,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CPopups__CIUICommand;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0015 */
 /* [local] */ 
@@ -1619,18 +1619,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CPopup
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Epopups2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Epopups_0000_0017 */
 /* [local] */ 

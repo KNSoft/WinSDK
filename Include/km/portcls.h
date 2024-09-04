@@ -2749,7 +2749,6 @@ DECLARE_INTERFACE_(IMiniportAudioSignalProcessing,IUnknown)
 typedef IMiniportAudioSignalProcessing *PMINIPORTAudioSignalProcessing;
 
 #define IMP_IMiniportAudioSignalProcessing\
-    IMP_IUnknown;\
     STDMETHODIMP_(NTSTATUS) GetModes\
     (\
         _In_                                        ULONG   Pin,\
@@ -4674,6 +4673,63 @@ PcUnregisterAdapterPnpManagement
 
 #endif  //PC_OLD_NAMES
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
+// {1E092CE2-DB25-483B-8446-B0961215258B}
+DEFINE_GUID(IID_IPortClsNotifications,
+0x1E092CE2L, 0xDB25, 0x483B, 0x84, 0x46, 0xB0, 0x96, 0x12, 0x15, 0x25, 0x8B);
+
+/*****************************************************************************
+ * IPortClsNotifications
+ *****************************************************************************
+ * An interface implemented by ports to provide
+ * notification helpers to miniports.
+ */
+
+typedef struct _PCNOTIFICATION_BUFFER 
+{
+    UCHAR NotificationBuffer[1];
+} PCNOTIFICATION_BUFFER, *PPCNOTIFICATION_BUFFER;
+
+DECLARE_INTERFACE_(IPortClsNotifications,IUnknown)
+{
+    DEFINE_ABSTRACT_UNKNOWN()   //  For IUnknown
+
+    STDMETHOD_(NTSTATUS, AllocNotificationBuffer)
+    (   THIS_
+        _In_    POOL_TYPE               PoolType,
+        _In_    USHORT                  NumberOfBytes,
+        _Out_   PPCNOTIFICATION_BUFFER* NotificationBuffer
+    )   PURE;
+    
+    STDMETHOD_(void, FreeNotificationBuffer)
+    (   THIS_
+        _In_    PPCNOTIFICATION_BUFFER  NotificationBuffer
+    )   PURE;
+    
+    STDMETHOD_(void, SendNotification)
+    (   THIS_
+        _In_    const GUID*             NotificationId,
+        _In_    PPCNOTIFICATION_BUFFER  NotificationBuffer
+    )   PURE;
+};
+
+typedef IPortClsNotifications *PPORTCLSNOTIFICATIONS;
+
+#define IMP_IPortClsNotifications\
+    STDMETHODIMP_(NTSTATUS) AllocNotificationBuffer\
+    (   _In_    POOL_TYPE      	        PoolType,\
+        _In_    USHORT                  NumberOfBytes,\
+        _Out_   PPCNOTIFICATION_BUFFER* NotificationBuffer\
+    );\
+    STDMETHODIMP_(void)     FreeNotificationBuffer\
+    (   _In_    PPCNOTIFICATION_BUFFER  NotificationBuffer\
+    );\
+    STDMETHODIMP_(void)     SendNotification\
+    (   _In_    const GUID*             NotificationId,\
+        _In_    PPCNOTIFICATION_BUFFER  NotificationBuffer\
+    )
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
 
 #endif //_PORTCLS_H_

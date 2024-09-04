@@ -466,7 +466,7 @@ FreeAddrInfoExW(
 #define FreeAddrInfoEx      FreeAddrInfoExW
 #endif
 
-#ifdef INCL_WINSOCK_API_TYPEDEFS
+#if INCL_WINSOCK_API_TYPEDEFS
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 typedef

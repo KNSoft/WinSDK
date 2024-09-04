@@ -265,7 +265,7 @@ WINOLEAUTAPI BstrFromVector (_In_ SAFEARRAY *psa, _Out_ BSTR *pbstr);
 #endif
 
 // SOUTHASIA START
-/* SOUTHASIA 
+/* SOUTHASIA
  * For VarBstrFromDate only - forces years to be 4 digits rather than shortening
  * to 2-digits when the years is in the date window.
  */
@@ -422,7 +422,7 @@ WINOLEAUTAPI VarCyFromUI8(ULONG64 ui64In, _Out_ CY FAR* pcyOut);
 WINOLEAUTAPI VarCyFromDec(_In_ const DECIMAL *pdecIn, _Out_ CY *pcyOut);
 
 WINOLEAUTAPI VarBstrFromUI1(BYTE bVal, LCID lcid, ULONG dwFlags, _Out_ BSTR * pbstrOut);
-WINOLEAUTAPI VarBstrFromI2(SHORT iVal, LCID lcid, ULONG dwFlags, BSTR * pbstrOut);
+WINOLEAUTAPI VarBstrFromI2(SHORT iVal, LCID lcid, ULONG dwFlags, _Out_ BSTR * pbstrOut);
 WINOLEAUTAPI VarBstrFromI4(LONG lIn, LCID lcid, ULONG dwFlags, _Out_ BSTR * pbstrOut);
 WINOLEAUTAPI VarBstrFromI8(LONG64 i64In, LCID lcid, ULONG dwFlags, _Out_ BSTR FAR* pbstrOut);
 WINOLEAUTAPI VarBstrFromR4(FLOAT fltIn, LCID lcid, ULONG dwFlags, _Out_ BSTR * pbstrOut);
@@ -453,55 +453,55 @@ WINOLEAUTAPI VarBoolFromUI4(ULONG ulIn, _Out_ VARIANT_BOOL *pboolOut);
 WINOLEAUTAPI VarBoolFromUI8(ULONG64 i64In, _Out_ VARIANT_BOOL FAR* pboolOut);
 WINOLEAUTAPI VarBoolFromDec(_In_ const DECIMAL *pdecIn, _Out_ VARIANT_BOOL *pboolOut);
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI1(
     _In_ BYTE bIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromI2(
     _In_ SHORT uiIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromI4(
     _In_ LONG lIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromI8(
     _In_ LONG64 i64In,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromR4(
     _In_ FLOAT fltIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromR8(
     _In_ DOUBLE dblIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromDate(
     _In_ DATE dateIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromCy(
     _In_ CY cyIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromStr(
     _In_ LPCOLESTR strIn,
     _In_ LCID lcid,
@@ -509,38 +509,38 @@ VarI1FromStr(
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromDisp(
     _In_ IDispatch *pdispIn,
     _In_ LCID lcid,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromBool(
     _In_ VARIANT_BOOL boolIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI2(
     _In_ USHORT uiIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI4(
     _In_ ULONG ulIn,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromUI8(
     _In_ ULONG64 i64In,
     _Out_ CHAR *pcOut
     );
 
-WINOLEAUTAPI 
+WINOLEAUTAPI
 VarI1FromDec(
     _In_ const DECIMAL *pdecIn,
     _Out_ CHAR *pcOut
@@ -913,10 +913,10 @@ STDAPI VarR8Round(_In_ double dblIn, _In_ int cDecimals, _Out_ double *pdblResul
 #define VARCMP_NULL 3
 
 // VT_HARDTYPE tells the compare routine that the argument is a literal or
-// otherwise declared of that specific type.  It causes comparison rules to 
+// otherwise declared of that specific type.  It causes comparison rules to
 // change. For example, if a hard-type string is compared to a variant (not hard
-// -type) number, the number is converted to string.  If a hard-type number is 
-// compared to a variant string, the string is converted to number.  If they're 
+// -type) number, the number is converted to string.  If a hard-type number is
+// compared to a variant string, the string is converted to number.  If they're
 // both variant, then number < string.
 #define VT_HARDTYPE VT_RESERVED
 
@@ -954,7 +954,7 @@ WINOLEAUTAPI VarUdateFromDate(_In_ DATE dateIn, _In_ ULONG dwFlags, _Out_ UDATE 
 
 /* API to retrieve the secondary(altername) month names
    Useful for Hijri, Polish and Russian alternate month names
-*/   
+*/
 _Check_return_
 WINOLEAUTAPI GetAltMonthNames(LCID lcid, _Outptr_result_buffer_maybenull_(13) LPOLESTR * * prgp);
 
@@ -970,81 +970,81 @@ WINOLEAUTAPI GetAltMonthNames(LCID lcid, _Outptr_result_buffer_maybenull_(13) LP
 
 WINOLEAUTAPI VarFormat(
 	_In_ LPVARIANT pvarIn,
-	_In_opt_ LPOLESTR pstrFormat, 
-	int iFirstDay, 
-	int iFirstWeek, 
-	ULONG dwFlags, 
+	_In_opt_ LPOLESTR pstrFormat,
+	int iFirstDay,
+	int iFirstWeek,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatDateTime(
-	_In_ LPVARIANT pvarIn, 
-	int iNamedFormat, 
-	ULONG dwFlags, 
+	_In_ LPVARIANT pvarIn,
+	int iNamedFormat,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatNumber(
-	_In_ LPVARIANT pvarIn, 
-	int iNumDig, 
-	int iIncLead, 
-	int iUseParens, 
-	int iGroup, 
-	ULONG dwFlags, 
+	_In_ LPVARIANT pvarIn,
+	int iNumDig,
+	int iIncLead,
+	int iUseParens,
+	int iGroup,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatPercent(
-	_In_ LPVARIANT pvarIn, 
-	int iNumDig, 
-	int iIncLead, 
-	int iUseParens, 
-	int iGroup, 
-	ULONG dwFlags, 
+	_In_ LPVARIANT pvarIn,
+	int iNumDig,
+	int iIncLead,
+	int iUseParens,
+	int iGroup,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarFormatCurrency(
-	_In_ LPVARIANT pvarIn, 
-	int iNumDig, 
-	int iIncLead,  
-	int iUseParens, 
-	int iGroup, 
-	ULONG dwFlags, 
+	_In_ LPVARIANT pvarIn,
+	int iNumDig,
+	int iIncLead,
+	int iUseParens,
+	int iGroup,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
 
 WINOLEAUTAPI VarWeekdayName(
-	int iWeekday, 
-	int fAbbrev, 
-	int iFirstDay, 
-	ULONG dwFlags, 
+	int iWeekday,
+	int fAbbrev,
+	int iFirstDay,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
-	
+
 WINOLEAUTAPI VarMonthName(
-	int iMonth, 
-	int fAbbrev, 
-	ULONG dwFlags, 
+	int iMonth,
+	int fAbbrev,
+	ULONG dwFlags,
 	_Out_ BSTR *pbstrOut
 	);
 
 WINOLEAUTAPI VarFormatFromTokens(
-	_In_ LPVARIANT pvarIn, 
-	_In_opt_ LPOLESTR pstrFormat, 
-	_In_reads_(_Inexpressible_("from VarTokenizeFormatString")) LPBYTE pbTokCur, 
-	ULONG dwFlags, 
-	_Out_ BSTR *pbstrOut, 
+	_In_ LPVARIANT pvarIn,
+	_In_opt_ LPOLESTR pstrFormat,
+	_In_reads_(_Inexpressible_("from VarTokenizeFormatString")) LPBYTE pbTokCur,
+	ULONG dwFlags,
+	_Out_ BSTR *pbstrOut,
 	LCID lcid
 	);
-	
+
 WINOLEAUTAPI VarTokenizeFormatString(
-	_In_opt_ LPOLESTR pstrFormat, 
-	_Inout_ LPBYTE rgbTok, 
-	int cbTok, 
-	int iFirstDay, 
-	int iFirstWeek, 
-	LCID lcid, 
+	_In_opt_ LPOLESTR pstrFormat,
+	_Inout_ LPBYTE rgbTok,
+	int cbTok,
+	int iFirstDay,
+	int iFirstWeek,
+	LCID lcid,
 	_In_opt_ int *pcbActual
 	);
 
@@ -1147,7 +1147,7 @@ typedef enum tagREGKIND
 } REGKIND;
 
 
-// Constants for specifying format in which TLB should be loaded 
+// Constants for specifying format in which TLB should be loaded
 // (the default format is 32-bit on WIN32 and 64-bit on WIN64)
 #define LOAD_TLB_AS_32BIT	0x20
 #define LOAD_TLB_AS_64BIT	0x40
@@ -1186,15 +1186,15 @@ WINOLEAUTAPI UnRegisterTypeLib(REFGUID libID, WORD wVerMajor,
 WINOLEAUTAPI RegisterTypeLibForUser(ITypeLib *ptlib,_In_ OLECHAR  *szFullPath,
 			_In_opt_ OLECHAR  *szHelpDir);
 
-/* Removes type library information that was registered by using RegisterTypeLibForUser. 
+/* Removes type library information that was registered by using RegisterTypeLibForUser.
 */
 WINOLEAUTAPI UnRegisterTypeLibForUser(
     REFGUID         libID,
-    WORD   wMajorVerNum, 
-    WORD   wMinorVerNum, 
-    LCID            lcid, 
+    WORD   wMajorVerNum,
+    WORD   wMinorVerNum,
+    LCID            lcid,
     SYSKIND         syskind);
-			
+
 _Check_return_
 WINOLEAUTAPI CreateTypeLib(SYSKIND syskind, LPCOLESTR szFile,
             ICreateTypeLib ** ppctlib);
@@ -1238,10 +1238,10 @@ typedef struct tagINTERFACEDATA {
  */
 _Check_return_
 WINOLEAUTAPI DispGetParam(
-	_In_ DISPPARAMS * pdispparams, 
+	_In_ DISPPARAMS * pdispparams,
 	UINT position,
-	VARTYPE vtTarg, 
-	_Out_ VARIANT * pvarResult, 
+	VARTYPE vtTarg,
+	_Out_ VARIANT * pvarResult,
 	_Out_opt_ UINT * puArgErr
 	);
 
@@ -1346,7 +1346,7 @@ WINOLEAUTAPI_(void) OaEnablePerUserTLibRegistration(void);
 
 // Declare variant access functions.
 
-#if __STDC__ || defined(NONAMELESSUNION)
+#if (__STDC__ && !defined(_FORCENAMELESSUNION)) || defined(NONAMELESSUNION) || (!defined(_MSC_EXTENSIONS) && !defined(_FORCENAMELESSUNION))
 #define V_UNION(X, Y)   ((X)->n1.n2.n3.Y)
 #define V_VT(X)         ((X)->n1.n2.vt)
 #define V_RECORDINFO(X) ((X)->n1.n2.n3.brecVal.pRecInfo)

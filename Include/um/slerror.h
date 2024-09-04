@@ -66,16 +66,16 @@
 //
 // Define the facility codes
 //
-#define _FACILITY_WINDOWS_STORE          0x3F
 #define FACILITY_SL_ITF                  0x4
+#define _FACILITY_WINDOWS_STORE          0x3F
 
 
 //
 // Define the severity codes
 //
-#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_SUCCESS          0x0
 #define STATUS_SEVERITY_INFORMATIONAL    0x1
+#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_ERROR            0x3
 
 
@@ -3765,13 +3765,13 @@
 #define SL_REMAPPING_MDOLLAR_OSR_LICENSE_THROTTLED ((HRESULT)0x803FABBDL)
 
 //
-// MessageId: SL_REMAPPING_MDOLLAR_OSR_EDITION_MISMATCH
+// MessageId: SL_REMAPPING_MDOLLAR_OSR_DEVICE_THROTTLED
 //
 // MessageText:
 //
-// Error code indicating that user not eligible for reactivation because edition does not match.
+// Error code indicating that device is not eligible for reactivation because it is throttled.
 //
-#define SL_REMAPPING_MDOLLAR_OSR_EDITION_MISMATCH ((HRESULT)0x803FABBEL)
+#define SL_REMAPPING_MDOLLAR_OSR_DEVICE_THROTTLED ((HRESULT)0x803FABBEL)
 
 //
 // MessageId: SL_REMAPPING_MDOLLAR_OSR_GP_DISABLED
@@ -3781,5 +3781,41 @@
 // Error code indicating that user not eligible for because policy does not allow it.
 //
 #define SL_REMAPPING_MDOLLAR_OSR_GP_DISABLED ((HRESULT)0x803FABBFL)
+
+//
+// MessageId: SL_REMAPPING_MDOLLAR_OSR_HARDWARE_BLOCKED
+//
+// MessageText:
+//
+// Error code indicating that the device is not eligible for reactivation because it is blocked.
+//
+#define SL_REMAPPING_MDOLLAR_OSR_HARDWARE_BLOCKED ((HRESULT)0x803FABC0L)
+
+//
+// MessageId: SL_REMAPPING_MDOLLAR_OSR_USER_BLOCKED
+//
+// MessageText:
+//
+// Error code indicating that the user is not eligible for reactivation because the user is blocked.
+//
+#define SL_REMAPPING_MDOLLAR_OSR_USER_BLOCKED ((HRESULT)0x803FABC1L)
+
+//
+// MessageId: SL_REMAPPING_MDOLLAR_OSR_LICENSE_BLOCKED
+//
+// MessageText:
+//
+// Error code indicating that the license is not eligible for transfer because the license is blocked.
+//
+#define SL_REMAPPING_MDOLLAR_OSR_LICENSE_BLOCKED ((HRESULT)0x803FABC2L)
+
+//
+// MessageId: SL_REMAPPING_MDOLLAR_OSR_DEVICE_BLOCKED
+//
+// MessageText:
+//
+// Error code indicating that the device is not eligible for transfer because the device is blocked.
+//
+#define SL_REMAPPING_MDOLLAR_OSR_DEVICE_BLOCKED ((HRESULT)0x803FABC3L)
 
 #endif//_SLERROR_

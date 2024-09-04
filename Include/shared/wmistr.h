@@ -19,6 +19,8 @@ Abstract:
 
 #if _MSC_VER >= 1200
 #pragma warning(push)
+#pragma warning(disable: 4668) // #if not_defined treated as #if 0
+#pragma warning(disable: 4820) // padding added
 #endif
 #pragma warning(disable: 4200) // nonstandard extension used : zero-sized array in struct/union
 #pragma warning(disable: 4201) // nonstandard extension used : nameless struct/union
@@ -121,6 +123,10 @@ typedef struct _WNODE_HEADER
 #define WNODE_FLAG_SEND_DATA_BLOCK  0x00400000 // Data Block delivery
 #endif
 
+// Indicates that the EVENT_TRACE_PROPERTIES struct that this is a part
+// of is at least EVENT_TRACE_PROPERTIES_V2 and contains a version field.
+#define WNODE_FLAG_VERSIONED_PROPERTIES     0x00800000
+
 // Set for events that are WNODE_EVENT_REFERENCE
 // Mask for event severity level. Level 0xff is the most severe type of event
 #define WNODE_FLAG_SEVERITY_MASK 0xff000000
@@ -164,7 +170,7 @@ typedef struct tagWNODE_ALL_DATA
                                     /* [InstanceCount] */
     } DUMMYUNIONNAME;
 
-    // padding so that first data block begins on a 8 byte boundry
+    // padding so that first data block begins on a 8 byte boundary
 
     // data blocks and instance names for all instances
 
@@ -189,7 +195,7 @@ typedef struct tagWNODE_SINGLE_INSTANCE
     ULONG SizeDataBlock;    // Size of data block for instance
 
     UCHAR VariableData[];
-    // instance names and padding so data block begins on 8 byte boundry
+    // instance names and padding so data block begins on 8 byte boundary
 
     // data block
 } WNODE_SINGLE_INSTANCE, *PWNODE_SINGLE_INSTANCE;
@@ -215,7 +221,7 @@ typedef struct tagWNODE_SINGLE_ITEM
     ULONG SizeDataItem;     // Size of data item
 
     UCHAR VariableData[];
-    // instance names and padding so data value begins on 8 byte boundry
+    // instance names and padding so data value begins on 8 byte boundary
 
     // data item value
 } WNODE_SINGLE_ITEM, *PWNODE_SINGLE_ITEM;
@@ -245,7 +251,7 @@ typedef struct tagWNODE_METHOD_ITEM
                             //            data
 
     UCHAR VariableData[];
-    // instance names and padding so data value begins on 8 byte boundry
+    // instance names and padding so data value begins on 8 byte boundary
 
     // data item value
 } WNODE_METHOD_ITEM, *PWNODE_METHOD_ITEM;

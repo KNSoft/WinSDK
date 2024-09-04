@@ -23,6 +23,7 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-libraryloader-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -432,16 +433,11 @@ LoadLibraryExW(
 #define LOAD_LIBRARY_SEARCH_USER_DIRS       0x00000400
 #define LOAD_LIBRARY_SEARCH_SYSTEM32        0x00000800
 #define LOAD_LIBRARY_SEARCH_DEFAULT_DIRS    0x00001000
-#define LOAD_LIBRARY_SAFE_CURRENT_DIRS      0x00002000
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 
-//
-// Define LOAD_LIBRARY_SEARCH_SYSTEM32_NO_FORWARDER the same as LOAD_LIBRARY_SEARCH_SYSTEM32
-// for now such that we can update internal code to use the new flag without any effect. Once we 
-// updated our code, we'll change this flag to 0x00004000, and update loader to handle it.
-//
+#define LOAD_LIBRARY_SAFE_CURRENT_DIRS      0x00002000
 
 #define LOAD_LIBRARY_SEARCH_SYSTEM32_NO_FORWARDER   0x00004000
 
@@ -455,6 +451,13 @@ LoadLibraryExW(
 #define LOAD_LIBRARY_SEARCH_SYSTEM32_NO_FORWARDER   LOAD_LIBRARY_SEARCH_SYSTEM32
 
 #endif // (_APISET_LIBLOADER_VER >= 0x0202)
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#define LOAD_LIBRARY_OS_INTEGRITY_CONTINUITY   0x00008000
+
+#endif
 
 WINBASEAPI
 _Ret_maybenull_

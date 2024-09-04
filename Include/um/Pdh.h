@@ -1049,6 +1049,7 @@ PdhSelectDataSourceA(
 );
 
 BOOL
+__stdcall
 PdhIsRealTimeQuery(
     _In_ PDH_HQUERY hQuery
 );

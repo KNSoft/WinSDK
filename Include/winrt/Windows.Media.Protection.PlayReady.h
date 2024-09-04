@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -884,6 +884,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Protection {
+                namespace PlayReady {
+                    interface IPlayReadyLicense2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest;
@@ -926,6 +948,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Protection {
+                namespace PlayReady {
+                    interface IPlayReadyLicenseAcquisitionServiceRequest3;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseIterableFactory_FWD_DEFINED__
@@ -992,6 +1036,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Protection {
+                namespace PlayReady {
+                    interface IPlayReadyLicenseSession2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSessionFactory_FWD_DEFINED__
@@ -1305,18 +1371,18 @@ interface IPlayReadyDomain;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0001 */
 /* [local] */ 
@@ -1351,18 +1417,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0002 */
 /* [local] */ 
@@ -1412,18 +1478,18 @@ interface IPlayReadyLicense;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0003 */
 /* [local] */ 
@@ -1458,18 +1524,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0004 */
 /* [local] */ 
@@ -1519,18 +1585,18 @@ interface IPlayReadySecureStopServiceRequest;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4046 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4046 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0005 */
 /* [local] */ 
@@ -1565,18 +1631,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4047 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4047 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0006 */
 /* [local] */ 
@@ -1626,18 +1692,18 @@ interface INDLicenseFetchResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4048 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4048 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0007 */
 /* [local] */ 
@@ -1672,18 +1738,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4049 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4049 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0008 */
 /* [local] */ 
@@ -1733,18 +1799,18 @@ interface INDSendResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4050 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4050 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0009 */
 /* [local] */ 
@@ -1779,18 +1845,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4051 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4051 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0010 */
 /* [local] */ 
@@ -1840,18 +1906,18 @@ interface INDStartResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4052 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4052 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0011 */
 /* [local] */ 
@@ -1886,18 +1952,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4053 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4053 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0012 */
 /* [local] */ 
@@ -1963,18 +2029,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4054 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4054 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0013 */
 /* [local] */ 
@@ -2024,18 +2090,18 @@ interface INDClosedCaptionDataReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4055 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4055 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0014 */
 /* [local] */ 
@@ -2085,18 +2151,18 @@ interface INDLicenseFetchCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4056 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4056 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0015 */
 /* [local] */ 
@@ -2146,18 +2212,18 @@ interface INDProximityDetectionCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4057 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4057 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0016 */
 /* [local] */ 
@@ -2207,18 +2273,18 @@ interface INDRegistrationCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4058 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4058 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0017 */
 /* [local] */ 
@@ -2253,18 +2319,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4059 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4059 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0018 */
 /* [local] */ 
@@ -2299,18 +2365,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4060 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4060 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0019 */
 /* [local] */ 
@@ -2345,18 +2411,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4061 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4061 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0020 */
 /* [local] */ 
@@ -2391,18 +2457,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4062 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4062 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0021 */
 /* [local] */ 
@@ -2461,18 +2527,18 @@ interface IAudioStreamDescriptor;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4063 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4063 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0022 */
 /* [local] */ 
@@ -2507,18 +2573,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4064 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4064 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0023 */
 /* [local] */ 
@@ -2553,18 +2619,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4065 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4065 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0024 */
 /* [local] */ 
@@ -2599,18 +2665,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4066 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4066 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0025 */
 /* [local] */ 
@@ -2669,18 +2735,18 @@ interface IVideoStreamDescriptor;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4067 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4067 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0026 */
 /* [local] */ 
@@ -2715,18 +2781,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4068 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4068 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0027 */
 /* [local] */ 
@@ -2761,18 +2827,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4069 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4069 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0028 */
 /* [local] */ 
@@ -2807,18 +2873,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4070 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4070 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0029 */
 /* [local] */ 
@@ -2864,18 +2930,18 @@ struct DateTime;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4071 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4071 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0030 */
 /* [local] */ 
@@ -3094,6 +3160,9 @@ typedef enum __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CPlayReadyITADataFor
 
 
 #endif
+
+
+
 
 
 
@@ -3786,21 +3855,24 @@ extern "C" {
 
 
 
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4072 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4072 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0031 */
 /* [local] */ 
@@ -3975,18 +4047,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CProtection__CPlayReady__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4073 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4073 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0033 */
 /* [local] */ 
@@ -4127,18 +4199,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CProtection__CPlayReady__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4074 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4074 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0035 */
 /* [local] */ 
@@ -4313,18 +4385,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CProtection__CPlayReady__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4075 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4075 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0037 */
 /* [local] */ 
@@ -4465,18 +4537,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CProtection__CPlayReady__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4076 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4076 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0039 */
 /* [local] */ 
@@ -4651,18 +4723,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CProtection__CPlayReady__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4077 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4077 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0041 */
 /* [local] */ 
@@ -4803,18 +4875,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CProtection__CPlayReady__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4078 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4078 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0043 */
 /* [local] */ 
@@ -4936,18 +5008,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CPr
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4079 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4699 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4079 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4699_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0045 */
 /* [local] */ 
@@ -5108,18 +5180,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CProtection__CPlayR
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4080 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4700 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4080 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4700 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4700_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4700_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0047 */
 /* [local] */ 
@@ -5241,18 +5313,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CPr
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4081 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4701 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4081 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4701 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4701_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4701_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0049 */
 /* [local] */ 
@@ -5413,18 +5485,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CProtection__CPlayR
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4082 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4702 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4082 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4702 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4702_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4702_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0051 */
 /* [local] */ 
@@ -5546,18 +5618,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CPr
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4083 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4703 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4083 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4703 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4703_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4703_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0053 */
 /* [local] */ 
@@ -5718,18 +5790,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CProtection__CPlayR
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4084 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4704 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4084 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4704 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4704_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4704_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0055 */
 /* [local] */ 
@@ -5849,18 +5921,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CProtection__CPl
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4085 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4705 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4085 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4705 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4705_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4705_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0057 */
 /* [local] */ 
@@ -5980,18 +6052,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CProtection__CPl
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0058_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4086 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4706 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4086 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4706 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4706_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4706_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0059 */
 /* [local] */ 
@@ -6111,18 +6183,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CProtection__CPl
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4087 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4707 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4087 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4707 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4707_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4707_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0061 */
 /* [local] */ 
@@ -6242,18 +6314,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CProtection__CPl
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0062_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4088 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4708 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4088 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4708 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4708_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready2Eidl_0000_4708_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0063 */
 /* [local] */ 
@@ -12472,9 +12544,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0097 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest[] = L"Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest";
-#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyLicense2[] = L"Windows.Media.Protection.PlayReady.IPlayReadyLicense2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0097 */
@@ -12484,6 +12556,175 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0097_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0097_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicense2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Protection {
+                    namespace PlayReady {
+                        
+                        MIDL_INTERFACE("30F4E7A7-D8E3-48A0-BCDA-FF9F40530436")
+                        IPlayReadyLicense2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SecureStopId( 
+                                /* [out][retval] */ __RPC__out GUID *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SecurityLevel( 
+                                /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InMemoryOnly( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExpiresInRealTime( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IPlayReadyLicense2 = __uuidof(IPlayReadyLicense2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SecureStopId )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out][retval] */ __RPC__out GUID *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SecurityLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InMemoryOnly )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExpiresInRealTime )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_get_SecureStopId(This,value)	\
+    ( (This)->lpVtbl -> get_SecureStopId(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_get_SecurityLevel(This,value)	\
+    ( (This)->lpVtbl -> get_SecurityLevel(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_get_InMemoryOnly(This,value)	\
+    ( (This)->lpVtbl -> get_InMemoryOnly(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_get_ExpiresInRealTime(This,value)	\
+    ( (This)->lpVtbl -> get_ExpiresInRealTime(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicense2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest[] = L"Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__
@@ -12638,7 +12879,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest2_INTERFACE_DEFINED__)
@@ -12646,13 +12887,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest2_INTERFACE_DEFINED__
@@ -12777,7 +13018,150 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest3[] = L"Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest3";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Protection {
+                    namespace PlayReady {
+                        
+                        MIDL_INTERFACE("394E5F4D-7F75-430D-B2E7-7F75F34B2D75")
+                        IPlayReadyLicenseAcquisitionServiceRequest3 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateLicenseIterable( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader *contentHeader,
+                                /* [in] */ boolean fullyEvaluated,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIIterable_1_Windows__CMedia__CProtection__CPlayReady__CIPlayReadyLicense **result) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IPlayReadyLicenseAcquisitionServiceRequest3 = __uuidof(IPlayReadyLicenseAcquisitionServiceRequest3);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateLicenseIterable )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyContentHeader *contentHeader,
+            /* [in] */ boolean fullyEvaluated,
+            /* [out][retval] */ __RPC__deref_out_opt __FIIterable_1_Windows__CMedia__CProtection__CPlayReady__CIPlayReadyLicense **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_CreateLicenseIterable(This,contentHeader,fullyEvaluated,result)	\
+    ( (This)->lpVtbl -> CreateLicenseIterable(This,contentHeader,fullyEvaluated,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseAcquisitionServiceRequest3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseIterableFactory_INTERFACE_DEFINED__)
@@ -12785,13 +13169,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseIterableFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseIterableFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseIterableFactory_INTERFACE_DEFINED__
@@ -12920,7 +13304,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseIterableFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseManagement_INTERFACE_DEFINED__)
@@ -12928,13 +13312,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseManagement_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseManagement_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseManagement_INTERFACE_DEFINED__
@@ -13061,7 +13445,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseManagement_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession_INTERFACE_DEFINED__)
@@ -13069,13 +13453,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession_INTERFACE_DEFINED__
@@ -13210,7 +13594,150 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyLicenseSession2[] = L"Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace Protection {
+                    namespace PlayReady {
+                        
+                        MIDL_INTERFACE("4909BE3A-3AED-4656-8AD7-EE0FD7799510")
+                        IPlayReadyLicenseSession2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateLicenseIterable( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader *contentHeader,
+                                /* [in] */ boolean fullyEvaluated,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIIterable_1_Windows__CMedia__CProtection__CPlayReady__CIPlayReadyLicense **licenseIterable) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IPlayReadyLicenseSession2 = __uuidof(IPlayReadyLicenseSession2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateLicenseIterable )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyContentHeader *contentHeader,
+            /* [in] */ boolean fullyEvaluated,
+            /* [out][retval] */ __RPC__deref_out_opt __FIIterable_1_Windows__CMedia__CProtection__CPlayReady__CIPlayReadyLicense **licenseIterable);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_CreateLicenseIterable(This,contentHeader,fullyEvaluated,licenseIterable)	\
+    ( (This)->lpVtbl -> CreateLicenseIterable(This,contentHeader,fullyEvaluated,licenseIterable) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSession2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSessionFactory_INTERFACE_DEFINED__)
@@ -13218,13 +13745,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSessionFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSessionFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSessionFactory_INTERFACE_DEFINED__
@@ -13351,7 +13878,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyLicenseSessionFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyMeteringReportServiceRequest_INTERFACE_DEFINED__)
@@ -13359,13 +13886,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyMeteringReportServiceRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyMeteringReportServiceRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyMeteringReportServiceRequest_INTERFACE_DEFINED__
@@ -13504,7 +14031,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyMeteringReportServiceRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyRevocationServiceRequest_INTERFACE_DEFINED__)
@@ -13512,13 +14039,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyRevocationServiceRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyRevocationServiceRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyRevocationServiceRequest_INTERFACE_DEFINED__
@@ -13633,7 +14160,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyRevocationServiceRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopIterableFactory_INTERFACE_DEFINED__)
@@ -13641,13 +14168,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopIterableFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopIterableFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopIterableFactory_INTERFACE_DEFINED__
@@ -13776,7 +14303,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopIterableFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequest_INTERFACE_DEFINED__)
@@ -13784,13 +14311,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequest_INTERFACE_DEFINED__
@@ -13957,7 +14484,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequestFactory_INTERFACE_DEFINED__)
@@ -13965,13 +14492,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequestFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequestFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequestFactory_INTERFACE_DEFINED__
@@ -14116,7 +14643,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySecureStopServiceRequestFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyServiceRequest_INTERFACE_DEFINED__)
@@ -14124,13 +14651,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyServiceRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyServiceRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyServiceRequest_INTERFACE_DEFINED__
@@ -14339,7 +14866,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyServiceRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySoapMessage_INTERFACE_DEFINED__)
@@ -14347,13 +14874,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySoapMessage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySoapMessage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySoapMessage_INTERFACE_DEFINED__
@@ -14500,7 +15027,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadySoapMessage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics_INTERFACE_DEFINED__)
@@ -14508,13 +15035,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics_INTERFACE_DEFINED__
@@ -14709,7 +15236,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics2_INTERFACE_DEFINED__)
@@ -14717,13 +15244,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics2_INTERFACE_DEFINED__
@@ -14848,7 +15375,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics3_INTERFACE_DEFINED__)
@@ -14856,13 +15383,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics3_INTERFACE_DEFINED__
@@ -14999,7 +15526,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_INTERFACE_DEFINED__)
@@ -15007,13 +15534,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_INTERFACE_DEFINED__
@@ -15148,7 +15675,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 #endif 	/* ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0117 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_Protection_PlayReady_NDClient_DEFINED
@@ -15269,13 +15796,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114 */
+/* interface __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eprotection2Eplayready_0000_0117_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

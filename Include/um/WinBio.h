@@ -217,6 +217,19 @@ typedef struct _WINBIO_ASYNC_RESULT {
 
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+        struct {
+            WINBIO_IDENTITY Identity;
+            WINBIO_PROTECTION_POLICY Policy;
+        } GetProtectionPolicy;
+
+        struct {
+            WINBIO_EXTENDED_UNIT_STATUS ExtendedStatus;
+        } NotifyUnitStatusChange;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
     } Parameters;
 
 } WINBIO_ASYNC_RESULT, *PWINBIO_ASYNC_RESULT;

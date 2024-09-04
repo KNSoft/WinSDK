@@ -54,7 +54,6 @@ DEFINE_GUID( GUID_DEVICE_PROCESSOR,         0x97fadb10L, 0x4e33, 0x40ae, 0x35, 0
 DEFINE_GUID( GUID_DEVICE_MEMORY,            0x3fd0f03dL, 0x92e0, 0x45fb, 0xb7, 0x5c, 0x5e, 0xd8, 0xff, 0xb0, 0x10, 0x21 );
 DEFINE_GUID( GUID_DEVICE_ACPI_TIME,         0x97f99bf6L, 0x4497, 0x4f18, 0xbb, 0x22, 0x4b, 0x9f, 0xb2, 0xfb, 0xef, 0x9c );
 DEFINE_GUID( GUID_DEVICE_MESSAGE_INDICATOR, 0XCD48A365L, 0xfa94, 0x4ce2, 0xa2, 0x32, 0xa1, 0xb7, 0x64, 0xe5, 0xd8, 0xb4 );
-DEFINE_GUID( GUID_DEVICE_GENERIC_EVENT_DEVICE, 0xb52f963c, 0x5bd1, 0x442a, 0x86, 0xdd, 0x9f, 0x38, 0xe1, 0x1, 0x9, 0x46);
 
 // copied from hidclass.h
 DEFINE_GUID( GUID_CLASS_INPUT,              0x4D1E55B2L, 0xF16F, 0x11CF, 0x88, 0xCB, 0x00, 0x11, 0x11, 0x00, 0x00, 0x30 );
@@ -207,8 +206,8 @@ typedef struct _BATTERY_CHARGER_STATUS
 } BATTERY_CHARGER_STATUS, *PBATTERY_CHARGER_STATUS;
 
 //
-// Payload for IOCTL_BATTERY_SET_INFORMATION information level
-// BatteryChargerStatus when Type is set to BatteryChargingSourceType_USB.
+// Payload for IOCTL_BATTERY_SET_INFORMATION/BatteryChargerStatus (CAD->Battery)
+// when Type is set to BatteryChargingSourceType_USB.
 //
 // CAD uses this structure to identify charger source properties to the Battery.
 //
@@ -264,8 +263,17 @@ typedef struct _BATTERY_USB_CHARGER_STATUS
     ULONGLONG PortId;
 
     //
-    // Opaque data passed to CAD by USB Fn stack, this normally contains USB
-    // port type information that CAD does not attempt to interpret.
+    // Power source specific information:
+    //
+    // Type                           | PowerSourceInformation
+    // -------------------------------|-----------------------
+    // BatteryChargingSourceType_USB  | USBFN_PORT_TYPE
+    // <other values>                 | <undefined>
+    //
+    // N.B. On 64-bit systems, the high order 32-bits are always reset and must
+    //      be unused. In other words, this value must not exceed 0xffffffff.
+    //      This is to ensure semantic compatibility with 32-bit applications on
+    //      64-bit systems.
     //
 
     PVOID PowerSourceInformation;
@@ -713,7 +721,7 @@ typedef struct _WAKE_ALARM_INFORMATION {
     //
 
     ULONG Timeout;
-   
+
 } WAKE_ALARM_INFORMATION, *PWAKE_ALARM_INFORMATION;
 
 //
@@ -729,10 +737,10 @@ typedef struct _WAKE_ALARM_INFORMATION {
 
 #define IOCTL_ACPI_SET_REAL_TIME     \
         CTL_CODE(FILE_DEVICE_BATTERY, 0x85, METHOD_BUFFERED, FILE_WRITE_ACCESS)
-        
+
 #define IOCTL_GET_WAKE_ALARM_SYSTEM_POWERSTATE    \
         CTL_CODE(FILE_DEVICE_BATTERY, 0x86, METHOD_BUFFERED, FILE_READ_DATA)
-        
+
 typedef struct _ACPI_REAL_TIME {
     UINT16 Year;          // Year : 2010 - 9999
     UINT8 Month;          // Month : 1 - 12
@@ -746,7 +754,6 @@ typedef struct _ACPI_REAL_TIME {
     UINT8 DayLight;       // DayLight : 0-1
     UINT8 Reserved1[3];   // Reserved: Must be 0
 } ACPI_REAL_TIME, *PACPI_REAL_TIME;
-
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

@@ -41,6 +41,7 @@
 #endif
 
 /* APISET_NAME: api-ms-win-core-sysinfo-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -199,9 +200,9 @@ SetLocalTime(
 // end_1_0
 // begin_1_0
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 __drv_preferredFunction("GetTickCount64", "GetTickCount overflows roughly every 49 days.  Code that does not take that into account can loop indefinitely.  GetTickCount64 operates on 64 bit values and does not have that problem")
 WINBASEAPI
@@ -211,13 +212,6 @@ GetTickCount(
     VOID
     );
 
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 
 #if (_WIN32_WINNT >= 0x0600)

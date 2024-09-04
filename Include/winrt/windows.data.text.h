@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -648,18 +648,18 @@ interface IAlternateWordForm;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0001 */
 /* [local] */ 
@@ -694,18 +694,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0002 */
 /* [local] */ 
@@ -764,18 +764,18 @@ interface ISelectableWordSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0003 */
 /* [local] */ 
@@ -810,18 +810,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0004 */
 /* [local] */ 
@@ -880,18 +880,18 @@ interface ITextPhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0005 */
 /* [local] */ 
@@ -926,18 +926,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0006 */
 /* [local] */ 
@@ -985,18 +985,18 @@ struct TextSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0007 */
 /* [local] */ 
@@ -1031,18 +1031,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0008 */
 /* [local] */ 
@@ -1101,18 +1101,18 @@ interface IWordSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0009 */
 /* [local] */ 
@@ -1147,18 +1147,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0010 */
 /* [local] */ 
@@ -1193,18 +1193,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0011 */
 /* [local] */ 
@@ -1239,18 +1239,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0012 */
 /* [local] */ 
@@ -1285,18 +1285,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0013 */
 /* [local] */ 
@@ -1331,18 +1331,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0014 */
 /* [local] */ 
@@ -1377,18 +1377,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0015 */
 /* [local] */ 
@@ -1423,18 +1423,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0016 */
 /* [local] */ 
@@ -1469,18 +1469,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0017 */
 /* [local] */ 
@@ -1515,18 +1515,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0018 */
 /* [local] */ 
@@ -1561,18 +1561,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0019 */
 /* [local] */ 
@@ -1607,18 +1607,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0020 */
 /* [local] */ 
@@ -1653,18 +1653,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0021 */
 /* [local] */ 
@@ -1699,18 +1699,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0022 */
 /* [local] */ 
@@ -1745,18 +1745,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0023 */
 /* [local] */ 
@@ -1791,18 +1791,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0024 */
 /* [local] */ 
@@ -1837,18 +1837,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0025 */
 /* [local] */ 
@@ -1883,18 +1883,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0026 */
 /* [local] */ 
@@ -1929,18 +1929,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0350_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0027 */
 /* [local] */ 
@@ -1975,18 +1975,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0351_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0028 */
 /* [local] */ 
@@ -2021,18 +2021,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0352_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0029 */
 /* [local] */ 
@@ -2278,18 +2278,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0353_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0030 */
 /* [local] */ 
@@ -2464,18 +2464,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CData__CText__CAlternateWordForm;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0354_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0032 */
 /* [local] */ 
@@ -2616,18 +2616,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CData__CText__CAlternateWordForm;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0355_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0034 */
 /* [local] */ 
@@ -2802,18 +2802,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CData__CText__CSelectableWordSegm
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0356_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0036 */
 /* [local] */ 
@@ -2954,18 +2954,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CData__CText__CSelectableWordSegm
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0357_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0038 */
 /* [local] */ 
@@ -3140,18 +3140,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CData__CText__CTextPhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0358_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0040 */
 /* [local] */ 
@@ -3292,18 +3292,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CData__CText__CTextPhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0359_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0042 */
 /* [local] */ 
@@ -3478,18 +3478,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CData__CText__CTextSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0360_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0044 */
 /* [local] */ 
@@ -3630,18 +3630,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CData__CText__CTextSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0361_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0046 */
 /* [local] */ 
@@ -3816,18 +3816,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CData__CText__CWordSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0362_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0048 */
 /* [local] */ 
@@ -3968,18 +3968,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CData__CText__CWordSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0363_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0050 */
 /* [local] */ 
@@ -4162,18 +4162,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CData__CText__CTextSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0364_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0052 */
 /* [local] */ 
@@ -4324,18 +4324,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING___FIVectorView_1_Windows__CDat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0365_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0054 */
 /* [local] */ 
@@ -4510,18 +4510,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVectorView_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0366_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0056 */
 /* [local] */ 
@@ -4662,18 +4662,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVectorView_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0367_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0058 */
 /* [local] */ 
@@ -4850,18 +4850,18 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING___FIVectorView_1_Windows__CData__CT
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0059_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0375 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0368_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0375_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0060 */
 /* [local] */ 
@@ -5068,18 +5068,18 @@ EXTERN_C const IID IID___FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0061_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0376 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0369_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0376_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0062 */
 /* [local] */ 
@@ -5262,18 +5262,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CData__CText__CAlternateWordFor
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0063_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0377 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0370_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0377_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0064 */
 /* [local] */ 
@@ -5456,18 +5456,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CData__CText__CSelectableWordSe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0065_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0378 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0371_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0378_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0066 */
 /* [local] */ 
@@ -5650,18 +5650,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CData__CText__CTextPhoneme;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0067_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0379 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0372_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0379_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0068 */
 /* [local] */ 
@@ -5844,18 +5844,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CData__CText__CWordSegment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0069_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0380 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0373_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0380_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0070 */
 /* [local] */ 
@@ -5977,18 +5977,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0071_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0381 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374 */
+/* interface __MIDL_itf_windows2Edata2Etext2Eidl_0000_0381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0374_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edata2Etext2Eidl_0000_0381_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edata2Etext_0000_0072 */
 /* [local] */ 

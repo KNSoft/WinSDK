@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -132,6 +132,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
+#include "Windows.ApplicationModel.Calls.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -145,6 +146,9 @@ extern "C"{
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Eapplicationmodel2Ecalls_h__)
+#include <Windows.ApplicationModel.Calls.h>
+#endif // !defined(__windows2Eapplicationmodel2Ecalls_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)

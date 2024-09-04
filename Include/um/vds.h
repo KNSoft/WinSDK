@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -7937,6 +7937,10 @@ EXTERN_C const IID IID_IVdsMaintenance;
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 #if (WINVER >= _WIN32_WINNT_WIN7)
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#pragma warning(disable:4820) /* padding added after data member */
+#endif
 
 
 
@@ -8415,6 +8419,9 @@ EXTERN_C const IID IID_IVdsOpenVDisk;
 
 #define	VDS_ATTACH_VIRTUAL_DISK_FLAG_USE_FILE_ACL	( 0x1 )
 
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
 #endif // _WIN32_WINNT_WIN7
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

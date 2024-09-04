@@ -983,6 +983,14 @@ typedef struct _HYBRID_DEMOTE_BY_SIZE {
 #define FIRMWARE_STATUS_CONTROLLER_ERROR                    0x10
 #define FIRMWARE_STATUS_POWER_CYCLE_REQUIRED                0x20
 #define FIRMWARE_STATUS_DEVICE_ERROR                        0x40
+#define FIRMWARE_STATUS_INTERFACE_CRC_ERROR                 0x80
+#define FIRMWARE_STATUS_UNCORRECTABLE_DATA_ERROR            0x81
+#define FIRMWARE_STATUS_MEDIA_CHANGE                        0x82
+#define FIRMWARE_STATUS_ID_NOT_FOUND                        0x83
+#define FIRMWARE_STATUS_MEDIA_CHANGE_REQUEST                0x84
+#define FIRMWARE_STATUS_COMMAND_ABORT                       0x85
+#define FIRMWARE_STATUS_END_OF_MEDIA                        0x86
+#define FIRMWARE_STATUS_ILLEGAL_LENGTH                      0x87
 
 //
 // For IOCTL_SCSI_MINIPORT_FIRMWARE, the data buffer should contain following structures/fields:
@@ -1012,6 +1020,11 @@ typedef struct _FIRMWARE_REQUEST_BLOCK {
 // The request is for Controller if this flag is set. Otherwise, it's for Device/Unit.
 //
 #define FIRMWARE_REQUEST_FLAG_CONTROLLER                    0x00000001
+
+//
+// Indicate that current FW image segment is the last one.
+//
+#define FIRMWARE_REQUEST_FLAG_LAST_SEGMENT                  0x00000002
 
 //
 // Indicate that the existing firmware in slot should be activated. 

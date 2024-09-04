@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -38,6 +38,27 @@
 #endif
 
 /* Forward Declarations */ 
+
+#ifndef ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor;
+
+#endif 	/* ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor;
+
+#endif 	/* ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__ */
+
+
+#ifndef ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor;
+
+#endif 	/* ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__ */
+
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_FWD_DEFINED__
@@ -251,6 +272,19 @@ extern "C"{
 #ifdef __cplusplus
 extern "C" {
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Gaming {
+namespace Input {
+namespace ForceFeedback {
+class ForceFeedbackMotor;
+} /*ForceFeedback*/
+} /*Input*/
+} /*Gaming*/
+} /*Windows*/
+}
+#endif
 
 #ifdef __cplusplus
 namespace ABI {
@@ -258,7 +292,7 @@ namespace Windows {
 namespace Gaming {
 namespace Input {
 namespace ForceFeedback {
-enum ForceFeedbackLoadEffectResult;
+interface IForceFeedbackMotor;
 } /*ForceFeedback*/
 } /*Input*/
 } /*Gaming*/
@@ -276,20 +310,173 @@ enum ForceFeedbackLoadEffectResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE
+#define DEF___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("64cf69e0-5464-5b72-bd4b-82f7c3d0386d"))
+IIterator<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*, ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor>"; }
+};
+typedef IIterator<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*> __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_t;
+#define ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0339 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0339 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0339_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE
+#define DEF___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("c14440d1-fea0-5147-aed8-9b85239da882"))
+IIterable<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*, ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor>"; }
+};
+typedef IIterable<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*> __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_t;
+#define ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0340 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0340 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0340_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE
+#define DEF___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5bfc5070-101d-5fbb-8d5f-ce5c23becdd9"))
+IVectorView<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*, ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor>"; }
+};
+typedef IVectorView<ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor*> __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_t;
+#define ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Gaming {
+namespace Input {
+namespace ForceFeedback {
+enum ForceFeedbackLoadEffectResult;
+} /*ForceFeedback*/
+} /*Input*/
+} /*Gaming*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0341 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0341 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0341_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_USE
@@ -313,29 +500,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_USE */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0333 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0333_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0342 */
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0342_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_USE
@@ -359,29 +546,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_USE */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0334 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0334_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0343 */
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0343_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -405,29 +592,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0335 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0335_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0344 */
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0344_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -524,7 +711,6 @@ typedef enum __x_ABI_CWindows_CGaming_CInput_CForceFeedback_CPeriodicForceEffect
 
 
 
-
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -545,19 +731,6 @@ namespace Gaming {
 namespace Input {
 namespace ForceFeedback {
 class ConstantForceEffect;
-} /*ForceFeedback*/
-} /*Input*/
-} /*Gaming*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Gaming {
-namespace Input {
-namespace ForceFeedback {
-class ForceFeedbackMotor;
 } /*ForceFeedback*/
 } /*Input*/
 } /*Gaming*/
@@ -592,7 +765,7 @@ class RampForceEffect;
 #endif
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007 */
 /* [local] */ 
 
 
@@ -739,24 +912,555 @@ extern "C" {
 
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007_v0_0_s_ifspec;
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0004_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0336 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0336_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0345 */
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0345_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+#define DEF___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("64cf69e0-5464-5b72-bd4b-82f7c3d0386d")
+    __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl;
+
+    interface __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0346 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0346 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0346_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+#define DEF___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c14440d1-fea0-5147-aed8-9b85239da882")
+    __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl;
+
+    interface __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0347 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0347 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0347_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+#define DEF___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5bfc5070-101d-5fbb-8d5f-ce5c23becdd9")
+    __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl;
+
+    interface __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotorVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackMotor */
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0348 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0348 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0348_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult
@@ -765,14 +1469,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_
 
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_INTERFACE_DEFINED__
@@ -861,35 +1565,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CI
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0337 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0349 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0337_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0349 */
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_0349_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult
@@ -897,13 +1601,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback2Eidl_0000_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_INTERFACE_DEFINED__
@@ -1033,7 +1737,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeed
 #endif 	/* ____FIAsyncOperation_1_Windows__CGaming__CInput__CForceFeedback__CForceFeedbackLoadEffectResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0017 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -1126,7 +1830,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffect_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0017 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -1256,8 +1960,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffect_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffect_INTERFACE_DEFINED__
@@ -1404,7 +2108,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditio
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffect_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0018 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffectFactory_INTERFACE_DEFINED__)
@@ -1412,13 +2116,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffectFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0018 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0018_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffectFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffectFactory_INTERFACE_DEFINED__
@@ -1545,7 +2249,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditio
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConditionForceEffectFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0019 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConstantForceEffect_INTERFACE_DEFINED__)
@@ -1553,13 +2257,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConstantForceEffect_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConstantForceEffect_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConstantForceEffect_INTERFACE_DEFINED__
@@ -1712,7 +2416,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConstant
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIConstantForceEffect_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0020 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackEffect_INTERFACE_DEFINED__)
@@ -1720,13 +2424,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackEffect_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0020_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackEffect_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackEffect_INTERFACE_DEFINED__
@@ -1887,7 +2591,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFee
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackEffect_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0021 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor_INTERFACE_DEFINED__)
@@ -1895,13 +2599,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor_INTERFACE_DEFINED__
@@ -2144,7 +2848,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFee
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIForceFeedbackMotor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0022 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffect_INTERFACE_DEFINED__)
@@ -2152,13 +2856,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffect_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0022_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffect_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffect_INTERFACE_DEFINED__
@@ -2333,7 +3037,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodic
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffect_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0023 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffectFactory_INTERFACE_DEFINED__)
@@ -2341,13 +3045,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffectFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffectFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffectFactory_INTERFACE_DEFINED__
@@ -2474,7 +3178,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodic
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIPeriodicForceEffectFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0024 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIRampForceEffect_INTERFACE_DEFINED__)
@@ -2482,13 +3186,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIRampForceEffect_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0024_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIRampForceEffect_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIRampForceEffect_INTERFACE_DEFINED__
@@ -2645,7 +3349,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIRampForc
 #endif 	/* ____x_ABI_CWindows_CGaming_CInput_CForceFeedback_CIRampForceEffect_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0025 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Gaming_Input_ForceFeedback_ConditionForceEffect_DEFINED
@@ -2670,13 +3374,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016 */
+/* interface __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egaming2Einput2Eforcefeedback_0000_0025_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

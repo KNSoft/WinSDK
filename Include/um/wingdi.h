@@ -3013,7 +3013,7 @@ typedef struct DISPLAYCONFIG_PATH_INFO
 #define DISPLAYCONFIG_PATH_SUPPORT_VIRTUAL_MODE 0x00000008
 #define DISPLAYCONFIG_PATH_VALID_FLAGS          0x0000000D
 
-typedef enum
+typedef enum DISPLAYCONFIG_TOPOLOGY_ID
 {
       DISPLAYCONFIG_TOPOLOGY_INTERNAL       = 0x00000001,
       DISPLAYCONFIG_TOPOLOGY_CLONE          = 0x00000002,
@@ -3033,6 +3033,8 @@ typedef enum
       DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_BASE_TYPE            = 6,
       DISPLAYCONFIG_DEVICE_INFO_GET_SUPPORT_VIRTUAL_RESOLUTION  = 7,
       DISPLAYCONFIG_DEVICE_INFO_SET_SUPPORT_VIRTUAL_RESOLUTION  = 8,
+      DISPLAYCONFIG_DEVICE_INFO_GET_ADVANCED_COLOR_INFO         = 9,
+      DISPLAYCONFIG_DEVICE_INFO_SET_ADVANCED_COLOR_STATE        = 10,
       DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32                = 0xFFFFFFFF
 } DISPLAYCONFIG_DEVICE_INFO_TYPE;
 
@@ -3137,6 +3139,50 @@ typedef struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     } DUMMYSTRUCTNAME;
 } DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION;
 
+typedef enum _DISPLAYCONFIG_COLOR_ENCODING
+{
+    DISPLAYCONFIG_COLOR_ENCODING_RGB           = 0,
+    DISPLAYCONFIG_COLOR_ENCODING_YCBCR444      = 1,
+    DISPLAYCONFIG_COLOR_ENCODING_YCBCR422      = 2,
+    DISPLAYCONFIG_COLOR_ENCODING_YCBCR420      = 3,
+    DISPLAYCONFIG_COLOR_ENCODING_INTENSITY     = 4,
+    DISPLAYCONFIG_COLOR_ENCODING_FORCE_UINT32  = 0xFFFFFFFF
+} DISPLAYCONFIG_COLOR_ENCODING;
+
+typedef struct _DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
+{
+    DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+    union
+    {
+        struct
+        {
+          UINT32 advancedColorSupported  :1;
+          UINT32 advancedColorEnabled    :1;
+          UINT32 reserved  :30;
+        } DUMMYSTRUCTNAME;
+
+        UINT32 value;
+    } DUMMYUNIONNAME;
+
+    DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
+    UINT32 bitsPerColorChannel;
+} DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO;
+
+typedef struct _DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
+{
+    DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+    union
+    {
+        struct
+        {
+          UINT32 enableAdvancedColor  :1;
+          UINT32 reserved  :31;
+        } DUMMYSTRUCTNAME;
+
+        UINT32 value;
+    }DUMMYUNIONNAME;
+} DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE;
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
@@ -3149,6 +3195,7 @@ typedef struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
 #define QDC_ONLY_ACTIVE_PATHS                         0x00000002
 #define QDC_DATABASE_CURRENT                          0x00000004
 #define QDC_VIRTUAL_MODE_AWARE                        0x00000010
+#define QDC_INCLUDE_HMD                               0x00000020
 
 //
 // Definitions used by SetDisplayConfig.
@@ -4275,6 +4322,7 @@ WINGDIAPI BOOL  WINAPI GetCharABCWidthsI(   _In_ HDC    hdc,
 
 #define STAMP_DESIGNVECTOR  (0x8000000 + 'd' + ('v' << 8))
 #define STAMP_AXESLIST      (0x8000000 + 'a' + ('l' << 8))
+#define STAMP_TRUETYPE_VARIATION (0x8000000 + 't' + ('v' << 8))
 #define MM_MAX_NUMAXES      16
 
 
@@ -5076,13 +5124,6 @@ WINGDIAPI BOOL  WINAPI PolylineTo(_In_ HDC hdc, _In_reads_(cpt) CONST POINT * ap
  WINGDIAPI BOOL  WINAPI ScaleWindowExtEx( _In_ HDC hdc, _In_ int xn, _In_ int xd, _In_ int yn, _In_ int yd, _Out_opt_ LPSIZE lpsz);
 WINGDIAPI BOOL  WINAPI SetBitmapDimensionEx( _In_ HBITMAP hbm, _In_ int w, _In_ int h, _Out_opt_ LPSIZE lpsz);
 WINGDIAPI BOOL  WINAPI SetBrushOrgEx( _In_ HDC hdc, _In_ int x, _In_ int y, _Out_opt_ LPPOINT lppt);
-
-#ifdef GDIDPISCALING
-BOOL WINAPI ScaleRgn(_In_ HDC hdc, _In_ HRGN hrgn);
-BOOL WINAPI ScaleValues(_In_ HDC hdc, __in_ecount(cl) LPLONG pl, _In_ UINT cl);
-LONG WINAPI GetDCDpiScaleValue(_In_ HDC hdc);
-LONG WINAPI GetBitmapDpiScaleValue(_In_ HBITMAP hsurf);
-#endif
 
 WINGDIAPI int   WINAPI GetTextFaceA( _In_ HDC hdc, _In_ int c, _Out_writes_to_opt_(c, return)  LPSTR lpName);
 WINGDIAPI int   WINAPI GetTextFaceW( _In_ HDC hdc, _In_ int c, _Out_writes_to_opt_(c, return)  LPWSTR lpName);

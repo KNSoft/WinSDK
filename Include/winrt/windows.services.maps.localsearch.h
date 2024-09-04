@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -311,18 +311,18 @@ interface ILocalLocation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0428 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0428 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0428_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0428_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0001 */
 /* [local] */ 
@@ -357,18 +357,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0429 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0446 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0429 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0446 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0429_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0429_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0446_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0446_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0002 */
 /* [local] */ 
@@ -431,18 +431,18 @@ interface ILocalLocationHoursOfOperationItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0430 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0447 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0430 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0447 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0430_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0430_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0447_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0447_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0003 */
 /* [local] */ 
@@ -477,18 +477,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0431 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0448 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0431 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0448 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0431_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0431_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0448_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0448_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0004 */
 /* [local] */ 
@@ -523,18 +523,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0432 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0449 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0432 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0449 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0432_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0432_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0449_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0449_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0005 */
 /* [local] */ 
@@ -569,18 +569,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0433 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0450 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0433 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0450 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0433_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0433_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0450_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0450_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0006 */
 /* [local] */ 
@@ -643,18 +643,18 @@ interface ILocalLocationFinderResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0434 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0451 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0434 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0451 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0434_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0434_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0451_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0451_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0007 */
 /* [local] */ 
@@ -689,18 +689,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0435 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0452 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0435 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0452 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0435_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0435_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0452_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0452_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0008 */
 /* [local] */ 
@@ -735,18 +735,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0436 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0453 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0436 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0453 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0436_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0436_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0453_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0453_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0009 */
 /* [local] */ 
@@ -781,18 +781,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0437 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0454 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0437 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0454 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0437_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0437_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0454_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0454_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0010 */
 /* [local] */ 
@@ -979,18 +979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0438 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0455 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0438 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0455 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0438_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0438_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0455_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0455_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0011 */
 /* [local] */ 
@@ -1165,18 +1165,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CLocalSearch__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0439 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0456 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0439 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0456 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0439_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0439_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0456_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0456_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0013 */
 /* [local] */ 
@@ -1317,18 +1317,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CLocalSearch__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0440 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0457 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0440 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0457 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0440_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0440_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0457_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0457_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0015 */
 /* [local] */ 
@@ -1503,18 +1503,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CServices__CMaps__CLocalSearch__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0441 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0458 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0441 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0458 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0441_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0441_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0458_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0458_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0017 */
 /* [local] */ 
@@ -1655,18 +1655,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CServices__CMaps__CLocalSearch__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0442 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0459 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0442 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0459 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0442_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0442_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0459_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0459_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0019 */
 /* [local] */ 
@@ -1849,18 +1849,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CLocalSearch_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0443 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0460 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0443 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0460 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0443_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0443_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0460_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0460_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0021 */
 /* [local] */ 
@@ -2043,18 +2043,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CServices__CMaps__CLocalSearch_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0444 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0461 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0444 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0461 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0444_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0444_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0461_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0461_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0023 */
 /* [local] */ 
@@ -2176,18 +2176,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CServices__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0462 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445 */
+/* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0462 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0445_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0462_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eservices2Emaps2Elocalsearch2Eidl_0000_0462_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eservices2Emaps2Elocalsearch_0000_0025 */
 /* [local] */ 

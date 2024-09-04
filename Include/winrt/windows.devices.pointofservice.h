@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -88,6 +88,20 @@ typedef interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarc
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeScanner_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__ */
+
+
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer;
@@ -130,6 +144,20 @@ typedef interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClai
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__ */
+
+
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader;
@@ -156,6 +184,20 @@ typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPoint
 typedef interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter;
 
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_FWD_DEFINED__
@@ -247,6 +289,13 @@ typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CC
 typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs_FWD_DEFINED__
@@ -478,6 +527,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IBarcodeScannerStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs;
@@ -516,6 +585,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IBarcodeSymbologiesStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IBarcodeSymbologyAttributes;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer_FWD_DEFINED__
@@ -638,6 +747,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface ICashDrawerStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus;
@@ -718,6 +847,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner1_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedBarcodeScanner2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer;
@@ -756,6 +905,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedLineDisplay;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedLineDisplayStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_FWD_DEFINED__
@@ -916,6 +1105,86 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinterCapabilities_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface ILineDisplay;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface ILineDisplayCapabilities;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface ILineDisplayStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface ILineDisplayWindow;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReader_FWD_DEFINED__
@@ -1098,6 +1367,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IMagneticStripeReaderStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs;
@@ -1276,6 +1565,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IPosPrinterStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatus_FWD_DEFINED__
@@ -1463,18 +1772,18 @@ enum PosPrinterRotation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0001 */
 /* [local] */ 
@@ -1509,18 +1818,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0002 */
 /* [local] */ 
@@ -1555,18 +1864,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0003 */
 /* [local] */ 
@@ -1625,18 +1934,18 @@ interface IClaimedBarcodeScanner;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0004 */
 /* [local] */ 
@@ -1695,18 +2004,18 @@ interface IClaimedMagneticStripeReader;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0005 */
 /* [local] */ 
@@ -1765,18 +2074,18 @@ interface IBarcodeScanner;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3191 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3191 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0006 */
 /* [local] */ 
@@ -1811,18 +2120,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3192 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3192 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0007 */
 /* [local] */ 
@@ -1851,6 +2160,122 @@ namespace ABI {
 namespace Windows {
 namespace Devices {
 namespace PointOfService {
+class BarcodeSymbologyAttributes;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+interface IBarcodeSymbologyAttributes;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0007 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0007_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4667 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4667 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0008 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f8fc5a52-2f45-5e46-a82e-3da009573b5c"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes*, ABI::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.PointOfService.BarcodeSymbologyAttributes>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0008 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0008_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4668 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4668 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0009 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("461550ca-7bb3-5ade-a642-61b8fef2e35c"))
+IAsyncOperation<ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes*, ABI::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.PointOfService.BarcodeSymbologyAttributes>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes*> __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_t;
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
 class CashDrawer;
 } /*PointOfService*/
 } /*Devices*/
@@ -1871,30 +2296,30 @@ interface ICashDrawer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0007 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0009 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3193 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3193 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3193_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_USE
@@ -1918,29 +2343,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0008 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3194 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3194 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3194_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer_USE
@@ -1964,29 +2389,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0009 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0011 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3195 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3195 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3195_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4671 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_USE
@@ -2010,29 +2435,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0010 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3196 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3196_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4672 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_USE
@@ -2079,30 +2504,30 @@ interface IClaimedCashDrawer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0011 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0013 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3197 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3197_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4673 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4673_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_USE
@@ -2126,29 +2551,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0012 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3198 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3198_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4674 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_USE
@@ -2170,31 +2595,147 @@ typedef IAsyncOperation<ABI::Windows::Devices::PointOfService::ClaimedCashDrawer
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+class ClaimedLineDisplay;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+interface IClaimedLineDisplay;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0013 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3199 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0015_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3199_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4675 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4675_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0016 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4e1a79f1-dff2-5b18-bebe-2aca010bbfcc"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*, ABI::Windows::Devices::PointOfService::IClaimedLineDisplay*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.PointOfService.ClaimedLineDisplay>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0016 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0016_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4676 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4676 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4676_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0017 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4bd0a904-1aaa-545a-8cbc-1d45c3e80e5e"))
+IAsyncOperation<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*, ABI::Windows::Devices::PointOfService::IClaimedLineDisplay*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.PointOfService.ClaimedLineDisplay>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*> __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_t;
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0017 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4677 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4677 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4677_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_USE
@@ -2218,29 +2759,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0014 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3200 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3200_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4678 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4678_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_USE
@@ -2287,30 +2828,30 @@ interface IClaimedPosPrinter;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0015 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0019 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3201 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3201_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4679 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4679_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_USE
@@ -2334,29 +2875,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0016 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3202 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3202_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4680 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4680_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_USE
@@ -2383,6 +2924,122 @@ namespace ABI {
 namespace Windows {
 namespace Devices {
 namespace PointOfService {
+class LineDisplay;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+interface ILineDisplay;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0021 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0021_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4681 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4681 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4681_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0022 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b5c4d476-4f46-53c4-8a45-89dbe6d6f286"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::PointOfService::LineDisplay*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::LineDisplay*, ABI::Windows::Devices::PointOfService::ILineDisplay*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.PointOfService.LineDisplay>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::PointOfService::LineDisplay*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0022 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4682 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4682 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4682_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0023 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("40ffdae9-e7c1-5c44-91b4-bd84ebf8539b"))
+IAsyncOperation<ABI::Windows::Devices::PointOfService::LineDisplay*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::LineDisplay*, ABI::Windows::Devices::PointOfService::ILineDisplay*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.PointOfService.LineDisplay>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Devices::PointOfService::LineDisplay*> __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_t;
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
 class MagneticStripeReader;
 } /*PointOfService*/
 } /*Devices*/
@@ -2403,30 +3060,30 @@ interface IMagneticStripeReader;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0017 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0023 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3203 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3203_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4683 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4683_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_USE
@@ -2450,29 +3107,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0018 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3204 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3204_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4684 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4684_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_USE
@@ -2519,30 +3176,30 @@ interface IPosPrinter;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0019 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0025 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3205 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3205_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4685 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4685_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter_USE
@@ -2566,29 +3223,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0020 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0026 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3206 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3206_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4686 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4686_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CPosPrinter_USE
@@ -2635,30 +3292,30 @@ interface IBarcodeScannerStatusUpdatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0021 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0027 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3207 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3207_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4687 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4687_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerStatusUpdatedEventArgs_USE
@@ -2705,30 +3362,30 @@ interface ICashDrawerStatusUpdatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0022 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0028 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3208 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3208_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4688 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4688_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawer_Windows__CDevices__CPointOfService__CCashDrawerStatusUpdatedEventArgs_USE
@@ -2777,7 +3434,7 @@ interface ICashDrawerCloseAlarm;
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0023 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0029 */
 /* [local] */ 
 
 
@@ -2785,23 +3442,23 @@ interface IInspectable;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3209 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3209_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4689 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4689_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerCloseAlarm_IInspectable_USE
@@ -2871,7 +3528,7 @@ interface ICashDrawerEventSourceEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0024 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0030 */
 /* [local] */ 
 
 
@@ -2879,23 +3536,23 @@ interface ICashDrawerEventSourceEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3210 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3210_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4690 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4690_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerClosedEventArgs_USE
@@ -2930,29 +3587,29 @@ class CashDrawerOpenedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0025 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3211 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3211_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4691 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4691_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerOpenedEventArgs_USE
@@ -2999,30 +3656,30 @@ interface IBarcodeScannerDataReceivedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0026 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0032 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3212 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3212_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4692 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4692_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerDataReceivedEventArgs_USE
@@ -3069,30 +3726,30 @@ interface IBarcodeScannerErrorOccurredEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0027 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0033 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3213 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3213_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4693 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4693_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerErrorOccurredEventArgs_USE
@@ -3139,30 +3796,30 @@ interface IBarcodeScannerImagePreviewReceivedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0028 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0034 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3214 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3214_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4694 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4694_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs_USE
@@ -3186,29 +3843,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0029 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3215 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3215 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3215_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4695 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4695_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_USE
@@ -3230,6 +3887,52 @@ typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedCashDra
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0036 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0036_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4696 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4696 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4696_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0037 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c997782b-46e9-5d92-ac84-ee9d7d073ab5"))
+ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*, ABI::Windows::Devices::PointOfService::IClaimedLineDisplay*>,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.PointOfService.ClaimedLineDisplay, Object>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*,IInspectable*> __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_t;
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3255,30 +3958,30 @@ interface IMagneticStripeReaderAamvaCardDataReceivedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0030 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0037 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3216 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3216 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3216_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4697 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4697_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs_USE
@@ -3325,30 +4028,30 @@ interface IMagneticStripeReaderBankCardDataReceivedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0031 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0038 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3217 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3217 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3217_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4698 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4698_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderBankCardDataReceivedEventArgs_USE
@@ -3395,30 +4098,30 @@ interface IMagneticStripeReaderErrorOccurredEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0032 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0039 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3218 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3218 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3218_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4699 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4699_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderErrorOccurredEventArgs_USE
@@ -3465,30 +4168,30 @@ interface IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0033 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0040 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3219 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3219 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4700 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3219_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4700 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4700_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4700_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_USE
@@ -3535,30 +4238,30 @@ interface IPosPrinterReleaseDeviceRequestedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0034 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0041 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3220 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3220 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4701 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3220_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4701 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4701_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4701_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterReleaseDeviceRequestedEventArgs_USE
@@ -3605,30 +4308,30 @@ interface IMagneticStripeReaderStatusUpdatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0035 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0042 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3221 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3221 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4702 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3221_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4702 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4702_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4702_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderStatusUpdatedEventArgs_USE
@@ -3675,30 +4378,30 @@ interface IPosPrinterStatusUpdatedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0036 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0043 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3222 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3222 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4703 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3222_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4703 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4703_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4703_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterStatusUpdatedEventArgs_USE
@@ -3722,29 +4425,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterStatusUpdatedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0037 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0044 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3223 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3223 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4704 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3223_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3223_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4704 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4704_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4704_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
@@ -3768,29 +4471,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0038 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3224 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3224 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4705 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3224_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3224_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4705 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4705_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4705_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_HSTRING_USE
@@ -3814,29 +4517,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0039 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3225 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3225 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4706 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3225_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3225_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4706 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4706_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4706_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_UINT32_USE
@@ -3860,29 +4563,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0040 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3226 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3226 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4707 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3226_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3226_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4707 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4707_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4707_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_UINT32_USE
@@ -3906,29 +4609,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0041 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0048 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3227 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3227 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4708 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3227_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3227_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4708 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4708_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4708_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_UINT32_USE
@@ -3952,29 +4655,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0042 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0049 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3228 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3228 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4709 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3228_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3228_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4709 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4709_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4709_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE
@@ -3998,29 +4701,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0043 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0050 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3229 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3229 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4710 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3229_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3229_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4710 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4710_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4710_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE
@@ -4044,29 +4747,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0044 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0051 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3230 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3230 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4711 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3230_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3230_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4711 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4711_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4711_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -4090,29 +4793,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0045 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0052 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3231 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3231 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4712 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3231_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3231_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4712 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4712_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4712_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -4136,29 +4839,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0046 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0053 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3232 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3232 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4713 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3232_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3232_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4713 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4713_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4713_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -4182,29 +4885,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0047 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0054 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3233 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3233 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4714 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3233_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3233_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4714 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4714_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4714_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
@@ -4240,30 +4943,30 @@ interface IBuffer;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0048 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0055 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3234 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3234 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4715 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3234_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3234_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4715 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4715_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4715_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -4287,29 +4990,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0049 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0056 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3235 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3235 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4716 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3235_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3235_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4716 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4716_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4716_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_USE
@@ -4333,29 +5036,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0050 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0057 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3236 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3236 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4717 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3236_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3236_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4717 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4717_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4717_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_HSTRING_USE
@@ -4379,29 +5082,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0051 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0058 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3237 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3237 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4718 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3237_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3237_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4718 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4718_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4718_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -4425,29 +5128,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0052 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0059 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3238 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3238 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4719 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3238_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3238_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4719 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4719_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4719_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -4471,29 +5174,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0053 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0060 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3239 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3239 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4720 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3239_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3239_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4720 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4720_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4720_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -4517,29 +5220,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0054 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0061 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3240 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3240 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4721 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3240_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3240_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4721 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4721_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4721_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_HSTRING_USE
@@ -4576,6 +5279,10 @@ extern "C" {
 #endif // defined(__cplusplus)
 
 
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CPoint __x_ABI_CWindows_CFoundation_CPoint;
+
+#endif
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
@@ -4614,7 +5321,47 @@ typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeScannerStatus __x
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeSymbologyDecodeLengthKind __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeSymbologyDecodeLengthKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CCashDrawerStatusKind __x_ABI_CWindows_CDevices_CPointOfService_CCashDrawerStatusKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayScrollDirection __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayScrollDirection;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttribute __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttribute;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttributeGranularity __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttributeGranularity;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -4675,6 +5422,16 @@ typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CMagneticStripeReaderTrac
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CMagneticStripeReaderTrackIds __x_ABI_CWindows_CDevices_CPointOfService_CMagneticStripeReaderTrackIds;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -4894,6 +5651,16 @@ typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CUnifiedPosPowerReporting
 
 
 
+
+
+
+
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -4988,6 +5755,28 @@ namespace Windows {
 namespace Devices {
 namespace PointOfService {
 class JournalPrinterCapabilities;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+class LineDisplayCapabilities;
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+class LineDisplayWindow;
 } /*PointOfService*/
 } /*Devices*/
 } /*Windows*/
@@ -5105,11 +5894,27 @@ class UnifiedPosErrorData;
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0055 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0062 */
 /* [local] */ 
 
 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct Point Point;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -5187,7 +5992,79 @@ namespace ABI {
         namespace Devices {
             namespace PointOfService {
                 
+                typedef enum BarcodeSymbologyDecodeLengthKind BarcodeSymbologyDecodeLengthKind;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
                 typedef enum CashDrawerStatusKind CashDrawerStatusKind;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                typedef enum LineDisplayScrollDirection LineDisplayScrollDirection;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                typedef enum LineDisplayTextAttribute LineDisplayTextAttribute;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                typedef enum LineDisplayTextAttributeGranularity LineDisplayTextAttributeGranularity;
                 
             } /* end namespace */
         } /* end namespace */
@@ -5296,6 +6173,24 @@ namespace ABI {
             namespace PointOfService {
                 
                 typedef enum MagneticStripeReaderTrackIds MagneticStripeReaderTrackIds;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                typedef enum PosConnectionTypes PosConnectionTypes;
                 
             } /* end namespace */
         } /* end namespace */
@@ -5664,23 +6559,33 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0055_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3241 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3241 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3241_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3241_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0056 */
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0062_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4722 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4722 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4722_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4722_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CPointOfService__CPosPrinterRotation
@@ -5688,13 +6593,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3241_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0056 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__
@@ -5838,35 +6743,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CPointOfService__CPosPr
 #endif 	/* ____FIIterator_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0057 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CDevices__CPointOfService__CPosPrinterRotation */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0057 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3242 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3242 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4723 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3242_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3242_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4723 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4723_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4723_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CPointOfService__CPosPrinterRotation
@@ -5874,13 +6779,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3242_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0058 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__
@@ -5990,35 +6895,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CPointOfService__CPosPr
 #endif 	/* ____FIIterable_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0059 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CDevices__CPointOfService__CPosPrinterRotation */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0059 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3243 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3243 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4724 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3243_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3243_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4724 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4724_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4724_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CPointOfService__CPosPrinterRotation
@@ -6026,13 +6931,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3243_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0060 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__
@@ -6184,35 +7089,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CPointOfService__CPos
 #endif 	/* ____FIVectorView_1_Windows__CDevices__CPointOfService__CPosPrinterRotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0061 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CPointOfService__CPosPrinterRotation */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0061 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3244 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3244 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4725 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3244_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3244_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4725 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4725_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4725_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner
@@ -6220,13 +7125,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3244_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0062 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__
@@ -6315,35 +7220,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CDevices__CPointOfService__CC
 #endif 	/* ____FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0063 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0063 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3245 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3245 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4726 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3245_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3245_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4726 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4726_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4726_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader
@@ -6351,13 +7256,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3245_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0064 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__
@@ -6446,35 +7351,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CDevices__CPointOfService__CC
 #endif 	/* ____FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0065 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0065 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3246 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3246 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4727 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3246_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3246_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4727 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4727_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4727_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeScanner
@@ -6483,14 +7388,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3246_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0066 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0073 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeScanner_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeScanner_INTERFACE_DEFINED__
@@ -6579,35 +7484,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0067 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeScanner */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0067 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3247 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3247 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4728 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3247_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3247_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4728 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4728_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4728_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeScanner
@@ -6615,13 +7520,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3247_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0068 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeScanner_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeScanner_INTERFACE_DEFINED__
@@ -6751,35 +7656,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0069 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeScanner */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0069 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3248 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3248 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4729 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3248_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3248_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4729 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4729_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4729_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0077 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0077 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0077_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f8fc5a52-2f45-5e46-a82e-3da009573b5c")
+    __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributesVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0078 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0078 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0078_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4730 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4730 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4730_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4730_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0079 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0079 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0079_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("461550ca-7bb3-5ade-a642-61b8fef2e35c")
+    __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributesVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0080 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0080 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0080_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4731 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4731 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4731_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4731_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer
@@ -6788,14 +7998,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3248_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0070 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0081 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_INTERFACE_DEFINED__
@@ -6884,35 +8094,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0071 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0082 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CCashDrawer */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0071 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3249 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3249 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4732 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3249_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3249_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4732 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4732_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4732_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0083 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer
@@ -6920,13 +8130,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3249_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0072 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer_INTERFACE_DEFINED__
@@ -7056,35 +8266,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0073 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0084 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CCashDrawer */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0073 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3250 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3250 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4733 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3250_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3250_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4733 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0074 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4733_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4733_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner
@@ -7093,14 +8303,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3250_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0074 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0085 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__
@@ -7189,35 +8399,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0075 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0086 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0075 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3251 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3251 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4734 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3251_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3251_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4734 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0076 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4734_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4734_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner
@@ -7225,13 +8435,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3251_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0076 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__
@@ -7361,35 +8571,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0077 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0088 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0077 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3252 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3252 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4735 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3252_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3252_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4735 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0078 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4735_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4735_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer
@@ -7398,14 +8608,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3252_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0078 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0089 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_INTERFACE_DEFINED__
@@ -7494,35 +8704,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0079 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0090 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0079 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3253 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3253 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4736 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3253_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3253_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4736 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0080 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4736_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4736_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0091 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer
@@ -7530,13 +8740,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3253_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0080 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_INTERFACE_DEFINED__
@@ -7666,35 +8876,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0081 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0092 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedCashDrawer */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0081 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3254 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3254 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4737 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3254_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3254_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4737 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0082 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4737_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4737_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0093 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0093 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0093_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4e1a79f1-dff2-5b18-bebe-2aca010bbfcc")
+    __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplayVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0094 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0094 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0094_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4738 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4738 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4738_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4738_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0095 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0095 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0095_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4bd0a904-1aaa-545a-8cbc-1d45c3e80e5e")
+    __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::PointOfService::IClaimedLineDisplay **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplayVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0096 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0096 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0096_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4739 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4739 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4739_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4739_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0097 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader
@@ -7703,14 +9218,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3254_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0082 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0097 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__
@@ -7799,35 +9314,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0083 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0098 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0083 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3255 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3255 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4740 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3255_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3255_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4740 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0084 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4740_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4740_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0099 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader
@@ -7835,13 +9350,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3255_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0084 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__
@@ -7971,35 +9486,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0085 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0100 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0085 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3256 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3256 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4741 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3256_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3256_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4741 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0086 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4741_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4741_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0101 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter
@@ -8008,14 +9523,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3256_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0086 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0101 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_INTERFACE_DEFINED__
@@ -8104,35 +9619,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0087 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0102 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0087 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3257 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3257 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4742 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3257_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3257_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4742 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0088 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4742_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4742_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0103 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter
@@ -8140,13 +9655,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3257_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0088 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_INTERFACE_DEFINED__
@@ -8276,35 +9791,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0089 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0104 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedPosPrinter */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0089 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3258 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3258 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4743 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3258_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3258_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4743 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0090 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4743_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4743_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0105 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0105 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0105_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b5c4d476-4f46-53c4-8a45-89dbe6d6f286")
+    __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplayVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0106 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0106 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0106_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4744 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4744 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4744_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4744_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0107 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0107 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0107_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("40ffdae9-e7c1-5c44-91b4-bd84ebf8539b")
+    __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::PointOfService::ILineDisplay **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CLineDisplay **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplayVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0108 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0108 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0108_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4745 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4745 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4745_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4745_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0109 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader
@@ -8313,14 +10133,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3258_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0090 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0109 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_INTERFACE_DEFINED__
@@ -8409,35 +10229,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0091 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0110 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CMagneticStripeReader */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0091 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0110_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3259 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3259 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4746 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3259_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3259_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4746 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0092 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4746_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4746_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0111 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CMagneticStripeReader
@@ -8445,13 +10265,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3259_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0092 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_INTERFACE_DEFINED__
@@ -8581,35 +10401,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0093 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0112 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CMagneticStripeReader */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0093 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0112_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3260 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3260 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4747 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3260_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3260_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4747 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0094 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4747_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4747_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0113 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter
@@ -8618,14 +10438,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3260_
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0094 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0113 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter_INTERFACE_DEFINED__
@@ -8714,35 +10534,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0095 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0114 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CPointOfService__CPosPrinter */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0095 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3261 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3261 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4748 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3261_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3261_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4748 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0096 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4748_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4748_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0115 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CPosPrinter
@@ -8750,13 +10570,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3261_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0096 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CPosPrinter_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CPosPrinter_INTERFACE_DEFINED__
@@ -8886,35 +10706,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CPointOfService__
 #endif 	/* ____FIAsyncOperation_1_Windows__CDevices__CPointOfService__CPosPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0097 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0116 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CPointOfService__CPosPrinter */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0097 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0116_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3262 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3262 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4749 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3262_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3262_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4749 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0098 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4749_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4749_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0117 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerStatusUpdatedEventArgs
@@ -8922,13 +10742,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3262_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0098 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -9017,35 +10837,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0099 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0118 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerStatusUpdatedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0099 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0118_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3263 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3263 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4750 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3263_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3263_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4750 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0100 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4750_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4750_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0119 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawer_Windows__CDevices__CPointOfService__CCashDrawerStatusUpdatedEventArgs
@@ -9053,13 +10873,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3263_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0100 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0119_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawer_Windows__CDevices__CPointOfService__CCashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawer_Windows__CDevices__CPointOfService__CCashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -9148,35 +10968,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawer_Windows__CDevices__CPointOfService__CCashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0101 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0120 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawer_Windows__CDevices__CPointOfService__CCashDrawerStatusUpdatedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0101 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0120_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3264 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3264 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4751 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3264_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3264_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4751 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0102 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4751_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4751_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0121 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerCloseAlarm_IInspectable
@@ -9184,13 +11004,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3264_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0102 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerCloseAlarm_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerCloseAlarm_IInspectable_INTERFACE_DEFINED__
@@ -9279,35 +11099,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerCloseAlarm_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0103 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0122 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerCloseAlarm_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0103 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0122_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3265 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3265 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4752 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3265_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3265_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4752 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0104 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4752_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4752_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0123 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerClosedEventArgs
@@ -9315,13 +11135,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3265_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0104 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerClosedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerClosedEventArgs_INTERFACE_DEFINED__
@@ -9410,35 +11230,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerClosedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0105 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0124 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerClosedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0105 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0124_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3266 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3266 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4753 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3266_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3266_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4753 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0106 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4753_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4753_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0125 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerOpenedEventArgs
@@ -9446,13 +11266,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3266_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0106 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerOpenedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerOpenedEventArgs_INTERFACE_DEFINED__
@@ -9541,35 +11361,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerOpenedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0107 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0126 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CCashDrawerEventSource_Windows__CDevices__CPointOfService__CCashDrawerOpenedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0107 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0126_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3267 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3267 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4754 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3267_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3267_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4754 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0108 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4754_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4754_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0127 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerDataReceivedEventArgs
@@ -9577,13 +11397,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3267_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0108 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -9672,35 +11492,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0109 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0128 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerDataReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0109 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0128_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3268 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3268 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4755 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3268_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3268_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4755 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0110 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4755_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4755_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0129 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerErrorOccurredEventArgs
@@ -9708,13 +11528,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3268_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0110 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__
@@ -9803,35 +11623,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0111 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0130 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerErrorOccurredEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0111 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0130_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3269 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3269 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4756 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3269_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3269_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4756 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0112 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4756_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4756_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0131 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs
@@ -9839,13 +11659,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3269_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0112 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__
@@ -9934,35 +11754,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0113 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0132 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CBarcodeScannerImagePreviewReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0113 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0132_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3270 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3270 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4757 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3270_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3270_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4757 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0114 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4757_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4757_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0133 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable
@@ -9970,13 +11790,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3270_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0114 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_INTERFACE_DEFINED__
@@ -10065,35 +11885,166 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0115 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0134 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0115 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0134 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0134_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3271 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3271 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4758 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3271_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3271_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4758 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0116 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4758_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4758_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0135 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0135 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0135_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c997782b-46e9-5d92-ac84-ee9d7d073ab5")
+    __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Devices::PointOfService::IClaimedLineDisplay *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectableVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectableVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectableVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0136 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0136 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0136_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4759 */
+
+
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4759 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4759_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4759_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0137 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs
@@ -10101,13 +12052,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3271_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0116 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -10196,35 +12147,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0117 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0138 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderAamvaCardDataReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0117 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0138_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3272 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3272 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4760 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3272_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3272_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4760 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0118 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4760_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4760_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0139 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderBankCardDataReceivedEventArgs
@@ -10232,13 +12183,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3272_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0118 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -10327,35 +12278,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0119 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0140 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderBankCardDataReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0119 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0140_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3273 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3273 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4761 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3273_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3273_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4761 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0120 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4761_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4761_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0141 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderErrorOccurredEventArgs
@@ -10363,13 +12314,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3273_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0120 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0141_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__
@@ -10458,35 +12409,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0121 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0142 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderErrorOccurredEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0121 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0142_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3274 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3274 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4762 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3274_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3274_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4762 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0122 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4762_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4762_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0143 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs
@@ -10494,13 +12445,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3274_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0122 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -10589,35 +12540,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0123 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0144 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0123 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0144_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3275 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3275 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4763 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3275_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3275_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4763 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0124 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4763_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4763_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0145 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterReleaseDeviceRequestedEventArgs
@@ -10625,13 +12576,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3275_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0124 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0145_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__
@@ -10720,35 +12671,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0125 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0146 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterReleaseDeviceRequestedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0125 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0146_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3276 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3276 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4764 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3276_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3276_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4764 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0126 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4764_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4764_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0147 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderStatusUpdatedEventArgs
@@ -10756,13 +12707,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3276_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0126 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0147 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0147_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -10851,35 +12802,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0127 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0148 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CMagneticStripeReader_Windows__CDevices__CPointOfService__CMagneticStripeReaderStatusUpdatedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0127 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0148 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0148_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3277 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3277 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4765 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3277_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3277_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4765 */
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0128 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4765_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_4765_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0149 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterStatusUpdatedEventArgs
@@ -10887,13 +12838,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice2Eidl_0000_3277_
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0128 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0149_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -10982,7 +12933,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfServic
 #endif 	/* ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CPosPrinter_Windows__CDevices__CPointOfService__CPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0129 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0150 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -11006,6 +12957,19 @@ enum __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeScannerStatus
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeSymbologyDecodeLengthKind
+    {
+        BarcodeSymbologyDecodeLengthKind_AnyLength	= 0,
+        BarcodeSymbologyDecodeLengthKind_Discrete	= 1,
+        BarcodeSymbologyDecodeLengthKind_Range	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CDevices_CPointOfService_CCashDrawerStatusKind
     {
         CashDrawerStatusKind_Online	= 0,
@@ -11013,6 +12977,47 @@ enum __x_ABI_CWindows_CDevices_CPointOfService_CCashDrawerStatusKind
         CashDrawerStatusKind_Offline	= 2,
         CashDrawerStatusKind_OffOrOffline	= 3,
         CashDrawerStatusKind_Extended	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayScrollDirection
+    {
+        LineDisplayScrollDirection_Up	= 0,
+        LineDisplayScrollDirection_Down	= 1,
+        LineDisplayScrollDirection_Left	= 2,
+        LineDisplayScrollDirection_Right	= 3
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttribute
+    {
+        LineDisplayTextAttribute_Normal	= 0,
+        LineDisplayTextAttribute_Blink	= 1,
+        LineDisplayTextAttribute_Reverse	= 2,
+        LineDisplayTextAttribute_ReverseBlink	= 3
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttributeGranularity
+    {
+        LineDisplayTextAttributeGranularity_NotSupported	= 0,
+        LineDisplayTextAttributeGranularity_EntireDisplay	= 1,
+        LineDisplayTextAttributeGranularity_PerCharacter	= 2
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -11097,6 +13102,31 @@ enum __x_ABI_CWindows_CDevices_CPointOfService_CMagneticStripeReaderTrackIds
     } ;
 #endif /* end if !defined(__cplusplus) */
 
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes
+    {
+        PosConnectionTypes_Local	= 0x1,
+        PosConnectionTypes_IP	= 0x2,
+        PosConnectionTypes_Bluetooth	= 0x4,
+        PosConnectionTypes_All	= 0xffffffff
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#else
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace PointOfService {
+enum PosConnectionTypes;
+DEFINE_ENUM_FLAG_OPERATORS(PosConnectionTypes)
+} /*PointOfService*/
+} /*Devices*/
+} /*Windows*/
+}
 #endif
 #if !defined(__cplusplus)
 
@@ -11419,7 +13449,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0129 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0150 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -11454,6 +13484,28 @@ namespace ABI {
             namespace PointOfService {
                 
                 /* [v1_enum] */ 
+                enum BarcodeSymbologyDecodeLengthKind
+                    {
+                        BarcodeSymbologyDecodeLengthKind_AnyLength	= 0,
+                        BarcodeSymbologyDecodeLengthKind_Discrete	= 1,
+                        BarcodeSymbologyDecodeLengthKind_Range	= 2
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                /* [v1_enum] */ 
                 enum CashDrawerStatusKind
                     {
                         CashDrawerStatusKind_Online	= 0,
@@ -11461,6 +13513,74 @@ namespace ABI {
                         CashDrawerStatusKind_Offline	= 2,
                         CashDrawerStatusKind_OffOrOffline	= 3,
                         CashDrawerStatusKind_Extended	= 4
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                /* [v1_enum] */ 
+                enum LineDisplayScrollDirection
+                    {
+                        LineDisplayScrollDirection_Up	= 0,
+                        LineDisplayScrollDirection_Down	= 1,
+                        LineDisplayScrollDirection_Left	= 2,
+                        LineDisplayScrollDirection_Right	= 3
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                /* [v1_enum] */ 
+                enum LineDisplayTextAttribute
+                    {
+                        LineDisplayTextAttribute_Normal	= 0,
+                        LineDisplayTextAttribute_Blink	= 1,
+                        LineDisplayTextAttribute_Reverse	= 2,
+                        LineDisplayTextAttribute_ReverseBlink	= 3
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                /* [v1_enum] */ 
+                enum LineDisplayTextAttributeGranularity
+                    {
+                        LineDisplayTextAttributeGranularity_NotSupported	= 0,
+                        LineDisplayTextAttributeGranularity_EntireDisplay	= 1,
+                        LineDisplayTextAttributeGranularity_PerCharacter	= 2
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -11596,6 +13716,29 @@ namespace ABI {
                         MagneticStripeReaderTrackIds_Track2	= 2,
                         MagneticStripeReaderTrackIds_Track3	= 4,
                         MagneticStripeReaderTrackIds_Track4	= 8
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                
+                /* [v1_enum] */ 
+                enum PosConnectionTypes
+                    {
+                        PosConnectionTypes_Local	= 0x1,
+                        PosConnectionTypes_IP	= 0x2,
+                        PosConnectionTypes_Bluetooth	= 0x4,
+                        PosConnectionTypes_All	= 0xffffffff
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -12041,8 +14184,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner_INTERFACE_DEFINED__
@@ -12275,7 +14418,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0130 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner2_INTERFACE_DEFINED__)
@@ -12283,13 +14426,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0130 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner2_INTERFACE_DEFINED__
@@ -12412,7 +14555,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanner2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0131 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities_INTERFACE_DEFINED__)
@@ -12420,13 +14563,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0131 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities_INTERFACE_DEFINED__
@@ -12579,7 +14722,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0132 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0153 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_INTERFACE_DEFINED__)
@@ -12587,13 +14730,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0132 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_INTERFACE_DEFINED__
@@ -12716,7 +14859,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0133 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__)
@@ -12724,13 +14867,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0133 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -12853,7 +14996,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0134 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__)
@@ -12861,13 +15004,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0134 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__
@@ -13010,7 +15153,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerErrorOccurredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0135 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__)
@@ -13018,13 +15161,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0135 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__
@@ -13147,7 +15290,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerImagePreviewReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0136 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerReport_INTERFACE_DEFINED__)
@@ -13155,13 +15298,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerReport_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0136 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerReport_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerReport_INTERFACE_DEFINED__
@@ -13304,7 +15447,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerReport_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0137 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0158 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics_INTERFACE_DEFINED__)
@@ -13312,13 +15455,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0137 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics_INTERFACE_DEFINED__
@@ -13463,7 +15606,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0138 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0159 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IBarcodeScannerStatics2[] = L"Windows.Devices.PointOfService.IBarcodeScannerStatics2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0159 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0159_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IBarcodeScannerStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("B8652473-A36F-4007-B1D0-279EBE92A656")
+                    IBarcodeScannerStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorWithConnectionTypes( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBarcodeScannerStatics2 = __uuidof(IBarcodeScannerStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorWithConnectionTypes )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes connectionTypes,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0160 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -13471,13 +15753,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0138 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -13610,7 +15892,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0139 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics_INTERFACE_DEFINED__)
@@ -13618,13 +15900,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0139 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics_INTERFACE_DEFINED__
@@ -14679,7 +16961,401 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbol
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0140 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0162 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IBarcodeSymbologiesStatics2[] = L"Windows.Devices.PointOfService.IBarcodeSymbologiesStatics2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0162 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0162_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("8B7518F4-99D0-40BF-9424-B91D6DD4C6E0")
+                    IBarcodeSymbologiesStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Gs1DWCode( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBarcodeSymbologiesStatics2 = __uuidof(IBarcodeSymbologiesStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Gs1DWCode )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2 * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_get_Gs1DWCode(This,value)	\
+    ( (This)->lpVtbl -> get_Gs1DWCode(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologiesStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0163 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IBarcodeSymbologyAttributes[] = L"Windows.Devices.PointOfService.IBarcodeSymbologyAttributes";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0163 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0163_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("66413A78-AB7A-4ADA-8ECE-936014B2EAD7")
+                    IBarcodeSymbologyAttributes : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCheckDigitValidationEnabled( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsCheckDigitValidationEnabled( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCheckDigitValidationSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCheckDigitTransmissionEnabled( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsCheckDigitTransmissionEnabled( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCheckDigitTransmissionSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DecodeLength1( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DecodeLength1( 
+                            /* [in] */ UINT32 value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DecodeLength2( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DecodeLength2( 
+                            /* [in] */ UINT32 value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DecodeLengthKind( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DecodeLengthKind( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsDecodeLengthSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBarcodeSymbologyAttributes = __uuidof(IBarcodeSymbologyAttributes);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCheckDigitValidationEnabled )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsCheckDigitValidationEnabled )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCheckDigitValidationSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCheckDigitTransmissionEnabled )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsCheckDigitTransmissionEnabled )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCheckDigitTransmissionSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DecodeLength1 )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DecodeLength1 )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [in] */ UINT32 value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DecodeLength2 )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DecodeLength2 )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [in] */ UINT32 value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DecodeLengthKind )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeSymbologyDecodeLengthKind *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DecodeLengthKind )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CBarcodeSymbologyDecodeLengthKind value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsDecodeLengthSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributesVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_IsCheckDigitValidationEnabled(This,value)	\
+    ( (This)->lpVtbl -> get_IsCheckDigitValidationEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_put_IsCheckDigitValidationEnabled(This,value)	\
+    ( (This)->lpVtbl -> put_IsCheckDigitValidationEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_IsCheckDigitValidationSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsCheckDigitValidationSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_IsCheckDigitTransmissionEnabled(This,value)	\
+    ( (This)->lpVtbl -> get_IsCheckDigitTransmissionEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_put_IsCheckDigitTransmissionEnabled(This,value)	\
+    ( (This)->lpVtbl -> put_IsCheckDigitTransmissionEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_IsCheckDigitTransmissionSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsCheckDigitTransmissionSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_DecodeLength1(This,value)	\
+    ( (This)->lpVtbl -> get_DecodeLength1(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_put_DecodeLength1(This,value)	\
+    ( (This)->lpVtbl -> put_DecodeLength1(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_DecodeLength2(This,value)	\
+    ( (This)->lpVtbl -> get_DecodeLength2(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_put_DecodeLength2(This,value)	\
+    ( (This)->lpVtbl -> put_DecodeLength2(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_DecodeLengthKind(This,value)	\
+    ( (This)->lpVtbl -> get_DecodeLengthKind(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_put_DecodeLengthKind(This,value)	\
+    ( (This)->lpVtbl -> put_DecodeLengthKind(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_get_IsDecodeLengthSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsDecodeLengthSupported(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer_INTERFACE_DEFINED__)
@@ -14687,13 +17363,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0140 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer_INTERFACE_DEFINED__
@@ -14912,7 +17588,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer;
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0141 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCapabilities_INTERFACE_DEFINED__)
@@ -14920,13 +17596,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0141 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCapabilities_INTERFACE_DEFINED__
@@ -15099,7 +17775,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCap
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0142 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCloseAlarm_INTERFACE_DEFINED__)
@@ -15107,13 +17783,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCloseAlarm_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0142 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCloseAlarm_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCloseAlarm_INTERFACE_DEFINED__
@@ -15338,7 +18014,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerClo
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerCloseAlarm_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0143 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSource_INTERFACE_DEFINED__)
@@ -15346,13 +18022,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0143 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSource_INTERFACE_DEFINED__
@@ -15509,7 +18185,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEve
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0144 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSourceEventArgs_INTERFACE_DEFINED__)
@@ -15517,13 +18193,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSourceEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0144 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSourceEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSourceEventArgs_INTERFACE_DEFINED__
@@ -15646,7 +18322,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEve
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerEventSourceEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0145 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0169 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics_INTERFACE_DEFINED__)
@@ -15654,13 +18330,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0145 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0169_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics_INTERFACE_DEFINED__
@@ -15805,7 +18481,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0146 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0170 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_ICashDrawerStatics2[] = L"Windows.Devices.PointOfService.ICashDrawerStatics2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0170 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0170_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::ICashDrawerStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("3E818121-8C42-40E8-9C0E-40297048104C")
+                    ICashDrawerStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorWithConnectionTypes( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ICashDrawerStatics2 = __uuidof(ICashDrawerStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorWithConnectionTypes )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes connectionTypes,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0171 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_INTERFACE_DEFINED__)
@@ -15813,13 +18628,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0146 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0171_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_INTERFACE_DEFINED__
@@ -15952,7 +18767,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0147 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0172 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -15960,13 +18775,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0147 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -16089,7 +18904,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICashDrawerStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0148 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner_INTERFACE_DEFINED__)
@@ -16097,13 +18912,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0148 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner_INTERFACE_DEFINED__
@@ -16484,7 +19299,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcod
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0149 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0174 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner1_INTERFACE_DEFINED__)
@@ -16492,13 +19307,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner1_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0149 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner1_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner1_INTERFACE_DEFINED__
@@ -16631,7 +19446,160 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcod
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner1_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0150 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0175 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedBarcodeScanner2[] = L"Windows.Devices.PointOfService.IClaimedBarcodeScanner2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0175 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0175_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("E3B59E8C-2D8B-4F70-8AF3-3448BEDD5FE2")
+                    IClaimedBarcodeScanner2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetSymbologyAttributesAsync( 
+                            /* [in] */ UINT32 barcodeSymbology,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SetSymbologyAttributesAsync( 
+                            /* [in] */ UINT32 barcodeSymbology,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes *attributes,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IClaimedBarcodeScanner2 = __uuidof(IClaimedBarcodeScanner2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSymbologyAttributesAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This,
+            /* [in] */ UINT32 barcodeSymbology,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CBarcodeSymbologyAttributes **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetSymbologyAttributesAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2 * This,
+            /* [in] */ UINT32 barcodeSymbology,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeSymbologyAttributes *attributes,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_GetSymbologyAttributesAsync(This,barcodeSymbology,result)	\
+    ( (This)->lpVtbl -> GetSymbologyAttributesAsync(This,barcodeSymbology,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_SetSymbologyAttributesAsync(This,barcodeSymbology,attributes,result)	\
+    ( (This)->lpVtbl -> SetSymbologyAttributesAsync(This,barcodeSymbology,attributes,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0176 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__)
@@ -16639,13 +19607,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0150 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__
@@ -16884,7 +19852,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDr
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0151 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0177 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_INTERFACE_DEFINED__)
@@ -16892,13 +19860,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0151 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0177_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_INTERFACE_DEFINED__
@@ -17021,7 +19989,405 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJourna
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0152 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0178 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedLineDisplay[] = L"Windows.Devices.PointOfService.IClaimedLineDisplay";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0178 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0178_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IClaimedLineDisplay */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("120AC970-9A75-4ACF-AAE7-09972BCF8794")
+                    IClaimedLineDisplay : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Capabilities( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::PointOfService::ILineDisplayCapabilities **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PhysicalDeviceName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PhysicalDeviceDescription( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceControlDescription( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceControlVersion( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceServiceVersion( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DefaultWindow( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::PointOfService::ILineDisplayWindow **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RetainDevice( void) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_ReleaseDeviceRequested( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_ReleaseDeviceRequested( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IClaimedLineDisplay = __uuidof(IClaimedLineDisplay);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceId )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Capabilities )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PhysicalDeviceName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PhysicalDeviceDescription )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceControlDescription )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceControlVersion )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceServiceVersion )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DefaultWindow )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *RetainDevice )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_ReleaseDeviceRequested )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_ReleaseDeviceRequested )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_DeviceId(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceId(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_Capabilities(This,value)	\
+    ( (This)->lpVtbl -> get_Capabilities(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_PhysicalDeviceName(This,value)	\
+    ( (This)->lpVtbl -> get_PhysicalDeviceName(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_PhysicalDeviceDescription(This,value)	\
+    ( (This)->lpVtbl -> get_PhysicalDeviceDescription(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_DeviceControlDescription(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceControlDescription(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_DeviceControlVersion(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceControlVersion(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_DeviceServiceVersion(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceServiceVersion(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_get_DefaultWindow(This,value)	\
+    ( (This)->lpVtbl -> get_DefaultWindow(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_RetainDevice(This)	\
+    ( (This)->lpVtbl -> RetainDevice(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_add_ReleaseDeviceRequested(This,handler,token)	\
+    ( (This)->lpVtbl -> add_ReleaseDeviceRequested(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_remove_ReleaseDeviceRequested(This,token)	\
+    ( (This)->lpVtbl -> remove_ReleaseDeviceRequested(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0179 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedLineDisplayStatics[] = L"Windows.Devices.PointOfService.IClaimedLineDisplayStatics";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0179 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0179_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IClaimedLineDisplayStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("78CA98FB-8B6B-4973-86F0-3E570C351825")
+                    IClaimedLineDisplayStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE FromIdAsync( 
+                            /* [in] */ __RPC__in HSTRING deviceId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorWithConnectionTypes( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IClaimedLineDisplayStatics = __uuidof(IClaimedLineDisplayStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *FromIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelector )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorWithConnectionTypes )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes connectionTypes,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStaticsVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FromIdAsync(This,deviceId,operation)	\
+    ( (This)->lpVtbl -> FromIdAsync(This,deviceId,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_GetDeviceSelector(This,result)	\
+    ( (This)->lpVtbl -> GetDeviceSelector(This,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0180 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_INTERFACE_DEFINED__)
@@ -17029,13 +20395,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0152 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_INTERFACE_DEFINED__
@@ -17502,7 +20868,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagnet
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0153 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0181 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__)
@@ -17510,13 +20876,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0153 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0181 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0181_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__
@@ -17825,7 +21191,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPri
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0154 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0182 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_INTERFACE_DEFINED__)
@@ -17833,13 +21199,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0154 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0182 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0182_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_INTERFACE_DEFINED__
@@ -18012,7 +21378,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0155 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0183 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedSlipPrinter_INTERFACE_DEFINED__)
@@ -18020,13 +21386,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedSlipPrinter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0155 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0183 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0183_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedSlipPrinter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedSlipPrinter_INTERFACE_DEFINED__
@@ -18269,7 +21635,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedSlipPr
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedSlipPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0156 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0184 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICommonClaimedPosPrinterStation_INTERFACE_DEFINED__)
@@ -18277,13 +21643,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICommonClaimedPosPrinterStation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0156 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICommonClaimedPosPrinterStation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICommonClaimedPosPrinterStation_INTERFACE_DEFINED__
@@ -18588,7 +21954,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICommonClaimed
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICommonClaimedPosPrinterStation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0157 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0185 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICommonPosPrintStationCapabilities_INTERFACE_DEFINED__)
@@ -18596,13 +21962,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICommonPosPrintStationCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0157 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0185_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICommonPosPrintStationCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICommonPosPrintStationCapabilities_INTERFACE_DEFINED__
@@ -18845,7 +22211,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICommonPosPrin
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICommonPosPrintStationCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0158 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0186 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICommonReceiptSlipCapabilities_INTERFACE_DEFINED__)
@@ -18853,13 +22219,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CICommonReceiptSlipCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0158 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CICommonReceiptSlipCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CICommonReceiptSlipCapabilities_INTERFACE_DEFINED__
@@ -19062,7 +22428,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CICommonReceipt
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CICommonReceiptSlipCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0159 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0187 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinterCapabilities_INTERFACE_DEFINED__)
@@ -19070,13 +22436,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinterCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0159 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0187_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinterCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinterCapabilities_INTERFACE_DEFINED__
@@ -19189,7 +22555,925 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinte
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIJournalPrinterCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0160 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0188 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_ILineDisplay[] = L"Windows.Devices.PointOfService.ILineDisplay";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0188 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0188_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::ILineDisplay */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("24F5DF4E-3C99-44E2-B73F-E51BE3637A8C")
+                    ILineDisplay : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Capabilities( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::PointOfService::ILineDisplayCapabilities **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PhysicalDeviceName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PhysicalDeviceDescription( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceControlDescription( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceControlVersion( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceServiceVersion( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE ClaimAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ILineDisplay = __uuidof(ILineDisplay);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceId )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Capabilities )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PhysicalDeviceName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PhysicalDeviceDescription )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceControlDescription )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceControlVersion )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceServiceVersion )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *ClaimAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CClaimedLineDisplay **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_DeviceId(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceId(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_Capabilities(This,value)	\
+    ( (This)->lpVtbl -> get_Capabilities(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_PhysicalDeviceName(This,value)	\
+    ( (This)->lpVtbl -> get_PhysicalDeviceName(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_PhysicalDeviceDescription(This,value)	\
+    ( (This)->lpVtbl -> get_PhysicalDeviceDescription(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_DeviceControlDescription(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceControlDescription(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_DeviceControlVersion(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceControlVersion(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_get_DeviceServiceVersion(This,value)	\
+    ( (This)->lpVtbl -> get_DeviceServiceVersion(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_ClaimAsync(This,result)	\
+    ( (This)->lpVtbl -> ClaimAsync(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0189 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_ILineDisplayCapabilities[] = L"Windows.Devices.PointOfService.ILineDisplayCapabilities";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0189 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0189_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::ILineDisplayCapabilities */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("5A15B5D1-8DC5-4B9C-9172-303E47B70C55")
+                    ILineDisplayCapabilities : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsStatisticsReportingSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsStatisticsUpdatingSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PowerReportingType( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::PointOfService::UnifiedPosPowerReportingType *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanChangeScreenSize( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanDisplayBitmaps( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanReadCharacterAtCursor( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanMapCharacterSets( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanDisplayCustomGlyphs( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanReverse( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanBlink( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanChangeBlinkRate( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsBrightnessSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsCursorSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsHorizontalMarqueeSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsVerticalMarqueeSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsInterCharacterWaitSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SupportedDescriptors( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SupportedWindows( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ILineDisplayCapabilities = __uuidof(ILineDisplayCapabilities);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilitiesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsStatisticsReportingSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsStatisticsUpdatingSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PowerReportingType )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CPointOfService_CUnifiedPosPowerReportingType *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanChangeScreenSize )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanDisplayBitmaps )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanReadCharacterAtCursor )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanMapCharacterSets )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanDisplayCustomGlyphs )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanReverse )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttributeGranularity *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanBlink )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttributeGranularity *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanChangeBlinkRate )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsBrightnessSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsCursorSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsHorizontalMarqueeSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsVerticalMarqueeSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsInterCharacterWaitSupported )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SupportedDescriptors )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SupportedWindows )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilitiesVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilitiesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsStatisticsReportingSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsStatisticsReportingSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsStatisticsUpdatingSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsStatisticsUpdatingSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_PowerReportingType(This,value)	\
+    ( (This)->lpVtbl -> get_PowerReportingType(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanChangeScreenSize(This,value)	\
+    ( (This)->lpVtbl -> get_CanChangeScreenSize(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanDisplayBitmaps(This,value)	\
+    ( (This)->lpVtbl -> get_CanDisplayBitmaps(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanReadCharacterAtCursor(This,value)	\
+    ( (This)->lpVtbl -> get_CanReadCharacterAtCursor(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanMapCharacterSets(This,value)	\
+    ( (This)->lpVtbl -> get_CanMapCharacterSets(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanDisplayCustomGlyphs(This,value)	\
+    ( (This)->lpVtbl -> get_CanDisplayCustomGlyphs(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanReverse(This,value)	\
+    ( (This)->lpVtbl -> get_CanReverse(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanBlink(This,value)	\
+    ( (This)->lpVtbl -> get_CanBlink(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_CanChangeBlinkRate(This,value)	\
+    ( (This)->lpVtbl -> get_CanChangeBlinkRate(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsBrightnessSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsBrightnessSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsCursorSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsCursorSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsHorizontalMarqueeSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsHorizontalMarqueeSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsVerticalMarqueeSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsVerticalMarqueeSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_IsInterCharacterWaitSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsInterCharacterWaitSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_SupportedDescriptors(This,value)	\
+    ( (This)->lpVtbl -> get_SupportedDescriptors(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_get_SupportedWindows(This,value)	\
+    ( (This)->lpVtbl -> get_SupportedWindows(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayCapabilities_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0190 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_ILineDisplayStatics[] = L"Windows.Devices.PointOfService.ILineDisplayStatics";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0190 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0190_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::ILineDisplayStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("022DC0B6-11B0-4690-9547-0B39C5AF2114")
+                    ILineDisplayStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE FromIdAsync( 
+                            /* [in] */ __RPC__in HSTRING deviceId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDefaultAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorWithConnectionTypes( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ILineDisplayStatics = __uuidof(ILineDisplayStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *FromIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefaultAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CPointOfService__CLineDisplay **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelector )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorWithConnectionTypes )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes connectionTypes,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStaticsVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_FromIdAsync(This,deviceId,operation)	\
+    ( (This)->lpVtbl -> FromIdAsync(This,deviceId,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_GetDefaultAsync(This,result)	\
+    ( (This)->lpVtbl -> GetDefaultAsync(This,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_GetDeviceSelector(This,result)	\
+    ( (This)->lpVtbl -> GetDeviceSelector(This,result) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0191 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_ILineDisplayWindow[] = L"Windows.Devices.PointOfService.ILineDisplayWindow";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0191 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0191_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::ILineDisplayWindow */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("D21FEEF4-2364-4BE5-BEE1-851680AF4964")
+                    ILineDisplayWindow : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SizeInCharacters( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Size *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InterCharacterWaitInterval( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::TimeSpan *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_InterCharacterWaitInterval( 
+                            /* [in] */ ABI::Windows::Foundation::TimeSpan value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryRefreshAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryDisplayTextAsync( 
+                            /* [in] */ __RPC__in HSTRING text,
+                            /* [in] */ ABI::Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryDisplayTextAtPositionAsync( 
+                            /* [in] */ __RPC__in HSTRING text,
+                            /* [in] */ ABI::Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute,
+                            /* [in] */ ABI::Windows::Foundation::Point startPosition,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryDisplayTextNormalAsync( 
+                            /* [in] */ __RPC__in HSTRING text,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryScrollTextAsync( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::LineDisplayScrollDirection direction,
+                            /* [in] */ UINT32 numberOfColumnsOrRows,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryClearTextAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ILineDisplayWindow = __uuidof(ILineDisplayWindow);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindowVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SizeInCharacters )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CSize *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InterCharacterWaitInterval )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_InterCharacterWaitInterval )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CTimeSpan value);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryRefreshAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryDisplayTextAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [in] */ __RPC__in HSTRING text,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttribute displayAttribute,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryDisplayTextAtPositionAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [in] */ __RPC__in HSTRING text,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayTextAttribute displayAttribute,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CPoint startPosition,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryDisplayTextNormalAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [in] */ __RPC__in HSTRING text,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryScrollTextAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CLineDisplayScrollDirection direction,
+            /* [in] */ UINT32 numberOfColumnsOrRows,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryClearTextAsync )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindowVtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindowVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_get_SizeInCharacters(This,value)	\
+    ( (This)->lpVtbl -> get_SizeInCharacters(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_get_InterCharacterWaitInterval(This,value)	\
+    ( (This)->lpVtbl -> get_InterCharacterWaitInterval(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_put_InterCharacterWaitInterval(This,value)	\
+    ( (This)->lpVtbl -> put_InterCharacterWaitInterval(This,value) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_TryRefreshAsync(This,operation)	\
+    ( (This)->lpVtbl -> TryRefreshAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_TryDisplayTextAsync(This,text,displayAttribute,operation)	\
+    ( (This)->lpVtbl -> TryDisplayTextAsync(This,text,displayAttribute,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_TryDisplayTextAtPositionAsync(This,text,displayAttribute,startPosition,operation)	\
+    ( (This)->lpVtbl -> TryDisplayTextAtPositionAsync(This,text,displayAttribute,startPosition,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_TryDisplayTextNormalAsync(This,text,operation)	\
+    ( (This)->lpVtbl -> TryDisplayTextNormalAsync(This,text,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_TryScrollTextAsync(This,direction,numberOfColumnsOrRows,operation)	\
+    ( (This)->lpVtbl -> TryScrollTextAsync(This,direction,numberOfColumnsOrRows,operation) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_TryClearTextAsync(This,operation)	\
+    ( (This)->lpVtbl -> TryClearTextAsync(This,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CILineDisplayWindow_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0192 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReader_INTERFACE_DEFINED__)
@@ -19197,13 +23481,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0160 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReader_INTERFACE_DEFINED__
@@ -19424,7 +23708,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0161 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0193 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__)
@@ -19432,13 +23716,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0161 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0193_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -19741,7 +24025,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderAamvaCardDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0162 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0194 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__)
@@ -19749,13 +24033,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0162 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0194_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -19958,7 +24242,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderBankCardDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0163 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0195 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCapabilities_INTERFACE_DEFINED__)
@@ -19966,13 +24250,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0163 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0195 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0195_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCapabilities_INTERFACE_DEFINED__
@@ -20195,7 +24479,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0164 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0196 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCardTypesStatics_INTERFACE_DEFINED__)
@@ -20203,13 +24487,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCardTypesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0164 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0196 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0196_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCardTypesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCardTypesStatics_INTERFACE_DEFINED__
@@ -20362,7 +24646,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderCardTypesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0165 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0197 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderEncryptionAlgorithmsStatics_INTERFACE_DEFINED__)
@@ -20370,13 +24654,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderEncryptionAlgorithmsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0165 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0197 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0197_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0197_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderEncryptionAlgorithmsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderEncryptionAlgorithmsStatics_INTERFACE_DEFINED__
@@ -20519,7 +24803,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderEncryptionAlgorithmsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0166 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0198 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__)
@@ -20527,13 +24811,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0166 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0198 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0198_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__
@@ -20706,7 +24990,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderErrorOccurredEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0167 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0199 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderReport_INTERFACE_DEFINED__)
@@ -20714,13 +24998,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderReport_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0167 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0199 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0199_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderReport_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderReport_INTERFACE_DEFINED__
@@ -20923,7 +25207,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderReport_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0168 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0200 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics_INTERFACE_DEFINED__)
@@ -20931,13 +25215,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0168 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0200 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0200_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics_INTERFACE_DEFINED__
@@ -21082,7 +25366,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0169 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0201 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IMagneticStripeReaderStatics2[] = L"Windows.Devices.PointOfService.IMagneticStripeReaderStatics2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0201 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0201_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IMagneticStripeReaderStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("8CADC362-D667-48FA-86BC-F5AE1189262B")
+                    IMagneticStripeReaderStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorWithConnectionTypes( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMagneticStripeReaderStatics2 = __uuidof(IMagneticStripeReaderStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorWithConnectionTypes )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes connectionTypes,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0202 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -21090,13 +25513,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0169 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0202 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0202_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -21229,7 +25652,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0170 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0203 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderTrackData_INTERFACE_DEFINED__)
@@ -21237,13 +25660,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderTrackData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0170 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0203 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0203_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderTrackData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderTrackData_INTERFACE_DEFINED__
@@ -21386,7 +25809,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderTrackData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0171 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0204 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__)
@@ -21394,13 +25817,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0171 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0204 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0204_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__
@@ -21523,7 +25946,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStrip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0172 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0205 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinter_INTERFACE_DEFINED__)
@@ -21531,13 +25954,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0172 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0205 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0205_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinter_INTERFACE_DEFINED__
@@ -21756,7 +26179,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinter;
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0173 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0206 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCapabilities_INTERFACE_DEFINED__)
@@ -21764,13 +26187,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0173 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0206 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0206_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0206_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCapabilities_INTERFACE_DEFINED__
@@ -21983,7 +26406,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCap
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0174 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0207 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCharacterSetIdsStatics_INTERFACE_DEFINED__)
@@ -21991,13 +26414,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCharacterSetIdsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0174 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0207 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0207_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0207_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCharacterSetIdsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCharacterSetIdsStatics_INTERFACE_DEFINED__
@@ -22140,7 +26563,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCha
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterCharacterSetIdsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0175 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0208 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterJob_INTERFACE_DEFINED__)
@@ -22148,13 +26571,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterJob_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0175 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0208 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0208_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0208_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterJob_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterJob_INTERFACE_DEFINED__
@@ -22305,7 +26728,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterJob
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterJob_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0176 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0209 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__)
@@ -22313,13 +26736,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0176 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0209 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0209_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0209_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__
@@ -22432,7 +26855,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterRel
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterReleaseDeviceRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0177 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0210 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics_INTERFACE_DEFINED__)
@@ -22440,13 +26863,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0177 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0210 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0210_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0210_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics_INTERFACE_DEFINED__
@@ -22591,7 +27014,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0178 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0211 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IPosPrinterStatics2[] = L"Windows.Devices.PointOfService.IPosPrinterStatics2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0211 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0211_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0211_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::PointOfService::IPosPrinterStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace PointOfService {
+                    
+                    MIDL_INTERFACE("EECD2C1C-B0D0-42E7-B137-B89B16244D41")
+                    IPosPrinterStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceSelectorWithConnectionTypes( 
+                            /* [in] */ ABI::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPosPrinterStatics2 = __uuidof(IPosPrinterStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeviceSelectorWithConnectionTypes )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CPointOfService_CPosConnectionTypes connectionTypes,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value)	\
+    ( (This)->lpVtbl -> GetDeviceSelectorWithConnectionTypes(This,connectionTypes,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0212 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatus_INTERFACE_DEFINED__)
@@ -22599,13 +27161,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatus_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0178 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0212 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0212_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0212_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatus_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatus_INTERFACE_DEFINED__
@@ -22738,7 +27300,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0179 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0213 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -22746,13 +27308,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0179 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0213 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0213_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0213_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -22875,7 +27437,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterSta
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIPosPrinterStatusUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0180 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0214 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptOrSlipJob_INTERFACE_DEFINED__)
@@ -22883,13 +27445,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptOrSlipJob_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0180 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0214 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0214_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0214_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptOrSlipJob_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptOrSlipJob_INTERFACE_DEFINED__
@@ -23214,7 +27776,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIReceiptOrSlip
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptOrSlipJob_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0181 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0215 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrintJob_INTERFACE_DEFINED__)
@@ -23222,13 +27784,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrintJob_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0181 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0215 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0215_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0215_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrintJob_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrintJob_INTERFACE_DEFINED__
@@ -23369,7 +27931,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrintJ
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrintJob_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0182 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0216 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrinterCapabilities_INTERFACE_DEFINED__)
@@ -23377,13 +27939,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrinterCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0182 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0216 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0216_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0216_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrinterCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrinterCapabilities_INTERFACE_DEFINED__
@@ -23526,7 +28088,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrinte
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIReceiptPrinterCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0183 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0217 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CISlipPrinterCapabilities_INTERFACE_DEFINED__)
@@ -23534,13 +28096,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CISlipPrinterCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0183 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0217 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0217_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0217_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CISlipPrinterCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CISlipPrinterCapabilities_INTERFACE_DEFINED__
@@ -23673,7 +28235,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CISlipPrinterCa
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CISlipPrinterCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0184 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0218 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIUnifiedPosErrorData_INTERFACE_DEFINED__)
@@ -23681,13 +28243,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIUnifiedPosErrorData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0184 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0218 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0218_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0218_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIUnifiedPosErrorData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIUnifiedPosErrorData_INTERFACE_DEFINED__
@@ -23840,7 +28402,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIUnifiedPosErr
 #endif 	/* ____x_ABI_CWindows_CDevices_CPointOfService_CIUnifiedPosErrorData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0185 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0219 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Devices_PointOfService_BarcodeScanner_DEFINED
@@ -23874,6 +28436,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Devices_PointOfService_BarcodeSymbologies_DEFINED
 #define RUNTIMECLASS_Windows_Devices_PointOfService_BarcodeSymbologies_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_BarcodeSymbologies[] = L"Windows.Devices.PointOfService.BarcodeSymbologies";
+#endif
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_BarcodeSymbologyAttributes_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_BarcodeSymbologyAttributes_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_BarcodeSymbologyAttributes[] = L"Windows.Devices.PointOfService.BarcodeSymbologyAttributes";
 #endif
 #ifndef RUNTIMECLASS_Windows_Devices_PointOfService_CashDrawer_DEFINED
 #define RUNTIMECLASS_Windows_Devices_PointOfService_CashDrawer_DEFINED
@@ -23919,6 +28485,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedJournalPrinter_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedJournalPrinter[] = L"Windows.Devices.PointOfService.ClaimedJournalPrinter";
 #endif
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedLineDisplay_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedLineDisplay_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedLineDisplay[] = L"Windows.Devices.PointOfService.ClaimedLineDisplay";
+#endif
 #ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedMagneticStripeReader_DEFINED
 #define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedMagneticStripeReader_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedMagneticStripeReader[] = L"Windows.Devices.PointOfService.ClaimedMagneticStripeReader";
@@ -23942,6 +28512,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Devices_PointOfService_JournalPrinterCapabilities_DEFINED
 #define RUNTIMECLASS_Windows_Devices_PointOfService_JournalPrinterCapabilities_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_JournalPrinterCapabilities[] = L"Windows.Devices.PointOfService.JournalPrinterCapabilities";
+#endif
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_LineDisplay_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_LineDisplay_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_LineDisplay[] = L"Windows.Devices.PointOfService.LineDisplay";
+#endif
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_LineDisplayCapabilities_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_LineDisplayCapabilities_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_LineDisplayCapabilities[] = L"Windows.Devices.PointOfService.LineDisplayCapabilities";
+#endif
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_LineDisplayWindow_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_LineDisplayWindow_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_LineDisplayWindow[] = L"Windows.Devices.PointOfService.LineDisplayWindow";
 #endif
 #ifndef RUNTIMECLASS_Windows_Devices_PointOfService_MagneticStripeReader_DEFINED
 #define RUNTIMECLASS_Windows_Devices_PointOfService_MagneticStripeReader_DEFINED
@@ -24033,13 +28615,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0185 */
+/* interface __MIDL_itf_windows2Edevices2Epointofservice_0000_0219 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0219_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epointofservice_0000_0219_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

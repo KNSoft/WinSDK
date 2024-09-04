@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -413,18 +413,18 @@ interface IPageStackEntry;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4705_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4705_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001 */
 /* [local] */ 
@@ -459,18 +459,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4706_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4706_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002 */
 /* [local] */ 
@@ -505,18 +505,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4707_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4707_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003 */
 /* [local] */ 
@@ -551,18 +551,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4708_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4708_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004 */
 /* [local] */ 
@@ -801,18 +801,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4709_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4709_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0005 */
 /* [local] */ 
@@ -987,18 +987,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageSta
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4710_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4710_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0007 */
 /* [local] */ 
@@ -1139,18 +1139,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageSta
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4711_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4711_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0009 */
 /* [local] */ 
@@ -1333,18 +1333,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4712_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_4712_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0011 */
 /* [local] */ 

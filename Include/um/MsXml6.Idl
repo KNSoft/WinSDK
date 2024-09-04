@@ -3657,7 +3657,8 @@ typedef [
     XHR_PROP_QUERY_STRING_UTF8          = 0x7,
     XHR_PROP_IGNORE_CERT_ERRORS         = 0x8,
     XHR_PROP_ONDATA_THRESHOLD           = 0x9,
-    XHR_PROP_SET_ENTERPRISEID           = 0xA
+    XHR_PROP_SET_ENTERPRISEID           = 0xA,
+    XHR_PROP_MAX_CONNECTIONS            = 0xB
 } XHR_PROPERTY;
 
 cpp_quote("#define XHR_PROP_ONDATA_ALWAYS 0x0")

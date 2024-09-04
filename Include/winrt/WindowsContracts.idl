@@ -4,10 +4,10 @@ namespace Windows
 {
     namespace Foundation
     {
-        [contractversion(2)]
+        [contractversion(3)]
         apicontract FoundationContract{};
 
-        [contractversion(3)]
+        [contractversion(4)]
         apicontract UniversalApiContract{};
     }
 
@@ -16,7 +16,12 @@ namespace Windows
         [contractversion(1)]
         apicontract WebUICommandBarContract{};
     }
-    
+    namespace ApplicationModel.Calls
+    {
+        [contractversion(3)]
+        apicontract CallsPhoneContract{};
+    }
+
     namespace Phone
     {
         [contractversion(1)]

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -58,6 +58,13 @@ typedef interface IDpxContainer IDpxContainer;
 typedef interface IDpxFile IDpxFile;
 
 #endif 	/* __IDpxFile_FWD_DEFINED__ */
+
+
+#ifndef __IDpxFile2_FWD_DEFINED__
+#define __IDpxFile2_FWD_DEFINED__
+typedef interface IDpxFile2 IDpxFile2;
+
+#endif 	/* __IDpxFile2_FWD_DEFINED__ */
 
 
 #ifndef __IDpxContainerDirectoryEntry_FWD_DEFINED__
@@ -116,6 +123,13 @@ typedef interface IDpxContainer2 IDpxContainer2;
 #endif 	/* __IDpxContainer2_FWD_DEFINED__ */
 
 
+#ifndef __IDpxContainer3_FWD_DEFINED__
+#define __IDpxContainer3_FWD_DEFINED__
+typedef interface IDpxContainer3 IDpxContainer3;
+
+#endif 	/* __IDpxContainer3_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -150,7 +164,8 @@ enum __MIDL___MIDL_itf_dpx1_0000_0000_0001
     {
         DPX_RESUME_AND_DOWNLOAD	= 0,
         DPX_RESUME_UNTIL_DOWNLOAD	= 0x1,
-        DPX_RESUME_AND_DOWNLOAD_FALLBACK	= 0x2
+        DPX_RESUME_AND_DOWNLOAD_FALLBACK	= 0x2,
+        DPX_RESUME_UNTIL_DOWNLOAD_NO_CLONE	= 0x3
     } 	DPX_RESUME_TYPE;
 
 #define DPX_MAX_HASH_SIZE 64
@@ -204,6 +219,7 @@ typedef /* [public][public] */ struct __MIDL___MIDL_itf_dpx1_0000_0000_0006
 #define DPX_COMPRESSED_FILE_HEADER_LENGTH 4
 #define DPX_COMPRESSED_FILE_HEADER_XPRESS_HUFF {'D', 'C', 'X', '\x01'}
 #define DPX_XPRESS_HUFF_BLOCK_SIZE (1024 * 1024)
+#define DPX_OPTION_TELEMETRY_CORRELATION_VECTOR L"Telemetry_correlation_vector"
 
 
 extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0000_v0_0_c_ifspec;
@@ -811,6 +827,149 @@ EXTERN_C const IID IID_IDpxFile;
 
 
 #endif 	/* __IDpxFile_INTERFACE_DEFINED__ */
+
+
+#ifndef __IDpxFile2_INTERFACE_DEFINED__
+#define __IDpxFile2_INTERFACE_DEFINED__
+
+/* interface IDpxFile2 */
+/* [unique][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IDpxFile2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c249cc11-c1f5-428e-acbf-e1b78b30b971")
+    IDpxFile2 : public IDpxFile
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetSize( 
+            /* [out] */ __RPC__out UINT64 *pSize) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IDpxFile2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IDpxFile2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IDpxFile2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IDpxFile2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSourceFileName )( 
+            __RPC__in IDpxFile2 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *pSourceFileName);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTargetFileName )( 
+            __RPC__in IDpxFile2 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *pTargetFileName);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetExpectedHash )( 
+            __RPC__in IDpxFile2 * This,
+            /* [in] */ __RPC__in DPX_HASH *pExpectedHash);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetExpectedHash )( 
+            __RPC__in IDpxFile2 * This,
+            /* [out] */ __RPC__deref_out_opt DPX_HASH **ppExpectedHash);
+        
+        HRESULT ( STDMETHODCALLTYPE *Remove )( 
+            __RPC__in IDpxFile2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetUserValue )( 
+            __RPC__in IDpxFile2 * This,
+            /* [in] */ UINT64 UserValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUserValue )( 
+            __RPC__in IDpxFile2 * This,
+            /* [out] */ __RPC__out UINT64 *pUserValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStatus )( 
+            __RPC__in IDpxFile2 * This,
+            /* [out] */ __RPC__out HRESULT *pStatus);
+        
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+            IDpxFile2 * This,
+            /* [in] */ void *Allocation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSize )( 
+            __RPC__in IDpxFile2 * This,
+            /* [out] */ __RPC__out UINT64 *pSize);
+        
+        END_INTERFACE
+    } IDpxFile2Vtbl;
+
+    interface IDpxFile2
+    {
+        CONST_VTBL struct IDpxFile2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IDpxFile2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IDpxFile2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IDpxFile2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IDpxFile2_GetSourceFileName(This,pSourceFileName)	\
+    ( (This)->lpVtbl -> GetSourceFileName(This,pSourceFileName) ) 
+
+#define IDpxFile2_GetTargetFileName(This,pTargetFileName)	\
+    ( (This)->lpVtbl -> GetTargetFileName(This,pTargetFileName) ) 
+
+#define IDpxFile2_SetExpectedHash(This,pExpectedHash)	\
+    ( (This)->lpVtbl -> SetExpectedHash(This,pExpectedHash) ) 
+
+#define IDpxFile2_GetExpectedHash(This,ppExpectedHash)	\
+    ( (This)->lpVtbl -> GetExpectedHash(This,ppExpectedHash) ) 
+
+#define IDpxFile2_Remove(This)	\
+    ( (This)->lpVtbl -> Remove(This) ) 
+
+#define IDpxFile2_SetUserValue(This,UserValue)	\
+    ( (This)->lpVtbl -> SetUserValue(This,UserValue) ) 
+
+#define IDpxFile2_GetUserValue(This,pUserValue)	\
+    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) ) 
+
+#define IDpxFile2_GetStatus(This,pStatus)	\
+    ( (This)->lpVtbl -> GetStatus(This,pStatus) ) 
+
+#define IDpxFile2_FreeMemory(This,Allocation)	\
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+
+
+#define IDpxFile2_GetSize(This,pSize)	\
+    ( (This)->lpVtbl -> GetSize(This,pSize) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IDpxFile2_INTERFACE_DEFINED__ */
 
 
 #ifndef __IDpxContainerDirectoryEntry_INTERFACE_DEFINED__
@@ -1633,7 +1792,7 @@ EXTERN_C const IID IID_IEnumDpxContainerDirectoryEntries;
 #endif 	/* __IEnumDpxContainerDirectoryEntries_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_dpx1_0000_0009 */
+/* interface __MIDL_itf_dpx1_0000_0010 */
 /* [local] */ 
 
 typedef struct tagDpxContainerDecryptionData
@@ -1652,8 +1811,8 @@ enum tagDPX_CONTAINER_ENCRYPTION_ENUM
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0010_v0_0_s_ifspec;
 
 #ifndef __IDpxEncryptedContainer_INTERFACE_DEFINED__
 #define __IDpxEncryptedContainer_INTERFACE_DEFINED__
@@ -1848,7 +2007,7 @@ EXTERN_C const IID IID_IDpxEncryptedContainer;
 #endif 	/* __IDpxEncryptedContainer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_dpx1_0000_0010 */
+/* interface __MIDL_itf_dpx1_0000_0011 */
 /* [local] */ 
 
 typedef struct tagDpxPredecessorFilePathInfo
@@ -1860,8 +2019,8 @@ typedef struct tagDpxPredecessorFilePathInfo
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0011_v0_0_s_ifspec;
 
 #ifndef __IDpxContainer2_INTERFACE_DEFINED__
 #define __IDpxContainer2_INTERFACE_DEFINED__
@@ -2068,15 +2227,249 @@ EXTERN_C const IID IID_IDpxContainer2;
 #endif 	/* __IDpxContainer2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_dpx1_0000_0011 */
+#ifndef __IDpxContainer3_INTERFACE_DEFINED__
+#define __IDpxContainer3_INTERFACE_DEFINED__
+
+/* interface IDpxContainer3 */
+/* [unique][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IDpxContainer3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("582f768c-fe7d-4bf5-b0b8-3ab01d53b0d0")
+    IDpxContainer3 : public IDpxContainer2
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE AddPeerContainer( 
+            /* [in] */ __RPC__in LPCWSTR ContainerPath,
+            /* [out] */ __RPC__deref_out_opt IDpxContainer3 **ppContainer) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IsPeer( 
+            /* [in] */ __RPC__in_opt IDpxContainer3 *ppOtherContainer,
+            /* [out] */ __RPC__out BOOL *pIsPeer) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetPeerGroupId( 
+            /* [out] */ __RPC__out UINT64 *pnPeerGroupId) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IDpxContainer3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IDpxContainer3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IDpxContainer3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetContainerPath )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in LPCWSTR ContainerPath);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetContainerPath )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *pContainerPath);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddFileToExtract )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in LPCWSTR SourceFileName,
+            /* [unique][in] */ __RPC__in_opt LPCWSTR TargetFileName,
+            /* [unique][in] */ __RPC__in_opt DPX_HASH *TargetFileHash);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddFileToExtract2 )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in LPCWSTR SourceFileName,
+            /* [unique][in] */ __RPC__in_opt LPCWSTR TargetFileName,
+            /* [out] */ __RPC__deref_out_opt IDpxFile **ppFile);
+        
+        HRESULT ( STDMETHODCALLTYPE *ExtractAllFiles )( 
+            __RPC__in IDpxContainer3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumFilesToExtract )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [out] */ __RPC__deref_out_opt IEnumDpxFiles **ppEnumFiles);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetExpectedContainerIndexHash )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in DPX_HASH *pExpectedHash);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetExpectedContainerIndexHash )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [out] */ __RPC__deref_out_opt DPX_HASH **ppExpectedHash);
+        
+        HRESULT ( STDMETHODCALLTYPE *ProvideContainerIndex )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ UINT IndexSize,
+            /* [size_is][in] */ __RPC__in_ecount_full(IndexSize) BYTE IndexData[  ]);
+        
+        HRESULT ( STDMETHODCALLTYPE *ProvideContainerIndexByFile )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in LPCWSTR IndexFileName);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumDirectoryEntries )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [out] */ __RPC__deref_out_opt IEnumDpxContainerDirectoryEntries **ppEnumEntries);
+        
+        HRESULT ( STDMETHODCALLTYPE *Remove )( 
+            __RPC__in IDpxContainer3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetUserValue )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ UINT64 UserValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetUserValue )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [out] */ __RPC__out UINT64 *pUserValue);
+        
+        /* [local] */ void ( STDMETHODCALLTYPE *FreeMemory )( 
+            IDpxContainer3 * This,
+            /* [in] */ void *Allocation);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetContainerDecryption )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ UINT DecryptionDataCount,
+            /* [size_is][in] */ __RPC__in_ecount_full(DecryptionDataCount) DpxContainerDecryptionData DecryptionData[  ],
+            /* [in] */ DPX_CONTAINER_ENCRYPTION_ENUM EncryptionType);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddPredecessorContainer )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in LPCWSTR ContainerPath,
+            /* [in] */ UINT PredecessorFilePathsCount,
+            /* [size_is][in] */ __RPC__in_ecount_full(PredecessorFilePathsCount) PredecessorFilePathInfo PredecessorFilePaths[  ],
+            /* [out] */ __RPC__deref_out_opt IDpxContainer2 **ppContainer);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddPeerContainer )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in LPCWSTR ContainerPath,
+            /* [out] */ __RPC__deref_out_opt IDpxContainer3 **ppContainer);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsPeer )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [in] */ __RPC__in_opt IDpxContainer3 *ppOtherContainer,
+            /* [out] */ __RPC__out BOOL *pIsPeer);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPeerGroupId )( 
+            __RPC__in IDpxContainer3 * This,
+            /* [out] */ __RPC__out UINT64 *pnPeerGroupId);
+        
+        END_INTERFACE
+    } IDpxContainer3Vtbl;
+
+    interface IDpxContainer3
+    {
+        CONST_VTBL struct IDpxContainer3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IDpxContainer3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IDpxContainer3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IDpxContainer3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IDpxContainer3_SetContainerPath(This,ContainerPath)	\
+    ( (This)->lpVtbl -> SetContainerPath(This,ContainerPath) ) 
+
+#define IDpxContainer3_GetContainerPath(This,pContainerPath)	\
+    ( (This)->lpVtbl -> GetContainerPath(This,pContainerPath) ) 
+
+#define IDpxContainer3_AddFileToExtract(This,SourceFileName,TargetFileName,TargetFileHash)	\
+    ( (This)->lpVtbl -> AddFileToExtract(This,SourceFileName,TargetFileName,TargetFileHash) ) 
+
+#define IDpxContainer3_AddFileToExtract2(This,SourceFileName,TargetFileName,ppFile)	\
+    ( (This)->lpVtbl -> AddFileToExtract2(This,SourceFileName,TargetFileName,ppFile) ) 
+
+#define IDpxContainer3_ExtractAllFiles(This)	\
+    ( (This)->lpVtbl -> ExtractAllFiles(This) ) 
+
+#define IDpxContainer3_EnumFilesToExtract(This,ppEnumFiles)	\
+    ( (This)->lpVtbl -> EnumFilesToExtract(This,ppEnumFiles) ) 
+
+#define IDpxContainer3_SetExpectedContainerIndexHash(This,pExpectedHash)	\
+    ( (This)->lpVtbl -> SetExpectedContainerIndexHash(This,pExpectedHash) ) 
+
+#define IDpxContainer3_GetExpectedContainerIndexHash(This,ppExpectedHash)	\
+    ( (This)->lpVtbl -> GetExpectedContainerIndexHash(This,ppExpectedHash) ) 
+
+#define IDpxContainer3_ProvideContainerIndex(This,IndexSize,IndexData)	\
+    ( (This)->lpVtbl -> ProvideContainerIndex(This,IndexSize,IndexData) ) 
+
+#define IDpxContainer3_ProvideContainerIndexByFile(This,IndexFileName)	\
+    ( (This)->lpVtbl -> ProvideContainerIndexByFile(This,IndexFileName) ) 
+
+#define IDpxContainer3_EnumDirectoryEntries(This,ppEnumEntries)	\
+    ( (This)->lpVtbl -> EnumDirectoryEntries(This,ppEnumEntries) ) 
+
+#define IDpxContainer3_Remove(This)	\
+    ( (This)->lpVtbl -> Remove(This) ) 
+
+#define IDpxContainer3_SetUserValue(This,UserValue)	\
+    ( (This)->lpVtbl -> SetUserValue(This,UserValue) ) 
+
+#define IDpxContainer3_GetUserValue(This,pUserValue)	\
+    ( (This)->lpVtbl -> GetUserValue(This,pUserValue) ) 
+
+#define IDpxContainer3_FreeMemory(This,Allocation)	\
+    ( (This)->lpVtbl -> FreeMemory(This,Allocation) ) 
+
+
+#define IDpxContainer3_SetContainerDecryption(This,DecryptionDataCount,DecryptionData,EncryptionType)	\
+    ( (This)->lpVtbl -> SetContainerDecryption(This,DecryptionDataCount,DecryptionData,EncryptionType) ) 
+
+
+#define IDpxContainer3_AddPredecessorContainer(This,ContainerPath,PredecessorFilePathsCount,PredecessorFilePaths,ppContainer)	\
+    ( (This)->lpVtbl -> AddPredecessorContainer(This,ContainerPath,PredecessorFilePathsCount,PredecessorFilePaths,ppContainer) ) 
+
+
+#define IDpxContainer3_AddPeerContainer(This,ContainerPath,ppContainer)	\
+    ( (This)->lpVtbl -> AddPeerContainer(This,ContainerPath,ppContainer) ) 
+
+#define IDpxContainer3_IsPeer(This,ppOtherContainer,pIsPeer)	\
+    ( (This)->lpVtbl -> IsPeer(This,ppOtherContainer,pIsPeer) ) 
+
+#define IDpxContainer3_GetPeerGroupId(This,pnPeerGroupId)	\
+    ( (This)->lpVtbl -> GetPeerGroupId(This,pnPeerGroupId) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IDpxContainer3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_dpx1_0000_0013 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpx1_0000_0013_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

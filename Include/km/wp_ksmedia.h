@@ -61,16 +61,17 @@ typedef enum {
 // Expected driver data format
 ///////////////////////////////////////////////////////////////////////////////
 // Block item structure
-typedef struct WPCAMERA_BLOCK_ITEM_S
+typedef _Struct_size_bytes_(cbSize) struct WPCAMERA_BLOCK_ITEM_S
 {
     DWORD cbSize;     // The size of this structure
     DWORD dataType;   // The WPCAMERA_STORYBOARD_IMGSTAT_VALUE of this data
     DWORD cbDataSize; // Size of this block item
+    _Field_size_bytes_(cbDataSize)
     BYTE byData[4];   // First byte of the data + Alignment
 } WPCAMERA_BLOCK_ITEM_S, *PWPCAMERA_BLOCK_ITEM_S;
 
 // Data block structure
-typedef struct WPCAMERA_BLOCK_DESCRIPTOR_S
+typedef _Struct_size_bytes_(cbSize) struct WPCAMERA_BLOCK_DESCRIPTOR_S
 {
     DWORD cbSize;        // The size of this structure
     GUID guidSBId;       // The storyboard identifier for this data

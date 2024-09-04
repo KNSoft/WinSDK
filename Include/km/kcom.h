@@ -238,6 +238,15 @@ KoDeviceInitialize(
 #ifndef _NEW_DELETE_OPERATORS_
 #define _NEW_DELETE_OPERATORS_
 
+// Note: Since VS2015 Update 2 overloaded operator new and operator delete may not 
+// be declared inline (Level 1 (/W1) on-by-default, warning C4595).
+// See https://msdn.microsoft.com/en-us/library/mt656697.aspx
+//
+// To mitigate this issue, add "#define _NEW_DELETE_OPERATORS_" before "#include <kcom.h>"
+// and implement non-inline operator new and operator delete locally.
+
+#pragma message(__FILE__ " WARNING: operator new and operator delete will be removed soon")
+
 inline PVOID operator new
 (
     size_t          iSize,

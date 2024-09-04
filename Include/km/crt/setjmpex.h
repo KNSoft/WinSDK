@@ -27,7 +27,7 @@
  * Definitions specific to particular setjmp implementations.
  */
 
-#if     defined(_M_IX86)
+#if     defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 /*
  * MS compiler for x86
@@ -41,6 +41,7 @@
 #ifdef setjmp
 #undef setjmp
 #endif
+
 #define setjmp _setjmpex
 
 #endif

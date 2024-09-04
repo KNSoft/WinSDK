@@ -11,6 +11,9 @@ class MSFT_FileStorageTier {
     [Key, Read]
     String  FilePath;
 
+    [Read]
+    Uint64  FileSize;
+
     [Read,
      ValueMap {"0", "1", "2", "3", "4" },
      Values {"Unknown", "OK", "Insufficient Capacity", "In Process", "Pending" }]
@@ -28,5 +31,8 @@ class MSFT_FileStorageTier {
     Uint64  FileSizeOnDesiredStorageTier;
 
     [Read]
-    Uint64  FileSize;
+    UInt16  DesiredStorageTierClass;
+
+    [Read]
+    Uint64  FileSizeOnDesiredStorageTierClass;
 };

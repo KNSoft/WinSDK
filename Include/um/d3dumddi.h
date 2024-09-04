@@ -3508,6 +3508,11 @@ typedef struct _D3DDDICB_PRESENT
     PVOID                       pPrivateDriverData;                             // in: Private driver data to pass to DdiPresent and DdiSetVidPnSourceAddress
     BOOLEAN                     bOptimizeForComposition;                        // out: DWM is involved in composition
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_0)
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
+    BOOL                        SyncIntervalOverrideValid;                      // in: Override app sync interval
+    D3DDDI_FLIPINTERVAL_TYPE    SyncIntervalOverride;                           // in: Override app sync interval
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_2)
 } D3DDDICB_PRESENT;
 
 typedef struct _D3DDDICB_RENDERFLAGS
@@ -4033,6 +4038,106 @@ typedef D3DDDICB_SYNCTOKEN D3DDDICB_ACQUIRERESOURCE;
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_1_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+
+typedef struct _D3DDDICB_CREATEHWCONTEXT
+{
+    UINT                        NodeOrdinal;                    // in:  Specify the node ordinal this context is targeted to.
+    UINT                        EngineAffinity;                 // in:  Specify the engine affinity within the node.
+    D3DDDI_CREATEHWCONTEXTFLAGS Flags;                          // in:  Context creation flags.
+    UINT                        PrivateDriverDataSize;          // in:  Size of private driver data
+    _Inout_
+    _Field_size_bytes_         (PrivateDriverDataSize)
+    VOID*                       pPrivateDriverData;             // in/out:  Pointer to private driver data
+    HANDLE                      hHwContext;                     // out: Handle to the created context.
+} D3DDDICB_CREATEHWCONTEXT;
+
+typedef struct _D3DDDICB_DESTROYHWCONTEXT
+{
+    HANDLE  hHwContext;                       // in: Handle to the context to destroy.
+} D3DDDICB_DESTROYHWCONTEXT;
+
+typedef struct _D3DDDICB_CREATEHWQUEUE
+{
+    HANDLE                                  hHwContext;                     // in: Handle to the context the queue is created for.
+    D3DDDI_CREATEHWQUEUEFLAGS               Flags;                          // in: Queue creation flags.
+    UINT                                    PrivateDriverDataSize;          // in:  Size of private driver data
+    _Inout_
+    _Field_size_bytes_                     (PrivateDriverDataSize)
+    VOID*                                   pPrivateDriverData;             // in/out:  Pointer to private driver data
+    HANDLE                                  hHwQueue;                       // out: Handle to the created queue.
+    D3DKMT_HANDLE                           hHwQueueProgressFence;          // out: Handle to the hardware queue progress fence object.
+    VOID*                                   HwQueueProgressFenceCPUVirtualAddress;  // out: Read-only mapping of the fence value for the CPU
+    D3DGPU_VIRTUAL_ADDRESS                  HwQueueProgressFenceGPUVirtualAddress;  // out: Read/write mapping of the fence value for the GPU
+} D3DDDICB_CREATEHWQUEUE;
+
+typedef struct _D3DDDICB_DESTROYHWQUEUE
+{
+    HANDLE  hHwQueue;                       // in: Handle to the queue to destroy.
+} D3DDDICB_DESTROYHWQUEUE;
+
+typedef struct _D3DDDICB_SUBMITCOMMANDTOHWQUEUEFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    Reserved                 :32;     // 0xFFFFFFFF
+        };
+        UINT Value;
+    };
+} D3DDDICB_SUBMITCOMMANDTOHWQUEUEFLAGS;
+
+typedef struct _D3DDDICB_SUBMITCOMMANDTOHWQUEUE
+{
+    HANDLE                                  hHwQueue;
+    UINT64                                  HwQueueProgressFenceId;
+
+    D3DGPU_VIRTUAL_ADDRESS                  Commands;
+    UINT                                    CommandLength;
+    D3DDDICB_SUBMITCOMMANDTOHWQUEUEFLAGS    Flags;
+
+    UINT                                    PrivateDriverDataSize;
+    _Field_size_bytes_                     (PrivateDriverDataSize)
+    VOID*                                   pPrivateDriverData;
+
+    UINT                                    NumPrimaries;
+    _Field_size_                           (NumPrimaries)
+    D3DKMT_HANDLE*                          WrittenPrimaries;
+} D3DDDICB_SUBMITCOMMANDTOHWQUEUE;
+
+typedef struct _D3DDDICB_SUBMITWAITFORSYNCOBJECTSTOHWQUEUE
+{
+    HANDLE                  hHwQueue;               // in: Hardware queue to queue the wait on.
+
+    UINT                    ObjectCount;            // in: Number of objects to wait on.
+
+    _Field_size_           (ObjectCount)
+    const D3DKMT_HANDLE*    ObjectHandleArray;      // in: Handles to monitored fence synchronization objects to wait on.
+
+    _Field_size_(ObjectCount)
+    const UINT64*           FenceValueArray;        // in: monitored fence values to be waited.
+} D3DDDICB_SUBMITWAITFORSYNCOBJECTSTOHWQUEUE;
+
+typedef struct _D3DDDICB_SUBMITSIGNALSYNCOBJECTSTOHWQUEUE
+{
+    D3DDDICB_SIGNALFLAGS    Flags;                  // in: Specifies signal behavior.
+
+    ULONG                   BroadcastHwQueueCount;  // in: Specifies the number of hardware queues to broadcast this signal to.
+
+    _Field_size_           (BroadcastHwQueueCount)
+    const HANDLE*           BroadcastHwQueueArray;  // in: Specifies hardware queue handles to broadcast to.
+
+    UINT                    ObjectCount;            // in: Number of objects to signal.
+
+    _Field_size_           (ObjectCount)
+    const D3DKMT_HANDLE*    ObjectHandleArray;      // in: Handles to monitored fence synchronization objects to signal.
+
+    _Field_size_           (ObjectCount)
+    const UINT64*           FenceValueArray;        // in: monitored fence values to signal.
+} D3DDDICB_SUBMITSIGNALSYNCOBJECTSTOHWQUEUE;
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
 
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_ALLOCATECB)(
         _In_ HANDLE hDevice, _Inout_ D3DDDICB_ALLOCATE*);
@@ -4184,6 +4289,30 @@ typedef PFND3DDDI_SYNCTOKENCB PFND3DDDI_ACQUIRERESOURCECB;
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_1_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_CREATEHWCONTEXTCB)(
+        _In_ HANDLE hDevice, _Inout_ D3DDDICB_CREATEHWCONTEXT*);
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_DESTROYHWCONTEXTCB)(
+        _In_ HANDLE hDevice, _In_ CONST D3DDDICB_DESTROYHWCONTEXT*);
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_CREATEHWQUEUECB)(
+        _In_ HANDLE hDevice, _Inout_ D3DDDICB_CREATEHWQUEUE*);
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_DESTROYHWQUEUECB)(
+        _In_ HANDLE hDevice, _In_ CONST D3DDDICB_DESTROYHWQUEUE*);
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITCOMMANDTOHWQUEUECB)(
+        _In_ HANDLE hDevice, _In_ CONST D3DDDICB_SUBMITCOMMANDTOHWQUEUE*);
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITWAITFORSYNCOBJECTSTOHWQUEUECB)(
+        _In_ HANDLE hDevice, _In_ CONST D3DDDICB_SUBMITWAITFORSYNCOBJECTSTOHWQUEUE*);
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITSIGNALSYNCOBJECTSTOHWQUEUECB)(
+        _In_ HANDLE hDevice, _In_ CONST D3DDDICB_SUBMITSIGNALSYNCOBJECTSTOHWQUEUE*);
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
 
 typedef struct _D3DDDI_DEVICECALLBACKS
 {
@@ -4253,6 +4382,15 @@ typedef struct _D3DDDI_DEVICECALLBACKS
 #endif // D3D_UMD_INTERFACE_VERSION
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_1_3)
     PFND3DDDI_SYNCTOKENCB                           pfnReleaseResourceCb;
+#endif // D3D_UMD_INTERFACE_VERSION
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2_1)
+    PFND3DDDI_CREATEHWCONTEXTCB                     pfnCreateHwContextCb;
+    PFND3DDDI_DESTROYHWCONTEXTCB                    pfnDestroyHwContextCb;
+    PFND3DDDI_CREATEHWQUEUECB                       pfnCreateHwQueueCb;
+    PFND3DDDI_DESTROYHWQUEUECB                      pfnDestroyHwQueueCb;
+    PFND3DDDI_SUBMITCOMMANDTOHWQUEUECB              pfnSubmitCommandToHwQueueCb;
+    PFND3DDDI_SUBMITWAITFORSYNCOBJECTSTOHWQUEUECB   pfnSubmitWaitForSyncObjectsToHwQueueCb;
+    PFND3DDDI_SUBMITSIGNALSYNCOBJECTSTOHWQUEUECB    pfnSubmitSignalSyncObjectsToHwQueueCb;
 #endif // D3D_UMD_INTERFACE_VERSION
 } D3DDDI_DEVICECALLBACKS;
 

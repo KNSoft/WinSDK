@@ -1527,6 +1527,7 @@ typedef struct {
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 //===========================================================================
+
 #define STATIC_KSPROPSETID_BtAudio\
     0x7FA06C40, 0xB8F6, 0x4C7E, 0x85, 0x56, 0xE8, 0xC3, 0x3A, 0x12, 0xE5, 0x4D
 DEFINE_GUIDSTRUCT("7FA06C40-B8F6-4C7E-8556-E8C33A12E54D", KSPROPSETID_BtAudio);
@@ -1534,8 +1535,9 @@ DEFINE_GUIDSTRUCT("7FA06C40-B8F6-4C7E-8556-E8C33A12E54D", KSPROPSETID_BtAudio);
 
 typedef enum {
     KSPROPERTY_ONESHOT_RECONNECT,
-    KSPROPERTY_ONESHOT_DISCONNECT
+    KSPROPERTY_ONESHOT_DISCONNECT,
 } KSPROPERTY_BTAUDIO;
+
 
 #endif
 
@@ -4816,7 +4818,8 @@ typedef enum {
         KS_CAPTURE_ALLOC_SYSTEM                 = 0x0001,  // surface in system memory
         KS_CAPTURE_ALLOC_VRAM                   = 0x0002,  // surface in display memory
         KS_CAPTURE_ALLOC_SYSTEM_AGP             = 0x0004,  // surface in system memory tagged as AGP accessible
-        KS_CAPTURE_ALLOC_VRAM_MAPPED    = 0x0008   // surface in system memory mapped into VRAM address space
+        KS_CAPTURE_ALLOC_VRAM_MAPPED            = 0x0008,  // surface in system memory mapped into VRAM address space
+        KS_CAPTURE_ALLOC_SECURE_BUFFER          = 0x0010   // secure buffer in VTL1
 }CAPTURE_MEMORY_ALLOCATION_FLAGS, *PCAPTURE_MEMORY_ALLOCATION_FLAGS;
 
 //
@@ -4890,6 +4893,21 @@ typedef struct {
         PVRAM_SURFACE_INFO pVramSurfaceInfo;
 }VRAM_SURFACE_INFO_PROPERTY_S, *PVRAM_SURFACE_INFO_PROPERTY_S;
 
+//
+//Secure buffer info passed on to the mini driver. 
+//
+typedef struct {
+    GUID guidBufferIdentifier;
+    DWORD cbBufferSize;
+    DWORD cbCaptured;
+    ULONGLONG ullReserved[16];
+} SECURE_BUFFER_INFO, *PSECURE_BUFFER_INFO;
+
+// Sceanrio ID for secure buffer for camera
+#define STATIC_KS_SECURE_CAMERA_SCENARIO_ID \
+    0xAE53FC6E, 0x8D89, 0x4488, 0x9D, 0x2E, 0x4D, 0x00, 0x87, 0x31, 0xC5, 0xFD
+DEFINE_GUIDSTRUCT("AE53FC6E-8D89-4488-9D2E-4D008731C5FD", KS_SECURE_CAMERA_SCENARIO_ID);
+#define KS_SECURE_CAMERA_SCENARIO_ID DEFINE_GUIDNAMED(KS_SECURE_CAMERA_SCENARIO_ID)
 
 #define STATIC_KSPROPSETID_MPEG4_MediaType_Attributes\
     0xff6c4bfa, 0x7a9, 0x4c7b, 0xa2, 0x37, 0x67, 0x2f, 0x9d, 0x68, 0x6, 0x5f
@@ -5789,6 +5807,7 @@ typedef enum {
     KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE,
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 
+    KSPROPERTY_CAMERACONTROL_EXTENDED_SECURE_MODE,
     KSPROPERTY_CAMERACONTROL_EXTENDED_END,                   // All new controls must be before this!
     KSPROPERTY_CAMERACONTROL_EXTENDED_END2 = KSPROPERTY_CAMERACONTROL_EXTENDED_END
 } KSPROPERTY_CAMERACONTROL_EXTENDED_PROPERTY;
@@ -6112,7 +6131,11 @@ typedef enum {
     MetadataId_Standard_Start = 1,
     MetadataId_PhotoConfirmation = MetadataId_Standard_Start,
     MetadataId_UsbVideoHeader,
-    MetadataId_Standard_End = MetadataId_UsbVideoHeader,
+    MetadataId_CaptureStats,
+    MetadataId_CameraExtrinsics,
+    MetadataId_CameraIntrinsics,
+    MetadataId_FrameIllumination,
+    MetadataId_Standard_End = MetadataId_FrameIllumination,
     MetadataId_Custom_Start = 0x80000000,
 } KSCAMERA_MetadataId;
 
@@ -6126,6 +6149,45 @@ typedef struct tagKSCAMERA_METADATA_PHOTOCONFIRMATION {
     ULONG                          PhotoConfirmationIndex;  
     ULONG                          Reserved;
 }KSCAMERA_METADATA_PHOTOCONFIRMATION, *PKSCAMERA_METADATA_PHOTOCONFIRMATION;
+
+typedef struct tagKSCAMERA_METADATA_FRAMEILLUMINATION {
+    KSCAMERA_METADATA_ITEMHEADER   Header;
+    ULONG                          Flags;
+    ULONG                          Reserved;
+}KSCAMERA_METADATA_FRAMEILLUMINATION, *PKSCAMERA_METADATA_FRAMEILLUMINATION;
+
+#define KSCAMERA_METADATA_FRAMEILLUMINATION_FLAG_ON                     0x00000001
+
+typedef struct tagKSCAMERA_METADATA_CAPTURESTATS {
+    KSCAMERA_METADATA_ITEMHEADER   Header;
+    ULONG                          Flags;
+    ULONG                          Reserved;
+    ULONGLONG                      ExposureTime;
+    ULONGLONG                      ExposureCompensationFlags;
+    LONG                           ExposureCompensationValue;
+    ULONG                          IsoSpeed;
+    ULONG                          FocusState;
+    ULONG                          LensPosition; // a.k.a Focus
+    ULONG                          WhiteBalance;
+    ULONG                          Flash;
+    ULONG                          FlashPower;
+    ULONG                          ZoomFactor;
+    ULONGLONG                      SceneMode;
+    ULONGLONG                      SensorFramerate;
+}KSCAMERA_METADATA_CAPTURESTATS, *PKSCAMERA_METADATA_CAPTURESTATS;
+
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_EXPOSURETIME                0x00000001
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_EXPOSURECOMPENSATION        0x00000002
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_ISOSPEED                    0x00000004
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_FOCUSSTATE                  0x00000008
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_LENSPOSITION                0x00000010
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_WHITEBALANCE                0x00000020
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_FLASH                       0x00000040
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_FLASHPOWER                  0x00000080
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_ZOOMFACTOR                  0x00000100
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_SCENEMODE                   0x00000200
+#define KSCAMERA_METADATA_CAPTURESTATS_FLAG_SENSORFRAMERATE             0x00000400
+
 
 // Focus Priority
 #define KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_OFF                         0x0000000000000000
@@ -6316,6 +6378,9 @@ typedef struct {
 #define KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_DISABLED                       0x0000000000000001
 #define KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION 0x0000000000000002
 #define KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION         0x0000000000000004
+
+#define KSCAMERA_EXTENDEDPROP_SECUREMODE_DISABLED               0x0000000000000001
+#define KSCAMERA_EXTENDEDPROP_SECUREMODE_ENABLED                0x0000000000000002
 
 typedef struct _KSCAMERA_EXTENDEDPROP_PROFILE
 {
@@ -7893,6 +7958,62 @@ DEFINE_GUIDSTRUCT("6f64adcd-8211-11e2-8c70-2c27d7f001fa", AUDIO_EFFECT_TYPE_SPEA
 #define STATIC_AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION  0x6f64adce, 0x8211, 0x11e2, 0x8c, 0x70, 0x2c, 0x27, 0xd7, 0xf0, 0x01, 0xfa
 DEFINE_GUIDSTRUCT("6f64adce-8211-11e2-8c70-2c27d7f001fa", AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION);
 #define AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION DEFINE_GUIDNAMED(AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// Interface to get audio modules information.
+//
+#define STATIC_KSPROPSETID_AudioModule \
+    0xc034fdb0, 0xff75, 0x47c8, 0xaa, 0x3c, 0xee, 0x46, 0x71, 0x6b, 0x50, 0xc6
+DEFINE_GUIDSTRUCT("C034FDB0-FF75-47C8-AA3C-EE46716B50C6", KSPROPSETID_AudioModule);
+#define KSPROPSETID_AudioModule DEFINE_GUIDNAMED(KSPROPSETID_AudioModule)
+
+typedef enum {
+    KSPROPERTY_AUDIOMODULE_DESCRIPTORS            = 1,
+    KSPROPERTY_AUDIOMODULE_COMMAND                = 2,
+    KSPROPERTY_AUDIOMODULE_NOTIFICATION_DEVICE_ID = 3,
+} KSPROPERTY_AUDIOMODULE; 
+
+#define AUDIOMODULE_MAX_DATA_SIZE 64000 
+#define AUDIOMODULE_MAX_NAME_CCH_SIZE 128
+
+typedef struct _KSAUDIOMODULE_DESCRIPTOR
+{
+    GUID        ClassId; 
+    ULONG       InstanceId;
+    ULONG       VersionMajor;
+    ULONG       VersionMinor;
+    WCHAR       Name[AUDIOMODULE_MAX_NAME_CCH_SIZE];
+} KSAUDIOMODULE_DESCRIPTOR, *PKSAUDIOMODULE_DESCRIPTOR;
+
+typedef struct _KSAUDIOMODULE_PROPERTY
+{
+    KSPROPERTY  Property;
+    GUID        ClassId; 
+    ULONG       InstanceId;
+} KSAUDIOMODULE_PROPERTY, *PKSAUDIOMODULE_PROPERTY;
+
+//
+// Audio module notification definitions.
+//
+#define STATIC_KSNOTIFICATIONID_AudioModule \
+    0x9C2220F0, 0xD9A6, 0x4D5C, 0xA0, 0x36, 0x57, 0x38, 0x57, 0xFD, 0x50, 0xD2
+DEFINE_GUIDSTRUCT("9C2220F0-D9A6-4D5C-A036-573857FD50D2", KSNOTIFICATIONID_AudioModule);
+#define KSNOTIFICATIONID_AudioModule DEFINE_GUIDNAMED(KSNOTIFICATIONID_AudioModule)
+
+typedef struct _KSAUDIOMODULE_NOTIFICATION {
+    union {
+        struct {
+            GUID        DeviceId;
+            GUID        ClassId;
+            ULONG       InstanceId;
+            ULONG       Reserved;
+        } ProviderId;
+        LONGLONG        Alignment;
+    };
+} KSAUDIOMODULE_NOTIFICATION, *PKSAUDIOMODULE_NOTIFICATION;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

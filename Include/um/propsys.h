@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -760,7 +760,9 @@ enum GETPROPERTYSTOREFLAGS
         GPS_PREFERQUERYPROPERTIES	= 0x100,
         GPS_EXTRINSICPROPERTIES	= 0x200,
         GPS_EXTRINSICPROPERTIESONLY	= 0x400,
-        GPS_MASK_VALID	= 0x7ff
+        GPS_VOLATILEPROPERTIES	= 0x800,
+        GPS_VOLATILEPROPERTIESONLY	= 0x1000,
+        GPS_MASK_VALID	= 0x1fff
     } 	GETPROPERTYSTOREFLAGS;
 
 DEFINE_ENUM_FLAG_OPERATORS(GETPROPERTYSTOREFLAGS)
@@ -1754,8 +1756,9 @@ enum PROPDESC_TYPE_FLAGS
         PDTF_CANBEPURGED	= 0x200,
         PDTF_SEARCHRAWVALUE	= 0x400,
         PDTF_DONTCOERCEEMPTYSTRINGS	= 0x800,
+        PDTF_ALWAYSINSUPPLEMENTALSTORE	= 0x1000,
         PDTF_ISSYSTEMPROPERTY	= 0x80000000,
-        PDTF_MASK_ALL	= 0x80000fff
+        PDTF_MASK_ALL	= 0x80001fff
     } 	PROPDESC_TYPE_FLAGS;
 
 DEFINE_ENUM_FLAG_OPERATORS(PROPDESC_TYPE_FLAGS)
@@ -4188,6 +4191,10 @@ PSSTDAPI PSStringFromPropertyKey(
 PSSTDAPI PSPropertyKeyFromString(
     _In_ LPCWSTR pszString,
     _Out_ PROPERTYKEY *pkey);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 
 // Creates an in-memory property store
@@ -4195,6 +4202,10 @@ PSSTDAPI PSPropertyKeyFromString(
 PSSTDAPI PSCreateMemoryPropertyStore(
     _In_ REFIID riid,
     _Outptr_ void **ppv);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 
 // Create a read-only, delay-bind multiplexing property store
@@ -4336,6 +4347,10 @@ PSSTDAPI PSCreatePropertyStoreFromPropertySetStorage(
     _In_ DWORD grfMode,
     _In_ REFIID riid,
     _Outptr_ void **ppv);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 
 // punkSource must support IPropertyStore or IPropertySetStorage
@@ -4354,6 +4369,10 @@ PSSTDAPI PSCreateAdapterFromPropertyStore(
     _In_ IPropertyStore *pps,
     _In_ REFIID riid,
     _Outptr_ void **ppv);
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 
 // Talk to the property system using an interface

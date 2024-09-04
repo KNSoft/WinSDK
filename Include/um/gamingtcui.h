@@ -37,12 +37,15 @@
 #include <winstring.h>
 
 /* APISET_NAME: api-ms-win-gaming-tcui-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_GAMING_TCUI_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#define _APISET_GAMING_TCUI_VER 0x0103
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_GAMING_TCUI_VER 0x0102
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_TH2
 #define _APISET_GAMING_TCUI_VER 0x0101
@@ -281,6 +284,37 @@ CheckGamingPrivilegeSilentlyForUser(
 
 #endif //#if _APISET_GAMING_TCUI_VER >= 0x0102)
 
+
+#if !defined(_CONTRACT_GEN) || (_APISET_GAMING_TCUI_VER >= 0x0103)
+
+HRESULT
+WINAPI
+ShowGameInviteUIWithContext(
+    _In_ HSTRING serviceConfigurationId,
+    _In_ HSTRING sessionTemplateName,
+    _In_ HSTRING sessionId,
+    _In_ HSTRING invitationDisplayText,
+    _In_ HSTRING customActivationContext,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowGameInviteUIWithContextForUser(
+    _In_ IInspectable * user,
+    _In_ HSTRING serviceConfigurationId,
+    _In_ HSTRING sessionTemplateName,
+    _In_ HSTRING sessionId,
+    _In_ HSTRING invitationDisplayText,
+    _In_ HSTRING customActivationContext,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+#endif //#if _APISET_GAMING_TCUI_VER >= 0x0103)
 
 
 #if defined(__cplusplus)

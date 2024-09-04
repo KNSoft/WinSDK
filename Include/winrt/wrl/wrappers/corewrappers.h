@@ -170,6 +170,9 @@ public:
         h.handle_ = HandleTraits::GetInvalidValue();
     }
 
+    HandleT(const HandleT&) = delete;
+    HandleT& operator=(const HandleT&) = delete;
+
     ~HandleT() throw()
     {
         Close();
@@ -243,9 +246,6 @@ protected:
     }
     
     typename HandleTraits::Type handle_;
-private:
-    HandleT(const HandleT&);
-    HandleT& operator=(const HandleT&);
 };
 
 // HandleT comparison operators
@@ -315,6 +315,9 @@ public:
         other.sync_ = HandleTraits::CriticalSectionTraits::GetInvalidValue();
     }
 
+    SyncLockCriticalSection(const SyncLockCriticalSection&) = delete;
+    SyncLockCriticalSection& operator=(const SyncLockCriticalSection&) = delete;
+
      _Releases_lock_(*sync_)
     ~SyncLockCriticalSection() throw()
     {
@@ -343,10 +346,6 @@ protected:
     CRITICAL_SECTION* sync_;
     
 private:
-    // Disallow copy and assignment
-    SyncLockCriticalSection(const SyncLockCriticalSection&);
-    SyncLockCriticalSection& operator=(const SyncLockCriticalSection&);
-
     _Releases_lock_(*sync_)
     void InternalUnlock() throw()
     {
@@ -373,6 +372,9 @@ public:
     {
         other.sync_ = HandleTraits::SRWLockExclusiveTraits::GetInvalidValue();
     }
+
+    SyncLockExclusive(const SyncLockExclusive&) = delete;
+    SyncLockExclusive& operator=(const SyncLockExclusive&) = delete;
 
     _Releases_exclusive_lock_(*sync_)
     ~SyncLockExclusive() throw()
@@ -403,10 +405,6 @@ protected:
     SRWLOCK* sync_;
     
 private:
-    // Disallow copy and assignment
-    SyncLockExclusive(const SyncLockExclusive&);
-    SyncLockExclusive& operator=(const SyncLockExclusive&);
-
     _Releases_exclusive_lock_(*sync_)
     void InternalUnlock() throw()
     {
@@ -426,6 +424,9 @@ public:
     {
         other.sync_ = HandleTraits::SRWLockSharedTraits::GetInvalidValue();
     }
+
+    SyncLockShared(const SyncLockShared&) = delete;
+    SyncLockShared& operator=(const SyncLockShared&) = delete;
 
     _Releases_shared_lock_(*sync_)
     ~SyncLockShared() throw()
@@ -456,10 +457,6 @@ protected:
     SRWLOCK* sync_;
     
 private:
-    // Disallow copy and assignment
-    SyncLockShared(const SyncLockShared&);
-    SyncLockShared& operator=(const SyncLockShared&);
-
     _Releases_shared_lock_(*sync_)
     void InternalUnlock() throw()
     {
@@ -486,6 +483,9 @@ public:
     {
         other.sync_ = SyncTraits::GetInvalidValue();
     }
+
+    SyncLockWithStatusT(const SyncLockWithStatusT&) = delete;
+    SyncLockWithStatusT& operator=(const SyncLockWithStatusT&) = delete;
 
     ~SyncLockWithStatusT() throw()
     {
@@ -519,10 +519,6 @@ protected:
     DWORD status_;
     typename SyncTraits::Type sync_;
 private:
-    // Disallow copy and assignment
-    SyncLockWithStatusT(const SyncLockWithStatusT&);
-    SyncLockWithStatusT& operator=(const SyncLockWithStatusT&);
-
     void InternalUnlock() throw()
     {
         if (IsLocked())
@@ -558,6 +554,9 @@ public:
     {
         ::InitializeCriticalSectionEx(&cs_, spincount, 0);
     }
+
+    CriticalSection(const CriticalSection&) = delete;
+    CriticalSection& operator=(const CriticalSection&) = delete;
 
     ~CriticalSection() throw()
     {
@@ -601,10 +600,6 @@ public:
     }
 protected:
     CRITICAL_SECTION cs_;
-private:
-    // Disallow copy and assignment
-    CriticalSection(const CriticalSection&);
-    CriticalSection& operator=(const CriticalSection&);
 };
 
 // Mutex handle implementation
@@ -714,6 +709,9 @@ public:
         ::InitializeSRWLock(&SRWLock_);
     }
 
+    SRWLock(const SRWLock&) = delete;
+    SRWLock& operator=(const SRWLock&) = delete;
+
     ~SRWLock() throw()
     {
     }
@@ -782,10 +780,6 @@ public:
     
 protected:
     SRWLOCK SRWLock_;
-private:
-    // Disallow copy and assignment
-    SRWLock(const SRWLock&);
-    SRWLock& operator=(const SRWLock&);
 };
 
 class HStringReference;
@@ -801,6 +795,9 @@ public:
     {
         other.hstr_ = nullptr;
     }
+
+    HString(_In_ const HString&) = delete;
+    HString& operator=(_In_ const HString&) = delete;
 
     ~HString() throw()
     {
@@ -960,9 +957,6 @@ public:
     static HStringReference MakeReference(wchar_t const (&str)[sizeDest], unsigned int len) throw();
 protected:
     HSTRING hstr_;
-private:
-    HString(_In_ const HString&) throw();
-    HString& operator=(_In_ const HString&) throw();
 }; 
 
 class HStringReference
@@ -988,6 +982,19 @@ private:
     {
     }
 
+    // Returns 1 + augend
+    // Failfast on addition overflow
+    static unsigned int AddOne(const unsigned int augend) throw()
+    {
+        unsigned int result = 0; // init to make compiler happy
+        HRESULT hr = UIntAdd(augend, 1, &result);
+        if (FAILED(hr))
+        {
+            ::Microsoft::WRL::Details::RaiseException(hr);
+        }
+        return result;
+    }
+
 public:
     // Constructor which takes an existing string buffer and its length as the parameters.
     // It fills an HSTRING_HEADER struct with the parameter.
@@ -996,7 +1003,8 @@ public:
     // object as it does not make a copy of the wide string memory.
     HStringReference(const wchar_t* str, unsigned int len) throw() : hstr_(nullptr)
     {
-        CreateReference(str, len + 1, len);
+        unsigned int lenPlusOne = AddOne(len);
+        CreateReference(str, lenPlusOne, len);
     }
 
     // Constructor which takes an existing literal string or const string buffer and infers its length.
@@ -1025,7 +1033,8 @@ public:
             ::Microsoft::WRL::Details::RaiseException(hr);
         }
 
-        CreateReference(str, length + 1, length);
+        unsigned int lengthPlusOne = AddOne(length);
+        CreateReference(str, lengthPlusOne, length);
     }
 
     // Constructor which takes an existing zero-terminated string buffer.
@@ -1046,14 +1055,17 @@ public:
             ::Microsoft::WRL::Details::RaiseException(hr);
         }
 
-        CreateReference(str, length + 1, length);
+        unsigned int lengthPlusOne = AddOne(length);
+        CreateReference(str, lengthPlusOne, length);
     }
 
     HStringReference(_In_ const HStringReference& other) throw() : hstr_(nullptr)
     {
         unsigned int length = 0;
         const wchar_t* value = other.GetRawBuffer(&length);
-        CreateReference(value, length + 1, length);
+
+        unsigned int lengthPlusOne = AddOne(length);
+        CreateReference(value, lengthPlusOne, length);
     }
 
     ~HStringReference() throw()
@@ -1065,7 +1077,9 @@ public:
     {
         unsigned int length = 0;
         const wchar_t* value = other.GetRawBuffer(&length);
-        CreateReference(value, length + 1, length);
+
+        unsigned int lengthPlusOne = AddOne(length);
+        CreateReference(value, lengthPlusOne, length);
 
         return *this;    
     }
@@ -1183,6 +1197,11 @@ inline bool operator!=(const HString& lhs, const HSTRING& rhs) throw()
 }
 
 inline bool operator<(const HString& lhs, const HString& rhs) throw()
+{
+    return Details::CompareStringOrdinal(lhs.Get(), rhs.Get()) == -1;
+}
+
+inline bool operator>(const HString& lhs, const HString& rhs) throw()
 {
     return Details::CompareStringOrdinal(lhs.Get(), rhs.Get()) == 1;
 }

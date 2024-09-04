@@ -704,6 +704,7 @@ _Check_return_opt_ _CRTIMP wchar_t * __cdecl fgetws(_Out_writes_z_(_SizeInWords)
 _Check_return_opt_ _CRTIMP int __cdecl fputws(_In_z_ const wchar_t * _Str, _Inout_ FILE * _File);
 _Check_return_opt_ _CRTIMP wchar_t * __cdecl _getws_s(_Out_writes_z_(_SizeInWords) wchar_t * _Str, _In_ size_t _SizeInWords);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_0(wchar_t *, _getws_s, wchar_t, _String)
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGE, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_0(wchar_t *, __RETURN_POLICY_SAME, _CRTIMP, _getws, _Pre_notnull_ _Post_z_, wchar_t, _String)
 _Check_return_opt_ _CRTIMP int __cdecl _putws(_In_z_ const wchar_t * _Str);
 

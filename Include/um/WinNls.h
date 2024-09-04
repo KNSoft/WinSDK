@@ -702,10 +702,8 @@ extern "C" {
 #if (WINVER >= _WIN32_WINNT_WIN8)
 #define LOCALE_SRELATIVELONGDATE      0x0000007c   // Long date without year, day of week, month, date, eg: for lock screen
 #endif
-#if (WINVER >= _WIN32_WINNT_WINBLUE)
-#endif
 
-#if (WINVER >= _WIN32_WINNT_WINTHRESHOLD)
+#if (WINVER >= _WIN32_WINNT_WIN10)
 #define LOCALE_SSHORTESTAM            0x0000007e   // Shortest AM designator, eg "A"
 #define LOCALE_SSHORTESTPM            0x0000007f   // Shortest PM designator, eg "P"
 #endif
@@ -844,6 +842,12 @@ extern "C" {
 #endif // winver >= windows 7
 
 #if (WINVER >= _WIN32_WINNT_WIN8)
+#define CAL_SRELATIVELONGDATE     0x0000003a   // Long date without year, day of week, month, date, eg: for lock screen
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define CAL_SENGLISHERANAME       0x0000003b   // Japanese calendar only: return the English era names for .Net compatibility
+#define CAL_SENGLISHABBREVERANAME 0x0000003c   // Japanese calendar only: return the English Abbreviated era names for .Net compatibility
 #endif
 
 //
@@ -1369,16 +1373,16 @@ WINAPI
 IsValidCodePage(
     _In_ UINT  CodePage);
 
+WINBASEAPI
+UINT
+WINAPI
+GetACP(void);
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-WINBASEAPI
-UINT
-WINAPI
-GetACP(void);
 
 WINBASEAPI
 UINT
@@ -1518,6 +1522,11 @@ LCMapStringA(
 #define LCMapString  LCMapStringA
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 // For Windows Vista and above GetLocaleInfoEx is preferred
 WINBASEAPI
@@ -1545,7 +1554,13 @@ GetLocaleInfoA(
 
 #ifndef UNICODE    
 #define GetLocaleInfo GetLocaleInfoA
-#endif 
+#endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -1654,8 +1669,8 @@ LoadStringByReference(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI         
 BOOL               
@@ -1671,12 +1686,6 @@ IsDBCSLeadByteEx(
     _In_ UINT  CodePage,
     _In_ BYTE  TestChar
     );
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #if (WINVER >= 0x0600)
 WINBASEAPI
@@ -2026,6 +2035,12 @@ LANGID
 WINAPI
 GetSystemDefaultUILanguage(void);
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINBASEAPI
 LANGID
 WINAPI
@@ -2035,12 +2050,18 @@ GetUserDefaultUILanguage(void);
 WINBASEAPI
 LANGID
 WINAPI
-GetSystemDefaultLangID(void);
+GetUserDefaultLangID(void);
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 LANGID
 WINAPI
-GetUserDefaultLangID(void);
+GetSystemDefaultLangID(void);
 
 WINBASEAPI
 LCID
@@ -2345,6 +2366,12 @@ EnumLanguageGroupLocalesW(
 #define EnumLanguageGroupLocales  EnumLanguageGroupLocalesA
 #endif // !UNICODE
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -2364,9 +2391,10 @@ EnumUILanguagesW(
 #else
 #define EnumUILanguages  EnumUILanguagesA
 #endif // !UNICODE
+
 #endif /* WINVER >= 0x0500 */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop or PC Family or OneCore Family
@@ -2502,7 +2530,7 @@ WINAPI
 GetLocaleInfoEx(
     _In_opt_ LPCWSTR lpLocaleName,
     _In_ LCTYPE LCType,
-    _Out_writes_opt_(cchData) LPWSTR lpLCData,
+    _Out_writes_to_opt_(cchData, return) LPWSTR lpLCData,
     _In_ int cchData
 );
 

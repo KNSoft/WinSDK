@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -205,6 +205,13 @@ typedef interface IAction IAction;
 typedef interface IExecAction IExecAction;
 
 #endif 	/* __IExecAction_FWD_DEFINED__ */
+
+
+#ifndef __IExecAction2_FWD_DEFINED__
+#define __IExecAction2_FWD_DEFINED__
+typedef interface IExecAction2 IExecAction2;
+
+#endif 	/* __IExecAction2_FWD_DEFINED__ */
 
 
 #ifndef __IShowMessageAction_FWD_DEFINED__
@@ -516,6 +523,13 @@ typedef interface IExecAction IExecAction;
 #endif 	/* __IExecAction_FWD_DEFINED__ */
 
 
+#ifndef __IExecAction2_FWD_DEFINED__
+#define __IExecAction2_FWD_DEFINED__
+typedef interface IExecAction2 IExecAction2;
+
+#endif 	/* __IExecAction2_FWD_DEFINED__ */
+
+
 #ifndef __IShowMessageAction_FWD_DEFINED__
 #define __IShowMessageAction_FWD_DEFINED__
 typedef interface IShowMessageAction IShowMessageAction;
@@ -699,6 +713,7 @@ extern RPC_IF_HANDLE __MIDL_itf_taskschd_0000_0000_v0_0_s_ifspec;
 
 
 
+
 typedef 
 enum _TASK_RUN_FLAGS
     {
@@ -818,7 +833,8 @@ enum _TASK_COMPATIBILITY
         TASK_COMPATIBILITY_V2	= 2,
         TASK_COMPATIBILITY_V2_1	= 3,
         TASK_COMPATIBILITY_V2_2	= 4,
-        TASK_COMPATIBILITY_V2_3	= 5
+        TASK_COMPATIBILITY_V2_3	= 5,
+        TASK_COMPATIBILITY_V2_4	= 6
     } 	TASK_COMPATIBILITY;
 
 
@@ -5946,6 +5962,211 @@ EXTERN_C const IID IID_IExecAction;
 #endif 	/* __IExecAction_INTERFACE_DEFINED__ */
 
 
+#ifndef __IExecAction2_INTERFACE_DEFINED__
+#define __IExecAction2_INTERFACE_DEFINED__
+
+/* interface IExecAction2 */
+/* [helpstring][nonextensible][dual][uuid][object][local] */ 
+
+
+EXTERN_C const IID IID_IExecAction2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f2a82542-bda5-4e6b-9143-e2bf4F8987b6")
+    IExecAction2 : public IExecAction
+    {
+    public:
+        virtual /* [helpstring][propget][id] */ HRESULT STDMETHODCALLTYPE get_HideAppWindow( 
+            /* [retval][out] */ VARIANT_BOOL *pHideAppWindow) = 0;
+        
+        virtual /* [helpstring][propput][id] */ HRESULT STDMETHODCALLTYPE put_HideAppWindow( 
+            /* [in] */ VARIANT_BOOL hideAppWindow) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IExecAction2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IExecAction2 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IExecAction2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IExecAction2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IExecAction2 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IExecAction2 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IExecAction2 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IExecAction2 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            IExecAction2 * This,
+            /* [retval][out] */ BSTR *pId);
+        
+        /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_Id )( 
+            IExecAction2 * This,
+            /* [in] */ BSTR Id);
+        
+        /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Type )( 
+            IExecAction2 * This,
+            /* [retval][out] */ TASK_ACTION_TYPE *pType);
+        
+        /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Path )( 
+            IExecAction2 * This,
+            /* [retval][out] */ BSTR *pPath);
+        
+        /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_Path )( 
+            IExecAction2 * This,
+            /* [in] */ BSTR path);
+        
+        /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Arguments )( 
+            IExecAction2 * This,
+            /* [retval][out] */ BSTR *pArgument);
+        
+        /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_Arguments )( 
+            IExecAction2 * This,
+            /* [in] */ BSTR argument);
+        
+        /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_WorkingDirectory )( 
+            IExecAction2 * This,
+            /* [retval][out] */ BSTR *pWorkingDirectory);
+        
+        /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_WorkingDirectory )( 
+            IExecAction2 * This,
+            /* [in] */ BSTR workingDirectory);
+        
+        /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_HideAppWindow )( 
+            IExecAction2 * This,
+            /* [retval][out] */ VARIANT_BOOL *pHideAppWindow);
+        
+        /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_HideAppWindow )( 
+            IExecAction2 * This,
+            /* [in] */ VARIANT_BOOL hideAppWindow);
+        
+        END_INTERFACE
+    } IExecAction2Vtbl;
+
+    interface IExecAction2
+    {
+        CONST_VTBL struct IExecAction2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IExecAction2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IExecAction2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IExecAction2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IExecAction2_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IExecAction2_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IExecAction2_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IExecAction2_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IExecAction2_get_Id(This,pId)	\
+    ( (This)->lpVtbl -> get_Id(This,pId) ) 
+
+#define IExecAction2_put_Id(This,Id)	\
+    ( (This)->lpVtbl -> put_Id(This,Id) ) 
+
+#define IExecAction2_get_Type(This,pType)	\
+    ( (This)->lpVtbl -> get_Type(This,pType) ) 
+
+
+#define IExecAction2_get_Path(This,pPath)	\
+    ( (This)->lpVtbl -> get_Path(This,pPath) ) 
+
+#define IExecAction2_put_Path(This,path)	\
+    ( (This)->lpVtbl -> put_Path(This,path) ) 
+
+#define IExecAction2_get_Arguments(This,pArgument)	\
+    ( (This)->lpVtbl -> get_Arguments(This,pArgument) ) 
+
+#define IExecAction2_put_Arguments(This,argument)	\
+    ( (This)->lpVtbl -> put_Arguments(This,argument) ) 
+
+#define IExecAction2_get_WorkingDirectory(This,pWorkingDirectory)	\
+    ( (This)->lpVtbl -> get_WorkingDirectory(This,pWorkingDirectory) ) 
+
+#define IExecAction2_put_WorkingDirectory(This,workingDirectory)	\
+    ( (This)->lpVtbl -> put_WorkingDirectory(This,workingDirectory) ) 
+
+
+#define IExecAction2_get_HideAppWindow(This,pHideAppWindow)	\
+    ( (This)->lpVtbl -> get_HideAppWindow(This,pHideAppWindow) ) 
+
+#define IExecAction2_put_HideAppWindow(This,hideAppWindow)	\
+    ( (This)->lpVtbl -> put_HideAppWindow(This,hideAppWindow) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IExecAction2_INTERFACE_DEFINED__ */
+
+
 #ifndef __IShowMessageAction_INTERFACE_DEFINED__
 #define __IShowMessageAction_INTERFACE_DEFINED__
 
@@ -10394,15 +10615,15 @@ EXTERN_C const IID IID_IRepetitionPattern;
 #endif 	/* __IRepetitionPattern_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_taskschd_0000_0043 */
+/* interface __MIDL_itf_taskschd_0000_0044 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_taskschd_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_taskschd_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_taskschd_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_taskschd_0000_0044_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -492,26 +492,6 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardReaderStatics_FWD_DEFINED__ */
 
 
-#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_FWD_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails;
-
-#ifdef __cplusplus
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace SmartCards {
-                interface ISmartCardTriggerDetails;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_FWD_DEFINED__ */
-
-
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -568,18 +548,18 @@ interface ISmartCard;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0001 */
 /* [local] */ 
@@ -614,18 +594,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0002 */
 /* [local] */ 
@@ -660,18 +640,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0003 */
 /* [local] */ 
@@ -730,18 +710,18 @@ interface ISmartCardChallengeContext;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0004 */
 /* [local] */ 
@@ -776,18 +756,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0005 */
 /* [local] */ 
@@ -846,18 +826,18 @@ interface ISmartCardConnection;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0006 */
 /* [local] */ 
@@ -892,18 +872,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0007 */
 /* [local] */ 
@@ -962,18 +942,18 @@ interface ISmartCardProvisioning;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0008 */
 /* [local] */ 
@@ -1008,18 +988,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0009 */
 /* [local] */ 
@@ -1078,18 +1058,18 @@ interface ISmartCardReader;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0010 */
 /* [local] */ 
@@ -1124,18 +1104,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0011 */
 /* [local] */ 
@@ -1183,18 +1163,18 @@ enum SmartCardReaderStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0012 */
 /* [local] */ 
@@ -1229,18 +1209,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0013 */
 /* [local] */ 
@@ -1288,18 +1268,18 @@ enum SmartCardStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0014 */
 /* [local] */ 
@@ -1334,18 +1314,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0015 */
 /* [local] */ 
@@ -1380,18 +1360,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0016 */
 /* [local] */ 
@@ -1426,18 +1406,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0017 */
 /* [local] */ 
@@ -1496,18 +1476,18 @@ interface ICardAddedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0018 */
 /* [local] */ 
@@ -1566,18 +1546,18 @@ interface ICardRemovedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0019 */
 /* [local] */ 
@@ -1625,18 +1605,18 @@ interface IBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0020 */
 /* [local] */ 
@@ -1671,18 +1651,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0021 */
 /* [local] */ 
@@ -1717,18 +1697,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0022 */
 /* [local] */ 
@@ -1763,18 +1743,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0023 */
 /* [local] */ 
@@ -1809,18 +1789,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0024 */
 /* [local] */ 
@@ -1855,18 +1835,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0025 */
 /* [local] */ 
@@ -1901,18 +1881,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0026 */
 /* [local] */ 
@@ -1947,18 +1927,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0027 */
 /* [local] */ 
@@ -2038,17 +2018,6 @@ typedef enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardStatus __x_ABI_CWin
 
 
 #endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-
 
 
 
@@ -2086,17 +2055,6 @@ namespace Windows {
 namespace Devices {
 namespace SmartCards {
 class SmartCardPinResetRequest;
-} /*SmartCards*/
-} /*Devices*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Devices {
-namespace SmartCards {
-class SmartCardTriggerDetails;
 } /*SmartCards*/
 } /*Devices*/
 } /*Windows*/
@@ -2198,25 +2156,6 @@ namespace ABI {
 extern "C" { 
 #endif
 
-#ifdef __cplusplus
-
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace SmartCards {
-                
-                typedef enum SmartCardTriggerType SmartCardTriggerType;
-                
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
 
 
 
@@ -2231,18 +2170,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0028 */
 /* [local] */ 
@@ -2417,18 +2356,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CSmartCards__CSmartCard
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0030 */
 /* [local] */ 
@@ -2569,18 +2508,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CSmartCards__CSmartCard
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0032 */
 /* [local] */ 
@@ -2763,18 +2702,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0034 */
 /* [local] */ 
@@ -2896,18 +2835,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0036 */
 /* [local] */ 
@@ -3068,18 +3007,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0038 */
 /* [local] */ 
@@ -3201,18 +3140,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0040 */
 /* [local] */ 
@@ -3373,18 +3312,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0042 */
 /* [local] */ 
@@ -3506,18 +3445,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0044 */
 /* [local] */ 
@@ -3678,18 +3617,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0046 */
 /* [local] */ 
@@ -3811,18 +3750,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0048 */
 /* [local] */ 
@@ -3983,18 +3922,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0050 */
 /* [local] */ 
@@ -4116,18 +4055,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0052 */
 /* [local] */ 
@@ -4288,18 +4227,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4699 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4699_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0054 */
 /* [local] */ 
@@ -4421,18 +4360,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4700 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4700 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4700_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4700_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0056 */
 /* [local] */ 
@@ -4593,18 +4532,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4701 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4701 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4701_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4701_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0058 */
 /* [local] */ 
@@ -4726,18 +4665,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0059_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4702 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4702 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4702_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4702_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0060 */
 /* [local] */ 
@@ -4898,18 +4837,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0061_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4703 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4703 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4703_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4703_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0062 */
 /* [local] */ 
@@ -5029,18 +4968,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CSmartCards__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0063_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4704 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4704 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4704_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards2Eidl_0000_4704_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0064 */
 /* [local] */ 
@@ -5207,20 +5146,6 @@ enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardStatus
 #endif /* end if !defined(__cplusplus) */
 
 #endif
-#if !defined(__cplusplus)
-
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType
-    {
-        SmartCardTriggerType_EmulatorTransaction	= 0,
-        SmartCardTriggerType_EmulatorNearFieldEntry	= 1,
-        SmartCardTriggerType_EmulatorNearFieldExit	= 2,
-        SmartCardTriggerType_ReaderCardAdded	= 5
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
 
 
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0065 */
@@ -5310,29 +5235,6 @@ namespace ABI {
                         SmartCardStatus_Shared	= 2,
                         SmartCardStatus_Exclusive	= 3,
                         SmartCardStatus_Unresponsive	= 4
-                    } ;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace SmartCards {
-                
-                /* [v1_enum] */ 
-                enum SmartCardTriggerType
-                    {
-                        SmartCardTriggerType_EmulatorTransaction	= 0,
-                        SmartCardTriggerType_EmulatorNearFieldEntry	= 1,
-                        SmartCardTriggerType_EmulatorNearFieldExit	= 2,
-                        SmartCardTriggerType_ReaderCardAdded	= 5
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -7953,163 +7855,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardReaderSt
 /* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0081 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_ISmartCardTriggerDetails[] = L"Windows.Devices.SmartCards.ISmartCardTriggerDetails";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0081 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0081_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Devices::SmartCards::ISmartCardTriggerDetails */
-/* [uuid][object] */ 
-
-
-EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace SmartCards {
-                    
-                    MIDL_INTERFACE("5F9BF11E-39EF-4F2B-B44F-0A9155B177BC")
-                    ISmartCardTriggerDetails : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TriggerType( 
-                            /* [out][retval] */ __RPC__out ABI::Windows::Devices::SmartCards::SmartCardTriggerType *value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SourceAppletId( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TriggerData( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer **value) = 0;
-                        
-                    };
-
-                    extern const __declspec(selectany) IID & IID_ISmartCardTriggerDetails = __uuidof(ISmartCardTriggerDetails);
-
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetailsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TriggerType )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SourceAppletId )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TriggerData )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetailsVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetailsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_get_TriggerType(This,value)	\
-    ( (This)->lpVtbl -> get_TriggerType(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_get_SourceAppletId(This,value)	\
-    ( (This)->lpVtbl -> get_SourceAppletId(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_get_TriggerData(This,value)	\
-    ( (This)->lpVtbl -> get_TriggerData(This,value) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardTriggerDetails_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0082 */
-/* [local] */ 
-
 #ifndef RUNTIMECLASS_Windows_Devices_SmartCards_CardAddedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_Devices_SmartCards_CardAddedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_SmartCards_CardAddedEventArgs[] = L"Windows.Devices.SmartCards.CardAddedEventArgs";
@@ -8150,19 +7895,15 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Devices_SmartCards_SmartCardReader_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_SmartCards_SmartCardReader[] = L"Windows.Devices.SmartCards.SmartCardReader";
 #endif
-#ifndef RUNTIMECLASS_Windows_Devices_SmartCards_SmartCardTriggerDetails_DEFINED
-#define RUNTIMECLASS_Windows_Devices_SmartCards_SmartCardTriggerDetails_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_SmartCards_SmartCardTriggerDetails[] = L"Windows.Devices.SmartCards.SmartCardTriggerDetails";
-#endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0082 */
+/* interface __MIDL_itf_windows2Edevices2Esmartcards_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Esmartcards_0000_0081_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

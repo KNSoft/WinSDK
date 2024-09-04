@@ -168,6 +168,7 @@ Abstract:
     #define STATIC_CODECAPI_AVEncVideoEncodeFrameTypeQP 0xaa70b610, 0xe03f, 0x450c, 0xad, 0x07, 0x07, 0x31, 0x4e, 0x63, 0x9c, 0xe7
     #define STATIC_CODECAPI_AVEncSliceControlMode       0xe9e782ef, 0x5f18, 0x44c9, 0xa9, 0x0b, 0xe9, 0xc3, 0xc2, 0xc1, 0x7b, 0x0b
     #define STATIC_CODECAPI_AVEncSliceControlSize       0x92f51df3, 0x07a5, 0x4172, 0xae, 0xfe, 0xc6, 0x9c, 0xa3, 0xb6, 0x0e, 0x35
+	#define STATIC_CODECAPI_AVEncSliceGenerationMode    0x8a6bc67f, 0x9497, 0x4286, 0xb4, 0x6b, 0x02, 0xdb, 0x8d, 0x60, 0xed, 0xbc
     #define STATIC_CODECAPI_AVEncVideoMaxNumRefFrame    0x964829ed, 0x94f9, 0x43b4, 0xb7, 0x4d, 0xef, 0x40, 0x94, 0x4b, 0x69, 0xa0
     #define STATIC_CODECAPI_AVEncVideoMeanAbsoluteDifference    0xe5c0c10f, 0x81a4, 0x422d, 0x8c, 0x3f, 0xb4, 0x74, 0xa4, 0x58, 0x13, 0x36      
     #define STATIC_CODECAPI_AVEncVideoMaxQP             0x3daf6f66, 0xa6a7, 0x45e0, 0xa8, 0xe5, 0xf2, 0x74, 0x3f, 0x46, 0xa3, 0xa2
@@ -175,6 +176,7 @@ Abstract:
     #define STATIC_CODECAPI_AVEncVideoMarkLTRFrame      0xe42f4748, 0xa06d, 0x4ef9, 0x8c, 0xea, 0x3d, 0x05, 0xfd, 0xe3, 0xbd, 0x3b
     #define STATIC_CODECAPI_AVEncVideoUseLTRFrame       0x00752db8, 0x55f7, 0x4f80, 0x89, 0x5b, 0x27, 0x63, 0x91, 0x95, 0xf2, 0xad
     #define STATIC_CODECAPI_AVEncVideoROIEnabled        0xd74f7f18, 0x44dd, 0x4b85, 0xab, 0xa3, 0x5, 0xd9, 0xf4, 0x2a, 0x82, 0x80
+    #define STATIC_CODECAPI_AVEncVideoDirtyRectEnabled  0x8acb8fdd, 0x5e0c, 0x4c66, 0x87, 0x29, 0xb8, 0xf6, 0x29, 0xab, 0x04, 0xfb
     #define STATIC_CODECAPI_AVScenarioInfo              0xb28a6e64, 0x3ff9, 0x446a, 0x8a, 0x4b, 0x0d, 0x7a, 0x53, 0x41, 0x32, 0x36
     #define STATIC_CODECAPI_AVEncMPVGOPSizeMin          0x7155cf20, 0xd440, 0x4852, 0xad, 0x0f, 0x9c, 0x4a, 0xbf, 0xe3, 0x7a, 0x6a
     #define STATIC_CODECAPI_AVEncMPVGOPSizeMax          0xfe7de4c4, 0x1936, 0x4fe2, 0xbd, 0xf7, 0x1f, 0x18, 0xca, 0x1d, 0x00, 0x1f
@@ -1003,6 +1005,9 @@ DEFINE_CODECAPI_GUID( AVEncSliceControlMode, "e9e782ef-5f18-44c9-a90b-e9c3c2c17b
 // AVEncSliceControlSize (UINT32)
 DEFINE_CODECAPI_GUID( AVEncSliceControlSize, "92f51df3-07a5-4172-aefe-c69ca3b60e35", 0x92f51df3, 0x07a5, 0x4172, 0xae, 0xfe, 0xc6, 0x9c, 0xa3, 0xb6, 0x0e, 0x35 )
 
+// CODECAPI_AVEncSliceGenerationMode (UINT32)
+DEFINE_CODECAPI_GUID( AVEncSliceGenerationMode, "8a6bc67f-9497-4286-b46b-02db8d60edbc", 0x8a6bc67f, 0x9497, 0x4286, 0xb4, 0x6b, 0x02, 0xdb, 0x8d, 0x60, 0xed, 0xbc )
+  
 // AVEncVideoMaxNumRefFrame (UINT32)
 DEFINE_CODECAPI_GUID( AVEncVideoMaxNumRefFrame, "964829ed-94f9-43b4-b74d-ef40944b69a0", 0x964829ed, 0x94f9, 0x43b4, 0xb7, 0x4d, 0xef, 0x40, 0x94, 0x4b, 0x69, 0xa0 )
 
@@ -1023,6 +1028,9 @@ DEFINE_CODECAPI_GUID( AVEncVideoUseLTRFrame, "00752db8-55f7-4f80-895b-27639195f2
 
 // AVEncVideoROIEnabled (UINT32)
 DEFINE_CODECAPI_GUID( AVEncVideoROIEnabled, "d74f7f18-44dd-4b85-aba3-05d9f42a8280", 0xd74f7f18, 0x44dd, 0x4b85, 0xab, 0xa3, 0x5, 0xd9, 0xf4, 0x2a, 0x82, 0x80 )
+
+// AVEncVideoDirtyRectEnabled (UINT32)
+DEFINE_CODECAPI_GUID( AVEncVideoDirtyRectEnabled, "8acb8fdd-5e0c-4c66-8729-b8f629ab04fb", 0x8acb8fdd, 0x5e0c, 0x4c66, 0x87, 0x29, 0xb8, 0xf6, 0x29, 0xab, 0x04, 0xfb )
 
 // AVEncMaxFrameRate (UINT64)
 DEFINE_CODECAPI_GUID( AVEncMaxFrameRate, "B98E1B31-19FA-4D4F-9931-D6A5B8AAB93C", 0xb98e1b31, 0x19fa, 0x4d4f, 0x99, 0x31, 0xd6, 0xa5, 0xb8, 0xaa, 0xb9, 0x3c )
@@ -2140,6 +2148,7 @@ DEFINE_CODECAPI_GUID( AVRealtimeControl,"6f440632-c4ad-4bf7-9e52-456942b454b0", 
     #define CODECAPI_AVEncVideoEncodeFrameTypeQP DEFINE_CODECAPI_GUIDNAMED( AVEncVideoEncodeFrameTypeQP )
     #define CODECAPI_AVEncSliceControlMode       DEFINE_CODECAPI_GUIDNAMED( AVEncSliceControlMode )
     #define CODECAPI_AVEncSliceControlSize       DEFINE_CODECAPI_GUIDNAMED( AVEncSliceControlSize )
+    #define CODECAPI_AVEncSliceGenerationMode    DEFINE_CODECAPI_GUIDNAMED( AVEncSliceGenerationMode )
     #define CODECAPI_AVEncVideoMaxNumRefFrame    DEFINE_CODECAPI_GUIDNAMED( AVEncVideoMaxNumRefFrame )
     #define CODECAPI_AVEncVideoMeanAbsoluteDifference    DEFINE_CODECAPI_GUIDNAMED( AVEncVideoMeanAbsoluteDifference )
     #define CODECAPI_AVEncVideoMaxQP             DEFINE_CODECAPI_GUIDNAMED( AVEncVideoMaxQP )
@@ -2147,6 +2156,7 @@ DEFINE_CODECAPI_GUID( AVRealtimeControl,"6f440632-c4ad-4bf7-9e52-456942b454b0", 
     #define CODECAPI_AVEncVideoMarkLTRFrame      DEFINE_CODECAPI_GUIDNAMED( AVEncVideoMarkLTRFrame )
     #define CODECAPI_AVEncVideoUseLTRFrame       DEFINE_CODECAPI_GUIDNAMED( AVEncVideoUseLTRFrame )
     #define CODECAPI_AVEncVideoROIEnabled        DEFINE_CODECAPI_GUIDNAMED( AVEncVideoROIEnabled )
+    #define CODECAPI_AVEncVideoDirtyRectEnabled  DEFINE_CODECAPI_GUIDNAMED( AVEncVideoDirtyRectEnabled )
     #define CODECAPI_AVScenarioInfo DEFINE_CODECAPI_GUIDNAMED( AVScenarioInfo )
     #define CODECAPI_AVEncMPVGOPSizeMin DEFINE_CODECAPI_GUIDNAMED( AVEncMPVGOPSizeMin )
     #define CODECAPI_AVEncMPVGOPSizeMax DEFINE_CODECAPI_GUIDNAMED( AVEncMPVGOPSizeMax )

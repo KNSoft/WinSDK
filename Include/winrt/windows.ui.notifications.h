@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -109,6 +109,20 @@ typedef interface __FIIterable_1_Windows__CUI__CNotifications__CShownTileNotific
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification_FWD_DEFINED__ */
 
 
+#ifndef ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CUI__CNotifications__CToastCollection __FIIterator_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CUI__CNotifications__CToastCollection __FIIterable_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CToastNotification_FWD_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CToastNotification_FWD_DEFINED__
 typedef interface __FIIterator_1_Windows__CUI__CNotifications__CToastNotification __FIIterator_1_Windows__CUI__CNotifications__CToastNotification;
@@ -172,6 +186,13 @@ typedef interface __FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotif
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_FWD_DEFINED__ */
 
 
+#ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification;
@@ -193,6 +214,20 @@ typedef interface __FIVector_1_Windows__CUI__CNotifications__CNotificationBindin
 #endif 	/* ____FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification;
@@ -205,6 +240,48 @@ typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows_
 typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification;
 
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_FWD_DEFINED__
@@ -495,6 +572,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationBinding_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationData_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CINotificationData_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CINotificationData __x_ABI_CWindows_CUI_CNotifications_CINotificationData;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface INotificationData;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationData_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface INotificationDataFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual;
@@ -653,6 +770,86 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface ITileFlyoutNotification;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface ITileFlyoutNotificationFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface ITileFlyoutUpdateManagerStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface ITileFlyoutUpdater;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileNotification_FWD_DEFINED__
@@ -815,6 +1012,66 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollection __x_ABI_CWindows_CUI_CNotifications_CIToastCollection;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastCollection;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastCollectionFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastCollectionManager;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs __x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs;
@@ -913,6 +1170,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastNotification4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_FWD_DEFINED__
@@ -1015,6 +1292,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastNotificationHistoryChangedTriggerDetail2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser;
@@ -1033,6 +1330,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastNotificationManagerForUser2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_FWD_DEFINED__
@@ -1095,6 +1412,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics4_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastNotificationManagerStatics5;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier;
@@ -1113,6 +1450,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastNotifier2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_FWD_DEFINED__
@@ -1213,18 +1570,18 @@ interface IAdaptiveNotificationText;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4568 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4568 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4568_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4568_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0001 */
 /* [local] */ 
@@ -1259,18 +1616,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4569 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4569 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4569_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4569_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0002 */
 /* [local] */ 
@@ -1329,18 +1686,18 @@ interface INotificationBinding;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4570 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4570 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4570_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4570_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0003 */
 /* [local] */ 
@@ -1375,18 +1732,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4571 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4571 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4571_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4571_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0004 */
 /* [local] */ 
@@ -1445,18 +1802,18 @@ interface IScheduledTileNotification;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4572 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4572 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4572_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4572_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0005 */
 /* [local] */ 
@@ -1491,18 +1848,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4573 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4573 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4573_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4573_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0006 */
 /* [local] */ 
@@ -1561,18 +1918,18 @@ interface IScheduledToastNotification;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4574 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4574 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4574_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4574_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0007 */
 /* [local] */ 
@@ -1607,18 +1964,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4575 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4575 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4575_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4575_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0008 */
 /* [local] */ 
@@ -1677,18 +2034,18 @@ interface IShownTileNotification;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4576 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4576 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4576_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0009 */
 /* [local] */ 
@@ -1723,18 +2080,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4577 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4577 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4577_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Enotifications_0000_0010 */
 /* [local] */ 
@@ -1763,6 +2120,122 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Notifications {
+class ToastCollection;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+interface IToastCollection;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0010 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4578 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4578 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4578_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIIterator_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1512ed75-8c74-5520-ac88-134a1403f7ad"))
+IIterator<ABI::Windows::UI::Notifications::ToastCollection*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastCollection*, ABI::Windows::UI::Notifications::IToastCollection*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Notifications.ToastCollection>"; }
+};
+typedef IIterator<ABI::Windows::UI::Notifications::ToastCollection*> __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CToastCollection_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4579 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4579 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4579_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIIterable_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("8928d527-db5d-5a10-ae9b-430fa0906e74"))
+IIterable<ABI::Windows::UI::Notifications::ToastCollection*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastCollection*, ABI::Windows::UI::Notifications::IToastCollection*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Notifications.ToastCollection>"; }
+};
+typedef IIterable<ABI::Windows::UI::Notifications::ToastCollection*> __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CToastCollection_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
 class ToastNotification;
 } /*Notifications*/
 } /*UI*/
@@ -1783,30 +2256,30 @@ interface IToastNotification;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0012 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3051 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3051_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4580 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4580_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CToastNotification_USE
@@ -1830,29 +2303,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CToastNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3052 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3052_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4581 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4581_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CToastNotification_USE
@@ -1899,30 +2372,30 @@ interface IUserNotification;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0014 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3053 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3053_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4582 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4582_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CUserNotification_USE
@@ -1946,29 +2419,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CUserNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3054 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3054_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4583 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4583_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CUserNotification_USE
@@ -1992,29 +2465,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CUserNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0016 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3055 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3055_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4584 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4584_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_USE
@@ -2038,29 +2511,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0017 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3056 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3056_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4585 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4585_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding_USE
@@ -2084,29 +2557,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3057 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3057_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4586 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4586_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification_USE
@@ -2130,29 +2603,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0017 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0019 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3058 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3058_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4587 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4587_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_USE
@@ -2176,29 +2649,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0018 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3059 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3059_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4588 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4588_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_USE
@@ -2222,29 +2695,75 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3060 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3060_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4589 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4589_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0022 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e09d090a-12e2-569b-ad29-fb0dfb98a1da"))
+IVectorView<ABI::Windows::UI::Notifications::ToastCollection*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastCollection*, ABI::Windows::UI::Notifications::IToastCollection*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.Notifications.ToastCollection>"; }
+};
+typedef IVectorView<ABI::Windows::UI::Notifications::ToastCollection*> __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0022 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0022_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4590 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4590 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4590_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_USE
@@ -2268,29 +2787,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0020 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3061 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3061_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4591 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4591_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_USE
@@ -2314,29 +2833,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3062 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3062_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4592 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4592_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_USE
@@ -2360,29 +2879,121 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0022 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3063 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3063_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4593 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4593_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0026 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4650e069-3052-530e-bc38-93c411773b77"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.UI.Notifications.ToastCollection>>"; }
+};
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0026 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0026_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4594 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4594 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4594_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0027 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("34d4fa14-252b-5cb4-a7da-971ee5daec7c"))
+IAsyncOperation<__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.UI.Notifications.ToastCollection>>"; }
+};
+typedef IAsyncOperation<__FIVectorView_1_Windows__CUI__CNotifications__CToastCollection*> __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0027 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4595 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4595 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4595_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_USE
@@ -2406,29 +3017,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3064 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3064_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4596 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4596_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_USE
@@ -2450,6 +3061,330 @@ typedef IAsyncOperation<__FIVectorView_1_Windows__CUI__CNotifications__CUserNoti
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0029 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0029_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4597 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4597 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4597_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0030 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("8d44ca1e-15d7-5bcb-b002-384c87171c74"))
+IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastCollection*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastCollection*, ABI::Windows::UI::Notifications::IToastCollection*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.UI.Notifications.ToastCollection>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastCollection*> __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0030 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0030_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4598 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4598 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4598_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0031 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_USE
+#define DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("9310ec47-9f0a-5999-80c2-4b31e9f77e8e"))
+IAsyncOperation<ABI::Windows::UI::Notifications::ToastCollection*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastCollection*, ABI::Windows::UI::Notifications::IToastCollection*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.UI.Notifications.ToastCollection>"; }
+};
+typedef IAsyncOperation<ABI::Windows::UI::Notifications::ToastCollection*> __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t;
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+class ToastNotificationHistory;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+interface IToastNotificationHistory;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0031 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0031_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4599 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4599 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4599_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0032 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c661d5da-6762-5d93-9138-e7dacd571056"))
+IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastNotificationHistory*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastNotificationHistory*, ABI::Windows::UI::Notifications::IToastNotificationHistory*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.UI.Notifications.ToastNotificationHistory>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastNotificationHistory*> __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0032 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0032_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4600 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4600 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4600_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0033 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_USE
+#define DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2a22fecb-4b96-551f-b7b9-a7b5beecad05"))
+IAsyncOperation<ABI::Windows::UI::Notifications::ToastNotificationHistory*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastNotificationHistory*, ABI::Windows::UI::Notifications::IToastNotificationHistory*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.UI.Notifications.ToastNotificationHistory>"; }
+};
+typedef IAsyncOperation<ABI::Windows::UI::Notifications::ToastNotificationHistory*> __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t;
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+class ToastNotifier;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+interface IToastNotifier;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0033 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0033_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4601 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4601 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4601_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0034 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("fde26ed7-bc37-5a7c-b3da-3e41ac97bba4"))
+IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastNotifier*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastNotifier*, ABI::Windows::UI::Notifications::IToastNotifier*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.UI.Notifications.ToastNotifier>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastNotifier*> __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0034 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0034_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4602 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4602 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4602_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0035 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_USE
+#define DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2dddc10e-38e6-5655-adf3-820e8fb14dcc"))
+IAsyncOperation<ABI::Windows::UI::Notifications::ToastNotifier*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastNotifier*, ABI::Windows::UI::Notifications::IToastNotifier*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.UI.Notifications.ToastNotifier>"; }
+};
+typedef IAsyncOperation<ABI::Windows::UI::Notifications::ToastNotifier*> __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t;
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2502,7 +3437,7 @@ interface IUserNotificationChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0035 */
 /* [local] */ 
 
 
@@ -2510,23 +3445,23 @@ interface IUserNotificationChangedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3065 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3065_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_USE
@@ -2552,30 +3487,30 @@ extern "C" {
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0036 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3066 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3066_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_USE
@@ -2622,30 +3557,30 @@ interface IToastDismissedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0037 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3067 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3067_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4605 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_USE
@@ -2692,30 +3627,30 @@ interface IToastFailedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0038 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3068 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3068_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_USE
@@ -2739,29 +3674,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0028 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0039 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3069 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3069_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -2785,29 +3720,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3070 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3070_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4608 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -2831,29 +3766,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3071 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3071_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4609 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
@@ -2877,29 +3812,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3072 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3072_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_HSTRING_USE
@@ -2923,29 +3858,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0043 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3073 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3073_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_HSTRING_USE
@@ -2979,30 +3914,30 @@ struct DateTime;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0044 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3074 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3074_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
@@ -3036,30 +3971,30 @@ struct TimeSpan;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0045 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3075 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3075_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
@@ -3102,30 +4037,30 @@ interface IUriRuntimeClass;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0046 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3076 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3076_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CUri_USE
@@ -3149,29 +4084,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CUri_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3077 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3077_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CUri_USE
@@ -3195,29 +4130,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CUri_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0048 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3078 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3078_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -3241,29 +4176,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0049 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -3287,29 +4222,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0050 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -3333,29 +4268,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0051 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3081 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -3379,29 +4314,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0052 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
@@ -3425,29 +4360,29 @@ extern "C" {
 #endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0053 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
@@ -3471,29 +4406,29 @@ extern "C" {
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0054 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4622 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
@@ -3517,29 +4452,29 @@ extern "C" {
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0055 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
@@ -3620,6 +4555,7 @@ class ValueSet;
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
 #endif
+
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
 
@@ -3687,7 +4623,27 @@ typedef enum __x_ABI_CWindows_CUI_CNotifications_CNotificationSetting __x_ABI_CW
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CUI_CNotifications_CNotificationUpdateResult __x_ABI_CWindows_CUI_CNotifications_CNotificationUpdateResult;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CUI_CNotifications_CPeriodicUpdateRecurrence __x_ABI_CWindows_CUI_CNotifications_CPeriodicUpdateRecurrence;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CNotifications_CTileFlyoutTemplateType __x_ABI_CWindows_CUI_CNotifications_CTileFlyoutTemplateType;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -3727,6 +4683,16 @@ typedef enum __x_ABI_CWindows_CUI_CNotifications_CToastHistoryChangedType __x_AB
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CUI_CNotifications_CToastNotificationPriority __x_ABI_CWindows_CUI_CNotifications_CToastNotificationPriority;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CUI_CNotifications_CToastTemplateType __x_ABI_CWindows_CUI_CNotifications_CToastTemplateType;
 
 
@@ -3744,6 +4710,17 @@ typedef enum __x_ABI_CWindows_CUI_CNotifications_CUserNotificationChangedKind __
 
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3829,7 +4806,40 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Notifications {
+class NotificationData;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
 class NotificationVisual;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+class TileFlyoutNotification;
+} /*Notifications*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Notifications {
+class TileFlyoutUpdater;
 } /*Notifications*/
 } /*UI*/
 } /*Windows*/
@@ -3884,7 +4894,7 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Notifications {
-class ToastNotificationActionTriggerDetail;
+class ToastCollectionManager;
 } /*Notifications*/
 } /*UI*/
 } /*Windows*/
@@ -3895,7 +4905,7 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Notifications {
-class ToastNotificationHistory;
+class ToastNotificationActionTriggerDetail;
 } /*Notifications*/
 } /*UI*/
 } /*Windows*/
@@ -3923,20 +4933,9 @@ class ToastNotificationManagerForUser;
 } /*Windows*/
 }
 #endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Notifications {
-class ToastNotifier;
-} /*Notifications*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0056 */
 /* [local] */ 
 
 
@@ -3958,6 +4957,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 #ifdef __cplusplus
 
@@ -4074,7 +5074,43 @@ namespace ABI {
         namespace UI {
             namespace Notifications {
                 
+                typedef enum NotificationUpdateResult NotificationUpdateResult;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                
                 typedef enum PeriodicUpdateRecurrence PeriodicUpdateRecurrence;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                
+                typedef enum TileFlyoutTemplateType TileFlyoutTemplateType;
                 
             } /* end namespace */
         } /* end namespace */
@@ -4129,6 +5165,24 @@ namespace ABI {
             namespace Notifications {
                 
                 typedef enum ToastHistoryChangedType ToastHistoryChangedType;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                
+                typedef enum ToastNotificationPriority ToastNotificationPriority;
                 
             } /* end namespace */
         } /* end namespace */
@@ -4212,23 +5266,34 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0045_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3086 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3086 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0046 */
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0056_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4624 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4624 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CAdaptiveNotificationText
@@ -4236,13 +5301,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3086_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__
@@ -4386,35 +5451,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CAdaptiveNot
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CAdaptiveNotificationText */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CAdaptiveNotificationText
@@ -4422,13 +5487,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3087_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__
@@ -4538,35 +5603,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CAdaptiveNot
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CAdaptiveNotificationText */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CNotificationBinding
@@ -4574,13 +5639,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3088_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
@@ -4724,35 +5789,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CNotificatio
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CNotificationBinding */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CNotificationBinding
@@ -4760,13 +5825,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3089_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
@@ -4876,35 +5941,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CNotificatio
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CNotificationBinding */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CScheduledTileNotification
@@ -4912,13 +5977,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3090_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__
@@ -5062,35 +6127,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CScheduledTi
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CScheduledTileNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CScheduledTileNotification
@@ -5098,13 +6163,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3091_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__
@@ -5214,35 +6279,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CScheduledTi
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CScheduledTileNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CScheduledToastNotification
@@ -5250,13 +6315,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3092_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__
@@ -5400,35 +6465,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CScheduledTo
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CScheduledToastNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CScheduledToastNotification
@@ -5436,13 +6501,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3093_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__
@@ -5552,35 +6617,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CScheduledTo
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CScheduledToastNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification
@@ -5588,13 +6653,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3094_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__
@@ -5738,35 +6803,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CShownTileNo
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CShownTileNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification
@@ -5774,13 +6839,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3095_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__
@@ -5890,35 +6955,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CShownTileNo
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CShownTileNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0077 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIIterator_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0077 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0077_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("1512ed75-8c74-5520-ac88-134a1403f7ad")
+    __FIIterator_1_Windows__CUI__CNotifications__CToastCollection : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollection **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Notifications::IToastCollection **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CNotifications_CIToastCollection **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIIterator_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CUI__CNotifications__CToastCollection_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0078 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0078 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0078_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4635 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4635 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0079 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIIterable_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0079 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0079_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8928d527-db5d-5a10-ae9b-430fa0906e74")
+    __FIIterable_1_Windows__CUI__CNotifications__CToastCollection : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CNotifications__CToastCollection **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CNotifications__CToastCollection **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIIterable_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CUI__CNotifications__CToastCollection_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0080 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0080 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0080_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4636 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4636 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CToastNotification
@@ -5926,13 +7329,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3096_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__
@@ -6076,35 +7479,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CToastNotifi
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0082 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CToastNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0083 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CToastNotification
@@ -6112,13 +7515,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3097_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__
@@ -6228,35 +7631,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CToastNotifi
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0084 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CToastNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CNotifications__CUserNotification
@@ -6264,13 +7667,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3098_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
@@ -6414,35 +7817,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CNotifications__CUserNotific
 #endif 	/* ____FIIterator_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0086 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CNotifications__CUserNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CNotifications__CUserNotification
@@ -6450,13 +7853,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3099_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
@@ -6566,35 +7969,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CNotifications__CUserNotific
 #endif 	/* ____FIIterable_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0088 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CNotifications__CUserNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0074 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText
@@ -6602,13 +8005,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3100_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__
@@ -6760,35 +8163,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveN
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0090 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0076 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0091 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding
@@ -6796,13 +8199,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3101_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
@@ -6954,35 +8357,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CNotificat
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0092 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CNotificationBinding */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0078 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0093 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification
@@ -6990,13 +8393,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3102_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__
@@ -7148,35 +8551,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CScheduled
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0094 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0080 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0095 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification
@@ -7184,13 +8587,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3103_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__
@@ -7342,35 +8745,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CScheduled
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0096 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0082 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0097 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification
@@ -7378,13 +8781,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3104_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__
@@ -7536,35 +8939,229 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CShownTile
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0098 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0084 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0099 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0099 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0099_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e09d090a-12e2-569b-ad29-fb0dfb98a1da")
+    __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollection **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Notifications::IToastCollection *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Notifications::IToastCollection **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CNotifications_CIToastCollection **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0100 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0100 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0100_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4646 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4646 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0101 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastNotification
@@ -7572,13 +9169,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3105_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__
@@ -7730,35 +9327,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CToastNoti
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0102 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CToastNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0086 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0103 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification
@@ -7766,13 +9363,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3106_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
@@ -7924,35 +9521,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CNotifications__CUserNotif
 #endif 	/* ____FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0104 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0088 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0105 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CNotifications__CNotificationBinding
@@ -7960,13 +9557,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3107_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__
@@ -8200,35 +9797,340 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CNotifications__CNotificationB
 #endif 	/* ____FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0106 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CNotifications__CNotificationBinding */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0090 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0107 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0107 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0107_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4650e069-3052-530e-bc38-93c411773b77")
+    __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0108 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0108 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0108_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4650 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4650 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0109 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0109 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0109_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("34d4fa14-252b-5cb4-a7da-971ee5daec7c")
+    __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastCollection **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0110 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0110 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0110_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4651 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4651 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0111 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification
@@ -8237,14 +10139,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3108_v0_0_s
 
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0111 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
@@ -8333,35 +10235,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0112 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0112_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0092 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0113 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification
@@ -8369,13 +10271,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3109_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__
@@ -8505,35 +10407,950 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNoti
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0114 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0094 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0115 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0115 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0115_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8d44ca1e-15d7-5bcb-b002-384c87171c74")
+    __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0116 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0116 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0116_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4654 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4654 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0117 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection
+#define DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0117 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0117_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9310ec47-9f0a-5999-80c2-4b31e9f77e8e")
+    __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollection **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastCollection **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollectionVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0118 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0118 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0118_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4655 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4655 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0119 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0119 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0119_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c661d5da-6762-5d93-9138-e7dacd571056")
+    __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistoryVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0120 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0120 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0120_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4656 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4656 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0121 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory
+#define DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0121 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0121_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2a22fecb-4b96-551f-b7b9-a7b5beecad05")
+    __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationHistory **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotificationHistory **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistoryVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0122 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0122 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0122_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4657 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4657 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0123 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0123 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0123_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("fde26ed7-bc37-5a7c-b3da-3e41ac97bba4")
+    __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifierVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifierVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifierVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0124 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0124 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0124_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0125 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier
+#define DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0125 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0125_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2dddc10e-38e6-5655-adf3-820e8fb14dcc")
+    __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifierVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CNotifications__CToastNotifier **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifierVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifierVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0126 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0126 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0126_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4659 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4659 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0127 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs
@@ -8541,13 +11358,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3110_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_INTERFACE_DEFINED__
@@ -8636,35 +11453,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CNotifications__CMa
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0128 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0128_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0096 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0129 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable
@@ -8672,13 +11489,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3111_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_INTERFACE_DEFINED__
@@ -8767,35 +11584,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CNotifications__CTo
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0130 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0130_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0098 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0131 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs
@@ -8803,13 +11620,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3112_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_INTERFACE_DEFINED__
@@ -8898,35 +11715,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CNotifications__CTo
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0132 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0132_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0100 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0133 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs
@@ -8934,13 +11751,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications2Eidl_0000_3113_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_INTERFACE_DEFINED__
@@ -9029,7 +11846,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CNotifications__CTo
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0134 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -9111,6 +11928,19 @@ enum __x_ABI_CWindows_CUI_CNotifications_CNotificationSetting
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CNotifications_CNotificationUpdateResult
+    {
+        NotificationUpdateResult_Succeeded	= 0,
+        NotificationUpdateResult_Failed	= 1,
+        NotificationUpdateResult_NotificationNotFound	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CNotifications_CPeriodicUpdateRecurrence
     {
         PeriodicUpdateRecurrence_HalfHour	= 0,
@@ -9118,6 +11948,17 @@ enum __x_ABI_CWindows_CUI_CNotifications_CPeriodicUpdateRecurrence
         PeriodicUpdateRecurrence_SixHours	= 2,
         PeriodicUpdateRecurrence_TwelveHours	= 3,
         PeriodicUpdateRecurrence_Daily	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CNotifications_CTileFlyoutTemplateType
+    {
+        TileFlyoutTemplateType_TileFlyoutTemplate01	= 0
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -9289,6 +12130,18 @@ enum __x_ABI_CWindows_CUI_CNotifications_CToastHistoryChangedType
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CNotifications_CToastNotificationPriority
+    {
+        ToastNotificationPriority_Default	= 0,
+        ToastNotificationPriority_High	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CNotifications_CToastTemplateType
     {
         ToastTemplateType_ToastImageAndText01	= 0,
@@ -9320,7 +12173,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationContent_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0134 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -9438,6 +12291,28 @@ namespace ABI {
             namespace Notifications {
                 
                 /* [v1_enum] */ 
+                enum NotificationUpdateResult
+                    {
+                        NotificationUpdateResult_Succeeded	= 0,
+                        NotificationUpdateResult_Failed	= 1,
+                        NotificationUpdateResult_NotificationNotFound	= 2
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                
+                /* [v1_enum] */ 
                 enum PeriodicUpdateRecurrence
                     {
                         PeriodicUpdateRecurrence_HalfHour	= 0,
@@ -9445,6 +12320,26 @@ namespace ABI {
                         PeriodicUpdateRecurrence_SixHours	= 2,
                         PeriodicUpdateRecurrence_TwelveHours	= 3,
                         PeriodicUpdateRecurrence_Daily	= 4
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                
+                /* [v1_enum] */ 
+                enum TileFlyoutTemplateType
+                    {
+                        TileFlyoutTemplateType_TileFlyoutTemplate01	= 0
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -9652,6 +12547,27 @@ namespace ABI {
             namespace Notifications {
                 
                 /* [v1_enum] */ 
+                enum ToastNotificationPriority
+                    {
+                        ToastNotificationPriority_Default	= 0,
+                        ToastNotificationPriority_High	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                
+                /* [v1_enum] */ 
                 enum ToastTemplateType
                     {
                         ToastTemplateType_ToastImageAndText01	= 0,
@@ -9694,8 +12610,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationContent_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationContent_INTERFACE_DEFINED__
@@ -9828,7 +12744,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificatio
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationContent_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__)
@@ -9836,13 +12752,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__
@@ -9995,7 +12911,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificatio
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0136 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification_INTERFACE_DEFINED__)
@@ -10003,13 +12919,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0136 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0136_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification_INTERFACE_DEFINED__
@@ -10152,7 +13068,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_INTERFACE_DEFINED__)
@@ -10160,13 +13076,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_INTERFACE_DEFINED__
@@ -10291,7 +13207,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFa
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerForUser_INTERFACE_DEFINED__)
@@ -10299,13 +13215,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerForUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerForUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerForUser_INTERFACE_DEFINED__
@@ -10462,7 +13378,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerF
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerForUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0139 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_INTERFACE_DEFINED__)
@@ -10470,13 +13386,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_INTERFACE_DEFINED__
@@ -10635,7 +13551,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerS
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0140 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics2_INTERFACE_DEFINED__)
@@ -10643,13 +13559,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics2_INTERFACE_DEFINED__
@@ -10774,7 +13690,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerS
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0141 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater_INTERFACE_DEFINED__)
@@ -10782,13 +13698,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0141_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater_INTERFACE_DEFINED__
@@ -10953,7 +13869,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0142 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationHintsStatics_INTERFACE_DEFINED__)
@@ -10961,13 +13877,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationHintsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationHintsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationHintsStatics_INTERFACE_DEFINED__
@@ -11140,7 +14056,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotifi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationHintsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0143 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationTextStylesStatics_INTERFACE_DEFINED__)
@@ -11148,13 +14064,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationTextStylesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationTextStylesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationTextStylesStatics_INTERFACE_DEFINED__
@@ -11457,7 +14373,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotifi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIKnownAdaptiveNotificationTextStylesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIKnownNotificationBindingsStatics_INTERFACE_DEFINED__)
@@ -11465,13 +14381,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIKnownNotificationBindingsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIKnownNotificationBindingsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIKnownNotificationBindingsStatics_INTERFACE_DEFINED__
@@ -11594,7 +14510,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIKnownNotificationBi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIKnownNotificationBindingsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0145 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CINotification_INTERFACE_DEFINED__)
@@ -11602,13 +14518,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CINotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0145_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CINotification_INTERFACE_DEFINED__
@@ -11761,7 +14677,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CINotification;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0146 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationBinding_INTERFACE_DEFINED__)
@@ -11769,13 +14685,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationBinding_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0146_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationBinding_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CINotificationBinding_INTERFACE_DEFINED__
@@ -11948,7 +14864,317 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CINotificationBinding
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationBinding_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0147 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationData_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_INotificationData[] = L"Windows.UI.Notifications.INotificationData";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationData_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0147 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0147_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationData_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CINotificationData_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CINotificationData */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::INotificationData */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CINotificationData;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("9FFD2312-9D6A-4AAF-B6AC-FF17F0C1F280")
+                    INotificationData : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Values( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIMap_2_HSTRING_HSTRING **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SequenceNumber( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_SequenceNumber( 
+                            /* [in] */ UINT32 value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_INotificationData = __uuidof(INotificationData);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CINotificationDataVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Values )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIMap_2_HSTRING_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SequenceNumber )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_SequenceNumber )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationData * This,
+            /* [in] */ UINT32 value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CINotificationDataVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CINotificationData
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CINotificationDataVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_get_Values(This,value)	\
+    ( (This)->lpVtbl -> get_Values(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_get_SequenceNumber(This,value)	\
+    ( (This)->lpVtbl -> get_SequenceNumber(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationData_put_SequenceNumber(This,value)	\
+    ( (This)->lpVtbl -> put_SequenceNumber(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationData_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0148 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_INotificationDataFactory[] = L"Windows.UI.Notifications.INotificationDataFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0148 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0148_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::INotificationDataFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("23C1E33A-1C10-46FB-8040-DEC384621CF8")
+                    INotificationDataFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateNotificationDataWithValuesAndSequenceNumber( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING *initialValues,
+                            /* [in] */ UINT32 sequenceNumber,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateNotificationDataWithValues( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING *initialValues,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_INotificationDataFactory = __uuidof(INotificationDataFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateNotificationDataWithValuesAndSequenceNumber )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING *initialValues,
+            /* [in] */ UINT32 sequenceNumber,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateNotificationDataWithValues )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING *initialValues,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_CreateNotificationDataWithValuesAndSequenceNumber(This,initialValues,sequenceNumber,result)	\
+    ( (This)->lpVtbl -> CreateNotificationDataWithValuesAndSequenceNumber(This,initialValues,sequenceNumber,result) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_CreateNotificationDataWithValues(This,initialValues,result)	\
+    ( (This)->lpVtbl -> CreateNotificationDataWithValues(This,initialValues,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0149 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_INTERFACE_DEFINED__)
@@ -11956,13 +15182,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0149_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_INTERFACE_DEFINED__
@@ -12117,7 +15343,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CINotificationVisual;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0150 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification_INTERFACE_DEFINED__)
@@ -12125,13 +15351,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0150 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification_INTERFACE_DEFINED__
@@ -12324,7 +15550,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotifi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_INTERFACE_DEFINED__)
@@ -12332,13 +15558,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_INTERFACE_DEFINED__
@@ -12465,7 +15691,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotifi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification_INTERFACE_DEFINED__)
@@ -12473,13 +15699,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification_INTERFACE_DEFINED__
@@ -12652,7 +15878,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotif
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0153 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification2_INTERFACE_DEFINED__)
@@ -12660,13 +15886,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification2_INTERFACE_DEFINED__
@@ -12839,7 +16065,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotif
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_INTERFACE_DEFINED__)
@@ -12847,13 +16073,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_INTERFACE_DEFINED__
@@ -13006,7 +16232,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotif
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__)
@@ -13014,13 +16240,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__
@@ -13165,7 +16391,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotif
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_INTERFACE_DEFINED__)
@@ -13173,13 +16399,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_INTERFACE_DEFINED__
@@ -13302,7 +16528,665 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIShownTileNotificati
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0157 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_ITileFlyoutNotification[] = L"Windows.UI.Notifications.ITileFlyoutNotification";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0157 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0157_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::ITileFlyoutNotification */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("9A53B261-C70C-42BE-B2F3-F42AA97D34E5")
+                    ITileFlyoutNotification : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Content( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ExpirationTime( 
+                            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExpirationTime( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ITileFlyoutNotification = __uuidof(ITileFlyoutNotification);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Content )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ExpirationTime )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CFoundation__CDateTime *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExpirationTime )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_get_Content(This,value)	\
+    ( (This)->lpVtbl -> get_Content(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_put_ExpirationTime(This,value)	\
+    ( (This)->lpVtbl -> put_ExpirationTime(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_get_ExpirationTime(This,value)	\
+    ( (This)->lpVtbl -> get_ExpirationTime(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0158 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_ITileFlyoutNotificationFactory[] = L"Windows.UI.Notifications.ITileFlyoutNotificationFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0158 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0158_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::ITileFlyoutNotificationFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("EF556FF5-5226-4F2B-B278-88A35DFE569F")
+                    ITileFlyoutNotificationFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutNotification( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument *content,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutNotification **notification) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ITileFlyoutNotificationFactory = __uuidof(ITileFlyoutNotificationFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutNotification )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument *content,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification **notification);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_CreateTileFlyoutNotification(This,content,notification)	\
+    ( (This)->lpVtbl -> CreateTileFlyoutNotification(This,content,notification) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0159 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_ITileFlyoutUpdateManagerStatics[] = L"Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0159 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0159_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("04363B0B-1AC0-4B99-88E7-ADA83E953D48")
+                    ITileFlyoutUpdateManagerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForApplication( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater **updater) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForApplicationWithId( 
+                            /* [in] */ __RPC__in HSTRING applicationId,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater **updater) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForSecondaryTile( 
+                            /* [in] */ __RPC__in HSTRING tileId,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater **updater) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetTemplateContent( 
+                            /* [in] */ ABI::Windows::UI::Notifications::TileFlyoutTemplateType type,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument **content) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ITileFlyoutUpdateManagerStatics = __uuidof(ITileFlyoutUpdateManagerStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutUpdaterForApplication )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater **updater);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutUpdaterForApplicationWithId )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [in] */ __RPC__in HSTRING applicationId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater **updater);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutUpdaterForSecondaryTile )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [in] */ __RPC__in HSTRING tileId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater **updater);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTemplateContent )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CNotifications_CTileFlyoutTemplateType type,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument **content);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForApplication(This,updater)	\
+    ( (This)->lpVtbl -> CreateTileFlyoutUpdaterForApplication(This,updater) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForApplicationWithId(This,applicationId,updater)	\
+    ( (This)->lpVtbl -> CreateTileFlyoutUpdaterForApplicationWithId(This,applicationId,updater) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForSecondaryTile(This,tileId,updater)	\
+    ( (This)->lpVtbl -> CreateTileFlyoutUpdaterForSecondaryTile(This,tileId,updater) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetTemplateContent(This,type,content)	\
+    ( (This)->lpVtbl -> GetTemplateContent(This,type,content) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0160 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_ITileFlyoutUpdater[] = L"Windows.UI.Notifications.ITileFlyoutUpdater";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0160 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0160_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::ITileFlyoutUpdater */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("8D40C76A-C465-4052-A740-5C2654C1A089")
+                    ITileFlyoutUpdater : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Update( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Notifications::ITileFlyoutNotification *notification) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE StartPeriodicUpdate( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *tileFlyoutContent,
+                            /* [in] */ ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE StartPeriodicUpdateAtTime( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *tileFlyoutContent,
+                            /* [in] */ ABI::Windows::Foundation::DateTime startTime,
+                            /* [in] */ ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE StopPeriodicUpdate( void) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Setting( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::UI::Notifications::NotificationSetting *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ITileFlyoutUpdater = __uuidof(ITileFlyoutUpdater);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdaterVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Update )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification *notification);
+        
+        HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *StartPeriodicUpdate )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *tileFlyoutContent,
+            /* [in] */ __x_ABI_CWindows_CUI_CNotifications_CPeriodicUpdateRecurrence requestedInterval);
+        
+        HRESULT ( STDMETHODCALLTYPE *StartPeriodicUpdateAtTime )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *tileFlyoutContent,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CDateTime startTime,
+            /* [in] */ __x_ABI_CWindows_CUI_CNotifications_CPeriodicUpdateRecurrence requestedInterval);
+        
+        HRESULT ( STDMETHODCALLTYPE *StopPeriodicUpdate )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Setting )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CNotifications_CNotificationSetting *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdaterVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdaterVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_Update(This,notification)	\
+    ( (This)->lpVtbl -> Update(This,notification) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_StartPeriodicUpdate(This,tileFlyoutContent,requestedInterval)	\
+    ( (This)->lpVtbl -> StartPeriodicUpdate(This,tileFlyoutContent,requestedInterval) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_StartPeriodicUpdateAtTime(This,tileFlyoutContent,startTime,requestedInterval)	\
+    ( (This)->lpVtbl -> StartPeriodicUpdateAtTime(This,tileFlyoutContent,startTime,requestedInterval) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_StopPeriodicUpdate(This)	\
+    ( (This)->lpVtbl -> StopPeriodicUpdate(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_get_Setting(This,value)	\
+    ( (This)->lpVtbl -> get_Setting(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileNotification_INTERFACE_DEFINED__)
@@ -13310,13 +17194,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileNotification_INTERFACE_DEFINED__
@@ -13479,7 +17363,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileNotification;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_INTERFACE_DEFINED__)
@@ -13487,13 +17371,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_INTERFACE_DEFINED__
@@ -13618,7 +17502,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileNotificationFac
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0163 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_INTERFACE_DEFINED__)
@@ -13626,13 +17510,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0163 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0163_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_INTERFACE_DEFINED__
@@ -13789,7 +17673,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerFo
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_INTERFACE_DEFINED__)
@@ -13797,13 +17681,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_INTERFACE_DEFINED__
@@ -13962,7 +17846,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerSt
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics2_INTERFACE_DEFINED__)
@@ -13970,13 +17854,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics2_INTERFACE_DEFINED__
@@ -14101,7 +17985,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerSt
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0127 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdater_INTERFACE_DEFINED__)
@@ -14109,13 +17993,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdater_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0127 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileUpdater_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileUpdater_INTERFACE_DEFINED__
@@ -14356,7 +18240,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileUpdater;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileUpdater_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0128 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdater2_INTERFACE_DEFINED__)
@@ -14364,13 +18248,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CITileUpdater2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0128 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CITileUpdater2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CITileUpdater2_INTERFACE_DEFINED__
@@ -14513,7 +18397,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CITileUpdater2;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CITileUpdater2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0129 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEventArgs_INTERFACE_DEFINED__)
@@ -14521,13 +18405,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0129 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEventArgs_INTERFACE_DEFINED__
@@ -14650,7 +18534,552 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEvent
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastActivatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0130 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0169 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastCollection[] = L"Windows.UI.Notifications.IToastCollection";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0169 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0169_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollection */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastCollection */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastCollection;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("0A8BC3B0-E0BE-4858-BC2A-89DFE0B32863")
+                    IToastCollection : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DisplayName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DisplayName( 
+                            /* [in] */ __RPC__in HSTRING value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LaunchArgs( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_LaunchArgs( 
+                            /* [in] */ __RPC__in HSTRING value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Icon( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Icon( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastCollection = __uuidof(IToastCollection);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DisplayName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DisplayName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LaunchArgs )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_LaunchArgs )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Icon )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Icon )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollection
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_get_DisplayName(This,value)	\
+    ( (This)->lpVtbl -> get_DisplayName(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_put_DisplayName(This,value)	\
+    ( (This)->lpVtbl -> put_DisplayName(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_get_LaunchArgs(This,value)	\
+    ( (This)->lpVtbl -> get_LaunchArgs(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_put_LaunchArgs(This,value)	\
+    ( (This)->lpVtbl -> put_LaunchArgs(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_get_Icon(This,value)	\
+    ( (This)->lpVtbl -> get_Icon(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollection_put_Icon(This,value)	\
+    ( (This)->lpVtbl -> put_Icon(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastCollection_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0170 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastCollectionFactory[] = L"Windows.UI.Notifications.IToastCollectionFactory";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0170 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0170_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastCollectionFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("164DD3D7-73C4-44F7-B4FF-FB6D4BF1F4C6")
+                    IToastCollectionFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance( 
+                            /* [in] */ __RPC__in HSTRING collectionId,
+                            /* [in] */ __RPC__in HSTRING displayName,
+                            /* [in] */ __RPC__in HSTRING launchArgs,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *iconUri,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollection **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastCollectionFactory = __uuidof(IToastCollectionFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateInstance )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory * This,
+            /* [in] */ __RPC__in HSTRING collectionId,
+            /* [in] */ __RPC__in HSTRING displayName,
+            /* [in] */ __RPC__in HSTRING launchArgs,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *iconUri,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactoryVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_CreateInstance(This,collectionId,displayName,launchArgs,iconUri,result)	\
+    ( (This)->lpVtbl -> CreateInstance(This,collectionId,displayName,launchArgs,iconUri,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0171 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastCollectionManager[] = L"Windows.UI.Notifications.IToastCollectionManager";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0171 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0171_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastCollectionManager */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("2A1821FE-179D-49BC-B79D-A527920D3665")
+                    IToastCollectionManager : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE SaveToastCollectionAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Notifications::IToastCollection *collection,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FindAllToastCollectionsAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetToastCollectionAsync( 
+                            /* [in] */ __RPC__in HSTRING collectionId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RemoveToastCollectionAsync( 
+                            /* [in] */ __RPC__in HSTRING collectionId,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RemoveAllToastCollectionsAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **operation) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AppId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastCollectionManager = __uuidof(IToastCollectionManager);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveToastCollectionAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection *collection,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAllToastCollectionsAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetToastCollectionAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [in] */ __RPC__in HSTRING collectionId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveToastCollectionAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [in] */ __RPC__in HSTRING collectionId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveAllToastCollectionsAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **operation);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AppId )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManagerVtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_SaveToastCollectionAsync(This,collection,operation)	\
+    ( (This)->lpVtbl -> SaveToastCollectionAsync(This,collection,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_FindAllToastCollectionsAsync(This,operation)	\
+    ( (This)->lpVtbl -> FindAllToastCollectionsAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_GetToastCollectionAsync(This,collectionId,operation)	\
+    ( (This)->lpVtbl -> GetToastCollectionAsync(This,collectionId,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_RemoveToastCollectionAsync(This,collectionId,operation)	\
+    ( (This)->lpVtbl -> RemoveToastCollectionAsync(This,collectionId,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_RemoveAllToastCollectionsAsync(This,operation)	\
+    ( (This)->lpVtbl -> RemoveAllToastCollectionsAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_get_User(This,value)	\
+    ( (This)->lpVtbl -> get_User(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_get_AppId(This,value)	\
+    ( (This)->lpVtbl -> get_AppId(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0172 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_INTERFACE_DEFINED__)
@@ -14658,13 +19087,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0130 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_INTERFACE_DEFINED__
@@ -14787,7 +19216,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEvent
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastDismissedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0131 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastFailedEventArgs_INTERFACE_DEFINED__)
@@ -14795,13 +19224,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastFailedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0131 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastFailedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastFailedEventArgs_INTERFACE_DEFINED__
@@ -14924,7 +19353,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastFailedEventArg
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastFailedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0132 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0174 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification_INTERFACE_DEFINED__)
@@ -14932,13 +19361,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0132 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification_INTERFACE_DEFINED__
@@ -15147,7 +19576,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotification;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0133 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0175 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification2_INTERFACE_DEFINED__)
@@ -15155,13 +19584,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0133 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0175_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification2_INTERFACE_DEFINED__
@@ -15334,7 +19763,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotification2;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0134 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0176 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification3_INTERFACE_DEFINED__)
@@ -15342,13 +19771,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0134 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification3_INTERFACE_DEFINED__
@@ -15501,7 +19930,174 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotification3;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0135 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0177 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotification4[] = L"Windows.UI.Notifications.IToastNotification4";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0177 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0177_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastNotification4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotification4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("15154935-28EA-4727-88E9-C58680E2D118")
+                    IToastNotification4 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Data( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Data( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Notifications::INotificationData *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Priority( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::UI::Notifications::ToastNotificationPriority *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Priority( 
+                            /* [in] */ ABI::Windows::UI::Notifications::ToastNotificationPriority value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastNotification4 = __uuidof(IToastNotification4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Data )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Data )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Priority )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CNotifications_CToastNotificationPriority *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Priority )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CNotifications_CToastNotificationPriority value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_get_Data(This,value)	\
+    ( (This)->lpVtbl -> get_Data(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_put_Data(This,value)	\
+    ( (This)->lpVtbl -> put_Data(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_get_Priority(This,value)	\
+    ( (This)->lpVtbl -> get_Priority(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_put_Priority(This,value)	\
+    ( (This)->lpVtbl -> put_Priority(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotification4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0178 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_INTERFACE_DEFINED__)
@@ -15509,13 +20105,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0135 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_INTERFACE_DEFINED__
@@ -15648,7 +20244,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationAc
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0136 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0179 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_INTERFACE_DEFINED__)
@@ -15656,13 +20252,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0136 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0179_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_INTERFACE_DEFINED__
@@ -15787,7 +20383,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFa
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0137 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0180 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory_INTERFACE_DEFINED__)
@@ -15795,13 +20391,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0137 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory_INTERFACE_DEFINED__
@@ -15990,7 +20586,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0138 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0181 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_INTERFACE_DEFINED__)
@@ -15998,13 +20594,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0138 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0181 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0181_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_INTERFACE_DEFINED__
@@ -16139,7 +20735,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0139 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0182 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail_INTERFACE_DEFINED__)
@@ -16147,13 +20743,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0139 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0182 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0182_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail_INTERFACE_DEFINED__
@@ -16276,7 +20872,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHi
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0140 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0183 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotificationHistoryChangedTriggerDetail2[] = L"Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0183 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0183_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("0B36E982-C871-49FB-BABB-25BDBC4CC45B")
+                    IToastNotificationHistoryChangedTriggerDetail2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CollectionId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *collectionId) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastNotificationHistoryChangedTriggerDetail2 = __uuidof(IToastNotificationHistoryChangedTriggerDetail2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CollectionId )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *collectionId);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_get_CollectionId(This,collectionId)	\
+    ( (This)->lpVtbl -> get_CollectionId(This,collectionId) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0184 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_INTERFACE_DEFINED__)
@@ -16284,13 +21017,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0140 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_INTERFACE_DEFINED__
@@ -16445,7 +21178,180 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationMa
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0141 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0185 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotificationManagerForUser2[] = L"Windows.UI.Notifications.IToastNotificationManagerForUser2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0185 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0185_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastNotificationManagerForUser2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("679C64B7-81AB-42C2-8819-C958767753F4")
+                    IToastNotificationManagerForUser2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetToastNotifierForToastCollectionIdAsync( 
+                            /* [in] */ __RPC__in HSTRING collectionId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetHistoryForToastCollectionIdAsync( 
+                            /* [in] */ __RPC__in HSTRING collectionId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetToastCollectionManager( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollectionManager **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetToastCollectionManagerWithAppId( 
+                            /* [in] */ __RPC__in HSTRING appId,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollectionManager **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastNotificationManagerForUser2 = __uuidof(IToastNotificationManagerForUser2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetToastNotifierForToastCollectionIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [in] */ __RPC__in HSTRING collectionId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetHistoryForToastCollectionIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [in] */ __RPC__in HSTRING collectionId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetToastCollectionManager )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetToastCollectionManagerWithAppId )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2 * This,
+            /* [in] */ __RPC__in HSTRING appId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionManager **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetToastNotifierForToastCollectionIdAsync(This,collectionId,operation)	\
+    ( (This)->lpVtbl -> GetToastNotifierForToastCollectionIdAsync(This,collectionId,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetHistoryForToastCollectionIdAsync(This,collectionId,operation)	\
+    ( (This)->lpVtbl -> GetHistoryForToastCollectionIdAsync(This,collectionId,operation) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetToastCollectionManager(This,result)	\
+    ( (This)->lpVtbl -> GetToastCollectionManager(This,result) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_GetToastCollectionManagerWithAppId(This,appId,result)	\
+    ( (This)->lpVtbl -> GetToastCollectionManagerWithAppId(This,appId,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0186 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_INTERFACE_DEFINED__)
@@ -16453,13 +21359,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0141 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_INTERFACE_DEFINED__
@@ -16606,7 +21512,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationMa
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0142 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0187 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics2_INTERFACE_DEFINED__)
@@ -16614,13 +21520,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0142 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0187_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics2_INTERFACE_DEFINED__
@@ -16743,7 +21649,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationMa
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0143 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0188 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics4_INTERFACE_DEFINED__)
@@ -16751,13 +21657,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0143 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0188 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0188_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics4_INTERFACE_DEFINED__
@@ -16892,7 +21798,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationMa
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0144 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0189 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotificationManagerStatics5[] = L"Windows.UI.Notifications.IToastNotificationManagerStatics5";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0189 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0189_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastNotificationManagerStatics5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("D6F5F569-D40D-407C-8989-88CAB42CFD14")
+                    IToastNotificationManagerStatics5 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefault( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationManagerForUser **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastNotificationManagerStatics5 = __uuidof(IToastNotificationManagerStatics5);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefault )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetDefault(This,value)	\
+    ( (This)->lpVtbl -> GetDefault(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0190 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_INTERFACE_DEFINED__)
@@ -16900,13 +21943,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0144 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0190 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0190_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_INTERFACE_DEFINED__
@@ -17079,7 +22122,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotifier;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0145 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0191 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotifier2[] = L"Windows.UI.Notifications.IToastNotifier2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0191 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0191_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Notifications::IToastNotifier2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Notifications {
+                    
+                    MIDL_INTERFACE("354389C6-7C01-4BD5-9C20-604340CD2B74")
+                    IToastNotifier2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE UpdateWithTagAndGroup( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Notifications::INotificationData *data,
+                            /* [in] */ __RPC__in HSTRING tag,
+                            /* [in] */ __RPC__in HSTRING group,
+                            /* [out][retval] */ __RPC__out ABI::Windows::UI::Notifications::NotificationUpdateResult *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE UpdateWithTag( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Notifications::INotificationData *data,
+                            /* [in] */ __RPC__in HSTRING tag,
+                            /* [out][retval] */ __RPC__out ABI::Windows::UI::Notifications::NotificationUpdateResult *result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IToastNotifier2 = __uuidof(IToastNotifier2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *UpdateWithTagAndGroup )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData *data,
+            /* [in] */ __RPC__in HSTRING tag,
+            /* [in] */ __RPC__in HSTRING group,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CNotifications_CNotificationUpdateResult *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *UpdateWithTag )( 
+            __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData *data,
+            /* [in] */ __RPC__in HSTRING tag,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CNotifications_CNotificationUpdateResult *result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_UpdateWithTagAndGroup(This,data,tag,group,result)	\
+    ( (This)->lpVtbl -> UpdateWithTagAndGroup(This,data,tag,group,result) ) 
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_UpdateWithTag(This,data,tag,result)	\
+    ( (This)->lpVtbl -> UpdateWithTag(This,data,tag,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0192 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_INTERFACE_DEFINED__)
@@ -17087,13 +22287,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0145 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_INTERFACE_DEFINED__
@@ -17246,7 +22446,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIUserNotification;
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0146 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0193 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIUserNotificationChangedEventArgs_INTERFACE_DEFINED__)
@@ -17254,13 +22454,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIUserNotificationChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0146 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0193_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIUserNotificationChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIUserNotificationChangedEventArgs_INTERFACE_DEFINED__
@@ -17393,7 +22593,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIUserNotificationCha
 #endif 	/* ____x_ABI_CWindows_CUI_CNotifications_CIUserNotificationChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0147 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0194 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_AdaptiveNotificationText_DEFINED
@@ -17436,6 +22636,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Notifications_NotificationBinding_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_NotificationBinding[] = L"Windows.UI.Notifications.NotificationBinding";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_NotificationData_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_NotificationData_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_NotificationData[] = L"Windows.UI.Notifications.NotificationData";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_NotificationVisual_DEFINED
 #define RUNTIMECLASS_Windows_UI_Notifications_NotificationVisual_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_NotificationVisual[] = L"Windows.UI.Notifications.NotificationVisual";
@@ -17451,6 +22655,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_ShownTileNotification_DEFINED
 #define RUNTIMECLASS_Windows_UI_Notifications_ShownTileNotification_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ShownTileNotification[] = L"Windows.UI.Notifications.ShownTileNotification";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_TileFlyoutNotification_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_TileFlyoutNotification_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_TileFlyoutNotification[] = L"Windows.UI.Notifications.TileFlyoutNotification";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_TileFlyoutUpdateManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_TileFlyoutUpdateManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_TileFlyoutUpdateManager[] = L"Windows.UI.Notifications.TileFlyoutUpdateManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_TileFlyoutUpdater_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_TileFlyoutUpdater_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_TileFlyoutUpdater[] = L"Windows.UI.Notifications.TileFlyoutUpdater";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_TileNotification_DEFINED
 #define RUNTIMECLASS_Windows_UI_Notifications_TileNotification_DEFINED
@@ -17471,6 +22687,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_ToastActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Notifications_ToastActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ToastActivatedEventArgs[] = L"Windows.UI.Notifications.ToastActivatedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_ToastCollection_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_ToastCollection_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ToastCollection[] = L"Windows.UI.Notifications.ToastCollection";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_ToastCollectionManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_ToastCollectionManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ToastCollectionManager[] = L"Windows.UI.Notifications.ToastCollectionManager";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_ToastDismissedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Notifications_ToastDismissedEventArgs_DEFINED
@@ -17518,13 +22742,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0147 */
+/* interface __MIDL_itf_windows2Eui2Enotifications_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Enotifications_0000_0194_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

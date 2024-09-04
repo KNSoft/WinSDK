@@ -65,11 +65,11 @@
 
     <xs:simpleType name="ST_FileName">
         <xs:annotation>
-            <xs:documentation>The name of the file must be non-empty and no more than 260 (MAX_PATH) characters supported by the APPX package format (even though ZIP format supports up to 65535 bytes).</xs:documentation>
+            <xs:documentation>The name of the file must be non-empty and no more than 32767 (UNICODE_STRING_MAX_CHARS) characters supported by the APPX package format (even though ZIP format supports up to 65535 bytes).</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="260"/>
+            <xs:maxLength value="32767"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

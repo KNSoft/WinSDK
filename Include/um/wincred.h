@@ -118,6 +118,13 @@ typedef _Return_type_success_(return >= 0) LONG NTSTATUS, *PNTSTATUS;
 //      but we want to popup UI to allow the user to connect to resources in the
 //      other LAN.
 //
+// STATUS_NO_SUCH_LOGON_SESSION and related error codes come from error mappings of
+//      SEC_E_NO_CREDENTIALS and generally indicates that there are not credentials
+//      available for SSO and some need to be provided.
+//
+// STATUS_NO_SUCH_USER comes when a username is mistyped or a certificate credential is
+//      used where a username/password credential is expected.
+//
 // Don't use the CREDUIP_* macros directly.  Their definition is private to credui.dll.
 //
 
@@ -134,6 +141,8 @@ typedef _Return_type_success_(return >= 0) LONG NTSTATUS, *PNTSTATUS;
 #define STATUS_ACCOUNT_LOCKED_OUT        ((NTSTATUS)0xC0000234L)    // ntsubauth
 #define STATUS_ACCOUNT_EXPIRED           ((NTSTATUS)0xC0000193L)    // ntsubauth
 #define STATUS_LOGON_TYPE_NOT_GRANTED    ((NTSTATUS)0xC000015BL)
+#define STATUS_NO_SUCH_LOGON_SESSION     ((NTSTATUS)0xC000005FL)
+#define STATUS_NO_SUCH_USER              ((NTSTATUS)0xC0000064L)     // ntsubauth
 
 // Don't require lmerr.h
 #define NERR_BASE       2100
@@ -152,6 +161,14 @@ typedef _Return_type_success_(return >= 0) LONG NTSTATUS, *PNTSTATUS;
         (_Status) == __HRESULT_FROM_WIN32( ERROR_INVALID_PASSWORD ) || \
         (_Status) == STATUS_WRONG_PASSWORD || \
         (_Status) == HRESULT_FROM_NT( STATUS_WRONG_PASSWORD ) || \
+        (_Status) == STATUS_NO_SUCH_USER || \
+        (_Status) == HRESULT_FROM_NT( STATUS_NO_SUCH_USER ) || \
+        (_Status) == ERROR_NO_SUCH_USER || \
+        (_Status) == __HRESULT_FROM_WIN32( ERROR_NO_SUCH_USER ) || \
+        (_Status) == ERROR_NO_SUCH_LOGON_SESSION || \
+        (_Status) == __HRESULT_FROM_WIN32( ERROR_NO_SUCH_LOGON_SESSION ) || \
+        (_Status) == STATUS_NO_SUCH_LOGON_SESSION || \
+        (_Status) == HRESULT_FROM_NT( STATUS_NO_SUCH_LOGON_SESSION ) || \
         (_Status) == SEC_E_NO_CREDENTIALS || \
         (_Status) == SEC_E_LOGON_DENIED || \
         (_Status) == SEC_E_NO_CONTEXT || \

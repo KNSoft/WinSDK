@@ -316,7 +316,8 @@ cpp_quote("#define APPIDREGFLAGS_RESERVED2 0x80")
 cpp_quote("#define APPIDREGFLAGS_RESERVED3 0x100")
 cpp_quote("#define APPIDREGFLAGS_RESERVED4 0x200")
 cpp_quote("#define APPIDREGFLAGS_RESERVED5 0x400")
-cpp_quote("#define APPIDREGFLAGS_RESERVED6 0x800")
+cpp_quote("#define APPIDREGFLAGS_AAA_NO_IMPLICIT_ACTIVATE_AS_IU 0x800")
+cpp_quote("#define APPIDREGFLAGS_RESERVED7 0x1000")
 cpp_quote("#endif // !_APPIDREGFLAGS_DEFINED")
 
 // Flags controlling security behavior of SCM/Resolver calls from RPCSS

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -136,6 +136,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IAudioEncodingProperties2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics;
@@ -154,6 +174,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IAudioEncodingPropertiesStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesWithFormatUserData_FWD_DEFINED__
@@ -336,6 +376,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingProfileStatics3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties;
@@ -374,6 +434,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingSubtypesStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingSubtypesStatics3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
@@ -476,6 +576,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IVideoEncodingProperties4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics;
@@ -494,6 +614,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IVideoEncodingPropertiesStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -552,18 +692,18 @@ interface IAudioEncodingProperties;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0001 */
 /* [local] */ 
@@ -598,18 +738,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0002 */
 /* [local] */ 
@@ -657,18 +797,18 @@ interface IMediaEncodingProperties;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0003 */
 /* [local] */ 
@@ -703,18 +843,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0004 */
 /* [local] */ 
@@ -773,18 +913,18 @@ interface IVideoEncodingProperties;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0005 */
 /* [local] */ 
@@ -819,18 +959,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0006 */
 /* [local] */ 
@@ -865,18 +1005,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0007 */
 /* [local] */ 
@@ -911,18 +1051,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0008 */
 /* [local] */ 
@@ -957,18 +1097,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0009 */
 /* [local] */ 
@@ -1027,18 +1167,18 @@ interface IMediaEncodingProfile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0010 */
 /* [local] */ 
@@ -1073,18 +1213,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0011 */
 /* [local] */ 
@@ -1122,18 +1262,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0012 */
 /* [local] */ 
@@ -1168,18 +1308,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0013 */
 /* [local] */ 
@@ -1214,18 +1354,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0014 */
 /* [local] */ 
@@ -1260,18 +1400,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0015 */
 /* [local] */ 
@@ -1306,18 +1446,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0016 */
 /* [local] */ 
@@ -1409,6 +1549,16 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaThumbnailFormat __x_
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CStereoscopicVideoPackingMode __x_ABI_CWindows_CMedia_CMediaProperties_CStereoscopicVideoPackingMode;
 
 
@@ -1426,6 +1576,13 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CVideoEncodingQuality __x_
 
 
 #endif
+
+
+
+
+
+
+
 
 
 
@@ -1591,6 +1748,24 @@ namespace ABI {
         namespace Media {
             namespace MediaProperties {
                 
+                typedef enum SphericalVideoFrameFormat SphericalVideoFrameFormat;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                
                 typedef enum StereoscopicVideoPackingMode StereoscopicVideoPackingMode;
                 
             } /* end namespace */
@@ -1636,21 +1811,28 @@ extern "C" {
 
 
 
+
+
+
+
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0017 */
 /* [local] */ 
@@ -1825,18 +2007,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CMediaProperties__CAudioE
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0019 */
 /* [local] */ 
@@ -1977,18 +2159,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CMediaProperties__CAudioE
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0021 */
 /* [local] */ 
@@ -2163,18 +2345,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CMediaProperties__CIMedia
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0023 */
 /* [local] */ 
@@ -2315,18 +2497,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CMediaProperties__CIMedia
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0025 */
 /* [local] */ 
@@ -2501,18 +2683,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CMediaProperties__CVideoE
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0027 */
 /* [local] */ 
@@ -2653,18 +2835,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CMediaProperties__CVideoE
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0029 */
 /* [local] */ 
@@ -2847,18 +3029,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CMediaProperties__CAudi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0031 */
 /* [local] */ 
@@ -3041,18 +3223,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CMediaProperties__CIMed
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0033 */
 /* [local] */ 
@@ -3235,18 +3417,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CMediaProperties__CVide
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0035 */
 /* [local] */ 
@@ -3368,18 +3550,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CMe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_3136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0037 */
 /* [local] */ 
@@ -3610,6 +3792,19 @@ enum __x_ABI_CWindows_CMedia_CMediaProperties_CMediaThumbnailFormat
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat
+    {
+        SphericalVideoFrameFormat_None	= 0,
+        SphericalVideoFrameFormat_Unsupported	= 1,
+        SphericalVideoFrameFormat_Equirectangular	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CMedia_CMediaProperties_CStereoscopicVideoPackingMode
     {
         StereoscopicVideoPackingMode_None	= 0,
@@ -3632,7 +3827,9 @@ enum __x_ABI_CWindows_CMedia_CMediaProperties_CVideoEncodingQuality
         VideoEncodingQuality_Ntsc	= 4,
         VideoEncodingQuality_Pal	= 5,
         VideoEncodingQuality_Vga	= 6,
-        VideoEncodingQuality_Qvga	= 7
+        VideoEncodingQuality_Qvga	= 7,
+        VideoEncodingQuality_Uhd2160p	= 8,
+        VideoEncodingQuality_Uhd4320p	= 9
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3763,6 +3960,28 @@ namespace ABI {
             namespace MediaProperties {
                 
                 /* [v1_enum] */ 
+                enum SphericalVideoFrameFormat
+                    {
+                        SphericalVideoFrameFormat_None	= 0,
+                        SphericalVideoFrameFormat_Unsupported	= 1,
+                        SphericalVideoFrameFormat_Equirectangular	= 2
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                
+                /* [v1_enum] */ 
                 enum StereoscopicVideoPackingMode
                     {
                         StereoscopicVideoPackingMode_None	= 0,
@@ -3794,7 +4013,9 @@ namespace ABI {
                         VideoEncodingQuality_Ntsc	= 4,
                         VideoEncodingQuality_Pal	= 5,
                         VideoEncodingQuality_Vga	= 6,
-                        VideoEncodingQuality_Qvga	= 7
+                        VideoEncodingQuality_Qvga	= 7,
+                        VideoEncodingQuality_Uhd2160p	= 8,
+                        VideoEncodingQuality_Uhd4320p	= 9
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -4003,9 +4224,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingP
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0039 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IAudioEncodingPropertiesStatics[] = L"Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics";
-#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IAudioEncodingProperties2[] = L"Windows.Media.MediaProperties.IAudioEncodingProperties2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0039 */
@@ -4015,6 +4236,143 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0039_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IAudioEncodingProperties2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("C45D54DA-80BD-4C23-80D5-72D4A181E894")
+                    IAudioEncodingProperties2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsSpatial( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAudioEncodingProperties2 = __uuidof(IAudioEncodingProperties2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSpatial )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_get_IsSpatial(This,value)	\
+    ( (This)->lpVtbl -> get_IsSpatial(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IAudioEncodingPropertiesStatics[] = L"Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__
@@ -4207,7 +4565,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IAudioEncodingPropertiesStatics2[] = L"Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("7489316F-77A0-433D-8ED5-4040280E8665")
+                    IAudioEncodingPropertiesStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateAlac( 
+                            /* [in] */ UINT32 sampleRate,
+                            /* [in] */ UINT32 channelCount,
+                            /* [in] */ UINT32 bitsPerSample,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateFlac( 
+                            /* [in] */ UINT32 sampleRate,
+                            /* [in] */ UINT32 channelCount,
+                            /* [in] */ UINT32 bitsPerSample,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IAudioEncodingProperties **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAudioEncodingPropertiesStatics2 = __uuidof(IAudioEncodingPropertiesStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateAlac )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This,
+            /* [in] */ UINT32 sampleRate,
+            /* [in] */ UINT32 channelCount,
+            /* [in] */ UINT32 bitsPerSample,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateFlac )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2 * This,
+            /* [in] */ UINT32 sampleRate,
+            /* [in] */ UINT32 channelCount,
+            /* [in] */ UINT32 bitsPerSample,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingProperties **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_CreateAlac(This,sampleRate,channelCount,bitsPerSample,value)	\
+    ( (This)->lpVtbl -> CreateAlac(This,sampleRate,channelCount,bitsPerSample,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_CreateFlac(This,sampleRate,channelCount,bitsPerSample,value)	\
+    ( (This)->lpVtbl -> CreateFlac(This,sampleRate,channelCount,bitsPerSample,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesWithFormatUserData_INTERFACE_DEFINED__)
@@ -4215,13 +4732,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesWithFormatUserData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesWithFormatUserData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesWithFormatUserData_INTERFACE_DEFINED__
@@ -4358,7 +4875,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIAudioEncodingPropertiesWithFormatUserData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_INTERFACE_DEFINED__)
@@ -4366,13 +4883,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_INTERFACE_DEFINED__
@@ -4485,7 +5002,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncod
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIContainerEncodingProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_INTERFACE_DEFINED__)
@@ -4493,13 +5010,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_INTERFACE_DEFINED__
@@ -4712,7 +5229,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIds
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIH264ProfileIdsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_INTERFACE_DEFINED__)
@@ -4720,13 +5237,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_INTERFACE_DEFINED__
@@ -4879,7 +5396,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_INTERFACE_DEFINED__)
@@ -4887,13 +5404,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_INTERFACE_DEFINED__
@@ -5036,7 +5553,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_INTERFACE_DEFINED__)
@@ -5044,13 +5561,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_INTERFACE_DEFINED__
@@ -5185,7 +5702,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_INTERFACE_DEFINED__)
@@ -5193,13 +5710,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_INTERFACE_DEFINED__
@@ -5372,7 +5889,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_INTERFACE_DEFINED__)
@@ -5380,13 +5897,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_INTERFACE_DEFINED__
@@ -5583,7 +6100,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics2_INTERFACE_DEFINED__)
@@ -5591,13 +6108,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics2_INTERFACE_DEFINED__
@@ -5734,7 +6251,170 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingProfileStatics3[] = L"Windows.Media.MediaProperties.IMediaEncodingProfileStatics3";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IMediaEncodingProfileStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("90DAC5AA-CF76-4294-A9ED-1A1420F51F6B")
+                    IMediaEncodingProfileStatics3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateAlac( 
+                            /* [in] */ ABI::Windows::Media::MediaProperties::AudioEncodingQuality quality,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProfile **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateFlac( 
+                            /* [in] */ ABI::Windows::Media::MediaProperties::AudioEncodingQuality quality,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProfile **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateHevc( 
+                            /* [in] */ ABI::Windows::Media::MediaProperties::VideoEncodingQuality quality,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IMediaEncodingProfile **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaEncodingProfileStatics3 = __uuidof(IMediaEncodingProfileStatics3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateAlac )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CMediaProperties_CAudioEncodingQuality quality,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateFlac )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CMediaProperties_CAudioEncodingQuality quality,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateHevc )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3 * This,
+            /* [in] */ __x_ABI_CWindows_CMedia_CMediaProperties_CVideoEncodingQuality quality,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_CreateAlac(This,quality,value)	\
+    ( (This)->lpVtbl -> CreateAlac(This,quality,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_CreateFlac(This,quality,value)	\
+    ( (This)->lpVtbl -> CreateFlac(This,quality,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_CreateHevc(This,quality,value)	\
+    ( (This)->lpVtbl -> CreateHevc(This,quality,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfileStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_INTERFACE_DEFINED__)
@@ -5742,13 +6422,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_INTERFACE_DEFINED__
@@ -5901,7 +6581,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics_INTERFACE_DEFINED__)
@@ -5909,13 +6589,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics_INTERFACE_DEFINED__
@@ -6428,7 +7108,321 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingS
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics2[] = L"Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("4B7CD23D-42FF-4D33-8531-0626BEE4B52D")
+                    IMediaEncodingSubtypesStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Vp9( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_L8( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_L16( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_D16( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaEncodingSubtypesStatics2 = __uuidof(IMediaEncodingSubtypesStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Vp9 )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_L8 )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_L16 )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_D16 )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_get_Vp9(This,value)	\
+    ( (This)->lpVtbl -> get_Vp9(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_get_L8(This,value)	\
+    ( (This)->lpVtbl -> get_L8(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_get_L16(This,value)	\
+    ( (This)->lpVtbl -> get_L16(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_get_D16(This,value)	\
+    ( (This)->lpVtbl -> get_D16(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics3[] = L"Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics3";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("BA2414E4-883D-464E-A44F-097DA08EF7FF")
+                    IMediaEncodingSubtypesStatics3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Alac( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Flac( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IMediaEncodingSubtypesStatics3 = __uuidof(IMediaEncodingSubtypesStatics3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Alac )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Flac )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_get_Alac(This,value)	\
+    ( (This)->lpVtbl -> get_Alac(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_get_Flac(This,value)	\
+    ( (This)->lpVtbl -> get_Flac(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_INTERFACE_DEFINED__)
@@ -6436,13 +7430,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_INTERFACE_DEFINED__
@@ -6595,7 +7589,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio;
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_INTERFACE_DEFINED__)
@@ -6603,13 +7597,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_INTERFACE_DEFINED__
@@ -6772,7 +7766,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileId
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIMpeg2ProfileIdsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_INTERFACE_DEFINED__)
@@ -6780,13 +7774,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_INTERFACE_DEFINED__
@@ -6979,7 +7973,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties2_INTERFACE_DEFINED__)
@@ -6987,13 +7981,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties2_INTERFACE_DEFINED__
@@ -7150,7 +8144,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0060 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties3_INTERFACE_DEFINED__)
@@ -7158,13 +8152,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties3_INTERFACE_DEFINED__
@@ -7287,7 +8281,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0061 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IVideoEncodingProperties4[] = L"Windows.Media.MediaProperties.IVideoEncodingProperties4";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0061 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0061_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IVideoEncodingProperties4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("724EF014-C10C-40F2-9D72-3EE13B45FA8E")
+                    IVideoEncodingProperties4 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SphericalVideoFrameFormat( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Media::MediaProperties::SphericalVideoFrameFormat *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IVideoEncodingProperties4 = __uuidof(IVideoEncodingProperties4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SphericalVideoFrameFormat )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CMedia_CMediaProperties_CSphericalVideoFrameFormat *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_get_SphericalVideoFrameFormat(This,value)	\
+    ( (This)->lpVtbl -> get_SphericalVideoFrameFormat(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_INTERFACE_DEFINED__)
@@ -7295,13 +8426,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_INTERFACE_DEFINED__
@@ -7450,7 +8581,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingP
 #endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0063 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IVideoEncodingPropertiesStatics2[] = L"Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0063 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0063_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace MediaProperties {
+                    
+                    MIDL_INTERFACE("CF1EBD5D-49FE-4D00-B59A-CFA4DFC51944")
+                    IVideoEncodingPropertiesStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateHevc( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IVideoEncodingProperties **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IVideoEncodingPropertiesStatics2 = __uuidof(IVideoEncodingPropertiesStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateHevc )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingProperties **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_CreateHevc(This,value)	\
+    ( (This)->lpVtbl -> CreateHevc(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CMediaProperties_CIVideoEncodingPropertiesStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0064 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_MediaProperties_AudioEncodingProperties_DEFINED
@@ -7495,13 +8763,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057 */
+/* interface __MIDL_itf_windows2Emedia2Emediaproperties_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Emediaproperties_0000_0064_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

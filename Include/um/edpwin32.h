@@ -20,7 +20,7 @@
 #endif /* NT_INCLUDED */
 
 #pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP)
 
 #if NTDDI_VERSION >= NTDDI_WIN10_TH2
 
@@ -31,7 +31,21 @@ STDAPI ProtectFileToEnterpriseIdentity(
 
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#if NTDDI_VERSION >= NTDDI_WIN10_RS2
+
+typedef struct
+{
+    bool audit;
+}FILE_UNPROTECT_OPTIONS;
+
+STDAPI UnprotectFile(
+    _In_ PCWSTR fileOrFolderPath,
+    _In_opt_ const FILE_UNPROTECT_OPTIONS* options
+    );
+
+#endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP) */
 #pragma endregion
 
 #endif // _EDPWIN32_H_

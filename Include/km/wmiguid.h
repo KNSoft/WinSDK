@@ -245,7 +245,7 @@ DEFINE_GUID ( /* 44608a51-1851-4456-98b2-b300e931ee41 */
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 
 //
-// This wmi guid is used to return the SMBIOS Identifer data
+// This wmi guid is used to return the SMBIOS Identifier data
 // {98A2B9D7-94DD-496a-847E-67A5557A59F2}
 //
 // MS_SystemInformation - MS_SystemInformation
@@ -273,11 +273,11 @@ DEFINE_GUID( /* 13976D09-A327-438c-950B-7F03192815C7  */
 // Event Log Logger GUID
 //
 DEFINE_GUID( /* b16f9f5e-bcda-4027-9318-adf2b79df73b */
-	EventLogGuid,
-	0xb16f9f5e, 
-	0xb3da, 
-	0x4027, 
-	0x93, 0x18, 0xad, 0xf2, 0xb7, 0x9d, 0xf7, 0x3b 
+    EventLogGuid,
+    0xb16f9f5e, 
+    0xb3da, 
+    0x4027, 
+    0x93, 0x18, 0xad, 0xf2, 0xb7, 0x9d, 0xf7, 0x3b 
   );
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)

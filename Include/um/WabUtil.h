@@ -487,20 +487,20 @@ STDAPI_(LPMALLOC) MAPIGetDefaultMalloc(VOID);
 #define SOF_UNIQUEFILENAME	((ULONG) 0x80000000)
 
 STDMETHODIMP OpenStreamOnFile(
-	LPALLOCATEBUFFER	lpAllocateBuffer,
-	LPFREEBUFFER		lpFreeBuffer,
-	ULONG				ulFlags,
-	LPTSTR				lpszFileName,
-	LPTSTR				lpszPrefix,
-	LPSTREAM FAR *		lppStream);
+    _In_     LPALLOCATEBUFFER    lpAllocateBuffer,
+    _In_     LPFREEBUFFER        lpFreeBuffer,
+             ULONG               ulFlags,
+    _In_     LPTSTR              lpszFileName,
+    _In_opt_ LPTSTR              lpszPrefix,
+    _Outptr_ LPSTREAM FAR *      lppStream);
 
 typedef HRESULT (STDMETHODCALLTYPE FAR * LPOPENSTREAMONFILE) (
-	LPALLOCATEBUFFER	lpAllocateBuffer,
-	LPFREEBUFFER		lpFreeBuffer,
-	ULONG				ulFlags,
-	LPTSTR				lpszFileName,
-	LPTSTR				lpszPrefix,
-	LPSTREAM FAR *		lppStream);
+    _In_     LPALLOCATEBUFFER      lpAllocateBuffer,
+    _In_     LPFREEBUFFER          lpFreeBuffer,
+             ULONG                 ulFlags,
+    _In_     LPTSTR                lpszFileName,
+    _In_opt_ LPTSTR                lpszPrefix,
+    _Outptr_ LPSTREAM FAR *        lppStream);
 
 #ifdef	_WIN32
 #define OPENSTREAMONFILE "OpenStreamOnFile"
@@ -741,10 +741,10 @@ STDAPI_(LPTSTR)			SzFindLastCh(LPCTSTR lpsz, USHORT ch);	/* strrchr */
 STDAPI_(LPTSTR)			SzFindSz(LPCTSTR lpsz, LPCTSTR lpszKey); /*strstr */
 STDAPI_(unsigned int)	UFromSz(LPCTSTR lpsz);					/* atoi */
 
-STDAPI_(SCODE)			ScUNCFromLocalPath(LPSTR lpszLocal, LPSTR lpszUNC,
-						UINT cchUNC);
-STDAPI_(SCODE)			ScLocalPathFromUNC(LPSTR lpszUNC, LPSTR lpszLocal,
-						UINT cchLocal);
+STDAPI_(SCODE)            ScUNCFromLocalPath(_In_ LPSTR lpszLocal, _In_reads_(cchUNC) LPSTR lpszUNC,
+                        UINT cchUNC);
+STDAPI_(SCODE)            ScLocalPathFromUNC(_In_ LPSTR lpszUNC, _In_reads_(cchLocal) LPSTR lpszLocal,
+                        UINT cchLocal);
 
 /* 64-bit arithmetic with times */
 
@@ -763,8 +763,8 @@ STDAPI_(SCODE)			ScCreateConversationIndex (ULONG cbParent,
 
 /* Store support */
 
-STDAPI WrapStoreEntryID (ULONG ulFlags, LPTSTR lpszDLLName, ULONG cbOrigEntry,
-	LPENTRYID lpOrigEntry, ULONG *lpcbWrappedEntry, LPENTRYID *lppWrappedEntry);
+STDAPI WrapStoreEntryID (ULONG ulFlags, _In_ LPTSTR lpszDLLName, ULONG cbOrigEntry,
+    _In_reads_bytes_(cbOrigEntry) LPENTRYID lpOrigEntry, _Out_ ULONG *lpcbWrappedEntry, _Out_writes_bytes_(*lpcbWrappedEntry) LPENTRYID *lppWrappedEntry);
 
 /* RTF Sync Utilities */
 

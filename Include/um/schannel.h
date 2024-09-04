@@ -53,6 +53,8 @@
 #define SCHANNEL_NAME_A  "Schannel"
 #define SCHANNEL_NAME_W  L"Schannel"
 
+#define DEFAULT_TLS_SSP_NAME_A  "Default TLS SSP"
+#define DEFAULT_TLS_SSP_NAME_W  L"Default TLS SSP"
 
 #ifdef UNICODE
 
@@ -62,6 +64,7 @@
 #define SSL3SP_NAME  SSL3SP_NAME_W
 #define TLS1SP_NAME  TLS1SP_NAME_W
 #define SCHANNEL_NAME  SCHANNEL_NAME_W
+#define DEFAULT_TLS_SSP_NAME  DEFAULT_TLS_SSP_NAME_W
 
 #else
 
@@ -71,6 +74,7 @@
 #define SSL3SP_NAME  SSL3SP_NAME_A
 #define TLS1SP_NAME  TLS1SP_NAME_A
 #define SCHANNEL_NAME  SCHANNEL_NAME_A
+#define DEFAULT_TLS_SSP_NAME  DEFAULT_TLS_SSP_NAME_A
 
 #endif
 
@@ -332,7 +336,7 @@ typedef struct _SecPkgContext_KeyingMaterialInfo
 typedef struct _SecPkgContext_KeyingMaterial
 {
     DWORD cbKeyingMaterial; // Exported keying material length, in bytes.
-    PBYTE pbKeyingMaterial; // Exported keying material.
+    _Field_size_bytes_(cbKeyingMaterial) PBYTE pbKeyingMaterial; // Exported keying material.
 } SecPkgContext_KeyingMaterial, * PSecPkgContext_KeyingMaterial;
 
 typedef struct _SecPkgContext_SrtpParameters
@@ -666,6 +670,11 @@ typedef struct _SCHANNEL_CLIENT_SIGNATURE
 #define SP_PROT_TLS1_2                  (SP_PROT_TLS1_2_SERVER | \
                                          SP_PROT_TLS1_2_CLIENT)
 
+#define SP_PROT_TLS1_3_SERVER           0x00001000
+#define SP_PROT_TLS1_3_CLIENT           0x00002000
+#define SP_PROT_TLS1_3                  (SP_PROT_TLS1_3_SERVER | \
+                                         SP_PROT_TLS1_3_CLIENT)
+
 #define SP_PROT_DTLS_SERVER             0x00010000
 #define SP_PROT_DTLS_CLIENT             0x00020000
 #define SP_PROT_DTLS                    (SP_PROT_DTLS_SERVER | \
@@ -689,19 +698,23 @@ typedef struct _SCHANNEL_CLIENT_SIGNATURE
                                          SP_PROT_DTLS1_X_CLIENT)
 
 #define SP_PROT_TLS1_1PLUS_SERVER       (SP_PROT_TLS1_1_SERVER | \
-                                         SP_PROT_TLS1_2_SERVER)
+                                         SP_PROT_TLS1_2_SERVER | \
+                                         SP_PROT_TLS1_3_SERVER)
 #define SP_PROT_TLS1_1PLUS_CLIENT       (SP_PROT_TLS1_1_CLIENT | \
-                                         SP_PROT_TLS1_2_CLIENT)
+                                         SP_PROT_TLS1_2_CLIENT | \
+                                         SP_PROT_TLS1_3_CLIENT)
 
 #define SP_PROT_TLS1_1PLUS              (SP_PROT_TLS1_1PLUS_SERVER | \
                                          SP_PROT_TLS1_1PLUS_CLIENT)
 
 #define SP_PROT_TLS1_X_SERVER           (SP_PROT_TLS1_0_SERVER | \
                                          SP_PROT_TLS1_1_SERVER | \
-                                         SP_PROT_TLS1_2_SERVER)
+                                         SP_PROT_TLS1_2_SERVER | \
+                                         SP_PROT_TLS1_3_SERVER)
 #define SP_PROT_TLS1_X_CLIENT           (SP_PROT_TLS1_0_CLIENT | \
                                          SP_PROT_TLS1_1_CLIENT | \
-                                         SP_PROT_TLS1_2_CLIENT)
+                                         SP_PROT_TLS1_2_CLIENT | \
+                                         SP_PROT_TLS1_3_CLIENT)
 #define SP_PROT_TLS1_X                  (SP_PROT_TLS1_X_SERVER | \
                                          SP_PROT_TLS1_X_CLIENT)
 

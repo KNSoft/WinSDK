@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -59,6 +59,66 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Pickers {
+                interface IFileOpenPicker2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Pickers {
+                interface IFileOpenPickerStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Pickers {
+                interface IFileOpenPickerWithOperationId;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_FWD_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker;
@@ -77,6 +137,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Pickers {
+                interface IFileSavePicker2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3_FWD_DEFINED__
@@ -119,6 +199,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Pickers {
+                interface IFolderPicker2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -151,18 +251,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0001 */
 /* [local] */ 
@@ -197,18 +297,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0002 */
 /* [local] */ 
@@ -243,18 +343,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0003 */
 /* [local] */ 
@@ -289,18 +389,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0004 */
 /* [local] */ 
@@ -355,18 +455,18 @@ interface IStorageFile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0005 */
 /* [local] */ 
@@ -401,18 +501,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0006 */
 /* [local] */ 
@@ -447,18 +547,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0007 */
 /* [local] */ 
@@ -493,18 +593,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0008 */
 /* [local] */ 
@@ -539,18 +639,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0009 */
 /* [local] */ 
@@ -585,18 +685,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0010 */
 /* [local] */ 
@@ -631,18 +731,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0011 */
 /* [local] */ 
@@ -667,6 +767,8 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_USE */
 
+interface IInspectable;
+
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0011 */
 /* [local] */ 
@@ -674,23 +776,392 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Estorage2Epickers_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20"))
+IKeyValuePair<HSTRING,IInspectable*> : IKeyValuePair_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Object>"; }
+};
+typedef IKeyValuePair<HSTRING,IInspectable*> __FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define ____FIKeyValuePair_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0012 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0012_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4671 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4671 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0013 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8"))
+IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; }
+};
+typedef IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0013 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0013_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4672 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4672 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0014 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204"))
+IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; }
+};
+typedef IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0014 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0014_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4673 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4673 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4673_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0015 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIMapView_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e"))
+IMapView<HSTRING,IInspectable*> : IMapView_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapView`2<String, Object>"; }
+};
+typedef IMapView<HSTRING,IInspectable*> __FIMapView_2_HSTRING_IInspectable_t;
+#define ____FIMapView_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0015 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0015_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4674 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4674 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0016 */
+/* [local] */ 
+
+#ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
+#define DEF___FIMap_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca"))
+IMap<HSTRING,IInspectable*> : IMap_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMap`2<String, Object>"; }
+};
+typedef IMap<HSTRING,IInspectable*> __FIMap_2_HSTRING_IInspectable_t;
+#define ____FIMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0016 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0016_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4675 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4675 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4675_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0017 */
+/* [local] */ 
+
+#ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#define DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("60141efb-f2f9-5377-96fd-f8c60d9558b5"))
+IMapChangedEventArgs<HSTRING> : IMapChangedEventArgs_impl<HSTRING> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapChangedEventArgs`1<String>"; }
+};
+typedef IMapChangedEventArgs<HSTRING> __FIMapChangedEventArgs_1_HSTRING_t;
+#define ____FIMapChangedEventArgs_1_HSTRING_FWD_DEFINED__
+#define __FIMapChangedEventArgs_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapChangedEventArgs_1_HSTRING_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0017 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4676 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4676 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4676_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0018 */
+/* [local] */ 
+
+#ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#define DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1"))
+MapChangedEventHandler<HSTRING,IInspectable*> : MapChangedEventHandler_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, Object>"; }
+};
+typedef MapChangedEventHandler<HSTRING,IInspectable*> __FMapChangedEventHandler_2_HSTRING_IInspectable_t;
+#define ____FMapChangedEventHandler_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0018 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0018_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4677 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4677 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4677_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0019 */
+/* [local] */ 
+
+#ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#define DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec"))
+IObservableMap<HSTRING,IInspectable*> : IObservableMap_impl<HSTRING,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IObservableMap`2<String, Object>"; }
+};
+typedef IObservableMap<HSTRING,IInspectable*> __FIObservableMap_2_HSTRING_IInspectable_t;
+#define ____FIObservableMap_2_HSTRING_IInspectable_FWD_DEFINED__
+#define __FIObservableMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0019 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0019_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4678 */
+
+
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4678 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4678_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_USE
@@ -714,29 +1185,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0012 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3120 */
-
-
-
-
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3120_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4679 */
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4679_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_USE
@@ -760,29 +1231,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0013 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3121 */
-
-
-
-
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3121_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4680 */
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4680_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_USE
@@ -806,29 +1277,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING___FIVector_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0014 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3122 */
-
-
-
-
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3122_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4681 */
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4681_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE
@@ -852,29 +1323,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING___FIVector_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0015 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3123 */
-
-
-
-
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3123_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4682 */
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4682_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING___FIVector_1_HSTRING_USE
@@ -917,30 +1388,30 @@ interface IStorageFolder;
 #endif
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0016 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0024 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3124 */
-
-
-
-
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3124_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4683 */
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4683_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_USE
@@ -964,29 +1435,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStorageFolder_USE */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0017 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3125 */
-
-
-
-
-/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_3125_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4684 */
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers2Eidl_0000_4684_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStorageFolder_USE
@@ -1018,6 +1489,18 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+namespace Collections {
+class ValueSet;
+} /*Collections*/
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -1038,6 +1521,11 @@ typedef enum __x_ABI_CWindows_CStorage_CPickers_CPickerViewMode __x_ABI_CWindows
 
 
 #endif
+
+
+
+
+
 
 
 
@@ -1145,8 +1633,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0018 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0026 */
 /* [local] */ 
+
 
 
 #ifdef __cplusplus
@@ -1184,6 +1673,11 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
+
+
+
+
 
 
 
@@ -1241,8 +1735,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0026_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker_INTERFACE_DEFINED__
@@ -1465,7 +1959,436 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker;
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0019 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0027 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Pickers_IFileOpenPicker2[] = L"Windows.Storage.Pickers.IFileOpenPicker2";
+#endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0027 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0027_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Storage::Pickers::IFileOpenPicker2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Storage {
+                namespace Pickers {
+                    
+                    MIDL_INTERFACE("8CEB6CD2-B446-46F7-B265-90F8E55AD650")
+                    IFileOpenPicker2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContinuationData( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE PickSingleFileAndContinue( void) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE PickMultipleFilesAndContinue( void) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileOpenPicker2 = __uuidof(IFileOpenPicker2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContinuationData )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *PickSingleFileAndContinue )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *PickMultipleFilesAndContinue )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2 * This);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2Vtbl;
+
+    interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_get_ContinuationData(This,value)	\
+    ( (This)->lpVtbl -> get_ContinuationData(This,value) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_PickSingleFileAndContinue(This)	\
+    ( (This)->lpVtbl -> PickSingleFileAndContinue(This) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_PickMultipleFilesAndContinue(This)	\
+    ( (This)->lpVtbl -> PickMultipleFilesAndContinue(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPicker2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0028 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Pickers_IFileOpenPickerStatics[] = L"Windows.Storage.Pickers.IFileOpenPickerStatics";
+#endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0028 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0028_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Storage::Pickers::IFileOpenPickerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Storage {
+                namespace Pickers {
+                    
+                    MIDL_INTERFACE("6821573B-2F02-4833-96D4-ABBFAD72B67B")
+                    IFileOpenPickerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE ResumePickSingleFileAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile **pickSingleFileOperation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileOpenPickerStatics = __uuidof(IFileOpenPickerStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *ResumePickSingleFileAsync )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile **pickSingleFileOperation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_ResumePickSingleFileAsync(This,pickSingleFileOperation)	\
+    ( (This)->lpVtbl -> ResumePickSingleFileAsync(This,pickSingleFileOperation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0029 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Pickers_IFileOpenPickerWithOperationId[] = L"Windows.Storage.Pickers.IFileOpenPickerWithOperationId";
+#endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0029 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0029_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Storage::Pickers::IFileOpenPickerWithOperationId */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Storage {
+                namespace Pickers {
+                    
+                    MIDL_INTERFACE("3F57B569-2522-4CA5-AA73-A15509F1FCBF")
+                    IFileOpenPickerWithOperationId : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE PickSingleFileAsync( 
+                            /* [in] */ __RPC__in HSTRING pickerOperationId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile **pickSingleFileOperation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileOpenPickerWithOperationId = __uuidof(IFileOpenPickerWithOperationId);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationIdVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *PickSingleFileAsync )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId * This,
+            /* [in] */ __RPC__in HSTRING pickerOperationId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStorageFile **pickSingleFileOperation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationIdVtbl;
+
+    interface __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationIdVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_PickSingleFileAsync(This,pickerOperationId,pickSingleFileOperation)	\
+    ( (This)->lpVtbl -> PickSingleFileAsync(This,pickerOperationId,pickSingleFileOperation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileOpenPickerWithOperationId_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0030 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_INTERFACE_DEFINED__)
@@ -1473,13 +2396,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0019 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0030_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_INTERFACE_DEFINED__
@@ -1732,7 +2655,152 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker;
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0020 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0031 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Pickers_IFileSavePicker2[] = L"Windows.Storage.Pickers.IFileSavePicker2";
+#endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0031_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Storage::Pickers::IFileSavePicker2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Storage {
+                namespace Pickers {
+                    
+                    MIDL_INTERFACE("0EC313A2-D24B-449A-8197-E89104FD42CC")
+                    IFileSavePicker2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContinuationData( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE PickSaveFileAndContinue( void) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileSavePicker2 = __uuidof(IFileSavePicker2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContinuationData )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *PickSaveFileAndContinue )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2 * This);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2Vtbl;
+
+    interface __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_get_ContinuationData(This,value)	\
+    ( (This)->lpVtbl -> get_ContinuationData(This,value) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_PickSaveFileAndContinue(This)	\
+    ( (This)->lpVtbl -> PickSaveFileAndContinue(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0032 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3_INTERFACE_DEFINED__)
@@ -1740,13 +2808,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0020 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3_INTERFACE_DEFINED__
@@ -1879,7 +2947,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3;
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFileSavePicker3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0021 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0033 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker_INTERFACE_DEFINED__)
@@ -1887,13 +2955,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0021 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker_INTERFACE_DEFINED__
@@ -2106,7 +3174,152 @@ EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFolderPicker;
 #endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0022 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0034 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Storage_Pickers_IFolderPicker2[] = L"Windows.Storage.Pickers.IFolderPicker2";
+#endif /* !defined(____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0034 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0034_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Storage::Pickers::IFolderPicker2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Storage {
+                namespace Pickers {
+                    
+                    MIDL_INTERFACE("8EB3BA97-DC85-4616-BE94-9660881F2F5D")
+                    IFolderPicker2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContinuationData( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE PickFolderAndContinue( void) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFolderPicker2 = __uuidof(IFolderPicker2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContinuationData )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *PickFolderAndContinue )( 
+            __RPC__in __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2 * This);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2Vtbl;
+
+    interface __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_get_ContinuationData(This,value)	\
+    ( (This)->lpVtbl -> get_ContinuationData(This,value) ) 
+
+#define __x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_PickFolderAndContinue(This)	\
+    ( (This)->lpVtbl -> PickFolderAndContinue(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CStorage_CPickers_CIFolderPicker2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0035 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Storage_Pickers_FileExtensionVector_DEFINED
@@ -2135,13 +3348,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0022 */
+/* interface __MIDL_itf_windows2Estorage2Epickers_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Estorage2Epickers_0000_0035_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

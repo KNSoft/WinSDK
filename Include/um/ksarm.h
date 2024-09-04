@@ -202,7 +202,14 @@
 // System DLL Init Block Structure Offset Definitions
 //
 
-#define IbCfgBitMap 0x60
+#define IbCfgBitMap 0xb0
+#define IbMitigationOptionsMap 0xa0
+#define PS_MITIGATION_OPTION_BITS_PER_OPTION 0x4
+#define PS_MITIGATION_OPTION_ALWAYS_ON 0x1
+#define PS_MITIGATION_OPTION_ALWAYS_OFF 0x2
+#define PS_MITIGATION_OPTION_MASK 0x3
+#define PS_MITIGATION_OPTION_RETURN_FLOW_GUARD 0x10
+#define PS_MITIGATION_OPTION_RESTRICT_SET_THREAD_CONTEXT 0x13
 
 //
 // User Shared Data Structure Offset Definitions
@@ -315,6 +322,7 @@
 #define STATUS_USER_APC 0xc0
 #define STATUS_WAKE_SYSTEM 0x40000294
 #define STATUS_WAKE_SYSTEM_DEBUGGER 0x80000007
+#define STATUS_SET_CONTEXT_DENIED 0xc000060a
 
 //
 // Fast Fail Code Definitions
@@ -322,6 +330,8 @@
 
 #define FAST_FAIL_INVALID_BUFFER_ACCESS 0x1c
 #define FAST_FAIL_INVALID_NEXT_THREAD 0x1e
+#define FAST_FAIL_INVALID_CONTROL_STACK 0x2f
+#define FAST_FAIL_SET_CONTEXT_DENIED 0x30
 
 //
 // APC Object Structure Offset Definitions
@@ -442,9 +452,9 @@
 #define PrCycleTime 0x80
 #define PrKernelTime 0x98
 #define PrUserTime 0x9c
-#define PrInstrumentationCallback 0xa0
-#define KernelProcessObjectLength 0xa8
-#define ExecutiveProcessObjectLength 0x388
+#define PrInstrumentationCallback 0xa4
+#define KernelProcessObjectLength 0xb0
+#define ExecutiveProcessObjectLength 0x3e0
 #define Win32BatchFlushCallout 0x7
 
 //
@@ -480,8 +490,8 @@
 // Thread Object Structure Offset Definitions
 //
 
-#define EtCid 0x36c
-#define EtPicoContext 0x434
+#define EtCid 0x374
+#define EtPicoContext 0x43c
 
 #define ThType 0x0
 #define ThSize 0x2
@@ -524,7 +534,7 @@
 
 #define KTHREAD_AUTO_ALIGNMENT_BIT 0x0
 #define KTHREAD_GUI_THREAD_MASK 0x40
-#define KTHREAD_RESTRICTED_GUI_THREAD_MASK 0x80000
+#define KTHREAD_RESTRICTED_GUI_THREAD_MASK 0x100000
 #define KTHREAD_SYSTEM_THREAD_BIT 0xa
 #define KTHREAD_QUEUE_DEFER_PREEMPTION_BIT 0xa
 
@@ -542,8 +552,8 @@
 #define ThWin32Thread 0x11c
 #define ThStackBase 0x28
 #define ThLegoData 0x1b8
-#define KernelThreadObjectLength 0x340
-#define ExecutiveThreadObjectLength 0x458
+#define KernelThreadObjectLength 0x348
+#define ExecutiveThreadObjectLength 0x478
 
 #define KF_VFP_32REG 0x10
 
@@ -702,11 +712,13 @@
 
 #define PERF_CONTEXTSWAP_OFFSET 0x4
 #define PERF_CONTEXTSWAP_FLAG 0x4
+#define PERF_INTERRUPT 0x20004000
 #define PERF_INTERRUPT_OFFSET 0x4
 #define PERF_INTERRUPT_FLAG 0x4000
 #define PERF_SYSCALL_OFFSET 0x8
 #define PERF_SYSCALL_FLAG 0x40
 #define NTOS_YIELD_MACRO 0x1
+#define EtwTSLength 0x18
 
 //
 // Extended context structure offset definitions
@@ -950,7 +962,7 @@
 #define PbCopyReadNoWait 0x644
 #define PbCopyReadWait 0x648
 #define PbCopyReadNoWaitMiss 0x64c
-#define PbAlignmentFixupCount 0xcd0
+#define PbAlignmentFixupCount 0xcf8
 #define PbExceptionDispatchCount 0x934
 #define PbProcessorVendorString 0x508
 #define PbFeatureBits 0x50c
@@ -962,8 +974,8 @@
 #define PbPanicMiniStack 0xfd0
 #define PbCycleCounterHigh 0x970
 #define ThNpxState 0x85
-#define ThUserRoBase 0x438
-#define ThUserRwBase 0x43c
+#define ThUserRoBase 0x440
+#define ThUserRwBase 0x444
 
 //
 // KTHREAD state
@@ -1739,7 +1751,7 @@
 // EPROCESS
 //
 
-#define EpDebugPort 0x154
+#define EpDebugPort 0x15c
 
 //
 // Pico Process Provider Routines

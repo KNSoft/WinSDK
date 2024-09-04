@@ -128,6 +128,17 @@ extern "C" {
 
 #endif
 
+//
+// This event data contains a single DWORD which corresponds 
+// to the NTSTATUS code returned by the (regular, non-secure) MOR bit 
+// setting API. The status code is either a success or the first 
+// failure code encountered by each pre-boot app attempting to manipulate 
+// the MOR bit state.
+// This event is available starting with NTDDI_WIN10_RS2.
+//
+#define SIPAEVENT_MORBIT_API_STATUS        (SIPAEVENTTYPE_INFORMATION + \
+                                            0x000B)
+
 //SIPAEVENTTYPE_PREOSPARAMETER
 #define SIPAEVENT_BOOTDEBUGGING            (SIPAEVENTTYPE_PREOSPARAMETER + \
                                             0x0001)
@@ -241,6 +252,20 @@ extern "C" {
                                              0x0027)
 
 #endif
+
+// #if NTDDI_VERSION >= NTDDI_WIN10_RS2 
+
+//
+// The data portion for this event is a single DWORD carrying the LSA_ISO_* flags 
+// as read from the corresponding UEFI variable ("Kernel_Lsa_Cfg_Flags") or from
+// the LsaIso configuration in the registry.
+// This event is only recorded if the LsaIso configuration can be found in at least one
+// of these 2 places.
+//
+#define SIPAEVENT_LSAISO_CONFIG             (SIPAEVENTTYPE_OSPARAMETER + \
+								            0x0028)
+
+// #endif
 
 //SIPAEVENTTYPE_AUHTORITY
 #define SIPAEVENT_NOAUTHORITY              (SIPAEVENTTYPE_AUTHORITY + \
@@ -367,6 +392,7 @@ typedef UINT16 WBCL_DIGEST_ALG_ID;
 #define WBCL_DIGEST_ALG_ID_SHA_2_256        0x000B
 #define WBCL_DIGEST_ALG_ID_SHA_2_384        0x000C
 #define WBCL_DIGEST_ALG_ID_SHA_2_512        0x000D
+#define WBCL_DIGEST_ALG_ID_SM3_256          0x0012
 
 //
 // These values are aligned with the TPM 2.0 algorithm bitmap
@@ -375,6 +401,7 @@ typedef UINT16 WBCL_DIGEST_ALG_ID;
 #define WBCL_DIGEST_ALG_BITMAP_SHA_2_256    0x00000002
 #define WBCL_DIGEST_ALG_BITMAP_SHA_2_384    0x00000004
 #define WBCL_DIGEST_ALG_BITMAP_SHA_2_512    0x00000008
+#define WBCL_DIGEST_ALG_BITMAP_SM3_256      0x00000010
 
 //
 // An iterator object for WBCL log.

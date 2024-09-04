@@ -51,9 +51,9 @@
 //
 // Define the facility codes
 //
+#define FACILITY_ITF                     0x4
 #define FACILITY_WINDOWS                 0x8
 #define FACILITY_STORAGE                 0x3
-#define FACILITY_ITF                     0x4
 
 
 //

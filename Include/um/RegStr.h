@@ -161,6 +161,7 @@
 #define REGSTR_VAL_UI_NUMBER                       TEXT("UINumber")
 #define REGSTR_VAL_UI_NUMBER_DESC_FORMAT           TEXT("UINumberDescFormat")
 #define REGSTR_VAL_CAPABILITIES                    TEXT("Capabilities")
+#define REGSTR_VAL_ADDRESS                         TEXT("Address")
 #define REGSTR_VAL_DEVICE_TYPE                     TEXT("DeviceType")
 #define REGSTR_VAL_DEVICE_CHARACTERISTICS          TEXT("DeviceCharacteristics")
 #define REGSTR_VAL_DEVICE_SECURITY_DESCRIPTOR      TEXT("Security")

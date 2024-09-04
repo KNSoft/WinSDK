@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -74,6 +74,20 @@ typedef interface IReferenceTrackerHost IReferenceTrackerHost;
 #endif 	/* __IReferenceTrackerHost_FWD_DEFINED__ */
 
 
+#ifndef __IReferenceTrackerExtension_FWD_DEFINED__
+#define __IReferenceTrackerExtension_FWD_DEFINED__
+typedef interface IReferenceTrackerExtension IReferenceTrackerExtension;
+
+#endif 	/* __IReferenceTrackerExtension_FWD_DEFINED__ */
+
+
+#ifndef __ITrackerOwner_FWD_DEFINED__
+#define __ITrackerOwner_FWD_DEFINED__
+typedef interface ITrackerOwner ITrackerOwner;
+
+#endif 	/* __ITrackerOwner_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 
@@ -85,6 +99,11 @@ extern "C"{
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0000 */
 /* [local] */ 
 
+#pragma warning(push)
+#pragma warning(disable:4668) 
+#pragma warning(disable:4001) 
+#pragma once
+#pragma warning(pop)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 
@@ -668,11 +687,220 @@ EXTERN_C const IID IID_IReferenceTrackerHost;
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0005 */
 /* [local] */ 
 
-#endif // NTDDI_VERSION >= NTDDI_WIN8
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0005_v0_0_s_ifspec;
+
+#ifndef __IReferenceTrackerExtension_INTERFACE_DEFINED__
+#define __IReferenceTrackerExtension_INTERFACE_DEFINED__
+
+/* interface IReferenceTrackerExtension */
+/* [unique][local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IReferenceTrackerExtension;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4e897caa-59d5-4613-8f8c-f7ebd1f399b0")
+    IReferenceTrackerExtension : public IUnknown
+    {
+    public:
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IReferenceTrackerExtensionVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IReferenceTrackerExtension * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IReferenceTrackerExtension * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IReferenceTrackerExtension * This);
+        
+        END_INTERFACE
+    } IReferenceTrackerExtensionVtbl;
+
+    interface IReferenceTrackerExtension
+    {
+        CONST_VTBL struct IReferenceTrackerExtensionVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IReferenceTrackerExtension_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IReferenceTrackerExtension_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IReferenceTrackerExtension_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IReferenceTrackerExtension_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0006 */
+/* [local] */ 
+
+typedef struct TrackerHandle__
+    {
+    int unused;
+    } 	TrackerHandle__;
+
+typedef /* [unique] */  __RPC_unique_pointer TrackerHandle__ *TrackerHandle;
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0006_v0_0_s_ifspec;
+
+#ifndef __ITrackerOwner_INTERFACE_DEFINED__
+#define __ITrackerOwner_INTERFACE_DEFINED__
+
+/* interface ITrackerOwner */
+/* [unique][local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ITrackerOwner;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("eb24c20b-9816-4ac7-8cff-36f67a118f4e")
+    ITrackerOwner : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE CreateTrackerHandle( 
+            /* [retval][out] */ TrackerHandle *returnValue) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE DeleteTrackerHandle( 
+            /* [in] */ TrackerHandle handle) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetTrackerValue( 
+            /* [in] */ TrackerHandle handle,
+            /* [in] */ IUnknown *value) = 0;
+        
+        virtual boolean STDMETHODCALLTYPE TryGetSafeTrackerValue( 
+            /* [in] */ TrackerHandle handle,
+            /* [retval][out] */ IUnknown **returnValue) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ITrackerOwnerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ITrackerOwner * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ITrackerOwner * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ITrackerOwner * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateTrackerHandle )( 
+            ITrackerOwner * This,
+            /* [retval][out] */ TrackerHandle *returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *DeleteTrackerHandle )( 
+            ITrackerOwner * This,
+            /* [in] */ TrackerHandle handle);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetTrackerValue )( 
+            ITrackerOwner * This,
+            /* [in] */ TrackerHandle handle,
+            /* [in] */ IUnknown *value);
+        
+        boolean ( STDMETHODCALLTYPE *TryGetSafeTrackerValue )( 
+            ITrackerOwner * This,
+            /* [in] */ TrackerHandle handle,
+            /* [retval][out] */ IUnknown **returnValue);
+        
+        END_INTERFACE
+    } ITrackerOwnerVtbl;
+
+    interface ITrackerOwner
+    {
+        CONST_VTBL struct ITrackerOwnerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ITrackerOwner_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ITrackerOwner_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ITrackerOwner_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ITrackerOwner_CreateTrackerHandle(This,returnValue)	\
+    ( (This)->lpVtbl -> CreateTrackerHandle(This,returnValue) ) 
+
+#define ITrackerOwner_DeleteTrackerHandle(This,handle)	\
+    ( (This)->lpVtbl -> DeleteTrackerHandle(This,handle) ) 
+
+#define ITrackerOwner_SetTrackerValue(This,handle,value)	\
+    ( (This)->lpVtbl -> SetTrackerValue(This,handle,value) ) 
+
+#define ITrackerOwner_TryGetSafeTrackerValue(This,handle,returnValue)	\
+    ( (This)->lpVtbl -> TryGetSafeTrackerValue(This,handle,returnValue) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ITrackerOwner_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0007 */
+/* [local] */ 
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+#endif // NTDDI_VERSION >= NTDDI_WIN8
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Ereferencetracker_0000_0007_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

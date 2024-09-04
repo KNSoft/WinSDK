@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -169,6 +169,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace UserDataAccounts {
+                interface IUserDataAccount4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser;
@@ -269,6 +289,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace UserDataAccounts {
+                interface IUserDataAccountStore3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs;
@@ -296,6 +336,7 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.Appointments.h"
 #include "Windows.ApplicationModel.Email.h"
+#include "Windows.ApplicationModel.UserDataTasks.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -346,18 +387,18 @@ interface IUserDataAccount;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0001 */
 /* [local] */ 
@@ -392,18 +433,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0002 */
 /* [local] */ 
@@ -438,18 +479,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0003 */
 /* [local] */ 
@@ -484,18 +525,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0004 */
 /* [local] */ 
@@ -530,18 +571,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0005 */
 /* [local] */ 
@@ -600,18 +641,18 @@ interface IUserDataAccountStore;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0006 */
 /* [local] */ 
@@ -646,18 +687,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0007 */
 /* [local] */ 
@@ -692,18 +733,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0008 */
 /* [local] */ 
@@ -738,18 +779,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0009 */
 /* [local] */ 
@@ -808,18 +849,18 @@ interface IUserDataAccountStoreChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0010 */
 /* [local] */ 
@@ -878,18 +919,18 @@ interface IAppointmentCalendar;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0011 */
 /* [local] */ 
@@ -924,18 +965,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0012 */
 /* [local] */ 
@@ -970,18 +1011,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0013 */
 /* [local] */ 
@@ -1016,18 +1057,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0014 */
 /* [local] */ 
@@ -1062,18 +1103,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0015 */
 /* [local] */ 
@@ -1132,18 +1173,18 @@ interface IEmailMailbox;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0016 */
 /* [local] */ 
@@ -1178,18 +1219,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0017 */
 /* [local] */ 
@@ -1224,18 +1265,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0018 */
 /* [local] */ 
@@ -1270,18 +1311,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0019 */
 /* [local] */ 
@@ -1316,18 +1357,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0020 */
 /* [local] */ 
@@ -1386,18 +1427,18 @@ interface IContactList;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0021 */
 /* [local] */ 
@@ -1432,18 +1473,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0022 */
 /* [local] */ 
@@ -1478,18 +1519,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0023 */
 /* [local] */ 
@@ -1524,18 +1565,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0024 */
 /* [local] */ 
@@ -1570,18 +1611,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0025 */
 /* [local] */ 
@@ -1640,18 +1681,18 @@ interface IContactAnnotationList;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0026 */
 /* [local] */ 
@@ -1686,18 +1727,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0027 */
 /* [local] */ 
@@ -1732,18 +1773,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0028 */
 /* [local] */ 
@@ -1778,18 +1819,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0029 */
 /* [local] */ 
@@ -1824,18 +1865,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0030 */
 /* [local] */ 
@@ -1870,18 +1911,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0031 */
 /* [local] */ 
@@ -1916,18 +1957,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0032 */
 /* [local] */ 
@@ -1962,18 +2003,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0033 */
 /* [local] */ 
@@ -2008,18 +2049,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0034 */
 /* [local] */ 
@@ -2043,6 +2084,29 @@ typedef IVector<HSTRING> __FIVector_1_HSTRING_t;
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVector_1_HSTRING_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace UserDataTasks {
+class UserDataTaskList;
+} /*UserDataTasks*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace UserDataTasks {
+interface IUserDataTaskList;
+} /*UserDataTasks*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0034 */
@@ -2051,23 +2115,508 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#define DEF___FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("8e989bcb-9d7c-512f-89da-fdb75532d665"))
+IIterator<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*, ABI::Windows::ApplicationModel::UserDataTasks::IUserDataTaskList*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.UserDataTasks.UserDataTaskList>"; }
+};
+typedef IIterator<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*> __FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t;
+#define ____FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_FWD_DEFINED__
+#define __FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4644 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4644 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#define DEF___FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2c4d63bc-cffb-50d2-8a82-a9aefad651d3"))
+IIterable<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*, ABI::Windows::ApplicationModel::UserDataTasks::IUserDataTaskList*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.ApplicationModel.UserDataTasks.UserDataTaskList>"; }
+};
+typedef IIterable<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*> __FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t;
+#define ____FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_FWD_DEFINED__
+#define __FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4645 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4645 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#define DEF___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("0910e3ae-2075-5486-866f-f1590ade3616"))
+IVectorView<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*, ABI::Windows::ApplicationModel::UserDataTasks::IUserDataTaskList*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.UserDataTasks.UserDataTaskList>"; }
+};
+typedef IVectorView<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList*> __FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t;
+#define ____FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4646 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4646 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4aba8568-5231-526c-b2e4-805006b8ef2f"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.UserDataTasks.UserDataTaskList>>"; }
+};
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4647 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4647 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2a4e06ee-9030-5ce6-ad7f-cf551795765d"))
+IAsyncOperation<__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.UserDataTasks.UserDataTaskList>>"; }
+};
+typedef IAsyncOperation<__FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList*> __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+class ContactGroup;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+interface IContactGroup;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4648 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4648 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("86dac457-7314-5044-8108-75290c36dd2b"))
+IIterator<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactGroup*, ABI::Windows::ApplicationModel::Contacts::IContactGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.Contacts.ContactGroup>"; }
+};
+typedef IIterator<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4649 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4649 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9db1688a-f7e0-5059-989e-d1453056d73a"))
+IIterable<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactGroup*, ABI::Windows::ApplicationModel::Contacts::IContactGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.ApplicationModel.Contacts.ContactGroup>"; }
+};
+typedef IIterable<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4650 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4650 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("124493aa-1617-5d0a-a5b6-4d1156fa95e5"))
+IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactGroup*, ABI::Windows::ApplicationModel::Contacts::IContactGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Contacts.ContactGroup>"; }
+};
+typedef IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4651 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4651 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("bd49aed6-182c-5847-9467-f750d1d029bc"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Contacts.ContactGroup>>"; }
+};
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4652 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4652 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f78d6a56-6e40-5f68-99de-b0ec119ccab2"))
+IAsyncOperation<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Contacts.ContactGroup>>"; }
+};
+typedef IAsyncOperation<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4653 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4653 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE
@@ -2091,29 +2640,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_HSTRING_USE
@@ -2148,6 +2697,9 @@ extern "C" {
 #if !defined(__windows2Eapplicationmodel2Eemail_h__)
 #include <Windows.ApplicationModel.Email.h>
 #endif // !defined(__windows2Eapplicationmodel2Eemail_h__)
+#if !defined(__windows2Eapplicationmodel2Euserdatatasks_h__)
+#include <Windows.ApplicationModel.UserDataTasks.h>
+#endif // !defined(__windows2Eapplicationmodel2Euserdatatasks_h__)
 #if !defined(__windows2Estorage2Estreams_h__)
 #include <Windows.Storage.Streams.h>
 #endif // !defined(__windows2Estorage2Estreams_h__)
@@ -2157,6 +2709,7 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2215,6 +2768,8 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CUserDataAccou
 
 
 
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2228,8 +2783,9 @@ class UserDataAccountManagerForUser;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046 */
 /* [local] */ 
+
 
 
 
@@ -2298,23 +2854,25 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0036_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3104 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -2322,13 +2880,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -2472,35 +3030,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CUserDataAccou
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -2508,13 +3066,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -2624,35 +3182,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CUserDataAccou
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -2660,13 +3218,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -2818,35 +3376,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CUserDataAcc
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -2855,14 +3413,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -2951,35 +3509,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -2987,13 +3545,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -3123,35 +3681,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CUserDat
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore
@@ -3160,14 +3718,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_INTERFACE_DEFINED__
@@ -3256,35 +3814,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore
@@ -3292,13 +3850,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_INTERFACE_DEFINED__
@@ -3428,35 +3986,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CUserDat
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -3465,14 +4023,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -3561,35 +4119,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount
@@ -3597,13 +4155,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__
@@ -3733,35 +4291,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4664 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs
@@ -3769,13 +4327,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__
@@ -3864,7 +4422,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CUser
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -3923,7 +4481,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0066 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -3993,8 +4551,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount_INTERFACE_DEFINED__
@@ -4247,7 +4805,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0067 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount2_INTERFACE_DEFINED__)
@@ -4255,13 +4813,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount2_INTERFACE_DEFINED__
@@ -4394,7 +4952,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount3_INTERFACE_DEFINED__)
@@ -4402,13 +4960,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount3_INTERFACE_DEFINED__
@@ -4551,7 +5109,214 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0069 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_UserDataAccounts_IUserDataAccount4[] = L"Windows.ApplicationModel.UserDataAccounts.IUserDataAccount4";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0069 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0069_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace UserDataAccounts {
+                    
+                    MIDL_INTERFACE("C4315210-EAE5-4F0A-A8B2-1CCA115E008F")
+                    IUserDataAccount4 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanShowCreateContactGroup( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_CanShowCreateContactGroup( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProviderProperties( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FindUserDataTaskListsAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE FindContactGroupsAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE TryShowCreateContactGroupAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_HSTRING **operation) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsProtectedUnderLock( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Icon( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IUserDataAccount4 = __uuidof(IUserDataAccount4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanShowCreateContactGroup )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_CanShowCreateContactGroup )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProviderProperties )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindUserDataTaskListsAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindContactGroupsAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryShowCreateContactGroupAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_HSTRING **operation);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsProtectedUnderLock )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [in] */ boolean value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Icon )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_get_CanShowCreateContactGroup(This,value)	\
+    ( (This)->lpVtbl -> get_CanShowCreateContactGroup(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_put_CanShowCreateContactGroup(This,value)	\
+    ( (This)->lpVtbl -> put_CanShowCreateContactGroup(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_get_ProviderProperties(This,value)	\
+    ( (This)->lpVtbl -> get_ProviderProperties(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_FindUserDataTaskListsAsync(This,operation)	\
+    ( (This)->lpVtbl -> FindUserDataTaskListsAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_FindContactGroupsAsync(This,operation)	\
+    ( (This)->lpVtbl -> FindContactGroupsAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_TryShowCreateContactGroupAsync(This,operation)	\
+    ( (This)->lpVtbl -> TryShowCreateContactGroupAsync(This,operation) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_put_IsProtectedUnderLock(This,value)	\
+    ( (This)->lpVtbl -> put_IsProtectedUnderLock(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_put_Icon(This,value)	\
+    ( (This)->lpVtbl -> put_Icon(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccount4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_INTERFACE_DEFINED__)
@@ -4559,13 +5324,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_INTERFACE_DEFINED__
@@ -4700,7 +5465,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerForUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics_INTERFACE_DEFINED__)
@@ -4708,13 +5473,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics_INTERFACE_DEFINED__
@@ -4875,7 +5640,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics2_INTERFACE_DEFINED__)
@@ -4883,13 +5648,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics2_INTERFACE_DEFINED__
@@ -5014,7 +5779,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore_INTERFACE_DEFINED__)
@@ -5022,13 +5787,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore_INTERFACE_DEFINED__
@@ -5175,7 +5940,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore2_INTERFACE_DEFINED__)
@@ -5183,13 +5948,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore2_INTERFACE_DEFINED__
@@ -5338,7 +6103,150 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0075 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_UserDataAccounts_IUserDataAccountStore3[] = L"Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0075 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0075_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace UserDataAccounts {
+                    
+                    MIDL_INTERFACE("8142C094-F3C9-478B-B117-6585BEBB6789")
+                    IUserDataAccountStore3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync( 
+                            /* [in] */ __RPC__in HSTRING userDisplayName,
+                            /* [in] */ __RPC__in HSTRING packageRelativeAppId,
+                            /* [in] */ __RPC__in HSTRING enterpriseId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IUserDataAccountStore3 = __uuidof(IUserDataAccountStore3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3 * This,
+            /* [in] */ __RPC__in HSTRING userDisplayName,
+            /* [in] */ __RPC__in HSTRING packageRelativeAppId,
+            /* [in] */ __RPC__in HSTRING enterpriseId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(This,userDisplayName,packageRelativeAppId,enterpriseId,result)	\
+    ( (This)->lpVtbl -> CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(This,userDisplayName,packageRelativeAppId,enterpriseId,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStore3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__)
@@ -5346,13 +6254,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__
@@ -5475,7 +6383,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUs
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CUserDataAccounts_CIUserDataAccountStoreChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0077 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_UserDataAccounts_UserDataAccount_DEFINED
@@ -5500,13 +6408,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Euserdataaccounts_0000_0077_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

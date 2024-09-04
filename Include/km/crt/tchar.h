@@ -1457,8 +1457,8 @@ _Check_return_wat_ _CRTIMP errno_t __cdecl _tccpy_s_l(_Out_writes_z_(_SizeInByte
 
 /* String functions */
 
-__inline _CRPC _tcschr(_In_ _CPC _s1,_In_ _UI _c) {return (_CRPC)_mbschr((_CPUC)_s1,_c);}
-__inline size_t _tcscspn(_In_ _CPC _s1,_In_ _CPC _s2) {return _mbscspn((_CPUC)_s1,(_CPUC)_s2);}
+__inline _CRPC _tcschr(_In_z_ _CPC _s1,_In_ _UI _c) {return (_CRPC)_mbschr((_CPUC)_s1,_c);}
+__inline size_t _tcscspn(_In_z_ _CPC _s1,_In_z_ _CPC _s2) {return _mbscspn((_CPUC)_s1,(_CPUC)_s2);}
 
 _Check_return_wat_ __inline errno_t _tcsncat_s(_Inout_updates_z_(_Destination_size_chars) char *_Destination, _In_ size_t _Destination_size_chars, _In_z_ const char *_Source, _In_ size_t _Count) 
 {
@@ -1471,6 +1471,8 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncat
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsnbcat((unsigned char *)_Dst,(const unsigned char *)_Source,_Count);
 #pragma warning(pop)
 }
@@ -1501,10 +1503,12 @@ _Check_return_wat_ __inline errno_t _tcsncpy_s(_Out_writes_z_(_Destination_size_
 
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_2(errno_t, _tcsncpy_s, _Deref_post_z_ char, _Dest, _In_z_ const char *, _Source, _In_ size_t, _Count)
 
-__DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncpy, _tcsncpy_s, _Out_writes_bytes_(_Size) _Post_maybez_ char, char, _Dst, _In_z_ const char *, _Source, _In_ size_t, _Count)
+__DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncpy, _tcsncpy_s, _Out_writes_bytes_(_Count) _Post_maybez_ char, _Out_writes_bytes_(_Count) _Post_maybez_ char, _Dst, _In_z_ const char *, _Source, _In_ size_t, _Count)
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsnbcpy((unsigned char *)_Dst,(const unsigned char *)_Source,_Count);
 #pragma warning(pop)
 }
@@ -1528,16 +1532,18 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsncpy
 
 __DEFINE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsncpy_l, _tcsncpy_s_l, _Out_writes_z_(_Size) char, _Out_writes_z_(_Count), char, _Dst, _In_z_ const char *, _Source, _In_ size_t, _Count, _In_opt_ _locale_t, _Locale)
 
-_Check_return_ __inline _CRPC _tcspbrk(_In_ _CPC _s1,_In_ _CPC _s2) {return (_CRPC)_mbspbrk((_CPUC)_s1,(_CPUC)_s2);}
-_Check_return_ __inline _CRPC _tcsrchr(_In_ _CPC _s1,_In_ _UI _c) {return (_CRPC)_mbsrchr((_CPUC)_s1,_c);}
-_Check_return_ __inline size_t _tcsspn(_In_ _CPC _s1,_In_ _CPC _s2) {return _mbsspn((_CPUC)_s1,(_CPUC)_s2);}
-_Check_return_ __inline _CRPC _tcsstr(_In_ _CPC _s1,_In_ _CPC _s2) {return (_CRPC)_mbsstr((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline _CRPC _tcspbrk(_In_z_ _CPC _s1,_In_z_ _CPC _s2) {return (_CRPC)_mbspbrk((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline _CRPC _tcsrchr(_In_z_ _CPC _s1,_In_ _UI _c) {return (_CRPC)_mbsrchr((_CPUC)_s1,_c);}
+_Check_return_ __inline size_t _tcsspn(_In_z_ _CPC _s1,_In_z_ _CPC _s2) {return _mbsspn((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline _CRPC _tcsstr(_In_z_ _CPC _s1,_In_z_ _CPC _s2) {return (_CRPC)_mbsstr((_CPUC)_s1,(_CPUC)_s2);}
 
 _Check_return_ _CRT_INSECURE_DEPRECATE(_tcstok_s) __inline char *  _tcstok(_Inout_opt_z_ char * _String,_In_z_ const char * _Delimiters) 
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
-	return (char * )_mbstok((unsigned char *)_String,(const unsigned char *)_Delimiters);
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
+    return (char * )_mbstok((unsigned char *)_String,(const unsigned char *)_Delimiters);
 #pragma warning(pop)
 }
 
@@ -1593,7 +1599,7 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsnset
 
 __DEFINE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsnset_l, _tcsnset_s_l, _Inout_updates_z_(_Size) char, _Inout_updates_z_(_Count), char, _Dst, _In_ unsigned int, _Value , _In_ size_t, _Count, _In_opt_ _locale_t, _Locale)
 
-__inline _PC _tcsrev(_Inout_ _PC _s1) {return (_PC)_mbsrev((_PUC)_s1);}
+__inline _PC _tcsrev(_Inout_z_ _PC _s1) {return (_PC)_mbsrev((_PUC)_s1);}
 
 _Check_return_wat_ __inline errno_t _tcsset_s(_Inout_updates_z_(_SizeInBytes) char * _Dst, _In_ size_t _SizeInBytes, _In_ unsigned int _Value)
 {
@@ -1629,7 +1635,7 @@ __DECLARE_CPP_OVERLOAD_INLINE_FUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsset_l
 
 __DEFINE_CPP_OVERLOAD_INLINE_FUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsset_l, _tcsset_s_l, _Inout_updates_z_(_Size) char, _Inout_z_, char, _Dst, _In_ unsigned int, _Value, _In_opt_ _locale_t, _Locale)
 
-_Check_return_ __inline int _tcscmp(_In_ _CPC _s1,_In_ _CPC _s2) {return _mbscmp((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline int _tcscmp(_In_z_ _CPC _s1,_In_z_ _CPC _s2) {return _mbscmp((_CPUC)_s1,(_CPUC)_s2);}
 
 _Check_return_ __inline int _tcsicmp(_In_z_ const char * _String1, _In_z_ const char * _String2) 
 {
@@ -1641,8 +1647,8 @@ _Check_return_ __inline int _tcsicmp_l(_In_z_ const char * _String1, _In_z_ cons
     return _mbsicmp_l((const unsigned char *)_String1,(const unsigned char *)_String2, _Locale);
 }
 
-_Check_return_ __inline int _tcsnccmp(_In_ _CPC _s1,_In_ _CPC _s2,_In_ size_t _n) {return _mbsncmp((_CPUC)_s1,(_CPUC)_s2,_n);}
-__inline int _tcsncmp(_In_ _CPC _s1,_In_ _CPC _s2,_In_ size_t _n) {return _mbsnbcmp((_CPUC)_s1,(_CPUC)_s2,_n);}
+_Check_return_ __inline int _tcsnccmp(_In_z_ _CPC _s1,_In_z_ _CPC _s2,_In_ size_t _n) {return _mbsncmp((_CPUC)_s1,(_CPUC)_s2,_n);}
+__inline int _tcsncmp(_In_z_ _CPC _s1,_In_z_ _CPC _s2,_In_ size_t _n) {return _mbsnbcmp((_CPUC)_s1,(_CPUC)_s2,_n);}
 
 _Check_return_ __inline int _tcsncicmp(_In_z_ const char * _String1, _In_z_ const char * _String2, _In_ size_t _Char_count)
 {
@@ -1756,6 +1762,8 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsncca
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsncat((unsigned char *)_Dst,(const unsigned char *)_Source, _Count);
 #pragma warning(pop)
 }
@@ -1786,10 +1794,12 @@ _Check_return_wat_ __inline errno_t _tcsnccpy_s(_Out_writes_z_(_Destination_size
 
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_2(errno_t, _tcsnccpy_s, _Deref_post_z_ char, _Dest, _In_z_ const char *, _Source, _In_ size_t, _Count)
 
-__DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsnccpy, _tcsnccpy_s, _Out_writes_bytes_(_Size) _Post_maybez_ char, _Pre_notnull_ _Post_maybez_ char, _Dst, _In_z_ const char *, _Source, _In_ size_t, _Count)
+__DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_2_EX(char *, __RETURN_POLICY_DST, _tcsnccpy, _tcsnccpy_s, _Pre_notnull_ _Out_writes_(2 * _Count) _Post_maybez_ char, _Pre_notnull_ _Out_writes_(2 * _Count) _Post_maybez_ char, _Dst, _In_z_ const char *, _Source, _In_ size_t, _Count)
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     return (char *)_mbsncpy((unsigned char *)_Dst,(const unsigned char *)_Source, _Count);
 #pragma warning(pop)
 }
@@ -1813,7 +1823,7 @@ __DECLARE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsnccp
 
 __DEFINE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsnccpy_l, _tcsnccpy_s_l, _Out_writes_z_(_Size) char, _Out_writes_bytes_(_Count) _Post_maybez_, char, _Dst, _In_z_ const char *, _Source, _In_ size_t, _Count, _In_opt_ _locale_t, _Locale)
 
-_Check_return_wat_ __inline errno_t _tcsncset_s(_Inout_updates_bytes_(_SizeInBytes) char *_Destination, _In_ size_t _SizeInBytes, _In_ unsigned int _Value, _In_ size_t _Count)
+_Check_return_wat_ __inline errno_t _tcsncset_s(_Inout_updates_z_(_SizeInBytes) char *_Destination, _In_ size_t _SizeInBytes, _In_ unsigned int _Value, _In_ size_t _Count)
 {
     return _mbsnset_s((unsigned char *)_Destination, _SizeInBytes, _Value, _Count);
 }
@@ -1849,12 +1859,12 @@ __DEFINE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsncset
 
 /* MBCS-specific mappings */
 
-_Check_return_ __inline _PC _tcsdec(_In_ _CPC _s1,_In_ _CPC _s2) {return (_PC)_mbsdec((_CPUC)_s1,(_CPUC)_s2);}
-_Check_return_ __inline _PC _tcsinc(_In_ _CPC _s1) {return (_PC)_mbsinc((_CPUC)_s1);}
-_Check_return_ __inline size_t _tcsnbcnt(_In_ _CPC _s1,_In_ size_t _n) {return _mbsnbcnt((_CPUC)_s1,_n);}
-_Check_return_ __inline size_t _tcsnccnt(_In_ _CPC _s1,_In_ size_t _n) {return _mbsnccnt((_CPUC)_s1,_n);}
-_Check_return_ __inline _PC _tcsninc(_In_ _CPC _s1,_In_ size_t _n) {return (_PC)_mbsninc((_CPUC)_s1,_n);}
-_Check_return_ __inline _PC _tcsspnp(_In_ _CPC _s1,_In_ _CPC _s2) {return (_PC)_mbsspnp((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline _PC _tcsdec(_In_reads_z_(_Pos - _Start + 1) _CPC _s1,_In_z_ _CPC _s2) {return (_PC)_mbsdec((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline _PC _tcsinc(_In_z_ _CPC _s1) {return (_PC)_mbsinc((_CPUC)_s1);}
+_Check_return_ __inline size_t _tcsnbcnt(_In_reads_bytes_(_n) _Pre_z_ _CPC _s1,_In_ size_t _n) {return _mbsnbcnt((_CPUC)_s1,_n);}
+_Check_return_ __inline size_t _tcsnccnt(_In_reads_bytes_(_n) _CPC _s1,_In_ size_t _n) {return _mbsnccnt((_CPUC)_s1,_n);}
+_Check_return_ __inline _PC _tcsninc(_In_reads_(_n) _Pre_z_ _CPC _s1,_In_ size_t _n) {return (_PC)_mbsninc((_CPUC)_s1,_n);}
+_Check_return_ __inline _PC _tcsspnp(_In_z_  _CPC _s1, _In_z_ _CPC _s2) {return (_PC)_mbsspnp((_CPUC)_s1,(_CPUC)_s2);}
 
 _Check_return_wat_ __inline errno_t _tcslwr_s(_Inout_updates_z_(_SizeInBytes) char * _String, size_t _SizeInBytes) 
 {
@@ -1937,6 +1947,8 @@ _CRT_INSECURE_DEPRECATE(_tccpy_s) __inline void _tccpy(_Out_writes_z_(2) char * 
 {
 #pragma warning(push)
 #pragma warning(disable:4996)
+#pragma prefast(suppress: __WARNING_BANNED_API_USAGEL2, "Banned API in wrapper")
+#pragma prefast(suppress: __WARNING_UNSAFE_STRING_FUNCTION, "Unsafe string function in wrapper")
     _mbccpy((unsigned char *)_Destination, (const unsigned char *)_Source);
 #pragma warning(pop)
 }

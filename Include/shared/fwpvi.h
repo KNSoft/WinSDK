@@ -452,6 +452,8 @@
 #define FwpmFilterUnsubscribeChanges FwpmFilterUnsubscribeChanges0
 #define FwpmFilterSubscriptionsGet FwpmFilterSubscriptionsGet0
 #define FwpmGetAppIdFromFileName FwpmGetAppIdFromFileName0
+#define FwpmBitmapIndexGet FwpmBitmapIndexGet0
+#define FwpmBitmapIndexFree FwpmBitmapIndexFree0
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 #define FwpmIPsecTunnelAdd FwpmIPsecTunnelAdd2
 #elif (NTDDI_VERSION >= NTDDI_WIN7)

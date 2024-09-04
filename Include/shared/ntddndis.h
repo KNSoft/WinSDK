@@ -25,6 +25,7 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
+        670         Windows 10 RS2
         660         Windows Server 2016
         651         Windows 10
         650         Windows 10
@@ -82,6 +83,19 @@ extern "C" {
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
 //
+// Something to identify new (RS2 and up) applications.
+// User-mode only. For drivers, NDIS_SUPPORT_NDIS670 is already
+// defined in ndismain.w.
+//
+#if !defined(NDIS_SUPPORT_NDIS670)
+#if  (defined (UM_NDIS670))
+#define NDIS_SUPPORT_NDIS670      1
+#else
+#define NDIS_SUPPORT_NDIS670      0
+#endif
+#endif // !defined(NDIS_SUPPORT_NDIS670)
+
+//
 // Something to identify new (Windows Server 2016 and up) applications.
 // User-mode only. For drivers, NDIS_SUPPORT_NDIS660 is already
 // defined in ndismain.w.
@@ -113,7 +127,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS650)
-#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
 #define NDIS_SUPPORT_NDIS650      1
 #else
 #define NDIS_SUPPORT_NDIS650      0
@@ -126,7 +140,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS640)
-#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
 #define NDIS_SUPPORT_NDIS640      1
 #else
 #define NDIS_SUPPORT_NDIS640      0
@@ -139,7 +153,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS630)
-#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
 #define NDIS_SUPPORT_NDIS630      1
 #else
 #define NDIS_SUPPORT_NDIS630      0
@@ -152,7 +166,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS620)
-#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
 #define NDIS_SUPPORT_NDIS620      1
 #else
 #define NDIS_SUPPORT_NDIS620      0
@@ -165,7 +179,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS61)
-#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
 #define NDIS_SUPPORT_NDIS61      1
 #else
 #define NDIS_SUPPORT_NDIS61      0
@@ -174,7 +188,7 @@ extern "C" {
 
 
 #if !defined(NDIS_SUPPORT_NDIS6)
-#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
 #define NDIS_SUPPORT_NDIS6       1
 #else
 #define NDIS_SUPPORT_NDIS6       0
@@ -373,6 +387,10 @@ typedef struct _NDIS_VAR_DATA_DESC
 #if (NDIS_SUPPORT_NDIS650)
 #define NDIS_OBJECT_TYPE_MINIPORT_ADAPTER_PACKET_DIRECT_ATTRIBUTES      0xC5
 #endif // (NDIS_SUPPORT_NDIS650)
+
+#if (NDIS_SUPPORT_NDIS670)
+#define NDIS_OBJECT_TYPE_MINIPORT_DEVICE_POWER_NOTIFICATION             0xC6
+#endif // (NDIS_SUPPORT_NDIS670)
 
 typedef struct _NDIS_OBJECT_HEADER
 {
@@ -789,6 +807,17 @@ typedef struct _NDIS_PCI_DEVICE_CUSTOM_PROPERTIES
 #define OID_WWAN_UICC_TERMINAL_CAPABILITY           0x0e01013d
 #define OID_WWAN_PS_MEDIA_CONFIG                    0x0e01013e
 #endif // ((NTDDI_VERSION >= NTDDI_WIN10_RS1) || NDIS_SUPPORT_NDIS660)
+
+#if ((NTDDI_VERSION >= NTDDI_WIN10_RS2) || NDIS_SUPPORT_NDIS670)
+//
+// More WWAN specific oids
+//
+#define OID_WWAN_SAR_CONFIG                         0x0e01013f
+#define OID_WWAN_SAR_TRANSMISSION_STATUS            0x0e010140
+#define OID_WWAN_NETWORK_BLACKLIST                  0x0e010141
+#define OID_WWAN_LTE_ATTACH_CONFIG                  0x0e010142
+#define OID_WWAN_LTE_ATTACH_STATUS                  0x0e010143
+#endif // ((NTDDI_VERSION >= NTDDI_WIN10_RS2) || NDIS_SUPPORT_NDIS670)
 
 //
 //  Required statistics
@@ -1912,8 +1941,10 @@ NDIS_802_11_RADIO_STATUS, *PNDIS_802_11_RADIO_STATUS;
 //
 #define OID_SRIOV_CONFIG_STATE                        0x00010261    // set only
 #define OID_SRIOV_VF_SERIAL_NUMBER                    0x00010262    // query only
+#if (NDIS_SUPPORT_NDIS670)
+#define OID_SRIOV_OVERLYING_ADAPTER_INFO              0x00010268    // set only
+#endif //(NDIS_SUPPORT_NDIS670)
 #define OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK          0x00010269    // method only
-
 
 //
 // OID's used for Hyper-V extensible switch
@@ -3444,6 +3475,24 @@ typedef struct _NDIS_ENCAPSULATED_PACKET_TASK_OFFLOAD_V2 {
 
 #endif // (NDIS_SUPPORT_NDIS650)
 
+#if (NDIS_SUPPORT_NDIS670)
+
+typedef enum _NDIS_RFC6877_464XLAT_OFFLOAD_OPTIONS
+{
+    NDIS_RFC6877_464XLAT_OFFLOAD_NOT_SUPPORTED = 0,    // incapable of 464XLAT hardware offload
+    NDIS_RFC6877_464XLAT_OFFLOAD_DISABLED,             // capable but disabled
+    NDIS_RFC6877_464XLAT_OFFLOAD_ENABLED,              // capable and enabled all time
+    NDIS_RFC6877_464XLAT_OFFLOAD_ON_DEMAND,            // capable and enabled only on-demand
+} NDIS_RFC6877_464XLAT_OFFLOAD_OPTIONS;
+
+typedef struct _NDIS_RFC6877_464XLAT_OFFLOAD
+{
+    NDIS_RFC6877_464XLAT_OFFLOAD_OPTIONS   XlatOffload;
+    ULONG Flags;                                       // Reserved, always 0 
+} NDIS_RFC6877_464XLAT_OFFLOAD, *PNDIS_RFC6877_464XLAT_OFFLOAD;
+
+#endif // (NDIS_SUPPORT_NDIS670)
+
 //
 // flags used in Flags field of NDIS_OFFLOAD structure
 //
@@ -3471,6 +3520,10 @@ typedef struct _NDIS_ENCAPSULATED_PACKET_TASK_OFFLOAD_V2 {
 #if (NDIS_SUPPORT_NDIS650)
 #define NDIS_OFFLOAD_REVISION_4    4
 #endif // (NDIS_SUPPORT_NDIS650)
+
+#if (NDIS_SUPPORT_NDIS670)
+#define NDIS_OFFLOAD_REVISION_5    5
+#endif // (NDIS_SUPPORT_NDIS670)
 
 typedef struct _NDIS_OFFLOAD
 {
@@ -3529,6 +3582,14 @@ typedef struct _NDIS_OFFLOAD
     UCHAR                                    EncapsulationTypes;
 #endif // (NDIS_SUPPORT_NDIS650)
 
+#if (NDIS_SUPPORT_NDIS670)
+    //
+    // 464XLAT hardward offload information.
+    //
+    NDIS_RFC6877_464XLAT_OFFLOAD             Rfc6877Xlat;
+
+#endif // (NDIS_SUPPORT_NDIS670)
+
 }NDIS_OFFLOAD, *PNDIS_OFFLOAD;
 
 #define NDIS_SIZEOF_NDIS_OFFLOAD_REVISION_1   RTL_SIZEOF_THROUGH_FIELD(NDIS_OFFLOAD, Flags)
@@ -3544,6 +3605,10 @@ typedef struct _NDIS_OFFLOAD
 #if (NDIS_SUPPORT_NDIS650)
 #define NDIS_SIZEOF_NDIS_OFFLOAD_REVISION_4   RTL_SIZEOF_THROUGH_FIELD(NDIS_OFFLOAD, EncapsulationTypes)
 #endif // (NDIS_SUPPORT_NDIS650)
+
+#if (NDIS_SUPPORT_NDIS670)
+#define NDIS_SIZEOF_NDIS_OFFLOAD_REVISION_5   RTL_SIZEOF_THROUGH_FIELD(NDIS_OFFLOAD, Rfc6877Xlat)
+#endif // (NDIS_SUPPORT_NDIS670)
 
 //
 // The following data structures are used with offload related WMI
@@ -4134,6 +4199,7 @@ typedef struct NDIS_WMI_OUTPUT_INFO
 #define NDIS_PM_WAKE_ON_MEDIA_DISCONNECT_ENABLED                0x00000002
 #define NDIS_PM_SELECTIVE_SUSPEND_ENABLED                       0x00000010
 #endif // (NDIS_SUPPORT_NDIS630)
+
 
 //
 // Flags for NDIS_PM_PARAMETERS.MediaSpecificWakeUpEvents field
@@ -6985,6 +7051,24 @@ typedef struct _NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO
 
 #define NDIS_SIZEOF_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO_REVISION_1    \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO, BlockMask)
+
+#if (NDIS_SUPPORT_NDIS670)
+
+typedef struct _NDIS_SRIOV_OVERLYING_ADAPTER_INFO
+{
+    NDIS_OBJECT_HEADER              Header;
+    ULONG                           Flags;
+    ULONG                           IfIndex;
+    ULONG                           NdisReserved1;
+    ULONG                           NdisReserved2;
+} NDIS_SRIOV_OVERLYING_ADAPTER_INFO, *PNDIS_SRIOV_OVERLYING_ADAPTER_INFO;
+
+#define NDIS_SRIOV_OVERLYING_ADAPTER_INFO_VERSION_1 1
+
+#define NDIS_SIZEOF_SRIOV_OVERLYING_ADAPTER_INFO_REVISION_1    \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_SRIOV_OVERLYING_ADAPTER_INFO, NdisReserved2)
+
+#endif //(NDIS_SUPPORT_NDIS670)
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE) || (NDIS_SUPPORT_NDIS640)
 
@@ -10404,7 +10488,6 @@ typedef struct _NDIS_QOS_OFFLOAD_CAPABILITIES
 #define NDIS_QOS_OFFLOAD_CAPS_GFT_SQ        0x00000002
 
 #endif // (NDIS_SUPPORT_NDIS650)
-
 
 #ifdef __cplusplus
 }

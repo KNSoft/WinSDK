@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -468,18 +468,18 @@ interface IHidBooleanControl;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0001 */
 /* [local] */ 
@@ -514,18 +514,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0002 */
 /* [local] */ 
@@ -584,18 +584,18 @@ interface IHidBooleanControlDescription;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0003 */
 /* [local] */ 
@@ -630,18 +630,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0004 */
 /* [local] */ 
@@ -700,18 +700,18 @@ interface IHidCollection;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0005 */
 /* [local] */ 
@@ -746,18 +746,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0006 */
 /* [local] */ 
@@ -816,18 +816,18 @@ interface IHidNumericControlDescription;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0007 */
 /* [local] */ 
@@ -862,18 +862,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0008 */
 /* [local] */ 
@@ -908,18 +908,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0009 */
 /* [local] */ 
@@ -954,18 +954,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0010 */
 /* [local] */ 
@@ -1000,18 +1000,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0011 */
 /* [local] */ 
@@ -1046,18 +1046,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0012 */
 /* [local] */ 
@@ -1116,18 +1116,18 @@ interface IHidDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0013 */
 /* [local] */ 
@@ -1162,18 +1162,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0014 */
 /* [local] */ 
@@ -1232,18 +1232,18 @@ interface IHidFeatureReport;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0015 */
 /* [local] */ 
@@ -1278,18 +1278,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0016 */
 /* [local] */ 
@@ -1348,18 +1348,18 @@ interface IHidInputReport;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0017 */
 /* [local] */ 
@@ -1394,18 +1394,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0018 */
 /* [local] */ 
@@ -1464,18 +1464,18 @@ interface IHidInputReportReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0019 */
 /* [local] */ 
@@ -1510,18 +1510,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0020 */
 /* [local] */ 
@@ -1556,18 +1556,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0021 */
 /* [local] */ 
@@ -1731,18 +1731,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0022 */
 /* [local] */ 
@@ -1917,18 +1917,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0024 */
 /* [local] */ 
@@ -2069,18 +2069,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0026 */
 /* [local] */ 
@@ -2255,18 +2255,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0028 */
 /* [local] */ 
@@ -2407,18 +2407,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0030 */
 /* [local] */ 
@@ -2593,18 +2593,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0032 */
 /* [local] */ 
@@ -2745,18 +2745,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0034 */
 /* [local] */ 
@@ -2931,18 +2931,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0036 */
 /* [local] */ 
@@ -3083,18 +3083,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CHumanInterfaceDevice__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0038 */
 /* [local] */ 
@@ -3277,18 +3277,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CHumanInterfaceDevice
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0040 */
 /* [local] */ 
@@ -3471,18 +3471,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CHumanInterfaceDevice
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0042 */
 /* [local] */ 
@@ -3665,18 +3665,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CHumanInterfaceDevice
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0044 */
 /* [local] */ 
@@ -3859,18 +3859,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CHumanInterfaceDevice
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0046 */
 /* [local] */ 
@@ -3992,18 +3992,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0048 */
 /* [local] */ 
@@ -4164,18 +4164,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CHumanInterfaceDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0050 */
 /* [local] */ 
@@ -4297,18 +4297,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0052 */
 /* [local] */ 
@@ -4469,18 +4469,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CHumanInterfaceDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0054 */
 /* [local] */ 
@@ -4602,18 +4602,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0056 */
 /* [local] */ 
@@ -4774,18 +4774,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CHumanInterfaceDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4699 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_3150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Ehumaninterfacedevice2Eidl_0000_4699_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Ehumaninterfacedevice_0000_0058 */
 /* [local] */ 

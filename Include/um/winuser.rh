@@ -774,6 +774,12 @@ Revision History:
 #if(WINVER >= 0x0601)
 #define WM_DPICHANGED                   0x02E0
 #endif /* WINVER >= 0x0601 */
+#if(WINVER >= 0x0605)
+#define WM_DPICHANGED_BEFOREPARENT      0x02E2
+#define WM_DPICHANGED_AFTERPARENT       0x02E3
+#define WM_GETDPISCALEDSIZE             0x02E4
+#endif /* WINVER >= 0x0605 */
+
 
 #define WM_CUT                          0x0300
 #define WM_COPY                         0x0301

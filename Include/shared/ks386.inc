@@ -205,7 +205,14 @@ StrBuffer equ 00004H
 ;  System DLL Init Block Structure Offset Definitions
 ;
 
-IbCfgBitMap equ 00060H
+IbCfgBitMap equ 000B0H
+IbMitigationOptionsMap equ 000A0H
+PS_MITIGATION_OPTION_BITS_PER_OPTION equ 00004H
+PS_MITIGATION_OPTION_ALWAYS_ON equ 00001H
+PS_MITIGATION_OPTION_ALWAYS_OFF equ 00002H
+PS_MITIGATION_OPTION_MASK equ 00003H
+PS_MITIGATION_OPTION_RETURN_FLOW_GUARD equ 00010H
+PS_MITIGATION_OPTION_RESTRICT_SET_THREAD_CONTEXT equ 00013H
 
 ;
 ;  System Time Structure Offset Definitions
@@ -326,6 +333,7 @@ STATUS_UNWIND_CONSOLIDATE equ 080000029H
 STATUS_USER_APC equ 000C0H
 STATUS_WAKE_SYSTEM equ 040000294H
 STATUS_WAKE_SYSTEM_DEBUGGER equ 080000007H
+STATUS_SET_CONTEXT_DENIED equ 0C000060AH
 
 ;
 ;  Fast Fail Code Definitions
@@ -333,6 +341,8 @@ STATUS_WAKE_SYSTEM_DEBUGGER equ 080000007H
 
 FAST_FAIL_INVALID_BUFFER_ACCESS equ 0001CH
 FAST_FAIL_INVALID_NEXT_THREAD equ 0001EH
+FAST_FAIL_INVALID_CONTROL_STACK equ 0002FH
+FAST_FAIL_SET_CONTEXT_DENIED equ 00030H
 
 ;
 ;  Bounds Callback Status Code Definitions
@@ -452,9 +462,9 @@ PrDirectoryTableBase equ 00018H
 PrLdtDescriptor equ 0001CH
 PrIopmOffset equ 00076H
 PrInt21Descriptor equ 00024H
-PrVdmTrapcHandler equ 000A4H
-PrVdmObjects equ 000B0H
-PrFlags equ 000C4H
+PrVdmTrapcHandler equ 000A8H
+PrVdmObjects equ 000C4H
+PrFlags equ 000CCH
 PrThreadListHead equ 0002CH
 PrAffinity equ 00040H
 PrReadyListHead equ 0004CH
@@ -467,8 +477,8 @@ PrCycleTime equ 00088H
 PrKernelTime equ 0009CH
 PrUserTime equ 000A0H
 PrInstrumentationCallback equ 00324H
-KernelProcessObjectLength equ 000A8H
-ExecutiveProcessObjectLength equ 00388H
+KernelProcessObjectLength equ 000B0H
+ExecutiveProcessObjectLength equ 003E0H
 Win32BatchFlushCallout equ 00007H
 
 ;
@@ -504,8 +514,8 @@ QueueObjectLength equ 00028H
 ;  Thread Object Structure Offset Definitions
 ;
 
-EtCid equ 00374H
-EtPicoContext equ 0043CH
+EtCid equ 0037CH
+EtPicoContext equ 00444H
 
 ThType equ 00000H
 ThSize equ 00002H
@@ -549,7 +559,7 @@ thProcess equ 00150H
 
 KTHREAD_AUTO_ALIGNMENT_BIT equ 00000H
 KTHREAD_GUI_THREAD_MASK equ 00040H
-KTHREAD_RESTRICTED_GUI_THREAD_MASK equ 080000H
+KTHREAD_RESTRICTED_GUI_THREAD_MASK equ 0100000H
 KTHREAD_SYSTEM_THREAD_BIT equ 0000AH
 KTHREAD_QUEUE_DEFER_PREEMPTION_BIT equ 0000AH
 
@@ -568,8 +578,8 @@ ThProcess equ 00150H
 ThWin32Thread equ 00124H
 ThStackBase equ 00028H
 ThLegoData equ 001B8H
-KernelThreadObjectLength equ 00348H
-ExecutiveThreadObjectLength equ 00460H
+KernelThreadObjectLength equ 00350H
+ExecutiveThreadObjectLength equ 00480H
 
 
 ;
@@ -728,11 +738,13 @@ KSTACK_ACTUAL_LIMIT_EXPANDED equ 00001H
 
 PERF_CONTEXTSWAP_OFFSET equ 00004H
 PERF_CONTEXTSWAP_FLAG equ 00004H
+PERF_INTERRUPT equ 020004000H
 PERF_INTERRUPT_OFFSET equ 00004H
 PERF_INTERRUPT_FLAG equ 04000H
 PERF_SYSCALL_OFFSET equ 00008H
 PERF_SYSCALL_FLAG equ 00040H
 NTOS_YIELD_MACRO equ 00001H
+EtwTSLength equ 00018H
 
 ;
 ;  Enlightenment structure definitions
@@ -824,8 +836,8 @@ ApcRecordLength equ 00010H
 ThNpxState equ 00340H
 ThSListFaultCount equ 0018EH
 ThSListFaultAddress equ 00010H
-ThUserFsBase equ 00440H
-ThUserGsBase equ 00444H
+ThUserFsBase equ 00448H
+ThUserGsBase equ 0044CH
 
 KI_SLIST_FAULT_COUNT_MAXIMUM equ 00400H
 
@@ -860,9 +872,9 @@ PcPrcbData equ 00120H
 PcCurrentThread equ 00124H
 PcNestingLevel equ 00131H
 PcInterruptCount equ 005C0H
-PcStartCycles equ 03C18H
-PcCycleTime equ 03C40H
-PcHighCycleTime equ 03C50H
+PcStartCycles equ 03C20H
+PcCycleTime equ 03C48H
+PcHighCycleTime equ 03C70H
 PcDpcRequestSummary equ 0235CH
 PcParentNode equ 00458H
 ProcessorControlRegisterLength equ 04A20H
@@ -1003,9 +1015,9 @@ PbWaitListHead equ 03AECH
 PbReadySummary equ 03AE0H
 PbDispatcherReadyListHead equ 03BA0H
 PbDeferredReadyListHead equ 03ADCH
-PbStartCycles equ 03AF8H
-PbCycleTime equ 03B20H
-PbHighCycleTime equ 03B30H
+PbStartCycles equ 03B00H
+PbCycleTime equ 03B28H
+PbHighCycleTime equ 03B50H
 PbCpuVendor equ 003BEH
 PbChainedInterruptList equ 03CA0H
 PbIsrStack equ 0421CH
@@ -1042,11 +1054,9 @@ IPI_SYNCH_REQUEST equ 00010H
 ;  ETW definitions for interrupt tracing
 ;
 
-EtwTSLength equ 00010H
 PERF_IPI_OFFSET equ 00008H
 PERF_IPI_FLAG equ 0400000H
 PERF_IPI equ 040400000H
-PERF_INTERRUPT equ 020004000H
 
 ;
 ;  Thread Environment Block Structure Offset Definitions
@@ -1072,21 +1082,12 @@ TbglSection equ 00BE4H
 TbglTable equ 00BE8H
 TbglCurrentRC equ 00BECH
 TbglContext equ 00BF0H
-TbWOW32Reserved equ 000C0H
 TbExceptionCode equ 001A4H
 TbDeallocationStack equ 00E0CH
 TbGdiBatchCount equ 00F70H
 TeSameTebFlags equ 00FCAH
 TEB_FLAGS_SAFE_THUNK_CALL equ 00001H
 TEB_FLAGS_FIBER_SWAPPED equ 00200H
-
-;
-;  WOW64 shared information block definitions
-;
-
-PwWow64Info equ 00460H
-WiCpuFlags equ 00004H
-WOW64_CPUFLAGS_SOFTWARE equ 00002H
 
 ;
 ;  Time Fields (TIME_FIELDS) Structure Offset Definitions
@@ -1398,8 +1399,8 @@ PROCESSOR_START_FLAG_FORCE_ENABLE_NX equ 00001H
 ;  EPROCESS
 ;
 
-EpDebugPort equ 00158H
-EpVdmObjects equ 000B0H
+EpDebugPort equ 00160H
+EpVdmObjects equ 000C4H
 
 ;
 ;  Machine type definitions (Temporarily)

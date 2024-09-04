@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -497,7 +497,6 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.Graphics.DirectX.Direct3D11.h"
 #include "Windows.Media.h"
-#include "Windows.Media.Capture.h"
 #include "Windows.Media.Editing.h"
 #include "Windows.Media.Render.h"
 
@@ -550,18 +549,18 @@ interface IAudioEffect;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4015 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0001 */
 /* [local] */ 
@@ -596,18 +595,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4016 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0002 */
 /* [local] */ 
@@ -655,18 +654,18 @@ interface IAudioEffectDefinition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4017 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0003 */
 /* [local] */ 
@@ -701,18 +700,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4018 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0004 */
 /* [local] */ 
@@ -760,18 +759,18 @@ interface IVideoEffectDefinition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4019 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0005 */
 /* [local] */ 
@@ -806,18 +805,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4020 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0006 */
 /* [local] */ 
@@ -852,18 +851,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4021 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0007 */
 /* [local] */ 
@@ -898,18 +897,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4022 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0008 */
 /* [local] */ 
@@ -944,18 +943,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4023 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0009 */
 /* [local] */ 
@@ -990,18 +989,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4024 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0010 */
 /* [local] */ 
@@ -1036,18 +1035,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4025 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0011 */
 /* [local] */ 
@@ -1109,18 +1108,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0012 */
 /* [local] */ 
@@ -1179,18 +1178,18 @@ interface IAudioRenderEffectsManager;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0013 */
 /* [local] */ 
@@ -1249,18 +1248,18 @@ interface IAudioEncodingProperties;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0014 */
 /* [local] */ 
@@ -1295,18 +1294,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0015 */
 /* [local] */ 
@@ -1341,18 +1340,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0016 */
 /* [local] */ 
@@ -1411,18 +1410,18 @@ interface IVideoEncodingProperties;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0017 */
 /* [local] */ 
@@ -1457,18 +1456,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0018 */
 /* [local] */ 
@@ -1503,18 +1502,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0019 */
 /* [local] */ 
@@ -1564,18 +1563,18 @@ interface IDirect3DSurface;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0020 */
 /* [local] */ 
@@ -1610,18 +1609,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0021 */
 /* [local] */ 
@@ -1656,18 +1655,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0022 */
 /* [local] */ 
@@ -2192,18 +2191,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0023 */
 /* [local] */ 
@@ -2378,18 +2377,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEffects__CAudioEffect;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0025 */
 /* [local] */ 
@@ -2530,18 +2529,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEffects__CAudioEffect;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0027 */
 /* [local] */ 
@@ -2716,18 +2715,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEffects__CIAudioEffectDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0029 */
 /* [local] */ 
@@ -2868,18 +2867,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEffects__CIAudioEffectDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0031 */
 /* [local] */ 
@@ -3054,18 +3053,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CEffects__CIVideoEffectDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0033 */
 /* [local] */ 
@@ -3206,18 +3205,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CEffects__CIVideoEffectDe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4043 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0035 */
 /* [local] */ 
@@ -3400,18 +3399,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEffects__CAudioEffect;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4044 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0037 */
 /* [local] */ 
@@ -3594,18 +3593,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEffects__CIAudioEffect
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4045 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0039 */
 /* [local] */ 
@@ -3788,18 +3787,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CEffects__CIVideoEffect
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4046 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4046 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0041 */
 /* [local] */ 
@@ -4064,18 +4063,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4047 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4047 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0043 */
 /* [local] */ 
@@ -4340,18 +4339,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CEffects__CIVideoEffectDefi
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4048 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4048 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0045 */
 /* [local] */ 
@@ -4471,18 +4470,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CMedia__CEffects__CAudio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4049 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4049 */
+/* interface __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Eeffects2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Eeffects_0000_0047 */
 /* [local] */ 

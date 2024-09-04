@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -79,6 +79,13 @@ typedef interface IStorageItemHandleAccess IStorageItemHandleAccess;
 typedef interface IStorageFolderHandleAccess IStorageFolderHandleAccess;
 
 #endif 	/* __IStorageFolderHandleAccess_FWD_DEFINED__ */
+
+
+#ifndef __IDDEInitializer_FWD_DEFINED__
+#define __IDDEInitializer_FWD_DEFINED__
+typedef interface IDDEInitializer IDDEInitializer;
+
+#endif 	/* __IDDEInitializer_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -663,12 +670,122 @@ EXTERN_C const IID IID_IStorageFolderHandleAccess;
 /* interface __MIDL_itf_windowsstoragecom_0000_0006 */
 /* [local] */ 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
+typedef /* [v1_enum] */ 
+enum CreateProcessMethod
+    {
+        CpCreateProcess	= 0,
+        CpCreateProcessAsUser	= 1,
+        CpAicLaunchAdminProcess	= 2
+    } 	CreateProcessMethod;
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_windowsstoragecom_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windowsstoragecom_0000_0006_v0_0_s_ifspec;
+
+#ifndef __IDDEInitializer_INTERFACE_DEFINED__
+#define __IDDEInitializer_INTERFACE_DEFINED__
+
+/* interface IDDEInitializer */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID_IDDEInitializer;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("30DC931F-33FC-4FFD-A168-942258CF3CA4")
+    IDDEInitializer : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Initialize( 
+            /* [string][in] */ __RPC__in_string LPCWSTR fileExtensionOrProtocol,
+            /* [in] */ CreateProcessMethod method,
+            /* [string][in] */ __RPC__in_string LPCWSTR currentDirectory,
+            /* [in] */ __RPC__in_opt IShellItem *execTarget,
+            /* [in] */ __RPC__in_opt IUnknown *site,
+            /* [string][in] */ __RPC__in_string LPCWSTR application,
+            /* [string][in] */ __RPC__in_string LPCWSTR targetFile,
+            /* [string][in] */ __RPC__in_string LPCWSTR arguments) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IDDEInitializerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IDDEInitializer * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IDDEInitializer * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IDDEInitializer * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Initialize )( 
+            __RPC__in IDDEInitializer * This,
+            /* [string][in] */ __RPC__in_string LPCWSTR fileExtensionOrProtocol,
+            /* [in] */ CreateProcessMethod method,
+            /* [string][in] */ __RPC__in_string LPCWSTR currentDirectory,
+            /* [in] */ __RPC__in_opt IShellItem *execTarget,
+            /* [in] */ __RPC__in_opt IUnknown *site,
+            /* [string][in] */ __RPC__in_string LPCWSTR application,
+            /* [string][in] */ __RPC__in_string LPCWSTR targetFile,
+            /* [string][in] */ __RPC__in_string LPCWSTR arguments);
+        
+        END_INTERFACE
+    } IDDEInitializerVtbl;
+
+    interface IDDEInitializer
+    {
+        CONST_VTBL struct IDDEInitializerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IDDEInitializer_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IDDEInitializer_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IDDEInitializer_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IDDEInitializer_Initialize(This,fileExtensionOrProtocol,method,currentDirectory,execTarget,site,application,targetFile,arguments)	\
+    ( (This)->lpVtbl -> Initialize(This,fileExtensionOrProtocol,method,currentDirectory,execTarget,site,application,targetFile,arguments) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IDDEInitializer_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windowsstoragecom_0000_0007 */
+/* [local] */ 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windowsstoragecom_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windowsstoragecom_0000_0007_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

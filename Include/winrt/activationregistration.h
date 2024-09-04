@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -143,18 +143,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0412 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0426 */
 
 
 
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0412 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0426 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0412_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0412_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0426_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0426_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_activationregistration_0000_0001 */
 /* [local] */ 
@@ -189,18 +189,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0413 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0427 */
 
 
 
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0413 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0427 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0413_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0413_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0427_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0427_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_activationregistration_0000_0002 */
 /* [local] */ 
@@ -235,18 +235,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0414 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0428 */
 
 
 
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0414 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0428 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0414_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0414_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0428_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0428_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_activationregistration_0000_0003 */
 /* [local] */ 
@@ -281,18 +281,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_activationregistration_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0415 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0429 */
 
 
 
 
-/* interface __MIDL_itf_activationregistration2Eidl_0000_0415 */
+/* interface __MIDL_itf_activationregistration2Eidl_0000_0429 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0415_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0415_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0429_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_activationregistration2Eidl_0000_0429_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_activationregistration_0000_0004 */
 /* [local] */ 

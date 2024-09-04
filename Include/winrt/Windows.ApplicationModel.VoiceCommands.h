@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -440,18 +440,18 @@ interface IVoiceCommandContentTile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0001 */
 /* [local] */ 
@@ -486,18 +486,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0002 */
 /* [local] */ 
@@ -556,18 +556,18 @@ interface IVoiceCommandDefinition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0003 */
 /* [local] */ 
@@ -602,18 +602,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0004 */
 /* [local] */ 
@@ -648,18 +648,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0005 */
 /* [local] */ 
@@ -694,18 +694,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0006 */
 /* [local] */ 
@@ -740,18 +740,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0007 */
 /* [local] */ 
@@ -786,18 +786,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0008 */
 /* [local] */ 
@@ -856,18 +856,18 @@ interface IVoiceCommand;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0009 */
 /* [local] */ 
@@ -902,18 +902,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0010 */
 /* [local] */ 
@@ -972,18 +972,18 @@ interface IVoiceCommandConfirmationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0011 */
 /* [local] */ 
@@ -1018,18 +1018,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0012 */
 /* [local] */ 
@@ -1088,18 +1088,18 @@ interface IVoiceCommandDisambiguationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0013 */
 /* [local] */ 
@@ -1134,18 +1134,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0014 */
 /* [local] */ 
@@ -1228,18 +1228,18 @@ interface IVoiceCommandCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0015 */
 /* [local] */ 
@@ -1274,18 +1274,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0016 */
 /* [local] */ 
@@ -1320,18 +1320,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0017 */
 /* [local] */ 
@@ -1366,18 +1366,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0018 */
 /* [local] */ 
@@ -1412,18 +1412,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0019 */
 /* [local] */ 
@@ -1458,18 +1458,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0020 */
 /* [local] */ 
@@ -1504,18 +1504,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0021 */
 /* [local] */ 
@@ -1550,18 +1550,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0022 */
 /* [local] */ 
@@ -1753,18 +1753,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0023 */
 /* [local] */ 
@@ -1939,18 +1939,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CVoiceCommands
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0025 */
 /* [local] */ 
@@ -2091,18 +2091,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CVoiceCommands
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0027 */
 /* [local] */ 
@@ -2253,18 +2253,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CV
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0029 */
 /* [local] */ 
@@ -2439,18 +2439,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CAppli
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0031 */
 /* [local] */ 
@@ -2591,18 +2591,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CAppli
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0033 */
 /* [local] */ 
@@ -2779,18 +2779,18 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CApplicationModel__CVoiceC
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0035 */
 /* [local] */ 
@@ -2973,18 +2973,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CVoiceComman
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0037 */
 /* [local] */ 
@@ -3249,18 +3249,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CVoiceCommands__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0039 */
 /* [local] */ 
@@ -3382,18 +3382,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0041 */
 /* [local] */ 
@@ -3554,18 +3554,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CVoiceCo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0043 */
 /* [local] */ 
@@ -3687,18 +3687,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0045 */
 /* [local] */ 
@@ -3859,18 +3859,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CVoiceCo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0047 */
 /* [local] */ 
@@ -3992,18 +3992,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0049 */
 /* [local] */ 
@@ -4164,18 +4164,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CVoiceCo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Evoicecommands2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Evoicecommands_0000_0051 */
 /* [local] */ 

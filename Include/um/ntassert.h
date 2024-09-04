@@ -85,9 +85,9 @@ __int2c (
 
 #endif // defined(_M_AMD64)
 
-#elif defined(_X86_)
+#elif defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)
 
-#if defined(_M_IX86)
+#if defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 #if _MSC_FULL_VER >= 140030222
 
@@ -152,9 +152,9 @@ __break(
 
 #endif // defined(_M_IA64)
 
-#elif defined(_ARM64_)
+#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 void
 __break(
@@ -169,7 +169,7 @@ __break(
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 #elif defined(_ARM_)
 

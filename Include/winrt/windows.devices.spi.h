@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -247,7 +247,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.Devices.Spi.Provider.h"
+#include "Windows.Devices.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -298,18 +298,18 @@ interface ISpiController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0373 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0373_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0001 */
 /* [local] */ 
@@ -344,18 +344,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0374 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0374_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0002 */
 /* [local] */ 
@@ -390,18 +390,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0375 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0375_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0003 */
 /* [local] */ 
@@ -436,18 +436,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0376 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0339 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0376_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0004 */
 /* [local] */ 
@@ -482,18 +482,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0377 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0340 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0377_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0005 */
 /* [local] */ 
@@ -552,18 +552,18 @@ interface ISpiDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0378 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0341 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0378_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0006 */
 /* [local] */ 
@@ -598,18 +598,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0379 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0342 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0379_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0007 */
 /* [local] */ 
@@ -644,18 +644,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0380 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0343 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0380_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0008 */
 /* [local] */ 
@@ -690,18 +690,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0381 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0344 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0381_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0009 */
 /* [local] */ 
@@ -736,18 +736,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0382 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0345 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0382 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0382_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0010 */
 /* [local] */ 
@@ -782,18 +782,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0383 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0346 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0383 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0383_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0011 */
 /* [local] */ 
@@ -828,18 +828,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0384 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0347 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0384 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0384_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0012 */
 /* [local] */ 
@@ -867,6 +867,9 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Edevices_h__)
+#include <Windows.Devices.h>
+#endif // !defined(__windows2Edevices_h__)
 #if !defined(__windows2Edevices2Espi2Eprovider_h__)
 #include <Windows.Devices.Spi.Provider.h>
 #endif // !defined(__windows2Edevices2Espi2Eprovider_h__)
@@ -976,18 +979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0385 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0348 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0385 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0385_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0385_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0013 */
 /* [local] */ 
@@ -1162,18 +1165,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CSpi__CSpiController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0386 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0349 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0386 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0386_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0386_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0015 */
 /* [local] */ 
@@ -1314,18 +1317,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CSpi__CSpiController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0387 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0350 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0387 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0350_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0387_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0387_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0017 */
 /* [local] */ 
@@ -1508,18 +1511,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CSpi__CSpiController;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0351 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0388 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0351 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0388 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0351_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0388_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0388_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0019 */
 /* [local] */ 
@@ -1641,18 +1644,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0352 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0389 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0352 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0389 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0352_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0352_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0389_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0389_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0021 */
 /* [local] */ 
@@ -1813,18 +1816,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiControl
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0353 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0390 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0353 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0390 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0353_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0353_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0390_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0390_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0023 */
 /* [local] */ 
@@ -1946,18 +1949,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0354 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0391 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0354 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0391 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0354_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0354_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0391_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0391_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0025 */
 /* [local] */ 
@@ -2118,18 +2121,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0355 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0392 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0355 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0392 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0355_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0355_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0392_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0392_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0027 */
 /* [local] */ 
@@ -2251,18 +2254,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0356 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0393 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0356 */
+/* interface __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0393 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0356_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0356_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0393_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eidl_0000_0393_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Espi_0000_0029 */
 /* [local] */ 

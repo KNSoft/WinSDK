@@ -121,7 +121,7 @@ typedef struct _EVT_VARIANT
         LPCWSTR*    XmlValArr;
     };
 
-    DWORD Count;   // number of elements (not length) in bytes.
+    DWORD Count;   // for arrays: number of elements (not the number of bytes).
     DWORD Type;
 
 } EVT_VARIANT, *PEVT_VARIANT;
@@ -166,7 +166,7 @@ EVT_HANDLE
 WINAPI
 EvtOpenSession(
     EVT_LOGIN_CLASS LoginClass,
-    PVOID Login,
+    _When_((LoginClass == EvtRpcLogin), _In_reads_bytes_(sizeof(EVT_RPC_LOGIN))) PVOID Login,
     _Reserved_ DWORD Timeout,
     _Reserved_ DWORD Flags
     );
@@ -179,10 +179,11 @@ EvtOpenSession(
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtClose(
-    EVT_HANDLE Object
+    _In_ _Post_invalid_ EVT_HANDLE Object
     );
 
 
@@ -190,10 +191,11 @@ EvtClose(
 BOOL
 WINAPI
 EvtCancel(
-    EVT_HANDLE Object
+    _In_opt_ EVT_HANDLE Object
     );
 
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 EvtGetExtendedStatus(
@@ -239,22 +241,23 @@ typedef enum _EVT_SEEK_FLAGS
 EVT_HANDLE
 WINAPI
 EvtQuery(
-    EVT_HANDLE Session,
-    LPCWSTR Path,
-    LPCWSTR Query,
+    _In_opt_ EVT_HANDLE Session,
+    _In_opt_z_ LPCWSTR Path,
+    _In_opt_z_ LPCWSTR Query,
     DWORD Flags
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtNext(
-    EVT_HANDLE ResultSet,
+    _In_ EVT_HANDLE ResultSet,
     DWORD EventsSize,
-    PEVT_HANDLE Events,
+    _Out_writes_to_(EventsSize, *Returned) PEVT_HANDLE Events,
     DWORD Timeout,
     DWORD Flags,
-    _Out_ PDWORD Returned
+    _Out_range_(0, EventsSize) PDWORD Returned
     );
 
 
@@ -263,9 +266,9 @@ EvtNext(
 BOOL
 WINAPI
 EvtSeek(
-    EVT_HANDLE ResultSet,
+    _In_ EVT_HANDLE ResultSet,
     LONGLONG Position,
-    EVT_HANDLE Bookmark,
+    _In_opt_ EVT_HANDLE Bookmark,
     _Reserved_ DWORD Timeout,
     DWORD Flags
     );
@@ -301,19 +304,19 @@ typedef enum _EVT_SUBSCRIBE_NOTIFY_ACTION
 
 typedef DWORD (WINAPI *EVT_SUBSCRIBE_CALLBACK)(
     EVT_SUBSCRIBE_NOTIFY_ACTION Action,
-    PVOID UserContext,
-    EVT_HANDLE Event );
+    _Maybenull_ PVOID UserContext,
+    _In_ EVT_HANDLE Event );
 
 EVT_HANDLE
 WINAPI
 EvtSubscribe(
-    EVT_HANDLE Session,
-    HANDLE SignalEvent,
-    LPCWSTR ChannelPath,
-    LPCWSTR Query,
-    EVT_HANDLE Bookmark,
-    PVOID context,
-    EVT_SUBSCRIBE_CALLBACK Callback,
+    _In_opt_ EVT_HANDLE Session,
+    _In_opt_ HANDLE SignalEvent,
+    _In_opt_z_ LPCWSTR ChannelPath,
+    _In_opt_z_ LPCWSTR Query,
+    _In_opt_ EVT_HANDLE Bookmark,
+    _Maybenull_ PVOID Context,
+    _Maybenull_ EVT_SUBSCRIBE_CALLBACK Callback,
     DWORD Flags
     );
 
@@ -374,11 +377,12 @@ EvtCreateRenderContext(
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtRender(
-    EVT_HANDLE Context,
-    EVT_HANDLE Fragment,
+    _In_opt_ EVT_HANDLE Context,
+    _In_ EVT_HANDLE Fragment,
     DWORD Flags,
     DWORD BufferSize,
     _Out_writes_bytes_to_opt_(BufferSize, *BufferUsed) PVOID Buffer,
@@ -403,16 +407,17 @@ typedef enum _EVT_FORMAT_MESSAGE_FLAGS
 
 
 // PublisherMetadata is NULL for forwarded events
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtFormatMessage(
     _In_opt_ EVT_HANDLE PublisherMetadata,
-    _In_ EVT_HANDLE Event,
-    _In_ DWORD MessageId,
-    _In_ DWORD ValueCount,
-    _In_ PEVT_VARIANT Values,
-    _In_ DWORD Flags,
-    _In_ DWORD BufferSize,
+    _In_opt_ EVT_HANDLE Event,
+    DWORD MessageId,
+    DWORD ValueCount,
+    _In_reads_opt_(ValueCount) PEVT_VARIANT Values,
+    DWORD Flags,
+    DWORD BufferSize,
     _Out_writes_to_opt_(BufferSize, *BufferUsed) LPWSTR Buffer,
     _Out_ PDWORD BufferUsed
     );
@@ -449,19 +454,20 @@ typedef enum _EVT_LOG_PROPERTY_ID
 EVT_HANDLE
 WINAPI
 EvtOpenLog(
-    EVT_HANDLE Session,
-    LPCWSTR Path,
+    _In_opt_ EVT_HANDLE Session,
+    _In_z_ LPCWSTR Path,
     DWORD Flags
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetLogInfo(
-    EVT_HANDLE Log,
+    _In_ EVT_HANDLE Log,
     EVT_LOG_PROPERTY_ID PropertyId,
     DWORD PropertyValueBufferSize,
-    PEVT_VARIANT PropertyValueBuffer,
+    _Out_writes_bytes_to_opt_(PropertyValueBufferSize, *PropertyValueBufferUsed) PEVT_VARIANT PropertyValueBuffer,
     _Out_ PDWORD PropertyValueBufferUsed
     );
 
@@ -469,9 +475,9 @@ EvtGetLogInfo(
 BOOL
 WINAPI
 EvtClearLog(
-    EVT_HANDLE Session,
-    LPCWSTR ChannelPath,
-    LPCWSTR TargetFilePath,
+    _In_opt_ EVT_HANDLE Session,
+    _In_z_ LPCWSTR ChannelPath,
+    _In_opt_z_ LPCWSTR TargetFilePath,
     DWORD Flags
     );
 
@@ -489,10 +495,10 @@ typedef enum _EVT_EXPORTLOG_FLAGS
 BOOL
 WINAPI
 EvtExportLog(
-    EVT_HANDLE Session,
-    LPCWSTR Path,
-    LPCWSTR Query,
-    LPCWSTR TargetFilePath,
+    _In_opt_ EVT_HANDLE Session,
+    _In_opt_z_ LPCWSTR Path,
+    _In_opt_z_ LPCWSTR Query,
+    _In_z_ LPCWSTR TargetFilePath,
     DWORD Flags
     );
 
@@ -501,8 +507,8 @@ EvtExportLog(
 BOOL
 WINAPI
 EvtArchiveExportedLog(
-    EVT_HANDLE Session,
-    LPCWSTR LogFilePath,
+    _In_opt_ EVT_HANDLE Session,
+    _In_z_ LPCWSTR LogFilePath,
     LCID Locale,
     DWORD Flags
     );
@@ -578,15 +584,16 @@ typedef enum _EVT_CHANNEL_SID_TYPE
 EVT_HANDLE
 WINAPI
 EvtOpenChannelEnum(
-    EVT_HANDLE Session,
+    _In_opt_ EVT_HANDLE Session,
     DWORD Flags
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtNextChannelPath(
-    EVT_HANDLE ChannelEnum,
+    _In_ EVT_HANDLE ChannelEnum,
     DWORD ChannelPathBufferSize,
     _Out_writes_to_opt_(ChannelPathBufferSize, *ChannelPathBufferUsed) LPWSTR ChannelPathBuffer,
     _Out_ PDWORD ChannelPathBufferUsed
@@ -597,8 +604,8 @@ EvtNextChannelPath(
 EVT_HANDLE
 WINAPI
 EvtOpenChannelConfig(
-    EVT_HANDLE Session,
-    LPCWSTR ChannelPath,
+    _In_opt_ EVT_HANDLE Session,
+    _In_z_ LPCWSTR ChannelPath,
     DWORD Flags
     );
 
@@ -607,7 +614,7 @@ EvtOpenChannelConfig(
 BOOL
 WINAPI
 EvtSaveChannelConfig(
-    EVT_HANDLE ChannelConfig,
+    _In_ EVT_HANDLE ChannelConfig,
     DWORD Flags
     );
 
@@ -615,22 +622,23 @@ EvtSaveChannelConfig(
 BOOL
 WINAPI
 EvtSetChannelConfigProperty(
-    EVT_HANDLE ChannelConfig,
+    _In_ EVT_HANDLE ChannelConfig,
     EVT_CHANNEL_CONFIG_PROPERTY_ID PropertyId,
     DWORD Flags,
-    PEVT_VARIANT PropertyValue
+    _In_ PEVT_VARIANT PropertyValue
     );
 
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetChannelConfigProperty(
-    EVT_HANDLE ChannelConfig,
+    _In_ EVT_HANDLE ChannelConfig,
     EVT_CHANNEL_CONFIG_PROPERTY_ID PropertyId,
     DWORD Flags,
     DWORD PropertyValueBufferSize,
-    PEVT_VARIANT PropertyValueBuffer,
+    _Out_writes_bytes_to_opt_(PropertyValueBufferSize, *PropertyValueBufferUsed) PEVT_VARIANT PropertyValueBuffer,
     _Out_ PDWORD PropertyValueBufferUsed
     );
 
@@ -693,15 +701,16 @@ typedef enum _EVT_PUBLISHER_METADATA_PROPERTY_ID
 EVT_HANDLE
 WINAPI
 EvtOpenPublisherEnum(
-    EVT_HANDLE Session,
+    _In_opt_ EVT_HANDLE Session,
     DWORD Flags
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtNextPublisherId(
-    EVT_HANDLE PublisherEnum,
+    _In_ EVT_HANDLE PublisherEnum,
     DWORD PublisherIdBufferSize,
     _Out_writes_to_opt_(PublisherIdBufferSize, *PublisherIdBufferUsed) LPWSTR PublisherIdBuffer,
     _Out_ PDWORD PublisherIdBufferUsed
@@ -721,14 +730,15 @@ EvtOpenPublisherMetadata(
 
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetPublisherMetadataProperty(
-    EVT_HANDLE PublisherMetadata,
+    _In_ EVT_HANDLE PublisherMetadata,
     EVT_PUBLISHER_METADATA_PROPERTY_ID PropertyId,
     DWORD Flags,
     DWORD PublisherMetadataPropertyBufferSize,
-    PEVT_VARIANT PublisherMetadataPropertyBuffer,
+    _Out_writes_bytes_to_opt_(PublisherMetadataPropertyBufferSize, *PublisherMetadataPropertyBufferUsed) PEVT_VARIANT PublisherMetadataPropertyBuffer,
     _Out_ PDWORD PublisherMetadataPropertyBufferUsed
     );
 
@@ -759,7 +769,7 @@ typedef enum _EVT_EVENT_METADATA_PROPERTY_ID
 EVT_HANDLE
 WINAPI
 EvtOpenEventMetadataEnum(
-    EVT_HANDLE PublisherMetadata,
+    _In_ EVT_HANDLE PublisherMetadata,
     DWORD Flags
     );
 
@@ -767,19 +777,20 @@ EvtOpenEventMetadataEnum(
 EVT_HANDLE
 WINAPI
 EvtNextEventMetadata(
-    EVT_HANDLE EventMetadataEnum,
+    _In_ EVT_HANDLE EventMetadataEnum,
     DWORD Flags
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetEventMetadataProperty(
-    EVT_HANDLE EventMetadata,
+    _In_ EVT_HANDLE EventMetadata,
     EVT_EVENT_METADATA_PROPERTY_ID PropertyId,
     DWORD Flags,
     DWORD EventMetadataPropertyBufferSize,
-    PEVT_VARIANT EventMetadataPropertyBuffer,
+    _Out_writes_bytes_to_opt_(EventMetadataPropertyBufferSize, *EventMetadataPropertyBufferUsed) PEVT_VARIANT EventMetadataPropertyBuffer,
     _Out_ PDWORD EventMetadataPropertyBufferUsed
     );
 
@@ -794,23 +805,25 @@ EvtGetEventMetadataProperty(
 typedef HANDLE EVT_OBJECT_ARRAY_PROPERTY_HANDLE;
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetObjectArraySize(
-    EVT_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray,
+    _In_ EVT_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray,
     _Out_ PDWORD ObjectArraySize
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetObjectArrayProperty(
-    EVT_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray,
+    _In_ EVT_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray,
     DWORD PropertyId,
     DWORD ArrayIndex,
     DWORD Flags,
     DWORD PropertyValueBufferSize,
-    PEVT_VARIANT PropertyValueBuffer,
+    _Out_writes_bytes_to_opt_(PropertyValueBufferSize, *PropertyValueBufferUsed) PEVT_VARIANT PropertyValueBuffer,
     _Out_ PDWORD PropertyValueBufferUsed
     );
 
@@ -850,13 +863,14 @@ typedef enum _EVT_EVENT_PROPERTY_ID
 } EVT_EVENT_PROPERTY_ID;
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetQueryInfo(
-    EVT_HANDLE QueryOrSubscription,
+    _In_ EVT_HANDLE QueryOrSubscription,
     EVT_QUERY_PROPERTY_ID PropertyId,
     DWORD PropertyValueBufferSize,
-    PEVT_VARIANT PropertyValueBuffer,
+    _Out_writes_bytes_to_opt_(PropertyValueBufferSize, *PropertyValueBufferUsed) PEVT_VARIANT PropertyValueBuffer,
     _Out_ PDWORD PropertyValueBufferUsed
     );
 
@@ -864,25 +878,26 @@ EvtGetQueryInfo(
 EVT_HANDLE
 WINAPI
 EvtCreateBookmark(
-    _In_opt_ LPCWSTR BookmarkXml
+    _In_opt_z_ LPCWSTR BookmarkXml
     );
 
 
 BOOL
 WINAPI
 EvtUpdateBookmark(
-    EVT_HANDLE Bookmark,
-    EVT_HANDLE Event
+    _In_ EVT_HANDLE Bookmark,
+    _In_ EVT_HANDLE Event
     );
 
 
+_Success_(return != 0)
 BOOL
 WINAPI
 EvtGetEventInfo(
-    EVT_HANDLE Event,
+    _In_ EVT_HANDLE Event,
     EVT_EVENT_PROPERTY_ID PropertyId,
     DWORD PropertyValueBufferSize,
-    PEVT_VARIANT PropertyValueBuffer,
+    _Out_writes_bytes_to_opt_(PropertyValueBufferSize, *PropertyValueBufferUsed) PEVT_VARIANT PropertyValueBuffer,
     _Out_ PDWORD PropertyValueBufferUsed
     );
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -953,18 +953,18 @@ interface IAppointment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4580 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4580_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0001 */
 /* [local] */ 
@@ -999,18 +999,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4581 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4581_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0002 */
 /* [local] */ 
@@ -1069,18 +1069,18 @@ interface IAppointmentCalendar;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4582 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4582_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0003 */
 /* [local] */ 
@@ -1115,18 +1115,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4583 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4583_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0004 */
 /* [local] */ 
@@ -1185,18 +1185,18 @@ interface IAppointmentException;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4584 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4584_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0005 */
 /* [local] */ 
@@ -1231,18 +1231,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4585 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4585_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0006 */
 /* [local] */ 
@@ -1301,18 +1301,18 @@ interface IAppointmentInvitee;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4586 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4586_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0007 */
 /* [local] */ 
@@ -1347,18 +1347,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4587 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4587_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0008 */
 /* [local] */ 
@@ -1417,18 +1417,18 @@ interface IAppointmentStoreChange;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4588 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4588_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0009 */
 /* [local] */ 
@@ -1463,18 +1463,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4589 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4589_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0010 */
 /* [local] */ 
@@ -1509,18 +1509,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4590 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4590_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0011 */
 /* [local] */ 
@@ -1555,18 +1555,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4591 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4591_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0012 */
 /* [local] */ 
@@ -1601,18 +1601,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4592 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4592_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0013 */
 /* [local] */ 
@@ -1647,18 +1647,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4593 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4593_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0014 */
 /* [local] */ 
@@ -1693,18 +1693,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4594 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4594_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0015 */
 /* [local] */ 
@@ -1739,18 +1739,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4595 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4595_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0016 */
 /* [local] */ 
@@ -1785,18 +1785,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4596 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4596_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0017 */
 /* [local] */ 
@@ -1831,18 +1831,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0018 */
 /* [local] */ 
@@ -1877,18 +1877,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0019 */
 /* [local] */ 
@@ -1923,18 +1923,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4599 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4599_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0020 */
 /* [local] */ 
@@ -1993,18 +1993,18 @@ interface IAppointmentConflictResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0021 */
 /* [local] */ 
@@ -2039,18 +2039,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0022 */
 /* [local] */ 
@@ -2109,18 +2109,18 @@ interface IAppointmentStore;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0023 */
 /* [local] */ 
@@ -2155,18 +2155,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4603 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4603_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0024 */
 /* [local] */ 
@@ -2201,18 +2201,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4604 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4604_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0025 */
 /* [local] */ 
@@ -2247,18 +2247,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0026 */
 /* [local] */ 
@@ -2293,18 +2293,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0027 */
 /* [local] */ 
@@ -2339,18 +2339,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0028 */
 /* [local] */ 
@@ -2385,18 +2385,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0029 */
 /* [local] */ 
@@ -2431,18 +2431,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0030 */
 /* [local] */ 
@@ -2477,18 +2477,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0031 */
 /* [local] */ 
@@ -2523,18 +2523,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0032 */
 /* [local] */ 
@@ -2596,18 +2596,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0033 */
 /* [local] */ 
@@ -2666,18 +2666,18 @@ interface IAppointmentStoreChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0034 */
 /* [local] */ 
@@ -2723,18 +2723,18 @@ struct TimeSpan;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0035 */
 /* [local] */ 
@@ -2780,18 +2780,18 @@ struct DateTime;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0036 */
 /* [local] */ 
@@ -2826,18 +2826,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0037 */
 /* [local] */ 
@@ -2872,18 +2872,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0038 */
 /* [local] */ 
@@ -2918,18 +2918,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0039 */
 /* [local] */ 
@@ -2964,18 +2964,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0040 */
 /* [local] */ 
@@ -3010,18 +3010,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0041 */
 /* [local] */ 
@@ -3056,18 +3056,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0042 */
 /* [local] */ 
@@ -3102,18 +3102,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0043 */
 /* [local] */ 
@@ -3148,18 +3148,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0044 */
 /* [local] */ 
@@ -3194,18 +3194,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0045 */
 /* [local] */ 
@@ -3240,18 +3240,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0046 */
 /* [local] */ 
@@ -3286,18 +3286,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0047 */
 /* [local] */ 
@@ -4088,18 +4088,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0048 */
 /* [local] */ 
@@ -4274,18 +4274,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0050 */
 /* [local] */ 
@@ -4426,18 +4426,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0052 */
 /* [local] */ 
@@ -4612,18 +4612,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0054 */
 /* [local] */ 
@@ -4764,18 +4764,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0056 */
 /* [local] */ 
@@ -4950,18 +4950,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0058 */
 /* [local] */ 
@@ -5102,18 +5102,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0059_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0060 */
 /* [local] */ 
@@ -5288,18 +5288,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0061_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0062 */
 /* [local] */ 
@@ -5440,18 +5440,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0063_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0064 */
 /* [local] */ 
@@ -5626,18 +5626,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0065_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0066 */
 /* [local] */ 
@@ -5778,18 +5778,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CAppointments_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0067_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0068 */
 /* [local] */ 
@@ -5972,18 +5972,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppointment
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0069_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0070 */
 /* [local] */ 
@@ -6166,18 +6166,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppointment
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0071_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0072 */
 /* [local] */ 
@@ -6360,18 +6360,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppointment
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0073_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0074 */
 /* [local] */ 
@@ -6554,18 +6554,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppointment
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0075_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0076 */
 /* [local] */ 
@@ -6748,18 +6748,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CAppointment
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0077_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0078 */
 /* [local] */ 
@@ -7024,18 +7024,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CAppointments__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0079_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0080 */
 /* [local] */ 
@@ -7157,18 +7157,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0081_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0082 */
 /* [local] */ 
@@ -7329,18 +7329,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CAppoint
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0083_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0084 */
 /* [local] */ 
@@ -7462,18 +7462,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0085_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0086 */
 /* [local] */ 
@@ -7634,18 +7634,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CAppoint
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0087_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0088 */
 /* [local] */ 
@@ -7767,18 +7767,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0089_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0090 */
 /* [local] */ 
@@ -7939,18 +7939,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CAppoint
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0091_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0092 */
 /* [local] */ 
@@ -8072,18 +8072,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0093_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0093_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0094 */
 /* [local] */ 
@@ -8244,18 +8244,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CAppoint
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0095_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0095_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0096 */
 /* [local] */ 
@@ -8377,18 +8377,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0097_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0097_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0098 */
 /* [local] */ 
@@ -8549,18 +8549,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0099_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0099_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0100 */
 /* [local] */ 
@@ -8682,18 +8682,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0101_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0101_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0102 */
 /* [local] */ 
@@ -8854,18 +8854,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0103_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0103_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0104 */
 /* [local] */ 
@@ -8987,18 +8987,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0105_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0105_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0106 */
 /* [local] */ 
@@ -9159,18 +9159,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0107_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0107_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0108 */
 /* [local] */ 
@@ -9292,18 +9292,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0109_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0109_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0110 */
 /* [local] */ 
@@ -9464,18 +9464,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0111_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0111_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0112 */
 /* [local] */ 
@@ -9595,18 +9595,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CAppo
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0113_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0113_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eappointments2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eappointments_0000_0114 */
 /* [local] */ 

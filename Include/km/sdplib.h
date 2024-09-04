@@ -327,7 +327,7 @@ SdpAddAttributeToTree(
 _Must_inspect_result_
 PSDP_NODE
 SdpCreateNodeString(
-    _In_reads_bytes_(StringLength) PCHAR string, 
+    _In_reads_bytes_(stringLength) PCHAR string, 
      ULONG stringLength
     );
 

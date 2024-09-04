@@ -355,6 +355,13 @@ OpenThemeData(
 #define OTD_VALIDBITS           (OTD_FORCE_RECT_SIZING | \
                                  OTD_NONCLIENT)
 
+THEMEAPI_(HTHEME)
+OpenThemeDataForDpi(
+    _In_opt_ HWND hwnd,
+    _In_ LPCWSTR pszClassList,
+    _In_ UINT dpi
+    );
+
 
 //---------------------------------------------------------------------------
 //  OpenThemeDataEx     - Open the theme data for the specified HWND and 

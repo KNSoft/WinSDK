@@ -501,7 +501,7 @@ typedef struct _PERF_OBJECT_TYPE {
 //      1) the count of elapsed time of the event being monitored
 //      2) the "clock" time in the same units
 //
-//  the precition timers are used where the standard system timers are not
+//  the precision timers are used where the standard system timers are not
 //  precise enough for accurate readings. It's assumed that the service
 //  providing the data is also providing a timestamp at the same time which
 //  will eliminate any error that may occur since some small and variable
@@ -591,7 +591,7 @@ typedef struct _PERF_COUNTER_DEFINITION {
 //  for each instance.
 //
 //  If (PERF_DATA_BLOCK.NumInstances < 0) then the counter definition
-//  strucutre above will be followed by only a PERF_COUNTER_BLOCK and the
+//  structure above will be followed by only a PERF_COUNTER_BLOCK and the
 //  counter data for that COUNTER.
 //
 

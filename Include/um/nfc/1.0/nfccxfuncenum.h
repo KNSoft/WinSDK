@@ -31,7 +31,9 @@ typedef enum _NFCCXFUNCENUM {
     NfcCxSetLlcpConfigTableIndex = 6,
     NfcCxRegisterSequenceHandlerTableIndex = 7,
     NfcCxUnregisterSequenceHandlerTableIndex = 8,
-    NfccxFunctionTableNumEntries = 9,
+    NfcCxReleaseHardwareControlTableIndex = 9,
+    NfcCxReacquireHardwareControlTableIndex = 10,
+    NfccxFunctionTableNumEntries = 11,
 } NFCCXFUNCENUM;
 
 #endif // _NFCCXFUNCENUM_H_

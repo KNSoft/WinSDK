@@ -1211,6 +1211,11 @@ extern HRESULT WINAPI                   WTHelperCertCheckValidSignature(CRYPT_PR
 #define CAT_MEMBERINFO2_OBJID               "1.3.6.1.4.1.311.12.2.3"
 
 //
+// Biometric entries
+
+#define SPC_WINDOWS_HELLO_COMPATIBILITY_OBJID "1.3.6.1.4.1.311.10.41.1"
+
+//
 //  encode/decode internal defines
 //
 #define SPC_SP_AGENCY_INFO_STRUCT           ((LPCSTR) 2000)

@@ -24,6 +24,8 @@ User and Kernel Mode.
 #pragma once
 #endif
 
+#include <pshpack8.h>
+
 #if(NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #define POINT_OF_SERVICE_COMMON_IOCTL_BASE    0x000
@@ -34,11 +36,12 @@ User and Kernel Mode.
 //----------------------------------------------------------------------------------------------
 
 // Current:
+//    1.8 = LineDisplay basic capabilities and text-only support added
 //    1.7 = BarcodeScannerVideoDeviceId added for camera barcode scanner support
 //    1.6 = IOCTL_POINT_OF_SERVICE_PRINTER_WAIT_FOR_JOB_COMPLETE added for pos printer job
 //    1.5 = IOCTL_POINT_OF_SERVICE_CONNECT_REMOTE_DEVICE added for remote pos
 //          peripheral support.
-//    1.4 = CashDrawer support added 
+//    1.4 = CashDrawer support added
 //    1.3 = PointOfService Printer support added
 //    1.2 = Barcode Scanner Software trigger support added
 //    (unification)
@@ -46,7 +49,7 @@ User and Kernel Mode.
 
 #define MAKE_POS_VERSION(major, minor)  (((major) << 16) | (minor))
 #define POS_DRIVER_MAJOR_VERSION        1
-#define POS_DRIVER_MINOR_VERSION        7
+#define POS_DRIVER_MINOR_VERSION        8
 #define POS_DRIVER_VERSION              MAKE_POS_VERSION(POS_DRIVER_MAJOR_VERSION, POS_DRIVER_MINOR_VERSION)
 
 // v1.2 -- First version with software trigger support
@@ -56,6 +59,7 @@ User and Kernel Mode.
 #define POS_VERSION_1_5                 MAKE_POS_VERSION(1, 5)
 #define POS_VERSION_1_6                 MAKE_POS_VERSION(1, 6)
 #define POS_VERSION_1_7                 MAKE_POS_VERSION(1, 7)
+#define POS_VERSION_1_8                 MAKE_POS_VERSION(1, 8)
 
 //----------------------------------------------------------------------------------------------
 //                                  Event Data
@@ -155,13 +159,12 @@ typedef struct _PosStatusUpdatedEventData
     UINT32 ExtendedStatus;
 } PosStatusUpdatedEventData;
 
-//------------------------------------
-// Common Device Statistics Struture Formats
-//------------------------------------
+//-------------------------------------------
+// Common Device Statistics Structure Formats
+//-------------------------------------------
 
-#define STATISTICS_STRING_SIZE                  128
-#define STATISTICS_STRING_BYTE_LENGTH           (STATISTICS_STRING_SIZE * sizeof(wchar_t))
-
+#define STATISTICS_STRING_SIZE          128
+#define STATISTICS_STRING_BYTE_LENGTH   (STATISTICS_STRING_SIZE * sizeof(wchar_t))
 
 
 // Generic profile string value type
@@ -184,11 +187,11 @@ typedef struct _PosPrinterCommonBitmapArgs
     UINT32 Width;
 
     // If Width == Custom, the custom width.
- 
+
     UINT32 CustomWidth;
 
     // PosPrinterAlignment
- 
+
     UINT32 Alignment;
 
     // If alignment == Custom, then the custom alignment distance from left
@@ -200,7 +203,7 @@ typedef struct _PosPrinterCommonBitmapArgs
 
     UINT32 BitmapDataLength;
 
-    // Bitmap properties captured from the IBitmapFrame 
+    // Bitmap properties captured from the IBitmapFrame
     UINT32 PixelFormat;
     UINT32 AlphaMode;
     UINT32 PixelWidth;
@@ -235,7 +238,7 @@ typedef struct _PosBitmapFillType
 } PosBitmapFillType;
 
 
-//A string of length positionListDatalength should trail this struct containing 
+//A string of length positionListDatalength should trail this struct containing
 //the data to be sent to the specified station
 typedef struct _PosPrinterDrawRuledLineArgs
 {
@@ -247,7 +250,7 @@ typedef struct _PosPrinterDrawRuledLineArgs
 }PosPrinterDrawRuledLineArgs;
 
 
-//A string of length datalength should trail this struct containing 
+//A string of length datalength should trail this struct containing
 //the data to be sent to the specified station
 typedef struct _PosPrinterPrintBarcodeArgs
 {
@@ -266,10 +269,10 @@ typedef struct _PosProfileType
     UINT32 ProfileCount;
 } PosProfileType;
 
-// PosStatistiscHeader 
+// PosStatistiscHeader
 // The structure is the header for incoming statistic
 //      TotalStatisticsEntry : Total Statistic entries
-//      DataLength           : Datalength of byte stream 
+//      DataLength           : Datalength of byte stream
 //                             (sizeof(PosStatisticsHeader) + (TotalStatisticsEntry * sizeof(PosValueStatisticsEntry))
 
 typedef struct _PosStatisticsHeader
@@ -279,9 +282,9 @@ typedef struct _PosStatisticsHeader
     UINT32 DataLength;
 }PosStatisticsHeader;
 
-// PosValueStatisticEntry 
+// PosValueStatisticEntry
 // The structure holds the statistic entry value
-//      EntryName           : Statistic name,  e.g., GoodScanCount, BadScanCount, etc. 
+//      EntryName           : Statistic name,  e.g., GoodScanCount, BadScanCount, etc.
 //      StatisticValue      : Current statistic value
 
 typedef struct _PosValueStatisticsEntry
@@ -327,7 +330,7 @@ typedef struct _PosBarcodeScannerErrorOccurredEventData
 
 // PosDeviceInformation
 // The structure holds the device information value required by UPOS
-//      All entries are as define in UPOS standard. 
+//      All entries are as define in UPOS standard.
 typedef struct _PosBarcodeScanDataTypeData
 {
     UINT32 dataLengthInBytes;
@@ -342,7 +345,7 @@ typedef struct _PosBarcodeScanDataTypeData
 typedef struct _PosEventDataHeader PosBarcodeScannerImagePreviewEventData;
 
 //------------------------------------
-// Printer Event Data formats
+// Printer data formats
 //------------------------------------
 
 typedef struct _PosPrinterErrorEventData
@@ -356,6 +359,37 @@ typedef struct _PosPrinterErrorEventData
     _Field_size_(MessageLength) WCHAR Message[ANYSIZE_ARRAY];
 
 } PosPrinterErrorEventData;
+
+typedef struct _PrinterTransactionPrintData
+{
+    UINT32 Station;
+    UINT32 TransactionMode;
+} PrinterTransactionPrintData;
+
+typedef struct _PrinterPrintNormalData
+{
+    UINT32 Station;
+    PosStringType PrintString;
+} PrinterPrintNormalData;
+
+typedef struct _PrinterPrintSavedBitmapData
+{
+    UINT32 BitmapNumber;
+    UINT32 Station;
+} PrinterPrintSavedBitmapData;
+
+typedef struct _PrinterRotatePrintData
+{
+    UINT32 Station;
+    UINT32 Rotation;
+    LONG IncludeBitmaps;
+} PrinterRotatePrintData;
+
+typedef struct PrinterValidateDataArgs
+{
+    UINT32 Station;
+    PosStringType String;
+} PrinterValidateDataArgs;
 
 //------------------------------------
 // CashDrawer Event Data formats
@@ -373,6 +407,40 @@ typedef struct _ConnectRemotePosDeviceParameters
 {
     BOOLEAN DisassociateOnFinalClose;
 } ConnectRemotePosDeviceParameters;
+
+//------------------------------------
+// LineDisplay data types (formats)
+//------------------------------------
+
+typedef struct _LineDisplayCreateWindowData
+{
+    UINT32 viewportRow;
+    UINT32 viewportColumn;
+    UINT32 viewportHeight;
+    UINT32 viewportWidth;
+    UINT32 windowHeight;
+    UINT32 windowWidth;
+} LineDisplayCreateWindowData;
+
+typedef struct _LineDisplayWindowDisplayTextData
+{
+    LineDisplayTextDisplayAttribute textAttribute;
+    PosStringType textToDisplay;
+} LineDisplayWindowDisplayTextData;
+
+typedef struct _LineDisplayWindowDisplayTextAtData
+{
+    LineDisplayTextDisplayAttribute textAttribute;
+    UINT32 row;
+    UINT32 column;
+    PosStringType textToDisplay;
+} LineDisplayWindowDisplayTextAtData;
+
+typedef struct _LineDisplayWindowScrollTextData
+{
+    LineDisplayTextScrollDirection direction;
+    UINT32 units;
+} LineDisplayWindowScrollTextData;
 
 //----------------------------------------------------------------------------------------------
 //                                  Device Controls
@@ -426,7 +494,7 @@ typedef enum _PosDeviceControlType
     ResetStatistics = 7,
 
     // UpdateStatistics
-    //    Input:  PosStatisticsHeader 
+    //    Input:  PosStatisticsHeader
     //            PosValueStatisticsEntry (statistics data buffer per API spec)
     //    Output: None
     UpdateStatistics = 8,
@@ -545,12 +613,12 @@ typedef enum _PosDeviceControlType
 
     //PrinterPrintMemoryBitmapStart
     //  Input: PosPrinterPrintMemoryBitmapArgs
-    //  Output:	UINT64(Handle)
+    //  Output:    UINT64(Handle)
     PrinterPrintMemoryBitmapStart = 30,
 
     //PrinterPrintMemoryBitmapFill
     //  Input: PosBitmapFillType, Byte[]
-    //  Output:	None
+    //  Output:    None
     PrinterPrintMemoryBitmapFill = 31,
 
     //PrinterPrintNormal
@@ -579,17 +647,18 @@ typedef enum _PosDeviceControlType
     //PrinterSetLogo = 36,
 
     //PrinterTransactionPrint
-    //  Input: UINT32(PointOfServicePrinterStation) + UINT32 (PointOfServicePrinterTransactionMode)
+    //  Input: UINT32(PointOfServicePrinterStation) + UINT32 (PointOfServicePrinterTransactionMode) aka PrinterTransactionPrintData
     //  Output: None
     PrinterTransactionPrint = 37,
 
     //PrinterValidateData
-    //  Input: UINT32(PointOfServicePrinterStation) + PosStringType
+    //  Input: UINT32(PointOfServicePrinterStation) + PosStringType aka PrinterValidateDataArgs
     //  Output: None
     PrinterValidateData = 38,
 
     //PrinterPrintSavedBitmap
-    //  Input: UINT32
+    //  Original Input: UINT32 (assumes the station is the receipt station)
+    //  Input (as of v1.8): PrinterPrintSavedBitmapData 
     //  Output: None
     PrinterPrintSavedBitmap = 39,
 
@@ -601,7 +670,7 @@ typedef enum _PosDeviceControlType
     //  Input: None
     //  Output: None
     CashDrawerOpenDrawer = 40,
-  
+
     //CashDrawerCreateDrawerCloseAlarm
     //  Input: CashDrawerCreateDrawerCloseAlarmArgs
     //  Output: BOOL
@@ -623,15 +692,67 @@ typedef enum _PosDeviceControlType
 
     PrinterWaitForJobComplete = 44,
 
-    _MaxDeviceControlType = 45
+    //------------------------------------
+    // LineDisplay controls
+    //------------------------------------
+
+    //LineDisplayCreateWindow
+    //  Input:  LineDisplayCreateWindowData
+    //  Output: None
+    LineDisplayCreateWindow = 50,
+
+    //LineDisplayDestroyWindow
+    //  Input:  UINT32 (windowId)
+    //  Output: None
+    LineDisplayDestroyWindow = 51,
+
+    //LineDisplayRefreshWindow
+    //  Input:  UINT32 (window id)
+    //  Output: None
+    LineDisplayRefreshWindow = 52,
+
+    //LineDisplayWindowDisplayText
+    //  Input:  LineDisplayWindowDisplayTextData
+    //  Output: None
+    LineDisplayWindowDisplayText = 53,
+
+    //LineDisplayWindowDisplayTextAt
+    //  Input:  LineDisplayWindowDisplayTextAtData
+    //  Output: None
+    LineDisplayWindowDisplayTextAt = 54,
+
+    //LineDisplayWindowScrollText
+    //  Input:  LineDisplayWindowScrollTextData
+    //  Output: None
+    LineDisplayWindowScrollText = 55,
+
+    //LineDisplayWindowClearText
+    //  Input:  None
+    //  Output: None
+    LineDisplayWindowClearText = 56,
+
+    //------------------------------------
+    // Scanner controls
+    //------------------------------------
+
+    //   Input: BarcodeScannerSymbology
+    //   Output: BarcodeSymbologyAttributesData
+    BarcodeScannerGetSymbologyAttributes = 80,
+
+    //   Input: BarcodeSymbologyAttributesData
+    //   Output: None
+    BarcodeScannerSetSymbologyAttributes = 81,
+
+    // Update the following value when new device controls show up.
+    _MaxDeviceControlType = 82
 
 } PosDeviceControlType;
 
 typedef struct _PosDeviceBasicsType
 {
-    UINT32 Version;					// (Major << 16) | (Minor)
-    PosDeviceType DeviceType;		// Barcode Scanner, MSR, etc
-    UINT32 RecommendedBufferSize;	// Recommended by the driver
+    UINT32 Version;                    // (Major << 16) | (Minor)
+    PosDeviceType DeviceType;        // Barcode Scanner, MSR, etc
+    UINT32 RecommendedBufferSize;    // Recommended by the driver
 } PosDeviceBasicsType;
 
 //------------------------------------
@@ -683,9 +804,9 @@ typedef enum _PosPropertyId
     IsEnabled = 1,
 
     // IsDisabledOnDataReceived : BOOL (read/write)
-    // Indicates whether the scanner should automatically disable itself after each scan 
-    // event. This provides an opportunity for the hardware to enter an idle power 
-    // saving mode as frequently as possible. 
+    // Indicates whether the scanner should automatically disable itself after each scan
+    // event. This provides an opportunity for the hardware to enter an idle power
+    // saving mode as frequently as possible.
     //
     // GetProperty I/O
     //   Input args    : PosPropertyId : IsDisabledOnDataReceived
@@ -703,10 +824,10 @@ typedef enum _PosPropertyId
     //------------------------------------
 
     // BarcodeScannerIsDecodeDataEnabled : BOOL (read/write)
-    // When TRUE, the driver must return decoded bar code data in the form of 
+    // When TRUE, the driver must return decoded bar code data in the form of
     // ScanDataLabel when raising a data received event in addition to ScanData.
     // Decoded barcode data typically only contains data from the scanner with
-    // header information, scanner generated symbol characther and length identification removed.
+    // header information, scanner generated symbol character and length identification removed.
     //
     // GetProperty I/O
     //   Input args    : PosPropertyId : BarcodeScannerIsDecodeDataEnabled
@@ -722,10 +843,10 @@ typedef enum _PosPropertyId
     // BarcodeScannerCapabilities : PosBarcodeScannerCapabilitiesType (readonly)
     // Returns the barcode scanner capability structure.
     //
-    // For example, a barcode scanner may support imaging and 
+    // For example, a barcode scanner may support imaging and
     // standard power reporting but not statistics updating and reporting.
     //
-    //  PosBarcodeScannerCapabilitiesType DeviceCapability = 
+    //  PosBarcodeScannerCapabilitiesType DeviceCapability =
     //  {
     //      Standard;   // DriverUnifiedPosPowerReportingType PowerReportingType
     //      0;          // LONG IsStatisticsReportingSupported
@@ -735,7 +856,7 @@ typedef enum _PosPropertyId
     //
     // GetProperty I/O
     //   Input args    : PosPropertyId : BarcodeScannerCapabilities
-    //   Output args   : PosBarcodeScannerCapabilities Strucuture : Structure filled with device capability
+    //   Output args   : PosBarcodeScannerCapabilities Structure : Structure filled with device capability
     //
     // SetProperty I/O
     //   Input args    : None
@@ -790,9 +911,9 @@ typedef enum _PosPropertyId
 
     // BarcodeScannerActiveProfile : PosStringType (writeonly)
     // Sets the active device configuration profile.Configure the driver using one of the driver
-    // or manufacture defined profiles in the list returned by the BarcodeScannerSupportedProfiles 
-    // property. For example, you may have one profile for warehouse staff and another profile 
-    // for the sales dept. Each profile is expected to configure the device based on the 
+    // or manufacture defined profiles in the list returned by the BarcodeScannerSupportedProfiles
+    // property. For example, you may have one profile for warehouse staff and another profile
+    // for the sales dept. Each profile is expected to configure the device based on the
     // driver/manufacturer definition
     //
     // GetProperty I/O
@@ -843,7 +964,7 @@ typedef enum _PosPropertyId
     // GetProperty I/O
     //   Input args    : PosPropertyId : BarcodeScannerVideoDeviceId
     //   Output args   : PosStringType : The video device id associated with camera lens.
-    //                   
+    //
     BarcodeScannerVideoDeviceId = 20,
 
     //------------------------------------
@@ -916,7 +1037,7 @@ typedef enum _PosPropertyId
     //PrinterCoverOpen: BOOL (readonly)
     PrinterCoverOpen = 118,
 
-    //PrinterMapMode: UINT32 (PointOfServicePrinterMapModeType) (read/write)
+    //PrinterMapMode: UINT32 (DriverPosPrinterMapMode) (read/write)
     PrinterMapMode = 119,
 
     //PrinterPageModeArea: PrinterWindowsFoundationSize (readonly)
@@ -1052,15 +1173,45 @@ typedef enum _PosPropertyId
     // CashDrawer properties
     //------------------------------------
 
-    //CashDrawerDrawerOpened: BOOL (readonly)
+    //CashDrawerIsDrawerOpened: BOOL (readonly)
     CashDrawerIsDrawerOpened = 200,
 
     //CashDrawerCapabilities: CashDrawerCapabilitiesType (readonly)
     CashDrawerCapabilities = 201,
 
-    //CashDrawerStatus: CashDrawerStatus
+    //CashDrawerStatus: CashDrawerStatusType
     CashDrawerStatusProp = 202,
 
+    //------------------------------------
+    // LineDisplay properties
+    //------------------------------------
+
+    //LineDisplayCapabilities: LineDisplayCapabilitiesType (readonly)
+    LineDisplayCapabilities = 303,
+
+    //LineDisplayCurrentWindow: UINT32 (CurrentWindow) (read/write)
+    LineDisplayCurrentWindow = 314,
+
+    //LineDisplayWindowSizeInCharacters: LineDisplayCharactersSize (readonly)
+    LineDisplayWindowSizeInCharacters = 315,
+
+    //LineDisplayWindowInterCharacterWaitIntervalL: UINT32 (InterCharacterWait) (read/write)
+    LineDisplayWindowInterCharacterWaitInterval = 316,
+
+    //LineDisplayPhysicalDeviceName: PosStringType (PhysicalDeviceName) (readonly)
+    LineDisplayPhysicalDeviceName = 330,
+
+    //LineDisplayPhysicalDeviceDescription: PosStringType (PhysicalDescription) (readonly)
+    LineDisplayPhysicalDeviceDescription = 331,
+
+    //LineDisplayDeviceControlDescription: PosStringType (ControlDescription) (readonly)
+    LineDisplayDeviceControlDescription = 332,
+
+    //LineDisplayDeviceControlVersion: PosStringType (ControlVersion) (readonly)
+    LineDisplayDeviceControlVersion = 333,
+
+    //LineDisplayDeviceServiceVersion: PosStringType (ServiceVersion) (readonly)
+    LineDisplayDeviceServiceVersion = 334,
 } PosPropertyId;
 
 typedef struct _PosBarcodeScannerCapabilitiesType
@@ -1115,7 +1266,7 @@ typedef struct _PosMagneticStripeReaderCapabilitiesType
 #define IS_POINT_OF_SERVICE_IOCTL(x)  \
     (((x) >= MIN_POINT_OF_SERVICE_IOCTL_READ && (x) <= MAX_POINT_OF_SERVICE_IOCTL_READ) || ((x) >= MIN_POINT_OF_SERVICE_IOCTL_WRITE && (x) <= MAX_POINT_OF_SERVICE_IOCTL_WRITE))
 
-// Common device IOCTLs
+// Device IOCTLs
 
 #define IOCTL_POINT_OF_SERVICE_GET_PROPERTY \
     READABLE_POS_IOCTL(GetProperty)
@@ -1243,6 +1394,32 @@ typedef struct _PosMagneticStripeReaderCapabilitiesType
 #define IOCTL_CASH_DRAWER_CANCEL_WAIT\
     POS_IOCTL(CashDrawerCancelWait)
 
+#define IOCTL_LINE_DISPLAY_CREATE_WINDOW\
+    POS_IOCTL(LineDisplayCreateWindow)
+
+#define IOCTL_LINE_DISPLAY_DESTROY_WINDOW\
+    POS_IOCTL(LineDisplayDestroyWindow)
+
+#define IOCTL_LINE_DISPLAY_REFRESH_WINDOW\
+    POS_IOCTL(LineDisplayRefreshWindow)
+
+#define IOCTL_LINE_DISPLAY_WINDOW_DISPLAY_TEXT\
+    POS_IOCTL(LineDisplayWindowDisplayText)
+
+#define IOCTL_LINE_DISPLAY_WINDOW_DISPLAY_TEXT_AT\
+    POS_IOCTL(LineDisplayWindowDisplayTextAt)
+
+#define IOCTL_LINE_DISPLAY_WINDOW_SCROLL_TEXT\
+    POS_IOCTL(LineDisplayWindowScrollText)
+
+#define IOCTL_LINE_DISPLAY_WINDOW_CLEAR_TEXT\
+    POS_IOCTL(LineDisplayWindowClearText)
+
+#define IOCTL_POINT_OF_SERVICE_BARCODE_SCANNER_GET_SYMBOLOGY_ATTRIBUTES \
+    READABLE_POS_IOCTL(BarcodeScannerGetSymbologyAttributes)
+
+#define IOCTL_POINT_OF_SERVICE_BARCODE_SCANNER_SET_SYMBOLOGY_ATTRIBUTES \
+    POS_IOCTL(BarcodeScannerSetSymbologyAttributes)
 
 //----------------------------------------------------------------------------------------------
 //                                  Device Interface IDs
@@ -1266,15 +1443,20 @@ DEFINE_GUID(GUID_DEVINTERFACE_POS_CASHDRAWER,
     0x772e18f2, 0x8925, 0x4229, 0xa5, 0xac, 0x64, 0x53, 0xcb, 0x48, 0x2f, 0xda);
 /* Identifies the device as a Cash Drawer */
 
+// {4FC9541C-0FE6-4480-A4F6-9495A0D17CD2}
+DEFINE_GUID(GUID_DEVINTERFACE_POS_LINEDISPLAY,
+    0x4fc9541c, 0xfe6, 0x4480, 0xa4, 0xf6, 0x94, 0x95, 0xa0, 0xd1, 0x7c, 0xd2);
+/* Identifies the device as a Line Display */
+
 //ioctldefinitions
 #pragma endregion
 
-    //
-    // Data format related constants
-    //
-#define MSR_TRACK_SIZE                              112 // wikipedia lists a max track len of 79 bytes, what is a good size?
+//
+// Data format related constants
+//
+#define MSR_TRACK_SIZE                              112
 #define MSR_CARD_AUTHENTICATION_DATA_SIZE           128 // based on magtek + POS.Net
-#define MSR_ADDITIONAL_SECURITY_INFORMATION_SIZE    10 // based on magtek + POS.Net
+#define MSR_ADDITIONAL_SECURITY_INFORMATION_SIZE    10  // based on magtek + POS.Net
 #define MSR_PROPERTY_NAME_LENGTH                    32
 #define MSR_PROPERTY_VALUE_LENGTH                   32
 #define MSR_KEY_SERIAL_NUMBER_SIZE                  10
@@ -1286,251 +1468,253 @@ DEFINE_GUID(GUID_DEVINTERFACE_POS_CASHDRAWER,
 #define MSR_CAP_CARD_AUTHENTICATION_MAX_LENGTH      128
 #define MSR_CARD_TYPE_MAX_COUNT                     10
 
-    typedef enum _MsrCardType
-    {
-        MsrCardType_Unknown,
-        MsrCardType_Bank,
-        MsrCardType_Aamva,
-        MsrCardType_ExtendedBase,
-    } MsrCardType;
+typedef enum _MsrCardType
+{
+    MsrCardType_Unknown,
+    MsrCardType_Bank,
+    MsrCardType_Aamva,
+    MsrCardType_ExtendedBase,
+} MsrCardType;
 
-    typedef enum _MsrDataEncryption
-    {
-        MsrDataEncryption_None,
-        MsrDataEncryption_3DEA_DUKPT,
-        MsrDataEncryption_AES,
-        MsrDataEncryption_ExtendedBase  // Values 0x01000000 and above are reserved for additional encryption algorithms supported by the service 
-    } MsrDataEncryption;
+typedef enum _MsrDataEncryption
+{
+    MsrDataEncryption_None,
+    MsrDataEncryption_3DEA_DUKPT,
+    MsrDataEncryption_AES,
+    MsrDataEncryption_ExtendedBase  // Values 0x01000000 and above are reserved for additional encryption algorithms supported by the service
+} MsrDataEncryption;
 
-    typedef enum _MsrAuthenticationProtocol
-    {
-        MsrAuthenticationProtocolType_None = 0,
-        MsrAuthenticationProtocolType_ChallengeResponse,
-    } MsrAuthenticationProtocolType;
+typedef enum _MsrAuthenticationProtocol
+{
+    MsrAuthenticationProtocolType_None = 0,
+    MsrAuthenticationProtocolType_ChallengeResponse,
+} MsrAuthenticationProtocolType;
 
-    typedef enum _MsrTrackIds
-    {
-        MsrTrackIds_None = 0x0,
-        MsrTrackIds_Track1 = 0x1,
-        MsrTrackIds_Track2 = 0x2,
-        MsrTrackIds_Track3 = 0x4,
-        MsrTrackIds_Track4 = 0x8
-    } MsrTrackIds;
+typedef enum _MsrTrackIds
+{
+    MsrTrackIds_None = 0x0,
+    MsrTrackIds_Track1 = 0x1,
+    MsrTrackIds_Track2 = 0x2,
+    MsrTrackIds_Track3 = 0x4,
+    MsrTrackIds_Track4 = 0x8
+} MsrTrackIds;
 
-    typedef enum _MsrErrorReportingType
-    {
-        MsrErrorReportingType_CardLevel = 0,
-        MsrErrorReportingType_TrackLevel
-    } MsrErrorReportingType;
+typedef enum _MsrErrorReportingType
+{
+    MsrErrorReportingType_CardLevel = 0,
+    MsrErrorReportingType_TrackLevel
+} MsrErrorReportingType;
 
-    typedef enum _MsrTrackErrorType
-    {
-        MsrTrackErrorType_Unknown = -1,
-        MsrTrackErrorType_None = 0,
-        MsrTrackErrorType_StartSentinelError = 1,
-        MsrTrackErrorType_EndSentinelError = 2,
-        MsrTrackErrorType_ParityError = 3,
-        MsrTrackErrorType_LrcError = 4
-    } MsrTrackErrorType;
+typedef enum _MsrTrackErrorType
+{
+    MsrTrackErrorType_Unknown = -1,
+    MsrTrackErrorType_None = 0,
+    MsrTrackErrorType_StartSentinelError = 1,
+    MsrTrackErrorType_EndSentinelError = 2,
+    MsrTrackErrorType_ParityError = 3,
+    MsrTrackErrorType_LrcError = 4
+} MsrTrackErrorType;
 
-    typedef enum _MsrStatusUpdateType
-    {
-        // Power state reporting: Online
-        // Valid if PowerReportingType is Standard or Advanced
-        MsrStatusUpdateType_Online = 0,
+typedef enum _MsrStatusUpdateType
+{
+    // Power state reporting: Online
+    // Valid if PowerReportingType is Standard or Advanced
+    MsrStatusUpdateType_Online = 0,
 
-        // Power state reporting: Powered off or detached from the terminal
-        // Valid if PowerReportingType is Advanced
-        MsrStatusUpdateType_Off,
+    // Power state reporting: Powered off or detached from the terminal
+    // Valid if PowerReportingType is Advanced
+    MsrStatusUpdateType_Off,
 
-        // Power state reporting: Powered on, but not ready or unable to respond to requests
-        // Valid if PowerReportingType is Advanced
-        MsrStatusUpdateType_Offline,
+    // Power state reporting: Powered on, but not ready or unable to respond to requests
+    // Valid if PowerReportingType is Advanced
+    MsrStatusUpdateType_Offline,
 
-        // Power state reporting: Either Off or Offline
-        // Valid if PowerReportingType is Standard
-        MsrStatusUpdateType_OffOrOffline,
+    // Power state reporting: Either Off or Offline
+    // Valid if PowerReportingType is Standard
+    MsrStatusUpdateType_OffOrOffline,
 
-        // Authentication state reporting: device was unauthenticated
-        // Valid if device supported authentication
-        MsrStatusUpdateType_Unauthenticated,
+    // Authentication state reporting: device was unauthenticated
+    // Valid if device supported authentication
+    MsrStatusUpdateType_Unauthenticated,
 
-        // Authentication state reporting: device was authenticated
-        // Valid if device supported authentication
-        MsrStatusUpdateType_Authenticated,
+    // Authentication state reporting: device was authenticated
+    // Valid if device supported authentication
+    MsrStatusUpdateType_Authenticated,
 
-        // OEM status
-        MsrStatusUpdateType_Extended
-    } MsrStatusUpdateType;
+    // OEM status
+    MsrStatusUpdateType_Extended
+} MsrStatusUpdateType;
 
-    typedef enum _MsrStatisticsEntryType
-    {
-        MsrStatisticsEntryType_Invalid = -1,
+typedef enum _MsrStatisticsEntryType
+{
+    MsrStatisticsEntryType_Invalid = -1,
 
-        // Number of hours the device was powered on
-        MsrStatisticsEntryType_HoursPoweredCount,
+    // Number of hours the device was powered on
+    MsrStatisticsEntryType_HoursPoweredCount,
 
-        // Number of commuincation errors
-        MsrStatisticsEntryType_CommunicationErrorCount,
+    // Number of communication errors
+    MsrStatisticsEntryType_CommunicationErrorCount,
 
-        // Number of successful reads
-        MsrStatisticsEntryType_GoodReadCount,
+    // Number of successful reads
+    MsrStatisticsEntryType_GoodReadCount,
 
-        // Number of failed reads
-        MsrStatisticsEntryType_FailedReadCount,
+    // Number of failed reads
+    MsrStatisticsEntryType_FailedReadCount,
 
-        // Number of unreadable cards
-        MsrStatisticsEntryType_UnreadableCardCount,
+    // Number of unreadable cards
+    MsrStatisticsEntryType_UnreadableCardCount,
 
-        // Number of successful writes - should never be used
-        MsrStatisticsEntryType_GoodWriteCount,
+    // Number of successful writes - should never be used
+    MsrStatisticsEntryType_GoodWriteCount,
 
-        // Number of failed writes - should never be used
-        MsrStatisticsEntryType_FailedWriteCount,
+    // Number of failed writes - should never be used
+    MsrStatisticsEntryType_FailedWriteCount,
 
-        // Number of error with missing start sentinel on track 1 (possible empty track)
-        MsrStatisticsEntryType_MissingStartSentinelTrack1Count,
+    // Number of error with missing start sentinel on track 1 (possible empty track)
+    MsrStatisticsEntryType_MissingStartSentinelTrack1Count,
 
-        // Number of Parity or LRC errors on track 1
-        MsrStatisticsEntryType_ParityLRCErrorTrack1Count,
+    // Number of Parity or LRC errors on track 1
+    MsrStatisticsEntryType_ParityLRCErrorTrack1Count,
 
-        // Number of error with missing start sentinel on track 2 (possible empty track)
-        MsrStatisticsEntryType_MissingStartSentinelTrack2Count,
+    // Number of error with missing start sentinel on track 2 (possible empty track)
+    MsrStatisticsEntryType_MissingStartSentinelTrack2Count,
 
-        // Number of Parity or LRC errors on track 2
-        MsrStatisticsEntryType_ParityLRCErrorTrack2Count,
+    // Number of Parity or LRC errors on track 2
+    MsrStatisticsEntryType_ParityLRCErrorTrack2Count,
 
-        // Number of error with missing start sentinel on track 3 (possible empty track)
-        MsrStatisticsEntryType_MissingStartSentinelTrack3Count,
+    // Number of error with missing start sentinel on track 3 (possible empty track)
+    MsrStatisticsEntryType_MissingStartSentinelTrack3Count,
 
-        // Number of Parity or LRC errors on track 3
-        MsrStatisticsEntryType_ParityLRCErrorTrack3Count,
+    // Number of Parity or LRC errors on track 3
+    MsrStatisticsEntryType_ParityLRCErrorTrack3Count,
 
-        // Number of error with missing start sentinel on track 4 (possible empty track)
-        MsrStatisticsEntryType_MissingStartSentinelTrack4Count,
+    // Number of error with missing start sentinel on track 4 (possible empty track)
+    MsrStatisticsEntryType_MissingStartSentinelTrack4Count,
 
-        // Number of Parity or LRC errors on track 4
-        MsrStatisticsEntryType_ParityLRCErrorTrack4Count,
+    // Number of Parity or LRC errors on track 4
+    MsrStatisticsEntryType_ParityLRCErrorTrack4Count,
 
-        // Number of successful card authentication data reads
-        MsrStatisticsEntryType_GoodCardAuthenticationDataCount,
+    // Number of successful card authentication data reads
+    MsrStatisticsEntryType_GoodCardAuthenticationDataCount,
 
-        // Number of failed card authentication data reads
-        MsrStatisticsEntryType_FailedCardAuthenticationDataCount,
+    // Number of failed card authentication data reads
+    MsrStatisticsEntryType_FailedCardAuthenticationDataCount,
 
-        // Number of successful calls to retrieveDeviceAuthenticationData
-        MsrStatisticsEntryType_ChallengeRequestCount,
+    // Number of successful calls to retrieveDeviceAuthenticationData
+    MsrStatisticsEntryType_ChallengeRequestCount,
 
-        // Number of successful card authentication attempts 
-        MsrStatisticsEntryType_GoodDeviceAuthenticationCount,
+    // Number of successful card authentication attempts
+    MsrStatisticsEntryType_GoodDeviceAuthenticationCount,
 
-        // Number of failed card authentication attempts 
-        MsrStatisticsEntryType_FailedDeviceAuthenticationCount,
+    // Number of failed card authentication attempts
+    MsrStatisticsEntryType_FailedDeviceAuthenticationCount,
 
 
-        // Count of entry types
-        MsrStatisticsEntryType_Count
-    } MstStatisticsEntryType;
+    // Count of entry types
+    MsrStatisticsEntryType_Count
+} MstStatisticsEntryType;
 
 #define MSR_STATISTICS_TYPE_(_name_) MsrStatisticsEntryType_##_name_
 
 #pragma pack(push,1)
 
-    //// Card data format
-    typedef struct _MSR_DATA_RECEIVED {
+//// Card data format
+typedef struct _MSR_DATA_RECEIVED {
 
-        MsrCardType CardType;
+    MsrCardType CardType;
 
-        unsigned char Track1EncryptedDataLength;
-        unsigned char Track2EncryptedDataLength;
-        unsigned char Track3EncryptedDataLength;
-        unsigned char Track4EncryptedDataLength;
+    unsigned char Track1EncryptedDataLength;
+    unsigned char Track2EncryptedDataLength;
+    unsigned char Track3EncryptedDataLength;
+    unsigned char Track4EncryptedDataLength;
 
-        unsigned char Track1EncryptedData[MSR_TRACK_SIZE];
-        unsigned char Track2EncryptedData[MSR_TRACK_SIZE];
-        unsigned char Track3EncryptedData[MSR_TRACK_SIZE];
-        unsigned char Track4EncryptedData[MSR_TRACK_SIZE];
+    unsigned char Track1EncryptedData[MSR_TRACK_SIZE];
+    unsigned char Track2EncryptedData[MSR_TRACK_SIZE];
+    unsigned char Track3EncryptedData[MSR_TRACK_SIZE];
+    unsigned char Track4EncryptedData[MSR_TRACK_SIZE];
 
-        unsigned char Track1MaskedDataLength;
-        unsigned char Track2MaskedDataLength;
-        unsigned char Track3MaskedDataLength;
-        unsigned char Track4MaskedDataLength;
+    unsigned char Track1MaskedDataLength;
+    unsigned char Track2MaskedDataLength;
+    unsigned char Track3MaskedDataLength;
+    unsigned char Track4MaskedDataLength;
 
-        unsigned char Track1MaskedData[MSR_TRACK_SIZE];
-        unsigned char Track2MaskedData[MSR_TRACK_SIZE];
-        unsigned char Track3MaskedData[MSR_TRACK_SIZE];
-        unsigned char Track4MaskedData[MSR_TRACK_SIZE];
+    unsigned char Track1MaskedData[MSR_TRACK_SIZE];
+    unsigned char Track2MaskedData[MSR_TRACK_SIZE];
+    unsigned char Track3MaskedData[MSR_TRACK_SIZE];
+    unsigned char Track4MaskedData[MSR_TRACK_SIZE];
 
-        unsigned char Track1DiscretionaryDataLength;
-        unsigned char Track2DiscretionaryDataLength;
+    unsigned char Track1DiscretionaryDataLength;
+    unsigned char Track2DiscretionaryDataLength;
 
-        unsigned char Track1DiscretionaryData[MSR_TRACK_SIZE];
-        unsigned char Track2DiscretionaryData[MSR_TRACK_SIZE];
+    unsigned char Track1DiscretionaryData[MSR_TRACK_SIZE];
+    unsigned char Track2DiscretionaryData[MSR_TRACK_SIZE];
 
-        unsigned char CardAuthenicationDataLength;                                  // Length of data after encryption, may include padding.
-        unsigned char CardAuthenticationDataAbsoluteLength;                         // Length of data before encryption, may be needed to strip padding on decryption.
-        unsigned char CardAuthenicationData[MSR_CARD_AUTHENTICATION_DATA_SIZE];
+    unsigned char CardAuthenicationDataLength;                                  // Length of data after encryption, may include padding.
+    unsigned char CardAuthenticationDataAbsoluteLength;                         // Length of data before encryption, may be needed to strip padding on decryption.
+    unsigned char CardAuthenicationData[MSR_CARD_AUTHENTICATION_DATA_SIZE];
 
-        unsigned char AdditionalSecurityInformationLength;
-        unsigned char AdditionalSecurityInformation[MSR_ADDITIONAL_SECURITY_INFORMATION_SIZE];
-    } MSR_DATA_RECEIVED, *PMSR_DATA_RECEIVED;
+    unsigned char AdditionalSecurityInformationLength;
+    unsigned char AdditionalSecurityInformation[MSR_ADDITIONAL_SECURITY_INFORMATION_SIZE];
+} MSR_DATA_RECEIVED, *PMSR_DATA_RECEIVED;
 
-    //// MagneticStripeReaderSupportedCardTypes
-    typedef struct _MSR_SUPPORTED_CARD_TYPES {
-        unsigned char Count;
-        unsigned int CardTypes[MSR_CARD_TYPE_MAX_COUNT];
-    } MSR_SUPPORTED_CARD_TYPES, *PMSR_SUPPORTED_CARD_TYPES;
+//// MagneticStripeReaderSupportedCardTypes
+typedef struct _MSR_SUPPORTED_CARD_TYPES {
+    unsigned char Count;
+    unsigned int CardTypes[MSR_CARD_TYPE_MAX_COUNT];
+} MSR_SUPPORTED_CARD_TYPES, *PMSR_SUPPORTED_CARD_TYPES;
 
-    //// MsrRetrieveDeviceAuthentication
-    typedef struct _MSR_RETRIEVE_DEVICE_AUTHENTICATION_DATA {
-        unsigned char KeySerialNumber[MSR_KEY_SERIAL_NUMBER_SIZE];
-        unsigned char Challenge1[MSR_CHALLENGE_SIZE];
-        unsigned char Challenge2[MSR_CHALLENGE_SIZE];
-    } MSR_RETRIEVE_DEVICE_AUTHENTICATION_DATA, *PMSR_RETRIEVE_DEVICE_AUTHENTICATION_DATA;
+//// MsrRetrieveDeviceAuthentication
+typedef struct _MSR_RETRIEVE_DEVICE_AUTHENTICATION_DATA {
+    unsigned char KeySerialNumber[MSR_KEY_SERIAL_NUMBER_SIZE];
+    unsigned char Challenge1[MSR_CHALLENGE_SIZE];
+    unsigned char Challenge2[MSR_CHALLENGE_SIZE];
+} MSR_RETRIEVE_DEVICE_AUTHENTICATION_DATA, *PMSR_RETRIEVE_DEVICE_AUTHENTICATION_DATA;
 
-    //// MsrAuthenticateDevice
-    typedef struct _MSR_AUTHENTICATE_DEVICE {
-        unsigned char Size;  // If the optional SessionId is present this will include the size of SessionId[]
-        unsigned char Challenge1[MSR_CHALLENGE_SIZE];
-        unsigned char SessionId[MSR_SESSION_ID_SIZE];
-    } MSR_AUTHENTICATE_DEVICE, *PMSR_AUTHENTICATE_DEVICE;
+//// MsrAuthenticateDevice
+typedef struct _MSR_AUTHENTICATE_DEVICE {
+    unsigned char Size;  // If the optional SessionId is present this will include the size of SessionId[]
+    unsigned char Challenge1[MSR_CHALLENGE_SIZE];
+    unsigned char SessionId[MSR_SESSION_ID_SIZE];
+} MSR_AUTHENTICATE_DEVICE, *PMSR_AUTHENTICATE_DEVICE;
 
-    //// MsrDeAuthenticateDevice
-    typedef struct _MSR_DEAUTHENTICATE_DEVICE {
-        unsigned char Challenge2[MSR_CHALLENGE_SIZE];
-    } MSR_DEAUTHENTICATE_DEVICE, *PMSR_DEAUTHENTICATE_DEVICE;
+//// MsrDeAuthenticateDevice
+typedef struct _MSR_DEAUTHENTICATE_DEVICE {
+    unsigned char Challenge2[MSR_CHALLENGE_SIZE];
+} MSR_DEAUTHENTICATE_DEVICE, *PMSR_DEAUTHENTICATE_DEVICE;
 
-    //// MsrUpdateKey
-    typedef struct _MSR_UPDATE_KEY{
-        unsigned char KeyLength;
-        unsigned char KeyNameLength;
-        unsigned char Key[MSR_KEY_SIZE];
-        unsigned char KeyName[MSR_KEY_NAME_SIZE];
-    } MSR_UPDATE_KEY, *PMSR_UPDATE_KEY;
+//// MsrUpdateKey
+typedef struct _MSR_UPDATE_KEY{
+    unsigned char KeyLength;
+    unsigned char KeyNameLength;
+    unsigned char Key[MSR_KEY_SIZE];
+    unsigned char KeyName[MSR_KEY_NAME_SIZE];
+} MSR_UPDATE_KEY, *PMSR_UPDATE_KEY;
 
-    //// Error event format
-    typedef struct _MSR_ERROR_EVENT
-    {
-        PosEventDataHeader Header;
+//// Error event format
+typedef struct _MSR_ERROR_EVENT
+{
+    PosEventDataHeader Header;
 
-        MsrTrackErrorType Track1Status;
-        MsrTrackErrorType Track2Status;
-        MsrTrackErrorType Track3Status;
-        MsrTrackErrorType Track4Status;
+    MsrTrackErrorType Track1Status;
+    MsrTrackErrorType Track2Status;
+    MsrTrackErrorType Track3Status;
+    MsrTrackErrorType Track4Status;
 
-        DriverUnifiedPosErrorSeverity Severity;
-        DriverUnifiedPosErrorReason Reason;
-        UINT32 ExtendedReason;
+    DriverUnifiedPosErrorSeverity Severity;
+    DriverUnifiedPosErrorReason Reason;
+    UINT32 ExtendedReason;
 
-        MSR_DATA_RECEIVED CardData;
+    MSR_DATA_RECEIVED CardData;
 
-        wchar_t Message[MSR_ERROR_MAX_MESSAGE_LENGTH];
+    wchar_t Message[MSR_ERROR_MAX_MESSAGE_LENGTH];
 
-    } MSR_ERROR_EVENT, *PMSR_ERROR_EVENT;
+} MSR_ERROR_EVENT, *PMSR_ERROR_EVENT;
 
 #pragma pack(pop)
 
 
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+
+#include <poppack.h>
 
 #endif // POINT_OF_SERVICE_DRIVER_INTERFACE_H

@@ -48,8 +48,8 @@
 //
 // Define the facility codes
 //
-#define FACILITY_SIP_STATUS_CODE         0xEF
 #define FACILITY_RTC_INTERFACE           0xEE
+#define FACILITY_SIP_STATUS_CODE         0xEF
 #define FACILITY_PINT_STATUS_CODE        0xF0
 
 

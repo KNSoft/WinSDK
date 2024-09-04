@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -38,6 +38,20 @@
 #endif
 
 /* Forward Declarations */ 
+
+#ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#endif 	/* ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__ */
+
 
 #ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_FWD_DEFINED__
 #define ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_FWD_DEFINED__
@@ -95,6 +109,13 @@ typedef interface __FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUs
 #endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage_FWD_DEFINED__ */
 
 
+#ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__ */
+
+
 #ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile __FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile;
@@ -121,6 +142,20 @@ typedef interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIden
 typedef interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage __FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage;
 
 #endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_FWD_DEFINED__
@@ -227,6 +262,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStatusChangedEventHandler_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                interface IAttributedNetworkUsage;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext __x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext;
@@ -325,6 +380,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                interface IConnectionProfile3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_FWD_DEFINED__
@@ -835,6 +910,121 @@ namespace ABI {
 namespace Windows {
 namespace Networking {
 namespace Connectivity {
+class AttributedNetworkUsage;
+} /*Connectivity*/
+} /*Networking*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Networking {
+namespace Connectivity {
+interface IAttributedNetworkUsage;
+} /*Connectivity*/
+} /*Networking*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0000 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0000_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4581 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4581 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4581_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#define DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("4070c40f-ab2f-56f2-b54c-8232ae86aacd"))
+IIterator<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*, ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Networking.Connectivity.AttributedNetworkUsage>"; }
+};
+typedef IIterator<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*> __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t;
+#define ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4582 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4582 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4582_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#define DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("d061dcb9-6854-5ef9-8e03-008a7a704c48"))
+IIterable<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*, ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Networking.Connectivity.AttributedNetworkUsage>"; }
+};
+typedef IIterable<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*> __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t;
+#define ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Networking {
+namespace Connectivity {
 class ConnectionProfile;
 } /*Connectivity*/
 } /*Networking*/
@@ -855,29 +1045,30 @@ interface IConnectionProfile;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0000 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3042 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3042_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4583 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4583_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -901,29 +1092,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3043 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3043_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4584 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4584_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -970,30 +1161,30 @@ interface IConnectivityInterval;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3044 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3044_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4585 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4585_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE
@@ -1017,29 +1208,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3045 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3045_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4586 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4586_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE
@@ -1086,30 +1277,30 @@ interface ILanIdentifier;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3046 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3046_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4587 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4587_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier_USE
@@ -1133,29 +1324,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3047 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3047_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4588 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4588_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CLanIdentifier_USE
@@ -1202,30 +1393,30 @@ interface INetworkUsage;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3048 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3048_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4589 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4589_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE
@@ -1249,29 +1440,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3049 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3049_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4590 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4590_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE
@@ -1295,29 +1486,75 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3050 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3050_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4591 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4591_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#define DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("6e7c44ad-7753-5437-9f79-970d391ff7c4"))
+IVectorView<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*, ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.Networking.Connectivity.AttributedNetworkUsage>"; }
+};
+typedef IVectorView<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage*> __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t;
+#define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4592 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4592 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4592_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -1341,29 +1578,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3051 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3051_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4593 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4593_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE
@@ -1387,29 +1624,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3052 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3052_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4594 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4594_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_USE
@@ -1433,29 +1670,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3053 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3053_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4595 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4595_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE
@@ -1479,29 +1716,121 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3054 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3054_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4596 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4596_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("96af15cc-f060-5667-9223-e054d14239ec"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.Networking.Connectivity.AttributedNetworkUsage>>"; }
+};
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4597 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4597 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4597_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("9d8a4113-e7f3-552d-9a8c-1c25e2137253"))
+IAsyncOperation<__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Networking.Connectivity.AttributedNetworkUsage>>"; }
+};
+typedef IAsyncOperation<__FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage*> __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4598 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4598 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4598_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -1525,29 +1854,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3055 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3055_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4599 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4599_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -1571,29 +1900,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3056 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3056_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4600 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4600_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE
@@ -1617,29 +1946,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3057 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3057_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4601 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4601_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE
@@ -1663,29 +1992,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3058 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3058_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4602 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4602_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE
@@ -1709,29 +2038,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3059 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3059_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE
@@ -1755,29 +2084,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3060 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3060_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -1801,29 +2130,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3061 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3061_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4605 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_USE
@@ -1870,30 +2199,30 @@ interface IConnectionSession;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3062 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3062_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession_USE
@@ -1917,29 +2246,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3063 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3063_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_USE
@@ -1986,30 +2315,30 @@ interface IProxyConfiguration;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3064 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3064_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4608 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_USE
@@ -2033,29 +2362,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3065 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3065_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4609 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_USE
@@ -2079,29 +2408,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3066 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3066_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -2125,29 +2454,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3067 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3067_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
@@ -2171,29 +2500,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3068 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3068_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_HSTRING_USE
@@ -2217,29 +2546,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3069 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3069_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_GUID_USE
@@ -2263,29 +2592,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_GUID_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3070 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3070_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_byte_USE
@@ -2309,29 +2638,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_byte_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3071 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3071_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_boolean_USE
@@ -2355,29 +2684,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3072 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3072_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT32_USE
@@ -2401,29 +2730,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3073 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3073_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT64_USE
@@ -2457,30 +2786,30 @@ struct DateTime;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3074 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3074_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CDateTime_USE
@@ -2504,29 +2833,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CFoundation__CDateTime_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3075 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3075_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_byte_USE
@@ -2550,29 +2879,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_byte_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3076 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3076_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_byte_USE
@@ -2596,29 +2925,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_byte_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3077 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3077_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_byte_USE
@@ -2661,30 +2990,30 @@ interface IHostName;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3078 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3078_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4622 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CHostName_USE
@@ -2708,29 +3037,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CHostName_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CHostName_USE
@@ -2754,29 +3083,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CHostName_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4624 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CHostName_USE
@@ -2819,30 +3148,30 @@ interface IEndpointPair;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3081 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CEndpointPair_USE
@@ -2866,29 +3195,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CEndpointPair_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CEndpointPair_USE
@@ -2912,29 +3241,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CEndpointPair_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CEndpointPair_USE
@@ -2977,30 +3306,30 @@ interface IUriRuntimeClass;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CFoundation__CUri_USE
@@ -3024,29 +3353,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CFoundation__CUri_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CFoundation__CUri_USE
@@ -3070,29 +3399,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CFoundation__CUri_USE */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CFoundation__CUri_USE
@@ -3156,6 +3485,7 @@ typedef enum __x_ABI_CWindows_CNetworking_CHostNameSortOptions __x_ABI_CWindows_
 
 
 #endif
+
 
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
@@ -3281,6 +3611,7 @@ typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CWwanNetworkRegistration
 typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates;
 
 #endif
+
 
 
 
@@ -3472,7 +3803,7 @@ class WwanConnectionProfileDetails;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050 */
 /* [local] */ 
 
 
@@ -3540,6 +3871,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 #ifdef __cplusplus
@@ -3802,23 +4134,362 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3087 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#define DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4070c40f-ab2f-56f2-b54c-8232ae86aacd")
+    __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl;
+
+    interface __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4632 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4632 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#define DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d061dcb9-6854-5ef9-8e03-008a7a704c48")
+    __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl;
+
+    interface __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4633 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4633 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -3826,13 +4497,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3087
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -3976,35 +4647,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CConnectivity__CConn
 #endif 	/* ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -4012,13 +4683,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3088
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -4128,35 +4799,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CConnectivity__CConn
 #endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval
@@ -4164,13 +4835,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3089
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
@@ -4314,35 +4985,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CConnectivity__CConn
 #endif 	/* ____FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CConnectivityInterval */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CConnectivityInterval
@@ -4350,13 +5021,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3090
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
@@ -4466,35 +5137,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CConnectivity__CConn
 #endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CConnectivityInterval */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier
@@ -4502,13 +5173,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3091
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__
@@ -4652,35 +5323,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CConnectivity__CLanI
 #endif 	/* ____FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CLanIdentifier */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CLanIdentifier
@@ -4688,13 +5359,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3092
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__
@@ -4804,35 +5475,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CConnectivity__CLanI
 #endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CLanIdentifier */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage
@@ -4840,13 +5511,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3093
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
@@ -4990,35 +5661,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CConnectivity__CNetw
 #endif 	/* ____FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CNetworking__CConnectivity__CNetworkUsage */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage
@@ -5026,13 +5697,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3094
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
@@ -5142,35 +5813,229 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CConnectivity__CNetw
 #endif 	/* ____FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CNetworking__CConnectivity__CNetworkUsage */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#define DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("6e7c44ad-7753-5437-9f79-970d391ff7c4")
+    __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl;
+
+    interface __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4642 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4642 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -5178,13 +6043,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3095
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -5336,35 +6201,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CConnectivity__CCo
 #endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval
@@ -5372,13 +6237,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3096
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
@@ -5530,35 +6395,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CConnectivity__CCo
 #endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier
@@ -5566,13 +6431,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3097
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__
@@ -5724,35 +6589,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CConnectivity__CLa
 #endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage
@@ -5760,13 +6625,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3098
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
@@ -5918,35 +6783,340 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CConnectivity__CNe
 #endif 	/* ____FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("96af15cc-f060-5667-9223-e054d14239ec")
+    __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4647 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4647 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9d8a4113-e7f3-552d-9a8c-1c25e2137253")
+    __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl;
+
+    interface __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage
+    {
+        CONST_VTBL struct __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4648 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4648 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -5955,14 +7125,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3099
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -6051,35 +7221,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -6087,13 +7257,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3100
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -6223,35 +7393,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworkin
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval
@@ -6260,14 +7430,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3101
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
@@ -6356,35 +7526,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval
@@ -6392,13 +7562,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3102
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__
@@ -6528,35 +7698,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworkin
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage
@@ -6565,14 +7735,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3103
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
@@ -6661,35 +7831,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage
@@ -6697,13 +7867,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3104
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__
@@ -6833,35 +8003,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworkin
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -6870,14 +8040,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3105
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -6966,35 +8136,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile
@@ -7002,13 +8172,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3106
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__
@@ -7138,35 +8308,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CConnectivity_
 #endif 	/* ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession
@@ -7175,14 +8345,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3107
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__
@@ -7271,35 +8441,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession
@@ -7307,13 +8477,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3108
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__
@@ -7443,35 +8613,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CConnectivity_
 #endif 	/* ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration
@@ -7480,14 +8650,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3109
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_INTERFACE_DEFINED__
@@ -7576,35 +8746,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CProxyConfiguration */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration
@@ -7612,13 +8782,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity2Eidl_0000_3110
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_INTERFACE_DEFINED__
@@ -7748,7 +8918,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CConnectivity_
 #endif 	/* ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -7985,7 +9155,7 @@ struct __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -8308,8 +9478,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStatusChangedEventHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStatusChangedEventHandler_INTERFACE_DEFINED__
@@ -8409,7 +9579,184 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStatu
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStatusChangedEventHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IAttributedNetworkUsage[] = L"Windows.Networking.Connectivity.IAttributedNetworkUsage";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Networking::Connectivity::IAttributedNetworkUsage */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Networking {
+                namespace Connectivity {
+                    
+                    MIDL_INTERFACE("F769B039-ECA2-45EB-ADE1-B0368B756C49")
+                    IAttributedNetworkUsage : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BytesSent( 
+                            /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BytesReceived( 
+                            /* [out][retval] */ __RPC__out UINT64 *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AttributionId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AttributionName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AttributionThumbnail( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IAttributedNetworkUsage = __uuidof(IAttributedNetworkUsage);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsageVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BytesSent )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BytesReceived )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out][retval] */ __RPC__out UINT64 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AttributionId )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AttributionName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AttributionThumbnail )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsageVtbl;
+
+    interface __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsageVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_get_BytesSent(This,value)	\
+    ( (This)->lpVtbl -> get_BytesSent(This,value) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_get_BytesReceived(This,value)	\
+    ( (This)->lpVtbl -> get_BytesReceived(This,value) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_get_AttributionId(This,value)	\
+    ( (This)->lpVtbl -> get_AttributionId(This,value) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_get_AttributionName(This,value)	\
+    ( (This)->lpVtbl -> get_AttributionName(This,value) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_get_AttributionThumbnail(This,value)	\
+    ( (This)->lpVtbl -> get_AttributionThumbnail(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIAttributedNetworkUsage_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_INTERFACE_DEFINED__)
@@ -8417,13 +9764,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_INTERFACE_DEFINED__
@@ -8656,7 +10003,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnC
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CICellularApnContext_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_INTERFACE_DEFINED__)
@@ -8664,13 +10011,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_INTERFACE_DEFINED__
@@ -8823,7 +10170,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCo
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost2_INTERFACE_DEFINED__)
@@ -8831,13 +10178,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost2_INTERFACE_DEFINED__
@@ -8960,7 +10307,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCo
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionCost2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile_INTERFACE_DEFINED__)
@@ -8968,13 +10315,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile_INTERFACE_DEFINED__
@@ -9187,7 +10534,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionPr
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile2_INTERFACE_DEFINED__)
@@ -9195,13 +10542,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile2_INTERFACE_DEFINED__
@@ -9418,7 +10765,150 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionPr
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IConnectionProfile3[] = L"Windows.Networking.Connectivity.IConnectionProfile3";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Networking::Connectivity::IConnectionProfile3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Networking {
+                namespace Connectivity {
+                    
+                    MIDL_INTERFACE("578C2528-4CD9-4161-8045-201CFD5B115C")
+                    IConnectionProfile3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetAttributedNetworkUsageAsync( 
+                            /* [in] */ ABI::Windows::Foundation::DateTime startTime,
+                            /* [in] */ ABI::Windows::Foundation::DateTime endTime,
+                            /* [in] */ ABI::Windows::Networking::Connectivity::NetworkUsageStates states,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IConnectionProfile3 = __uuidof(IConnectionProfile3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAttributedNetworkUsageAsync )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3 * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CDateTime startTime,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CDateTime endTime,
+            /* [in] */ __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates states,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CAttributedNetworkUsage **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3Vtbl;
+
+    interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_GetAttributedNetworkUsageAsync(This,startTime,endTime,states,value)	\
+    ( (This)->lpVtbl -> GetAttributedNetworkUsageAsync(This,startTime,endTime,states,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_INTERFACE_DEFINED__)
@@ -9426,13 +10916,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_INTERFACE_DEFINED__
@@ -9645,7 +11135,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionPr
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_INTERFACE_DEFINED__)
@@ -9653,13 +11143,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_INTERFACE_DEFINED__
@@ -9842,7 +11332,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionPr
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_INTERFACE_DEFINED__)
@@ -9850,13 +11340,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_INTERFACE_DEFINED__
@@ -9979,7 +11469,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSe
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionSession_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityInterval_INTERFACE_DEFINED__)
@@ -9987,13 +11477,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityInterval_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityInterval_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityInterval_INTERFACE_DEFINED__
@@ -10126,7 +11616,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivity
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityInterval_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityManagerStatics_INTERFACE_DEFINED__)
@@ -10134,13 +11624,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityManagerStatics_INTERFACE_DEFINED__
@@ -10285,7 +11775,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivity
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectivityManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanStatus_INTERFACE_DEFINED__)
@@ -10293,13 +11783,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanStatus_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanStatus_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanStatus_INTERFACE_DEFINED__
@@ -10472,7 +11962,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanStat
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanUsage_INTERFACE_DEFINED__)
@@ -10480,13 +11970,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanUsage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanUsage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanUsage_INTERFACE_DEFINED__
@@ -10619,7 +12109,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanUsag
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataPlanUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIDataUsage_INTERFACE_DEFINED__)
@@ -10627,13 +12117,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIDataUsage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataUsage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataUsage_INTERFACE_DEFINED__
@@ -10766,7 +12256,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIDataUsage;
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIDataUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0124 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIIPInformation_INTERFACE_DEFINED__)
@@ -10774,13 +12264,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIIPInformation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0124_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIIPInformation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIIPInformation_INTERFACE_DEFINED__
@@ -10913,7 +12403,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIIPInformatio
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIIPInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0125 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifier_INTERFACE_DEFINED__)
@@ -10921,13 +12411,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifier_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifier_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifier_INTERFACE_DEFINED__
@@ -11070,7 +12560,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifie
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifier_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0126 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifierData_INTERFACE_DEFINED__)
@@ -11078,13 +12568,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifierData_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifierData_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifierData_INTERFACE_DEFINED__
@@ -11217,7 +12707,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifie
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CILanIdentifierData_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkAdapter_INTERFACE_DEFINED__)
@@ -11225,13 +12715,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkAdapter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkAdapter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkAdapter_INTERFACE_DEFINED__
@@ -11404,7 +12894,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkAdapt
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkAdapter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0128 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics_INTERFACE_DEFINED__)
@@ -11412,13 +12902,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics_INTERFACE_DEFINED__
@@ -11619,7 +13109,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInfor
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0129 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics2_INTERFACE_DEFINED__)
@@ -11627,13 +13117,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics2_INTERFACE_DEFINED__
@@ -11758,7 +13248,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInfor
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkInformationStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0130 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkItem_INTERFACE_DEFINED__)
@@ -11766,13 +13256,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkItem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0130_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkItem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkItem_INTERFACE_DEFINED__
@@ -11905,7 +13395,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkItem;
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0131 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkSecuritySettings_INTERFACE_DEFINED__)
@@ -11913,13 +13403,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkSecuritySettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkSecuritySettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkSecuritySettings_INTERFACE_DEFINED__
@@ -12052,7 +13542,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkSecur
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkSecuritySettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0132 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails_INTERFACE_DEFINED__)
@@ -12060,13 +13550,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0132_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails_INTERFACE_DEFINED__
@@ -12239,7 +13729,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkState
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0133 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails2_INTERFACE_DEFINED__)
@@ -12247,13 +13737,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails2_INTERFACE_DEFINED__
@@ -12386,7 +13876,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkState
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkStateChangeEventDetails2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0134 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkUsage_INTERFACE_DEFINED__)
@@ -12394,13 +13884,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkUsage_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0134 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkUsage_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkUsage_INTERFACE_DEFINED__
@@ -12543,7 +14033,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CINetworkUsage
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CINetworkUsage_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIProxyConfiguration_INTERFACE_DEFINED__)
@@ -12551,13 +14041,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIProxyConfiguration_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIProxyConfiguration_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIProxyConfiguration_INTERFACE_DEFINED__
@@ -12690,7 +14180,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIProxyConfigu
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIProxyConfiguration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0136 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicy_INTERFACE_DEFINED__)
@@ -12698,13 +14188,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicy_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0136 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0136_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicy_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicy_INTERFACE_DEFINED__
@@ -12847,7 +14337,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicy;
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicy_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicyFactory_INTERFACE_DEFINED__)
@@ -12855,13 +14345,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicyFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicyFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicyFactory_INTERFACE_DEFINED__
@@ -12990,7 +14480,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicyF
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIRoutePolicyFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnectionProfileDetails_INTERFACE_DEFINED__)
@@ -12998,13 +14488,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnectionProfileDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnectionProfileDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnectionProfileDetails_INTERFACE_DEFINED__
@@ -13127,7 +14617,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnecti
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIWlanConnectionProfileDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0139 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_INTERFACE_DEFINED__)
@@ -13135,13 +14625,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_INTERFACE_DEFINED__
@@ -13294,9 +14784,13 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnecti
 #endif 	/* ____x_ABI_CWindows_CNetworking_CConnectivity_CIWwanConnectionProfileDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0140 */
 /* [local] */ 
 
+#ifndef RUNTIMECLASS_Windows_Networking_Connectivity_AttributedNetworkUsage_DEFINED
+#define RUNTIMECLASS_Windows_Networking_Connectivity_AttributedNetworkUsage_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Connectivity_AttributedNetworkUsage[] = L"Windows.Networking.Connectivity.AttributedNetworkUsage";
+#endif
 #ifndef RUNTIMECLASS_Windows_Networking_Connectivity_CellularApnContext_DEFINED
 #define RUNTIMECLASS_Windows_Networking_Connectivity_CellularApnContext_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Networking_Connectivity_CellularApnContext[] = L"Windows.Networking.Connectivity.CellularApnContext";
@@ -13391,13 +14885,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123 */
+/* interface __MIDL_itf_windows2Enetworking2Econnectivity_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Econnectivity_0000_0140_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

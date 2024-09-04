@@ -1231,8 +1231,10 @@ BOOLAPI InternetUnlockRequestFile(
 #define INTERNET_OPTION_REFERER_TOKEN_BINDING_HOSTNAME          163
 
 
+#define INTERNET_OPTION_TOKEN_BINDING_PUBLIC_KEY     181
+
 #define INTERNET_FIRST_OPTION                   INTERNET_OPTION_CALLBACK
-#define INTERNET_LAST_OPTION                    INTERNET_OPTION_REFERER_TOKEN_BINDING_HOSTNAME
+#define INTERNET_LAST_OPTION                    INTERNET_OPTION_TOKEN_BINDING_PUBLIC_KEY
 
 
 //
@@ -1317,8 +1319,6 @@ BOOLAPI InternetUnlockRequestFile(
 
 #define SECURITY_FLAG_IGNORE_REDIRECT_TO_HTTPS  INTERNET_FLAG_IGNORE_REDIRECT_TO_HTTPS
 #define SECURITY_FLAG_IGNORE_REDIRECT_TO_HTTP   INTERNET_FLAG_IGNORE_REDIRECT_TO_HTTP
-
-
 
 #define SECURITY_SET_MASK       (SECURITY_FLAG_IGNORE_REVOCATION |\
                                  SECURITY_FLAG_IGNORE_UNKNOWN_CA |\
@@ -2319,9 +2319,15 @@ BOOLAPI GopherGetAttributeW(
 #define HTTP_QUERY_STRICT_TRANSPORT_SECURITY    91
 
 #define HTTP_QUERY_TOKEN_BINDING                92
-#define HTTP_QUERY_INCLUDE_REFERER_TOKEN_BINDING_ID  93
 
-#define HTTP_QUERY_MAX                          93
+#define HTTP_QUERY_INCLUDE_REFERRED_TOKEN_BINDING_ID  93
+#define HTTP_QUERY_INCLUDE_REFERER_TOKEN_BINDING_ID   HTTP_QUERY_INCLUDE_REFERRED_TOKEN_BINDING_ID
+
+#define HTTP_QUERY_PUBLIC_KEY_PINS              94
+#define HTTP_QUERY_PUBLIC_KEY_PINS_REPORT_ONLY  95
+
+#define HTTP_QUERY_MAX                          95
+
 //
 // HTTP_QUERY_CUSTOM - if this special value is supplied as the dwInfoLevel
 // parameter of HttpQueryInfo() then the lpBuffer parameter contains the name
@@ -2652,6 +2658,9 @@ typedef struct
 #define INTERNET_COOKIE_HTTPONLY                 0x00002000
 #define INTERNET_COOKIE_HOST_ONLY                0x00004000
 #define INTERNET_COOKIE_APPLY_HOST_ONLY          0x00008000
+
+
+#define INTERNET_COOKIE_HOST_ONLY_APPLIED        0x00080000
 
 
 BOOLAPI
@@ -4043,6 +4052,7 @@ HttpIsHostHstsEnabled(
     _In_z_ PCWSTR pcwszUrl,
     _Out_ PBOOL pfIsHsts
 );
+
 
 
 #if defined(__cplusplus)

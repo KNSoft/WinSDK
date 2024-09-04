@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -1082,11 +1082,12 @@ EXTERN_C const IID IID_IEnumBackgroundCopyJobs;
 /* interface __MIDL_itf_bits_0000_0005 */
 /* [local] */ 
 
-#define   BG_NOTIFY_JOB_TRANSFERRED    0x0001
-#define   BG_NOTIFY_JOB_ERROR          0x0002
-#define   BG_NOTIFY_DISABLE            0x0004
-#define   BG_NOTIFY_JOB_MODIFICATION   0x0008
-#define   BG_NOTIFY_FILE_TRANSFERRED   0x0010
+#define   BG_NOTIFY_JOB_TRANSFERRED         0x0001
+#define   BG_NOTIFY_JOB_ERROR               0x0002
+#define   BG_NOTIFY_DISABLE                 0x0004
+#define   BG_NOTIFY_JOB_MODIFICATION        0x0008
+#define   BG_NOTIFY_FILE_TRANSFERRED        0x0010
+#define   BG_NOTIFY_FILE_RANGES_TRANSFERRED 0x0020
 
 
 extern RPC_IF_HANDLE __MIDL_itf_bits_0000_0005_v0_0_c_ifspec;

@@ -334,6 +334,12 @@ typedef enum _CREATE_VIRTUAL_DISK_FLAG
     // name of the file may change.
     CREATE_VIRTUAL_DISK_FLAG_VHD_SET_USE_ORIGINAL_BACKING_STORAGE = 0x40,
 
+    //
+    // When creating a fixed virtual disk, take advantage of an underlying sparse file.
+    // Only supported on file systems that support sparse VDLs.
+    //
+    CREATE_VIRTUAL_DISK_FLAG_SPARSE_FILE = 0x80,
+
 } CREATE_VIRTUAL_DISK_FLAG;
 
 #define CREATE_VIRTUAL_DISK_FLAG_USE_RCT_SOURCE_LIMIT CREATE_VIRTUAL_DISK_FLAG_USE_CHANGE_TRACKING_SOURCE_LIMIT

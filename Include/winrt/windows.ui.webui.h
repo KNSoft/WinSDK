@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -408,12 +408,18 @@ extern "C"{
 #if !defined(__windows2Eapplicationmodel2Ebackground_h__)
 #include <Windows.ApplicationModel.Background.h>
 #endif // !defined(__windows2Eapplicationmodel2Ebackground_h__)
+#if !defined(__windows2Eapplicationmodel2Ewallet_h__)
+#include <Windows.ApplicationModel.Wallet.h>
+#endif // !defined(__windows2Eapplicationmodel2Ewallet_h__)
 #if !defined(__windows2Egraphics2Eprinting_h__)
 #include <Windows.Graphics.Printing.h>
 #endif // !defined(__windows2Egraphics2Eprinting_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+
+
+
 
 
 
@@ -711,6 +717,17 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace WebUI {
+class WebUIContactPanelActivatedEventArgs;
+} /*WebUI*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace WebUI {
 class WebUIContactPickerActivatedEventArgs;
 } /*WebUI*/
 } /*UI*/
@@ -876,6 +893,17 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace WebUI {
+class WebUILockScreenComponentActivatedEventArgs;
+} /*WebUI*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace WebUI {
 class WebUINavigatedDeferral;
 } /*WebUI*/
 } /*UI*/
@@ -921,6 +949,17 @@ namespace Windows {
 namespace UI {
 namespace WebUI {
 class WebUIPrintTaskSettingsActivatedEventArgs;
+} /*WebUI*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace WebUI {
+class WebUIPrintWorkflowForegroundTaskActivatedEventArgs;
 } /*WebUI*/
 } /*UI*/
 } /*Windows*/
@@ -1019,7 +1058,29 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace WebUI {
+class WebUIWalletActionActivatedEventArgs;
+} /*WebUI*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace WebUI {
 class WebUIWebAccountProviderActivatedEventArgs;
+} /*WebUI*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace WebUI {
+class WebUIWebAuthenticationBrokerContinuationEventArgs;
 } /*WebUI*/
 } /*UI*/
 } /*Windows*/
@@ -1043,6 +1104,9 @@ enum __x_ABI_CWindows_CUI_CWebUI_CPrintContent
 
 /* interface __MIDL_itf_windows2Eui2Ewebui_0000_0000 */
 /* [local] */ 
+
+
+
 
 
 
@@ -3655,6 +3719,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUIContactMessageActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIContactMessageActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIContactMessageActivatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIContactPanelActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUIContactPanelActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIContactPanelActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIContactPanelActivatedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIContactPickerActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUIContactPickerActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIContactPickerActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIContactPickerActivatedEventArgs";
@@ -3715,6 +3783,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUILockScreenCallActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUILockScreenCallActivatedEventArgs[] = L"Windows.UI.WebUI.WebUILockScreenCallActivatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUILockScreenComponentActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUILockScreenComponentActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUILockScreenComponentActivatedEventArgs[] = L"Windows.UI.WebUI.WebUILockScreenComponentActivatedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUINavigatedDeferral_DEFINED
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUINavigatedDeferral_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUINavigatedDeferral[] = L"Windows.UI.WebUI.WebUINavigatedDeferral";
@@ -3734,6 +3806,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIPrintTaskSettingsActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUIPrintTaskSettingsActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIPrintTaskSettingsActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIPrintTaskSettingsActivatedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIPrintWorkflowForegroundTaskActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUIPrintWorkflowForegroundTaskActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIPrintWorkflowForegroundTaskActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIPrintWorkflowForegroundTaskActivatedEventArgs";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIProtocolActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUIProtocolActivatedEventArgs_DEFINED
@@ -3767,9 +3843,17 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUIVoiceCommandActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIVoiceCommandActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIVoiceCommandActivatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIWalletActionActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUIWalletActionActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIWalletActionActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIWalletActionActivatedEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIWebAccountProviderActivatedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_WebUI_WebUIWebAccountProviderActivatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIWebAccountProviderActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIWebAccountProviderActivatedEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIWebAuthenticationBrokerContinuationEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUIWebAuthenticationBrokerContinuationEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIWebAuthenticationBrokerContinuationEventArgs[] = L"Windows.UI.WebUI.WebUIWebAuthenticationBrokerContinuationEventArgs";
 #endif
 
 

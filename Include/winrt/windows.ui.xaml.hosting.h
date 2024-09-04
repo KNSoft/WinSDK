@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -81,6 +81,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IElementCompositionPreviewStatics2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_FWD_DEFINED__
@@ -251,18 +273,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5380 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4713_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4713_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5380_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0001 */
 /* [local] */ 
@@ -297,18 +319,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5381 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4714_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4714_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5381_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0002 */
 /* [local] */ 
@@ -343,18 +365,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4715 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5382 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4715 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5382 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4715_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4715_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5382_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0003 */
 /* [local] */ 
@@ -389,18 +411,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4716 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5383 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4716 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5383 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4716_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4716_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5383_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0004 */
 /* [local] */ 
@@ -435,18 +457,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4717 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5384 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4717 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5384 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4717_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_4717_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting2Eidl_0000_5384_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0005 */
 /* [local] */ 
@@ -508,6 +530,7 @@ class CompositionPropertySet;
 } /*Windows*/
 }
 #endif
+
 
 #ifdef __cplusplus
 namespace ABI {
@@ -589,6 +612,7 @@ class UIElement;
 
 
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -658,6 +682,7 @@ extern "C" {
 
 
 
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -679,6 +704,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 
@@ -990,9 +1016,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionP
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0007 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlUIPresenter[] = L"Windows.UI.Xaml.Hosting.IXamlUIPresenter";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IElementCompositionPreviewStatics2[] = L"Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0007 */
@@ -1002,6 +1028,183 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0007_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Hosting {
+                        
+                        MIDL_INTERFACE("24148FBB-23D6-4F37-BA0C-0733E799722D")
+                        IElementCompositionPreviewStatics2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE SetImplicitShowAnimation( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *element,
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Composition::ICompositionAnimationBase *animation) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetImplicitHideAnimation( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *element,
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Composition::ICompositionAnimationBase *animation) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetIsTranslationEnabled( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *element,
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetPointerPositionPropertySet( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *targetElement,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Composition::ICompositionPropertySet **result) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IElementCompositionPreviewStatics2 = __uuidof(IElementCompositionPreviewStatics2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetImplicitShowAnimation )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *element,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase *animation);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetImplicitHideAnimation )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *element,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase *animation);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetIsTranslationEnabled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *element,
+            /* [in] */ boolean value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPointerPositionPropertySet )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *targetElement,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CComposition_CICompositionPropertySet **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_SetImplicitShowAnimation(This,element,animation)	\
+    ( (This)->lpVtbl -> SetImplicitShowAnimation(This,element,animation) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_SetImplicitHideAnimation(This,element,animation)	\
+    ( (This)->lpVtbl -> SetImplicitHideAnimation(This,element,animation) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_SetIsTranslationEnabled(This,element,value)	\
+    ( (This)->lpVtbl -> SetIsTranslationEnabled(This,element,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_GetPointerPositionPropertySet(This,targetElement,result)	\
+    ( (This)->lpVtbl -> GetPointerPositionPropertySet(This,targetElement,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlUIPresenter[] = L"Windows.UI.Xaml.Hosting.IXamlUIPresenter";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__
@@ -1204,7 +1407,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_INTERFACE_DEFINED__)
@@ -1212,13 +1415,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_INTERFACE_DEFINED__
@@ -1345,7 +1548,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_INTERFACE_DEFINED__)
@@ -1353,13 +1556,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_INTERFACE_DEFINED__
@@ -1484,7 +1687,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_INTERFACE_DEFINED__)
@@ -1492,13 +1695,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_INTERFACE_DEFINED__
@@ -1629,7 +1832,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics_INTERFACE_DEFINED__)
@@ -1637,13 +1840,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics_INTERFACE_DEFINED__
@@ -1796,7 +1999,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics2_INTERFACE_DEFINED__)
@@ -1804,13 +2007,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics2_INTERFACE_DEFINED__
@@ -1967,7 +2170,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0014 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_ElementCompositionPreview_DEFINED
@@ -1980,13 +2183,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Ehosting_0000_0014_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

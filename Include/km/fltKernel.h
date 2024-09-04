@@ -85,6 +85,12 @@ extern "C" {
 
 #define FLT_MGR_WIN10_RS1 (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 
+//
+//  This defines items that only exist in Windows RedStone 2 or later
+//
+
+#define FLT_MGR_WIN10_RS2 (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //  Standard includes
@@ -160,6 +166,7 @@ extern "C" {
 #define IRP_MJ_RELEASE_FOR_MOD_WRITE                 ((UCHAR)-4)
 #define IRP_MJ_ACQUIRE_FOR_CC_FLUSH                  ((UCHAR)-5)
 #define IRP_MJ_RELEASE_FOR_CC_FLUSH                  ((UCHAR)-6)
+#define IRP_MJ_QUERY_OPEN                            ((UCHAR)-7)
 
 
 //
@@ -888,6 +895,17 @@ typedef union _FLT_PARAMETERS {
     struct {
         PERESOURCE ResourceToRelease;
     } ReleaseForModifiedPageWriter;
+
+    //
+    // IRP_MJ_QUERY_OPEN
+    //
+
+    struct {
+        PIRP Irp;
+        PVOID FileInformation;
+        PULONG Length;
+        FILE_INFORMATION_CLASS FileInformationClass;
+    } QueryOpen;
 
 
     //
@@ -1722,7 +1740,8 @@ typedef enum _FLT_PREOP_CALLBACK_STATUS {
     FLT_PREOP_PENDING,
     FLT_PREOP_DISALLOW_FASTIO,
     FLT_PREOP_COMPLETE,
-    FLT_PREOP_SYNCHRONIZE
+    FLT_PREOP_SYNCHRONIZE,
+    FLT_PREOP_DISALLOW_FSFILTER_IO
 
 
 } FLT_PREOP_CALLBACK_STATUS, *PFLT_PREOP_CALLBACK_STATUS;
@@ -3284,6 +3303,23 @@ FltFastIoMdlWriteComplete (
     _In_ PFILE_OBJECT FileObject,
     _In_ PLARGE_INTEGER FileOffset,
     _In_ PMDL MdlChain
+    );
+#endif
+
+#if FLT_MGR_WIN10_RS2
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+FLTAPI
+FltQueryInformationByName (
+    _In_ PFLT_FILTER Filter,
+    _In_opt_ PFLT_INSTANCE Instance,
+    _In_ POBJECT_ATTRIBUTES ObjectAttributes,
+    _Out_ PIO_STATUS_BLOCK IoStatusBlock,
+    _Out_writes_bytes_(Length) PVOID FileInformation,
+    _In_ ULONG Length,
+    _In_ FILE_INFORMATION_CLASS FileInformationClass,
+    _In_opt_ PIO_DRIVER_CREATE_CONTEXT DriverContext
     );
 #endif
 

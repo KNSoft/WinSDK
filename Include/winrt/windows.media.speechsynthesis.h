@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -134,6 +134,46 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                interface ISpeechSynthesizer2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace SpeechSynthesis {
+                interface ISpeechSynthesizerOptions;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation __x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation;
@@ -210,18 +250,18 @@ interface IVoiceInformation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3230 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3230 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3230_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3230_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0001 */
 /* [local] */ 
@@ -256,18 +296,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3231 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3231 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3231_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3231_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0002 */
 /* [local] */ 
@@ -302,18 +342,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3232 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3232 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3232_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3232_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0003 */
 /* [local] */ 
@@ -372,18 +412,18 @@ interface ISpeechSynthesisStream;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3233 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3233 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3233_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3233_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0004 */
 /* [local] */ 
@@ -418,18 +458,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3234 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3234 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3234_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3234_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0005 */
 /* [local] */ 
@@ -475,18 +515,18 @@ interface IMediaMarker;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3235 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3235 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3235_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3235_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0006 */
 /* [local] */ 
@@ -521,18 +561,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3236 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3236 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3236_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3236_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0007 */
 /* [local] */ 
@@ -567,18 +607,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3237 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3237 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3237_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3237_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0008 */
 /* [local] */ 
@@ -609,12 +649,16 @@ extern "C" {
 #if !defined(__windows2Emedia_h__)
 #include <Windows.Media.h>
 #endif // !defined(__windows2Emedia_h__)
+#if !defined(__windows2Emedia2Ecore_h__)
+#include <Windows.Media.Core.h>
+#endif // !defined(__windows2Emedia2Ecore_h__)
 #if !defined(__windows2Estorage2Estreams_h__)
 #include <Windows.Storage.Streams.h>
 #endif // !defined(__windows2Estorage2Estreams_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+
 
 
 
@@ -633,6 +677,8 @@ typedef enum __x_ABI_CWindows_CMedia_CSpeechSynthesis_CVoiceGender __x_ABI_CWind
 #endif
 
 
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -644,10 +690,22 @@ class SpeechSynthesizer;
 } /*Windows*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Media {
+namespace SpeechSynthesis {
+class SpeechSynthesizerOptions;
+} /*SpeechSynthesis*/
+} /*Media*/
+} /*Windows*/
+}
+#endif
 
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0008 */
 /* [local] */ 
+
 
 
 
@@ -678,21 +736,23 @@ extern "C" {
 
 
 
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3238 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3238 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3238_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3238_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0009 */
 /* [local] */ 
@@ -867,18 +927,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CSpeechSynthesis__CVoiceI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3239 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3239 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3239_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3239_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0011 */
 /* [local] */ 
@@ -1019,18 +1079,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CSpeechSynthesis__CVoiceI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3240 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3240 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3240_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3240_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0013 */
 /* [local] */ 
@@ -1213,18 +1273,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CSpeechSynthesis__CVoic
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3241 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3241 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3241_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3241_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0015 */
 /* [local] */ 
@@ -1346,18 +1406,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CSp
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3242 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3242 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3242_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_3242_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0017 */
 /* [local] */ 
@@ -1996,9 +2056,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesi
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0021 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechSynthesis_IVoiceInformation[] = L"Windows.Media.SpeechSynthesis.IVoiceInformation";
-#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechSynthesis_ISpeechSynthesizer2[] = L"Windows.Media.SpeechSynthesis.ISpeechSynthesizer2";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0021 */
@@ -2008,6 +2068,310 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0021_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizer2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace SpeechSynthesis {
+                    
+                    MIDL_INTERFACE("A7C5ECB2-4339-4D6A-BBF8-C7A4F1544C2E")
+                    ISpeechSynthesizer2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Options( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpeechSynthesizer2 = __uuidof(ISpeechSynthesizer2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Options )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2Vtbl;
+
+    interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_get_Options(This,value)	\
+    ( (This)->lpVtbl -> get_Options(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizer2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechSynthesis_ISpeechSynthesizerOptions[] = L"Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Media {
+                namespace SpeechSynthesis {
+                    
+                    MIDL_INTERFACE("A0E23871-CC3D-43C9-91B1-EE185324D83D")
+                    ISpeechSynthesizerOptions : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IncludeWordBoundaryMetadata( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IncludeWordBoundaryMetadata( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IncludeSentenceBoundaryMetadata( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IncludeSentenceBoundaryMetadata( 
+                            /* [in] */ boolean value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_ISpeechSynthesizerOptions = __uuidof(ISpeechSynthesizerOptions);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptionsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IncludeWordBoundaryMetadata )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IncludeWordBoundaryMetadata )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IncludeSentenceBoundaryMetadata )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IncludeSentenceBoundaryMetadata )( 
+            __RPC__in __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptionsVtbl;
+
+    interface __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptionsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_get_IncludeWordBoundaryMetadata(This,value)	\
+    ( (This)->lpVtbl -> get_IncludeWordBoundaryMetadata(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_put_IncludeWordBoundaryMetadata(This,value)	\
+    ( (This)->lpVtbl -> put_IncludeWordBoundaryMetadata(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_get_IncludeSentenceBoundaryMetadata(This,value)	\
+    ( (This)->lpVtbl -> get_IncludeSentenceBoundaryMetadata(This,value) ) 
+
+#define __x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_put_IncludeSentenceBoundaryMetadata(This,value)	\
+    ( (This)->lpVtbl -> put_IncludeSentenceBoundaryMetadata(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CISpeechSynthesizerOptions_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0023 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_SpeechSynthesis_IVoiceInformation[] = L"Windows.Media.SpeechSynthesis.IVoiceInformation";
+#endif /* !defined(____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0023 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__
@@ -2170,7 +2534,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformati
 #endif 	/* ____x_ABI_CWindows_CMedia_CSpeechSynthesis_CIVoiceInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0024 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Media_SpeechSynthesis_SpeechSynthesisStream_DEFINED
@@ -2181,19 +2545,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_Media_SpeechSynthesis_SpeechSynthesizer_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechSynthesis_SpeechSynthesizer[] = L"Windows.Media.SpeechSynthesis.SpeechSynthesizer";
 #endif
+#ifndef RUNTIMECLASS_Windows_Media_SpeechSynthesis_SpeechSynthesizerOptions_DEFINED
+#define RUNTIMECLASS_Windows_Media_SpeechSynthesis_SpeechSynthesizerOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechSynthesis_SpeechSynthesizerOptions[] = L"Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions";
+#endif
 #ifndef RUNTIMECLASS_Windows_Media_SpeechSynthesis_VoiceInformation_DEFINED
 #define RUNTIMECLASS_Windows_Media_SpeechSynthesis_VoiceInformation_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Media_SpeechSynthesis_VoiceInformation[] = L"Windows.Media.SpeechSynthesis.VoiceInformation";
 #endif
 
 
-/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022 */
+/* interface __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Espeechsynthesis_0000_0024_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

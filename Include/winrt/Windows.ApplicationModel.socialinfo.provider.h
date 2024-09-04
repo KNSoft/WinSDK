@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -193,18 +193,18 @@ interface ISocialDashboardItemUpdater;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0001 */
 /* [local] */ 
@@ -239,18 +239,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0002 */
 /* [local] */ 
@@ -313,18 +313,18 @@ interface ISocialFeedUpdater;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3203 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0003 */
 /* [local] */ 
@@ -359,18 +359,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3204 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0004 */
 /* [local] */ 
@@ -429,18 +429,18 @@ interface ISocialFeedItem;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3205 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0005 */
 /* [local] */ 
@@ -475,18 +475,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3206 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0006 */
 /* [local] */ 
@@ -521,18 +521,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3207 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0007 */
 /* [local] */ 
@@ -567,18 +567,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3208 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0008 */
 /* [local] */ 
@@ -613,18 +613,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3209 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0009 */
 /* [local] */ 
@@ -659,18 +659,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3210 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3210_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0010 */
 /* [local] */ 
@@ -832,18 +832,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3211 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3211_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0011 */
 /* [local] */ 
@@ -965,18 +965,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3212 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3212_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0013 */
 /* [local] */ 
@@ -1137,18 +1137,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CSocialI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3213 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3213_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0015 */
 /* [local] */ 
@@ -1270,18 +1270,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3214 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_3214_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Esocialinfo2Eprovider_0000_0017 */
 /* [local] */ 

@@ -1,7 +1,7 @@
  
 /****************************************************************************
 *                                                                           *
-* rimext.h --        ApiSet Contract for ext-ms-win-ntuser-rim-l1-1-0       *
+* rimext.h --        ApiSet Contract for ext-ms-win-ntuser-rim-l1           *
 *                                                                           *
 * Copyright (c) Microsoft Corporation. All rights reserved.                 *
 *                                                                           *
@@ -31,9 +31,14 @@
 
 #ifndef _APISET_RIM_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
+
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#define _APISET_RIM_VER 0x0101
+
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_RIM_VER 0x0100
 #endif
+
 #endif
 #endif
 
@@ -268,11 +273,36 @@ typedef struct _RIM_HID_ATTRIBUTES
     //
 
     HMONITOR Monitor;
+
+    //
+    // Vendor ID of the device.
+    //
+
+    USHORT VendorID;
+
+    //
+    // Product ID of the device.
+    //
+
+    USHORT ProductID;
+
+    //
+    // Version number of the device.
+    //
+
+    USHORT VersionNumber;
 } RIM_HID_ATTRIBUTES, *PRIM_HID_ATTRIBUTES;
 
 #define RIM_DEVICE_PROP_KEYBOARD 1
 #define RIM_DEVICE_PROP_MOUSE 2
 #define RIM_DEVICE_PROP_HID 3
+#define RIM_DEVICE_PROP_PNP_INSTANCE_PATH 4
+
+typedef struct _RIM_PNP_INSTANCE_PATH
+{
+    ULONG cbBufferSize;
+    LPVOID pData;
+} RIM_PNP_INSTANCE_PATH;
 
 typedef struct RIM_DEVICE_PROPERTIES
 {
@@ -283,6 +313,7 @@ typedef struct RIM_DEVICE_PROPERTIES
         RIM_KEYBOARD_ATTRIBUTES keyboard;
         RIM_MOUSE_ATTRIBUTES mouse;
         RIM_HID_ATTRIBUTES hid;
+        RIM_PNP_INSTANCE_PATH pnpInstancePath;
     };
 } RIMDEVICEPROPERTIES, *PRIMDEVICEPROPERTIES;
 
@@ -331,7 +362,7 @@ struct RIMCOMPLETEFRAME {
     UINT64          qpcArrivalTime; // System QPC time when input frame was reported
     BOOL            bDevInjection;  // If RimDev is a an injection device
     BOOL            bButtonOnly;    // Used by TouchPad. (fButtonOnly)
-    BOOL            bAutoRepeatFrame;// This is an auto repeat frame. 
+    BOOL            bAutoRepeatFrame;// This is an auto repeat frame.
     DWORD           dwRimTickCount; // TickCount when this frame was signalled
                                     // by the RIM.
     ULONGLONG       ullRimQpc;      // QPC count that matches to dwRimTickCount.
@@ -341,6 +372,30 @@ struct RIMCOMPLETEFRAME {
     __field_ecount(cPointers) RIMPOINTERINFONODE*  pPointerInfoList; // Array[cPointers] of
                                                                      // RIMPOINTERINFONODE
 };
+
+typedef struct _RIMIDE_GENERIC_HID_DEVICE_PROPERTIES {
+
+    USHORT          VendorID;
+    USHORT          ProductID;
+    USHORT          VersionNumber;
+
+    GUID            ContainerID;
+
+    HANDLE          DeviceParent;
+
+    _Field_size_bytes_full_(ReportDescriptorLength)
+    PUCHAR          ReportDescriptor;
+    USHORT          ReportDescriptorLength;
+
+    // TODO: Update API to take in a callback to a user
+    // defined get feature routine instead of having a 
+    // static field. This is temporary to enable max count
+    // and other required features to be reported.
+    _Field_size_bytes_full_(FeatureReportLength)
+    PUCHAR          FeatureReport;
+    USHORT          FeatureReportLength;
+
+} RIMIDE_GENERIC_HID_DEVICE_PROPERTIES, *PRIMIDE_GENERIC_HID_DEVICE_PROPERTIES;
 
 
 #if !defined(_BUILD_RIM_) && !defined(_CONVERGED_BASE_SYS_DRIVER_) && !defined(_CONVERGED_WINDOWS_SYS_DRIVER_) && !defined(_CONVERGED_MIN_SYS_DRIVER_)
@@ -401,7 +456,7 @@ RIMUpdateInputObserverRegistration(
     _In_opt_ DWORD dwBufferSize
     );
 
-    
+
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -417,7 +472,7 @@ RIMObserveNextInput(
     _In_ HANDLE hInputObserver
     );
 
-    
+
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -427,7 +482,7 @@ RIMGetDevicePreparsedDataLockfree(
     _Inout_ PDWORD pdwBufferSize
     );
 
-    
+
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -436,6 +491,15 @@ RIMGetDevicePreparsedData(
     _In_ HANDLE hRimDev,
     _Out_writes_bytes_opt_(*pdwBufferSize) PVOID pBuffer,
     _Inout_ PDWORD pdwBufferSize
+    );
+
+
+WINUSERAPI
+NTSTATUS
+WINAPI
+RIMGetDevicePropertiesLockfree(
+    _In_ HANDLE hRimDev,
+    _Out_ PRIMDEVICEPROPERTIES pRimDevProps
     );
 
 
@@ -474,7 +538,7 @@ WINAPI
 RIMOnPnpNotification(
     _In_ HANDLE hRimHandle
     );
-  
+
 
 WINUSERAPI
 NTSTATUS
@@ -526,7 +590,7 @@ RIMGetPhysicalDeviceRect(
     _Out_ RECT * pPhysicalDeviceRect
     );
 
-    
+
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -676,7 +740,7 @@ typedef struct tagINPUT_INJECTION_VALUE {
 }INPUT_INJECTION_VALUE, *PINPUT_INJECTION_VALUE;
 
 #endif
-    
+
 WINUSERAPI
 BOOL
 WINAPI
@@ -689,6 +753,7 @@ InitializeInputDeviceInjection(
     _In_ DWORD visualMode,
     _Out_writes_(1) HANDLE * device
     );
+
 
 
 WINUSERAPI
@@ -757,7 +822,44 @@ InjectPointerInput(
     _In_reads_(count) CONST POINTER_TYPE_INFO * pointerInfo,
     _In_ UINT32 count
     );
-    
+
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_RIM_VER >= 0x0101)
+
+WINUSERAPI
+BOOL
+WINAPI
+InitializePointerDeviceInjectionEx(
+    _In_ POINTER_INPUT_TYPE type,
+    _In_ ULONG contactCount,
+    _In_ HMONITOR monitor,
+    _In_ DWORD visualMode,
+    _In_ DWORD workspaceId,
+    _Out_writes_(1) HANDLE * device
+    );
+
+
+WINUSERAPI
+BOOL
+WINAPI
+InitializeGenericHidInjection(
+    _In_ PRIMIDE_GENERIC_HID_DEVICE_PROPERTIES pDeviceProperties,
+    _Out_writes_(1) HANDLE * phDevice
+    );
+
+
+WINUSERAPI
+BOOL
+WINAPI
+InjectGenericHidInput(
+    _In_ HANDLE hDevice,
+    _In_reads_(ulInputReportLength) CONST PUCHAR pInputReport,
+    _In_ ULONG ulInputReportLength
+    );
+
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_RIM_VER >= 0x0101)
 
 #ifdef __cplusplus
 }
@@ -766,8 +868,8 @@ InjectPointerInput(
 #endif // _RIM_EXT_H_
 
 
-#ifndef ext_ms_win_ntuser_rim_l1_1_0_query_routines
-#define ext_ms_win_ntuser_rim_l1_1_0_query_routines
+#ifndef ext_ms_win_ntuser_rim_l1_1_1_query_routines
+#define ext_ms_win_ntuser_rim_l1_1_1_query_routines
 
 
 
@@ -824,6 +926,12 @@ IsRIMGetDevicePreparsedDataLockfreePresent(
 BOOLEAN
 __stdcall
 IsRIMGetDevicePreparsedDataPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsRIMGetDevicePropertiesLockfreePresent(
     VOID
     );
 
@@ -934,6 +1042,29 @@ __stdcall
 IsInjectPointerInputPresent(
     VOID
     );
+
+#if !defined(_CONTRACT_GEN) || (_APISET_RIM_VER >= 0x0101)
+
+
+BOOLEAN
+__stdcall
+IsInitializePointerDeviceInjectionExPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsInitializeGenericHidInjectionPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsInjectGenericHidInputPresent(
+    VOID
+    );
+
+#endif
 
 #ifdef __cplusplus
 }

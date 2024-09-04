@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -177,6 +177,20 @@ typedef interface IErrorLog IErrorLog;
 typedef interface IPropertyBag IPropertyBag;
 
 #endif 	/* __IPropertyBag_FWD_DEFINED__ */
+
+
+#ifndef __ITypeLibRegistrationReader_FWD_DEFINED__
+#define __ITypeLibRegistrationReader_FWD_DEFINED__
+typedef interface ITypeLibRegistrationReader ITypeLibRegistrationReader;
+
+#endif 	/* __ITypeLibRegistrationReader_FWD_DEFINED__ */
+
+
+#ifndef __ITypeLibRegistration_FWD_DEFINED__
+#define __ITypeLibRegistration_FWD_DEFINED__
+typedef interface ITypeLibRegistration ITypeLibRegistration;
+
+#endif 	/* __ITypeLibRegistration_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -1066,7 +1080,8 @@ EXTERN_C const IID IID_ICreateTypeInfo;
         
         virtual HRESULT STDMETHODCALLTYPE SetMops( 
             /* [in] */ UINT index,
-            /* [in] */ BSTR bstrMops) = 0;
+            /* [annotation][in] */ 
+            _In_  BSTR bstrMops) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetTypeIdldesc( 
             /* [in] */ IDLDESC *pIdlDesc) = 0;
@@ -1200,7 +1215,8 @@ EXTERN_C const IID IID_ICreateTypeInfo;
         HRESULT ( STDMETHODCALLTYPE *SetMops )( 
             ICreateTypeInfo * This,
             /* [in] */ UINT index,
-            /* [in] */ BSTR bstrMops);
+            /* [annotation][in] */ 
+            _In_  BSTR bstrMops);
         
         HRESULT ( STDMETHODCALLTYPE *SetTypeIdldesc )( 
             ICreateTypeInfo * This,
@@ -1514,7 +1530,8 @@ EXTERN_C const IID IID_ICreateTypeInfo2;
         HRESULT ( STDMETHODCALLTYPE *SetMops )( 
             ICreateTypeInfo2 * This,
             /* [in] */ UINT index,
-            /* [in] */ BSTR bstrMops);
+            /* [annotation][in] */ 
+            _In_  BSTR bstrMops);
         
         HRESULT ( STDMETHODCALLTYPE *SetTypeIdldesc )( 
             ICreateTypeInfo2 * This,
@@ -2682,9 +2699,11 @@ EXTERN_C const IID IID_ITypeInfo;
         
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetNames( 
             /* [in] */ MEMBERID memid,
-            /* [length_is][size_is][out] */ BSTR *rgBstrNames,
+            /* [annotation][length_is][size_is][out] */ 
+            __RPC__out_ecount_part(cMaxNames, *pcNames)  BSTR *rgBstrNames,
             /* [in] */ UINT cMaxNames,
-            /* [out] */ UINT *pcNames) = 0;
+            /* [annotation][out] */ 
+            __RPC__out  UINT *pcNames) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetRefTypeOfImplType( 
             /* [in] */ UINT index,
@@ -2711,16 +2730,21 @@ EXTERN_C const IID IID_ITypeInfo;
         
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDocumentation( 
             /* [in] */ MEMBERID memid,
-            /* [out] */ BSTR *pBstrName,
-            /* [out] */ BSTR *pBstrDocString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDocString,
             /* [out] */ DWORD *pdwHelpContext,
-            /* [out] */ BSTR *pBstrHelpFile) = 0;
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrHelpFile) = 0;
         
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDllEntry( 
             /* [in] */ MEMBERID memid,
             /* [in] */ INVOKEKIND invKind,
-            /* [out] */ BSTR *pBstrDllName,
-            /* [out] */ BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDllName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
             /* [out] */ WORD *pwOrdinal) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetRefTypeInfo( 
@@ -2796,9 +2820,11 @@ EXTERN_C const IID IID_ITypeInfo;
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetNames )( 
             ITypeInfo * This,
             /* [in] */ MEMBERID memid,
-            /* [length_is][size_is][out] */ BSTR *rgBstrNames,
+            /* [annotation][length_is][size_is][out] */ 
+            __RPC__out_ecount_part(cMaxNames, *pcNames)  BSTR *rgBstrNames,
             /* [in] */ UINT cMaxNames,
-            /* [out] */ UINT *pcNames);
+            /* [annotation][out] */ 
+            __RPC__out  UINT *pcNames);
         
         HRESULT ( STDMETHODCALLTYPE *GetRefTypeOfImplType )( 
             __RPC__in ITypeInfo * This,
@@ -2830,17 +2856,22 @@ EXTERN_C const IID IID_ITypeInfo;
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDocumentation )( 
             ITypeInfo * This,
             /* [in] */ MEMBERID memid,
-            /* [out] */ BSTR *pBstrName,
-            /* [out] */ BSTR *pBstrDocString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDocString,
             /* [out] */ DWORD *pdwHelpContext,
-            /* [out] */ BSTR *pBstrHelpFile);
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrHelpFile);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDllEntry )( 
             ITypeInfo * This,
             /* [in] */ MEMBERID memid,
             /* [in] */ INVOKEKIND invKind,
-            /* [out] */ BSTR *pBstrDllName,
-            /* [out] */ BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDllName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
             /* [out] */ WORD *pwOrdinal);
         
         HRESULT ( STDMETHODCALLTYPE *GetRefTypeInfo )( 
@@ -3215,9 +3246,11 @@ EXTERN_C const IID IID_ITypeInfo2;
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDocumentation2( 
             /* [in] */ MEMBERID memid,
             /* [in] */ LCID lcid,
-            /* [out] */ BSTR *pbstrHelpString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpString,
             /* [out] */ DWORD *pdwHelpStringContext,
-            /* [out] */ BSTR *pbstrHelpStringDll) = 0;
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpStringDll) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetAllCustData( 
             /* [out] */ __RPC__out CUSTDATA *pCustData) = 0;
@@ -3281,9 +3314,11 @@ EXTERN_C const IID IID_ITypeInfo2;
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetNames )( 
             ITypeInfo2 * This,
             /* [in] */ MEMBERID memid,
-            /* [length_is][size_is][out] */ BSTR *rgBstrNames,
+            /* [annotation][length_is][size_is][out] */ 
+            __RPC__out_ecount_part(cMaxNames, *pcNames)  BSTR *rgBstrNames,
             /* [in] */ UINT cMaxNames,
-            /* [out] */ UINT *pcNames);
+            /* [annotation][out] */ 
+            __RPC__out  UINT *pcNames);
         
         HRESULT ( STDMETHODCALLTYPE *GetRefTypeOfImplType )( 
             __RPC__in ITypeInfo2 * This,
@@ -3315,17 +3350,22 @@ EXTERN_C const IID IID_ITypeInfo2;
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDocumentation )( 
             ITypeInfo2 * This,
             /* [in] */ MEMBERID memid,
-            /* [out] */ BSTR *pBstrName,
-            /* [out] */ BSTR *pBstrDocString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDocString,
             /* [out] */ DWORD *pdwHelpContext,
-            /* [out] */ BSTR *pBstrHelpFile);
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrHelpFile);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDllEntry )( 
             ITypeInfo2 * This,
             /* [in] */ MEMBERID memid,
             /* [in] */ INVOKEKIND invKind,
-            /* [out] */ BSTR *pBstrDllName,
-            /* [out] */ BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDllName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
             /* [out] */ WORD *pwOrdinal);
         
         HRESULT ( STDMETHODCALLTYPE *GetRefTypeInfo )( 
@@ -3420,9 +3460,11 @@ EXTERN_C const IID IID_ITypeInfo2;
             ITypeInfo2 * This,
             /* [in] */ MEMBERID memid,
             /* [in] */ LCID lcid,
-            /* [out] */ BSTR *pbstrHelpString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpString,
             /* [out] */ DWORD *pdwHelpStringContext,
-            /* [out] */ BSTR *pbstrHelpStringDll);
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpStringDll);
         
         HRESULT ( STDMETHODCALLTYPE *GetAllCustData )( 
             __RPC__in ITypeInfo2 * This,
@@ -3684,10 +3726,13 @@ EXTERN_C const IID IID_ITypeLib;
         
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDocumentation( 
             /* [in] */ INT index,
-            /* [out] */ BSTR *pBstrName,
-            /* [out] */ BSTR *pBstrDocString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDocString,
             /* [out] */ DWORD *pdwHelpContext,
-            /* [out] */ BSTR *pBstrHelpFile) = 0;
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrHelpFile) = 0;
         
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE IsName( 
             /* [annotation][out][in] */ 
@@ -3756,10 +3801,13 @@ EXTERN_C const IID IID_ITypeLib;
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDocumentation )( 
             ITypeLib * This,
             /* [in] */ INT index,
-            /* [out] */ BSTR *pBstrName,
-            /* [out] */ BSTR *pBstrDocString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDocString,
             /* [out] */ DWORD *pdwHelpContext,
-            /* [out] */ BSTR *pBstrHelpFile);
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrHelpFile);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *IsName )( 
             ITypeLib * This,
@@ -3970,9 +4018,11 @@ EXTERN_C const IID IID_ITypeLib2;
         virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDocumentation2( 
             /* [in] */ INT index,
             /* [in] */ LCID lcid,
-            /* [out] */ BSTR *pbstrHelpString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpString,
             /* [out] */ DWORD *pdwHelpStringContext,
-            /* [out] */ BSTR *pbstrHelpStringDll) = 0;
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpStringDll) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetAllCustData( 
             /* [out] */ __RPC__out CUSTDATA *pCustData) = 0;
@@ -4027,10 +4077,13 @@ EXTERN_C const IID IID_ITypeLib2;
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetDocumentation )( 
             ITypeLib2 * This,
             /* [in] */ INT index,
-            /* [out] */ BSTR *pBstrName,
-            /* [out] */ BSTR *pBstrDocString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrName,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrDocString,
             /* [out] */ DWORD *pdwHelpContext,
-            /* [out] */ BSTR *pBstrHelpFile);
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pBstrHelpFile);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *IsName )( 
             ITypeLib2 * This,
@@ -4066,9 +4119,11 @@ EXTERN_C const IID IID_ITypeLib2;
             ITypeLib2 * This,
             /* [in] */ INT index,
             /* [in] */ LCID lcid,
-            /* [out] */ BSTR *pbstrHelpString,
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpString,
             /* [out] */ DWORD *pdwHelpStringContext,
-            /* [out] */ BSTR *pbstrHelpStringDll);
+            /* [annotation][out] */ 
+            _Outptr_opt_  BSTR *pbstrHelpStringDll);
         
         HRESULT ( STDMETHODCALLTYPE *GetAllCustData )( 
             __RPC__in ITypeLib2 * This,
@@ -4883,7 +4938,8 @@ EXTERN_C const IID IID_IRecordInfo;
             /* [out] */ GUID *pguid) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetName( 
-            /* [out] */ BSTR *pbstrName) = 0;
+            /* [annotation][out] */ 
+            __RPC__deref_out_opt  BSTR *pbstrName) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetSize( 
             /* [out] */ ULONG *pcbSize) = 0;
@@ -4916,7 +4972,8 @@ EXTERN_C const IID IID_IRecordInfo;
         
         virtual HRESULT STDMETHODCALLTYPE GetFieldNames( 
             /* [out][in] */ ULONG *pcNames,
-            /* [length_is][size_is][out] */ BSTR *rgBstrNames) = 0;
+            /* [annotation][length_is][size_is][out] */ 
+            __RPC__out_ecount_part(*pcNames, *pcNames)  BSTR *rgBstrNames) = 0;
         
         virtual BOOL STDMETHODCALLTYPE IsMatchingType( 
             /* [in] */ IRecordInfo *pRecordInfo) = 0;
@@ -4970,7 +5027,8 @@ EXTERN_C const IID IID_IRecordInfo;
         
         HRESULT ( STDMETHODCALLTYPE *GetName )( 
             IRecordInfo * This,
-            /* [out] */ BSTR *pbstrName);
+            /* [annotation][out] */ 
+            __RPC__deref_out_opt  BSTR *pbstrName);
         
         HRESULT ( STDMETHODCALLTYPE *GetSize )( 
             IRecordInfo * This,
@@ -5010,7 +5068,8 @@ EXTERN_C const IID IID_IRecordInfo;
         HRESULT ( STDMETHODCALLTYPE *GetFieldNames )( 
             IRecordInfo * This,
             /* [out][in] */ ULONG *pcNames,
-            /* [length_is][size_is][out] */ BSTR *rgBstrNames);
+            /* [annotation][length_is][size_is][out] */ 
+            __RPC__out_ecount_part(*pcNames, *pcNames)  BSTR *rgBstrNames);
         
         BOOL ( STDMETHODCALLTYPE *IsMatchingType )( 
             IRecordInfo * This,
@@ -5308,9 +5367,240 @@ void __RPC_STUB IPropertyBag_RemoteRead_Stub(
 #endif 	/* __IPropertyBag_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_oaidl_0000_0021 */
+#ifndef __ITypeLibRegistrationReader_INTERFACE_DEFINED__
+#define __ITypeLibRegistrationReader_INTERFACE_DEFINED__
+
+/* interface ITypeLibRegistrationReader */
+/* [uuid][object][local] */ 
+
+
+EXTERN_C const IID IID_ITypeLibRegistrationReader;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("ED6A8A2A-B160-4E77-8F73-AA7435CD5C27")
+    ITypeLibRegistrationReader : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE EnumTypeLibRegistrations( 
+            /* [out] */ IEnumUnknown **ppEnumUnknown) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ITypeLibRegistrationReaderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ITypeLibRegistrationReader * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ITypeLibRegistrationReader * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ITypeLibRegistrationReader * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnumTypeLibRegistrations )( 
+            ITypeLibRegistrationReader * This,
+            /* [out] */ IEnumUnknown **ppEnumUnknown);
+        
+        END_INTERFACE
+    } ITypeLibRegistrationReaderVtbl;
+
+    interface ITypeLibRegistrationReader
+    {
+        CONST_VTBL struct ITypeLibRegistrationReaderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ITypeLibRegistrationReader_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ITypeLibRegistrationReader_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ITypeLibRegistrationReader_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ITypeLibRegistrationReader_EnumTypeLibRegistrations(This,ppEnumUnknown)	\
+    ( (This)->lpVtbl -> EnumTypeLibRegistrations(This,ppEnumUnknown) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ITypeLibRegistrationReader_INTERFACE_DEFINED__ */
+
+
+#ifndef __ITypeLibRegistration_INTERFACE_DEFINED__
+#define __ITypeLibRegistration_INTERFACE_DEFINED__
+
+/* interface ITypeLibRegistration */
+/* [uuid][object][local] */ 
+
+
+EXTERN_C const IID IID_ITypeLibRegistration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("76A3E735-02DF-4A12-98EB-043AD3600AF3")
+    ITypeLibRegistration : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetGuid( 
+            /* [out] */ GUID *pGuid) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetVersion( 
+            /* [out] */ BSTR *pVersion) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetLcid( 
+            /* [out] */ LCID *pLcid) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetWin32Path( 
+            /* [out] */ BSTR *pWin32Path) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetWin64Path( 
+            /* [out] */ BSTR *pWin64Path) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetDisplayName( 
+            /* [out] */ BSTR *pDisplayName) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetFlags( 
+            /* [out] */ DWORD *pFlags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetHelpDir( 
+            /* [out] */ BSTR *pHelpDir) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ITypeLibRegistrationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ITypeLibRegistration * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ITypeLibRegistration * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ITypeLibRegistration * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetGuid )( 
+            ITypeLibRegistration * This,
+            /* [out] */ GUID *pGuid);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetVersion )( 
+            ITypeLibRegistration * This,
+            /* [out] */ BSTR *pVersion);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetLcid )( 
+            ITypeLibRegistration * This,
+            /* [out] */ LCID *pLcid);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetWin32Path )( 
+            ITypeLibRegistration * This,
+            /* [out] */ BSTR *pWin32Path);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetWin64Path )( 
+            ITypeLibRegistration * This,
+            /* [out] */ BSTR *pWin64Path);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDisplayName )( 
+            ITypeLibRegistration * This,
+            /* [out] */ BSTR *pDisplayName);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetFlags )( 
+            ITypeLibRegistration * This,
+            /* [out] */ DWORD *pFlags);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetHelpDir )( 
+            ITypeLibRegistration * This,
+            /* [out] */ BSTR *pHelpDir);
+        
+        END_INTERFACE
+    } ITypeLibRegistrationVtbl;
+
+    interface ITypeLibRegistration
+    {
+        CONST_VTBL struct ITypeLibRegistrationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ITypeLibRegistration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ITypeLibRegistration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ITypeLibRegistration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ITypeLibRegistration_GetGuid(This,pGuid)	\
+    ( (This)->lpVtbl -> GetGuid(This,pGuid) ) 
+
+#define ITypeLibRegistration_GetVersion(This,pVersion)	\
+    ( (This)->lpVtbl -> GetVersion(This,pVersion) ) 
+
+#define ITypeLibRegistration_GetLcid(This,pLcid)	\
+    ( (This)->lpVtbl -> GetLcid(This,pLcid) ) 
+
+#define ITypeLibRegistration_GetWin32Path(This,pWin32Path)	\
+    ( (This)->lpVtbl -> GetWin32Path(This,pWin32Path) ) 
+
+#define ITypeLibRegistration_GetWin64Path(This,pWin64Path)	\
+    ( (This)->lpVtbl -> GetWin64Path(This,pWin64Path) ) 
+
+#define ITypeLibRegistration_GetDisplayName(This,pDisplayName)	\
+    ( (This)->lpVtbl -> GetDisplayName(This,pDisplayName) ) 
+
+#define ITypeLibRegistration_GetFlags(This,pFlags)	\
+    ( (This)->lpVtbl -> GetFlags(This,pFlags) ) 
+
+#define ITypeLibRegistration_GetHelpDir(This,pHelpDir)	\
+    ( (This)->lpVtbl -> GetHelpDir(This,pHelpDir) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ITypeLibRegistration_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_oaidl_0000_0023 */
 /* [local] */ 
 
+EXTERN_C const CLSID CLSID_TypeLibRegistrationReader;
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 #if ( _MSC_VER >= 800 )
@@ -5322,8 +5612,8 @@ void __RPC_STUB IPropertyBag_RemoteRead_Stub(
 #endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_oaidl_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_oaidl_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_oaidl_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_oaidl_0000_0023_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 
@@ -5479,9 +5769,11 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
 /* [local] */ HRESULT STDMETHODCALLTYPE ITypeInfo_GetNames_Proxy( 
     ITypeInfo * This,
     /* [in] */ MEMBERID memid,
-    /* [length_is][size_is][out] */ BSTR *rgBstrNames,
+    /* [annotation][length_is][size_is][out] */ 
+    __RPC__out_ecount_part(cMaxNames, *pcNames)  BSTR *rgBstrNames,
     /* [in] */ UINT cMaxNames,
-    /* [out] */ UINT *pcNames);
+    /* [annotation][out] */ 
+    __RPC__out  UINT *pcNames);
 
 
 /* [call_as] */ HRESULT STDMETHODCALLTYPE ITypeInfo_GetNames_Stub( 
@@ -5519,10 +5811,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
 /* [local] */ HRESULT STDMETHODCALLTYPE ITypeInfo_GetDocumentation_Proxy( 
     ITypeInfo * This,
     /* [in] */ MEMBERID memid,
-    /* [out] */ BSTR *pBstrName,
-    /* [out] */ BSTR *pBstrDocString,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrName,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrDocString,
     /* [out] */ DWORD *pdwHelpContext,
-    /* [out] */ BSTR *pBstrHelpFile);
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrHelpFile);
 
 
 /* [call_as] */ HRESULT STDMETHODCALLTYPE ITypeInfo_GetDocumentation_Stub( 
@@ -5538,8 +5833,10 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
     ITypeInfo * This,
     /* [in] */ MEMBERID memid,
     /* [in] */ INVOKEKIND invKind,
-    /* [out] */ BSTR *pBstrDllName,
-    /* [out] */ BSTR *pBstrName,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrDllName,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrName,
     /* [out] */ WORD *pwOrdinal);
 
 
@@ -5613,9 +5910,11 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
     ITypeInfo2 * This,
     /* [in] */ MEMBERID memid,
     /* [in] */ LCID lcid,
-    /* [out] */ BSTR *pbstrHelpString,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pbstrHelpString,
     /* [out] */ DWORD *pdwHelpStringContext,
-    /* [out] */ BSTR *pbstrHelpStringDll);
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pbstrHelpStringDll);
 
 
 /* [call_as] */ HRESULT STDMETHODCALLTYPE ITypeInfo2_GetDocumentation2_Stub( 
@@ -5648,10 +5947,13 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
 /* [local] */ HRESULT STDMETHODCALLTYPE ITypeLib_GetDocumentation_Proxy( 
     ITypeLib * This,
     /* [in] */ INT index,
-    /* [out] */ BSTR *pBstrName,
-    /* [out] */ BSTR *pBstrDocString,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrName,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrDocString,
     /* [out] */ DWORD *pdwHelpContext,
-    /* [out] */ BSTR *pBstrHelpFile);
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pBstrHelpFile);
 
 
 /* [call_as] */ HRESULT STDMETHODCALLTYPE ITypeLib_GetDocumentation_Stub( 
@@ -5720,9 +6022,11 @@ void                      __RPC_USER  VARIANT_UserFree64(     __RPC__in unsigned
     ITypeLib2 * This,
     /* [in] */ INT index,
     /* [in] */ LCID lcid,
-    /* [out] */ BSTR *pbstrHelpString,
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pbstrHelpString,
     /* [out] */ DWORD *pdwHelpStringContext,
-    /* [out] */ BSTR *pbstrHelpStringDll);
+    /* [annotation][out] */ 
+    _Outptr_opt_  BSTR *pbstrHelpStringDll);
 
 
 /* [call_as] */ HRESULT STDMETHODCALLTYPE ITypeLib2_GetDocumentation2_Stub( 

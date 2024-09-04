@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -215,7 +215,6 @@ namespace ABI {
 #include "EventToken.h"
 #include "Windows.Foundation.h"
 #include "Windows.Graphics.Imaging.h"
-#include "Windows.Media.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -266,18 +265,18 @@ interface IDetectedFace;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3229 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3229 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3229_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3229_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0001 */
 /* [local] */ 
@@ -312,18 +311,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3230 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3230 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3230_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3230_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0002 */
 /* [local] */ 
@@ -358,18 +357,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3231 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3231 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3231_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3231_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0003 */
 /* [local] */ 
@@ -404,18 +403,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3232 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3232 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3232_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3232_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0004 */
 /* [local] */ 
@@ -450,18 +449,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3233 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3233 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3233_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3233_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0005 */
 /* [local] */ 
@@ -496,18 +495,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3234 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3234 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3234_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3234_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0006 */
 /* [local] */ 
@@ -566,18 +565,18 @@ interface IFaceDetector;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3235 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3235 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3235_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3235_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0007 */
 /* [local] */ 
@@ -612,18 +611,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3236 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3236 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3236_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3236_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0008 */
 /* [local] */ 
@@ -682,18 +681,18 @@ interface IFaceTracker;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3237 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3237 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3237_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3237_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0009 */
 /* [local] */ 
@@ -728,18 +727,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3238 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3238 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3238_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3238_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0010 */
 /* [local] */ 
@@ -787,18 +786,18 @@ enum BitmapPixelFormat;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3239 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3239 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3239_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3239_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0011 */
 /* [local] */ 
@@ -833,18 +832,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3240 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3240 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3240_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3240_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0012 */
 /* [local] */ 
@@ -879,18 +878,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3241 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3241 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3241_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3241_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0013 */
 /* [local] */ 
@@ -1038,18 +1037,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3242 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3242 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3242_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3242_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0014 */
 /* [local] */ 
@@ -1224,18 +1223,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CMedia__CFaceAnalysis__CDetectedF
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3243 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3243 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3243_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3243_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0016 */
 /* [local] */ 
@@ -1376,18 +1375,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CMedia__CFaceAnalysis__CDetectedF
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3244 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3244 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3244_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3244_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0018 */
 /* [local] */ 
@@ -1570,18 +1569,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetecte
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3245 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3245 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3245_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3245_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0020 */
 /* [local] */ 
@@ -1846,18 +1845,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CMedia__CFaceAnalysis__CDetectedFac
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3246 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3246 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3246_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3246_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0022 */
 /* [local] */ 
@@ -1979,18 +1978,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3247 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3247 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3247_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3247_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0024 */
 /* [local] */ 
@@ -2151,18 +2150,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVector_1_Windows__CMedia__CFaceA
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3248 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3248 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3248_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3248_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0026 */
 /* [local] */ 
@@ -2284,18 +2283,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CFa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3249 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3249 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3249_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3249_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0028 */
 /* [local] */ 
@@ -2456,18 +2455,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CFaceAnalysis__CFac
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3250 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3250 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3250_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3250_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0030 */
 /* [local] */ 
@@ -2589,18 +2588,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CFa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3251 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3251 */
+/* interface __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3251_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_3251_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Efaceanalysis2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Efaceanalysis_0000_0032 */
 /* [local] */ 

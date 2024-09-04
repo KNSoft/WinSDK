@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -340,7 +340,8 @@ enum tagMEMCTX
 #define APPIDREGFLAGS_RESERVED3 0x100
 #define APPIDREGFLAGS_RESERVED4 0x200
 #define APPIDREGFLAGS_RESERVED5 0x400
-#define APPIDREGFLAGS_RESERVED6 0x800
+#define APPIDREGFLAGS_AAA_NO_IMPLICIT_ACTIVATE_AS_IU 0x800
+#define APPIDREGFLAGS_RESERVED7 0x1000
 #endif // !_APPIDREGFLAGS_DEFINED
 #ifndef _DCOMSCM_REMOTECALL_FLAGS_DEFINED
 #define _DCOMSCM_REMOTECALL_FLAGS_DEFINED

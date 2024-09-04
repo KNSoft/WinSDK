@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -715,6 +715,30 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IFlyoutBase3;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs;
@@ -833,6 +857,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IFlyoutBaseStatics3;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_FWD_DEFINED__
@@ -2555,18 +2603,18 @@ interface IPopup;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5363 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5363 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4696_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4696_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5363_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0001 */
 /* [local] */ 
@@ -2601,18 +2649,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4697 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5364 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4697 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5364 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4697_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4697_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5364_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0002 */
 /* [local] */ 
@@ -2647,18 +2695,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4698 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5365 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4698 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5365 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4698_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4698_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5365_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0003 */
 /* [local] */ 
@@ -2757,18 +2805,18 @@ interface IFlyoutBaseClosingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4699 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5366 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4699 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5366 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4699_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4699_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5366_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0004 */
 /* [local] */ 
@@ -2806,18 +2854,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4700 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5367 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4700 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5367 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4700_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4700_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5367_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0005 */
 /* [local] */ 
@@ -2852,18 +2900,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4701 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5368 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4701 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4701_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4701_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5368_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0006 */
 /* [local] */ 
@@ -2898,18 +2946,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4702 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5369 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4702 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4702_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4702_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5369_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0007 */
 /* [local] */ 
@@ -2944,18 +2992,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4703 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5370 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4703 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5370 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4703_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4703_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5370_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0008 */
 /* [local] */ 
@@ -2990,18 +3038,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4704 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5371 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4704 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4704_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4704_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5371_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0009 */
 /* [local] */ 
@@ -3068,18 +3116,18 @@ interface ITransition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5372 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5372 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4705_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4705_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5372_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0010 */
 /* [local] */ 
@@ -3114,18 +3162,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5373 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4706_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4706_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5373_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0011 */
 /* [local] */ 
@@ -3160,18 +3208,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5374 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4707_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4707_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5374_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0012 */
 /* [local] */ 
@@ -3206,18 +3254,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5375 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4708_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4708_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5375_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0013 */
 /* [local] */ 
@@ -3252,18 +3300,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5376 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4709_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4709_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5376_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0014 */
 /* [local] */ 
@@ -3298,18 +3346,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5377 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4710_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4710_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5377_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0015 */
 /* [local] */ 
@@ -3344,18 +3392,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5378 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4711_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4711_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5378_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0016 */
 /* [local] */ 
@@ -3390,18 +3438,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5379 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4712_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4712_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5379_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0017 */
 /* [local] */ 
@@ -3788,6 +3836,8 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CTickPlacement __x
 typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPosition __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPosition;
 
 #endif
+
+
 
 
 
@@ -5157,21 +5207,23 @@ extern "C" {
 
 
 
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5380 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4713_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4713_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5380_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0018 */
 /* [local] */ 
@@ -5346,18 +5398,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CControls__CPrimitive
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5381 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4714_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4714_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5381_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0020 */
 /* [local] */ 
@@ -5498,18 +5550,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CControls__CPrimitive
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4715 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5382 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4715 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5382 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4715_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4715_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5382_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0022 */
 /* [local] */ 
@@ -5692,18 +5744,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CControls__CPrimiti
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4716 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5383 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4716 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5383 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4716_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_4716_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives2Eidl_0000_5383_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0024 */
 /* [local] */ 
@@ -10889,9 +10941,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0052 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBaseClosingEventArgs[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBase3[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0052 */
@@ -10901,6 +10953,157 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0052_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Primitives {
+                            
+                            MIDL_INTERFACE("A89C9712-48E0-4240-95B9-0DFD0826A8D3")
+                            IFlyoutBase3 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OverlayInputPassThroughElement( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_OverlayInputPassThroughElement( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IFlyoutBase3 = __uuidof(IFlyoutBase3);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OverlayInputPassThroughElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_OverlayInputPassThroughElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_get_OverlayInputPassThroughElement(This,value)	\
+    ( (This)->lpVtbl -> get_OverlayInputPassThroughElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_put_OverlayInputPassThroughElement(This,value)	\
+    ( (This)->lpVtbl -> put_OverlayInputPassThroughElement(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBaseClosingEventArgs[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__
@@ -11037,7 +11240,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_INTERFACE_DEFINED__)
@@ -11045,13 +11248,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_INTERFACE_DEFINED__
@@ -11182,7 +11385,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_INTERFACE_DEFINED__)
@@ -11190,13 +11393,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_INTERFACE_DEFINED__
@@ -11323,7 +11526,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_INTERFACE_DEFINED__)
@@ -11331,13 +11534,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_INTERFACE_DEFINED__
@@ -11508,7 +11711,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics2_INTERFACE_DEFINED__)
@@ -11516,13 +11719,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics2_INTERFACE_DEFINED__
@@ -11679,7 +11882,148 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBaseStatics3[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics3";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Controls {
+                        namespace Primitives {
+                            
+                            MIDL_INTERFACE("7BA92E4F-DD16-4BE4-99DB-BD9D4406C0F8")
+                            IFlyoutBaseStatics3 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OverlayInputPassThroughElementProperty( 
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IFlyoutBaseStatics3 = __uuidof(IFlyoutBaseStatics3);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OverlayInputPassThroughElementProperty )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_get_OverlayInputPassThroughElementProperty(This,value)	\
+    ( (This)->lpVtbl -> get_OverlayInputPassThroughElementProperty(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_INTERFACE_DEFINED__)
@@ -11687,13 +12031,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_INTERFACE_DEFINED__
@@ -11810,7 +12154,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGenera
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_INTERFACE_DEFINED__)
@@ -11818,13 +12162,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_INTERFACE_DEFINED__
@@ -11955,7 +12299,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGenera
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter_INTERFACE_DEFINED__)
@@ -11963,13 +12307,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter_INTERFACE_DEFINED__
@@ -12526,7 +12870,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_INTERFACE_DEFINED__)
@@ -12534,13 +12878,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_INTERFACE_DEFINED__
@@ -12671,7 +13015,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterStatics_INTERFACE_DEFINED__)
@@ -12679,13 +13023,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterStatics_INTERFACE_DEFINED__
@@ -13022,7 +13366,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemTemplateSettings_INTERFACE_DEFINED__)
@@ -13030,13 +13374,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemTemplateSettings_INTERFACE_DEFINED__
@@ -13163,7 +13507,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventArgs_INTERFACE_DEFINED__)
@@ -13171,13 +13515,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventArgs_INTERFACE_DEFINED__
@@ -13344,7 +13688,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIItemsC
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverter_INTERFACE_DEFINED__)
@@ -13352,13 +13696,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverter_INTERFACE_DEFINED__
@@ -13515,7 +13859,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpLi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverterStatics_INTERFACE_DEFINED__)
@@ -13523,13 +13867,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverterStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverterStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverterStatics_INTERFACE_DEFINED__
@@ -13666,7 +14010,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpLi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemBackgroundConverterStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverter_INTERFACE_DEFINED__)
@@ -13674,13 +14018,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverter_INTERFACE_DEFINED__
@@ -13837,7 +14181,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpLi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverterStatics_INTERFACE_DEFINED__)
@@ -13845,13 +14189,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverterStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverterStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverterStatics_INTERFACE_DEFINED__
@@ -13988,7 +14332,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpLi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIJumpListItemForegroundConverterStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformation_INTERFACE_DEFINED__)
@@ -13996,13 +14340,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformation_INTERFACE_DEFINED__
@@ -14119,7 +14463,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_INTERFACE_DEFINED__)
@@ -14127,13 +14471,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_INTERFACE_DEFINED__
@@ -14274,7 +14618,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter_INTERFACE_DEFINED__)
@@ -14282,13 +14626,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter_INTERFACE_DEFINED__
@@ -14845,7 +15189,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter2_INTERFACE_DEFINED__)
@@ -14853,13 +15197,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter2_INTERFACE_DEFINED__
@@ -15096,7 +15440,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_INTERFACE_DEFINED__)
@@ -15104,13 +15448,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_INTERFACE_DEFINED__
@@ -15241,7 +15585,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics_INTERFACE_DEFINED__)
@@ -15249,13 +15593,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics_INTERFACE_DEFINED__
@@ -15592,7 +15936,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics2_INTERFACE_DEFINED__)
@@ -15600,13 +15944,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics2_INTERFACE_DEFINED__
@@ -15783,7 +16127,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings_INTERFACE_DEFINED__)
@@ -15791,13 +16135,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings_INTERFACE_DEFINED__
@@ -15924,7 +16268,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListVi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_INTERFACE_DEFINED__)
@@ -15932,13 +16276,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_INTERFACE_DEFINED__
@@ -16217,7 +16561,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorItem_INTERFACE_DEFINED__)
@@ -16225,13 +16569,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorItem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorItem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorItem_INTERFACE_DEFINED__
@@ -16348,7 +16692,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorPanel_INTERFACE_DEFINED__)
@@ -16356,13 +16700,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorPanel_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorPanel_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorPanel_INTERFACE_DEFINED__
@@ -16479,7 +16823,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorPanel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_INTERFACE_DEFINED__)
@@ -16487,13 +16831,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_INTERFACE_DEFINED__
@@ -16680,7 +17024,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelectorStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_INTERFACE_DEFINED__)
@@ -16688,13 +17032,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_INTERFACE_DEFINED__
@@ -16821,7 +17165,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFl
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_INTERFACE_DEFINED__)
@@ -16829,13 +17173,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_INTERFACE_DEFINED__
@@ -17202,7 +17546,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrient
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanelFactory_INTERFACE_DEFINED__)
@@ -17210,13 +17554,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanelFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanelFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanelFactory_INTERFACE_DEFINED__
@@ -17333,7 +17677,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrient
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanelFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase_INTERFACE_DEFINED__)
@@ -17341,13 +17685,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase_INTERFACE_DEFINED__
@@ -17464,7 +17808,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPicker
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_INTERFACE_DEFINED__)
@@ -17472,13 +17816,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_INTERFACE_DEFINED__
@@ -17609,7 +17953,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPicker
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_INTERFACE_DEFINED__)
@@ -17617,13 +17961,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_INTERFACE_DEFINED__
@@ -17758,7 +18102,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPicker
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_INTERFACE_DEFINED__)
@@ -17766,13 +18110,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_INTERFACE_DEFINED__
@@ -17923,7 +18267,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPicker
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem_INTERFACE_DEFINED__)
@@ -17931,13 +18275,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem_INTERFACE_DEFINED__
@@ -18054,7 +18398,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotH
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_INTERFACE_DEFINED__)
@@ -18062,13 +18406,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_INTERFACE_DEFINED__
@@ -18199,7 +18543,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotH
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderPanel_INTERFACE_DEFINED__)
@@ -18207,13 +18551,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderPanel_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderPanel_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderPanel_INTERFACE_DEFINED__
@@ -18330,7 +18674,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotH
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderPanel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotPanel_INTERFACE_DEFINED__)
@@ -18338,13 +18682,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotPanel_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotPanel_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotPanel_INTERFACE_DEFINED__
@@ -18461,7 +18805,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotP
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotPanel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_INTERFACE_DEFINED__)
@@ -18469,13 +18813,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_INTERFACE_DEFINED__
@@ -18756,7 +19100,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup2_INTERFACE_DEFINED__)
@@ -18764,13 +19108,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup2_INTERFACE_DEFINED__
@@ -18907,7 +19251,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup2
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics_INTERFACE_DEFINED__)
@@ -18915,13 +19259,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics_INTERFACE_DEFINED__
@@ -19098,7 +19442,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics2_INTERFACE_DEFINED__)
@@ -19106,13 +19450,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics2_INTERFACE_DEFINED__
@@ -19239,7 +19583,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopupStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressBarTemplateSettings_INTERFACE_DEFINED__)
@@ -19247,13 +19591,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressBarTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressBarTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressBarTemplateSettings_INTERFACE_DEFINED__
@@ -19440,7 +19784,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgre
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressBarTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressRingTemplateSettings_INTERFACE_DEFINED__)
@@ -19448,13 +19792,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressRingTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressRingTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressRingTemplateSettings_INTERFACE_DEFINED__
@@ -19601,7 +19945,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgre
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIProgressRingTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_INTERFACE_DEFINED__)
@@ -19609,13 +19953,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_INTERFACE_DEFINED__
@@ -19854,7 +20198,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeB
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_INTERFACE_DEFINED__)
@@ -19862,13 +20206,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_INTERFACE_DEFINED__
@@ -19999,7 +20343,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeB
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseOverrides_INTERFACE_DEFINED__)
@@ -20007,13 +20351,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseOverrides_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseOverrides_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseOverrides_INTERFACE_DEFINED__
@@ -20166,7 +20510,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeB
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseOverrides_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseStatics_INTERFACE_DEFINED__)
@@ -20174,13 +20518,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseStatics_INTERFACE_DEFINED__
@@ -20347,7 +20691,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeB
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventArgs_INTERFACE_DEFINED__)
@@ -20355,13 +20699,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventArgs_INTERFACE_DEFINED__
@@ -20498,7 +20842,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeB
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButton_INTERFACE_DEFINED__)
@@ -20506,13 +20850,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButton_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButton_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButton_INTERFACE_DEFINED__
@@ -20669,7 +21013,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButton_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButtonStatics_INTERFACE_DEFINED__)
@@ -20677,13 +21021,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButtonStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButtonStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButtonStatics_INTERFACE_DEFINED__
@@ -20820,7 +21164,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeat
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButtonStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_INTERFACE_DEFINED__)
@@ -20828,13 +21172,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_INTERFACE_DEFINED__
@@ -21033,7 +21377,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScroll
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBarStatics_INTERFACE_DEFINED__)
@@ -21041,13 +21385,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBarStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBarStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBarStatics_INTERFACE_DEFINED__
@@ -21194,7 +21538,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScroll
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBarStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventArgs_INTERFACE_DEFINED__)
@@ -21202,13 +21546,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventArgs_INTERFACE_DEFINED__
@@ -21345,7 +21689,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScroll
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_INTERFACE_DEFINED__)
@@ -21353,13 +21697,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_INTERFACE_DEFINED__
@@ -21570,7 +21914,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScroll
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_INTERFACE_DEFINED__)
@@ -21578,13 +21922,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_INTERFACE_DEFINED__
@@ -21823,7 +22167,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelect
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorFactory_INTERFACE_DEFINED__)
@@ -21831,13 +22175,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorFactory_INTERFACE_DEFINED__
@@ -21954,7 +22298,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelect
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem_INTERFACE_DEFINED__)
@@ -21962,13 +22306,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem_INTERFACE_DEFINED__
@@ -22105,7 +22449,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelect
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_INTERFACE_DEFINED__)
@@ -22113,13 +22457,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_INTERFACE_DEFINED__
@@ -22250,7 +22594,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelect
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemStatics_INTERFACE_DEFINED__)
@@ -22258,13 +22602,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemStatics_INTERFACE_DEFINED__
@@ -22391,7 +22735,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelect
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_INTERFACE_DEFINED__)
@@ -22399,13 +22743,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_INTERFACE_DEFINED__
@@ -22584,7 +22928,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelect
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISettingsFlyoutTemplateSettings_INTERFACE_DEFINED__)
@@ -22592,13 +22936,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISettingsFlyoutTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISettingsFlyoutTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISettingsFlyoutTemplateSettings_INTERFACE_DEFINED__
@@ -22775,7 +23119,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISettin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISettingsFlyoutTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISplitViewTemplateSettings_INTERFACE_DEFINED__)
@@ -22783,13 +23127,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISplitViewTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISplitViewTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISplitViewTemplateSettings_INTERFACE_DEFINED__
@@ -22966,7 +23310,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISplitV
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISplitViewTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_INTERFACE_DEFINED__)
@@ -22974,13 +23318,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_INTERFACE_DEFINED__
@@ -23181,7 +23525,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumbStatics_INTERFACE_DEFINED__)
@@ -23189,13 +23533,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumbStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumbStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumbStatics_INTERFACE_DEFINED__
@@ -23322,7 +23666,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumbS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumbStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBar_INTERFACE_DEFINED__)
@@ -23330,13 +23674,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBar_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBar_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBar_INTERFACE_DEFINED__
@@ -23473,7 +23817,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBar_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBarStatics_INTERFACE_DEFINED__)
@@ -23481,13 +23825,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBarStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBarStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBarStatics_INTERFACE_DEFINED__
@@ -23614,7 +23958,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CITickBarStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_INTERFACE_DEFINED__)
@@ -23622,13 +23966,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_INTERFACE_DEFINED__
@@ -23851,7 +24195,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggle
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_INTERFACE_DEFINED__)
@@ -23859,13 +24203,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_INTERFACE_DEFINED__
@@ -23996,7 +24340,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggle
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonOverrides_INTERFACE_DEFINED__)
@@ -24004,13 +24348,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonOverrides_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonOverrides_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonOverrides_INTERFACE_DEFINED__
@@ -24135,7 +24479,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggle
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonOverrides_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonStatics_INTERFACE_DEFINED__)
@@ -24143,13 +24487,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonStatics_INTERFACE_DEFINED__
@@ -24286,7 +24630,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggle
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleSwitchTemplateSettings_INTERFACE_DEFINED__)
@@ -24294,13 +24638,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleSwitchTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleSwitchTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleSwitchTemplateSettings_INTERFACE_DEFINED__
@@ -24497,7 +24841,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggle
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleSwitchTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings_INTERFACE_DEFINED__)
@@ -24505,13 +24849,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings_INTERFACE_DEFINED__
@@ -24648,7 +24992,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0128 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_AppBarTemplateSettings_DEFINED
@@ -24841,13 +25185,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Econtrols2Eprimitives_0000_0128_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

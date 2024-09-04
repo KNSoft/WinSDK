@@ -1535,6 +1535,7 @@ AtaPortDeviceReady (
 
 _Must_inspect_result_
 _IRQL_requires_same_
+_Success_(return != FALSE)
 BOOLEAN
 __inline
 AtaPortRegistryControllerKeyRead (
@@ -1542,7 +1543,11 @@ AtaPortRegistryControllerKeyRead (
     _In_ UCHAR ControllerNumber,
     _In_ PCHAR ValueName,
     _In_ UCHAR ValueType,
-    _Out_opt_ PUCHAR Buffer,
+    _At_(Buffer,
+        _Post_notnull_
+        _Pre_writable_size_(*BufferLength)
+        _Post_readable_size_(*BufferLength)
+        _On_failure_(_Post_maybenull_)) PUCHAR Buffer,
     _Inout_   PULONG BufferLength
     )
 {
@@ -1565,7 +1570,7 @@ AtaPortRegistryControllerKeyWrite (
     _In_ UCHAR ControllerNumber,
     _In_ PCHAR ValueName,
     _In_ UCHAR ValueType,
-    _In_ PUCHAR Buffer,
+    _In_reads_bytes_(*BufferLength) PUCHAR Buffer,
     _In_ PULONG BufferLength
     )
 {
@@ -1588,7 +1593,7 @@ AtaPortRegistryControllerKeyWriteDeferred (
     _In_ UCHAR ControllerNumber,
     _In_ PCHAR ValueName,
     _In_ UCHAR ValueType,
-    _In_ PUCHAR Buffer,
+    _In_reads_bytes_(*BufferLength) PUCHAR Buffer,
     _In_ PULONG BufferLength
     )
 {
@@ -1604,6 +1609,7 @@ AtaPortRegistryControllerKeyWriteDeferred (
 
 _Must_inspect_result_
 _IRQL_requires_same_
+_Success_(return != FALSE)
 BOOLEAN
 __inline
 AtaPortRegistryChannelSubkeyRead (
@@ -1611,7 +1617,11 @@ AtaPortRegistryChannelSubkeyRead (
     _In_ UCHAR ControllerNumber,
     _In_ PCHAR ValueName,
     _In_ UCHAR ValueType,
-    _Out_opt_ PUCHAR Buffer,
+    _At_(Buffer,
+        _Post_notnull_
+        _Pre_writable_size_(*BufferLength)
+        _Post_readable_size_(*BufferLength)
+        _On_failure_(_Post_maybenull_)) PUCHAR Buffer,
     _Inout_   PULONG BufferLength
     )
 {
@@ -1634,7 +1644,7 @@ AtaPortRegistryChannelSubkeyWrite (
     _In_ UCHAR ControllerNumber,
     _In_ PCHAR ValueName,
     _In_ UCHAR ValueType,
-    _In_ PUCHAR Buffer,
+    _In_reads_bytes_(*BufferLength) PUCHAR Buffer,
     _In_ PULONG BufferLength
     )
 {
@@ -1657,7 +1667,7 @@ AtaPortRegistryChannelSubkeyWriteDeferred (
     _In_ UCHAR ControllerNumber,
     _In_ PCHAR ValueName,
     _In_ UCHAR ValueType,
-    _In_ PUCHAR Buffer,
+    _In_reads_bytes_(*BufferLength) PUCHAR Buffer,
     _In_ PULONG BufferLength
     )
 {

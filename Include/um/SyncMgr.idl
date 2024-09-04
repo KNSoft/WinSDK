@@ -16,7 +16,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 #ifndef DO_NO_IMPORTS
 import "objidl.idl";
 import "oleidl.idl";
-import "shobjidl.idl";  // IShellItem
+import "shobjidl_core.idl";  // IShellItem
 import "ocidl.idl";     // IObjectWithSite
 import "comcat.idl";    // IEnumString
 #endif

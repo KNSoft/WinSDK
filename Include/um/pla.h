@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -399,7 +399,7 @@ extern RPC_IF_HANDLE __MIDL_itf_pla_0000_0000_v0_0_s_ifspec;
 
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("03837504-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0001
+enum __MIDL___MIDL_itf_pla_0001_0043_0001
     {
         plaPerformanceCounter	= 0,
         plaTrace	= 1,
@@ -409,7 +409,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0001
     } 	DataCollectorType;
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("03837507-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0002
+enum __MIDL___MIDL_itf_pla_0001_0043_0002
     {
         plaCommaSeparated	= 0,
         plaTabSeparated	= 1,
@@ -418,7 +418,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0002
     } 	FileFormat;
 
 typedef /* [public][public][public][public][public][uuid] */  DECLSPEC_UUID("03837508-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0003
+enum __MIDL___MIDL_itf_pla_0001_0043_0003
     {
         plaNone	= 0,
         plaPattern	= 0x1,
@@ -433,7 +433,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0003
     } 	AutoPathFormat;
 
 typedef /* [public][public][uuid] */  DECLSPEC_UUID("0383750a-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0004
+enum __MIDL___MIDL_itf_pla_0001_0043_0004
     {
         plaStopped	= 0,
         plaRunning	= 1,
@@ -443,7 +443,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0004
     } 	DataCollectorSetStatus;
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("0383750d-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0005
+enum __MIDL___MIDL_itf_pla_0001_0043_0005
     {
         plaTimeStamp	= 0,
         plaPerformance	= 1,
@@ -452,7 +452,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0005
     } 	ClockType;
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("0383750e-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0006
+enum __MIDL___MIDL_itf_pla_0001_0043_0006
     {
         plaFile	= 0x1,
         plaRealTime	= 0x2,
@@ -461,7 +461,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0006
     } 	StreamMode;
 
 typedef /* [public][public][uuid] */  DECLSPEC_UUID("0383751f-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0007
+enum __MIDL___MIDL_itf_pla_0001_0043_0007
     {
         plaCreateNew	= 0x1,
         plaModify	= 0x2,
@@ -472,7 +472,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0007
     } 	CommitMode;
 
 typedef /* [public][public][public][public][public][uuid] */  DECLSPEC_UUID("03837535-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0008
+enum __MIDL___MIDL_itf_pla_0001_0043_0008
     {
         plaIndex	= 1,
         plaFlag	= 2,
@@ -481,7 +481,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0008
     } 	ValueMapType;
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("0383753b-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0009
+enum __MIDL___MIDL_itf_pla_0001_0043_0009
     {
         plaRunOnce	= 0,
         plaSunday	= 0x1,
@@ -495,14 +495,14 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0009
     } 	WeekDays;
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("0383753f-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0010
+enum __MIDL___MIDL_itf_pla_0001_0043_0010
     {
         plaDeleteLargest	= 0,
         plaDeleteOldest	= 1
     } 	ResourcePolicy;
 
 typedef /* [public][public][uuid] */  DECLSPEC_UUID("03837540-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0011
+enum __MIDL___MIDL_itf_pla_0001_0043_0011
     {
         plaCreateReport	= 0x1,
         plaRunRules	= 0x2,
@@ -512,7 +512,7 @@ enum __MIDL___MIDL_itf_pla_0001_0041_0011
     } 	DataManagerSteps;
 
 typedef /* [public][public][public][uuid] */  DECLSPEC_UUID("03837542-098b-11d8-9414-505054503030") 
-enum __MIDL___MIDL_itf_pla_0001_0041_0012
+enum __MIDL___MIDL_itf_pla_0001_0043_0012
     {
         plaCreateCab	= 0x1,
         plaDeleteData	= 0x2,

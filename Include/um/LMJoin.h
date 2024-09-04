@@ -29,15 +29,12 @@ Notes:
 #endif
 #include <winapifamily.h>
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 
 //
 // Types of name that can be validated
@@ -55,21 +52,65 @@ typedef enum  _NETSETUP_NAME_TYPE {
 
 } NETSETUP_NAME_TYPE, *PNETSETUP_NAME_TYPE;
 
-
-//
-// Status of a workstation
-//
-typedef enum _NETSETUP_JOIN_STATUS {
-
-    NetSetupUnknownStatus = 0,
-    NetSetupUnjoined,
-    NetSetupWorkgroupName,
-    NetSetupDomainName
-
-} NETSETUP_JOIN_STATUS, *PNETSETUP_JOIN_STATUS;
-
-
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or App Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_APP)
+
+#if(_WIN32_WINNT >= _WIN32_WINNT_WIN10)
+
+//
+// AAD join type
+//
+typedef enum _DSREG_JOIN_TYPE{
+    DSREG_UNKNOWN_JOIN = 0,
+    DSREG_DEVICE_JOIN = 1,
+    DSREG_WORKPLACE_JOIN = 2
+} DSREG_JOIN_TYPE, *PDSREG_JOIN_TYPE;
+
+typedef struct _DSREG_USER_INFO
+{
+    LPWSTR pszUserEmail;
+    LPWSTR pszUserKeyId;
+    LPWSTR pszUserKeyName;
+
+} DSREG_USER_INFO, *PDSREG_USER_INFO;
+
+//
+// The following type definition must be kept
+// in sync with wincrypt.h
+//
+#ifndef __WINCRYPT_H__
+typedef const struct _CERT_CONTEXT *PCCERT_CONTEXT;
+#endif // __WINCRYPT_H__
+
+typedef struct _DSREG_JOIN_INFO
+{
+    DSREG_JOIN_TYPE joinType;
+
+    PCCERT_CONTEXT pJoinCertificate;
+    LPWSTR pszDeviceId;
+
+    LPWSTR pszIdpDomain;
+    LPWSTR pszTenantId;
+    LPWSTR pszJoinUserEmail;
+
+    LPWSTR pszTenantDisplayName;
+
+    LPWSTR pszMdmEnrollmentUrl;
+    LPWSTR pszMdmTermsOfUseUrl;
+    LPWSTR pszMdmComplianceUrl;
+
+    LPWSTR pszUserSettingSyncUrl;
+
+    DSREG_USER_INFO *pUserInfo;
+
+} DSREG_JOIN_INFO, *PDSREG_JOIN_INFO;
+
+#endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN10)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -129,7 +170,6 @@ typedef enum _NETSETUP_JOIN_STATUS {
 // 0x80000000 is reserved for internal use only
 //
 
-
 //
 // Joins a machine to the domain.
 //
@@ -143,135 +183,6 @@ NetJoinDomain(
     _In_opt_ LPCWSTR lpPassword,
     _In_ DWORD   fJoinOptions
     );
-
-#if(_WIN32_WINNT >= _WIN32_WINNT_WIN7)
-
-//
-// Flags to determine the behavior of NetProvisionComputerAccount and
-// NetCreateProvisioningPackage.
-//
-
-// The caller requires account creation by privilege, this option will cause a retry
-// on failure using down level account creation APIs.
-//
-#define NETSETUP_PROVISION_DOWNLEVEL_PRIV_SUPPORT 0x00000001
-
-// If the named account already exists an attempt will be made to reuse. Requires
-// sufficient credentials i.e. Domain Administrator or the object owner.
-//
-#define NETSETUP_PROVISION_REUSE_ACCOUNT          0x00000002
-
-// Use the default machine account password which is the machine name in lowercase.
-//
-#define NETSETUP_PROVISION_USE_DEFAULT_PASSWORD   0x00000004
-
-// Do not try to find the account on any DC in the domain. This is faster but
-// should only be used when the caller is certain that an account by the same
-// name hasn't recently been created. Only valid when specifying the target DC.
-// When the pre-requisites are met, this option allows for must faster provisioning
-// useful for scenarios such as batch processing.
-//
-#define NETSETUP_PROVISION_SKIP_ACCOUNT_SEARCH    0x00000008
-
-// Include root Certificate Authority certificates in provisioning package.
-//
-#define NETSETUP_PROVISION_ROOT_CA_CERTS          0x00000010
-
-// Configure site as persistent (if not specified then configure as dynamic).
-//
-#define NETSETUP_PROVISION_PERSISTENTSITE         0x00000020
-
-//
-// The following are reserved for internal use.
-//
-
-// The operation is online.
-// This is an internal option not available through the API.
-//
-#define NETSETUP_PROVISION_ONLINE_CALLER          0x40000000
-
-// Validate the machine password only. This is an internal option not available
-// through the API.
-//
-#define NETSETUP_PROVISION_CHECK_PWD_ONLY         0x80000000
-
-
-
-NET_API_STATUS
-NET_API_FUNCTION
-NetProvisionComputerAccount(
-   _In_z_          LPCWSTR lpDomain,
-   _In_z_          LPCWSTR lpMachineName,
-   _In_opt_z_      LPCWSTR lpMachineAccountOU,
-   _In_opt_z_      LPCWSTR lpDcName,
-   _In_            DWORD   dwOptions,
-   _Outptr_opt_result_bytebuffer_maybenull_(*pdwProvisionBinDataSize)
-                   PBYTE  *pProvisionBinData,
-   _Out_opt_       DWORD  *pdwProvisionBinDataSize,
-   _Outptr_opt_result_maybenull_z_
-                   LPWSTR *pProvisionTextData
-);
-
-NET_API_STATUS
-NET_API_FUNCTION
-NetRequestOfflineDomainJoin(
-    _In_reads_bytes_(cbProvisionBinDataSize) BYTE *pProvisionBinData,
-    _In_    DWORD   cbProvisionBinDataSize,
-    _In_    DWORD   dwOptions,
-    _In_z_  LPCWSTR lpWindowsPath
-);
-
-#endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
-
-#if(_WIN32_WINNT >= _WIN32_WINNT_WIN8)
-
-// For dwVersion field of NETSETUP_PROVISIONING_PARAMS
-#define NETSETUP_PROVISIONING_PARAMS_WIN8_VERSION    0x00000001
-#define NETSETUP_PROVISIONING_PARAMS_CURRENT_VERSION 0x00000002
-
-typedef struct _NETSETUP_PROVISIONING_PARAMS
-{
-    // Version 1 fields
-    DWORD   dwVersion;              //  _In_
-    LPCWSTR lpDomain;               //  _In_z_
-    LPCWSTR lpHostName;             //  _In_z_
-    LPCWSTR lpMachineAccountOU;     //  _In_opt_z_
-    LPCWSTR lpDcName;               //  _In_opt_z_
-    DWORD   dwProvisionOptions;     //  _In_
-    LPCWSTR *aCertTemplateNames;    //  _In_reads_opt_(cCertTemplateNames)
-    DWORD   cCertTemplateNames;     //  _In_
-    LPCWSTR *aMachinePolicyNames;   //  _In_reads_opt_(cMachinePolicyNames)
-    DWORD   cMachinePolicyNames;    //  _In_
-    LPCWSTR *aMachinePolicyPaths;   //  _In_reads_opt_(cMachinePolicyPaths)
-    DWORD   cMachinePolicyPaths;    //  _In_
-
-    // Version 2 fields
-    LPWSTR  lpNetbiosName;          //  _In_
-    LPWSTR  lpSiteName;             //  _In_
-    LPWSTR  lpPrimaryDNSDomain;     //  _In_
-} NETSETUP_PROVISIONING_PARAMS, *PNETSETUP_PROVISIONING_PARAMS;
-
-NET_API_STATUS
-NET_API_FUNCTION
-NetCreateProvisioningPackage(
-    _In_    PNETSETUP_PROVISIONING_PARAMS   pProvisioningParams,
-    _Outptr_opt_result_bytebuffer_maybenull_(*pdwPackageBinDataSize)
-                                    PBYTE  *ppPackageBinData,
-    _Out_opt_                       DWORD  *pdwPackageBinDataSize,
-    _Outptr_opt_result_maybenull_z_ LPWSTR *ppPackageTextData
-    );
-
-NET_API_STATUS
-NET_API_FUNCTION
-NetRequestProvisioningPackageInstall(
-    _In_reads_bytes_(dwPackageBinDataSize) BYTE *pPackageBinData,
-    _In_ DWORD dwPackageBinDataSize,
-    _In_ DWORD dwProvisionOptions,
-    _In_z_ LPCWSTR lpWindowsPath,
-    _Reserved_ PVOID pvReserved
-    );
-
-#endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
 
 NET_API_STATUS
 NET_API_FUNCTION
@@ -292,7 +203,6 @@ NetRenameMachineInDomain(
     _In_ DWORD   fRenameOptions
     );
 
-
 //
 // Determine the validity of a name
 //
@@ -305,30 +215,6 @@ NetValidateName(
     _In_opt_ LPCWSTR         lpPassword,
     _In_ NETSETUP_NAME_TYPE  NameType
     );
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
-//
-// Determines whether a workstation is joined to a domain or not
-//
-NET_API_STATUS
-NET_API_FUNCTION
-NetGetJoinInformation(
-    _In_opt_ LPCWSTR             lpServer,
-    _Outptr_ LPWSTR             *lpNameBuffer,
-    _Out_ PNETSETUP_JOIN_STATUS  BufferType
-    );
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 //
 // Determines the list of OUs that the client can create a machine account in
@@ -407,70 +293,132 @@ NetEnumerateComputerNames(
 
 #endif // (_WIN32_WINNT >= 0x0501)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-
-
-#pragma region Deskotp Family or Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_APP)
-
-#if(_WIN32_WINNT >= _WIN32_WINNT_WIN10)
+#if(_WIN32_WINNT >= _WIN32_WINNT_WIN7)
 
 //
-// AAD join type
+// Flags to determine the behavior of NetProvisionComputerAccount and
+// NetCreateProvisioningPackage.
 //
-typedef enum _DSREG_JOIN_TYPE{
-    DSREG_UNKNOWN_JOIN = 0,
-    DSREG_DEVICE_JOIN = 1,
-    DSREG_WORKPLACE_JOIN = 2
-} DSREG_JOIN_TYPE, *PDSREG_JOIN_TYPE;
-    
-typedef struct _DSREG_USER_INFO
+
+// The caller requires account creation by privilege, this option will cause a retry
+// on failure using down level account creation APIs.
+//
+#define NETSETUP_PROVISION_DOWNLEVEL_PRIV_SUPPORT 0x00000001
+
+// If the named account already exists an attempt will be made to reuse. Requires
+// sufficient credentials i.e. Domain Administrator or the object owner.
+//
+#define NETSETUP_PROVISION_REUSE_ACCOUNT          0x00000002
+
+// Use the default machine account password which is the machine name in lowercase.
+//
+#define NETSETUP_PROVISION_USE_DEFAULT_PASSWORD   0x00000004
+
+// Do not try to find the account on any DC in the domain. This is faster but
+// should only be used when the caller is certain that an account by the same
+// name hasn't recently been created. Only valid when specifying the target DC.
+// When the pre-requisites are met, this option allows for must faster provisioning
+// useful for scenarios such as batch processing.
+//
+#define NETSETUP_PROVISION_SKIP_ACCOUNT_SEARCH    0x00000008
+
+// Include root Certificate Authority certificates in provisioning package.
+//
+#define NETSETUP_PROVISION_ROOT_CA_CERTS          0x00000010
+
+// Configure site as persistent (if not specified then configure as dynamic).
+//
+#define NETSETUP_PROVISION_PERSISTENTSITE         0x00000020
+
+//
+// The following are reserved for internal use.
+//
+
+// The operation is online.
+// This is an internal option not available through the API.
+//
+#define NETSETUP_PROVISION_ONLINE_CALLER          0x40000000
+
+// Validate the machine password only. This is an internal option not available
+// through the API.
+//
+#define NETSETUP_PROVISION_CHECK_PWD_ONLY         0x80000000
+
+NET_API_STATUS
+NET_API_FUNCTION
+NetProvisionComputerAccount(
+   _In_z_          LPCWSTR lpDomain,
+   _In_z_          LPCWSTR lpMachineName,
+   _In_opt_z_      LPCWSTR lpMachineAccountOU,
+   _In_opt_z_      LPCWSTR lpDcName,
+   _In_            DWORD   dwOptions,
+   _Outptr_opt_result_bytebuffer_maybenull_(*pdwProvisionBinDataSize)
+                   PBYTE  *pProvisionBinData,
+   _Out_opt_       DWORD  *pdwProvisionBinDataSize,
+   _Outptr_opt_result_maybenull_z_
+                   LPWSTR *pProvisionTextData
+);
+
+NET_API_STATUS
+NET_API_FUNCTION
+NetRequestOfflineDomainJoin(
+    _In_reads_bytes_(cbProvisionBinDataSize) BYTE *pProvisionBinData,
+    _In_    DWORD   cbProvisionBinDataSize,
+    _In_    DWORD   dwOptions,
+    _In_z_  LPCWSTR lpWindowsPath
+);
+
+#endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
+
+#if(_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+
+// For dwVersion field of NETSETUP_PROVISIONING_PARAMS
+#define NETSETUP_PROVISIONING_PARAMS_WIN8_VERSION    0x00000001
+#define NETSETUP_PROVISIONING_PARAMS_CURRENT_VERSION 0x00000002
+
+typedef struct _NETSETUP_PROVISIONING_PARAMS
 {
-    LPWSTR pszUserEmail;
-    LPWSTR pszUserKeyId;
-    LPWSTR pszUserKeyName;
+    // Version 1 fields
+    DWORD   dwVersion;              //  _In_
+    LPCWSTR lpDomain;               //  _In_z_
+    LPCWSTR lpHostName;             //  _In_z_
+    LPCWSTR lpMachineAccountOU;     //  _In_opt_z_
+    LPCWSTR lpDcName;               //  _In_opt_z_
+    DWORD   dwProvisionOptions;     //  _In_
+    LPCWSTR *aCertTemplateNames;    //  _In_reads_opt_(cCertTemplateNames)
+    DWORD   cCertTemplateNames;     //  _In_
+    LPCWSTR *aMachinePolicyNames;   //  _In_reads_opt_(cMachinePolicyNames)
+    DWORD   cMachinePolicyNames;    //  _In_
+    LPCWSTR *aMachinePolicyPaths;   //  _In_reads_opt_(cMachinePolicyPaths)
+    DWORD   cMachinePolicyPaths;    //  _In_
 
-} DSREG_USER_INFO, *PDSREG_USER_INFO;
+    // Version 2 fields
+    LPWSTR  lpNetbiosName;          //  _In_
+    LPWSTR  lpSiteName;             //  _In_
+    LPWSTR  lpPrimaryDNSDomain;     //  _In_
+} NETSETUP_PROVISIONING_PARAMS, *PNETSETUP_PROVISIONING_PARAMS;
 
-//
-// The following type definition must be kept
-// in sync with wincrypt.h
-//
-#ifndef __WINCRYPT_H__
-typedef const struct _CERT_CONTEXT *PCCERT_CONTEXT;
-#endif // __WINCRYPT_H__
+NET_API_STATUS
+NET_API_FUNCTION
+NetCreateProvisioningPackage(
+    _In_    PNETSETUP_PROVISIONING_PARAMS   pProvisioningParams,
+    _Outptr_opt_result_bytebuffer_maybenull_(*pdwPackageBinDataSize)
+                                    PBYTE  *ppPackageBinData,
+    _Out_opt_                       DWORD  *pdwPackageBinDataSize,
+    _Outptr_opt_result_maybenull_z_ LPWSTR *ppPackageTextData
+    );
 
-typedef struct _DSREG_JOIN_INFO
-{
-    DSREG_JOIN_TYPE joinType;
+NET_API_STATUS
+NET_API_FUNCTION
+NetRequestProvisioningPackageInstall(
+    _In_reads_bytes_(dwPackageBinDataSize) BYTE *pPackageBinData,
+    _In_ DWORD dwPackageBinDataSize,
+    _In_ DWORD dwProvisionOptions,
+    _In_z_ LPCWSTR lpWindowsPath,
+    _Reserved_ PVOID pvReserved
+    );
 
-    PCCERT_CONTEXT pJoinCertificate;
-    LPWSTR pszDeviceId;
-    
-    LPWSTR pszIdpDomain;
-    LPWSTR pszTenantId;
-    LPWSTR pszJoinUserEmail;
-
-    LPWSTR pszTenantDisplayName;
-
-    LPWSTR pszMdmEnrollmentUrl;
-    LPWSTR pszMdmTermsOfUseUrl;
-    LPWSTR pszMdmComplianceUrl;
-
-    LPWSTR pszUserSettingSyncUrl;
-
-    DSREG_USER_INFO *pUserInfo;
-
-} DSREG_JOIN_INFO, *PDSREG_JOIN_INFO;
-
-#endif // _WIN32_WINNT >= _WIN32_WINNT_WIN10
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_APP) */
-#pragma endregion
-
-
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
 
 #if(_WIN32_WINNT >= _WIN32_WINNT_WIN10)
 
@@ -492,6 +440,34 @@ NetFreeAadJoinInformation(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
+#pragma region Desktop Family or OneCore Family or Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
+
+//
+// Status of a workstation
+//
+typedef enum _NETSETUP_JOIN_STATUS {
+
+    NetSetupUnknownStatus = 0,
+    NetSetupUnjoined,
+    NetSetupWorkgroupName,
+    NetSetupDomainName
+
+} NETSETUP_JOIN_STATUS, *PNETSETUP_JOIN_STATUS;
+
+//
+// Determines whether a workstation is joined to a domain or not
+//
+NET_API_STATUS
+NET_API_FUNCTION
+NetGetJoinInformation(
+    _In_opt_ LPCWSTR             lpServer,
+    _Outptr_ LPWSTR             *lpNameBuffer,
+    _Out_ PNETSETUP_JOIN_STATUS  BufferType
+    );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
+#pragma endregion
 
 #ifdef __cplusplus
 }

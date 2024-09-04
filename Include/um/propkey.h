@@ -3460,6 +3460,14 @@ DEFINE_PROPERTYKEY(PKEY_Devices_Aep_Bluetooth_Le_Appearance_Category, 0x995EF0B0
 DEFINE_PROPERTYKEY(PKEY_Devices_Aep_Bluetooth_Le_Appearance_Subcategory, 0x995EF0B0, 0x7EB3, 0x4A8B, 0xB9, 0xCE, 0x06, 0x8B, 0xB3, 0xF4, 0xAF, 0x69, 6);
 #define INIT_PKEY_Devices_Aep_Bluetooth_Le_Appearance_Subcategory { { 0x995EF0B0, 0x7EB3, 0x4A8B, 0xB9, 0xCE, 0x06, 0x8B, 0xB3, 0xF4, 0xAF, 0x69 }, 6 }
 
+//  Name:     System.Devices.Aep.Bluetooth.Le.IsConnectable -- PKEY_Devices_Aep_Bluetooth_Le_IsConnectable
+//  Type:     Boolean -- VT_BOOL
+//  FormatID: {995EF0B0-7EB3-4A8B-B9CE-068BB3F4AF69}, 8
+//
+//  Whether the Bluetooth LE device is currently advertising a connectable advertisement.
+DEFINE_PROPERTYKEY(PKEY_Devices_Aep_Bluetooth_Le_IsConnectable, 0x995EF0B0, 0x7EB3, 0x4A8B, 0xB9, 0xCE, 0x06, 0x8B, 0xB3, 0xF4, 0xAF, 0x69, 8);
+#define INIT_PKEY_Devices_Aep_Bluetooth_Le_IsConnectable { { 0x995EF0B0, 0x7EB3, 0x4A8B, 0xB9, 0xCE, 0x06, 0x8B, 0xB3, 0xF4, 0xAF, 0x69 }, 8 }
+
 //  Name:     System.Devices.Aep.CanPair -- PKEY_Devices_Aep_CanPair
 //  Type:     Boolean -- VT_BOOL
 //  FormatID: {E7C3FB29-CAA7-4F47-8C8B-BE59B330D4C5}, 3
@@ -3539,6 +3547,14 @@ DEFINE_PROPERTYKEY(PKEY_Devices_Aep_ModelId, 0xA35996AB, 0x11CF, 0x4935, 0x8B, 0
 //  Device Association Endpoint's Model Name
 DEFINE_PROPERTYKEY(PKEY_Devices_Aep_ModelName, 0xA35996AB, 0x11CF, 0x4935, 0x8B, 0x61, 0xA6, 0x76, 0x10, 0x81, 0xEC, 0xDF, 3);
 #define INIT_PKEY_Devices_Aep_ModelName { { 0xA35996AB, 0x11CF, 0x4935, 0x8B, 0x61, 0xA6, 0x76, 0x10, 0x81, 0xEC, 0xDF }, 3 }
+
+//  Name:     System.Devices.Aep.PointOfService.ConnectionTypes -- PKEY_Devices_Aep_PointOfService_ConnectionTypes
+//  Type:     Int32 -- VT_I4
+//  FormatID: {D4BF61B3-442E-4ADA-882D-FA7B70C832D9}, 6
+//
+//  A bit mask that specifies which connection types should be included in the search.
+DEFINE_PROPERTYKEY(PKEY_Devices_Aep_PointOfService_ConnectionTypes, 0xD4BF61B3, 0x442E, 0x4ADA, 0x88, 0x2D, 0xFA, 0x7B, 0x70, 0xC8, 0x32, 0xD9, 6);
+#define INIT_PKEY_Devices_Aep_PointOfService_ConnectionTypes { { 0xD4BF61B3, 0x442E, 0x4ADA, 0x88, 0x2D, 0xFA, 0x7B, 0x70, 0xC8, 0x32, 0xD9 }, 6 }
 
 //  Name:     System.Devices.Aep.ProtocolId -- PKEY_Devices_Aep_ProtocolId
 //  Type:     Guid -- VT_CLSID
@@ -7860,6 +7876,23 @@ DEFINE_PROPERTYKEY(PKEY_Search_UrlToIndex, 0x0B63E343, 0x9CCC, 0x11D0, 0xBC, 0xD
 DEFINE_PROPERTYKEY(PKEY_Search_UrlToIndexWithModificationTime, 0x0B63E343, 0x9CCC, 0x11D0, 0xBC, 0xDB, 0x00, 0x80, 0x5F, 0xCC, 0xCE, 0x04, 12);
 #define INIT_PKEY_Search_UrlToIndexWithModificationTime { { 0x0B63E343, 0x9CCC, 0x11D0, 0xBC, 0xDB, 0x00, 0x80, 0x5F, 0xCC, 0xCE, 0x04 }, 12 }
 
+//  Name:     System.Supplemental.AlbumID -- PKEY_Supplemental_AlbumID
+//  Type:     Multivalue String -- VT_VECTOR | VT_LPWSTR  (For variants: VT_ARRAY | VT_BSTR)
+//  FormatID: {0C73B141-39D6-4653-A683-CAB291EAF95B}, 2
+//  
+//  Contains the identifiers of the albums that the item is a member of. Can be used in conjunction with the Album item in the Content Indexer APIs 
+//  to notify other apps about picture albums either the user created or apps have already created.
+DEFINE_PROPERTYKEY(PKEY_Supplemental_AlbumID, 0x0C73B141, 0x39D6, 0x4653, 0xA6, 0x83, 0xCA, 0xB2, 0x91, 0xEA, 0xF9, 0x5B, 2);
+#define INIT_PKEY_Supplemental_AlbumID { { 0x0C73B141, 0x39D6, 0x4653, 0xA6, 0x83, 0xCA, 0xB2, 0x91, 0xEA, 0xF9, 0x5B }, 2 }
+
+//  Name:     System.Supplemental.ResourceId -- PKEY_Supplemental_ResourceId
+//  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
+//  FormatID: {0C73B141-39D6-4653-A683-CAB291EAF95B}, 3
+//  
+//  Contains the identifier for the item on the remote sync service. Used for comparing a file on the system to ones that are available in the cloud.
+DEFINE_PROPERTYKEY(PKEY_Supplemental_ResourceId, 0x0C73B141, 0x39D6, 0x4653, 0xA6, 0x83, 0xCA, 0xB2, 0x91, 0xEA, 0xF9, 0x5B, 3);
+#define INIT_PKEY_Supplemental_ResourceId { { 0x0C73B141, 0x39D6, 0x4653, 0xA6, 0x83, 0xCA, 0xB2, 0x91, 0xEA, 0xF9, 0x5B }, 3 }
+
 //-----------------------------------------------------------------------------
 // Shell properties
 
@@ -8244,9 +8277,19 @@ DEFINE_PROPERTYKEY(PKEY_Video_FrameWidth, 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70
 DEFINE_PROPERTYKEY(PKEY_Video_HorizontalAspectRatio, 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70, 0x08, 0x00, 0x36, 0xB1, 0x1A, 0x03, 42);
 #define INIT_PKEY_Video_HorizontalAspectRatio { { 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70, 0x08, 0x00, 0x36, 0xB1, 0x1A, 0x03 }, 42 }
 
+//  Name:     System.Video.IsSpherical -- PKEY_Video_IsSpherical
+//  Type:     Boolean -- VT_BOOL
+//  FormatID: (FMTID_VideoSummaryInformation) {64440491-4C8B-11D1-8B70-080036B11A03}, 100
+//
+//  Indicates whether the media file has a spherical video stream.
+DEFINE_PROPERTYKEY(PKEY_Video_IsSpherical, 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70, 0x08, 0x00, 0x36, 0xB1, 0x1A, 0x03, 100);
+#define INIT_PKEY_Video_IsSpherical { { 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70, 0x08, 0x00, 0x36, 0xB1, 0x1A, 0x03 }, 100 }
+
 //  Name:     System.Video.IsStereo -- PKEY_Video_IsStereo
 //  Type:     Boolean -- VT_BOOL
 //  FormatID: (FMTID_VideoSummaryInformation) {64440491-4C8B-11D1-8B70-080036B11A03}, 98
+//
+//  Indicates whether the media file has a stereo video stream.
 DEFINE_PROPERTYKEY(PKEY_Video_IsStereo, 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70, 0x08, 0x00, 0x36, 0xB1, 0x1A, 0x03, 98);
 #define INIT_PKEY_Video_IsStereo { { 0x64440491, 0x4C8B, 0x11D1, 0x8B, 0x70, 0x08, 0x00, 0x36, 0xB1, 0x1A, 0x03 }, 98 }
 

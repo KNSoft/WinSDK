@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -177,6 +177,20 @@ typedef interface __FIIterator_1_Windows__CApplicationModel__CContacts__CContact
 typedef interface __FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType __FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType;
 
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__ */
 
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation_FWD_DEFINED__
@@ -387,6 +401,13 @@ typedef interface __FIVectorView_1_Windows__CApplicationModel__CContacts__CConta
 typedef interface __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType;
 
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType_FWD_DEFINED__ */
+
+
+#ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__ */
 
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_FWD_DEFINED__
@@ -648,6 +669,20 @@ typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CC
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__ */
+
+
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact;
@@ -704,6 +739,20 @@ typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationMod
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_FWD_DEFINED__ */
 
 
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__ */
+
+
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_FWD_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_FWD_DEFINED__
 typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation;
@@ -758,6 +807,20 @@ typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts_
 typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_FWD_DEFINED__
@@ -907,6 +970,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactAnnotation2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList;
@@ -945,6 +1028,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactAnnotationStore2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactBatch_FWD_DEFINED__
@@ -1227,6 +1330,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactFieldFactory_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactGroup;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation __x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation;
@@ -1487,6 +1610,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactManagerForUser2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics;
@@ -1567,6 +1710,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics4_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactManagerStatics5;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason __x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason;
@@ -1605,6 +1768,66 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactName_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactPanel;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactPanelClosingEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactPanelLaunchFullAppRequestedEventArgs;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_FWD_DEFINED__
@@ -1665,6 +1888,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactPicker3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IContactPickerStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptions_FWD_DEFINED__
@@ -1927,6 +2190,66 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIKnownContactFieldStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IPinnedContactIdsQueryResult;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IPinnedContactManager;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                interface IPinnedContactManagerStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -1984,18 +2307,18 @@ interface IContact;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2882 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4413 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2882 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4413 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2882_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2882_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4413_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4413_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0001 */
 /* [local] */ 
@@ -2030,18 +2353,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2883 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4414 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2883 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4414 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2883_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2883_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4414_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4414_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0002 */
 /* [local] */ 
@@ -2100,18 +2423,18 @@ interface IContactAddress;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2884 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4415 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2884 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4415 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2884_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2884_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4415_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4415_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0003 */
 /* [local] */ 
@@ -2146,18 +2469,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2885 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4416 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2885 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4416 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2885_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2885_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4416_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4416_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0004 */
 /* [local] */ 
@@ -2216,18 +2539,18 @@ interface IContactAnnotation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2886 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4417 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2886 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4417 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2886_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2886_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4417_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4417_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0005 */
 /* [local] */ 
@@ -2262,18 +2585,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2887 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4418 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2887 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4418 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2887_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2887_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4418_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4418_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0006 */
 /* [local] */ 
@@ -2332,18 +2655,18 @@ interface IContactAnnotationList;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2888 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4419 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2888 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4419 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2888_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2888_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4419_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4419_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0007 */
 /* [local] */ 
@@ -2378,18 +2701,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2889 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4420 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2889 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4420 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2889_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2889_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4420_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4420_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0008 */
 /* [local] */ 
@@ -2448,18 +2771,18 @@ interface IContactChange;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2890 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4421 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2890 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4421 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2890_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2890_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4421_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4421_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0009 */
 /* [local] */ 
@@ -2494,18 +2817,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2891 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4422 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2891 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4422 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2891_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2891_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4422_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4422_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0010 */
 /* [local] */ 
@@ -2564,18 +2887,18 @@ interface IContactConnectedServiceAccount;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2892 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4423 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2892 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4423 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2892_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2892_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4423_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4423_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0011 */
 /* [local] */ 
@@ -2610,18 +2933,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2893 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4424 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2893 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4424 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2893_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2893_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4424_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4424_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0012 */
 /* [local] */ 
@@ -2680,18 +3003,18 @@ interface IContactDate;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2894 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4425 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2894 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4425 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2894_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2894_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4425_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4425_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0013 */
 /* [local] */ 
@@ -2726,18 +3049,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2895 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4426 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2895 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4426 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2895_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2895_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4426_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4426_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0014 */
 /* [local] */ 
@@ -2796,18 +3119,18 @@ interface IContactEmail;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2896 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4427 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2896 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4427 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2896_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2896_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4427_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4427_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0015 */
 /* [local] */ 
@@ -2842,18 +3165,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2897 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4428 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2897 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4428 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2897_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2897_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4428_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4428_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0016 */
 /* [local] */ 
@@ -2912,18 +3235,18 @@ interface IContactField;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2898 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4429 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2898 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4429 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2898_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2898_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4429_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4429_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0017 */
 /* [local] */ 
@@ -2958,18 +3281,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2899 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4430 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2899 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4430 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2899_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2899_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4430_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4430_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0018 */
 /* [local] */ 
@@ -3017,18 +3340,18 @@ enum ContactFieldType;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2900 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4431 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2900 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4431 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2900_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2900_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4431_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4431_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0019 */
 /* [local] */ 
@@ -3063,18 +3386,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2901 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4432 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2901 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4432 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2901_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2901_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4432_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4432_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020 */
 /* [local] */ 
@@ -3103,6 +3426,122 @@ namespace ABI {
 namespace Windows {
 namespace ApplicationModel {
 namespace Contacts {
+class ContactGroup;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+interface IContactGroup;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4433 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4433 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4433_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4433_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("86dac457-7314-5044-8108-75290c36dd2b"))
+IIterator<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactGroup*, ABI::Windows::ApplicationModel::Contacts::IContactGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.Contacts.ContactGroup>"; }
+};
+typedef IIterator<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4434 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4434 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4434_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4434_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9db1688a-f7e0-5059-989e-d1453056d73a"))
+IIterable<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactGroup*, ABI::Windows::ApplicationModel::Contacts::IContactGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.ApplicationModel.Contacts.ContactGroup>"; }
+};
+typedef IIterable<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
 class ContactInformation;
 } /*Contacts*/
 } /*ApplicationModel*/
@@ -3123,30 +3562,30 @@ interface IContactInformation;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2902 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2902 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4435 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2902_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2902_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4435 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4435_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4435_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -3170,29 +3609,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2903 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2903 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4436 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2903_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2903_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4436 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4436_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4436_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -3239,30 +3678,30 @@ interface IContactInstantMessageField;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2904 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2904 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4437 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2904_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2904_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4437 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4437_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4437_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_USE
@@ -3286,29 +3725,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2905 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2905 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4438 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2905_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2905_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4438 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4438_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4438_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_USE
@@ -3355,30 +3794,30 @@ interface IContactJobInfo;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2906 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2906 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4439 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2906_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2906_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4439 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4439_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4439_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE
@@ -3402,29 +3841,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2907 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2907 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4440 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2907_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2907_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4440 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4440_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4440_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE
@@ -3471,30 +3910,30 @@ interface IContactList;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2908 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2908 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4441 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2908_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2908_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4441 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4441_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4441_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -3518,29 +3957,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2909 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2909 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4442 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2909_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2909_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4442 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4442_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4442_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -3587,30 +4026,30 @@ interface IContactLocationField;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2910 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2910 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4443 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2910_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2910_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4443 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4443_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4443_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField_USE
@@ -3634,29 +4073,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2911 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2911 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4444 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2911_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2911_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4444 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4444_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4444_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactLocationField_USE
@@ -3703,30 +4142,30 @@ interface IContactMatchReason;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2912 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2912 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4445 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2912_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2912_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4445 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4445_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4445_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason_USE
@@ -3750,29 +4189,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2913 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2913 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4446 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2913_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2913_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4446 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4446_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4446_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactMatchReason_USE
@@ -3819,30 +4258,30 @@ interface IContactPhone;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2914 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2914 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4447 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2914_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2914_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4447 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4447_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4447_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone_USE
@@ -3866,29 +4305,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2915 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2915 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4448 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2915_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2915_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4448 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4448_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4448_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactPhone_USE
@@ -3935,30 +4374,30 @@ interface IContactSignificantOther;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2916 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2916 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4449 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2916_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2916_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4449 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4449_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4449_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE
@@ -3982,29 +4421,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2917 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2917 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4450 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2917_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2917_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4450 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4450_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4450_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE
@@ -4051,30 +4490,30 @@ interface IContactWebsite;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2918 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2918 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4451 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2918_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2918_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4451 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4451_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4451_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE
@@ -4098,29 +4537,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2919 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2919 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4452 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2919_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2919_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4452 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4452_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4452_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE
@@ -4144,29 +4583,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2920 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2920 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4453 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2920_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2920_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4453 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4453_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4453_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField_USE
@@ -4190,29 +4629,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2921 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2921 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4454 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2921_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2921_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4454 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4454_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4454_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField_USE
@@ -4236,29 +4675,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2922 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2922 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4455 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2922_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2922_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4455 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4455_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4455_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -4282,29 +4721,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2923 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2923 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4456 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2923_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2923_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4456 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4456_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4456_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress_USE
@@ -4328,29 +4767,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2924 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2924 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4457 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2924_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2924_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4457 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4457_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4457_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE
@@ -4374,29 +4813,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2925 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2925 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4458 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2925_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2925_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4458 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4458_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4458_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE
@@ -4420,29 +4859,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2926 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2926 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4459 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2926_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2926_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4459 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4459_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4459_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_USE
@@ -4466,29 +4905,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2927 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2927 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4460 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2927_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2927_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4460 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4460_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4460_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_USE
@@ -4512,29 +4951,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2928 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2928 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4461 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2928_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2928_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4461 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4461_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4461_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate_USE
@@ -4558,29 +4997,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2929 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2929 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4462 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2929_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2929_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4462 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4462_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4462_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail_USE
@@ -4604,29 +5043,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2930 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2930 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4463 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2930_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2930_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4463 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4463_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4463_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_USE
@@ -4650,29 +5089,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2931 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2931 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4464 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2931_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2931_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4464 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4464_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4464_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType_USE
@@ -4696,29 +5135,75 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2932 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2932 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4465 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2932_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2932_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4465 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4465_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4465_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("124493aa-1617-5d0a-a5b6-4d1156fa95e5"))
+IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactGroup*, ABI::Windows::ApplicationModel::Contacts::IContactGroup*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Contacts.ContactGroup>"; }
+};
+typedef IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup*> __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4466 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4466 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4466_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4466_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -4742,29 +5227,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2933 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2933 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4467 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2933_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2933_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4467 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4467_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4467_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_USE
@@ -4788,29 +5273,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2934 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2934 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4468 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2934_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2934_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4468 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4468_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4468_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE
@@ -4834,29 +5319,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2935 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2935 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4469 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2935_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2935_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4469 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4469_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4469_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -4880,29 +5365,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2936 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2936 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4470 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2936_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2936_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4470 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4470_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4470_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_USE
@@ -4926,29 +5411,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2937 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2937 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4471 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2937_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2937_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4471 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4471_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4471_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_USE
@@ -4972,29 +5457,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2938 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2938 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4472 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2938_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2938_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4472 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4472_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4472_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone_USE
@@ -5018,29 +5503,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2939 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2939 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4473 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2939_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2939_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4473 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4473_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4473_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE
@@ -5064,29 +5549,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2940 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2940 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4474 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2940_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2940_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4474 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4474_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4474_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE
@@ -5110,29 +5595,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2941 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2941 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4475 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2941_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2941_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4475 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4475_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4475_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField_USE
@@ -5156,29 +5641,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2942 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2942 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4476 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2942_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2942_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4476 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4476_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4476_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -5202,29 +5687,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2943 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2943 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4477 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2943_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2943_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4477 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4477_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4477_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_USE
@@ -5248,29 +5733,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2944 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2944 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4478 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2944_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2944_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4478 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4478_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4478_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_USE
@@ -5294,29 +5779,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2945 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2945 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4479 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2945_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2945_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4479 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4479_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4479_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_USE
@@ -5340,29 +5825,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2946 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2946 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4480 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2946_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2946_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4480 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4480_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4480_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_USE
@@ -5386,29 +5871,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2947 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2947 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4481 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2947_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2947_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4481 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4481_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4481_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType_USE
@@ -5432,29 +5917,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2948 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2948 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4482 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2948_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2948_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4482 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4482_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4482_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE
@@ -5478,29 +5963,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2949 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2949 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4483 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2949_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2949_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4483 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4483_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4483_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_USE
@@ -5524,29 +6009,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2950 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2950 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4484 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2950_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2950_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4484 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4484_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4484_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE
@@ -5570,29 +6055,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2951 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2951 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4485 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2951_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2951_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4485 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4485_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4485_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE
@@ -5616,29 +6101,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2952 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2952 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4486 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2952_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2952_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4486 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4486_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4486_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_USE
@@ -5662,29 +6147,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2953 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2953 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4487 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2953_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2953_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4487 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4487_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4487_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -5708,29 +6193,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2954 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2954 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4488 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2954_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2954_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4488 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4488_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4488_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -5754,29 +6239,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2955 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2955 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4489 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2955_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2955_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4489 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4489_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4489_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE
@@ -5800,29 +6285,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2956 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2956 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4490 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2956_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2956_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4490 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4490_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4490_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE
@@ -5846,29 +6331,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2957 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2957 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4491 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2957_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2957_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4491 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4491_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4491_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE
@@ -5892,29 +6377,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2958 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2958 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4492 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2958_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2958_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4492 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4492_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4492_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE
@@ -5961,30 +6446,30 @@ interface IContactAnnotationStore;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2959 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2959 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4493 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2959_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2959_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4493 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4493_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4493_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_USE
@@ -6008,29 +6493,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2960 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2960 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4494 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2960_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2960_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4494 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4494_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4494_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_USE
@@ -6077,30 +6562,30 @@ interface IContactBatch;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2961 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2961 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4495 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2961_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2961_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4495 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4495_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4495_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch_USE
@@ -6124,29 +6609,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2962 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2962 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4496 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2962_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2962_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4496 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4496_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4496_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_USE
@@ -6170,29 +6655,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2963 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2963 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4497 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2963_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2963_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4497 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4497_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4497_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -6216,29 +6701,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2964 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2964 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4498 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2964_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2964_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4498 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4498_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4498_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -6262,29 +6747,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2965 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2965 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4499 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2965_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2965_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4499 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4499_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4499_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -6308,29 +6793,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2966 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2966 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4500 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2966_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2966_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4500 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4500_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4500_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -6377,30 +6862,30 @@ interface IContactStore;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2967 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2967 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4501 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2967_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2967_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4501 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4501_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4501_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore_USE
@@ -6424,29 +6909,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2968 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2968 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4502 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2968_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2968_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4502 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4502_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4502_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_USE
@@ -6468,31 +6953,147 @@ typedef IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactStore*>
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+class PinnedContactIdsQueryResult;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+interface IPinnedContactIdsQueryResult;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2969 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2969 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4503 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2969_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2969_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4503 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4503_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4503_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("930a23a2-28cf-5606-82f1-65dfee228735"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult*, ABI::Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4504 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4504 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4504_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4504_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("031adb6c-3aa3-5b09-a8fb-92ea0145dc40"))
+IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult*, ABI::Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult*> __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t;
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4505 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4505 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4505_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4505_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -6516,29 +7117,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2970 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2970 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4506 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2970_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2970_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4506 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4506_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4506_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -6562,29 +7163,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2971 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2971 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4507 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2971_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2971_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4507 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4507_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4507_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE
@@ -6608,29 +7209,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2972 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2972 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4508 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2972_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2972_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4508 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4508_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4508_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE
@@ -6654,29 +7255,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2973 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2973 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4509 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2973_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2973_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4509 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4509_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4509_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE
@@ -6700,29 +7301,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2974 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2974 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4510 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2974_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2974_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4510 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4510_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4510_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE
@@ -6746,29 +7347,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2975 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2975 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4511 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2975_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2975_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4511 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4511_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4511_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_USE
@@ -6792,29 +7393,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2976 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2976 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4512 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2976_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2976_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4512 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4512_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4512_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_USE
@@ -6838,29 +7439,121 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2977 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2977 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4513 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2977_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2977_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4513 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4513_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4513_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("bd49aed6-182c-5847-9467-f750d1d029bc"))
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Contacts.ContactGroup>>"; }
+};
+typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4514 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4514 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4514_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4514_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("f78d6a56-6e40-5f68-99de-b0ec119ccab2"))
+IAsyncOperation<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Contacts.ContactGroup>>"; }
+};
+typedef IAsyncOperation<__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup*> __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t;
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4515 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4515 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4515_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4515_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -6884,29 +7577,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2978 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2978 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4516 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2978_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2978_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4516 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4516_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4516_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_USE
@@ -6930,29 +7623,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2979 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2979 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4517 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2979_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2979_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4517 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4517_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4517_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -6976,29 +7669,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2980 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2980 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4518 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2980_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2980_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4518 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4518_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4518_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_USE
@@ -7022,29 +7715,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2981 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2981 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4519 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2981_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2981_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4519 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4519_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4519_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -7068,29 +7761,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2982 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2982 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4520 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2982_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2982_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4520 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4520_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4520_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_USE
@@ -7137,30 +7830,30 @@ interface IContactChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2983 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2983 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4521 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2983_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2983_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4521 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4521_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4521_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE
@@ -7209,7 +7902,7 @@ interface IContactListSyncManager;
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109 */
 /* [local] */ 
 
 
@@ -7217,23 +7910,23 @@ interface IInspectable;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2984 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2984 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4522 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2984_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2984_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4522 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4522_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4522_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_USE
@@ -7255,31 +7948,195 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactList
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+class ContactPanel;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+interface IContactPanel;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+class ContactPanelClosingEventArgs;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+interface IContactPanelClosingEventArgs;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0103_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2985 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2985 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4523 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2985_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2985_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4523 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4523_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4523_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4357954b-bce6-5456-a511-fe8904e8090b"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPanel*,ABI::Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactPanel*, ABI::Windows::ApplicationModel::Contacts::IContactPanel*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs*, ABI::Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPanel*,ABI::Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs*> __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+class ContactPanelLaunchFullAppRequestedEventArgs;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+interface IContactPanelLaunchFullAppRequestedEventArgs;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4524 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4524 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4524_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4524_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c4030df2-ad34-5575-a369-5616577878eb"))
+ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPanel*,ABI::Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactPanel*, ABI::Windows::ApplicationModel::Contacts::IContactPanel*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs*, ABI::Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPanel*,ABI::Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs*> __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4525 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4525 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4525_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4525_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE
@@ -7303,29 +8160,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2986 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2986 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4526 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2986_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2986_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4526 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4526_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4526_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -7349,29 +8206,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2987 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2987 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4527 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2987_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2987_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4527 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4527_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4527_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -7395,29 +8252,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2988 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2988 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4528 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2988_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2988_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4528 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4528_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4528_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -7441,29 +8298,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2989 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2989 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4529 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2989_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2989_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4529 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4529_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4529_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
@@ -7487,29 +8344,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2990 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2990 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4530 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2990_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2990_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4530 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4530_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4530_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_HSTRING_USE
@@ -7533,29 +8390,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2991 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2991 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4531 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2991_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2991_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4531 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4531_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4531_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_HSTRING_USE
@@ -7579,29 +8436,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2992 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2992 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4532 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2992_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2992_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4532 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4532_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4532_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -7625,29 +8482,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2993 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2993 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4533 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2993_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2993_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4533 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4533_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4533_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -7671,29 +8528,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2994 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2994 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4534 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2994_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2994_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4534 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4534_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4534_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -7717,29 +8574,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2995 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2995 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4535 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2995_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2995_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4535 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4535_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4535_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -7763,29 +8620,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2996 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2996 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4536 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2996_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2996_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4536 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4536_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4536_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
@@ -7809,29 +8666,29 @@ extern "C" {
 #endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2997 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2997 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4537 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2997_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2997_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4537 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4537_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4537_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
@@ -7855,29 +8712,29 @@ extern "C" {
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2998 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2998 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4538 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2998_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2998_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4538 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4538_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4538_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
@@ -7901,29 +8758,29 @@ extern "C" {
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2999 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2999 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4539 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2999_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_2999_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4539 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4539_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4539_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
@@ -7947,29 +8804,29 @@ extern "C" {
 #endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3000 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3000 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4540 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3000_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4540 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4540_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4540_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE
@@ -7993,29 +8850,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3001 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3001 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4541 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3001_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4541 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4541_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4541_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE
@@ -8039,29 +8896,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3002 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3002 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4542 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3002_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4542 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4542_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4542_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_UINT32_USE
@@ -8085,29 +8942,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_UINT32_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3003 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3003 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4543 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3003_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4543 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4543_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4543_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_int_USE
@@ -8143,30 +9000,30 @@ interface IRandomAccessStreamWithContentType;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3004 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3004 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4544 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3004_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4544 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4544_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4544_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_USE
@@ -8190,29 +9047,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3005 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3005 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4545 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3005_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4545 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4545_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4545_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_USE
@@ -8259,30 +9116,30 @@ interface IRandomAccessStreamReference;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3006 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3006 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4546 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3006_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4546 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4546_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4546_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_USE
@@ -8306,29 +9163,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3007 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3007 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4547 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3007_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4547 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4547_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4547_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_USE
@@ -8364,30 +9221,30 @@ struct TextSegment;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3008 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3008 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4548 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3008_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4548 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4548_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4548_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CData__CText__CTextSegment_USE
@@ -8411,29 +9268,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CData__CText__CTextSegment_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3009 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3009 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4549 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3009_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4549 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4549_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4549_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CData__CText__CTextSegment_USE
@@ -8457,29 +9314,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CData__CText__CTextSegment_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3010 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3010 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4550 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3010_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4550 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4550_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4550_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CData__CText__CTextSegment_USE
@@ -8501,6 +9358,63 @@ typedef IVectorView<struct ABI::Windows::Data::Text::TextSegment> __FIVectorView
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVectorView_1_Windows__CData__CText__CTextSegment_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+struct Color;
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4551 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4551 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4551_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4551_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CUI__CColor_USE
+#define DEF___FIReference_1_Windows__CUI__CColor_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("ab8e5d11-b0c1-5a21-95ae-f16bf3a37624"))
+IReference<struct ABI::Windows::UI::Color> : IReference_impl<struct ABI::Windows::UI::Color> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IReference`1<Windows.UI.Color>"; }
+};
+typedef IReference<struct ABI::Windows::UI::Color> __FIReference_1_Windows__CUI__CColor_t;
+#define ____FIReference_1_Windows__CUI__CColor_FWD_DEFINED__
+#define __FIReference_1_Windows__CUI__CColor ABI::Windows::Foundation::__FIReference_1_Windows__CUI__CColor_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIReference_1_Windows__CUI__CColor_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -8514,6 +9428,9 @@ extern "C" {
 #if !defined(__windows2Esystem_h__)
 #include <Windows.System.h>
 #endif // !defined(__windows2Esystem_h__)
+#if !defined(__windows2Eui_h__)
+#include <Windows.UI.h>
+#endif // !defined(__windows2Eui_h__)
 #if !defined(__windows2Eui2Epopups_h__)
 #include <Windows.UI.Popups.h>
 #endif // !defined(__windows2Eui2Epopups_h__)
@@ -8543,6 +9460,16 @@ class ValueSet;
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Foundation {
+class Deferral;
+} /*Foundation*/
+} /*Windows*/
+}
+#endif
+
 
 
 #if !defined(__cplusplus)
@@ -8569,6 +9496,10 @@ class User;
 }
 #endif
 
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CUI_CColor __x_ABI_CWindows_CUI_CColor;
+
+#endif
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -8819,6 +9750,24 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CContacts_CContactStoreAccessTyp
 
 
 #endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
+
+
+
+
+
+
+
 
 
 
@@ -9019,9 +9968,20 @@ class FullContactCardOptions;
 } /*Windows*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Contacts {
+class PinnedContactManager;
+} /*Contacts*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139 */
 /* [local] */ 
 
 
@@ -9062,6 +10022,7 @@ extern "C" {
 
 
 
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -9079,6 +10040,22 @@ extern "C" {
 #endif
 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            
+            typedef struct Color Color;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -9530,6 +10507,23 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                
+                typedef enum PinnedContactSurface PinnedContactSurface;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -9567,23 +10561,32 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0129_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3011 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3011 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4552 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4552 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4552_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4552_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContact
@@ -9591,13 +10594,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -9741,35 +10744,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3012 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3012 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4553 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3012_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4553 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4553_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4553_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContact
@@ -9777,13 +10780,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -9893,35 +10896,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3013 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4554 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3013_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4554 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4554_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4554_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactAddress
@@ -9929,13 +10932,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
@@ -10079,35 +11082,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactAddress */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3014 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3014 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4555 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3014_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4555 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4555_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4555_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactAddress
@@ -10115,13 +11118,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
@@ -10231,35 +11234,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactAddress */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3015 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3015 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4556 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3015_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4556 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4556_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4556_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -10267,13 +11270,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -10417,35 +11420,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3016 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3016 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4557 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3016_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4557 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4557_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4557_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -10453,13 +11456,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -10569,35 +11572,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3017 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3017 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4558 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3017_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4558 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4558_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4558_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -10605,13 +11608,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -10755,35 +11758,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3018 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3018 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4559 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3018_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4559 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4559_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4559_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -10791,13 +11794,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -10907,35 +11910,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3019 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3019 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4560 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3019_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4560 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4560_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4560_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactChange
@@ -10943,13 +11946,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
@@ -11093,35 +12096,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactChange */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3020 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4561 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3020_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4561 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4561_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4561_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactChange
@@ -11129,13 +12132,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
@@ -11245,35 +12248,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactChange */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3021 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4562 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3021_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4562 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4562_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4562_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount
@@ -11281,13 +12284,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
@@ -11431,35 +12434,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3022 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4563 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3022_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4563 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4563_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4563_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount
@@ -11467,13 +12470,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
@@ -11583,35 +12586,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3023 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4564 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3023_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4564 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4564_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4564_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactDate
@@ -11619,13 +12622,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
@@ -11769,35 +12772,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactDate */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3024 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4565 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3024_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4565 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4565_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4565_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactDate
@@ -11805,13 +12808,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
@@ -11921,35 +12924,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactDate */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3025 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4566 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3025_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4566 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4566_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4566_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactEmail
@@ -11957,13 +12960,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
@@ -12107,35 +13110,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactEmail */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3026 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4567 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3026_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4567 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4567_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4567_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactEmail
@@ -12143,13 +13146,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
@@ -12259,35 +13262,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactEmail */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3027 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4568 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3027_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4568 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4568_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4568_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactField
@@ -12295,13 +13298,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__
@@ -12445,35 +13448,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3028 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4569 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3028_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4569 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4569_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4569_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactField
@@ -12481,13 +13484,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__
@@ -12597,35 +13600,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3029 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4570 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3029_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4570 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4570_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4570_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactFieldType
@@ -12633,13 +13636,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
@@ -12783,35 +13786,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactFieldType */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3030 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4571 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3030_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4571 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4571_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4571_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType
@@ -12819,13 +13822,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
@@ -12935,35 +13938,373 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactFieldType */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3031 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4572 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3031_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4572 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4572_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4572_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup
+#define DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("86dac457-7314-5044-8108-75290c36dd2b")
+    __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactGroup **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::ApplicationModel::Contacts::IContactGroup **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl;
+
+    interface __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4573 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4573 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4573_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4573_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup
+#define DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9db1688a-f7e0-5059-989e-d1453056d73a")
+    __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CApplicationModel__CContacts__CContactGroup **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl;
+
+    interface __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4574 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4574 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4574_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4574_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -12971,13 +14312,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -13121,35 +14462,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3032 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4575 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3032_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4575 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4575_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4575_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -13157,13 +14498,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -13273,35 +14614,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3033 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4576 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3033_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4576 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4576_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField
@@ -13309,13 +14650,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__
@@ -13459,35 +14800,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3034 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4577 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3034_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4577 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4577_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField
@@ -13495,13 +14836,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__
@@ -13611,35 +14952,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3035 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4578 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3035_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4578 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4578_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo
@@ -13647,13 +14988,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
@@ -13797,35 +15138,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactJobInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3036 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4579 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3036_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4579 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4579_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactJobInfo
@@ -13833,13 +15174,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
@@ -13949,35 +15290,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactJobInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3037 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3037_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4580 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4580_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactList
@@ -13985,13 +15326,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -14135,35 +15476,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3038 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3038_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4581 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4581_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactList
@@ -14171,13 +15512,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -14287,35 +15628,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3039 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3039_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4582 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4582_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField
@@ -14323,13 +15664,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__
@@ -14473,35 +15814,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactLocationField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3040 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3040_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4583 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4583_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactLocationField
@@ -14509,13 +15850,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__
@@ -14625,35 +15966,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactLocationField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3041 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3041_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4584 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4584_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason
@@ -14661,13 +16002,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__
@@ -14811,35 +16152,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactMatchReason */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3042 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3042_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4585 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4585_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactMatchReason
@@ -14847,13 +16188,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__
@@ -14963,35 +16304,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactMatchReason */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0193_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3043 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3043_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4586 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4586_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone
@@ -14999,13 +16340,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0194_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
@@ -15149,35 +16490,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactPhone */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0195_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3044 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3044_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4587 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4587_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactPhone
@@ -15185,13 +16526,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
@@ -15301,35 +16642,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactPhone */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3045 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3045_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4588 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4588_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther
@@ -15337,13 +16678,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
@@ -15487,35 +16828,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactSignificantOther */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3046 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3046_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4589 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4589_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactSignificantOther
@@ -15523,13 +16864,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
@@ -15639,35 +16980,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactSignificantOther */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3047 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3047_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4590 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4590_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite
@@ -15675,13 +17016,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
@@ -15825,35 +17166,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CContactWebsite */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3048 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3048_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4591 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4591_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite
@@ -15861,13 +17202,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
@@ -15977,35 +17318,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CCo
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CContactWebsite */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3049 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3049_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4592 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4592_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField
@@ -16013,13 +17354,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
@@ -16163,35 +17504,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CContacts__CIC
 #endif 	/* ____FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CContacts__CIContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3050 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3050_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4593 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4593_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField
@@ -16199,13 +17540,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
@@ -16315,35 +17656,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CContacts__CIC
 #endif 	/* ____FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CContacts__CIContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3051 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3051_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4594 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4594_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact
@@ -16351,13 +17692,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0210_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -16509,35 +17850,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0211_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3052 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3052_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4595 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4595_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress
@@ -16545,13 +17886,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0212_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
@@ -16703,35 +18044,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAddress */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0213_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3053 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3053_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4596 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4596_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -16739,13 +18080,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0214_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -16897,35 +18238,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0215_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3054 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3054_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4597 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4597_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -16933,13 +18274,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0216_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -17091,35 +18432,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0217_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3055 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3055_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4598 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4598_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange
@@ -17127,13 +18468,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0218_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
@@ -17285,35 +18626,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0219_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3056 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3056_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4599 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4599_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount
@@ -17321,13 +18662,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0220_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
@@ -17479,35 +18820,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0221_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3057 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3057_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4600 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4600_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate
@@ -17515,13 +18856,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0222_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
@@ -17673,35 +19014,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactDate */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0223_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3058 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3058_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4601 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4601_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail
@@ -17709,13 +19050,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0224_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
@@ -17867,35 +19208,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactEmail */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0225_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3059 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3059_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4602 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4602_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField
@@ -17903,13 +19244,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0226_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__
@@ -18061,35 +19402,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0227_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3060 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3060_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType
@@ -18097,13 +19438,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0228_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
@@ -18255,35 +19596,229 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactFieldType */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0229_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3061 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3061_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+#define DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("124493aa-1617-5d0a-a5b6-4d1156fa95e5")
+    __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactGroup **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactGroup *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::ApplicationModel::Contacts::IContactGroup **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl;
+
+    interface __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4605 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4605 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -18291,13 +19826,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0230_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -18449,35 +19984,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0231_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3062 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3062_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField
@@ -18485,13 +20020,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0232_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__
@@ -18643,35 +20178,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0233_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3063 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3063_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo
@@ -18679,13 +20214,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0234_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
@@ -18837,35 +20372,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactJobInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0235_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3064 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3064_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4608 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList
@@ -18873,13 +20408,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0236_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -19031,35 +20566,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0237_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3065 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3065_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4609 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField
@@ -19067,13 +20602,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0238_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__
@@ -19225,35 +20760,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0239_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3066 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3066_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason
@@ -19261,13 +20796,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0240_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__
@@ -19419,35 +20954,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0241_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3067 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3067_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone
@@ -19455,13 +20990,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0242_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
@@ -19613,35 +21148,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactPhone */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0243_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3068 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3068_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther
@@ -19649,13 +21184,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0244_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
@@ -19807,35 +21342,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactSignificantOther */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0245_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3069 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3069_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite
@@ -19843,13 +21378,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0246_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
@@ -20001,35 +21536,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactWebsite */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0247_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3070 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3070_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField
@@ -20037,13 +21572,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0248_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
@@ -20195,35 +21730,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CContacts__C
 #endif 	/* ____FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CContacts__CIContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0249_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3071 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3071_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContact
@@ -20231,13 +21766,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0250_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -20471,35 +22006,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0251_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3072 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3072_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress
@@ -20507,13 +22042,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0252_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__
@@ -20747,35 +22282,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0253_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3073 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3073_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount
@@ -20783,13 +22318,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0254_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__
@@ -21023,35 +22558,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0255_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3074 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3074_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactDate
@@ -21059,13 +22594,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0256_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__
@@ -21299,35 +22834,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactDate */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0257_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3075 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3075_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail
@@ -21335,13 +22870,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0258_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__
@@ -21575,35 +23110,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0259_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3076 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3076_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType
@@ -21611,13 +23146,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0260_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__
@@ -21851,35 +23386,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0261_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3077 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3077_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo
@@ -21887,13 +23422,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0262_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__
@@ -22127,35 +23662,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0263_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3078 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3078_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4622 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone
@@ -22163,13 +23698,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0264_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__
@@ -22403,35 +23938,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0265_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther
@@ -22439,13 +23974,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0266_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__
@@ -22679,35 +24214,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0267_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4624 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite
@@ -22715,13 +24250,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0268_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__
@@ -22955,35 +24490,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CCont
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0269_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3081 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CApplicationModel__CContacts__CIContactField
@@ -22991,13 +24526,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0270_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__
@@ -23231,35 +24766,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CContacts__CICon
 #endif 	/* ____FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CApplicationModel__CContacts__CIContactField */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0271_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact
@@ -23268,14 +24803,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0272_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -23364,35 +24899,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0273_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact
@@ -23400,13 +24935,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0274_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -23536,35 +25071,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0275_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -23573,14 +25108,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0276_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -23669,35 +25204,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0277_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -23705,13 +25240,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0278_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -23841,35 +25376,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0279_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -23878,14 +25413,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0280_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -23974,35 +25509,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0281_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -24010,13 +25545,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0282_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -24146,35 +25681,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0283_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore
@@ -24183,14 +25718,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0284_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_INTERFACE_DEFINED__
@@ -24279,35 +25814,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0285_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore
@@ -24315,13 +25850,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0286_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_INTERFACE_DEFINED__
@@ -24451,35 +25986,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0287_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch
@@ -24488,14 +26023,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0288_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch_INTERFACE_DEFINED__
@@ -24584,35 +26119,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactBatch */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0289_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch
@@ -24620,13 +26155,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0290_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_INTERFACE_DEFINED__
@@ -24756,35 +26291,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0291_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -24793,14 +26328,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0292_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -24889,35 +26424,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0293_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -24925,13 +26460,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0294_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -25061,35 +26596,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0295_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4638 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList
@@ -25098,14 +26633,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0296_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -25194,35 +26729,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0297_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4639 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList
@@ -25230,13 +26765,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0298_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -25366,35 +26901,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0299_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore
@@ -25403,14 +26938,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0300_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore_INTERFACE_DEFINED__
@@ -25499,35 +27034,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CContactStore */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0301_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore
@@ -25535,13 +27070,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0302_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_INTERFACE_DEFINED__
@@ -25671,35 +27206,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContact
 #endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0303_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("930a23a2-28cf-5606-82f1-65dfee228735")
+    __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResultVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4643 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4643 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("031adb6c-3aa3-5b09-a8fb-92ea0145dc40")
+    __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResultVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4644 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4644 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact
@@ -25708,14 +27548,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0304_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -25804,35 +27644,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0305_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact
@@ -25840,13 +27680,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_30
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0306_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -25976,35 +27816,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0307_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -26013,14 +27853,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0308_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -26109,35 +27949,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0309_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation
@@ -26145,13 +27985,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0310_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__
@@ -26281,35 +28121,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0311_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -26318,14 +28158,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0312_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -26414,35 +28254,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0313_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList
@@ -26450,13 +28290,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0314_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__
@@ -26586,35 +28426,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0315_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange
@@ -26623,14 +28463,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0316_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
@@ -26719,35 +28559,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0317_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange
@@ -26755,13 +28595,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0318_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__
@@ -26891,35 +28731,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0319_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("bd49aed6-182c-5847-9467-f750d1d029bc")
+    __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4653 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4653 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("f78d6a56-6e40-5f68-99de-b0ec119ccab2")
+    __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl;
+
+    interface __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup
+    {
+        CONST_VTBL struct __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4654 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4654 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -26928,14 +29073,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0320_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -27024,35 +29169,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0321_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation
@@ -27060,13 +29205,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0322_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__
@@ -27196,35 +29341,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInformation */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0323_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList
@@ -27233,14 +29378,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -27329,35 +29474,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList
@@ -27365,13 +29510,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__
@@ -27501,35 +29646,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact
@@ -27538,14 +29683,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -27634,35 +29779,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact
@@ -27670,13 +29815,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__
@@ -27806,35 +29951,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVector_1_Windows__CApplicationMo
 #endif 	/* ____FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs
@@ -27842,13 +29987,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
@@ -27937,35 +30082,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactList_Windows__CApplicationModel__CContacts__CContactChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable
@@ -27973,13 +30118,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_INTERFACE_DEFINED__
@@ -28068,35 +30213,297 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3114 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_3114_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4357954b-bce6-5456-a511-fe8904e8090b")
+    __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactPanel *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4663 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4663 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("c4030df2-ad34-5575-a369-5616577878eb")
+    __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactPanel *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4664 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4664 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs
@@ -28104,13 +30511,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Eidl_0000_31
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__
@@ -28199,7 +30606,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCont
 #endif 	/* ____FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -28228,7 +30635,8 @@ enum __x_ABI_CWindows_CApplicationModel_CContacts_CContactAnnotationOperations
         ContactAnnotationOperations_Message	= 0x2,
         ContactAnnotationOperations_AudioCall	= 0x4,
         ContactAnnotationOperations_VideoCall	= 0x8,
-        ContactAnnotationOperations_SocialFeeds	= 0x10
+        ContactAnnotationOperations_SocialFeeds	= 0x10,
+        ContactAnnotationOperations_Share	= 0x20
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -28570,12 +30978,24 @@ enum __x_ABI_CWindows_CApplicationModel_CContacts_CContactStoreAccessType
 #endif /* end if !defined(__cplusplus) */
 
 #endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface
+    {
+        PinnedContactSurface_StartMenu	= 0,
+        PinnedContactSurface_Taskbar	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IAggregateContactManager[] = L"Windows.ApplicationModel.Contacts.IAggregateContactManager";
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -28615,7 +31035,8 @@ namespace ABI {
                         ContactAnnotationOperations_Message	= 0x2,
                         ContactAnnotationOperations_AudioCall	= 0x4,
                         ContactAnnotationOperations_VideoCall	= 0x8,
-                        ContactAnnotationOperations_SocialFeeds	= 0x10
+                        ContactAnnotationOperations_SocialFeeds	= 0x10,
+                        ContactAnnotationOperations_Share	= 0x20
                     } ;
             } /* end namespace */
         } /* end namespace */
@@ -29118,10 +31539,31 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Contacts {
+                
+                /* [v1_enum] */ 
+                enum PinnedContactSurface
+                    {
+                        PinnedContactSurface_StartMenu	= 0,
+                        PinnedContactSurface_Taskbar	= 1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0337_v0_0_s_ifspec;
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager_INTERFACE_DEFINED__
@@ -29286,7 +31728,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateC
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager2_INTERFACE_DEFINED__)
@@ -29294,13 +31736,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager2_INTERFACE_DEFINED__
@@ -29429,7 +31871,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateC
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIAggregateContactManager2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_INTERFACE_DEFINED__)
@@ -29437,13 +31879,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0339_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_INTERFACE_DEFINED__
@@ -29606,7 +32048,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContact;
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContact2_INTERFACE_DEFINED__)
@@ -29614,13 +32056,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContact2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0340_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact2_INTERFACE_DEFINED__
@@ -29873,7 +32315,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContact2;
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContact3_INTERFACE_DEFINED__)
@@ -29881,13 +32323,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContact3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0341_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact3_INTERFACE_DEFINED__
@@ -30230,7 +32672,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContact3;
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContact3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAddress_INTERFACE_DEFINED__)
@@ -30238,13 +32680,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAddress_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0342_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAddress_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAddress_INTERFACE_DEFINED__
@@ -30497,7 +32939,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactAdd
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAddress_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation_INTERFACE_DEFINED__)
@@ -30505,13 +32947,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0343_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation_INTERFACE_DEFINED__
@@ -30724,7 +33166,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnn
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactAnnotation2[] = L"Windows.ApplicationModel.Contacts.IContactAnnotation2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactAnnotation2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("B691ECF3-4AB7-4A1F-9941-0C9CF3171B75")
+                    IContactAnnotation2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContactListId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ContactListId( 
+                            /* [in] */ __RPC__in HSTRING value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactAnnotation2 = __uuidof(IContactAnnotation2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContactListId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ContactListId )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2 * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_get_ContactListId(This,value)	\
+    ( (This)->lpVtbl -> get_ContactListId(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_put_ContactListId(This,value)	\
+    ( (This)->lpVtbl -> put_ContactListId(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotation2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_INTERFACE_DEFINED__)
@@ -30732,13 +33321,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0344_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_INTERFACE_DEFINED__
@@ -30949,7 +33538,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnn
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore_INTERFACE_DEFINED__)
@@ -30957,13 +33546,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0345_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore_INTERFACE_DEFINED__
@@ -31168,7 +33757,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnn
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactAnnotationStore2[] = L"Windows.ApplicationModel.Contacts.IContactAnnotationStore2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactAnnotationStore2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("7EDE23FD-61E7-4967-8EC5-BDF280A24063")
+                    IContactAnnotationStore2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE FindAnnotationsForContactListAsync( 
+                            /* [in] */ __RPC__in HSTRING contactListId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation **annotations) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactAnnotationStore2 = __uuidof(IContactAnnotationStore2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindAnnotationsForContactListAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2 * This,
+            /* [in] */ __RPC__in HSTRING contactListId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation **annotations);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_FindAnnotationsForContactListAsync(This,contactListId,annotations)	\
+    ( (This)->lpVtbl -> FindAnnotationsForContactListAsync(This,contactListId,annotations) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactAnnotationStore2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactBatch_INTERFACE_DEFINED__)
@@ -31176,13 +33904,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactBatch_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0346_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactBatch_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactBatch_INTERFACE_DEFINED__
@@ -31315,7 +34043,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactBat
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactBatch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardDelayedDataLoader_INTERFACE_DEFINED__)
@@ -31323,13 +34051,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardDelayedDataLoader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0347_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardDelayedDataLoader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardDelayedDataLoader_INTERFACE_DEFINED__
@@ -31452,7 +34180,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardDelayedDataLoader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions_INTERFACE_DEFINED__)
@@ -31460,13 +34188,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0348_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions_INTERFACE_DEFINED__
@@ -31619,7 +34347,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions2_INTERFACE_DEFINED__)
@@ -31627,13 +34355,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0349_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions2_INTERFACE_DEFINED__
@@ -31756,7 +34484,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCar
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactCardOptions2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChange_INTERFACE_DEFINED__)
@@ -31764,13 +34492,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChange_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0350_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChange_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChange_INTERFACE_DEFINED__
@@ -31903,7 +34631,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCha
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChange_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeReader_INTERFACE_DEFINED__)
@@ -31911,13 +34639,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0351_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeReader_INTERFACE_DEFINED__
@@ -32058,7 +34786,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCha
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeTracker_INTERFACE_DEFINED__)
@@ -32066,13 +34794,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeTracker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0352_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeTracker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeTracker_INTERFACE_DEFINED__
@@ -32211,7 +34939,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCha
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangeTracker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedDeferral_INTERFACE_DEFINED__)
@@ -32219,13 +34947,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0353_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedDeferral_INTERFACE_DEFINED__
@@ -32346,7 +35074,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCha
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedEventArgs_INTERFACE_DEFINED__)
@@ -32354,13 +35082,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0354_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedEventArgs_INTERFACE_DEFINED__
@@ -32483,7 +35211,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCha
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactConnectedServiceAccount_INTERFACE_DEFINED__)
@@ -32491,13 +35219,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactConnectedServiceAccount_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0355_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactConnectedServiceAccount_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactConnectedServiceAccount_INTERFACE_DEFINED__
@@ -32650,7 +35378,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactCon
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactConnectedServiceAccount_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactDate_INTERFACE_DEFINED__)
@@ -32658,13 +35386,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactDate_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0356_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactDate_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactDate_INTERFACE_DEFINED__
@@ -32877,7 +35605,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactDat
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactDate_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactEmail_INTERFACE_DEFINED__)
@@ -32885,13 +35613,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactEmail_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0357_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactEmail_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactEmail_INTERFACE_DEFINED__
@@ -33064,7 +35792,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactEma
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactEmail_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactField_INTERFACE_DEFINED__)
@@ -33072,13 +35800,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactField_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0358_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactField_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactField_INTERFACE_DEFINED__
@@ -33231,7 +35959,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactFie
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactFieldFactory_INTERFACE_DEFINED__)
@@ -33239,13 +35967,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactFieldFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0359_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactFieldFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactFieldFactory_INTERFACE_DEFINED__
@@ -33406,7 +36134,134 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactFie
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactFieldFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactGroup[] = L"Windows.ApplicationModel.Contacts.IContactGroup";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactGroup */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("59BDEB01-9E9A-475D-BFE5-A37B806D852C")
+                    IContactGroup : public IInspectable
+                    {
+                    public:
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactGroup = __uuidof(IContactGroup);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroupVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroupVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroupVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactGroup_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_INTERFACE_DEFINED__)
@@ -33414,13 +36269,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0360_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_INTERFACE_DEFINED__
@@ -33615,7 +36470,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactInf
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageField_INTERFACE_DEFINED__)
@@ -33623,13 +36478,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageField_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0361_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageField_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageField_INTERFACE_DEFINED__
@@ -33782,7 +36637,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactIns
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageFieldFactory_INTERFACE_DEFINED__)
@@ -33790,13 +36645,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageFieldFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0362_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageFieldFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageFieldFactory_INTERFACE_DEFINED__
@@ -33955,7 +36810,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactIns
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactInstantMessageFieldFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactJobInfo_INTERFACE_DEFINED__)
@@ -33963,13 +36818,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactJobInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0363_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactJobInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactJobInfo_INTERFACE_DEFINED__
@@ -34242,7 +37097,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactJob
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactJobInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLaunchActionVerbsStatics_INTERFACE_DEFINED__)
@@ -34250,13 +37105,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLaunchActionVerbsStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0364_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLaunchActionVerbsStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLaunchActionVerbsStatics_INTERFACE_DEFINED__
@@ -34419,7 +37274,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLau
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLaunchActionVerbsStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0396 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList_INTERFACE_DEFINED__)
@@ -34427,13 +37282,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0396 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0365_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0396_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0396_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList_INTERFACE_DEFINED__
@@ -34808,7 +37663,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLis
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0397 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList2_INTERFACE_DEFINED__)
@@ -34816,13 +37671,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0397 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0366_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0397_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0397_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList2_INTERFACE_DEFINED__
@@ -34965,7 +37820,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLis
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactList2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0398 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncConstraints_INTERFACE_DEFINED__)
@@ -34973,13 +37828,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncConstraints_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0398 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0367_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0398_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0398_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncConstraints_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncConstraints_INTERFACE_DEFINED__
@@ -35652,7 +38507,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLis
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncConstraints_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0399 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager_INTERFACE_DEFINED__)
@@ -35660,13 +38515,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0399 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0368_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0399_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0399_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager_INTERFACE_DEFINED__
@@ -35841,7 +38696,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLis
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0400 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager2_INTERFACE_DEFINED__)
@@ -35849,13 +38704,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0400 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0369_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0400_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0400_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager2_INTERFACE_DEFINED__
@@ -35998,7 +38853,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLis
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactListSyncManager2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0401 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationField_INTERFACE_DEFINED__)
@@ -36006,13 +38861,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationField_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0401 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0370_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0401_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0401_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationField_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationField_INTERFACE_DEFINED__
@@ -36185,7 +39040,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLoc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationField_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0402 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationFieldFactory_INTERFACE_DEFINED__)
@@ -36193,13 +39048,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationFieldFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0402 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0371_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0402_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0402_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationFieldFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationFieldFactory_INTERFACE_DEFINED__
@@ -36362,7 +39217,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactLoc
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactLocationFieldFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0403 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser_INTERFACE_DEFINED__)
@@ -36370,13 +39225,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0403 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0372_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0403_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0403_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser_INTERFACE_DEFINED__
@@ -36601,7 +39456,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactMan
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0404 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactManagerForUser2[] = L"Windows.ApplicationModel.Contacts.IContactManagerForUser2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0404 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0404_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0404_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactManagerForUser2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("4D469C2E-3B75-4A73-BB30-736645472256")
+                    IContactManagerForUser2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE ShowFullContactCard( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact *contact,
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IFullContactCardOptions *fullContactCardOptions) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactManagerForUser2 = __uuidof(IContactManagerForUser2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowFullContactCard )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact *contact,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIFullContactCardOptions *fullContactCardOptions);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_ShowFullContactCard(This,contact,fullContactCardOptions)	\
+    ( (This)->lpVtbl -> ShowFullContactCard(This,contact,fullContactCardOptions) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerForUser2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0405 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_INTERFACE_DEFINED__)
@@ -36609,13 +39603,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0405 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0373_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0405_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0405_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_INTERFACE_DEFINED__
@@ -36770,7 +39764,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactMan
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0406 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics2_INTERFACE_DEFINED__)
@@ -36778,13 +39772,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0406 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0374_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0406_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0406_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics2_INTERFACE_DEFINED__
@@ -36907,7 +39901,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactMan
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0407 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics3_INTERFACE_DEFINED__)
@@ -36915,13 +39909,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0407 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0375_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0407_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0407_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics3_INTERFACE_DEFINED__
@@ -37202,7 +40196,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactMan
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0408 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics4_INTERFACE_DEFINED__)
@@ -37210,13 +40204,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0408 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0376_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0408_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0408_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics4_INTERFACE_DEFINED__
@@ -37341,7 +40335,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactMan
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0409 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactManagerStatics5[] = L"Windows.ApplicationModel.Contacts.IContactManagerStatics5";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0409 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0409_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0409_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactManagerStatics5 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("F7591A87-ACB7-4FAD-90F2-A8AB64CDBBA4")
+                    IContactManagerStatics5 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE IsShowFullContactCardSupportedAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IncludeMiddleNameInSystemDisplayAndSort( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IncludeMiddleNameInSystemDisplayAndSort( 
+                            /* [in] */ boolean value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactManagerStatics5 = __uuidof(IContactManagerStatics5);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsShowFullContactCardSupportedAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IncludeMiddleNameInSystemDisplayAndSort )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IncludeMiddleNameInSystemDisplayAndSort )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5 * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_IsShowFullContactCardSupportedAsync(This,result)	\
+    ( (This)->lpVtbl -> IsShowFullContactCardSupportedAsync(This,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_get_IncludeMiddleNameInSystemDisplayAndSort(This,value)	\
+    ( (This)->lpVtbl -> get_IncludeMiddleNameInSystemDisplayAndSort(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_put_IncludeMiddleNameInSystemDisplayAndSort(This,value)	\
+    ( (This)->lpVtbl -> put_IncludeMiddleNameInSystemDisplayAndSort(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactManagerStatics5_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0410 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_INTERFACE_DEFINED__)
@@ -37349,13 +40500,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0410 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0377_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0410_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0410_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_INTERFACE_DEFINED__
@@ -37498,7 +40649,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactMat
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactMatchReason_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0411 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactName_INTERFACE_DEFINED__)
@@ -37506,13 +40657,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactName_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0411 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0378_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0411_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0411_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactName_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactName_INTERFACE_DEFINED__
@@ -37785,7 +40936,490 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactNam
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0412 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactPanel[] = L"Windows.ApplicationModel.Contacts.IContactPanel";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0412 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0412_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0412_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactPanel */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("41BF1265-D2EE-4B97-A80A-7D8D64CCA6F5")
+                    IContactPanel : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE ClosePanel( void) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HeaderColor( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_HeaderColor( 
+                            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CUI__CColor *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_LaunchFullAppRequested( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_LaunchFullAppRequested( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_Closing( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_Closing( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactPanel = __uuidof(IContactPanel);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *ClosePanel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HeaderColor )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIReference_1_Windows__CUI__CColor **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_HeaderColor )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [in] */ __RPC__in_opt __FIReference_1_Windows__CUI__CColor *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_LaunchFullAppRequested )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_LaunchFullAppRequested )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_Closing )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_Closing )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_ClosePanel(This)	\
+    ( (This)->lpVtbl -> ClosePanel(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_get_HeaderColor(This,value)	\
+    ( (This)->lpVtbl -> get_HeaderColor(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_put_HeaderColor(This,value)	\
+    ( (This)->lpVtbl -> put_HeaderColor(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_add_LaunchFullAppRequested(This,handler,token)	\
+    ( (This)->lpVtbl -> add_LaunchFullAppRequested(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_remove_LaunchFullAppRequested(This,token)	\
+    ( (This)->lpVtbl -> remove_LaunchFullAppRequested(This,token) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_add_Closing(This,handler,token)	\
+    ( (This)->lpVtbl -> add_Closing(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_remove_Closing(This,token)	\
+    ( (This)->lpVtbl -> remove_Closing(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanel_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0413 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactPanelClosingEventArgs[] = L"Windows.ApplicationModel.Contacts.IContactPanelClosingEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0413 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0413_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0413_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("222174D3-CF4B-46D7-B739-6EDC16110BFB")
+                    IContactPanelClosingEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDeferral( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IDeferral **deferral) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactPanelClosingEventArgs = __uuidof(IContactPanelClosingEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDeferral )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIDeferral **deferral);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_GetDeferral(This,deferral)	\
+    ( (This)->lpVtbl -> GetDeferral(This,deferral) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelClosingEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0414 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactPanelLaunchFullAppRequestedEventArgs[] = L"Windows.ApplicationModel.Contacts.IContactPanelLaunchFullAppRequestedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0414 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0414_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0414_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("88D61C0E-23B4-4BE8-8AFC-072C25A4190D")
+                    IContactPanelLaunchFullAppRequestedEventArgs : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Handled( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Handled( 
+                            /* [in] */ boolean value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactPanelLaunchFullAppRequestedEventArgs = __uuidof(IContactPanelLaunchFullAppRequestedEventArgs);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handled )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Handled )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_get_Handled(This,value)	\
+    ( (This)->lpVtbl -> get_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_put_Handled(This,value)	\
+    ( (This)->lpVtbl -> put_Handled(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPanelLaunchFullAppRequestedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0415 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_INTERFACE_DEFINED__)
@@ -37793,13 +41427,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0415 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0379_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0415_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0415_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_INTERFACE_DEFINED__
@@ -37972,7 +41606,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPho
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPhone_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0416 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker_INTERFACE_DEFINED__)
@@ -37980,13 +41614,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0416 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0380_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0416_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0416_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker_INTERFACE_DEFINED__
@@ -38169,7 +41803,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPic
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0417 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker2_INTERFACE_DEFINED__)
@@ -38177,13 +41811,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0417 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0381_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0417_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0417_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker2_INTERFACE_DEFINED__
@@ -38326,7 +41960,293 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPic
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0418 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactPicker3[] = L"Windows.ApplicationModel.Contacts.IContactPicker3";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0418 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0418_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0418_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactPicker3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("0E723315-B243-4BED-8516-22B1A7AC0ACE")
+                    IContactPicker3 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactPicker3 = __uuidof(IContactPicker3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_get_User(This,value)	\
+    ( (This)->lpVtbl -> get_User(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0419 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IContactPickerStatics[] = L"Windows.ApplicationModel.Contacts.IContactPickerStatics";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0419 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0419_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0419_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IContactPickerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("7488C029-6A53-4258-A3E9-62DFF6784B6C")
+                    IContactPickerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateForUser( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IContactPicker **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsSupportedAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IContactPickerStatics = __uuidof(IContactPickerStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateForUser )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPicker **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsSupportedAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_CreateForUser(This,user,result)	\
+    ( (This)->lpVtbl -> CreateForUser(This,user,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_IsSupportedAsync(This,result)	\
+    ( (This)->lpVtbl -> IsSupportedAsync(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactPickerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0420 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptions_INTERFACE_DEFINED__)
@@ -38334,13 +42254,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0420 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0382_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0420_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0420_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptions_INTERFACE_DEFINED__
@@ -38543,7 +42463,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactQue
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0421 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptionsFactory_INTERFACE_DEFINED__)
@@ -38551,13 +42471,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptionsFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0421 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0383_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0421_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0421_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptionsFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptionsFactory_INTERFACE_DEFINED__
@@ -38696,7 +42616,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactQue
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryOptionsFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0422 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryTextSearch_INTERFACE_DEFINED__)
@@ -38704,13 +42624,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryTextSearch_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0422 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0384_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0422_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0422_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryTextSearch_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryTextSearch_INTERFACE_DEFINED__
@@ -38883,7 +42803,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactQue
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactQueryTextSearch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0423 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactReader_INTERFACE_DEFINED__)
@@ -38891,13 +42811,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0423 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0385_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0423_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0423_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactReader_INTERFACE_DEFINED__
@@ -39032,7 +42952,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactRea
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0424 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther_INTERFACE_DEFINED__)
@@ -39040,13 +42960,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0424 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0386_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0424_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0424_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther_INTERFACE_DEFINED__
@@ -39199,7 +43119,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactSig
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0425 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther2_INTERFACE_DEFINED__)
@@ -39207,13 +43127,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0425 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0387_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0425_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0425_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther2_INTERFACE_DEFINED__
@@ -39346,7 +43266,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactSig
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactSignificantOther2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0426 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore_INTERFACE_DEFINED__)
@@ -39354,13 +43274,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0426 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0388_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0426_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0426_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore_INTERFACE_DEFINED__
@@ -39507,7 +43427,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactSto
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0427 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore2_INTERFACE_DEFINED__)
@@ -39515,13 +43435,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0427 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0389_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0427_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0427_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore2_INTERFACE_DEFINED__
@@ -39756,7 +43676,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactSto
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStore2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0428 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStoreNotificationTriggerDetails_INTERFACE_DEFINED__)
@@ -39764,13 +43684,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStoreNotificationTriggerDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0428 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0390_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0428_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0428_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStoreNotificationTriggerDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStoreNotificationTriggerDetails_INTERFACE_DEFINED__
@@ -39883,7 +43803,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactSto
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactStoreNotificationTriggerDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0429 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite_INTERFACE_DEFINED__)
@@ -39891,13 +43811,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0429 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0391_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0429_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0429_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite_INTERFACE_DEFINED__
@@ -40050,7 +43970,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactWeb
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0430 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite2_INTERFACE_DEFINED__)
@@ -40058,13 +43978,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0430 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0392_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0430_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0430_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite2_INTERFACE_DEFINED__
@@ -40197,7 +44117,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIContactWeb
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIContactWebsite2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0431 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIFullContactCardOptions_INTERFACE_DEFINED__)
@@ -40205,13 +44125,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIFullContactCardOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0431 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0393_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0431_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0431_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIFullContactCardOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIFullContactCardOptions_INTERFACE_DEFINED__
@@ -40344,7 +44264,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIFullContac
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIFullContactCardOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0432 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIKnownContactFieldStatics_INTERFACE_DEFINED__)
@@ -40352,13 +44272,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIKnownContactFieldStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0432 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0394_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0432_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0432_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIKnownContactFieldStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CContacts_CIKnownContactFieldStatics_INTERFACE_DEFINED__
@@ -40535,7 +44455,528 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIKnownConta
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIKnownContactFieldStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0433 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IPinnedContactIdsQueryResult[] = L"Windows.ApplicationModel.Contacts.IPinnedContactIdsQueryResult";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0433 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0433_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0433_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("7D9B2552-1579-4DDC-871F-A30A3AEA9BA1")
+                    IPinnedContactIdsQueryResult : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ContactIds( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPinnedContactIdsQueryResult = __uuidof(IPinnedContactIdsQueryResult);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ContactIds )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_HSTRING **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResultVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_get_ContactIds(This,value)	\
+    ( (This)->lpVtbl -> get_ContactIds(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactIdsQueryResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0434 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IPinnedContactManager[] = L"Windows.ApplicationModel.Contacts.IPinnedContactManager";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0434 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0434_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0434_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IPinnedContactManager */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("FCBC740C-E1D6-45C3-B8B6-A35604E167A0")
+                    IPinnedContactManager : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **user) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsPinSurfaceSupported( 
+                            /* [in] */ ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface surface,
+                            /* [out][retval] */ __RPC__out boolean *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsContactPinned( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact *contact,
+                            /* [in] */ ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface surface,
+                            /* [out][retval] */ __RPC__out boolean *result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestPinContactAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact *contact,
+                            /* [in] */ ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface surface,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestPinContactsAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CContacts__CContact *contacts,
+                            /* [in] */ ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface surface,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestUnpinContactAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact *contact,
+                            /* [in] */ ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface surface,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SignalContactActivity( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Contacts::IContact *contact) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetPinnedContactIdsAsync( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPinnedContactManager = __uuidof(IPinnedContactManager);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **user);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsPinSurfaceSupported )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface surface,
+            /* [out][retval] */ __RPC__out boolean *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsContactPinned )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact *contact,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface surface,
+            /* [out][retval] */ __RPC__out boolean *result);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestPinContactAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact *contact,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface surface,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestPinContactsAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CContacts__CContact *contacts,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface surface,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestUnpinContactAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact *contact,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CContacts_CPinnedContactSurface surface,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *SignalContactActivity )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIContact *contact);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPinnedContactIdsAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_get_User(This,user)	\
+    ( (This)->lpVtbl -> get_User(This,user) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_IsPinSurfaceSupported(This,surface,result)	\
+    ( (This)->lpVtbl -> IsPinSurfaceSupported(This,surface,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_IsContactPinned(This,contact,surface,result)	\
+    ( (This)->lpVtbl -> IsContactPinned(This,contact,surface,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_RequestPinContactAsync(This,contact,surface,operation)	\
+    ( (This)->lpVtbl -> RequestPinContactAsync(This,contact,surface,operation) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_RequestPinContactsAsync(This,contacts,surface,operation)	\
+    ( (This)->lpVtbl -> RequestPinContactsAsync(This,contacts,surface,operation) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_RequestUnpinContactAsync(This,contact,surface,operation)	\
+    ( (This)->lpVtbl -> RequestUnpinContactAsync(This,contact,surface,operation) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_SignalContactActivity(This,contact)	\
+    ( (This)->lpVtbl -> SignalContactActivity(This,contact) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_GetPinnedContactIdsAsync(This,operation)	\
+    ( (This)->lpVtbl -> GetPinnedContactIdsAsync(This,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0435 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Contacts_IPinnedContactManagerStatics[] = L"Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0435 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0435_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0435_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Contacts {
+                    
+                    MIDL_INTERFACE("F65CCC7E-FDF9-486A-ACE9-BC311D0AE7F0")
+                    IPinnedContactManagerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefault( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IPinnedContactManager **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetForUser( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Contacts::IPinnedContactManager **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsSupported( 
+                            /* [out][retval] */ __RPC__out boolean *result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPinnedContactManagerStatics = __uuidof(IPinnedContactManagerStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefault )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForUser )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManager **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsSupported )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics * This,
+            /* [out][retval] */ __RPC__out boolean *result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_GetDefault(This,result)	\
+    ( (This)->lpVtbl -> GetDefault(This,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_GetForUser(This,user,result)	\
+    ( (This)->lpVtbl -> GetForUser(This,user,result) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_IsSupported(This,result)	\
+    ( (This)->lpVtbl -> IsSupported(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CContacts_CIPinnedContactManagerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0436 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_AggregateContactManager_DEFINED
@@ -40614,6 +45055,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactFieldFactory_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactFieldFactory[] = L"Windows.ApplicationModel.Contacts.ContactFieldFactory";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactGroup_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactGroup_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactGroup[] = L"Windows.ApplicationModel.Contacts.ContactGroup";
+#endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactInformation_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactInformation_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactInformation[] = L"Windows.ApplicationModel.Contacts.ContactInformation";
@@ -40657,6 +45102,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactMatchReason_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactMatchReason_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactMatchReason[] = L"Windows.ApplicationModel.Contacts.ContactMatchReason";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPanel_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPanel_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactPanel[] = L"Windows.ApplicationModel.Contacts.ContactPanel";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPanelClosingEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPanelClosingEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactPanelClosingEventArgs[] = L"Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPanelLaunchFullAppRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPanelLaunchFullAppRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_ContactPanelLaunchFullAppRequestedEventArgs[] = L"Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs";
 #endif
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPhone_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Contacts_ContactPhone_DEFINED
@@ -40702,15 +45159,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Contacts_KnownContactField_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_KnownContactField[] = L"Windows.ApplicationModel.Contacts.KnownContactField";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_PinnedContactIdsQueryResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Contacts_PinnedContactIdsQueryResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_PinnedContactIdsQueryResult[] = L"Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult";
+#endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Contacts_PinnedContactManager_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Contacts_PinnedContactManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Contacts_PinnedContactManager[] = L"Windows.ApplicationModel.Contacts.PinnedContactManager";
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0436 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0395_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0436_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts_0000_0436_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -267,6 +267,10 @@ typedef struct _ACPI_ENUM_CHILDREN_INPUT_BUFFER {
     CHAR        Name[ANYSIZE_ARRAY];
 } ACPI_ENUM_CHILDREN_INPUT_BUFFER, *PACPI_ENUM_CHILDREN_INPUT_BUFFER;
 
+//
+// Enum child structures.
+//
+
 typedef struct _ACPI_ENUM_CHILD {
     ULONG       Flags;
     ULONG       NameLength; // length including null terminator

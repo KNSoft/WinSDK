@@ -118,12 +118,6 @@ typedef struct _UUID_VECTOR
 
 typedef void __RPC_FAR * RPC_IF_HANDLE;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 #ifndef IFID_DEFINED
 #define IFID_DEFINED
 typedef struct _RPC_IF_ID
@@ -133,6 +127,12 @@ typedef struct _RPC_IF_ID
     unsigned short VersMinor;
 } RPC_IF_ID;
 #endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #define RPC_C_BINDING_INFINITE_TIMEOUT 10
 #define RPC_C_BINDING_MIN_TIMEOUT 0
@@ -271,12 +271,6 @@ RPC_SECURITY_CALLBACK_FN (
 
 #define RPC_MGR_EPV void
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 typedef struct
 {
     unsigned int Count;
@@ -375,8 +369,13 @@ RpcBindingFromStringBinding (
     );
 
 #endif /* RPC_UNICODE_SUPPORTED */
-
 #endif /* _KRPCENV_ */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 /* client */
 RPCRTAPI
@@ -386,6 +385,12 @@ RpcSsGetContextBinding (
     _In_ void *ContextHandle,
     _Out_ RPC_BINDING_HANDLE __RPC_FAR * Binding
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 /* client/server */
 RPCRTAPI
@@ -419,6 +424,12 @@ RpcBindingSetObject (
     _In_ UUID __RPC_FAR * ObjectUuid
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 /* client/server */
 RPCRTAPI
 _Must_inspect_result_
@@ -428,6 +439,12 @@ RpcMgmtInqDefaultProtectLevel (
     _In_  unsigned long AuthnSvc,
     _Out_ unsigned long __RPC_FAR *AuthnLevel
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 /* client/server */
 
@@ -469,6 +486,12 @@ RpcBindingToStringBinding (
 
 #endif /* RPC_UNICODE_SUPPORTED */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 /* client/server */
 RPCRTAPI
 RPC_STATUS
@@ -482,6 +505,12 @@ RpcBindingVectorFree (
 #if !defined(_KRPCENV_)
 
 #ifdef RPC_UNICODE_SUPPORTED
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 RPCRTAPI
 _Must_inspect_result_
@@ -515,6 +544,12 @@ RpcStringBindingComposeW (
 #define RpcStringBindingCompose RpcStringBindingComposeA
 #endif /* UNICODE */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 #else /* RPC_UNICODE_SUPPORTED */
 
 RPCRTAPI
@@ -534,6 +569,12 @@ RpcStringBindingCompose (
 /* client/server */
 
 #ifdef RPC_UNICODE_SUPPORTED
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 RPCRTAPI
 _Must_inspect_result_
@@ -567,6 +608,12 @@ RpcStringBindingParseW (
 #define RpcStringBindingParse RpcStringBindingParseA
 #endif /* UNICODE */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 #else /* RPC_UNICODE_SUPPORTED */
 
 RPCRTAPI
@@ -589,6 +636,12 @@ RpcStringBindingParse (
 
 #ifdef RPC_UNICODE_SUPPORTED
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 RPC_STATUS
 RPC_ENTRY
@@ -608,6 +661,12 @@ RpcStringFreeW (
 #else /* UNICODE */
 #define RpcStringFree RpcStringFreeA
 #endif /* UNICODE */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #else /* RPC_UNICODE_SUPPORTED */
 
@@ -635,6 +694,12 @@ RpcIfInqId (
 
 #ifdef RPC_UNICODE_SUPPORTED
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 _Must_inspect_result_
 RPC_STATUS
@@ -657,6 +722,12 @@ RpcNetworkIsProtseqValidW (
 #define RpcNetworkIsProtseqValid RpcNetworkIsProtseqValidA
 #endif /* UNICODE */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 #else /* RPC_UNICODE_SUPPORTED */
 
 RPCRTAPI
@@ -678,6 +749,12 @@ RpcMgmtInqComTimeout (
     _Out_ unsigned int __RPC_FAR * Timeout
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 /* client */
 RPCRTAPI
 _Must_inspect_result_
@@ -697,6 +774,11 @@ RpcMgmtSetCancelTimeout(
     _In_ long Timeout
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 /* server */
 
@@ -805,6 +887,16 @@ _Must_inspect_result_
 RPC_STATUS
 RPC_ENTRY
 RpcServerInqBindings (
+    _Outptr_ RPC_BINDING_VECTOR __RPC_FAR * __RPC_FAR * BindingVector
+    );
+
+/* server */
+RPCRTAPI
+_Must_inspect_result_
+RPC_STATUS
+RPC_ENTRY
+RpcServerInqBindingsEx (
+    _In_opt_ void __RPC_FAR * SecurityDescriptor,
     _Outptr_ RPC_BINDING_VECTOR __RPC_FAR * __RPC_FAR * BindingVector
     );
 
@@ -1212,6 +1304,12 @@ RpcMgmtStatsVectorFree (
     _Inout_ RPC_STATS_VECTOR ** StatsVector
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 /* server */
 RPCRTAPI
 _Must_inspect_result_
@@ -1230,6 +1328,12 @@ RPC_ENTRY
 RpcMgmtIsServerListening (
     _In_opt_ RPC_BINDING_HANDLE Binding
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 /* server */
 RPCRTAPI
@@ -1293,6 +1397,12 @@ RpcIfIdVectorFree (
 
 #ifdef RPC_UNICODE_SUPPORTED
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 _Must_inspect_result_
 RPC_STATUS
@@ -1318,6 +1428,12 @@ RpcMgmtInqServerPrincNameW (
 #else /* UNICODE */
 #define RpcMgmtInqServerPrincName RpcMgmtInqServerPrincNameA
 #endif /* UNICODE */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #else /* RPC_UNICODE_SUPPORTED */
 
@@ -1370,6 +1486,12 @@ RpcServerInqDefaultPrincName (
 
 #endif /* RPC_UNICODE_SUPPORTED */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 /* client */
 RPCRTAPI
 _Must_inspect_result_
@@ -1379,6 +1501,12 @@ RpcEpResolveBinding (
     _In_ RPC_BINDING_HANDLE Binding,
     _In_ RPC_IF_HANDLE IfSpec
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 /* client */
 
@@ -1879,6 +2007,12 @@ typedef struct _RPC_SECURITY_QOS_V5_A {
 
 #endif // UNICODE
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
 #define RPC_PROTSEQ_TCP                             (0x1)
@@ -1998,6 +2132,12 @@ RpcBindingCreateW (
 #else /* UNICODE */
 #define RpcBindingCreate RpcBindingCreateA
 #endif /* UNICODE */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 RPCRTAPI
 RPC_STATUS 
@@ -2193,6 +2333,12 @@ RpcBindingInqAuthClientExW (
     _In_  unsigned long             Flags
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 _Must_inspect_result_
 RPC_STATUS
@@ -2303,6 +2449,12 @@ RpcBindingInqAuthInfoExW (
     _Out_opt_ RPC_SECURITY_QOS * SecurityQOS
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 typedef void
 (__RPC_USER * RPC_AUTH_KEY_RETRIEVAL_FN) (
     _In_ void __RPC_FAR * Arg,
@@ -2342,6 +2494,12 @@ RpcServerRegisterAuthInfoW (
     _In_opt_ void __RPC_FAR * Arg
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #ifdef UNICODE
 #define RpcBindingInqAuthClient RpcBindingInqAuthClientW
 #define RpcBindingInqAuthClientEx RpcBindingInqAuthClientExW
@@ -2359,6 +2517,12 @@ RpcServerRegisterAuthInfoW (
 #define RpcBindingInqAuthInfoEx RpcBindingInqAuthInfoExA
 #define RpcBindingSetAuthInfoEx RpcBindingSetAuthInfoExA
 #endif /* UNICODE */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #else /* RPC_UNICODE_SUPPORTED */
 
@@ -2452,6 +2616,12 @@ RpcBindingServerFromClient (
     _Out_ RPC_BINDING_HANDLE __RPC_FAR * ServerBinding
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 DECLSPEC_NORETURN
 void
@@ -2467,6 +2637,12 @@ RPC_ENTRY
 RpcTestCancel(
     void
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 RPCRTAPI
 _Must_inspect_result_
@@ -2491,6 +2667,12 @@ RpcCancelThreadEx(
     _In_ void * Thread,
     _In_ long Timeout
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 /* client/server */
 RPCRTAPI
@@ -2623,6 +2805,12 @@ UuidIsNil (
     _Out_ RPC_STATUS __RPC_FAR * Status
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 #ifdef RPC_UNICODE_SUPPORTED
 
 RPCRTAPI
@@ -2716,6 +2904,12 @@ RpcEpUnregister(
 
 #ifdef RPC_UNICODE_SUPPORTED
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 RPCRTAPI
 _Must_inspect_result_
 RPC_STATUS
@@ -2739,6 +2933,12 @@ DceErrorInqTextW (
 #else /* UNICODE */
 #define DceErrorInqText DceErrorInqTextA
 #endif /* UNICODE */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #else /* RPC_UNICODE_SUPPORTED */
 
@@ -2864,6 +3064,12 @@ RpcMgmtSetAuthorizationFn (
     _In_ RPC_MGMT_AUTHORIZATION_FN AuthorizationFn
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 RPCRTAPI
 int
@@ -2872,6 +3078,12 @@ RpcExceptionFilter (
     _In_ unsigned long ExceptionCode
     );
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #define RPC_C_PARM_MAX_PACKET_LENGTH    1
 #define RPC_C_PARM_BUFFER_LENGTH        2

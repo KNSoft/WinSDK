@@ -19,12 +19,15 @@
 #endif
 
 /* APISET_NAME: api-ms-win-core-featurestaging-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_WIL_FEATURESTAGING_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#define _APISET_WIL_FEATURESTAGING_VER 0x0101
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_WIL_FEATURESTAGING_VER 0x0100
 #endif
 #endif
@@ -112,5 +115,17 @@ UnsubscribeFeatureStateChangeNotification(
     );
 
 
+
+#if !defined(_CONTRACT_GEN) || (_APISET_WIL_FEATURESTAGING_VER >= 0x0101)
+EXTERN_C
+UINT32
+GetFeatureVariant(
+    UINT32 featureId,
+    FEATURE_CHANGE_TIME changeTime,
+    _Out_ UINT32 * payloadId,
+    _Out_ BOOL * hasNotification
+    );
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_WIL_FEATURESTAGING_VER >= 0x0101)
 
 #endif // _APISET_WIL_FEATURESTAGING_

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -122,6 +122,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicCamera2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose;
@@ -160,6 +180,86 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicCameraRenderingParameters2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicCameraViewportParameters;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicDisplay;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicDisplayStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFrame_FWD_DEFINED__
@@ -282,6 +382,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicSpaceStatics2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -341,18 +461,18 @@ interface IHolographicCamera;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0001 */
 /* [local] */ 
@@ -387,18 +507,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0002 */
 /* [local] */ 
@@ -457,18 +577,18 @@ interface IHolographicCameraPose;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0003 */
 /* [local] */ 
@@ -503,18 +623,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0004 */
 /* [local] */ 
@@ -549,18 +669,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0005 */
 /* [local] */ 
@@ -595,18 +715,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0006 */
 /* [local] */ 
@@ -654,18 +774,18 @@ struct HolographicStereoTransform;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0007 */
 /* [local] */ 
@@ -748,18 +868,18 @@ interface IHolographicSpaceCameraAddedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0008 */
 /* [local] */ 
@@ -818,18 +938,18 @@ interface IHolographicSpaceCameraRemovedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0009 */
 /* [local] */ 
@@ -877,18 +997,18 @@ struct SpatialBoundingFrustum;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0010 */
 /* [local] */ 
@@ -912,6 +1032,55 @@ typedef IReference<struct ABI::Windows::Perception::Spatial::SpatialBoundingFrus
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_Windows__CPerception__CSpatial__CSpatialBoundingFrustum_USE */
+
+interface IInspectable;
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0010 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4674 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4674 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FIEventHandler_1_IInspectable_USE
+#define DEF___FIEventHandler_1_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
+IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.EventHandler`1<Object>"; }
+};
+typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
+#define ____FIEventHandler_1_IInspectable_FWD_DEFINED__
+#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIEventHandler_1_IInspectable_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -946,6 +1115,10 @@ class Deferral;
 
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4 __x_ABI_CWindows_CFoundation_CNumerics_CMatrix4x4;
+
+#endif
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CVector2 __x_ABI_CWindows_CFoundation_CNumerics_CVector2;
 
 #endif
 #if !defined(__cplusplus)
@@ -995,6 +1168,18 @@ class SpatialCoordinateSystem;
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
+namespace Perception {
+namespace Spatial {
+class SpatialLocator;
+} /*Spatial*/
+} /*Perception*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
 namespace UI {
 namespace Core {
 class CoreWindow;
@@ -1025,6 +1210,16 @@ typedef enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicFramePresentWai
 
 #endif
 #if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CHolographicAdapterId __x_ABI_CWindows_CGraphics_CHolographic_CHolographicAdapterId;
 
 #endif
@@ -1036,12 +1231,40 @@ typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CHolographicStereoTransfo
 
 
 
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
 namespace Graphics {
 namespace Holographic {
 class HolographicCameraRenderingParameters;
+} /*Holographic*/
+} /*Graphics*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Graphics {
+namespace Holographic {
+class HolographicCameraViewportParameters;
+} /*Holographic*/
+} /*Graphics*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Graphics {
+namespace Holographic {
+class HolographicDisplay;
 } /*Holographic*/
 } /*Graphics*/
 } /*Windows*/
@@ -1071,7 +1294,7 @@ class HolographicFramePrediction;
 #endif
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0010 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0011 */
 /* [local] */ 
 
 
@@ -1085,6 +1308,24 @@ namespace ABI {
             namespace Numerics {
                 
                 typedef struct Matrix4x4 Matrix4x4;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Numerics {
+                
+                typedef struct Vector2 Vector2;
                 
             } /* end namespace */
         } /* end namespace */
@@ -1183,6 +1424,7 @@ extern "C" {
 
 
 
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -1210,6 +1452,24 @@ namespace ABI {
             namespace Holographic {
                 
                 typedef enum HolographicFramePresentWaitBehavior HolographicFramePresentWaitBehavior;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                
+                typedef enum HolographicReprojectionMode HolographicReprojectionMode;
                 
             } /* end namespace */
         } /* end namespace */
@@ -1261,23 +1521,29 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0010_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3175 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3175 */
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3175_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4675 */
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4675_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCamera
@@ -1285,13 +1551,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3175_v0
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0011 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__
@@ -1435,40 +1701,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CHolographic__CHologra
 #endif 	/* ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0012 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0013 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCamera */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0012 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0012_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3176 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3176 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3176_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0013 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera
-#define DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0013 */
@@ -1478,6 +1715,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3176_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0013_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4676 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4676 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4676_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0014 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera
+#define DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0014 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__
@@ -1587,40 +1853,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CHolographic__CHologra
 #endif 	/* ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0014 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0015 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCamera */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0014 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0014_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3177 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3177 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3177_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0015 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
-#define DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0015 */
@@ -1630,6 +1867,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3177_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0015_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4677 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4677 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4677_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0016 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
+#define DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0016 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
@@ -1773,40 +2039,11 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CHolographic__CHologra
 #endif 	/* ____FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0016 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0017 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CGraphics__CHolographic__CHolographicCameraPose */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0016 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0016_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3178 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3178 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3178_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0017 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
-#define DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0017 */
@@ -1816,6 +2053,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3178_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4678 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4678 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4678_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0018 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
+#define DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0018 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0018_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
@@ -1925,40 +2191,11 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CHolographic__CHologra
 #endif 	/* ____FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0018 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0019 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CGraphics__CHolographic__CHolographicCameraPose */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0018 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0018_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3179 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3179 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3179_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0019 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera
-#define DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0019 */
@@ -1968,6 +2205,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3179_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0019_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4679 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4679 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4679_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0020 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera
+#define DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0020 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0020_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__
@@ -2119,40 +2385,11 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CHolographic__CHolog
 #endif 	/* ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0020 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0021 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCamera */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0020 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0020_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3180 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3180 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3180_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0021 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
-#define DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0021 */
@@ -2162,6 +2399,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3180_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0021_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4680 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4680 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4680_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0022 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
+#define DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0022 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0022_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__
@@ -2313,40 +2579,11 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CHolographic__CHolog
 #endif 	/* ____FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0022 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0023 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CGraphics__CHolographic__CHolographicCameraPose */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0022 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0022_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3181 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3181 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3181_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0023 */
-/* [local] */ 
-
-#ifndef DEF___FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform
-#define DEF___FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0023 */
@@ -2356,6 +2593,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3181_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0023_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4681 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4681 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4681_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0024 */
+/* [local] */ 
+
+#ifndef DEF___FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform
+#define DEF___FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0024 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0024_v0_0_s_ifspec;
 
 #ifndef ____FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform_INTERFACE_DEFINED__
 #define ____FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform_INTERFACE_DEFINED__
@@ -2465,40 +2731,11 @@ EXTERN_C const IID IID___FIReference_1_Windows__CGraphics__CHolographic__CHologr
 #endif 	/* ____FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0024 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0025 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIReference_1_Windows__CGraphics__CHolographic__CHolographicStereoTransform */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0024 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0024_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3182 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3182 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3182_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0025 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0025 */
@@ -2508,6 +2745,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3182_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0025_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4682 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4682 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4682_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0026 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0026 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0026_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__
@@ -2596,40 +2862,11 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CGraphics__CHolographic_
 #endif 	/* ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0026 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0027 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraAddedEventArgs */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0026 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0026_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3183 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3183 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3183_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0027 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
 /* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0027 */
@@ -2639,6 +2876,35 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_3183_v0
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4683 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4683 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic2Eidl_0000_4683_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0028 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0028 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0028_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__
@@ -2727,7 +2993,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CGraphics__CHolographic_
 #endif 	/* ____FITypedEventHandler_2_Windows__CGraphics__CHolographic__CHolographicSpace_Windows__CGraphics__CHolographic__CHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0028 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0029 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -2757,6 +3023,19 @@ enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicFramePresentWaitBehavio
 
 #endif
 #if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode
+    {
+        HolographicReprojectionMode_PositionAndOrientation	= 0,
+        HolographicReprojectionMode_OrientationOnly	= 1,
+        HolographicReprojectionMode_Disabled	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
 struct __x_ABI_CWindows_CGraphics_CHolographic_CHolographicAdapterId
     {
     UINT32 LowPart;
@@ -2775,7 +3054,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0028 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0029 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -2827,6 +3106,28 @@ namespace ABI {
         namespace Graphics {
             namespace Holographic {
                 
+                /* [v1_enum] */ 
+                enum HolographicReprojectionMode
+                    {
+                        HolographicReprojectionMode_PositionAndOrientation	= 0,
+                        HolographicReprojectionMode_OrientationOnly	= 1,
+                        HolographicReprojectionMode_Disabled	= 2
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                
                 struct HolographicAdapterId
                     {
                     UINT32 LowPart;
@@ -2862,8 +3163,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera_INTERFACE_DEFINED__
@@ -3046,7 +3347,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCame
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0029 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0030 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCamera2[] = L"Windows.Graphics.Holographic.IHolographicCamera2";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0030 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0030_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Holographic::IHolographicCamera2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Holographic {
+                    
+                    MIDL_INTERFACE("B55B9F1A-BA8C-4F84-AD79-2E7E1E2450F3")
+                    IHolographicCamera2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LeftViewportParameters( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicCameraViewportParameters **result) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_RightViewportParameters( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicCameraViewportParameters **result) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Display( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicDisplay **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IHolographicCamera2 = __uuidof(IHolographicCamera2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LeftViewportParameters )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters **result);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_RightViewportParameters )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters **result);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Display )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2Vtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_get_LeftViewportParameters(This,result)	\
+    ( (This)->lpVtbl -> get_LeftViewportParameters(This,result) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_get_RightViewportParameters(This,result)	\
+    ( (This)->lpVtbl -> get_RightViewportParameters(This,result) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_get_Display(This,result)	\
+    ( (This)->lpVtbl -> get_Display(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0031 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_INTERFACE_DEFINED__)
@@ -3054,13 +3512,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0029 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_INTERFACE_DEFINED__
@@ -3259,7 +3717,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCame
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0030 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0032 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_INTERFACE_DEFINED__)
@@ -3267,13 +3725,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0030 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_INTERFACE_DEFINED__
@@ -3448,7 +3906,639 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCame
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0031 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0033 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCameraRenderingParameters2[] = L"Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0033 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0033_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Holographic {
+                    
+                    MIDL_INTERFACE("261270E3-B696-4634-94D6-BE0681643599")
+                    IHolographicCameraRenderingParameters2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ReprojectionMode( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Graphics::Holographic::HolographicReprojectionMode *value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ReprojectionMode( 
+                            /* [in] */ ABI::Windows::Graphics::Holographic::HolographicReprojectionMode value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CommitDirect3D11DepthBuffer( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IHolographicCameraRenderingParameters2 = __uuidof(IHolographicCameraRenderingParameters2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ReprojectionMode )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ReprojectionMode )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CHolographic_CHolographicReprojectionMode value);
+        
+        HRESULT ( STDMETHODCALLTYPE *CommitDirect3D11DepthBuffer )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2Vtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_get_ReprojectionMode(This,value)	\
+    ( (This)->lpVtbl -> get_ReprojectionMode(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_put_ReprojectionMode(This,value)	\
+    ( (This)->lpVtbl -> put_ReprojectionMode(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_CommitDirect3D11DepthBuffer(This,value)	\
+    ( (This)->lpVtbl -> CommitDirect3D11DepthBuffer(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraRenderingParameters2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0034 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCameraViewportParameters[] = L"Windows.Graphics.Holographic.IHolographicCameraViewportParameters";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0034 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0034_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Holographic::IHolographicCameraViewportParameters */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Holographic {
+                    
+                    MIDL_INTERFACE("80CDF3F7-842A-41E1-93ED-5692AB1FBB10")
+                    IHolographicCameraViewportParameters : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HiddenAreaMesh( 
+                            /* [out] */ __RPC__out UINT32 *__valueSize,
+                            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) ABI::Windows::Foundation::Numerics::Vector2 **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VisibleAreaMesh( 
+                            /* [out] */ __RPC__out UINT32 *__valueSize,
+                            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) ABI::Windows::Foundation::Numerics::Vector2 **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IHolographicCameraViewportParameters = __uuidof(IHolographicCameraViewportParameters);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParametersVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HiddenAreaMesh )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This,
+            /* [out] */ __RPC__out UINT32 *__valueSize,
+            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) __x_ABI_CWindows_CFoundation_CNumerics_CVector2 **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VisibleAreaMesh )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters * This,
+            /* [out] */ __RPC__out UINT32 *__valueSize,
+            /* [out][retval][size_is][size_is] */ __RPC__deref_out_ecount_full_opt(*__valueSize) __x_ABI_CWindows_CFoundation_CNumerics_CVector2 **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParametersVtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParametersVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_get_HiddenAreaMesh(This,__valueSize,value)	\
+    ( (This)->lpVtbl -> get_HiddenAreaMesh(This,__valueSize,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_get_VisibleAreaMesh(This,__valueSize,value)	\
+    ( (This)->lpVtbl -> get_VisibleAreaMesh(This,__valueSize,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraViewportParameters_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0035 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicDisplay[] = L"Windows.Graphics.Holographic.IHolographicDisplay";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0035 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0035_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Holographic::IHolographicDisplay */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Holographic {
+                    
+                    MIDL_INTERFACE("9ACEA414-1D9F-4090-A388-90C06F6EAE9C")
+                    IHolographicDisplay : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DisplayName( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxViewportSize( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Size *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsStereo( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsOpaque( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AdapterId( 
+                            /* [out][retval] */ __RPC__out ABI::Windows::Graphics::Holographic::HolographicAdapterId *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SpatialLocator( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialLocator **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IHolographicDisplay = __uuidof(IHolographicDisplay);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DisplayName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxViewportSize )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CSize *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsStereo )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsOpaque )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AdapterId )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CGraphics_CHolographic_CHolographicAdapterId *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SpatialLocator )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayVtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_get_DisplayName(This,value)	\
+    ( (This)->lpVtbl -> get_DisplayName(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_get_MaxViewportSize(This,value)	\
+    ( (This)->lpVtbl -> get_MaxViewportSize(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_get_IsStereo(This,value)	\
+    ( (This)->lpVtbl -> get_IsStereo(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_get_IsOpaque(This,value)	\
+    ( (This)->lpVtbl -> get_IsOpaque(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_get_AdapterId(This,value)	\
+    ( (This)->lpVtbl -> get_AdapterId(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_get_SpatialLocator(This,value)	\
+    ( (This)->lpVtbl -> get_SpatialLocator(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0036 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicDisplayStatics[] = L"Windows.Graphics.Holographic.IHolographicDisplayStatics";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0036 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0036_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Holographic::IHolographicDisplayStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Holographic {
+                    
+                    MIDL_INTERFACE("CB374983-E7B0-4841-8355-3AE5B536E9A4")
+                    IHolographicDisplayStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefault( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Graphics::Holographic::IHolographicDisplay **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IHolographicDisplayStatics = __uuidof(IHolographicDisplayStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefault )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplay **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStaticsVtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_GetDefault(This,result)	\
+    ( (This)->lpVtbl -> GetDefault(This,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicDisplayStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0037 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFrame_INTERFACE_DEFINED__)
@@ -3456,13 +4546,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0031 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFrame_INTERFACE_DEFINED__
@@ -3665,7 +4755,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFram
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0032 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0038 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_INTERFACE_DEFINED__)
@@ -3673,13 +4763,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0032 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_INTERFACE_DEFINED__
@@ -3812,7 +4902,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFram
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicFramePrediction_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0033 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0039 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_INTERFACE_DEFINED__)
@@ -3820,13 +4910,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0033 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_INTERFACE_DEFINED__
@@ -4013,7 +5103,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0034 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0040 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__)
@@ -4021,13 +5111,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0034 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__
@@ -4160,7 +5250,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraAddedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0035 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0041 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__)
@@ -4168,13 +5258,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0035 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__
@@ -4297,7 +5387,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceCameraRemovedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0036 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0042 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics_INTERFACE_DEFINED__)
@@ -4305,13 +5395,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0036 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics_INTERFACE_DEFINED__
@@ -4436,7 +5526,176 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
 #endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0037 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0043 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicSpaceStatics2[] = L"Windows.Graphics.Holographic.IHolographicSpaceStatics2";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0043 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0043_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Holographic::IHolographicSpaceStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Holographic {
+                    
+                    MIDL_INTERFACE("0E777088-75FC-48AF-8758-0652F6F07C59")
+                    IHolographicSpaceStatics2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsAvailable( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_IsAvailableChanged( 
+                            /* [in] */ __RPC__in_opt __FIEventHandler_1_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_IsAvailableChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IHolographicSpaceStatics2 = __uuidof(IHolographicSpaceStatics2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSupported )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsAvailable )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_IsAvailableChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [in] */ __RPC__in_opt __FIEventHandler_1_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_IsAvailableChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2 * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_get_IsSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_get_IsAvailable(This,value)	\
+    ( (This)->lpVtbl -> get_IsAvailable(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_add_IsAvailableChanged(This,handler,token)	\
+    ( (This)->lpVtbl -> add_IsAvailableChanged(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_remove_IsAvailableChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_IsAvailableChanged(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpaceStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0044 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicCamera_DEFINED
@@ -4450,6 +5709,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicCameraRenderingParameters_DEFINED
 #define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicCameraRenderingParameters_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicCameraRenderingParameters[] = L"Windows.Graphics.Holographic.HolographicCameraRenderingParameters";
+#endif
+#ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicCameraViewportParameters_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicCameraViewportParameters_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicCameraViewportParameters[] = L"Windows.Graphics.Holographic.HolographicCameraViewportParameters";
+#endif
+#ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicDisplay_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicDisplay_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Holographic_HolographicDisplay[] = L"Windows.Graphics.Holographic.HolographicDisplay";
 #endif
 #ifndef RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFrame_DEFINED
 #define RUNTIMECLASS_Windows_Graphics_Holographic_HolographicFrame_DEFINED
@@ -4473,15 +5740,25 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0037 */
+/* interface __MIDL_itf_windows2Egraphics2Eholographic_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Eholographic_0000_0044_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
+
+unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
+void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
+
+unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
+unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
+void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
 
 /* end of Additional Prototypes */
 

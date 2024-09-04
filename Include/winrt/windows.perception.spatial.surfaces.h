@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -242,6 +242,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                namespace Surfaces {
+                    interface ISpatialSurfaceObserverStatics2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
@@ -304,18 +326,18 @@ interface ISpatialSurfaceInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0001 */
 /* [local] */ 
@@ -350,18 +372,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0002 */
 /* [local] */ 
@@ -396,18 +418,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0003 */
 /* [local] */ 
@@ -442,18 +464,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0004 */
 /* [local] */ 
@@ -516,18 +538,18 @@ interface ISpatialSurfaceMesh;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0005 */
 /* [local] */ 
@@ -562,18 +584,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0006 */
 /* [local] */ 
@@ -639,18 +661,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0007 */
 /* [local] */ 
@@ -698,18 +720,18 @@ struct SpatialBoundingOrientedBox;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0008 */
 /* [local] */ 
@@ -757,18 +779,18 @@ enum DirectXPixelFormat;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0009 */
 /* [local] */ 
@@ -803,18 +825,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0010 */
 /* [local] */ 
@@ -849,18 +871,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0011 */
 /* [local] */ 
@@ -919,18 +941,18 @@ interface ISpatialBoundingVolume;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0012 */
 /* [local] */ 
@@ -965,18 +987,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0013 */
 /* [local] */ 
@@ -1024,18 +1046,18 @@ enum SpatialPerceptionAccessStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0014 */
 /* [local] */ 
@@ -1070,18 +1092,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0015 */
 /* [local] */ 
@@ -1168,6 +1190,7 @@ typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialPerceptionAccessStatu
 
 
 #endif
+
 
 
 
@@ -1301,21 +1324,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0016 */
 /* [local] */ 
@@ -1466,18 +1490,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_GUID_Windows__CPerception__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0018 */
 /* [local] */ 
@@ -1652,18 +1676,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_GUID_Windows__CPercepti
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0020 */
 /* [local] */ 
@@ -1804,18 +1828,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_GUID_Windows__CPercepti
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0022 */
 /* [local] */ 
@@ -1992,18 +2016,18 @@ EXTERN_C const IID IID___FIMapView_2_GUID_Windows__CPerception__CSpatial__CSurfa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0024 */
 /* [local] */ 
@@ -2125,18 +2149,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CPerception
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0026 */
 /* [local] */ 
@@ -2297,18 +2321,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSur
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0028 */
 /* [local] */ 
@@ -3651,6 +3675,145 @@ EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatial
 /* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036 */
 /* [local] */ 
 
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserverStatics2[] = L"Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics2";
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Perception {
+                namespace Spatial {
+                    namespace Surfaces {
+                        
+                        MIDL_INTERFACE("0F534261-C55D-4E6B-A895-A19DE69A42E3")
+                        ISpatialSurfaceObserverStatics2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE IsSupported( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialSurfaceObserverStatics2 = __uuidof(ISpatialSurfaceObserverStatics2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsSupported )( 
+            __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_IsSupported(This,value)	\
+    ( (This)->lpVtbl -> IsSupported(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CPerception_CSpatial_CSurfaces_CISpatialSurfaceObserverStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0037 */
+/* [local] */ 
+
 #ifndef RUNTIMECLASS_Windows_Perception_Spatial_Surfaces_SpatialSurfaceInfo_DEFINED
 #define RUNTIMECLASS_Windows_Perception_Spatial_Surfaces_SpatialSurfaceInfo_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_Surfaces_SpatialSurfaceInfo[] = L"Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo";
@@ -3673,13 +3836,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036 */
+/* interface __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eperception2Espatial2Esurfaces_0000_0037_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

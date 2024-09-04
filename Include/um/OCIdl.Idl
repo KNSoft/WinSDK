@@ -365,11 +365,11 @@ interface IClassFactory2 : IClassFactory
 
     [local]
     HRESULT CreateInstanceLic(
-                [in] IUnknown * pUnkOuter,
-                [in] IUnknown * pUnkReserved,
-                [in] REFIID riid,
-                [in] BSTR bstrKey,
-                [out, iid_is(riid)] PVOID * ppvObj
+                [in, annotation("_In_opt_")] IUnknown * pUnkOuter,
+                [in, annotation("_Reserved_")] IUnknown * pUnkReserved,
+                [in, annotation("__RPC__in")] REFIID riid,
+                [in, annotation("__RPC__in")] BSTR bstrKey,
+                [out, iid_is(riid), annotation("__RPC__deref_out_opt")] PVOID * ppvObj
             );
 
     [call_as(CreateInstanceLic)]
@@ -434,11 +434,11 @@ interface IProvideMultipleClassInfo : IProvideClassInfo2
 
     typedef IProvideMultipleClassInfo * LPPROVIDEMULTIPLECLASSINFO;
 
-    HRESULT GetMultiTypeInfoCount( 
+    HRESULT GetMultiTypeInfoCount(
                 [out] ULONG * pcti
             );
 
-    HRESULT GetInfoOfIndex( 
+    HRESULT GetInfoOfIndex(
                 [in]  ULONG iti,
                 [in]  DWORD dwFlags,
                 [out] ITypeInfo ** pptiCoClass,
@@ -1064,19 +1064,19 @@ interface IPicture : IUnknown
 
 // IPicture2 defines a platform aware IDL representation of IPicture2
 // implemented by the standard StdPicture object.
-// It uses HHANDLE  defined as UINT_PTR and relies on HDC being already 
+// It uses HHANDLE  defined as UINT_PTR and relies on HDC being already
 // defined as UINT_PTR to represent the platform specific HANDLEs.
 // This will result in signatures identical to IPicture on 32-bit
 // platforms but correctly sized pointer arguments for 64-bit machines.
 //
 // Notice the differences between the definition below and the definition
-// from stdole2.tlb (in particular the use of void* in stdole2 to represent 
+// from stdole2.tlb (in particular the use of void* in stdole2 to represent
 // the "HANDLE" types.  These are needed because IDL does not accept void*
 // as arguments.
 //
-// A very important point that allows us to do this is the fact that the 
-// StdPicture objects are not remoteable (their IMarshal implementation 
-// returns E_NOTIMPL).  This means that stdole2.tlb will never be used to 
+// A very important point that allows us to do this is the fact that the
+// StdPicture objects are not remoteable (their IMarshal implementation
+// returns E_NOTIMPL).  This means that stdole2.tlb will never be used to
 // marshal a call to IPicture2.
 [
     object,
@@ -1540,7 +1540,7 @@ cpp_quote("#define SID_SOleUndoManager IID_IOleUndoManager")
 
     HRESULT Close(
                 [in] IOleParentUndoUnit * pPUU,
-                [in] BOOL fCommit   
+                [in] BOOL fCommit
             );
 
     HRESULT Add(
@@ -1874,7 +1874,7 @@ interface IQuickActivate : IUnknown
     } QACONTAINERFLAGS;
 
     typedef [uuid(66504301-BE0F-101A-8BBB-00AA00300CAB), public] DWORD OLE_COLOR;
-    
+
     typedef struct tagQACONTAINER {
         ULONG                   cbSize;
         IOleClientSite *        pClientSite;
@@ -1893,7 +1893,7 @@ interface IQuickActivate : IUnknown
         IOleControlSite *       pOleControlSite;
         IServiceProvider *      pServiceProvider;
     } QACONTAINER;
-    
+
     typedef struct tagQACONTROL {
         ULONG   cbSize;
         DWORD   dwMiscStatus;

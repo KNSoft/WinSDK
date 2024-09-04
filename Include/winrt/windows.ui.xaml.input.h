@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -88,6 +88,27 @@ typedef interface __FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName __FI
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName_FWD_DEFINED__ */
 
 
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs;
@@ -114,6 +135,27 @@ typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Window
 typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedEventHandler_FWD_DEFINED__
@@ -468,6 +510,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IAccessKeyManagerStatics2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CICommand __x_ABI_CWindows_CUI_CXaml_CInput_CICommand;
@@ -532,6 +596,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IFindNextElementOptions;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_FWD_DEFINED__
@@ -620,6 +706,50 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IFocusManagerStatics4;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IGettingFocusEventArgs;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_FWD_DEFINED__
@@ -842,6 +972,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface ILosingFocusEventArgs;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs;
@@ -1018,6 +1170,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingRoutedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface INoFocusCandidateFoundEventArgs;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIPointer __x_ABI_CWindows_CUI_CXaml_CInput_CIPointer;
@@ -1168,18 +1342,18 @@ interface IInputScopeName;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4687 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5344 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4687 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4687_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4687_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0001 */
 /* [local] */ 
@@ -1214,18 +1388,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4688 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5345 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4688 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4688_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4688_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5345_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0002 */
 /* [local] */ 
@@ -1288,18 +1462,18 @@ interface IPointer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4689 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5346 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4689 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5346 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4689_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4689_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5346_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0003 */
 /* [local] */ 
@@ -1334,18 +1508,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4690 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5347 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4690 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5347 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4690_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4690_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5347_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0004 */
 /* [local] */ 
@@ -1380,18 +1554,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4691 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5348 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4691 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5348 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4691_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4691_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5348_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0005 */
 /* [local] */ 
@@ -1426,18 +1600,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4692 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5349 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4692 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5349 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4692_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4692_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5349_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0006 */
 /* [local] */ 
@@ -1472,18 +1646,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4693 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5350 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4693 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5350 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4693_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4693_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5350_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0007 */
 /* [local] */ 
@@ -1512,7 +1686,9 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Xaml {
-class UIElement;
+namespace Documents {
+class TextElement;
+} /*Documents*/
 } /*Xaml*/
 } /*UI*/
 } /*Windows*/
@@ -1524,7 +1700,9 @@ namespace ABI {
 namespace Windows {
 namespace UI {
 namespace Xaml {
-interface IUIElement;
+namespace Documents {
+interface ITextElement;
+} /*Documents*/
 } /*Xaml*/
 } /*UI*/
 } /*Windows*/
@@ -1570,41 +1748,41 @@ interface IAccessKeyDisplayDismissedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4694 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5351 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4694 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5351 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4694_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4694_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5351_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0008 */
 /* [local] */ 
 
-#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE
-#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("2831903f-655e-5464-828c-56a8b4c65f1e"))
-ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs*>> {
+struct __declspec(uuid("a8c9544b-7078-5316-beb6-d9ec916ab88a"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::TextElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::TextElement*, ABI::Windows::UI::Xaml::Documents::ITextElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs*>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs>"; }
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs>"; }
 };
-typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_t;
-#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
-#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_t
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::TextElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1644,41 +1822,41 @@ interface IAccessKeyDisplayRequestedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4695 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5352 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4695 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5352 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4695_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4695_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5352_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0009 */
 /* [local] */ 
 
-#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE
-#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE
 #if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
 } /*extern "C"*/ 
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("5871821a-2491-5cec-a457-21996ca4efaf"))
-ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs*>> {
+struct __declspec(uuid("39ad7708-254e-560a-9e2e-73b1db31f935"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::TextElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::TextElement*, ABI::Windows::UI::Xaml::Documents::ITextElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs*>> {
 static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs>"; }
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs>"; }
 };
-typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_t;
-#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_FWD_DEFINED__
-#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_t
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::TextElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_t
 
 /* ABI */ } /* Windows */ } /* Foundation */ }
 extern "C" {
 #endif //__cplusplus
-#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1718,20 +1896,182 @@ interface IAccessKeyInvokedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5353 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5353 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4696_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4696_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5353_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0010 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a72c6b01-2e3c-57b5-9ec4-948f6c6d930a"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::TextElement*,ABI::Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Documents::TextElement*, ABI::Windows::UI::Xaml::Documents::ITextElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Documents::TextElement*,ABI::Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+class UIElement;
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+interface IUIElement;
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0010 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0010_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5354 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5354 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5354_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2831903f-655e-5464-828c-56a8b4c65f1e"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5355 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5355 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5355_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5871821a-2491-5cec-a457-21996ca4efaf"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*, ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0012 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0012_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5356 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5356 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5356_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_USE
@@ -1782,30 +2122,30 @@ interface IContextRequestedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0010 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0013 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4697 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4697 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5357 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4697_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4697_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5357 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5357_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs_USE
@@ -1827,34 +2167,256 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+class GettingFocusEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 
-interface IInspectable;
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+interface IGettingFocusEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0011 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0014 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4698 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4698 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5358 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4698_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4698_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5358 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5358_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5358_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0015 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("34f34b77-ec52-5eb6-affc-220cb52ca093"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs*, ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+class LosingFocusEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+interface ILosingFocusEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0015 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0015_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5359 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5359 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5359_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5359_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0016 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a0f49f5f-c366-569a-895a-3a82d8801fe4"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs*, ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+class NoFocusCandidateFoundEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+interface INoFocusCandidateFoundEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0016 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0016_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5360 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5360 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5360_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5360_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0017 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d5de4415-b53c-5312-9e1b-ac2a19f04e71"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs*, ABI::Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_t;
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_USE */
+
+interface IInspectable;
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0017 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0017_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5361 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5361 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5361_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5361_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_IInspectable_IInspectable_USE
@@ -1878,29 +2440,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_IInspectable_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0012 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4699 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4699 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5362 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4699_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4699_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5362 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5362_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5362_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_IInspectable_USE
@@ -1947,30 +2509,30 @@ interface IPointerPoint;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0013 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0019 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4700 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4700 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5363 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4700_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4700_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5363 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5363_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0020 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CInput__CPointerPoint_USE
@@ -1994,29 +2556,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CUI__CInput__CPointerPoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0014 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0020 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4701 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4701 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5364 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4701_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4701_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5364 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5364_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CInput__CPointerPoint_USE
@@ -2040,29 +2602,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CUI__CInput__CPointerPoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0015 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0021 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4702 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4702 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5365 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4702_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4702_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5365 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5365_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CInput__CPointerPoint_USE
@@ -2086,29 +2648,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CUI__CInput__CPointerPoint_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0016 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4703 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4703 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5366 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4703_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4703_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5366 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5366_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CInput__CPointerPoint_USE
@@ -2149,6 +2711,9 @@ extern "C" {
 #if !defined(__windows2Eui2Examl_h__)
 #include <Windows.UI.Xaml.h>
 #endif // !defined(__windows2Eui2Examl_h__)
+#if !defined(__windows2Eui2Examl2Edocuments_h__)
+#include <Windows.UI.Xaml.Documents.h>
+#endif // !defined(__windows2Eui2Examl2Edocuments_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
@@ -2212,6 +2777,38 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CManipulationDelta __x_ABI_CWindows_C
 typedef struct __x_ABI_CWindows_CUI_CInput_CManipulationVelocities __x_ABI_CWindows_CUI_CInput_CManipulationVelocities;
 
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+class DependencyObject;
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CFocusState __x_ABI_CWindows_CUI_CXaml_CFocusState;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CFocusInputDeviceKind __x_ABI_CWindows_CUI_CXaml_CInput_CFocusInputDeviceKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
@@ -2226,6 +2823,16 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection __x_ABI
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CInputScopeNameValue __x_ABI_CWindows_CUI_CXaml_CInput_CInputScopeNameValue;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyTipPlacementMode __x_ABI_CWindows_CUI_CXaml_CInput_CKeyTipPlacementMode;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -2252,6 +2859,39 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CManipulationModes __x_ABI_CWindo
 
 
 #endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusKeyboardNavigationMode __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusKeyboardNavigationMode;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
+
+
 
 
 
@@ -2311,6 +2951,19 @@ namespace UI {
 namespace Xaml {
 namespace Input {
 class DoubleTappedRoutedEventArgs;
+} /*Input*/
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+namespace Input {
+class FindNextElementOptions;
 } /*Input*/
 } /*Xaml*/
 } /*UI*/
@@ -2527,7 +3180,7 @@ class TappedRoutedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0017 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0023 */
 /* [local] */ 
 
 
@@ -2685,6 +3338,45 @@ namespace ABI {
 extern "C" { 
 #endif
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                
+                typedef enum FocusState FocusState;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    typedef enum FocusInputDeviceKind FocusInputDeviceKind;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -2715,6 +3407,26 @@ namespace ABI {
                 namespace Input {
                     
                     typedef enum InputScopeNameValue InputScopeNameValue;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    typedef enum KeyTipPlacementMode KeyTipPlacementMode;
                     
                 } /* end namespace */
             } /* end namespace */
@@ -2765,6 +3477,65 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    typedef enum XYFocusKeyboardNavigationMode XYFocusKeyboardNavigationMode;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    typedef enum XYFocusNavigationStrategy XYFocusNavigationStrategy;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    typedef enum XYFocusNavigationStrategyOverride XYFocusNavigationStrategyOverride;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -2806,23 +3577,27 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0017_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4704 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4704 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0023_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5367 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4704_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4704_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5367 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5367_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CInput__CInputScopeName
@@ -2830,13 +3605,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4704_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0018 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0024_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
@@ -2980,35 +3755,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CInput__CInputScopeNa
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0025 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CInput__CInputScopeName */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0019 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4705 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4705_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4705_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5368 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5368_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CInput__CInputScopeName
@@ -3016,13 +3791,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4705_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0020 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0026_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
@@ -3132,35 +3907,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CInput__CInputScopeNa
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0027 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CInput__CInputScopeName */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0021 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4706 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4706_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4706_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5369 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5369_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CInput__CPointer
@@ -3168,13 +3943,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4706_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0022 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0028_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__
@@ -3318,35 +4093,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CInput__CPointer;
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0029 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CInput__CPointer */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0023 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4707 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5370 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4707_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4707_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5370 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5370_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CInput__CPointer
@@ -3354,13 +4129,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4707_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0024 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0030_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__
@@ -3470,35 +4245,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CInput__CPointer;
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0031 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CInput__CPointer */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0025 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4708 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4708_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4708_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5371 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5371_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CInput__CInputScopeName
@@ -3506,13 +4281,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4708_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0026 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
@@ -3664,35 +4439,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CInput__CInputScope
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0033 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CInput__CInputScopeName */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4709 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5372 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4709_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4709_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5372 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5372_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CInput__CPointer
@@ -3700,13 +4475,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4709_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0028 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__
@@ -3858,35 +4633,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CInput__CPointer;
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CInput__CPointer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0035 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CInput__CPointer */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4710 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4710_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4710_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5373 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5373_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName
@@ -3894,13 +4669,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4710_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__
@@ -4134,35 +4909,428 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0037 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CInput__CInputScopeName */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4711 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4711_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4711_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5374 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5374_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0038 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0038 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0038_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a8c9544b-7078-5316-beb6-d9ec916ab88a")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Documents::ITextElement *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismissedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0039 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0039 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0039_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5375 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5375 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5375_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0040 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0040 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0040_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("39ad7708-254e-560a-9e2e-73b1db31f935")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Documents::ITextElement *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayRequestedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0041 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0041 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0041_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5376 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5376 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5376_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0042 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0042 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0042_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a72c6b01-2e3c-57b5-9ec4-948f6c6d930a")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Documents::ITextElement *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0043 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0043 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0043_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5377 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5377 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5377_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs
@@ -4170,13 +5338,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4711_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__
@@ -4265,35 +5433,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_W
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0045 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4712 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4712_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4712_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5378 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5378_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs
@@ -4301,13 +5469,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4712_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__
@@ -4396,35 +5564,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_W
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0047 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4713 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4713_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4713_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5379 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5379_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs
@@ -4432,13 +5600,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4713_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_INTERFACE_DEFINED__
@@ -4527,35 +5695,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_W
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0049 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4714 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4714_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4714_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5380 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5380_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs
@@ -4563,13 +5731,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_4714_v0_0_s_i
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs_INTERFACE_DEFINED__
@@ -4658,11 +5826,420 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_W
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0051 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CContextRequestedEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0051 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0051_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5381 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5381 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5381_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0052 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0052 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0052_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("34f34b77-ec52-5eb6-affc-220cb52ca093")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0053 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0053_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5382 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5382 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5382_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5382_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0054 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0054 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0054_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a0f49f5f-c366-569a-895a-3a82d8801fe4")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0055 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0055 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0055_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5383 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5383 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5383_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput2Eidl_0000_5383_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0056 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0056 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0056_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d5de4415-b53c-5312-9e1b-ac2a19f04e71")
+    __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *sender,
+            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *sender,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgsVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0057 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CUIElement_Windows__CUI__CXaml__CInput__CNoFocusCandidateFoundEventArgs */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CInput_CFocusInputDeviceKind
+    {
+        FocusInputDeviceKind_None	= 0,
+        FocusInputDeviceKind_Mouse	= 1,
+        FocusInputDeviceKind_Touch	= 2,
+        FocusInputDeviceKind_Pen	= 3,
+        FocusInputDeviceKind_Keyboard	= 4,
+        FocusInputDeviceKind_GameController	= 5
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -4737,6 +6314,23 @@ enum __x_ABI_CWindows_CUI_CXaml_CInput_CInputScopeNameValue
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyTipPlacementMode
+    {
+        KeyTipPlacementMode_Auto	= 0,
+        KeyTipPlacementMode_Bottom	= 1,
+        KeyTipPlacementMode_Top	= 2,
+        KeyTipPlacementMode_Left	= 3,
+        KeyTipPlacementMode_Right	= 4,
+        KeyTipPlacementMode_Center	= 5,
+        KeyTipPlacementMode_Hidden	= 6
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardNavigationMode
     {
         KeyboardNavigationMode_Local	= 0,
@@ -4781,10 +6375,79 @@ DEFINE_ENUM_FLAG_OPERATORS(ManipulationModes)
 } /*Windows*/
 }
 #endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusKeyboardNavigationMode
+    {
+        XYFocusKeyboardNavigationMode_Auto	= 0,
+        XYFocusKeyboardNavigationMode_Enabled	= 1,
+        XYFocusKeyboardNavigationMode_Disabled	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy
+    {
+        XYFocusNavigationStrategy_Auto	= 0,
+        XYFocusNavigationStrategy_Projection	= 1,
+        XYFocusNavigationStrategy_NavigationDirectionDistance	= 2,
+        XYFocusNavigationStrategy_RectilinearDistance	= 3
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride
+    {
+        XYFocusNavigationStrategyOverride_None	= 0,
+        XYFocusNavigationStrategyOverride_Auto	= 1,
+        XYFocusNavigationStrategyOverride_Projection	= 2,
+        XYFocusNavigationStrategyOverride_NavigationDirectionDistance	= 3,
+        XYFocusNavigationStrategyOverride_RectilinearDistance	= 4
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0057 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    /* [v1_enum] */ 
+                    enum FocusInputDeviceKind
+                        {
+                            FocusInputDeviceKind_None	= 0,
+                            FocusInputDeviceKind_Mouse	= 1,
+                            FocusInputDeviceKind_Touch	= 2,
+                            FocusInputDeviceKind_Pen	= 3,
+                            FocusInputDeviceKind_Keyboard	= 4,
+                            FocusInputDeviceKind_GameController	= 5
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -4887,6 +6550,34 @@ namespace ABI {
                 namespace Input {
                     
                     /* [v1_enum] */ 
+                    enum KeyTipPlacementMode
+                        {
+                            KeyTipPlacementMode_Auto	= 0,
+                            KeyTipPlacementMode_Bottom	= 1,
+                            KeyTipPlacementMode_Top	= 2,
+                            KeyTipPlacementMode_Left	= 3,
+                            KeyTipPlacementMode_Right	= 4,
+                            KeyTipPlacementMode_Center	= 5,
+                            KeyTipPlacementMode_Hidden	= 6
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    /* [v1_enum] */ 
                     enum KeyboardNavigationMode
                         {
                             KeyboardNavigationMode_Local	= 0,
@@ -4935,10 +6626,85 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    /* [v1_enum] */ 
+                    enum XYFocusKeyboardNavigationMode
+                        {
+                            XYFocusKeyboardNavigationMode_Auto	= 0,
+                            XYFocusKeyboardNavigationMode_Enabled	= 1,
+                            XYFocusKeyboardNavigationMode_Disabled	= 2
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    /* [v1_enum] */ 
+                    enum XYFocusNavigationStrategy
+                        {
+                            XYFocusNavigationStrategy_Auto	= 0,
+                            XYFocusNavigationStrategy_Projection	= 1,
+                            XYFocusNavigationStrategy_NavigationDirectionDistance	= 2,
+                            XYFocusNavigationStrategy_RectilinearDistance	= 3
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
+                    /* [v1_enum] */ 
+                    enum XYFocusNavigationStrategyOverride
+                        {
+                            XYFocusNavigationStrategyOverride_None	= 0,
+                            XYFocusNavigationStrategyOverride_Auto	= 1,
+                            XYFocusNavigationStrategyOverride_Projection	= 2,
+                            XYFocusNavigationStrategyOverride_NavigationDirectionDistance	= 3,
+                            XYFocusNavigationStrategyOverride_RectilinearDistance	= 4
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0039_v0_0_s_ifspec;
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedEventHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedEventHandler_INTERFACE_DEFINED__
@@ -6062,7 +7828,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CITappedEventHandler;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedEventHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__)
@@ -6070,13 +7836,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__
@@ -6191,7 +7957,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayDismissedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0069 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__)
@@ -6199,13 +7965,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__
@@ -6330,7 +8096,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayReque
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyDisplayRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEventArgs_INTERFACE_DEFINED__)
@@ -6338,13 +8104,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEventArgs_INTERFACE_DEFINED__
@@ -6479,7 +8245,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEvent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyInvokedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManager_INTERFACE_DEFINED__)
@@ -6487,13 +8253,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManager_INTERFACE_DEFINED__
@@ -6608,7 +8374,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManager;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_INTERFACE_DEFINED__)
@@ -6616,13 +8382,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_INTERFACE_DEFINED__
@@ -6777,7 +8543,156 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStati
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0073 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IAccessKeyManagerStatics2[] = L"Windows.UI.Xaml.Input.IAccessKeyManagerStatics2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0073 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0073_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Input::IAccessKeyManagerStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Input {
+                        
+                        MIDL_INTERFACE("962BB594-2AB3-47C5-954B-7092F355F797")
+                        IAccessKeyManagerStatics2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AreKeyTipsEnabled( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_AreKeyTipsEnabled( 
+                                /* [in] */ boolean value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IAccessKeyManagerStatics2 = __uuidof(IAccessKeyManagerStatics2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AreKeyTipsEnabled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_AreKeyTipsEnabled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_get_AreKeyTipsEnabled(This,value)	\
+    ( (This)->lpVtbl -> get_AreKeyTipsEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_put_AreKeyTipsEnabled(This,value)	\
+    ( (This)->lpVtbl -> put_AreKeyTipsEnabled(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_INTERFACE_DEFINED__)
@@ -6785,13 +8700,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_INTERFACE_DEFINED__
@@ -6950,7 +8865,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CICommand;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CICommand_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIContextRequestedEventArgs_INTERFACE_DEFINED__)
@@ -6958,13 +8873,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIContextRequestedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIContextRequestedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIContextRequestedEventArgs_INTERFACE_DEFINED__
@@ -7113,7 +9028,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIContextRequestedEvent
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIContextRequestedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__)
@@ -7121,13 +9036,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__
@@ -7284,7 +9199,216 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEve
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0077 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFindNextElementOptions[] = L"Windows.UI.Xaml.Input.IFindNextElementOptions";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0077 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0077_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Input::IFindNextElementOptions */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Input {
+                        
+                        MIDL_INTERFACE("D88AE22B-46C2-41FC-897E-B5961977B89D")
+                        IFindNextElementOptions : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SearchRoot( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_SearchRoot( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExclusionRect( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Rect *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ExclusionRect( 
+                                /* [in] */ ABI::Windows::Foundation::Rect value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HintRect( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Rect *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_HintRect( 
+                                /* [in] */ ABI::Windows::Foundation::Rect value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_XYFocusNavigationStrategyOverride( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_XYFocusNavigationStrategyOverride( 
+                                /* [in] */ ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IFindNextElementOptions = __uuidof(IFindNextElementOptions);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptionsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SearchRoot )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_SearchRoot )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExclusionRect )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CRect *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ExclusionRect )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CRect value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HintRect )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CRect *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_HintRect )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CRect value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_XYFocusNavigationStrategyOverride )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_XYFocusNavigationStrategyOverride )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptionsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptionsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_get_SearchRoot(This,value)	\
+    ( (This)->lpVtbl -> get_SearchRoot(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_put_SearchRoot(This,value)	\
+    ( (This)->lpVtbl -> put_SearchRoot(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_get_ExclusionRect(This,value)	\
+    ( (This)->lpVtbl -> get_ExclusionRect(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_put_ExclusionRect(This,value)	\
+    ( (This)->lpVtbl -> put_ExclusionRect(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_get_HintRect(This,value)	\
+    ( (This)->lpVtbl -> get_HintRect(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_put_HintRect(This,value)	\
+    ( (This)->lpVtbl -> put_HintRect(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_get_XYFocusNavigationStrategyOverride(This,value)	\
+    ( (This)->lpVtbl -> get_XYFocusNavigationStrategyOverride(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_put_XYFocusNavigationStrategyOverride(This,value)	\
+    ( (This)->lpVtbl -> put_XYFocusNavigationStrategyOverride(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_INTERFACE_DEFINED__)
@@ -7292,13 +9416,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_INTERFACE_DEFINED__
@@ -7413,7 +9537,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_INTERFACE_DEFINED__)
@@ -7421,13 +9545,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_INTERFACE_DEFINED__
@@ -7552,7 +9676,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_INTERFACE_DEFINED__)
@@ -7560,13 +9684,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_INTERFACE_DEFINED__
@@ -7693,7 +9817,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3_INTERFACE_DEFINED__)
@@ -7701,13 +9825,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3_INTERFACE_DEFINED__
@@ -7848,7 +9972,429 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0082 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerStatics4[] = L"Windows.UI.Xaml.Input.IFocusManagerStatics4";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0082 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0082_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Input::IFocusManagerStatics4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Input {
+                        
+                        MIDL_INTERFACE("29276E9C-1C6C-414A-BA1C-96EFD5962BCD")
+                        IFocusManagerStatics4 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE TryMoveFocusWithOptions( 
+                                /* [in] */ ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::IFindNextElementOptions *focusNavigationOptions,
+                                /* [out][retval] */ __RPC__out boolean *returnValue) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE FindNextElement( 
+                                /* [in] */ ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **returnValue) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE FindFirstFocusableElement( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *searchScope,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **returnValue) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE FindLastFocusableElement( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *searchScope,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **returnValue) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE FindNextElementWithOptions( 
+                                /* [in] */ ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Input::IFindNextElementOptions *focusNavigationOptions,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **returnValue) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IFocusManagerStatics4 = __uuidof(IFocusManagerStatics4);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryMoveFocusWithOptions )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions *focusNavigationOptions,
+            /* [out][retval] */ __RPC__out boolean *returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindNextElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindFirstFocusableElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *searchScope,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindLastFocusableElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *searchScope,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *FindNextElementWithOptions )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions *focusNavigationOptions,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **returnValue);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_TryMoveFocusWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue)	\
+    ( (This)->lpVtbl -> TryMoveFocusWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindNextElement(This,focusNavigationDirection,returnValue)	\
+    ( (This)->lpVtbl -> FindNextElement(This,focusNavigationDirection,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindFirstFocusableElement(This,searchScope,returnValue)	\
+    ( (This)->lpVtbl -> FindFirstFocusableElement(This,searchScope,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindLastFocusableElement(This,searchScope,returnValue)	\
+    ( (This)->lpVtbl -> FindLastFocusableElement(This,searchScope,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindNextElementWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue)	\
+    ( (This)->lpVtbl -> FindNextElementWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0083 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IGettingFocusEventArgs[] = L"Windows.UI.Xaml.Input.IGettingFocusEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0083 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0083_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Input {
+                        
+                        MIDL_INTERFACE("FA05B9CE-C67C-4BE8-8FD4-C44D67877E0D")
+                        IGettingFocusEventArgs : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OldFocusedElement( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NewFocusedElement( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_NewFocusedElement( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FocusState( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::FocusState *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Direction( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::FocusNavigationDirection *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Handled( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Handled( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InputDevice( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::FocusInputDeviceKind *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Cancel( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Cancel( 
+                                /* [in] */ boolean value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IGettingFocusEventArgs = __uuidof(IGettingFocusEventArgs);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OldFocusedElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NewFocusedElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_NewFocusedElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FocusState )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CFocusState *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Direction )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Handled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InputDevice )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CFocusInputDeviceKind *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Cancel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Cancel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_OldFocusedElement(This,value)	\
+    ( (This)->lpVtbl -> get_OldFocusedElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_NewFocusedElement(This,value)	\
+    ( (This)->lpVtbl -> get_NewFocusedElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_put_NewFocusedElement(This,value)	\
+    ( (This)->lpVtbl -> put_NewFocusedElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_FocusState(This,value)	\
+    ( (This)->lpVtbl -> get_FocusState(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_Direction(This,value)	\
+    ( (This)->lpVtbl -> get_Direction(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_Handled(This,value)	\
+    ( (This)->lpVtbl -> get_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_put_Handled(This,value)	\
+    ( (This)->lpVtbl -> put_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_InputDevice(This,value)	\
+    ( (This)->lpVtbl -> get_InputDevice(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_get_Cancel(This,value)	\
+    ( (This)->lpVtbl -> get_Cancel(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_put_Cancel(This,value)	\
+    ( (This)->lpVtbl -> put_Cancel(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_INTERFACE_DEFINED__)
@@ -7856,13 +10402,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_INTERFACE_DEFINED__
@@ -8029,7 +10575,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArg
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaExpansionBehavior_INTERFACE_DEFINED__)
@@ -8037,13 +10583,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaExpansionBehavior_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaExpansionBehavior_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaExpansionBehavior_INTERFACE_DEFINED__
@@ -8198,7 +10744,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaExpansionBehav
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaExpansionBehavior_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaRotationBehavior_INTERFACE_DEFINED__)
@@ -8206,13 +10752,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaRotationBehavior_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaRotationBehavior_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaRotationBehavior_INTERFACE_DEFINED__
@@ -8367,7 +10913,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaRotationBehavi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaRotationBehavior_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaTranslationBehavior_INTERFACE_DEFINED__)
@@ -8375,13 +10921,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaTranslationBehavior_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaTranslationBehavior_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaTranslationBehavior_INTERFACE_DEFINED__
@@ -8536,7 +11082,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaTranslationBeh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIInertiaTranslationBehavior_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScope_INTERFACE_DEFINED__)
@@ -8544,13 +11090,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScope_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScope_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScope_INTERFACE_DEFINED__
@@ -8675,7 +11221,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIInputScope;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScope_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName_INTERFACE_DEFINED__)
@@ -8683,13 +11229,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName_INTERFACE_DEFINED__
@@ -8824,7 +11370,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_INTERFACE_DEFINED__)
@@ -8832,13 +11378,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_INTERFACE_DEFINED__
@@ -8965,7 +11511,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs_INTERFACE_DEFINED__)
@@ -8973,13 +11519,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs_INTERFACE_DEFINED__
@@ -9134,7 +11680,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs2_INTERFACE_DEFINED__)
@@ -9142,13 +11688,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs2_INTERFACE_DEFINED__
@@ -9273,7 +11819,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs2;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3_INTERFACE_DEFINED__)
@@ -9281,13 +11827,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3_INTERFACE_DEFINED__
@@ -9412,7 +11958,236 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIKeyRoutedEventArgs3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0094 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_ILosingFocusEventArgs[] = L"Windows.UI.Xaml.Input.ILosingFocusEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0094 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0094_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Input {
+                        
+                        MIDL_INTERFACE("F9F683C7-D789-472B-AA93-6D4105E6DABE")
+                        ILosingFocusEventArgs : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_OldFocusedElement( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NewFocusedElement( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject **value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_NewFocusedElement( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FocusState( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::FocusState *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Direction( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::FocusNavigationDirection *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Handled( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Handled( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InputDevice( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::FocusInputDeviceKind *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Cancel( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Cancel( 
+                                /* [in] */ boolean value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ILosingFocusEventArgs = __uuidof(ILosingFocusEventArgs);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_OldFocusedElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NewFocusedElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_NewFocusedElement )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FocusState )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CFocusState *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Direction )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Handled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InputDevice )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CFocusInputDeviceKind *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Cancel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Cancel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_OldFocusedElement(This,value)	\
+    ( (This)->lpVtbl -> get_OldFocusedElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_NewFocusedElement(This,value)	\
+    ( (This)->lpVtbl -> get_NewFocusedElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_put_NewFocusedElement(This,value)	\
+    ( (This)->lpVtbl -> put_NewFocusedElement(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_FocusState(This,value)	\
+    ( (This)->lpVtbl -> get_FocusState(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_Direction(This,value)	\
+    ( (This)->lpVtbl -> get_Direction(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_Handled(This,value)	\
+    ( (This)->lpVtbl -> get_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_put_Handled(This,value)	\
+    ( (This)->lpVtbl -> put_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_InputDevice(This,value)	\
+    ( (This)->lpVtbl -> get_InputDevice(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_get_Cancel(This,value)	\
+    ( (This)->lpVtbl -> get_Cancel(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_put_Cancel(This,value)	\
+    ( (This)->lpVtbl -> put_Cancel(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_INTERFACE_DEFINED__)
@@ -9420,13 +12195,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_INTERFACE_DEFINED__
@@ -9621,7 +12396,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompleted
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationDeltaRoutedEventArgs_INTERFACE_DEFINED__)
@@ -9629,13 +12404,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationDeltaRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationDeltaRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationDeltaRoutedEventArgs_INTERFACE_DEFINED__
@@ -9848,7 +12623,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationDeltaRout
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationDeltaRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationInertiaStartingRoutedEventArgs_INTERFACE_DEFINED__)
@@ -9856,13 +12631,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationInertiaStartingRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationInertiaStartingRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationInertiaStartingRoutedEventArgs_INTERFACE_DEFINED__
@@ -10107,7 +12882,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationInertiaSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationInertiaStartingRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot_INTERFACE_DEFINED__)
@@ -10115,13 +12890,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot_INTERFACE_DEFINED__
@@ -10276,7 +13051,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_INTERFACE_DEFINED__)
@@ -10284,13 +13059,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_INTERFACE_DEFINED__
@@ -10419,7 +13194,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFact
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0100 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs_INTERFACE_DEFINED__)
@@ -10427,13 +13202,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0100 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0100_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs_INTERFACE_DEFINED__
@@ -10616,7 +13391,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_INTERFACE_DEFINED__)
@@ -10624,13 +13399,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_INTERFACE_DEFINED__
@@ -10759,7 +13534,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingRoutedEventArgs_INTERFACE_DEFINED__)
@@ -10767,13 +13542,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingRoutedEventArgs_INTERFACE_DEFINED__
@@ -10968,7 +13743,176 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingR
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartingRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0103 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_INoFocusCandidateFoundEventArgs[] = L"Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0103 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0103_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Input {
+                        
+                        MIDL_INTERFACE("EC3601A7-1007-48F9-B6B3-ED0BEA53937D")
+                        INoFocusCandidateFoundEventArgs : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Direction( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::FocusNavigationDirection *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Handled( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Handled( 
+                                /* [in] */ boolean value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InputDevice( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Input::FocusInputDeviceKind *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_INoFocusCandidateFoundEventArgs = __uuidof(INoFocusCandidateFoundEventArgs);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Direction )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Handled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InputDevice )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CFocusInputDeviceKind *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgsVtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_get_Direction(This,value)	\
+    ( (This)->lpVtbl -> get_Direction(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_get_Handled(This,value)	\
+    ( (This)->lpVtbl -> get_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_put_Handled(This,value)	\
+    ( (This)->lpVtbl -> put_Handled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_get_InputDevice(This,value)	\
+    ( (This)->lpVtbl -> get_InputDevice(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CINoFocusCandidateFoundEventArgs_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_INTERFACE_DEFINED__)
@@ -10976,13 +13920,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_INTERFACE_DEFINED__
@@ -11137,7 +14081,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIPointer;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_INTERFACE_DEFINED__)
@@ -11145,13 +14089,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_INTERFACE_DEFINED__
@@ -11330,7 +14274,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArg
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__)
@@ -11338,13 +14282,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__
@@ -11501,7 +14445,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEven
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__)
@@ -11509,13 +14453,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__
@@ -11672,7 +14616,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0108 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_AccessKeyDisplayDismissedEventArgs_DEFINED
@@ -11699,9 +14643,17 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_DoubleTappedRoutedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_DoubleTappedRoutedEventArgs[] = L"Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_FindNextElementOptions_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_FindNextElementOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_FindNextElementOptions[] = L"Windows.UI.Xaml.Input.FindNextElementOptions";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManager_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_FocusManager[] = L"Windows.UI.Xaml.Input.FocusManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_GettingFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_GettingFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_GettingFocusEventArgs[] = L"Windows.UI.Xaml.Input.GettingFocusEventArgs";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_HoldingRoutedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_HoldingRoutedEventArgs_DEFINED
@@ -11731,6 +14683,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_KeyRoutedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_KeyRoutedEventArgs[] = L"Windows.UI.Xaml.Input.KeyRoutedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_LosingFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_LosingFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_LosingFocusEventArgs[] = L"Windows.UI.Xaml.Input.LosingFocusEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_ManipulationCompletedRoutedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_ManipulationCompletedRoutedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_ManipulationCompletedRoutedEventArgs[] = L"Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs";
@@ -11755,6 +14711,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_ManipulationStartingRoutedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_ManipulationStartingRoutedEventArgs[] = L"Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_NoFocusCandidateFoundEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_NoFocusCandidateFoundEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_NoFocusCandidateFoundEventArgs[] = L"Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_Pointer_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Input_Pointer_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_Pointer[] = L"Windows.UI.Xaml.Input.Pointer";
@@ -11773,13 +14733,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Einput_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Einput_0000_0108_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -25,6 +25,7 @@ Abstract:
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-registry-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -57,14 +58,16 @@ extern "C" {
 #pragma warning(disable:4820) // padding added after data member
 #endif
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or Desktop Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 
 #ifndef WINVER
 #define WINVER 0x0500   // version 5.0
 #endif /* !WINVER */
+
+typedef _Return_type_success_(return==ERROR_SUCCESS) LONG LSTATUS;
 
 //
 // RRF - Registry Routine Flags (for RegGetValue)
@@ -98,11 +101,6 @@ extern "C" {
 #define REG_PROCESS_APPKEY          0x00000001
 
 //
-// Flags for RegLoadMUIString
-//
-#define REG_MUI_STRING_TRUNCATE     0x00000001
-
-//
 // Requested Key access mask type.
 //
 
@@ -124,12 +122,6 @@ typedef ACCESS_MASK REGSAM;
 #define HKEY_CURRENT_CONFIG                 (( HKEY ) (ULONG_PTR)((LONG)0x80000005) )
 #define HKEY_DYN_DATA                       (( HKEY ) (ULONG_PTR)((LONG)0x80000006) )
 #define HKEY_CURRENT_USER_LOCAL_SETTINGS    (( HKEY ) (ULONG_PTR)((LONG)0x80000007) )
-
-
-//
-// RegConnectRegistryEx supported flags
-//
-#define REG_SECURE_CONNECTION   1
 
 /*NOINC*/
 #ifndef _PROVIDER_STRUCTS_DEFINED
@@ -214,11 +206,31 @@ typedef PVALENTA PVALENT;
 
 #define WIN31_CLASS                 NULL
 
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+//
+// Flags for RegLoadMUIString
+//
+#define REG_MUI_STRING_TRUNCATE     0x00000001
+
+
+#if (WINVER >= 0x0400)
+
+//
+// RegConnectRegistryEx supported flags
+//
+#define REG_SECURE_CONNECTION   1
+
+#endif /* WINVER >= 0x0400 */
+
 //
 // API Prototypes.
 //
-
-typedef _Return_type_success_(return==ERROR_SUCCESS) LONG LSTATUS;
 
 WINADVAPI
 LSTATUS

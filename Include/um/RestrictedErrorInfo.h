@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -51,6 +51,27 @@ typedef interface IRestrictedErrorInfo IRestrictedErrorInfo;
 typedef interface ILanguageExceptionErrorInfo ILanguageExceptionErrorInfo;
 
 #endif 	/* __ILanguageExceptionErrorInfo_FWD_DEFINED__ */
+
+
+#ifndef __ILanguageExceptionTransform_FWD_DEFINED__
+#define __ILanguageExceptionTransform_FWD_DEFINED__
+typedef interface ILanguageExceptionTransform ILanguageExceptionTransform;
+
+#endif 	/* __ILanguageExceptionTransform_FWD_DEFINED__ */
+
+
+#ifndef __ILanguageExceptionStackBackTrace_FWD_DEFINED__
+#define __ILanguageExceptionStackBackTrace_FWD_DEFINED__
+typedef interface ILanguageExceptionStackBackTrace ILanguageExceptionStackBackTrace;
+
+#endif 	/* __ILanguageExceptionStackBackTrace_FWD_DEFINED__ */
+
+
+#ifndef __ILanguageExceptionErrorInfo2_FWD_DEFINED__
+#define __ILanguageExceptionErrorInfo2_FWD_DEFINED__
+typedef interface ILanguageExceptionErrorInfo2 ILanguageExceptionErrorInfo2;
+
+#endif 	/* __ILanguageExceptionErrorInfo2_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -252,15 +273,287 @@ EXTERN_C const IID IID_ILanguageExceptionErrorInfo;
 #endif 	/* __ILanguageExceptionErrorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_restrictederrorinfo_0000_0002 */
+#ifndef __ILanguageExceptionTransform_INTERFACE_DEFINED__
+#define __ILanguageExceptionTransform_INTERFACE_DEFINED__
+
+/* interface ILanguageExceptionTransform */
+/* [object][unique][uuid] */ 
+
+
+EXTERN_C const IID IID_ILanguageExceptionTransform;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("FEB5A271-A6CD-45CE-880A-696706BADC65")
+    ILanguageExceptionTransform : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetTransformedRestrictedErrorInfo( 
+            /* [out] */ __RPC__deref_out_opt IRestrictedErrorInfo **restrictedErrorInfo) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ILanguageExceptionTransformVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ILanguageExceptionTransform * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ILanguageExceptionTransform * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ILanguageExceptionTransform * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTransformedRestrictedErrorInfo )( 
+            __RPC__in ILanguageExceptionTransform * This,
+            /* [out] */ __RPC__deref_out_opt IRestrictedErrorInfo **restrictedErrorInfo);
+        
+        END_INTERFACE
+    } ILanguageExceptionTransformVtbl;
+
+    interface ILanguageExceptionTransform
+    {
+        CONST_VTBL struct ILanguageExceptionTransformVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ILanguageExceptionTransform_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ILanguageExceptionTransform_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ILanguageExceptionTransform_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ILanguageExceptionTransform_GetTransformedRestrictedErrorInfo(This,restrictedErrorInfo)	\
+    ( (This)->lpVtbl -> GetTransformedRestrictedErrorInfo(This,restrictedErrorInfo) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ILanguageExceptionTransform_INTERFACE_DEFINED__ */
+
+
+#ifndef __ILanguageExceptionStackBackTrace_INTERFACE_DEFINED__
+#define __ILanguageExceptionStackBackTrace_INTERFACE_DEFINED__
+
+/* interface ILanguageExceptionStackBackTrace */
+/* [object][unique][uuid] */ 
+
+
+EXTERN_C const IID IID_ILanguageExceptionStackBackTrace;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("CBE53FB5-F967-4258-8D34-42F5E25833DE")
+    ILanguageExceptionStackBackTrace : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetStackBackTrace( 
+            /* [in] */ ULONG maxFramesToCapture,
+            /* [max_is][out][in] */ __RPC__inout_ecount_full(( ( maxFramesToCapture - 1 )  + 1 ) ) UINT_PTR stackBackTrace[  ],
+            /* [out] */ __RPC__out ULONG *framesCaptured) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ILanguageExceptionStackBackTraceVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ILanguageExceptionStackBackTrace * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ILanguageExceptionStackBackTrace * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ILanguageExceptionStackBackTrace * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStackBackTrace )( 
+            __RPC__in ILanguageExceptionStackBackTrace * This,
+            /* [in] */ ULONG maxFramesToCapture,
+            /* [max_is][out][in] */ __RPC__inout_ecount_full(( ( maxFramesToCapture - 1 )  + 1 ) ) UINT_PTR stackBackTrace[  ],
+            /* [out] */ __RPC__out ULONG *framesCaptured);
+        
+        END_INTERFACE
+    } ILanguageExceptionStackBackTraceVtbl;
+
+    interface ILanguageExceptionStackBackTrace
+    {
+        CONST_VTBL struct ILanguageExceptionStackBackTraceVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ILanguageExceptionStackBackTrace_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ILanguageExceptionStackBackTrace_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ILanguageExceptionStackBackTrace_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ILanguageExceptionStackBackTrace_GetStackBackTrace(This,maxFramesToCapture,stackBackTrace,framesCaptured)	\
+    ( (This)->lpVtbl -> GetStackBackTrace(This,maxFramesToCapture,stackBackTrace,framesCaptured) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ILanguageExceptionStackBackTrace_INTERFACE_DEFINED__ */
+
+
+#ifndef __ILanguageExceptionErrorInfo2_INTERFACE_DEFINED__
+#define __ILanguageExceptionErrorInfo2_INTERFACE_DEFINED__
+
+/* interface ILanguageExceptionErrorInfo2 */
+/* [object][unique][uuid] */ 
+
+
+EXTERN_C const IID IID_ILanguageExceptionErrorInfo2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5746E5C4-5B97-424C-B620-2822915734DD")
+    ILanguageExceptionErrorInfo2 : public ILanguageExceptionErrorInfo
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetPreviousLanguageExceptionErrorInfo( 
+            /* [out] */ __RPC__deref_out_opt ILanguageExceptionErrorInfo2 **previousLanguageExceptionErrorInfo) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE CapturePropagationContext( 
+            /* [in] */ __RPC__in_opt IUnknown *languageException) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetPropagationContextHead( 
+            /* [out] */ __RPC__deref_out_opt ILanguageExceptionErrorInfo2 **propagatedLanguageExceptionErrorInfoHead) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ILanguageExceptionErrorInfo2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetLanguageException )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt IUnknown **languageException);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPreviousLanguageExceptionErrorInfo )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt ILanguageExceptionErrorInfo2 **previousLanguageExceptionErrorInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *CapturePropagationContext )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This,
+            /* [in] */ __RPC__in_opt IUnknown *languageException);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPropagationContextHead )( 
+            __RPC__in ILanguageExceptionErrorInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt ILanguageExceptionErrorInfo2 **propagatedLanguageExceptionErrorInfoHead);
+        
+        END_INTERFACE
+    } ILanguageExceptionErrorInfo2Vtbl;
+
+    interface ILanguageExceptionErrorInfo2
+    {
+        CONST_VTBL struct ILanguageExceptionErrorInfo2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ILanguageExceptionErrorInfo2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ILanguageExceptionErrorInfo2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ILanguageExceptionErrorInfo2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ILanguageExceptionErrorInfo2_GetLanguageException(This,languageException)	\
+    ( (This)->lpVtbl -> GetLanguageException(This,languageException) ) 
+
+
+#define ILanguageExceptionErrorInfo2_GetPreviousLanguageExceptionErrorInfo(This,previousLanguageExceptionErrorInfo)	\
+    ( (This)->lpVtbl -> GetPreviousLanguageExceptionErrorInfo(This,previousLanguageExceptionErrorInfo) ) 
+
+#define ILanguageExceptionErrorInfo2_CapturePropagationContext(This,languageException)	\
+    ( (This)->lpVtbl -> CapturePropagationContext(This,languageException) ) 
+
+#define ILanguageExceptionErrorInfo2_GetPropagationContextHead(This,propagatedLanguageExceptionErrorInfoHead)	\
+    ( (This)->lpVtbl -> GetPropagationContextHead(This,propagatedLanguageExceptionErrorInfoHead) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ILanguageExceptionErrorInfo2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_restrictederrorinfo_0000_0005 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_restrictederrorinfo_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_restrictederrorinfo_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_restrictederrorinfo_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_restrictederrorinfo_0000_0005_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

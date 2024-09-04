@@ -899,7 +899,7 @@ typedef __time64_t time_t;      /* time value */
     __inline \
     _ReturnType __CRTDECL __insecure_##_FuncName(_SalAttributeDst _DstType *_Dst) \
     { \
-        _DeclSpec _ReturnType __cdecl _FuncName(_DstType *_Dst); \
+        _DeclSpec _ReturnType __cdecl _FuncName(_SalAttributeDst _DstType *_Dst); \
         return _FuncName(_Dst); \
     } \
     extern "C++" \
@@ -944,7 +944,7 @@ typedef __time64_t time_t;      /* time value */
     __inline \
     _ReturnType __CRTDECL __insecure_##_FuncName(_SalAttributeDst _DstType *_Dst) \
     { \
-        _DeclSpec _ReturnType __cdecl _FuncName(_DstType *_Dst); \
+        _DeclSpec _ReturnType __cdecl _FuncName(_SalAttributeDst _DstType *_Dst); \
         return _FuncName(_Dst); \
     } \
     extern "C++" \
@@ -999,7 +999,7 @@ typedef __time64_t time_t;      /* time value */
     __inline \
     _ReturnType __CRTDECL __insecure_##_FuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1) \
     { \
-        _DeclSpec _ReturnType __cdecl _FuncName(_DstType *_Dst, _TType1 _TArg1); \
+        _DeclSpec _ReturnType __cdecl _FuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1); \
         return _FuncName(_Dst, _TArg1); \
     } \
     extern "C++" \
@@ -1269,7 +1269,7 @@ typedef __time64_t time_t;      /* time value */
     __inline \
     _ReturnType __CRTDECL __insecure_##_VFuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1, va_list _ArgList) \
     { \
-        _DeclSpec _ReturnType __cdecl _VFuncName(_DstType *_Dst, _TType1 _TArg1, va_list _ArgList); \
+        _DeclSpec _ReturnType __cdecl _VFuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1, va_list _ArgList); \
         return _VFuncName(_Dst, _TArg1, _ArgList); \
     } \
     extern "C++" \
@@ -1374,7 +1374,7 @@ typedef __time64_t time_t;      /* time value */
     __inline \
     _ReturnType __CRTDECL __insecure_##_VFuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1, _TType2 _TArg2, va_list _ArgList) \
     { \
-        _DeclSpec _ReturnType __cdecl _VFuncName(_DstType *_Dst, _TType1 _TArg1, _TType2 _TArg2, va_list _ArgList); \
+        _DeclSpec _ReturnType __cdecl _VFuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1, _TType2 _TArg2, va_list _ArgList); \
         return _VFuncName(_Dst, _TArg1, _TArg2, _ArgList); \
     } \
     extern "C++" \
@@ -1479,7 +1479,7 @@ typedef __time64_t time_t;      /* time value */
     __inline \
     size_t __CRTDECL __insecure_##_FuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1, _TType2 _TArg2) \
     { \
-        _DeclSpec size_t __cdecl _FuncName(_DstType *_Dst, _TType1 _TArg1, _TType2 _TArg2); \
+        _DeclSpec size_t __cdecl _FuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1, _TType2 _TArg2); \
         return _FuncName(_Dst, _TArg1, _TArg2); \
     } \
     extern "C++" \
@@ -2103,6 +2103,14 @@ __cdecl
 _guard_icall_checks_enforced (
     void
     );
+
+#ifdef _M_AMD64
+int
+__cdecl
+_guard_rf_checks_enforced (
+    void
+    );
+#endif
 
 #endif
 

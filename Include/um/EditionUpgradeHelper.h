@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -44,6 +44,13 @@
 typedef interface IEditionUpgradeHelper IEditionUpgradeHelper;
 
 #endif 	/* __IEditionUpgradeHelper_FWD_DEFINED__ */
+
+
+#ifndef __IEnableCodeGeneration_FWD_DEFINED__
+#define __IEnableCodeGeneration_FWD_DEFINED__
+typedef interface IEnableCodeGeneration IEnableCodeGeneration;
+
+#endif 	/* __IEnableCodeGeneration_FWD_DEFINED__ */
 
 
 #ifndef __IEditionUpgradeBroker_FWD_DEFINED__
@@ -124,6 +131,9 @@ EXTERN_C const IID IID_IEditionUpgradeHelper;
         virtual HRESULT STDMETHODCALLTYPE GetGenuineLocalStatus( 
             /* [out] */ __RPC__out BOOL *isGenuine) = 0;
         
+        virtual HRESULT STDMETHODCALLTYPE DisableAcgEnforcement( 
+            /* [in] */ BOOL isEnforcementSet) = 0;
+        
     };
     
     
@@ -164,6 +174,10 @@ EXTERN_C const IID IID_IEditionUpgradeHelper;
             __RPC__in IEditionUpgradeHelper * This,
             /* [out] */ __RPC__out BOOL *isGenuine);
         
+        HRESULT ( STDMETHODCALLTYPE *DisableAcgEnforcement )( 
+            __RPC__in IEditionUpgradeHelper * This,
+            /* [in] */ BOOL isEnforcementSet);
+        
         END_INTERFACE
     } IEditionUpgradeHelperVtbl;
 
@@ -202,6 +216,9 @@ EXTERN_C const IID IID_IEditionUpgradeHelper;
 #define IEditionUpgradeHelper_GetGenuineLocalStatus(This,isGenuine)	\
     ( (This)->lpVtbl -> GetGenuineLocalStatus(This,isGenuine) ) 
 
+#define IEditionUpgradeHelper_DisableAcgEnforcement(This,isEnforcementSet)	\
+    ( (This)->lpVtbl -> DisableAcgEnforcement(This,isEnforcementSet) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -211,6 +228,88 @@ EXTERN_C const IID IID_IEditionUpgradeHelper;
 
 
 #endif 	/* __IEditionUpgradeHelper_INTERFACE_DEFINED__ */
+
+
+#ifndef __IEnableCodeGeneration_INTERFACE_DEFINED__
+#define __IEnableCodeGeneration_INTERFACE_DEFINED__
+
+/* interface IEnableCodeGeneration */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID_IEnableCodeGeneration;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("80AE3FC2-2580-4483-B427-9215C56E1604")
+    IEnableCodeGeneration : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE DisableAcgEnforcementWithBinaryName( 
+            /* [in] */ BOOL isEnforcementSet,
+            /* [string][in] */ __RPC__in_string LPCWSTR binaryName) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IEnableCodeGenerationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IEnableCodeGeneration * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IEnableCodeGeneration * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IEnableCodeGeneration * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *DisableAcgEnforcementWithBinaryName )( 
+            __RPC__in IEnableCodeGeneration * This,
+            /* [in] */ BOOL isEnforcementSet,
+            /* [string][in] */ __RPC__in_string LPCWSTR binaryName);
+        
+        END_INTERFACE
+    } IEnableCodeGenerationVtbl;
+
+    interface IEnableCodeGeneration
+    {
+        CONST_VTBL struct IEnableCodeGenerationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IEnableCodeGeneration_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IEnableCodeGeneration_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IEnableCodeGeneration_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IEnableCodeGeneration_DisableAcgEnforcementWithBinaryName(This,isEnforcementSet,binaryName)	\
+    ( (This)->lpVtbl -> DisableAcgEnforcementWithBinaryName(This,isEnforcementSet,binaryName) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IEnableCodeGeneration_INTERFACE_DEFINED__ */
 
 
 #ifndef __IEditionUpgradeBroker_INTERFACE_DEFINED__
@@ -237,6 +336,10 @@ EXTERN_C const IID IID_IEditionUpgradeBroker;
         virtual HRESULT STDMETHODCALLTYPE ShowProductKeyUI( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CanUpgrade( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE DisableAcgEnforcement( 
+            /* [in] */ BOOL isEnforcementSet,
+            /* [string][in] */ __RPC__in_string BSTR binaryName) = 0;
         
     };
     
@@ -273,6 +376,11 @@ EXTERN_C const IID IID_IEditionUpgradeBroker;
         HRESULT ( STDMETHODCALLTYPE *CanUpgrade )( 
             __RPC__in IEditionUpgradeBroker * This);
         
+        HRESULT ( STDMETHODCALLTYPE *DisableAcgEnforcement )( 
+            __RPC__in IEditionUpgradeBroker * This,
+            /* [in] */ BOOL isEnforcementSet,
+            /* [string][in] */ __RPC__in_string BSTR binaryName);
+        
         END_INTERFACE
     } IEditionUpgradeBrokerVtbl;
 
@@ -307,6 +415,9 @@ EXTERN_C const IID IID_IEditionUpgradeBroker;
 
 #define IEditionUpgradeBroker_CanUpgrade(This)	\
     ( (This)->lpVtbl -> CanUpgrade(This) ) 
+
+#define IEditionUpgradeBroker_DisableAcgEnforcement(This,isEnforcementSet,binaryName)	\
+    ( (This)->lpVtbl -> DisableAcgEnforcement(This,isEnforcementSet,binaryName) ) 
 
 #endif /* COBJMACROS */
 
@@ -346,15 +457,15 @@ EditionUpgradeBroker;
 #endif
 #endif /* __EditionUpgradeHelperLib_LIBRARY_DEFINED__ */
 
-/* interface __MIDL_itf_editionupgradehelper_0000_0003 */
+/* interface __MIDL_itf_editionupgradehelper_0000_0004 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0004_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

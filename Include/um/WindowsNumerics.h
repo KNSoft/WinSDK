@@ -24,7 +24,7 @@
 #elif defined __windows2Efoundation2Enumerics_h__
 
 // Raw COM mode using ABI interop (after including windows.foundation.numerics.h).
-#ifdef BUILD_WINDOWS
+#ifdef ____x_Windows_CFoundation_CIClosable_FWD_DEFINED__
 #define _WINDOWS_NUMERICS_INTEROP_NAMESPACE_ Windows::Foundation::Numerics
 #else
 #define _WINDOWS_NUMERICS_INTEROP_NAMESPACE_ ABI::Windows::Foundation::Numerics

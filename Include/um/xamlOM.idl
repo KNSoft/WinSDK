@@ -12,6 +12,7 @@ import "dxgi1_2.idl";
 
 cpp_quote("// Win32 API definitions")
 cpp_quote("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")
+cpp_quote("#define E_UNKNOWNTYPE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAML, 40L)")
 cpp_quote("_Check_return_ HRESULT InitializeXamlDiagnostic(_In_ LPCWSTR endPointName, _In_ DWORD pid, _In_ LPCWSTR wszDllXamlDiagnostics, _In_ LPCWSTR wszTAPDllName,  _In_ CLSID tapClsid);")
 cpp_quote("_Check_return_ HRESULT InitializeXamlDiagnosticsEx(_In_ LPCWSTR endPointName, _In_ DWORD pid, _In_ LPCWSTR wszDllXamlDiagnostics, _In_ LPCWSTR wszTAPDllName, _In_ CLSID tapClsid, _In_ LPCWSTR wszInitializationData);")
 
@@ -136,6 +137,20 @@ typedef struct BitmapDescription
     DXGI_ALPHA_MODE AlphaMode;
 } BitmapDescription;
 
+typedef enum ResourceType
+{
+    ResourceTypeStatic = 0,
+    ResourceTypeTheme
+} ResourceType;
+
+typedef enum VisualElementState
+{
+    ErrorResolved = 0,
+    ErrorResourceNotFound, // Could not resolve resource
+    ErrorInvalidResource,  // Resource found, but does not match property
+} VisualElementState;
+
+
 // Interfaces.
 
 [
@@ -146,9 +161,22 @@ typedef struct BitmapDescription
 interface IVisualTreeServiceCallback : IUnknown
 {
     HRESULT OnVisualTreeChange(
-        [in] ParentChildRelation relation, 
-        [in] VisualElement element, 
+        [in] ParentChildRelation relation,
+        [in] VisualElement element,
         [in] VisualMutationType mutationType);
+};
+
+[
+    object,
+    uuid(BAD9EB88-AE77-4397-B948-5FA2DB0A19EA),
+    pointer_default(unique)
+]
+interface IVisualTreeServiceCallback2 : IVisualTreeServiceCallback
+{
+    HRESULT OnElementStateChanged(
+        [in] InstanceHandle element,
+        [in] VisualElementState elementState,
+        [in] LPCWSTR context);
 };
 
 [
@@ -158,7 +186,9 @@ interface IVisualTreeServiceCallback : IUnknown
 ]
 interface IVisualTreeService : IUnknown
 {
-    // Mutation events.
+    // Mutation events. If the callback also implements IVisualTreeServiceCallback2,
+    // then multiple window support is enabled. When the callback implements IVisualTreeServiceCallback2,
+    // all methods must be dispatched onto the correct thread if they require access to the UI thread.
     HRESULT AdviseVisualTreeChange(
         [in] IVisualTreeServiceCallback *pCallback);
     HRESULT UnadviseVisualTreeChange(
@@ -338,6 +368,34 @@ interface IVisualTreeService2 : IVisualTreeService
         [out] IBitmapData** ppBitmapData);
 };
 
+[
+    object,
+    uuid(0E79C6E0-85A0-4BE8-B41A-655CF1FD19BD),
+    pointer_default(unique)
+]
+interface IVisualTreeService3 : IVisualTreeService2
+{
+    HRESULT ResolveResource(
+        [in] InstanceHandle resourceContext,
+        [in] LPCWSTR resourceName,
+        [in] ResourceType resourceType,
+        [in] unsigned int propertyIndex);
+
+    HRESULT GetDictionaryItem(
+        [in] InstanceHandle dictionaryHandle,
+        [in] LPCWSTR resourceName,
+        [in] BOOL resourceIsImplicitStyle,
+        [out] InstanceHandle* resourceHandle);
+
+    HRESULT AddDictionaryItem(
+        [in] InstanceHandle dictionaryHandle,
+        [in] InstanceHandle resourceKey,
+        [in] InstanceHandle resourceHandle);
+
+    HRESULT RemoveDictionaryItem(
+        [in] InstanceHandle dictionaryHandle,
+        [in] InstanceHandle resourceKey);
+};
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */ ")
 cpp_quote("#pragma endregion")

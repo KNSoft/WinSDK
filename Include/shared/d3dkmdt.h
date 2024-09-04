@@ -274,33 +274,7 @@ typedef D3DKMDT_2DREGION  D3DKMDT_2DOFFSET;
 //          the video output codec.
 //
 //          Miniport is free to support any D3D pixel format for its graphics modes that is meaningful
-//          as a primary surface pixel format. No validation for an appropriately used pixel format shall be
-//          done in kernel-mode. If this turns out to be a problem, WHQL can enforce a certain list of pixel
-//          formats from user-mode.
-//
-//          This descriptor does NOT include pixel value sub-channel bit masks since:
-//            1. Primary goal of such descriptors is to allow application developers to write extensible code
-//               that can leverage future pixel formats.
-//            2. As it stands, however, historically numerous application developers have failed to properly
-//               implement generic pixel value decoding algorithms and pixel value sub-channel bit masks were
-//               dropped in DX8.
-//            3. Main idea: it's best to force application developers to test every scenario they claim to
-//               support by making them use look-up tables that map D3D pixel format enums into pixel value
-//               sub-channel bit masks.
-//            4. To facilitate application development, it would make sense to ship a helper user-mode library
-//               that does the enum-to-bitmask mapping for the application developers. They would still need
-//               to code their application against existing pixel value formats but not maintain look-up tables,
-//               for every application.
-//            5. Need for pixel value sub-channel bitmasks exposure is further reduced by the fact that they are
-//               only truly useful for linear surface formats with well defined integer RGB encoded pixel values.
-//                   i. When surface format has a non-linear pixel layout
-//                      (i.e. VIDEO_PRESENT_SOURCE.VidPSContentLayout = VPSCL_Linear),
-//                      knowledge of pixel value sub-channel bitmasks will not help the developer to know how to
-//                      access each pixel in the surface.
-//                  ii. Most four-CC formats (e.g. NVT4/NVT5) fall into this category and one should test against
-//                      every format to be supported by the application, because most of them imply texture layouts
-//                      that aren't easily described.
-//                 iii. Also the bitmasks won't work for floating point pixel formats.
+//          as a primary surface pixel format. 
 //
 typedef struct _D3DKMDT_GRAPHICS_RENDERING_FORMAT
 {
@@ -308,6 +282,7 @@ typedef struct _D3DKMDT_GRAPHICS_RENDERING_FORMAT
     D3DKMDT_2DREGION  PrimSurfSize;
 
     // Size of the visible part of the primary surface, used for panned modes including zoom modes.
+    // The visible region size is required to be the same as the primary surface 
     D3DKMDT_2DREGION  VisibleRegionSize;
 
     // Number of bytes between the start of one scan line and the next.
@@ -443,24 +418,24 @@ D3DKMDT_VIDEO_OUTPUT_TECHNOLOGY;
 
 typedef enum _DXGKMDT_OPM_CONNECTOR_TYPE
 {
-    DXGKMDT_OPM_CONNECTOR_TYPE_OTHER								= -1,
-    DXGKMDT_OPM_CONNECTOR_TYPE_HD15									=  0,
-    DXGKMDT_OPM_CONNECTOR_TYPE_SVIDEO								=  1,
-    DXGKMDT_OPM_CONNECTOR_TYPE_COMPOSITE_VIDEO						=  2,
-    DXGKMDT_OPM_CONNECTOR_TYPE_COMPONENT_VIDEO						=  3,
-    DXGKMDT_OPM_CONNECTOR_TYPE_DVI									=  4,
-    DXGKMDT_OPM_CONNECTOR_TYPE_HDMI									=  5,
-    DXGKMDT_OPM_CONNECTOR_TYPE_LVDS									=  6,
-    DXGKMDT_OPM_CONNECTOR_TYPE_D_JPN								=  8,
-    DXGKMDT_OPM_CONNECTOR_TYPE_SDI									=  9,
-    DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EXTERNAL					= 10,
-    DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EMBEDDED					= 11,
-    DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EXTERNAL							= 12,
-    DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EMBEDDED							= 13,
-    DXGKMDT_OPM_CONNECTOR_TYPE_RESERVED								= 14,
-    DXGKMDT_OPM_CONNECTOR_TYPE_MIRACAST								= 15,
-    DXGKMDT_OPM_CONNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A	= 16,
-    DXGKMDT_OPM_CONNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B	= 17,
+    DXGKMDT_OPM_CONNECTOR_TYPE_OTHER                                = -1,
+    DXGKMDT_OPM_CONNECTOR_TYPE_HD15                                 =  0,
+    DXGKMDT_OPM_CONNECTOR_TYPE_SVIDEO                               =  1,
+    DXGKMDT_OPM_CONNECTOR_TYPE_COMPOSITE_VIDEO                      =  2,
+    DXGKMDT_OPM_CONNECTOR_TYPE_COMPONENT_VIDEO                      =  3,
+    DXGKMDT_OPM_CONNECTOR_TYPE_DVI                                  =  4,
+    DXGKMDT_OPM_CONNECTOR_TYPE_HDMI                                 =  5,
+    DXGKMDT_OPM_CONNECTOR_TYPE_LVDS                                 =  6,
+    DXGKMDT_OPM_CONNECTOR_TYPE_D_JPN                                =  8,
+    DXGKMDT_OPM_CONNECTOR_TYPE_SDI                                  =  9,
+    DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EXTERNAL                 = 10,
+    DXGKMDT_OPM_CONNECTOR_TYPE_DISPLAYPORT_EMBEDDED                 = 11,
+    DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EXTERNAL                         = 12,
+    DXGKMDT_OPM_CONNECTOR_TYPE_UDI_EMBEDDED                         = 13,
+    DXGKMDT_OPM_CONNECTOR_TYPE_RESERVED                             = 14,
+    DXGKMDT_OPM_CONNECTOR_TYPE_MIRACAST                             = 15,
+    DXGKMDT_OPM_CONNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A    = 16,
+    DXGKMDT_OPM_CONNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B    = 17,
     DXGKMDT_OPM_COPP_COMPATIBLE_CONNECTOR_TYPE_INTERNAL = 0x80000000
 } DXGKMDT_OPM_CONNECTOR_TYPE;
 
@@ -519,6 +494,7 @@ D3DKMDT_GTFCOMPLIANCE;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Purpose: VidPN target mode preference descriptor type.
+
 typedef enum _D3DKMDT_MODE_PREFERENCE
 {
     D3DKMDT_MP_UNINITIALIZED = 0,
@@ -526,6 +502,7 @@ typedef enum _D3DKMDT_MODE_PREFERENCE
     D3DKMDT_MP_NOTPREFERRED  = 2,
 }
 D3DKMDT_MODE_PREFERENCE;
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Purpose: Video signal info descriptor type.
@@ -585,9 +562,46 @@ typedef struct _D3DKMDT_VIDEO_SIGNAL_INFO
 D3DKMDT_VIDEO_SIGNAL_INFO;
 
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#define D3DKMDT_BITS_PER_COMPONENT_06 0x01
+#define D3DKMDT_BITS_PER_COMPONENT_08 0x02
+#define D3DKMDT_BITS_PER_COMPONENT_10 0x04
+#define D3DKMDT_BITS_PER_COMPONENT_12 0x08
+#define D3DKMDT_BITS_PER_COMPONENT_14 0x10
+#define D3DKMDT_BITS_PER_COMPONENT_16 0x20
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Purpose: Video present target mode ID type.
 typedef UINT  D3DKMDT_VIDEO_PRESENT_TARGET_MODE_ID;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Purpose: Describe bit-fields for wire format and preference
+//  In the D3DKMDT_VIDPN_TARGET_MODE structure all fields are valid and the wire format fields indicate 
+//  supported bit depts per color encoding format.
+//  In the DXGK_SET_TIMING_PATH_INFO structure the Preference field is unused so should be ignored by the 
+//  driver and will be set to zero by the OS in case of future usage.  The wire format fields are used to 
+//  indicate which wire format has been selected so only one bit across the five fields will be set.
+//
+
+typedef union _D3DKMDT_WIRE_FORMAT_AND_PREFERENCE
+{
+    struct
+    {
+        D3DKMDT_MODE_PREFERENCE Preference  : 2;
+
+        // Flags indicating supported formats of color components transmitted between source and target
+        UINT                    Rgb         : 6;
+        UINT                    YCbCr444    : 6;
+        UINT                    YCbCr422    : 6;
+        UINT                    YCbCr420    : 6;
+        UINT                    Intensity   : 6;
+    };
+    UINT Value;
+} D3DKMDT_WIRE_FORMAT_AND_PREFERENCE, *PD3DKMDT_WIRE_FORMAT_AND_PREFERENCE;
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -600,12 +614,24 @@ typedef struct _D3DKMDT_VIDPN_TARGET_MODE
     // Video signal parameters.
     D3DKMDT_VIDEO_SIGNAL_INFO  VideoSignalInfo;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    union
+    {
+        D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  WireFormatAndPreference;
+        struct
+        {
+            D3DKMDT_MODE_PREFERENCE Preference  : 2;
+            UINT                                :30;
+        };
+    };
+#else
     // Predicate specifying whether this mode is preferred by the adapter given the mode pinned on
     // the source of the respective present path.
     D3DKMDT_MODE_PREFERENCE  Preference;
+#endif // (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 }
 D3DKMDT_VIDPN_TARGET_MODE;
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Purpose: VESA Display ID detailed timing type I.
@@ -750,8 +776,9 @@ typedef struct _D3DKMDT_MONITOR_SOURCE_MODE
     // Color basis with respect to which monitor is presenting the pixels sampled from the video signal.
     D3DKMDT_COLOR_BASIS  ColorBasis;
 
-    // Supported dynamic range of each of the pixel color bases' coefficients by the monitor's
-    // presentational technology - e.g. for a DFP LCD with 12-bit bit-depth, this might be (4, 4, 4, 0).
+    // Supported dynamic range of each of the pixel color component coefficients by the monitor's
+    // presentational technology - e.g. for a DFP LCD with 12-bit bit-depth, this will be (4, 4, 4, 0).
+    // A TV supporting 10-bit per component YCbCr this will be (10, 10, 10, 0) regardless of chroma compression.
     D3DKMDT_COLOR_COEFF_DYNAMIC_RANGES  ColorCoeffDynamicRanges;
 
     // Origins of the monitor source mode information.
@@ -1106,7 +1133,7 @@ typedef struct _D3DKMDT_GAMMA_RAMP
     D3DDDI_GAMMARAMP_TYPE    Type;
     SIZE_T                   DataSize;
 
-    // If (Type == D3DDDI_GAMMARAMP_DEFAULT), (DataSize == 0) and (Data.pFormatOther == NULL )
+    // If (Type == D3DDDI_GAMMARAMP_DEFAULT), (DataSize == 0) and (Data.pRaw == NULL )
     union
     {
         D3DDDI_GAMMA_RAMP_RGB256x3x16* pRgb256x3x16;  // Type == D3DDDI_GAMMARAMP_RGB256x3x16.
@@ -1540,15 +1567,6 @@ typedef enum _DXGKMDT_OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL
     DXGKMDT_OPM_TYPE_ENFORCEMENT_HDCP_FORCE_ULONG                 = 0x7fffffff  
 } DXGKMDT_OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL;  
 
-// (deprecated - use DXGKMDT_OPM_TYPE_ENFORCEMENT_HDCP_PROTECTION_LEVEL)
-typedef enum _DXGKMDT_OPM_HDCP_WITH_TYPE_ENFORCEMENT_PROTECTION_LEVEL
-{
-    DXGKMDT_OPM_HDCP_WITH_TYPE_ENFORCEMENT_OFF = 0,
-    DXGKMDT_OPM_HDCP_WITH_TYPE_ENFORCEMENT_ON = 1,    //Allow all HDCP versions.
-    DXGKMDT_OPM_HDCP_WITH_TYPE_1_ENFORCEMENT_ON = 2,  //Allow HDCP versions 2.2+
-    DXGKMDT_OPM_HDCP_WITH_TYPE_ENFORCEMENT_FORCE_ULONG = 0x7fffffff
-} DXGKMDT_OPM_HDCP_WITH_TYPE_ENFORCEMENT_PROTECTION_LEVEL;
-
 typedef enum _DXGKMDT_OPM_CGMSA
 {
     DXGKMDT_OPM_CGMSA_OFF                                           = 0,
@@ -1578,7 +1596,6 @@ typedef enum _DXGKMDT_OPM_PROTECTION_TYPE
     DXGKMDT_OPM_PROTECTION_TYPE_HDCP                        = 0x00000008,
     DXGKMDT_OPM_PROTECTION_TYPE_DPCP                        = 0x00000010,
     DXGKMDT_OPM_PROTECTION_TYPE_TYPE_ENFORCEMENT_HDCP       = 0x00000020,
-    DXGKMDT_OPM_PROTECTION_TYPE_HDCP_TYPE_ENFORCEMENT       = 0x00000020, // (deprecated)
     DXGKMDT_OPM_PROTECTION_TYPE_MASK                        = 0x8000003F
 } DXGKMDT_OPM_PROTECTION_TYPE;
 
@@ -1818,7 +1835,10 @@ typedef enum
     DxgkBacklightOptimizationDisable    = 0,
     DxgkBacklightOptimizationDesktop    = 1,
     DxgkBacklightOptimizationDynamic    = 2,
-    DxgkBacklightOptimizationDimmed     = 3
+    DxgkBacklightOptimizationDimmed     = 3,
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    DxgkBacklightOptimizationEDR        = 4,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 } DXGK_BACKLIGHT_OPTIMIZATION_LEVEL;
 
 typedef struct _DXGK_BACKLIGHT_INFO
@@ -1860,11 +1880,34 @@ typedef enum
     DXGK_ENGINE_TYPE_OVERLAY          = 7,
 } DXGK_ENGINE_TYPE;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGK_NODEMETADATA_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT ContextSchedulingSupported :  1;
+            UINT Reserved                   : 31;
+        };
+        UINT32 Value;
+    };
+} DXGK_NODEMETADATA_FLAGS;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 typedef struct _DXGK_NODEMETADATA
 {
     DXGK_ENGINE_TYPE EngineType;
     WCHAR            FriendlyName[DXGK_MAX_METADATA_NAME_LENGTH];
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    DXGK_NODEMETADATA_FLAGS Flags;
+#else
     UINT32           Reserved;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
     BOOLEAN          GpuMmuSupported;        
     BOOLEAN          IoMmuSupported;        
@@ -1938,6 +1981,15 @@ typedef enum _DXGK_PAGE_FAULT_FLAGS
                                                     // and the OS should issue a bugcheck
     DXGK_PAGE_FAULT_IOMMU                   = 0x20, // when set, indicates that the faulting GPU virtual address was mapped using IoMmu,
                                                     // when not set, the faulting GPU virtual address was mapped using GPU memory management unit.
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+    DXGK_PAGE_FAULT_HW_CONTEXT_VALID        = 0x40, // when set, indicates that the faulting hardware queue was not identified, but faulting HW context was.
+    DXGK_PAGE_FAULT_PROCESS_HANDLE_VALID    = 0x80, // when set, indicates that the faulting hardware queue or context was not identified,
+                                                    // but process handle that submitted the faulted buffer was.
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 } DXGK_PAGE_FAULT_FLAGS;
 
 typedef enum _DXGK_GENERAL_ERROR_CODE
@@ -1983,6 +2035,81 @@ typedef struct _D3DKMT_DRIVERCAPS_EXT
 #define DXGK_BIND_TABLE_ENTRY_UNKNOWN               UINT_MAX
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
+
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+typedef union _DXGK_MONITORLINKINFO_USAGEHINTS
+{
+    struct
+    {
+        UINT Hidden             : 1;    // 0x00000001
+        UINT Reserved           :31;    // 0xFFFFFFFE
+    };
+    UINT Value;
+} DXGK_MONITORLINKINFO_USAGEHINTS, *PDXGK_MONITORLINKINFO_USAGEHINTS;
+
+typedef union _DXGK_MONITORLINKINFO_CAPABILITIES
+{
+    struct
+    {
+        UINT Stereo                     : 1;    // 0x00000001
+        UINT WideColorSpace             : 1;    // 0x00000002
+        UINT HighColorSpace             : 1;    // 0x00000004
+#if (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+        UINT Reserved                   :29;    // 0xFFFFFFF8
+#else // (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+        UINT DynamicColorSpace          : 1;    // 0x00000008
+        UINT DynamicBitsPerColorChannel : 1;    // 0x00000010
+        UINT DynamicColorEncodingFormat : 1;    // 0x00000020
+        
+        UINT DedicatedTimingGeneration  : 1;    // 0x00000040
+
+        UINT Reserved                   :25;    // 0xFFFFFF80
+#endif // (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    };
+    UINT Value;
+} DXGK_MONITORLINKINFO_CAPABILITIES, *PDXGK_MONITORLINKINFO_CAPABILITIES;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+
+typedef enum _DXGK_DISPLAY_USAGE : BYTE
+{
+    DXGK_DU_INVALID     = 0,
+    DXGK_DU_GENERIC     = 1,
+    DXGK_DU_AR          = 2,
+    DXGK_DU_VR          = 3,
+    DXGK_DU_MAX         = 4
+} DXGK_DISPLAY_USAGE, *PDXGK_DISPLAY_USAGE;
+
+typedef enum _DXGK_DISPLAY_TECHNOLOGY : BYTE
+{
+    DXGK_DT_INVALID     = 0,
+    DXGK_DT_OTHER       = 1,
+    DXGK_DT_LCD         = 2,
+    DXGK_DT_OLED        = 3,
+    DXGK_DT_PROJECTOR   = 4,
+    DXGK_DT_MAX         = 5
+} DXGK_DISPLAY_TECHNOLOGY, *PDXGK_DISPLAY_TECHNOLOGY;
+
+typedef enum _DXGK_DISPLAY_DESCRIPTOR_TYPE: BYTE
+{
+    DXGK_DDT_INVALID = 0,
+    DXGK_DDT_EDID,
+} DXGK_DISPLAY_DESCRIPTOR_TYPE, *PDXGK_DISPLAY_DESCRIPTOR_TYPE;
+
+#else
+typedef BYTE DXGK_DISPLAY_USAGE;
+typedef BYTE DXGK_DISPLAY_TECHNOLOGY;
+typedef BYTE DXGK_DISPLAY_DESCRIPTOR_TYPE;
+#endif // defined(__cplusplus) && !defined(SORTPP_PASS)
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 #pragma pack( pop )
 

@@ -5,7 +5,7 @@
 #pragma once
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Desktop Application or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef __cplusplus
@@ -29,12 +29,6 @@ typedef UINT32 NET_IF_COMPARTMENT_ID, *PNET_IF_COMPARTMENT_ID;
 // Define NetworkGUID type:
 //
 typedef GUID NET_IF_NETWORK_GUID, *PNET_IF_NETWORK_GUID;
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 typedef enum _NET_IF_OPER_STATUS   // ifOperStatus
 {
@@ -96,13 +90,6 @@ typedef UINT32 NET_IF_COMPARTMENT_SCOPE, *PNET_IF_COMPARTMENT_SCOPE;
 #define NET_SITEID_MAXUSER (0x07ffffff)
 #define NET_SITEID_MAXSYSTEM (0x0fffffff)
 C_ASSERT(NET_SITEID_MAXUSER < NET_SITEID_MAXSYSTEM);
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
 
 typedef enum _NET_IF_RCV_ADDRESS_TYPE // ifRcvAddressType
 {
@@ -200,12 +187,6 @@ typedef enum {
     TUNNEL_TYPE_TEREDO = 14,
     TUNNEL_TYPE_IPHTTPS = 15,
 } TUNNEL_TYPE, *PTUNNEL_TYPE;
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #define IFI_UNSPECIFIED NET_IFINDEX_UNSPECIFIED
 
@@ -328,11 +309,6 @@ typedef enum _IF_ADMINISTRATIVE_STATE {
     IF_ADMINISTRATIVE_DEMANDDIAL,
 } IF_ADMINISTRATIVE_STATE, *PIF_ADMINISTRATIVE_STATE;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 //
 // Note: Interface is Operational iff
 // ((MediaSense is Connected) and (AdministrativeState is Enabled))
@@ -355,11 +331,6 @@ typedef enum {
     IfOperStatusNotPresent,
     IfOperStatusLowerLayerDown
 } IF_OPER_STATUS;
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 typedef struct _NDIS_INTERFACE_INFORMATION
 {
@@ -378,7 +349,7 @@ typedef struct _NDIS_INTERFACE_INFORMATION
 
     ULONG64                     ifLastChange;
     ULONG64                     ifCounterDiscontinuityTime;
-    ULONG64                     ifInUnknownProtos;      
+    ULONG64                     ifInUnknownProtos;
 
     //
     // OID_GEN_STATISTICS
@@ -386,33 +357,29 @@ typedef struct _NDIS_INTERFACE_INFORMATION
     ULONG64                     ifInDiscards;           // OID_GEN_RCV_DISCARDS = OID_GEN_RCV_ERROR + OID_GEN_RCV_NO_BUFFER
     ULONG64                     ifInErrors;             // OID_GEN_RCV_ERROR
     ULONG64                     ifHCInOctets;           // OID_GEN_BYTES_RCV = OID_GEN_DIRECTED_BYTES_RCV + OID_GEN_MULTICAST_BYTES_RCV + OID_GEN_BROADCAST_BYTES_RCV
-    ULONG64                     ifHCInUcastPkts;        // OID_GEN_DIRECTED_FRAMES_RCV    
+    ULONG64                     ifHCInUcastPkts;        // OID_GEN_DIRECTED_FRAMES_RCV
     ULONG64                     ifHCInMulticastPkts;    // OID_GEN_MULTICAST_FRAMES_RCV
     ULONG64                     ifHCInBroadcastPkts;    // OID_GEN_BROADCAST_FRAMES_RCV
     ULONG64                     ifHCOutOctets;          // OID_GEN_BYTES_XMIT = OID_GEN_DIRECTED_BYTES_XMIT + OID_GEN_MULTICAST_BYTES_XMIT + OID_GEN_BROADCAST_BYTES_XMIT
     ULONG64                     ifHCOutUcastPkts;       // OID_GEN_DIRECTED_FRAMES_XMIT
     ULONG64                     ifHCOutMulticastPkts;   // OID_GEN_MULTICAST_FRAMES_XMIT
     ULONG64                     ifHCOutBroadcastPkts;   // OID_GEN_BROADCAST_FRAMES_XMIT
-    ULONG64                     ifOutErrors;            // OID_GEN_XMIT_ERROR    
-    ULONG64                     ifOutDiscards;          // OID_GEN_XMIT_DISCARDS        
+    ULONG64                     ifOutErrors;            // OID_GEN_XMIT_ERROR
+    ULONG64                     ifOutDiscards;          // OID_GEN_XMIT_DISCARDS
     ULONG64                     ifHCInUcastOctets;      // OID_GEN_DIRECTED_BYTES_RCV
     ULONG64                     ifHCInMulticastOctets;  // OID_GEN_MULTICAST_BYTES_RCV
-    ULONG64                     ifHCInBroadcastOctets;  // OID_GEN_BROADCAST_BYTES_RCV    
+    ULONG64                     ifHCInBroadcastOctets;  // OID_GEN_BROADCAST_BYTES_RCV
     ULONG64                     ifHCOutUcastOctets;     // OID_GEN_DIRECTED_BYTES_XMIT
     ULONG64                     ifHCOutMulticastOctets; // OID_GEN_MULTICAST_BYTES_XMIT
-    ULONG64                     ifHCOutBroadcastOctets; // OID_GEN_BROADCAST_BYTES_XMIT            
+    ULONG64                     ifHCOutBroadcastOctets; // OID_GEN_BROADCAST_BYTES_XMIT
     NET_IF_COMPARTMENT_ID       CompartmentId;
     ULONG                       SupportedStatistics;
 }NDIS_INTERFACE_INFORMATION, *PNDIS_INTERFACE_INFORMATION;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #ifdef __cplusplus
 }
 #endif
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 

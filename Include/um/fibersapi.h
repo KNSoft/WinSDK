@@ -21,6 +21,7 @@
 #include <minwindef.h>
 
 /* APISET_NAME: api-ms-win-core-fibers-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

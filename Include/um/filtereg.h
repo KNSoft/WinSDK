@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -44,6 +44,13 @@
 typedef interface ILoadFilter ILoadFilter;
 
 #endif 	/* __ILoadFilter_FWD_DEFINED__ */
+
+
+#ifndef __ILoadFilterWithPrivateComActivation_FWD_DEFINED__
+#define __ILoadFilterWithPrivateComActivation_FWD_DEFINED__
+typedef interface ILoadFilterWithPrivateComActivation ILoadFilterWithPrivateComActivation;
+
+#endif 	/* __ILoadFilterWithPrivateComActivation_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -218,15 +225,146 @@ EXTERN_C const IID IID_ILoadFilter;
 #endif 	/* __ILoadFilter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_filtereg_0000_0001 */
+#ifndef __ILoadFilterWithPrivateComActivation_INTERFACE_DEFINED__
+#define __ILoadFilterWithPrivateComActivation_INTERFACE_DEFINED__
+
+/* interface ILoadFilterWithPrivateComActivation */
+/* [unique][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ILoadFilterWithPrivateComActivation;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("40BDBD34-780B-48D3-9BB6-12EBD4AD2E75")
+    ILoadFilterWithPrivateComActivation : public ILoadFilter
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE LoadIFilterWithPrivateComActivation( 
+            /* [unique][in] */ __RPC__in_opt FILTERED_DATA_SOURCES *filteredSources,
+            /* [in] */ BOOL useDefault,
+            /* [out] */ __RPC__out CLSID *filterClsid,
+            /* [out] */ __RPC__out BOOL *isFilterPrivateComActivated,
+            /* [unique][out][in] */ __RPC__deref_opt_inout_opt IFilter **filterObj) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ILoadFilterWithPrivateComActivationVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *LoadIFilter )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This,
+            /* [unique][in] */ __RPC__in_opt LPCWSTR pwcsPath,
+            /* [unique][in] */ __RPC__in_opt FILTERED_DATA_SOURCES *pFilteredSources,
+            /* [unique][in] */ __RPC__in_opt IUnknown *pUnkOuter,
+            /* [in] */ BOOL fUseDefault,
+            /* [unique][out][in] */ __RPC__inout_opt CLSID *pFilterClsid,
+            /* [unique][out][in] */ __RPC__inout_opt int *SearchDecSize,
+            /* [length_is][length_is][size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_part_opt(( *SearchDecSize + 1 ) , ( *SearchDecSize + 1 ) ) WCHAR **pwcsSearchDesc,
+            /* [unique][out][in] */ __RPC__deref_opt_inout_opt IFilter **ppIFilt);
+        
+        HRESULT ( STDMETHODCALLTYPE *LoadIFilterFromStorage )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This,
+            /* [in] */ __RPC__in_opt IStorage *pStg,
+            /* [unique][in] */ __RPC__in_opt IUnknown *pUnkOuter,
+            /* [unique][in] */ __RPC__in_opt LPCWSTR pwcsOverride,
+            /* [in] */ BOOL fUseDefault,
+            /* [unique][out][in] */ __RPC__inout_opt CLSID *pFilterClsid,
+            /* [unique][out][in] */ __RPC__inout_opt int *SearchDecSize,
+            /* [length_is][length_is][size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_part_opt(( *SearchDecSize + 1 ) , ( *SearchDecSize + 1 ) ) WCHAR **pwcsSearchDesc,
+            /* [unique][out][in] */ __RPC__deref_opt_inout_opt IFilter **ppIFilt);
+        
+        HRESULT ( STDMETHODCALLTYPE *LoadIFilterFromStream )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This,
+            /* [in] */ __RPC__in_opt IStream *pStm,
+            /* [unique][in] */ __RPC__in_opt FILTERED_DATA_SOURCES *pFilteredSources,
+            /* [unique][in] */ __RPC__in_opt IUnknown *pUnkOuter,
+            /* [in] */ BOOL fUseDefault,
+            /* [unique][out][in] */ __RPC__inout_opt CLSID *pFilterClsid,
+            /* [unique][out][in] */ __RPC__inout_opt int *SearchDecSize,
+            /* [length_is][length_is][size_is][size_is][unique][out][in] */ __RPC__deref_opt_inout_ecount_part_opt(( *SearchDecSize + 1 ) , ( *SearchDecSize + 1 ) ) WCHAR **pwcsSearchDesc,
+            /* [unique][out][in] */ __RPC__deref_opt_inout_opt IFilter **ppIFilt);
+        
+        HRESULT ( STDMETHODCALLTYPE *LoadIFilterWithPrivateComActivation )( 
+            __RPC__in ILoadFilterWithPrivateComActivation * This,
+            /* [unique][in] */ __RPC__in_opt FILTERED_DATA_SOURCES *filteredSources,
+            /* [in] */ BOOL useDefault,
+            /* [out] */ __RPC__out CLSID *filterClsid,
+            /* [out] */ __RPC__out BOOL *isFilterPrivateComActivated,
+            /* [unique][out][in] */ __RPC__deref_opt_inout_opt IFilter **filterObj);
+        
+        END_INTERFACE
+    } ILoadFilterWithPrivateComActivationVtbl;
+
+    interface ILoadFilterWithPrivateComActivation
+    {
+        CONST_VTBL struct ILoadFilterWithPrivateComActivationVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ILoadFilterWithPrivateComActivation_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ILoadFilterWithPrivateComActivation_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ILoadFilterWithPrivateComActivation_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ILoadFilterWithPrivateComActivation_LoadIFilter(This,pwcsPath,pFilteredSources,pUnkOuter,fUseDefault,pFilterClsid,SearchDecSize,pwcsSearchDesc,ppIFilt)	\
+    ( (This)->lpVtbl -> LoadIFilter(This,pwcsPath,pFilteredSources,pUnkOuter,fUseDefault,pFilterClsid,SearchDecSize,pwcsSearchDesc,ppIFilt) ) 
+
+#define ILoadFilterWithPrivateComActivation_LoadIFilterFromStorage(This,pStg,pUnkOuter,pwcsOverride,fUseDefault,pFilterClsid,SearchDecSize,pwcsSearchDesc,ppIFilt)	\
+    ( (This)->lpVtbl -> LoadIFilterFromStorage(This,pStg,pUnkOuter,pwcsOverride,fUseDefault,pFilterClsid,SearchDecSize,pwcsSearchDesc,ppIFilt) ) 
+
+#define ILoadFilterWithPrivateComActivation_LoadIFilterFromStream(This,pStm,pFilteredSources,pUnkOuter,fUseDefault,pFilterClsid,SearchDecSize,pwcsSearchDesc,ppIFilt)	\
+    ( (This)->lpVtbl -> LoadIFilterFromStream(This,pStm,pFilteredSources,pUnkOuter,fUseDefault,pFilterClsid,SearchDecSize,pwcsSearchDesc,ppIFilt) ) 
+
+
+#define ILoadFilterWithPrivateComActivation_LoadIFilterWithPrivateComActivation(This,filteredSources,useDefault,filterClsid,isFilterPrivateComActivated,filterObj)	\
+    ( (This)->lpVtbl -> LoadIFilterWithPrivateComActivation(This,filteredSources,useDefault,filterClsid,isFilterPrivateComActivated,filterObj) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ILoadFilterWithPrivateComActivation_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_filtereg_0000_0002 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_filtereg_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_filtereg_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_filtereg_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_filtereg_0000_0002_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -137,7 +137,9 @@ typedef [v1_enum] enum GETPROPERTYSTOREFLAGS
     GPS_PREFERQUERYPROPERTIES     = 0x00000100,   // For file system WDS results, only retrieve properties from the indexer 
     GPS_EXTRINSICPROPERTIES       = 0x00000200,   // include properties from the file's secondary stream
     GPS_EXTRINSICPROPERTIESONLY   = 0x00000400,   // only include properties from the file's secondary stream
-    GPS_MASK_VALID                = 0x000007FF,
+    GPS_VOLATILEPROPERTIES        = 0x00000800,   // include properties from the file's volatile store in the indexer
+    GPS_VOLATILEPROPERTIESONLY    = 0x00001000,   // only include properties from the file's volatile store in the indexer
+    GPS_MASK_VALID                = 0x00001FFF,
 } GETPROPERTYSTOREFLAGS;
 
 cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(GETPROPERTYSTOREFLAGS)")
@@ -298,8 +300,9 @@ interface IPropertyDescription : IUnknown
         PDTF_CANBEPURGED                = 0x00000200,   // This property can be purged, even if it is innate (property handler should respect this)
         PDTF_SEARCHRAWVALUE             = 0x00000400,   // The raw (rather than formatted) value of this property should be used for searching
         PDTF_DONTCOERCEEMPTYSTRINGS     = 0x00000800,   // Don't coerce empty strings into null/empty
-        PDTF_ISSYSTEMPROPERTY           = 0x80000000, // This property is owned by the system
-        PDTF_MASK_ALL                   = 0x80000FFF
+        PDTF_ALWAYSINSUPPLEMENTALSTORE  = 0x00001000,   // Property is persisted into supplemental store, not file format property handler's store
+        PDTF_ISSYSTEMPROPERTY           = 0x80000000,   // This property is owned by the system
+        PDTF_MASK_ALL                   = 0x80001FFF
     } PROPDESC_TYPE_FLAGS;
 
     cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(PROPDESC_TYPE_FLAGS)")
@@ -761,6 +764,10 @@ cpp_quote("")
 cpp_quote("PSSTDAPI PSPropertyKeyFromString(")
 cpp_quote("    _In_ LPCWSTR pszString,")
 cpp_quote("    _Out_ PROPERTYKEY *pkey);")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 cpp_quote("")
 cpp_quote("")
 cpp_quote("// Creates an in-memory property store")
@@ -768,6 +775,10 @@ cpp_quote("// Returns an IPropertyStore, IPersistSerializedPropStorage, and rela
 cpp_quote("PSSTDAPI PSCreateMemoryPropertyStore(")
 cpp_quote("    _In_ REFIID riid,")
 cpp_quote("    _Outptr_ void **ppv);")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
+#pragma endregion
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 cpp_quote("")
 cpp_quote("")
 cpp_quote("// Create a read-only, delay-bind multiplexing property store")
@@ -909,6 +920,10 @@ cpp_quote("    _In_ IPropertySetStorage *ppss,")
 cpp_quote("    _In_ DWORD grfMode,")
 cpp_quote("    _In_ REFIID riid,")
 cpp_quote("    _Outptr_ void **ppv);")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 cpp_quote("")
 cpp_quote("")
 cpp_quote("// punkSource must support IPropertyStore or IPropertySetStorage")
@@ -927,6 +942,10 @@ cpp_quote("PSSTDAPI PSCreateAdapterFromPropertyStore(")
 cpp_quote("    _In_ IPropertyStore *pps,")
 cpp_quote("    _In_ REFIID riid,")
 cpp_quote("    _Outptr_ void **ppv);")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
+#pragma endregion
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 cpp_quote("")
 cpp_quote("")
 cpp_quote("// Talk to the property system using an interface")

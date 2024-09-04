@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -292,6 +292,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics2_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace EnterpriseData {
+                interface IFileProtectionManagerStatics3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics;
@@ -310,6 +330,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace EnterpriseData {
+                interface IFileUnprotectOptions;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace EnterpriseData {
+                interface IFileUnprotectOptionsFactory;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessResumedEventArgs_FWD_DEFINED__
@@ -572,6 +632,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace EnterpriseData {
+                interface IProtectionPolicyManagerStatics4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext __x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext;
@@ -648,18 +728,18 @@ interface IProtectedAccessResumedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0001 */
 /* [local] */ 
@@ -718,18 +798,18 @@ interface IProtectedAccessSuspendingEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0002 */
 /* [local] */ 
@@ -788,18 +868,18 @@ interface IProtectedContentRevokedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0003 */
 /* [local] */ 
@@ -858,18 +938,18 @@ interface IBufferProtectUnprotectResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0004 */
 /* [local] */ 
@@ -904,18 +984,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0005 */
 /* [local] */ 
@@ -974,18 +1054,18 @@ interface IDataProtectionInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0006 */
 /* [local] */ 
@@ -1020,18 +1100,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0007 */
 /* [local] */ 
@@ -1090,18 +1170,18 @@ interface IFileProtectionInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0008 */
 /* [local] */ 
@@ -1136,18 +1216,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0009 */
 /* [local] */ 
@@ -1195,18 +1275,18 @@ enum FileProtectionStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0010 */
 /* [local] */ 
@@ -1241,18 +1321,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0011 */
 /* [local] */ 
@@ -1311,18 +1391,18 @@ interface IProtectedContainerExportResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0012 */
 /* [local] */ 
@@ -1357,18 +1437,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0013 */
 /* [local] */ 
@@ -1427,18 +1507,18 @@ interface IProtectedContainerImportResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0014 */
 /* [local] */ 
@@ -1473,18 +1553,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0015 */
 /* [local] */ 
@@ -1543,18 +1623,18 @@ interface IProtectedFileCreateResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0016 */
 /* [local] */ 
@@ -1589,18 +1669,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0017 */
 /* [local] */ 
@@ -1648,18 +1728,18 @@ enum ProtectionPolicyEvaluationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0018 */
 /* [local] */ 
@@ -1694,18 +1774,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0019 */
 /* [local] */ 
@@ -1740,18 +1820,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0020 */
 /* [local] */ 
@@ -1786,18 +1866,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0021 */
 /* [local] */ 
@@ -1832,18 +1912,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0022 */
 /* [local] */ 
@@ -1878,18 +1958,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0023 */
 /* [local] */ 
@@ -1924,18 +2004,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0024 */
 /* [local] */ 
@@ -1970,18 +2050,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0025 */
 /* [local] */ 
@@ -2016,18 +2096,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0026 */
 /* [local] */ 
@@ -2065,18 +2145,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027 */
 /* [local] */ 
@@ -2100,6 +2180,109 @@ typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIEventHandler_1_IInspectable_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Storage {
+interface IStorageItem;
+} /*Storage*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4640 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4640 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE
+#define DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("05b487c2-3830-5d3c-98da-25fa11542dbd"))
+IIterator<ABI::Windows::Storage::IStorageItem*> : IIterator_impl<ABI::Windows::Storage::IStorageItem*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Storage.IStorageItem>"; }
+};
+typedef IIterator<ABI::Windows::Storage::IStorageItem*> __FIIterator_1_Windows__CStorage__CIStorageItem_t;
+#define ____FIIterator_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+#define __FIIterator_1_Windows__CStorage__CIStorageItem ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CStorage__CIStorageItem_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4641 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4641 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE
+#define DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("bb8b8418-65d1-544b-b083-6d172f568c73"))
+IIterable<ABI::Windows::Storage::IStorageItem*> : IIterable_impl<ABI::Windows::Storage::IStorageItem*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Storage.IStorageItem>"; }
+};
+typedef IIterable<ABI::Windows::Storage::IStorageItem*> __FIIterable_1_Windows__CStorage__CIStorageItem_t;
+#define ____FIIterable_1_Windows__CStorage__CIStorageItem_FWD_DEFINED__
+#define __FIIterable_1_Windows__CStorage__CIStorageItem ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
@@ -2151,7 +2334,6 @@ typedef enum __x_ABI_CWindows_CStorage_CCreationCollisionOption __x_ABI_CWindows
 
 
 #endif
-
 
 
 #if !defined(__cplusplus)
@@ -2259,6 +2441,21 @@ typedef enum __x_ABI_CWindows_CSecurity_CEnterpriseData_CProtectionPolicyRequest
 
 
 
+
+
+
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace EnterpriseData {
+class FileUnprotectOptions;
+} /*EnterpriseData*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2294,7 +2491,7 @@ class ThreadNetworkContext;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029 */
 /* [local] */ 
 
 
@@ -2332,7 +2529,6 @@ namespace ABI {
 
 extern "C" { 
 #endif
-
 
 
 
@@ -2496,23 +2692,27 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0027_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3093 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3093 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4642 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs
@@ -2520,13 +2720,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3093
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_INTERFACE_DEFINED__
@@ -2615,35 +2815,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__C
 #endif 	/* ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs
@@ -2651,13 +2851,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3094
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__
@@ -2746,35 +2946,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__C
 #endif 	/* ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4644 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs
@@ -2782,13 +2982,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3095
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_INTERFACE_DEFINED__
@@ -2877,35 +3077,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__C
 #endif 	/* ____FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3096 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult
@@ -2914,14 +3114,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3096
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_INTERFACE_DEFINED__
@@ -3010,35 +3210,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult
@@ -3046,13 +3246,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3097
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_INTERFACE_DEFINED__
@@ -3182,35 +3382,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo
@@ -3219,14 +3419,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3098
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_INTERFACE_DEFINED__
@@ -3315,35 +3515,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo
@@ -3351,13 +3551,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3099
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_INTERFACE_DEFINED__
@@ -3487,35 +3687,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4649 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo
@@ -3524,14 +3724,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3100
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_INTERFACE_DEFINED__
@@ -3620,35 +3820,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4650 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo
@@ -3656,13 +3856,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3101
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_INTERFACE_DEFINED__
@@ -3792,35 +3992,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus
@@ -3829,14 +4029,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3102
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus_INTERFACE_DEFINED__
@@ -3925,35 +4125,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus
@@ -3961,13 +4161,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3103
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus_INTERFACE_DEFINED__
@@ -4097,35 +4297,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionStatus */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult
@@ -4134,14 +4334,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3104
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_INTERFACE_DEFINED__
@@ -4230,35 +4430,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult
@@ -4266,13 +4466,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3105
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_INTERFACE_DEFINED__
@@ -4402,35 +4602,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult
@@ -4439,14 +4639,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3106
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_INTERFACE_DEFINED__
@@ -4535,35 +4735,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult
@@ -4571,13 +4771,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3107
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_INTERFACE_DEFINED__
@@ -4707,35 +4907,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult
@@ -4744,14 +4944,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3108
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult_INTERFACE_DEFINED__
@@ -4840,35 +5040,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4658 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult
@@ -4876,13 +5076,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3109
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult_INTERFACE_DEFINED__
@@ -5012,35 +5212,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedFileCreateResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult
@@ -5049,14 +5249,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3110
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult_INTERFACE_DEFINED__
@@ -5145,35 +5345,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult
@@ -5181,13 +5381,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata2Eidl_0000_3111
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult_INTERFACE_DEFINED__
@@ -5317,7 +5517,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -5436,7 +5636,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIBufferProtectUnprotectResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -5613,8 +5813,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIBufferProtectUnprotectResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIBufferProtectUnprotectResult_INTERFACE_DEFINED__
@@ -5747,7 +5947,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIBufferProtec
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIBufferProtectUnprotectResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionInfo_INTERFACE_DEFINED__)
@@ -5755,13 +5955,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionInfo_INTERFACE_DEFINED__
@@ -5894,7 +6094,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtecti
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionManagerStatics_INTERFACE_DEFINED__)
@@ -5902,13 +6102,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionManagerStatics_INTERFACE_DEFINED__
@@ -6101,7 +6301,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtecti
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIDataProtectionManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionInfo_INTERFACE_DEFINED__)
@@ -6109,13 +6309,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionInfo_INTERFACE_DEFINED__
@@ -6258,7 +6458,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtecti
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics_INTERFACE_DEFINED__)
@@ -6266,13 +6466,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics_INTERFACE_DEFINED__
@@ -6481,7 +6681,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtecti
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics2_INTERFACE_DEFINED__)
@@ -6489,13 +6689,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics2_INTERFACE_DEFINED__
@@ -6650,7 +6850,160 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtecti
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_EnterpriseData_IFileProtectionManagerStatics3[] = L"Windows.Security.EnterpriseData.IFileProtectionManagerStatics3";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::EnterpriseData::IFileProtectionManagerStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace EnterpriseData {
+                    
+                    MIDL_INTERFACE("6918849A-624F-46D6-B241-E9CD5FDF3E3F")
+                    IFileProtectionManagerStatics3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE UnprotectAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::IStorageItem *target,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE UnprotectWithOptionsAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::IStorageItem *target,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions *options,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileProtectionManagerStatics3 = __uuidof(IFileProtectionManagerStatics3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *UnprotectAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageItem *target,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *UnprotectWithOptionsAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageItem *target,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions *options,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_UnprotectAsync(This,target,result)	\
+    ( (This)->lpVtbl -> UnprotectAsync(This,target,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_UnprotectWithOptionsAsync(This,target,options,result)	\
+    ( (This)->lpVtbl -> UnprotectWithOptionsAsync(This,target,options,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileProtectionManagerStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_INTERFACE_DEFINED__)
@@ -6658,13 +7011,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_INTERFACE_DEFINED__
@@ -6827,7 +7180,293 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocati
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileRevocationManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_EnterpriseData_IFileUnprotectOptions[] = L"Windows.Security.EnterpriseData.IFileUnprotectOptions";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace EnterpriseData {
+                    
+                    MIDL_INTERFACE("7D1312F1-3B0D-4DD8-A1F8-1EC53822E2F3")
+                    IFileUnprotectOptions : public IInspectable
+                    {
+                    public:
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Audit( 
+                            /* [in] */ boolean value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Audit( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileUnprotectOptions = __uuidof(IFileUnprotectOptions);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Audit )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This,
+            /* [in] */ boolean value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Audit )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_put_Audit(This,value)	\
+    ( (This)->lpVtbl -> put_Audit(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_get_Audit(This,value)	\
+    ( (This)->lpVtbl -> get_Audit(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_EnterpriseData_IFileUnprotectOptionsFactory[] = L"Windows.Security.EnterpriseData.IFileUnprotectOptionsFactory";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::EnterpriseData::IFileUnprotectOptionsFactory */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace EnterpriseData {
+                    
+                    MIDL_INTERFACE("51AEB39C-DA8C-4C3F-9BFB-CB73A7CCE0DD")
+                    IFileUnprotectOptionsFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Create( 
+                            /* [in] */ boolean audit,
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions **result) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IFileUnprotectOptionsFactory = __uuidof(IFileUnprotectOptionsFactory);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactoryVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *Create )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory * This,
+            /* [in] */ boolean audit,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptions **result);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactoryVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactoryVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_Create(This,audit,result)	\
+    ( (This)->lpVtbl -> Create(This,audit,result) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIFileUnprotectOptionsFactory_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessResumedEventArgs_INTERFACE_DEFINED__)
@@ -6835,13 +7474,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessResumedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessResumedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessResumedEventArgs_INTERFACE_DEFINED__
@@ -6964,7 +7603,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAcc
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessResumedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__)
@@ -6972,13 +7611,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__
@@ -7121,7 +7760,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAcc
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedAccessSuspendingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerExportResult_INTERFACE_DEFINED__)
@@ -7129,13 +7768,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerExportResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerExportResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerExportResult_INTERFACE_DEFINED__
@@ -7268,7 +7907,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedCon
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerExportResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerImportResult_INTERFACE_DEFINED__)
@@ -7276,13 +7915,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerImportResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerImportResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerImportResult_INTERFACE_DEFINED__
@@ -7415,7 +8054,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedCon
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContainerImportResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContentRevokedEventArgs_INTERFACE_DEFINED__)
@@ -7423,13 +8062,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContentRevokedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContentRevokedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContentRevokedEventArgs_INTERFACE_DEFINED__
@@ -7552,7 +8191,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedCon
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedContentRevokedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedFileCreateResult_INTERFACE_DEFINED__)
@@ -7560,13 +8199,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedFileCreateResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedFileCreateResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedFileCreateResult_INTERFACE_DEFINED__
@@ -7709,7 +8348,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedFil
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectedFileCreateResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo_INTERFACE_DEFINED__)
@@ -7717,13 +8356,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo_INTERFACE_DEFINED__
@@ -7916,7 +8555,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfoFactory_INTERFACE_DEFINED__)
@@ -7924,13 +8563,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfoFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfoFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfoFactory_INTERFACE_DEFINED__
@@ -8075,7 +8714,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfoFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager_INTERFACE_DEFINED__)
@@ -8083,13 +8722,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager_INTERFACE_DEFINED__
@@ -8222,7 +8861,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager2_INTERFACE_DEFINED__)
@@ -8230,13 +8869,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager2_INTERFACE_DEFINED__
@@ -8369,7 +9008,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManager2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics_INTERFACE_DEFINED__)
@@ -8377,13 +9016,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics_INTERFACE_DEFINED__
@@ -8666,7 +9305,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics2_INTERFACE_DEFINED__)
@@ -8674,13 +9313,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics2_INTERFACE_DEFINED__
@@ -8903,7 +9542,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics3_INTERFACE_DEFINED__)
@@ -8911,13 +9550,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics3_INTERFACE_DEFINED__
@@ -9112,7 +9751,310 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPo
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0090 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_EnterpriseData_IProtectionPolicyManagerStatics4[] = L"Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics4";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0090 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0090_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace EnterpriseData {
+                    
+                    MIDL_INTERFACE("20B794DB-CCBD-490F-8C83-49CCB77AEA6C")
+                    IProtectionPolicyManagerStatics4 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE IsRoamableProtectionEnabled( 
+                            /* [in] */ __RPC__in HSTRING identity,
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessWithBehaviorAsync( 
+                            /* [in] */ __RPC__in HSTRING sourceIdentity,
+                            /* [in] */ __RPC__in HSTRING targetIdentity,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IProtectionPolicyAuditInfo *auditInfo,
+                            /* [in] */ __RPC__in HSTRING messageFromApp,
+                            /* [in] */ ABI::Windows::Security::EnterpriseData::ProtectionPolicyRequestAccessBehavior behavior,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessForAppWithBehaviorAsync( 
+                            /* [in] */ __RPC__in HSTRING sourceIdentity,
+                            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IProtectionPolicyAuditInfo *auditInfo,
+                            /* [in] */ __RPC__in HSTRING messageFromApp,
+                            /* [in] */ ABI::Windows::Security::EnterpriseData::ProtectionPolicyRequestAccessBehavior behavior,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForAppAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+                            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IProtectionPolicyAuditInfo *auditInfo,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForAppWithMessageAndBehaviorAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+                            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IProtectionPolicyAuditInfo *auditInfo,
+                            /* [in] */ __RPC__in HSTRING messageFromApp,
+                            /* [in] */ ABI::Windows::Security::EnterpriseData::ProtectionPolicyRequestAccessBehavior behavior,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForProcessAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+                            /* [in] */ UINT32 processId,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IProtectionPolicyAuditInfo *auditInfo,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE RequestAccessToFilesForProcessWithMessageAndBehaviorAsync( 
+                            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+                            /* [in] */ UINT32 processId,
+                            /* [in] */ __RPC__in_opt ABI::Windows::Security::EnterpriseData::IProtectionPolicyAuditInfo *auditInfo,
+                            /* [in] */ __RPC__in HSTRING messageFromApp,
+                            /* [in] */ ABI::Windows::Security::EnterpriseData::ProtectionPolicyRequestAccessBehavior behavior,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsFileProtectionRequiredAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::IStorageItem *target,
+                            /* [in] */ __RPC__in HSTRING identity,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE IsFileProtectionRequiredForNewFileAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::IStorageFolder *parentFolder,
+                            /* [in] */ __RPC__in HSTRING identity,
+                            /* [in] */ __RPC__in HSTRING desiredName,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PrimaryManagedIdentity( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetPrimaryManagedIdentityForIdentity( 
+                            /* [in] */ __RPC__in HSTRING identity,
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IProtectionPolicyManagerStatics4 = __uuidof(IProtectionPolicyManagerStatics4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsRoamableProtectionEnabled )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in HSTRING identity,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessWithBehaviorAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in HSTRING sourceIdentity,
+            /* [in] */ __RPC__in HSTRING targetIdentity,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo *auditInfo,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CEnterpriseData_CProtectionPolicyRequestAccessBehavior behavior,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessForAppWithBehaviorAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in HSTRING sourceIdentity,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo *auditInfo,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CEnterpriseData_CProtectionPolicyRequestAccessBehavior behavior,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForAppAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo *auditInfo,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForAppWithMessageAndBehaviorAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+            /* [in] */ __RPC__in HSTRING appPackageFamilyName,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo *auditInfo,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CEnterpriseData_CProtectionPolicyRequestAccessBehavior behavior,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForProcessAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+            /* [in] */ UINT32 processId,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo *auditInfo,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestAccessToFilesForProcessWithMessageAndBehaviorAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CStorage__CIStorageItem *sourceItemList,
+            /* [in] */ UINT32 processId,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyAuditInfo *auditInfo,
+            /* [in] */ __RPC__in HSTRING messageFromApp,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CEnterpriseData_CProtectionPolicyRequestAccessBehavior behavior,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectionPolicyEvaluationResult **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsFileProtectionRequiredAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageItem *target,
+            /* [in] */ __RPC__in HSTRING identity,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsFileProtectionRequiredForNewFileAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFolder *parentFolder,
+            /* [in] */ __RPC__in HSTRING identity,
+            /* [in] */ __RPC__in HSTRING desiredName,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **result);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PrimaryManagedIdentity )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPrimaryManagedIdentityForIdentity )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4 * This,
+            /* [in] */ __RPC__in HSTRING identity,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_IsRoamableProtectionEnabled(This,identity,value)	\
+    ( (This)->lpVtbl -> IsRoamableProtectionEnabled(This,identity,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_RequestAccessWithBehaviorAsync(This,sourceIdentity,targetIdentity,auditInfo,messageFromApp,behavior,result)	\
+    ( (This)->lpVtbl -> RequestAccessWithBehaviorAsync(This,sourceIdentity,targetIdentity,auditInfo,messageFromApp,behavior,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_RequestAccessForAppWithBehaviorAsync(This,sourceIdentity,appPackageFamilyName,auditInfo,messageFromApp,behavior,result)	\
+    ( (This)->lpVtbl -> RequestAccessForAppWithBehaviorAsync(This,sourceIdentity,appPackageFamilyName,auditInfo,messageFromApp,behavior,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_RequestAccessToFilesForAppAsync(This,sourceItemList,appPackageFamilyName,auditInfo,result)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForAppAsync(This,sourceItemList,appPackageFamilyName,auditInfo,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_RequestAccessToFilesForAppWithMessageAndBehaviorAsync(This,sourceItemList,appPackageFamilyName,auditInfo,messageFromApp,behavior,result)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForAppWithMessageAndBehaviorAsync(This,sourceItemList,appPackageFamilyName,auditInfo,messageFromApp,behavior,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_RequestAccessToFilesForProcessAsync(This,sourceItemList,processId,auditInfo,result)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForProcessAsync(This,sourceItemList,processId,auditInfo,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_RequestAccessToFilesForProcessWithMessageAndBehaviorAsync(This,sourceItemList,processId,auditInfo,messageFromApp,behavior,result)	\
+    ( (This)->lpVtbl -> RequestAccessToFilesForProcessWithMessageAndBehaviorAsync(This,sourceItemList,processId,auditInfo,messageFromApp,behavior,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_IsFileProtectionRequiredAsync(This,target,identity,result)	\
+    ( (This)->lpVtbl -> IsFileProtectionRequiredAsync(This,target,identity,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_IsFileProtectionRequiredForNewFileAsync(This,parentFolder,identity,desiredName,result)	\
+    ( (This)->lpVtbl -> IsFileProtectionRequiredForNewFileAsync(This,parentFolder,identity,desiredName,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_get_PrimaryManagedIdentity(This,value)	\
+    ( (This)->lpVtbl -> get_PrimaryManagedIdentity(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_GetPrimaryManagedIdentityForIdentity(This,identity,value)	\
+    ( (This)->lpVtbl -> GetPrimaryManagedIdentityForIdentity(This,identity,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIProtectionPolicyManagerStatics4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_INTERFACE_DEFINED__)
@@ -9120,13 +10062,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_INTERFACE_DEFINED__
@@ -9239,7 +10181,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetwor
 #endif 	/* ____x_ABI_CWindows_CSecurity_CEnterpriseData_CIThreadNetworkContext_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0092 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Security_EnterpriseData_BufferProtectUnprotectResult_DEFINED
@@ -9265,6 +10207,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Security_EnterpriseData_FileRevocationManager_DEFINED
 #define RUNTIMECLASS_Windows_Security_EnterpriseData_FileRevocationManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_EnterpriseData_FileRevocationManager[] = L"Windows.Security.EnterpriseData.FileRevocationManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_Security_EnterpriseData_FileUnprotectOptions_DEFINED
+#define RUNTIMECLASS_Windows_Security_EnterpriseData_FileUnprotectOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_EnterpriseData_FileUnprotectOptions[] = L"Windows.Security.EnterpriseData.FileUnprotectOptions";
 #endif
 #ifndef RUNTIMECLASS_Windows_Security_EnterpriseData_ProtectedAccessResumedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_Security_EnterpriseData_ProtectedAccessResumedEventArgs_DEFINED
@@ -9304,13 +10250,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086 */
+/* interface __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eenterprisedata_0000_0092_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

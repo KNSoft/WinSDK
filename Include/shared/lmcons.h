@@ -199,18 +199,6 @@ Abstract:
 #endif
 #endif
 
-//
-// Keywords used in Function Prototypes
-//
-
-#define NET_API_STATUS          DWORD
-#define API_RET_TYPE            NET_API_STATUS      // Old value: do not use
-#if (_MSC_VER >= 800) || defined(_STDCALL_SUPPORTED)
-#define NET_API_FUNCTION    __stdcall
-#else
-#define NET_API_FUNCTION
-#endif
-
 // Define pseudo-keywords.
 #ifndef IN
 #define IN
@@ -262,6 +250,24 @@ Abstract:
 /*NOINC*/
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family or App Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
+
+//
+// Keywords used in Function Prototypes
+//
+
+#define NET_API_STATUS          DWORD
+#define API_RET_TYPE            NET_API_STATUS      // Old value: do not use
+#if (_MSC_VER >= 800) || defined(_STDCALL_SUPPORTED)
+#define NET_API_FUNCTION    __stdcall
+#else
+#define NET_API_FUNCTION
+#endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #endif // NETCONS_INCLUDED

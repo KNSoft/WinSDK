@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -100,6 +100,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace PushNotifications {
+                interface IPushNotificationChannelManagerForUser2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics;
@@ -138,6 +158,26 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace PushNotifications {
+                interface IPushNotificationChannelManagerStatics3;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationReceivedEventArgs_FWD_DEFINED__
@@ -180,12 +220,32 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace PushNotifications {
+                interface IRawNotification2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.System.h"
+#include "Windows.Storage.Streams.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -236,18 +296,18 @@ interface IPushNotificationChannel;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0001 */
 /* [local] */ 
@@ -282,18 +342,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0002 */
 /* [local] */ 
@@ -352,18 +412,18 @@ interface IPushNotificationReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003 */
 /* [local] */ 
@@ -387,10 +447,197 @@ typedef ITypedEventHandler<ABI::Windows::Networking::PushNotifications::PushNoti
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_Windows__CNetworking__CPushNotifications__CPushNotificationReceivedEventArgs_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4664 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4664 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004 */
+/* [local] */ 
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
+#define DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716"))
+IKeyValuePair<HSTRING,HSTRING> : IKeyValuePair_impl<HSTRING,HSTRING> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IKeyValuePair`2<String, String>"; }
+};
+typedef IKeyValuePair<HSTRING,HSTRING> __FIKeyValuePair_2_HSTRING_HSTRING_t;
+#define ____FIKeyValuePair_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIKeyValuePair_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_HSTRING_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4665 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4665 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1"))
+IIterator<__FIKeyValuePair_2_HSTRING_HSTRING*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_HSTRING*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, String>>"; }
+};
+typedef IIterator<__FIKeyValuePair_2_HSTRING_HSTRING*> __FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_t;
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4666 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4666 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e9bdaaf0-cbf6-5c72-be90-29cbf3a1319b"))
+IIterable<__FIKeyValuePair_2_HSTRING_HSTRING*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_HSTRING*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, String>>"; }
+};
+typedef IIterable<__FIKeyValuePair_2_HSTRING_HSTRING*> __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t;
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_USE */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4667 */
+
+
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4667 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007 */
+/* [local] */ 
+
+#ifndef DEF___FIMapView_2_HSTRING_HSTRING_USE
+#define DEF___FIMapView_2_HSTRING_HSTRING_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede"))
+IMapView<HSTRING,HSTRING> : IMapView_impl<HSTRING,HSTRING> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IMapView`2<String, String>"; }
+};
+typedef IMapView<HSTRING,HSTRING> __FIMapView_2_HSTRING_HSTRING_t;
+#define ____FIMapView_2_HSTRING_HSTRING_FWD_DEFINED__
+#define __FIMapView_2_HSTRING_HSTRING ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIMapView_2_HSTRING_HSTRING_USE */
 #if defined(__cplusplus)
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Estorage2Estreams_h__)
+#include <Windows.Storage.Streams.h>
+#endif // !defined(__windows2Estorage2Estreams_h__)
 #if !defined(__windows2Esystem_h__)
 #include <Windows.System.h>
 #endif // !defined(__windows2Esystem_h__)
@@ -404,6 +651,7 @@ extern "C" {
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
 #endif
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -464,6 +712,9 @@ typedef enum __x_ABI_CWindows_CNetworking_CPushNotifications_CPushNotificationTy
 
 
 
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -488,7 +739,7 @@ class RawNotification;
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007 */
 /* [local] */ 
 
 
@@ -507,6 +758,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 
@@ -536,23 +788,26 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3114 */
 
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3114_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4668 */
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel
@@ -561,14 +816,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_INTERFACE_DEFINED__
@@ -657,35 +912,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3115 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3115_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel
@@ -693,13 +948,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_INTERFACE_DEFINED__
@@ -829,35 +1084,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CPushNotificat
 #endif 	/* ____FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3116 */
-
-
-
-
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_3116_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_Windows__CNetworking__CPushNotifications__CPushNotificationReceivedEventArgs
@@ -865,13 +1120,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications2Eidl_0000
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_Windows__CNetworking__CPushNotifications__CPushNotificationReceivedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_Windows__CNetworking__CPushNotifications__CPushNotificationReceivedEventArgs_INTERFACE_DEFINED__
@@ -960,7 +1215,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CPushNotifi
 #endif 	/* ____FITypedEventHandler_2_Windows__CNetworking__CPushNotifications__CPushNotificationChannel_Windows__CNetworking__CPushNotifications__CPushNotificationReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -985,7 +1240,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannel_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -1014,8 +1269,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannel_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannel_INTERFACE_DEFINED__
@@ -1178,7 +1433,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNot
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser_INTERFACE_DEFINED__)
@@ -1186,13 +1441,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser_INTERFACE_DEFINED__
@@ -1349,7 +1604,164 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNot
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_PushNotifications_IPushNotificationChannelManagerForUser2[] = L"Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Networking {
+                namespace PushNotifications {
+                    
+                    MIDL_INTERFACE("C38B066A-7CC1-4DAC-87FD-BE6E920414A4")
+                    IPushNotificationChannelManagerForUser2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IBuffer *appServerKey,
+                            /* [in] */ __RPC__in HSTRING channelId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel **operation) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IBuffer *appServerKey,
+                            /* [in] */ __RPC__in HSTRING channelId,
+                            /* [in] */ __RPC__in HSTRING appId,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPushNotificationChannelManagerForUser2 = __uuidof(IPushNotificationChannelManagerForUser2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer *appServerKey,
+            /* [in] */ __RPC__in HSTRING channelId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer *appServerKey,
+            /* [in] */ __RPC__in HSTRING channelId,
+            /* [in] */ __RPC__in HSTRING appId,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CPushNotifications__CPushNotificationChannel **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2Vtbl;
+
+    interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(This,appServerKey,channelId,operation)	\
+    ( (This)->lpVtbl -> CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(This,appServerKey,channelId,operation) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(This,appServerKey,channelId,appId,operation)	\
+    ( (This)->lpVtbl -> CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(This,appServerKey,channelId,appId,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_INTERFACE_DEFINED__)
@@ -1357,13 +1769,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_INTERFACE_DEFINED__
@@ -1510,7 +1922,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNot
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0017 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics2_INTERFACE_DEFINED__)
@@ -1518,13 +1930,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics2_INTERFACE_DEFINED__
@@ -1649,7 +2061,144 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNot
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0018 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_PushNotifications_IPushNotificationChannelManagerStatics3[] = L"Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics3";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0018 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0018_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics3 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Networking {
+                namespace PushNotifications {
+                    
+                    MIDL_INTERFACE("4701FEFE-0EDE-4A3F-AE78-BFA471496925")
+                    IPushNotificationChannelManagerStatics3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefault( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser **value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPushNotificationChannelManagerStatics3 = __uuidof(IPushNotificationChannelManagerStatics3);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefault )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerForUser **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3Vtbl;
+
+    interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_GetDefault(This,value)	\
+    ( (This)->lpVtbl -> GetDefault(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationChannelManagerStatics3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0019 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationReceivedEventArgs_INTERFACE_DEFINED__)
@@ -1657,13 +2206,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationReceivedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationReceivedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationReceivedEventArgs_INTERFACE_DEFINED__
@@ -1846,7 +2395,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNot
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIPushNotificationReceivedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0020 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification_INTERFACE_DEFINED__)
@@ -1854,13 +2403,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0020_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification_INTERFACE_DEFINED__
@@ -1983,7 +2532,154 @@ EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNoti
 #endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0021 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_PushNotifications_IRawNotification2[] = L"Windows.Networking.PushNotifications.IRawNotification2";
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0021 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0021_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Networking::PushNotifications::IRawNotification2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Networking {
+                namespace PushNotifications {
+                    
+                    MIDL_INTERFACE("E6D0CF19-0C6F-4CDD-9424-EEC5BE014D26")
+                    IRawNotification2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Headers( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_HSTRING **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ChannelId( 
+                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IRawNotification2 = __uuidof(IRawNotification2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Headers )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ChannelId )( 
+            __RPC__in __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2Vtbl;
+
+    interface __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_get_Headers(This,value)	\
+    ( (This)->lpVtbl -> get_Headers(This,value) ) 
+
+#define __x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_get_ChannelId(This,value)	\
+    ( (This)->lpVtbl -> get_ChannelId(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CNetworking_CPushNotifications_CIRawNotification2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0022 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Networking_PushNotifications_PushNotificationChannel_DEFINED
@@ -2008,13 +2704,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015 */
+/* interface __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Epushnotifications_0000_0022_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

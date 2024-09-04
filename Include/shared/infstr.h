@@ -243,6 +243,7 @@
 #define INFSTR_SUBKEY_HW                TEXT("Hw")
 #define INFSTR_SUBKEY_CTL               TEXT("CTL")
 #define INFSTR_SUBKEY_SERVICES          TEXT("Services")
+#define INFSTR_SUBKEY_SOFTWARE          TEXT("Software")
 #define INFSTR_SUBKEY_INTERFACES        TEXT("Interfaces")
 #define INFSTR_SUBKEY_COINSTALLERS      TEXT("CoInstallers")
 #define INFSTR_SUBKEY_LOGCONFIGOVERRIDE TEXT("LogConfigOverride")
@@ -280,6 +281,9 @@
 
 // Driver Version
 #define INFSTR_DRIVERVERSION_SECTION    TEXT("DriverVer")
+
+// Software Version
+#define INFSTR_SOFTWAREVERSION_SECTION  TEXT("SoftwareVersion")
 
 // The following is for PCMCIA.INF parsing
 #define INFSTR_SECT_CFGSYS              TEXT("ConfigSysDrivers")

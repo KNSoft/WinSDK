@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -72,6 +72,20 @@ typedef interface __FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId_
 typedef interface __FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket __FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket;
 
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_FWD_DEFINED__
@@ -176,6 +190,94 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequestFactory_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace OnlineId {
+                    interface IOnlineIdSystemAuthenticatorForUser;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace OnlineId {
+                    interface IOnlineIdSystemAuthenticatorStatics;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace OnlineId {
+                    interface IOnlineIdSystemIdentity;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace OnlineId {
+                    interface IOnlineIdSystemTicketResult;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity;
@@ -203,6 +305,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
+#include "Windows.System.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -257,18 +360,18 @@ interface IOnlineIdServiceTicket;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0001 */
 /* [local] */ 
@@ -303,18 +406,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0002 */
 /* [local] */ 
@@ -377,18 +480,18 @@ interface IOnlineIdServiceTicketRequest;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0003 */
 /* [local] */ 
@@ -423,18 +526,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0004 */
 /* [local] */ 
@@ -469,18 +572,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005 */
 /* [local] */ 
@@ -510,6 +613,126 @@ namespace Windows {
 namespace Security {
 namespace Authentication {
 namespace OnlineId {
+class OnlineIdSystemTicketResult;
+} /*OnlineId*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace OnlineId {
+interface IOnlineIdSystemTicketResult;
+} /*OnlineId*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4664 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4664 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("05f9f2ec-5950-56f8-b7f8-22e20b984679"))
+IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult*, ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult*> __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_USE */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4665 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4665 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("162f5870-5a4a-503c-987f-a05a1312d8e4"))
+IAsyncOperation<ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult*, ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult*> __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_t;
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace OnlineId {
 class UserIdentity;
 } /*OnlineId*/
 } /*Authentication*/
@@ -533,30 +756,30 @@ interface IUserIdentity;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0330 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0330_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4666 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_USE
@@ -580,29 +803,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0331 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0331_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4667 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_USE
@@ -628,9 +851,22 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Esystem_h__)
+#include <Windows.System.h>
+#endif // !defined(__windows2Esystem_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+class User;
+} /*System*/
+} /*Windows*/
+}
+#endif
 
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
@@ -642,6 +878,19 @@ typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CCredentialPro
 
 
 #endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_COnlineIdSystemTicketStatus __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_COnlineIdSystemTicketStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
+
+
 
 
 #ifdef __cplusplus
@@ -651,6 +900,32 @@ namespace Security {
 namespace Authentication {
 namespace OnlineId {
 class OnlineIdAuthenticator;
+} /*OnlineId*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace OnlineId {
+class OnlineIdSystemAuthenticatorForUser;
+} /*OnlineId*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace OnlineId {
+class OnlineIdSystemIdentity;
 } /*OnlineId*/
 } /*Authentication*/
 } /*Security*/
@@ -685,8 +960,9 @@ class UserAuthenticationOperation;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009 */
 /* [local] */ 
+
 
 
 
@@ -710,27 +986,50 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace OnlineId {
+                    
+                    typedef enum OnlineIdSystemTicketStatus OnlineIdSystemTicketStatus;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0332 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0332_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4668 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4668_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket
@@ -738,13 +1037,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__
@@ -888,35 +1187,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CAuthentication__COnli
 #endif 	/* ____FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0333 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0333_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4669 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4669_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket
@@ -924,13 +1223,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__
@@ -1040,35 +1339,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CAuthentication__COnli
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0334 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0334_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4670 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest
@@ -1076,13 +1375,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest_INTERFACE_DEFINED__
@@ -1226,35 +1525,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CAuthentication__COnli
 #endif 	/* ____FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0335 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0335_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4671 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest
@@ -1262,13 +1561,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest_INTERFACE_DEFINED__
@@ -1378,35 +1677,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CAuthentication__COnli
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicketRequest */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0336 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0336_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4672 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket
@@ -1414,13 +1713,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__
@@ -1572,35 +1871,340 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CAuthentication__COn
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdServiceTicket */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0337 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0337_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4673 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4673_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("05f9f2ec-5950-56f8-b7f8-22e20b984679")
+    __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResultVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4674 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4674 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult
+#define DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("162f5870-5a4a-503c-987f-a05a1312d8e4")
+    __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResultVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4675 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4675 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4675_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity
@@ -1609,14 +2213,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_INTERFACE_DEFINED__
@@ -1705,35 +2309,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0338 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_0338_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4676 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl_0000_4676_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity
@@ -1741,13 +2345,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid2Eidl
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_INTERFACE_DEFINED__
@@ -1877,7 +2481,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__CUserIdentity_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0027 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -1895,12 +2499,25 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CCredentialPromptType
 #endif /* end if !defined(__cplusplus) */
 
 #endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_COnlineIdSystemTicketStatus
+    {
+        OnlineIdSystemTicketStatus_Success	= 0,
+        OnlineIdSystemTicketStatus_Error	= 1,
+        OnlineIdSystemTicketStatus_ServiceConnectionError	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdAuthenticator_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_OnlineId_IOnlineIdAuthenticator[] = L"Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator";
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdAuthenticator_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0027 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -1927,10 +2544,34 @@ namespace ABI {
 extern "C" { 
 #endif
 
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace OnlineId {
+                    
+                    /* [v1_enum] */ 
+                    enum OnlineIdSystemTicketStatus
+                        {
+                            OnlineIdSystemTicketStatus_Success	= 0,
+                            OnlineIdSystemTicketStatus_Error	= 1,
+                            OnlineIdSystemTicketStatus_ServiceConnectionError	= 2
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0021_v0_0_s_ifspec;
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdAuthenticator_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdAuthenticator_INTERFACE_DEFINED__
@@ -2121,7 +2762,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOn
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdAuthenticator_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0028 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicket_INTERFACE_DEFINED__)
@@ -2129,13 +2770,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicket_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0028_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicket_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicket_INTERFACE_DEFINED__
@@ -2280,7 +2921,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOn
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicket_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0029 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequest_INTERFACE_DEFINED__)
@@ -2288,13 +2929,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequest_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequest_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequest_INTERFACE_DEFINED__
@@ -2429,7 +3070,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOn
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequest_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0030 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequestFactory_INTERFACE_DEFINED__)
@@ -2437,13 +3078,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequestFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0030_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequestFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequestFactory_INTERFACE_DEFINED__
@@ -2584,7 +3225,637 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOn
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequestFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0031 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_OnlineId_IOnlineIdSystemAuthenticatorForUser[] = L"Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0031 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0031_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace OnlineId {
+                        
+                        MIDL_INTERFACE("5798BEFB-1DE4-4186-A2E6-B563F86AAF44")
+                        IOnlineIdSystemAuthenticatorForUser : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE GetTicketAsync( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest *request,
+                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult **operation) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ApplicationId( 
+                                /* [in] */ GUID value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ApplicationId( 
+                                /* [out][retval] */ __RPC__out GUID *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_User( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::System::IUser **user) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IOnlineIdSystemAuthenticatorForUser = __uuidof(IOnlineIdSystemAuthenticatorForUser);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUserVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTicketAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicketRequest *request,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__COnlineId__COnlineIdSystemTicketResult **operation);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ApplicationId )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [in] */ GUID value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ApplicationId )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [out][retval] */ __RPC__out GUID *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_User )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser **user);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUserVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUserVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_GetTicketAsync(This,request,operation)	\
+    ( (This)->lpVtbl -> GetTicketAsync(This,request,operation) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_put_ApplicationId(This,value)	\
+    ( (This)->lpVtbl -> put_ApplicationId(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_get_ApplicationId(This,value)	\
+    ( (This)->lpVtbl -> get_ApplicationId(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_get_User(This,user)	\
+    ( (This)->lpVtbl -> get_User(This,user) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0032 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_OnlineId_IOnlineIdSystemAuthenticatorStatics[] = L"Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0032 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0032_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace OnlineId {
+                        
+                        MIDL_INTERFACE("85047792-F634-41E3-96A4-5164E902C740")
+                        IOnlineIdSystemAuthenticatorStatics : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Default( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser **value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE GetForUser( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::System::IUser *user,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IOnlineIdSystemAuthenticatorStatics = __uuidof(IOnlineIdSystemAuthenticatorStatics);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Default )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForUser )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIUser *user,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorForUser **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_get_Default(This,value)	\
+    ( (This)->lpVtbl -> get_Default(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_GetForUser(This,user,value)	\
+    ( (This)->lpVtbl -> GetForUser(This,user,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemAuthenticatorStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0033 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_OnlineId_IOnlineIdSystemIdentity[] = L"Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0033 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0033_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace OnlineId {
+                        
+                        MIDL_INTERFACE("743CD20D-B6CA-434D-8124-53EA12685307")
+                        IOnlineIdSystemIdentity : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Ticket( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Id( 
+                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IOnlineIdSystemIdentity = __uuidof(IOnlineIdSystemIdentity);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentityVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Ticket )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdServiceTicket **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Id )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentityVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentityVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_get_Ticket(This,value)	\
+    ( (This)->lpVtbl -> get_Ticket(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_get_Id(This,value)	\
+    ( (This)->lpVtbl -> get_Id(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0034 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_OnlineId_IOnlineIdSystemTicketResult[] = L"Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0034 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0034_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace OnlineId {
+                        
+                        MIDL_INTERFACE("DB0A5FF8-B098-4ACD-9D13-9E640652B5B6")
+                        IOnlineIdSystemTicketResult : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Identity( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Status( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExtendedError( 
+                                /* [out][retval] */ __RPC__out HRESULT *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_IOnlineIdSystemTicketResult = __uuidof(IOnlineIdSystemTicketResult);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Identity )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemIdentity **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Status )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_COnlineIdSystemTicketStatus *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult * This,
+            /* [out][retval] */ __RPC__out HRESULT *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResultVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_get_Identity(This,value)	\
+    ( (This)->lpVtbl -> get_Identity(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_get_Status(This,value)	\
+    ( (This)->lpVtbl -> get_Status(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_get_ExtendedError(This,value)	\
+    ( (This)->lpVtbl -> get_ExtendedError(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIOnlineIdSystemTicketResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0035 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_INTERFACE_DEFINED__)
@@ -2592,13 +3863,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_INTERFACE_DEFINED__
@@ -2793,7 +4064,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUs
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_COnlineId_CIUserIdentity_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0036 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdAuthenticator_DEFINED
@@ -2807,6 +4078,22 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdServiceTicketRequest_DEFINED
 #define RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdServiceTicketRequest_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Authentication_OnlineId_OnlineIdServiceTicketRequest[] = L"Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest";
+#endif
+#ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemAuthenticator_DEFINED
+#define RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemAuthenticator_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Authentication_OnlineId_OnlineIdSystemAuthenticator[] = L"Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticator";
+#endif
+#ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemAuthenticatorForUser_DEFINED
+#define RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemAuthenticatorForUser_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Authentication_OnlineId_OnlineIdSystemAuthenticatorForUser[] = L"Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser";
+#endif
+#ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemIdentity_DEFINED
+#define RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemIdentity_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Authentication_OnlineId_OnlineIdSystemIdentity[] = L"Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity";
+#endif
+#ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemTicketResult_DEFINED
+#define RUNTIMECLASS_Windows_Security_Authentication_OnlineId_OnlineIdSystemTicketResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Security_Authentication_OnlineId_OnlineIdSystemTicketResult[] = L"Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult";
 #endif
 #ifndef RUNTIMECLASS_Windows_Security_Authentication_OnlineId_SignOutUserOperation_DEFINED
 #define RUNTIMECLASS_Windows_Security_Authentication_OnlineId_SignOutUserOperation_DEFINED
@@ -2822,13 +4109,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eonlineid_0000_0036_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -46,6 +46,13 @@ typedef interface IInkD2DRenderer IInkD2DRenderer;
 #endif 	/* __IInkD2DRenderer_FWD_DEFINED__ */
 
 
+#ifndef __IInkD2DRenderer2_FWD_DEFINED__
+#define __IInkD2DRenderer2_FWD_DEFINED__
+typedef interface IInkD2DRenderer2 IInkD2DRenderer2;
+
+#endif 	/* __IInkD2DRenderer2_FWD_DEFINED__ */
+
+
 #ifndef __InkD2DRenderer_FWD_DEFINED__
 #define __InkD2DRenderer_FWD_DEFINED__
 
@@ -75,6 +82,14 @@ extern "C"{
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+typedef /* [public][public] */ 
+enum __MIDL___MIDL_itf_inkrenderer_0000_0000_0001
+    {
+        USE_SYSTEM_COLORS_WHEN_NECESSARY	= 0,
+        USE_SYSTEM_COLORS	= 1,
+        USE_ORIGINAL_COLORS	= 2
+    } 	INK_HIGH_CONTRAST_ADJUSTMENT;
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_inkrenderer_0000_0000_v0_0_c_ifspec;
@@ -164,6 +179,90 @@ EXTERN_C const IID IID_IInkD2DRenderer;
 #endif 	/* __IInkD2DRenderer_INTERFACE_DEFINED__ */
 
 
+#ifndef __IInkD2DRenderer2_INTERFACE_DEFINED__
+#define __IInkD2DRenderer2_INTERFACE_DEFINED__
+
+/* interface IInkD2DRenderer2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID_IInkD2DRenderer2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0a95dcd9-4578-4b71-b20b-bf664d4bfeee")
+    IInkD2DRenderer2 : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Draw( 
+            /* [in] */ __RPC__in_opt IUnknown *pD2D1DeviceContext,
+            /* [in] */ __RPC__in_opt IUnknown *pInkStrokeIterable,
+            /* [in] */ INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IInkD2DRenderer2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IInkD2DRenderer2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IInkD2DRenderer2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IInkD2DRenderer2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Draw )( 
+            __RPC__in IInkD2DRenderer2 * This,
+            /* [in] */ __RPC__in_opt IUnknown *pD2D1DeviceContext,
+            /* [in] */ __RPC__in_opt IUnknown *pInkStrokeIterable,
+            /* [in] */ INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment);
+        
+        END_INTERFACE
+    } IInkD2DRenderer2Vtbl;
+
+    interface IInkD2DRenderer2
+    {
+        CONST_VTBL struct IInkD2DRenderer2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IInkD2DRenderer2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IInkD2DRenderer2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IInkD2DRenderer2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IInkD2DRenderer2_Draw(This,pD2D1DeviceContext,pInkStrokeIterable,highContrastAdjustment)	\
+    ( (This)->lpVtbl -> Draw(This,pD2D1DeviceContext,pInkStrokeIterable,highContrastAdjustment) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IInkD2DRenderer2_INTERFACE_DEFINED__ */
+
+
 
 #ifndef __InkD2DRendererLib_LIBRARY_DEFINED__
 #define __InkD2DRendererLib_LIBRARY_DEFINED__
@@ -183,7 +282,7 @@ InkD2DRenderer;
 #endif
 #endif /* __InkD2DRendererLib_LIBRARY_DEFINED__ */
 
-/* interface __MIDL_itf_inkrenderer_0000_0002 */
+/* interface __MIDL_itf_inkrenderer_0000_0003 */
 /* [local] */ 
 
 #endif // NTDDI_VERSION >= NTDDI_WINTHRESHOLD
@@ -191,8 +290,8 @@ InkD2DRenderer;
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_inkrenderer_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_inkrenderer_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_inkrenderer_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_inkrenderer_0000_0003_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -222,7 +222,14 @@ typedef enum    _PNP_VETO_TYPE {
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
-#define DN_DEVICE_DISCONNECTED         DN_NEEDS_LOCKING        // The function driver for a device reported that the device is not connected.  Typically this means a wireless device is out of range.
+#define DN_DEVICE_DISCONNECTED          DN_NEEDS_LOCKING        // The function driver for a device reported that the device is not connected.  Typically this means a wireless device is out of range.
+
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10)
+
+#define DN_QUERY_REMOVE_PENDING         DN_MF_PARENT            // Device is part of a set of related devices collectively pending query-removal
+#define DN_QUERY_REMOVE_ACTIVE          DN_MF_CHILD             // Device is actively engaged in a query-remove IRP
 
 #endif
 

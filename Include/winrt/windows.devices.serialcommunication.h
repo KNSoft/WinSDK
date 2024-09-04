@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -203,18 +203,18 @@ interface ISerialDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0001 */
 /* [local] */ 
@@ -249,18 +249,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0002 */
 /* [local] */ 
@@ -319,18 +319,18 @@ interface IErrorReceivedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0003 */
 /* [local] */ 
@@ -389,18 +389,18 @@ interface IPinChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0004 */
 /* [local] */ 
@@ -613,18 +613,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0005 */
 /* [local] */ 
@@ -746,18 +746,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0007 */
 /* [local] */ 
@@ -918,18 +918,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSerialCommunicat
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0009 */
 /* [local] */ 
@@ -1049,18 +1049,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CSerialCommuni
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eserialcommunication2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eserialcommunication_0000_0011 */
 /* [local] */ 

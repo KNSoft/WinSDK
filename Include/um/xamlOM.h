@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -46,6 +46,13 @@ typedef interface IVisualTreeServiceCallback IVisualTreeServiceCallback;
 #endif 	/* __IVisualTreeServiceCallback_FWD_DEFINED__ */
 
 
+#ifndef __IVisualTreeServiceCallback2_FWD_DEFINED__
+#define __IVisualTreeServiceCallback2_FWD_DEFINED__
+typedef interface IVisualTreeServiceCallback2 IVisualTreeServiceCallback2;
+
+#endif 	/* __IVisualTreeServiceCallback2_FWD_DEFINED__ */
+
+
 #ifndef __IVisualTreeService_FWD_DEFINED__
 #define __IVisualTreeService_FWD_DEFINED__
 typedef interface IVisualTreeService IVisualTreeService;
@@ -74,6 +81,13 @@ typedef interface IVisualTreeService2 IVisualTreeService2;
 #endif 	/* __IVisualTreeService2_FWD_DEFINED__ */
 
 
+#ifndef __IVisualTreeService3_FWD_DEFINED__
+#define __IVisualTreeService3_FWD_DEFINED__
+typedef interface IVisualTreeService3 IVisualTreeService3;
+
+#endif 	/* __IVisualTreeService3_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -97,6 +111,7 @@ extern "C"{
 #pragma warning(pop)
 // Win32 API definitions
 #define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)
+#define E_UNKNOWNTYPE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAML, 40L)
 _Check_return_ HRESULT InitializeXamlDiagnostic(_In_ LPCWSTR endPointName, _In_ DWORD pid, _In_ LPCWSTR wszDllXamlDiagnostics, _In_ LPCWSTR wszTAPDllName,  _In_ CLSID tapClsid);
 _Check_return_ HRESULT InitializeXamlDiagnosticsEx(_In_ LPCWSTR endPointName, _In_ DWORD pid, _In_ LPCWSTR wszDllXamlDiagnostics, _In_ LPCWSTR wszTAPDllName, _In_ CLSID tapClsid, _In_ LPCWSTR wszInitializationData);
 typedef MIDL_uhyper InstanceHandle;
@@ -219,6 +234,21 @@ typedef struct BitmapDescription
     DXGI_ALPHA_MODE AlphaMode;
     } 	BitmapDescription;
 
+typedef 
+enum ResourceType
+    {
+        ResourceTypeStatic	= 0,
+        ResourceTypeTheme	= ( ResourceTypeStatic + 1 ) 
+    } 	ResourceType;
+
+typedef 
+enum VisualElementState
+    {
+        ErrorResolved	= 0,
+        ErrorResourceNotFound	= ( ErrorResolved + 1 ) ,
+        ErrorInvalidResource	= ( ErrorResourceNotFound + 1 ) 
+    } 	VisualElementState;
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_xamlom_0000_0000_v0_0_c_ifspec;
@@ -306,6 +336,100 @@ EXTERN_C const IID IID_IVisualTreeServiceCallback;
 
 
 #endif 	/* __IVisualTreeServiceCallback_INTERFACE_DEFINED__ */
+
+
+#ifndef __IVisualTreeServiceCallback2_INTERFACE_DEFINED__
+#define __IVisualTreeServiceCallback2_INTERFACE_DEFINED__
+
+/* interface IVisualTreeServiceCallback2 */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IVisualTreeServiceCallback2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("BAD9EB88-AE77-4397-B948-5FA2DB0A19EA")
+    IVisualTreeServiceCallback2 : public IVisualTreeServiceCallback
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE OnElementStateChanged( 
+            /* [in] */ InstanceHandle element,
+            /* [in] */ VisualElementState elementState,
+            /* [in] */ __RPC__in LPCWSTR context) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IVisualTreeServiceCallback2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IVisualTreeServiceCallback2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IVisualTreeServiceCallback2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IVisualTreeServiceCallback2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnVisualTreeChange )( 
+            __RPC__in IVisualTreeServiceCallback2 * This,
+            /* [in] */ ParentChildRelation relation,
+            /* [in] */ VisualElement element,
+            /* [in] */ VisualMutationType mutationType);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnElementStateChanged )( 
+            __RPC__in IVisualTreeServiceCallback2 * This,
+            /* [in] */ InstanceHandle element,
+            /* [in] */ VisualElementState elementState,
+            /* [in] */ __RPC__in LPCWSTR context);
+        
+        END_INTERFACE
+    } IVisualTreeServiceCallback2Vtbl;
+
+    interface IVisualTreeServiceCallback2
+    {
+        CONST_VTBL struct IVisualTreeServiceCallback2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IVisualTreeServiceCallback2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IVisualTreeServiceCallback2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IVisualTreeServiceCallback2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IVisualTreeServiceCallback2_OnVisualTreeChange(This,relation,element,mutationType)	\
+    ( (This)->lpVtbl -> OnVisualTreeChange(This,relation,element,mutationType) ) 
+
+
+#define IVisualTreeServiceCallback2_OnElementStateChanged(This,element,elementState,context)	\
+    ( (This)->lpVtbl -> OnElementStateChanged(This,element,elementState,context) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IVisualTreeServiceCallback2_INTERFACE_DEFINED__ */
 
 
 #ifndef __IVisualTreeService_INTERFACE_DEFINED__
@@ -1040,15 +1164,284 @@ EXTERN_C const IID IID_IVisualTreeService2;
 #endif 	/* __IVisualTreeService2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_xamlom_0000_0005 */
+#ifndef __IVisualTreeService3_INTERFACE_DEFINED__
+#define __IVisualTreeService3_INTERFACE_DEFINED__
+
+/* interface IVisualTreeService3 */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IVisualTreeService3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0E79C6E0-85A0-4BE8-B41A-655CF1FD19BD")
+    IVisualTreeService3 : public IVisualTreeService2
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE ResolveResource( 
+            /* [in] */ InstanceHandle resourceContext,
+            /* [in] */ __RPC__in LPCWSTR resourceName,
+            /* [in] */ ResourceType resourceType,
+            /* [in] */ unsigned int propertyIndex) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetDictionaryItem( 
+            /* [in] */ InstanceHandle dictionaryHandle,
+            /* [in] */ __RPC__in LPCWSTR resourceName,
+            /* [in] */ BOOL resourceIsImplicitStyle,
+            /* [out] */ __RPC__out InstanceHandle *resourceHandle) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddDictionaryItem( 
+            /* [in] */ InstanceHandle dictionaryHandle,
+            /* [in] */ InstanceHandle resourceKey,
+            /* [in] */ InstanceHandle resourceHandle) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveDictionaryItem( 
+            /* [in] */ InstanceHandle dictionaryHandle,
+            /* [in] */ InstanceHandle resourceKey) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IVisualTreeService3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IVisualTreeService3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IVisualTreeService3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *AdviseVisualTreeChange )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ __RPC__in_opt IVisualTreeServiceCallback *pCallback);
+        
+        HRESULT ( STDMETHODCALLTYPE *UnadviseVisualTreeChange )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ __RPC__in_opt IVisualTreeServiceCallback *pCallback);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetEnums )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [out] */ __RPC__out unsigned int *pCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pCount) EnumType **ppEnums);
+        
+        HRESULT ( STDMETHODCALLTYPE *CreateInstance )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ __RPC__in BSTR typeName,
+            /* [in] */ __RPC__in BSTR value,
+            /* [retval][out] */ __RPC__out InstanceHandle *pInstanceHandle);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPropertyValuesChain )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle instanceHandle,
+            /* [out] */ __RPC__out unsigned int *pSourceCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pSourceCount) PropertyChainSource **ppPropertySources,
+            /* [out] */ __RPC__out unsigned int *pPropertyCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pPropertyCount) PropertyChainValue **ppPropertyValues);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetProperty )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle instanceHandle,
+            /* [in] */ InstanceHandle value,
+            /* [in] */ unsigned int propertyIndex);
+        
+        HRESULT ( STDMETHODCALLTYPE *ClearProperty )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle instanceHandle,
+            /* [in] */ unsigned int propertyIndex);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCollectionCount )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle instanceHandle,
+            /* [out] */ __RPC__out unsigned int *pCollectionSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCollectionElements )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle instanceHandle,
+            /* [in] */ unsigned int startIndex,
+            /* [out][in] */ __RPC__inout unsigned int *pElementCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pElementCount) CollectionElementValue **ppElementValues);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddChild )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle parent,
+            /* [in] */ InstanceHandle child,
+            /* [in] */ unsigned int index);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveChild )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle parent,
+            /* [in] */ unsigned int index);
+        
+        HRESULT ( STDMETHODCALLTYPE *ClearChildren )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle parent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetPropertyIndex )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle object,
+            /* [in] */ __RPC__in LPCWSTR propertyName,
+            /* [out] */ __RPC__out unsigned int *pPropertyIndex);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetProperty )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle object,
+            /* [in] */ unsigned int propertyIndex,
+            /* [out] */ __RPC__out InstanceHandle *pValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *ReplaceResource )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle resourceDictionary,
+            /* [in] */ InstanceHandle key,
+            /* [in] */ InstanceHandle newValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *RenderTargetBitmap )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle handle,
+            /* [in] */ RenderTargetBitmapOptions options,
+            /* [in] */ unsigned int maxPixelWidth,
+            /* [in] */ unsigned int maxPixelHeight,
+            /* [out] */ __RPC__deref_out_opt IBitmapData **ppBitmapData);
+        
+        HRESULT ( STDMETHODCALLTYPE *ResolveResource )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle resourceContext,
+            /* [in] */ __RPC__in LPCWSTR resourceName,
+            /* [in] */ ResourceType resourceType,
+            /* [in] */ unsigned int propertyIndex);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDictionaryItem )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle dictionaryHandle,
+            /* [in] */ __RPC__in LPCWSTR resourceName,
+            /* [in] */ BOOL resourceIsImplicitStyle,
+            /* [out] */ __RPC__out InstanceHandle *resourceHandle);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddDictionaryItem )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle dictionaryHandle,
+            /* [in] */ InstanceHandle resourceKey,
+            /* [in] */ InstanceHandle resourceHandle);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveDictionaryItem )( 
+            __RPC__in IVisualTreeService3 * This,
+            /* [in] */ InstanceHandle dictionaryHandle,
+            /* [in] */ InstanceHandle resourceKey);
+        
+        END_INTERFACE
+    } IVisualTreeService3Vtbl;
+
+    interface IVisualTreeService3
+    {
+        CONST_VTBL struct IVisualTreeService3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IVisualTreeService3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IVisualTreeService3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IVisualTreeService3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IVisualTreeService3_AdviseVisualTreeChange(This,pCallback)	\
+    ( (This)->lpVtbl -> AdviseVisualTreeChange(This,pCallback) ) 
+
+#define IVisualTreeService3_UnadviseVisualTreeChange(This,pCallback)	\
+    ( (This)->lpVtbl -> UnadviseVisualTreeChange(This,pCallback) ) 
+
+#define IVisualTreeService3_GetEnums(This,pCount,ppEnums)	\
+    ( (This)->lpVtbl -> GetEnums(This,pCount,ppEnums) ) 
+
+#define IVisualTreeService3_CreateInstance(This,typeName,value,pInstanceHandle)	\
+    ( (This)->lpVtbl -> CreateInstance(This,typeName,value,pInstanceHandle) ) 
+
+#define IVisualTreeService3_GetPropertyValuesChain(This,instanceHandle,pSourceCount,ppPropertySources,pPropertyCount,ppPropertyValues)	\
+    ( (This)->lpVtbl -> GetPropertyValuesChain(This,instanceHandle,pSourceCount,ppPropertySources,pPropertyCount,ppPropertyValues) ) 
+
+#define IVisualTreeService3_SetProperty(This,instanceHandle,value,propertyIndex)	\
+    ( (This)->lpVtbl -> SetProperty(This,instanceHandle,value,propertyIndex) ) 
+
+#define IVisualTreeService3_ClearProperty(This,instanceHandle,propertyIndex)	\
+    ( (This)->lpVtbl -> ClearProperty(This,instanceHandle,propertyIndex) ) 
+
+#define IVisualTreeService3_GetCollectionCount(This,instanceHandle,pCollectionSize)	\
+    ( (This)->lpVtbl -> GetCollectionCount(This,instanceHandle,pCollectionSize) ) 
+
+#define IVisualTreeService3_GetCollectionElements(This,instanceHandle,startIndex,pElementCount,ppElementValues)	\
+    ( (This)->lpVtbl -> GetCollectionElements(This,instanceHandle,startIndex,pElementCount,ppElementValues) ) 
+
+#define IVisualTreeService3_AddChild(This,parent,child,index)	\
+    ( (This)->lpVtbl -> AddChild(This,parent,child,index) ) 
+
+#define IVisualTreeService3_RemoveChild(This,parent,index)	\
+    ( (This)->lpVtbl -> RemoveChild(This,parent,index) ) 
+
+#define IVisualTreeService3_ClearChildren(This,parent)	\
+    ( (This)->lpVtbl -> ClearChildren(This,parent) ) 
+
+
+#define IVisualTreeService3_GetPropertyIndex(This,object,propertyName,pPropertyIndex)	\
+    ( (This)->lpVtbl -> GetPropertyIndex(This,object,propertyName,pPropertyIndex) ) 
+
+#define IVisualTreeService3_GetProperty(This,object,propertyIndex,pValue)	\
+    ( (This)->lpVtbl -> GetProperty(This,object,propertyIndex,pValue) ) 
+
+#define IVisualTreeService3_ReplaceResource(This,resourceDictionary,key,newValue)	\
+    ( (This)->lpVtbl -> ReplaceResource(This,resourceDictionary,key,newValue) ) 
+
+#define IVisualTreeService3_RenderTargetBitmap(This,handle,options,maxPixelWidth,maxPixelHeight,ppBitmapData)	\
+    ( (This)->lpVtbl -> RenderTargetBitmap(This,handle,options,maxPixelWidth,maxPixelHeight,ppBitmapData) ) 
+
+
+#define IVisualTreeService3_ResolveResource(This,resourceContext,resourceName,resourceType,propertyIndex)	\
+    ( (This)->lpVtbl -> ResolveResource(This,resourceContext,resourceName,resourceType,propertyIndex) ) 
+
+#define IVisualTreeService3_GetDictionaryItem(This,dictionaryHandle,resourceName,resourceIsImplicitStyle,resourceHandle)	\
+    ( (This)->lpVtbl -> GetDictionaryItem(This,dictionaryHandle,resourceName,resourceIsImplicitStyle,resourceHandle) ) 
+
+#define IVisualTreeService3_AddDictionaryItem(This,dictionaryHandle,resourceKey,resourceHandle)	\
+    ( (This)->lpVtbl -> AddDictionaryItem(This,dictionaryHandle,resourceKey,resourceHandle) ) 
+
+#define IVisualTreeService3_RemoveDictionaryItem(This,dictionaryHandle,resourceKey)	\
+    ( (This)->lpVtbl -> RemoveDictionaryItem(This,dictionaryHandle,resourceKey) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IVisualTreeService3_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_xamlom_0000_0007 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */ 
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_xamlom_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_xamlom_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_xamlom_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_xamlom_0000_0007_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

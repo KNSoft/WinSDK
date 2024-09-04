@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -5281,7 +5281,8 @@ enum _ISTORE_PENDING_TRANSACTION_PEND_FLAGS
         ISTORE_PENDING_TRANSACTION_PEND_FLAGS_DONT_FAIL_IF_NOT_PENDABLE	= 0x2,
         ISTORE_PENDING_TRANSACTION_PEND_FLAGS_FORBID_ROLLBACK	= 0x4,
         ISTORE_PENDING_TRANSACTION_PEND_FLAGS_DONT_FAIL_IF_NO_IMPACTFUL_TRANSACTIONS	= 0x8,
-        ISTORE_PENDING_TRANSACTION_PEND_FLAGS_DONT_FAIL_IF_NO_OPS	= 0x10
+        ISTORE_PENDING_TRANSACTION_PEND_FLAGS_DONT_FAIL_IF_NO_OPS	= 0x10,
+        ISTORE_PENDING_TRANSACTION_PEND_FLAGS_FORCE_PEND	= 0x20
     } ;
 /* [v1_enum] */ 
 enum _ISTORE_PENDING_TRANSACTION_PEND_DISPOSITION
@@ -5301,6 +5302,7 @@ enum _ISTORE_PENDING_TRANSACTION_GET_CHANGELIST_FLAGS
 enum ISTORE_PENDING_TRANSACTION_ANALYZE_FLAGS
     {
         ISTORE_PENDING_TRANSACTION_ANALYZE_FLAG_DETERMINE_COLDPATCHABILITY	= 0x1,
+        ISTORE_PENDING_TRANSACTION_ANALYZE_FLAG_SKIP_PARTIAL_SERVICING	= 0x2,
         ISTORE_PENDING_TRANSACTION_ANALYZE_FLAG_DO_NOT_PEND	= 0x10
     } ;
 /* [v1_enum] */ 
@@ -9730,8 +9732,11 @@ enum __MIDL___MIDL_itf_isolation_0000_0043_0002
         CREATE_NEW_WINDOWS_DISABLE_SMI	= 0x2,
         CREATE_NEW_WINDOWS_DISABLE_MANIFEST_CACHE	= 0x4,
         CREATE_NEW_WINDOWS_SINGLE_RESOURCE_OWNERSHIP	= 0x8,
+        CREATE_NEW_WINDOWS_CREATE_BCD_HIVE	= 0x10,
         CREATE_NEW_WINDOWS_MOBILE_STORE	= 0x20,
-        CREATE_NEW_WINDOWS_IS_ONE_CORE	= 0x40
+        CREATE_NEW_WINDOWS_IS_ONE_CORE	= 0x40,
+        CREATE_NEW_WINDOWS_BIOS_SYSTEM	= 0x80,
+        CREATE_NEW_WINDOWS_PIN_TIERED_SPACES	= 0x100
     } ;
 /* [local] */ HRESULT __stdcall DismountRegistryHives( 
     /* [annotation][out] */ 
@@ -9803,7 +9808,9 @@ enum __MIDL___MIDL_itf_isolation_0000_0043_0004
         CREATE_NEW_PSEUDO_WINDOWS_FLAG_USE_EXT_STORAGE	= 0x8,
         CREATE_NEW_PSEUDO_WINDOWS_FLAG_KEEP_EXISTING	= 0x10,
         CREATE_NEW_PSEUDO_WINDOWS_FLAG_MOBILESTORE	= 0x20,
-        CREATE_NEW_PSEUDO_WINDOWS_VALID_FLAGS	= 0x3f
+        CREATE_NEW_PSEUDO_WINDOWS_FLAG_DISABLE_SMI	= 0x40,
+        CREATE_NEW_PSEUDO_WINDOWS_FLAG_SINGLE_RESOURCE_OWNERSHIP	= 0x80,
+        CREATE_NEW_PSEUDO_WINDOWS_VALID_FLAGS	= 0xff
     } ;
 
 enum __MIDL___MIDL_itf_isolation_0000_0043_0005
@@ -9975,6 +9982,39 @@ typedef HRESULT ( __stdcall *PPARSE_MANIFEST_FUNCTION )(
     _In_  REFIID riid,
     /* [annotation][iid_is][out] */ 
     _Out_  IUnknown **ppManifest);
+
+
+enum __MIDL___MIDL_itf_isolation_0000_0043_0006
+    {
+        PARSE_MANIFEST_EX_FLAG_DECOMPRESS_MANIFEST	= 0x1
+    } ;
+/* [local] */ HRESULT __stdcall ParseManifestEx( 
+    /* [annotation][in] */ 
+    _In_  DWORD dwFlags,
+    /* [annotation][in] */ 
+    _In_  LPCWSTR pszManifestPath,
+    /* [annotation][full][in] */ 
+    _In_opt_  IManifestParseErrorCallback *pIManifestParseErrorCallback,
+    /* [annotation][in] */ 
+    _In_  REFIID riid,
+    /* [annotation][iid_is][out] */ 
+    _Out_  IUnknown **ppManifest,
+    /* [annotation][out] */ 
+    _Out_opt_  DWORD *pdwDisposition);
+
+typedef HRESULT ( __stdcall *PPARSE_MANIFEST_EX_FUNCTION )( 
+    /* [annotation][in] */ 
+    _In_  DWORD dwFlags,
+    /* [annotation][in] */ 
+    _In_  LPCWSTR pszManifestPath,
+    /* [annotation][full][in] */ 
+    _In_opt_  IManifestParseErrorCallback *pIManifestParseErrorCallback,
+    /* [annotation][in] */ 
+    _In_  REFIID riid,
+    /* [annotation][iid_is][out] */ 
+    _Out_  IUnknown **ppManifest,
+    /* [annotation][out] */ 
+    _Out_opt_  DWORD *pdwDisposition);
 
 /* [local] */ HRESULT __stdcall ParseManifestFromXML( 
     /* [annotation][in] */ 

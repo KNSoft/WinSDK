@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -207,10 +207,32 @@ typedef interface IMFDXGIDeviceManager IMFDXGIDeviceManager;
 #endif 	/* __IMFDXGIDeviceManager_FWD_DEFINED__ */
 
 
+#ifndef __IMFMuxStreamAttributesManager_FWD_DEFINED__
+#define __IMFMuxStreamAttributesManager_FWD_DEFINED__
+typedef interface IMFMuxStreamAttributesManager IMFMuxStreamAttributesManager;
+
+#endif 	/* __IMFMuxStreamAttributesManager_FWD_DEFINED__ */
+
+
+#ifndef __IMFMuxStreamMediaTypeManager_FWD_DEFINED__
+#define __IMFMuxStreamMediaTypeManager_FWD_DEFINED__
+typedef interface IMFMuxStreamMediaTypeManager IMFMuxStreamMediaTypeManager;
+
+#endif 	/* __IMFMuxStreamMediaTypeManager_FWD_DEFINED__ */
+
+
+#ifndef __IMFMuxStreamSampleManager_FWD_DEFINED__
+#define __IMFMuxStreamSampleManager_FWD_DEFINED__
+typedef interface IMFMuxStreamSampleManager IMFMuxStreamSampleManager;
+
+#endif 	/* __IMFMuxStreamSampleManager_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "unknwn.h"
 #include "propsys.h"
 #include "mediaobj.h"
+#include "mmreg.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -223,55 +245,6 @@ extern "C"{
 #include <winapifamily.h>
 typedef ULONGLONG QWORD;
 
-#include <mmreg.h>
-#pragma warning(push)
-#pragma warning(disable:4001) 
-#pragma once
-#pragma warning(push)
-#pragma warning(disable:4001) 
-#pragma once
-#pragma warning(pop)
-#pragma warning(pop)
-#if 0
-
-#pragma pack(push, 1)
-typedef struct tWAVEFORMATEX
-    {
-    WORD wFormatTag;
-    WORD nChannels;
-    DWORD nSamplesPerSec;
-    DWORD nAvgBytesPerSec;
-    WORD nBlockAlign;
-    WORD wBitsPerSample;
-    WORD cbSize;
-    /* [size_is] */ BYTE pExtraBytes[ 1 ];
-    } 	WAVEFORMATEX;
-
-typedef struct tWAVEFORMATEX *PWAVEFORMATEX;
-
-typedef struct tWAVEFORMATEX *NPWAVEFORMATEX;
-
-typedef struct tWAVEFORMATEX *LPWAVEFORMATEX;
-
-typedef /* [public] */ struct __MIDL___MIDL_itf_mfobjects_0000_0000_0001
-    {
-    WORD wFormatTag;
-    WORD nChannels;
-    DWORD nSamplesPerSec;
-    DWORD nAvgBytesPerSec;
-    WORD nBlockAlign;
-    WORD wBitsPerSample;
-    WORD cbSize;
-    WORD wValidBitsPerSample;
-    DWORD dwChannelMask;
-    GUID SubFormat;
-    } 	WAVEFORMATEXTENSIBLE;
-
-typedef struct __MIDL___MIDL_itf_mfobjects_0000_0000_0001 *PWAVEFORMATEXTENSIBLE;
-
-
-#pragma pack(pop)
-#endif /* 0 */
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 typedef 
@@ -1844,7 +1817,7 @@ EXTERN_C const IID IID_IMFDXGIBuffer;
 #define __IMFMediaType_INTERFACE_DEFINED__
 
 /* interface IMFMediaType */
-/* [local][uuid][object] */ 
+/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID_IMFMediaType;
@@ -1856,24 +1829,21 @@ EXTERN_C const IID IID_IMFMediaType;
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE GetMajorType( 
-            /* [annotation][out] */ 
-            _Out_  GUID *pguidMajorType) = 0;
+            /* [out] */ __RPC__out GUID *pguidMajorType) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE IsCompressedFormat( 
-            /* [annotation][out] */ 
-            _Out_  BOOL *pfCompressed) = 0;
+            /* [out] */ __RPC__out BOOL *pfCompressed) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE IsEqual( 
-            /* [in] */ IMFMediaType *pIMediaType,
-            /* [annotation][out] */ 
-            _Out_  DWORD *pdwFlags) = 0;
+            /* [in] */ __RPC__in_opt IMFMediaType *pIMediaType,
+            /* [out] */ __RPC__out DWORD *pdwFlags) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE GetRepresentation( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetRepresentation( 
             /* [in] */ GUID guidRepresentation,
             /* [annotation][out] */ 
             _Out_  LPVOID *ppvRepresentation) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE FreeRepresentation( 
+        virtual /* [local] */ HRESULT STDMETHODCALLTYPE FreeRepresentation( 
             /* [in] */ GUID guidRepresentation,
             /* [in] */ LPVOID pvRepresentation) = 0;
         
@@ -1887,192 +1857,189 @@ EXTERN_C const IID IID_IMFMediaType;
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IMFMediaType * This,
-            /* [in] */ REFIID riid,
+            __RPC__in IMFMediaType * This,
+            /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IMFMediaType * This);
+            __RPC__in IMFMediaType * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            IMFMediaType * This);
+            __RPC__in IMFMediaType * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetItem )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [full][out][in] */ PROPVARIANT *pValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [full][out][in] */ __RPC__inout_opt PROPVARIANT *pValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetItemType )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ MF_ATTRIBUTE_TYPE *pType);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out MF_ATTRIBUTE_TYPE *pType);
         
         HRESULT ( STDMETHODCALLTYPE *CompareItem )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            REFPROPVARIANT Value,
-            /* [out] */ BOOL *pbResult);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            __RPC__in REFPROPVARIANT Value,
+            /* [out] */ __RPC__out BOOL *pbResult);
         
         HRESULT ( STDMETHODCALLTYPE *Compare )( 
-            IMFMediaType * This,
-            IMFAttributes *pTheirs,
+            __RPC__in IMFMediaType * This,
+            __RPC__in_opt IMFAttributes *pTheirs,
             MF_ATTRIBUTES_MATCH_TYPE MatchType,
-            /* [out] */ BOOL *pbResult);
+            /* [out] */ __RPC__out BOOL *pbResult);
         
         HRESULT ( STDMETHODCALLTYPE *GetUINT32 )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ UINT32 *punValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out UINT32 *punValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetUINT64 )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ UINT64 *punValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out UINT64 *punValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetDouble )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ double *pfValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out double *pfValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetGUID )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ GUID *pguidValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out GUID *pguidValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetStringLength )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ UINT32 *pcchLength);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out UINT32 *pcchLength);
         
         HRESULT ( STDMETHODCALLTYPE *GetString )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [size_is][out] */ LPWSTR pwszValue,
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [size_is][out] */ __RPC__out_ecount_full(cchBufSize) LPWSTR pwszValue,
             UINT32 cchBufSize,
-            /* [full][out][in] */ UINT32 *pcchLength);
+            /* [full][out][in] */ __RPC__inout_opt UINT32 *pcchLength);
         
         HRESULT ( STDMETHODCALLTYPE *GetAllocatedString )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [size_is][size_is][out] */ LPWSTR *ppwszValue,
-            /* [out] */ UINT32 *pcchLength);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(( *pcchLength + 1 ) ) LPWSTR *ppwszValue,
+            /* [out] */ __RPC__out UINT32 *pcchLength);
         
         HRESULT ( STDMETHODCALLTYPE *GetBlobSize )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [out] */ UINT32 *pcbBlobSize);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [out] */ __RPC__out UINT32 *pcbBlobSize);
         
         HRESULT ( STDMETHODCALLTYPE *GetBlob )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [size_is][out] */ UINT8 *pBuf,
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [size_is][out] */ __RPC__out_ecount_full(cbBufSize) UINT8 *pBuf,
             UINT32 cbBufSize,
-            /* [full][out][in] */ UINT32 *pcbBlobSize);
+            /* [full][out][in] */ __RPC__inout_opt UINT32 *pcbBlobSize);
         
         HRESULT ( STDMETHODCALLTYPE *GetAllocatedBlob )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [size_is][size_is][out] */ UINT8 **ppBuf,
-            /* [out] */ UINT32 *pcbSize);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcbSize) UINT8 **ppBuf,
+            /* [out] */ __RPC__out UINT32 *pcbSize);
         
         HRESULT ( STDMETHODCALLTYPE *GetUnknown )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            REFIID riid,
-            /* [iid_is][out] */ LPVOID *ppv);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            __RPC__in REFIID riid,
+            /* [iid_is][out] */ __RPC__deref_out_opt LPVOID *ppv);
         
         HRESULT ( STDMETHODCALLTYPE *SetItem )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            REFPROPVARIANT Value);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            __RPC__in REFPROPVARIANT Value);
         
         HRESULT ( STDMETHODCALLTYPE *DeleteItem )( 
-            IMFMediaType * This,
-            REFGUID guidKey);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey);
         
         HRESULT ( STDMETHODCALLTYPE *DeleteAllItems )( 
-            IMFMediaType * This);
+            __RPC__in IMFMediaType * This);
         
         HRESULT ( STDMETHODCALLTYPE *SetUINT32 )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
             UINT32 unValue);
         
         HRESULT ( STDMETHODCALLTYPE *SetUINT64 )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
             UINT64 unValue);
         
         HRESULT ( STDMETHODCALLTYPE *SetDouble )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
             double fValue);
         
         HRESULT ( STDMETHODCALLTYPE *SetGUID )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            REFGUID guidValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            __RPC__in REFGUID guidValue);
         
         HRESULT ( STDMETHODCALLTYPE *SetString )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [string][in] */ LPCWSTR wszValue);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [string][in] */ __RPC__in_string LPCWSTR wszValue);
         
         HRESULT ( STDMETHODCALLTYPE *SetBlob )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [size_is][in] */ const UINT8 *pBuf,
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [size_is][in] */ __RPC__in_ecount_full(cbBufSize) const UINT8 *pBuf,
             UINT32 cbBufSize);
         
         HRESULT ( STDMETHODCALLTYPE *SetUnknown )( 
-            IMFMediaType * This,
-            REFGUID guidKey,
-            /* [in] */ IUnknown *pUnknown);
+            __RPC__in IMFMediaType * This,
+            __RPC__in REFGUID guidKey,
+            /* [in] */ __RPC__in_opt IUnknown *pUnknown);
         
         HRESULT ( STDMETHODCALLTYPE *LockStore )( 
-            IMFMediaType * This);
+            __RPC__in IMFMediaType * This);
         
         HRESULT ( STDMETHODCALLTYPE *UnlockStore )( 
-            IMFMediaType * This);
+            __RPC__in IMFMediaType * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetCount )( 
-            IMFMediaType * This,
-            /* [out] */ UINT32 *pcItems);
+            __RPC__in IMFMediaType * This,
+            /* [out] */ __RPC__out UINT32 *pcItems);
         
         HRESULT ( STDMETHODCALLTYPE *GetItemByIndex )( 
-            IMFMediaType * This,
+            __RPC__in IMFMediaType * This,
             UINT32 unIndex,
-            /* [out] */ GUID *pguidKey,
-            /* [full][out][in] */ PROPVARIANT *pValue);
+            /* [out] */ __RPC__out GUID *pguidKey,
+            /* [full][out][in] */ __RPC__inout_opt PROPVARIANT *pValue);
         
         HRESULT ( STDMETHODCALLTYPE *CopyAllItems )( 
-            IMFMediaType * This,
-            /* [in] */ IMFAttributes *pDest);
+            __RPC__in IMFMediaType * This,
+            /* [in] */ __RPC__in_opt IMFAttributes *pDest);
         
         HRESULT ( STDMETHODCALLTYPE *GetMajorType )( 
-            IMFMediaType * This,
-            /* [annotation][out] */ 
-            _Out_  GUID *pguidMajorType);
+            __RPC__in IMFMediaType * This,
+            /* [out] */ __RPC__out GUID *pguidMajorType);
         
         HRESULT ( STDMETHODCALLTYPE *IsCompressedFormat )( 
-            IMFMediaType * This,
-            /* [annotation][out] */ 
-            _Out_  BOOL *pfCompressed);
+            __RPC__in IMFMediaType * This,
+            /* [out] */ __RPC__out BOOL *pfCompressed);
         
         HRESULT ( STDMETHODCALLTYPE *IsEqual )( 
-            IMFMediaType * This,
-            /* [in] */ IMFMediaType *pIMediaType,
-            /* [annotation][out] */ 
-            _Out_  DWORD *pdwFlags);
+            __RPC__in IMFMediaType * This,
+            /* [in] */ __RPC__in_opt IMFMediaType *pIMediaType,
+            /* [out] */ __RPC__out DWORD *pdwFlags);
         
-        HRESULT ( STDMETHODCALLTYPE *GetRepresentation )( 
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRepresentation )( 
             IMFMediaType * This,
             /* [in] */ GUID guidRepresentation,
             /* [annotation][out] */ 
             _Out_  LPVOID *ppvRepresentation);
         
-        HRESULT ( STDMETHODCALLTYPE *FreeRepresentation )( 
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *FreeRepresentation )( 
             IMFMediaType * This,
             /* [in] */ GUID guidRepresentation,
             /* [in] */ LPVOID pvRepresentation);
@@ -2426,27 +2393,24 @@ EXTERN_C const IID IID_IMFAudioMediaType;
         
         HRESULT ( STDMETHODCALLTYPE *GetMajorType )( 
             IMFAudioMediaType * This,
-            /* [annotation][out] */ 
-            _Out_  GUID *pguidMajorType);
+            /* [out] */ GUID *pguidMajorType);
         
         HRESULT ( STDMETHODCALLTYPE *IsCompressedFormat )( 
             IMFAudioMediaType * This,
-            /* [annotation][out] */ 
-            _Out_  BOOL *pfCompressed);
+            /* [out] */ BOOL *pfCompressed);
         
         HRESULT ( STDMETHODCALLTYPE *IsEqual )( 
             IMFAudioMediaType * This,
             /* [in] */ IMFMediaType *pIMediaType,
-            /* [annotation][out] */ 
-            _Out_  DWORD *pdwFlags);
+            /* [out] */ DWORD *pdwFlags);
         
-        HRESULT ( STDMETHODCALLTYPE *GetRepresentation )( 
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRepresentation )( 
             IMFAudioMediaType * This,
             /* [in] */ GUID guidRepresentation,
             /* [annotation][out] */ 
             _Out_  LPVOID *ppvRepresentation);
         
-        HRESULT ( STDMETHODCALLTYPE *FreeRepresentation )( 
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *FreeRepresentation )( 
             IMFAudioMediaType * This,
             /* [in] */ GUID guidRepresentation,
             /* [in] */ LPVOID pvRepresentation);
@@ -2627,13 +2591,17 @@ typedef /* [public] */ struct __MIDL___MIDL_itf_mfobjects_0000_0008_0002
 
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 typedef /* [public] */ struct __MIDL___MIDL_itf_mfobjects_0000_0008_0003
     {
     GUID guidMajorType;
     GUID guidSubtype;
     } 	MFT_REGISTER_TYPE_INFO;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 #if !defined( _MFVIDEOFORMAT_ )
 #define _MFVIDEOFORMAT_
@@ -3120,27 +3088,24 @@ EXTERN_C const IID IID_IMFVideoMediaType;
         
         HRESULT ( STDMETHODCALLTYPE *GetMajorType )( 
             IMFVideoMediaType * This,
-            /* [annotation][out] */ 
-            _Out_  GUID *pguidMajorType);
+            /* [out] */ GUID *pguidMajorType);
         
         HRESULT ( STDMETHODCALLTYPE *IsCompressedFormat )( 
             IMFVideoMediaType * This,
-            /* [annotation][out] */ 
-            _Out_  BOOL *pfCompressed);
+            /* [out] */ BOOL *pfCompressed);
         
         HRESULT ( STDMETHODCALLTYPE *IsEqual )( 
             IMFVideoMediaType * This,
             /* [in] */ IMFMediaType *pIMediaType,
-            /* [annotation][out] */ 
-            _Out_  DWORD *pdwFlags);
+            /* [out] */ DWORD *pdwFlags);
         
-        HRESULT ( STDMETHODCALLTYPE *GetRepresentation )( 
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *GetRepresentation )( 
             IMFVideoMediaType * This,
             /* [in] */ GUID guidRepresentation,
             /* [annotation][out] */ 
             _Out_  LPVOID *ppvRepresentation);
         
-        HRESULT ( STDMETHODCALLTYPE *FreeRepresentation )( 
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *FreeRepresentation )( 
             IMFVideoMediaType * This,
             /* [in] */ GUID guidRepresentation,
             /* [in] */ LPVOID pvRepresentation);
@@ -6178,10 +6143,378 @@ enum _MF_STREAM_STATE
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 #endif // (WINVER >= _WIN32_WINNT_WIN7) 
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#if (WINVER >= _WIN32_WINNT_WIN10_RS2)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfobjects_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_mfobjects_0000_0024_v0_0_s_ifspec;
+
+#ifndef __IMFMuxStreamAttributesManager_INTERFACE_DEFINED__
+#define __IMFMuxStreamAttributesManager_INTERFACE_DEFINED__
+
+/* interface IMFMuxStreamAttributesManager */
+/* [unique][helpstring][uuid][local][object] */ 
+
+
+EXTERN_C const IID IID_IMFMuxStreamAttributesManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("CE8BD576-E440-43B3-BE34-1E53F565F7E8")
+    IMFMuxStreamAttributesManager : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetStreamCount( 
+            /* [annotation] */ 
+            _Out_  DWORD *pdwMuxStreamCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetAttributes( 
+            /* [annotation] */ 
+            _In_  DWORD dwMuxStreamIndex,
+            /* [annotation] */ 
+            _COM_Outptr_  IMFAttributes **ppStreamAttributes) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFMuxStreamAttributesManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFMuxStreamAttributesManager * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFMuxStreamAttributesManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFMuxStreamAttributesManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamCount )( 
+            IMFMuxStreamAttributesManager * This,
+            /* [annotation] */ 
+            _Out_  DWORD *pdwMuxStreamCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAttributes )( 
+            IMFMuxStreamAttributesManager * This,
+            /* [annotation] */ 
+            _In_  DWORD dwMuxStreamIndex,
+            /* [annotation] */ 
+            _COM_Outptr_  IMFAttributes **ppStreamAttributes);
+        
+        END_INTERFACE
+    } IMFMuxStreamAttributesManagerVtbl;
+
+    interface IMFMuxStreamAttributesManager
+    {
+        CONST_VTBL struct IMFMuxStreamAttributesManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFMuxStreamAttributesManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFMuxStreamAttributesManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFMuxStreamAttributesManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFMuxStreamAttributesManager_GetStreamCount(This,pdwMuxStreamCount)	\
+    ( (This)->lpVtbl -> GetStreamCount(This,pdwMuxStreamCount) ) 
+
+#define IMFMuxStreamAttributesManager_GetAttributes(This,dwMuxStreamIndex,ppStreamAttributes)	\
+    ( (This)->lpVtbl -> GetAttributes(This,dwMuxStreamIndex,ppStreamAttributes) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFMuxStreamAttributesManager_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFMuxStreamMediaTypeManager_INTERFACE_DEFINED__
+#define __IMFMuxStreamMediaTypeManager_INTERFACE_DEFINED__
+
+/* interface IMFMuxStreamMediaTypeManager */
+/* [unique][helpstring][uuid][local][object] */ 
+
+
+EXTERN_C const IID IID_IMFMuxStreamMediaTypeManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("505A2C72-42F7-4690-AEAB-8F513D0FFDB8")
+    IMFMuxStreamMediaTypeManager : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetStreamCount( 
+            /* [annotation] */ 
+            _Out_  DWORD *pdwMuxStreamCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMediaType( 
+            /* [annotation] */ 
+            _In_  DWORD dwMuxStreamIndex,
+            /* [annotation] */ 
+            _COM_Outptr_  IMFMediaType **ppMediaType) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetStreamConfigurationCount( 
+            /* [annotation] */ 
+            _Out_  DWORD *pdwCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddStreamConfiguration( 
+            /* [annotation] */ 
+            _In_  ULONGLONG ullStreamMask) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveStreamConfiguration( 
+            /* [annotation] */ 
+            _In_  ULONGLONG ullStreamMask) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetStreamConfiguration( 
+            /* [annotation] */ 
+            _In_  DWORD ulIndex,
+            /* [annotation] */ 
+            _Out_  ULONGLONG *pullStreamMask) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFMuxStreamMediaTypeManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFMuxStreamMediaTypeManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFMuxStreamMediaTypeManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamCount )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [annotation] */ 
+            _Out_  DWORD *pdwMuxStreamCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMediaType )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [annotation] */ 
+            _In_  DWORD dwMuxStreamIndex,
+            /* [annotation] */ 
+            _COM_Outptr_  IMFMediaType **ppMediaType);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamConfigurationCount )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [annotation] */ 
+            _Out_  DWORD *pdwCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddStreamConfiguration )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [annotation] */ 
+            _In_  ULONGLONG ullStreamMask);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveStreamConfiguration )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [annotation] */ 
+            _In_  ULONGLONG ullStreamMask);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamConfiguration )( 
+            IMFMuxStreamMediaTypeManager * This,
+            /* [annotation] */ 
+            _In_  DWORD ulIndex,
+            /* [annotation] */ 
+            _Out_  ULONGLONG *pullStreamMask);
+        
+        END_INTERFACE
+    } IMFMuxStreamMediaTypeManagerVtbl;
+
+    interface IMFMuxStreamMediaTypeManager
+    {
+        CONST_VTBL struct IMFMuxStreamMediaTypeManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFMuxStreamMediaTypeManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFMuxStreamMediaTypeManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFMuxStreamMediaTypeManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFMuxStreamMediaTypeManager_GetStreamCount(This,pdwMuxStreamCount)	\
+    ( (This)->lpVtbl -> GetStreamCount(This,pdwMuxStreamCount) ) 
+
+#define IMFMuxStreamMediaTypeManager_GetMediaType(This,dwMuxStreamIndex,ppMediaType)	\
+    ( (This)->lpVtbl -> GetMediaType(This,dwMuxStreamIndex,ppMediaType) ) 
+
+#define IMFMuxStreamMediaTypeManager_GetStreamConfigurationCount(This,pdwCount)	\
+    ( (This)->lpVtbl -> GetStreamConfigurationCount(This,pdwCount) ) 
+
+#define IMFMuxStreamMediaTypeManager_AddStreamConfiguration(This,ullStreamMask)	\
+    ( (This)->lpVtbl -> AddStreamConfiguration(This,ullStreamMask) ) 
+
+#define IMFMuxStreamMediaTypeManager_RemoveStreamConfiguration(This,ullStreamMask)	\
+    ( (This)->lpVtbl -> RemoveStreamConfiguration(This,ullStreamMask) ) 
+
+#define IMFMuxStreamMediaTypeManager_GetStreamConfiguration(This,ulIndex,pullStreamMask)	\
+    ( (This)->lpVtbl -> GetStreamConfiguration(This,ulIndex,pullStreamMask) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFMuxStreamMediaTypeManager_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFMuxStreamSampleManager_INTERFACE_DEFINED__
+#define __IMFMuxStreamSampleManager_INTERFACE_DEFINED__
+
+/* interface IMFMuxStreamSampleManager */
+/* [unique][helpstring][uuid][local][object] */ 
+
+
+EXTERN_C const IID IID_IMFMuxStreamSampleManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("74ABBC19-B1CC-4E41-BB8B-9D9B86A8F6CA")
+    IMFMuxStreamSampleManager : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetStreamCount( 
+            /* [annotation] */ 
+            _Out_  DWORD *pdwMuxStreamCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetSample( 
+            /* [annotation] */ 
+            _In_  DWORD dwMuxStreamIndex,
+            /* [annotation] */ 
+            _COM_Outptr_  IMFSample **ppSample) = 0;
+        
+        virtual ULONGLONG STDMETHODCALLTYPE GetStreamConfiguration( void) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFMuxStreamSampleManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFMuxStreamSampleManager * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFMuxStreamSampleManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFMuxStreamSampleManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamCount )( 
+            IMFMuxStreamSampleManager * This,
+            /* [annotation] */ 
+            _Out_  DWORD *pdwMuxStreamCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSample )( 
+            IMFMuxStreamSampleManager * This,
+            /* [annotation] */ 
+            _In_  DWORD dwMuxStreamIndex,
+            /* [annotation] */ 
+            _COM_Outptr_  IMFSample **ppSample);
+        
+        ULONGLONG ( STDMETHODCALLTYPE *GetStreamConfiguration )( 
+            IMFMuxStreamSampleManager * This);
+        
+        END_INTERFACE
+    } IMFMuxStreamSampleManagerVtbl;
+
+    interface IMFMuxStreamSampleManager
+    {
+        CONST_VTBL struct IMFMuxStreamSampleManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFMuxStreamSampleManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFMuxStreamSampleManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFMuxStreamSampleManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFMuxStreamSampleManager_GetStreamCount(This,pdwMuxStreamCount)	\
+    ( (This)->lpVtbl -> GetStreamCount(This,pdwMuxStreamCount) ) 
+
+#define IMFMuxStreamSampleManager_GetSample(This,dwMuxStreamIndex,ppSample)	\
+    ( (This)->lpVtbl -> GetSample(This,dwMuxStreamIndex,ppSample) ) 
+
+#define IMFMuxStreamSampleManager_GetStreamConfiguration(This)	\
+    ( (This)->lpVtbl -> GetStreamConfiguration(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFMuxStreamSampleManager_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mfobjects_0000_0027 */
+/* [local] */ 
+
+#endif // (WINVER >=_WIN32_WINNT_WIN10_RS2)
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma endregion
+
+
+extern RPC_IF_HANDLE __MIDL_itf_mfobjects_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfobjects_0000_0027_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

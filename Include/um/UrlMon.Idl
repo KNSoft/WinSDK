@@ -182,8 +182,20 @@ cpp_quote("#endif")
 #pragma midl_echo("STDAPI RevokeFormatEnumerator(_In_ LPBC pBC, _In_ IEnumFORMATETC *pEFetc);                            ")
 #pragma midl_echo("STDAPI RegisterMediaTypeClass(_In_ LPBC pBC, _In_ _In_range_(>, 0) UINT ctypes, _In_reads_(ctypes) const LPCSTR* rgszTypes, _In_reads_(ctypes)  CLSID *rgclsID, DWORD reserved);    ")
 #pragma midl_echo("STDAPI FindMediaTypeClass(_In_ LPBC pBC, _In_ LPCSTR szType, _Out_ CLSID *pclsID, DWORD reserved);                          ")
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)")
 #pragma midl_echo("STDAPI UrlMkSetSessionOption(DWORD dwOption, _In_reads_bytes_opt_(dwBufferLength) LPVOID pBuffer, DWORD dwBufferLength, _Reserved_ DWORD dwReserved);       ")
 #pragma midl_echo("STDAPI UrlMkGetSessionOption(DWORD dwOption, _Out_writes_bytes_to_opt_(dwBufferLength,*pdwBufferLengthOut) LPVOID pBuffer, DWORD dwBufferLength, _Out_ DWORD *pdwBufferLengthOut, _Reserved_ DWORD dwReserved);       ")
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */")
+#pragma endregion
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+
 
 #pragma midl_echo("STDAPI FindMimeFromData(                                                                                                                  ")
 #pragma midl_echo("    _In_opt_                     LPBC    pBC,                   // bind context - can be NULL                                                 ")
@@ -916,7 +928,8 @@ interface IBindStatusCallback: IUnknown
             ,BINDSTATUS_RESERVED_F
             ,BINDSTATUS_RESERVED_10
             ,BINDSTATUS_RESERVED_11
-            ,BINDSTATUS_LAST_PRIVATE = BINDSTATUS_RESERVED_11
+            ,BINDSTATUS_RESERVED_12
+            , BINDSTATUS_LAST_PRIVATE = BINDSTATUS_RESERVED_12
         } BINDSTATUS;
 
         HRESULT OnStartBinding(
@@ -3610,7 +3623,8 @@ cpp_quote("#define URLACTION_ALLOW_XDOMAIN_SUBFRAME_RESIZE                0x0000
 cpp_quote("#define URLACTION_SCRIPT_XSSFILTER                             0x00001409")
 cpp_quote("#define URLACTION_SCRIPT_NAVIGATE                              0x0000140A")
 cpp_quote("#define URLACTION_PLUGGABLE_PROTOCOL_XHR                       0x0000140B")
-cpp_quote("#define URLACTION_SCRIPT_CURR_MAX                              0x0000140B")
+cpp_quote("#define URLACTION_ALLOW_VBSCRIPT_IE                            0x0000140C")
+cpp_quote("#define URLACTION_SCRIPT_CURR_MAX                              0x0000140C")
 cpp_quote("#define URLACTION_SCRIPT_MAX                                   0x000015ff")
 cpp_quote("")
 cpp_quote("#define URLACTION_HTML_MIN                                     0x00001600")

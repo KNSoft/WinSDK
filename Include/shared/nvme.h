@@ -472,6 +472,9 @@ typedef enum {
     NVME_STATUS_PRP_OFFSET_INVALID                              = 0x13,
     NVME_STATUS_ATOMIC_WRITE_UNIT_EXCEEDED                      = 0x14,
 
+    NVME_STATUS_DIRECTIVE_TYPE_INVALID                          = 0x70,
+    NVME_STATUS_DIRECTIVE_ID_INVALID                            = 0x71,
+
     NVME_STATUS_NVM_LBA_OUT_OF_RANGE                            = 0x80,
     NVME_STATUS_NVM_CAPACITY_EXCEEDED                           = 0x81,
     NVME_STATUS_NVM_NAMESPACE_NOT_READY                         = 0x82,
@@ -513,6 +516,8 @@ typedef enum {
     NVME_STATUS_NAMESPACE_NOT_ATTACHED                              = 0x1A,         // Namespace Attachment
     NVME_STATUS_NAMESPACE_THIN_PROVISIONING_NOT_SUPPORTED           = 0x1B,         // Namespace Management
     NVME_STATUS_CONTROLLER_LIST_INVALID                             = 0x1C,         // Namespace Attachment
+
+    NVME_STATUS_STREAM_RESOURCE_ALLOCATION_FAILED                   = 0x7F,         // Streams Directive
 
     NVME_STATUS_NVM_CONFLICTING_ATTRIBUTES                          = 0x80,         // Dataset Management, Read, Write 
     NVME_STATUS_NVM_INVALID_PROTECTION_INFORMATION                  = 0x81,         // Compare, Read, Write, Write Zeroes
@@ -557,6 +562,9 @@ typedef enum {
     NVME_ADMIN_COMMAND_FIRMWARE_COMMIT          = 0x10,         // "Firmware Activate" command has been renamed to "Firmware Commit" command in spec v1.2
     NVME_ADMIN_COMMAND_FIRMWARE_IMAGE_DOWNLOAD  = 0x11,
     NVME_ADMIN_COMMAND_NAMESPACE_ATTACHMENT     = 0x15,
+
+    NVME_ADMIN_COMMAND_DIRECTIVE_SEND           = 0x19,
+    NVME_ADMIN_COMMAND_DIRECTIVE_RECEIVE        = 0x1A,
 
     NVME_ADMIN_COMMAND_FORMAT_NVM               = 0x80,
     NVME_ADMIN_COMMAND_SECURITY_SEND            = 0x81,
@@ -711,7 +719,9 @@ typedef struct {
         USHORT  FormatNVM           : 1;
         USHORT  FirmwareCommands    : 1;
         USHORT  NamespaceCommands   : 1;
-        USHORT  Reserved            : 12;
+        USHORT  DeviceSelfTest      : 1;
+        USHORT  Directives          : 1;
+        USHORT  Reserved            : 10;
     } OACS;                     // byte 256:257. M - Optional Admin Command Support (OACS)
 
     UCHAR   ACL;                // byte 258.    M - Abort Command Limit (ACL)
@@ -1173,6 +1183,19 @@ typedef union {
     ULONG   AsUlong;
 
 } NVME_CDW11_FEATURE_VOLATILE_WRITE_CACHE, *PNVME_CDW11_FEATURE_VOLATILE_WRITE_CACHE;
+
+typedef union {
+
+    struct {
+        ULONG   SAVE         : 1;        // Save supported
+        ULONG   NSS   	     : 1;        // Namespace specific
+        ULONG   MOD          : 1;        // Changeable
+        ULONG   Reserved0    : 29;
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW11_FEATURE_SUPPORTED_CAPABILITY, *PNVME_CDW11_FEATURE_SUPPORTED_CAPABILITY;
 
 typedef union {
 
@@ -1640,6 +1663,196 @@ typedef union {
 } NVME_CDW10_FORMAT_NVM, *PNVME_CDW10_FORMAT_NVM;
 
 
+
+
+//
+// Parameters for Directives.
+//
+
+typedef enum {
+
+    NVME_DIRECTIVE_TYPE_IDENTIFY                    = 0x00,
+    NVME_DIRECTIVE_TYPE_STREAMS                     = 0x01
+
+} NVME_DIRECTIVE_TYPES;
+
+#define NVME_STREAMS_ID_MIN 1
+#define NVME_STREAMS_ID_MAX 0xFFFF
+
+//
+// General parameters for Directive Receive.
+//
+
+typedef struct {
+
+    ULONG   NUMD; // Number of Dwords (NUMD)
+
+} NVME_CDW10_DIRECTIVE_RECEIVE, *PNVME_CDW10_DIRECTIVE_RECEIVE;
+
+typedef union {
+
+    struct {
+        ULONG   DOPER : 8;    // Directive Operation        
+        ULONG   DTYPE : 8;    // Directive Type
+        ULONG   DSPEC : 16;   // Directive Specific
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW11_DIRECTIVE_RECEIVE, *PNVME_CDW11_DIRECTIVE_RECEIVE;
+
+
+//
+// General parameters for Directive Send.
+//
+
+typedef struct {
+
+    ULONG   NUMD; // Number of Dwords (NUMD)
+
+} NVME_CDW10_DIRECTIVE_SEND, *PNVME_CDW10_DIRECTIVE_SEND;
+
+typedef union {
+
+    struct {
+        ULONG   DOPER : 8;    // Directive Operation        
+        ULONG   DTYPE : 8;    // Directive Type
+        ULONG   DSPEC : 16;   // Directive Specific
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW11_DIRECTIVE_SEND, *PNVME_CDW11_DIRECTIVE_SEND;
+
+
+//
+// Parameters for the Identify Directive Type.
+//
+
+typedef enum {
+
+    NVME_DIRECTIVE_RECEIVE_IDENTIFY_OPERATION_RETURN_PARAMETERS = 1
+
+} NVME_DIRECTIVE_RECEIVE_IDENTIFY_OPERATIONS;
+
+typedef enum {
+
+    NVME_DIRECTIVE_SEND_IDENTIFY_OPERATION_ENABLE_DIRECTIVE = 1
+
+} NVME_DIRECTIVE_SEND_IDENTIFY_OPERATIONS;
+
+typedef struct {
+
+    UCHAR   Identify : 1;
+    UCHAR   Streams : 1;
+    UCHAR   Reserved0 : 6;
+
+    UCHAR   Reserved1[31];
+
+} NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR, *PNVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR;
+
+typedef struct {
+    
+    NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR     DirectivesSupported;
+    NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS_DESCRIPTOR     DirectivesEnabled;
+    
+    //
+    // This data structure is 4KB in size.  The reserved space is commented out
+    // so that this data structure can be safely allocated on the stack.
+    //
+    //UCHAR   Reserved[4032]; // 4096 - 32 - 32 = 4032
+
+} NVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS, *PNVME_DIRECTIVE_IDENTIFY_RETURN_PARAMETERS;
+
+typedef union {
+
+    struct {
+        ULONG   ENDIR       : 1;    // Enable Directive
+        ULONG   Reserved0   : 7;
+        ULONG   DTYPE       : 8;    // Directive Type
+        ULONG   Reserved1   : 16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsUlong;
+
+} NVME_CDW12_DIRECTIVE_SEND_IDENTIFY_ENABLE_DIRECTIVE, *PNVME_CDW12_DIRECTIVE_SEND_IDENTIFY_ENABLE_DIRECTIVE;
+
+//
+// Parameters for the Streams Directive Type
+//
+typedef enum {
+
+    NVME_DIRECTIVE_RECEIVE_STREAMS_OPERATION_RETURN_PARAMETERS = 1,
+    NVME_DIRECTIVE_RECEIVE_STREAMS_OPERATION_GET_STATUS = 2,
+    NVME_DIRECTIVE_RECEIVE_STREAMS_OPERATION_ALLOCATE_RESOURCES = 3
+
+} NVME_DIRECTIVE_RECEIVE_STREAMS_OPERATIONS;
+
+typedef enum {
+
+    NVME_DIRECTIVE_SEND_STREAMS_OPERATION_RELEASE_IDENTIFIER = 1,
+    NVME_DIRECTIVE_SEND_STREAMS_OPERATION_RELEASE_RESOURCES = 2
+
+} NVME_DIRECTIVE_SEND_STREAMS_OPERATIONS;
+
+typedef struct {
+
+    USHORT  MSL;    // Max Streams Limit
+    USHORT  NSSA;   // NVM Subsystem Streams Available
+    USHORT  NSSO;   // NVM Subsystem Streams Open
+    UCHAR   Reserved0[10];
+
+    ULONG   SWS;    // Stream Write Size
+    USHORT  SGS;    // Stream Granularity Size
+    USHORT  NSA;    // Namespace Streams Allocated
+    USHORT  NSO;    // Namespace Streams Open
+    UCHAR   Reserved1[6];
+
+} NVME_DIRECTIVE_STREAMS_RETURN_PARAMETERS, *PNVME_DIRECTIVE_STREAMS_RETURN_PARAMETERS;
+
+#define NVME_STREAMS_GET_STATUS_MAX_IDS 65535
+
+typedef struct {
+
+    USHORT  OpenStreamCount;            // Number of currently open streams.
+    USHORT  StreamIdentifiers[NVME_STREAMS_GET_STATUS_MAX_IDS];   // Array of stream IDs that are currently open.
+
+} NVME_DIRECTIVE_STREAMS_GET_STATUS_DATA, *PNVME_DIRECTIVE_STREAMS_GET_STATUS_DATA;
+
+typedef union {
+
+    struct {
+        ULONG   NSR         : 16;   // Namespace Streams Requested
+        ULONG   Reserved    : 16;
+    } DUMMYSTRUCTNAME;
+        
+    ULONG AsUlong;
+
+} NVME_CDW12_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES, *PNVME_CDW12_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES;
+
+typedef struct {
+
+    struct {
+        ULONG   NSA         : 16;   // Namespace Streams Allocated
+        ULONG   Reserved    : 16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsUlong;
+
+} NVME_COMPLETION_DW0_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES, *PNVME_COMPLETION_DW0_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES;
+
+typedef union {
+    NVME_CDW12_DIRECTIVE_SEND_IDENTIFY_ENABLE_DIRECTIVE EnableDirective;
+    
+    ULONG AsUlong;
+} NVME_CDW12_DIRECTIVE_SEND;
+
+typedef union {
+    NVME_CDW12_DIRECTIVE_RECEIVE_STREAMS_ALLOCATE_RESOURCES AllocateResources;
+
+    ULONG AsUlong;
+} NVME_CDW12_DIRECTIVE_RECEIVE;
+
 //
 // NVM Command Set
 //
@@ -1667,7 +1880,9 @@ typedef union {
 
     struct {
         ULONG   NLB         : 16;       // Number of Logical Blocks (NLB)
-        ULONG   Reserved0   : 10;
+        ULONG   Reserved0   : 4;
+        ULONG   DTYPE       : 4;        // Directive Type (DTYPE)
+        ULONG   Reserved1   : 2;
         ULONG   PRINFO      : 4;        // Protection Information Field (PRINFO)
         ULONG   FUA         : 1;        // Force Unit Access (FUA)
         ULONG   LR          : 1;        // Limited Retry (LR)
@@ -1714,7 +1929,9 @@ typedef union {
             UCHAR   Incompressible      : 1;
         } DSM;                      // Dataset Management (DSM)
 
-        UCHAR   Reserved0[3];
+        UCHAR   Reserved;
+        USHORT  DSPEC;                // Directive Specific Value
+
     } DUMMYSTRUCTNAME;
 
     ULONG   AsUlong;
@@ -2011,6 +2228,30 @@ typedef struct {
             ULONG   CDW14;
             ULONG   CDW15;
         } FORMATNVM;
+
+        //
+        // Admin Command: DIRECTIVE RECEIVE
+        //
+        struct {
+            NVME_CDW10_DIRECTIVE_RECEIVE        CDW10;
+            NVME_CDW11_DIRECTIVE_RECEIVE        CDW11;
+            NVME_CDW12_DIRECTIVE_RECEIVE        CDW12;
+            ULONG   CDW13;
+            ULONG   CDW14;
+            ULONG   CDW15;
+        } DIRECTIVERECEIVE;
+
+        //
+        // Admin Command: DIRECTIVE SEND
+        //
+        struct {
+            NVME_CDW10_DIRECTIVE_SEND           CDW10;
+            NVME_CDW11_DIRECTIVE_SEND           CDW11;
+            NVME_CDW12_DIRECTIVE_SEND           CDW12;
+            ULONG   CDW13;
+            ULONG   CDW14;
+            ULONG   CDW15;
+        } DIRECTIVESEND;        
 
         //
         // NVM Command: Read/Write

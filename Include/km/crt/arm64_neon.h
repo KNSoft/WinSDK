@@ -13,7 +13,7 @@
 //#include <stdint.h>
 #include <sal.h>
 
-#if !defined (_M_ARM64)
+#if !defined (_M_ARM64) && !defined(_M_HYBRID_X86_ARM64)
 #error This header is specific to ARM64 targets
 #endif  /* !defined (_M_ARM64) */
 
@@ -289,6 +289,7 @@ typedef __n128   uint64x2_t;
 typedef __n128x2 uint64x2x2_t;
 typedef __n128x3 uint64x2x3_t;
 typedef __n128x4 uint64x2x4_t;
+typedef __n64 float16x4_t;
 
 ///////////////////////////////////////////////////////////////////////////////
 // prototypes
@@ -918,6 +919,7 @@ __n64 neon_faddpsq64(__n128);
 #define vpadd_s32(src1, src2) neon_addp32(src1, src2)
 #define vpadd_u32(src1, src2) neon_addp32(src1, src2)
 #define vpadd_f32(src1, src2) neon_faddp32(src1, src2)
+#define vpaddq_f32(src1, src2) neon_faddpq32(src1, src2)
 
 // ADDV/SADDLV/UADDLV
 __n8  neon_addv8(__n64);
@@ -1522,6 +1524,8 @@ __n128 neon_uabaq32(__n128, __n128, __n128);
 __n64  neon_fdiv32(__n64, __n64);
 __n128 neon_fdivq32(__n128, __n128);
 __n128 neon_fdivq64(__n128, __n128);
+#define vdiv_f32(src1, src2) neon_fdiv32(src1, src2)
+#define vdivq_f32(src1, src2) neon_fdivq32(src1, src2)
 
 // FSQRT/FRSQRTE/URSQRTE/FRSQRTS
 __n64  neon_fsqrt32(__n64);
@@ -2673,18 +2677,20 @@ __n128 neon_frintx_q64(__n128);
 __n64 neon_frintz_32(__n64);
 __n128 neon_frintz_q32(__n128);
 __n128 neon_frintz_q64(__n128);
-#define vrnd_f32(src) neon_frinti_32(src)
+#define vrndi_f32(src) neon_frinti_32(src)
 #define vrnda_f32(src) neon_frinta_32(src)
 #define vrndm_f32(src) neon_frintm_32(src)
 #define vrndn_f32(src) neon_frintn_32(src)
 #define vrndp_f32(src) neon_frintp_32(src)
 #define vrndx_f32(src) neon_frintx_32(src)
-#define vrndq_f32(src) neon_frinti_q32(src)
+#define vrndiq_f32(src) neon_frinti_q32(src)
 #define vrndaq_f32(src) neon_frinta_q32(src)
 #define vrndmq_f32(src) neon_frintm_q32(src)
 #define vrndnq_f32(src) neon_frintn_q32(src)
 #define vrndpq_f32(src) neon_frintp_q32(src)
 #define vrndxq_f32(src) neon_frintx_q32(src)
+#define vrnd_f32(src) neon_frintz_32(src)
+#define vrndq_f32(src) neon_frintz_q32(src)
 
 // SHA1C/SHA1M/SHA1P/SHA256H2/SHA256H/SHA1SU0/SHA256SU1/SHA1SU1/SHA256SU0/SHA1H/
 __n128 neon_sha1c(__n128, __n128, __n128);
@@ -5243,7 +5249,8 @@ __n64 vcreate(__int64 src);
 #define vreinterpretq_u64_u8(a)        (a)
 #define vreinterpretq_u64_u16(a)       (a)
 #define vreinterpretq_u64_u32(a)       (a)
-
+#define vreinterpret_f16_u16(a)        (a)
+#define vreinterpret_u16_f16(a)        (a)
 
 #if defined (__cplusplus)
 }

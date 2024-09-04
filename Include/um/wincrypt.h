@@ -1077,7 +1077,6 @@ typedef struct _CMS_DH_KEY_INFO {
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM)
 
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 BOOL
 WINAPI
@@ -1103,69 +1102,12 @@ CryptAcquireContextW(
 #else
 #define CryptAcquireContext  CryptAcquireContextA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptAcquireContextA(
-    HCRYPTPROV *phProv,
-    LPCSTR szContainer,
-    LPCSTR szProvider,
-    DWORD dwProvType,
-    DWORD dwFlags
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptAcquireContextW(
-    HCRYPTPROV *phProv,
-    LPCWSTR szContainer,
-    LPCWSTR szProvider,
-    DWORD dwProvType,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptAcquireContextA(
-    HCRYPTPROV *phProv,
-    LPCSTR pszContainer,
-    LPCSTR pszProvider,
-    DWORD dwProvType,
-    DWORD dwFlags
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptAcquireContextW(
-    HCRYPTPROV *phProv,
-    LPCWSTR pszContainer,
-    LPCWSTR pszProvider,
-    DWORD dwProvType,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_VISTA)
-#ifdef UNICODE
-#define CryptAcquireContext  CryptAcquireContextW
-#else
-#define CryptAcquireContext  CryptAcquireContextA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
-#if (NTDDI_VERSION >= NTDDI_WINXP)
 
 WINADVAPI
 BOOL
@@ -1174,18 +1116,6 @@ CryptReleaseContext(
     _In_    HCRYPTPROV  hProv,
     _In_    DWORD       dwFlags
     );
-
-#endif //(NTDDI_VERSION >= NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptReleaseContext(
-    HCRYPTPROV hProv,
-    ULONG_PTR dwFlags
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)*/
 #pragma endregion
@@ -1221,7 +1151,6 @@ CryptDestroyKey(
     _In_    HCRYPTKEY   hKey
     );
 
-#if (NTDDI_VERSION >= NTDDI_WINXP)
 WINADVAPI
 BOOL
 WINAPI
@@ -1231,19 +1160,6 @@ CryptSetKeyParam(
     _In_    CONST BYTE  *pbData,
     _In_    DWORD       dwFlags
     );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptSetKeyParam(
-    HCRYPTKEY hKey,
-    DWORD dwParam,
-    BYTE *pbData,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
 
 WINADVAPI
 BOOL
@@ -1256,7 +1172,6 @@ CryptGetKeyParam(
     _In_                                            DWORD   dwFlags
     );
 
-#if (NTDDI_VERSION >= NTDDI_WINXP)
 WINADVAPI
 BOOL
 WINAPI
@@ -1266,19 +1181,6 @@ CryptSetHashParam(
     _In_    CONST BYTE  *pbData,
     _In_    DWORD       dwFlags
     );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptSetHashParam(
-    HCRYPTHASH hHash,
-    DWORD dwParam,
-    BYTE*pbData,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
 
 WINADVAPI
 BOOL
@@ -1291,7 +1193,6 @@ CryptGetHashParam(
     _In_                                        DWORD   dwFlags
     );
 
-#if (NTDDI_VERSION >= NTDDI_WINXP)
 WINADVAPI
 BOOL
 WINAPI
@@ -1301,19 +1202,6 @@ CryptSetProvParam(
     _In_    CONST BYTE  *pbData,
     _In_    DWORD       dwFlags
     );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptSetProvParam(
-    HCRYPTPROV hProv,
-    DWORD dwParam,
-    BYTE*pbData,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
 
 WINADVAPI
 BOOL
@@ -1430,7 +1318,6 @@ CryptDestroyHash(
     _In_    HCRYPTHASH  hHash
     );
 
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 BOOL
 WINAPI
@@ -1458,67 +1345,7 @@ CryptSignHashW(
 #else
 #define CryptSignHash  CryptSignHashA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
 
-#if (NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptSignHashA(
-    HCRYPTHASH hHash,
-    DWORD dwKeySpec,
-    LPCSTR szDescription,
-    DWORD dwFlags,
-    BYTE *pbSignature,
-    DWORD *pdwSigLen
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptSignHashW(
-    HCRYPTHASH hHash,
-    DWORD dwKeySpec,
-    LPCWSTR szDescription,
-    DWORD dwFlags,
-    BYTE *pbSignature,
-    DWORD *pdwSigLen
-    );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptSignHashA(
-    HCRYPTHASH hHash,
-    DWORD dwKeySpec,
-    LPCSTR sDescription,
-    DWORD dwFlags,
-    BYTE *pbSignature,
-    DWORD *pdwSigLen
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptSignHashW(
-    HCRYPTHASH hHash,
-    DWORD dwKeySpec,
-    LPCWSTR sDescription,
-    DWORD dwFlags,
-    BYTE *pbSignature,
-    DWORD *pdwSigLen
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_VISTA)
-#ifdef UNICODE
-#define CryptSignHash  CryptSignHashW
-#else
-#define CryptSignHash  CryptSignHashA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 BOOL
 WINAPI
@@ -1546,67 +1373,7 @@ CryptVerifySignatureW(
 #else
 #define CryptVerifySignature  CryptVerifySignatureA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
 
-#if (NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptVerifySignatureA(
-    HCRYPTHASH hHash,
-    CONST BYTE *pbSignature,
-    DWORD dwSigLen,
-    HCRYPTKEY hPubKey,
-    LPCSTR szDescription,
-    DWORD dwFlags
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptVerifySignatureW(
-    HCRYPTHASH hHash,
-    CONST BYTE *pbSignature,
-    DWORD dwSigLen,
-    HCRYPTKEY hPubKey,
-    LPCWSTR szDescription,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptVerifySignatureA(
-    HCRYPTHASH hHash,
-    CONST BYTE *pbSignature,
-    DWORD dwSigLen,
-    HCRYPTKEY hPubKey,
-    LPCSTR sDescription,
-    DWORD dwFlags
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptVerifySignatureW(
-    HCRYPTHASH hHash,
-    CONST BYTE *pbSignature,
-    DWORD dwSigLen,
-    HCRYPTKEY hPubKey,
-    LPCWSTR sDescription,
-    DWORD dwFlags
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_VISTA)
-#ifdef UNICODE
-#define CryptVerifySignature  CryptVerifySignatureW
-#else
-#define CryptVerifySignature  CryptVerifySignatureA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 BOOL
 WINAPI
@@ -1626,31 +1393,7 @@ CryptSetProviderW(
 #else
 #define CryptSetProvider  CryptSetProviderA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
 
-#if (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptSetProviderA(
-    LPCSTR pszProvName,
-    DWORD dwProvType
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptSetProviderW(
-    LPCWSTR pszProvName,
-    DWORD dwProvType
-    );
-#ifdef UNICODE
-#define CryptSetProvider  CryptSetProviderW
-#else
-#define CryptSetProvider  CryptSetProviderA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 BOOL
 WINAPI
@@ -1674,35 +1417,7 @@ CryptSetProviderExW(
 #else
 #define CryptSetProviderEx  CryptSetProviderExA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
 
-#if (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptSetProviderExA(
-    LPCSTR pszProvName,
-    DWORD dwProvType,
-    DWORD *pdwReserved,
-    DWORD dwFlags
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptSetProviderExW(
-    LPCWSTR pszProvName,
-    DWORD dwProvType,
-    DWORD *pdwReserved,
-    DWORD dwFlags
-    );
-#ifdef UNICODE
-#define CryptSetProviderEx  CryptSetProviderExW
-#else
-#define CryptSetProviderEx  CryptSetProviderExA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 _Success_(0 != return) BOOL
 WINAPI
@@ -1728,37 +1443,7 @@ CryptGetDefaultProviderW(
 #else
 #define CryptGetDefaultProvider  CryptGetDefaultProviderA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
 
-#if (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptGetDefaultProviderA(
-    DWORD dwProvType,
-    DWORD *pdwReserved,
-    DWORD dwFlags,
-    LPSTR pszProvName,
-    DWORD *pcbProvName
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptGetDefaultProviderW(
-    DWORD dwProvType,
-    DWORD *pdwReserved,
-    DWORD dwFlags,
-    LPWSTR pszProvName,
-    DWORD *pcbProvName
-    );
-#ifdef UNICODE
-#define CryptGetDefaultProvider  CryptGetDefaultProviderW
-#else
-#define CryptGetDefaultProvider  CryptGetDefaultProviderA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 _Success_(0 != return) BOOL
 WINAPI
@@ -1786,67 +1471,7 @@ CryptEnumProviderTypesW(
 #else
 #define CryptEnumProviderTypes  CryptEnumProviderTypesA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
 
-#if (NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProviderTypesA(
-    DWORD dwIndex,
-    DWORD *pdwReserved,
-    DWORD dwFlags,
-    DWORD *pdwProvType,
-    LPSTR szTypeName,
-    DWORD *pcbTypeName
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProviderTypesW(
-    DWORD dwIndex,
-    DWORD *pdwReserved,
-    DWORD dwFlags,
-    DWORD *pdwProvType,
-    LPWSTR szTypeName,
-    DWORD *pcbTypeName
-    );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProviderTypesA(
-    DWORD   dwIndex,
-    DWORD * pdwReserved,
-    DWORD   dwFlags,
-    DWORD * pdwProvType,
-    LPSTR pszTypeName,
-    DWORD * pcbTypeName
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProviderTypesW(
-    DWORD   dwIndex,
-    DWORD * pdwReserved,
-    DWORD   dwFlags,
-    DWORD * pdwProvType,
-    LPWSTR pszTypeName,
-    DWORD * pcbTypeName
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_VISTA)
-#ifdef UNICODE
-#define CryptEnumProviderTypes  CryptEnumProviderTypesW
-#else
-#define CryptEnumProviderTypes  CryptEnumProviderTypesA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_VISTA)
 WINADVAPI
 _Success_(0 != return) BOOL
 WINAPI
@@ -1874,65 +1499,6 @@ CryptEnumProvidersW(
 #else
 #define CryptEnumProviders  CryptEnumProvidersA
 #endif // !UNICODE
-#endif //(NTDDI_VERSION >= NTDDI_VISTA)
-
-#if (NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProvidersA(
-    DWORD dwIndex,
-    DWORD *pdwReserved,
-    DWORD dwFlags,
-    DWORD *pdwProvType,
-    LPSTR szProvName,
-    DWORD *pcbProvName
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProvidersW(
-    DWORD dwIndex,
-    DWORD *pdwReserved,
-    DWORD dwFlags,
-    DWORD *pdwProvType,
-    LPWSTR szProvName,
-    DWORD *pcbProvName
-    );
-#endif //(NTDDI_VERSION >= NTDDI_WINXP) && (NTDDI_VERSION < NTDDI_VISTA)
-
-#if (NTDDI_VERSION < NTDDI_WINXP)
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProvidersA(
-    DWORD   dwIndex,
-    DWORD * pdwReserved,
-    DWORD   dwFlags,
-    DWORD * pdwProvType,
-    LPSTR pszProvName,
-    DWORD * pcbProvName
-    );
-WINADVAPI
-BOOL
-WINAPI
-CryptEnumProvidersW(
-    DWORD   dwIndex,
-    DWORD * pdwReserved,
-    DWORD   dwFlags,
-    DWORD * pdwProvType,
-    LPWSTR pszProvName,
-    DWORD * pcbProvName
-    );
-#endif //(NTDDI_VERSION < NTDDI_WINXP)
-
-#if (NTDDI_VERSION < NTDDI_VISTA)
-#ifdef UNICODE
-#define CryptEnumProviders  CryptEnumProvidersW
-#else
-#define CryptEnumProviders  CryptEnumProvidersA
-#endif // !UNICODE
-#endif //(NTDDI_VERSION < NTDDI_VISTA)
 
 WINADVAPI
 BOOL
@@ -3924,6 +3490,18 @@ CryptDecodeObject(
 // The following extension is set in the disallowed CTL to trigger
 // a quicker sync of the autorootupdate CTL
 #define szOID_SYNC_ROOT_CTL_EXT         "1.3.6.1.4.1.311.10.3.50"
+
+
+// CTL containing HPKP Domain Names
+#define szOID_HPKP_DOMAIN_NAME_CTL      "1.3.6.1.4.1.311.10.3.60"
+// SubjectAlgorithm for HPKP Domain CTL entries: szOID_PIN_RULES_DOMAIN_NAME
+
+// CTL containing HPKP Header Values. Stored as an extension in the
+// Hpkp Domain Name CTL. This OID is also used to identify
+// the extension.
+#define szOID_HPKP_HEADER_VALUE_CTL     "1.3.6.1.4.1.311.10.3.61"
+// SubjectAlgorithm for HPKP Header Value CTL entries: szOID_NIST_sha256
+// Only the first 16 bytes of the SHA256 hash are used
 
 
 // HAL Extensions
@@ -9581,7 +9159,12 @@ typedef const CTL_CONTEXT *PCCTL_CONTEXT;
 #define CERT_DISALLOWED_ENHKEY_USAGE_PROP_ID   122
 #define CERT_NONCOMPLIANT_ROOT_URL_PROP_ID     123      // NULL terminated UNICODE string
 
-#define CERT_FIRST_RESERVED_PROP_ID            124
+#define CERT_PIN_SHA256_HASH_PROP_ID           124
+#define CERT_CLR_DELETE_KEY_PROP_ID            125
+#define CERT_NOT_BEFORE_FILETIME_PROP_ID       126
+#define CERT_NOT_BEFORE_ENHKEY_USAGE_PROP_ID   127
+
+#define CERT_FIRST_RESERVED_PROP_ID            128
 
 #define CERT_LAST_RESERVED_PROP_ID          0x00007FFF
 #define CERT_FIRST_USER_PROP_ID             0x00008000
@@ -9617,6 +9200,7 @@ typedef enum CertKeyType WINCRYPT_DWORD_CPP_ONLY
                                         CERT_SIGNATURE_HASH_PROP_ID == (X))
 
 #define IS_PUBKEY_HASH_PROP_ID(X)     (CERT_ISSUER_PUBLIC_KEY_MD5_HASH_PROP_ID == (X) || \
+                                        CERT_PIN_SHA256_HASH_PROP_ID == (X) || \
                                         CERT_SUBJECT_PUBLIC_KEY_MD5_HASH_PROP_ID == (X))
 
 #define IS_CHAIN_HASH_PROP_ID(X)     (CERT_ISSUER_PUBLIC_KEY_MD5_HASH_PROP_ID == (X) || \
@@ -14802,6 +14386,12 @@ CryptHashCertificate(
     _Inout_ DWORD *pcbComputedHash
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
 //+-------------------------------------------------------------------------
@@ -14822,6 +14412,12 @@ CryptHashCertificate2(
     );
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)*/
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM)
 
 //+-------------------------------------------------------------------------
 //  Sign the "to be signed" information in the encoded signed content.
@@ -15380,6 +14976,12 @@ CryptImportPublicKeyInfoEx(
     _Out_ HCRYPTKEY *phKey
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
 //+-------------------------------------------------------------------------
@@ -15422,6 +15024,12 @@ typedef BOOL (WINAPI *PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC) (
     );
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)*/
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM)
 
 //+-------------------------------------------------------------------------
 //  Acquire a HCRYPTPROV and dwKeySpec or NCRYPT_KEY_HANDLE for the
@@ -15918,6 +15526,7 @@ CertNameToStrW(
 #define CERT_NAME_STR_FORCE_UTF8_DIR_STR_FLAG   0x00080000
 #define CERT_NAME_STR_DISABLE_UTF8_DIR_STR_FLAG 0x00100000
 #define CERT_NAME_STR_ENABLE_PUNYCODE_FLAG      0x00200000
+//#define CERT_NAME_STR_RESERVED00800000          0x00800000
 // certenrolld_end
 
 
@@ -18644,7 +18253,7 @@ CryptCreateKeyIdentifierFromCSP(
 // 0, uses the default value.
 #define CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_VALUE_NAME \
     L"MaxSslTimeUpdatedEventCount"
-#define CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DEFAULT     256
+#define CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DEFAULT     5
 
 // The following value disables uploading "SslTimeUpdated" events
 #define CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DISABLE     0xFFFFFFFF
@@ -19004,6 +18613,7 @@ CryptCreateKeyIdentifierFromCSP(
 #define CERT_CHAIN_AUTO_PINRULE_INFO                5
 #define CERT_CHAIN_AUTO_NETWORK_INFO                6
 #define CERT_CHAIN_AUTO_SERIAL_LOCAL_MACHINE        7
+#define CERT_CHAIN_AUTO_HPKP_RULE_INFO              8
 
 // The following is a REG_DWORD that can be set to disable
 // auto flush or enable the logging of auto create, free or
@@ -20407,7 +20017,6 @@ typedef struct _CERT_CHAIN_POLICY_STATUS {
 #define CERT_CHAIN_POLICY_IGNORE_WEAK_SIGNATURE_FLAG                0x08000000
 
 
-
 //+-------------------------------------------------------------------------
 //  Verify that the certificate chain satisfies the specified policy
 //  requirements. If we were able to verify the chain policy, TRUE is returned
@@ -20459,6 +20068,9 @@ CertVerifyCertificateChainPolicy(
 #define CERT_CHAIN_POLICY_MICROSOFT_ROOT    ((LPCSTR) 7)
 #define CERT_CHAIN_POLICY_EV                ((LPCSTR) 8)
 #define CERT_CHAIN_POLICY_SSL_F12           ((LPCSTR) 9)
+#define CERT_CHAIN_POLICY_SSL_HPKP_HEADER   ((LPCSTR) 10)
+#define CERT_CHAIN_POLICY_THIRD_PARTY_ROOT  ((LPCSTR) 11)
+#define CERT_CHAIN_POLICY_SSL_KEY_PIN       ((LPCSTR) 12)
 
 //+-------------------------------------------------------------------------
 //  CERT_CHAIN_POLICY_BASE
@@ -20709,11 +20321,127 @@ typedef struct _SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS {
 //     -- All Root Program compliance failures will map to warning level
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)*/
-#pragma endregion
+//+-------------------------------------------------------------------------
+//  CERT_CHAIN_POLICY_SSL_HPKP_HEADER
+//
+//  Processes the Http Public Key Pinning (HPKP) responses headers.
+//  There are two possible response headers:
+//   - "Public-Key-Pins" (PKP_HEADER)
+//   - "Public-Key-Pins-Report-Only" (PKP_RO_HEADER)
+//
+//  One or both of the above header values must be present.
+//
+//  pvExtraPolicyPara must be set to point to the following
+//  SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
+//
+//  One of the following dwError's will be set if the HPKP header isn't
+//  used:
+//   ERROR_SERVICE_DISABLED
+//      HPKP has been explicitly disabled
+//   ERROR_NOT_FOUND
+//      No previous call using CERT_CHAIN_POLICY_SSL policy for chain and
+//      server name.
+//   ERROR_ALREADY_EXISTS
+//      Second add to same server within 10 minutes
+//   ERROR_NOT_SUPPORTED
+//      Only the "Public-Key-Pins-Report-Only" header was set. It will
+//      only be trace logged.
+//   CRYPT_E_NO_MATCH
+//      No public key match in the chain context being used.
+//   CERT_E_UNTRUSTEDROOT
+//      Didn't chain up to a Third Party Root.
+//   ERROR_INVALID_TIME
+//      max-age value was less than the supported minimum. Default is 7 days.
+//   ERROR_INVALID_DATA
+//      HPKP header parsing errors.
+//--------------------------------------------------------------------------
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM)
+// "Public-Key-Pins" and "Public-Key-Pins-Report-Only" header indices
+#define SSL_HPKP_PKP_HEADER_INDEX       0
+#define SSL_HPKP_PKP_RO_HEADER_INDEX    1
+#define SSL_HPKP_HEADER_COUNT           2
+
+typedef struct _SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA {
+    DWORD               cbSize;
+    DWORD               dwReserved;
+    LPWSTR              pwszServerName;
+
+    // One or both of the following must be nonNULL.
+    LPSTR               rgpszHpkpValue[SSL_HPKP_HEADER_COUNT];
+} SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA,
+    *PSSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA;
+
+//+-------------------------------------------------------------------------
+//  CERT_CHAIN_POLICY_THIRD_PARTY_ROOT
+//
+//  Checks if the last element of the first simple chain is
+//  a Third Party root. If it isn't dwError is set to CERT_E_UNTRUSTEDROOT.
+//
+//
+//  pvExtraPolicyPara and pvExtraPolicyStatus aren't used and must be set
+//  to NULL.
+//--------------------------------------------------------------------------
+
+//+-------------------------------------------------------------------------
+//  CERT_CHAIN_POLICY_SSL_KEY_PIN
+//
+//  Uses the machine's non-expired HPKP rules to check for
+//  SSL server certificate Key Pin matches.
+//
+//  Also uses the Microsoft Windows Update Pin Rules to check if a potential
+//  MiTM root was used.
+//
+//  pvExtraPolicyPara must point to the 
+//  SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA data structure.
+//
+//  pvExtraPolicyStatus must point to the
+//  SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS data structure.
+//
+//  lError will be updated as follows:
+//   = 0 - SUCCESS. No MiTM or mismatch errors
+//   < 0 - ERROR.   User should be prompted with a click through option
+//   > 0 - WARNING. Only F12 warning
+//
+//  Two types of errors:
+//   - MITM -     Server certificates didn't chain up to a third party root
+//                 ERROR -   Current User or Local Machine root
+//                 WARNING - Group Policy or Enterprise root
+//   - MISMATCH - Server certificates chained up to a third party root
+//                 ERROR -   Only domain mismatches
+//                 WARNING - Both a domain mismatch and a domain match
+//
+//  For any errors wszErrorText will be updated with localized error string
+//  to be included in F12.
+//
+//  Before calling, the cbSize must be set to a
+//  value >= sizeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS).
+//
+//  dwError in CERT_CHAIN_POLICY_STATUS will be set to CERT_E_CN_NO_MATCH
+//  for either MITM or MISMATCH error.
+//--------------------------------------------------------------------------
+
+typedef struct _SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA {
+    DWORD   cbSize;
+    DWORD   dwReserved;
+    PCWSTR  pwszServerName;
+} SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA, *PSSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_PARA;
+
+#define SSL_KEY_PIN_ERROR_TEXT_LENGTH   512
+typedef struct _SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS {
+    DWORD   cbSize;
+    LONG    lError;
+    WCHAR   wszErrorText[SSL_KEY_PIN_ERROR_TEXT_LENGTH];  // Localized
+} SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS, *PSSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS;
+
+
+//+-------------------------------------------------------------------------
+//  SSL_KEY_PIN Errors
+//--------------------------------------------------------------------------
+#define CERT_CHAIN_POLICY_SSL_KEY_PIN_MISMATCH_ERROR   -2
+#define CERT_CHAIN_POLICY_SSL_KEY_PIN_MITM_ERROR       -1
+#define CERT_CHAIN_POLICY_SSL_KEY_PIN_SUCCESS           0
+#define CERT_CHAIN_POLICY_SSL_KEY_PIN_MITM_WARNING      1
+#define CERT_CHAIN_POLICY_SSL_KEY_PIN_MISMATCH_WARNING  2
 
 //+-------------------------------------------------------------------------
 // convert formatted string to binary
@@ -20805,12 +20533,6 @@ CryptBinaryToStringW(
 #define CryptBinaryToString  CryptBinaryToStringA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PHONE_RESTRICTED | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
 // dwFlags has the following defines
 // certenrolld_begin -- CRYPT_STRING_*
 #define CRYPT_STRING_BASE64HEADER           0x00000000
@@ -20827,6 +20549,10 @@ CryptBinaryToStringW(
 #define CRYPT_STRING_HEXASCIIADDR           0x0000000b
 #define CRYPT_STRING_HEXRAW                 0x0000000c
 #define CRYPT_STRING_BASE64URI              0x0000000d
+
+#define CRYPT_STRING_ENCODEMASK             0x000000ff
+#define CRYPT_STRING_RESERVED100            0x00000100
+#define CRYPT_STRING_RESERVED200            0x00000200
 
 #define CRYPT_STRING_PERCENTESCAPE          0x08000000	// base64 formats only
 #define CRYPT_STRING_HASHDATA               0x10000000
@@ -20864,7 +20590,6 @@ CryptBinaryToStringW(
 //    CRYPT_STRING_HEXASCIIADDR
 //    CRYPT_STRING_HEXASCII
 //    CRYPT_STRING_HEX
-
 
 //+=========================================================================
 //  PFX (PKCS #12) function definitions and types

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -107,6 +107,20 @@ typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuth
 typedef interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo;
 
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_FWD_DEFINED__
@@ -257,6 +271,30 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStatics_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        interface ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo;
@@ -279,6 +317,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        interface ISecondaryAuthenticationFactorInfo2;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistration_FWD_DEFINED__
@@ -417,18 +479,18 @@ interface ISecondaryAuthenticationFactorInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0001 */
 /* [local] */ 
@@ -463,18 +525,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0002 */
 /* [local] */ 
@@ -509,18 +571,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0003 */
 /* [local] */ 
@@ -587,18 +649,18 @@ interface ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0004 */
 /* [local] */ 
@@ -633,18 +695,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0005 */
 /* [local] */ 
@@ -679,18 +741,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0006 */
 /* [local] */ 
@@ -757,18 +819,18 @@ interface ISecondaryAuthenticationFactorAuthenticationResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0007 */
 /* [local] */ 
@@ -803,18 +865,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0008 */
 /* [local] */ 
@@ -881,18 +943,18 @@ interface ISecondaryAuthenticationFactorAuthenticationStageInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0009 */
 /* [local] */ 
@@ -927,18 +989,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0010 */
 /* [local] */ 
@@ -970,7 +1032,7 @@ namespace Security {
 namespace Authentication {
 namespace Identity {
 namespace Provider {
-enum SecondaryAuthenticationFactorFinishAuthenticationStatus;
+enum SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
 } /*Provider*/
 } /*Identity*/
 } /*Authentication*/
@@ -990,20 +1052,129 @@ enum SecondaryAuthenticationFactorFinishAuthenticationStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2294a212-9061-5e99-a226-a44ac8f8f4dd"))
+IAsyncOperationCompletedHandler<enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> : IAsyncOperationCompletedHandler_impl<enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>"; }
+};
+typedef IAsyncOperationCompletedHandler<enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_USE */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4670 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4670 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4670_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_USE
+#define DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("7f37ecea-e3e8-53fc-b0e5-7aa471970edd"))
+IAsyncOperation<enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> : IAsyncOperation_impl<enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>"; }
+};
+typedef IAsyncOperation<enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_t;
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_USE */
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Security {
+namespace Authentication {
+namespace Identity {
+namespace Provider {
+enum SecondaryAuthenticationFactorFinishAuthenticationStatus;
+} /*Provider*/
+} /*Identity*/
+} /*Authentication*/
+} /*Security*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4671 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4671 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4671_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_USE
@@ -1027,29 +1198,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3121 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3121_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4672 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4672_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_USE
@@ -1104,30 +1275,30 @@ interface ISecondaryAuthenticationFactorRegistrationResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3122 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3122_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4673 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4673_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_USE
@@ -1151,29 +1322,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3123 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3123_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4674 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4674_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_USE
@@ -1270,6 +1441,36 @@ typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSec
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorFinishAuthenticationStatus __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorFinishAuthenticationStatus;
 
 
@@ -1287,6 +1488,8 @@ typedef enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSec
 
 
 #endif
+
+
 
 
 
@@ -1323,7 +1526,7 @@ class SecondaryAuthenticationFactorRegistration;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016 */
 /* [local] */ 
 
 
@@ -1471,6 +1674,72 @@ namespace ABI {
                 namespace Identity {
                     namespace Provider {
                         
+                        typedef enum SecondaryAuthenticationFactorDevicePresence SecondaryAuthenticationFactorDevicePresence;
+                        
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        
+                        typedef enum SecondaryAuthenticationFactorDevicePresenceMonitoringMode SecondaryAuthenticationFactorDevicePresenceMonitoringMode;
+                        
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        
+                        typedef enum SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
+                        
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        
                         typedef enum SecondaryAuthenticationFactorFinishAuthenticationStatus SecondaryAuthenticationFactorFinishAuthenticationStatus;
                         
                     } /* end namespace */
@@ -1511,23 +1780,25 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0014_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3124 */
 
 
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016_v0_0_s_ifspec;
 
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3124_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4675 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4675_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo
@@ -1535,13 +1806,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
@@ -1685,35 +1956,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSecurity__CAuthentication__CIden
 #endif 	/* ____FIIterator_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3125 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3125_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4676 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4676_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo
@@ -1721,13 +1992,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
@@ -1837,35 +2108,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSecurity__CAuthentication__CIden
 #endif 	/* ____FIIterable_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3126 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3126_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4677 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4677_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo
@@ -1873,13 +2144,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
@@ -2031,35 +2302,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSecurity__CAuthentication__CId
 #endif 	/* ____FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3127 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3127_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4678 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4678_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageChangedEventArgs
@@ -2067,13 +2338,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__
@@ -2162,35 +2433,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CSecurity__CAuthentication__C
 #endif 	/* ____FIEventHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3128 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3128_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4679 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4679_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo
@@ -2199,14 +2470,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
@@ -2295,35 +2566,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3129 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3129_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4680 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4680_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo
@@ -2331,13 +2602,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
@@ -2467,35 +2738,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity_
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3130 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3130_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4681 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4681_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult
@@ -2504,14 +2775,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__
@@ -2600,35 +2871,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3131 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3131_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4682 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4682_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult
@@ -2636,13 +2907,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__
@@ -2772,35 +3043,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3132 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3132_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4683 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4683_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo
@@ -2809,14 +3080,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__
@@ -2905,35 +3176,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3133 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3133_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4684 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4684_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo
@@ -2941,13 +3212,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__
@@ -3077,35 +3348,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorAuthenticationStageInfo */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3134 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3134_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4685 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4685_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2294a212-9061-5e99-a226-a44ac8f8f4dd")
+    __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatusVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatusVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatusVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4686 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4686 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4686_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+#define DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("7f37ecea-e3e8-53fc-b0e5-7aa471970edd")
+    __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__out enum ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus *results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatusVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * This,
+            /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus *results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatusVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatusVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4687 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4687 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4687_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus
@@ -3114,14 +3690,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_INTERFACE_DEFINED__
@@ -3210,35 +3786,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3135 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3135_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4688 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4688_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus
@@ -3246,13 +3822,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_INTERFACE_DEFINED__
@@ -3382,35 +3958,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorFinishAuthenticationStatus */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3136 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3136_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4689 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4689_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult
@@ -3419,14 +3995,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__
@@ -3515,35 +4091,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3137 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_3137_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4690 */
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider2Eidl_0000_4690_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult
@@ -3551,13 +4127,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Epro
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__
@@ -3687,7 +4263,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSecurity__CAuthentication_
 #endif 	/* ____FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -3747,7 +4323,8 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
         SecondaryAuthenticationFactorAuthenticationStage_CredentialCollected	= 4,
         SecondaryAuthenticationFactorAuthenticationStage_CredentialAuthenticated	= 5,
         SecondaryAuthenticationFactorAuthenticationStage_StoppingAuthentication	= 6,
-        SecondaryAuthenticationFactorAuthenticationStage_ReadyForLock	= 7
+        SecondaryAuthenticationFactorAuthenticationStage_ReadyForLock	= 7,
+        SecondaryAuthenticationFactorAuthenticationStage_CheckingDevicePresence	= 8
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3779,7 +4356,8 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
         SecondaryAuthenticationFactorDeviceCapabilities_ConfirmUserIntentToAuthenticate	= 0x4,
         SecondaryAuthenticationFactorDeviceCapabilities_SupportSecureUserPresenceCheck	= 0x8,
         SecondaryAuthenticationFactorDeviceCapabilities_TransmittedDataIsEncrypted	= 0x10,
-        SecondaryAuthenticationFactorDeviceCapabilities_HMacSha256	= 0x20
+        SecondaryAuthenticationFactorDeviceCapabilities_HMacSha256	= 0x20,
+        SecondaryAuthenticationFactorDeviceCapabilities_CloseRangeDataTransmission	= 0x40
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3807,6 +4385,44 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
     {
         SecondaryAuthenticationFactorDeviceFindScope_User	= 0,
         SecondaryAuthenticationFactorDeviceFindScope_AllUsers	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence
+    {
+        SecondaryAuthenticationFactorDevicePresence_Absent	= 0,
+        SecondaryAuthenticationFactorDevicePresence_Present	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode
+    {
+        SecondaryAuthenticationFactorDevicePresenceMonitoringMode_Unsupported	= 0,
+        SecondaryAuthenticationFactorDevicePresenceMonitoringMode_AppManaged	= 1,
+        SecondaryAuthenticationFactorDevicePresenceMonitoringMode_SystemManaged	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+    {
+        SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Unsupported	= 0,
+        SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Succeeded	= 1,
+        SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_DisabledByPolicy	= 2
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -3844,7 +4460,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthentication_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -3934,7 +4550,8 @@ namespace ABI {
                                 SecondaryAuthenticationFactorAuthenticationStage_CredentialCollected	= 4,
                                 SecondaryAuthenticationFactorAuthenticationStage_CredentialAuthenticated	= 5,
                                 SecondaryAuthenticationFactorAuthenticationStage_StoppingAuthentication	= 6,
-                                SecondaryAuthenticationFactorAuthenticationStage_ReadyForLock	= 7
+                                SecondaryAuthenticationFactorAuthenticationStage_ReadyForLock	= 7,
+                                SecondaryAuthenticationFactorAuthenticationStage_CheckingDevicePresence	= 8
                             } ;
                     } /* end namespace */
                 } /* end namespace */
@@ -3992,7 +4609,8 @@ namespace ABI {
                                 SecondaryAuthenticationFactorDeviceCapabilities_ConfirmUserIntentToAuthenticate	= 0x4,
                                 SecondaryAuthenticationFactorDeviceCapabilities_SupportSecureUserPresenceCheck	= 0x8,
                                 SecondaryAuthenticationFactorDeviceCapabilities_TransmittedDataIsEncrypted	= 0x10,
-                                SecondaryAuthenticationFactorDeviceCapabilities_HMacSha256	= 0x20
+                                SecondaryAuthenticationFactorDeviceCapabilities_HMacSha256	= 0x20,
+                                SecondaryAuthenticationFactorDeviceCapabilities_CloseRangeDataTransmission	= 0x40
                             } ;
                     } /* end namespace */
                 } /* end namespace */
@@ -4018,6 +4636,83 @@ namespace ABI {
                             {
                                 SecondaryAuthenticationFactorDeviceFindScope_User	= 0,
                                 SecondaryAuthenticationFactorDeviceFindScope_AllUsers	= 1
+                            } ;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        
+                        /* [v1_enum] */ 
+                        enum SecondaryAuthenticationFactorDevicePresence
+                            {
+                                SecondaryAuthenticationFactorDevicePresence_Absent	= 0,
+                                SecondaryAuthenticationFactorDevicePresence_Present	= 1
+                            } ;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        
+                        /* [v1_enum] */ 
+                        enum SecondaryAuthenticationFactorDevicePresenceMonitoringMode
+                            {
+                                SecondaryAuthenticationFactorDevicePresenceMonitoringMode_Unsupported	= 0,
+                                SecondaryAuthenticationFactorDevicePresenceMonitoringMode_AppManaged	= 1,
+                                SecondaryAuthenticationFactorDevicePresenceMonitoringMode_SystemManaged	= 2
+                            } ;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Authentication {
+                namespace Identity {
+                    namespace Provider {
+                        
+                        /* [v1_enum] */ 
+                        enum SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+                            {
+                                SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Unsupported	= 0,
+                                SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Succeeded	= 1,
+                                SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_DisabledByPolicy	= 2
                             } ;
                     } /* end namespace */
                 } /* end namespace */
@@ -4085,8 +4780,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthentication_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthentication_INTERFACE_DEFINED__
@@ -4269,7 +4964,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthentication_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__)
@@ -4277,13 +4972,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__
@@ -4420,7 +5115,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__)
@@ -4428,13 +5123,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__
@@ -4561,7 +5256,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__)
@@ -4569,13 +5264,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__
@@ -4722,7 +5417,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStageInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0052 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStatics_INTERFACE_DEFINED__)
@@ -4730,13 +5425,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0052_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStatics_INTERFACE_DEFINED__
@@ -4913,7 +5608,198 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorAuthenticationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0053 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Identity_Provider_ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics[] = L"Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0053 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0053_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace Identity {
+                        namespace Provider {
+                            
+                            MIDL_INTERFACE("90499A19-7EF2-4523-951C-A417A24ACF93")
+                            ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : public IInspectable
+                            {
+                            public:
+                                virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringAsync( 
+                                    /* [in] */ __RPC__in HSTRING deviceId,
+                                    /* [in] */ __RPC__in HSTRING deviceInstancePath,
+                                    /* [in] */ ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus **operation) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringWithNewDeviceAsync( 
+                                    /* [in] */ __RPC__in HSTRING deviceId,
+                                    /* [in] */ __RPC__in HSTRING deviceInstancePath,
+                                    /* [in] */ ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
+                                    /* [in] */ __RPC__in HSTRING deviceFriendlyName,
+                                    /* [in] */ __RPC__in HSTRING deviceModelNumber,
+                                    /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IBuffer *deviceConfigurationData,
+                                    /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus **operation) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE UnregisterDevicePresenceMonitoringAsync( 
+                                    /* [in] */ __RPC__in HSTRING deviceId,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **result) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE IsDevicePresenceMonitoringSupported( 
+                                    /* [out][retval] */ __RPC__out boolean *value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics = __uuidof(ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterDevicePresenceMonitoringAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [in] */ __RPC__in HSTRING deviceInstancePath,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *RegisterDevicePresenceMonitoringWithNewDeviceAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [in] */ __RPC__in HSTRING deviceInstancePath,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
+            /* [in] */ __RPC__in HSTRING deviceFriendlyName,
+            /* [in] */ __RPC__in HSTRING deviceModelNumber,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer *deviceConfigurationData,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus **operation);
+        
+        HRESULT ( STDMETHODCALLTYPE *UnregisterDevicePresenceMonitoringAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [in] */ __RPC__in HSTRING deviceId,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **result);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsDevicePresenceMonitoringSupported )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_RegisterDevicePresenceMonitoringAsync(This,deviceId,deviceInstancePath,monitoringMode,operation)	\
+    ( (This)->lpVtbl -> RegisterDevicePresenceMonitoringAsync(This,deviceId,deviceInstancePath,monitoringMode,operation) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_RegisterDevicePresenceMonitoringWithNewDeviceAsync(This,deviceId,deviceInstancePath,monitoringMode,deviceFriendlyName,deviceModelNumber,deviceConfigurationData,operation)	\
+    ( (This)->lpVtbl -> RegisterDevicePresenceMonitoringWithNewDeviceAsync(This,deviceId,deviceInstancePath,monitoringMode,deviceFriendlyName,deviceModelNumber,deviceConfigurationData,operation) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_UnregisterDevicePresenceMonitoringAsync(This,deviceId,result)	\
+    ( (This)->lpVtbl -> UnregisterDevicePresenceMonitoringAsync(This,deviceId,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_IsDevicePresenceMonitoringSupported(This,value)	\
+    ( (This)->lpVtbl -> IsDevicePresenceMonitoringSupported(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0054 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__)
@@ -4921,13 +5807,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0054_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__
@@ -5084,7 +5970,170 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0055 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Security_Authentication_Identity_Provider_ISecondaryAuthenticationFactorInfo2[] = L"Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo2";
+#endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0055 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0055_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Security {
+                namespace Authentication {
+                    namespace Identity {
+                        namespace Provider {
+                            
+                            MIDL_INTERFACE("14D981A3-FC26-4FF7-ABC3-48E82A512A0A")
+                            ISecondaryAuthenticationFactorInfo2 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PresenceMonitoringMode( 
+                                    /* [out][retval] */ __RPC__out ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode *value) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE UpdateDevicePresenceAsync( 
+                                    /* [in] */ ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresence presenceState,
+                                    /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **result) = 0;
+                                
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsAuthenticationSupported( 
+                                    /* [out][retval] */ __RPC__out boolean *value) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_ISecondaryAuthenticationFactorInfo2 = __uuidof(ISecondaryAuthenticationFactorInfo2);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PresenceMonitoringMode )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *UpdateDevicePresenceAsync )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [in] */ __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence presenceState,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **result);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsAuthenticationSupported )( 
+            __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2Vtbl;
+
+    interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_get_PresenceMonitoringMode(This,value)	\
+    ( (This)->lpVtbl -> get_PresenceMonitoringMode(This,value) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_UpdateDevicePresenceAsync(This,presenceState,result)	\
+    ( (This)->lpVtbl -> UpdateDevicePresenceAsync(This,presenceState,result) ) 
+
+#define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_get_IsAuthenticationSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsAuthenticationSupported(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0056 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistration_INTERFACE_DEFINED__)
@@ -5092,13 +6141,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistration_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0056_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistration_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistration_INTERFACE_DEFINED__
@@ -5239,7 +6288,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistration_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0057 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__)
@@ -5247,13 +6296,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__
@@ -5390,7 +6439,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0058 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationStatics_INTERFACE_DEFINED__)
@@ -5398,13 +6447,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0058_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationStatics_INTERFACE_DEFINED__
@@ -5581,7 +6630,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CPro
 #endif 	/* ____x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorRegistrationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0059 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Security_Authentication_Identity_Provider_SecondaryAuthenticationFactorAuthentication_DEFINED
@@ -5614,13 +6663,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051 */
+/* interface __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esecurity2Eauthentication2Eidentity2Eprovider_0000_0059_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

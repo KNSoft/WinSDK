@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -109,6 +109,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
+#include "Windows.Devices.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -150,18 +151,18 @@ interface IPwmControllerProvider;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0365 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0324 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0365 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0324_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0324_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0365_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0001 */
 /* [local] */ 
@@ -196,18 +197,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0366 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0366 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0366_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0002 */
 /* [local] */ 
@@ -242,18 +243,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0367 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0367 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0367_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0003 */
 /* [local] */ 
@@ -281,6 +282,9 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Edevices_h__)
+#include <Windows.Devices.h>
+#endif // !defined(__windows2Edevices_h__)
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
@@ -297,18 +301,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0368 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0368_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0004 */
 /* [local] */ 
@@ -483,18 +487,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CPwm__CProvider__CIPwmC
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0369 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0369_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0006 */
 /* [local] */ 
@@ -635,18 +639,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CPwm__CProvider__CIPwmC
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0370 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0370 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Epwm2Eprovider2Eidl_0000_0370_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Epwm2Eprovider_0000_0008 */
 /* [local] */ 
@@ -866,7 +870,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerP
                             
                             virtual HRESULT STDMETHODCALLTYPE SetDesiredFrequency( 
                                 /* [in] */ DOUBLE frequency,
-                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                                /* [out][retval] */ __RPC__out DOUBLE *result) = 0;
                             
                             virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxFrequency( 
                                 /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
@@ -945,7 +949,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerP
         HRESULT ( STDMETHODCALLTYPE *SetDesiredFrequency )( 
             __RPC__in __x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerProvider * This,
             /* [in] */ DOUBLE frequency,
-            /* [out][retval] */ __RPC__out DOUBLE *value);
+            /* [out][retval] */ __RPC__out DOUBLE *result);
         
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxFrequency )( 
             __RPC__in __x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerProvider * This,
@@ -1016,8 +1020,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerP
 #define __x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerProvider_get_ActualFrequency(This,value)	\
     ( (This)->lpVtbl -> get_ActualFrequency(This,value) ) 
 
-#define __x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerProvider_SetDesiredFrequency(This,frequency,value)	\
-    ( (This)->lpVtbl -> SetDesiredFrequency(This,frequency,value) ) 
+#define __x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerProvider_SetDesiredFrequency(This,frequency,result)	\
+    ( (This)->lpVtbl -> SetDesiredFrequency(This,frequency,result) ) 
 
 #define __x_ABI_CWindows_CDevices_CPwm_CProvider_CIPwmControllerProvider_get_MaxFrequency(This,value)	\
     ( (This)->lpVtbl -> get_MaxFrequency(This,value) ) 

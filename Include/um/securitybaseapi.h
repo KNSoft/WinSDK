@@ -22,12 +22,15 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-security-base-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_SECURITYBASE_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#define _APISET_SECURITYBASE_VER 0x0202
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_SECURITYBASE_VER 0x0201
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_SECURITYBASE_VER 0x0200
@@ -46,16 +49,16 @@ extern "C" {
 
 // end_1_0
 
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 // begin_1_0
 
 //
 //
 // Security APIs
 //
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -212,6 +215,13 @@ AccessCheckByTypeResultListAndAuditAlarmByHandleW(
 #define AccessCheckByTypeResultListAndAuditAlarmByHandle  AccessCheckByTypeResultListAndAuditAlarmByHandleW
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -234,6 +244,13 @@ AddAccessAllowedAceEx(
     _In_ PSID pSid
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -286,6 +303,13 @@ AddAccessDeniedObjectAce(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -297,6 +321,13 @@ AddAce(
     _In_ DWORD nAceListLength
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -341,6 +372,13 @@ AddAuditAccessObjectAce(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 
 #if (_WIN32_WINNT >= 0x0600)
 
@@ -358,10 +396,17 @@ AddMandatoryAce(
 
 #endif /* _WIN32_WINNT >=  0x0600 */
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
 // end_1_0
 
 
 #if ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100))
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -389,9 +434,16 @@ AddScopedPolicyIDAce(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
 #endif /* ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100)) */
 
 // begin_1_0
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -445,6 +497,13 @@ AllocateLocallyUniqueId(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -463,6 +522,13 @@ AreAnyAccessesGranted(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 APIENTRY
@@ -473,10 +539,17 @@ CheckTokenMembership(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
 // end_1_0
 
 
 #if ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100))
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -499,6 +572,13 @@ GetAppContainerAce(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 APIENTRY
@@ -510,9 +590,16 @@ CheckTokenMembershipEx(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
 #endif /* ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100)) */
 
 // begin_1_0
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -527,6 +614,13 @@ ConvertToAutoInheritPrivateObjectSecurity(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -536,6 +630,13 @@ CopySid(
     _In_ PSID pSourceSid
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -597,6 +698,13 @@ CreateRestrictedToken(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 
 #if (_WIN32_WINNT >= 0x0501)
 
@@ -634,6 +742,13 @@ DeleteAce(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -641,6 +756,13 @@ DestroyPrivateObjectSecurity(
     _Pre_valid_ _Post_invalid_ PSECURITY_DESCRIPTOR * ObjectDescriptor
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -664,6 +786,13 @@ DuplicateTokenEx(
     _Outptr_ PHANDLE phNewToken
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -691,6 +820,13 @@ FindFirstFreeAce(
     _Outptr_ LPVOID * pAce
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 PVOID
@@ -721,6 +857,13 @@ GetAclInformation(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -736,6 +879,13 @@ GetFileSecurityW(
 #ifdef UNICODE
 #define GetFileSecurity  GetFileSecurityW
 #endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -759,6 +909,13 @@ GetLengthSid(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 _Success_(return != FALSE)
 BOOL
@@ -771,6 +928,13 @@ GetPrivateObjectSecurity(
     _Out_ PDWORD ReturnLength
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -902,6 +1066,13 @@ GetWindowsAccountDomainSid(
 
 #endif //(_WIN32_WINNT >= 0x0501)
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 APIENTRY
@@ -927,6 +1098,13 @@ ImpersonateSelf(
     _In_ SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -957,6 +1135,13 @@ InitializeSid(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -964,6 +1149,13 @@ IsTokenRestricted(
     _In_ HANDLE TokenHandle
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -1032,6 +1224,13 @@ MakeSelfRelativeSD(
     _Inout_ LPDWORD lpdwBufferLength
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 VOID
@@ -1182,6 +1381,13 @@ SetFileSecurityW(
 #define SetFileSecurity  SetFileSecurityW
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINADVAPI
 BOOL
 WINAPI
@@ -1191,6 +1397,13 @@ SetKernelObjectSecurity(
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -1230,6 +1443,13 @@ SetSecurityAccessMask(
 
 
 #endif // (_WIN32_WINNT >= 0x0600)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -1303,10 +1523,17 @@ SetTokenInformation(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
 // end_1_0
 
 
 #if ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100))
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 BOOL
@@ -1331,18 +1558,18 @@ GetCachedSigningLevel(
     _Out_opt_ PULONG ThumbprintAlgorithm
     );
 
-    
-#endif /* ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100)) */
 
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#endif /* ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN8)) || (_APISET_SECURITYBASE_VER > 0x0100)) */
 
 
 #if ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN10)) || (_APISET_SECURITYBASE_VER >= 0x0201))
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
 LONG
@@ -1353,10 +1580,34 @@ CveEventWrite(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
 #endif /* ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN10)) || (_APISET_SECURITYBASE_VER >= 0x0201)) */
+
+
+#if ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN10)) || (_APISET_SECURITYBASE_VER >= 0x0202))
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+WINADVAPI
+BOOL
+WINAPI
+DeriveCapabilitySidsFromName(
+    _In_ LPCWSTR CapName,
+    _Outptr_result_buffer_maybenull_(*CapabilityGroupSidCount) PSID ** CapabilityGroupSids,
+    _Out_ DWORD * CapabilityGroupSidCount,
+    _Outptr_result_buffer_maybenull_(*CapabilitySidCount) PSID ** CapabilitySids,
+    _Out_ DWORD * CapabilitySidCount
+    );
+
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
+
+#endif /* ((!defined(_CONTRACT_GEN) && (_WIN32_WINNT >= _WIN32_WINNT_WIN10)) || (_APISET_SECURITYBASE_VER >= 0x0202)) */
 
 // begin_1_0
 

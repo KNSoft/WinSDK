@@ -1225,6 +1225,18 @@ DEFINE_PROPERTYKEY( WPD_DEVICE_USE_DEVICE_STAGE , 0x463DD662, 0x7FC4, 0x4291, 0x
 
 /****************************************************************************
  * This section defines all Commands, Parameters and Options associated with:
+ * WPD_DEVICE_PROPERTIES_V3 
+ *
+ * 
+ ****************************************************************************/
+DEFINE_GUID( WPD_DEVICE_PROPERTIES_V3 , 0x6C2B878C, 0xC2EC, 0x490D, 0xB4, 0x25, 0xD7, 0xA7, 0x5E, 0x23, 0xE5, 0xED );
+//
+// WPD_DEVICE_EDP_IDENTITY  
+//   [ VT_LPWSTR ] Represents EDP identity of the device.
+DEFINE_PROPERTYKEY( WPD_DEVICE_EDP_IDENTITY , 0x6C2B878C, 0xC2EC, 0x490D, 0xB4, 0x25, 0xD7, 0xA7, 0x5E, 0x23, 0xE5, 0xED ,  1 );
+
+/****************************************************************************
+ * This section defines all Commands, Parameters and Options associated with:
  * WPD_SERVICE_PROPERTIES_V1 
  *
  * 

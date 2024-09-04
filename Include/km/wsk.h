@@ -31,11 +31,12 @@ extern "C" {
 #include <mswsockdef.h>
 
 //
-// Socket object. 
+// Socket object.
 //
-// 'Dispatch' can be one of 4 types depending on the socket type:
+// 'Dispatch' can be one of 5 types depending on the socket type:
 // PWSK_PROVIDER_BASIC_DISPATCH, PWSK_PROVIDER_LISTEN_DISPATCH,
-// PWSK_PROVIDER_DATAGRAM_DISPATCH, PWSK_PROVIDER_CONNECTION_DISPATCH
+// PWSK_PROVIDER_DATAGRAM_DISPATCH, PWSK_PROVIDER_CONNECTION_DISPATCH,
+// PWSK_PROVIDER_STREAM_DISPATCH
 //
 
 typedef struct _WSK_SOCKET {
@@ -91,14 +92,14 @@ typedef struct _WSK_TRANSPORT {
     USHORT         SocketType;
     ULONG          Protocol;
     ADDRESS_FAMILY AddressFamily;
-    GUID           ProviderId; 
+    GUID           ProviderId;
 } WSK_TRANSPORT, *PWSK_TRANSPORT;
 
 //
 // Buffer structure used for sending/receiving data.
 // Mdl points to a chain of memory descriptors (scatter/gather list).
 // The data described begin at 'Offset' and extend for 'Length' bytes.
-// N.B. 'Offset' is required to lie entirely within the first MDL in 
+// N.B. 'Offset' is required to lie entirely within the first MDL in
 // the chain.
 //
 
@@ -174,12 +175,12 @@ NTSTATUS
     _In_ SIZE_T    InformationLength
     );
 /*
- * Indicates client-specific control event. 
+ * Indicates client-specific control event.
  *
  * Parameters:
  *  ClientContext - ClientContext value that was passed to WskRegister
  *  EventType - No event types are currently defined.
- *  Information - Optional event specific information. 
+ *  Information - Optional event specific information.
  *  InformationLength - Length of information.
  * Returns:
  *  STATUS_SUCCESS unless otherwise is specified by specific EventTypes.
@@ -194,11 +195,11 @@ NTSTATUS
     _In_opt_ PWSK_DATAGRAM_INDICATION DataIndication
     );
 /*
- * Indicates that one or more datagrams have arrived on one of the datagram 
+ * Indicates that one or more datagrams have arrived on one of the datagram
  * socket objects created by the client
  *
  * Parameters:
- *  SocketContext - Context value associated with the socket on which 
+ *  SocketContext - Context value associated with the socket on which
  *     datagram(s) were received.
  *  Flags - MSG_BCAST, MSG_MCAST, WSK_FLAG_AT_DISPATCH_LEVEL
  *  DataIndication - List of one or more datagrams.
@@ -206,19 +207,19 @@ NTSTATUS
  * Returns:
  *  STATUS_SUCCESS - Datagram(s) were consumed and further indication should be
  *     made when new datagrams arrive.
- *  STATUS_PENDING - Datagram(s) were retained by the client and the data must 
+ *  STATUS_PENDING - Datagram(s) were retained by the client and the data must
  *     remain valid until released by the client. Further indication should be
  *     made when new datagrams arrive.
  *  STATUS_DATA_NOT_ACCEPTED - Datagram(s) could not be processed and should be
- *     buffered by the transport if possible or required by the 
- *     protocol. No further indication should be made until 
- *     message indication callbacks are specifically re-enabled. 
+ *     buffered by the transport if possible or required by the
+ *     protocol. No further indication should be made until
+ *     message indication callbacks are specifically re-enabled.
  */
 
 //
 // Forward declaration for connected socket callback table
 //
-typedef struct _WSK_CLIENT_CONNECTION_DISPATCH 
+typedef struct _WSK_CLIENT_CONNECTION_DISPATCH
     WSK_CLIENT_CONNECTION_DISPATCH, *PWSK_CLIENT_CONNECTION_DISPATCH;
 
 typedef
@@ -235,26 +236,26 @@ NTSTATUS
     _Outptr_result_maybenull_ CONST WSK_CLIENT_CONNECTION_DISPATCH **AcceptSocketDispatch
     );
 /*
- * Indicates that a connection request has arrived on one of the listening 
- * sockets created by the client. Note that when this callback is made,  
+ * Indicates that a connection request has arrived on one of the listening
+ * sockets created by the client. Note that when this callback is made,
  * connection setup handshake with the remote party have already taken place.
  *
  * Parameters:
- *  SocketContext - Context value associated with the listening socket 
+ *  SocketContext - Context value associated with the listening socket
  *     on which connection request has been received.
  *  Flags - WSK_FLAG_AT_DISPATCH_LEVEL
  *  LocalAddress - Local transport address this connection request arrived on.
  *     Useful if the listening socket is bound to the wildcard address.
  *  RemoteAddress - Transport address of the remote party.
  *  AcceptSocket - New connected socket object that represent the connection.
- *     NULL denotes that listening socket must be closed. 
+ *     NULL denotes that listening socket must be closed.
  *  AcceptSocketContext - OUT parameter through which the client passes the
  *     SocketContext for the new socket to WSK. WSK client must initialize
  *     this parameter before enabling event callbacks via
  *     SO_WSK_EVENT_CALLBACK option.
- *  AcceptSocketDispatch - OUT parameter through which the client passes the  
- *     callback routines for the new socket to WSK. WSK client must  
- *     initialize this parameter before enabling callbacks via 
+ *  AcceptSocketDispatch - OUT parameter through which the client passes the
+ *     callback routines for the new socket to WSK. WSK client must
+ *     initialize this parameter before enabling callbacks via
  *     SO_WSK_EVENT_CALLBACK option.
  * Returns:
  *  STATUS_SUCCESS - Client accepted the connection.
@@ -272,9 +273,9 @@ WSK_INSPECT_ACTION
     _In_opt_ PWSK_INSPECT_ID InspectID
     );
 /*
- * Indicates that a connection request has arrived on a conditional-accept 
+ * Indicates that a connection request has arrived on a conditional-accept
  * listening socket. This callback is used only for conditional-accept sockets.
- * This indication allows the client to decide if it wants to proceed with 
+ * This indication allows the client to decide if it wants to proceed with
  * regular connection acceptance before any actual connection setup handshake
  * with the remote party takes place. If the client decides to proceed with
  * regular acceptance than the WskAcceptEvent callback will be invoked later
@@ -282,14 +283,14 @@ WSK_INSPECT_ACTION
  * successfully.
  *
  * Parameters:
- *  SocketContext - Context value associated with the listening socket 
+ *  SocketContext - Context value associated with the listening socket
  *                  on which connection request has been received.
  *  LocalAddress - Local transport address this connection request arrived on.
  *              Useful if the listening socket is bound to the wildcard address.
  *  RemoteAddress - Transport address of the remote party.
  *  InspectID - Pointer to the inspect ID structure. The connection request
- *              is identified via the contents of this structure (NOT via the 
- *              pointer to the structure) until the WskAcceptEvent callback 
+ *              is identified via the contents of this structure (NOT via the
+ *              pointer to the structure) until the WskAcceptEvent callback
  *              happens. If the client wants to preserve the inspect ID then it
  *              needs to copy this structure to its own memory before returning
  *              from this callback.
@@ -312,16 +313,16 @@ NTSTATUS
     );
 /*
  * Indicates that a previous connection request indicated by WskInspectEvent
- * callback is dropped. This callback is used only for conditional-accept 
+ * callback is dropped. This callback is used only for conditional-accept
  * sockets.
  *
  * Parameters:
- *  SocketContext - Context value associated with the listening socket 
+ *  SocketContext - Context value associated with the listening socket
  *                  on which connection request was received.
  *  InspectID - Pointer to the inspect ID structure. The connection request
  *              is identified via the contents of this structure (NOT via the
  *              pointer to the structure.) If the client wants to preserve the
- *              inspect ID then it needs to copy this sturcture to its own 
+ *              inspect ID then it needs to copy this sturcture to its own
  *              memory before returning from this callback.
  * Returns:
  *  STATUS_SUCCESS - This is the only allowed return value.
@@ -387,13 +388,13 @@ NTSTATUS
  *    then it does NOT have to set this parameter, i.e. returning STATUS_SUCCESS
  *    without touching this parameter means full acceptance.
  * Returns:
- *  STATUS_SUCCESS - Data buffer(s) were fully or partially consumed. If 
+ *  STATUS_SUCCESS - Data buffer(s) were fully or partially consumed. If
  *     indication was fully consumed, further indication should be made when
  *     more data arrives. If indication was partially consumed, i.e. client
  *     sets the BytesAccepted parameter to a number smaller than BytesIndicated,
- *     then no further indications will be made until the client posts a 
+ *     then no further indications will be made until the client posts a
  *     WskReceive request and it gets completed.
- *  STATUS_PENDING - Data buffer(s) were retained by the client and the data 
+ *  STATUS_PENDING - Data buffer(s) were retained by the client and the data
  *     must remain valid until released. Further indications should be made
  *     when more data arrives.
  *  STATUS_DATA_NOT_ACCEPTED - Data buffer(s) could not be processed and should
@@ -434,6 +435,7 @@ NTSTATUS
 #define WSK_FLAG_LISTEN_SOCKET       0x00000001
 #define WSK_FLAG_CONNECTION_SOCKET   0x00000002
 #define WSK_FLAG_DATAGRAM_SOCKET     0x00000004
+#define WSK_FLAG_STREAM_SOCKET       0x00000008
 
 typedef
 _At_((void*)Irp->IoStatus.Information, __drv_allocatesMem(Mem))
@@ -456,7 +458,7 @@ NTSTATUS
  *
  * Parameters:
  *
- *  Client - Pointer to the Client object returned by WskCaptureProviderNPI 
+ *  Client - Pointer to the Client object returned by WskCaptureProviderNPI
  *  AddressFamily - address family, e.g. AF_INET, AF_INET6
  *  SocketType - socket type, e.g. SOCK_STREAM, SOCK_DGRAM
  *  Protocol - protocol, e.g. IPPROTO_TCP, IPPROTO_UDP
@@ -465,16 +467,17 @@ NTSTATUS
  *          WSK_FLAG_CONNECTION_SOCKET - This socket will be for connecting
  *                                       to a remote party.
  *          WSK_FLAG_DATAGRAM_SOCKET - This socket will be used for sending and
- *                                     receiving datagrams. 
- *          WSK_FLAG_BASIC_SOCKET - This socket will be used for basic control 
+ *                                     receiving datagrams.
+ *          WSK_FLAG_BASIC_SOCKET - This socket will be used for basic control
  *                                  operations.
  *  SocketContext - Context value to pass in event callbacks
- *  Dispatch - pointer to a constant structure that contains pointers to 
+ *  Dispatch - pointer to a constant structure that contains pointers to
  *            callback routines. OPTIONAL if client won't be enabling callbacks.
  *            Client must provide the right callback table based on socket type:
  *            WSK_CLIENT_LISTEN_DISPATCH for WSK_FLAG_LISTEN_SOCKET,
  *            WSK_CLIENT_CONNECTION_DISPATCH for WSK_FLAG_CONNECTION_SOCKET,
  *            WSK_CLIENT_DATAGRAM_DISPATCH for WSK_FLAG_DATAGRAM_SOCKET,
+ *            WSK_CLIENT_STREAM_DISPATCH for WSK_FLAG_STREAM_SOCKET,
  *            NULL for WSK_FLAG_BASIC_SOCKET.
  *  OwningProcess - The process to retrieve the security context from. If this
  *                  is set to NULL then the current process is assumed. This is
@@ -482,9 +485,9 @@ NTSTATUS
  *  OwningThread  - The thread to retrieve the security context from. This is
  *                  useful only if an impersonation token is in effect and used
  *                  for implementing transport address security during bind.
- *  SecurityDescriptor - Optional security descriptor to protect the transport 
+ *  SecurityDescriptor - Optional security descriptor to protect the transport
  *                       address that this socket will be bound to. Only the
- *                       security descriptors obtained from the NT object 
+ *                       security descriptors obtained from the NT object
  *                       manager's security descriptor cache can be specified.
  *  Irp - IRP for async completion of the request
  *
@@ -526,7 +529,7 @@ NTSTATUS
  *  RemoteAddress - Remote address to connect to.
  *  Flags - Reserved. (Must be 0)
  *  SocketContext - Context value to pass in event callbacks
- *  Dispatch - pointer to a constant structure that contains pointers to 
+ *  Dispatch - pointer to a constant structure that contains pointers to
  *     callback routines. OPTIONAL if client won't be enabling callbacks.
  *  OwningProcess - The process to retrieve the security context from. If this
  *                  is set to NULL then the current process is assumed. This is
@@ -534,9 +537,9 @@ NTSTATUS
  *  OwningThread  - The thread to retrieve the security context from. This is
  *                  useful only if an impersonation token is in effect and used
  *                  for implementing transport address security during bind.
- *  SecurityDescriptor - Optional security descriptor to protect the transport 
+ *  SecurityDescriptor - Optional security descriptor to protect the transport
  *                       address that this socket will be bound to. Only the
- *                       security descriptors obtained from the NT object 
+ *                       security descriptors obtained from the NT object
  *                       manager's security descriptor cache can be specified.
  *  Irp - IRP for async completion of the request
  *
@@ -596,7 +599,7 @@ NTSTATUS
     _Inout_opt_ PIRP                    Irp
     );
 /*
- * Issues control request to WSK subsystem, e.g., registration for protocol 
+ * Issues control request to WSK subsystem, e.g., registration for protocol
  * change notifications, etc.
  *
  * Parameters:
@@ -605,10 +608,10 @@ NTSTATUS
  *               WSK_TRANSPORT_LIST_QUERY - Retrieves the array of transports
  *               into the OutputBuffer. InputSize and InputBuffer parameters
  *               are ignored. Irp must be NULL and pOutputSize must be Non-NULL.
- *               WSK_TRANSPORT_LIST_CHANGE - Notifies the client when a 
- *               transport is added or removed. InputSize/InputBuffer, 
+ *               WSK_TRANSPORT_LIST_CHANGE - Notifies the client when a
+ *               transport is added or removed. InputSize/InputBuffer,
  *               OutputSize/OutputBuffer, and pOutputSize parameters are
- *               ignored. Irp must be specified. 
+ *               ignored. Irp must be specified.
  *  InputSize - size of the input data residing in InputBuffer
  *  InputBuffer - buffer that holds input data
  *  OutputSize - size of the OutputBuffer
@@ -637,9 +640,9 @@ NTSTATUS
     _In_opt_ PUNICODE_STRING  NodeName,
     _In_opt_ PUNICODE_STRING  ServiceName,
     _In_opt_ ULONG            NameSpace,
-    _In_opt_ GUID            *Provider,    
+    _In_opt_ GUID            *Provider,
     _In_opt_ PADDRINFOEXW     Hints,
-    _Outptr_ PADDRINFOEXW *Result, 
+    _Outptr_ PADDRINFOEXW *Result,
     _In_opt_ PEPROCESS        OwningProcess,
     _In_opt_ PETHREAD         OwningThread,
     _Inout_ PIRP              Irp
@@ -648,24 +651,24 @@ NTSTATUS
  * Provides protocol independent translation from host name to address.
  *
  * Parameters:
- *  Client - Pointer to the Client object returned by WskCaptureProviderNPI 
- *  NodeName - Pointer to a UNICODE_STRING that contains a host (node) name. The 
- *          host name must be a NULL-terminated unicode string. Either NodeName or 
+ *  Client - Pointer to the Client object returned by WskCaptureProviderNPI
+ *  NodeName - Pointer to a UNICODE_STRING that contains a host (node) name. The
+ *          host name must be a NULL-terminated unicode string. Either NodeName or
  *          ServiceName must point to a non-emptry string.
  *  ServiceName - Pointer to a UNICODE_STRING that contains either a service name
- *          or port number represented as a string. The service name or port number 
- *          must be a NULL-terminated unicode string. Either NodeName or 
+ *          or port number represented as a string. The service name or port number
+ *          must be a NULL-terminated unicode string. Either NodeName or
  *          ServiceName must point to a non-emptry string.
  *  NameSpace - a namespace identifier that determines which namespace providers
- *          are queried. Passing a specific namespace identifier will result in 
- *          only namespace providers that support the specified namepsace being 
+ *          are queried. Passing a specific namespace identifier will result in
+ *          only namespace providers that support the specified namepsace being
  *          queried.
- *  Provider - Pointer to a GUID of a specific namespace provider to query. Passing 
+ *  Provider - Pointer to a GUID of a specific namespace provider to query. Passing
  *          the GUID of specific namespace provider will result in only the specified
  *          namespace provider being queried.
- *  Hints - Pointer to an ADDRINFOEXW structure that provides hints about the type 
- *          of socket the caller supports. 
- *  Result - Pointer to a linked list of one or more ADDRINFOEXW structures that 
+ *  Hints - Pointer to an ADDRINFOEXW structure that provides hints about the type
+ *          of socket the caller supports.
+ *  Result - Pointer to a linked list of one or more ADDRINFOEXW structures that
  *          contains response information about the host. The caller must call
  *          WskFreeAddressInfo to free it.
  *  OwningProcess - The process to retrieve the security context from. If this is
@@ -700,29 +703,29 @@ NTSTATUS
  * Provides protocol independent translation from address to host name.
  *
  * Parameters:
- *  Client - Pointer to the Client object returned by WskCaptureProviderNPI 
+ *  Client - Pointer to the Client object returned by WskCaptureProviderNPI
  *  SockAddr - Pointer to a socket address structure containing the IP address
- *          and port number of the socket. 
- *  SockAddrLength - The length, in bytes, of the structure pointed to by the 
- *          SockAddr parameter. The size should not exceed size of 
+ *          and port number of the socket.
+ *  SockAddrLength - The length, in bytes, of the structure pointed to by the
+ *          SockAddr parameter. The size should not exceed size of
  *          SOCKADDR_STORAGE.
- *  NodeName - Pointer to a UNICODE_STRING to hold the host name. On success, 
- *          the Unicode host name is written into the buffer as a Fully Qualified 
- *          Domain Name (FQDN) by default. The caller must provide a buffer large 
- *          enough to hold the Unicode host name, including the terminating NULL 
- *          character. If the NodeBuffer parameter is NULL, this indicates the 
+ *  NodeName - Pointer to a UNICODE_STRING to hold the host name. On success,
+ *          the Unicode host name is written into the buffer as a Fully Qualified
+ *          Domain Name (FQDN) by default. The caller must provide a buffer large
+ *          enough to hold the Unicode host name, including the terminating NULL
+ *          character. If the NodeBuffer parameter is NULL, this indicates the
  *          caller does not want to receive a host name string. Either NodeBuffer
  *          or ServiceBuffer MUST be not NULL.
- *  ServiceName - Pointer to a UNICODE_STRING to hold the service name. On success, 
- *          a Unicode string representing the service name associated with the port 
- *          number is written into the buffer. The caller must provide a buffer large 
- *          enough to hold the Unicode host name, including the terminating NULL 
- *          character. If the ServiceBuffer parameter is NULL, this indicates the 
+ *  ServiceName - Pointer to a UNICODE_STRING to hold the service name. On success,
+ *          a Unicode string representing the service name associated with the port
+ *          number is written into the buffer. The caller must provide a buffer large
+ *          enough to hold the Unicode host name, including the terminating NULL
+ *          character. If the ServiceBuffer parameter is NULL, this indicates the
  *          caller does not want to receive a service name string. Either NodeBuffer
  *          or ServiceBuffer MUST be not NULL.
- *  Flags - A value used to customize processing of the function. 
+ *  Flags - A value used to customize processing of the function.
  *  OwningProcess - The process to retrieve the security context from. If this is
- *          set to NULL then the current process is assumed.  
+ *          set to NULL then the current process is assumed.
  *  OwningThread  - The thread to retrieve the security context from. This is
  *          valid only if an impersonation token is in effect. This can be NULL
  *          only if the OwningProcess is NULL too.
@@ -767,7 +770,7 @@ NTSTATUS
     _Inout_ PIRP     Irp
     );
 /*
- * Bind local (unicast or multicast) tranport address to a socket 
+ * Bind local (unicast or multicast) tranport address to a socket
  *
  * Parameters:
  *  Socket - socket object to bind address to
@@ -791,14 +794,38 @@ NTSTATUS
     _Inout_ PIRP     Irp
     );
 /*
- * Establish comunication with the entity or group specified by the transport
- * address by means appropriate for the protocol (e.g. run protocol to 
- * establish a VC and/or make sure the address is reachable and/or
- * cache the routing entry, etc)
+ * Connect to the specified address.
  *
  * Parameters:
  *  Socket - socket object to establish connection for
  *  RemoteAddress - transport address specification
+ *  Flags - Reserved. (Must be 0)
+ *  Irp - IRP for async completion
+ *
+ * Returns:
+ *
+ *  SUCCESS - request succeeded
+ *  PENDING - request will be completed later
+ *  FAILURES - request failed
+ */
+
+typedef
+NTSTATUS
+(WSKAPI * PFN_WSK_CONNECT_EX) (
+    _In_ PWSK_SOCKET  Socket,
+    _In_ PSOCKADDR    RemoteAddress,
+    _In_opt_ PWSK_BUF Buffer,
+    _Reserved_ ULONG  Flags,
+    _Inout_ PIRP      Irp
+    );
+/*
+ * Like PFN_WSK_CONNECT, but with an optional send buffer to be sent during or
+ * after connection synchronization.
+ *
+ * Parameters:
+ *  Socket - socket object to establish connection for
+ *  RemoteAddress - transport address specification
+ *  Buffer  - data to send
  *  Flags - Reserved. (Must be 0)
  *  Irp - IRP for async completion
  *
@@ -822,7 +849,7 @@ NTSTATUS
 #define SO_WSK_EVENT_CALLBACK  (WSK_SO_BASE+2)
 
 //
-// Flags for enabling event callbacks via WskControlSocket call with 
+// Flags for enabling event callbacks via WskControlSocket call with
 // SO_WSK_EVENT_CALLBACK option.
 //
 
@@ -833,7 +860,7 @@ NTSTATUS
 #define WSK_EVENT_DISCONNECT       0x00000080 // Connection and Listen sockets
 
 //
-// Flag for disabling a given event callback via WskControlSocket call with 
+// Flag for disabling a given event callback via WskControlSocket call with
 // SO_WSK_EVENT_CALLBACK option.
 //
 #define WSK_EVENT_DISABLE       0x80000000
@@ -857,7 +884,7 @@ typedef struct _WSK_EVENT_CALLBACK_CONTROL {
 #define SIO_WSK_QUERY_INSPECT_ID          _WSAIOR(IOC_WSK,0x5)
 #define SIO_WSK_SET_SENDTO_ADDRESS        _WSAIOW(IOC_WSK,0x6)
 #define SIO_WSK_SET_TCP_SILENT_MODE       _WSAIO(IOC_WSK,0x7)
- 
+
 
 //
 // Input structure used with SIO_WSK_REGISTER_EXTENSION
@@ -942,7 +969,7 @@ NTSTATUS
  *
  * Parameters:
  *  Socket - Socket to be closed.
- *  Irp - notification method to trigger when operation completes. 
+ *  Irp - notification method to trigger when operation completes.
  *     This is a required parameter.
  *
  * Returns:
@@ -966,7 +993,7 @@ NTSTATUS
     );
 /*
  * Dequeue (pend if it is not there) and return incoming connection request
- * on the specified listening socket. 
+ * on the specified listening socket.
  *
  * Parameters:
  *  ListenSocket - listening socket to dequeue request from
@@ -977,8 +1004,8 @@ NTSTATUS
  *         to callback routines. OPTIONAL if client won't be enabling callbacks.
  *  LocalAddress - Optional buffer to return the local address on which
  *              this connection request arrived. Useful if listening socket is
- *              bound to the wildcard address. 
- *  RemoteAddress - Optional buffer to return the remote party's address. 
+ *              bound to the wildcard address.
+ *  RemoteAddress - Optional buffer to return the remote party's address.
  *  Irp - IRP for async completion of the request
  *
  * Returns:
@@ -1002,9 +1029,9 @@ NTSTATUS
 /*
  * Resume a previously pended inspect operation. This routine is valid only
  * for conditional-accept sockets.
- * 
+ *
  * Parameters:
- *  ListenSocket - listening socket on which the inspect action was pended for 
+ *  ListenSocket - listening socket on which the inspect action was pended for
  *                 the connection request identified by the structure pointed
  *                 by pInspectID.
  *  InspectID - Pointer to the inspect ID structure that identified the pended
@@ -1046,7 +1073,7 @@ NTSTATUS
  *  Buffer  - data to send
  *  Flags   - Reserved. (Must be 0)
  *  RemoteAddress - remote transport address
- *  ControlInfo - additional information to pass to the remote party. 
+ *  ControlInfo - additional information to pass to the remote party.
  *                Might not be supported by all transports.
  *  ControlInfoLength - length of control info
  *  Irp - notification method to trigger when operation completes
@@ -1091,7 +1118,7 @@ NTSTATUS
  *  BufferList  - List of datagrams to send
  *  Flags   - Reserved. (Must be 0)
  *  RemoteAddress - remote transport address
- *  ControlInfo - additional information to pass to the remote party. 
+ *  ControlInfo - additional information to pass to the remote party.
  *                Might not be supported by all transports.
  *  ControlInfoLength - length of control info
  *  Irp - notification method to trigger when operation completes
@@ -1127,21 +1154,21 @@ NTSTATUS
  *  Flags   - Reserved. (Must be 0)
  *  RemoteAddress - OUT parameter to return the transport address of the remote
  *     party that sent the packet
- *  ControlLength - Pointer to a ULONG that specifies the length of buffer 
+ *  ControlLength - Pointer to a ULONG that specifies the length of buffer
  *     pointed by ControlInfo on input, and the length of actual control data
  *     copied into ControlInfo buffer on output. If ControlLength is NULL
- *     then ControlInfo and ControlFlags parameters are ignored. 
+ *     then ControlInfo and ControlFlags parameters are ignored.
  *     If ControlLength is non-NULL then ControlLength should be pointing to
- *     valid memory until the request completes. 
- *  ControlInfo - Pointer to a buffer into which WSK copies the control data 
- *     received with the datagram. This parameter is ignored if 
- *     ControlLength parameter is NULL. Otherwise, if ControlInfo should 
- *     be pointing to valid memory until the request completes. 
+ *     valid memory until the request completes.
+ *  ControlInfo - Pointer to a buffer into which WSK copies the control data
+ *     received with the datagram. This parameter is ignored if
+ *     ControlLength parameter is NULL. Otherwise, if ControlInfo should
+ *     be pointing to valid memory until the request completes.
  *  ControlFlags - Pointer to a ULONG through which WSK may pass the following
- *     flags when the request completes: MSG_MCAST, MSG_BCAST, MSG_TRUNC, 
+ *     flags when the request completes: MSG_MCAST, MSG_BCAST, MSG_TRUNC,
  *     MSG_CTRUNC. This parameter is ignored if it is NULL.
- *     Otherwise, ControlFlags should be pointing to valid memory until the 
- *     request completes.  
+ *     Otherwise, ControlFlags should be pointing to valid memory until the
+ *     request completes.
  *  Irp - notification method to trigger when operation completes
  *
  * Returns:
@@ -1166,7 +1193,7 @@ NTSTATUS
  * Parameters:
  *  Socket - Socket whose local address is being queried
  *  LocalAddress - local transport address
- *  Irp - Irp for async completion. 
+ *  Irp - Irp for async completion.
  *
  * Returns:
  *
@@ -1183,8 +1210,8 @@ NTSTATUS
     _Inout_ PIRP     Irp
     );
 /*
- * Retrieve the transport address of the peer to which the socket is connected. 
- * Clients are always informed -- upon connection setup -- of the peer's 
+ * Retrieve the transport address of the peer to which the socket is connected.
+ * Clients are always informed -- upon connection setup -- of the peer's
  * address, so this call is useful if a socket is being shared between multiple
  * components of the client application. If one component set up the connection
  * and another component wishes to determine the peer address, it can do so via
@@ -1193,7 +1220,7 @@ NTSTATUS
  * Parameters:
  *  Socket - Socket whose local address is being queried
  *  RemoteAddress - remote party's transport address
- *  Irp - Irp for async completion. 
+ *  Irp - Irp for async completion.
  *
  * Returns:
  *
@@ -1209,7 +1236,7 @@ NTSTATUS
     _In_ PWSK_DATA_INDICATION DataIndication
     );
 /*
- * Release data indications that were previously retained by returning 
+ * Release data indications that were previously retained by returning
  * STATUS_PENDING from the receive event callback on connection-oriented
  * socket.
  *
@@ -1229,7 +1256,7 @@ NTSTATUS
     _In_ PWSK_DATAGRAM_INDICATION DatagramIndication
     );
 /*
- * Release datagram indications that were previously retained by returning 
+ * Release datagram indications that were previously retained by returning
  * STATUS_PENDING from the receive-from event callback on datagram socket.
  *
  * Parameters:
@@ -1242,7 +1269,7 @@ NTSTATUS
  */
 
 //
-// Flag used for denoting that the send request (along with any previously 
+// Flag used for denoting that the send request (along with any previously
 // queued send requests, if any) should be sent out without further delay.
 //
 
@@ -1254,7 +1281,7 @@ NTSTATUS
     _In_ PWSK_SOCKET Socket,
     _In_ PWSK_BUF    Buffer,
     _In_ ULONG       Flags,
-    _Inout_ PIRP     Irp 
+    _Inout_ PIRP     Irp
     );
 /*
  * Send on the specified connected socket
@@ -1327,15 +1354,36 @@ NTSTATUS
  *  FAILURES - request failed
  */
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+typedef
+NTSTATUS
+(WSKAPI * PFN_WSK_LISTEN) (
+    _In_ PWSK_SOCKET Socket,
+    _Inout_ PIRP     Irp
+    );
+/*
+ * Listen for incoming connections at the address bound to.
+ *
+ * Parameters:
+ *  Socket  - Socket to listen with. Must have been bound.
+ *  Irp - notification method to trigger when operation completes
+ *
+ * Returns:
+ *
+ *  SUCCESS - request succeeded
+ *  PENDING - request will be completed later
+ *  FAILURES - request failed
+ */
+#endif // if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 
 
 //
 // WSK Dispatch tables.
-// WSK interface consists of routines implemented by both 
+// WSK interface consists of routines implemented by both
 // the client and the provider. These routines operate
 // at either client/provider level or socket level.
-// Client/provider level function pointers are exchanged 
+// Client/provider level function pointers are exchanged
 // during WSK registration.
 // Socket level function pointers are exchanged during
 // socket creation.
@@ -1379,6 +1427,16 @@ typedef struct _WSK_CLIENT_CONNECTION_DISPATCH {
     PFN_WSK_SEND_BACKLOG_EVENT  WskSendBacklogEvent;
 } WSK_CLIENT_CONNECTION_DISPATCH, *PWSK_CLIENT_CONNECTION_DISPATCH;
 
+//
+// Socket level callbacks for stream sockets
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+typedef struct _WSK_CLIENT_STREAM_DISPATCH {
+    CONST WSK_CLIENT_LISTEN_DISPATCH* Listen;
+    CONST WSK_CLIENT_CONNECTION_DISPATCH* Connect;
+} WSK_CLIENT_STREAM_DISPATCH, *PWSK_CLIENT_STREAM_DISPATCH;
+#endif // if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 //
 // Provider level downcall table
@@ -1393,7 +1451,7 @@ typedef struct _WSK_PROVIDER_DISPATCH {
 #if (NTDDI_VERSION >= NTDDI_WIN7)
     PFN_WSK_GET_ADDRESS_INFO  WskGetAddressInfo;
     PFN_WSK_FREE_ADDRESS_INFO WskFreeAddressInfo;
-    PFN_WSK_GET_NAME_INFO     WskGetNameInfo;    
+    PFN_WSK_GET_NAME_INFO     WskGetNameInfo;
 #endif // if (NTDDI_VERSION >= NTDDI_WIN7)
 } WSK_PROVIDER_DISPATCH, *PWSK_PROVIDER_DISPATCH;
 
@@ -1462,8 +1520,33 @@ typedef struct _WSK_PROVIDER_CONNECTION_DISPATCH {
     PFN_WSK_RECEIVE             WskReceive;
     PFN_WSK_DISCONNECT          WskDisconnect;
     PFN_WSK_RELEASE_DATA_INDICATION_LIST WskRelease;
+    PFN_WSK_CONNECT_EX          WskConnectEx;
 } WSK_PROVIDER_CONNECTION_DISPATCH, *PWSK_PROVIDER_CONNECTION_DISPATCH;
 
+//
+// Stream socket downcalls
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+typedef struct _WSK_PROVIDER_STREAM_DISPATCH {
+#ifdef __cplusplus
+    WSK_PROVIDER_BASIC_DISPATCH Basic;
+#else
+    WSK_PROVIDER_BASIC_DISPATCH;
+#endif
+    PFN_WSK_BIND                WskBind;
+    PFN_WSK_ACCEPT              WskAccept;
+    PFN_WSK_CONNECT             WskConnect;
+    PFN_WSK_LISTEN              WskListen;
+    PFN_WSK_SEND                WskSend;
+    PFN_WSK_RECEIVE             WskReceive;
+    PFN_WSK_DISCONNECT          WskDisconnect;
+    PFN_WSK_RELEASE_DATA_INDICATION_LIST WskRelease;
+    PFN_WSK_GET_LOCAL_ADDRESS   WskGetLocalAddress;
+    PFN_WSK_GET_REMOTE_ADDRESS  WskGetRemoteAddress;
+    PFN_WSK_CONNECT_EX          WskConnectEx;
+} WSK_PROVIDER_STREAM_DISPATCH, *PWSK_PROVIDER_STREAM_DISPATCH;
+#endif // if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 //
 // Structures and routines used for WSK registration and deregistration
@@ -1474,7 +1557,7 @@ typedef struct _WSK_PROVIDER_CONNECTION_DISPATCH {
 //
 typedef struct _WSK_CLIENT_NPI {
     PVOID                        ClientContext;
-    CONST WSK_CLIENT_DISPATCH   *Dispatch;    
+    CONST WSK_CLIENT_DISPATCH   *Dispatch;
 } WSK_CLIENT_NPI, *PWSK_CLIENT_NPI;
 
 //
@@ -1482,13 +1565,13 @@ typedef struct _WSK_CLIENT_NPI {
 //
 typedef struct _WSK_PROVIDER_NPI {
     PWSK_CLIENT                  Client;
-    CONST WSK_PROVIDER_DISPATCH *Dispatch;    
+    CONST WSK_PROVIDER_DISPATCH *Dispatch;
 } WSK_PROVIDER_NPI, *PWSK_PROVIDER_NPI;
 
 //
 // WSK Registration block that needs to be provided by the WSK client and
 // initialized by the WSK subsystem via WskRegister. WSK client should not
-// manipulate any of the fields of the registration block directly. 
+// manipulate any of the fields of the registration block directly.
 //
 typedef struct _WSK_REGISTRATION {
     ULONGLONG  ReservedRegistrationState;
@@ -1541,7 +1624,7 @@ WskCaptureProviderNPI(
  * be exactly one corresponding call to WskReleaseProviderNPI.
  * It's OK to call WskCaptureProviderNPI after WskDeregister is called as long
  * as the WskRegistration block is not freed or overwritten. After WskDeregister
- * is called, any further calls to WskCaptureProviderNPI will fail with 
+ * is called, any further calls to WskCaptureProviderNPI will fail with
  * STATUS_DEVICE_NOT_READY, and any exisiting WskCaptureProviderNPI calls that
  * are blocked in other threads waiting for WSK provider to become available
  * will also return immediately with the STATUS_DEVICE_NOT_READY status code.
@@ -1552,7 +1635,7 @@ WskCaptureProviderNPI(
  * Parameters:
  *  WskRegistration - Registration block initialized by WskRegister.
  *  WaitTimeout - Time in milliseconds for how long to wait for the WSK provider
- *                to become available. 
+ *                to become available.
  *                WSK_NO_WAIT : return immediately if provider not available
  *                WSK_INFINITE_WAIT : wait until provider becomes available
  * WskProviderNpi - Provider NPI returned by the WSK provider. WSK clients can
@@ -1594,14 +1677,14 @@ WskQueryProviderCharacteristics(
 /*
  * Query the characterisitics of the WSK provider. This routine should be called
  * after WskCaptureProviderNPI returns STATUS_NOINTERFACE or STATUS_SUCCESS.
- * WSK clients may use this routine to find out the versions supported by the 
+ * WSK clients may use this routine to find out the versions supported by the
  * WSK provider.
  *
  * Required IRQL <= DISPATCH_LEVEL
  *
  * Parameters:
  *  WskRegistration - Registration block initialized by WskRegister.
- * WskProviderCharacteristics - Provider characterisitics returned by the WSK 
+ * WskProviderCharacteristics - Provider characterisitics returned by the WSK
  *                              provider
  * Returns:
  *
@@ -1618,7 +1701,7 @@ WskDeregister(
  * Deregister as a WSK client. For each successful WskRegister call, there must
  * be exactly one corresponding WskDeregister call with the same WskRegistration
  * block that was passed to WskRegister.
- * WskDeregister will wait until all captured instances of the provider NPI are 
+ * WskDeregister will wait until all captured instances of the provider NPI are
  * released, any outstanding calls to functions in WSK_PROVIDER_DISPATCH have
  * returned, and all sockets are closed.
  *

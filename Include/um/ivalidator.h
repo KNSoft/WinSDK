@@ -191,7 +191,7 @@ HRESULT STDMETHODCALLTYPE IValidator_Validate_Proxy(
     /* [in] */ unsigned long ulFlags,
     /* [in] */ unsigned long ulMaxError,
     /* [in] */ unsigned long token,
-    /* [in] */ LPWSTR fileName,
+    /* [in] */ __in LPWSTR fileName,
     /* [size_is][in] */ BYTE *pe,
     /* [in] */ unsigned long ulSize);
 
@@ -207,7 +207,7 @@ HRESULT STDMETHODCALLTYPE IValidator_FormatEventInfo_Proxy(
     IValidator * This,
     /* [in] */ HRESULT hVECode,
     /* [in] */ VEContext Context,
-    /* [out][in] */ LPWSTR msg,
+    /* [out][in] */ __out_ecount(ulMaxLength) __out_z LPWSTR msg,
     /* [in] */ unsigned long ulMaxLength,
     /* [in] */ SAFEARRAY * psa);
 
@@ -336,7 +336,7 @@ HRESULT STDMETHODCALLTYPE ICLRValidator_Validate_Proxy(
     /* [in] */ unsigned long ulFlags,
     /* [in] */ unsigned long ulMaxError,
     /* [in] */ unsigned long token,
-    /* [in] */ LPWSTR fileName,
+    /* [in] */ __in LPWSTR fileName,
     /* [size_is][in] */ BYTE *pe,
     /* [in] */ unsigned long ulSize);
 
@@ -352,7 +352,7 @@ HRESULT STDMETHODCALLTYPE ICLRValidator_FormatEventInfo_Proxy(
     ICLRValidator * This,
     /* [in] */ HRESULT hVECode,
     /* [in] */ VEContext Context,
-    /* [out][in] */ LPWSTR msg,
+    /* [out][in] */ __out_ecount(ulMaxLength) __out_z LPWSTR msg,
     /* [in] */ unsigned long ulMaxLength,
     /* [in] */ SAFEARRAY * psa);
 

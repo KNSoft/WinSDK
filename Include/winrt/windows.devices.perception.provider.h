@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -538,18 +538,18 @@ interface IPerceptionCorrelation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3417 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4770 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3417 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4770 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3417_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3417_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4770_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4770_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0001 */
 /* [local] */ 
@@ -584,18 +584,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3418 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4771 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3418 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4771 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3418_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3418_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4771_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4771_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0002 */
 /* [local] */ 
@@ -630,18 +630,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3419 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4772 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3419 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4772 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3419_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3419_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4772_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4772_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0003 */
 /* [local] */ 
@@ -676,18 +676,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3420 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4773 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3420 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4773 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3420_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3420_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4773_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4773_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0004 */
 /* [local] */ 
@@ -722,18 +722,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3421 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4774 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3421 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4774 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3421_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3421_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4774_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4774_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0005 */
 /* [local] */ 
@@ -768,18 +768,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3422 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4775 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3422 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4775 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3422_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3422_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4775_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4775_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0006 */
 /* [local] */ 
@@ -817,18 +817,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3423 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4776 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3423 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4776 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3423_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3423_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4776_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4776_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0007 */
 /* [local] */ 
@@ -863,18 +863,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3424 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4777 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3424 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4777 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3424_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3424_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4777_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4777_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0008 */
 /* [local] */ 
@@ -909,18 +909,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3425 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4778 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3425 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4778 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3425_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3425_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4778_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4778_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0009 */
 /* [local] */ 
@@ -955,18 +955,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3426 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4779 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3426 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4779 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3426_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3426_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4779_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4779_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0010 */
 /* [local] */ 
@@ -1001,18 +1001,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3427 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4780 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3427 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4780 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3427_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3427_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4780_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4780_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0011 */
 /* [local] */ 
@@ -1047,18 +1047,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3428 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4781 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3428 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4781 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3428_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3428_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4781_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4781_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0012 */
 /* [local] */ 
@@ -1093,18 +1093,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3429 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4782 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3429 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4782 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3429_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3429_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4782_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4782_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0013 */
 /* [local] */ 
@@ -1139,18 +1139,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3430 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4783 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3430 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4783 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3430_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3430_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4783_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4783_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0014 */
 /* [local] */ 
@@ -1538,18 +1538,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3431 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4784 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3431 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4784 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3431_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3431_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4784_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4784_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0015 */
 /* [local] */ 
@@ -1724,18 +1724,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CPerception__CProvider_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3432 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4785 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3432 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4785 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3432_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3432_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4785_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4785_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0017 */
 /* [local] */ 
@@ -1876,18 +1876,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CPerception__CProvider_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3433 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4786 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3433 */
+/* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4786 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3433_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_3433_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4786_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eperception2Eprovider2Eidl_0000_4786_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Eperception2Eprovider_0000_0019 */
 /* [local] */ 

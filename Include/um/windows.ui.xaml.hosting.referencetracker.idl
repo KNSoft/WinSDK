@@ -1,5 +1,7 @@
 //  Copyright (c) Microsoft Corporation. All rights reserved.
 
+#include <sdkddkver.h>
+
 import "oaidl.idl";
 
 cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN8)")
@@ -75,12 +77,6 @@ interface IFindReferenceTargetsCallback : IUnknown
 };    
 
 
-
-
-
-
-
-
 typedef [v1_enum] enum
 {
     XAML_REFERENCETRACKER_DISCONNECT_DEFAULT = 0,
@@ -107,8 +103,42 @@ interface IReferenceTrackerHost : IUnknown
     HRESULT RemoveMemoryPressure(UINT64 bytesAllocated);
 };
 
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)")
 
+[
+    object,
+    uuid( 4e897caa-59d5-4613-8f8c-f7ebd1f399b0 ),
+    local,
+    pointer_default(unique)
+]
+interface IReferenceTrackerExtension : IUnknown
+{
+	// When this interface is implemented by a subclass of Windows.UI.Xaml.DependencyObject,
+	// it can participate in reference tracking.  Implementing this interface signals that the object
+	// is the controlling unknown, and returns the actual COM ref count from it's Release() method.
+};
 
+typedef struct TrackerHandle__ {
+    int unused;
+} TrackerHandle__;
+
+typedef [unique] TrackerHandle__* TrackerHandle;
+
+[
+    object,
+    uuid( eb24c20b-9816-4ac7-8cff-36f67a118f4e ),
+    local,
+    pointer_default(unique)
+]
+interface ITrackerOwner: IUnknown
+{
+    HRESULT CreateTrackerHandle([out, retval] TrackerHandle* returnValue);
+    HRESULT DeleteTrackerHandle([in] TrackerHandle handle);
+    HRESULT SetTrackerValue([in] TrackerHandle handle, [in] IUnknown* value);
+    boolean TryGetSafeTrackerValue([in] TrackerHandle handle, [out, retval] IUnknown** returnValue);
+};
+
+cpp_quote("#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2")
 
 
 cpp_quote("#endif // NTDDI_VERSION >= NTDDI_WIN8")

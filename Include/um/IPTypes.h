@@ -16,7 +16,7 @@ Module Name:
 #endif
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef __cplusplus
@@ -42,12 +42,6 @@ extern "C" {
 #define MAX_SCOPE_ID_LEN                256 // arb.
 #define MAX_DHCPV6_DUID_LENGTH          130 // RFC 3315.
 #define MAX_DNS_SUFFIX_STRING_LENGTH    256
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 //
 // types
@@ -106,12 +100,6 @@ typedef struct _IP_ADAPTER_INFO {
     time_t LeaseExpires;
 } IP_ADAPTER_INFO, *PIP_ADAPTER_INFO;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
 #ifdef _WINSOCK2API_
 
 //
@@ -125,7 +113,7 @@ typedef NL_DAD_STATE IP_DAD_STATE;
 typedef struct _IP_ADAPTER_UNICAST_ADDRESS_LH {
     union {
         ULONGLONG Alignment;
-        struct { 
+        struct {
             ULONG Length;
             DWORD Flags;
         };
@@ -147,7 +135,7 @@ typedef struct _IP_ADAPTER_UNICAST_ADDRESS_LH {
 typedef struct _IP_ADAPTER_UNICAST_ADDRESS_XP {
     union {
         ULONGLONG Alignment;
-        struct { 
+        struct {
             ULONG Length;
             DWORD Flags;
         };
@@ -181,7 +169,7 @@ typedef  IP_ADAPTER_UNICAST_ADDRESS_XP *PIP_ADAPTER_UNICAST_ADDRESS;
 typedef struct _IP_ADAPTER_ANYCAST_ADDRESS_XP {
     union {
         ULONGLONG Alignment;
-        struct { 
+        struct {
             ULONG Length;
             DWORD Flags;
         };
@@ -346,7 +334,7 @@ typedef struct _IP_ADAPTER_ADDRESSES_LH {
     SOCKET_ADDRESS Dhcpv4Server;
     NET_IF_COMPARTMENT_ID CompartmentId;
     NET_IF_NETWORK_GUID NetworkGuid;
-    NET_IF_CONNECTION_TYPE ConnectionType;    
+    NET_IF_CONNECTION_TYPE ConnectionType;
     TUNNEL_TYPE TunnelType;
     //
     // DHCP v6 Info.
@@ -358,7 +346,7 @@ typedef struct _IP_ADAPTER_ADDRESSES_LH {
 #if (NTDDI_VERSION >= NTDDI_VISTASP1)
     PIP_ADAPTER_DNS_SUFFIX FirstDnsSuffix;
 #endif
-} IP_ADAPTER_ADDRESSES_LH, 
+} IP_ADAPTER_ADDRESSES_LH,
  *PIP_ADAPTER_ADDRESSES_LH;
 
 typedef struct _IP_ADAPTER_ADDRESSES_XP {
@@ -425,12 +413,6 @@ typedef  IP_ADAPTER_ADDRESSES_XP *PIP_ADAPTER_ADDRESSES;
 
 #endif /* _WINSOCK2API_ */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 //
 // IP_PER_ADAPTER_INFO - per-adapter IP information such as DNS server list.
 //
@@ -445,7 +427,6 @@ typedef struct _IP_PER_ADAPTER_INFO_W2KSP1 {
 typedef  IP_PER_ADAPTER_INFO_W2KSP1 IP_PER_ADAPTER_INFO;
 typedef  IP_PER_ADAPTER_INFO_W2KSP1 *PIP_PER_ADAPTER_INFO;
 #endif
-
 
 //
 // FIXED_INFO - the set of IP-related information which does not depend on DHCP
@@ -491,14 +472,10 @@ typedef IP_INTERFACE_NAME_INFO_W2KSP1 *PIP_INTERFACE_NAME_INFO;
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #ifdef __cplusplus
 }
 #endif
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -39,6 +39,13 @@
 
 /* Forward Declarations */ 
 
+#ifndef ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_FWD_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_FWD_DEFINED__
+typedef interface __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable;
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_FWD_DEFINED__ */
+
+
 #ifndef ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_FWD_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_FWD_DEFINED__
 typedef interface __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable;
@@ -64,6 +71,46 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesEventHandler_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                interface IBrightnessOverride;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                interface IBrightnessOverrideStatics;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation_FWD_DEFINED__
@@ -213,7 +260,7 @@ namespace ABI {
 namespace Windows {
 namespace Graphics {
 namespace Display {
-class DisplayInformation;
+class BrightnessOverride;
 } /*Display*/
 } /*Graphics*/
 } /*Windows*/
@@ -225,7 +272,7 @@ namespace ABI {
 namespace Windows {
 namespace Graphics {
 namespace Display {
-interface IDisplayInformation;
+interface IBrightnessOverride;
 } /*Display*/
 } /*Graphics*/
 } /*Windows*/
@@ -245,20 +292,90 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a460214e-6620-521d-9cb9-a0a0f732ce90"))
+ITypedEventHandler<ABI::Windows::Graphics::Display::BrightnessOverride*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Graphics::Display::BrightnessOverride*, ABI::Windows::Graphics::Display::IBrightnessOverride*>,IInspectable*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.TypedEventHandler`2<Windows.Graphics.Display.BrightnessOverride, Object>"; }
+};
+typedef ITypedEventHandler<ABI::Windows::Graphics::Display::BrightnessOverride*,IInspectable*> __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t;
+#define ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_FWD_DEFINED__
+#define __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Graphics {
+namespace Display {
+class DisplayInformation;
+} /*Display*/
+} /*Graphics*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Graphics {
+namespace Display {
+interface IDisplayInformation;
+} /*Display*/
+} /*Graphics*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0001 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4651 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4651 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0002 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_USE
@@ -281,6 +398,98 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_USE */
 
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0002 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0002_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4652 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4652 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0003 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a"))
+IAsyncOperationCompletedHandler<bool> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Boolean>"; }
+};
+typedef IAsyncOperationCompletedHandler<bool> __FIAsyncOperationCompletedHandler_1_boolean_t;
+#define ____FIAsyncOperationCompletedHandler_1_boolean_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_boolean ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_boolean_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0003 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0003_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4653 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4653 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0004 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_boolean_USE
+#define DEF___FIAsyncOperation_1_boolean_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a"))
+IAsyncOperation<bool> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<bool, boolean>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Boolean>"; }
+};
+typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
+#define ____FIAsyncOperation_1_boolean_FWD_DEFINED__
+#define __FIAsyncOperation_1_boolean ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_boolean_USE */
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -294,30 +503,30 @@ interface IRandomAccessStream;
 #endif
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0001 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0004 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0005 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStream_USE
@@ -341,29 +550,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStream_USE */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0002 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0005 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_USE
@@ -387,29 +596,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_USE */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0003 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0006 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0007 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double_USE
@@ -444,6 +653,26 @@ extern "C" {
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessOverrideOptions __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessOverrideOptions;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessScenario __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessScenario;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CGraphics_CDisplay_CDisplayOrientations __x_ABI_CWindows_CGraphics_CDisplay_CDisplayOrientations;
 
 
@@ -469,9 +698,46 @@ typedef enum __x_ABI_CWindows_CGraphics_CDisplay_CResolutionScale __x_ABI_CWindo
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0004 */
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0007 */
 /* [local] */ 
 
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                
+                typedef enum DisplayBrightnessOverrideOptions DisplayBrightnessOverrideOptions;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                
+                typedef enum DisplayBrightnessScenario DisplayBrightnessScenario;
+                
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 
@@ -517,23 +783,155 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3108 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0007_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4657 */
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0008 */
+/* [local] */ 
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable
+#define DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0008 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0008_v0_0_s_ifspec;
+
+#ifndef ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_INTERFACE_DEFINED__
+#define ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_INTERFACE_DEFINED__
+
+/* interface __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a460214e-6620-521d-9cb9-a0a0f732ce90")
+    __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::Display::IBrightnessOverride *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectableVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride *sender,
+            /* [in] */ __RPC__in_opt IInspectable *e);
+        
+        END_INTERFACE
+    } __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectableVtbl;
+
+    interface __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable
+    {
+        CONST_VTBL struct __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectableVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0009 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0009 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0009_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable
@@ -541,13 +939,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay2Eidl_0000_3108_v0_0_s
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0005 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0010 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0010_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_INTERFACE_DEFINED__
@@ -636,11 +1034,48 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDi
 #endif 	/* ____FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0006 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0011 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessOverrideOptions
+    {
+        DisplayBrightnessOverrideOptions_None	= 0,
+        DisplayBrightnessOverrideOptions_UseDimmedPolicyWhenBatteryIsLow	= 0x1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#else
+namespace ABI {
+namespace Windows {
+namespace Graphics {
+namespace Display {
+enum DisplayBrightnessOverrideOptions;
+DEFINE_ENUM_FLAG_OPERATORS(DisplayBrightnessOverrideOptions)
+} /*Display*/
+} /*Graphics*/
+} /*Windows*/
+}
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessScenario
+    {
+        DisplayBrightnessScenario_DefaultBrightness	= 0,
+        DisplayBrightnessScenario_IdleBrightness	= 1,
+        DisplayBrightnessScenario_BarcodeReadingBrightness	= 2,
+        DisplayBrightnessScenario_FullBrightness	= 3
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(__cplusplus)
 
 #if !defined(__cplusplus)
@@ -696,8 +1131,52 @@ enum __x_ABI_CWindows_CGraphics_CDisplay_CResolutionScale
 #endif
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0006 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0011 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                
+                /* [v1_enum] */ 
+                enum DisplayBrightnessOverrideOptions
+                    {
+                        DisplayBrightnessOverrideOptions_None	= 0,
+                        DisplayBrightnessOverrideOptions_UseDimmedPolicyWhenBatteryIsLow	= 0x1
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                
+                /* [v1_enum] */ 
+                enum DisplayBrightnessScenario
+                    {
+                        DisplayBrightnessScenario_DefaultBrightness	= 0,
+                        DisplayBrightnessScenario_IdleBrightness	= 1,
+                        DisplayBrightnessScenario_BarcodeReadingBrightness	= 2,
+                        DisplayBrightnessScenario_FullBrightness	= 3
+                    } ;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 #ifdef __cplusplus
 } /* end extern "C" */
@@ -761,8 +1240,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0011_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesEventHandler_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesEventHandler_INTERFACE_DEFINED__
@@ -862,7 +1341,441 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesEv
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesEventHandler_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0007 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0012 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Display_IBrightnessOverride[] = L"Windows.Graphics.Display.IBrightnessOverride";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0012 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0012_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Display::IBrightnessOverride */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Display {
+                    
+                    MIDL_INTERFACE("96C9621A-C143-4392-BEDD-4A7E9574C8FD")
+                    IBrightnessOverride : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsSupported( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsOverrideActive( 
+                            /* [out][retval] */ __RPC__out boolean *value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_BrightnessLevel( 
+                            /* [out][retval] */ __RPC__out DOUBLE *level) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SetBrightnessLevel( 
+                            /* [in] */ DOUBLE brightnessLevel,
+                            /* [in] */ ABI::Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SetBrightnessScenario( 
+                            /* [in] */ ABI::Windows::Graphics::Display::DisplayBrightnessScenario scenario,
+                            /* [in] */ ABI::Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetLevelForScenario( 
+                            /* [in] */ ABI::Windows::Graphics::Display::DisplayBrightnessScenario scenario,
+                            /* [out][retval] */ __RPC__out DOUBLE *brightnessLevel) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE StartOverride( void) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE StopOverride( void) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_IsSupportedChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_IsSupportedChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_IsOverrideActiveChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_IsOverrideActiveChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE add_BrightnessLevelChanged( 
+                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable *handler,
+                            /* [out][retval] */ __RPC__out EventRegistrationToken *token) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE remove_BrightnessLevelChanged( 
+                            /* [in] */ EventRegistrationToken token) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBrightnessOverride = __uuidof(IBrightnessOverride);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSupported )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsOverrideActive )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_BrightnessLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [out][retval] */ __RPC__out DOUBLE *level);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetBrightnessLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ DOUBLE brightnessLevel,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessOverrideOptions options);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetBrightnessScenario )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessScenario scenario,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessOverrideOptions options);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetLevelForScenario )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDisplay_CDisplayBrightnessScenario scenario,
+            /* [out][retval] */ __RPC__out DOUBLE *brightnessLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *StartOverride )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *StopOverride )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_IsSupportedChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_IsSupportedChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_IsOverrideActiveChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_IsOverrideActiveChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        HRESULT ( STDMETHODCALLTYPE *add_BrightnessLevelChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable *handler,
+            /* [out][retval] */ __RPC__out EventRegistrationToken *token);
+        
+        HRESULT ( STDMETHODCALLTYPE *remove_BrightnessLevelChanged )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride * This,
+            /* [in] */ EventRegistrationToken token);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideVtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_get_IsSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_get_IsOverrideActive(This,value)	\
+    ( (This)->lpVtbl -> get_IsOverrideActive(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_get_BrightnessLevel(This,level)	\
+    ( (This)->lpVtbl -> get_BrightnessLevel(This,level) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_SetBrightnessLevel(This,brightnessLevel,options)	\
+    ( (This)->lpVtbl -> SetBrightnessLevel(This,brightnessLevel,options) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_SetBrightnessScenario(This,scenario,options)	\
+    ( (This)->lpVtbl -> SetBrightnessScenario(This,scenario,options) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_GetLevelForScenario(This,scenario,brightnessLevel)	\
+    ( (This)->lpVtbl -> GetLevelForScenario(This,scenario,brightnessLevel) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_StartOverride(This)	\
+    ( (This)->lpVtbl -> StartOverride(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_StopOverride(This)	\
+    ( (This)->lpVtbl -> StopOverride(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_add_IsSupportedChanged(This,handler,token)	\
+    ( (This)->lpVtbl -> add_IsSupportedChanged(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_remove_IsSupportedChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_IsSupportedChanged(This,token) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_add_IsOverrideActiveChanged(This,handler,token)	\
+    ( (This)->lpVtbl -> add_IsOverrideActiveChanged(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_remove_IsOverrideActiveChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_IsOverrideActiveChanged(This,token) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_add_BrightnessLevelChanged(This,handler,token)	\
+    ( (This)->lpVtbl -> add_BrightnessLevelChanged(This,handler,token) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_remove_BrightnessLevelChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_BrightnessLevelChanged(This,token) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0013 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Display_IBrightnessOverrideStatics[] = L"Windows.Graphics.Display.IBrightnessOverrideStatics";
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0013 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0013_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Graphics::Display::IBrightnessOverrideStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Graphics {
+                namespace Display {
+                    
+                    MIDL_INTERFACE("03A7B9ED-E1F1-4A68-A11F-946AD8CE5393")
+                    IBrightnessOverrideStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetDefaultForSystem( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Graphics::Display::IBrightnessOverride **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE GetForCurrentView( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Graphics::Display::IBrightnessOverride **value) = 0;
+                        
+                        virtual HRESULT STDMETHODCALLTYPE SaveForSystemAsync( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::Display::IBrightnessOverride *value,
+                            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IBrightnessOverrideStatics = __uuidof(IBrightnessOverrideStatics);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDefaultForSystem )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveForSystemAsync )( 
+            __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverride *value,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_boolean **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStaticsVtbl;
+
+    interface __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_GetDefaultForSystem(This,value)	\
+    ( (This)->lpVtbl -> GetDefaultForSystem(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_GetForCurrentView(This,value)	\
+    ( (This)->lpVtbl -> GetForCurrentView(This,value) ) 
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_SaveForSystemAsync(This,value,operation)	\
+    ( (This)->lpVtbl -> SaveForSystemAsync(This,value,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIBrightnessOverrideStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0014 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation_INTERFACE_DEFINED__)
@@ -870,13 +1783,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0007 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0014 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation_INTERFACE_DEFINED__
@@ -1157,7 +2070,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation;
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0008 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0015 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation2_INTERFACE_DEFINED__)
@@ -1165,13 +2078,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0008 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0015_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation2_INTERFACE_DEFINED__
@@ -1294,7 +2207,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation2
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0009 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0016 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation3_INTERFACE_DEFINED__)
@@ -1302,13 +2215,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0009 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0016 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0016_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation3_INTERFACE_DEFINED__
@@ -1431,7 +2344,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation3
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0010 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0017 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation4_INTERFACE_DEFINED__)
@@ -1439,13 +2352,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0010 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0017 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0017_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation4_INTERFACE_DEFINED__
@@ -1578,7 +2491,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation4
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformation4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0011 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0018 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformationStatics_INTERFACE_DEFINED__)
@@ -1586,13 +2499,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0011 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0018 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0018_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformationStatics_INTERFACE_DEFINED__
@@ -1757,7 +2670,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformationS
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayInformationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0012 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0019 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesStatics_INTERFACE_DEFINED__)
@@ -1765,13 +2678,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0012 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0019 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0019_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesStatics_INTERFACE_DEFINED__
@@ -2074,9 +2987,13 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesSt
 #endif 	/* ____x_ABI_CWindows_CGraphics_CDisplay_CIDisplayPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0013 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0020 */
 /* [local] */ 
 
+#ifndef RUNTIMECLASS_Windows_Graphics_Display_BrightnessOverride_DEFINED
+#define RUNTIMECLASS_Windows_Graphics_Display_BrightnessOverride_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Display_BrightnessOverride[] = L"Windows.Graphics.Display.BrightnessOverride";
+#endif
 #ifndef RUNTIMECLASS_Windows_Graphics_Display_DisplayInformation_DEFINED
 #define RUNTIMECLASS_Windows_Graphics_Display_DisplayInformation_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Graphics_Display_DisplayInformation[] = L"Windows.Graphics.Display.DisplayInformation";
@@ -2087,13 +3004,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0013 */
+/* interface __MIDL_itf_windows2Egraphics2Edisplay_0000_0020 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edisplay_0000_0020_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

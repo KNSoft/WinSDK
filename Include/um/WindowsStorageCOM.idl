@@ -127,5 +127,30 @@ interface IStorageFolderHandleAccess : IUnknown
         );
 };
 
+// These values indicate which API should be used to create the new process
+typedef[v1_enum] enum CreateProcessMethod
+{
+    CpCreateProcess = 0,         // CreateProcess
+    CpCreateProcessAsUser = 1,   // CreateProcessAsUser, requires _hUserToken to be set
+    CpAicLaunchAdminProcess = 2, // AicLaunchAdminProcess
+} CreateProcessMethod;
+
+[
+    object,
+    uuid(30DC931F-33FC-4FFD-A168-942258CF3CA4),
+]
+interface IDDEInitializer : IUnknown
+{
+    HRESULT Initialize(
+        [in, string] LPCWSTR fileExtensionOrProtocol,
+        [in] CreateProcessMethod method,
+        [in, string] LPCWSTR currentDirectory,
+        [in] IShellItem* execTarget,
+        [in] IUnknown* site,
+        [in, string] LPCWSTR application,
+        [in, string] LPCWSTR targetFile,
+        [in, string] LPCWSTR arguments);
+};
+
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion

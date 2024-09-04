@@ -174,6 +174,11 @@ STDAPI MFPutWaitingWorkItem (
 STDAPI MFAllocateSerialWorkQueue (
             _In_ DWORD dwWorkQueue,
             _Out_ OUT DWORD * pdwWorkQueue);
+            
+STDAPI MFScheduleWorkItemEx(
+            IMFAsyncResult * pResult,
+            INT64 Timeout,
+            _Out_opt_ MFWORKITEM_KEY * pKey);
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
@@ -184,11 +189,6 @@ STDAPI MFAllocateSerialWorkQueue (
 STDAPI MFScheduleWorkItem(
             IMFAsyncCallback * pCallback,
             IUnknown * pState,
-            INT64 Timeout,
-            _Out_opt_ MFWORKITEM_KEY * pKey);
-
-STDAPI MFScheduleWorkItemEx(
-            IMFAsyncResult * pResult,
             INT64 Timeout,
             _Out_opt_ MFWORKITEM_KEY * pKey);
 
@@ -1318,6 +1318,11 @@ DEFINE_GUID(MFSampleExtension_LongTermReferenceFrameInfo,
 DEFINE_GUID(MFSampleExtension_ROIRectangle,
 0x3414a438, 0x4998, 0x4d2c, 0xbe, 0x82, 0xbe, 0x3c, 0xa0, 0xb2, 0x4d, 0x43);
 
+// MFSampleExtension_LastSlice {2b5d5457-5547-4f07-b8c8-b4a3a9a1daac}
+// Type: UINT32
+DEFINE_GUID(MFSampleExtension_LastSlice,
+0x2b5d5457, 0x5547, 0x4f07, 0xb8, 0xc8, 0xb4, 0xa3, 0xa9, 0xa1, 0xda, 0xac);
+
 typedef struct _ROI_AREA {
   RECT rect;
   INT32 QPDelta;
@@ -1477,6 +1482,27 @@ DEFINE_GUID(MF_CAPTURE_METADATA_EXIF,
 // TYPE: UINT64
 DEFINE_GUID(MF_CAPTURE_METADATA_FRAME_ILLUMINATION,
 0x6D688FFC, 0x63D3, 0x46FE, 0xBA, 0xDA, 0x5B, 0x94, 0x7D, 0xB0, 0xD0, 0x80);
+
+// MF_CAPTURE_METADATA_UVC_PAYLOADHEADER {F9F88A87-E1DD-441E-95CB-42E21A64F1D9}
+// Value type: Blob
+// Stores USB Video Class Camera's payload header for user mode components to 
+// get the camera timestamps and other header information.
+DEFINE_GUID(MF_CAPTURE_METADATA_UVC_PAYLOADHEADER,
+    0xf9f88a87, 0xe1dd, 0x441e, 0x95, 0xcb, 0x42, 0xe2, 0x1a, 0x64, 0xf1, 0xd9);
+
+// MFSampleExtension_Depth_MinReliableDepth
+// Type: UINT32, minimum reliable depth value in a D16 format depth frame.
+// Default value if the attribute is absent is 1, because 0 represent invalid depth
+// {5F8582B2-E36B-47C8-9B87-FEE1CA72C5B0}
+DEFINE_GUID(MFSampleExtension_Depth_MinReliableDepth,
+0x5f8582b2, 0xe36b, 0x47c8, 0x9b, 0x87, 0xfe, 0xe1, 0xca, 0x72, 0xc5, 0xb0);
+
+// MFSampleExtension_Depth_MaxReliableDepth
+// Type: UINT32, maximum reliable depth value in a D16 format depth frame
+// Default value if the attribute is absent is 65535
+// {E45545D1-1F0F-4A32-A8A7-6101A24EA8BE}
+DEFINE_GUID(MFSampleExtension_Depth_MaxReliableDepth,
+0xe45545d1, 0x1f0f, 0x4a32, 0xa8, 0xa7, 0x61, 0x1, 0xa2, 0x4e, 0xa8, 0xbe);
 
 typedef struct tagFaceRectInfoBlobHeader
 {
@@ -1744,6 +1770,12 @@ MFTEnum(
     _Out_                   UINT32*                 pcMFTs
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+
 #if (WINVER >= _WIN32_WINNT_WIN7)
 
 enum _MFT_ENUM_FLAG
@@ -1758,7 +1790,8 @@ enum _MFT_ENUM_FLAG
     MFT_ENUM_FLAG_SORTANDFILTER_APPROVED_ONLY     = 0x000000C0, // Similar to MFT_ENUM_FLAG_SORTANDFILTER, but apply a local policy of: MF_PLUGIN_CONTROL_POLICY_USE_APPROVED_PLUGINS
     MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY          = 0x00000140, // Similar to MFT_ENUM_FLAG_SORTANDFILTER, but apply a local policy of: MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS
     MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY_EDGEMODE = 0x00000240, // Similar to MFT_ENUM_FLAG_SORTANDFILTER, but apply a local policy of: MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS_EDGEMODE
-    MFT_ENUM_FLAG_ALL                             = 0x0000003F  // Enumerates all MFTs including SW and HW MFTs and applies filtering
+    MFT_ENUM_FLAG_UNTRUSTED_STOREMFT              = 0x00000400, // Enumerates all untrusted store MFTs downloaded from the store
+    MFT_ENUM_FLAG_ALL                             = 0x0000003F, // Enumerates all MFTs including SW and HW MFTs and applies filtering
 };
 
 //
@@ -1777,6 +1810,11 @@ MFTEnumEx(
 );
 #endif // (WINVER >= _WIN32_WINNT_WIN7)
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)  
 
@@ -2132,6 +2170,14 @@ DEFINE_GUID(MFAudioFormat_Dolby_DDPlus, // == MEDIASUBTYPE_DOLBY_DDPLUS defined 
 DEFINE_GUID(MFAudioFormat_Vorbis,      // {8D2FD10B-5841-4a6b-8905-588FEC1ADED9}
 0x8D2FD10B, 0x5841, 0x4a6b, 0x89, 0x05, 0x58, 0x8F, 0xEC, 0x1A, 0xDE, 0xD9);
 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+DEFINE_GUID( MFAudioFormat_Float_SpatialObjects,
+    0xfa39cd94, 0xbc64, 0x4ab1, 0x9b, 0x71, 0xdc, 0xd0, 0x9d, 0x5a, 0x7e, 0x7a );
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 #if (WINVER >= _WIN32_WINNT_THRESHOLD)
 // LPCM audio with headers for encapsulation in an MPEG2 bitstream
 DEFINE_GUID(MFAudioFormat_LPCM, // == MEDIASUBTYPE_LPCM defined in ksmedia.h
@@ -2177,7 +2223,11 @@ DEFINE_GUID(MFMPEG4Format_Base,
 // Subtitle media types
 //
 
-// {73E73992-9a10-4356-9557-7194E91E3E54}      MFSubtitleFormat_TTML 
+// {2006F94F-29CA-4195-B8DB-00DED8FF0C97}      MFSubtitleFormat_XML
+DEFINE_GUID(MFSubtitleFormat_XML, 
+    0x2006f94f, 0x29ca, 0x4195, 0xb8, 0xdb, 0x00, 0xde, 0xd8, 0xff, 0x0c, 0x97);
+
+// {73E73992-9a10-4356-9557-7194E91E3E54}      MFSubtitleFormat_TTML
 DEFINE_GUID(MFSubtitleFormat_TTML,
     0x73e73992, 0x9a10, 0x4356, 0x95, 0x57, 0x71, 0x94, 0xe9, 0x1e, 0x3e, 0x54);
 
@@ -2322,6 +2372,33 @@ typedef enum _MFVideoRotationFormat {
 // the attribute MF_MT_VIDEO_ROTATION as MFVideoRotationFormat_270 accordingly.
 DEFINE_GUID(MF_MT_VIDEO_ROTATION,
 0xc380465d, 0x2271, 0x428c, 0x9b, 0x83, 0xec, 0xea, 0x3b, 0x4a, 0x85, 0xc1);
+
+#if (WINVER >= _WIN32_WINNT_WIN10_RS2)
+DEFINE_GUID(MF_DEVICESTREAM_MULTIPLEXED_MANAGER,
+0x6ea542b0, 0x281f, 0x4231, 0xa4, 0x64, 0xfe, 0x2f, 0x50, 0x22, 0x50, 0x1c);    
+
+DEFINE_GUID(MF_MEDIATYPE_MULTIPLEXED_MANAGER,
+0x13c78fb5, 0xf275, 0x4ea0, 0xbb, 0x5f, 0x2, 0x49, 0x83, 0x2b, 0xd, 0x6e);
+
+DEFINE_GUID(MFSampleExtension_MULTIPLEXED_MANAGER,
+0x8dcdee79, 0x6b5a, 0x4c45, 0x8d, 0xb9, 0x20, 0xb3, 0x95, 0xf0, 0x2f, 0xcf);
+
+
+STDAPI MFCreateMuxStreamAttributes(
+    _In_ IMFCollection *pAttributesToMux,
+    _COM_Outptr_ IMFAttributes**ppMuxAttribs
+);
+
+STDAPI MFCreateMuxStreamMediaType(
+    _In_ IMFCollection *pMediaTypesToMux,
+    _COM_Outptr_ IMFMediaType**ppMuxMediaType
+);
+
+STDAPI MFCreateMuxStreamSample(
+    _In_ IMFCollection *pSamplesToMux,
+    _COM_Outptr_ IMFSample**ppMuxSample
+);
+#endif
 
 #if (WINVER >= _WIN32_WINNT_WINTHRESHOLD)
 // MF_MT_SECURE     {c5acc4fd-0304-4ecf-809f-47bc97ff63bd }
@@ -2512,6 +2589,39 @@ DEFINE_GUID(MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE,
 
 #endif // (WINVER >= _WIN32_WINNT_WIN10)
 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+//
+// AUDIO - Spatial Audio Sample extra data
+//
+
+// {DCFBA24A-2609-4240-A721-3FAEA76A4DF9} MF_MT_SPATIAL_AUDIO_MAX_DYNAMIC_OBJECTS     {UINT32}
+DEFINE_GUID( MF_MT_SPATIAL_AUDIO_MAX_DYNAMIC_OBJECTS,
+    0xdcfba24a, 0x2609, 0x4240, 0xa7, 0x21, 0x3f, 0xae, 0xa7, 0x6a, 0x4d, 0xf9 );
+
+// {2AB71BC0-6223-4BA7-AD64-7B94B47AE792} MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID     {GUID}
+DEFINE_GUID( MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID,
+    0x2ab71bc0, 0x6223, 0x4ba7, 0xad, 0x64, 0x7b, 0x94, 0xb4, 0x7a, 0xe7, 0x92 );
+
+// {094BA8BE-D723-489F-92FA-766777B34726} MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_LENGTH  {UINT32}
+DEFINE_GUID( MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_LENGTH,
+    0x94ba8be, 0xd723, 0x489f, 0x92, 0xfa, 0x76, 0x67, 0x77, 0xb3, 0x47, 0x26 );
+
+// {11AA80B4-E0DA-47C6-8060-96C1259AE50D} MF_MT_SPATIAL_AUDIO_MAX_METADATA_ITEMS {UINT32}
+DEFINE_GUID( MF_MT_SPATIAL_AUDIO_MAX_METADATA_ITEMS,
+    0x11aa80b4, 0xe0da, 0x47c6, 0x80, 0x60, 0x96, 0xc1, 0x25, 0x9a, 0xe5, 0xd );
+
+// {83E96EC9-1184-417E-8254-9F269158FC06} MF_MT_SPATIAL_AUDIO_MIN_METADATA_ITEM_OFFSET_SPACING {UINT32}
+DEFINE_GUID( MF_MT_SPATIAL_AUDIO_MIN_METADATA_ITEM_OFFSET_SPACING,
+    0x83e96ec9, 0x1184, 0x417e, 0x82, 0x54, 0x9f, 0x26, 0x91, 0x58, 0xfc, 0x6 );
+
+// {6842F6E7-D43E-4EBB-9C9C-C96F41784863} MF_MT_SPATIAL_AUDIO_DATA_PRESENT {UINT32 (BOOL)}
+DEFINE_GUID( MF_MT_SPATIAL_AUDIO_DATA_PRESENT, 
+    0x6842f6e7, 0xd43e, 0x4ebb, 0x9c, 0x9c, 0xc9, 0x6f, 0x41, 0x78, 0x48, 0x63 );
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+
 //
 // VIDEO core data
 //
@@ -2619,6 +2729,20 @@ DEFINE_GUID(MF_MT_MAX_MASTERING_LUMINANCE,
 // {839A4460-4E7E-4b4f-AE79-CC08905C7B27} MF_MT_MIN_MASTERING_LUMINANCE {UINT32}
 DEFINE_GUID(MF_MT_MIN_MASTERING_LUMINANCE,
 0x839a4460, 0x4e7e, 0x4b4f, 0xae, 0x79, 0xcc, 0x8, 0x90, 0x5c, 0x7b, 0x27);
+
+// 
+// MF_MT_DECODER_USE_MAX_RESOLUTION hints the decoder should allocate worst 
+// case supported resolution whenever possible
+// {4c547c24-af9a-4f38-96ad-978773cf53xe7} MF_MT_DECODER_USE_MAX_RESOLUTION {UINT32 (BOOL)}
+DEFINE_GUID(MF_MT_DECODER_USE_MAX_RESOLUTION,
+0x4c547c24, 0xaf9a, 0x4f38, 0x96, 0xad, 0x97, 0x87, 0x73, 0xcf, 0x53, 0xe7);
+
+//
+// MF_MT_DECODER_MAX_DPB_COUNT is a value that hints to the decoder that the current 
+// decoding session will never require more than the specified number of decode surfaces
+// {67BE144C-88B7-4CA9-9628-C808D5262217} MF_MT_DECODER_MAX_DPB_COUNT {UINT32}
+DEFINE_GUID(MF_MT_DECODER_MAX_DPB_COUNT,
+0x67be144c, 0x88b7, 0x4ca9, 0x96, 0x28, 0xc8, 0x8, 0xd5, 0x26, 0x22, 0x17);
 
 #endif // (WINVER > _WIN32_WINNT_WIN10)
 
@@ -3097,7 +3221,7 @@ DEFINE_GUID(MFStreamExtension_PinholeCameraIntrinsics,
     0xdbac0455, 0xec8, 0x4aef, 0x9c, 0x32, 0x7a, 0x3e, 0xe3, 0x45, 0x6f, 0x53);
 
 // MFSampleExtension_PinholeCameraIntrinsics {4EE3B6C5-6A15-4E72-9761-70C1DB8B9FE3}
-// Value type: Blob (MFPinholeCameraIntrinsic_IntrinsicModel)
+// Value type: Blob (MFPinholeCameraIntrinsics)
 // Stores camera intrinsics data on the sample's (a.k.a frame) attribute store
 DEFINE_GUID(MFSampleExtension_PinholeCameraIntrinsics,
     0x4ee3b6c5, 0x6a15, 0x4e72, 0x97, 0x61, 0x70, 0xc1, 0xdb, 0x8b, 0x9f, 0xe3);
@@ -3133,6 +3257,10 @@ DEFINE_GUID(MFMediaType_FileTransfer,
 0x72178C26, 0xE45B, 0x11D5, 0xBC, 0x2A, 0x00, 0xB0, 0xD0, 0xF3, 0xF4, 0xAB);
 DEFINE_GUID(MFMediaType_Stream,
 0xe436eb83, 0x524f, 0x11ce, 0x9f, 0x53, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+DEFINE_GUID(MFMediaType_MultiplexedFrames,
+0x6ea542b0, 0x281f, 0x4231, 0xa4, 0x64, 0xfe, 0x2f, 0x50, 0x22, 0x50, 0x1c);
+DEFINE_GUID(MFMediaType_Subtitle,
+0xa6d13581, 0xed50, 0x4e65, 0xae, 0x08, 0x26, 0x06, 0x55, 0x76, 0xaa, 0xcc);
 
 // TODO: switch to RS define once it exists (see: 5312604)
 #if (WINVER >= _WIN32_WINNT_WIN10)

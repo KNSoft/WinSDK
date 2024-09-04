@@ -37,9 +37,11 @@
 // Computer
 #define DEVICEDISPLAY_CATEGORY_COMPUTER                             L"Computer"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_ALLINONE                    L"Computer.AllInOne"
+#define DEVICEDISPLAY_CATEGORY_COMPUTER_CONVERTIBLE                 L"Computer.Convertible"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_DESKTOP                     L"Computer.Desktop"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_DESKTOP_LOWPROFILE          L"Computer.Desktop.LowProfile"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_DESKTOP_PIZZABOX            L"Computer.Desktop.Pizzabox"
+#define DEVICEDISPLAY_CATEGORY_COMPUTER_DETACHABLE                  L"Computer.Detachable"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_HANDHELD                    L"Computer.Handheld"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_HANDHELD_WINDOWS            L"Computer.Handheld.Windows"
 #define DEVICEDISPLAY_CATEGORY_COMPUTER_LAPTOP                      L"Computer.Laptop"
@@ -59,6 +61,7 @@
 
 // Display
 #define DEVICEDISPLAY_CATEGORY_DISPLAY                              L"Display"
+#define DEVICEDISPLAY_CATEGORY_DISPLAY_HEADMOUNTED                  L"Display.Headmounted"
 #define DEVICEDISPLAY_CATEGORY_DISPLAY_MONITOR                      L"Display.Monitor"
 #define DEVICEDISPLAY_CATEGORY_DISPLAY_MONITOR_CRT                  L"Display.Monitor.CRT"
 #define DEVICEDISPLAY_CATEGORY_DISPLAY_MONITOR_LCD                  L"Display.Monitor.LCD"
@@ -206,6 +209,7 @@
 //Pos
 #define DEVICEDISPLAY_CATEGORY_POS_BARCODESCANNER                   L"Pos.BarcodeScanner"
 #define DEVICEDISPLAY_CATEGORY_POS_CASHDRAWER                       L"Pos.CashDrawer"
+#define DEVICEDISPLAY_CATEGORY_POS_LINEDISPLAY                      L"Pos.LineDisplay"
 #define DEVICEDISPLAY_CATEGORY_POS_MAGNETICSTRIPEREADER             L"Pos.MagneticStripeReader"
 #define DEVICEDISPLAY_CATEGORY_POS_PRINTER                          L"Pos.Printer"
 
@@ -220,6 +224,7 @@
 #define DEVICEDISPLAY_CATEGORY_PRINTFAX_PRINTER_VIRTUAL             L"PrintFax.Printer.Virtual"
 #define DEVICEDISPLAY_CATEGORY_PRINTFAX_PRINTER_SERVICE             L"PrintFax.Printer.Service"
 #define DEVICEDISPLAY_CATEGORY_PRINTFAX_PRINTER_3D                  L"PrintFax.Printer.3D"
+#define DEVICEDISPLAY_CATEGORY_PRINTFAX_PRINTER_CLOUD               L"PrintFax.Printer.Cloud"
 
 // Sensor
 #define DEVICEDISPLAY_CATEGORY_SENSOR                               L"Sensor"
@@ -269,6 +274,13 @@
 #define DEVICEDISPLAY_CATEGORY_PERSONALIDENTITY_SMARTCARD           L"PersonalIdentity.Smartcard"
 #define DEVICEDISPLAY_CATEGORY_PERSONALIDENTITY_SMARTCARDREADER     L"PersonalIdentity.SmartcardReader"
 
+// Wearable
+#define DEVICEDISPLAY_CATEGORY_WEARABLE                             L"Wearable"
+#define DEVICEDISPLAY_CATEGORY_WEARABLE_HEADSET                     L"Wearable.Headset"
+#define DEVICEDISPLAY_CATEGORY_WEARABLE_HEADSET_HOLOGRAPHIC         L"Wearable.Headset.Holographic"
+#define DEVICEDISPLAY_CATEGORY_WEARABLE_HEADSET_VIRTUALREALITY      L"Wearable.Headset.VirtualReality"
+
+// Gaming
 #define DEVICEDISPLAY_CATEGORY_GAMING_DEVICES                       L"GamingDevices"
 #define DEVICEDISPLAY_CATEGORY_GAMING_DEVICES_XBOX                  L"GamingDevices.Xbox"
 #define DEVICEDISPLAY_CATEGORY_GAMING_DEVICES_XBOX360               L"GamingDevices.Xbox360"

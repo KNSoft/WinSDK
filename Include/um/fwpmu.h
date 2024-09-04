@@ -10,6 +10,9 @@
 #pragma region Desktop Family or AppRuntime Package
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PKG_APPRUNTIME)
 
+#define FW_BITMAP_INDEX_FULL  ((UINT8)~(0))
+
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN6)
 
@@ -653,6 +656,71 @@ DEFINE_GUID(
    0x486f,
    0x94,0x46,0x82,0x93,0xcb,0xc7,0x5e,0xb8
 );
+
+
+// {36C299BB-64D3-4B2A-8C07-06A6E063AB72}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_LOCAL_ADDRESS_V4, 
+   0x36c299bb, 
+   0x64d3, 
+   0x4b2a, 
+   0x8c, 0x7, 0x6, 0xa6, 0xe0, 0x63, 0xab, 0x72
+);
+
+// {BA062113-FFD1-4D12-948A-C121666B66A4}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_REMOTE_ADDRESS_V4, 
+   0xba062113, 
+   0xffd1, 
+   0x4d12, 
+   0x94, 0x8a, 0xc1, 0x21, 0x66, 0x6b, 0x66, 0xa4
+);
+
+// {141EB5BC-2E50-449D-B78D-B27DFEEB1705}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_LOCAL_PORT_V4, 
+    0x141eb5bc, 
+    0x2e50, 
+    0x449d, 
+    0xb7, 0x8d, 0xb2, 0x7d, 0xfe, 0xeb, 0x17, 0x5
+);
+
+// {72BC3A67-F1F8-436E-8984-5AD4924A9DAC}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_REMOTE_PORT_V4, 
+    0x72bc3a67, 
+    0xf1f8, 
+    0x436e, 
+    0x89, 0x84, 0x5a, 0xd4, 0x92, 0x4a, 0x9d, 0xac
+);
+
+// {EFBB6075-1DF3-4EE9-9E33-265381198AF7}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_LOCAL_ADDRESS_V6, 
+   0xefbb6075, 
+   0x1df3, 
+   0x4ee9, 
+   0x9e, 0x33, 0x26, 0x53, 0x81, 0x19, 0x8a, 0xf7
+);
+
+
+// {B47DF0DF-DA49-49E1-9CE4-82A7224118B2}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_REMOTE_ADDRESS_V6, 
+   0xb47df0df, 
+   0xda49, 
+   0x49e1, 
+   0x9c, 0xe4, 0x82, 0xa7, 0x22, 0x41, 0x18, 0xb2
+);
+
+// {DF97AB11-2DC4-4018-B631-18BB38944CAF}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_LOCAL_PORT_V6, 
+    0xdf97ab11, 
+    0x2dc4, 
+    0x4018, 
+    0xb6, 0x31, 0x18, 0xbb, 0x38, 0x94, 0x4c, 0xaf);
+
+
+// {EE0865C4-658F-465D-A37B-79C09339EBF6}
+DEFINE_GUID(FWPM_LAYER_ALE_PRECLASSIFY_IP_REMOTE_PORT_V6, 
+    0xee0865c4, 
+    0x658f, 
+    0x465d, 
+    0xa3, 0x7b, 0x79, 0xc0, 0x93, 0x39, 0xeb, 0xf6);
 
 
 #endif // (NTDDI_VERSION >= NTDDI_WINBLUE)
@@ -1355,6 +1423,38 @@ DEFINE_GUID(
    0xb9, 0xef, 0x76, 0xbe, 0xaa, 0xaf, 0x17, 0xee
 );
 
+// {16EBC3DF-957A-452E-A1FC-3D2FF6A730BA}
+DEFINE_GUID(FWPM_CONDITION_BITMAP_IP_LOCAL_ADDRESS, 
+   0x16ebc3df, 
+   0x957a, 
+   0x452e, 
+   0xa1, 0xfc, 0x3d, 0x2f, 0xf6, 0xa7, 0x30, 0xba
+);
+
+// {9F90A920-C3B5-4569-BA31-8BD3910DC656}
+DEFINE_GUID(FWPM_CONDITION_BITMAP_IP_LOCAL_PORT, 
+   0x9f90a920, 
+   0xc3b5, 
+   0x4569, 
+   0xba, 0x31, 0x8b, 0xd3, 0x91, 0xd, 0xc6, 0x56
+);
+
+// {33F00E25-8EEC-4531-A005-41B911F62452}
+DEFINE_GUID(FWPM_CONDITION_BITMAP_IP_REMOTE_ADDRESS, 
+	0x33f00e25, 
+	0x8eec, 
+	0x4531, 
+	0xa0, 0x5, 0x41, 0xb9, 0x11, 0xf6, 0x24, 0x52
+);
+
+// {2663D549-AAF2-46A2-8666-1E7667F86985}
+DEFINE_GUID(FWPM_CONDITION_BITMAP_IP_REMOTE_PORT, 
+   0x2663d549, 
+   0xaaf2, 
+   0x46a2, 
+   0x86, 0x66, 0x1e, 0x76, 0x67, 0xf8, 0x69, 0x85
+);
+
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 
 // eabe448a-a711-4d64-85b7-3f76b65299c7
@@ -1364,6 +1464,14 @@ DEFINE_GUID(
    0xa711,
    0x4d64,
    0x85, 0xb7, 0x3f, 0x76, 0xb6, 0x52, 0x99, 0xc7
+);
+
+// {0F36514C-3226-4A81-A214-2D518B04D08A}
+DEFINE_GUID(FWPM_CONDITION_BITMAP_INDEX_KEY, 
+   0xf36514c, 
+   0x3226, 
+   0x4a81, 
+   0xa2, 0x14, 0x2d, 0x51, 0x8b, 0x4, 0xd0, 0x8a
 );
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
@@ -2162,6 +2270,18 @@ DEFINE_GUID(
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+// 35A791AB-04AC-4FF2-A6BB-DA6CFAC71806
+DEFINE_GUID(
+    FWPM_CONDITION_COMPARTMENT_ID,
+    0x35a791ab,
+    0x4ac,
+    0x4ff2,
+    0xa6, 0xbb, 0xda, 0x6c, 0xfa, 0xc7, 0x18, 0x6
+);
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -2593,6 +2713,46 @@ DEFINE_GUID(
 );
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+// 5FBFC31D-A51C-44DC-ACB6-0624A030A700
+DEFINE_GUID(
+    FWPM_CALLOUT_POLICY_SILENT_MODE_AUTH_CONNECT_LAYER_V4,
+    0x5fbfc31d, 
+    0xa51c, 
+    0x44dc, 
+    0xac, 0xb6, 0x6, 0x24, 0xa0, 0x30, 0xa7, 0x00
+);
+
+// 5FBFC31D-A51C-44DC-ACB6-0624A030A701
+DEFINE_GUID(
+    FWPM_CALLOUT_POLICY_SILENT_MODE_AUTH_CONNECT_LAYER_V6,
+    0x5fbfc31d, 
+    0xa51c, 
+    0x44dc, 
+    0xac, 0xb6, 0x6, 0x24, 0xa0, 0x30, 0xa7, 0x01
+);
+
+// 5FBFC31D-A51C-44DC-ACB6-0624A030A702
+DEFINE_GUID(
+    FWPM_CALLOUT_POLICY_SILENT_MODE_AUTH_RECV_ACCEPT_LAYER_V4,
+    0x5fbfc31d, 
+    0xa51c, 
+    0x44dc, 
+    0xac, 0xb6, 0x6, 0x24, 0xa0, 0x30, 0xa7, 0x02
+);
+
+// 5FBFC31D-A51C-44DC-ACB6-0624A030A703
+DEFINE_GUID(
+    FWPM_CALLOUT_POLICY_SILENT_MODE_AUTH_RECV_ACCEPT_LAYER_V6,
+    0x5fbfc31d, 
+    0xa51c, 
+    0x44dc, 
+    0xac, 0xb6, 0x6, 0x24, 0xa0, 0x30, 0xa7, 0x03
+);
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -3783,6 +3943,28 @@ FwpmGetAppIdFromFileName0(
    _Outptr_ FWP_BYTE_BLOB** appId
    );
 
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Functions for managing Bitmaps.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+DWORD
+WINAPI
+FwpmBitmapIndexGet0(
+   _In_ HANDLE engineHandle,
+   _In_ const GUID* fieldId,
+   _Out_ UINT8* idx
+   );
+
+   DWORD
+WINAPI
+FwpmBitmapIndexFree0(
+   _In_ HANDLE engineHandle,
+   _In_ const GUID* fieldId,
+   _In_ UINT8* idx
+   );
 
 ///////////////////////////////////////////////////////////////////////////////
 //

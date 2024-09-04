@@ -67,6 +67,7 @@
 #define SECPKG_ATTR_SRTP_PARAMETERS      0x6c   // returns negotiated SRTP parameters
 #define SECPKG_ATTR_TOKEN_BINDING        0x6d   // returns SecPkgContext_TokenBinding
 #define SECPKG_ATTR_CONNECTION_INFO_EX   0x6e   // returns SecPkgContext_ConnectionInfoEx
+#define SECPKG_ATTR_KEYING_MATERIAL_TOKEN_BINDING 0x6f // returns SecPkgContext_KeyingMaterial specific to Token Binding
 
 //
 // typedefs

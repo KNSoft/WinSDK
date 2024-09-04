@@ -8,9 +8,6 @@
 *  Copyright (c) Microsoft Corp.  All rights reserved.            *
 *                                                                 *
 ******************************************************************/
-#ifndef _versionhelpers_H_INCLUDED_
-#define _versionhelpers_H_INCLUDED_
-
 #include <winapifamily.h>
 
 #ifdef _MSC_VER
@@ -25,6 +22,9 @@
 #if !defined(__midl) && !defined(SORTPP_PASS)
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+
+#ifndef _versionhelpers_H_INCLUDED_
+#define _versionhelpers_H_INCLUDED_
 
 #ifdef __cplusplus
 
@@ -141,6 +141,7 @@ IsWindowsServer()
     return !VerifyVersionInfoW(&osvi, VER_PRODUCT_TYPE, dwlConditionMask);
 }
 
+#endif // _VERSIONHELPERS_H_INCLUDED_
 
 #endif // NTDDI_VERSION
 
@@ -149,4 +150,3 @@ IsWindowsServer()
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#endif // _VERSIONHELPERS_H_INCLUDED_

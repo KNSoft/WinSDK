@@ -897,8 +897,8 @@ typedef struct _CAINFO
 
 //======================================================================
 // Full path to HKLM or HKCU "AutoEnrollment" key:
-#define wszREGKEYENROLLMENT	L"SOFTWARE\\Microsoft\\Cryptography\\AutoEnrollment"
-#define wszREGKEYGROUPPOLICYENROLLMENT	L"SOFTWARE\\Policies\\Microsoft\\Cryptography\\AutoEnrollment"
+#define wszREGKEYENROLLMENT	L"Software\\Microsoft\\Cryptography\\AutoEnrollment"
+#define wszREGKEYGROUPPOLICYENROLLMENT	L"Software\\Policies\\Microsoft\\Cryptography\\AutoEnrollment"
 
 // Values Under "...\Cryptography\AutoEnrollment"
 

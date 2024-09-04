@@ -139,14 +139,17 @@ typedef _Return_type_success_(return >= 0) long HRESULT;
 //
 // UInt32x32To64 macro
 //
+#ifndef UInt32x32To64
 #if defined(MIDL_PASS) || defined(RC_INVOKED) || defined(_M_CEE_PURE) \
     || defined(_68K_) || defined(_MPPC_) \
-    || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)
+    || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64) \
+    || defined(_M_HYBRID_X86_ARM64)
 #define UInt32x32To64(a, b) (((unsigned __int64)((unsigned int)(a))) * ((unsigned __int64)((unsigned int)(b))))
 #elif defined(_M_IX86)
 #define UInt32x32To64(a, b) ((unsigned __int64)(((unsigned __int64)((unsigned int)(a))) * ((unsigned int)(b))))
 #else
 #error Must define a target architecture.
+#endif
 #endif
 
 //

@@ -23,7 +23,7 @@ cpp_quote("//-------------------------------------------------------------------
 cpp_quote("// IE Namespace Control Interfaces.")
 cpp_quote("")
 
-import "shobjidl.idl";
+import "shobjidl_core.idl";
 
 interface INamespaceProxy;
 interface INSCTree;

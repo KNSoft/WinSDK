@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -39,6 +39,20 @@
 
 /* Forward Declarations */ 
 
+#ifndef ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#endif 	/* ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__ */
+
+
+#ifndef ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#endif 	/* ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__ */
+
+
 #ifndef ____FIIterator_1_Windows__CSystem__CUser_FWD_DEFINED__
 #define ____FIIterator_1_Windows__CSystem__CUser_FWD_DEFINED__
 typedef interface __FIIterator_1_Windows__CSystem__CUser __FIIterator_1_Windows__CSystem__CUser;
@@ -53,11 +67,25 @@ typedef interface __FIIterable_1_Windows__CSystem__CUser __FIIterable_1_Windows_
 #endif 	/* ____FIIterable_1_Windows__CSystem__CUser_FWD_DEFINED__ */
 
 
+#ifndef ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#endif 	/* ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__ */
+
+
 #ifndef ____FIVectorView_1_Windows__CSystem__CUser_FWD_DEFINED__
 #define ____FIVectorView_1_Windows__CSystem__CUser_FWD_DEFINED__
 typedef interface __FIVectorView_1_Windows__CSystem__CUser __FIVectorView_1_Windows__CSystem__CUser;
 
 #endif 	/* ____FIVectorView_1_Windows__CSystem__CUser_FWD_DEFINED__ */
+
+
+#ifndef ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __FIVector_1_Windows__CSystem__CAppDiagnosticInfo __FIVector_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#endif 	/* ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__ */
 
 
 #ifndef ____FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_FWD_DEFINED__
@@ -86,6 +114,20 @@ typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows_
 typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser __FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser;
 
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#endif 	/* ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus_FWD_DEFINED__
@@ -128,6 +170,20 @@ typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunch
 typedef interface __FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus __FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus;
 
 #endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult;
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__ */
+
+
+#ifndef ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__
+typedef interface __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult;
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus_FWD_DEFINED__
@@ -184,6 +240,42 @@ typedef interface __FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows
 typedef interface __FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs __FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs;
 
 #endif 	/* ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppDiagnosticInfo;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppDiagnosticInfoStatics;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppMemoryReport_FWD_DEFINED__
@@ -328,6 +420,24 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherOptions3_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CILauncherOptions4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CILauncherOptions4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CILauncherOptions4 __x_ABI_CWindows_CSystem_CILauncherOptions4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface ILauncherOptions4;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CILauncherOptions4_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics_FWD_DEFINED__
@@ -492,6 +602,60 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIProcessLauncherOptions __x_ABI_CWindows_CSystem_CIProcessLauncherOptions;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IProcessLauncherOptions;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIProcessLauncherResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIProcessLauncherResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIProcessLauncherResult __x_ABI_CWindows_CSystem_CIProcessLauncherResult;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IProcessLauncherResult;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIProcessLauncherResult_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIProcessLauncherStatics __x_ABI_CWindows_CSystem_CIProcessLauncherStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IProcessLauncherStatics;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CSystem_CIProcessMemoryReport_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIProcessMemoryReport_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CIProcessMemoryReport __x_ABI_CWindows_CSystem_CIProcessMemoryReport;
@@ -562,6 +726,60 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CSystem_CIRemoteLauncherStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics __x_ABI_CWindows_CSystem_CIShutdownManagerStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IShutdownManagerStatics;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IShutdownManagerStatics2;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface ITimeZoneSettingsStatics;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_FWD_DEFINED__ */
 
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_FWD_DEFINED__
@@ -765,7 +983,6 @@ namespace ABI {
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Gaming.Input.h"
-#include "Windows.System.RemoteSystems.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -782,6 +999,117 @@ extern "C"{
 #ifdef __cplusplus
 extern "C" {
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+class AppDiagnosticInfo;
+} /*System*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+interface IAppDiagnosticInfo;
+} /*System*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0000 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0000_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4576 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4576 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4576_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0001 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#define DEF___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("183f1e4a-2224-5fe4-b064-68869c53e361"))
+IIterator<ABI::Windows::System::AppDiagnosticInfo*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppDiagnosticInfo*, ABI::Windows::System::IAppDiagnosticInfo*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.System.AppDiagnosticInfo>"; }
+};
+typedef IIterator<ABI::Windows::System::AppDiagnosticInfo*> __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_t;
+#define ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_USE */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0001 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0001_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4577 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4577 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4577_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0002 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#define DEF___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("8118de8f-3ae3-55e1-80a8-25453cdba894"))
+IIterable<ABI::Windows::System::AppDiagnosticInfo*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppDiagnosticInfo*, ABI::Windows::System::IAppDiagnosticInfo*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.System.AppDiagnosticInfo>"; }
+};
+typedef IIterable<ABI::Windows::System::AppDiagnosticInfo*> __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_t;
+#define ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -803,29 +1131,30 @@ interface IUser;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0000 */
+/* interface __MIDL_itf_windows2Esystem_0000_0002 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3043 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0002_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4578 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3043_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4578 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0001 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4578_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0003 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSystem__CUser_USE
@@ -849,29 +1178,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CSystem__CUser_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0001 */
+/* interface __MIDL_itf_windows2Esystem_0000_0003 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3044 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4579 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3044_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4579 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0002 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4579_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0004 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSystem__CUser_USE
@@ -895,29 +1224,75 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CSystem__CUser_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0002 */
+/* interface __MIDL_itf_windows2Esystem_0000_0004 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3045 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3045_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4580 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0003 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4580_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0005 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#define DEF___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b0c2c7a4-78ba-50fd-84fe-00e02a6c1d42"))
+IVectorView<ABI::Windows::System::AppDiagnosticInfo*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppDiagnosticInfo*, ABI::Windows::System::IAppDiagnosticInfo*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVectorView`1<Windows.System.AppDiagnosticInfo>"; }
+};
+typedef IVectorView<ABI::Windows::System::AppDiagnosticInfo*> __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t;
+#define ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_USE */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0005 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0005_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0005_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4581 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4581 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4581_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0006 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSystem__CUser_USE
@@ -939,6 +1314,52 @@ typedef IVectorView<ABI::Windows::System::User*> __FIVectorView_1_Windows__CSyst
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIVectorView_1_Windows__CSystem__CUser_USE */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0006 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0006_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4582 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4582 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4582_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0007 */
+/* [local] */ 
+
+#ifndef DEF___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#define DEF___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9cffa2c3-7eeb-599c-b94d-c794b11f807f"))
+IVector<ABI::Windows::System::AppDiagnosticInfo*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppDiagnosticInfo*, ABI::Windows::System::IAppDiagnosticInfo*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IVector`1<Windows.System.AppDiagnosticInfo>"; }
+};
+typedef IVector<ABI::Windows::System::AppDiagnosticInfo*> __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t;
+#define ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE */
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -960,30 +1381,30 @@ interface IAppMemoryUsageLimitChangingEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0003 */
+/* interface __MIDL_itf_windows2Esystem_0000_0007 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0007_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3046 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3046_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4583 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0004 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4583_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0008 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_USE
@@ -1026,30 +1447,30 @@ interface IUserDeviceAssociationChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0004 */
+/* interface __MIDL_itf_windows2Esystem_0000_0008 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0008_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3047 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3047_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4584 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0005 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4584_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0009 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_USE
@@ -1073,29 +1494,29 @@ extern "C" {
 #endif /* DEF___FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0005 */
+/* interface __MIDL_itf_windows2Esystem_0000_0009 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0009_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3048 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3048_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4585 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0006 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4585_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0010 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser_USE
@@ -1119,29 +1540,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0006 */
+/* interface __MIDL_itf_windows2Esystem_0000_0010 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0010_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3049 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3049_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4586 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0007 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4586_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0011 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_USE
@@ -1164,6 +1585,98 @@ extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_USE */
 
+
+/* interface __MIDL_itf_windows2Esystem_0000_0011 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0011_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0011_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4587 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4587 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4587_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0012 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("cc3f5f7e-4160-567f-a0f6-aa9aeb187af3"))
+IAsyncOperationCompletedHandler<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> : IAsyncOperationCompletedHandler_impl<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVector`1<Windows.System.AppDiagnosticInfo>>"; }
+};
+typedef IAsyncOperationCompletedHandler<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t;
+#define ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0012 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0012_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0012_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4588 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4588 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4588_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0013 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#define DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d6a9d3b9-f63c-59be-a096-3e9557c41182"))
+IAsyncOperation<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> : IAsyncOperation_impl<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVector`1<Windows.System.AppDiagnosticInfo>>"; }
+};
+typedef IAsyncOperation<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t;
+#define ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_FWD_DEFINED__
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_USE */
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -1175,30 +1688,30 @@ enum LaunchQuerySupportStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0007 */
+/* interface __MIDL_itf_windows2Esystem_0000_0013 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3050 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3050_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4589 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0008 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4589_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0014 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus_USE
@@ -1222,29 +1735,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0008 */
+/* interface __MIDL_itf_windows2Esystem_0000_0014 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3051 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3051_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4590 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0009 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4590_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0015 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus_USE
@@ -1287,30 +1800,30 @@ interface ILaunchUriResult;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0009 */
+/* interface __MIDL_itf_windows2Esystem_0000_0015 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3052 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3052_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4591 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0010 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4591_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0016 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult_USE
@@ -1334,29 +1847,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0010 */
+/* interface __MIDL_itf_windows2Esystem_0000_0016 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0016_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3053 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3053_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4592 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0011 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4592_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0017 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_USE
@@ -1390,30 +1903,30 @@ enum LaunchUriStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0011 */
+/* interface __MIDL_itf_windows2Esystem_0000_0017 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0017_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3054 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3054_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4593 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0012 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4593_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0018 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus_USE
@@ -1437,29 +1950,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0012 */
+/* interface __MIDL_itf_windows2Esystem_0000_0018 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3055 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3055_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4594 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0013 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4594_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0019 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_USE
@@ -1481,6 +1994,118 @@ typedef IAsyncOperation<enum ABI::Windows::System::LaunchUriStatus> __FIAsyncOpe
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+class ProcessLauncherResult;
+} /*System*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+interface IProcessLauncherResult;
+} /*System*/
+} /*Windows*/
+}
+#endif
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0019 */
+/* [local] */ 
+
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0019_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4595 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4595 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4595_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0020 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("8d787ee6-07e4-5dce-8fe5-b503a1f6368c"))
+IAsyncOperationCompletedHandler<ABI::Windows::System::ProcessLauncherResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::ProcessLauncherResult*, ABI::Windows::System::IProcessLauncherResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.System.ProcessLauncherResult>"; }
+};
+typedef IAsyncOperationCompletedHandler<ABI::Windows::System::ProcessLauncherResult*> __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_t;
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_USE */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0020 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0020_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4596 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4596 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4596_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0021 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e6827240-7a8d-51be-8d21-e093268ccc15"))
+IAsyncOperation<ABI::Windows::System::ProcessLauncherResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::ProcessLauncherResult*, ABI::Windows::System::IProcessLauncherResult*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.IAsyncOperation`1<Windows.System.ProcessLauncherResult>"; }
+};
+typedef IAsyncOperation<ABI::Windows::System::ProcessLauncherResult*> __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t;
+#define ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_FWD_DEFINED__
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_USE */
 
 #ifdef __cplusplus
 namespace ABI {
@@ -1493,30 +2118,30 @@ enum RemoteLaunchUriStatus;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0013 */
+/* interface __MIDL_itf_windows2Esystem_0000_0021 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0021_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3056 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3056_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4597 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0014 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4597_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0022 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus_USE
@@ -1540,29 +2165,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0014 */
+/* interface __MIDL_itf_windows2Esystem_0000_0022 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3057 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3057_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4598 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0015 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4598_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0023 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus_USE
@@ -1586,29 +2211,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0015 */
+/* interface __MIDL_itf_windows2Esystem_0000_0023 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3058 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3058_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4599 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0016 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4599_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0024 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser_USE
@@ -1632,29 +2257,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0016 */
+/* interface __MIDL_itf_windows2Esystem_0000_0024 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3059 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3059_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4600 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0017 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4600_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0025 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CUser_USE
@@ -1709,7 +2334,7 @@ interface IUserChangedEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0017 */
+/* interface __MIDL_itf_windows2Esystem_0000_0025 */
 /* [local] */ 
 
 
@@ -1717,23 +2342,23 @@ interface IUserChangedEventArgs;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3060 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3060_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4601 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0018 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4601_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0026 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_USE
@@ -1778,7 +2403,7 @@ interface IUserWatcher;
 interface IInspectable;
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0018 */
+/* interface __MIDL_itf_windows2Esystem_0000_0026 */
 /* [local] */ 
 
 
@@ -1786,23 +2411,23 @@ interface IInspectable;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3061 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3061_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4602 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0019 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4602_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0027 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_USE
@@ -1845,30 +2470,30 @@ interface IUserAuthenticationStatusChangingEventArgs;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0019 */
+/* interface __MIDL_itf_windows2Esystem_0000_0027 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3062 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3062_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4603 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0020 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4603_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0028 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_USE
@@ -1892,29 +2517,29 @@ extern "C" {
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0020 */
+/* interface __MIDL_itf_windows2Esystem_0000_0028 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3063 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3063_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4604 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0021 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4604_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_USE
@@ -1948,30 +2573,30 @@ interface IStorageItem;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0021 */
+/* interface __MIDL_itf_windows2Esystem_0000_0029 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3064 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3064_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4605 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0022 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4605_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE
@@ -1995,29 +2620,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CStorage__CIStorageItem_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0022 */
+/* interface __MIDL_itf_windows2Esystem_0000_0030 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3065 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3065_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4606 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0023 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4606_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE
@@ -2041,29 +2666,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CStorage__CIStorageItem_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0023 */
+/* interface __MIDL_itf_windows2Esystem_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3066 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3066_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4607 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0024 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4607_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CStorage__CIStorageItem_USE
@@ -2087,29 +2712,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CStorage__CIStorageItem_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0024 */
+/* interface __MIDL_itf_windows2Esystem_0000_0032 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3067 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3067_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4608 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0025 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4608_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CStorage__CIStorageItem_USE
@@ -2133,29 +2758,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_Windows__CStorage__CIStorageItem_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0025 */
+/* interface __MIDL_itf_windows2Esystem_0000_0033 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3068 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3068_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4609 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0026 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4609_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0034 */
 /* [local] */ 
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -2179,29 +2804,29 @@ extern "C" {
 #endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0026 */
+/* interface __MIDL_itf_windows2Esystem_0000_0034 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3069 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3069_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4610 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0027 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4610_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -2225,29 +2850,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0027 */
+/* interface __MIDL_itf_windows2Esystem_0000_0035 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3070 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3070_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4611 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4611_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0036 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
@@ -2271,29 +2896,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0028 */
+/* interface __MIDL_itf_windows2Esystem_0000_0036 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3071 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3071_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4612 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4612_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
@@ -2317,29 +2942,29 @@ extern "C" {
 #endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0029 */
+/* interface __MIDL_itf_windows2Esystem_0000_0037 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3072 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3072_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4613 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4613_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0038 */
 /* [local] */ 
 
 #ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
@@ -2363,29 +2988,29 @@ extern "C" {
 #endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0030 */
+/* interface __MIDL_itf_windows2Esystem_0000_0038 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3073 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3073_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4614 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4614_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
@@ -2409,29 +3034,29 @@ extern "C" {
 #endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0031 */
+/* interface __MIDL_itf_windows2Esystem_0000_0039 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3074 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3074_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4615 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0032 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4615_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0040 */
 /* [local] */ 
 
 #ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
@@ -2455,29 +3080,29 @@ extern "C" {
 #endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0032 */
+/* interface __MIDL_itf_windows2Esystem_0000_0040 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3075 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3075_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4616 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4616_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
@@ -2501,29 +3126,29 @@ extern "C" {
 #endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0033 */
+/* interface __MIDL_itf_windows2Esystem_0000_0041 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3076 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3076_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4617 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0034 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4617_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0042 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_boolean_USE
@@ -2547,29 +3172,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_boolean_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0034 */
+/* interface __MIDL_itf_windows2Esystem_0000_0042 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3077 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3077_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4618 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4618_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_boolean_USE
@@ -2612,30 +3237,30 @@ interface IAppInfo;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0035 */
+/* interface __MIDL_itf_windows2Esystem_0000_0043 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3078 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3078_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4619 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0036 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4619_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0044 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CApplicationModel__CAppInfo_USE
@@ -2659,29 +3284,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_Windows__CApplicationModel__CAppInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0036 */
+/* interface __MIDL_itf_windows2Esystem_0000_0044 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3079 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3079_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4620 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4620_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CApplicationModel__CAppInfo_USE
@@ -2705,29 +3330,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_Windows__CApplicationModel__CAppInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0037 */
+/* interface __MIDL_itf_windows2Esystem_0000_0045 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3080 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3080_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4621 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0038 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4621_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0046 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CAppInfo_USE
@@ -2751,29 +3376,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CAppInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0038 */
+/* interface __MIDL_itf_windows2Esystem_0000_0046 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3081 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3081_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4622 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4622_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_USE
@@ -2797,29 +3422,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0039 */
+/* interface __MIDL_itf_windows2Esystem_0000_0047 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3082 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3082_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4623 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0040 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4623_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0048 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_USE
@@ -2853,30 +3478,30 @@ struct Point;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0040 */
+/* interface __MIDL_itf_windows2Esystem_0000_0048 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3083 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3083_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4624 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4624_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CPoint_USE
@@ -2910,30 +3535,30 @@ struct Rect;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0041 */
+/* interface __MIDL_itf_windows2Esystem_0000_0049 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3084 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3084_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4625 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0042 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4625_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0050 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CRect_USE
@@ -2957,29 +3582,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CFoundation__CRect_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0042 */
+/* interface __MIDL_itf_windows2Esystem_0000_0050 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3085 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3085_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4626 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4626_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_IInspectable_USE
@@ -3003,29 +3628,29 @@ extern "C" {
 #endif /* DEF___FIEventHandler_1_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0043 */
+/* interface __MIDL_itf_windows2Esystem_0000_0051 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3086 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3086_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4627 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0044 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4627_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0052 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
@@ -3049,29 +3674,29 @@ extern "C" {
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0044 */
+/* interface __MIDL_itf_windows2Esystem_0000_0052 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3087 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3087_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4628 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4628_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
@@ -3095,29 +3720,29 @@ extern "C" {
 #endif /* DEF___FIIterable_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0045 */
+/* interface __MIDL_itf_windows2Esystem_0000_0053 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3088 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3088_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4629 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0046 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4629_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0054 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_HSTRING_USE
@@ -3141,29 +3766,29 @@ extern "C" {
 #endif /* DEF___FIVectorView_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0046 */
+/* interface __MIDL_itf_windows2Esystem_0000_0054 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3089 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3089_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4630 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4630_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_HSTRING_USE
@@ -3187,29 +3812,29 @@ extern "C" {
 #endif /* DEF___FIVector_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0047 */
+/* interface __MIDL_itf_windows2Esystem_0000_0055 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3090 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3090_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4631 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0048 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4631_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0056 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE
@@ -3233,29 +3858,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_IInspectable_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0048 */
+/* interface __MIDL_itf_windows2Esystem_0000_0056 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3091 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3091_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4632 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4632_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_IInspectable_USE
@@ -3291,30 +3916,30 @@ interface IPropertySet;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0049 */
+/* interface __MIDL_itf_windows2Esystem_0000_0057 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3092 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3092_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4633 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0050 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4633_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0058 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE
@@ -3338,29 +3963,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0050 */
+/* interface __MIDL_itf_windows2Esystem_0000_0058 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3093 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3093_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4634 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4634_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___F__CIPropertySet_USE
@@ -3396,30 +4021,30 @@ interface IRandomAccessStreamReference;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0051 */
+/* interface __MIDL_itf_windows2Esystem_0000_0059 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3094 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3094_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4635 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0052 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4635_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0060 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_USE
@@ -3443,29 +4068,29 @@ extern "C" {
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_USE */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0052 */
+/* interface __MIDL_itf_windows2Esystem_0000_0060 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3095 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3095_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4636 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4636_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_USE
@@ -3537,6 +4162,10 @@ typedef struct __x_ABI_CWindows_CFoundation_CPoint __x_ABI_CWindows_CFoundation_
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 #endif
+#if !defined(__cplusplus)
+typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
+
+#endif
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3570,6 +4199,8 @@ class StorageFile;
 } /*Windows*/
 }
 #endif
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3655,6 +4286,16 @@ typedef enum __x_ABI_CWindows_CSystem_CLaunchUriStatus __x_ABI_CWindows_CSystem_
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CSystem_CPowerState __x_ABI_CWindows_CSystem_CPowerState;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CSystem_CProcessorArchitecture __x_ABI_CWindows_CSystem_CProcessorArchitecture;
 
 
@@ -3666,6 +4307,16 @@ typedef enum __x_ABI_CWindows_CSystem_CProcessorArchitecture __x_ABI_CWindows_CS
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CSystem_CRemoteLaunchUriStatus __x_ABI_CWindows_CSystem_CRemoteLaunchUriStatus;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CSystem_CShutdownKind __x_ABI_CWindows_CSystem_CShutdownKind;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -3756,6 +4407,13 @@ typedef enum __x_ABI_CWindows_CSystem_CVirtualKeyModifiers __x_ABI_CWindows_CSys
 
 
 
+
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -3788,6 +4446,15 @@ namespace ABI {
 namespace Windows {
 namespace System {
 class LauncherUIOptions;
+} /*System*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace System {
+class ProcessLauncherOptions;
 } /*System*/
 } /*Windows*/
 }
@@ -3839,7 +4506,7 @@ class UserPicker;
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0053 */
+/* interface __MIDL_itf_windows2Esystem_0000_0061 */
 /* [local] */ 
 
 
@@ -3874,6 +4541,24 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct TimeSpan TimeSpan;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+
 
 
 
@@ -4003,6 +4688,22 @@ namespace ABI {
     namespace Windows {
         namespace System {
             
+            typedef enum PowerState PowerState;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            
             typedef enum ProcessorArchitecture ProcessorArchitecture;
             
         } /* end namespace */
@@ -4020,6 +4721,22 @@ namespace ABI {
         namespace System {
             
             typedef enum RemoteLaunchUriStatus RemoteLaunchUriStatus;
+            
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            
+            typedef enum ShutdownKind ShutdownKind;
             
         } /* end namespace */
     } /* end namespace */
@@ -4150,23 +4867,368 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0053_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3096 */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3096 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0061_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3096_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4637 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0054 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4637_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0062 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo
+#define DEF___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0062 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0062_v0_0_s_ifspec;
+
+#ifndef ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("183f1e4a-2224-5fe4-b064-68869c53e361")
+    __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo : public IInspectable
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::System::IAppDiagnosticInfo **current) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
+            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::System::IAppDiagnosticInfo **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterator_1_Windows__CSystem__CAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **current);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__out boolean *hasCurrent);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIIterator_1_Windows__CSystem__CAppDiagnosticInfoVtbl;
+
+    interface __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo
+    {
+        CONST_VTBL struct __FIIterator_1_Windows__CSystem__CAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterator_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0063 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterator_1_Windows__CSystem__CAppDiagnosticInfo */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0063 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0063_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4638 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4638 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4638_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0064 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo
+#define DEF___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0064 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0064_v0_0_s_ifspec;
+
+#ifndef ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8118de8f-3ae3-55e1-80a8-25453cdba894")
+    __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE First( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo **first) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIIterable_1_Windows__CSystem__CAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *First )( 
+            __RPC__in __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CSystem__CAppDiagnosticInfo **first);
+        
+        END_INTERFACE
+    } __FIIterable_1_Windows__CSystem__CAppDiagnosticInfoVtbl;
+
+    interface __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo
+    {
+        CONST_VTBL struct __FIIterable_1_Windows__CSystem__CAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIIterable_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0065 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIIterable_1_Windows__CSystem__CAppDiagnosticInfo */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0065 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0065_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4639 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4639 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4639_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0066 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CSystem__CUser
@@ -4174,13 +5236,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3096_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0054 */
+/* interface __MIDL_itf_windows2Esystem_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0066_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -4324,35 +5386,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CSystem__CUser;
 #endif 	/* ____FIIterator_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0055 */
+/* interface __MIDL_itf_windows2Esystem_0000_0067 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0055 */
+/* interface __MIDL_itf_windows2Esystem_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3097 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3097_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4640 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0056 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4640_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0068 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CSystem__CUser
@@ -4360,13 +5422,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3097_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0056 */
+/* interface __MIDL_itf_windows2Esystem_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0068_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -4476,35 +5538,229 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CSystem__CUser;
 #endif 	/* ____FIIterable_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0057 */
+/* interface __MIDL_itf_windows2Esystem_0000_0069 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0057 */
+/* interface __MIDL_itf_windows2Esystem_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3098 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3098_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4641 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0058 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4641_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0070 */
+/* [local] */ 
+
+#ifndef DEF___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo
+#define DEF___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0070 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0070_v0_0_s_ifspec;
+
+#ifndef ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("b0c2c7a4-78ba-50fd-84fe-00e02a6c1d42")
+    __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::System::IAppDiagnosticInfo **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::System::IAppDiagnosticInfo *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::System::IAppDiagnosticInfo **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        END_INTERFACE
+    } __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfoVtbl;
+
+    interface __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo
+    {
+        CONST_VTBL struct __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0071 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0071 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0071_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4642 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4642 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4642_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0072 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CSystem__CUser
@@ -4512,13 +5768,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3098_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0058 */
+/* interface __MIDL_itf_windows2Esystem_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0072_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -4670,35 +5926,311 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CSystem__CUser;
 #endif 	/* ____FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0059 */
+/* interface __MIDL_itf_windows2Esystem_0000_0073 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0059 */
+/* interface __MIDL_itf_windows2Esystem_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3099 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3099_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4643 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0060 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4643_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0074 */
+/* [local] */ 
+
+#ifndef DEF___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+#define DEF___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0074 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0074_v0_0_s_ifspec;
+
+#ifndef ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIVector_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("9cffa2c3-7eeb-599c-b94d-c794b11f807f")
+    __FIVector_1_Windows__CSystem__CAppDiagnosticInfo : public IInspectable
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAt( 
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::System::IAppDiagnosticInfo **item) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
+            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetView( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo **view) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
+            /* [in] */ __RPC__in_opt ABI::Windows::System::IAppDiagnosticInfo *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetAt( 
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt ABI::Windows::System::IAppDiagnosticInfo *item) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt ABI::Windows::System::IAppDiagnosticInfo *item) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
+            /* [in] */ unsigned int index) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Append( 
+            /* [in] */ __RPC__in_opt ABI::Windows::System::IAppDiagnosticInfo *item) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetMany( 
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::System::IAppDiagnosticInfo **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
+            /* [in] */ unsigned int count,
+            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::System::IAppDiagnosticInfo **value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int index,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **item);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetView )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo **view);
+        
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo *item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo *item);
+        
+        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int index,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo *item);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int index);
+        
+        HRESULT ( STDMETHODCALLTYPE *Append )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo *item);
+        
+        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+        
+        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
+            __RPC__in __FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ unsigned int count,
+            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo **value);
+        
+        END_INTERFACE
+    } __FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl;
+
+    interface __FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+    {
+        CONST_VTBL struct __FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppDiagnosticInfo_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0075 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0075 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0075_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4644 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4644 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4644_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0076 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs
@@ -4706,13 +6238,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3099_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0060 */
+/* interface __MIDL_itf_windows2Esystem_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__
@@ -4801,35 +6333,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimit
 #endif 	/* ____FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0061 */
+/* interface __MIDL_itf_windows2Esystem_0000_0077 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0061 */
+/* interface __MIDL_itf_windows2Esystem_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3100 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3100_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4645 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0062 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4645_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0078 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs
@@ -4837,13 +6369,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3100_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0062 */
+/* interface __MIDL_itf_windows2Esystem_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__
 #define ____FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__
@@ -4932,35 +6464,35 @@ EXTERN_C const IID IID___FIEventHandler_1_Windows__CSystem__CUserDeviceAssociati
 #endif 	/* ____FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0063 */
+/* interface __MIDL_itf_windows2Esystem_0000_0079 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0063 */
+/* interface __MIDL_itf_windows2Esystem_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3101 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3101_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4646 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0064 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4646_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0080 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser
@@ -4969,14 +6501,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3101_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0064 */
+/* interface __MIDL_itf_windows2Esystem_0000_0080 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -5065,35 +6597,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0065 */
+/* interface __MIDL_itf_windows2Esystem_0000_0081 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0065 */
+/* interface __MIDL_itf_windows2Esystem_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3102 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3102_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4647 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0066 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4647_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0082 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser
@@ -5101,13 +6633,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3102_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0066 */
+/* interface __MIDL_itf_windows2Esystem_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -5237,35 +6769,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__C
 #endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0067 */
+/* interface __MIDL_itf_windows2Esystem_0000_0083 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0067 */
+/* interface __MIDL_itf_windows2Esystem_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3103 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3103_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4648 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0068 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4648_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0084 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0084 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0084_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("cc3f5f7e-4160-567f-a0f6-aa9aeb187af3")
+    __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0085 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0085 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0085_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4649 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4649 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4649_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0086 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+#define DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0086 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0086_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d6a9d3b9-f63c-59be-a096-3e9557c41182")
+    __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIVector_1_Windows__CSystem__CAppDiagnosticInfo **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIVector_1_Windows__CSystem__CAppDiagnosticInfo **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl;
+
+    interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
+    {
+        CONST_VTBL struct __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0087 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0087 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0087_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4650 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4650 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4650_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0088 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus
@@ -5274,14 +7111,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3103_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0068 */
+/* interface __MIDL_itf_windows2Esystem_0000_0088 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus_INTERFACE_DEFINED__
@@ -5370,35 +7207,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CL
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0069 */
+/* interface __MIDL_itf_windows2Esystem_0000_0089 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchQuerySupportStatus */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0069 */
+/* interface __MIDL_itf_windows2Esystem_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3104 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3104_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4651 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0070 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4651_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0090 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus
@@ -5406,13 +7243,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3104_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0070 */
+/* interface __MIDL_itf_windows2Esystem_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus_INTERFACE_DEFINED__
@@ -5542,35 +7379,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySuppor
 #endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0071 */
+/* interface __MIDL_itf_windows2Esystem_0000_0091 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0071 */
+/* interface __MIDL_itf_windows2Esystem_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3105 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3105_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4652 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0072 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4652_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0092 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult
@@ -5579,14 +7416,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3105_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0072 */
+/* interface __MIDL_itf_windows2Esystem_0000_0092 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult_INTERFACE_DEFINED__
@@ -5675,35 +7512,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CL
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0073 */
+/* interface __MIDL_itf_windows2Esystem_0000_0093 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriResult */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0073 */
+/* interface __MIDL_itf_windows2Esystem_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0093_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3106 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3106_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4653 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0074 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4653_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0094 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult
@@ -5711,13 +7548,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3106_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0074 */
+/* interface __MIDL_itf_windows2Esystem_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_INTERFACE_DEFINED__
@@ -5847,35 +7684,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult;
 #endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0075 */
+/* interface __MIDL_itf_windows2Esystem_0000_0095 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0075 */
+/* interface __MIDL_itf_windows2Esystem_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0095_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3107 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3107_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4654 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0076 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4654_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0096 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus
@@ -5884,14 +7721,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3107_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0076 */
+/* interface __MIDL_itf_windows2Esystem_0000_0096 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus_INTERFACE_DEFINED__
@@ -5980,35 +7817,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CL
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0077 */
+/* interface __MIDL_itf_windows2Esystem_0000_0097 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CLaunchUriStatus */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0077 */
+/* interface __MIDL_itf_windows2Esystem_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0097_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3108 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3108_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4655 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0078 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4655_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0098 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus
@@ -6016,13 +7853,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3108_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0078 */
+/* interface __MIDL_itf_windows2Esystem_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_INTERFACE_DEFINED__
@@ -6152,35 +7989,340 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus;
 #endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0079 */
+/* interface __MIDL_itf_windows2Esystem_0000_0099 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0079 */
+/* interface __MIDL_itf_windows2Esystem_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0099_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3109 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3109_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4656 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0080 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4656_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0100 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0100 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0100_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8d787ee6-07e4-5dce-8fe5-b503a1f6368c")
+    __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Invoke( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult *asyncInfo,
+            /* [in] */ AsyncStatus status) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult *asyncInfo,
+            /* [in] */ AsyncStatus status);
+        
+        END_INTERFACE
+    } __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResultVtbl;
+
+    interface __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult
+    {
+        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0101 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0101 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0101_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4657 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4657 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4657_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0102 */
+/* [local] */ 
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult
+#define DEF___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult
+#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0102 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0102_v0_0_s_ifspec;
+
+#ifndef ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_INTERFACE_DEFINED__
+#define ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_INTERFACE_DEFINED__
+
+/* interface __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult */
+/* [unique][uuid][object] */ 
+
+
+
+/* interface __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("e6827240-7a8d-51be-8d21-e093268ccc15")
+    __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult : public IInspectable
+    {
+    public:
+        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult *handler) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult **handler) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetResults( 
+            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::System::IProcessLauncherResult **results) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult *handler);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CSystem__CProcessLauncherResult **handler);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
+            __RPC__in __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult * This,
+            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIProcessLauncherResult **results);
+        
+        END_INTERFACE
+    } __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResultVtbl;
+
+    interface __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult
+    {
+        CONST_VTBL struct __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+
+#define __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0103 */
+/* [local] */ 
+
+#endif /* pinterface */
+#endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0103 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0103_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4658 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4658 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4658_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0104 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus
@@ -6189,14 +8331,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3109_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0080 */
+/* interface __MIDL_itf_windows2Esystem_0000_0104 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus_INTERFACE_DEFINED__
@@ -6285,35 +8427,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CR
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0081 */
+/* interface __MIDL_itf_windows2Esystem_0000_0105 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CRemoteLaunchUriStatus */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0081 */
+/* interface __MIDL_itf_windows2Esystem_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0105_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3110 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3110_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4659 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0082 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4659_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0106 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus
@@ -6321,13 +8463,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3110_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0082 */
+/* interface __MIDL_itf_windows2Esystem_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus_INTERFACE_DEFINED__
@@ -6457,35 +8599,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriSt
 #endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0083 */
+/* interface __MIDL_itf_windows2Esystem_0000_0107 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CRemoteLaunchUriStatus */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0083 */
+/* interface __MIDL_itf_windows2Esystem_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0107_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3111 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3111_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4660 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0084 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4660_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0108 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser
@@ -6494,14 +8636,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3111_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0084 */
+/* interface __MIDL_itf_windows2Esystem_0000_0108 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -6590,35 +8732,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CU
 #endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0085 */
+/* interface __MIDL_itf_windows2Esystem_0000_0109 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0085 */
+/* interface __MIDL_itf_windows2Esystem_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0109_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3112 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3112_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4661 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0086 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4661_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0110 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CSystem__CUser
@@ -6626,13 +8768,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3112_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0086 */
+/* interface __MIDL_itf_windows2Esystem_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -6762,35 +8904,35 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CSystem__CUser;
 #endif 	/* ____FIAsyncOperation_1_Windows__CSystem__CUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0087 */
+/* interface __MIDL_itf_windows2Esystem_0000_0111 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CSystem__CUser */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0087 */
+/* interface __MIDL_itf_windows2Esystem_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0111_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3113 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3113_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4662 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0088 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4662_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0112 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs
@@ -6798,13 +8940,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3113_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0088 */
+/* interface __MIDL_itf_windows2Esystem_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
@@ -6893,35 +9035,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameC
 #endif 	/* ____FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0089 */
+/* interface __MIDL_itf_windows2Esystem_0000_0113 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CGaming__CInput__CIGameController_Windows__CSystem__CUserChangedEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0089 */
+/* interface __MIDL_itf_windows2Esystem_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0113_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3114 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3114_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4663 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0090 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4663_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0114 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable
@@ -6929,13 +9071,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3114_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0090 */
+/* interface __MIDL_itf_windows2Esystem_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_INTERFACE_DEFINED__
@@ -7024,35 +9166,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_II
 #endif 	/* ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0091 */
+/* interface __MIDL_itf_windows2Esystem_0000_0115 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0091 */
+/* interface __MIDL_itf_windows2Esystem_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0115_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3115 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3115_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4664 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0092 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4664_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0116 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs
@@ -7060,13 +9202,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3115_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0092 */
+/* interface __MIDL_itf_windows2Esystem_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__
@@ -7155,35 +9297,35 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Wi
 #endif 	/* ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0093 */
+/* interface __MIDL_itf_windows2Esystem_0000_0117 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0093 */
+/* interface __MIDL_itf_windows2Esystem_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0117_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3116 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3116_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4665 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0094 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4665_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0118 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs
@@ -7191,13 +9333,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3116_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0094 */
+/* interface __MIDL_itf_windows2Esystem_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__
@@ -7286,7 +9428,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Wi
 #endif 	/* ____FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0095 */
+/* interface __MIDL_itf_windows2Esystem_0000_0119 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -7365,6 +9507,18 @@ enum __x_ABI_CWindows_CSystem_CLaunchUriStatus
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CSystem_CPowerState
+    {
+        PowerState_ConnectedStandby	= 0,
+        PowerState_SleepS3	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CSystem_CProcessorArchitecture
     {
         ProcessorArchitecture_X86	= 0,
@@ -7390,6 +9544,18 @@ enum __x_ABI_CWindows_CSystem_CRemoteLaunchUriStatus
         RemoteLaunchUriStatus_ValueSetTooLarge	= 5,
         RemoteLaunchUriStatus_DeniedByLocalSystem	= 6,
         RemoteLaunchUriStatus_DeniedByRemoteSystem	= 7
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CSystem_CShutdownKind
+    {
+        ShutdownKind_Shutdown	= 0,
+        ShutdownKind_Restart	= 1
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -7655,12 +9821,12 @@ DEFINE_ENUM_FLAG_OPERATORS(VirtualKeyModifiers)
 } /*Windows*/
 }
 #endif
-#if !defined(____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppMemoryReport[] = L"Windows.System.IAppMemoryReport";
-#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppDiagnosticInfo[] = L"Windows.System.IAppDiagnosticInfo";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0095 */
+/* interface __MIDL_itf_windows2Esystem_0000_0119 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -7775,6 +9941,25 @@ namespace ABI {
         namespace System {
             
             /* [v1_enum] */ 
+            enum PowerState
+                {
+                    PowerState_ConnectedStandby	= 0,
+                    PowerState_SleepS3	= 1
+                } ;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            
+            /* [v1_enum] */ 
             enum ProcessorArchitecture
                 {
                     ProcessorArchitecture_X86	= 0,
@@ -7807,6 +9992,25 @@ namespace ABI {
                     RemoteLaunchUriStatus_ValueSetTooLarge	= 5,
                     RemoteLaunchUriStatus_DeniedByLocalSystem	= 6,
                     RemoteLaunchUriStatus_DeniedByRemoteSystem	= 7
+                } ;
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            
+            /* [v1_enum] */ 
+            enum ShutdownKind
+                {
+                    ShutdownKind_Shutdown	= 0,
+                    ShutdownKind_Restart	= 1
                 } ;
         } /* end namespace */
     } /* end namespace */
@@ -8111,8 +10315,278 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0119_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IAppDiagnosticInfo */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("E348A69A-8889-4CA3-BE07-D5FFFF5F0804")
+                IAppDiagnosticInfo : public IInspectable
+                {
+                public:
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AppInfo( 
+                        /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::IAppInfo **value) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IAppDiagnosticInfo = __uuidof(IAppDiagnosticInfo);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AppInfo )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CIAppInfo **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_get_AppInfo(This,value)	\
+    ( (This)->lpVtbl -> get_AppInfo(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfo_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0120 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppDiagnosticInfoStatics[] = L"Windows.System.IAppDiagnosticInfoStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0120 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0120_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IAppDiagnosticInfoStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("CE6925BF-10CA-40C8-A9CA-C5C96501866E")
+                IAppDiagnosticInfoStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE RequestInfoAsync( 
+                        /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo **operation) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IAppDiagnosticInfoStatics = __uuidof(IAppDiagnosticInfoStatics);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *RequestInfoAsync )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo **operation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_RequestInfoAsync(This,operation)	\
+    ( (This)->lpVtbl -> RequestInfoAsync(This,operation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIAppDiagnosticInfoStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0121 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppMemoryReport[] = L"Windows.System.IAppMemoryReport";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0121 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__
@@ -8263,7 +10737,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppMemoryReport;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIAppMemoryReport_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0096 */
+/* interface __MIDL_itf_windows2Esystem_0000_0122 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__)
@@ -8271,13 +10745,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0096 */
+/* interface __MIDL_itf_windows2Esystem_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__
@@ -8408,7 +10882,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppMemoryUsageLimitChangingEve
 #endif 	/* ____x_ABI_CWindows_CSystem_CIAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0097 */
+/* interface __MIDL_itf_windows2Esystem_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIFolderLauncherOptions_INTERFACE_DEFINED__)
@@ -8416,13 +10890,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIFolderLauncherOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0097 */
+/* interface __MIDL_itf_windows2Esystem_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIFolderLauncherOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIFolderLauncherOptions_INTERFACE_DEFINED__
@@ -8543,7 +11017,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIFolderLauncherOptions;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIFolderLauncherOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0098 */
+/* interface __MIDL_itf_windows2Esystem_0000_0124 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIKnownUserPropertiesStatics_INTERFACE_DEFINED__)
@@ -8551,13 +11025,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIKnownUserPropertiesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0098 */
+/* interface __MIDL_itf_windows2Esystem_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0124_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIKnownUserPropertiesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIKnownUserPropertiesStatics_INTERFACE_DEFINED__
@@ -8758,7 +11232,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIKnownUserPropertiesStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIKnownUserPropertiesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0099 */
+/* interface __MIDL_itf_windows2Esystem_0000_0125 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILaunchUriResult_INTERFACE_DEFINED__)
@@ -8766,13 +11240,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILaunchUriResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0099 */
+/* interface __MIDL_itf_windows2Esystem_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILaunchUriResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILaunchUriResult_INTERFACE_DEFINED__
@@ -8903,7 +11377,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILaunchUriResult;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILaunchUriResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0100 */
+/* interface __MIDL_itf_windows2Esystem_0000_0126 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherOptions_INTERFACE_DEFINED__)
@@ -8911,13 +11385,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0100 */
+/* interface __MIDL_itf_windows2Esystem_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherOptions_INTERFACE_DEFINED__
@@ -9158,7 +11632,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherOptions;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0101 */
+/* interface __MIDL_itf_windows2Esystem_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherOptions2_INTERFACE_DEFINED__)
@@ -9166,13 +11640,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherOptions2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0101 */
+/* interface __MIDL_itf_windows2Esystem_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherOptions2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherOptions2_INTERFACE_DEFINED__
@@ -9323,7 +11797,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherOptions2;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherOptions2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0102 */
+/* interface __MIDL_itf_windows2Esystem_0000_0128 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherOptions3_INTERFACE_DEFINED__)
@@ -9331,13 +11805,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherOptions3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0102 */
+/* interface __MIDL_itf_windows2Esystem_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherOptions3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherOptions3_INTERFACE_DEFINED__
@@ -9468,7 +11942,152 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherOptions3;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherOptions3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0103 */
+/* interface __MIDL_itf_windows2Esystem_0000_0129 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CILauncherOptions4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_ILauncherOptions4[] = L"Windows.System.ILauncherOptions4";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherOptions4_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0129 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0129_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CILauncherOptions4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CILauncherOptions4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CILauncherOptions4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::ILauncherOptions4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherOptions4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("EF6FD10E-E6FB-4814-A44E-57E8B9D9A01B")
+                ILauncherOptions4 : public IInspectable
+                {
+                public:
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LimitPickerToCurrentAppAndAppUriHandlers( 
+                        /* [out][retval] */ __RPC__out boolean *value) = 0;
+                    
+                    virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_LimitPickerToCurrentAppAndAppUriHandlers( 
+                        /* [in] */ boolean value) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_ILauncherOptions4 = __uuidof(ILauncherOptions4);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CILauncherOptions4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LimitPickerToCurrentAppAndAppUriHandlers )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_LimitPickerToCurrentAppAndAppUriHandlers )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CILauncherOptions4 * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CILauncherOptions4Vtbl;
+
+    interface __x_ABI_CWindows_CSystem_CILauncherOptions4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CILauncherOptions4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_get_LimitPickerToCurrentAppAndAppUriHandlers(This,value)	\
+    ( (This)->lpVtbl -> get_LimitPickerToCurrentAppAndAppUriHandlers(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CILauncherOptions4_put_LimitPickerToCurrentAppAndAppUriHandlers(This,value)	\
+    ( (This)->lpVtbl -> put_LimitPickerToCurrentAppAndAppUriHandlers(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CILauncherOptions4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0130 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherStatics_INTERFACE_DEFINED__)
@@ -9476,13 +12095,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0103 */
+/* interface __MIDL_itf_windows2Esystem_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0130_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherStatics_INTERFACE_DEFINED__
@@ -9645,7 +12264,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0104 */
+/* interface __MIDL_itf_windows2Esystem_0000_0131 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherStatics2_INTERFACE_DEFINED__)
@@ -9653,13 +12272,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0104 */
+/* interface __MIDL_itf_windows2Esystem_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherStatics2_INTERFACE_DEFINED__
@@ -9910,7 +12529,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics2;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0105 */
+/* interface __MIDL_itf_windows2Esystem_0000_0132 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherStatics3_INTERFACE_DEFINED__)
@@ -9918,13 +12537,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0105 */
+/* interface __MIDL_itf_windows2Esystem_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0132_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherStatics3_INTERFACE_DEFINED__
@@ -10061,7 +12680,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics3;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0106 */
+/* interface __MIDL_itf_windows2Esystem_0000_0133 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__)
@@ -10069,13 +12688,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0106 */
+/* interface __MIDL_itf_windows2Esystem_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__
@@ -10306,7 +12925,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics4;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0107 */
+/* interface __MIDL_itf_windows2Esystem_0000_0134 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherUIOptions_INTERFACE_DEFINED__)
@@ -10314,13 +12933,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherUIOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0107 */
+/* interface __MIDL_itf_windows2Esystem_0000_0134 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherUIOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherUIOptions_INTERFACE_DEFINED__
@@ -10491,7 +13110,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherUIOptions;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherUIOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0108 */
+/* interface __MIDL_itf_windows2Esystem_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CILauncherViewOptions_INTERFACE_DEFINED__)
@@ -10499,13 +13118,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherViewOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0108 */
+/* interface __MIDL_itf_windows2Esystem_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherViewOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherViewOptions_INTERFACE_DEFINED__
@@ -10636,7 +13255,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherViewOptions;
 #endif 	/* ____x_ABI_CWindows_CSystem_CILauncherViewOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0109 */
+/* interface __MIDL_itf_windows2Esystem_0000_0136 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIMemoryManagerStatics_INTERFACE_DEFINED__)
@@ -10644,13 +13263,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIMemoryManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0109 */
+/* interface __MIDL_itf_windows2Esystem_0000_0136 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0136_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics_INTERFACE_DEFINED__
@@ -10857,7 +13476,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIMemoryManagerStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0110 */
+/* interface __MIDL_itf_windows2Esystem_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIMemoryManagerStatics2_INTERFACE_DEFINED__)
@@ -10865,13 +13484,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIMemoryManagerStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0110 */
+/* interface __MIDL_itf_windows2Esystem_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics2_INTERFACE_DEFINED__
@@ -11002,7 +13621,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIMemoryManagerStatics2;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0111 */
+/* interface __MIDL_itf_windows2Esystem_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIMemoryManagerStatics3_INTERFACE_DEFINED__)
@@ -11010,13 +13629,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIMemoryManagerStatics3_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0111 */
+/* interface __MIDL_itf_windows2Esystem_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics3_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics3_INTERFACE_DEFINED__
@@ -11139,7 +13758,502 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIMemoryManagerStatics3;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIMemoryManagerStatics3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0112 */
+/* interface __MIDL_itf_windows2Esystem_0000_0139 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IProcessLauncherOptions[] = L"Windows.System.IProcessLauncherOptions";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0139 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0139_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIProcessLauncherOptions */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IProcessLauncherOptions */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIProcessLauncherOptions;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("3080B9CF-F444-4A83-BEAF-A549A0F3229C")
+                IProcessLauncherOptions : public IInspectable
+                {
+                public:
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StandardInput( 
+                        /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IInputStream **value) = 0;
+                    
+                    virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StandardInput( 
+                        /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IInputStream *value) = 0;
+                    
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StandardOutput( 
+                        /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IOutputStream **value) = 0;
+                    
+                    virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StandardOutput( 
+                        /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream *value) = 0;
+                    
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_StandardError( 
+                        /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Storage::Streams::IOutputStream **value) = 0;
+                    
+                    virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_StandardError( 
+                        /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream *value) = 0;
+                    
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_WorkingDirectory( 
+                        /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                    
+                    virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_WorkingDirectory( 
+                        /* [in] */ __RPC__in HSTRING value) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IProcessLauncherOptions = __uuidof(IProcessLauncherOptions);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIProcessLauncherOptionsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StandardInput )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIInputStream **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_StandardInput )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIInputStream *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StandardOutput )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_StandardOutput )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_StandardError )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_StandardError )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_WorkingDirectory )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_WorkingDirectory )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherOptions * This,
+            /* [in] */ __RPC__in HSTRING value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIProcessLauncherOptionsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIProcessLauncherOptions
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIProcessLauncherOptionsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_get_StandardInput(This,value)	\
+    ( (This)->lpVtbl -> get_StandardInput(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_put_StandardInput(This,value)	\
+    ( (This)->lpVtbl -> put_StandardInput(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_get_StandardOutput(This,value)	\
+    ( (This)->lpVtbl -> get_StandardOutput(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_put_StandardOutput(This,value)	\
+    ( (This)->lpVtbl -> put_StandardOutput(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_get_StandardError(This,value)	\
+    ( (This)->lpVtbl -> get_StandardError(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_put_StandardError(This,value)	\
+    ( (This)->lpVtbl -> put_StandardError(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_get_WorkingDirectory(This,value)	\
+    ( (This)->lpVtbl -> get_WorkingDirectory(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherOptions_put_WorkingDirectory(This,value)	\
+    ( (This)->lpVtbl -> put_WorkingDirectory(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIProcessLauncherOptions_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0140 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIProcessLauncherResult_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IProcessLauncherResult[] = L"Windows.System.IProcessLauncherResult";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIProcessLauncherResult_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0140 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0140_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIProcessLauncherResult_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIProcessLauncherResult_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIProcessLauncherResult */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IProcessLauncherResult */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIProcessLauncherResult;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("544C8934-86D8-4991-8E75-ECE8A43B6B6D")
+                IProcessLauncherResult : public IInspectable
+                {
+                public:
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExitCode( 
+                        /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IProcessLauncherResult = __uuidof(IProcessLauncherResult);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIProcessLauncherResultVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExitCode )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherResult * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIProcessLauncherResultVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIProcessLauncherResult
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIProcessLauncherResultVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherResult_get_ExitCode(This,value)	\
+    ( (This)->lpVtbl -> get_ExitCode(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIProcessLauncherResult_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0141 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IProcessLauncherStatics[] = L"Windows.System.IProcessLauncherStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0141 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0141_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIProcessLauncherStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IProcessLauncherStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIProcessLauncherStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("33AB66E7-2D0E-448B-A6A0-C13C3836D09C")
+                IProcessLauncherStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE RunToCompletionAsync( 
+                        /* [in] */ __RPC__in HSTRING fileName,
+                        /* [in] */ __RPC__in HSTRING args,
+                        /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult **asyncOperationResult) = 0;
+                    
+                    virtual HRESULT STDMETHODCALLTYPE RunToCompletionAsyncWithOptions( 
+                        /* [in] */ __RPC__in HSTRING fileName,
+                        /* [in] */ __RPC__in HSTRING args,
+                        /* [in] */ __RPC__in_opt ABI::Windows::System::IProcessLauncherOptions *options,
+                        /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult **asyncOperationResult) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IProcessLauncherStatics = __uuidof(IProcessLauncherStatics);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIProcessLauncherStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *RunToCompletionAsync )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This,
+            /* [in] */ __RPC__in HSTRING fileName,
+            /* [in] */ __RPC__in HSTRING args,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult **asyncOperationResult);
+        
+        HRESULT ( STDMETHODCALLTYPE *RunToCompletionAsyncWithOptions )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIProcessLauncherStatics * This,
+            /* [in] */ __RPC__in HSTRING fileName,
+            /* [in] */ __RPC__in HSTRING args,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSystem_CIProcessLauncherOptions *options,
+            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult **asyncOperationResult);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIProcessLauncherStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIProcessLauncherStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIProcessLauncherStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_RunToCompletionAsync(This,fileName,args,asyncOperationResult)	\
+    ( (This)->lpVtbl -> RunToCompletionAsync(This,fileName,args,asyncOperationResult) ) 
+
+#define __x_ABI_CWindows_CSystem_CIProcessLauncherStatics_RunToCompletionAsyncWithOptions(This,fileName,args,options,asyncOperationResult)	\
+    ( (This)->lpVtbl -> RunToCompletionAsyncWithOptions(This,fileName,args,options,asyncOperationResult) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CIProcessLauncherStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0142 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIProcessMemoryReport_INTERFACE_DEFINED__)
@@ -11147,13 +14261,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIProcessMemoryReport_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0112 */
+/* interface __MIDL_itf_windows2Esystem_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIProcessMemoryReport_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIProcessMemoryReport_INTERFACE_DEFINED__
@@ -11284,7 +14398,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIProcessMemoryReport;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIProcessMemoryReport_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0113 */
+/* interface __MIDL_itf_windows2Esystem_0000_0143 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIProtocolForResultsOperation_INTERFACE_DEFINED__)
@@ -11292,13 +14406,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIProtocolForResultsOperation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0113 */
+/* interface __MIDL_itf_windows2Esystem_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIProtocolForResultsOperation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIProtocolForResultsOperation_INTERFACE_DEFINED__
@@ -11419,7 +14533,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIProtocolForResultsOperation;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIProtocolForResultsOperation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0114 */
+/* interface __MIDL_itf_windows2Esystem_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIRemoteLauncherOptions_INTERFACE_DEFINED__)
@@ -11427,13 +14541,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIRemoteLauncherOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0114 */
+/* interface __MIDL_itf_windows2Esystem_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIRemoteLauncherOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIRemoteLauncherOptions_INTERFACE_DEFINED__
@@ -11574,7 +14688,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIRemoteLauncherOptions;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIRemoteLauncherOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0115 */
+/* interface __MIDL_itf_windows2Esystem_0000_0145 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIRemoteLauncherStatics_INTERFACE_DEFINED__)
@@ -11582,13 +14696,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIRemoteLauncherStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0115 */
+/* interface __MIDL_itf_windows2Esystem_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0145_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIRemoteLauncherStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIRemoteLauncherStatics_INTERFACE_DEFINED__
@@ -11747,20 +14861,489 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIRemoteLauncherStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIRemoteLauncherStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Esystem_0000_0146 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IShutdownManagerStatics[] = L"Windows.System.IShutdownManagerStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0146 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0146_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IShutdownManagerStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIShutdownManagerStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("72E247ED-DD5B-4D6C-B1D0-C57A7BBB5F94")
+                IShutdownManagerStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE BeginShutdown( 
+                        /* [in] */ ABI::Windows::System::ShutdownKind shutdownKind,
+                        /* [in] */ ABI::Windows::Foundation::TimeSpan timeout) = 0;
+                    
+                    virtual HRESULT STDMETHODCALLTYPE CancelShutdown( void) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IShutdownManagerStatics = __uuidof(IShutdownManagerStatics);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIShutdownManagerStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *BeginShutdown )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This,
+            /* [in] */ __x_ABI_CWindows_CSystem_CShutdownKind shutdownKind,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CTimeSpan timeout);
+        
+        HRESULT ( STDMETHODCALLTYPE *CancelShutdown )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics * This);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIShutdownManagerStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIShutdownManagerStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_BeginShutdown(This,shutdownKind,timeout)	\
+    ( (This)->lpVtbl -> BeginShutdown(This,shutdownKind,timeout) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics_CancelShutdown(This)	\
+    ( (This)->lpVtbl -> CancelShutdown(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
 
 
 
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3117 */
+#endif 	/* ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0147 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IShutdownManagerStatics2[] = L"Windows.System.IShutdownManagerStatics2";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0147 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0147_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::IShutdownManagerStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIShutdownManagerStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("0F69A02F-9C34-43C7-A8C3-70B30A7F7504")
+                IShutdownManagerStatics2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE IsPowerStateSupported( 
+                        /* [in] */ ABI::Windows::System::PowerState powerState,
+                        /* [out][retval] */ __RPC__out boolean *value) = 0;
+                    
+                    virtual HRESULT STDMETHODCALLTYPE EnterPowerState( 
+                        /* [in] */ ABI::Windows::System::PowerState powerState) = 0;
+                    
+                    virtual HRESULT STDMETHODCALLTYPE EnterPowerStateWithTimeSpan( 
+                        /* [in] */ ABI::Windows::System::PowerState powerState,
+                        /* [in] */ ABI::Windows::Foundation::TimeSpan wakeUpAfter) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_IShutdownManagerStatics2 = __uuidof(IShutdownManagerStatics2);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsPowerStateSupported )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CSystem_CPowerState powerState,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnterPowerState )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CSystem_CPowerState powerState);
+        
+        HRESULT ( STDMETHODCALLTYPE *EnterPowerStateWithTimeSpan )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CSystem_CPowerState powerState,
+            /* [in] */ __x_ABI_CWindows_CFoundation_CTimeSpan wakeUpAfter);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_IsPowerStateSupported(This,powerState,value)	\
+    ( (This)->lpVtbl -> IsPowerStateSupported(This,powerState,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_EnterPowerState(This,powerState)	\
+    ( (This)->lpVtbl -> EnterPowerState(This,powerState) ) 
+
+#define __x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_EnterPowerStateWithTimeSpan(This,powerState,wakeUpAfter)	\
+    ( (This)->lpVtbl -> EnterPowerStateWithTimeSpan(This,powerState,wakeUpAfter) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3117_v0_0_s_ifspec;
+#endif 	/* ____x_ABI_CWindows_CSystem_CIShutdownManagerStatics2_INTERFACE_DEFINED__ */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0117 */
+
+/* interface __MIDL_itf_windows2Esystem_0000_0148 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_ITimeZoneSettingsStatics[] = L"Windows.System.ITimeZoneSettingsStatics";
+#endif /* !defined(____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Esystem_0000_0148 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0148_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::System::ITimeZoneSettingsStatics */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace System {
+                
+                MIDL_INTERFACE("9B3B2BEA-A101-41AE-9FBD-028728BAB73D")
+                ITimeZoneSettingsStatics : public IInspectable
+                {
+                public:
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CurrentTimeZoneDisplayName( 
+                        /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
+                    
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SupportedTimeZoneDisplayNames( 
+                        /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_HSTRING **value) = 0;
+                    
+                    virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CanChangeTimeZone( 
+                        /* [out][retval] */ __RPC__out boolean *value) = 0;
+                    
+                    virtual HRESULT STDMETHODCALLTYPE ChangeTimeZoneByDisplayName( 
+                        /* [in] */ __RPC__in HSTRING timeZoneDisplayName) = 0;
+                    
+                };
+
+                extern const __declspec(selectany) IID & IID_ITimeZoneSettingsStatics = __uuidof(ITimeZoneSettingsStatics);
+
+                
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CSystem_CITimeZoneSettingsStaticsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentTimeZoneDisplayName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SupportedTimeZoneDisplayNames )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_HSTRING **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanChangeTimeZone )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *ChangeTimeZoneByDisplayName )( 
+            __RPC__in __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics * This,
+            /* [in] */ __RPC__in HSTRING timeZoneDisplayName);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CSystem_CITimeZoneSettingsStaticsVtbl;
+
+    interface __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CSystem_CITimeZoneSettingsStaticsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_get_CurrentTimeZoneDisplayName(This,value)	\
+    ( (This)->lpVtbl -> get_CurrentTimeZoneDisplayName(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_get_SupportedTimeZoneDisplayNames(This,value)	\
+    ( (This)->lpVtbl -> get_SupportedTimeZoneDisplayNames(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_get_CanChangeTimeZone(This,value)	\
+    ( (This)->lpVtbl -> get_CanChangeTimeZone(This,value) ) 
+
+#define __x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_ChangeTimeZoneByDisplayName(This,timeZoneDisplayName)	\
+    ( (This)->lpVtbl -> ChangeTimeZoneByDisplayName(This,timeZoneDisplayName) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CSystem_CITimeZoneSettingsStatics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4666 */
+
+
+
+
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4666 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4666_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0150 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet
@@ -11769,14 +15352,14 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3117_v0_0_s_ifspec;
 
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0117 */
+/* interface __MIDL_itf_windows2Esystem_0000_0150 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_INTERFACE_DEFINED__
 #define ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_INTERFACE_DEFINED__
@@ -11865,35 +15448,35 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___F__CIPropertySet;
 #endif 	/* ____FIAsyncOperationCompletedHandler_1___F__CIPropertySet_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0118 */
+/* interface __MIDL_itf_windows2Esystem_0000_0151 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___F__CIPropertySet */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0118 */
+/* interface __MIDL_itf_windows2Esystem_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0151_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3118 */
-
-
-
-
-/* interface __MIDL_itf_windows2Esystem2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3118_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Esystem2Eidl_0000_4667 */
 
-/* interface __MIDL_itf_windows2Esystem_0000_0119 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_4667_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Esystem_0000_0152 */
 /* [local] */ 
 
 #ifndef DEF___FIAsyncOperation_1___F__CIPropertySet
@@ -11901,13 +15484,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem2Eidl_0000_3118_v0_0_s_ifspec;
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0119 */
+/* interface __MIDL_itf_windows2Esystem_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____FIAsyncOperation_1___F__CIPropertySet_INTERFACE_DEFINED__
 #define ____FIAsyncOperation_1___F__CIPropertySet_INTERFACE_DEFINED__
@@ -12037,7 +15620,7 @@ EXTERN_C const IID IID___FIAsyncOperation_1___F__CIPropertySet;
 #endif 	/* ____FIAsyncOperation_1___F__CIPropertySet_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0120 */
+/* interface __MIDL_itf_windows2Esystem_0000_0153 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -12047,13 +15630,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUser_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0120 */
+/* interface __MIDL_itf_windows2Esystem_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUser_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUser_INTERFACE_DEFINED__
@@ -12230,7 +15813,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUser;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUser_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0121 */
+/* interface __MIDL_itf_windows2Esystem_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangeDeferral_INTERFACE_DEFINED__)
@@ -12238,13 +15821,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangeDeferral_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0121 */
+/* interface __MIDL_itf_windows2Esystem_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangeDeferral_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangeDeferral_INTERFACE_DEFINED__
@@ -12363,7 +15946,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChange
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangeDeferral_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0122 */
+/* interface __MIDL_itf_windows2Esystem_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__)
@@ -12371,13 +15954,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0122 */
+/* interface __MIDL_itf_windows2Esystem_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__
@@ -12528,7 +16111,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangi
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserAuthenticationStatusChangingEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0123 */
+/* interface __MIDL_itf_windows2Esystem_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_INTERFACE_DEFINED__)
@@ -12536,13 +16119,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0123 */
+/* interface __MIDL_itf_windows2Esystem_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_INTERFACE_DEFINED__
@@ -12663,7 +16246,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserChangedEventArgs;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0124 */
+/* interface __MIDL_itf_windows2Esystem_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__)
@@ -12671,13 +16254,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0124 */
+/* interface __MIDL_itf_windows2Esystem_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__
@@ -12818,7 +16401,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserDeviceAssociationChangedEv
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserDeviceAssociationChangedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0125 */
+/* interface __MIDL_itf_windows2Esystem_0000_0158 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserDeviceAssociationStatics_INTERFACE_DEFINED__)
@@ -12826,13 +16409,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserDeviceAssociationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0125 */
+/* interface __MIDL_itf_windows2Esystem_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserDeviceAssociationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserDeviceAssociationStatics_INTERFACE_DEFINED__
@@ -12977,7 +16560,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserDeviceAssociationStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserDeviceAssociationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0126 */
+/* interface __MIDL_itf_windows2Esystem_0000_0159 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserPicker_INTERFACE_DEFINED__)
@@ -12985,13 +16568,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserPicker_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0126 */
+/* interface __MIDL_itf_windows2Esystem_0000_0159 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0159_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserPicker_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserPicker_INTERFACE_DEFINED__
@@ -13152,7 +16735,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserPicker;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserPicker_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0127 */
+/* interface __MIDL_itf_windows2Esystem_0000_0160 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserPickerStatics_INTERFACE_DEFINED__)
@@ -13160,13 +16743,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserPickerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0127 */
+/* interface __MIDL_itf_windows2Esystem_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserPickerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserPickerStatics_INTERFACE_DEFINED__
@@ -13287,7 +16870,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserPickerStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserPickerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0128 */
+/* interface __MIDL_itf_windows2Esystem_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__)
@@ -13295,13 +16878,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0128 */
+/* interface __MIDL_itf_windows2Esystem_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__
@@ -13470,7 +17053,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserStatics;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0129 */
+/* interface __MIDL_itf_windows2Esystem_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CSystem_CIUserWatcher_INTERFACE_DEFINED__)
@@ -13478,13 +17061,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserWatcher_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0129 */
+/* interface __MIDL_itf_windows2Esystem_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserWatcher_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserWatcher_INTERFACE_DEFINED__
@@ -13775,9 +17358,13 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserWatcher;
 #endif 	/* ____x_ABI_CWindows_CSystem_CIUserWatcher_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0130 */
+/* interface __MIDL_itf_windows2Esystem_0000_0163 */
 /* [local] */ 
 
+#ifndef RUNTIMECLASS_Windows_System_AppDiagnosticInfo_DEFINED
+#define RUNTIMECLASS_Windows_System_AppDiagnosticInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppDiagnosticInfo[] = L"Windows.System.AppDiagnosticInfo";
+#endif
 #ifndef RUNTIMECLASS_Windows_System_AppMemoryReport_DEFINED
 #define RUNTIMECLASS_Windows_System_AppMemoryReport_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppMemoryReport[] = L"Windows.System.AppMemoryReport";
@@ -13814,6 +17401,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_System_MemoryManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_MemoryManager[] = L"Windows.System.MemoryManager";
 #endif
+#ifndef RUNTIMECLASS_Windows_System_ProcessLauncher_DEFINED
+#define RUNTIMECLASS_Windows_System_ProcessLauncher_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_ProcessLauncher[] = L"Windows.System.ProcessLauncher";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_ProcessLauncherOptions_DEFINED
+#define RUNTIMECLASS_Windows_System_ProcessLauncherOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_ProcessLauncherOptions[] = L"Windows.System.ProcessLauncherOptions";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_ProcessLauncherResult_DEFINED
+#define RUNTIMECLASS_Windows_System_ProcessLauncherResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_ProcessLauncherResult[] = L"Windows.System.ProcessLauncherResult";
+#endif
 #ifndef RUNTIMECLASS_Windows_System_ProcessMemoryReport_DEFINED
 #define RUNTIMECLASS_Windows_System_ProcessMemoryReport_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_ProcessMemoryReport[] = L"Windows.System.ProcessMemoryReport";
@@ -13829,6 +17428,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_System_RemoteLauncherOptions_DEFINED
 #define RUNTIMECLASS_Windows_System_RemoteLauncherOptions_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_RemoteLauncherOptions[] = L"Windows.System.RemoteLauncherOptions";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_ShutdownManager_DEFINED
+#define RUNTIMECLASS_Windows_System_ShutdownManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_ShutdownManager[] = L"Windows.System.ShutdownManager";
+#endif
+#ifndef RUNTIMECLASS_Windows_System_TimeZoneSettings_DEFINED
+#define RUNTIMECLASS_Windows_System_TimeZoneSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_TimeZoneSettings[] = L"Windows.System.TimeZoneSettings";
 #endif
 #ifndef RUNTIMECLASS_Windows_System_User_DEFINED
 #define RUNTIMECLASS_Windows_System_User_DEFINED
@@ -13864,13 +17471,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Esystem_0000_0130 */
+/* interface __MIDL_itf_windows2Esystem_0000_0163 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Esystem_0000_0163_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

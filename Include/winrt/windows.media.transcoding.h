@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -193,18 +193,18 @@ enum TranscodeFailureReason;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4026 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0001 */
 /* [local] */ 
@@ -239,18 +239,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4027 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0002 */
 /* [local] */ 
@@ -285,18 +285,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4028 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0003 */
 /* [local] */ 
@@ -355,18 +355,18 @@ interface IPrepareTranscodeResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4029 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0004 */
 /* [local] */ 
@@ -401,18 +401,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4030 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0005 */
 /* [local] */ 
@@ -447,18 +447,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4031 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0006 */
 /* [local] */ 
@@ -493,18 +493,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4032 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0007 */
 /* [local] */ 
@@ -539,18 +539,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4033 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0008 */
 /* [local] */ 
@@ -585,18 +585,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4034 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0009 */
 /* [local] */ 
@@ -631,18 +631,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4035 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0010 */
 /* [local] */ 
@@ -808,18 +808,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4036 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0011 */
 /* [local] */ 
@@ -941,18 +941,18 @@ EXTERN_C const IID IID___FIAsyncOperationProgressHandler_2_Windows__CMedia__CTra
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4037 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0013 */
 /* [local] */ 
@@ -1074,18 +1074,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgressCompletedHandler_2_Windows_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4038 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0015 */
 /* [local] */ 
@@ -1266,18 +1266,18 @@ EXTERN_C const IID IID___FIAsyncOperationWithProgress_2_Windows__CMedia__CTransc
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4039 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0017 */
 /* [local] */ 
@@ -1399,18 +1399,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CTr
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4040 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0019 */
 /* [local] */ 
@@ -1571,18 +1571,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrep
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4041 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0021 */
 /* [local] */ 
@@ -1704,18 +1704,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CMedia__CTr
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4042 */
+/* interface __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Emedia2Etranscoding2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Emedia2Etranscoding_0000_0023 */
 /* [local] */ 

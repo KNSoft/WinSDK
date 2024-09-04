@@ -352,6 +352,27 @@ typedef struct _HTTP_TIMEOUT_LIMIT_INFO
 } HTTP_TIMEOUT_LIMIT_INFO, *PHTTP_TIMEOUT_LIMIT_INFO;
 
 //
+//  Controls config settings
+//
+
+typedef enum _HTTP_SERVICE_CONFIG_SETTING_KEY
+{
+    HttpNone = 0,
+    HttpTlsThrottle
+} HTTP_SERVICE_CONFIG_SETTING_KEY, *PHTTP_SERVICE_CONFIG_SETTING_KEY;
+
+typedef ULONG HTTP_SERVICE_CONFIG_SETTING_PARAM,
+               *PHTTP_SERVICE_CONFIG_SETTING_PARAM;
+
+typedef struct _HTTP_SERVICE_CONFIG_SETTING_SET
+{
+    HTTP_SERVICE_CONFIG_SETTING_KEY KeyDesc;
+    HTTP_SERVICE_CONFIG_SETTING_PARAM ParamDesc;
+
+} HTTP_SERVICE_CONFIG_SETTING_SET, *PHTTP_SERVICE_CONFIG_SETTING_SET;
+
+
+//
 // Controls whether IP-based URLs should listen on the specific IP or wildcard.
 //
 
@@ -516,10 +537,10 @@ typedef struct _HTTP_REQUEST_TOKEN_BINDING_INFO
     PUCHAR TokenBinding;
     ULONG TokenBindingSize;
 
-    PUCHAR TlsUnique;
-    ULONG TlsUniqueSize;
+    PUCHAR EKM;
+    ULONG EKMSize;
 
-    PWSTR KeyType;
+    UCHAR KeyType;
 
 } HTTP_REQUEST_TOKEN_BINDING_INFO, *PHTTP_REQUEST_TOKEN_BINDING_INFO;
 
@@ -1474,6 +1495,7 @@ typedef enum _HTTP_REQUEST_INFO_TYPE
     HttpRequestInfoTypeAuth,
     HttpRequestInfoTypeChannelBind,
     HttpRequestInfoTypeSslProtocol,
+    HttpRequestInfoTypeSslTokenBindingDraft,
     HttpRequestInfoTypeSslTokenBinding
 
 } HTTP_REQUEST_INFO_TYPE, *PHTTP_REQUEST_INFO_TYPE;
@@ -1955,15 +1977,21 @@ typedef struct _HTTP_CACHE_POLICY
 typedef enum _HTTP_SERVICE_CONFIG_ID
 {
     HttpServiceConfigIPListenList,    // Set, Query & Delete.
-    HttpServiceConfigSSLCertInfo,     // Set, Query & Delete.
+    HttpServiceConfigSSLCertInfo,     // Set, Update, Query & Delete.
     HttpServiceConfigUrlAclInfo,      // Set, Query & Delete.
     HttpServiceConfigTimeout,         // Set, Query & Delete.
     HttpServiceConfigCache,           // Set, Query & Delete.
 
 #if _WIN32_WINNT >= _WIN32_WINNT_WIN8
 
-    HttpServiceConfigSslSniCertInfo,  // Set, Query & Delete.
-    HttpServiceConfigSslCcsCertInfo,  // Set, Query & Delete.
+    HttpServiceConfigSslSniCertInfo,  // Set, Update, Query & Delete.
+    HttpServiceConfigSslCcsCertInfo,  // Set, Update, Query & Delete.
+
+#endif
+
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN10
+
+    HttpServiceConfigSetting,        // Set, Query & Delete.
 
 #endif
 
@@ -2764,6 +2792,17 @@ HttpSetServiceConfiguration(
     _In_reads_bytes_(ConfigInformationLength) IN PVOID pConfigInformation,
     IN ULONG ConfigInformationLength,
     _Reserved_ IN LPOVERLAPPED pOverlapped
+    );
+
+HTTPAPI_LINKAGE
+ULONG
+WINAPI
+HttpUpdateServiceConfiguration(
+    __reserved __in HANDLE Handle,
+    __in HTTP_SERVICE_CONFIG_ID ConfigId,
+    __in_bcount(ConfigInfoLength) PVOID ConfigInfo,
+    __in ULONG ConfigInfoLength,
+    __reserved __in LPOVERLAPPED Overlapped
     );
 
 HTTPAPI_LINKAGE

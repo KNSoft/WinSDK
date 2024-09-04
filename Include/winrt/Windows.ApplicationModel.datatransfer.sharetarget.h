@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -137,18 +137,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0001 */
 /* [local] */ 
@@ -183,18 +183,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0002 */
 /* [local] */ 
@@ -229,18 +229,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0003 */
 /* [local] */ 
@@ -275,18 +275,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Edatatransfer2Esharetarget_0000_0004 */
 /* [local] */ 

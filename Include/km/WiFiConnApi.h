@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -2787,7 +2787,7 @@ EXTERN_C const IID IID_IWiFiCertificateList;
             /* [retval][out] */ __RPC__out DWORD *pdwSize) = 0;
         
         virtual /* [helpstring] */ HRESULT STDMETHODCALLTYPE GetCertStoreHandle( 
-            /* [retval][out] */ __RPC__out DWORD *ppCertStoreHandle) = 0;
+            /* [retval][out] */ __RPC__out INT64 *ppCertStoreHandle) = 0;
         
     };
     
@@ -2821,7 +2821,7 @@ EXTERN_C const IID IID_IWiFiCertificateList;
         
         /* [helpstring] */ HRESULT ( STDMETHODCALLTYPE *GetCertStoreHandle )( 
             __RPC__in IWiFiCertificateList * This,
-            /* [retval][out] */ __RPC__out DWORD *ppCertStoreHandle);
+            /* [retval][out] */ __RPC__out INT64 *ppCertStoreHandle);
         
         END_INTERFACE
     } IWiFiCertificateListVtbl;

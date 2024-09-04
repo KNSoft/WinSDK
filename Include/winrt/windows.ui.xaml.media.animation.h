@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -644,6 +644,30 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IConnectedAnimation2;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_FWD_DEFINED__
@@ -3688,18 +3712,18 @@ interface IColorKeyFrame;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4660 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5325 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4660 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5325 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4660_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4660_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5325_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5325_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0001 */
 /* [local] */ 
@@ -3734,18 +3758,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4661 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5326 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4661 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5326 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4661_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4661_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5326_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5326_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0002 */
 /* [local] */ 
@@ -3812,18 +3836,18 @@ interface IDoubleKeyFrame;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4662 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5327 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4662 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5327 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4662_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4662_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5327_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5327_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0003 */
 /* [local] */ 
@@ -3858,18 +3882,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4663 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5328 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4663 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5328 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4663_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4663_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5328_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5328_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0004 */
 /* [local] */ 
@@ -3936,18 +3960,18 @@ interface IObjectKeyFrame;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4664 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5329 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4664 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5329 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4664_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4664_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5329_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5329_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0005 */
 /* [local] */ 
@@ -3982,18 +4006,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4665 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5330 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4665 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5330 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4665_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4665_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5330_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5330_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0006 */
 /* [local] */ 
@@ -4060,18 +4084,18 @@ interface IPointKeyFrame;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4666 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4666 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4666_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4666_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0007 */
 /* [local] */ 
@@ -4106,18 +4130,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4667 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4667 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4667_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4667_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0008 */
 /* [local] */ 
@@ -4184,18 +4208,18 @@ interface ITimeline;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4668 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4668 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4668_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4668_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0009 */
 /* [local] */ 
@@ -4230,18 +4254,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4669 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4669 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4669_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4669_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0010 */
 /* [local] */ 
@@ -4308,18 +4332,18 @@ interface ITransition;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4670 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4670 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4670_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4670_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0011 */
 /* [local] */ 
@@ -4354,18 +4378,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4671 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4671 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4671_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4671_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0012 */
 /* [local] */ 
@@ -4400,18 +4424,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4672 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5337 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4672 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4672_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4672_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0013 */
 /* [local] */ 
@@ -4446,18 +4470,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4673 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4673 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4673_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4673_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0014 */
 /* [local] */ 
@@ -4492,18 +4516,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4674 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4674 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4674_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4674_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0015 */
 /* [local] */ 
@@ -4538,18 +4562,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4675 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4675 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4675_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4675_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0016 */
 /* [local] */ 
@@ -4584,18 +4608,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4676 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4676 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4676_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4676_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0017 */
 /* [local] */ 
@@ -4630,18 +4654,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4677 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4677 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4677_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4677_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0018 */
 /* [local] */ 
@@ -4676,18 +4700,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4678 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5343 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4678 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4678_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4678_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0019 */
 /* [local] */ 
@@ -4722,18 +4746,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4679 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5344 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4679 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4679_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4679_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0020 */
 /* [local] */ 
@@ -4768,18 +4792,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4680 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5345 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4680 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5345 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4680_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4680_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5345_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5345_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0021 */
 /* [local] */ 
@@ -4814,18 +4838,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4681 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5346 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4681 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5346 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4681_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4681_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5346_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5346_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0022 */
 /* [local] */ 
@@ -4860,18 +4884,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4682 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5347 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4682 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5347 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4682_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4682_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5347_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5347_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0023 */
 /* [local] */ 
@@ -4906,18 +4930,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4683 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5348 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4683 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5348 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4683_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4683_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5348_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5348_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0024 */
 /* [local] */ 
@@ -4987,18 +5011,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4684 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5349 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4684 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5349 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4684_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4684_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5349_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5349_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0025 */
 /* [local] */ 
@@ -5044,18 +5068,18 @@ struct Color;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4685 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5350 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4685 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5350 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4685_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4685_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5350_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5350_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0026 */
 /* [local] */ 
@@ -5079,6 +5103,29 @@ typedef IReference<struct ABI::Windows::UI::Color> __FIReference_1_Windows__CUI_
 extern "C" {
 #endif //__cplusplus
 #endif /* DEF___FIReference_1_Windows__CUI__CColor_USE */
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+class UIElement;
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Xaml {
+interface IUIElement;
+} /*Xaml*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
 
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0026 */
@@ -5087,23 +5134,116 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4686 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5351 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4686 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5351 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4686_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4686_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5351_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5351_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027 */
+/* [local] */ 
+
+#ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CUIElement_USE
+#define DEF___FIIterator_1_Windows__CUI__CXaml__CUIElement_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1d1f9d60-d53b-57f7-b144-8f7c487846e8"))
+IIterator<ABI::Windows::UI::Xaml::UIElement*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Xaml.UIElement>"; }
+};
+typedef IIterator<ABI::Windows::UI::Xaml::UIElement*> __FIIterator_1_Windows__CUI__CXaml__CUIElement_t;
+#define ____FIIterator_1_Windows__CUI__CXaml__CUIElement_FWD_DEFINED__
+#define __FIIterator_1_Windows__CUI__CXaml__CUIElement ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CXaml__CUIElement_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CUIElement_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5352 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5352 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5352_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5352_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028 */
+/* [local] */ 
+
+#ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CUIElement_USE
+#define DEF___FIIterable_1_Windows__CUI__CXaml__CUIElement_USE
+#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
+} /*extern "C"*/ 
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("42e26ae1-d357-57e8-bb48-f75c9ff69d91"))
+IIterable<ABI::Windows::UI::Xaml::UIElement*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::UIElement*, ABI::Windows::UI::Xaml::IUIElement*>> {
+static const wchar_t* z_get_rc_name_impl() {
+return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Xaml.UIElement>"; }
+};
+typedef IIterable<ABI::Windows::UI::Xaml::UIElement*> __FIIterable_1_Windows__CUI__CXaml__CUIElement_t;
+#define ____FIIterable_1_Windows__CUI__CXaml__CUIElement_FWD_DEFINED__
+#define __FIIterable_1_Windows__CUI__CXaml__CUIElement ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CXaml__CUIElement_t
+
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+extern "C" {
+#endif //__cplusplus
+#endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CUIElement_USE */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028 */
+/* [local] */ 
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5353 */
+
+
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5353 */
+
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5353_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5353_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_double_USE
@@ -5137,30 +5277,30 @@ struct Point;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4687 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4687 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5354 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4687_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4687_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5354 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5354_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5354_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CPoint_USE
@@ -5194,30 +5334,30 @@ struct TimeSpan;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030 */
 /* [local] */ 
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4688 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4688 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5355 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4688_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4688_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5355 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5355_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5355_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031 */
 /* [local] */ 
 
 #ifndef DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE
@@ -5241,29 +5381,29 @@ extern "C" {
 #endif /* DEF___FIReference_1_Windows__CFoundation__CTimeSpan_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031 */
 /* [local] */ 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4689 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4689 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5356 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4689_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4689_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5356 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5356_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5356_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032 */
 /* [local] */ 
 
 #ifndef DEF___FIEventHandler_1_IInspectable_USE
@@ -5331,6 +5471,7 @@ class CompositionEasingFunction;
 }
 #endif
 
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -5393,22 +5534,20 @@ class DependencyProperty;
 typedef struct __x_ABI_CWindows_CUI_CXaml_CDuration __x_ABI_CWindows_CUI_CXaml_CDuration;
 
 #endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-class UIElement;
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
 typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CClockState __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CClockState;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CConnectedAnimationComponent __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CConnectedAnimationComponent;
 
 
 #endif /* end if !defined(__cplusplus) */
@@ -5453,6 +5592,7 @@ typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CKeyTime __x_ABI_CWi
 typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior;
 
 #endif
+
 
 
 
@@ -6730,7 +6870,7 @@ class TransitionCollection;
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032 */
 /* [local] */ 
 
 
@@ -6781,6 +6921,7 @@ namespace ABI {
 
 extern "C" { 
 #endif
+
 
 
 
@@ -6848,7 +6989,6 @@ namespace ABI {
 extern "C" { 
 #endif
 
-
 #ifdef __cplusplus
 
 } /* end extern "C" */
@@ -6860,6 +7000,28 @@ namespace ABI {
                     namespace Animation {
                         
                         typedef enum ClockState ClockState;
+                        
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        
+                        typedef enum ConnectedAnimationComponent ConnectedAnimationComponent;
                         
                     } /* end namespace */
                 } /* end namespace */
@@ -7118,23 +7280,24 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4690 */
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032_v0_0_s_ifspec;
 
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4690 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5357 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4690_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4690_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5357 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5357_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5357_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame
@@ -7142,13 +7305,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
@@ -7292,35 +7455,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4691 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4691 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5358 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4691_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4691_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5358 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5358_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5358_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame
@@ -7328,13 +7491,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
@@ -7444,35 +7607,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4692 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4692 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5359 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4692_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4692_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5359 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5359_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5359_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame
@@ -7480,13 +7643,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
@@ -7630,35 +7793,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4693 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4693 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5360 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4693_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4693_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5360 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5360_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5360_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame
@@ -7666,13 +7829,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
@@ -7782,35 +7945,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4694 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4694 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5361 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4694_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4694_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5361 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5361_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5361_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame
@@ -7818,13 +7981,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
@@ -7968,35 +8131,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4695 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4695 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5362 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4695_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4695_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5362 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5362_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5362_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame
@@ -8004,13 +8167,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
@@ -8120,35 +8283,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4696 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4696 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5363 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4696_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4696_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5363 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5363_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5363_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame
@@ -8156,13 +8319,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
@@ -8306,35 +8469,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4697 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4697 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5364 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4697_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4697_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5364 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5364_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5364_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame
@@ -8342,13 +8505,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
@@ -8458,35 +8621,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4698 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4698 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5365 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4698_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4698_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5365 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5365_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5365_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline
@@ -8494,13 +8657,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
@@ -8644,35 +8807,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4699 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4699 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5366 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4699_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4699_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5366 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5366_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5366_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline
@@ -8680,13 +8843,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_46
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
@@ -8796,35 +8959,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4700 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4700 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5367 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4700_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4700_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5367 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5367_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5367_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053 */
 /* [local] */ 
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition
@@ -8832,13 +8995,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053_v0_0_s_ifspec;
 
 #ifndef ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
 #define ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
@@ -8982,35 +9145,35 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4701 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4701 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4701_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4701_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5368 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5368_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5368_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055 */
 /* [local] */ 
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition
@@ -9018,13 +9181,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055_v0_0_s_ifspec;
 
 #ifndef ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
 #define ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
@@ -9134,35 +9297,35 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__C
 #endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4702 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4702 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5369 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4702_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4702_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5369 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5369_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5369_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame
@@ -9170,13 +9333,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
@@ -9328,35 +9491,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation_
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4703 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4703 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5370 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4703_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4703_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5370 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5370_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5370_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame
@@ -9364,13 +9527,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
@@ -9522,35 +9685,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation_
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4704 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4704 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5371 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4704_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4704_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5371 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5371_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5371_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame
@@ -9558,13 +9721,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
@@ -9716,35 +9879,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation_
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4705 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4705 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5372 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4705_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4705_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5372 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5372_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5372_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame
@@ -9752,13 +9915,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
@@ -9910,35 +10073,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation_
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4706 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4706 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5373 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4706_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4706_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5373 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5373_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5373_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline
@@ -9946,13 +10109,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
@@ -10104,35 +10267,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation_
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4707 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4707 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5374 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4707_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4707_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5374 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5374_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5374_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067 */
 /* [local] */ 
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition
@@ -10140,13 +10303,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
 #define ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
@@ -10298,35 +10461,35 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation_
 #endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4708 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4708 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5375 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4708_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4708_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5375 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5375_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5375_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame
@@ -10334,13 +10497,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__
@@ -10574,35 +10737,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CCo
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CColorKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4709 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4709 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5376 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4709_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4709_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5376 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5376_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5376_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame
@@ -10610,13 +10773,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__
@@ -10850,35 +11013,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDo
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CDoubleKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4710 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4710 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5377 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4710_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4710_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5377 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5377_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5377_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame
@@ -10886,13 +11049,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__
@@ -11126,35 +11289,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__COb
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CObjectKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4711 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4711 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5378 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4711_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4711_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5378 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5378_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5378_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame
@@ -11162,13 +11325,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__
@@ -11402,35 +11565,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPo
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CPointKeyFrame */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4712 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4712 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5379 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4712_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4712_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5379 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5379_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5379_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline
@@ -11438,13 +11601,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__
@@ -11678,35 +11841,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTi
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTimeline */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4713 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4713 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5380 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4713_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4713_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5380 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5380_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5380_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079 */
 /* [local] */ 
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition
@@ -11714,13 +11877,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079_v0_0_s_ifspec;
 
 #ifndef ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
 #define ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__
@@ -11954,35 +12117,35 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTr
 #endif 	/* ____FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080 */
 /* [local] */ 
 
 #endif /* pinterface */
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CMedia__CAnimation__CTransition */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4714 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4714 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5381 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4714_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_4714_v0_0_s_ifspec;
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5381 */
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079 */
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5381_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_5381_v0_0_s_ifspec;
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081 */
 /* [local] */ 
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable
@@ -11990,13 +12153,13 @@ extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation2Eidl_0000_47
 #if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable_INTERFACE_DEFINED__
 #define ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable_INTERFACE_DEFINED__
@@ -12085,7 +12248,7 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAni
 #endif 	/* ____FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082 */
 /* [local] */ 
 
 #endif /* pinterface */
@@ -12099,6 +12262,20 @@ enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CClockState
         ClockState_Active	= 0,
         ClockState_Filling	= 1,
         ClockState_Stopped	= 2
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CConnectedAnimationComponent
+    {
+        ConnectedAnimationComponent_OffsetX	= 0,
+        ConnectedAnimationComponent_OffsetY	= 1,
+        ConnectedAnimationComponent_CrossFade	= 2,
+        ConnectedAnimationComponent_Scale	= 3
     } ;
 #endif /* end if !defined(__cplusplus) */
 
@@ -12160,7 +12337,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIAddDeleteThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082 */
 /* [local] */ 
 
 #ifdef __cplusplus
@@ -12178,6 +12355,33 @@ namespace ABI {
                                 ClockState_Active	= 0,
                                 ClockState_Filling	= 1,
                                 ClockState_Stopped	= 2
+                            } ;
+                    } /* end namespace */
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        
+                        /* [v1_enum] */ 
+                        enum ConnectedAnimationComponent
+                            {
+                                ConnectedAnimationComponent_OffsetX	= 0,
+                                ConnectedAnimationComponent_OffsetY	= 1,
+                                ConnectedAnimationComponent_CrossFade	= 2,
+                                ConnectedAnimationComponent_Scale	= 3
                             } ;
                     } /* end namespace */
                 } /* end namespace */
@@ -12316,8 +12520,8 @@ extern "C" {
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIAddDeleteThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIAddDeleteThemeTransition_INTERFACE_DEFINED__
@@ -12434,7 +12638,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIAddDeleteT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIAddDeleteThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEase_INTERFACE_DEFINED__)
@@ -12442,13 +12646,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEase_INTERFACE_DEFINED__
@@ -12585,7 +12789,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEase;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__)
@@ -12593,13 +12797,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__
@@ -12726,7 +12930,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_INTERFACE_DEFINED__)
@@ -12734,13 +12938,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_INTERFACE_DEFINED__
@@ -12877,7 +13081,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStory
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboardStatics_INTERFACE_DEFINED__)
@@ -12885,13 +13089,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboardStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboardStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboardStatics_INTERFACE_DEFINED__
@@ -13018,7 +13222,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStory
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboardStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase_INTERFACE_DEFINED__)
@@ -13026,13 +13230,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase_INTERFACE_DEFINED__
@@ -13189,7 +13393,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEaseStatics_INTERFACE_DEFINED__)
@@ -13197,13 +13401,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEaseStatics_INTERFACE_DEFINED__
@@ -13340,7 +13544,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEase
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBounceEaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICircleEase_INTERFACE_DEFINED__)
@@ -13348,13 +13552,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICircleEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICircleEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICircleEase_INTERFACE_DEFINED__
@@ -13471,7 +13675,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICircleEase
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICircleEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimation_INTERFACE_DEFINED__)
@@ -13479,13 +13683,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimation_INTERFACE_DEFINED__
@@ -13702,7 +13906,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationStatics_INTERFACE_DEFINED__)
@@ -13710,13 +13914,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationStatics_INTERFACE_DEFINED__
@@ -13883,7 +14087,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFrames_INTERFACE_DEFINED__)
@@ -13891,13 +14095,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFrames_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFrames_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFrames_INTERFACE_DEFINED__
@@ -14044,7 +14248,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFrames_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__)
@@ -14052,13 +14256,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
@@ -14185,7 +14389,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame_INTERFACE_DEFINED__)
@@ -14193,13 +14397,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame_INTERFACE_DEFINED__
@@ -14356,7 +14560,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_INTERFACE_DEFINED__)
@@ -14364,13 +14568,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_INTERFACE_DEFINED__
@@ -14501,7 +14705,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameStatics_INTERFACE_DEFINED__)
@@ -14509,13 +14713,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameStatics_INTERFACE_DEFINED__
@@ -14652,7 +14856,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -14660,13 +14864,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfo_INTERFACE_DEFINED__
@@ -14803,7 +15007,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_INTERFACE_DEFINED__)
@@ -14811,13 +15015,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_INTERFACE_DEFINED__
@@ -14978,7 +15182,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavi
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_INTERFACE_DEFINED__)
@@ -14986,13 +15190,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_INTERFACE_DEFINED__
@@ -15151,7 +15355,184 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedA
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimation2[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimation2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Xaml {
+                    namespace Media {
+                        namespace Animation {
+                            
+                            MIDL_INTERFACE("5D2F8E5C-584B-4DDD-B668-973891431459")
+                            IConnectedAnimation2 : public IInspectable
+                            {
+                            public:
+                                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsScaleAnimationEnabled( 
+                                    /* [out][retval] */ __RPC__out boolean *value) = 0;
+                                
+                                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_IsScaleAnimationEnabled( 
+                                    /* [in] */ boolean value) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE TryStartWithCoordinatedElements( 
+                                    /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::IUIElement *destination,
+                                    /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement *coordinatedElements,
+                                    /* [out][retval] */ __RPC__out boolean *returnValue) = 0;
+                                
+                                virtual HRESULT STDMETHODCALLTYPE SetAnimationComponent( 
+                                    /* [in] */ ABI::Windows::UI::Xaml::Media::Animation::ConnectedAnimationComponent component,
+                                    /* [in] */ __RPC__in_opt ABI::Windows::UI::Composition::ICompositionAnimationBase *animation) = 0;
+                                
+                            };
+
+                            extern const __declspec(selectany) IID & IID_IConnectedAnimation2 = __uuidof(IConnectedAnimation2);
+
+                            
+                        }  /* end namespace */
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsScaleAnimationEnabled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_IsScaleAnimationEnabled )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [in] */ boolean value);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryStartWithCoordinatedElements )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement *destination,
+            /* [in] */ __RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement *coordinatedElements,
+            /* [out][retval] */ __RPC__out boolean *returnValue);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetAnimationComponent )( 
+            __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CConnectedAnimationComponent component,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CICompositionAnimationBase *animation);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_get_IsScaleAnimationEnabled(This,value)	\
+    ( (This)->lpVtbl -> get_IsScaleAnimationEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_put_IsScaleAnimationEnabled(This,value)	\
+    ( (This)->lpVtbl -> put_IsScaleAnimationEnabled(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_TryStartWithCoordinatedElements(This,destination,coordinatedElements,returnValue)	\
+    ( (This)->lpVtbl -> TryStartWithCoordinatedElements(This,destination,coordinatedElements,returnValue) ) 
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_SetAnimationComponent(This,component,animation)	\
+    ( (This)->lpVtbl -> SetAnimationComponent(This,component,animation) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_INTERFACE_DEFINED__)
@@ -15159,13 +15540,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_INTERFACE_DEFINED__
@@ -15348,7 +15729,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedA
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_INTERFACE_DEFINED__)
@@ -15356,13 +15737,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_INTERFACE_DEFINED__
@@ -15489,7 +15870,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedA
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransition_INTERFACE_DEFINED__)
@@ -15497,13 +15878,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransition_INTERFACE_DEFINED__
@@ -15660,7 +16041,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransitionStatics_INTERFACE_DEFINED__)
@@ -15668,13 +16049,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransitionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransitionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransitionStatics_INTERFACE_DEFINED__
@@ -15811,7 +16192,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContentThemeTransitionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -15819,13 +16200,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfo_INTERFACE_DEFINED__
@@ -15962,7 +16343,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumN
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_INTERFACE_DEFINED__)
@@ -15970,13 +16351,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_INTERFACE_DEFINED__
@@ -16205,7 +16586,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumN
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__)
@@ -16213,13 +16594,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__
@@ -16336,7 +16717,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_INTERFACE_DEFINED__)
@@ -16344,13 +16725,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_INTERFACE_DEFINED__
@@ -16467,7 +16848,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteCo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteDoubleKeyFrame_INTERFACE_DEFINED__)
@@ -16475,13 +16856,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteDoubleKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteDoubleKeyFrame_INTERFACE_DEFINED__
@@ -16598,7 +16979,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteDo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteObjectKeyFrame_INTERFACE_DEFINED__)
@@ -16606,13 +16987,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteObjectKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteObjectKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteObjectKeyFrame_INTERFACE_DEFINED__
@@ -16729,7 +17110,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteOb
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteObjectKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscretePointKeyFrame_INTERFACE_DEFINED__)
@@ -16737,13 +17118,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscretePointKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscretePointKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscretePointKeyFrame_INTERFACE_DEFINED__
@@ -16860,7 +17241,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscretePo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscretePointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimation_INTERFACE_DEFINED__)
@@ -16868,13 +17249,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimation_INTERFACE_DEFINED__
@@ -17091,7 +17472,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnim
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationStatics_INTERFACE_DEFINED__)
@@ -17099,13 +17480,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationStatics_INTERFACE_DEFINED__
@@ -17272,7 +17653,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnim
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFrames_INTERFACE_DEFINED__)
@@ -17280,13 +17661,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFrames_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFrames_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFrames_INTERFACE_DEFINED__
@@ -17433,7 +17814,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnim
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFrames_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__)
@@ -17441,13 +17822,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
@@ -17574,7 +17955,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnim
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame_INTERFACE_DEFINED__)
@@ -17582,13 +17963,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame_INTERFACE_DEFINED__
@@ -17745,7 +18126,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_INTERFACE_DEFINED__)
@@ -17753,13 +18134,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_INTERFACE_DEFINED__
@@ -17890,7 +18271,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameStatics_INTERFACE_DEFINED__)
@@ -17898,13 +18279,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameStatics_INTERFACE_DEFINED__
@@ -18041,7 +18422,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimation_INTERFACE_DEFINED__)
@@ -18049,13 +18430,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimation_INTERFACE_DEFINED__
@@ -18192,7 +18573,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -18200,13 +18581,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimationStatics_INTERFACE_DEFINED__
@@ -18333,7 +18714,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragItemThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimation_INTERFACE_DEFINED__)
@@ -18341,13 +18722,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimation_INTERFACE_DEFINED__
@@ -18524,7 +18905,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -18532,13 +18913,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimationStatics_INTERFACE_DEFINED__
@@ -18685,7 +19066,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDragOverThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInNavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -18693,13 +19074,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInNavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInNavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInNavigationTransitionInfo_INTERFACE_DEFINED__
@@ -18816,7 +19197,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInNav
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInNavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimation_INTERFACE_DEFINED__)
@@ -18824,13 +19205,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimation_INTERFACE_DEFINED__
@@ -19027,7 +19408,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -19035,13 +19416,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimationStatics_INTERFACE_DEFINED__
@@ -19198,7 +19579,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillInThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimation_INTERFACE_DEFINED__)
@@ -19206,13 +19587,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimation_INTERFACE_DEFINED__
@@ -19409,7 +19790,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -19417,13 +19798,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimationStatics_INTERFACE_DEFINED__
@@ -19580,7 +19961,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDrillOutThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimation_INTERFACE_DEFINED__)
@@ -19588,13 +19969,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimation_INTERFACE_DEFINED__
@@ -19731,7 +20112,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTarget
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -19739,13 +20120,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimationStatics_INTERFACE_DEFINED__
@@ -19872,7 +20253,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTarget
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDropTargetItemThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrame_INTERFACE_DEFINED__)
@@ -19880,13 +20261,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrame_INTERFACE_DEFINED__
@@ -20023,7 +20404,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrameStatics_INTERFACE_DEFINED__)
@@ -20031,13 +20412,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrameStatics_INTERFACE_DEFINED__
@@ -20164,7 +20545,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingColorKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrame_INTERFACE_DEFINED__)
@@ -20172,13 +20553,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrame_INTERFACE_DEFINED__
@@ -20315,7 +20696,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoub
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrameStatics_INTERFACE_DEFINED__)
@@ -20323,13 +20704,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrameStatics_INTERFACE_DEFINED__
@@ -20456,7 +20837,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoub
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingDoubleKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_INTERFACE_DEFINED__)
@@ -20464,13 +20845,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_INTERFACE_DEFINED__
@@ -20619,7 +21000,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunc
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseFactory_INTERFACE_DEFINED__)
@@ -20627,13 +21008,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseFactory_INTERFACE_DEFINED__
@@ -20750,7 +21131,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunc
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseStatics_INTERFACE_DEFINED__)
@@ -20758,13 +21139,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseStatics_INTERFACE_DEFINED__
@@ -20891,7 +21272,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunc
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrame_INTERFACE_DEFINED__)
@@ -20899,13 +21280,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrame_INTERFACE_DEFINED__
@@ -21042,7 +21423,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPoin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrameStatics_INTERFACE_DEFINED__)
@@ -21050,13 +21431,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrameStatics_INTERFACE_DEFINED__
@@ -21183,7 +21564,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPoin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingPointKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransition_INTERFACE_DEFINED__)
@@ -21191,13 +21572,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransition_INTERFACE_DEFINED__
@@ -21334,7 +21715,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThem
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransitionStatics_INTERFACE_DEFINED__)
@@ -21342,13 +21723,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransitionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransitionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransitionStatics_INTERFACE_DEFINED__
@@ -21475,7 +21856,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThem
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEdgeUIThemeTransitionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEase_INTERFACE_DEFINED__)
@@ -21483,13 +21864,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEase_INTERFACE_DEFINED__
@@ -21646,7 +22027,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEas
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEaseStatics_INTERFACE_DEFINED__)
@@ -21654,13 +22035,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEaseStatics_INTERFACE_DEFINED__
@@ -21797,7 +22178,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEas
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIElasticEaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -21805,13 +22186,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfo_INTERFACE_DEFINED__
@@ -21928,7 +22309,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_INTERFACE_DEFINED__)
@@ -21936,13 +22317,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_INTERFACE_DEFINED__
@@ -22093,7 +22474,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransition_INTERFACE_DEFINED__)
@@ -22101,13 +22482,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransition_INTERFACE_DEFINED__
@@ -22284,7 +22665,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransitionStatics_INTERFACE_DEFINED__)
@@ -22292,13 +22673,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransitionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransitionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransitionStatics_INTERFACE_DEFINED__
@@ -22445,7 +22826,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceTh
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceThemeTransitionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEase_INTERFACE_DEFINED__)
@@ -22453,13 +22834,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEase_INTERFACE_DEFINED__
@@ -22596,7 +22977,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentia
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEaseStatics_INTERFACE_DEFINED__)
@@ -22604,13 +22985,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEaseStatics_INTERFACE_DEFINED__
@@ -22737,7 +23118,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentia
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIExponentialEaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimation_INTERFACE_DEFINED__)
@@ -22745,13 +23126,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimation_INTERFACE_DEFINED__
@@ -22888,7 +23269,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThem
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -22896,13 +23277,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimationStatics_INTERFACE_DEFINED__
@@ -23029,7 +23410,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThem
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeInThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimation_INTERFACE_DEFINED__)
@@ -23037,13 +23418,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimation_INTERFACE_DEFINED__
@@ -23180,7 +23561,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -23188,13 +23569,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_INTERFACE_DEFINED__
@@ -23321,7 +23702,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_INTERFACE_DEFINED__)
@@ -23329,13 +23710,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_INTERFACE_DEFINED__
@@ -23492,7 +23873,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelper_INTERFACE_DEFINED__)
@@ -23500,13 +23881,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelper_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelper_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelper_INTERFACE_DEFINED__
@@ -23623,7 +24004,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHel
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelper_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_INTERFACE_DEFINED__)
@@ -23631,13 +24012,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_INTERFACE_DEFINED__
@@ -23766,7 +24147,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHel
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearColorKeyFrame_INTERFACE_DEFINED__)
@@ -23774,13 +24155,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearColorKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearColorKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearColorKeyFrame_INTERFACE_DEFINED__
@@ -23897,7 +24278,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearColo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearDoubleKeyFrame_INTERFACE_DEFINED__)
@@ -23905,13 +24286,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearDoubleKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearDoubleKeyFrame_INTERFACE_DEFINED__
@@ -24028,7 +24409,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearDoub
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearPointKeyFrame_INTERFACE_DEFINED__)
@@ -24036,13 +24417,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearPointKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearPointKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearPointKeyFrame_INTERFACE_DEFINED__
@@ -24159,7 +24540,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearPoin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CILinearPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransition_INTERFACE_DEFINED__)
@@ -24167,13 +24548,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransition_INTERFACE_DEFINED__
@@ -24310,7 +24691,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigation
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransitionStatics_INTERFACE_DEFINED__)
@@ -24318,13 +24699,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransitionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransitionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransitionStatics_INTERFACE_DEFINED__
@@ -24451,7 +24832,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigation
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationThemeTransitionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -24459,13 +24840,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_INTERFACE_DEFINED__
@@ -24582,7 +24963,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigation
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_INTERFACE_DEFINED__)
@@ -24590,13 +24971,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_INTERFACE_DEFINED__
@@ -24727,7 +25108,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigation
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_INTERFACE_DEFINED__)
@@ -24735,13 +25116,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_INTERFACE_DEFINED__
@@ -24878,7 +25259,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigation
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFrames_INTERFACE_DEFINED__)
@@ -24886,13 +25267,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFrames_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFrames_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFrames_INTERFACE_DEFINED__
@@ -25039,7 +25420,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnim
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFrames_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__)
@@ -25047,13 +25428,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
@@ -25180,7 +25561,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnim
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame_INTERFACE_DEFINED__)
@@ -25188,13 +25569,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame_INTERFACE_DEFINED__
@@ -25351,7 +25732,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_INTERFACE_DEFINED__)
@@ -25359,13 +25740,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_INTERFACE_DEFINED__
@@ -25496,7 +25877,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameStatics_INTERFACE_DEFINED__)
@@ -25504,13 +25885,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameStatics_INTERFACE_DEFINED__
@@ -25647,7 +26028,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyF
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransition_INTERFACE_DEFINED__)
@@ -25655,13 +26036,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransition_INTERFACE_DEFINED__
@@ -25798,7 +26179,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransitionStatics_INTERFACE_DEFINED__)
@@ -25806,13 +26187,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransitionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransitionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransitionStatics_INTERFACE_DEFINED__
@@ -25939,7 +26320,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPaneThemeTransitionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimation_INTERFACE_DEFINED__)
@@ -25947,13 +26328,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimation_INTERFACE_DEFINED__
@@ -26170,7 +26551,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationStatics_INTERFACE_DEFINED__)
@@ -26178,13 +26559,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationStatics_INTERFACE_DEFINED__
@@ -26351,7 +26732,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFrames_INTERFACE_DEFINED__)
@@ -26359,13 +26740,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFrames_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFrames_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFrames_INTERFACE_DEFINED__
@@ -26512,7 +26893,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFrames_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__)
@@ -26520,13 +26901,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__
@@ -26653,7 +27034,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnima
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointAnimationUsingKeyFramesStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame_INTERFACE_DEFINED__)
@@ -26661,13 +27042,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame_INTERFACE_DEFINED__
@@ -26824,7 +27205,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_INTERFACE_DEFINED__)
@@ -26832,13 +27213,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_INTERFACE_DEFINED__
@@ -26969,7 +27350,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameStatics_INTERFACE_DEFINED__)
@@ -26977,13 +27358,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameStatics_INTERFACE_DEFINED__
@@ -27120,7 +27501,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFr
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimation_INTERFACE_DEFINED__)
@@ -27128,13 +27509,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimation_INTERFACE_DEFINED__
@@ -27271,7 +27652,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDow
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -27279,13 +27660,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimationStatics_INTERFACE_DEFINED__
@@ -27412,7 +27793,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDow
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerDownThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimation_INTERFACE_DEFINED__)
@@ -27420,13 +27801,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimation_INTERFACE_DEFINED__
@@ -27563,7 +27944,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -27571,13 +27952,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimationStatics_INTERFACE_DEFINED__
@@ -27704,7 +28085,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointerUpThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimation_INTERFACE_DEFINED__)
@@ -27712,13 +28093,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimation_INTERFACE_DEFINED__
@@ -27895,7 +28276,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInTheme
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -27903,13 +28284,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimationStatics_INTERFACE_DEFINED__
@@ -28056,7 +28437,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInTheme
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopInThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimation_INTERFACE_DEFINED__)
@@ -28064,13 +28445,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimation_INTERFACE_DEFINED__
@@ -28207,7 +28588,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThem
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -28215,13 +28596,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimationStatics_INTERFACE_DEFINED__
@@ -28348,7 +28729,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThem
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopOutThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransition_INTERFACE_DEFINED__)
@@ -28356,13 +28737,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransition_INTERFACE_DEFINED__
@@ -28519,7 +28900,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupTheme
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransitionStatics_INTERFACE_DEFINED__)
@@ -28527,13 +28908,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransitionStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransitionStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransitionStatics_INTERFACE_DEFINED__
@@ -28670,7 +29051,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupTheme
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPopupThemeTransitionStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEase_INTERFACE_DEFINED__)
@@ -28678,13 +29059,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEase_INTERFACE_DEFINED__
@@ -28821,7 +29202,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEase;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEaseStatics_INTERFACE_DEFINED__)
@@ -28829,13 +29210,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEaseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEaseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEaseStatics_INTERFACE_DEFINED__
@@ -28962,7 +29343,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEaseS
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPowerEaseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuadraticEase_INTERFACE_DEFINED__)
@@ -28970,13 +29351,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuadraticEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuadraticEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuadraticEase_INTERFACE_DEFINED__
@@ -29093,7 +29474,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuadraticE
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuadraticEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuarticEase_INTERFACE_DEFINED__)
@@ -29101,13 +29482,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuarticEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuarticEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuarticEase_INTERFACE_DEFINED__
@@ -29224,7 +29605,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuarticEas
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuarticEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuinticEase_INTERFACE_DEFINED__)
@@ -29232,13 +29613,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuinticEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuinticEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuinticEase_INTERFACE_DEFINED__
@@ -29355,7 +29736,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuinticEas
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIQuinticEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReorderThemeTransition_INTERFACE_DEFINED__)
@@ -29363,13 +29744,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReorderThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReorderThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReorderThemeTransition_INTERFACE_DEFINED__
@@ -29486,7 +29867,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReorderThe
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReorderThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelper_INTERFACE_DEFINED__)
@@ -29494,13 +29875,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelper_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelper_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelper_INTERFACE_DEFINED__
@@ -29617,7 +29998,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBeha
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelper_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_INTERFACE_DEFINED__)
@@ -29625,13 +30006,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_INTERFACE_DEFINED__
@@ -29820,7 +30201,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBeha
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimation_INTERFACE_DEFINED__)
@@ -29828,13 +30209,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0193_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimation_INTERFACE_DEFINED__
@@ -30011,7 +30392,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReposition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -30019,13 +30400,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0194_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimationStatics_INTERFACE_DEFINED__
@@ -30172,7 +30553,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReposition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition_INTERFACE_DEFINED__)
@@ -30180,13 +30561,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0195_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition_INTERFACE_DEFINED__
@@ -30303,7 +30684,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReposition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition2_INTERFACE_DEFINED__)
@@ -30311,13 +30692,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition2_INTERFACE_DEFINED__
@@ -30454,7 +30835,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReposition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransition2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransitionStatics2_INTERFACE_DEFINED__)
@@ -30462,13 +30843,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransitionStatics2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransitionStatics2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransitionStatics2_INTERFACE_DEFINED__
@@ -30595,7 +30976,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIReposition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepositionThemeTransitionStatics2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase_INTERFACE_DEFINED__)
@@ -30603,13 +30984,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase_INTERFACE_DEFINED__
@@ -30726,7 +31107,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -30734,13 +31115,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__
@@ -30857,7 +31238,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavig
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_INTERFACE_DEFINED__)
@@ -30865,13 +31246,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_INTERFACE_DEFINED__
@@ -31008,7 +31389,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrameStatics_INTERFACE_DEFINED__)
@@ -31016,13 +31397,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrameStatics_INTERFACE_DEFINED__
@@ -31149,7 +31530,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColo
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrame_INTERFACE_DEFINED__)
@@ -31157,13 +31538,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrame_INTERFACE_DEFINED__
@@ -31300,7 +31681,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoub
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrameStatics_INTERFACE_DEFINED__)
@@ -31308,13 +31689,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0203_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrameStatics_INTERFACE_DEFINED__
@@ -31441,7 +31822,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoub
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineDoubleKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrame_INTERFACE_DEFINED__)
@@ -31449,13 +31830,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrame_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0204_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrame_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrame_INTERFACE_DEFINED__
@@ -31592,7 +31973,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePoin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrameStatics_INTERFACE_DEFINED__)
@@ -31600,13 +31981,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrameStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0205_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrameStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrameStatics_INTERFACE_DEFINED__
@@ -31733,7 +32114,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePoin
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplinePointKeyFrameStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimation_INTERFACE_DEFINED__)
@@ -31741,13 +32122,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0206_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimation_INTERFACE_DEFINED__
@@ -32084,7 +32465,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitClose
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -32092,13 +32473,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0207_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimationStatics_INTERFACE_DEFINED__
@@ -32325,7 +32706,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitClose
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitCloseThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimation_INTERFACE_DEFINED__)
@@ -32333,13 +32714,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0208_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimation_INTERFACE_DEFINED__
@@ -32676,7 +33057,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -32684,13 +33065,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0209_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimationStatics_INTERFACE_DEFINED__
@@ -32917,7 +33298,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplitOpenThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_INTERFACE_DEFINED__)
@@ -32925,13 +33306,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0210_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_INTERFACE_DEFINED__
@@ -33138,7 +33519,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_INTERFACE_DEFINED__)
@@ -33146,13 +33527,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0211_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_INTERFACE_DEFINED__
@@ -33349,7 +33730,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISuppressNavigationTransitionInfo_INTERFACE_DEFINED__)
@@ -33357,13 +33738,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISuppressNavigationTransitionInfo_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0212_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISuppressNavigationTransitionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISuppressNavigationTransitionInfo_INTERFACE_DEFINED__
@@ -33480,7 +33861,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISuppressNa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISuppressNavigationTransitionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimation_INTERFACE_DEFINED__)
@@ -33488,13 +33869,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0213_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimation_INTERFACE_DEFINED__
@@ -33671,7 +34052,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -33679,13 +34060,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0214_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimationStatics_INTERFACE_DEFINED__
@@ -33832,7 +34213,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeBackThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimation_INTERFACE_DEFINED__)
@@ -33840,13 +34221,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0215_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimation_INTERFACE_DEFINED__
@@ -34023,7 +34404,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimationStatics_INTERFACE_DEFINED__)
@@ -34031,13 +34412,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimationStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0216_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimationStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimationStatics_INTERFACE_DEFINED__
@@ -34184,7 +34565,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintT
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISwipeHintThemeAnimationStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_INTERFACE_DEFINED__)
@@ -34192,13 +34573,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0217_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_INTERFACE_DEFINED__
@@ -34457,7 +34838,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline;
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_INTERFACE_DEFINED__)
@@ -34465,13 +34846,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0218_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_INTERFACE_DEFINED__
@@ -34602,7 +34983,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFa
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineStatics_INTERFACE_DEFINED__)
@@ -34610,13 +34991,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0219_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineStatics_INTERFACE_DEFINED__
@@ -34813,7 +35194,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineSt
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0223 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition_INTERFACE_DEFINED__)
@@ -34821,13 +35202,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0223 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0220_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0223_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0223_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition_INTERFACE_DEFINED__
@@ -34944,7 +35325,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0224 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransitionFactory_INTERFACE_DEFINED__)
@@ -34952,13 +35333,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransitionFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0224 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0221_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0224_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0224_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransitionFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransitionFactory_INTERFACE_DEFINED__
@@ -35075,7 +35456,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransition
 #endif 	/* ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITransitionFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0225 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_AddDeleteThemeTransition_DEFINED
@@ -35412,13 +35793,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222 */
+/* interface __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0225 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0222_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0225_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Emedia2Eanimation_0000_0225_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

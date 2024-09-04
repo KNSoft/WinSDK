@@ -46,8 +46,11 @@
 
 #define     CRYPTCAT_FILEEXT                    L"CAT"
 
+#if (NTDDI_VERSION <= NTDDI_WIN10_RS1)
 #define     CRYPTCAT_MAX_MEMBERTAG              64
-
+#else
+#define     CRYPTCAT_MAX_MEMBERTAG              128
+#endif
 
         //
         // dwPublicVersion

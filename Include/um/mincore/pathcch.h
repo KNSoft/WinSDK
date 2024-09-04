@@ -15,6 +15,7 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-path-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -33,13 +34,49 @@
 extern "C" {
 #endif
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
-// Flags for controling the Ex functions
-#define PATHCCH_ALLOW_LONG_PATHS    0x00000001  // Allow building of \\?\ paths if longer than MAX_PATH
+typedef enum PATHCCH_OPTIONS
+{
+    PATHCCH_NONE = 0x0,
 
+    // This option allows applications to gain access to long paths. It has two
+    // different behaviors. For process configured to enable long paths it will allow
+    // the returned path to be longer than the max path limit that is normally imposed.
+    // For process that are not this option will convert long paths into the extended
+    // length DOS device form (with \\?\ prefix) when the path is longer than the limit.
+    // This form is not length limited by the Win32 file system API on all versions of Windows.
+    // This second behavior is the same behavior for OSes that don't have the long path feature.
+    // This can not be specified with PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH.
+    PATHCCH_ALLOW_LONG_PATHS = 0x01,
+
+    // Can only be used when PATHCCH_ALLOW_LONG_PATHS is specified. This
+    // Forces the API to treat the caller as long path enabled, independent of the
+    // process's long name enabled state. Cannot be used with PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS.
+    PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS = 0x02,
+
+    // Can only be used when PATHCCH_ALLOW_LONG_PATHS is specified. This
+    // Forces the API to treat the caller as long path disabled, independent of the
+    // process's long name enabled state. Cannot be used with PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS.
+    PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS = 0x04,
+
+    // Disable the normalization of path segments that includes removing trailing dots and spaces.
+    // This enables access to paths that win32 path normalization will block.
+    PATHCCH_DO_NOT_NORMALIZE_SEGMENTS = 0x08,
+
+    // Convert the input path into the extended length DOS device path form (with the \\?\ prefix)
+    // if not already in that form. This enables access to paths that are otherwise not addressable
+    // due to Win32 normalization rules (that can strip trailing dots and spaces) and path
+    // length limitations. This option implies the same behavior of PATHCCH_DO_NOT_NORMALIZE_SEGMENTS.
+    // This can not be specified with PATHCCH_ALLOW_LONG_PATHS.
+    PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH = 0x10,
+
+    // When combining or normalizing a path ensure there is a trailing backslash.
+    PATHCCH_ENSURE_TRAILING_SLASH = 0x020,
+} PATHCCH_OPTIONS;
+DEFINE_ENUM_FLAG_OPERATORS(PATHCCH_OPTIONS)
 
 #define VOLUME_PREFIX           L"\\\\?\\Volume"
 #define VOLUME_PREFIX_LEN       (ARRAYSIZE(VOLUME_PREFIX) - 1)
@@ -47,7 +84,6 @@ extern "C" {
 // max # of characters we support using the "\\?\" syntax
 // (0x7FFF + 1 for NULL terminator)
 #define PATHCCH_MAX_CCH             0x8000
-
 
 WINPATHCCHAPI
 BOOL
@@ -66,7 +102,6 @@ PathCchIsRoot(
     );
 
 
-
 WINPATHCCHAPI
 HRESULT
 APIENTRY
@@ -76,7 +111,6 @@ PathCchAddBackslashEx(
     _Outptr_opt_result_buffer_(*pcchRemaining) PWSTR * ppszEnd,
     _Out_opt_ size_t * pcchRemaining
     );
-
 
 
 WINPATHCCHAPI
@@ -99,7 +133,6 @@ PathCchRemoveBackslashEx(
     );
 
 
-
 WINPATHCCHAPI
 HRESULT
 APIENTRY
@@ -109,7 +142,6 @@ PathCchRemoveBackslash(
     );
 
 
-
 WINPATHCCHAPI
 HRESULT
 APIENTRY
@@ -117,7 +149,6 @@ PathCchSkipRoot(
     _In_ PCWSTR pszPath,
     _Outptr_ PCWSTR * ppszRootEnd
     );
-
 
 
 WINPATHCCHAPI
@@ -179,18 +210,15 @@ PathCchRemoveExtension(
     );
 
 
-
-WINPATHCCHAPI
+/* PATHCCH_OPTIONS */WINPATHCCHAPI
 HRESULT
 APIENTRY
 PathCchCanonicalizeEx(
     _Out_writes_(cchPathOut) PWSTR pszPathOut,
     _In_ size_t cchPathOut,
     _In_ PCWSTR pszPathIn,
-    _In_ unsigned long dwFlags
+    _In_ ULONG dwFlags
     );
-
-
 
 
 WINPATHCCHAPI
@@ -203,7 +231,7 @@ PathCchCanonicalize(
     );
 
 
-WINPATHCCHAPI
+/* PATHCCH_OPTIONS */WINPATHCCHAPI
 HRESULT
 APIENTRY
 PathCchCombineEx(
@@ -211,9 +239,8 @@ PathCchCombineEx(
     _In_ size_t cchPathOut,
     _In_opt_ PCWSTR pszPathIn,
     _In_opt_ PCWSTR pszMore,
-    _In_ unsigned long dwFlags
+    _In_ ULONG dwFlags
     );
-
 
 
 WINPATHCCHAPI
@@ -227,16 +254,15 @@ PathCchCombine(
     );
 
 
-WINPATHCCHAPI
+/* PATHCCH_OPTIONS */WINPATHCCHAPI
 HRESULT
 APIENTRY
 PathCchAppendEx(
     _Inout_updates_(cchPath) PWSTR pszPath,
     _In_ size_t cchPath,
     _In_opt_ PCWSTR pszMore,
-    _In_ unsigned long dwFlags
+    _In_ ULONG dwFlags
     );
-
 
 
 WINPATHCCHAPI
@@ -249,7 +275,6 @@ PathCchAppend(
     );
 
 
-
 WINPATHCCHAPI
 HRESULT
 APIENTRY
@@ -259,130 +284,49 @@ PathCchStripPrefix(
     );
 
 
-
-WINPATHCCHAPI
+/* PATHCCH_OPTIONS */WINPATHCCHAPI
 HRESULT
 APIENTRY
 PathAllocCombine(
     _In_opt_ PCWSTR pszPathIn,
     _In_opt_ PCWSTR pszMore,
-    _In_ unsigned long dwFlags,
+    _In_ ULONG dwFlags,
     _Outptr_ PWSTR * ppszPathOut
     );
 
 
-
-WINPATHCCHAPI
+/* PATHCCH_OPTIONS */WINPATHCCHAPI
 HRESULT
 APIENTRY
 PathAllocCanonicalize(
     _In_ PCWSTR pszPathIn,
-    _In_ unsigned long dwFlags,
+    _In_ ULONG dwFlags,
     _Outptr_ PWSTR * ppszPathOut
     );
 
 
-
 #ifndef PATHCCH_NO_DEPRECATE
-// Deprecate all of the unsafe functions to generate compiletime errors. If you do not want
-// this then you can #define PATHCCH_NO_DEPRECATE before including this file.
-
-#undef PathAddBackslash
-#undef PathAddBackslashA
-#undef PathAddBackslashW
-
-#undef PathAddExtension
-#undef PathAddExtensionA
-#undef PathAddExtensionW
-
-#undef PathAppend
-#undef PathAppendA
-#undef PathAppendW
-
-#undef PathCanonicalize
-#undef PathCanonicalizeA
-#undef PathCanonicalizeW
-
-#undef PathCombine
-#undef PathCombineA
-#undef PathCombineW
-
-#undef PathRenameExtension
-#undef PathRenameExtensionA
-#undef PathRenameExtensionW
-
+// Deprecate the old path functions that do not take a buffer size (and assume MAX_PATH) to generate compile time errors.
+// #define PATHCCH_NO_DEPRECATE before including this file to disable these deprecations.
 #ifdef DEPRECATE_SUPPORTED
 
-#pragma deprecated(PathIsRelativeWorker)
-#pragma deprecated(StrIsEqualWorker)
-#pragma deprecated(FindPreviousBackslashWorker)
-#pragma deprecated(IsHexDigitWorker)
-#pragma deprecated(StringIsGUIDWorker)
-#pragma deprecated(PathIsVolumeGUIDWorker)
-#pragma deprecated(IsValidExtensionWorker)
-
-#pragma deprecated(PathAddBackslash)
 #pragma deprecated(PathAddBackslashA)
 #pragma deprecated(PathAddBackslashW)
-
-#pragma deprecated(PathAddExtension)
 #pragma deprecated(PathAddExtensionA)
 #pragma deprecated(PathAddExtensionW)
-
-#pragma deprecated(PathAppend)
 #pragma deprecated(PathAppendA)
 #pragma deprecated(PathAppendW)
-
-#pragma deprecated(PathCanonicalize)
 #pragma deprecated(PathCanonicalizeA)
 #pragma deprecated(PathCanonicalizeW)
-
-#pragma deprecated(PathCombine)
 #pragma deprecated(PathCombineA)
 #pragma deprecated(PathCombineW)
-
-#pragma deprecated(PathRenameExtension)
 #pragma deprecated(PathRenameExtensionA)
 #pragma deprecated(PathRenameExtensionW)
-
-#else // DEPRECATE_SUPPORTED
-
-#define PathIsRelativeWorker    PathIsRelativeWorker_is_internal_to_pathcch;
-#define StrIsEqualWorker        StrIsEqualWorker_is_internal_to_pathcch;
-#define FindPreviousBackslashWorker FindPreviousBackslashWorker_is_internal_to_pathcch;
-#define IsHexDigitWorker        IsHexDigitWorker_is_internal_to_pathcch;
-#define StringIsGUIDWorker      StringIsGUIDWorker_is_internal_to_pathcch;
-#define PathIsVolumeGUIDWorker  PathIsVolumeGUIDWorker_is_internal_to_pathcch;
-#define IsValidExtensionWorker  IsValidExtensionWorker_is_internal_to_pathcch;
-
-#define PathAddBackslash        PathAddBackslash_instead_use_PathCchAddBackslash;
-#define PathAddBackslashA       PathAddBackslash_instead_use_PathCchAddBackslash;
-#define PathAddBackslashW       PathAddBackslash_instead_use_PathCchAddBackslash;
-
-#define PathAddExtension        PathAddExtension_instead_use_PathCchAddExtension;
-#define PathAddExtensionA       PathAddExtension_instead_use_PathCchAddExtension;
-#define PathAddExtensionW       PathAddExtension_instead_use_PathCchAddExtension;
-
-#define PathAppend              PathAppend_instead_use_PathCchAppend;
-#define PathAppendA             PathAppend_instead_use_PathCchAppend;
-#define PathAppendW             PathAppend_instead_use_PathCchAppend;
-
-#define PathCanonicalize        PathCanonicalize_instead_use_PathCchCanonicalize;
-#define PathCanonicalizeA       PathCanonicalize_instead_use_PathCchCanonicalize;
-#define PathCanonicalizeW       PathCanonicalize_instead_use_PathCchCanonicalize;
-
-#define PathCombine             PathCombine_instead_use_PathCchCombine;
-#define PathCombineA            PathCombine_instead_use_PathCchCombine;
-#define PathCombineW            PathCombine_instead_use_PathCchCombine;
-
-#define PathRenameExtension     PathRenameExtension_instead_use_PathCchRenameExtension;
-#define PathRenameExtensionA    PathRenameExtension_instead_use_PathCchRenameExtension;
-#define PathRenameExtensionW    PathRenameExtension_instead_use_PathCchRenameExtension;
 
 #endif  // !DEPRECATE_SUPPORTED
 #endif  // !PATHCCH_NO_DEPRECATE
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 #ifdef __cplusplus
@@ -392,9 +336,9 @@ PathAllocCanonicalize(
 
 #ifdef __cplusplus
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 // non-const overload (C++ only)
 
@@ -421,7 +365,7 @@ PathCchFindExtension(
     return PathCchFindExtension(const_cast<PCWSTR>(pszPath), cchPath, const_cast<PCWSTR*>(ppszExt));
 }
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 #endif

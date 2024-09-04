@@ -499,7 +499,7 @@ typedef struct _WDI_SIGNAL_INFO
 typedef struct _WDI_BSS_ENTRY_CHANNEL_INFO
 {
     WDI_CHANNEL_NUMBER ChannelNumber; // The logical channel number on which the peer was discovered
-    UINT32 BandId; // Band ID for the given BSS entry.
+    WDI_BAND_ID BandId; // Band ID for the given BSS entry.
 #ifdef __cplusplus
     _WDI_BSS_ENTRY_CHANNEL_INFO()
     {
@@ -1092,11 +1092,12 @@ typedef struct _WDI_DATAPATH_CAPABILITIES
 //
 typedef struct _WDI_BAND_CAPABILITIES
 {
-    UINT32 BandID; // Identifier for this band 
+    WDI_BAND_ID BandID; // Identifier for this band 
     BOOLEAN BandState; // Whether or not this band is enabled
 #ifdef __cplusplus
-    _WDI_BAND_CAPABILITIES() : BandID( 0 ), BandState( FALSE )
+    _WDI_BAND_CAPABILITIES()
     {
+        memset( this, 0, sizeof( _WDI_BAND_CAPABILITIES ) );
     };
 #endif // __cplusplus
 } WDI_BAND_CAPABILITIES, *PWDI_BAND_CAPABILITIES;
@@ -1586,7 +1587,7 @@ typedef struct _WDI_RECEIVE_SEQUENCE_COUNT_STRUCT
 typedef struct _WDI_ACTION_FRAME_REQUEST_PARAMETERS
 {
     WDI_CHANNEL_NUMBER ChannelNumber; // The channel number to send this action frame on
-    UINT32 BandId; // The band ID to send this action frame on
+    WDI_BAND_ID BandId; // The band ID to send this action frame on
     WDI_MAC_ADDRESS DestinationAddress; // Destination address to send this action frame on
     UINT32 SendTimeout; // Maximum time, in milliseconds to send this action frame
     UINT32 PostACKDwellTime; // Time to remain on listen channel, in milliseconds after the incoming packet is acknowledged
@@ -1808,6 +1809,21 @@ typedef struct _WDI_IPv6TCP_SYNC
     };
 #endif // __cplusplus
 } WDI_IPv6TCP_SYNC, *PWDI_IPv6TCP_SYNC;
+
+
+//
+// struct for a GUID
+//
+typedef struct _WDI_GUID
+{
+    GUID Guid; // A GUID entry
+#ifdef __cplusplus
+    _WDI_GUID()
+    {
+        memset( this, 0, sizeof( _WDI_GUID ) );
+    };
+#endif // __cplusplus
+} WDI_GUID, *PWDI_GUID;
 
 struct ArrayOfElementsOfUINT8
 {
@@ -2067,10 +2083,8 @@ typedef struct _WDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER
     struct _WDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER_Optional
     {
         UINT32 ServiceInformation_IsPresent : 1;
-        UINT32 ServiceUpdateIndicator_IsPresent : 1;
-        UINT32 ServiceTransactionId_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER_Optional() : ServiceInformation_IsPresent( FALSE ), ServiceUpdateIndicator_IsPresent( FALSE ), ServiceTransactionId_IsPresent( FALSE )
+        _WDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER_Optional() : ServiceInformation_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -2101,15 +2115,15 @@ namespace WDI_TLV
 //
 // Container for ASP2 service information discovery entry.
 //
-typedef struct _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER
+typedef struct _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20
 {
-    struct _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER_Optional
+    struct _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20_Optional
     {
         UINT32 ServiceInformation_IsPresent : 1;
         UINT32 ServiceUpdateIndicator_IsPresent : 1;
         UINT32 ServiceTransactionId_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER_Optional() : ServiceInformation_IsPresent( FALSE ), ServiceUpdateIndicator_IsPresent( FALSE ), ServiceTransactionId_IsPresent( FALSE )
+        _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20_Optional() : ServiceInformation_IsPresent( FALSE ), ServiceUpdateIndicator_IsPresent( FALSE ), ServiceTransactionId_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -2121,17 +2135,17 @@ typedef struct _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER
     UINT16_CONTAINER ServiceUpdateIndicator;
     UINT8_CONTAINER ServiceTransactionId;
 #ifdef __cplusplus
-    _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER() : ServiceUpdateIndicator( (UINT16_CONTAINER)0 ), ServiceTransactionId( (UINT8_CONTAINER)0 )
+    _WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20() : ServiceUpdateIndicator( (UINT16_CONTAINER)0 ), ServiceTransactionId( (UINT8_CONTAINER)0 )
     {
     };
 #endif // __cplusplus
-} WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER, *PWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER;
+} WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20, *PWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20 * pField );
     }
 }
 #endif // __cplusplus
@@ -2213,13 +2227,13 @@ namespace WDI_TLV
 //
 // Container for ASP2 advertised service entry.
 //
-typedef struct _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER
+typedef struct _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20
 {
-    struct _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER_Optional
+    struct _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20_Optional
     {
         UINT32 ServiceInformation_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER_Optional() : ServiceInformation_IsPresent( FALSE )
+        _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20_Optional() : ServiceInformation_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -2234,19 +2248,19 @@ typedef struct _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER
     UINT32_CONTAINER AdvertisementID;
     UINT16_CONTAINER ConfigurationMethods;
 #ifdef __cplusplus
-    _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER() : ServiceStatus( (UINT8_CONTAINER)0 ), AdvertisementID( (UINT32_CONTAINER)0 ), ConfigurationMethods( (UINT16_CONTAINER)0 )
+    _WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20() : ServiceStatus( (UINT8_CONTAINER)0 ), AdvertisementID( (UINT32_CONTAINER)0 ), ConfigurationMethods( (UINT16_CONTAINER)0 )
     {
         memset( &ServiceTypeHash, 0, sizeof( ServiceTypeHash ) );
         memset( &InstanceNameHash, 0, sizeof( InstanceNameHash ) );
     };
 #endif // __cplusplus
-} WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER, *PWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER;
+} WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20, *PWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20 * pField );
     }
 }
 #endif // __cplusplus
@@ -2283,14 +2297,14 @@ struct ArrayOfElementsOfWDI_P2P_ADVERTISED_SERVICE_ENTRY_CONTAINER
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_P2P_ADVERTISED_SERVICE_ENTRY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_P2P_ADVERTISED_SERVICE_ENTRY_CONTAINER ) );
 #endif // __cplusplus
-struct ArrayOfElementsOfWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER
+struct ArrayOfElementsOfWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20
 {
     UINT32 ElementCount;
-    WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER* pElements;
+    WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20* pElements;
     BOOLEAN MemoryInternallyAllocated;
 };
 #ifdef __cplusplus
-C_ASSERT( sizeof( ArrayOfElements<WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER ) );
+C_ASSERT( sizeof( ArrayOfElements<WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20> ) == sizeof( struct ArrayOfElementsOfWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINERV1_0_20 ) );
 #endif // __cplusplus
 struct ArrayOfElementsOfWDI_P2P_ADVERTISED_PREFIX_ENTRY_CONTAINER
 {
@@ -2310,10 +2324,8 @@ typedef struct _WDI_P2P_ADVERTISED_SERVICES_CONTAINER
     struct _WDI_P2P_ADVERTISED_SERVICES_CONTAINER_Optional
     {
         UINT32 ServiceEntry_IsPresent : 1;
-        UINT32 ASP2ServiceEntry_IsPresent : 1;
-        UINT32 ServicePrefix_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_P2P_ADVERTISED_SERVICES_CONTAINER_Optional() : ServiceEntry_IsPresent( FALSE ), ASP2ServiceEntry_IsPresent( FALSE ), ServicePrefix_IsPresent( FALSE )
+        _WDI_P2P_ADVERTISED_SERVICES_CONTAINER_Optional() : ServiceEntry_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -2323,16 +2335,6 @@ typedef struct _WDI_P2P_ADVERTISED_SERVICES_CONTAINER
     ArrayOfElements<WDI_P2P_ADVERTISED_SERVICE_ENTRY_CONTAINER> ServiceEntry;
 #else // __cplusplus
     struct ArrayOfElementsOfWDI_P2P_ADVERTISED_SERVICE_ENTRY_CONTAINER ServiceEntry;
-#endif // __cplusplus
-#ifdef __cplusplus
-    ArrayOfElements<WDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER> ASP2ServiceEntry;
-#else // __cplusplus
-    struct ArrayOfElementsOfWDI_P2P_ASP2_ADVERTISED_SERVICE_ENTRY_CONTAINER ASP2ServiceEntry;
-#endif // __cplusplus
-#ifdef __cplusplus
-    ArrayOfElements<WDI_P2P_ADVERTISED_PREFIX_ENTRY_CONTAINER> ServicePrefix;
-#else // __cplusplus
-    struct ArrayOfElementsOfWDI_P2P_ADVERTISED_PREFIX_ENTRY_CONTAINER ServicePrefix;
 #endif // __cplusplus
     UINT16_CONTAINER ServiceUpdateIndicator;
 #ifdef __cplusplus
@@ -2446,6 +2448,20 @@ namespace WDI_TLV
     }
 }
 #endif // __cplusplus
+
+//
+// Container for AP band + channel information
+//
+typedef struct _WDI_AP_BAND_INFORMATION_CONTAINER
+{
+    WDI_BAND_ID_CONTAINER BandID;
+    UINT8_CONTAINER IsPCPinPBSS;
+#ifdef __cplusplus
+    _WDI_AP_BAND_INFORMATION_CONTAINER() : BandID( (WDI_BAND_ID_CONTAINER)0 ), IsPCPinPBSS( (UINT8_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_AP_BAND_INFORMATION_CONTAINER, *PWDI_AP_BAND_INFORMATION_CONTAINER;
 typedef WDI_SIGNAL_INFO WDI_SIGNAL_INFO_CONTAINER;
 
 typedef WDI_BSS_ENTRY_CHANNEL_INFO WDI_CHANNEL_INFO_CONTAINER;
@@ -3480,9 +3496,8 @@ typedef struct _WDI_ASSOCIATION_RESULT_CONTAINER
         UINT32 AuthenticationResponseFrame_IsPresent : 1;
         UINT32 BeaconProbeResponse_IsPresent : 1;
         UINT32 EthertypeEncapTable_IsPresent : 1;
-        UINT32 ActivePhyTypeList_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_ASSOCIATION_RESULT_CONTAINER_Optional() : AssociationRequestFrame_IsPresent( FALSE ), AssociationResponseFrame_IsPresent( FALSE ), AuthenticationResponseFrame_IsPresent( FALSE ), BeaconProbeResponse_IsPresent( FALSE ), EthertypeEncapTable_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE )
+        _WDI_ASSOCIATION_RESULT_CONTAINER_Optional() : AssociationRequestFrame_IsPresent( FALSE ), AssociationResponseFrame_IsPresent( FALSE ), AuthenticationResponseFrame_IsPresent( FALSE ), BeaconProbeResponse_IsPresent( FALSE ), EthertypeEncapTable_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3627,9 +3642,25 @@ typedef WDI_NETWORK_LIST_OFFLOAD_CONFIG WDI_NETWORK_LIST_OFFLOAD_CONFIG_CONTAINE
 //
 typedef struct _WDI_SSID_OFFLOAD_CONTAINER
 {
+    struct _WDI_SSID_OFFLOAD_CONTAINER_Optional
+    {
+        UINT32 IsDirectedProbeForHiddenPermitted_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SSID_OFFLOAD_CONTAINER_Optional() : IsDirectedProbeForHiddenPermitted_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
     WDI_SSID SsidToScan;
     WDI_ALGO_PAIRS_LIST_CONTAINER UnicastAlgorithms;
     WDI_CHANNEL_MAPPING_CONTAINER ChannellHintList;
+    BOOL_CONTAINER IsDirectedProbeForHiddenPermitted;
+#ifdef __cplusplus
+    _WDI_SSID_OFFLOAD_CONTAINER() : IsDirectedProbeForHiddenPermitted( (BOOL_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
 } WDI_SSID_OFFLOAD_CONTAINER, *PWDI_SSID_OFFLOAD_CONTAINER;
 #ifdef __cplusplus
 namespace WDI_TLV
@@ -3810,6 +3841,23 @@ namespace WDI_TLV
     }
 }
 #endif // __cplusplus
+typedef WDI_GUID WDI_GUID_CONTAINER;
+
+struct ArrayOfElementsOfGUID
+{
+    UINT32 ElementCount;
+    GUID* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<GUID> ) == sizeof( struct ArrayOfElementsOfGUID ) );
+#endif // __cplusplus
+#ifdef __cplusplus
+typedef ArrayOfElements<GUID> WDI_GUID_LIST_CONTAINER;
+#else // __cplusplus
+typedef struct ArrayOfElementsOfGUID WDI_GUID_LIST_CONTAINER;
+#endif // __cplusplus
+
 typedef ULONG TEST_CONTAINER;
 
 struct ArrayOfElementsOfTEST_CONTAINER
@@ -3932,14 +3980,14 @@ struct ArrayOfElementsOfWDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER ) );
 #endif // __cplusplus
-struct ArrayOfElementsOfWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER
+struct ArrayOfElementsOfWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20
 {
     UINT32 ElementCount;
-    WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER* pElements;
+    WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20* pElements;
     BOOLEAN MemoryInternallyAllocated;
 };
 #ifdef __cplusplus
-C_ASSERT( sizeof( ArrayOfElements<WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER ) );
+C_ASSERT( sizeof( ArrayOfElements<WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20> ) == sizeof( struct ArrayOfElementsOfWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINERV1_0_20 ) );
 #endif // __cplusplus
 
 //
@@ -3954,10 +4002,9 @@ typedef struct _WDI_TASK_P2P_DISCOVER_PARAMETERS
         UINT32 ServiceNameHash_IsPresent : 1;
         UINT32 VendorIEs_IsPresent : 1;
         UINT32 ServiceInformationDiscoveryEntry_IsPresent : 1;
-        UINT32 ASP2ServiceInformationDiscoveryEntry_IsPresent : 1;
         UINT32 bIncludeListenChannel_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_TASK_P2P_DISCOVER_PARAMETERS_Optional() : DiscoveryChannelSettings_IsPresent( FALSE ), SSIDList_IsPresent( FALSE ), ServiceNameHash_IsPresent( FALSE ), VendorIEs_IsPresent( FALSE ), ServiceInformationDiscoveryEntry_IsPresent( FALSE ), ASP2ServiceInformationDiscoveryEntry_IsPresent( FALSE ), bIncludeListenChannel_IsPresent( FALSE )
+        _WDI_TASK_P2P_DISCOVER_PARAMETERS_Optional() : DiscoveryChannelSettings_IsPresent( FALSE ), SSIDList_IsPresent( FALSE ), ServiceNameHash_IsPresent( FALSE ), VendorIEs_IsPresent( FALSE ), ServiceInformationDiscoveryEntry_IsPresent( FALSE ), bIncludeListenChannel_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3985,11 +4032,6 @@ typedef struct _WDI_TASK_P2P_DISCOVER_PARAMETERS
     ArrayOfElements<WDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER> ServiceInformationDiscoveryEntry;
 #else // __cplusplus
     struct ArrayOfElementsOfWDI_P2P_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER ServiceInformationDiscoveryEntry;
-#endif // __cplusplus
-#ifdef __cplusplus
-    ArrayOfElements<WDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER> ASP2ServiceInformationDiscoveryEntry;
-#else // __cplusplus
-    struct ArrayOfElementsOfWDI_P2P_ASP2_SERVICE_INFORMATION_DISCOVERY_ENTRY_CONTAINER ASP2ServiceInformationDiscoveryEntry;
 #endif // __cplusplus
     BOOL_CONTAINER bIncludeListenChannel;
 #ifdef __cplusplus
@@ -5296,6 +5338,7 @@ typedef struct _WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL_PARAMETERS
 {
     WDI_P2P_CHANNEL_CONTAINER Channel;
     WDI_P2P_CHANNEL_INDICATE_REASON_CONTAINER IndicateReason;
+    WDI_AP_BAND_INFORMATION_CONTAINER APBandInformation;
 #ifdef __cplusplus
     _WDI_INDICATION_P2P_GROUP_OPERATING_CHANNEL_PARAMETERS() : IndicateReason( (WDI_P2P_CHANNEL_INDICATE_REASON_CONTAINER)0 )
     {
@@ -5962,6 +6005,74 @@ typedef struct _WDI_SET_NEIGHBOR_REPORT_ENTRIES_PARAMETERS
 // No TLV data needed, header is sufficient
 //
 typedef EmptyMessageStructureType WDI_SET_NEIGHBOR_REPORT_ENTRIES_RESULTS, *PWDI_SET_NEIGHBOR_REPORT_ENTRIES_RESULTS;
+
+
+//
+// No TLV data needed, header is sufficient
+//
+typedef EmptyMessageStructureType WDI_GET_SUPPORTED_DEVICE_SERVICES_INPUTS, *PWDI_GET_SUPPORTED_DEVICE_SERVICES_INPUTS;
+
+
+//
+// Parameters for WDI_GET_SUPPORTED_DEVICE_SERVICES
+//
+typedef struct _WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS
+{
+    WDI_GUID_LIST_CONTAINER DeviceServiceGUIDList;
+} WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS, *PWDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS;
+
+
+//
+// Input parameters for WDI_DEVICE_SERVICE_COMMAND
+//
+typedef struct _WDI_DEVICE_SERVICE_COMMAND_INPUTS
+{
+    struct _WDI_DEVICE_SERVICE_COMMAND_INPUTS_Optional
+    {
+        UINT32 Params_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_DEVICE_SERVICE_COMMAND_INPUTS_Optional() : Params_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_GUID_CONTAINER DeviceServiceGUID;
+    UINT32_CONTAINER Opcode;
+#ifdef __cplusplus
+    ArrayOfElements<WDI_BYTE_BLOB> Params;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_BYTE_BLOB Params;
+#endif // __cplusplus
+#ifdef __cplusplus
+    _WDI_DEVICE_SERVICE_COMMAND_INPUTS() : Opcode( (UINT32_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_DEVICE_SERVICE_COMMAND_INPUTS, *PWDI_DEVICE_SERVICE_COMMAND_INPUTS;
+
+
+//
+// Parameters for WDI_DEVICE_SERVICE_COMMAND
+//
+typedef struct _WDI_DEVICE_SERVICE_COMMAND_PARAMETERS
+{
+    struct _WDI_DEVICE_SERVICE_COMMAND_PARAMETERS_Optional
+    {
+        UINT32 Params_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_DEVICE_SERVICE_COMMAND_PARAMETERS_Optional() : Params_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+#ifdef __cplusplus
+    ArrayOfElements<WDI_BYTE_BLOB> Params;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_BYTE_BLOB Params;
+#endif // __cplusplus
+} WDI_DEVICE_SERVICE_COMMAND_PARAMETERS, *PWDI_DEVICE_SERVICE_COMMAND_PARAMETERS;
 
 
 //
@@ -8706,6 +8817,80 @@ extern "C" {
         _Out_opt_ WDI_SET_NEIGHBOR_REPORT_ENTRIES_RESULTS* pParsedMessage );
     void __stdcall CleanupParsedWdiSetNeighborReportEntriesFromIhv( _In_ WDI_SET_NEIGHBOR_REPORT_ENTRIES_RESULTS* pParsedMessage );
 
+    NDIS_STATUS __stdcall GenerateWdiGetSupportedDeviceServicesToIhv(
+        _In_opt_ WDI_GET_SUPPORTED_DEVICE_SERVICES_INPUTS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+
+    NDIS_STATUS __stdcall ParseWdiGetSupportedDeviceServicesToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_opt_ WDI_GET_SUPPORTED_DEVICE_SERVICES_INPUTS* pParsedMessage );
+    void __stdcall CleanupParsedWdiGetSupportedDeviceServicesToIhv( _In_ WDI_GET_SUPPORTED_DEVICE_SERVICES_INPUTS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiGetSupportedDeviceServicesFromIhv(
+        _In_ WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiGetSupportedDeviceServicesFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiGetSupportedDeviceServicesFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiGetSupportedDeviceServicesFromIhv( _In_ WDI_GET_SUPPORTED_DEVICE_SERVICES_PARAMETERS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiDeviceServiceCommandToIhv(
+        _In_ WDI_DEVICE_SERVICE_COMMAND_INPUTS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_DEVICE_SERVICE_COMMAND_INPUTS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiDeviceServiceCommandToIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiDeviceServiceCommandToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_DEVICE_SERVICE_COMMAND_INPUTS* pParsedMessage );
+    void __stdcall CleanupParsedWdiDeviceServiceCommandToIhv( _In_ WDI_DEVICE_SERVICE_COMMAND_INPUTS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiDeviceServiceCommandFromIhv(
+        _In_ WDI_DEVICE_SERVICE_COMMAND_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_DEVICE_SERVICE_COMMAND_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiDeviceServiceCommandFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiDeviceServiceCommandFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_DEVICE_SERVICE_COMMAND_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiDeviceServiceCommandFromIhv( _In_ WDI_DEVICE_SERVICE_COMMAND_PARAMETERS* pParsedMessage );
+
     NDIS_STATUS __stdcall GenerateWdiTestTask(
         _In_ WDI_TASK_TEST_PARAMETERS const * pInput,
         _In_ ULONG ReservedHeaderLength,
@@ -8994,6 +9179,12 @@ extern "C" {
 #define GenerateWdiSetNeighborReportEntries GenerateWdiSetNeighborReportEntriesToIhv
 #define ParseWdiSetNeighborReportEntries ParseWdiSetNeighborReportEntriesFromIhv
 #define CleanupParsedWdiSetNeighborReportEntries CleanupParsedWdiSetNeighborReportEntriesFromIhv
+#define GenerateWdiGetSupportedDeviceServices GenerateWdiGetSupportedDeviceServicesToIhv
+#define ParseWdiGetSupportedDeviceServices ParseWdiGetSupportedDeviceServicesFromIhv
+#define CleanupParsedWdiGetSupportedDeviceServices CleanupParsedWdiGetSupportedDeviceServicesFromIhv
+#define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandToIhv
+#define ParseWdiDeviceServiceCommand ParseWdiDeviceServiceCommandFromIhv
+#define CleanupParsedWdiDeviceServiceCommand CleanupParsedWdiDeviceServiceCommandFromIhv
 #define Parse ParseFromIhv
 #define FreeParsed FreeParsedFromIhv
 
@@ -9195,6 +9386,12 @@ extern "C" {
 #define ParseWdiSetNeighborReportEntries ParseWdiSetNeighborReportEntriesToIhv
 #define CleanupParsedWdiSetNeighborReportEntries CleanupParsedWdiSetNeighborReportEntriesToIhv
 #define GenerateWdiSetNeighborReportEntries GenerateWdiSetNeighborReportEntriesFromIhv
+#define ParseWdiGetSupportedDeviceServices ParseWdiGetSupportedDeviceServicesToIhv
+#define CleanupParsedWdiGetSupportedDeviceServices CleanupParsedWdiGetSupportedDeviceServicesToIhv
+#define GenerateWdiGetSupportedDeviceServices GenerateWdiGetSupportedDeviceServicesFromIhv
+#define ParseWdiDeviceServiceCommand ParseWdiDeviceServiceCommandToIhv
+#define CleanupParsedWdiDeviceServiceCommand CleanupParsedWdiDeviceServiceCommandToIhv
+#define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandFromIhv
 #define Parse ParseToIhv
 #define FreeParsed FreeParsedToIhv
 

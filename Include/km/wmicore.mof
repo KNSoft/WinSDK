@@ -11300,6 +11300,31 @@ class Thread_V2_TypeGroup1:Thread_V2
 };
 
 [Dynamic,
+ Description("Thread Set Name Event") : amended,
+ EventType(10),
+ EventTypeName("SetName") : amended
+]
+class ThreadSetName:Thread_V2
+{
+    [WmiDataId(1),
+     Description("ProcessId") : amended,
+     format("x"),
+     read]
+     uint32  ProcessId;
+    [WmiDataId(2),
+     Description("ThreadId") : amended,
+     format("x"),
+     read]
+     uint32  ThreadId;
+    [WmiDataId(3),
+     Description("ThreadName") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string ThreadName;
+};
+
+[Dynamic,
  Description("Context Switch Event") : amended,
  EventType(36),
  EventTypeName("CSwitch") : amended
@@ -11369,26 +11394,62 @@ class CompCS:Thread_V2
 };
 
 [Dynamic,
- Description("Worker Thread Event") : amended,
- EventType(57),
- EventTypeName("WorkerThread") : amended
+ Description("Spinlock Release Event") : amended,
+ EventType(41),
+ EventTypeName("SpinLock") : amended
 ]
-class WorkerThread:Thread_V2
+class SpinLock:Thread_V2
 {
     [WmiDataId(1),
-     Description("ThreadId") : amended,
-     format("x"),
-     read]
-     uint32  TThreadId;
-    [WmiDataId(2),
-     Description("StartTime") : amended,
-     read]
-     uint64  StartTime;
-    [WmiDataId(3),
-     Description("ThreadRoutine") : amended,
+     Description("SpinLockAddress") : amended,
      pointer,
      read]
-     uint32  ThreadRoutine;
+     uint32  SpinLockAddress;
+    [WmiDataId(2),
+     Description("CallerAddress") : amended,
+     pointer,
+     read]
+     uint32  CallerAddress;
+   [WmiDataId(3),
+     Description("AcquireTime") : amended,
+     read]
+     uint64  AcquireTime;
+   [WmiDataId(4),
+     Description("ReleaseTime") : amended,
+     read]
+     uint64  ReleaseTime;
+   [WmiDataId(5),
+     Description("WaitTimeInCycles") : amended,
+     read]
+     uint32  WaitTimeInCycles;
+   [WmiDataId(6),
+     Description("SpinCount") : amended,
+     read]
+     uint32  SpinCount;
+   [WmiDataId(7),
+     Description("ThreadId") : amended,
+     read]
+     uint32  ThreadId;
+   [WmiDataId(8),
+     Description("InterruptCount") : amended,
+     read]
+     uint32  InterruptCount;
+   [WmiDataId(9),
+     Description("Irql") : amended,
+     read]
+     uint8   Irql;
+   [WmiDataId(10),
+     Description("AcquireDepth") : amended,
+     read]
+     uint8   AcquireDepth;
+   [WmiDataId(11),
+     Description("Flag") : amended,
+     read]
+     uint8   Flag;
+   [WmiDataId(12),
+     Description("Reserved") : amended,
+     read]
+     uint8   Reserved[5];
 };
 
 [Dynamic,
@@ -11421,7 +11482,6 @@ class ReadyThread:Thread_V2
      sint8  Reserved;
 };
 
-
 [Dynamic,
  Description("Thread Affinity Event") : amended,
  EventType(53),
@@ -11449,6 +11509,28 @@ class ThreadAffinity:Thread_V2
      uint16  Reserved;
 };
 
+[Dynamic,
+ Description("Worker Thread Event") : amended,
+ EventType(57),
+ EventTypeName("WorkerThread") : amended
+]
+class WorkerThread:Thread_V2
+{
+    [WmiDataId(1),
+     Description("ThreadId") : amended,
+     format("x"),
+     read]
+     uint32  TThreadId;
+    [WmiDataId(2),
+     Description("StartTime") : amended,
+     read]
+     uint64  StartTime;
+    [WmiDataId(3),
+     Description("ThreadRoutine") : amended,
+     pointer,
+     read]
+     uint32  ThreadRoutine;
+};
 
 [Dynamic,
  Description("Anti Starvation Boost Event") : amended,
@@ -11665,71 +11747,12 @@ class SubProcessTagChanged:Thread_V2
 };
 
 [Dynamic,
- Description("Spinlock Release Event") : amended,
- EventType(41),
- EventTypeName("SpinLock") : amended
-]
-class SpinLock:Thread_V2
-{
-    [WmiDataId(1),
-     Description("SpinLockAddress") : amended,
-     pointer,
-     read]
-     uint32  SpinLockAddress;
-    [WmiDataId(2),
-     Description("CallerAddress") : amended,
-     pointer,
-     read]
-     uint32  CallerAddress;
-   [WmiDataId(3),
-     Description("AcquireTime") : amended,
-     read]
-     uint64  AcquireTime;
-   [WmiDataId(4),
-     Description("ReleaseTime") : amended,
-     read]
-     uint64  ReleaseTime;
-   [WmiDataId(5),
-     Description("WaitTimeInCycles") : amended,
-     read]
-     uint32  WaitTimeInCycles;
-   [WmiDataId(6),
-     Description("SpinCount") : amended,
-     read]
-     uint32  SpinCount;
-   [WmiDataId(7),
-     Description("ThreadId") : amended,
-     read]
-     uint32  ThreadId;
-   [WmiDataId(8),
-     Description("InterruptCount") : amended,
-     read]
-     uint32  InterruptCount;
-   [WmiDataId(9),
-     Description("Irql") : amended,
-     read]
-     uint8   Irql;
-   [WmiDataId(10),
-     Description("AcquireDepth") : amended,
-     read]
-     uint8   AcquireDepth;
-   [WmiDataId(11),
-     Description("Flag") : amended,
-     read]
-     uint8   Flag;
-   [WmiDataId(12),
-     Description("Reserved") : amended,
-     read]
-     uint8   Reserved[5];
-};
-
-[Dynamic,
  Description("Thread Create/Exit Event") : amended,
  Guid("{3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}"),
  EventVersion(3),
  DisplayName("Thread") : amended
 ]
-class Thread:MSNT_SystemTrace
+class Thread_V3:MSNT_SystemTrace
 {
 
 };
@@ -11739,7 +11762,7 @@ class Thread:MSNT_SystemTrace
  EventType{1, 2, 3, 4},
  EventTypeName{"Start", "End", "DCStart", "DCEnd"} : amended
 ]
-class Thread_TypeGroup1:Thread
+class Thread_V3_TypeGroup1:Thread_V3
 {
    [WmiDataId(1),
      Description("ProcessId") : amended,
@@ -11808,12 +11831,13 @@ class Thread_TypeGroup1:Thread
      read]
      uint8   ThreadFlags;
 };
+
 [Dynamic,
  Description("Priority Change Event") : amended,
  EventType{48, 49, 51, 52},
  EventTypeName{"SetPriority", "SetBasePriority", "SetPagePriority", "SetIoPriority"} : amended
 ]
-class ThreadPriority:Thread
+class ThreadPriority:Thread_V3
 {
     [WmiDataId(1),
      Description("ThreadId") : amended,
@@ -11832,6 +11856,98 @@ class ThreadPriority:Thread
      Description("Reserved") : amended,
      read]
      uint16  Reserved;
+};
+
+[Dynamic,
+ Description("Thread Create/Exit Event") : amended,
+ Guid("{3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}"),
+ EventVersion(4),
+ DisplayName("Thread") : amended
+]
+class Thread_V4:MSNT_SystemTrace
+{
+
+};
+
+[Dynamic,
+ Description("Thread Create/Exit Event") : amended,
+ EventType{1, 2, 3, 4},
+ EventTypeName{"Start", "End", "DCStart", "DCEnd"} : amended
+]
+class Thread_TypeGroup1:Thread_V4
+{
+   [WmiDataId(1),
+     Description("ProcessId") : amended,
+     format("x"),
+     read]
+     uint32  ProcessId;
+    [WmiDataId(2),
+     Description("ThreadId") : amended,
+     format("x"),
+     read]
+     uint32  TThreadId;
+    [WmiDataId(3),
+     Description("StackBase") : amended,
+     pointer,
+     read]
+     uint32  StackBase;
+    [WmiDataId(4),
+     Description("StackLimit") : amended,
+     pointer,
+     read]
+     uint32  StackLimit;
+    [WmiDataId(5),
+     Description("UserStackBase") : amended,
+     pointer,
+     read]
+     uint32  UserStackBase;
+    [WmiDataId(6),
+     Description("UserStackLimit") : amended,
+     pointer,
+     read]
+     uint32  UserStackLimit;
+    [WmiDataId(7),
+     Description("Affinity") : amended,
+     pointer,
+     read]
+     uint32  Affinity;
+    [WmiDataId(8),
+     Description("Win32StartAddr") : amended,
+     pointer,
+     read]
+     uint32  Win32StartAddr;
+    [WmiDataId(9),
+     Description("TebBase") : amended,
+     pointer,
+     read]
+     uint32  TebBase;
+    [WmiDataId(10),
+     Description("SubProcessTag") : amended,
+     format("x"),
+     read]
+     uint32  SubProcessTag;
+    [WmiDataId(11),
+     Description("BasePriority") : amended,
+     read]
+     uint8   BasePriority;
+    [WmiDataId(12),
+     Description("PagePriority") : amended,
+     read]
+     uint8   PagePriority;
+    [WmiDataId(13),
+     Description("IoPriority") : amended,
+     read]
+     uint8   IoPriority;
+    [WmiDataId(14),
+     Description("Flags") : amended,
+     read]
+     uint8   ThreadFlags;
+    [WmiDataId(15),
+     Description("Name") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string ThreadName;
 };
 
 [Dynamic,

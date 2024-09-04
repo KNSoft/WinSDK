@@ -1705,7 +1705,9 @@ WSAAPI
 ioctlsocket(
     _In_ SOCKET s,
     _In_ long cmd,
-    _Inout_ u_long FAR * argp
+    _When_(cmd != FIONREAD, _Inout_)
+    _When_(cmd == FIONREAD, _Out_)
+    u_long FAR * argp
     );
 #endif /* INCL_WINSOCK_API_PROTOTYPES */
 

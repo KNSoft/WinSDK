@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -1357,18 +1357,18 @@ interface IVpnCustomPrompt;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0001 */
 /* [local] */ 
@@ -1403,18 +1403,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0002 */
 /* [local] */ 
@@ -1462,18 +1462,18 @@ interface IVpnCustomPromptElement;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0003 */
 /* [local] */ 
@@ -1508,18 +1508,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0004 */
 /* [local] */ 
@@ -1567,18 +1567,18 @@ interface IVpnProfile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0005 */
 /* [local] */ 
@@ -1613,18 +1613,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0006 */
 /* [local] */ 
@@ -1683,18 +1683,18 @@ interface IVpnAppId;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0007 */
 /* [local] */ 
@@ -1729,18 +1729,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0008 */
 /* [local] */ 
@@ -1799,18 +1799,18 @@ interface IVpnDomainNameInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0009 */
 /* [local] */ 
@@ -1845,18 +1845,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0010 */
 /* [local] */ 
@@ -1915,18 +1915,18 @@ interface IVpnNamespaceInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0011 */
 /* [local] */ 
@@ -1961,18 +1961,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3124 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0012 */
 /* [local] */ 
@@ -2031,18 +2031,18 @@ interface IVpnPacketBuffer;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3125 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0013 */
 /* [local] */ 
@@ -2077,18 +2077,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3126 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3126_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3126_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0014 */
 /* [local] */ 
@@ -2147,18 +2147,18 @@ interface IVpnRoute;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3127 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0015 */
 /* [local] */ 
@@ -2193,18 +2193,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3128 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0016 */
 /* [local] */ 
@@ -2263,18 +2263,18 @@ interface IVpnTrafficFilter;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3129 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0017 */
 /* [local] */ 
@@ -2309,18 +2309,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3130 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3130_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3130_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0018 */
 /* [local] */ 
@@ -2355,18 +2355,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3131 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0019 */
 /* [local] */ 
@@ -2401,18 +2401,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3132 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0020 */
 /* [local] */ 
@@ -2447,18 +2447,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3133 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0021 */
 /* [local] */ 
@@ -2493,18 +2493,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3134 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0022 */
 /* [local] */ 
@@ -2539,18 +2539,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3135 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3135_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3135_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0023 */
 /* [local] */ 
@@ -2585,18 +2585,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3136 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3136_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3136_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0024 */
 /* [local] */ 
@@ -2631,18 +2631,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3137 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3137_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3137_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0025 */
 /* [local] */ 
@@ -2677,18 +2677,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3138 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3138_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3138_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0026 */
 /* [local] */ 
@@ -2723,18 +2723,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3139 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0027 */
 /* [local] */ 
@@ -2769,18 +2769,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3140 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0028 */
 /* [local] */ 
@@ -2815,18 +2815,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3141 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3141_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3141_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0029 */
 /* [local] */ 
@@ -2861,18 +2861,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3142 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0030 */
 /* [local] */ 
@@ -2907,18 +2907,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3143 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3143_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3143_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0031 */
 /* [local] */ 
@@ -2953,18 +2953,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3144 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3144_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3144_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0032 */
 /* [local] */ 
@@ -2999,18 +2999,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3145 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3145_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3145_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0033 */
 /* [local] */ 
@@ -3069,18 +3069,18 @@ interface IVpnCredential;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3146 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3146_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3146_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0034 */
 /* [local] */ 
@@ -3115,18 +3115,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3147 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3147_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3147_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0035 */
 /* [local] */ 
@@ -3174,18 +3174,18 @@ enum VpnManagementErrorStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3148 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0036 */
 /* [local] */ 
@@ -3220,18 +3220,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3149 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0037 */
 /* [local] */ 
@@ -3314,18 +3314,18 @@ interface IVpnChannelActivityEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4699 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4699_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0038 */
 /* [local] */ 
@@ -3384,18 +3384,18 @@ interface IVpnChannelActivityStateChangedArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4700 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4700 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4700_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4700_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0039 */
 /* [local] */ 
@@ -3450,18 +3450,18 @@ interface IHostName;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4701 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4701 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4701_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4701_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0040 */
 /* [local] */ 
@@ -3496,18 +3496,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4702 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4702 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4702_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4702_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0041 */
 /* [local] */ 
@@ -3542,18 +3542,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4703 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4703 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4703_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4703_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0042 */
 /* [local] */ 
@@ -3608,18 +3608,18 @@ interface IUriRuntimeClass;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4704 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4704 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4704_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4704_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0043 */
 /* [local] */ 
@@ -3654,18 +3654,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4705 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4705 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4705_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4705_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0044 */
 /* [local] */ 
@@ -3700,18 +3700,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4706 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4706 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4706_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4706_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0045 */
 /* [local] */ 
@@ -3746,18 +3746,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4707 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4707 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4707_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4707_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0046 */
 /* [local] */ 
@@ -3792,18 +3792,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4708 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4708 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4708_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4708_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0047 */
 /* [local] */ 
@@ -3838,18 +3838,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4709 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4709 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4709_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4709_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0048 */
 /* [local] */ 
@@ -3884,18 +3884,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4710 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4710 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4710_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4710_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0049 */
 /* [local] */ 
@@ -3930,18 +3930,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4711 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4711 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4711_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4711_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0050 */
 /* [local] */ 
@@ -3976,18 +3976,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4712 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4712 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4712_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4712_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0051 */
 /* [local] */ 
@@ -4753,18 +4753,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4713 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4713 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4713_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4713_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0052 */
 /* [local] */ 
@@ -4939,18 +4939,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CIVpnCustomPro
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4714 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4714 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4714_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4714_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0054 */
 /* [local] */ 
@@ -5091,18 +5091,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CIVpnCustomPro
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4715 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4715 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4715_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4715_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0056 */
 /* [local] */ 
@@ -5277,18 +5277,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CIVpnCustomPro
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4716 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4716 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4716_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4716_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0058 */
 /* [local] */ 
@@ -5429,18 +5429,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CIVpnCustomPro
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0059_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4717 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4717 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4717_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4717_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0060 */
 /* [local] */ 
@@ -5615,18 +5615,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CIVpnProfile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0061_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4718 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4718 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4718_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4718_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0062 */
 /* [local] */ 
@@ -5767,18 +5767,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CIVpnProfile;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0063_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4719 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4719 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4719_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4719_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0064 */
 /* [local] */ 
@@ -5953,18 +5953,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CVpnAppId;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0065_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4720 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4720 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4720_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4720_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0066 */
 /* [local] */ 
@@ -6105,18 +6105,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CVpnAppId;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0067_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4721 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4721 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4721_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4721_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0068 */
 /* [local] */ 
@@ -6291,18 +6291,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CVpnDomainName
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0069_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4722 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4722 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4722_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4722_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0070 */
 /* [local] */ 
@@ -6443,18 +6443,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CVpnDomainName
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0071_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4723 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4723 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4723_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4723_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0072 */
 /* [local] */ 
@@ -6629,18 +6629,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CVpnNamespaceI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0073_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4724 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4724 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4724_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4724_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0074 */
 /* [local] */ 
@@ -6781,18 +6781,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CVpnNamespaceI
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0075_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4725 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4725 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4725_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4725_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0076 */
 /* [local] */ 
@@ -6967,18 +6967,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CVpnPacketBuff
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0077_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4726 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4726 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4726_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4726_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0078 */
 /* [local] */ 
@@ -7119,18 +7119,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CVpnPacketBuff
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0079_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4727 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4727 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4727_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4727_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0080 */
 /* [local] */ 
@@ -7305,18 +7305,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CVpnRoute;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0081_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4728 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4728 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4728_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4728_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0082 */
 /* [local] */ 
@@ -7457,18 +7457,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CVpnRoute;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0083_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4729 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4729 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4729_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4729_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0084 */
 /* [local] */ 
@@ -7643,18 +7643,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CNetworking__CVpn__CVpnTrafficFil
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0085_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0085_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4730 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4730 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4730_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4730_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0086 */
 /* [local] */ 
@@ -7795,18 +7795,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CNetworking__CVpn__CVpnTrafficFil
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0087_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0087_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4731 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4731 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4731_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4731_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0088 */
 /* [local] */ 
@@ -7989,18 +7989,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CIVpnCustomP
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0089_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0089_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4732 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4732 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4732_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4732_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0090 */
 /* [local] */ 
@@ -8183,18 +8183,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CIVpnCustomP
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0091_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0091_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4733 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4733 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4733_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4733_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0092 */
 /* [local] */ 
@@ -8377,18 +8377,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CIVpnProfile
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0093_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0093_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4734 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4734 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4734_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4734_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0094 */
 /* [local] */ 
@@ -8571,18 +8571,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CVpnAppId;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0095_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0095_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4735 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4735 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4735_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4735_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0096 */
 /* [local] */ 
@@ -8765,18 +8765,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CVpnDomainNa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0097_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0097_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4736 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4736 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4736_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4736_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0098 */
 /* [local] */ 
@@ -8959,18 +8959,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CVpnNamespac
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0099_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0099_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4737 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4737 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4737_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4737_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0100 */
 /* [local] */ 
@@ -9153,18 +9153,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CVpnRoute;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0101_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0101_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4738 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4738 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4738_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4738_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0102 */
 /* [local] */ 
@@ -9347,18 +9347,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CNetworking__CVpn__CVpnTrafficF
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0103_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0103_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4739 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3190 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4739 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3190_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3190_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4739_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4739_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0104 */
 /* [local] */ 
@@ -9623,18 +9623,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CNetworking__CVpn__CVpnAppId;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0105_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0105_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3191 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4740 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3191 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4740 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3191_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3191_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4740_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4740_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0106 */
 /* [local] */ 
@@ -9899,18 +9899,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CNetworking__CVpn__CVpnDomainNameIn
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0107_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0107_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3192 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4741 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3192 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4741 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3192_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3192_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4741_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4741_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0108 */
 /* [local] */ 
@@ -10175,18 +10175,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CNetworking__CVpn__CVpnNamespaceInf
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0109_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0109_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3193 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4742 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3193 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4742 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3193_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3193_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4742_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4742_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0110 */
 /* [local] */ 
@@ -10451,18 +10451,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CNetworking__CVpn__CVpnRoute;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0111_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0111_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3194 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4743 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3194 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4743 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3194_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3194_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4743_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4743_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0112 */
 /* [local] */ 
@@ -10727,18 +10727,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CNetworking__CVpn__CVpnTrafficFilte
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0113_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0113_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3195 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4744 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3195 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4744 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3195_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3195_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4744_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4744_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0114 */
 /* [local] */ 
@@ -10860,18 +10860,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0115_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0115_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4745 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3196 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4745 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3196_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3196_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4745_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4745_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0116 */
 /* [local] */ 
@@ -11032,18 +11032,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CNetworkin
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0117_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0117_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4746 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3197 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4746 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3197_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3197_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4746_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4746_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0118 */
 /* [local] */ 
@@ -11165,18 +11165,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0119_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0119_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4747 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3198 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4747 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3198_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3198_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4747_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4747_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0120 */
 /* [local] */ 
@@ -11337,18 +11337,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CVpn__CVpnCred
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0121_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0121_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4748 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3199 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4748 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3199_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3199_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4748_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4748_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0122 */
 /* [local] */ 
@@ -11470,18 +11470,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0123_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0123_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4749 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3200 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4749 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3200_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3200_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4749_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4749_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0124 */
 /* [local] */ 
@@ -11642,18 +11642,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CVpn__CVpnMana
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0125_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0125_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4750 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3201 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4750 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3201_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3201_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4750_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4750_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0126 */
 /* [local] */ 
@@ -11773,18 +11773,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CNetworking__CVpn__CVpnC
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0127_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn_0000_0127_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4751 */
 
 
 
 
-/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3202 */
+/* interface __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4751 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3202_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_3202_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4751_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Enetworking2Evpn2Eidl_0000_4751_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Enetworking2Evpn_0000_0128 */
 /* [local] */ 

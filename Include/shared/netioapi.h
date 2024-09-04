@@ -56,7 +56,7 @@ Notes:
 #pragma once
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef __cplusplus
@@ -108,12 +108,6 @@ extern "C" {
 
 #define NETIOAPI_API NETIO_STATUS NETIOAPI_API_
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 typedef enum _MIB_NOTIFICATION_TYPE {
     //
     // ParameterChange.
@@ -133,7 +127,7 @@ typedef enum _MIB_NOTIFICATION_TYPE {
     MibInitialNotification,
 } MIB_NOTIFICATION_TYPE, *PMIB_NOTIFICATION_TYPE;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 //
@@ -146,8 +140,8 @@ typedef enum _MIB_NOTIFICATION_TYPE {
 
 #ifdef _WS2IPDEF_
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #include <ntddndis.h>
 
@@ -256,6 +250,60 @@ Notes:
 
 --*/
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+typedef enum _MIB_IF_ENTRY_LEVEL {
+    MibIfEntryNormal = 0,
+    MibIfEntryNormalWithoutStatistics = 2
+} MIB_IF_ENTRY_LEVEL, *PMIB_IF_ENTRY_LEVEL;
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_NETIOAPI_SUCCESS_
+NETIOAPI_API
+GetIfEntry2Ex(
+    _In_    MIB_IF_ENTRY_LEVEL Level,
+    _Inout_ PMIB_IF_ROW2       Row
+    );
+/*++
+
+Routine Description:
+
+    Retrieves information for the specified interface on the local computer.
+
+Arguments:
+
+    Level - Value from MIB_IF_ENTRY_LEVEL indicating how much information
+            should be retrieved
+
+    Row - Supplies a MIB_IF_ROW2 structure with either the Luid or Index
+          initialized to that of the interface for which to retrieve
+          information.
+
+Return Value:
+
+    User-Mode: NO_ERROR on success, error code on failure.
+
+    Kernel-Mode: STATUS_SUCCESS on success, error code on failure.
+
+Notes:
+
+    On input, the following key fields of Row must be initialized:
+    1.  At least one of InterfaceLuid or InterfaceIndex must be specified.
+
+    On output, the remaining fields of Row are filled in.
+
+    The fields prefixed with "In" or "Out" will always be zero if
+    MibIfEntryNormalWithoutStatistics is used.
+
+--*/
+#endif
+
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _NETIOAPI_SUCCESS_
 NETIOAPI_API
@@ -287,7 +335,10 @@ Notes:
 
 typedef enum _MIB_IF_TABLE_LEVEL {
     MibIfTableNormal,
-    MibIfTableRaw
+    MibIfTableRaw,
+    #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+    MibIfTableNormalWithoutStatistics
+    #endif
 } MIB_IF_TABLE_LEVEL, *PMIB_IF_TABLE_LEVEL;
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -317,6 +368,9 @@ Return Value:
 Notes:
 
     The API allocates the buffer for Table.  Use FreeMibTable to free it.
+
+    The fields prefixed with "In" or "Out" will always be zero if
+    MibIfEntryNormalWithoutStatistics is used.
 
 --*/
 
@@ -670,7 +724,7 @@ Return Value:
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //
@@ -707,12 +761,6 @@ typedef struct _MIB_UNICASTIPADDRESS_TABLE {
     MIB_UNICASTIPADDRESS_ROW Table[ANY_SIZE];
 } MIB_UNICASTIPADDRESS_TABLE, *PMIB_UNICASTIPADDRESS_TABLE;
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 typedef
 VOID
 (NETIOAPI_API_ *PUNICAST_IPADDRESS_CHANGE_CALLBACK) (
@@ -720,6 +768,12 @@ VOID
     _In_opt_ PMIB_UNICASTIPADDRESS_ROW Row,
     _In_ MIB_NOTIFICATION_TYPE NotificationType
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _NETIOAPI_SUCCESS_
@@ -822,7 +876,7 @@ Notes:
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -900,6 +954,11 @@ Notes:
 
 --*/
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _NETIOAPI_SUCCESS_
@@ -969,6 +1028,12 @@ NotifyStableUnicastIpAddressTable(
     _In_ PVOID CallerContext,
     _Inout_ HANDLE *NotificationHandle
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _NETIOAPI_SUCCESS_
@@ -1262,7 +1327,7 @@ Notes:
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 typedef struct _IP_ADDRESS_PREFIX {
@@ -1389,7 +1454,7 @@ Notes:
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -2138,6 +2203,12 @@ Return Value:
 // Generic (not IP-specific) interface definitions.
 //
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NETIOAPI_API
 CancelMibChangeNotify2(
@@ -2165,12 +2236,6 @@ Notes:
     Blocks until all callback have returned.
 
 --*/
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 VOID
 NETIOAPI_API_
@@ -3001,7 +3066,7 @@ Return Value:
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //

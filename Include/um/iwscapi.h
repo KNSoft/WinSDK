@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -53,6 +53,13 @@ typedef interface IWSCProductList IWSCProductList;
 #endif 	/* __IWSCProductList_FWD_DEFINED__ */
 
 
+#ifndef __IWSCDefaultProduct_FWD_DEFINED__
+#define __IWSCDefaultProduct_FWD_DEFINED__
+typedef interface IWSCDefaultProduct IWSCDefaultProduct;
+
+#endif 	/* __IWSCDefaultProduct_FWD_DEFINED__ */
+
+
 #ifndef __WSCProductList_FWD_DEFINED__
 #define __WSCProductList_FWD_DEFINED__
 
@@ -63,6 +70,18 @@ typedef struct WSCProductList WSCProductList;
 #endif /* __cplusplus */
 
 #endif 	/* __WSCProductList_FWD_DEFINED__ */
+
+
+#ifndef __WSCDefaultProduct_FWD_DEFINED__
+#define __WSCDefaultProduct_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class WSCDefaultProduct WSCDefaultProduct;
+#else
+typedef struct WSCDefaultProduct WSCDefaultProduct;
+#endif /* __cplusplus */
+
+#endif 	/* __WSCDefaultProduct_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -80,6 +99,8 @@ extern "C"{
 #include <winapifamily.h>
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#ifndef __WSC_SECURITY_PRODUCT_STATE__
+#define __WSC_SECURITY_PRODUCT_STATE__
 typedef 
 enum _WSC_SECURITY_PRODUCT_STATE
     {
@@ -89,6 +110,20 @@ enum _WSC_SECURITY_PRODUCT_STATE
         WSC_SECURITY_PRODUCT_STATE_EXPIRED	= 3
     } 	WSC_SECURITY_PRODUCT_STATE;
 
+#endif
+#ifndef __SECURITY_PRODUCT_TYPE__
+#define __SECURITY_PRODUCT_TYPE__
+typedef 
+enum _SECURITY_PRODUCT_TYPE
+    {
+        SECURITY_PRODUCT_TYPE_ANTIVIRUS	= 0,
+        SECURITY_PRODUCT_TYPE_FIREWALL	= 1,
+        SECURITY_PRODUCT_TYPE_ANTISPYWARE	= 2
+    } 	SECURITY_PRODUCT_TYPE;
+
+#endif
+#ifndef __WSC_SECURITY_SIGNATURE_STATUS__
+#define __WSC_SECURITY_SIGNATURE_STATUS__
 typedef 
 enum _WSC_SECURITY_SIGNATURE_STATUS
     {
@@ -96,6 +131,7 @@ enum _WSC_SECURITY_SIGNATURE_STATUS
         WSC_SECURITY_PRODUCT_UP_TO_DATE	= 1
     } 	WSC_SECURITY_SIGNATURE_STATUS;
 
+#endif
 
 
 extern RPC_IF_HANDLE __MIDL_itf_iwscapi_0000_0000_v0_0_c_ifspec;
@@ -130,6 +166,12 @@ EXTERN_C const IID IID_IWscProduct;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_ProductStateTimestamp( 
             /* [retval][out] */ __RPC__deref_out_opt BSTR *pVal) = 0;
+        
+        virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_ProductGuid( 
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *pVal) = 0;
+        
+        virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_ProductIsDefault( 
+            /* [retval][out] */ __RPC__out BOOL *pVal) = 0;
         
     };
     
@@ -209,6 +251,14 @@ EXTERN_C const IID IID_IWscProduct;
             __RPC__in IWscProduct * This,
             /* [retval][out] */ __RPC__deref_out_opt BSTR *pVal);
         
+        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProductGuid )( 
+            __RPC__in IWscProduct * This,
+            /* [retval][out] */ __RPC__deref_out_opt BSTR *pVal);
+        
+        /* [helpstring][id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProductIsDefault )( 
+            __RPC__in IWscProduct * This,
+            /* [retval][out] */ __RPC__out BOOL *pVal);
+        
         END_INTERFACE
     } IWscProductVtbl;
 
@@ -259,6 +309,12 @@ EXTERN_C const IID IID_IWscProduct;
 
 #define IWscProduct_get_ProductStateTimestamp(This,pVal)	\
     ( (This)->lpVtbl -> get_ProductStateTimestamp(This,pVal) ) 
+
+#define IWscProduct_get_ProductGuid(This,pVal)	\
+    ( (This)->lpVtbl -> get_ProductGuid(This,pVal) ) 
+
+#define IWscProduct_get_ProductIsDefault(This,pVal)	\
+    ( (This)->lpVtbl -> get_ProductIsDefault(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
@@ -423,6 +479,138 @@ EXTERN_C const IID IID_IWSCProductList;
 #endif 	/* __IWSCProductList_INTERFACE_DEFINED__ */
 
 
+#ifndef __IWSCDefaultProduct_INTERFACE_DEFINED__
+#define __IWSCDefaultProduct_INTERFACE_DEFINED__
+
+/* interface IWSCDefaultProduct */
+/* [unique][helpstring][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IWSCDefaultProduct;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0476d69c-f21a-11e5-9ce9-5e5517507c66")
+    IWSCDefaultProduct : public IDispatch
+    {
+    public:
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE SetDefaultProduct( 
+            /* [in] */ SECURITY_PRODUCT_TYPE eType,
+            /* [in] */ __RPC__in BSTR pGuid) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IWSCDefaultProductVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IWSCDefaultProduct * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IWSCDefaultProduct * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IWSCDefaultProduct * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            __RPC__in IWSCDefaultProduct * This,
+            /* [out] */ __RPC__out UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            __RPC__in IWSCDefaultProduct * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ __RPC__deref_out_opt ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            __RPC__in IWSCDefaultProduct * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [size_is][in] */ __RPC__in_ecount_full(cNames) LPOLESTR *rgszNames,
+            /* [range][in] */ __RPC__in_range(0,16384) UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ __RPC__out_ecount_full(cNames) DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IWSCDefaultProduct * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *SetDefaultProduct )( 
+            __RPC__in IWSCDefaultProduct * This,
+            /* [in] */ SECURITY_PRODUCT_TYPE eType,
+            /* [in] */ __RPC__in BSTR pGuid);
+        
+        END_INTERFACE
+    } IWSCDefaultProductVtbl;
+
+    interface IWSCDefaultProduct
+    {
+        CONST_VTBL struct IWSCDefaultProductVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IWSCDefaultProduct_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IWSCDefaultProduct_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IWSCDefaultProduct_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IWSCDefaultProduct_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define IWSCDefaultProduct_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define IWSCDefaultProduct_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define IWSCDefaultProduct_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define IWSCDefaultProduct_SetDefaultProduct(This,eType,pGuid)	\
+    ( (This)->lpVtbl -> SetDefaultProduct(This,eType,pGuid) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IWSCDefaultProduct_INTERFACE_DEFINED__ */
+
+
 
 #ifndef __wscAPILib_LIBRARY_DEFINED__
 #define __wscAPILib_LIBRARY_DEFINED__
@@ -440,17 +628,25 @@ EXTERN_C const CLSID CLSID_WSCProductList;
 class DECLSPEC_UUID("17072F7B-9ABE-4A74-A261-1EB76B55107A")
 WSCProductList;
 #endif
+
+EXTERN_C const CLSID CLSID_WSCDefaultProduct;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("2981a36e-f22d-11e5-9ce9-5e5517507c66")
+WSCDefaultProduct;
+#endif
 #endif /* __wscAPILib_LIBRARY_DEFINED__ */
 
-/* interface __MIDL_itf_iwscapi_0000_0003 */
+/* interface __MIDL_itf_iwscapi_0000_0004 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_iwscapi_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_iwscapi_0000_0003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_iwscapi_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_iwscapi_0000_0004_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

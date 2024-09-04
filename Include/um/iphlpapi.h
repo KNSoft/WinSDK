@@ -20,7 +20,7 @@ Abstract:
 #endif
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef __cplusplus
@@ -146,6 +146,12 @@ GetIpForwardTable(
 //                                                                          //
 //////////////////////////////////////////////////////////////////////////////
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 ULONG
 WINAPI
 GetTcpTable(
@@ -177,6 +183,12 @@ GetExtendedTcpTable(
     _In_                          ULONG           Reserved
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 DWORD
 WINAPI
 GetOwnerModuleFromTcpEntry(
@@ -185,6 +197,12 @@ GetOwnerModuleFromTcpEntry(
     _Out_writes_bytes_(*pdwSize) PVOID                         pBuffer,
     _Inout_                PDWORD                        pdwSize
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 ULONG
 WINAPI
@@ -204,6 +222,12 @@ GetExtendedUdpTable(
     _In_                          UDP_TABLE_CLASS TableClass,
     _In_                          ULONG           Reserved
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 DWORD
 WINAPI
@@ -396,14 +420,29 @@ WINAPI
 GetIpStatistics(
     _Out_ PMIB_IPSTATS Statistics
     );
+#endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+#if (NTDDI_VERSION >= NTDDI_WIN2K)
 ULONG
 WINAPI
 GetIcmpStatistics(
     _Out_ PMIB_ICMP Statistics
     );
+#endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
 
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+#if (NTDDI_VERSION >= NTDDI_WIN2K)
 ULONG
 WINAPI
 GetTcpStatistics(
@@ -420,16 +459,24 @@ GetUdpStatistics(
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 ULONG
 WINAPI
-GetIpStatisticsEx(
-    _Out_ PMIB_IPSTATS Statistics,
-    _In_  ULONG Family
-    );
-
-ULONG
-WINAPI
 SetIpStatisticsEx(
     _In_ PMIB_IPSTATS Statistics,
     _In_ ULONG Family
+    );
+#endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+#if (NTDDI_VERSION >= NTDDI_WINXP)
+ULONG
+WINAPI
+GetIpStatisticsEx(
+    _Out_ PMIB_IPSTATS Statistics,
+    _In_  ULONG Family
     );
 
 ULONG
@@ -453,6 +500,12 @@ GetUdpStatisticsEx(
     _In_  ULONG Family
     );
 #endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
@@ -643,6 +696,12 @@ GetBestInterface(
     _Out_ PDWORD  pdwBestIfIndex
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #pragma warning(push)
 #pragma warning(disable:4115)
 DWORD
@@ -652,6 +711,12 @@ GetBestInterfaceEx(
     _Out_ PDWORD           pdwBestIfIndex
     );
 #pragma warning(pop)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
@@ -715,6 +780,12 @@ DeleteIPAddress(
     _In_ ULONG NTEContext
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if (NTDDI_VERSION >= NTDDI_WIN2KSP1)
 DWORD
 WINAPI
@@ -723,6 +794,12 @@ GetNetworkParams(
     _Inout_                         PULONG      pOutBufLen
     );
 #endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 ULONG
 WINAPI
@@ -741,7 +818,7 @@ GetAdapterOrderMap(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef _WINSOCK2API_
@@ -762,12 +839,6 @@ GetAdaptersAddresses(
 
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 #if (NTDDI_VERSION >= NTDDI_WIN2KSP1)
 DWORD
 WINAPI
@@ -777,6 +848,12 @@ GetPerAdapterInfo(
     _Inout_                         PULONG               pOutBufLen
     );
 #endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 DWORD
 WINAPI
@@ -1033,7 +1110,7 @@ ParseNetworkString(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #ifdef __cplusplus
 }

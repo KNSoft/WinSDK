@@ -244,7 +244,7 @@ typedef struct _IMAGE_FILE_HEADER {
 
 // end_winnt
 
-#define IMAGE_FILE_MACHINE_HYBRID_X86        0x3A64  // Hybrid: x86
+#define IMAGE_FILE_MACHINE_CHPE_X86          0x3A64
 
 // begin_winnt
  
@@ -1064,7 +1064,7 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 //
 
 #define IMAGE_REL_ARM64_ABSOLUTE        0x0000  // No relocation required
-#define IMAGE_REL_ARM64_ADDR32          0x0001  // 32 bit address. Review! do we need it? 
+#define IMAGE_REL_ARM64_ADDR32          0x0001  // 32 bit address. Review! do we need it?
 #define IMAGE_REL_ARM64_ADDR32NB        0x0002  // 32 bit address w/o image base (RVA: for Data/PData/XData)
 #define IMAGE_REL_ARM64_BRANCH26        0x0003  // 26 bit offset << 2 & sign ext. for B & BL
 #define IMAGE_REL_ARM64_PAGEBASE_REL21  0x0004  // ADRP
@@ -1078,6 +1078,7 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 #define IMAGE_REL_ARM64_TOKEN           0x000C
 #define IMAGE_REL_ARM64_SECTION         0x000D  // Section table index
 #define IMAGE_REL_ARM64_ADDR64          0x000E  // 64 bit address
+#define IMAGE_REL_ARM64_BRANCH19        0x000F  // 19 bit offset << 2 & sign ext. for conditional B
 
 //
 // x64 relocations
@@ -1343,6 +1344,8 @@ typedef IMAGE_BASE_RELOCATION UNALIGNED * PIMAGE_BASE_RELOCATION;
 #define IMAGE_ARCHIVE_PAD                    "\n"
 #define IMAGE_ARCHIVE_LINKER_MEMBER          "/               "
 #define IMAGE_ARCHIVE_LONGNAMES_MEMBER       "//              "
+#define IMAGE_ARCHIVE_HYBRIDMAP_MEMBER       "/<HYBRIDMAP>/   "
+
 
 typedef struct _IMAGE_ARCHIVE_MEMBER_HEADER {
     UCHAR    Name[16];                          // File member name - `/' terminated.
@@ -1639,6 +1642,8 @@ typedef struct _IMAGE_RESOURCE_DATA_ENTRY {
     ULONG   Reserved;
 } IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
 
+// begin_ntoshvp
+
 //
 // Code Integrity in loadconfig (CI)
 //
@@ -1664,11 +1669,80 @@ typedef struct _IMAGE_DYNAMIC_RELOCATION_TABLE {
 // Dynamic value relocation entries following IMAGE_DYNAMIC_RELOCATION_TABLE
 //
 
-typedef struct _IMAGE_DYNAMIC_RELOCATION {
-    PVOID Symbol;
-    ULONG BaseRelocSize;
+#include "pshpack1.h"
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION32 {
+    ULONG      Symbol;
+    ULONG      BaseRelocSize;
 //  IMAGE_BASE_RELOCATION BaseRelocations[0];
-} IMAGE_DYNAMIC_RELOCATION, *PIMAGE_DYNAMIC_RELOCATION;
+} IMAGE_DYNAMIC_RELOCATION32, *PIMAGE_DYNAMIC_RELOCATION32;
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION64 {
+    ULONGLONG  Symbol;
+    ULONG      BaseRelocSize;
+//  IMAGE_BASE_RELOCATION BaseRelocations[0];
+} IMAGE_DYNAMIC_RELOCATION64, *PIMAGE_DYNAMIC_RELOCATION64;
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION32_V2 {
+    ULONG      HeaderSize;
+    ULONG      FixupInfoSize;
+    ULONG      Symbol;
+    ULONG      SymbolGroup;
+    ULONG      Flags;
+    // ...     variable length header fields
+    // UCHAR   FixupInfo[FixupInfoSize]
+} IMAGE_DYNAMIC_RELOCATION32_V2, *PIMAGE_DYNAMIC_RELOCATION32_V2;
+
+typedef struct _IMAGE_DYNAMIC_RELOCATION64_V2 {
+    ULONG      HeaderSize;
+    ULONG      FixupInfoSize;
+    ULONGLONG  Symbol;
+    ULONG      SymbolGroup;
+    ULONG      Flags;
+    // ...     variable length header fields
+    // UCHAR   FixupInfo[FixupInfoSize]
+} IMAGE_DYNAMIC_RELOCATION64_V2, *PIMAGE_DYNAMIC_RELOCATION64_V2;
+
+#include "poppack.h"                    // Back to 4 byte packing
+
+#ifdef _WIN64
+typedef IMAGE_DYNAMIC_RELOCATION64          IMAGE_DYNAMIC_RELOCATION;
+typedef PIMAGE_DYNAMIC_RELOCATION64         PIMAGE_DYNAMIC_RELOCATION;
+typedef IMAGE_DYNAMIC_RELOCATION64_V2       IMAGE_DYNAMIC_RELOCATION_V2;
+typedef PIMAGE_DYNAMIC_RELOCATION64_V2      PIMAGE_DYNAMIC_RELOCATION_V2;
+#else
+typedef IMAGE_DYNAMIC_RELOCATION32          IMAGE_DYNAMIC_RELOCATION;
+typedef PIMAGE_DYNAMIC_RELOCATION32         PIMAGE_DYNAMIC_RELOCATION;
+typedef IMAGE_DYNAMIC_RELOCATION32_V2       IMAGE_DYNAMIC_RELOCATION_V2;
+typedef PIMAGE_DYNAMIC_RELOCATION32_V2      PIMAGE_DYNAMIC_RELOCATION_V2;
+#endif
+
+//
+// Defined symbolic dynamic relocation entries.
+//
+
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_RF_PROLOGUE   0x00000001
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_RF_EPILOGUE   0x00000002
+
+#include "pshpack1.h"
+
+typedef struct _IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER {
+    UCHAR      PrologueByteCount;
+    // UCHAR   PrologueBytes[PrologueByteCount];
+} IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER;
+typedef IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER UNALIGNED * PIMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER;
+
+typedef struct _IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER {
+    ULONG      EpilogueCount;
+    UCHAR      EpilogueByteCount;
+    UCHAR      BranchDescriptorElementSize;
+    USHORT     BranchDescriptorCount;
+    // UCHAR   BranchDescriptors[...];
+    // UCHAR   BranchDescriptorBitMap[...];
+} IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER;
+typedef IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER UNALIGNED * PIMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER;
+
+#include "poppack.h"                    // Back to 4 byte packing
 
 //
 // Load Configuration Directory Entry
@@ -1706,7 +1780,14 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     ULONG   GuardLongJumpTargetTable;       // VA
     ULONG   GuardLongJumpTargetCount;
     ULONG   DynamicValueRelocTable;         // VA
-    ULONG   HybridMetadataPointer;
+    ULONG   CHPEMetadataPointer;
+    ULONG   GuardRFFailureRoutine;          // VA
+    ULONG   GuardRFFailureRoutineFunctionPointer; // VA
+    ULONG   DynamicValueRelocTableOffset;
+    USHORT  DynamicValueRelocTableSection;
+    USHORT  Reserved2;
+    ULONG   GuardRFVerifyStackPointerFunctionPointer; // VA
+    ULONG   HotPatchTableOffset;
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -1741,21 +1822,33 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     ULONGLONG  GuardLongJumpTargetTable;       // VA
     ULONGLONG  GuardLongJumpTargetCount;
     ULONGLONG  DynamicValueRelocTable;         // VA
-    ULONGLONG  HybridMetadataPointer;          // VA
+    ULONGLONG  CHPEMetadataPointer;            // VA
+    ULONGLONG  GuardRFFailureRoutine;          // VA
+    ULONGLONG  GuardRFFailureRoutineFunctionPointer; // VA
+    ULONG      DynamicValueRelocTableOffset;
+    USHORT     DynamicValueRelocTableSection;
+    USHORT     Reserved2;
+    ULONGLONG  GuardRFVerifyStackPointerFunctionPointer; // VA
+    ULONG      HotPatchTableOffset;
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
+// end_ntoshvp 
 // end_winnt
 
-typedef struct _IMAGE_HYBRID_METADATA_X86 {
+typedef struct _IMAGE_CHPE_METADATA_X86 {
     ULONG  Version;
+    ULONG  CHPECodeAddressRangeOffset;
+    ULONG  CHPECodeAddressRangeCount;
     ULONG  WowA64ExceptionHandlerFunctionPointer;
     ULONG  WowA64DispatchCallFunctionPointer;
     ULONG  WowA64DispatchIndirectCallFunctionPointer;
-    ULONG  HybridCodeAddressRangeOffset;
-    ULONG  HybridCodeAddressRangeCount;
-} IMAGE_HYBRID_METADATA_X86, *PIMAGE_HYBRID_METADATA_X86;
+    ULONG  WowA64DispatchIndirectCallCfgFunctionPointer;
+    ULONG  WowA64DispatchRetFunctionPointer;
+    ULONG  WowA64DispatchRetLeafFunctionPointer;
+    ULONG  WowA64DispatchJumpFunctionPointer;
+} IMAGE_CHPE_METADATA_X86, *PIMAGE_CHPE_METADATA_X86;
 
-typedef struct _IMAGE_HYBRID_RANGE_ENTRY {
+typedef struct _IMAGE_CHPE_RANGE_ENTRY {
     union {
         ULONG StartOffset;
         struct {
@@ -1765,9 +1858,10 @@ typedef struct _IMAGE_HYBRID_RANGE_ENTRY {
     } DUMMYUNIONNAME;
 
     ULONG Length;
-} IMAGE_HYBRID_RANGE_ENTRY, *PIMAGE_HYBRID_RANGE_ENTRY;
+} IMAGE_CHPE_RANGE_ENTRY, *PIMAGE_CHPE_RANGE_ENTRY;
 
 // begin_winnt
+// begin_ntoshvp
 
 #ifdef _WIN64
 typedef IMAGE_LOAD_CONFIG_DIRECTORY64     IMAGE_LOAD_CONFIG_DIRECTORY;
@@ -1777,15 +1871,63 @@ typedef IMAGE_LOAD_CONFIG_DIRECTORY32     IMAGE_LOAD_CONFIG_DIRECTORY;
 typedef PIMAGE_LOAD_CONFIG_DIRECTORY32    PIMAGE_LOAD_CONFIG_DIRECTORY;
 #endif
 
+// end_ntoshvp
+
+typedef struct _IMAGE_HOT_PATCH_INFO {
+    ULONG Version;
+    ULONG Size;
+    ULONG SequenceNumber;
+    ULONG BaseImageList;
+    ULONG BaseImageCount;
+} IMAGE_HOT_PATCH_INFO, *PIMAGE_HOT_PATCH_INFO;
+
+typedef struct _IMAGE_HOT_PATCH_BASE {
+    ULONG SequenceNumber;
+    ULONG Flags;
+    ULONG OriginalTimeDateStamp;
+    ULONG OriginalCheckSum;
+    ULONG CodeIntegrityInfo;
+    ULONG CodeIntegritySize;
+    ULONG PatchTable;
+} IMAGE_HOT_PATCH_BASE, *PIMAGE_HOT_PATCH_BASE;
+
+typedef struct _IMAGE_HOT_PATCH_HASHES {
+    UCHAR SHA256[32];
+    UCHAR SHA1[20];
+} IMAGE_HOT_PATCH_HASHES, *PIMAGE_HOT_PATCH_HASHES;
+
+#define IMAGE_HOT_PATCH_BASE_OBLIGATORY     0x00000001
+
+#define IMAGE_HOT_PATCH_CHUNK_INVERSE       0x80000000
+#define IMAGE_HOT_PATCH_CHUNK_OBLIGATORY    0x40000000
+#define IMAGE_HOT_PATCH_CHUNK_RESERVED      0x3FF03000
+#define IMAGE_HOT_PATCH_CHUNK_TYPE          0x000FC000
+#define IMAGE_HOT_PATCH_CHUNK_SOURCE_RVA    0x00008000
+#define IMAGE_HOT_PATCH_CHUNK_TARGET_RVA    0x00004000
+#define IMAGE_HOT_PATCH_CHUNK_SIZE          0x00000FFF
+
+#define IMAGE_HOT_PATCH_NONE                0x00000000
+#define IMAGE_HOT_PATCH_FUNCTION            0x0001C000
+#define IMAGE_HOT_PATCH_ABSOLUTE            0x0002C000
+#define IMAGE_HOT_PATCH_REL32               0x0003C000
+#define IMAGE_HOT_PATCH_CALL_TARGET         0x00044000
+#define IMAGE_HOT_PATCH_INDIRECT            0x0005C000
+#define IMAGE_HOT_PATCH_NO_CALL_TARGET      0x00064000
+#define IMAGE_HOT_PATCH_DYNAMIC_VALUE       0x00078000
+
 #define IMAGE_GUARD_CF_INSTRUMENTED                    0x00000100 // Module performs control flow integrity checks using system-supplied support
 #define IMAGE_GUARD_CFW_INSTRUMENTED                   0x00000200 // Module performs control flow and write integrity checks
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_PRESENT          0x00000400 // Module contains valid control flow target metadata
 #define IMAGE_GUARD_SECURITY_COOKIE_UNUSED             0x00000800 // Module does not make use of the /GS security cookie
 #define IMAGE_GUARD_PROTECT_DELAYLOAD_IAT              0x00001000 // Module supports read only delay load IAT
 #define IMAGE_GUARD_DELAYLOAD_IAT_IN_ITS_OWN_SECTION   0x00002000 // Delayload import table in its own .didat section (with nothing else in it) that can be freely reprotected
-#define IMAGE_GUARD_CF_EXPORT_SUPPRESSION_INFO_PRESENT 0x00004000 // Module contains suppressed export information
+#define IMAGE_GUARD_CF_EXPORT_SUPPRESSION_INFO_PRESENT 0x00004000 // Module contains suppressed export information. This also infers that the address taken
+                                                                  // taken IAT table is also present in the load config.
 #define IMAGE_GUARD_CF_ENABLE_EXPORT_SUPPRESSION       0x00008000 // Module enables suppression of exports
 #define IMAGE_GUARD_CF_LONGJUMP_TABLE_PRESENT          0x00010000 // Module contains longjmp target information
+#define IMAGE_GUARD_RF_INSTRUMENTED                    0x00020000 // Module contains return flow instrumentation and metadata
+#define IMAGE_GUARD_RF_ENABLE                          0x00040000 // Module requests that the OS enable return flow protection
+#define IMAGE_GUARD_RF_STRICT                          0x00080000 // Module requests that the OS enable return flow protection in strict mode
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK        0xF0000000 // Stride of Guard CF function table encoded in these bits (additional count of bytes per element)
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_SHIFT       28         // Shift to right-justify Guard CF function table stride
 
@@ -1794,7 +1936,7 @@ typedef PIMAGE_LOAD_CONFIG_DIRECTORY32    PIMAGE_LOAD_CONFIG_DIRECTORY;
 //
 
 #define IMAGE_GUARD_FLAG_FID_SUPPRESSED               0x01       // The containing GFID entry is suppressed
-#define IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED            0x02       // The containing GFID entry is suppressed
+#define IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED            0x02       // The containing GFID entry is export suppressed
 
 //
 // WIN CE Exception table format
@@ -1935,6 +2077,7 @@ typedef struct _IMAGE_DEBUG_DIRECTORY {
 #define IMAGE_DEBUG_TYPE_POGO             13
 #define IMAGE_DEBUG_TYPE_ILTCG            14
 #define IMAGE_DEBUG_TYPE_MPX              15
+#define IMAGE_DEBUG_TYPE_REPRO            16
 
 // end_winnt
 
@@ -2134,7 +2277,8 @@ typedef enum IMPORT_OBJECT_NAME_TYPE
     IMPORT_OBJECT_NAME = 1,             // Import name == public symbol name.
     IMPORT_OBJECT_NAME_NO_PREFIX = 2,   // Import name == public symbol name skipping leading ?, @, or optionally _.
     IMPORT_OBJECT_NAME_UNDECORATE = 3,  // Import name == public symbol name skipping leading ?, @, or optionally _
-                                        // and truncating at first @
+                                        //  and truncating at first @.
+    IMPORT_OBJECT_NAME_EXPORTAS = 4,    // Import name == a name is explicitly provided after the DLL name.
 } IMPORT_OBJECT_NAME_TYPE;
 
 // end_winnt

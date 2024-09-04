@@ -54,6 +54,23 @@ typedef [v1_enum] enum AMSI_ATTRIBUTE
     // is self-contained. Mandatory.
     AMSI_ATTRIBUTE_SESSION = 4,
 
+    // ULONGLONG, size of the Microsoft Edge redirect chain. Optional.
+    AMSI_ATTRIBUTE_REDIRECT_CHAIN_SIZE = 5,
+
+    // PVOID, memory address of the Microsoft Edge redirect chain. Optional.
+    AMSI_ATTRIBUTE_REDIRECT_CHAIN_ADDRESS = 6,
+
+    // "All Attribute" buffer is provided by Microsoft Edge to pass future attributes without
+    // requiring adding new attributes to the amsi interface. It is a multi-string with the following
+    // format:
+    //   L"Attribute1\0Value1\0Attribute2\0Value2\0...AttributeN\0ValueN\0\0"
+
+    // ULONGLONG, size of the "All Attribute" Microsoft Edge buffer. Optional.
+    AMSI_ATTRIBUTE_ALL_SIZE = 7,
+
+    // PVOID, memory address of the "All Attribute" Microsoft Edge buffer. Optional.
+    AMSI_ATTRIBUTE_ALL_ADDRESS = 8,
+
 } AMSI_ATTRIBUTE;
 
 typedef [v1_enum] enum AMSI_UAC_REQUEST_TYPE

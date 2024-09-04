@@ -456,10 +456,11 @@ typedef enum _VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE {
     VideoFindAdapterCallout = 4,
     VideoPnpNotifyCallout = 7,
     VideoDxgkDisplaySwitchCallout = 8,
-    VideoDxgkMonitorEventCallout = 9,
     VideoDxgkFindAdapterTdrCallout = 10,
     VideoDxgkHardwareProtectionTeardown = 11,
     VideoRepaintDesktop = 12,
+    VideoUpdateCursor = 13,
+    VideoDisableMultiPlaneOverlay = 14,
 } VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE;
 
 #define DXGK_WIN32K_PARAM_FLAG_UPDATEREGISTRY 1         // Saves the mode switch information into the registry.

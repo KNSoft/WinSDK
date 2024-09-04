@@ -36,6 +36,24 @@ interface IEditionUpgradeHelper : IUnknown
         [out]                   BOOL*                       isGenuine
     );
 
+    HRESULT
+    DisableAcgEnforcement(
+        [in]                    BOOL                        isEnforcementSet
+    );
+
+};
+
+[
+object,
+uuid(80AE3FC2-2580-4483-B427-9215C56E1604),
+]
+interface IEnableCodeGeneration: IUnknown
+{
+    HRESULT
+    DisableAcgEnforcementWithBinaryName(
+        [in]                    BOOL                        isEnforcementSet,
+        [in, string]            LPCWSTR                     binaryName
+    );
 };
 
 [
@@ -68,6 +86,12 @@ interface IEditionUpgradeBroker: IUnknown
     CanUpgrade(
         void
     );
+
+    HRESULT
+    DisableAcgEnforcement(
+        [in]                    BOOL                        isEnforcementSet,
+        [in, string]            BSTR                        binaryName
+    );
 };
 
 
@@ -83,6 +107,7 @@ library EditionUpgradeHelperLib
     coclass EditionUpgradeHelper
     {
         [default] interface IEditionUpgradeHelper;
+        interface IEnableCodeGeneration;
     }
 
     [

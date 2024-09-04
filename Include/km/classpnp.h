@@ -2094,7 +2094,13 @@ typedef struct _CLASS_FUNCTION_SUPPORT_INFO {
     // user setting in registry
     BOOLEAN     RegAccessAlignmentQueryNotSupported;
     BOOLEAN     AsynchronousNotificationSupported;
-    UCHAR       Reserved[2];
+    
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+    BOOLEAN UseModeSense10;
+    UCHAR Reserved;
+#else
+    UCHAR Reserved[2];
+#endif
 
     // cached data
     CLASS_VPD_B0_DATA           BlockLimitsData;
@@ -2898,6 +2904,19 @@ ClassModeSense(
     _In_reads_bytes_(Length) PCHAR ModeSenseBuffer,
     _In_ ULONG Length,
     _In_ UCHAR PageMode
+    );
+
+/*++
+
+Internal function - described in classpnp\class.c in ddk sources
+
+--*/
+SCSIPORT_API
+NTSTATUS 
+ClassModeSenseTranslate(
+    _In_ PDEVICE_OBJECT DeviceObject,
+    _In_ PMODE_PARAMETER_HEADER ModeSenseData,
+    _Inout_ PULONG ModeSenseBufferSize
     );
 
 /*++

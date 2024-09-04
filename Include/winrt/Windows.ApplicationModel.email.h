@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -1410,6 +1410,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage3_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Email {
+                interface IEmailMessage4;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch;
@@ -1686,18 +1706,18 @@ interface IEmailAttachment;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2956 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4505 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2956 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4505 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2956_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2956_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4505_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4505_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0001 */
 /* [local] */ 
@@ -1732,18 +1752,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2957 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4506 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2957 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4506 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2957_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2957_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4506_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4506_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0002 */
 /* [local] */ 
@@ -1791,18 +1811,18 @@ enum EmailCertificateValidationStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2958 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4507 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2958 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4507 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2958_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2958_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4507_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4507_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0003 */
 /* [local] */ 
@@ -1837,18 +1857,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2959 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4508 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2959 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4508 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2959_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2959_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4508_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4508_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0004 */
 /* [local] */ 
@@ -1907,18 +1927,18 @@ interface IEmailConversation;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2960 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4509 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2960 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4509 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2960_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2960_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4509_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4509_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0005 */
 /* [local] */ 
@@ -1953,18 +1973,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2961 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4510 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2961 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4510 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2961_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2961_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4510_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4510_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0006 */
 /* [local] */ 
@@ -2023,18 +2043,18 @@ interface IEmailFolder;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2962 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4511 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2962 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4511 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2962_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2962_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4511_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4511_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0007 */
 /* [local] */ 
@@ -2069,18 +2089,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2963 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4512 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2963 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4512 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2963_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2963_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4512_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4512_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0008 */
 /* [local] */ 
@@ -2139,18 +2159,18 @@ interface IEmailMailbox;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2964 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4513 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2964 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4513 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2964_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2964_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4513_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4513_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0009 */
 /* [local] */ 
@@ -2185,18 +2205,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2965 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4514 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2965 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4514 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2965_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2965_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4514_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4514_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0010 */
 /* [local] */ 
@@ -2255,18 +2275,18 @@ interface IEmailMailboxAction;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2966 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4515 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2966 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4515 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2966_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2966_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4515_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4515_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0011 */
 /* [local] */ 
@@ -2301,18 +2321,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2967 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4516 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2967 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4516 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2967_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2967_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4516_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4516_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0012 */
 /* [local] */ 
@@ -2371,18 +2391,18 @@ interface IEmailMailboxChange;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2968 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4517 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2968 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4517 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2968_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2968_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4517_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4517_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0013 */
 /* [local] */ 
@@ -2417,18 +2437,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2969 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4518 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2969 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4518 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2969_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2969_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4518_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4518_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0014 */
 /* [local] */ 
@@ -2487,18 +2507,18 @@ interface IEmailMessage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2970 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4519 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2970 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4519 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2970_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2970_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4519_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4519_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0015 */
 /* [local] */ 
@@ -2533,18 +2553,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2971 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4520 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2971 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4520 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2971_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2971_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4520_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4520_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0016 */
 /* [local] */ 
@@ -2603,18 +2623,18 @@ interface IEmailRecipient;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2972 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4521 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2972 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4521 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2972_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2972_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4521_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4521_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0017 */
 /* [local] */ 
@@ -2649,18 +2669,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2973 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4522 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2973 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4522 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2973_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2973_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4522_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4522_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0018 */
 /* [local] */ 
@@ -2719,18 +2739,18 @@ interface IEmailRecipientResolutionResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2974 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4523 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2974 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4523 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2974_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2974_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4523_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4523_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0019 */
 /* [local] */ 
@@ -2765,18 +2785,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2975 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4524 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2975 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4524 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2975_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2975_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4524_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4524_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0020 */
 /* [local] */ 
@@ -2811,18 +2831,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2976 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4525 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2976 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4525 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2976_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2976_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4525_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4525_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0021 */
 /* [local] */ 
@@ -2857,18 +2877,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2977 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4526 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2977 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4526 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2977_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2977_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4526_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4526_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0022 */
 /* [local] */ 
@@ -2903,18 +2923,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0022_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0022_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2978 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4527 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2978 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4527 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2978_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2978_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4527_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4527_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0023 */
 /* [local] */ 
@@ -2949,18 +2969,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2979 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4528 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2979 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4528 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2979_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2979_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4528_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4528_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0024 */
 /* [local] */ 
@@ -2995,18 +3015,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0024_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0024_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2980 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4529 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2980 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4529 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2980_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2980_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4529_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4529_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0025 */
 /* [local] */ 
@@ -3041,18 +3061,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2981 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4530 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2981 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4530 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2981_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2981_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4530_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4530_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0026 */
 /* [local] */ 
@@ -3087,18 +3107,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0026_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0026_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2982 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4531 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2982 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4531 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2982_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2982_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4531_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4531_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0027 */
 /* [local] */ 
@@ -3133,18 +3153,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2983 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4532 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2983 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4532 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2983_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2983_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4532_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4532_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0028 */
 /* [local] */ 
@@ -3179,18 +3199,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0028_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0028_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2984 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4533 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2984 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4533 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2984_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2984_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4533_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4533_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0029 */
 /* [local] */ 
@@ -3225,18 +3245,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2985 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4534 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2985 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4534 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2985_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2985_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4534_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4534_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0030 */
 /* [local] */ 
@@ -3271,18 +3291,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0030_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0030_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2986 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4535 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2986 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4535 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2986_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2986_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4535_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4535_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0031 */
 /* [local] */ 
@@ -3317,18 +3337,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2987 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4536 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2987 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4536 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2987_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2987_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4536_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4536_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0032 */
 /* [local] */ 
@@ -3363,18 +3383,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0032_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0032_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2988 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4537 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2988 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4537 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2988_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2988_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4537_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4537_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0033 */
 /* [local] */ 
@@ -3409,18 +3429,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2989 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4538 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2989 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4538 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2989_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2989_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4538_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4538_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0034 */
 /* [local] */ 
@@ -3455,18 +3475,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0034_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0034_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2990 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4539 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2990 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4539 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2990_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2990_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4539_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4539_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0035 */
 /* [local] */ 
@@ -3525,18 +3545,18 @@ interface IEmailConversationBatch;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2991 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4540 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2991 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4540 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2991_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2991_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4540_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4540_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0036 */
 /* [local] */ 
@@ -3571,18 +3591,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0036_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0036_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2992 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4541 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2992 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4541 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2992_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2992_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4541_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4541_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0037 */
 /* [local] */ 
@@ -3617,18 +3637,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2993 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4542 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2993 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4542 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2993_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2993_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4542_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4542_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0038 */
 /* [local] */ 
@@ -3663,18 +3683,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0038_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0038_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2994 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4543 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2994 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4543 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2994_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2994_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4543_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4543_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0039 */
 /* [local] */ 
@@ -3733,18 +3753,18 @@ interface IEmailItemCounts;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2995 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4544 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2995 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4544 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2995_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2995_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4544_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4544_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0040 */
 /* [local] */ 
@@ -3779,18 +3799,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0040_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0040_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2996 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4545 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2996 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4545 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2996_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2996_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4545_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4545_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0041 */
 /* [local] */ 
@@ -3825,18 +3845,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2997 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4546 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2997 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4546 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2997_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2997_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4546_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4546_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0042 */
 /* [local] */ 
@@ -3871,18 +3891,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0042_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0042_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2998 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4547 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2998 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4547 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2998_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2998_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4547_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4547_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0043 */
 /* [local] */ 
@@ -3941,18 +3961,18 @@ interface IEmailMailboxAutoReplySettings;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2999 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4548 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2999 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4548 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2999_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_2999_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4548_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4548_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0044 */
 /* [local] */ 
@@ -3987,18 +4007,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0044_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0044_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3000 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4549 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3000 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4549 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3000_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4549_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4549_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0045 */
 /* [local] */ 
@@ -4057,18 +4077,18 @@ interface IEmailMailboxCreateFolderResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3001 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4550 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3001 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4550 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3001_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4550_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4550_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0046 */
 /* [local] */ 
@@ -4103,18 +4123,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0046_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0046_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3002 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4551 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3002 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4551 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3002_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4551_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4551_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0047 */
 /* [local] */ 
@@ -4162,18 +4182,18 @@ enum EmailMailboxDeleteFolderStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3003 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4552 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3003 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4552 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3003_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4552_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4552_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0048 */
 /* [local] */ 
@@ -4208,18 +4228,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0048_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0048_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3004 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4553 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3004 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4553 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3004_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4553_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4553_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0049 */
 /* [local] */ 
@@ -4267,18 +4287,18 @@ enum EmailMailboxEmptyFolderStatus;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3005 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4554 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3005 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4554 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4554_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4554_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0050 */
 /* [local] */ 
@@ -4313,18 +4333,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0050_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0050_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3006 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4555 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3006 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4555 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3006_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4555_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4555_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0051 */
 /* [local] */ 
@@ -4359,18 +4379,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3007 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4556 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3007 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4556 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3007_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4556_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4556_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0052 */
 /* [local] */ 
@@ -4405,18 +4425,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0052_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0052_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3008 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4557 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3008 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4557 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3008_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4557_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4557_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0053 */
 /* [local] */ 
@@ -4475,18 +4495,18 @@ interface IEmailMessageBatch;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3009 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4558 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3009 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4558 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3009_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4558_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4558_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0054 */
 /* [local] */ 
@@ -4521,18 +4541,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0054_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0054_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3010 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4559 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3010 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4559 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3010_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4559_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4559_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0055 */
 /* [local] */ 
@@ -4591,18 +4611,18 @@ interface IEmailStore;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3011 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4560 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3011 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4560 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3011_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4560_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4560_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0056 */
 /* [local] */ 
@@ -4637,18 +4657,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0056_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0056_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3012 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4561 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3012 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4561 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3012_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4561_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4561_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0057 */
 /* [local] */ 
@@ -4683,18 +4703,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4562 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4562 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4562_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4562_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0058 */
 /* [local] */ 
@@ -4729,18 +4749,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0058_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0058_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3014 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4563 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3014 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4563 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3014_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4563_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4563_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0059 */
 /* [local] */ 
@@ -4775,18 +4795,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0059_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0059_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3015 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4564 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3015 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4564 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3015_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4564_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4564_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0060 */
 /* [local] */ 
@@ -4821,18 +4841,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0060_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0060_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3016 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4565 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3016 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4565 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3016_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4565_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4565_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0061 */
 /* [local] */ 
@@ -4867,18 +4887,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0061_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0061_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3017 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4566 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3017 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4566 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4566_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4566_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0062 */
 /* [local] */ 
@@ -4913,18 +4933,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0062_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0062_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3018 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4567 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3018 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4567 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4567_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4567_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0063 */
 /* [local] */ 
@@ -4959,18 +4979,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0063_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0063_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3019 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4568 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3019 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4568 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4568_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4568_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0064 */
 /* [local] */ 
@@ -5005,18 +5025,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0064_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0064_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4569 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3020 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4569 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3020_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4569_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4569_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0065 */
 /* [local] */ 
@@ -5051,18 +5071,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0065_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0065_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4570 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3021 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4570 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4570_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4570_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0066 */
 /* [local] */ 
@@ -5097,18 +5117,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0066_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0066_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4571 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4571 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4571_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4571_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0067 */
 /* [local] */ 
@@ -5143,18 +5163,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0067_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0067_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4572 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4572 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4572_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4572_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0068 */
 /* [local] */ 
@@ -5189,18 +5209,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0068_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0068_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4573 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3024 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4573 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4573_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4573_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0069 */
 /* [local] */ 
@@ -5248,18 +5268,18 @@ enum EmailMailboxSmimeEncryptionAlgorithm;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0069_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0069_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4574 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3025 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4574 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4574_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4574_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0070 */
 /* [local] */ 
@@ -5307,18 +5327,18 @@ enum EmailMailboxSmimeSigningAlgorithm;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0070_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0070_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4575 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3026 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4575 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4575_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4575_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0071 */
 /* [local] */ 
@@ -5377,18 +5397,18 @@ interface IEmailMailboxChangedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0071_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0071_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4576 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3027 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4576 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4576_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4576_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0072 */
 /* [local] */ 
@@ -5450,18 +5470,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0072_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0072_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4577 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3028 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4577 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4577_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4577_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0073 */
 /* [local] */ 
@@ -5496,18 +5516,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0073_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0073_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4578 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3029 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4578 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4578_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4578_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0074 */
 /* [local] */ 
@@ -5542,18 +5562,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0074_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0074_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4579 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3030 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4579 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3030_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4579_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4579_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0075 */
 /* [local] */ 
@@ -5588,18 +5608,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0075_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0075_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4580 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3031 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4580 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4580_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4580_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0076 */
 /* [local] */ 
@@ -5634,18 +5654,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0076_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0076_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4581 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3032 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4581 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4581_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4581_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0077 */
 /* [local] */ 
@@ -5680,18 +5700,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0077_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0077_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4582 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3033 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4582 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3033_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4582_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4582_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0078 */
 /* [local] */ 
@@ -5726,18 +5746,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0078_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0078_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4583 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3034 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4583 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3034_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4583_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4583_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0079 */
 /* [local] */ 
@@ -5800,18 +5820,18 @@ interface ICertificate;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0079_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0079_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4584 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3035 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4584 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3035_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4584_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4584_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0080 */
 /* [local] */ 
@@ -5846,18 +5866,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0080_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0080_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4585 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3036 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4585 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3036_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4585_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4585_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0081 */
 /* [local] */ 
@@ -5903,18 +5923,18 @@ struct DateTime;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0081_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0081_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4586 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3037 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4586 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3037_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4586_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4586_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0082 */
 /* [local] */ 
@@ -5960,18 +5980,18 @@ struct TimeSpan;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0082_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0082_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4587 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3038 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4587 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3038_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4587_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4587_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0083 */
 /* [local] */ 
@@ -6006,18 +6026,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0083_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0083_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4588 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3039 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4588 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3039_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4588_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4588_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0084 */
 /* [local] */ 
@@ -6392,6 +6412,7 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CEmail_CEmailStoreAccessType __x
 
 
 #endif
+
 
 
 
@@ -7215,21 +7236,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0084_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0084_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4589 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3040 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4589 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3040_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4589_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4589_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0085 */
 /* [local] */ 
@@ -7404,18 +7426,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0086_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0086_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4590 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3041 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4590 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3041_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4590_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4590_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0087 */
 /* [local] */ 
@@ -7556,18 +7578,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0088_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0088_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4591 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3042 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4591 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4591_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4591_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0089 */
 /* [local] */ 
@@ -7742,18 +7764,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0090_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0090_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4592 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3043 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4592 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4592_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4592_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0091 */
 /* [local] */ 
@@ -7894,18 +7916,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0092_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0092_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4593 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3044 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4593 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3044_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4593_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4593_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0093 */
 /* [local] */ 
@@ -8080,18 +8102,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0094_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0094_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4594 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3045 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4594 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3045_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4594_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4594_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0095 */
 /* [local] */ 
@@ -8232,18 +8254,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0096_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0096_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4595 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3046 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4595 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4595_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4595_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0097 */
 /* [local] */ 
@@ -8418,18 +8440,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0098_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0098_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4596 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3047 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4596 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3047_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4596_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4596_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0099 */
 /* [local] */ 
@@ -8570,18 +8592,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0100_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0100_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4597 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3048 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4597 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4597_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4597_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0101 */
 /* [local] */ 
@@ -8756,18 +8778,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0102_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0102_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4598 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3049 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4598 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3049_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4598_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4598_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0103 */
 /* [local] */ 
@@ -8908,18 +8930,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0104_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0104_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4599 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3050 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4599 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3050_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4599_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4599_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0105 */
 /* [local] */ 
@@ -9094,18 +9116,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0106_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0106_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4600 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3051 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4600 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3051_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4600_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4600_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0107 */
 /* [local] */ 
@@ -9246,18 +9268,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0108_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0108_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4601 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3052 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4601 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3052_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4601_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4601_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0109 */
 /* [local] */ 
@@ -9432,18 +9454,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0110_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0110_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4602 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3053 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4602 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3053_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4602_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4602_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0111 */
 /* [local] */ 
@@ -9584,18 +9606,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0112_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0112_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4603 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3054 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4603 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3054_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4603_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4603_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0113 */
 /* [local] */ 
@@ -9770,18 +9792,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0114_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0114_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4604 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3055 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4604 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3055_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3055_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4604_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4604_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0115 */
 /* [local] */ 
@@ -9922,18 +9944,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0116_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0116_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4605 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3056 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4605 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3056_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3056_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4605_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4605_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0117 */
 /* [local] */ 
@@ -10108,18 +10130,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0118_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0118_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4606 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3057 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4606 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3057_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4606_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4606_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0119 */
 /* [local] */ 
@@ -10260,18 +10282,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0120_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0120_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4607 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3058 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4607 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3058_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4607_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4607_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0121 */
 /* [local] */ 
@@ -10446,18 +10468,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0122_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0122_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4608 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3059 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4608 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3059_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4608_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4608_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0123 */
 /* [local] */ 
@@ -10598,18 +10620,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CEmail__CEmail
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0124_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0124_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4609 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3060 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4609 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3060_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4609_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4609_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0125 */
 /* [local] */ 
@@ -10792,18 +10814,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0126_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0126_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4610 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3061 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4610 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3061_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4610_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4610_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0127 */
 /* [local] */ 
@@ -10986,18 +11008,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0128_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0128_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4611 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3062 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4611 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3062_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4611_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4611_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0129 */
 /* [local] */ 
@@ -11180,18 +11202,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0130_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0130_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4612 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3063 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4612 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3063_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4612_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4612_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0131 */
 /* [local] */ 
@@ -11374,18 +11396,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0132_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0132_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4613 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3064 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4613 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3064_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4613_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4613_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0133 */
 /* [local] */ 
@@ -11568,18 +11590,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0134_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0134_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4614 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3065 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4614 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3065_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4614_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4614_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0135 */
 /* [local] */ 
@@ -11762,18 +11784,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0136_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0136_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4615 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3066 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4615 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4615_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4615_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0137 */
 /* [local] */ 
@@ -11956,18 +11978,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0138_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0138_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4616 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3067 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4616 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4616_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4616_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0139 */
 /* [local] */ 
@@ -12150,18 +12172,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0140_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0140_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4617 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3068 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4617 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4617_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4617_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0141 */
 /* [local] */ 
@@ -12344,18 +12366,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0142_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0142_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4618 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3069 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4618 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4618_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4618_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0143 */
 /* [local] */ 
@@ -12538,18 +12560,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CEmail__CEma
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0144_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0144_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4619 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3070 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4619 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4619_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4619_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0145 */
 /* [local] */ 
@@ -12814,18 +12836,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CEmail__CEmailAt
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0146_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0146_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4620 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3071 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4620 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4620_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4620_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0147 */
 /* [local] */ 
@@ -13090,18 +13112,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CEmail__CEmailMa
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0148_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0148_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4621 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3072 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4621 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4621_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4621_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0149 */
 /* [local] */ 
@@ -13366,18 +13388,18 @@ EXTERN_C const IID IID___FIVector_1_Windows__CApplicationModel__CEmail__CEmailRe
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0150_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0150_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4622 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3073 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4622 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4622_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4622_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0151 */
 /* [local] */ 
@@ -13499,18 +13521,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0152_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0152_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4623 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3074 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4623 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4623_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4623_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0153 */
 /* [local] */ 
@@ -13671,18 +13693,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0154_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0154_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4624 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3075 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4624 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4624_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4624_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0155 */
 /* [local] */ 
@@ -13804,18 +13826,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0156_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0156_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4625 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3076 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4625 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4625_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4625_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0157 */
 /* [local] */ 
@@ -13976,18 +13998,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0158_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0158_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4626 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3077 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4626 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4626_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4626_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0159 */
 /* [local] */ 
@@ -14109,18 +14131,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0160_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0160_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4627 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3078 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4627 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4627_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4627_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0161 */
 /* [local] */ 
@@ -14281,18 +14303,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0162_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0162_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4628 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3079 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4628 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4628_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4628_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0163 */
 /* [local] */ 
@@ -14414,18 +14436,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0164_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0164_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4629 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3080 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4629 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4629_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4629_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0165 */
 /* [local] */ 
@@ -14586,18 +14608,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0166_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0166_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4630 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3081 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4630 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4630_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4630_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0167 */
 /* [local] */ 
@@ -14719,18 +14741,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0168_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0168_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4631 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3082 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4631 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4631_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4631_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0169 */
 /* [local] */ 
@@ -14891,18 +14913,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0170_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0170_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4632 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3083 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4632 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4632_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4632_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0171 */
 /* [local] */ 
@@ -15024,18 +15046,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0172_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0172_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4633 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3084 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4633 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4633_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4633_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0173 */
 /* [local] */ 
@@ -15196,18 +15218,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0174_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0174_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4634 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3085 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4634 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4634_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4634_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0175 */
 /* [local] */ 
@@ -15329,18 +15351,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0176_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0176_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4635 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3086 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4635 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4635_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4635_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0177 */
 /* [local] */ 
@@ -15501,18 +15523,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0178_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0178_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4636 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3087 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4636 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4636_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4636_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0179 */
 /* [local] */ 
@@ -15634,18 +15656,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0180_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0180_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4637 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3088 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4637 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4637_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4637_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0181 */
 /* [local] */ 
@@ -15806,18 +15828,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0182_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0182_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4638 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3089 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4638 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3089_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3089_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4638_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4638_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0183 */
 /* [local] */ 
@@ -15939,18 +15961,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0184_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0184_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4639 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3090 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4639 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3090_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3090_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4639_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4639_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0185 */
 /* [local] */ 
@@ -16111,18 +16133,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0186_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0186_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4640 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3091 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4640 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3091_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3091_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4640_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4640_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0187 */
 /* [local] */ 
@@ -16244,18 +16266,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0188_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0188_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4641 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3092 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4641 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3092_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3092_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4641_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4641_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0189 */
 /* [local] */ 
@@ -16416,18 +16438,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0190_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0190_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4642 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3093 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4642 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3093_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3093_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4642_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4642_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0191 */
 /* [local] */ 
@@ -16549,18 +16571,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0192_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0192_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4643 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3094 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4643 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3094_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3094_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4643_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4643_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0193 */
 /* [local] */ 
@@ -16721,18 +16743,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0194_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0194_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4644 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3095 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4644 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3095_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3095_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4644_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4644_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0195 */
 /* [local] */ 
@@ -16854,18 +16876,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0196_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0196_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4645 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3096 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4645 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3096_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3096_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4645_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4645_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0197 */
 /* [local] */ 
@@ -17026,18 +17048,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CEmail__
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0198_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0198_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4646 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3097 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4646 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3097_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3097_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4646_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4646_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0199 */
 /* [local] */ 
@@ -17159,18 +17181,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0200_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0200_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4647 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3098 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4647 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3098_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3098_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4647_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4647_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0201 */
 /* [local] */ 
@@ -17331,18 +17353,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0202_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0202_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4648 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3099 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4648 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3099_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3099_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4648_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4648_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0203 */
 /* [local] */ 
@@ -17464,18 +17486,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0204_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0204_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4649 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3100 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4649 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3100_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3100_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4649_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4649_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0205 */
 /* [local] */ 
@@ -17636,18 +17658,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0206_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0206_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4650 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3101 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4650 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3101_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3101_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4650_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4650_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0207 */
 /* [local] */ 
@@ -17769,18 +17791,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0208_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0208_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4651 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3102 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4651 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3102_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3102_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4651_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4651_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0209 */
 /* [local] */ 
@@ -17941,18 +17963,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0210_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0210_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4652 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3103 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4652 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3103_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3103_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4652_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4652_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0211 */
 /* [local] */ 
@@ -18074,18 +18096,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0212_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0212_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4653 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3104 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4653 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3104_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3104_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4653_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4653_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0213 */
 /* [local] */ 
@@ -18246,18 +18268,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0214_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0214_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4654 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3105 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4654 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3105_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3105_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4654_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4654_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0215 */
 /* [local] */ 
@@ -18379,18 +18401,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0216_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0216_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4655 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3106 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4655 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3106_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3106_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4655_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4655_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0217 */
 /* [local] */ 
@@ -18551,18 +18573,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0218_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0218_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4656 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3107 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4656 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3107_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3107_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4656_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4656_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0219 */
 /* [local] */ 
@@ -18684,18 +18706,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Win
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0220_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0220_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4657 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3108 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4657 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3108_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3108_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4657_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4657_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0221 */
 /* [local] */ 
@@ -18856,18 +18878,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CApplicati
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0222_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0222_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4658 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3109 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4658 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3109_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3109_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4658_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4658_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0223 */
 /* [local] */ 
@@ -19008,18 +19030,18 @@ EXTERN_C const IID IID___FIReference_1_Windows__CApplicationModel__CEmail__CEmai
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0224_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0224_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0225 */
 /* [local] */ 
@@ -19160,18 +19182,18 @@ EXTERN_C const IID IID___FIReference_1_Windows__CApplicationModel__CEmail__CEmai
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0226_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0226_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0227 */
 /* [local] */ 
@@ -19291,18 +19313,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CEmai
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0228_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0228_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0229 */
 /* [local] */ 
@@ -29484,9 +29506,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage3
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0273 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Email_IEmailMessageBatch[] = L"Windows.ApplicationModel.Email.IEmailMessageBatch";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Email_IEmailMessage4[] = L"Windows.ApplicationModel.Email.IEmailMessage4";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0273 */
@@ -29496,6 +29518,163 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0273_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0273_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Email::IEmailMessage4 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Email {
+                    
+                    MIDL_INTERFACE("317CF181-3E7F-4A05-8394-3E10336DD435")
+                    IEmailMessage4 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ReplyTo( 
+                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CEmail__CEmailRecipient **value) = 0;
+                        
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SentRepresenting( 
+                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Email::IEmailRecipient **value) = 0;
+                        
+                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_SentRepresenting( 
+                            /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Email::IEmailRecipient *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IEmailMessage4 = __uuidof(IEmailMessage4);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ReplyTo )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CApplicationModel__CEmail__CEmailRecipient **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SentRepresenting )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_SentRepresenting )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_get_ReplyTo(This,value)	\
+    ( (This)->lpVtbl -> get_ReplyTo(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_get_SentRepresenting(This,value)	\
+    ( (This)->lpVtbl -> get_SentRepresenting(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_put_SentRepresenting(This,value)	\
+    ( (This)->lpVtbl -> put_SentRepresenting(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessage4_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Email_IEmailMessageBatch[] = L"Windows.ApplicationModel.Email.IEmailMessageBatch";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__
@@ -29628,7 +29807,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageB
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageBatch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageReader_INTERFACE_DEFINED__)
@@ -29636,13 +29815,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageReader_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0274_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageReader_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageReader_INTERFACE_DEFINED__
@@ -29765,7 +29944,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageR
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailMessageReader_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptions_INTERFACE_DEFINED__)
@@ -29773,13 +29952,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptions_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0275_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptions_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptions_INTERFACE_DEFINED__
@@ -29972,7 +30151,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOpt
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptions_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptionsFactory_INTERFACE_DEFINED__)
@@ -29980,13 +30159,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptionsFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0276_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptionsFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptionsFactory_INTERFACE_DEFINED__
@@ -30125,7 +30304,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOpt
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryOptionsFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryTextSearch_INTERFACE_DEFINED__)
@@ -30133,13 +30312,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryTextSearch_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0277_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryTextSearch_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryTextSearch_INTERFACE_DEFINED__
@@ -30312,7 +30491,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryTex
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailQueryTextSearch_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient_INTERFACE_DEFINED__)
@@ -30320,13 +30499,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0278_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient_INTERFACE_DEFINED__
@@ -30479,7 +30658,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipien
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipient_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientFactory_INTERFACE_DEFINED__)
@@ -30487,13 +30666,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientFactory_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0279_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientFactory_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientFactory_INTERFACE_DEFINED__
@@ -30632,7 +30811,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipien
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult_INTERFACE_DEFINED__)
@@ -30640,13 +30819,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0280_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult_INTERFACE_DEFINED__
@@ -30779,7 +30958,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipien
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult2_INTERFACE_DEFINED__)
@@ -30787,13 +30966,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0281_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult2_INTERFACE_DEFINED__
@@ -30926,7 +31105,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipien
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailRecipientResolutionResult2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStore_INTERFACE_DEFINED__)
@@ -30934,13 +31113,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStore_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0282_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStore_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStore_INTERFACE_DEFINED__
@@ -31185,7 +31364,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStore;
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStore_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStoreNotificationTriggerDetails_INTERFACE_DEFINED__)
@@ -31193,13 +31372,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStoreNotificationTriggerDetails_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0283_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStoreNotificationTriggerDetails_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStoreNotificationTriggerDetails_INTERFACE_DEFINED__
@@ -31312,7 +31491,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStoreNot
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CEmail_CIEmailStoreNotificationTriggerDetails_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0285 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Email_EmailAttachment_DEFINED
@@ -31449,13 +31628,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0285 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0284_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0285_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Eemail_0000_0285_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

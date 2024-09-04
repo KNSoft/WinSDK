@@ -19,6 +19,7 @@
 #include <minwindef.h>
 
 /* APISET_NAME: api-ms-win-core-handle-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -53,7 +54,7 @@ WINBASEAPI
 BOOL
 WINAPI
 CloseHandle(
-    _In_ HANDLE hObject
+    _In_ _Post_ptr_invalid_ HANDLE hObject
     );
 
 

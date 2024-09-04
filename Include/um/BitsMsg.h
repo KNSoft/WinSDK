@@ -762,6 +762,42 @@
 #define BG_E_WATCHDOG_TIMEOUT            0x80200069L
 
 //
+// MessageId: BG_E_APP_PACKAGE_NOT_FOUND
+//
+// MessageText:
+//
+// An app package matching the job owner or COM caller was not found.
+//
+#define BG_E_APP_PACKAGE_NOT_FOUND       0x8020006AL
+
+//
+// MessageId: BG_E_APP_PACKAGE_SCENARIO_NOT_SUPPORTED
+//
+// MessageText:
+//
+// BITS usage by app packages cannot be supported on this device because one or more dependencies are missing.
+//
+#define BG_E_APP_PACKAGE_SCENARIO_NOT_SUPPORTED 0x8020006BL
+
+//
+// MessageId: BG_E_DATABASE_CORRUPT
+//
+// MessageText:
+//
+// BITS persistent state corruption was detected. The necessary steps will be taken to fix this issue once BITS is restarted. BITS will now shutdown.
+//
+#define BG_E_DATABASE_CORRUPT            0x8020006CL
+
+//
+// MessageId: BG_E_RANDOM_ACCESS_NOT_SUPPORTED
+//
+// MessageText:
+//
+// BITS IBackgroundCopyFile6 methods are not supported in SMB, dynamic content, multirange, upload, or upload-reply transfers.
+//
+#define BG_E_RANDOM_ACCESS_NOT_SUPPORTED 0x8020006DL
+
+//
 // MessageId: BG_E_HTTP_ERROR_100
 //
 // MessageText:

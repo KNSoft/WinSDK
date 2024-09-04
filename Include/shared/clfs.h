@@ -307,7 +307,7 @@ typedef CLS_RECORD_TYPE CLFS_RECORD_TYPE, *PCLFS_RECORD_TYPE, **PPCLFS_RECORD_TY
 //
 // CLS_CONTEXT_MODE
 //
-// The context mode specifies the dirction and access methods used to scan the
+// The context mode specifies the direction and access methods used to scan the
 // log file. 
 //
 
@@ -360,7 +360,7 @@ typedef struct _CLFS_NODE_ID
 //  CLS_WRITE_ENTRY
 //
 // Write entry specifying the contents of a user buffer and length that are
-// marshalled in the space reservation and append interface of the CLS API.
+// marshaled in the space reservation and append interface of the CLS API.
 //
 
 typedef struct _CLS_WRITE_ENTRY
@@ -400,7 +400,7 @@ typedef GUID CLFS_LOG_ID;
 typedef struct _CLS_INFORMATION
 {
     LONGLONG TotalAvailable;                            // Total log data space available.
-    LONGLONG CurrentAvailable;                          // Useable space in the log file.
+    LONGLONG CurrentAvailable;                          // Usable space in the log file.
     LONGLONG TotalReservation;                       // Space reserved for UNDO's (aggregate for physical log)
     ULONGLONG BaseFileSize;                             // Size of the base log file.
     ULONGLONG ContainerSize;                            // Uniform size of log containers.
@@ -509,7 +509,7 @@ typedef struct _CLFS_PHYSICAL_LSN_INFORMATION
 //
 // CLS_CONTAINER_STATE
 //
-// At any point in time a container could be inactive or unitialized, active,
+// At any point in time a container could be inactive or uninitialized, active,
 // pending deletion from the list of free containers, pending archival, or 
 // pending deletion while waiting to be archived.
 //
@@ -862,7 +862,7 @@ typedef CLFS_ARCHIVE_DESCRIPTOR *PCLFS_ARCHIVE_DESCRIPTOR, **PPCLFS_ARCHIVE_DESC
 //
 // CLFS_ALLOCATION_ROUTINE
 //
-// Allocate a blocks for marshalled reads or writes
+// Allocate a blocks for marshaled reads or writes
 //
 
 typedef PVOID (* CLFS_BLOCK_ALLOCATION) (ULONG cbBufferLength, PVOID pvUserContext);

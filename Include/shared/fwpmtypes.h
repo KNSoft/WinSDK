@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -402,6 +402,7 @@ typedef struct FWPM_ACTION0_
         {
         /* [case()] */ GUID filterType;
         /* [case()] */ GUID calloutKey;
+        /* [case()] */ UINT8 bitmapIndex;
         } 	;
     } 	FWPM_ACTION0;
 
@@ -423,6 +424,7 @@ typedef struct FWPM_FILTER_CONDITION0_
 #define FWPM_FILTER_FLAG_HAS_SECURITY_REALM_PROVIDER_CONTEXT (0x00000080)
 #define FWPM_FILTER_FLAG_SYSTEMOS_ONLY (0x00000100)
 #define FWPM_FILTER_FLAG_GAMEOS_ONLY (0x00000200)
+#define FWPM_FILTER_FLAG_SILENT_MODE (0x00000400)
 typedef struct FWPM_FILTER0_
     {
     GUID filterKey;

@@ -183,7 +183,7 @@ Revision History:
 
 //
 // Define PROBE_ALIGNMENT32 to be the same as PROBE_ALIGNMENT on x86, so that
-// code hosting x86 under WoW can handle x86's maximum garanteed alignment.
+// code hosting x86 under WoW can handle x86's maximum guaranteed alignment.
 //
 
 #define PROBE_ALIGNMENT32( _s ) TYPE_ALIGNMENT( ULONG )
@@ -335,6 +335,14 @@ Revision History:
 #define DECLSPEC_GUARD_SUPPRESS  __declspec(guard(suppress))
 #else
 #define DECLSPEC_GUARD_SUPPRESS
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_GUEST
+#if _M_HYBRID
+#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#else
+#define DECLSPEC_CHPE_GUEST
 #endif
 #endif
 
@@ -872,6 +880,8 @@ typedef LONGLONG USN;
 
 #if defined(MIDL_PASS)
 typedef struct _LARGE_INTEGER {
+    LONGLONG QuadPart;
+} LARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _LARGE_INTEGER {
     struct {
@@ -882,14 +892,16 @@ typedef union _LARGE_INTEGER {
         ULONG LowPart;
         LONG HighPart;
     } u;
-#endif //MIDL_PASS
     LONGLONG QuadPart;
 } LARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef LARGE_INTEGER *PLARGE_INTEGER;
 
 #if defined(MIDL_PASS)
 typedef struct _ULARGE_INTEGER {
+    ULONGLONG QuadPart;
+} ULARGE_INTEGER;
 #else // MIDL_PASS
 typedef union _ULARGE_INTEGER {
     struct {
@@ -900,9 +912,9 @@ typedef union _ULARGE_INTEGER {
         ULONG LowPart;
         ULONG HighPart;
     } u;
-#endif //MIDL_PASS
     ULONGLONG QuadPart;
 } ULARGE_INTEGER;
+#endif //MIDL_PASS
 
 typedef ULARGE_INTEGER *PULARGE_INTEGER;
 
@@ -911,6 +923,7 @@ typedef ULARGE_INTEGER *PULARGE_INTEGER;
 //
 
 typedef LONG_PTR RTL_REFERENCE_COUNT, *PRTL_REFERENCE_COUNT;
+typedef LONG RTL_REFERENCE_COUNT32, *PRTL_REFERENCE_COUNT32;
 
 // begin_wudfwdm
 // begin_ntoshvp
@@ -976,7 +989,8 @@ typedef BOOLEAN *PBOOLEAN;       // winnt
 //
 //  RTL_CONTAINS_FIELD usage:
 //
-//      if (RTL_CONTAINS_FIELD(pBlock, pBlock->cbSize, dwMumble)) { // safe to use pBlock->dwMumble
+//      if (RTL_CONTAINS_FIELD(pBlock, pBlock->cbSize, dwMumble))
+//          // safe to use pBlock->dwMumble
 //
 #define RTL_CONTAINS_FIELD(Struct, Size, Field) \
     ( (((PCHAR)(&(Struct)->Field)) + sizeof((Struct)->Field)) <= (((PCHAR)(Struct))+(Size)) )
@@ -1013,7 +1027,7 @@ typedef BOOLEAN *PBOOLEAN;       // winnt
 // pointer_to_array_of_char RtlpNumberOf(reference_to_array_of_T);
 //
 // We never even call RtlpNumberOf, we just take the size of dereferencing its return type.
-// We do not even implement RtlpNumberOf, we just decare it.
+// We do not even implement RtlpNumberOf, we just declare it.
 //
 // Attempts to pass pointers instead of arrays to this macro result in compile time errors.
 // That is the point.
@@ -1229,7 +1243,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 #else // lint
 
 // Note: lint -e530 says don't complain about uninitialized variables for
-// this varible.  Error 527 has to do with unreachable code.
+// this variable.  Error 527 has to do with unreachable code.
 // -restore restores checking to the -save state
 
 #define UNREFERENCED_PARAMETER(P)          \
@@ -1289,7 +1303,7 @@ void _Prefast_unreferenced_parameter_impl_(const char*, ...);
 // Moved here from objbase.w.
 
 // Templates are defined here in order to avoid a dependency on C++ <type_traits> header file,
-// or on compiler-specific contructs.
+// or on compiler-specific constructs.
 extern "C++" {
 
     template <size_t S>
@@ -1971,6 +1985,7 @@ _mm_clflush (
 
 #pragma intrinsic(_mm_clflush)
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 VOID
@@ -1987,11 +2002,13 @@ _ReadWriteBarrier (
 #define FastFence __faststorefence
 
 // end_wudfpwdm
+// end_sdfwdm
 
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 VOID
@@ -2000,6 +2017,7 @@ __faststorefence (
     );
 
 // end_wudfpwdm
+// end_sdfwdm
 
 VOID
 _mm_lfence (
@@ -2041,11 +2059,13 @@ _m_prefetchw (
 #define _MM_HINT_T2     3
 #define _MM_HINT_NTA    0
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 #pragma intrinsic(__faststorefence)
 
 // end_wudfpwdm
+// end_sdfwdm
 
 #pragma intrinsic(_mm_pause)
 #pragma intrinsic(_mm_prefetch)
@@ -3154,26 +3174,16 @@ YieldProcessor (
 
 #endif // _ARM_
 
-// begin_ntoshvp
 
-#ifdef _ARM64_
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
 
-#if defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#if !defined(_M_CEE_PURE)
+#if !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #include <intrin.h>
 
-#if !defined(_M_CEE_PURE)
-
-#pragma intrinsic(__getReg)
-#pragma intrinsic(__getCallerReg)
-#pragma intrinsic(__getRegFp)
-#pragma intrinsic(__getCallerRegFp)
-
-#pragma intrinsic(__setReg)
-#pragma intrinsic(__setCallerReg)
-#pragma intrinsic(__setRegFp)
-#pragma intrinsic(__setCallerRegFp)
+#if defined(_M_ARM64)
 
 #pragma intrinsic(__readx18byte)
 #pragma intrinsic(__readx18word)
@@ -3194,42 +3204,6 @@ YieldProcessor (
 #pragma intrinsic(__incx18word)
 #pragma intrinsic(__incx18dword)
 #pragma intrinsic(__incx18qword)
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-//
-// Memory barriers and prefetch intrinsics.
-//
-
-#pragma intrinsic(__yield)
-#pragma intrinsic(__prefetch)
-
-#pragma intrinsic(__dmb)
-#pragma intrinsic(__dsb)
-#pragma intrinsic(__isb)
-
-#pragma intrinsic(_ReadWriteBarrier)
-#pragma intrinsic(_WriteBarrier)
-
-FORCEINLINE
-VOID
-YieldProcessor (
-    VOID
-    )
-{
-    __dmb(_ARM64_BARRIER_ISHST);
-    __yield();
-}
-
-#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
-#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
-
-#define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
-#define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
 
 //
 // Define bit test intrinsics.
@@ -3565,6 +3539,52 @@ YieldProcessor (
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrementNoFence64((LONG64 *)a)
 
+#endif // defined(_M_ARM64)
+
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+
+#pragma intrinsic(__getReg)
+#pragma intrinsic(__getCallerReg)
+#pragma intrinsic(__getRegFp)
+#pragma intrinsic(__getCallerRegFp)
+
+#pragma intrinsic(__setReg)
+#pragma intrinsic(__setCallerReg)
+#pragma intrinsic(__setRegFp)
+#pragma intrinsic(__setCallerRegFp)
+
+//
+// Memory barriers and prefetch intrinsics.
+//
+
+#pragma intrinsic(__yield)
+#pragma intrinsic(__prefetch)
+
+#pragma intrinsic(__dmb)
+#pragma intrinsic(__dsb)
+#pragma intrinsic(__isb)
+
+#pragma intrinsic(_ReadWriteBarrier)
+#pragma intrinsic(_WriteBarrier)
+
+#define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
+#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
+#define PrefetchForWrite(p)         __prefetch((const void *) (p))
+#define ReadForWriteAccess(p)       (*(p))
+
+#define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
+#define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
+
+FORCEINLINE
+VOID
+YieldProcessor (
+    VOID
+    )
+{
+    __dmb(_ARM64_BARRIER_ISHST);
+    __yield();
+}
+
 //
 // Define accessors for volatile loads and stores.
 //
@@ -3810,6 +3830,7 @@ WriteNoFence64 (
 // identification and performance counters.
 //
 
+// op0=2/3 encodings, use with _Read/WriteStatusReg
 #define ARM64_SYSREG(op0, op1, crn, crm, op2) \
         ( ((op0 & 1) << 14) | \
           ((op1 & 7) << 11) | \
@@ -3817,6 +3838,14 @@ WriteNoFence64 (
           ((crm & 15) << 3) | \
           ((op2 & 7) << 0) )
 
+// op0=1 encodings, use with __sys
+#define ARM64_SYSINSTR(op0, op1, crn, crm, op2) \
+        ( ((op1 & 7) << 11) | \
+          ((crn & 15) << 7) | \
+          ((crm & 15) << 3) | \
+          ((op2 & 7) << 0) )
+
+#define ARM64_CNTVCT            ARM64_SYSREG(3,3,14, 0,2)  // Generic Timer counter register
 #define ARM64_PMCCNTR_EL0       ARM64_SYSREG(3,3, 9,13,0)  // Cycle Count Register [CP15_PMCCNTR]
 #define ARM64_PMSELR_EL0        ARM64_SYSREG(3,3, 9,12,5)  // Event Counter Selection Register [CP15_PMSELR]
 #define ARM64_PMXEVCNTR_EL0     ARM64_SYSREG(3,3, 9,13,2)  // Event Count Register [CP15_PMXEVCNTR]
@@ -3849,7 +3878,22 @@ ReadTimeStampCounter(
     VOID
     )
 {
+
+#if defined(_M_HYBRID_X86_ARM64)
+
+    //
+    // For guest code, the rdtsc instruction is implemented in terms of CNTVCT.
+    // Use the same implementation for consistency.
+    //
+
+    return (ULONG64)_ReadStatusReg(ARM64_CNTVCT);
+
+#else
+
     return (ULONG64)_ReadStatusReg(ARM64_PMCCNTR_EL0);
+
+#endif
+
 }
 
 FORCEINLINE
@@ -3877,13 +3921,15 @@ ReadPMC (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
-#ifdef __cplusplus
-}
-#endif
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+
+#endif // !defined(RC_INVOKED) && !defined(MIDL_PASS)
+
+#else // defined(_M_CEE_PURE)
+
+#include <intrin.h>
 
 #endif // !defined(_M_CEE_PURE)
-
-#endif // defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #if defined(_M_CEE_PURE)
 FORCEINLINE
@@ -3895,9 +3941,8 @@ YieldProcessor (
 }
 #endif
 
-// end_ntoshvp
 
-#endif // _ARM64_
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
 // begin_ntoshvp
 
@@ -4741,7 +4786,7 @@ __writefsdword (
 #endif // !defined(_M_CEE_PURE)
 
 
-#if !defined(_MANAGED)
+#if !defined(_MANAGED) && !defined(_M_HYBRID_X86_ARM64)
 VOID
 _mm_pause (
     VOID
@@ -4751,7 +4796,7 @@ _mm_pause (
 
 #define YieldProcessor _mm_pause
 
-#endif // !defined(_MANAGED)
+#endif // !defined(_MANAGED) && !defined(_M_HYBRID_X86_ARM64)
 
 #ifdef __cplusplus
 }
@@ -4764,7 +4809,7 @@ _mm_pause (
 
 
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
-#if defined(_M_AMD64) || defined(_M_IX86) || defined(_M_CEE_PURE)
+#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64)) || defined(_M_CEE_PURE)
 
 #ifdef __cplusplus
 extern "C" {
@@ -4892,7 +4937,7 @@ ReadAcquire (
     return Value;
 }
 
-FORCEINLINE
+CFORCEINLINE
 LONG
 ReadNoFence (
     _In_ _Interlocked_operand_ LONG const volatile *Source
@@ -4946,7 +4991,7 @@ ReadAcquire64 (
     return Value;
 }
 
-FORCEINLINE
+CFORCEINLINE
 LONG64
 ReadNoFence64 (
     _In_ _Interlocked_operand_ LONG64 const volatile *Source
@@ -5469,7 +5514,7 @@ ReadPointerAcquire (
     return (PVOID)ReadAcquire((PLONG)Source);
 }
 
-FORCEINLINE
+CFORCEINLINE
 PVOID
 ReadPointerNoFence (
     _In_ _Interlocked_operand_ PVOID const volatile *Source
@@ -5567,7 +5612,7 @@ ReadPointerAcquire (
     return (PVOID)ReadAcquire64((PLONG64)Source);
 }
 
-FORCEINLINE
+CFORCEINLINE
 PVOID
 ReadPointerNoFence (
     _In_ _Interlocked_operand_ PVOID const volatile *Source
@@ -5928,9 +5973,9 @@ __int2c (
 
 #endif // defined(_M_AMD64)
 
-#elif defined(_X86_)
+#elif defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)
 
-#if defined(_M_IX86)
+#if defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 #if _MSC_FULL_VER >= 140030222
 
@@ -5995,9 +6040,9 @@ __break(
 
 #endif // defined(_M_IA64)
 
-#elif defined(_ARM64_)
+#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 void
 __break(
@@ -6012,7 +6057,7 @@ __break(
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
 
 #elif defined(_ARM_)
 
@@ -6459,6 +6504,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
 }
 
 // end_wudfpwdm
+// end_sdfwdm
 
 __forceinline
 UCHAR
@@ -6638,6 +6684,7 @@ WRITE_PORT_BUFFER_ULONG (
     return;
 }
 
+// begin_sdfwdm
 // begin_wudfpwdm
 
 #ifdef __cplusplus
@@ -6804,7 +6851,7 @@ typedef struct _PCI_COMMON_CONFIG {
 
 #endif
 
-#define PCI_COMMON_HDR_LENGTH (FIELD_OFFSET (PCI_COMMON_CONFIG, DeviceSpecific))
+#define PCI_COMMON_HDR_LENGTH (UFIELD_OFFSET (PCI_COMMON_CONFIG, DeviceSpecific))
 #define PCI_EXTENDED_CONFIG_LENGTH          0x1000
 
 // begin_ntoshvp
@@ -8093,9 +8140,9 @@ typedef struct _PCI_EXPRESS_ARI_CAPABILITY {
 
 typedef union _VIRTUAL_CHANNEL_CAPABILITIES1 {
     struct {
-        ULONG ExtendedVCCount:2;
+        ULONG ExtendedVCCount:3;
         ULONG RsvdP1:1;
-        ULONG LowPriorityExtendedVCCount:2;
+        ULONG LowPriorityExtendedVCCount:3;
         ULONG RsvdP2:1;
         ULONG ReferenceClock:2;
         ULONG PortArbitrationTableEntrySize:2;
@@ -8981,10 +9028,10 @@ typedef struct _PCI_EXPRESS_SRIOV_CAPABILITY {
 //
 // ---
 //
-//      All resources comsumed by a PCI device start as unitialized
+//      All resources consumed by a PCI device start as uninitialized
 //      under NT.  An uninitialized memory or I/O base address can be
-//      determined by checking it's corrisponding enabled bit in the
-//      PCI_COMMON_CONFIG.Command value.  An InterruptLine is unitialized
+//      determined by checking it's corresponding enabled bit in the
+//      PCI_COMMON_CONFIG.Command value.  An InterruptLine is uninitialized
 //      if it contains the value of -1.
 //
 
@@ -9091,7 +9138,7 @@ typedef struct _INTERFACE {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -9109,7 +9156,7 @@ typedef struct _INTERFACE {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -9127,7 +9174,7 @@ typedef struct _INTERFACE {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -9145,7 +9192,7 @@ typedef struct _INTERFACE {
 #define PAGE_SIZE 0x1000
 
 //
-// Define the number of trailing zeroes in a page aligned virtual address.
+// Define the number of trailing zeros in a page aligned virtual address.
 // This is used as the shift count when shifting virtual addresses to
 // virtual page numbers.
 //
@@ -9186,6 +9233,7 @@ typedef int CM_RESOURCE_TYPE;
 #define CmResourceTypeBusNumber           6   // ResType_BusNumber (0x0006)
 #define CmResourceTypeMemoryLarge         7   // ResType_MemLarge (0x0007)
 // end_wdm end_wudfwdm
+// end_sdfwdm
 // begin_ntddk
 #define CmResourceTypeMaximum             8
 // end_ntddk
@@ -9197,6 +9245,8 @@ typedef int CM_RESOURCE_TYPE;
 #define CmResourceTypeMfCardConfig      131   // ResType_MfCardConfig (0x8003)
 #define CmResourceTypeConnection        132   // ResType_Connection (0x8004)
 
+// begin_sdfwdm
+
 //
 // Defines the ShareDisposition in the RESOURCE_DESCRIPTOR
 //
@@ -9207,6 +9257,8 @@ typedef enum _CM_SHARE_DISPOSITION {
     CmResourceShareDriverExclusive,
     CmResourceShareShared
 } CM_SHARE_DISPOSITION;
+
+// end_sdfwdm
 
 //
 // Define the bit masks for Flags when type is CmResourceTypeInterrupt
@@ -9237,6 +9289,8 @@ typedef enum _CM_SHARE_DISPOSITION {
 
 #define CM_RESOURCE_INTERRUPT_MESSAGE_TOKEN   ((ULONG)-2)
 
+// begin_sdfwdm
+
 //
 // Define the bit masks for Flags when type is CmResourceTypeMemory
 // or CmResourceTypeMemoryLarge
@@ -9255,6 +9309,8 @@ typedef enum _CM_SHARE_DISPOSITION {
 #define CM_RESOURCE_MEMORY_BAR                              0x0080
 
 #define CM_RESOURCE_MEMORY_COMPAT_FOR_INACCESSIBLE_RANGE    0x0100
+
+// end_sdfwdm
 
 //
 // Define the bit masks exclusive to type CmResourceTypeMemoryLarge.

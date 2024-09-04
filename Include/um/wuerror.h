@@ -140,6 +140,24 @@
 #define WU_S_SOME_UPDATES_SKIPPED_ON_BATTERY _HRESULT_TYPEDEF_(0x00240009L)
 
 //
+// MessageId: WU_S_ALREADY_REVERTED
+//
+// MessageText:
+//
+// The update to be reverted is not present on the system.
+//
+#define WU_S_ALREADY_REVERTED            _HRESULT_TYPEDEF_(0x0024000AL)
+
+//
+// MessageId: WU_S_SEARCH_CRITERIA_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The operation is skipped because the update service does not support the requested search criteria.
+//
+#define WU_S_SEARCH_CRITERIA_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x00240010L)
+
+//
 // MessageId: WU_S_UH_INSTALLSTILLPENDING
 //
 // MessageText:
@@ -147,6 +165,15 @@
 // The installation operation for the update is still in progress.
 //
 #define WU_S_UH_INSTALLSTILLPENDING      _HRESULT_TYPEDEF_(0x00242015L)
+
+//
+// MessageId: WU_S_UH_DOWNLOAD_SIZE_CALCULATED
+//
+// MessageText:
+//
+// The actual download size has been calculated by the handler.
+//
+#define WU_S_UH_DOWNLOAD_SIZE_CALCULATED _HRESULT_TYPEDEF_(0x00242016L)
 
 //
 // MessageId: WU_S_SIH_NOOP
@@ -165,6 +192,24 @@
 // The update to be downloaded is already being downloaded.
 //
 #define WU_S_DM_ALREADYDOWNLOADING       _HRESULT_TYPEDEF_(0x00246001L)
+
+//
+// MessageId: WU_S_METADATA_SKIPPED_BY_ENFORCEMENTMODE
+//
+// MessageText:
+//
+// Metadata verification was skipped by enforcement mode.
+//
+#define WU_S_METADATA_SKIPPED_BY_ENFORCEMENTMODE _HRESULT_TYPEDEF_(0x00247101L)
+
+//
+// MessageId: WU_S_METADATA_IGNORED_SIGNATURE_VERIFICATION
+//
+// MessageText:
+//
+// A server configuration refresh resulted in metadata signature verification to be ignored.
+//
+#define WU_S_METADATA_IGNORED_SIGNATURE_VERIFICATION _HRESULT_TYPEDEF_(0x00247102L)
 
 ///////////////////////////////////////////////////////////////////////////////
 // Windows Update Error Codes
@@ -727,16 +772,20 @@
 //
 #define WU_E_BAD_FILE_URL                _HRESULT_TYPEDEF_(0x80240046L)
 
-// Do not use WU_E_NOTSUPPORTED - it is deprecated.
-// Use WU_E_NOT_SUPPORTED (note the underscore) instead.
 //
-// MessageId: WU_E_NOTSUPPORTED
+// MessageId: WU_E_REVERT_NOT_ALLOWED
 //
 // MessageText:
 //
-// The operation requested is not supported.
+// The update could not be reverted.
 //
-#define WU_E_NOTSUPPORTED                _HRESULT_TYPEDEF_(0x80240047L)
+#define WU_E_REVERT_NOT_ALLOWED          _HRESULT_TYPEDEF_(0x80240047L)
+
+//
+// MessageId: WU_E_NOTSUPPORTED
+//
+// This error (0x80240047) has been removed to avoid confusion with WU_E_NOT_SUPPORTED (note the underscore).
+//
 
 //
 // MessageId: WU_E_INVALID_NOTIFICATION_INFO
@@ -953,6 +1002,24 @@
 // The installation extended error code is set to general fail.
 //
 #define WU_E_EXTENDEDERROR_FAILED        _HRESULT_TYPEDEF_(0x8024005FL)
+
+//
+// MessageId: WU_E_IDLESHUTDOWN_OPCOUNT_SERVICEREGISTRATION
+//
+// MessageText:
+//
+// A service registration call contributed to a non-zero operation count at idle timer shutdown.
+//
+#define WU_E_IDLESHUTDOWN_OPCOUNT_SERVICEREGISTRATION _HRESULT_TYPEDEF_(0x80240060L)
+
+//
+// MessageId: WU_E_FILETRUST_SHA2SIGNATURE_MISSING
+//
+// MessageText:
+//
+// Signature validation of the file fails to find valid SHA2+ signature on MS signed payload.
+//
+#define WU_E_FILETRUST_SHA2SIGNATURE_MISSING _HRESULT_TYPEDEF_(0x80240061L)
 
 //
 // MessageId: WU_E_UNEXPECTED
@@ -1702,7 +1769,7 @@
 //
 #define WU_E_PT_ADDRESS_NOT_AVAILABLE    _HRESULT_TYPEDEF_(0x80240449L)
 
-// Same as WS_E_OTHER 
+// Same as WS_E_OTHER
 //
 // MessageId: WU_E_PT_OTHER
 //
@@ -3490,6 +3557,369 @@
 #define WU_E_OL_UNEXPECTED               _HRESULT_TYPEDEF_(0x80247FFFL)
 
 //////////////////////////////////////////////////////////////////////////////
+// WU Metadata Integrity related errors - 0x71FE
+///////////////////////////////////////////////////////////////////////////////
+///////
+// Metadata General errors 0x7100 - 0x711F
+///////
+//
+// MessageId: WU_E_METADATA_NOOP
+//
+// MessageText:
+//
+// No operation was required by update metadata verification.
+//
+#define WU_E_METADATA_NOOP               _HRESULT_TYPEDEF_(0x80247100L)
+
+//
+// MessageId: WU_E_METADATA_CONFIG_INVALID_BINARY_ENCODING
+//
+// MessageText:
+//
+// The binary encoding of metadata config data was invalid.
+//
+#define WU_E_METADATA_CONFIG_INVALID_BINARY_ENCODING _HRESULT_TYPEDEF_(0x80247101L)
+
+//
+// MessageId: WU_E_METADATA_FETCH_CONFIG
+//
+// MessageText:
+//
+// Unable to fetch required configuration for metadata signature verification.
+//
+#define WU_E_METADATA_FETCH_CONFIG       _HRESULT_TYPEDEF_(0x80247102L)
+
+//
+// MessageId: WU_E_METADATA_INVALID_PARAMETER
+//
+// MessageText:
+//
+// A metadata verification operation failed due to an invalid parameter.
+//
+#define WU_E_METADATA_INVALID_PARAMETER  _HRESULT_TYPEDEF_(0x80247104L)
+
+//
+// MessageId: WU_E_METADATA_UNEXPECTED
+//
+// MessageText:
+//
+// A metadata verification operation failed due to reasons not covered by another error code.
+//
+#define WU_E_METADATA_UNEXPECTED         _HRESULT_TYPEDEF_(0x80247105L)
+
+//
+// MessageId: WU_E_METADATA_NO_VERIFICATION_DATA
+//
+// MessageText:
+//
+// None of the update metadata had verification data, which may be disabled on the update server.
+//
+#define WU_E_METADATA_NO_VERIFICATION_DATA _HRESULT_TYPEDEF_(0x80247106L)
+
+//
+// MessageId: WU_E_METADATA_BAD_FRAGMENTSIGNING_CONFIG
+//
+// MessageText:
+//
+// The fragment signing configuration used for verifying update metadata signatures was bad.
+//
+#define WU_E_METADATA_BAD_FRAGMENTSIGNING_CONFIG _HRESULT_TYPEDEF_(0x80247107L)
+
+//
+// MessageId: WU_E_METADATA_FAILURE_PROCESSING_FRAGMENTSIGNING_CONFIG
+//
+// MessageText:
+//
+// There was an unexpected operational failure while parsing fragment signing configuration.
+//
+#define WU_E_METADATA_FAILURE_PROCESSING_FRAGMENTSIGNING_CONFIG _HRESULT_TYPEDEF_(0x80247108L)
+
+///////
+// Metadata XML errors 0x7120 - 0x713F
+///////
+//
+// MessageId: WU_E_METADATA_XML_MISSING
+//
+// MessageText:
+//
+// Required xml data was missing from configuration.
+//
+#define WU_E_METADATA_XML_MISSING        _HRESULT_TYPEDEF_(0x80247120L)
+
+//
+// MessageId: WU_E_METADATA_XML_FRAGMENTSIGNING_MISSING
+//
+// MessageText:
+//
+// Required fragmentsigning data was missing from xml configuration.
+//
+#define WU_E_METADATA_XML_FRAGMENTSIGNING_MISSING _HRESULT_TYPEDEF_(0x80247121L)
+
+//
+// MessageId: WU_E_METADATA_XML_MODE_MISSING
+//
+// MessageText:
+//
+// Required mode data was missing from xml configuration.
+//
+#define WU_E_METADATA_XML_MODE_MISSING   _HRESULT_TYPEDEF_(0x80247122L)
+
+//
+// MessageId: WU_E_METADATA_XML_MODE_INVALID
+//
+// MessageText:
+//
+// An invalid metadata enforcement mode was detected.
+//
+#define WU_E_METADATA_XML_MODE_INVALID   _HRESULT_TYPEDEF_(0x80247123L)
+
+//
+// MessageId: WU_E_METADATA_XML_VALIDITY_INVALID
+//
+// MessageText:
+//
+// An invalid timestamp validity window configuration was detected.
+//
+#define WU_E_METADATA_XML_VALIDITY_INVALID _HRESULT_TYPEDEF_(0x80247124L)
+
+//
+// MessageId: WU_E_METADATA_XML_LEAFCERT_MISSING
+//
+// MessageText:
+//
+// Required leaf certificate data was missing from xml configuration.
+//
+#define WU_E_METADATA_XML_LEAFCERT_MISSING _HRESULT_TYPEDEF_(0x80247125L)
+
+//
+// MessageId: WU_E_METADATA_XML_INTERMEDIATECERT_MISSING
+//
+// MessageText:
+//
+// Required intermediate certificate data was missing from xml configuration.
+//
+#define WU_E_METADATA_XML_INTERMEDIATECERT_MISSING _HRESULT_TYPEDEF_(0x80247126L)
+
+//
+// MessageId: WU_E_METADATA_XML_LEAFCERT_ID_MISSING
+//
+// MessageText:
+//
+// Required leaf certificate id attribute was missing from xml configuration.
+//
+#define WU_E_METADATA_XML_LEAFCERT_ID_MISSING _HRESULT_TYPEDEF_(0x80247127L)
+
+//
+// MessageId: WU_E_METADATA_XML_BASE64CERDATA_MISSING
+//
+// MessageText:
+//
+// Required certificate base64CerData attribute was missing from xml configuration.
+//
+#define WU_E_METADATA_XML_BASE64CERDATA_MISSING _HRESULT_TYPEDEF_(0x80247128L)
+
+///////
+// Metadata Signature/Hash-related errors 0x7140 - 0x714F
+///////
+//
+// MessageId: WU_E_METADATA_BAD_SIGNATURE
+//
+// MessageText:
+//
+// The metadata for an update was found to have a bad or invalid digital signature.
+//
+#define WU_E_METADATA_BAD_SIGNATURE      _HRESULT_TYPEDEF_(0x80247140L)
+
+//
+// MessageId: WU_E_METADATA_UNSUPPORTED_HASH_ALG
+//
+// MessageText:
+//
+// An unsupported hash algorithm for metadata verification was specified.
+//
+#define WU_E_METADATA_UNSUPPORTED_HASH_ALG _HRESULT_TYPEDEF_(0x80247141L)
+
+//
+// MessageId: WU_E_METADATA_SIGNATURE_VERIFY_FAILED
+//
+// MessageText:
+//
+// An error occurred during an update's metadata signature verification.
+//
+#define WU_E_METADATA_SIGNATURE_VERIFY_FAILED _HRESULT_TYPEDEF_(0x80247142L)
+
+///////
+// Metadata Certificate Chain trust related errors 0x7150 - 0x715F
+///////
+//
+// MessageId: WU_E_METADATATRUST_CERTIFICATECHAIN_VERIFICATION
+//
+// MessageText:
+//
+// An failure occurred while verifying trust for metadata signing certificate chains.
+//
+#define WU_E_METADATATRUST_CERTIFICATECHAIN_VERIFICATION _HRESULT_TYPEDEF_(0x80247150L)
+
+//
+// MessageId: WU_E_METADATATRUST_UNTRUSTED_CERTIFICATECHAIN
+//
+// MessageText:
+//
+// A metadata signing certificate had an untrusted certificate chain.
+//
+#define WU_E_METADATATRUST_UNTRUSTED_CERTIFICATECHAIN _HRESULT_TYPEDEF_(0x80247151L)
+
+///////
+// Metadata Timestamp Token/Signature errors 0x7160 - 0x717F
+///////
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_MISSING
+//
+// MessageText:
+//
+// An expected metadata timestamp token was missing.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_MISSING _HRESULT_TYPEDEF_(0x80247160L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_VERIFICATION_FAILED
+//
+// MessageText:
+//
+// A metadata Timestamp token failed verification.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_VERIFICATION_FAILED _HRESULT_TYPEDEF_(0x80247161L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_UNTRUSTED
+//
+// MessageText:
+//
+// A metadata timestamp token signer certificate chain was untrusted.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_UNTRUSTED _HRESULT_TYPEDEF_(0x80247162L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_VALIDITY_WINDOW
+//
+// MessageText:
+//
+// A metadata signature timestamp token was no longer within the validity window.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_VALIDITY_WINDOW _HRESULT_TYPEDEF_(0x80247163L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_SIGNATURE
+//
+// MessageText:
+//
+// A metadata timestamp token failed signature validation
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_SIGNATURE _HRESULT_TYPEDEF_(0x80247164L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_CERTCHAIN
+//
+// MessageText:
+//
+// A metadata timestamp token certificate failed certificate chain verification.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_CERTCHAIN _HRESULT_TYPEDEF_(0x80247165L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_REFRESHONLINE
+//
+// MessageText:
+//
+// A failure occurred when refreshing a missing timestamp token from the network.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_REFRESHONLINE _HRESULT_TYPEDEF_(0x80247166L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_ALL_BAD
+//
+// MessageText:
+//
+// All update metadata verification timestamp tokens from the timestamp token cache are invalid.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_ALL_BAD _HRESULT_TYPEDEF_(0x80247167L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_NODATA
+//
+// MessageText:
+//
+// No update metadata verification timestamp tokens exist in the timestamp token cache.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_NODATA _HRESULT_TYPEDEF_(0x80247168L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_CACHELOOKUP
+//
+// MessageText:
+//
+// An error occurred during cache lookup of update metadata verification timestamp token.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_CACHELOOKUP _HRESULT_TYPEDEF_(0x80247169L)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_VALIDITYWINDOW_UNEXPECTED
+//
+// MessageText:
+//
+// An metadata timestamp token validity window failed unexpectedly due to reasons not covered by another error code.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_VALIDITYWINDOW_UNEXPECTED _HRESULT_TYPEDEF_(0x8024717EL)
+
+//
+// MessageId: WU_E_METADATA_TIMESTAMP_TOKEN_UNEXPECTED
+//
+// MessageText:
+//
+// An metadata timestamp token verification operation failed due to reasons not covered by another error code.
+//
+#define WU_E_METADATA_TIMESTAMP_TOKEN_UNEXPECTED _HRESULT_TYPEDEF_(0x8024717FL)
+
+///////
+// Metadata Certificate-Related errors 0x7180 - 0x719F
+///////
+//
+// MessageId: WU_E_METADATA_CERT_MISSING
+//
+// MessageText:
+//
+// An expected metadata signing certificate was missing.
+//
+#define WU_E_METADATA_CERT_MISSING       _HRESULT_TYPEDEF_(0x80247180L)
+
+//
+// MessageId: WU_E_METADATA_LEAFCERT_BAD_TRANSPORT_ENCODING
+//
+// MessageText:
+//
+// The transport encoding of a metadata signing leaf certificate was malformed.
+//
+#define WU_E_METADATA_LEAFCERT_BAD_TRANSPORT_ENCODING _HRESULT_TYPEDEF_(0x80247181L)
+
+//
+// MessageId: WU_E_METADATA_INTCERT_BAD_TRANSPORT_ENCODING
+//
+// MessageText:
+//
+// The transport encoding of a metadata signing intermediate certificate was malformed.
+//
+#define WU_E_METADATA_INTCERT_BAD_TRANSPORT_ENCODING _HRESULT_TYPEDEF_(0x80247182L)
+
+//
+// MessageId: WU_E_METADATA_CERT_UNTRUSTED
+//
+// MessageText:
+//
+// A metadata certificate chain was untrusted.
+//
+#define WU_E_METADATA_CERT_UNTRUSTED     _HRESULT_TYPEDEF_(0x80247183L)
+
+//////////////////////////////////////////////////////////////////////////////
 // WU Task related errors
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -3557,5 +3987,32 @@
 // Hardware capability meta data was malformed and/or failed to parse.
 //
 #define WU_E_BAD_XML_HARDWARECAPABILITY  _HRESULT_TYPEDEF_(0x8024B102L)
+
+//
+// MessageId: WU_E_WMI_NOT_SUPPORTED
+//
+// MessageText:
+//
+// Unable to complete action due to WMI dependency, which isn't supported on this platform.
+//
+#define WU_E_WMI_NOT_SUPPORTED           _HRESULT_TYPEDEF_(0x8024B103L)
+
+//
+// MessageId: WU_E_UPDATE_MERGE_NOT_ALLOWED
+//
+// MessageText:
+//
+// Merging of the update is not allowed
+//
+#define WU_E_UPDATE_MERGE_NOT_ALLOWED    _HRESULT_TYPEDEF_(0x8024B104L)
+
+//
+// MessageId: WU_E_SKIPPED_UPDATE_INSTALLATION
+//
+// MessageText:
+//
+// Installing merged updates only. So skipping non mergeable updates.
+//
+#define WU_E_SKIPPED_UPDATE_INSTALLATION _HRESULT_TYPEDEF_(0x8024B105L)
 
 #endif //_WUERROR_

@@ -204,6 +204,9 @@ WINHTTP_AUTOPROXY_OPTIONS;
 #define WINHTTP_AUTOPROXY_CONFIG_URL            0x00000002
 #define WINHTTP_AUTOPROXY_HOST_KEEPCASE         0x00000004
 #define WINHTTP_AUTOPROXY_HOST_LOWERCASE        0x00000008
+#define WINHTTP_AUTOPROXY_ALLOW_AUTOCONFIG      0x00000100
+#define WINHTTP_AUTOPROXY_ALLOW_STATIC          0x00000200
+#define WINHTTP_AUTOPROXY_ALLOW_CM              0x00000400
 #define WINHTTP_AUTOPROXY_RUN_INPROCESS         0x00010000
 #define WINHTTP_AUTOPROXY_RUN_OUTPROCESS_ONLY   0x00020000
 #define WINHTTP_AUTOPROXY_NO_DIRECTACCESS       0x00040000
@@ -238,6 +241,41 @@ typedef struct _WINHTTP_PROXY_RESULT
     DWORD cEntries;
     WINHTTP_PROXY_RESULT_ENTRY *pEntries;
 } WINHTTP_PROXY_RESULT;
+
+typedef struct _WINHTTP_PROXY_RESULT_EX
+{
+    DWORD cEntries;
+    WINHTTP_PROXY_RESULT_ENTRY *pEntries;
+    HANDLE hProxyDetectionHandle;
+    DWORD dwProxyInterfaceAffinity;
+} WINHTTP_PROXY_RESULT_EX;
+
+#define NETWORKING_KEY_BUFSIZE 128
+
+typedef struct _WinHttpProxyNetworkKey
+{
+    unsigned char pbBuffer[NETWORKING_KEY_BUFSIZE];
+} WINHTTP_PROXY_NETWORKING_KEY, *PWINHTTP_PROXY_NETWORKING_KEY;
+
+typedef struct _WINHTTP_PROXY_SETTINGS
+{
+    DWORD dwStructSize;
+    DWORD dwFlags;
+    DWORD dwCurrentSettingsVersion;
+    PWSTR pwszConnectionName;
+    PWSTR pwszProxy;
+    PWSTR pwszProxyBypass;
+    PWSTR pwszAutoconfigUrl;
+    PWSTR pwszAutoconfigSecondaryUrl;
+    DWORD dwAutoDiscoveryFlags;
+    PWSTR pwszLastKnownGoodAutoConfigUrl;
+    DWORD dwAutoconfigReloadDelayMins;
+    FILETIME ftLastKnownDetectTime;
+    DWORD dwDetectedInterfaceIpCount;
+    PDWORD pdwDetectedInterfaceIp;
+    DWORD cNetworkKeys;
+    PWINHTTP_PROXY_NETWORKING_KEY pNetworkKeys;
+} WINHTTP_PROXY_SETTINGS, *PWINHTTP_PROXY_SETTINGS;
 
 //
 // WINHTTP_CERTIFICATE_INFO lpBuffer - contains the certificate returned from
@@ -417,7 +455,9 @@ typedef struct
 #define WINHTTP_OPTION_HTTP_PROTOCOL_USED             134
 
 
-#define WINHTTP_LAST_OPTION                           WINHTTP_OPTION_HTTP_PROTOCOL_USED
+#define WINHTTP_OPTION_KDC_PROXY_SETTINGS             136
+
+#define WINHTTP_LAST_OPTION                           WINHTTP_OPTION_KDC_PROXY_SETTINGS
 
 #define WINHTTP_OPTION_USERNAME                      0x1000
 #define WINHTTP_OPTION_PASSWORD                      0x1001
@@ -608,6 +648,8 @@ typedef WINHTTP_STATUS_CALLBACK * LPWINHTTP_STATUS_CALLBACK;
 #define WINHTTP_CALLBACK_STATUS_GETPROXYFORURL_COMPLETE 0x01000000
 #define WINHTTP_CALLBACK_STATUS_CLOSE_COMPLETE          0x02000000
 #define WINHTTP_CALLBACK_STATUS_SHUTDOWN_COMPLETE       0x04000000
+#define WINHTTP_CALLBACK_STATUS_SETTINGS_WRITE_COMPLETE 0x10000000
+#define WINHTTP_CALLBACK_STATUS_SETTINGS_READ_COMPLETE  0x20000000
 
 // API Enums for WINHTTP_CALLBACK_STATUS_REQUEST_ERROR:
 #define API_RECEIVE_RESPONSE          (1)
@@ -783,6 +825,13 @@ typedef WINHTTP_STATUS_CALLBACK * LPWINHTTP_STATUS_CALLBACK;
 
 #define WINHTTP_QUERY_FLAG_NUMBER                  0x20000000
 
+//
+// HTTP_QUERY_FLAG_NUMBER64 - if this bit is set in the dwInfoLevel parameter of
+// HttpQueryInfo(), then the value of the header will be converted to a 64bit
+// number before being returned to the caller, if applicable
+//
+
+#define WINHTTP_QUERY_FLAG_NUMBER64                0x08000000
 
 
 //
@@ -1361,10 +1410,32 @@ WinHttpGetProxyForUrlEx
 WINHTTPAPI
 DWORD
 WINAPI
+WinHttpGetProxyForUrlEx2
+(
+    _In_ HINTERNET hResolver,
+    _In_ PCWSTR pcwszUrl,
+    _In_ WINHTTP_AUTOPROXY_OPTIONS *pAutoProxyOptions,
+    _In_ DWORD cbInterfaceSelectionContext,
+    _In_reads_bytes_opt_(cbInterfaceSelectionContext) BYTE *pInterfaceSelectionContext,
+    _In_opt_ DWORD_PTR pContext
+);
+
+WINHTTPAPI
+DWORD
+WINAPI
 WinHttpGetProxyResult
 (
     _In_ HINTERNET hResolver,
     _Out_ WINHTTP_PROXY_RESULT *pProxyResult
+);
+
+WINHTTPAPI
+DWORD
+WINAPI
+WinHttpGetProxyResultEx
+(
+    _In_ HINTERNET hResolver,
+    _Out_ WINHTTP_PROXY_RESULT_EX *pProxyResultEx
 );
 
 WINHTTPAPI
@@ -1373,6 +1444,14 @@ WINAPI
 WinHttpFreeProxyResult
 (
     _Inout_ WINHTTP_PROXY_RESULT *pProxyResult
+);
+
+WINHTTPAPI
+VOID
+WINAPI
+WinHttpFreeProxyResultEx
+(
+    _Inout_ WINHTTP_PROXY_RESULT_EX *pProxyResultEx
 );
 
 WINHTTPAPI
@@ -1388,6 +1467,43 @@ BOOLAPI
 WinHttpGetIEProxyConfigForCurrentUser
 (
     IN OUT WINHTTP_CURRENT_USER_IE_PROXY_CONFIG * pProxyConfig
+);
+
+WINHTTPAPI
+DWORD
+WINAPI
+WinHttpWriteProxySettings(
+    _In_ HINTERNET hSession,
+    _In_ BOOL fForceUpdate,
+    _In_ WINHTTP_PROXY_SETTINGS *pWinHttpProxySettings
+);
+
+WINHTTPAPI
+DWORD
+WINAPI
+WinHttpReadProxySettings(
+    _In_ HINTERNET hSession,
+    _In_opt_ PCWSTR pcwszConnectionName,
+    _In_ BOOL fFallBackToDefaultSettings,
+    _In_ BOOL fSetAutoDiscoverForDefaultSettings,
+    _Out_ DWORD *pdwSettingsVersion,
+    _Out_ BOOL *pfDefaultSettingsAreReturned,
+    _Out_ WINHTTP_PROXY_SETTINGS *pWinHttpProxySettings
+);
+
+WINHTTPAPI
+VOID
+WINAPI
+WinHttpFreeProxySettings(
+    _In_ WINHTTP_PROXY_SETTINGS *pWinHttpProxySettings
+);
+
+WINHTTPAPI
+DWORD
+WINAPI
+WinHttpGetProxySettingsVersion(
+    _In_ HINTERNET hSession,
+    _Out_ DWORD *pdwProxySettingsVersion
 );
 
 typedef enum _WINHTTP_WEB_SOCKET_OPERATION

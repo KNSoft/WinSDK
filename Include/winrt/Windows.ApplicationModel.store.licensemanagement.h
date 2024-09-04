@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -101,6 +101,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    interface ILicenseManagerStatics2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
@@ -207,18 +229,18 @@ interface ILicenseSatisfactionInfo;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001 */
 /* [local] */ 
@@ -253,18 +275,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002 */
 /* [local] */ 
@@ -299,18 +321,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003 */
 /* [local] */ 
@@ -345,18 +367,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004 */
 /* [local] */ 
@@ -419,18 +441,18 @@ interface ILicenseSatisfactionResult;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005 */
 /* [local] */ 
@@ -465,18 +487,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006 */
 /* [local] */ 
@@ -511,18 +533,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3116 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3116_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3116_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007 */
 /* [local] */ 
@@ -557,18 +579,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3117 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3117_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3117_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008 */
 /* [local] */ 
@@ -604,6 +626,17 @@ extern "C" {
 #endif // defined(__cplusplus)
 
 
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+
 
 
 
@@ -613,24 +646,45 @@ extern "C" {
 
 
 
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    
+                    typedef enum LicenseRefreshOption LicenseRefreshOption;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+
 
 
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3118 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3118_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3118_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0009 */
 /* [local] */ 
@@ -781,18 +835,18 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CS
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3119 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3119_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3119_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0011 */
 /* [local] */ 
@@ -967,18 +1021,18 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CAppli
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3120 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3120_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3120_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0013 */
 /* [local] */ 
@@ -1119,18 +1173,18 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CAppli
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3121 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3121_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3121_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0015 */
 /* [local] */ 
@@ -1307,18 +1361,18 @@ EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore_
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3122 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3122_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3122_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0017 */
 /* [local] */ 
@@ -1440,18 +1494,18 @@ EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicatio
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3123 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3123_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_3123_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0019 */
 /* [local] */ 
@@ -1602,6 +1656,18 @@ EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CStore__
 
 #endif /* pinterface */
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
+enum __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption
+    {
+        LicenseRefreshOption_RunningLicenses	= 0,
+        LicenseRefreshOption_AllLicenses	= 1
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__)
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics";
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__) */
@@ -1609,6 +1675,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0020 */
 /* [local] */ 
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    
+                    /* [v1_enum] */ 
+                    enum LicenseRefreshOption
+                        {
+                            LicenseRefreshOption_RunningLicenses	= 0,
+                            LicenseRefreshOption_AllLicenses	= 1
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
 
 
 
@@ -1757,9 +1846,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagem
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics2[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021 */
@@ -1769,6 +1858,147 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Store {
+                    namespace LicenseManagement {
+                        
+                        MIDL_INTERFACE("AB2EC47B-1F79-4480-B87E-2C499E601BA3")
+                        ILicenseManagerStatics2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE RefreshLicensesAsync( 
+                                /* [in] */ ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ILicenseManagerStatics2 = __uuidof(ILicenseManagerStatics2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *RefreshLicensesAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption refreshOption,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_RefreshLicensesAsync(This,refreshOption,action)	\
+    ( (This)->lpVtbl -> RefreshLicensesAsync(This,refreshOption,action) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__
@@ -1953,7 +2183,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagem
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__)
@@ -1961,13 +2191,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__
@@ -2102,7 +2332,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagem
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager_DEFINED
@@ -2119,13 +2349,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

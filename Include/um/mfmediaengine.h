@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -710,7 +710,8 @@ enum MF_MEDIA_ENGINE_EVENT
         MF_MEDIA_ENGINE_EVENT_OPMINFO	= 1011,
         MF_MEDIA_ENGINE_EVENT_RESOURCELOST	= 1012,
         MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED	= 1013,
-        MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR	= 1014
+        MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR	= 1014,
+        MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED	= 1015
     } 	MF_MEDIA_ENGINE_EVENT;
 
 
@@ -1642,7 +1643,7 @@ EXTERN_C const IID IID_IMFMediaEngineEx;
         virtual HRESULT STDMETHODCALLTYPE GetStreamSelection( 
             /* [annotation][in] */ 
             _In_  DWORD dwStreamIndex,
-            /* [annotation][in] */ 
+            /* [annotation][out] */ 
             _Out_  BOOL *pEnabled) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE SetStreamSelection( 
@@ -2017,7 +2018,7 @@ EXTERN_C const IID IID_IMFMediaEngineEx;
             IMFMediaEngineEx * This,
             /* [annotation][in] */ 
             _In_  DWORD dwStreamIndex,
-            /* [annotation][in] */ 
+            /* [annotation][out] */ 
             _Out_  BOOL *pEnabled);
         
         HRESULT ( STDMETHODCALLTYPE *SetStreamSelection )( 
@@ -5008,12 +5009,12 @@ EXTERN_GUID(MF_MEDIA_ENGINE_PLAYBACK_HWND,
 0xd988879b,0x67c9,0x4d92,0xba,0xa7,0x6e,0xad,0xd4,0x46,0x03,0x9d);
 EXTERN_GUID(MF_MEDIA_ENGINE_OPM_HWND,
 0xa0be8ee7, 0x0572, 0x4f2c, 0xa8, 0x01, 0x2a, 0x15, 0x1b, 0xd3, 0xe7, 0x26);
-EXTERN_GUID(MF_MEDIA_ENGINE_PLAYBACK_VISUAL,
-0x6debd26f,0x6ab9,0x4d7e,0xb0,0xee,0xc6,0x1a,0x73,0xff,0xad,0x15);
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 #pragma region Application Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+EXTERN_GUID(MF_MEDIA_ENGINE_PLAYBACK_VISUAL,
+0x6debd26f,0x6ab9,0x4d7e,0xb0,0xee,0xc6,0x1a,0x73,0xff,0xad,0x15);
 EXTERN_GUID(MF_MEDIA_ENGINE_COREWINDOW,
 0xfccae4dc, 0x0b7f, 0x41c2, 0x9f, 0x96, 0x46, 0x59, 0x94, 0x8a, 0xcd, 0xdc);
 EXTERN_GUID(MF_MEDIA_ENGINE_VIDEO_OUTPUT_FORMAT,

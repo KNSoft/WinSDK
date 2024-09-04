@@ -104,7 +104,7 @@ typedef struct _RECORDER_CONFIGURE_PARAMS {
 FORCEINLINE
 VOID
 RECORDER_CONFIGURE_PARAMS_INIT(
-    __out
+    _Out_
         PRECORDER_CONFIGURE_PARAMS  Params
     )
 {
@@ -121,9 +121,9 @@ RECORDER_CONFIGURE_PARAMS_INIT(
 __drv_maxIRQL(PASSIVE_LEVEL)
 VOID
 imp_WppRecorderConfigure(
-    __in
+    _In_
         PVOID                       WppCb,
-    __in 
+    _In_ 
         PRECORDER_CONFIGURE_PARAMS  ConfigureParams
     );
 
@@ -177,7 +177,7 @@ typedef struct _RECORDER_LOG_CREATE_PARAMS {
     // Lives at end of struct so that, if at some point clients have different definitions of the
     // array size, it remains simple to read the rest of the struct.
     //
-    __field_bcount(LogIdentifierSize)
+    _Field_size_(LogIdentifierSize)
     CHAR        LogIdentifier[RECORDER_LOG_IDENTIFIER_MAX_CHARS];
 
 } RECORDER_LOG_CREATE_PARAMS, *PRECORDER_LOG_CREATE_PARAMS;
@@ -185,9 +185,9 @@ typedef struct _RECORDER_LOG_CREATE_PARAMS {
 FORCEINLINE
 VOID
 RECORDER_LOG_CREATE_PARAMS_INIT(
-    __out
+    _Out_
         PRECORDER_LOG_CREATE_PARAMS Params,
-    __in_opt
+    _In_opt_
         PSTR                        LogIdentifier
     )
 {
@@ -211,11 +211,11 @@ RECORDER_LOG_CREATE_PARAMS_INIT(
 FORCEINLINE
 VOID
 RECORDER_LOG_CREATE_PARAMS_INIT_APPEND_POINTER(
-    __out
+    _Out_
         PRECORDER_LOG_CREATE_PARAMS Params,
-    __in_opt
+    _In_opt_
         PSTR                        LogIdentifier,
-    __in
+    _In_
         PVOID                       LogIdentifierAppendPointer
     )
 {
@@ -228,11 +228,11 @@ RECORDER_LOG_CREATE_PARAMS_INIT_APPEND_POINTER(
 __drv_maxIRQL(DISPATCH_LEVEL)
 NTSTATUS
 imp_WppRecorderLogCreate(
-    __in
+    _In_
         PVOID                       WppCb,
-    __in
+    _In_
         PRECORDER_LOG_CREATE_PARAMS CreateParams,
-    __out
+    _Out_
         RECORDER_LOG *              RecorderLog
     );
 
@@ -242,9 +242,9 @@ imp_WppRecorderLogCreate(
 __drv_maxIRQL(DISPATCH_LEVEL)
 VOID
 imp_WppRecorderLogDelete(
-    __in
+    _In_
        PVOID                        WppCb,
-    __in
+    _In_
         RECORDER_LOG                RecorderLog
     );
 
@@ -254,11 +254,11 @@ imp_WppRecorderLogDelete(
 __drv_maxIRQL(DISPATCH_LEVEL)
 VOID
 imp_WppRecorderLogSetIdentifier(
-    __in
+    _In_
        PVOID                        WppCb,
-    __in
+    _In_
         RECORDER_LOG                RecorderLog,
-    __in
+    _In_
         PSTR                        LogIdentifier
     );
 
@@ -268,7 +268,7 @@ imp_WppRecorderLogSetIdentifier(
 __drv_maxIRQL(DISPATCH_LEVEL)
 RECORDER_LOG
 imp_WppRecorderLogGetDefault(
-    __in
+    _In_
         PVOID                       WppCb
     );
 
@@ -278,7 +278,7 @@ imp_WppRecorderLogGetDefault(
 __drv_maxIRQL(DISPATCH_LEVEL)
 BOOLEAN
 imp_WppRecorderIsDefaultLogAvailable(
-    __in
+    _In_
         PVOID                       WppCb
     );
 
@@ -288,7 +288,7 @@ imp_WppRecorderIsDefaultLogAvailable(
 __drv_maxIRQL(DISPATCH_LEVEL)
 WPP_RECORDER_COUNTER
 imp_WppRecorderGetCounterHandle(
-    __in
+    _In_
         PVOID                       WppCb
     );
 
@@ -298,9 +298,9 @@ imp_WppRecorderGetCounterHandle(
 __drv_maxIRQL(DISPATCH_LEVEL)
 NTSTATUS
 imp_WppRecorderLinkCounters(
-    __in
+    _In_
         PVOID                       WppCb,
-    __in
+    _In_
         WPP_RECORDER_COUNTER        CounterOwner
     );
 
@@ -310,9 +310,9 @@ imp_WppRecorderLinkCounters(
 __drv_maxIRQL(DISPATCH_LEVEL)
 NTSTATUS
 imp_WppRecorderGetTriageInfo(
-    __in
+    _In_
         PVOID                       WppCb,
-    __out
+    _Out_
         PWPP_TRIAGE_INFO            WppTriageInfo
     );
 
@@ -322,13 +322,13 @@ imp_WppRecorderGetTriageInfo(
 __drv_maxIRQL(HIGH_LEVEL)
 NTSTATUS
 imp_WppRecorderDumpLiveDriverData(
-    __in
+    _In_
         PVOID                WppCb,
-    __out __deref_ecount(*OutBufferLength)
+    _Out_ __deref_ecount(*OutBufferLength)
         PVOID              * OutBuffer,
-    __out
+    _Out_
         PULONG               OutBufferLength,
-    __out
+    _Out_
         LPGUID               Guid
     );
 
@@ -338,15 +338,15 @@ imp_WppRecorderDumpLiveDriverData(
 __drv_maxIRQL(HIGH_LEVEL)
 NTSTATUS
 imp_WppRecorderLogDumpLiveData(
-    __in
+    _In_
         PVOID                WppCb,
-    __in
+    _In_
         RECORDER_LOG         RecorderLog,
-    __out __deref_ecount(*OutBufferLength)
+    _Out_ __deref_ecount(*OutBufferLength)
         PVOID              * OutBuffer,
-    __out
+    _Out_
         PULONG               OutBufferLength,
-    __out
+    _Out_
         LPGUID               Guid
     );
 
@@ -363,13 +363,13 @@ as examples below.
 __drv_maxIRQL(HIGH_LEVEL)
 VOID
 TraceTo(
-    __in
+    _In_
         RECORDER_LOG   RecorderLog,
-    __in
+    _In_
         UCHAR          Level,
-    __in
+    _In_
         ULONG          Flags,
-    __in
+    _In_
         LPCSTR         Format,
     ...
     );
@@ -377,11 +377,11 @@ TraceTo(
 __drv_maxIRQL(HIGH_LEVEL)
 VOID
 TraceDefault(
-    __in
+    _In_
         UCHAR          Level,
-    __in
+    _In_
         ULONG          Flags,
-    __in
+    _In_
         LPCSTR         Format,
     ...
     );

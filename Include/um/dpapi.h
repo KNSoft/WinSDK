@@ -247,6 +247,11 @@ CryptUpdateProtectedState(
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region App Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 //
 // The buffer length passed into CryptProtectMemory and CryptUnprotectMemory
@@ -298,7 +303,7 @@ CryptUnprotectMemory(
     _In_            DWORD           dwFlags
     );
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #ifdef __cplusplus

@@ -695,6 +695,9 @@ typedef struct  _DRVFN  /* drvfn */
 #define INDEX_DrvEndDxInterop                   100L
 #define INDEX_DrvLockDisplayArea                101L
 #define INDEX_DrvUnlockDisplayArea              102L
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS1 )
+#define INDEX_DrvSurfaceComplete                103L
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 #endif // (NTDDI_VERSION >= NTDDI_WINXP)
@@ -706,8 +709,10 @@ typedef struct  _DRVFN  /* drvfn */
 #define INDEX_LAST                              93L
 #elif (NTDDI_VERSION < NTDDI_WIN7)
 #define INDEX_LAST                              94L
-#else // (NTDDI_VERSION >= NTDDI_WIN7)
+#elif (NTDDI_VERSION < NTDDI_WIN10_RS1)
 #define INDEX_LAST                              103L
+#else // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+#define INDEX_LAST                              104L
 #endif 
 
 typedef struct  tagDRVENABLEDATA
@@ -790,6 +795,9 @@ typedef struct  tagDEVINFO
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 #define GCAPS2_ACC_DRIVER        0x00008000
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define GCAPS2_BITMAPEXREUSE     0x00010000
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 typedef struct  _LINEATTRS
 {
@@ -2377,6 +2385,9 @@ BOOL APIENTRY EngAssociateSurface(
 #define MS_NOTSYSTEMMEMORY  0x0001
 #define MS_SHAREDACCESS     0x0002
 #define MS_CDDDEVICEBITMAP  0x0004
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define MS_REUSEDDEVICEBITMAP 0x0008
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 ENGAPI
 BOOL APIENTRY EngModifySurface(
@@ -2623,6 +2634,9 @@ VOID APIENTRY DrvDeleteDeviceBitmap(
 #define CDBEX_DXINTEROP               0x00000002
 #define CDBEX_NTSHAREDSURFACEHANDLE   0x00000004
 #define CDBEX_CROSSADAPTER            0x00000008
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define CDBEX_REUSE                   0x00000010 // This flag indicates dhsurfGroup is the dhsurf from old PDEV during dynamic mode change.
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 HBITMAP APIENTRY DrvCreateDeviceBitmapEx(
     DHPDEV  dhpdev,
@@ -2680,8 +2694,17 @@ VOID APIENTRY DrvUnlockDisplayArea(
     _In_ DHPDEV dhpdev,
     _In_opt_ RECTL *prcl
     );
-    
+
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+
+BOOL APIENTRY DrvSurfaceComplete(
+    _In_ DHPDEV  dhpdev,
+    _In_ HANDLE hLogicalSurface
+    );
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 
 /*
  * Palettes
@@ -4788,6 +4811,13 @@ PVOID APIENTRY  EngFntCacheLookUp(
     _In_    ULONG FastCheckSum, 
     _Out_   ULONG * pulSize);
 
+#ifdef USERMODE_DRIVER
+ENGAPI
+BOOL WINAPI EngFntCacheFlush(
+    _In_  PVOID OffsetBuffer,
+    _In_  BOOL  DiscardContent);
+#endif
+
 ENGAPI
 _Post_writable_byte_size_(ulSize)
 PVOID APIENTRY  EngFntCacheAlloc(
@@ -5026,6 +5056,10 @@ typedef BOOL    (APIENTRY *PFN_DrvStartDxInterop)(SURFOBJ*, BOOL, PVOID KernelMo
 typedef BOOL    (APIENTRY *PFN_DrvEndDxInterop)(SURFOBJ*, BOOL, BOOL*, PVOID KernelModeDeviceHandle);
 typedef VOID    (APIENTRY *PFN_DrvLockDisplayArea)(DHPDEV, RECTL*);
 typedef VOID    (APIENTRY *PFN_DrvUnlockDisplayArea)(DHPDEV, RECTL*);
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
+typedef BOOL    (APIENTRY *PFN_DrvSurfaceComplete)(DHPDEV, HANDLE);
 #endif
 
 #ifdef __cplusplus

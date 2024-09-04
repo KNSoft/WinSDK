@@ -101,8 +101,7 @@ typedef struct _NET_INTERFACE_CONTEXT_TABLE
 //
 // FAILED(HRESULT)  - Returned in case of failures that are outside the control of the implementation.
 //
-HRESULT
-GetInterfaceContextTableForHostName(
+STDAPI GetInterfaceContextTableForHostName(
     _In_opt_ PCWSTR HostName,
     _In_opt_ PCWSTR ProxyName,
     _In_ DWORD Flags,
@@ -118,8 +117,7 @@ GetInterfaceContextTableForHostName(
 //
 // InterfaceContextTable                - Interface context table retrieved using GetInterfaceContextTableForHostName.
 //
-VOID
-FreeInterfaceContextTable(
+STDAPI_(VOID) FreeInterfaceContextTable(
     _In_ NET_INTERFACE_CONTEXT_TABLE* InterfaceContextTable);
 
 #endif // NTDDI_VERSION >= NTDDI_WINTHRESHOLD

@@ -1,6 +1,7 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+import "dxgicommon.idl";
 import "dxgitype.idl";
 
 cpp_quote("#include <winapifamily.h>")
@@ -76,10 +77,13 @@ typedef struct DXGI_MAPPED_RECT
 // The system LUID struct isn't defined in wtypes, so we repeat it here just
 // for the MIDL compiler.
 cpp_quote("#ifdef __midl")
+cpp_quote("#ifndef LUID_DEFINED")
+cpp_quote("#define LUID_DEFINED 1")
 typedef struct _LUID {
     DWORD LowPart;
     LONG HighPart;
 } LUID, *PLUID;
+cpp_quote("#endif")
 cpp_quote("#endif")
 
 //--------------------------------------------------------------------------------------------------------
@@ -173,6 +177,7 @@ typedef enum DXGI_SWAP_CHAIN_FLAG
     DXGI_SWAP_CHAIN_FLAG_YUV_VIDEO = 512,
     DXGI_SWAP_CHAIN_FLAG_HW_PROTECTED = 1024,
     DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING = 2048,
+    DXGI_SWAP_CHAIN_FLAG_RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS = 4096,
 } DXGI_SWAP_CHAIN_FLAG;
 
 //--------------------------------------------------------------------------------------------------------
@@ -209,7 +214,7 @@ interface IDXGIObject :
         [in, annotation("_In_reads_bytes_(DataSize)")] const void *pData );
     HRESULT SetPrivateDataInterface(
         [in, annotation("_In_")] REFGUID Name,
-        [in, annotation("_In_")] const IUnknown *pUnknown );
+        [in, annotation("_In_opt_")] const IUnknown *pUnknown );
     HRESULT GetPrivateData(
         [in, annotation("_In_")] REFGUID Name,
         [in, out, annotation("_Inout_")] UINT *pDataSize,
@@ -504,10 +509,10 @@ interface IDXGIDevice :
 //--------------------------------------------------------------------------------------------------------
 typedef enum DXGI_ADAPTER_FLAG
 {
-    DXGI_ADAPTER_FLAG_NONE        = 0,
-    DXGI_ADAPTER_FLAG_REMOTE      = 1,
-    DXGI_ADAPTER_FLAG_SOFTWARE    = 2,
-    DXGI_ADAPTER_FLAG_FORCE_DWORD = 0xFFFFFFFF,
+    DXGI_ADAPTER_FLAG_NONE                      = 0,
+    DXGI_ADAPTER_FLAG_REMOTE                    = 1,
+    DXGI_ADAPTER_FLAG_SOFTWARE                  = 2,
+    DXGI_ADAPTER_FLAG_FORCE_DWORD               = 0xFFFFFFFF,
 } DXGI_ADAPTER_FLAG;
 
 //--------------------------------------------------------------------------------------------------------

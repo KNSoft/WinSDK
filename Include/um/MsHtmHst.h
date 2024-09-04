@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -153,6 +153,7 @@ extern "C"{
 //;begin_internal
 #define CONTEXT_MENU_ENTITY         12
 #define CONTEXT_MENU_PDF            13
+#define CONTEXT_MENU_DISABLEDFLASH  14
 //;end_internal
 #define MENUEXT_SHOWDIALOG           0x1
 #define DOCHOSTUIFLAG_BROWSER       (DOCHOSTUIFLAG_DISABLE_HELP_MENU | DOCHOSTUIFLAG_DISABLE_SCRIPT_INACTIVE) 

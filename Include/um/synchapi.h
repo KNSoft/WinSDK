@@ -23,6 +23,7 @@
 #include <minwinbase.h>
 
 /* APISET_NAME: api-ms-win-core-synch-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -591,15 +592,8 @@ OpenSemaphoreW(
 #define OpenSemaphore  OpenSemaphoreW
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
 
 #if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
-
-#pragma region Desktop or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 typedef
 VOID
@@ -663,15 +657,8 @@ CancelWaitableTimer(
     );
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
 
 #if (_WIN32_WINNT >= 0x0600)
-
-#pragma region Application or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #define CREATE_MUTEX_INITIAL_OWNER  0x00000001
 
@@ -752,13 +739,6 @@ CreateSemaphoreExW(
 #define CreateSemaphoreEx  CreateSemaphoreExW
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 #define CREATE_WAITABLE_TIMER_MANUAL_RESET  0x00000001
 
 WINBASEAPI
@@ -777,12 +757,12 @@ CreateWaitableTimerExW(
 #define CreateWaitableTimerEx  CreateWaitableTimerExW
 #endif
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
-
 #endif // (_WIN32_WINNT >= 0x0600)
 
 #endif // (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
 
 // end_1_0
 
@@ -928,13 +908,6 @@ CreateSemaphoreW(
 #define CreateSemaphore  CreateSemaphoreW
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 WINBASEAPI
 _Ret_maybenull_
 HANDLE
@@ -950,7 +923,7 @@ CreateWaitableTimerW(
 #define CreateWaitableTimer  CreateWaitableTimerW
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #endif // !defined(_CONTRACT_GEN) || (_APISET_SYNCH_VER >= 0x0201)

@@ -74,6 +74,21 @@ interface ILoadFilter : IUnknown
                                    [in, out, unique] IFilter ** ppIFilt );
 };
 
+[
+    object,
+    uuid(40BDBD34-780B-48D3-9BB6-12EBD4AD2E75),
+    helpstring("ILoadFilterWithPrivateComActivation Interface"),
+    pointer_default(unique)
+]
+interface ILoadFilterWithPrivateComActivation : ILoadFilter
+{
+    HRESULT LoadIFilterWithPrivateComActivation(
+        [in, unique] FILTERED_DATA_SOURCES * filteredSources,
+        [in] BOOL useDefault,   // use default filter when no filter is found
+        [out] CLSID * filterClsid,
+        [out] BOOL *isFilterPrivateComActivated,
+        [in, out, unique] IFilter **  filterObj);
+};
 
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")

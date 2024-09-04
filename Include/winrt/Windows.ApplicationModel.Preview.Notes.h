@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -126,6 +126,50 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Preview {
+                namespace Notes {
+                    interface INotesWindowManagerPreview2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Preview {
+                namespace Notes {
+                    interface INotesWindowManagerPreviewShowNoteOptions;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics;
@@ -153,7 +197,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
-#include "Windows.Storage.Streams.h"
+#include "Windows.Graphics.Imaging.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -211,18 +255,18 @@ interface IInspectable;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0001 */
 /* [local] */ 
@@ -285,18 +329,18 @@ interface INotePlacementChangedPreviewEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0002 */
 /* [local] */ 
@@ -359,18 +403,18 @@ interface INoteVisibilityChangedPreviewEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0003 */
 /* [local] */ 
@@ -398,6 +442,9 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Egraphics2Eimaging_h__)
+#include <Windows.Graphics.Imaging.h>
+#endif // !defined(__windows2Egraphics2Eimaging_h__)
 #if !defined(__windows2Estorage2Estreams_h__)
 #include <Windows.Storage.Streams.h>
 #endif // !defined(__windows2Estorage2Estreams_h__)
@@ -409,8 +456,35 @@ extern "C" {
 typedef struct __x_ABI_CWindows_CFoundation_CSize __x_ABI_CWindows_CFoundation_CSize;
 
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Graphics {
+namespace Imaging {
+class SoftwareBitmap;
+} /*Imaging*/
+} /*Graphics*/
+} /*Windows*/
+}
+#endif
 
 
+
+
+
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace ApplicationModel {
+namespace Preview {
+namespace Notes {
+class NotesWindowManagerPreviewShowNoteOptions;
+} /*Notes*/
+} /*Preview*/
+} /*ApplicationModel*/
+} /*Windows*/
+}
+#endif
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0003 */
@@ -438,21 +512,24 @@ extern "C" {
 
 
 
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0004 */
 /* [local] */ 
@@ -572,18 +649,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CPrev
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3114 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3114_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3114_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0006 */
 /* [local] */ 
@@ -703,18 +780,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CPrev
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3115 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3115_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_3115_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0008 */
 /* [local] */ 
@@ -1407,9 +1484,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINote
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0012 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Preview_Notes_INotesWindowManagerPreviewStatics[] = L"Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Preview_Notes_INotesWindowManagerPreview2[] = L"Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0012 */
@@ -1419,6 +1496,332 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0012_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Preview::Notes::INotesWindowManagerPreview2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Preview {
+                    namespace Notes {
+                        
+                        MIDL_INTERFACE("EDFE864A-1F54-4B09-9823-FF477F6FA3BC")
+                        INotesWindowManagerPreview2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE ShowNoteRelativeToWithOptions( 
+                                /* [in] */ INT32 noteViewId,
+                                /* [in] */ INT32 anchorNoteViewId,
+                                /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Preview::Notes::INotesWindowManagerPreviewShowNoteOptions *options) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE ShowNoteWithPlacementWithOptions( 
+                                /* [in] */ INT32 noteViewId,
+                                /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IBuffer *data,
+                                /* [in] */ __RPC__in_opt ABI::Windows::ApplicationModel::Preview::Notes::INotesWindowManagerPreviewShowNoteOptions *options) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetFocusToPreviousView( void) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE SetThumbnailImageForTaskSwitcherAsync( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap *bitmap,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_INotesWindowManagerPreview2 = __uuidof(INotesWindowManagerPreview2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowNoteRelativeToWithOptions )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [in] */ INT32 noteViewId,
+            /* [in] */ INT32 anchorNoteViewId,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions *options);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowNoteWithPlacementWithOptions )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [in] */ INT32 noteViewId,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer *data,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions *options);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetFocusToPreviousView )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetThumbnailImageForTaskSwitcherAsync )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CImaging_CISoftwareBitmap *bitmap,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2Vtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_ShowNoteRelativeToWithOptions(This,noteViewId,anchorNoteViewId,options)	\
+    ( (This)->lpVtbl -> ShowNoteRelativeToWithOptions(This,noteViewId,anchorNoteViewId,options) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_ShowNoteWithPlacementWithOptions(This,noteViewId,data,options)	\
+    ( (This)->lpVtbl -> ShowNoteWithPlacementWithOptions(This,noteViewId,data,options) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_SetFocusToPreviousView(This)	\
+    ( (This)->lpVtbl -> SetFocusToPreviousView(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_SetThumbnailImageForTaskSwitcherAsync(This,bitmap,action)	\
+    ( (This)->lpVtbl -> SetThumbnailImageForTaskSwitcherAsync(This,bitmap,action) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreview2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Preview_Notes_INotesWindowManagerPreviewShowNoteOptions[] = L"Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::ApplicationModel::Preview::Notes::INotesWindowManagerPreviewShowNoteOptions */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace ApplicationModel {
+                namespace Preview {
+                    namespace Notes {
+                        
+                        MIDL_INTERFACE("886B09D6-A6AE-4007-A56D-1CA70C84C0D2")
+                        INotesWindowManagerPreviewShowNoteOptions : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ShowWithFocus( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ShowWithFocus( 
+                                /* [in] */ boolean value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_INotesWindowManagerPreviewShowNoteOptions = __uuidof(INotesWindowManagerPreviewShowNoteOptions);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptionsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ShowWithFocus )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ShowWithFocus )( 
+            __RPC__in __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions * This,
+            /* [in] */ boolean value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptionsVtbl;
+
+    interface __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptionsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_get_ShowWithFocus(This,value)	\
+    ( (This)->lpVtbl -> get_ShowWithFocus(This,value) ) 
+
+#define __x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_put_ShowWithFocus(This,value)	\
+    ( (This)->lpVtbl -> put_ShowWithFocus(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewShowNoteOptions_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0014 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Preview_Notes_INotesWindowManagerPreviewStatics[] = L"Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics";
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0014 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0014_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0014_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__
@@ -1543,7 +1946,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINote
 #endif 	/* ____x_ABI_CWindows_CApplicationModel_CPreview_CNotes_CINotesWindowManagerPreviewStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0015 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Preview_Notes_NotePlacementChangedPreviewEventArgs_DEFINED
@@ -1558,15 +1961,19 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_ApplicationModel_Preview_Notes_NotesWindowManagerPreview_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Preview_Notes_NotesWindowManagerPreview[] = L"Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview";
 #endif
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Preview_Notes_NotesWindowManagerPreviewShowNoteOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Preview_Notes_NotesWindowManagerPreviewShowNoteOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Preview_Notes_NotesWindowManagerPreviewShowNoteOptions[] = L"Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions";
+#endif
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0015 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0013_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0015_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Epreview2Enotes_0000_0015_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

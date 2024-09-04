@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -273,18 +273,18 @@ interface IContactListServerSearchReadBatchRequestEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4659 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3110 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4659 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3110_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3110_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4659_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4659_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0001 */
 /* [local] */ 
@@ -347,18 +347,18 @@ interface IContactListSyncManagerSyncRequestEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4660 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3111 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4660 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3111_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3111_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4660_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4660_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0002 */
 /* [local] */ 
@@ -515,18 +515,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4661 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3112 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4661 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3112_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3112_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4661_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4661_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0003 */
 /* [local] */ 
@@ -646,18 +646,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CApplicationModel__CCont
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4662 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3113 */
+/* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4662 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3113_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_3113_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4662_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider2Eidl_0000_4662_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eapplicationmodel2Econtacts2Edataprovider_0000_0005 */
 /* [local] */ 

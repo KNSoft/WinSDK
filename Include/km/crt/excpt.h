@@ -63,30 +63,9 @@ EXCEPTION_DISPOSITION __cdecl _except_handler (
     _Inout_ void * _DispatcherContext
     );
 
-#elif   defined(_M_IA64)
-
-/*
- * Declarations to keep IA64 compiler happy
- */
-typedef struct _EXCEPTION_POINTERS *Exception_info_ptr;
-struct _EXCEPTION_RECORD;
-struct _CONTEXT;
-struct _DISPATCHER_CONTEXT;
-
-#ifndef _M_CEE_PURE
-
-_CRTIMP EXCEPTION_DISPOSITION __cdecl __C_specific_handler (
-    _In_ struct _EXCEPTION_RECORD *_ExceptionRecord,
-    _In_ unsigned __int64 _MemoryStackFp,
-    _In_ unsigned __int64 _BackingStoreFp,
-    _Inout_ struct _CONTEXT *_ContextRecord,
-    _Inout_ struct _DISPATCHER_CONTEXT *_DispatcherContext,
-    _In_ unsigned __int64 _GlobalPointer
-    );
-
 #endif
 
-#elif   defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)
+#if defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID)
 
 /*
  * Declarations to keep AMD64 compiler happy

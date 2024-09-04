@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -304,6 +304,50 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialInteractionController;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialInteractionControllerProperties;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs;
@@ -324,6 +368,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialInteractionDetectedEventArgs2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManager_FWD_DEFINED__
@@ -392,6 +458,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialInteractionSource2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs;
@@ -412,6 +500,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialInteractionSourceEventArgs2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation_FWD_DEFINED__
@@ -500,6 +610,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialInteractionSourceState2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCanceledEventArgs_FWD_DEFINED__
@@ -700,6 +832,28 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationUpdatedEventArgs_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialPointerInteractionSourcePose;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose;
@@ -720,6 +874,28 @@ namespace ABI {
 #endif /* __cplusplus */
 
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_FWD_DEFINED__ */
+
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    interface ISpatialPointerPose2;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_FWD_DEFINED__ */
 
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPoseStatics_FWD_DEFINED__
@@ -815,6 +991,7 @@ namespace ABI {
 #include "AsyncInfo.h"
 #include "EventToken.h"
 #include "Windows.Foundation.h"
+#include "Windows.Devices.Haptics.h"
 #include "Windows.Foundation.Numerics.h"
 #include "Windows.Perception.h"
 #include "Windows.Perception.People.h"
@@ -873,18 +1050,18 @@ interface ISpatialInteractionSourceState;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4663 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3150 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4663 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3150_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3150_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4663_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4663_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0001 */
 /* [local] */ 
@@ -919,18 +1096,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4664 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3151 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4664 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3151_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3151_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4664_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4664_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0002 */
 /* [local] */ 
@@ -965,18 +1142,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4665 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3152 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4665 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3152_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3152_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4665_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4665_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0003 */
 /* [local] */ 
@@ -1067,18 +1244,18 @@ interface ISpatialHoldCanceledEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4666 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3153 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4666 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4666_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4666_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0004 */
 /* [local] */ 
@@ -1141,18 +1318,18 @@ interface ISpatialHoldCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4667 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3154 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4667 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4667_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4667_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0005 */
 /* [local] */ 
@@ -1215,18 +1392,18 @@ interface ISpatialHoldStartedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4668 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3155 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4668 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4668_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4668_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0006 */
 /* [local] */ 
@@ -1289,18 +1466,18 @@ interface ISpatialManipulationCanceledEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4669 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3156 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4669 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4669_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4669_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0007 */
 /* [local] */ 
@@ -1363,18 +1540,18 @@ interface ISpatialManipulationCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4670 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3157 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4670 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3157_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3157_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4670_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4670_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0008 */
 /* [local] */ 
@@ -1437,18 +1614,18 @@ interface ISpatialManipulationStartedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0008_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0008_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4671 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3158 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4671 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3158_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3158_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4671_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4671_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0009 */
 /* [local] */ 
@@ -1511,18 +1688,18 @@ interface ISpatialManipulationUpdatedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4672 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3159 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4672 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4672_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4672_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0010 */
 /* [local] */ 
@@ -1585,18 +1762,18 @@ interface ISpatialNavigationCanceledEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0010_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0010_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4673 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3160 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4673 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3160_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3160_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4673_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4673_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0011 */
 /* [local] */ 
@@ -1659,18 +1836,18 @@ interface ISpatialNavigationCompletedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4674 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3161 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4674 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4674_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4674_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0012 */
 /* [local] */ 
@@ -1733,18 +1910,18 @@ interface ISpatialNavigationStartedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0012_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0012_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4675 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3162 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4675 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3162_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3162_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4675_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4675_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0013 */
 /* [local] */ 
@@ -1807,18 +1984,18 @@ interface ISpatialNavigationUpdatedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4676 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3163 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4676 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4676_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4676_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0014 */
 /* [local] */ 
@@ -1881,18 +2058,18 @@ interface ISpatialRecognitionEndedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0014_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0014_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4677 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3164 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4677 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3164_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3164_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4677_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4677_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0015 */
 /* [local] */ 
@@ -1955,18 +2132,18 @@ interface ISpatialRecognitionStartedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4678 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3165 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4678 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4678_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4678_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0016 */
 /* [local] */ 
@@ -2029,18 +2206,18 @@ interface ISpatialTappedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0016_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0016_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4679 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3166 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4679 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3166_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3166_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4679_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4679_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0017 */
 /* [local] */ 
@@ -2131,18 +2308,18 @@ interface ISpatialInteractionDetectedEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4680 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3167 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4680 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3167_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3167_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4680_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4680_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0018 */
 /* [local] */ 
@@ -2205,18 +2382,18 @@ interface ISpatialInteractionSourceEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0018_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0018_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4681 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3168 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4681 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3168_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3168_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4681_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4681_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0019 */
 /* [local] */ 
@@ -2264,18 +2441,18 @@ struct Vector3;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4682 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3169 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4682 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4682_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4682_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0020 */
 /* [local] */ 
@@ -2323,18 +2500,18 @@ struct Quaternion;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0020_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0020_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4683 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3170 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4683 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4683_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4683_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0021 */
 /* [local] */ 
@@ -2362,6 +2539,9 @@ extern "C" {
 }
 #endif // defined(__cplusplus)
 #include <Windows.Foundation.h>
+#if !defined(__windows2Edevices2Ehaptics_h__)
+#include <Windows.Devices.Haptics.h>
+#endif // !defined(__windows2Edevices2Ehaptics_h__)
 #if !defined(__windows2Efoundation2Enumerics_h__)
 #include <Windows.Foundation.Numerics.h>
 #endif // !defined(__windows2Efoundation2Enumerics_h__)
@@ -2377,6 +2557,18 @@ extern "C" {
 #if defined(__cplusplus)
 extern "C" {
 #endif // defined(__cplusplus)
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace Devices {
+namespace Haptics {
+class SimpleHapticsController;
+} /*Haptics*/
+} /*Devices*/
+} /*Windows*/
+}
+#endif
+
 #if !defined(__cplusplus)
 typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion;
 
@@ -2432,6 +2624,16 @@ typedef enum __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialGestureSettings __x_AB
 #if !defined(__cplusplus)
 #if !defined(__cplusplus)
 
+typedef enum __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionPressKind __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionPressKind;
+
+
+#endif /* end if !defined(__cplusplus) */
+
+
+#endif
+#if !defined(__cplusplus)
+#if !defined(__cplusplus)
+
 typedef enum __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionSourceKind __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionSourceKind;
 
 
@@ -2449,6 +2651,14 @@ typedef enum __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionSourceKind 
 
 
 
+
+
+
+
+
+
+
+
 #ifdef __cplusplus
 namespace ABI {
 namespace Windows {
@@ -2456,6 +2666,32 @@ namespace UI {
 namespace Input {
 namespace Spatial {
 class SpatialInteraction;
+} /*Spatial*/
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+namespace Spatial {
+class SpatialInteractionController;
+} /*Spatial*/
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+namespace Spatial {
+class SpatialInteractionControllerProperties;
 } /*Spatial*/
 } /*Input*/
 } /*UI*/
@@ -2520,6 +2756,19 @@ namespace Windows {
 namespace UI {
 namespace Input {
 namespace Spatial {
+class SpatialPointerInteractionSourcePose;
+} /*Spatial*/
+} /*Input*/
+} /*UI*/
+} /*Windows*/
+}
+#endif
+#ifdef __cplusplus
+namespace ABI {
+namespace Windows {
+namespace UI {
+namespace Input {
+namespace Spatial {
 class SpatialPointerPose;
 } /*Spatial*/
 } /*Input*/
@@ -2531,6 +2780,7 @@ class SpatialPointerPose;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0021 */
 /* [local] */ 
+
 
 
 #ifdef __cplusplus
@@ -2601,6 +2851,26 @@ namespace ABI {
             namespace Input {
                 namespace Spatial {
                     
+                    typedef enum SpatialInteractionPressKind SpatialInteractionPressKind;
+                    
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    
                     typedef enum SpatialInteractionSourceKind SpatialInteractionSourceKind;
                     
                 } /* end namespace */
@@ -2624,21 +2894,29 @@ extern "C" {
 
 
 
+
+
+
+
+
+
+
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0021_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0021_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4684 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3171 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4684 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4684_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4684_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0022 */
 /* [local] */ 
@@ -2813,18 +3091,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CInput__CSpatial__CSpatialIn
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0023_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0023_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4685 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3172 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4685 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4685_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4685_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0024 */
 /* [local] */ 
@@ -2965,18 +3243,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CInput__CSpatial__CSpatialIn
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0025_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0025_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4686 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3173 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4686 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4686_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4686_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0026 */
 /* [local] */ 
@@ -3159,18 +3437,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CInput__CSpatial__CSpatial
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0027_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4687 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3174 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4687 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4687_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4687_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0028 */
 /* [local] */ 
@@ -3290,18 +3568,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0029_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0029_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4688 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3175 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4688 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4688_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4688_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0030 */
 /* [local] */ 
@@ -3421,18 +3699,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0031_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0031_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4689 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3176 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4689 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4689_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4689_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0032 */
 /* [local] */ 
@@ -3552,18 +3830,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0033_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0033_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4690 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3177 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4690 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4690_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4690_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0034 */
 /* [local] */ 
@@ -3683,18 +3961,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0035_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0035_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4691 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3178 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4691 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3178_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3178_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4691_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4691_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0036 */
 /* [local] */ 
@@ -3814,18 +4092,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0037_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0037_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4692 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3179 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4692 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4692_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4692_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0038 */
 /* [local] */ 
@@ -3945,18 +4223,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0039_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0039_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4693 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3180 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4693 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4693_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4693_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0040 */
 /* [local] */ 
@@ -4076,18 +4354,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0041_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0041_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4694 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3181 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4694 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4694_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4694_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0042 */
 /* [local] */ 
@@ -4207,18 +4485,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0043_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0043_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4695 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3182 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4695 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4695_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4695_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0044 */
 /* [local] */ 
@@ -4338,18 +4616,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0045_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0045_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4696 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3183 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4696 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4696_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4696_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0046 */
 /* [local] */ 
@@ -4469,18 +4747,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0047_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0047_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4697 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3184 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4697 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3184_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3184_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4697_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4697_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0048 */
 /* [local] */ 
@@ -4600,18 +4878,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0049_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0049_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4698 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3185 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4698 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3185_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3185_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4698_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4698_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0050 */
 /* [local] */ 
@@ -4731,18 +5009,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0051_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0051_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4699 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3186 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4699 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3186_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3186_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4699_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4699_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0052 */
 /* [local] */ 
@@ -4862,18 +5140,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0053_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0053_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4700 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3187 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4700 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3187_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3187_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4700_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4700_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0054 */
 /* [local] */ 
@@ -4993,18 +5271,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0055_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0055_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4701 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3188 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4701 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3188_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3188_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4701_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4701_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0056 */
 /* [local] */ 
@@ -5124,18 +5402,18 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CInput__CSpatial__C
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0057_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0057_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4702 */
 
 
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3189 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4702 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3189_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_3189_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4702_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial2Eidl_0000_4702_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0058 */
 /* [local] */ 
@@ -5283,6 +5561,22 @@ DEFINE_ENUM_FLAG_OPERATORS(SpatialGestureSettings)
 
 #if !defined(__cplusplus)
 /* [v1_enum] */ 
+enum __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionPressKind
+    {
+        SpatialInteractionPressKind_None	= 0,
+        SpatialInteractionPressKind_Select	= 1,
+        SpatialInteractionPressKind_Menu	= 2,
+        SpatialInteractionPressKind_Grasp	= 3,
+        SpatialInteractionPressKind_Touchpad	= 4,
+        SpatialInteractionPressKind_Thumbstick	= 5
+    } ;
+#endif /* end if !defined(__cplusplus) */
+
+#endif
+#if !defined(__cplusplus)
+
+#if !defined(__cplusplus)
+/* [v1_enum] */ 
 enum __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionSourceKind
     {
         SpatialInteractionSourceKind_Other	= 0,
@@ -5323,6 +5617,33 @@ namespace ABI {
                             SpatialGestureSettings_NavigationRailsX	= 0x80,
                             SpatialGestureSettings_NavigationRailsY	= 0x100,
                             SpatialGestureSettings_NavigationRailsZ	= 0x200
+                        } ;
+                } /* end namespace */
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+extern "C" { 
+#endif
+
+#ifdef __cplusplus
+} /* end extern "C" */
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Input {
+                namespace Spatial {
+                    
+                    /* [v1_enum] */ 
+                    enum SpatialInteractionPressKind
+                        {
+                            SpatialInteractionPressKind_None	= 0,
+                            SpatialInteractionPressKind_Select	= 1,
+                            SpatialInteractionPressKind_Menu	= 2,
+                            SpatialInteractionPressKind_Grasp	= 3,
+                            SpatialInteractionPressKind_Touchpad	= 4,
+                            SpatialInteractionPressKind_Thumbstick	= 5
                         } ;
                 } /* end namespace */
             } /* end namespace */
@@ -6536,9 +6857,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0065 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionDetectedEventArgs[] = L"Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionController[] = L"Windows.UI.Input.Spatial.ISpatialInteractionController";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0065 */
@@ -6548,6 +6869,394 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0065_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0065_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialInteractionController */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("5F0E5BA3-0954-4E97-86C5-E7F30B114DFD")
+                        ISpatialInteractionController : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasTouchpad( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasThumbstick( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SimpleHapticsController( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Haptics::ISimpleHapticsController **value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_VendorId( 
+                                /* [out][retval] */ __RPC__out UINT16 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ProductId( 
+                                /* [out][retval] */ __RPC__out UINT16 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Version( 
+                                /* [out][retval] */ __RPC__out UINT16 *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialInteractionController = __uuidof(ISpatialInteractionController);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasTouchpad )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasThumbstick )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SimpleHapticsController )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_VendorId )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out][retval] */ __RPC__out UINT16 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProductId )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out][retval] */ __RPC__out UINT16 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Version )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController * This,
+            /* [out][retval] */ __RPC__out UINT16 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_get_HasTouchpad(This,value)	\
+    ( (This)->lpVtbl -> get_HasTouchpad(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_get_HasThumbstick(This,value)	\
+    ( (This)->lpVtbl -> get_HasThumbstick(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_get_SimpleHapticsController(This,value)	\
+    ( (This)->lpVtbl -> get_SimpleHapticsController(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_get_VendorId(This,value)	\
+    ( (This)->lpVtbl -> get_VendorId(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_get_ProductId(This,value)	\
+    ( (This)->lpVtbl -> get_ProductId(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_get_Version(This,value)	\
+    ( (This)->lpVtbl -> get_Version(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionControllerProperties[] = L"Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("61056FB1-7BA9-4E35-B93F-9272CBA9B28B")
+                        ISpatialInteractionControllerProperties : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsTouchpadTouched( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsTouchpadPressed( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsThumbstickPressed( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ThumbstickX( 
+                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ThumbstickY( 
+                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TouchpadX( 
+                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_TouchpadY( 
+                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialInteractionControllerProperties = __uuidof(ISpatialInteractionControllerProperties);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerPropertiesVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsTouchpadTouched )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsTouchpadPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsThumbstickPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ThumbstickX )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ThumbstickY )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TouchpadX )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_TouchpadY )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerPropertiesVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerPropertiesVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_IsTouchpadTouched(This,value)	\
+    ( (This)->lpVtbl -> get_IsTouchpadTouched(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_IsTouchpadPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsTouchpadPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_IsThumbstickPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsThumbstickPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_ThumbstickX(This,value)	\
+    ( (This)->lpVtbl -> get_ThumbstickX(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_ThumbstickY(This,value)	\
+    ( (This)->lpVtbl -> get_ThumbstickY(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_TouchpadX(This,value)	\
+    ( (This)->lpVtbl -> get_TouchpadX(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_get_TouchpadY(This,value)	\
+    ( (This)->lpVtbl -> get_TouchpadY(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionDetectedEventArgs[] = L"Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__
@@ -6694,7 +7403,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionDetectedEventArgs2[] = L"Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("7B263E93-5F13-419C-97D5-834678266AA6")
+                        ISpatialInteractionDetectedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_InteractionSource( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Spatial::ISpatialInteractionSource **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialInteractionDetectedEventArgs2 = __uuidof(ISpatialInteractionDetectedEventArgs2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_InteractionSource )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_get_InteractionSource(This,value)	\
+    ( (This)->lpVtbl -> get_InteractionSource(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionDetectedEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManager_INTERFACE_DEFINED__)
@@ -6702,13 +7550,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManager_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0066_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManager_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManager_INTERFACE_DEFINED__
@@ -6967,7 +7815,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManagerStatics_INTERFACE_DEFINED__)
@@ -6975,13 +7823,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManagerStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0067_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManagerStatics_INTERFACE_DEFINED__
@@ -7106,7 +7954,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionManagerStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource_INTERFACE_DEFINED__)
@@ -7114,13 +7962,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0068_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource_INTERFACE_DEFINED__
@@ -7255,7 +8103,188 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionSource2[] = L"Windows.UI.Input.Spatial.ISpatialInteractionSource2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialInteractionSource2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("E4C5B70C-0470-4028-88C0-A0EB44D34EFE")
+                        ISpatialInteractionSource2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsPointingSupported( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsMenuSupported( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsGraspSupported( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Controller( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Spatial::ISpatialInteractionController **value) = 0;
+                            
+                            virtual HRESULT STDMETHODCALLTYPE TryGetStateAtTimestamp( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::Perception::IPerceptionTimestamp *timestamp,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Spatial::ISpatialInteractionSourceState **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialInteractionSource2 = __uuidof(ISpatialInteractionSource2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsPointingSupported )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsMenuSupported )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsGraspSupported )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Controller )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionController **value);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetStateAtTimestamp )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CPerception_CIPerceptionTimestamp *timestamp,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_get_IsPointingSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsPointingSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_get_IsMenuSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsMenuSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_get_IsGraspSupported(This,value)	\
+    ( (This)->lpVtbl -> get_IsGraspSupported(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_get_Controller(This,value)	\
+    ( (This)->lpVtbl -> get_Controller(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_TryGetStateAtTimestamp(This,timestamp,value)	\
+    ( (This)->lpVtbl -> TryGetStateAtTimestamp(This,timestamp,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_INTERFACE_DEFINED__)
@@ -7263,13 +8292,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0069_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_INTERFACE_DEFINED__
@@ -7394,7 +8423,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionSourceEventArgs2[] = L"Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("D8B4B467-E648-4D52-AB49-E0D227199F63")
+                        ISpatialInteractionSourceEventArgs2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PressKind( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Input::Spatial::SpatialInteractionPressKind *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialInteractionSourceEventArgs2 = __uuidof(ISpatialInteractionSourceEventArgs2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PressKind )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2 * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CInput_CSpatial_CSpatialInteractionPressKind *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_get_PressKind(This,value)	\
+    ( (This)->lpVtbl -> get_PressKind(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceEventArgs2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation_INTERFACE_DEFINED__)
@@ -7402,13 +8570,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0070_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation_INTERFACE_DEFINED__
@@ -7543,7 +8711,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation2_INTERFACE_DEFINED__)
@@ -7551,13 +8719,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation2_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0071_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation2_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation2_INTERFACE_DEFINED__
@@ -7682,7 +8850,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceLocation2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceProperties_INTERFACE_DEFINED__)
@@ -7690,13 +8858,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceProperties_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0072_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceProperties_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceProperties_INTERFACE_DEFINED__
@@ -7845,7 +9013,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceProperties_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState_INTERFACE_DEFINED__)
@@ -7853,13 +9021,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0073_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState_INTERFACE_DEFINED__
@@ -8026,7 +9194,186 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteraction
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialInteractionSourceState2[] = L"Windows.UI.Input.Spatial.ISpatialInteractionSourceState2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialInteractionSourceState2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("45F6D0BD-1773-492E-9BA3-8AC1CBE77C08")
+                        ISpatialInteractionSourceState2 : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsSelectPressed( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsMenuPressed( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsGrasped( 
+                                /* [out][retval] */ __RPC__out boolean *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SelectPressedValue( 
+                                /* [out][retval] */ __RPC__out DOUBLE *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ControllerProperties( 
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialInteractionSourceState2 = __uuidof(ISpatialInteractionSourceState2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSelectPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsMenuPressed )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsGrasped )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out][retval] */ __RPC__out boolean *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SelectPressedValue )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out][retval] */ __RPC__out DOUBLE *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ControllerProperties )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2 * This,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionControllerProperties **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_get_IsSelectPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsSelectPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_get_IsMenuPressed(This,value)	\
+    ( (This)->lpVtbl -> get_IsMenuPressed(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_get_IsGrasped(This,value)	\
+    ( (This)->lpVtbl -> get_IsGrasped(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_get_SelectPressedValue(This,value)	\
+    ( (This)->lpVtbl -> get_SelectPressedValue(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_get_ControllerProperties(This,value)	\
+    ( (This)->lpVtbl -> get_ControllerProperties(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSourceState2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCanceledEventArgs_INTERFACE_DEFINED__)
@@ -8034,13 +9381,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCanceledEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0074_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCanceledEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCanceledEventArgs_INTERFACE_DEFINED__
@@ -8165,7 +9512,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulatio
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCanceledEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCompletedEventArgs_INTERFACE_DEFINED__)
@@ -8173,13 +9520,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCompletedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0075_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCompletedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCompletedEventArgs_INTERFACE_DEFINED__
@@ -8316,7 +9663,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulatio
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationDelta_INTERFACE_DEFINED__)
@@ -8324,13 +9671,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationDelta_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0076_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationDelta_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationDelta_INTERFACE_DEFINED__
@@ -8455,7 +9802,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulatio
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationDelta_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationStartedEventArgs_INTERFACE_DEFINED__)
@@ -8463,13 +9810,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationStartedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0077_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationStartedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationStartedEventArgs_INTERFACE_DEFINED__
@@ -8606,7 +9953,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulatio
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -8614,13 +9961,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0078_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationUpdatedEventArgs_INTERFACE_DEFINED__
@@ -8757,7 +10104,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulatio
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialManipulationUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCanceledEventArgs_INTERFACE_DEFINED__)
@@ -8765,13 +10112,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCanceledEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0079_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCanceledEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCanceledEventArgs_INTERFACE_DEFINED__
@@ -8896,7 +10243,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationC
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCanceledEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCompletedEventArgs_INTERFACE_DEFINED__)
@@ -8904,13 +10251,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCompletedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0080_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCompletedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCompletedEventArgs_INTERFACE_DEFINED__
@@ -9045,7 +10392,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationC
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationCompletedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationStartedEventArgs_INTERFACE_DEFINED__)
@@ -9053,13 +10400,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationStartedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0081_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationStartedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationStartedEventArgs_INTERFACE_DEFINED__
@@ -9226,7 +10573,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationS
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationUpdatedEventArgs_INTERFACE_DEFINED__)
@@ -9234,13 +10581,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationUpdatedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0082_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationUpdatedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationUpdatedEventArgs_INTERFACE_DEFINED__
@@ -9375,7 +10722,166 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationU
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialNavigationUpdatedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0089 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialPointerInteractionSourcePose[] = L"Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0089 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0089_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0089_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("A7104307-2C2B-4D3A-92A7-80CED7C4A0D0")
+                        ISpatialPointerInteractionSourcePose : public IInspectable
+                        {
+                        public:
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Position( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Numerics::Vector3 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ForwardDirection( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Numerics::Vector3 *value) = 0;
+                            
+                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UpDirection( 
+                                /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Numerics::Vector3 *value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialPointerInteractionSourcePose = __uuidof(ISpatialPointerInteractionSourcePose);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePoseVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Position )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ForwardDirection )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 *value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UpDirection )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose * This,
+            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePoseVtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePoseVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_get_Position(This,value)	\
+    ( (This)->lpVtbl -> get_Position(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_get_ForwardDirection(This,value)	\
+    ( (This)->lpVtbl -> get_ForwardDirection(This,value) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_get_UpDirection(This,value)	\
+    ( (This)->lpVtbl -> get_UpDirection(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0090 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_INTERFACE_DEFINED__)
@@ -9383,13 +10889,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0090 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0083_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0090_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0090_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_INTERFACE_DEFINED__
@@ -9524,7 +11030,148 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0091 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_Spatial_ISpatialPointerPose2[] = L"Windows.UI.Input.Spatial.ISpatialPointerPose2";
+#endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0091 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0091_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0091_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::UI::Input::Spatial::ISpatialPointerPose2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace UI {
+                namespace Input {
+                    namespace Spatial {
+                        
+                        MIDL_INTERFACE("9D202B17-954E-4E0C-96D1-B6790B6FC2FD")
+                        ISpatialPointerPose2 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE TryGetInteractionSourcePose( 
+                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Input::Spatial::ISpatialInteractionSource *source,
+                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose **value) = 0;
+                            
+                        };
+
+                        extern const __declspec(selectany) IID & IID_ISpatialPointerPose2 = __uuidof(ISpatialPointerPose2);
+
+                        
+                    }  /* end namespace */
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        HRESULT ( STDMETHODCALLTYPE *TryGetInteractionSourcePose )( 
+            __RPC__in __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2 * This,
+            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialInteractionSource *source,
+            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerInteractionSourcePose **value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2Vtbl;
+
+    interface __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_TryGetInteractionSourcePose(This,source,value)	\
+    ( (This)->lpVtbl -> TryGetInteractionSourcePose(This,source,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0092 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPoseStatics_INTERFACE_DEFINED__)
@@ -9532,13 +11179,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPoseStatics_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0092 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0084_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0092_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0092_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPoseStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPoseStatics_INTERFACE_DEFINED__
@@ -9667,7 +11314,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPose
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialPointerPoseStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0093 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionEndedEventArgs_INTERFACE_DEFINED__)
@@ -9675,13 +11322,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionEndedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0093 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0085_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0093_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0093_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionEndedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionEndedEventArgs_INTERFACE_DEFINED__
@@ -9806,7 +11453,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognition
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionEndedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0094 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionStartedEventArgs_INTERFACE_DEFINED__)
@@ -9814,13 +11461,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionStartedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0094 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0086_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0094_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0094_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionStartedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionStartedEventArgs_INTERFACE_DEFINED__
@@ -9969,7 +11616,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognition
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialRecognitionStartedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0095 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialTappedEventArgs_INTERFACE_DEFINED__)
@@ -9977,13 +11624,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialTappedEventArgs_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0095 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0087_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0095_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0095_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialTappedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialTappedEventArgs_INTERFACE_DEFINED__
@@ -10130,7 +11777,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialTappedEvent
 #endif 	/* ____x_ABI_CWindows_CUI_CInput_CSpatial_CISpatialTappedEventArgs_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0096 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialGestureRecognizer_DEFINED
@@ -10152,6 +11799,14 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteraction_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteraction_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Spatial_SpatialInteraction[] = L"Windows.UI.Input.Spatial.SpatialInteraction";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteractionController_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteractionController_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Spatial_SpatialInteractionController[] = L"Windows.UI.Input.Spatial.SpatialInteractionController";
+#endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteractionControllerProperties_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteractionControllerProperties_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Spatial_SpatialInteractionControllerProperties[] = L"Windows.UI.Input.Spatial.SpatialInteractionControllerProperties";
 #endif
 #ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteractionDetectedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialInteractionDetectedEventArgs_DEFINED
@@ -10217,6 +11872,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialNavigationUpdatedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Spatial_SpatialNavigationUpdatedEventArgs[] = L"Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs";
 #endif
+#ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialPointerInteractionSourcePose_DEFINED
+#define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialPointerInteractionSourcePose_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Spatial_SpatialPointerInteractionSourcePose[] = L"Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose";
+#endif
 #ifndef RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialPointerPose_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_Spatial_SpatialPointerPose_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_Spatial_SpatialPointerPose[] = L"Windows.UI.Input.Spatial.SpatialPointerPose";
@@ -10235,13 +11894,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088 */
+/* interface __MIDL_itf_windows2Eui2Einput2Espatial_0000_0096 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0088_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0096_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Einput2Espatial_0000_0096_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

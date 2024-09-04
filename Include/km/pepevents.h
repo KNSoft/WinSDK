@@ -19,7 +19,7 @@ extern "C" {
 #endif
 
 //
-// Allow Diasabling of code generation
+// Allow disabling of code generation
 //
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 #if  !defined(McGenDebug)
@@ -124,7 +124,7 @@ McGenControlCallbackV2(
 
 Routine Description:
 
-    This is the notification callback for Vista.
+    This is the notification callback for Windows Vista and later.
 
 Arguments:
 
@@ -258,7 +258,7 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR POP_PEP_ETW_PLATFORM_IDLE_
 #define POP_PEP_ETW_PLATFORM_IDLE_TRANSITION_value 0x7
 
 //
-// Note on Generate Code from Manifest Windows Vista and above
+// Note on Generate Code from Manifest for Windows Vista and above
 //
 //Structures :  are handled as a size and pointer pairs. The macro for the event will have an extra 
 //parameter for the size in bytes of the structure. Make sure that your structures have no extra padding.
@@ -271,7 +271,7 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR POP_PEP_ETW_PLATFORM_IDLE_
 //
 
 //
-// Allow Diasabling of code generation
+// Allow disabling of code generation
 //
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
@@ -307,16 +307,16 @@ McGenEventRegister(
 
 Routine Description:
 
-    This function register the provider with ETW KERNEL mode.
+    This function registers the provider with ETW KERNEL mode.
 
 Arguments:
-    ProviderId - Provider Id to be register with ETW.
+    ProviderId - Provider ID to be register with ETW.
 
     EnableCallback - Callback to be used.
 
     CallbackContext - Context for this provider.
 
-    RegHandle - Pointer to Registration handle.
+    RegHandle - Pointer to registration handle.
 
 Remarks:
 
@@ -353,7 +353,7 @@ Routine Description:
 Arguments:
             RegHandle this is the pointer to the provider context
 Remarks:
-            If Provider has not register RegHandle = NULL,
+            If provider has not been registered, RegHandle == NULL,
             return ERROR_SUCCESS
 --*/
 {

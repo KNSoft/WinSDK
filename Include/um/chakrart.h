@@ -460,11 +460,11 @@
     /// <summary>
     ///     Create runtime with IE10 version.
     /// </summary>
-    __declspec(deprecated("Only JsRuntimeVersionEdge is supported when targeting the edge-mode JavaScript Runtime header.  To use jscript9 mode, which supports targeting docmode 10 or 11, omit USE_EDGEMODE_JSRT before including jsrt.h, and link against jsrt.lib.  For more information, go to http://go.microsoft.com/fwlink/?LinkId=522493")) const JsRuntimeVersion JsRuntimeVersion10 = (JsRuntimeVersion)0;
+    __declspec(deprecated("Only JsRuntimeVersionEdge is supported when targeting the edge-mode JavaScript Runtime header.  To use jscript9 mode, which supports targeting docmode 10 or 11, omit USE_EDGEMODE_JSRT before including jsrt.h, and link against jsrt.lib.  For more information, go to https://go.microsoft.com/fwlink/?LinkId=522493")) const JsRuntimeVersion JsRuntimeVersion10 = (JsRuntimeVersion)0;
     /// <summary>
     ///     Create runtime with IE11 version.
     /// </summary>
-    __declspec(deprecated("Only JsRuntimeVersionEdge is supported when targeting the edge-mode JavaScript Runtime header.  To use jscript9 mode, which supports targeting docmode 10 or 11, omit USE_EDGEMODE_JSRT before including jsrt.h, and link against jsrt.lib.  For more information, go to http://go.microsoft.com/fwlink/?LinkId=522493")) const JsRuntimeVersion JsRuntimeVersion11 = (JsRuntimeVersion)1;
+    __declspec(deprecated("Only JsRuntimeVersionEdge is supported when targeting the edge-mode JavaScript Runtime header.  To use jscript9 mode, which supports targeting docmode 10 or 11, omit USE_EDGEMODE_JSRT before including jsrt.h, and link against jsrt.lib.  For more information, go to https://go.microsoft.com/fwlink/?LinkId=522493")) const JsRuntimeVersion JsRuntimeVersion11 = (JsRuntimeVersion)1;
 
     /// <summary>
     ///     Creates a new runtime.

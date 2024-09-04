@@ -1100,6 +1100,16 @@ enum SymTagEnum
     SymTagManagedType,
     SymTagDimension,
     SymTagCallSite,
+    SymTagInlineSite,
+    SymTagBaseInterface,
+    SymTagVectorType,
+    SymTagMatrixType,
+    SymTagHLSLType,
+    SymTagCaller,
+    SymTagCallee,
+    SymTagExport,
+    SymTagHeapAllocationSite,
+    SymTagCoffGroup,
     SymTagMax
 };
 
@@ -2188,6 +2198,30 @@ SymGetSourceFileToken(
     _In_ PCSTR FileSpec,
     _Outptr_ PVOID *Token,
     _Out_ DWORD *Size
+    );
+
+BOOL
+IMAGEAPI
+SymGetSourceFileChecksumW(
+    _In_ HANDLE hProcess,
+    _In_ ULONG64 Base,
+    _In_ PCWSTR FileSpec,
+    _Out_ DWORD *pCheckSumType,
+    _Out_writes_(checksumSize) BYTE *pChecksum,
+    _In_ DWORD checksumSize,
+    _Out_ DWORD *pActualBytesWritten
+    );
+
+BOOL
+IMAGEAPI
+SymGetSourceFileChecksum(
+    _In_ HANDLE hProcess,
+    _In_ ULONG64 Base,
+    _In_ PCSTR FileSpec,
+    _Out_ DWORD *pCheckSumType,
+    _Out_writes_(checksumSize) BYTE *pChecksum,
+    _In_ DWORD checksumSize,
+    _Out_ DWORD *pActualBytesWritten
     );
 
 BOOL
@@ -3380,17 +3414,30 @@ typedef BOOL (WINAPI *PSYMBOLSERVERGETOPTIONDATAPROC)(UINT_PTR, PULONG64);
 #define SSRVOPT_ENABLE_COMM_MSG     0x10000000
 #define SSRVOPT_URI_FILTER          0x20000000
 #define SSRVOPT_URI_TIERS           0x40000000
+#define SSRVOPT_RETRY_APP_HANG      0x80000000
 
-#define SSRVOPT_MAX                 0x40000000
+#define SSRVOPT_MAX                 0x80000000
 
 #define SSRVOPT_RESET               ((ULONG_PTR)-1)
 
-#define NUM_SSRVOPTS                31
+#define NUM_SSRVOPTS                32
 
-#define SSRVURI_NORMAL              0x01
-#define SSRVURI_COMPRESSED          0x02
-#define SSRVURI_FILEPTR             0x04
+#define SSRVURI_HTTP_NORMAL         0x01
+#define SSRVURI_HTTP_COMPRESSED     0x02
+#define SSRVURI_HTTP_FILEPTR        0x04
+
+#define SSRVURI_UNC_NORMAL          0x10
+#define SSRVURI_UNC_COMPRESSED      0x20
+#define SSRVURI_UNC_FILEPTR         0x40
+
+#define SSRVURI_HTTP_MASK           0x0F
+#define SSRVURI_UNC_MASK            0xF0
 #define SSRVURI_ALL                 0xFF
+
+// Legacy Names
+#define SSRVURI_NORMAL              SSRVURI_HTTP_NORMAL
+#define SSRVURI_COMPRESSED          SSRVURI_HTTP_COMPRESSED
+#define SSRVURI_FILEPTR             SSRVURI_HTTP_FILEPTR
 
 #define SSRVACTION_TRACE        1
 #define SSRVACTION_QUERYCANCEL  2

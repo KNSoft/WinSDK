@@ -94,66 +94,66 @@ Notes:
 //
 // Define the facility codes
 //
-#define FACILITY_VSM                     0x45
-#define FACILITY_VOLSNAP                 0x50
-#define FACILITY_VOLMGR                  0x38
-#define FACILITY_VIRTUALIZATION          0x37
-#define FACILITY_VIDEO                   0x1B
-#define FACILITY_USB_ERROR_CODE          0x10
-#define FACILITY_TRANSACTION             0x19
-#define FACILITY_TPM                     0x29
-#define FACILITY_TERMINAL_SERVER         0xA
-#define FACILITY_SXS_ERROR_CODE          0x15
-#define FACILITY_NTSSPI                  0x9
-#define FACILITY_SPACES                  0xE7
-#define FACILITY_SMB                     0x5D
-#define FACILITY_SYSTEM_INTEGRITY        0xE9
-#define FACILITY_SHARED_VHDX             0x5C
-#define FACILITY_SECUREBOOT              0x43
-#define FACILITY_SECURITY_CORE           0xE8
-#define FACILITY_SDBUS                   0x51
-#define FACILITY_RTPM                    0x2A
-#define FACILITY_RPC_STUBS               0x3
+#define FACILITY_DEBUGGER                0x1
 #define FACILITY_RPC_RUNTIME             0x2
-#define FACILITY_RESUME_KEY_FILTER       0x40
-#define FACILITY_RDBSS                   0x41
-#define FACILITY_PLATFORM_MANIFEST       0xEB
+#define FACILITY_RPC_STUBS               0x3
+#define FACILITY_IO_ERROR_CODE           0x4
+#define FACILITY_CODCLASS_ERROR_CODE     0x6
 #define FACILITY_NTWIN32                 0x7
+#define FACILITY_NTCERT                  0x8
+#define FACILITY_NTSSPI                  0x9
+#define FACILITY_TERMINAL_SERVER         0xA
+#define FACILTIY_MUI_ERROR_CODE          0xB
+#define FACILITY_USB_ERROR_CODE          0x10
+#define FACILITY_HID_ERROR_CODE          0x11
+#define FACILITY_FIREWIRE_ERROR_CODE     0x12
+#define FACILITY_CLUSTER_ERROR_CODE      0x13
+#define FACILITY_ACPI_ERROR_CODE         0x14
+#define FACILITY_SXS_ERROR_CODE          0x15
+#define FACILITY_TRANSACTION             0x19
+#define FACILITY_COMMONLOG               0x1A
+#define FACILITY_VIDEO                   0x1B
+#define FACILITY_FILTER_MANAGER          0x1C
+#define FACILITY_MONITOR                 0x1D
+#define FACILITY_GRAPHICS_KERNEL         0x1E
+#define FACILITY_DRIVER_FRAMEWORK        0x20
+#define FACILITY_FVE_ERROR_CODE          0x21
+#define FACILITY_FWP_ERROR_CODE          0x22
+#define FACILITY_NDIS_ERROR_CODE         0x23
+#define FACILITY_TPM                     0x29
+#define FACILITY_RTPM                    0x2A
+#define FACILITY_HYPERVISOR              0x35
+#define FACILITY_IPSEC                   0x36
+#define FACILITY_VIRTUALIZATION          0x37
+#define FACILITY_VOLMGR                  0x38
+#define FACILITY_BCD_ERROR_CODE          0x39
 #define FACILITY_WIN32K_NTUSER           0x3E
 #define FACILITY_WIN32K_NTGDI            0x3F
-#define FACILITY_NDIS_ERROR_CODE         0x23
-#define FACILTIY_MUI_ERROR_CODE          0xB
-#define FACILITY_MONITOR                 0x1D
-#define FACILITY_MAXIMUM_VALUE           0xEC
-#define FACILITY_LICENSING               0xEA
-#define FACILITY_IPSEC                   0x36
-#define FACILITY_IO_ERROR_CODE           0x4
-#define FACILITY_INTERIX                 0x99
-#define FACILITY_HYPERVISOR              0x35
-#define FACILITY_HID_ERROR_CODE          0x11
-#define FACILITY_GRAPHICS_KERNEL         0x1E
-#define FACILITY_FWP_ERROR_CODE          0x22
-#define FACILITY_FVE_ERROR_CODE          0x21
-#define FACILITY_FIREWIRE_ERROR_CODE     0x12
-#define FACILITY_FILTER_MANAGER          0x1C
-#define FACILITY_DRIVER_FRAMEWORK        0x20
-#define FACILITY_DEBUGGER                0x1
-#define FACILITY_COMMONLOG               0x1A
-#define FACILITY_CODCLASS_ERROR_CODE     0x6
-#define FACILITY_CLUSTER_ERROR_CODE      0x13
-#define FACILITY_NTCERT                  0x8
+#define FACILITY_RESUME_KEY_FILTER       0x40
+#define FACILITY_RDBSS                   0x41
 #define FACILITY_BTH_ATT                 0x42
-#define FACILITY_BCD_ERROR_CODE          0x39
+#define FACILITY_SECUREBOOT              0x43
 #define FACILITY_AUDIO_KERNEL            0x44
-#define FACILITY_ACPI_ERROR_CODE         0x14
+#define FACILITY_VSM                     0x45
+#define FACILITY_VOLSNAP                 0x50
+#define FACILITY_SDBUS                   0x51
+#define FACILITY_SHARED_VHDX             0x5C
+#define FACILITY_SMB                     0x5D
+#define FACILITY_INTERIX                 0x99
+#define FACILITY_SPACES                  0xE7
+#define FACILITY_SECURITY_CORE           0xE8
+#define FACILITY_SYSTEM_INTEGRITY        0xE9
+#define FACILITY_LICENSING               0xEA
+#define FACILITY_PLATFORM_MANIFEST       0xEB
+#define FACILITY_MAXIMUM_VALUE           0xEC
 
 
 //
 // Define the severity codes
 //
-#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_SUCCESS          0x0
 #define STATUS_SEVERITY_INFORMATIONAL    0x1
+#define STATUS_SEVERITY_WARNING          0x2
 #define STATUS_SEVERITY_ERROR            0x3
 
 
@@ -2822,7 +2822,7 @@ Notes:
 //
 // MessageText:
 //
-// There are currently no logon servers available to service the logon request.
+// We can't sign you in with this credential because your domain isn't available. Make sure your device is connected to your organization's network and try again. If you previously signed in on this device with another credential, you can sign in with that credential.
 //
 #define STATUS_NO_LOGON_SERVERS          ((NTSTATUS)0xC000005EL)
 
@@ -4805,7 +4805,7 @@ Notes:
 //
 // MessageText:
 //
-// The program can't start because %hs is missing from your computer. Try reinstalling the program to fix this problem.
+// The code execution cannot proceed because %hs was not found. Reinstalling the program may fix this problem.
 //
 #define STATUS_DLL_NOT_FOUND             ((NTSTATUS)0xC0000135L)    // winnt
 
@@ -8217,9 +8217,18 @@ Notes:
 //
 #define STATUS_PASSWORD_CHANGE_REQUIRED  ((NTSTATUS)0xC000030CL)
 
+//
+// MessageId: STATUS_LOST_MODE_LOGON_RESTRICTION
+//
+// MessageText:
+//
+// An administrator has restricted sign in. To sign in, make sure your device is connected to the Internet, and have your administrator sign in first.
+//
+#define STATUS_LOST_MODE_LOGON_RESTRICTION ((NTSTATUS)0xC000030DL)
+
 /*++
 
- MessageId's 0x030c - 0x031f (inclusive) are reserved for future **STORAGE**
+ MessageId's 0x030e - 0x031f (inclusive) are reserved for future **STORAGE**
  copy protection errors.
 
 --*/
@@ -9732,7 +9741,7 @@ Notes:
 //
 // MessageText:
 //
-// Enterprise Data Protection policy does not allow access to this network resource.
+// Windows Information Protection policy does not allow access to this network resource.
 //
 #define STATUS_NETWORK_ACCESS_DENIED_EDP ((NTSTATUS)0xC000048EL)
 
@@ -9871,6 +9880,15 @@ Notes:
 //
 #define STATUS_STORAGE_LOST_DATA_PERSISTENCE ((NTSTATUS)0xC000049EL)
 
+//
+// MessageId: STATUS_VRF_CFG_ENABLED
+//
+// MessageText:
+//
+// Driver Verifier Volatile settings cannot be set when CFG is enabled.
+//
+#define STATUS_VRF_CFG_ENABLED           ((NTSTATUS)0xC000049FL)
+
 
 //     **** New SYSTEM error codes can be inserted here ****
 
@@ -9982,6 +10000,51 @@ Notes:
 //
 #define STATUS_REPARSE_POINT_ENCOUNTERED ((NTSTATUS)0xC000050BL)
 
+//
+// MessageId: STATUS_ATTRIBUTE_NOT_PRESENT
+//
+// MessageText:
+//
+// The requested attribute is not present on the specified file or directory.
+//
+#define STATUS_ATTRIBUTE_NOT_PRESENT     ((NTSTATUS)0xC000050CL)
+
+//
+// MessageId: STATUS_NOT_A_TIERED_VOLUME
+//
+// MessageText:
+//
+// This volume is not a tiered volume.
+//
+#define STATUS_NOT_A_TIERED_VOLUME       ((NTSTATUS)0xC000050DL)
+
+//
+// MessageId: STATUS_ALREADY_HAS_STREAM_ID
+//
+// MessageText:
+//
+// This file is currently associated with a different stream id.
+//
+#define STATUS_ALREADY_HAS_STREAM_ID     ((NTSTATUS)0xC000050EL)
+
+//
+// MessageId: STATUS_JOB_NOT_EMPTY
+//
+// MessageText:
+//
+// The requested operation could not be completed because the specified job has children.
+//
+#define STATUS_JOB_NOT_EMPTY             ((NTSTATUS)0xC000050FL)
+
+//
+// MessageId: STATUS_ALREADY_INITIALIZED
+//
+// MessageText:
+//
+// The specified object has already been initialized.
+//
+#define STATUS_ALREADY_INITIALIZED       ((NTSTATUS)0xC0000510L)
+
 
 //     **** New SYSTEM error codes can be inserted here ****
 
@@ -10021,6 +10084,69 @@ Notes:
 // Windows cannot verify the digital signature for this file. The signing certificate for this file has expired.
 //
 #define STATUS_IMAGE_CERT_EXPIRED        ((NTSTATUS)0xC0000605L)
+
+//
+// MessageId: STATUS_STRICT_CFG_VIOLATION
+//
+// MessageText:
+//
+// The specified image file was blocked from loading because it does not enable a feature required by the process: Control Flow Guard.
+//
+#define STATUS_STRICT_CFG_VIOLATION      ((NTSTATUS)0xC0000606L)
+
+//
+// MessageId: STATUS_STRICT_RFG_VIOLATION
+//
+// MessageText:
+//
+// The specified image file was blocked from loading because it does not enable a feature required by the process: Return Flow Guard.
+//
+#define STATUS_STRICT_RFG_VIOLATION      ((NTSTATUS)0xC0000607L)
+
+//
+// MessageId: STATUS_RFG_ACCESS_VIOLATION
+//
+// MessageText:
+//
+// An invalid memory access occurred to a Return Flow Guard restricted region.
+//
+#define STATUS_RFG_ACCESS_VIOLATION      ((NTSTATUS)0xC0000608L)
+
+//
+// MessageId: STATUS_RFG_ATTACHED_ACCESS_VIOLATION
+//
+// MessageText:
+//
+// An invalid memory access occurred to a Return Flow Guard restricted region from an attached process.
+//
+#define STATUS_RFG_ATTACHED_ACCESS_VIOLATION ((NTSTATUS)0xC0000609L)
+
+//
+// MessageId: STATUS_SET_CONTEXT_DENIED
+//
+// MessageText:
+//
+// The thread context could not be updated because this has been restricted for the process.
+//
+#define STATUS_SET_CONTEXT_DENIED        ((NTSTATUS)0xC000060AL)
+
+//
+// MessageId: STATUS_CROSS_PARTITION_VIOLATION
+//
+// MessageText:
+//
+// An attempt to access another partition's private file/section was rejected.
+//
+#define STATUS_CROSS_PARTITION_VIOLATION ((NTSTATUS)0xC000060BL)
+
+//
+// MessageId: STATUS_RFG_ATTACHED_ACCESS_VIOLATION_TRIGGERED
+//
+// MessageText:
+//
+// This process triggered an invalid memory access to a Return Flow Guard restricted region while attached to another process.
+//
+#define STATUS_RFG_ATTACHED_ACCESS_VIOLATION_TRIGGERED ((NTSTATUS)0xC000060CL)
 
 //
 // MessageId: STATUS_PORT_CLOSED
@@ -11046,6 +11172,15 @@ Notes:
 //
 #define STATUS_INVALID_PACKAGE_SID_LENGTH ((NTSTATUS)0xC000A202L)
 
+//
+// MessageId: STATUS_LPAC_ACCESS_DENIED
+//
+// MessageText:
+//
+// Access to the specified resource has been denied for a less privileged app container.
+//
+#define STATUS_LPAC_ACCESS_DENIED        ((NTSTATUS)0xC000A203L)
+
 /*++
 
  MessageId's 0xa281 - 0xa2a0 (inclusive) are reserved for Fast Cache specific messages.
@@ -11139,6 +11274,47 @@ Notes:
 
 /*++
 
+ MessageId's 0xce00 - 0xceff (inclusive) are for File System virtualization specific messages.
+
+--*/
+//
+// MessageId: STATUS_FILE_SYSTEM_VIRTUALIZATION_UNAVAILABLE
+//
+// MessageText:
+//
+// The provider that supports file system virtualization is temporarily unavailable.
+//
+#define STATUS_FILE_SYSTEM_VIRTUALIZATION_UNAVAILABLE ((NTSTATUS)0xC000CE01L)
+
+//
+// MessageId: STATUS_FILE_SYSTEM_VIRTUALIZATION_METADATA_CORRUPT
+//
+// MessageText:
+//
+// The metadata for file system virtualization is corrupt and unreadable.
+//
+#define STATUS_FILE_SYSTEM_VIRTUALIZATION_METADATA_CORRUPT ((NTSTATUS)0xC000CE02L)
+
+//
+// MessageId: STATUS_FILE_SYSTEM_VIRTUALIZATION_BUSY
+//
+// MessageText:
+//
+// The provider that supports file system virtualization is too busy to complete this operation.
+//
+#define STATUS_FILE_SYSTEM_VIRTUALIZATION_BUSY ((NTSTATUS)0xC000CE03L)
+
+//
+// MessageId: STATUS_FILE_SYSTEM_VIRTUALIZATION_PROVIDER_UNKNOWN
+//
+// MessageText:
+//
+// The provider that supports file system virtualization is unknown.
+//
+#define STATUS_FILE_SYSTEM_VIRTUALIZATION_PROVIDER_UNKNOWN ((NTSTATUS)0xC000CE04L)
+
+/*++
+
  MessageId's 0xcf00 - 0xcfff (inclusive) are for Cloud Files specific messages.
 
 --*/
@@ -11174,7 +11350,7 @@ Notes:
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File metadata has is too large.
+// The operation could not be completed because the Cloud File metadata is too large.
 //
 #define STATUS_CLOUD_FILE_METADATA_TOO_LARGE ((NTSTATUS)0xC000CF03L)
 
@@ -11186,6 +11362,42 @@ Notes:
 // The operation could not be completed because the Cloud File property blob is too large.
 //
 #define STATUS_CLOUD_FILE_PROPERTY_BLOB_TOO_LARGE ((NTSTATUS)0x8000CF04L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_TOO_MANY_PROPERTY_BLOBS
+//
+// MessageText:
+//
+// The operation could not be completed because the maximum number of Cloud File property blobs would be exceeded.
+//
+#define STATUS_CLOUD_FILE_TOO_MANY_PROPERTY_BLOBS ((NTSTATUS)0x8000CF05L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The operation could not be completed because the Cloud File metadata version is not supported.
+//
+#define STATUS_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED ((NTSTATUS)0xC000CF06L)
+
+//
+// MessageId: STATUS_NOT_A_CLOUD_FILE
+//
+// MessageText:
+//
+// The operation could not be completed because the file is not a Cloud File.
+//
+#define STATUS_NOT_A_CLOUD_FILE          ((NTSTATUS)0xC000CF07L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_NOT_IN_SYNC
+//
+// MessageText:
+//
+// The operation could not be completed because the Cloud File is not in sync.
+//
+#define STATUS_CLOUD_FILE_NOT_IN_SYNC    ((NTSTATUS)0xC000CF08L)
 
 
 //
@@ -13027,6 +13239,13 @@ Notes:
 #define STATUS_FLT_DISALLOW_FAST_IO      ((NTSTATUS)0xC01C0004L)
 
 //
+//  The same code used to disallow fast IO is also used to disallow the FS
+//  filter QueryOpen callback.
+//
+
+#define STATUS_FLT_DISALLOW_FSFILTER_IO STATUS_FLT_DISALLOW_FAST_IO
+
+//
 // MessageId: STATUS_FLT_INVALID_NAME_REQUEST
 //
 // MessageText:
@@ -13947,6 +14166,15 @@ Notes:
 // This operation is supported only on the CSV coordinator node.
 //
 #define STATUS_CLUSTER_CSV_SUPPORTED_ONLY_ON_COORDINATOR ((NTSTATUS)0xC0130030L)
+
+//
+// MessageId: STATUS_CLUSTER_CAM_TICKET_REPLAY_DETECTED
+//
+// MessageText:
+//
+// Cluster CAM has detected that somone is trying to reply ticket.
+//
+#define STATUS_CLUSTER_CAM_TICKET_REPLAY_DETECTED ((NTSTATUS)0xC0130031L)
 
 
 //
@@ -19669,7 +19897,7 @@ Notes:
 
 
 //
-// Platform Crypto Provider Error Codes (PCPTPM12.dll and future platform crypto providers)
+// Platform Crypto Provider Error Codes (PCPKSP.dll and future platform crypto providers)
 //
 
 //
@@ -19798,6 +20026,159 @@ Notes:
 //
 #define STATUS_PCP_DEVICE_NOT_FOUND      ((NTSTATUS)0xC029200DL)
 
+//
+// MessageId: STATUS_PCP_WRONG_PARENT
+//
+// MessageText:
+//
+// An attempt was made to import or load a key under an incorrect storage parent.
+//
+#define STATUS_PCP_WRONG_PARENT          ((NTSTATUS)0xC029200EL)
+
+//
+// MessageId: STATUS_PCP_KEY_NOT_LOADED
+//
+// MessageText:
+//
+// The TPM key is not loaded.
+//
+#define STATUS_PCP_KEY_NOT_LOADED        ((NTSTATUS)0xC029200FL)
+
+//
+// MessageId: STATUS_PCP_NO_KEY_CERTIFICATION
+//
+// MessageText:
+//
+// The TPM key certification has not been generated.
+//
+#define STATUS_PCP_NO_KEY_CERTIFICATION  ((NTSTATUS)0xC0292010L)
+
+//
+// MessageId: STATUS_PCP_KEY_NOT_FINALIZED
+//
+// MessageText:
+//
+// The TPM key is not yet finalized.
+//
+#define STATUS_PCP_KEY_NOT_FINALIZED     ((NTSTATUS)0xC0292011L)
+
+//
+// MessageId: STATUS_PCP_ATTESTATION_CHALLENGE_NOT_SET
+//
+// MessageText:
+//
+// The TPM attestation challenge is not set.
+//
+#define STATUS_PCP_ATTESTATION_CHALLENGE_NOT_SET ((NTSTATUS)0xC0292012L)
+
+//
+// MessageId: STATUS_PCP_NOT_PCR_BOUND
+//
+// MessageText:
+//
+// The TPM key is not bound to PCR info.
+//
+#define STATUS_PCP_NOT_PCR_BOUND         ((NTSTATUS)0xC0292013L)
+
+//
+// MessageId: STATUS_PCP_KEY_ALREADY_FINALIZED
+//
+// MessageText:
+//
+// The TPM key is already finalized.
+//
+#define STATUS_PCP_KEY_ALREADY_FINALIZED ((NTSTATUS)0xC0292014L)
+
+//
+// MessageId: STATUS_PCP_KEY_USAGE_POLICY_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The TPM key usage policy is not supported.
+//
+#define STATUS_PCP_KEY_USAGE_POLICY_NOT_SUPPORTED ((NTSTATUS)0xC0292015L)
+
+//
+// MessageId: STATUS_PCP_KEY_USAGE_POLICY_INVALID
+//
+// MessageText:
+//
+// The TPM key usage policy is invalid.
+//
+#define STATUS_PCP_KEY_USAGE_POLICY_INVALID ((NTSTATUS)0xC0292016L)
+
+//
+// MessageId: STATUS_PCP_SOFT_KEY_ERROR
+//
+// MessageText:
+//
+// There was a problem with the software key being imported into the TPM.
+//
+#define STATUS_PCP_SOFT_KEY_ERROR        ((NTSTATUS)0xC0292017L)
+
+//
+// MessageId: STATUS_PCP_KEY_NOT_AUTHENTICATED
+//
+// MessageText:
+//
+// The TPM key is not authenticated.
+//
+#define STATUS_PCP_KEY_NOT_AUTHENTICATED ((NTSTATUS)0xC0292018L)
+
+//
+// MessageId: STATUS_PCP_KEY_NOT_AIK
+//
+// MessageText:
+//
+// The TPM key is not an AIK.
+//
+#define STATUS_PCP_KEY_NOT_AIK           ((NTSTATUS)0xC0292019L)
+
+//
+// MessageId: STATUS_PCP_KEY_NOT_SIGNING_KEY
+//
+// MessageText:
+//
+// The TPM key is not a signing key.
+//
+#define STATUS_PCP_KEY_NOT_SIGNING_KEY   ((NTSTATUS)0xC029201AL)
+
+//
+// MessageId: STATUS_PCP_LOCKED_OUT
+//
+// MessageText:
+//
+// The TPM is locked out.
+//
+#define STATUS_PCP_LOCKED_OUT            ((NTSTATUS)0xC029201BL)
+
+//
+// MessageId: STATUS_PCP_CLAIM_TYPE_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The claim type requested is not supported.
+//
+#define STATUS_PCP_CLAIM_TYPE_NOT_SUPPORTED ((NTSTATUS)0xC029201CL)
+
+//
+// MessageId: STATUS_PCP_TPM_VERSION_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The current TPM version is not supported.
+//
+#define STATUS_PCP_TPM_VERSION_NOT_SUPPORTED ((NTSTATUS)0xC029201DL)
+
+//
+// MessageId: STATUS_PCP_BUFFER_LENGTH_MISMATCH
+//
+// MessageText:
+//
+// The buffer lengths do not match.
+//
+#define STATUS_PCP_BUFFER_LENGTH_MISMATCH ((NTSTATUS)0xC029201EL)
+
 
 //
 // Remote TPM Error Codes
@@ -19856,6 +20237,20 @@ Notes:
 // The rTPM target does not support remote processing of the specified TPM command.
 //
 #define STATUS_RTPM_UNSUPPORTED_CMD      ((NTSTATUS)0xC0293005L)
+
+
+//
+// Misc TPM Error Codes
+//
+
+//
+// MessageId: STATUS_TPM_ZERO_EXHAUST_ENABLED
+//
+// MessageText:
+//
+// TPM related network operations are blocked as Zero Exhaust mode is enabled on client.
+//
+#define STATUS_TPM_ZERO_EXHAUST_ENABLED  ((NTSTATUS)0xC0294000L)
 
 //
 // Hypervisor error codes - changes to these codes must be reflected in HvStatus.h
@@ -20249,13 +20644,22 @@ Notes:
 #define STATUS_HV_INVALID_CPU_GROUP_STATE ((NTSTATUS)0xC0350070L)
 
 //
+// MessageId: STATUS_HV_OPERATION_FAILED
+//
+// MessageText:
+//
+// The requested operation failed.
+//
+#define STATUS_HV_OPERATION_FAILED       ((NTSTATUS)0xC0350071L)
+
+//
 // MessageId: STATUS_HV_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE
 //
 // MessageText:
 //
 // The hypervisor could not perform the operation because it is not allowed with nested virtualization active.
 //
-#define STATUS_HV_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE ((NTSTATUS)0xC0350071L)
+#define STATUS_HV_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE ((NTSTATUS)0xC0350072L)
 
 //
 // MessageId: STATUS_HV_NOT_PRESENT
@@ -22108,6 +22512,20 @@ Notes:
 // The virtualization storage subsystem has generated an error.
 //
 #define STATUS_QUERY_STORAGE_ERROR       ((NTSTATUS)0x803A0001L)
+
+
+//
+// NtGdi warnings.
+//
+
+//
+// MessageId: STATUS_GDI_HANDLE_LEAK
+//
+// MessageText:
+//
+// GDI handles were potentially leaked by the application.
+//
+#define STATUS_GDI_HANDLE_LEAK           ((NTSTATUS)0x803F0001L)
 
 
 //

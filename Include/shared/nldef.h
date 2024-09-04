@@ -24,7 +24,7 @@ Environment:
 #pragma once
 #include <winapifamily.h>
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 

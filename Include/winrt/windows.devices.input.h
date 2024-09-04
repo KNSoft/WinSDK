@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -208,6 +208,26 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Input {
+                interface IPointerDevice2;
+            } /* end namespace */
+        } /* end namespace */
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_FWD_DEFINED__ */
+
+
 #ifndef ____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics __x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics;
@@ -303,18 +323,18 @@ interface IPointerDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0000_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0325 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0325_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0325_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0001 */
 /* [local] */ 
@@ -349,18 +369,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0001_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0001_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0326 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0326_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0326_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0002 */
 /* [local] */ 
@@ -408,18 +428,18 @@ struct PointerDeviceUsage;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0002_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0002_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0327 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0327_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0327_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0003 */
 /* [local] */ 
@@ -454,18 +474,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0003_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0328 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0328_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0328_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0004 */
 /* [local] */ 
@@ -500,18 +520,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0004_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0004_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0329 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0329_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0329_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0005 */
 /* [local] */ 
@@ -546,18 +566,18 @@ extern "C" {
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0005_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0005_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0330 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0330_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0330_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0006 */
 /* [local] */ 
@@ -640,18 +660,18 @@ interface IMouseEventArgs;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0006_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0006_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0331_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0007 */
 /* [local] */ 
@@ -704,6 +724,7 @@ typedef struct __x_ABI_CWindows_CDevices_CInput_CMouseDelta __x_ABI_CWindows_CDe
 typedef struct __x_ABI_CWindows_CDevices_CInput_CPointerDeviceUsage __x_ABI_CWindows_CDevices_CInput_CPointerDeviceUsage;
 
 #endif
+
 
 
 
@@ -825,21 +846,22 @@ extern "C" {
 
 
 
+
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0007_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0007_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0332_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0008 */
 /* [local] */ 
@@ -1014,18 +1036,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CInput__CPointerDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0009_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0009_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0339 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0339 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0333_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0339_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0339_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0010 */
 /* [local] */ 
@@ -1166,18 +1188,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CInput__CPointerDevice;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0011_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0011_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0340 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0340 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0334_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0340_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0340_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0012 */
 /* [local] */ 
@@ -1352,18 +1374,18 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CInput__CPointerDeviceU
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0013_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0013_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0335_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0341_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0341_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0014 */
 /* [local] */ 
@@ -1504,18 +1526,18 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CInput__CPointerDeviceU
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0015_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0015_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0342 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0342 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0336_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0342_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0342_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0016 */
 /* [local] */ 
@@ -1698,18 +1720,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CInput__CPointerDevic
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0017_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0017_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0343 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0343 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0337_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0343_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0343_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0018 */
 /* [local] */ 
@@ -1892,18 +1914,18 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CInput__CPointerDevic
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0019_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0019_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0344 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338 */
+/* interface __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0344 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0338_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0344_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput2Eidl_0000_0344_v0_0_s_ifspec;
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0020 */
 /* [local] */ 
@@ -3038,9 +3060,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CInput_CIPointerDevice;
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0027 */
 /* [local] */ 
 
-#if !defined(____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Input_IPointerDeviceStatics[] = L"Windows.Devices.Input.IPointerDeviceStatics";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__) */
+#if !defined(____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Input_IPointerDevice2[] = L"Windows.Devices.Input.IPointerDevice2";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_windows2Edevices2Einput_0000_0027 */
@@ -3050,6 +3072,143 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0027_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0027_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_INTERFACE_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::Windows::Devices::Input::IPointerDevice2 */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CInput_CIPointerDevice2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace Windows {
+            namespace Devices {
+                namespace Input {
+                    
+                    MIDL_INTERFACE("F8A6D2A0-C484-489F-AE3E-30D2EE1FFD3E")
+                    IPointerDevice2 : public IInspectable
+                    {
+                    public:
+                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxPointersWithZDistance( 
+                            /* [out][retval] */ __RPC__out UINT32 *value) = 0;
+                        
+                    };
+
+                    extern const __declspec(selectany) IID & IID_IPointerDevice2 = __uuidof(IPointerDevice2);
+
+                    
+                }  /* end namespace */
+            }  /* end namespace */
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxPointersWithZDistance )( 
+            __RPC__in __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2 * This,
+            /* [out][retval] */ __RPC__out UINT32 *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2Vtbl;
+
+    interface __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2
+    {
+        CONST_VTBL struct __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_get_MaxPointersWithZDistance(This,value)	\
+    ( (This)->lpVtbl -> get_MaxPointersWithZDistance(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWindows_CDevices_CInput_CIPointerDevice2_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_windows2Edevices2Einput_0000_0028 */
+/* [local] */ 
+
+#if !defined(____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__)
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Input_IPointerDeviceStatics[] = L"Windows.Devices.Input.IPointerDeviceStatics";
+#endif /* !defined(____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__) */
+
+
+/* interface __MIDL_itf_windows2Edevices2Einput_0000_0028 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0028_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__
@@ -3184,7 +3343,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics;
 #endif 	/* ____x_ABI_CWindows_CDevices_CInput_CIPointerDeviceStatics_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput_0000_0028 */
+/* interface __MIDL_itf_windows2Edevices2Einput_0000_0029 */
 /* [local] */ 
 
 #if !defined(____x_ABI_CWindows_CDevices_CInput_CITouchCapabilities_INTERFACE_DEFINED__)
@@ -3192,13 +3351,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows
 #endif /* !defined(____x_ABI_CWindows_CDevices_CInput_CITouchCapabilities_INTERFACE_DEFINED__) */
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput_0000_0028 */
+/* interface __MIDL_itf_windows2Edevices2Einput_0000_0029 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0028_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0029_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0029_v0_0_s_ifspec;
 
 #ifndef ____x_ABI_CWindows_CDevices_CInput_CITouchCapabilities_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CInput_CITouchCapabilities_INTERFACE_DEFINED__
@@ -3331,7 +3490,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CInput_CITouchCapabilities;
 #endif 	/* ____x_ABI_CWindows_CDevices_CInput_CITouchCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput_0000_0029 */
+/* interface __MIDL_itf_windows2Edevices2Einput_0000_0030 */
 /* [local] */ 
 
 #ifndef RUNTIMECLASS_Windows_Devices_Input_KeyboardCapabilities_DEFINED
@@ -3360,13 +3519,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif
 
 
-/* interface __MIDL_itf_windows2Edevices2Einput_0000_0029 */
+/* interface __MIDL_itf_windows2Edevices2Einput_0000_0030 */
 /* [local] */ 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0029_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0030_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Einput_0000_0030_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

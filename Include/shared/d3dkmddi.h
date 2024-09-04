@@ -704,6 +704,13 @@ typedef enum _DXGK_INTERRUPT_TYPE
     DXGK_INTERRUPT_CRTC_VSYNC_WITH_MULTIPLANE_OVERLAY2 = 10,
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    DXGK_INTERRUPT_MONITORED_FENCE_SIGNALED = 11,
+    DXGK_INTERRUPT_HWQUEUE_PAGE_FAULTED = 12,
+    DXGK_INTERRUPT_HWCONTEXTLIST_SWITCH_COMPLETED = 13,
+    DXGK_INTERRUPT_PERIODIC_MONITORED_FENCE_SIGNALED = 14,
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 } DXGK_INTERRUPT_TYPE;
 
 
@@ -724,7 +731,12 @@ typedef struct _DXGKCB_NOTIFY_INTERRUPT_DATA_FLAGS
         struct
         {
             UINT            ValidPhysicalAdapterMask : 1; // 0x00000001
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+            UINT            HsyncFlipCompletion      : 1; // 0x00000002
+            UINT            Reserved                 :30; // 0xFFFFFFFC
+#else
             UINT            Reserved                 :31; // 0xFFFFFFFE
+#endif
         };
         UINT                Value;
     };
@@ -838,9 +850,56 @@ typedef struct _DXGKARGCB_NOTIFY_INTERRUPT_DATA
             UINT                                          MultiPlaneOverlayVsyncInfoCount;
             _Field_size_(MultiPlaneOverlayVsyncInfoCount) DXGK_MULTIPLANE_OVERLAY_VSYNC_INFO2 *pMultiPlaneOverlayVsyncInfo;
             ULONGLONG                                     GpuFrequency;
-            ULONGLONG                                     GpuClockCounter;            
+            ULONGLONG                                     GpuClockCounter;
         } CrtcVsyncWithMultiPlaneOverlay2;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+        struct
+        {
+            UINT    NodeOrdinal;          // in: Node ordinal of engine generating the notification.
+            UINT    EngineOrdinal;        // in: Engine ordinal of engine generating the notification.
+        } MonitoredFenceSignaled;
+
+        struct
+        {
+            UINT    NodeOrdinal;          // in: Node ordinal of engine generating the notification.
+            UINT    EngineOrdinal;        // in: Engine ordinal of engine generating the notification.
+        } HwContextListSwitchCompleted;
+
+        struct
+        {
+            UINT64                      FaultedFenceId;       // in: HW queue progress fence ID of the faulted command. If the faulted fence could not be determined reliably,
+                                                              // PageFaultFlags should have DXGK_PAGE_FAULT_FENCE_INVALID flag set.
+            D3DGPU_VIRTUAL_ADDRESS      FaultedVirtualAddress;  // in: VA of fault, or 0 if the fault has another cause. In the latter case, FaultErrorCode field should be used to describe the GPU error.
+            UINT64                      FaultedPrimitiveAPISequenceNumber; // in: when per draw fence write is enabled, identifies the draw that caused the page fault, or DXGK_PRIMITIVE_API_SEQUENCE_NUMBER_UNKNOWN if such information is not available.           
+
+            union
+            {
+                HANDLE                  FaultedHwQueue;         // in: when DXGK_PAGE_FAULT_FENCE_INVALID is not set,
+                                                                // specifies the handle of the HW queue that generated the fault.
+                HANDLE                  FaultedHwContext;       // in: when DXGK_PAGE_FAULT_FENCE_INVALID and DXGK_PAGE_FAULT_HW_CONTEXT_VALID are set,
+                                                                // specifies the handle of the HW context that generated the fault.
+                HANDLE                  FaultedProcessHandle;   // in: when DXGK_PAGE_FAULT_FENCE_INVALID and DXGK_PAGE_FAULT_PROCESS_HANDLE_VALID are set,
+                                                                // specifies the handle of the process that generated the fault.
+            };
+
+            UINT                        NodeOrdinal;          // in: Node ordinal of engine generating the notification.
+            UINT                        EngineOrdinal;        // in: Engine ordinal of engine generating the notification.
+
+            DXGK_RENDER_PIPELINE_STAGE  FaultedPipelineStage;   // in: render pipeline stage during which the fault was generated, or DXGK_RENDER_PIPELINE_STAGE_UNKNOWN if such information is not available.
+            UINT                        FaultedBindTableEntry;  // in: a bind table index of a resource being accessed at the time of the fault, or DXGK_BIND_TABLE_ENTRY_UNKNOWN if such information is not available.
+            DXGK_PAGE_FAULT_FLAGS       PageFaultFlags;         // in: flags specifying the nature of the page fault and recovery policy
+            UINT                        PageTableLevel;         // in: Described page table level which the faulting operation was attempted on.
+            DXGK_FAULT_ERROR_CODE       FaultErrorCode;         // in: Structure that contains error code describing the fault.
+        } HwQueuePageFaulted;
+
+        struct
+        {
+            D3DDDI_VIDEO_PRESENT_TARGET_ID    VidPnTargetId;    // in: The display signaling the monitored fence.
+            UINT                              NotificationID;   // in: The notification id as multiple can be attached to one VidPnSource.
+        } PeriodicMonitoredFenceSignaled;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
         struct
         {
@@ -965,6 +1024,30 @@ APIENTRY
 DXGKDDI_DESTROYCONTEXT(
     IN_CONST_HANDLE     hContext
     );
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_DESTROYHWCONTEXT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_DESTROYHWCONTEXT(
+    IN_CONST_HANDLE     hHwContext
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_DESTROYHWQUEUE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_DESTROYHWQUEUE(
+    IN_CONST_HANDLE     hHwQueue
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 typedef _In_          D3DKMT_HANDLE             IN_D3DKMT_HANDLE;
 
@@ -1215,6 +1298,75 @@ DXGKDDI_CREATECONTEXT(
     INOUT_PDXGKARG_CREATECONTEXT    pCreateContext
     );
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGK_HWCONTEXT_CAPS
+{
+    union
+    {
+        struct
+        {
+            UINT UseIoMmu               : 1;
+            UINT Reserved               : 31;
+        };
+        UINT Value;
+    };
+} DXGK_HWCONTEXT_CAPS;
+
+typedef struct _DXGKARG_CREATEHWCONTEXT
+{
+    HANDLE                      hHwContext;            // in:  Runtime handle/out: Driver handle
+    UINT                        NodeOrdinal;           // in:  Node targetted for this context.
+    UINT                        EngineAffinity;        // in:  Engine affinity.
+    D3DDDI_CREATEHWCONTEXTFLAGS Flags;                 // in:  Context creation flags.
+    UINT                        PrivateDriverDataSize; // in:  Size of private driver data
+    _Inout_
+    _Field_size_bytes_         (PrivateDriverDataSize)
+    VOID*                       pPrivateDriverData;    // in/out:  Private driver data
+    DXGK_HWCONTEXT_CAPS         ContextCaps;           // out: context caps from driver
+} DXGKARG_CREATEHWCONTEXT;
+
+typedef _Inout_ DXGKARG_CREATEHWCONTEXT*   INOUT_PDXGKARG_CREATEHWCONTEXT;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_CREATEHWCONTEXT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_CREATEHWCONTEXT(
+    IN_CONST_HANDLE                 hDevice,
+    INOUT_PDXGKARG_CREATEHWCONTEXT  pCreateContext
+    );
+
+typedef struct _DXGKARG_CREATEHWQUEUE
+{
+    HANDLE                      hHwQueue;              // in:  Runtime handle/out: Driver handle
+    D3DDDI_CREATEHWQUEUEFLAGS   Flags;                 // in:  Queue creation flags.
+    UINT                        PrivateDriverDataSize; // in:  Size of private driver data
+    _Inout_
+    _Field_size_bytes_         (PrivateDriverDataSize)
+    VOID*                       pPrivateDriverData;    // in/out:  Private driver data
+    D3DKMT_HANDLE               hHwQueueProgressFence; // in: Handle to the hardware queue progress fence object.
+    VOID*                       HwQueueProgressFenceCPUVirtualAddress;  // in: Read-only mapping of the fence value for the CPU
+    D3DGPU_VIRTUAL_ADDRESS      HwQueueProgressFenceGPUVirtualAddress;  // in: Read/write mapping of the fence value for the GPU
+} DXGKARG_CREATEHWQUEUE;
+
+typedef _Inout_ DXGKARG_CREATEHWQUEUE*   INOUT_PDXGKARG_CREATEHWQUEUE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_CREATEHWQUEUE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_CREATEHWQUEUE(
+    IN_CONST_HANDLE                 hHwContext,
+    INOUT_PDXGKARG_CREATEHWQUEUE    pCreateHwQueue
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 typedef _In_ CONST DXGKARG_SETPALETTE*      IN_CONST_PDXGKARG_SETPALETTE;
 
 typedef
@@ -1362,8 +1514,13 @@ typedef enum _DXGK_QUERYADAPTERINFOTYPE
     DXGKQAITYPE_GPUMMUCAPS                = 13,
     DXGKQAITYPE_PAGETABLELEVELDESC        = 14,
     DXGKQAITYPE_PHYSICALADAPTERCAPS       = 15,
-    DXGKQAITYPE_DISPLAY_DRIVERCAPS_EXTENSION = 16,
+    DXGKQAITYPE_DISPLAY_DRIVERCAPS_EXTENSION    = 16,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_0
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    DXGKQAITYPE_INTEGRATED_DISPLAY_DESCRIPTOR   = 17,
+    DXGKQAITYPE_UEFIFRAMEBUFFERRANGES           = 18,
+    DXGKQAITYPE_QUERYCOLORIMETRYOVERRIDES       = 19,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 } DXGK_QUERYADAPTERINFOTYPE;
 
 typedef struct _DXGK_GAMMARAMPCAPS
@@ -1373,11 +1530,30 @@ typedef struct _DXGK_GAMMARAMPCAPS
         struct
         {
             UINT    Gamma_Rgb256x3x16  : 1;    // 0x00000001
-            UINT    Reserved           :31;    // 0xFFFFFFFC
+            UINT    Reserved           :31;    // 0xFFFFFFFE
         };
         UINT        Value;
     };
 } DXGK_GAMMARAMPCAPS;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGK_COLORTRANSFORMCAPS
+{
+    union
+    {
+        struct
+        {
+            UINT    Gamma_Rgb256x3x16   : 1;    // 0x00000001
+            UINT    Gamma_Dxgi1         : 1;    // 0x00000002
+            UINT    Reserved            :30;    // 0xFFFFFFFC
+        };
+        UINT        Value;
+    };
+} DXGK_COLORTRANSFORMCAPS;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+
 
 #define DXGK_TEXTURE_SIZE_SHIFT 11
 
@@ -1542,7 +1718,7 @@ typedef struct _DXGK_GPUMMUCAPS
     union
     {
         struct
-        {	
+        {
             UINT ReadOnlyMemorySupported                : 1;
             UINT NoExecuteMemorySupported               : 1; 
             UINT ZeroInPteSupported                     : 1;
@@ -1586,9 +1762,14 @@ typedef struct _DXGK_PHYSICALADAPTERFLAGS
          UINT IoMmuSupported                 : 1;
          UINT GpuMmuSupported                : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
-         UINT    MovePagingSupported         : 1;
-         UINT    VPRPagingContextRequired    : 1;
+         UINT MovePagingSupported            : 1;
+         UINT VPRPagingContextRequired       : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+         UINT AllowHardwareProtectedNoVpr    : 1;
+         UINT Reserved                       : 27;
+#else
          UINT    Reserved                    : 28;
+#endif
 #else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_1
          UINT Reserved                       : 30;
 #endif
@@ -1599,7 +1780,7 @@ typedef struct _DXGK_PHYSICALADAPTERFLAGS
 
 typedef struct _DXGK_PHYSICALADAPTERCAPS
 {
-    WORD                        NumExecutionNodes;			
+    WORD                        NumExecutionNodes;
     WORD                        PagingNodeIndex;
     HANDLE                      DxgkPhysicalAdapterHandle;
     DXGK_PHYSICALADAPTERFLAGS   Flags;
@@ -1635,7 +1816,12 @@ typedef struct _DXGK_VIDMMCAPS
             UINT    IoMmuSupported              : 1;  
             UINT    ReplicateGdiContent         : 1;  
             UINT    NonCpuVisiblePrimary        : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+            UINT    ParavirtualizationSupported : 1;
+            UINT    Reserved                    : 21;
+#else
             UINT    Reserved                    : 22;
+#endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2
 #else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_0
             UINT    Reserved                    : 27;
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_0
@@ -1711,6 +1897,7 @@ typedef enum _DXGK_WDDMVERSION // _ADVSCH_
      DXGKDDI_WDDMv1_3 = 0x1300,
      DXGKDDI_WDDMv2   = 0x2000,
      DXGKDDI_WDDMv2_1 = 0x2100,
+     DXGKDDI_WDDMv2_2 = 0x2200,
 } DXGK_WDDMVERSION;
 #endif // DXGKDDI_INTERFACE_VERSION
 
@@ -1725,7 +1912,13 @@ typedef struct _DXGK_DRIVERCAPS
     UINT                    InterruptMessageNumber;
     UINT                    NumberOfSwizzlingRanges;
     UINT                    MaxOverlays;
-    DXGK_GAMMARAMPCAPS      GammaRampCaps;
+    union
+    {
+        DXGK_GAMMARAMPCAPS      GammaRampCaps;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+        DXGK_COLORTRANSFORMCAPS ColorTransformCaps;
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+    };
     DXGK_PRESENTATIONCAPS   PresentationCaps;
     UINT                    MaxQueuedFlipOnVSync;
     DXGK_FLIPCAPS           FlipCaps;
@@ -1949,8 +2142,10 @@ typedef struct _DXGK_SEGMENTDESCRIPTOR4
     SIZE_T                   VprRangeSize;            // Size of the video protected region range
     UINT                     VprAlignment;            // Alignment of video protected regions in bytes. Applies to size and start offset.
     UINT                     NumVprSupported;         // Number of supported video protected regions in the VPR range. Zero for infinite number.
-
-	UINT                     VprReserveSize;          // Size of area in VPR to reserve for driver/hardware use.  Zero for no reserve.
+    UINT                     VprReserveSize;          // Size of area in VPR to reserve for driver/hardware use.  Zero for no reserve.
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    UINT                     NumUEFIFrameBufferRanges;// Number of UEFI frame buffer memory ranges in the segment.
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 } DXGK_SEGMENTDESCRIPTOR4;
 
 typedef struct _DXGK_QUERYSEGMENTOUT4
@@ -1977,9 +2172,19 @@ typedef struct _DXGK_QUERYSEGMENTMEMORYSTATE
 {
     WORD                DriverSegmentId;        // [in] Driver segment Id.
     WORD                PhysicalAdapterIndex;   // [in] Physical adapter index in an LDA link
-    UINT                NumInvalidMemoryRanges; // [in] Number of elements in the pMemoryRanges array.
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    union
+    {
+        UINT            NumInvalidMemoryRanges; // [in] Number of elements in the pMemoryRanges array used with DXGKQAITYPE_SEGMENTMEMORYSTATE.
+        UINT            NumUEFIFrameBufferRanges;// [in] Number of elements in the pMemoryRanges array used with DXGKQAITYPE_UEFIFRAMEBUFFERRANGES.
+    };
+#else
+    UINT                NumInvalidMemoryRanges; // [in] Number of elements in the pMemoryRanges array used with DXGKQAITYPE_SEGMENTMEMORYSTATE.
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
     DXGK_MEMORYRANGE*   pMemoryRanges;          // [out] Invalid memory ranges
-} DXGK_QUERYSEGMENTMEMORYSTATE;
+} DXGK_QUERYSEGMENTMEMORYSTATE, DXGK_SEGMENTMEMORYSTATE;
+
+typedef _In_ CONST DXGK_SEGMENTMEMORYSTATE* IN_CONST_PDXGK_SEGMENTMEMORYSTATE;
 
 //
 // Driver caps extension for WDDM2.0 or above drivers
@@ -2004,6 +2209,97 @@ typedef struct _DXGK_DISPLAY_DRIVERCAPS_EXTENSION
 } DXGK_DISPLAY_DRIVERCAPS_EXTENSION;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
+
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGK_QUERYINTEGRATEDDISPLAYIN
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID      TargetId;
+} DXGK_QUERYINTEGRATEDDISPLAYIN;
+
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+typedef enum _DXGK_DISPLAYPANELORIENTATION : UINT
+{
+    DXGK_DPO_0      = 0,
+    DXGK_DPO_90     = 1,
+    DXGK_DPO_180    = 2,
+    DXGK_DPO_270    = 3
+} DXGK_DISPLAYPANELORIENTATION;
+#else
+typedef UINT DXGK_DISPLAYPANELORIENTATION;
+#endif // defined(__cplusplus) && !defined(SORTPP_PASS)
+
+
+#define DXGK_MAX_INTEGRATED_DISPLAYS 16
+
+typedef union _DXGK_INTEGRATEDDISPLAYFLAGS
+{
+    struct
+    {
+        DXGK_DISPLAYPANELORIENTATION    UndockedOrientation         : 2;
+        DXGK_DISPLAYPANELORIENTATION    DockedOrientation           : 2;
+        UINT                            Reserved                    :28;
+    };
+    UINT Value;
+} DXGK_INTEGRATEDDISPLAYFLAGS, *PDXGK_INTEGRATEDDISPLAYFLAGS;
+
+typedef union _DXGK_STANDARD_COLORIMETRY_FLAGS
+{
+    struct
+    {
+        UINT    BT2020YCC   : 1;
+        UINT    BT2020RGB   : 1;
+        UINT    ST2084      : 1;
+        UINT    Reserved    :29;
+    };
+    ULONG Value;
+} DXGK_STANDARD_COLORIMETRY_FLAGS, *PDXGK_STANDARD_COLORIMETRY_FLAGS;
+
+typedef struct _DXGK_COLORIMETRY
+{
+    // Color primaries
+    D3DKMDT_2DOFFSET                    RedPoint;
+    D3DKMDT_2DOFFSET                    GreenPoint;
+    D3DKMDT_2DOFFSET                    BluePoint;
+    D3DKMDT_2DOFFSET                    WhitePoint;
+
+    // Luminance limits
+    ULONG                               MinLuminance;
+    ULONG                               MaxLuminance;
+    ULONG                               MaxFullFrameLuminance;
+
+    // Supported bit depths by wire format
+    D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  FormatBitDepths;
+
+    // Standard colorimetry support flags
+    DXGK_STANDARD_COLORIMETRY_FLAGS     StandardColorimetryFlags;
+} DXGK_COLORIMETRY, *PDXGK_COLORIMETRY;
+
+typedef struct _DXGK_QUERYINTEGRATEDDISPLAYOUT
+{
+    DXGK_INTEGRATEDDISPLAYFLAGS         Flags;
+
+    D3DKMDT_VIDEO_SIGNAL_INFO           NativeTiming;
+
+    DXGK_MONITORLINKINFO_CAPABILITIES   LinkCapabilities;
+
+    DXGK_COLORIMETRY                    Colorimetry;
+
+    DXGK_DISPLAY_TECHNOLOGY             DisplayTechnology;
+    DXGK_DISPLAY_USAGE                  IntendedUsage;
+    BYTE                                Instance;
+    DXGK_DISPLAY_DESCRIPTOR_TYPE        DescriptorType;
+
+    BYTE                                Descriptor[1];
+} DXGK_QUERYINTEGRATEDDISPLAYOUT, *PDXGK_QUERYINTEGRATEDDISPLAYOUT;
+
+typedef struct _DXGK_QUERYCOLORIMETRYOVERRIDESIN
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID      TargetId;
+} DXGK_QUERYCOLORIMETRYOVERRIDESIN;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 
 //
 // Defines for runtime power management
@@ -2105,10 +2401,15 @@ typedef enum _DXGK_POWER_COMPONENT_TYPE
    DXGK_POWER_COMPONENT_OTHER           = 5,
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
    DXGK_POWER_COMPONENT_D3_TRANSITION	= 6,
+#endif
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+   DXGK_POWER_COMPONENT_SHARED          = 7,
+   DXGK_POWER_COMPONENT_MAX             = 8,
+#elif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
    DXGK_POWER_COMPONENT_MAX             = 7,
 #else
    DXGK_POWER_COMPONENT_MAX             = 6,
-#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
+#endif
 } DXGK_POWER_COMPONENT_TYPE;
 
 typedef struct _DXGK_POWER_COMPONENT_MAPPING
@@ -2221,7 +2522,21 @@ typedef struct _DXGK_POWER_P_COMPONENT
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM1_3
 
-
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+typedef struct _DXGK_QUERYADAPTERINFOFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    VirtualMachineData          : 1;    // 0x00000001
+            UINT    Reserved                    :31;    // 0xFFFFFFFE
+        };
+        UINT Value;
+    };
+ } DXGK_QUERYADAPTERINFOFLAGS;
+ #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+ 
 typedef struct _DXGKARG_QUERYADAPTERINFO
 {
     DXGK_QUERYADAPTERINFOTYPE   Type;
@@ -2229,6 +2544,9 @@ typedef struct _DXGKARG_QUERYADAPTERINFO
     UINT                        InputDataSize;
     VOID*                       pOutputData;
     UINT                        OutputDataSize;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    DXGK_QUERYADAPTERINFOFLAGS  Flags;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 } DXGKARG_QUERYADAPTERINFO;
 
 typedef _In_ CONST DXGKARG_QUERYADAPTERINFO*   IN_CONST_PDXGKARG_QUERYADAPTERINFO;
@@ -2351,8 +2669,12 @@ typedef struct _DXGK_ALLOCATIONINFOFLAGS_WDDM2_0
             UINT    DisableLargePageMapping         : 1;    // 0x00000080   // Swizzled 
             UINT    Overlay                         : 1;    // 0x00000100
             UINT    Capture                         : 1;    // 0x00000200
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+            UINT    CreateInVpr                     : 1;    // 0x00000400   // UseAlternateVA
+#else
             UINT    Reserved00                      : 1;    // 0x00000400   // UseAlternateVA
-            UINT    Reserved01                      : 1;    // 0x00000800   // SynchronousPaging
+#endif            
+            UINT    DXGK_ALLOC_RESERVED17           : 1;    // 0x00000800   // Reserved
             UINT    Reserved02                      : 1;    // 0x00001000   // LinkMirrored
             UINT    Reserved03                      : 1;    // 0x00002000   // LinkInstanced
             UINT    HistoryBuffer                   : 1;    // 0x00004000
@@ -2515,7 +2837,7 @@ typedef struct _DXGKARGCB_CREATECONTEXTALLOCATION
                                                                 // or NULL for system device.
     HANDLE                              hContext;               // in: When ContextAllocationFlags.SharedAcrossContexts bit is set to 0,
                                                                 // this parameter contains DXG assigned value for the context that was passed to
-                                                                // DxgkDdiCreateContext, or NULL for system context.
+                                                                // DxgkDdiCreateContext or DxgkDdiCreateHwContext, or NULL for system context.
                                                                 // This parameter should be NULL when ContextAllocationFlags.SharedAcrossContexts bit is set to 1.
     HANDLE                              hDriverAllocation;      // Driver created handle that identifies the created allocation on its side,
                                                                 // this value is subsequently passed as DXGKARG_BUILDPAGINGBUFFER::Transfer::hAllocation
@@ -2764,7 +3086,12 @@ typedef struct _DXGK_SUBMITCOMMANDFLAGS
             UINT        ContextSwitch       : 1;    // GPU should switch from the last executed context on this node to the null context.
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
             UINT        Resubmission        : 1;    // Indicates whether this DMA packet is being resubmitted to the GPU due to an earlier preemption.
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+            UINT        VirtualMachineData  : 1;    // Indicates that the submission is from a paravirtualized adapter.
+            UINT        Reserved            :23;
+#else
             UINT        Reserved            :24;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 #else
             UINT        Reserved            :25;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
@@ -3027,6 +3354,9 @@ typedef enum _DXGK_BUILDPAGINGBUFFER_OPERATION
     DXGK_OPERATION_COPY_PAGE_TABLE_ENTRIES  = 14,
     DXGK_OPERATION_NOTIFY_RESIDENCY         = 15,
 #endif //  DXGKDDI_INTERFACE_VERSION
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+    DXGK_OPERATION_SIGNAL_MONITORED_FENCE   = 16,
+#endif //  DXGKDDI_INTERFACE_VERSION
 } DXGK_BUILDPAGINGBUFFER_OPERATION;
 
 typedef struct _DXGK_TRANSFERFLAGS
@@ -3177,6 +3507,16 @@ typedef struct _DXGK_BUILDPAGINGBUFFER_UPDATECONTEXTALLOCATION
 } DXGK_BUILDPAGINGBUFFER_UPDATECONTEXTALLOCATION;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGK_BUILDPAGINGBUFFER_SIGNALMONITOREDFENCE
+{
+    D3DGPU_VIRTUAL_ADDRESS  MonitoredFenceGpuVa;
+    UINT64                  MonitoredFenceValue;
+} DXGK_BUILDPAGINGBUFFER_SIGNALMONITOREDFENCE;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 typedef struct _DXGKARG_BUILDPAGINGBUFFER
 {
@@ -3331,6 +3671,12 @@ typedef struct _DXGKARG_BUILDPAGINGBUFFER
 
 #endif // DXGKDDI_INTERFACE_VERSION
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+        DXGK_BUILDPAGINGBUFFER_SIGNALMONITOREDFENCE     SignalMonitoredFence;
+
+#endif // DXGKDDI_INTERFACE_VERSION
+
         struct
         {
             UINT    Reserved[64];
@@ -3423,9 +3769,14 @@ typedef struct _DXGK_CREATEPROCESSFLAGS
     {
         struct
         {
-            UINT    SystemProcess   : 1;
-            UINT    GdiProcess      : 1;
-            UINT    Reserved        : 30;
+            UINT    SystemProcess           : 1;
+            UINT    GdiProcess              : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+            UINT    VirtualMachineProcess   : 1;
+            UINT    Reserved                : 29;
+#else
+            UINT    Reserved                : 30;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
         };
         UINT Value;
     };
@@ -3492,6 +3843,60 @@ DXGKDDI_SUBMITCOMMANDVIRTUAL(
     IN_CONST_HANDLE                         hAdapter,
     IN_CONST_PDXGKARG_SUBMITCOMMANDVIRTUAL  pSubmitCommand
     );
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGKARG_SUBMITCOMMANDTOHWQUEUE
+{
+    HANDLE                          hHwQueue;
+    UINT64                          HwQueueProgressFenceId; // Hardware queue progress fence ID that will be signaled upon this DMA buffer completion.
+    D3DGPU_VIRTUAL_ADDRESS          DmaBufferVirtualAddress;
+    UINT                            DmaBufferSize;
+    UINT                            DmaBufferPrivateDataSize;
+    _Field_size_bytes_             (DmaBufferPrivateDataSize)
+    VOID*                           pDmaBufferPrivateData;
+    UINT                            DmaBufferUmdPrivateDataSize;
+} DXGKARG_SUBMITCOMMANDTOHWQUEUE;
+
+typedef _In_ CONST DXGKARG_SUBMITCOMMANDTOHWQUEUE*   IN_CONST_PDXGKARG_SUBMITCOMMANDTOHWQUEUE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SUBMITCOMMANDTOHWQUEUE)
+    _IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SUBMITCOMMANDTOHWQUEUE(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARG_SUBMITCOMMANDTOHWQUEUE    pSubmitCommandToHwQueue
+    );
+
+typedef struct _DXGKARG_SWITCHTOHWCONTEXTLIST
+{
+    HANDLE  hHwContextFirst;    // Hardware context that should be executed by the GPU first. If the GPU is currently not executing this context,
+                                // it needs to preempt the current work and switch to hHwContextFirst.
+                                // May be NULL if the GPU is instructed to become idle.
+    HANDLE  hHwContextSecond;   // Hardware context that should be executed by the GPU
+                                // once all queues in hHwContextFirst are idle or blocked on waits.
+                                // May be NULL.
+    UINT    NodeOrdinal;        // Node ordinal of engine that is instructed to switch to the new context(s).
+    UINT    EngineOrdinal;      // Engine ordinal of engine that is instructed to switch to the new context(s).
+} DXGKARG_SWITCHTOHWCONTEXTLIST;
+
+typedef _In_ CONST DXGKARG_SWITCHTOHWCONTEXTLIST*   IN_CONST_PDXGKARG_SWITCHTOHWCONTEXTLIST;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SWITCHTOHWCONTEXTLIST)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SWITCHTOHWCONTEXTLIST(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARG_SWITCHTOHWCONTEXTLIST pHwContextList
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 typedef struct _DXGKARG_RENDERGDI
 {
@@ -3962,6 +4367,7 @@ typedef enum _DXGK_RECOMMENDFUNCTIONALVIDPN_REASON
     DXGK_RFVR_UNINITIALIZED  = 0,
     DXGK_RFVR_HOTKEY         = 1,
     DXGK_RFVR_USERMODE       = 2,
+    DXGK_RFVR_FIRMWARE       = 3,
 }
 DXGK_RECOMMENDFUNCTIONALVIDPN_REASON;
 
@@ -4104,9 +4510,14 @@ typedef struct _DXGK_PLANE_SPECIFIC_OUTPUT_FLAGS
     {
         struct
         {
-            UINT FlipConvertedToImmediate	: 1;	// 0x00000001
-			UINT PostPresentNeeded			: 1;	// 0x00000002 Should only be set for immediate flips if driver requires a postpresent call on this plane
+            UINT FlipConvertedToImmediate   : 1;	// 0x00000001
+            UINT PostPresentNeeded          : 1;    // 0x00000002 Should only be set for immediate flips if driver requires a postpresent call on this plane
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+            UINT HsyncInterruptCompletion   : 1;    // 0x00000004 Should be set for immediate flips that are completed on Hsync interrupt notification and not upon the return from the DDI.
+            UINT Reserved                   :29;    // 0xFFFFFFF8
+#else
             UINT Reserved					:30;	// 0xFFFFFFFC
+#endif
         };
         UINT Value;
     };
@@ -4382,6 +4793,120 @@ DXGKDDI_VALIDATEUPDATEALLOCATIONPROPERTY(
     IN_CONST_PDXGKARG_VALIDATEUPDATEALLOCPROPERTY pValidateUpdateAllocProperty
     );
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGKARG_CREATEPERIODICFRAMENOTIFICATION
+{
+    HANDLE                          hAdapter;       // [in] Handle to the adapter associated with the VidPnSource
+    D3DDDI_VIDEO_PRESENT_SOURCE_ID  VidPnTargetId;  // [in] The output that the notification will be attached to
+    UINT64                          Time;           // [in] Represents an offset before the VSync.
+                                                    // The Time value may not be longer than a VSync interval.
+                                                    // In units of 100ns.
+    UINT                            NotificationID; // [in] Id that represents this instance of the notification
+                                                    // used to identify which interrupt has fired.
+    HANDLE                          hNotification;  // [out] Handle to the notification object, later used to destroy
+} DXGKARG_CREATEPERIODICFRAMENOTIFICATION;
+
+typedef _Inout_ DXGKARG_CREATEPERIODICFRAMENOTIFICATION* INOUT_PDXGKARG_CREATEPERIODICFRAMENOTIFICATION;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_ (DXGKARG_CREATEPERIODICFRAMENOTIFICATION)
+    _IRQL_requires_max_ (PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_CREATEPERIODICFRAMENOTIFICATION (
+    INOUT_PDXGKARG_CREATEPERIODICFRAMENOTIFICATION pCreatePeriodicFrameNotification
+    );
+
+typedef struct _DXGKARG_DESTROYPERIODICFRAMENOTIFICATION
+{
+    HANDLE      hNotification;  // [in] Handle to the notification object to destroy
+    HANDLE      hAdapter;       // [in] Handle to the adapter associated with the notification
+} DXGKARG_DESTROYPERIODICFRAMENOTIFICATION;
+
+typedef _In_ CONST DXGKARG_DESTROYPERIODICFRAMENOTIFICATION* IN_CONST_PDXGKARG_DESTROYPERIODICFRAMENOTIFICATION;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_ (DXGKARG_DESTROYPERIODICFRAMENOTIFICATION)
+    _IRQL_requires_max_ (PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_DESTROYPERIODICFRAMENOTIFICATION (
+    IN_CONST_PDXGKARG_DESTROYPERIODICFRAMENOTIFICATION pDestroyPeriodicFrameNotification
+    );
+
+typedef struct _DXGK_MULTIPLANEOVERLAYCAPS
+{
+    union
+    {
+        struct
+        {
+            UINT Rotation                        : 1;    // Full rotation
+            UINT RotationWithoutIndependentFlip  : 1;    // Rotation, but without simultaneous IndependentFlip support
+            UINT VerticalFlip                    : 1;    // Can flip the data vertically
+            UINT HorizontalFlip                  : 1;    // Can flip the data horizontally
+            UINT StretchRGB                      : 1;    // Supports RGB formats
+            UINT StretchYUV                      : 1;    // Supports YUV formats
+            UINT BilinearFilter                  : 1;    // Blinear filtering
+            UINT HighFilter                      : 1;    // Better than bilinear filtering
+            UINT Shared                          : 1;    // MPO resources are shared across VidPnSources
+            UINT Immediate                       : 1;    // Immediate flip support
+            UINT Plane0ForVirtualModeOnly        : 1;    // Stretching plane 0 will also stretch the HW cursor and should only be used for virtual mode support
+            UINT Reserved                        : 21;
+        };
+        UINT Value;
+    };
+} DXGK_MULTIPLANEOVERLAYCAPS;
+
+typedef struct _DXGKARG_GETMULTIPLANEOVERLAYCAPS
+{
+    D3DDDI_VIDEO_PRESENT_SOURCE_ID         VidPnSourceId;        // [in] 
+    UINT                                   MaxPlanes;            // [out] Total number of planes supported (including the DWM's primary)
+    UINT                                   MaxRGBPlanes;         // [out] Maximum number of RGB planes supported (including the DWM's primary)
+    UINT                                   MaxYUVPlanes;         // [out] Maximum number of YUV planes supported
+    DXGK_MULTIPLANEOVERLAYCAPS             OverlayCaps;          // [out] Plane capabilities
+    float                                  MaxStretchFactor;     // [out] 
+    float                                  MaxShrinkFactor;      // [out]
+} DXGKARG_GETMULTIPLANEOVERLAYCAPS;
+
+typedef _Inout_ DXGKARG_GETMULTIPLANEOVERLAYCAPS* IN_OUT_PDXGKARG_GETMULTIPLANEOVERLAYCAPS;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_GETMULTIPLANEOVERLAYCAPS)
+    _IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_GETMULTIPLANEOVERLAYCAPS(
+    IN_CONST_HANDLE hAdapter,
+    IN_OUT_PDXGKARG_GETMULTIPLANEOVERLAYCAPS
+                  pGetMultiPlaneOverlayCaps
+    );
+
+typedef struct _DXGKARG_GETPOSTCOMPOSITIONCAPS
+{
+    D3DDDI_VIDEO_PRESENT_SOURCE_ID         VidPnSourceId;        // [in]
+    float                                  MaxStretchFactor;     // [out] 
+    float                                  MaxShrinkFactor;      // [out]
+} DXGKARG_GETPOSTCOMPOSITIONCAPS;
+
+typedef _Inout_ DXGKARG_GETPOSTCOMPOSITIONCAPS* IN_OUT_PDXGKARG_GETPOSTCOMPOSITIONCAPS;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_GETPOSTCOMPOSITIONCAPS)
+    _IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_GETPOSTCOMPOSITIONCAPS(
+    IN_CONST_HANDLE hAdapter,
+    IN_OUT_PDXGKARG_GETPOSTCOMPOSITIONCAPS
+                  pGetPostCompositionCaps
+    );
+#endif //(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
 typedef struct _DXGKARG_CHECKMULTIPLANEOVERLAYSUPPORT
@@ -5851,6 +6376,55 @@ DXGKDDI_RESETENGINE(
 
 #endif // DXGKDDI_INTERFACE_VERSION
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef struct _DXGKARG_RESETHWENGINE
+{
+    UINT                NodeOrdinal;            // in: node ordinal
+    UINT                EngineOrdinal;          // in: engine ordinal
+} DXGKARG_RESETHWENGINE;
+
+typedef _Inout_ DXGKARG_RESETHWENGINE*    INOUT_PDXGKARG_RESETHWENGINE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_RESETHWENGINE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_RESETHWENGINE(
+    IN_CONST_HANDLE                 hAdapter,
+    INOUT_PDXGKARG_RESETHWENGINE    pResetHwEngine
+    );
+
+typedef struct _DXGKARGCB_INVALIDATEHWCONTEXT
+{
+    HANDLE                              hHwContext; // in: For contexts that were invalidated by HW engine reset operation,
+                                                    // DXG assigned value for the context that was passed to
+                                                    // DxgkDdiCreateHwContext.
+} DXGKARGCB_INVALIDATEHWCONTEXT;
+
+typedef _In_ CONST DXGKARGCB_INVALIDATEHWCONTEXT*   IN_CONST_PDXGKARGCB_INVALIDATEHWCONTEXT;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_INVALIDATEHWCONTEXT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_INVALIDATEHWCONTEXT)(
+    IN_CONST_PDXGKARGCB_INVALIDATEHWCONTEXT
+    );
+
+typedef
+_Function_class_DXGK_(DXGKCB_INDICATE_CONNECTOR_CHANGE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+(APIENTRY *DXGKCB_INDICATE_CONNECTOR_CHANGE)(
+    IN_CONST_HANDLE     hAdapter
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 typedef
     _Check_return_
     _Function_class_DXGK_(DXGKDDI_RESETFROMTIMEOUT)
@@ -5879,6 +6453,17 @@ typedef enum _DXGK_ACTIVE_VIDPN_INVALIDATION_REASON
 }
 DXGK_ACTIVE_VIDPN_INVALIDATION_REASON;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_UNBLOCKUEFIFRAMEBUFFERRANGES)
+    _IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_UNBLOCKUEFIFRAMEBUFFERRANGES)(
+    IN_CONST_HANDLE                   hAdapter,
+    IN_CONST_PDXGK_SEGMENTMEMORYSTATE pSegmentMemoryState);
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 typedef struct _DXGK_INTERFACESPECIFICDATA
 {
     HANDLE hAdapter;       // in: handle to dxgkrnl's adapter object
@@ -5894,7 +6479,6 @@ typedef struct _DXGK_INTERFACESPECIFICDATA
     DXGKCB_QUERYVIDPNINTERFACE    pfnQueryVidPnInterfaceCb;
     DXGKCB_GETCAPTUREADDRESS      pfnGetCaptureAddressCb;
 } DXGK_INTERFACESPECIFICDATA;
-
 
 typedef struct _DXGKARG_SETDISPLAYPRIVATEDRIVERFORMAT
 {
@@ -6337,7 +6921,7 @@ Routine Description:
     ControlModeBehavior - requests high-level mode enumeration and setting behaviors
 
 Arguments:
-    hAdapter                        LDDM display miniport adapter handle.
+    hAdapter                        WDDM display miniport adapter handle.
 
     pControlModeBehaviorArg
        ->Request                    Input flags indicating the behaviors the OS is requesting.
@@ -6366,8 +6950,8 @@ typedef union _DXGK_MODE_BEHAVIOR_FLAGS
 {
     struct
     {
-        UINT    PrioritizeHDR               : 1;
-        UINT    Reserved                    :31;
+        UINT    PrioritizeHDR               : 1;    // 0x00000001
+        UINT    Reserved                    :31;    // 0xFFFFFFFE
     };
     UINT    Value;
 } DXGK_MODE_BEHAVIOR_FLAGS;
@@ -6402,28 +6986,8 @@ DXGKDDI_CONTROLMODEBEHAVIOR(
 //
 typedef struct _DXGK_MONITORLINKINFO
 {
-    union
-    {
-        struct
-        {
-            UINT Hidden             : 1;    // 0x00000001
-            UINT Reserved           :31;    // 0xFFFFFFFE
-        };
-        UINT Value;
-    } UsageHints;
-
-    union
-    {
-        struct
-        {
-
-            UINT Stereo             : 1;    // 0x00000001
-            UINT WideColorSpace     : 1;    // 0x00000002
-            UINT HighColorSpace     : 1;    // 0x00000004
-            UINT Reserved           :29;    // 0xFFFFFFF8
-        };
-        UINT Value;
-    } Capabilities;
+    DXGK_MONITORLINKINFO_USAGEHINTS     UsageHints;
+    DXGK_MONITORLINKINFO_CAPABILITIES   Capabilities;
 } DXGK_MONITORLINKINFO;
 
 
@@ -6432,7 +6996,7 @@ Routine Description:
     UpdateMonitorLinkInfo - Reports static per monitor capabilities
 
 Arguments:
-    hAdapter           - LDDM display miniport adapter handle.
+    hAdapter           - WDDM display miniport adapter handle.
 
     pUpdateMonitorLinkInfoArg
        ->VideoPresentTargetId - ID of the video present target to which the monitor in question is connected.
@@ -6480,6 +7044,429 @@ DXGKDDI_UPDATEMONITORLINKINFO(
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
 
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+typedef enum _DXGK_CONNECTION_STATUS : UINT {
+    ConnectionStatusUninitialized   = 0,
+
+    TargetStatusDisconnected        = 4,
+    TargetStatusConnected,
+    TargetStatusJoined,
+
+    MonitorStatusDisconnected       = 8,
+    MonitorStatusUnknown,
+    MonitorStatusConnected,
+
+    LinkConfigurationStarted        =12,
+    LinkConfigurationFailed,
+    LinkConfigurationSucceeded,
+} DXGK_CONNECTION_STATUS, *PDXGK_CONNECTION_STATUS;
+#else
+typedef UINT DXGK_CONNECTION_STATUS;
+#endif // defined(__cplusplus) && !defined(SORTPP_PASS)
+
+
+//
+// Connection change structure which is indicated as available by the miniport
+// and then picked up by the OS from the driver.
+//
+typedef struct _DXGK_CONNECTION_CHANGE {
+    ULONGLONG                       ConnectionChangeId;
+    D3DDDI_VIDEO_PRESENT_TARGET_ID  TargetId            :24;
+    DXGK_CONNECTION_STATUS          ConnectionStatus    : 4;
+    UINT                            Reserved            : 4;
+    union {
+        struct {
+            D3DKMDT_VIDEO_OUTPUT_TECHNOLOGY LinkTargetType;
+        } MonitorConnect;
+        struct {
+            D3DKMDT_VIDEO_OUTPUT_TECHNOLOGY BaseTargetType;
+            D3DDDI_VIDEO_PRESENT_TARGET_ID  NewTargetId;
+        } TargetConnect;
+        struct {
+            D3DKMDT_VIDEO_OUTPUT_TECHNOLOGY BaseTargetType;
+            D3DDDI_VIDEO_PRESENT_TARGET_ID  NewTargetId;
+        } TargetJoin;
+    };
+} DXGK_CONNECTION_CHANGE, *PDXGK_CONNECTION_CHANGE;
+
+
+/*++
+Routine Description:
+    SetTimingsFromVidPn WDDM display miniport VidPN management DDI method
+
+Arguments:
+    hAdapter                        WDDM display miniport adapter handle.
+
+    pSetTimingsFromVidPnArg
+       ->hFunctionalVidPn           Handle of a functional VidPN to applyt to hardware.
+
+       ->SetFlags                   Flags to modify the behavior of the call.
+
+       ->PathCount                  Count of paths in the pSetTimingPathInfo array of pointers.
+
+       ->pSetTimingPathInfo       - Array of pointers, one per path, describing the timing changes 
+                                        The structure for each path, provides details beyond those 
+                                        in the VidPn and contain fields for the driver to describe 
+                                        the results of the request
+
+Return Value:
+    STATUS_SUCCESS
+      - Request has been completed successfully.
+
+    STATUS_NO_MEMORY
+      - There is insufficient memory to complete this request.
+
+    One of the invalid parameter STATUS_GRAPHICS_* codes that can be returned by the OS via
+    DXGDDI_VIDPN* interfaces. These codes should only occur during development since they
+    indicate a bug in the driver or OS.
+
+Side-effects:
+    The driver may report changes in link status triggered by attmepting to change the timings.
+
+Environment:
+    Kernel mode. PASSIVE_LEVEL.
+
+--*/
+
+typedef struct _DXGK_SET_TIMING_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    Reserved;
+        };
+        UINT    Value;
+    };
+} DXGK_SET_TIMING_FLAGS;
+
+typedef struct _DXGK_SET_TIMING_RESULTS
+{
+    union
+    {
+        struct
+        {
+            UINT    ConnectionStatusChanges : 1;    // One or more connection status changes were detected in the course of this call
+            UINT    Reserved                :31;
+        };
+        UINT    Value;
+    };
+} DXGK_SET_TIMING_RESULTS, *PDXGK_SET_TIMING_RESULTS;
+
+
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+
+typedef enum _DXGK_PATH_UPDATE : UINT
+{
+    DXGK_PATH_UPDATE_UNMODIFIED             = 0,
+    DXGK_PATH_UPDATE_ADDED                  = 1,
+    DXGK_PATH_UPDATE_MODIFIED               = 2,
+    DXGK_PATH_UPDATE_REMOVED                = 3
+} DXGK_PATH_UPDATE;
+
+typedef enum _DXGK_GLITCH_CAUSE : UINT8
+{
+    DXGK_GLITCH_CAUSE_DRIVER_ERROR          = 0,
+    DXGK_GLITCH_CAUSE_TIMING_CHANGE         = 1,
+    DXGK_GLITCH_CAUSE_PIPELINE_CHANGE       = 2,
+    DXGK_GLITCH_CAUSE_MEMORY_TIMING         = 3,
+    DXGK_GLITCH_CAUSE_ENCODER_RECONFIG      = 4,
+    DXGK_GLITCH_CAUSE_MODIFIED_WIRE_USAGE   = 5,
+    DXGK_GLITCH_CAUSE_METADATA_CHANGE       = 6,
+    DXGK_GLITCH_CAUSE_NONE                  =255
+} DXGK_GLITCH_CAUSE;
+
+typedef enum _DXGK_GLITCH_EFFECT : UINT8
+{
+    DXGK_GLITCH_EFFECT_SYNC_LOSS            = 0,
+    DXGK_GLITCH_EFFECT_GARBAGE_CONTENT      = 1,
+    DXGK_GLITCH_EFFECT_STALE_CONTENT        = 2,
+    DXGK_GLITCH_EFFECT_BLACK_CONTENT        = 3,
+    DXGK_GLITCH_EFFECT_DEGRADED_CONTENT     = 4,
+    DXGK_GLITCH_EFFECT_SEAMLESS             =255
+} DXGK_GLITCH_EFFECT;
+
+typedef enum _DXGK_GLITCH_DURATION : UINT8
+{
+    DXGK_GLITCH_DURATION_INDEFINITE         = 0,
+    DXGK_GLITCH_DURATION_MULTI_FRAME        = 1,
+    DXGK_GLITCH_DURATION_SINGLE_FRAME       = 2,
+    DXGK_GLITCH_DURATION_MULTI_LINE         = 3,
+    DXGK_GLITCH_DURATION_SINGLE_LINE        = 4,
+    DXGK_GLITCH_DURATION_NONE               =255
+} DXGK_GLITCH_DURATION;
+
+#else
+typedef UINT DXGK_PATH_UPDATE;
+typedef UINT8 DXGK_GLITCH_CAUSE;
+typedef UINT8 DXGK_GLITCH_EFFECT;
+typedef UINT8 DXGK_GLITCH_DURATION;
+#endif // defined(__cplusplus) && !defined(SORTPP_PASS)
+
+typedef struct _DXGK_SET_TIMING_PATH_INFO
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID      VidPnTargetId;
+    D3DDDI_COLOR_SPACE_TYPE             OutputColorSpace;
+    D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  SelectedWireFormat;
+
+    union
+    {
+        struct
+        {
+            DXGK_PATH_UPDATE    VidPnPathUpdates    : 2;    // Indicates how the VidPn description of this path has been modified since the last successful call
+            UINT                Active              : 1;    // The host should be driving a signal to the target (timing or training)
+            UINT                IgnoreConnectivity  : 1;    // Used to force output to an undetected monitor on an analog target
+            UINT                PreserveInherited   : 1;    // Driver should preserve the timings and content inherited from previous driver 
+            UINT                Reserved            :27;
+        } Input;
+        UINT InputFlags;
+    };
+
+    union
+    {
+        struct
+        {
+            UINT    RecheckMPO              : 1;    // Active plane(s) on other paths need to be released before visibility can be turned on
+            UINT    Reserved                :31;
+        } Output;
+        UINT OutputFlags;
+    };
+
+    DXGK_CONNECTION_CHANGE              TargetState;   // Indicates the target state as a result of this call
+
+    union
+    {
+        struct
+        {
+            DXGK_GLITCH_CAUSE       GlitchCause; 
+            DXGK_GLITCH_EFFECT      GlitchEffect; 
+            DXGK_GLITCH_DURATION    GlitchDuration;
+            UINT8                   Reserved;
+        };
+        UINT    DiagnosticInfo;
+    };
+} DXGK_SET_TIMING_PATH_INFO;
+
+typedef struct _DXGKARG_SETTIMINGSFROMVIDPN
+{
+    D3DKMDT_HVIDPN                                      hFunctionalVidPn;
+    DXGK_SET_TIMING_FLAGS                               SetFlags;
+    PDXGK_SET_TIMING_RESULTS                            pResultsFlags;
+    UINT                                                PathCount;
+    _Field_size_(PathCount) DXGK_SET_TIMING_PATH_INFO * pSetTimingPathInfo;
+} DXGKARG_SETTIMINGSFROMVIDPN;
+
+
+typedef _Inout_ DXGKARG_SETTIMINGSFROMVIDPN*       IN_OUT_PDXGKARG_SETTIMINGSFROMVIDPN;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTIMINGSFROMVIDPN)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTIMINGSFROMVIDPN(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_OUT_PDXGKARG_SETTIMINGSFROMVIDPN         pSetTimings
+    );
+
+
+
+/*++
+Routine Description:
+    SetTargetGamma - Sets the gama ramp on the specified target id
+
+Arguments:
+    hAdapter                        WDDM display miniport adapter handle.
+
+    pSetTargetGammaArg
+       ->TargetId                   Target to be modified
+
+       ->GammaRamp                  Gamma look up table
+
+Environment:
+    Kernel mode. PASSIVE_LEVEL.
+
+--*/
+
+typedef struct _DXGKARG_SETTARGETGAMMA
+{
+    IN  D3DDDI_VIDEO_PRESENT_TARGET_ID  TargetId;
+    IN  D3DKMDT_GAMMA_RAMP              GammaRamp;
+} DXGKARG_SETTARGETGAMMA;
+
+
+typedef _In_ CONST DXGKARG_SETTARGETGAMMA* IN_CONST_PDXGKARG_SETTARGETGAMMA;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTARGETGAMMA)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTARGETGAMMA(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARG_SETTARGETGAMMA            pSetTargetGammaArg
+    );
+
+
+
+
+/*++
+Routine Description:
+    SetTargetContentType - Sets the content type for which the driver should be optimizing
+
+Arguments:
+    hAdapter                        WDDM display miniport adapter handle.
+
+    pSetTargetContentTypeArg
+       ->TargetId                   Target to be modified
+
+       ->ContentType                New type of content being displayed
+
+Environment:
+    Kernel mode. PASSIVE_LEVEL.
+
+--*/
+
+typedef struct _DXGKARG_SETTARGETCONTENTTYPE
+{
+    IN  D3DDDI_VIDEO_PRESENT_TARGET_ID      TargetId;
+    IN  D3DKMDT_VIDPN_PRESENT_PATH_CONTENT  ContentType;
+} DXGKARG_SETTARGETCONTENTTYPE;
+
+
+typedef _In_ CONST DXGKARG_SETTARGETCONTENTTYPE* IN_CONST_PDXGKARG_SETTARGETCONTENTTYPE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTARGETCONTENTTYPE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTARGETCONTENTTYPE(
+    IN_CONST_HANDLE                             hAdapter,
+    IN_CONST_PDXGKARG_SETTARGETCONTENTTYPE      pSetTargetContentTypeArg
+    );
+
+
+
+
+/*++
+Routine Description:
+    SetTargetAnalogCopyProtection - Sets the analog copy protection on the specified target id
+
+Arguments:
+    hAdapter                        WDDM display miniport adapter handle.
+
+    pSetTargetAnalogCopyProtectionArg
+       ->TargetId                   Target to be modified
+
+       ->AnalogCopyProtection       Analog copy protection 
+
+Environment:
+    Kernel mode. PASSIVE_LEVEL.
+
+--*/
+
+typedef struct _DXGKARG_SETTARGETANALOGCOPYPROTECTION
+{
+    IN  D3DDDI_VIDEO_PRESENT_TARGET_ID                  TargetId;
+    D3DKMDT_VIDPN_PRESENT_PATH_COPYPROTECTION_TYPE      CopyProtectionType;
+    UINT                                                APSTriggerBits;
+    D3DKMDT_VIDPN_PRESENT_PATH_COPYPROTECTION_SUPPORT   CopyProtectionSupport;
+} DXGKARG_SETTARGETANALOGCOPYPROTECTION;
+
+
+typedef _In_ CONST DXGKARG_SETTARGETANALOGCOPYPROTECTION* IN_CONST_PDXGKARG_SETTARGETANALOGCOPYPROTECTION;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTARGETANALOGCOPYPROTECTION)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTARGETANALOGCOPYPROTECTION(
+    IN_CONST_HANDLE                                 hAdapter,
+    IN_CONST_PDXGKARG_SETTARGETANALOGCOPYPROTECTION pSetTargetAnalogCopyProtectionArg
+    );
+
+
+#if defined(__cplusplus) && !defined(SORTPP_PASS)
+typedef enum _DXGK_DISPLAYDETECTCONTROLTYPE : UINT
+{
+    DXGK_DDCT_UNINITIALIZED  = 0,
+    DXGK_DDCT_POLLONE,
+    DXGK_DDCT_POLLALL,
+    DXGK_DDCT_ENABLEHPD,
+    DXGK_DDCT_DISABLEHPD,
+} DXGK_DISPLAYDETECTCONTROLTYPE;
+#else
+typedef UINT DXGK_DISPLAYDETECTCONTROLTYPE;
+#endif // defined(__cplusplus) && !defined(SORTPP_PASS)
+
+
+typedef struct _DXGKARG_DISPLAYDETECTCONTROL
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID  TargetId            :24;
+    DXGK_DISPLAYDETECTCONTROLTYPE   Type                : 4;
+    UINT                            NonDestructiveOnly  : 1;
+    UINT                            Reserved            : 3;
+} DXGKARG_DISPLAYDETECTCONTROL;
+
+typedef _In_ CONST DXGKARG_DISPLAYDETECTCONTROL* IN_CONST_PDXGKARG_DISPLAYDETECTCONTROL;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_DISPLAYDETECTCONTROL)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_DISPLAYDETECTCONTROL(
+    IN_CONST_HANDLE                         hAdapter,
+    IN_CONST_PDXGKARG_DISPLAYDETECTCONTROL  pDisplayDetectControl
+    );
+
+
+typedef struct _DXGKARG_QUERYCONNECTIONCHANGE
+{
+    DXGK_CONNECTION_CHANGE                  ConnectionChange;          // out: Buffer into which the oldest available change is copied by driver
+} DXGKARG_QUERYCONNECTIONCHANGE;
+
+typedef _In_ DXGKARG_QUERYCONNECTIONCHANGE* IN_PDXGKARG_QUERYCONNECTIONCHANGE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_QUERYCONNECTIONCHANGE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_QUERYCONNECTIONCHANGE(
+    IN_CONST_HANDLE                         hAdapter,
+    IN_PDXGKARG_QUERYCONNECTIONCHANGE       pQueryConnectionChange
+    );
+
+typedef struct _DXGK_INHERITED_TIMING_INFO
+{
+    D3DDDI_COLOR_SPACE_TYPE             OutputColorSpace;
+    D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  SelectedWireFormat;
+    union
+    {
+        struct
+        {
+            DXGK_GLITCH_CAUSE           GlitchCause; 
+            DXGK_GLITCH_EFFECT          GlitchEffect; 
+            DXGK_GLITCH_DURATION        GlitchDuration;
+            UINT8                       Reserved;
+        };
+        UINT    DiagnosticInfo;
+    };
+} DXGK_INHERITED_TIMING_INFO, *PDXGK_INHERITED_TIMING_INFO;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 
 //
 //     Function pointer typedefs
@@ -6574,6 +7561,30 @@ typedef DXGKDDI_CONTROLMODEBEHAVIOR                         *PDXGKDDI_CONTROLMOD
 typedef DXGKDDI_UPDATEMONITORLINKINFO                       *PDXGKDDI_UPDATEMONITORLINKINFO;
 typedef DXGKDDI_VALIDATEUPDATEALLOCATIONPROPERTY            *PDXGKDDI_VALIDATEUPDATEALLOCATIONPROPERTY;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+typedef DXGKDDI_CREATEHWCONTEXT         *PDXGKDDI_CREATEHWCONTEXT;
+typedef DXGKDDI_DESTROYHWCONTEXT        *PDXGKDDI_DESTROYHWCONTEXT;
+typedef DXGKDDI_CREATEHWQUEUE           *PDXGKDDI_CREATEHWQUEUE;
+typedef DXGKDDI_DESTROYHWQUEUE          *PDXGKDDI_DESTROYHWQUEUE;
+typedef DXGKDDI_SUBMITCOMMANDTOHWQUEUE  *PDXGKDDI_SUBMITCOMMANDTOHWQUEUE;
+typedef DXGKDDI_SWITCHTOHWCONTEXTLIST   *PDXGKDDI_SWITCHTOHWCONTEXTLIST;
+typedef DXGKDDI_RESETHWENGINE           *PDXGKDDI_RESETHWENGINE;
+
+typedef DXGKDDI_CREATEPERIODICFRAMENOTIFICATION     *PDXGKDDI_CREATEPERIODICFRAMENOTIFICATION;
+typedef DXGKDDI_DESTROYPERIODICFRAMENOTIFICATION    *PDXGKDDI_DESTROYPERIODICFRAMENOTIFICATION;
+
+typedef DXGKDDI_SETTIMINGSFROMVIDPN             *PDXGKDDI_SETTIMINGSFROMVIDPN;
+typedef DXGKDDI_SETTARGETGAMMA                  *PDXGKDDI_SETTARGETGAMMA;
+typedef DXGKDDI_SETTARGETCONTENTTYPE            *PDXGKDDI_SETTARGETCONTENTTYPE;
+typedef DXGKDDI_SETTARGETANALOGCOPYPROTECTION   *PDXGKDDI_SETTARGETANALOGCOPYPROTECTION;
+typedef DXGKDDI_DISPLAYDETECTCONTROL            *PDXGKDDI_DISPLAYDETECTCONTROL;
+typedef DXGKDDI_QUERYCONNECTIONCHANGE           *PDXGKDDI_QUERYCONNECTIONCHANGE;
+typedef DXGKDDI_GETMULTIPLANEOVERLAYCAPS        *PDXGKDDI_GETMULTIPLANEOVERLAYCAPS;
+typedef DXGKDDI_GETPOSTCOMPOSITIONCAPS          *PDXGKDDI_GETPOSTCOMPOSITIONCAPS;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
 #pragma warning(pop)
 
 #endif /* _D3DKMDDI_H_ */

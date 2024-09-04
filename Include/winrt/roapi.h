@@ -22,6 +22,7 @@
 #include <hstring.h>
 
 /* APISET_NAME: api-ms-win-core-winrt-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 
@@ -270,7 +271,7 @@ namespace ABI
             _Check_return_
             __inline  HRESULT ActivateInstance(_In_ HSTRING activatableClassId,_COM_Outptr_ T** instance)
             {
-                return ::Windows::Foundation::ActivateInstance<T>(activatableClassId, instance);
+                return ::Windows::Foundation::ActivateInstance(activatableClassId, instance);
             }
 
             // registration

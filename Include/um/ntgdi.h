@@ -56,6 +56,9 @@ typedef struct _HLSURF_INFORMATION_PROBE {
 #define DX_LONGHORN_PRESERVEDC
 #endif
 
+#define MAX_COLORTABLE 256
+#define GAMMARAMP_SIZE (MAX_COLORTABLE * sizeof(WORD) * 3)
+
 // PRIVATE
 
 __kernel_entry W32KAPI BOOL APIENTRY
@@ -383,505 +386,6 @@ NtGdiSwapBuffers(
     _In_ HDC hdc
     );
 
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDxgGenericThunk(
-    _In_ ULONG_PTR ulIndex,
-    _In_ ULONG_PTR ulHandle,
-    _Inout_ SIZE_T *pdwSizeOfPtr1,
-    _Inout_  PVOID pvPtr1,
-    _Inout_ SIZE_T *pdwSizeOfPtr2,
-    _Inout_  PVOID pvPtr2
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdAddAttachedSurface(
-    _In_ HANDLE hSurface,
-    _In_ HANDLE hSurfaceAttached,
-    _Inout_ PDD_ADDATTACHEDSURFACEDATA puAddAttachedSurfaceData
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdAttachSurface(
-    _In_ HANDLE  hSurfaceFrom,
-    _In_ HANDLE  hSurfaceTo
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdBlt(
-    _In_ HANDLE hSurfaceDest,
-    _In_ HANDLE hSurfaceSrc,
-    _Inout_ PDD_BLTDATA puBltData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdCanCreateSurface(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_CANCREATESURFACEDATA puCanCreateSurfaceData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdColorControl(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_COLORCONTROLDATA puColorControlData
-    );
-
-__kernel_entry W32KAPI HANDLE APIENTRY
-NtGdiDdCreateDirectDrawObject(
-    _In_ HDC hdc
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdCreateSurface(
-    _In_ HANDLE hDirectDraw,
-    _In_ HANDLE* hSurface,
-    _Inout_ DDSURFACEDESC* puSurfaceDescription,
-    _Inout_ DD_SURFACE_GLOBAL* puSurfaceGlobalData,
-    _Inout_ DD_SURFACE_LOCAL* puSurfaceLocalData,
-    _Inout_ DD_SURFACE_MORE* puSurfaceMoreData,
-    _Inout_ DD_CREATESURFACEDATA* puCreateSurfaceData,
-    _Out_ HANDLE* puhSurface
-    );
-
-#ifdef DX_LONGHORN_PRESERVEDC
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdChangeSurfacePointer(
-    _In_ HANDLE hSurface,
-    _In_ PVOID pSurfacePointer
-    );
-
-#endif // DX_LONGHORN_PRESERVEDC
-
-__kernel_entry W32KAPI HANDLE APIENTRY
-NtGdiDdCreateSurfaceObject(
-    _In_ HANDLE hDirectDrawLocal,
-    _In_ HANDLE hSurface,
-    _In_ PDD_SURFACE_LOCAL puSurfaceLocal,
-    _In_ PDD_SURFACE_MORE puSurfaceMore,
-    _In_ PDD_SURFACE_GLOBAL puSurfaceGlobal,
-    _In_ BOOL bComplete
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdDeleteSurfaceObject(
-    _In_ HANDLE hSurface
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdDeleteDirectDrawObject(
-    _In_ HANDLE hDirectDrawLocal
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdDestroySurface(
-    _In_ HANDLE hSurface,
-    _In_ BOOL bRealDestroy
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdFlip(
-    _In_ HANDLE hSurfaceCurrent,
-    _In_ HANDLE hSurfaceTarget,
-    _In_ HANDLE hSurfaceCurrentLeft,
-    _In_ HANDLE hSurfaceTargetLeft,
-    _Inout_ PDD_FLIPDATA puFlipData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetAvailDriverMemory(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETAVAILDRIVERMEMORYDATA puGetAvailDriverMemoryData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetBltStatus(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_GETBLTSTATUSDATA puGetBltStatusData
-    );
-
-__kernel_entry W32KAPI HDC APIENTRY
-NtGdiDdGetDC(
-    _In_ HANDLE hSurface,
-    _In_ PALETTEENTRY* puColorTable
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetDriverInfo(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETDRIVERINFODATA puGetDriverInfoData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetFlipStatus(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_GETFLIPSTATUSDATA puGetFlipStatusData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetScanLine(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETSCANLINEDATA puGetScanLineData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdSetExclusiveMode(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_SETEXCLUSIVEMODEDATA puSetExclusiveModeData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdFlipToGDISurface(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_FLIPTOGDISURFACEDATA puFlipToGDISurfaceData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdLock(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_LOCKDATA puLockData,
-    _In_ HDC hdcClip
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdQueryDirectDrawObject(
-    _In_ HANDLE hDirectDrawLocal,
-    _Out_ PDD_HALINFO pHalInfo,
-    _Out_writes_(3) DWORD* pCallBackFlags,
-    _Out_opt_ LPD3DNTHAL_CALLBACKS puD3dCallbacks,
-    _Out_opt_ LPD3DNTHAL_GLOBALDRIVERDATA puD3dDriverData,
-    _Out_opt_ PDD_D3DBUFCALLBACKS puD3dBufferCallbacks,
-    _Out_opt_ LPDDSURFACEDESC puD3dTextureFormats,
-    _Out_ DWORD* puNumHeaps,
-    _Out_opt_ VIDEOMEMORY* puvmList,
-    _Out_ DWORD* puNumFourCC,
-    _Out_opt_ DWORD* puFourCC
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdReenableDirectDrawObject(
-    _In_ HANDLE hDirectDrawLocal,
-    _Inout_ BOOL* pubNewMode
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdReleaseDC(
-    _In_ HANDLE hSurface
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdResetVisrgn(
-    _In_ HANDLE hSurface,
-    _In_ HWND hwnd
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdSetColorKey(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_SETCOLORKEYDATA puSetColorKeyData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdSetOverlayPosition(
-    _In_ HANDLE hSurfaceSource,
-    _In_ HANDLE hSurfaceDestination,
-    _Inout_ PDD_SETOVERLAYPOSITIONDATA puSetOverlayPositionData
-    );
-
-__kernel_entry W32KAPI NTSTATUS APIENTRY
-NtGdiDdUnattachSurface(
-    _In_ HANDLE hSurface,
-    _In_ HANDLE hSurfaceAttached
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdUnlock(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_UNLOCKDATA puUnlockData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdUpdateOverlay(
-    _In_ HANDLE hSurfaceDestination,
-    _In_ HANDLE hSurfaceSource,
-    _Inout_ PDD_UPDATEOVERLAYDATA puUpdateOverlayData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdWaitForVerticalBlank(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_WAITFORVERTICALBLANKDATA puWaitForVerticalBlankData
-    );
-
-__kernel_entry W32KAPI HANDLE APIENTRY
-NtGdiDdGetDxHandle(
-    _In_opt_ HANDLE hDirectDraw,
-    _In_opt_ HANDLE hSurface,
-    _In_ BOOL bRelease
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiDdSetGammaRamp(
-    _In_ HANDLE hDirectDraw,
-    _In_ HDC hdc,
-    _In_reads_bytes_(256*3*2) LPVOID lpGammaRamp
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdLockD3D(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_LOCKDATA puLockData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdUnlockD3D(
-    _In_ HANDLE hSurface,
-    _Inout_ PDD_UNLOCKDATA puUnlockData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdCreateD3DBuffer(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ HANDLE* hSurface,
-    _Inout_ DDSURFACEDESC* puSurfaceDescription,
-    _Inout_ DD_SURFACE_GLOBAL* puSurfaceGlobalData,
-    _Inout_ DD_SURFACE_LOCAL* puSurfaceLocalData,
-    _Inout_ DD_SURFACE_MORE* puSurfaceMoreData,
-    _Inout_ DD_CREATESURFACEDATA* puCreateSurfaceData,
-    _Inout_ HANDLE* puhSurface
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdCanCreateD3DBuffer(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_CANCREATESURFACEDATA puCanCreateSurfaceData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdDestroyD3DBuffer(
-    _In_ HANDLE hSurface
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiD3dContextCreate(
-    _In_ HANDLE hDirectDrawLocal,
-    _In_ HANDLE hSurfColor,
-    _In_ HANDLE hSurfZ,
-    _Inout_ D3DNTHAL_CONTEXTCREATEI *pdcci
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiD3dContextDestroy(
-    _In_ LPD3DNTHAL_CONTEXTDESTROYDATA
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiD3dContextDestroyAll(
-    _Out_ LPD3DNTHAL_CONTEXTDESTROYALLDATA pdcdad
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiD3dValidateTextureStageState(
-    _Inout_ LPD3DNTHAL_VALIDATETEXTURESTAGESTATEDATA pData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiD3dDrawPrimitives2(
-    _In_ HANDLE hCmdBuf,
-    _In_ HANDLE hVBuf,
-    _Inout_ LPD3DNTHAL_DRAWPRIMITIVES2DATA pded,
-    _Inout_ FLATPTR* pfpVidMemCmd,
-    _Inout_ DWORD* pdwSizeCmd,
-    _Inout_ FLATPTR* pfpVidMemVtx,
-    _Inout_ DWORD* pdwSizeVtx
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetDriverState(
-    _Inout_ PDD_GETDRIVERSTATEDATA pdata
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdCreateSurfaceEx(
-    _In_ HANDLE hDirectDraw,
-    _In_ HANDLE hSurface,
-    _In_ DWORD dwSurfaceHandle
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpCanCreateVideoPort(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_CANCREATEVPORTDATA puCanCreateVPortData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpColorControl(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_VPORTCOLORDATA puVPortColorData
-    );
-
-__kernel_entry W32KAPI HANDLE APIENTRY
-NtGdiDvpCreateVideoPort(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_CREATEVPORTDATA puCreateVPortData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpDestroyVideoPort(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_DESTROYVPORTDATA puDestroyVPortData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpFlipVideoPort(
-    _In_ HANDLE hVideoPort,
-    _In_ HANDLE hDDSurfaceCurrent,
-    _In_ HANDLE hDDSurfaceTarget,
-    _Inout_ PDD_FLIPVPORTDATA puFlipVPortData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortBandwidth(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_GETVPORTBANDWIDTHDATA puGetVPortBandwidthData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortField(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_GETVPORTFIELDDATA puGetVPortFieldData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortFlipStatus(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETVPORTFLIPSTATUSDATA puGetVPortFlipStatusData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortInputFormats(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_GETVPORTINPUTFORMATDATA puGetVPortInputFormatData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortLine(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_GETVPORTLINEDATA puGetVPortLineData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortOutputFormats(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_GETVPORTOUTPUTFORMATDATA puGetVPortOutputFormatData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoPortConnectInfo(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETVPORTCONNECTDATA puGetVPortConnectData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpGetVideoSignalStatus(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_GETVPORTSIGNALDATA puGetVPortSignalData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpUpdateVideoPort(
-    _In_ HANDLE hVideoPort,
-    _In_ HANDLE* phSurfaceVideo,
-    _In_ HANDLE* phSurfaceVbi,
-    _Inout_ PDD_UPDATEVPORTDATA puUpdateVPortData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpWaitForVideoPortSync(
-    _In_ HANDLE hVideoPort,
-    _Inout_ PDD_WAITFORVPORTSYNCDATA puWaitForVPortSyncData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpAcquireNotification(
-    _In_ HANDLE hVideoPort,
-    _Inout_ HANDLE* hEvent,
-    _In_ LPDDVIDEOPORTNOTIFY pNotify
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDvpReleaseNotification(
-    _In_ HANDLE hVideoPort,
-    _In_ HANDLE hEvent
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetMoCompGuids(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETMOCOMPGUIDSDATA puGetMoCompGuidsData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetMoCompFormats(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETMOCOMPFORMATSDATA puGetMoCompFormatsData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetMoCompBuffInfo(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETMOCOMPCOMPBUFFDATA puGetBuffData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdGetInternalMoCompInfo(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_GETINTERNALMOCOMPDATA puGetInternalData
-    );
-
-__kernel_entry W32KAPI HANDLE APIENTRY
-NtGdiDdCreateMoComp(
-    _In_ HANDLE hDirectDraw,
-    _Inout_ PDD_CREATEMOCOMPDATA puCreateMoCompData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdDestroyMoComp(
-    _In_ HANDLE hMoComp,
-    _Inout_ PDD_DESTROYMOCOMPDATA puDestroyMoCompData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdBeginMoCompFrame(
-    _In_ HANDLE hMoComp,
-    _Inout_ PDD_BEGINMOCOMPFRAMEDATA puBeginFrameData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdEndMoCompFrame(
-    _In_ HANDLE hMoComp,
-    _Inout_ PDD_ENDMOCOMPFRAMEDATA puEndFrameData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdRenderMoComp(
-    _In_ HANDLE hMoComp,
-    _Inout_ PDD_RENDERMOCOMPDATA puRenderMoCompData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdQueryMoCompStatus(
-    _In_ HANDLE hMoComp,
-    _Inout_ PDD_QUERYMOCOMPSTATUSDATA puQueryMoCompStatusData
-    );
-
-__kernel_entry W32KAPI DWORD APIENTRY
-NtGdiDdAlphaBlt(
-    _In_ HANDLE hSurfaceDest,
-    _In_opt_ HANDLE hSurfaceSrc,
-    _Inout_ PDD_BLTDATA puBltData
-    );
-
-
 // Image32
 
 __kernel_entry W32KAPI BOOL APIENTRY
@@ -1012,6 +516,24 @@ __kernel_entry W32KAPI BOOL APIENTRY
 NtGdiSetDeviceGammaRamp(
     _In_ HDC hdc,
     _In_reads_bytes_(256*2*3) LPVOID lpGammaRamp
+    );
+
+__kernel_entry W32KAPI BOOL APIENTRY
+NtGdiSetPrivateDeviceGammaRamp(
+    _In_ HDC hdc,
+    _In_reads_bytes_(GAMMARAMP_SIZE) LPVOID lpGammaRamp,
+    _In_ BOOL bRangeCheck
+    );
+
+__kernel_entry W32KAPI BOOL APIENTRY
+NtGdiGetAppliedDeviceGammaRamp(
+    _In_ HDC hdc,
+    _Out_writes_bytes_(GAMMARAMP_SIZE) LPVOID lpGammaRamp
+    );
+
+__kernel_entry W32KAPI BOOL APIENTRY
+NtGdiGetGammaRampCapability(
+    _In_ HDC hdc
     );
 
 __kernel_entry W32KAPI BOOL APIENTRY
@@ -2382,7 +1904,7 @@ NtGdiGetFontUnicodeRanges(
 __kernel_entry W32KAPI BOOL
 NtGdiGetRealizationInfo(
     _In_ HDC hdc,
-    _Out_ PFONT_REALIZATION_INFO pri
+    _Out_ PFONT_REALIZATION_INFO2 pri
     );
 
 typedef struct tagDOWNLOADDESIGNVECTOR {
@@ -2987,25 +2509,6 @@ NtGdiDrawStream(
 __kernel_entry W32KAPI BOOL APIENTRY NtGdiMakeObjectXferable(IN HANDLE h, IN DWORD dwProcessId);
 __kernel_entry W32KAPI BOOL APIENTRY NtGdiMakeObjectUnXferable(IN HANDLE h);
 
-// Private DWM interfaces
-
-#ifdef DWM_HIGHCOLOR
-
-__kernel_entry W32KAPI BOOL
-NtGdiDwmGetHighColorMode(
-    _Out_ DXGI_FORMAT* pdxgiFormat);
-
-__kernel_entry W32KAPI BOOL
-NtGdiDwmSetHighColorMode(
-    _In_ DXGI_FORMAT dxgiFormat);
-
-__kernel_entry W32KAPI HANDLE
-NtGdiDwmCaptureScreen(
-    _In_ const RECT* prcCapture,
-    _In_ DXGI_FORMAT dxgiFormat);
-
-#endif
-
 __kernel_entry W32KAPI NTSTATUS APIENTRY
 NtGdiDdCreateFullscreenSprite(
     _In_ HDC hdc,
@@ -3062,6 +2565,12 @@ NtGdiGetProcessSessionFonts(
     _Inout_ DWORD *pdwFilePathsSize
     );
 
+_Must_inspect_result_
+_Success_(return == STATUS_SUCCESS)
+__kernel_entry W32KAPI NTSTATUS APIENTRY
+NtGdiAddInitialFonts(
+    );
+
 __kernel_entry W32KAPI NTSTATUS APIENTRY
 NtGdiGetEntry(
     _In_ int index,
@@ -3070,7 +2579,6 @@ NtGdiGetEntry(
 __kernel_entry W32KAPI UINT APIENTRY
 NtGdiGetPublicFontTableChangeCookie();
 
-#ifdef GDIDPISCALING
 __kernel_entry W32KAPI BOOL
 NtGdiScaleRgn(
     _In_ HDC hdc, 
@@ -3105,7 +2613,6 @@ LONG GreGetDCDpiScaleValue(
 LONG GreGetBitmapDpiScaleValue(
     _In_ HSURF hsurf);
 
-#endif
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0618 */
+ /* File created by MIDL compiler version 8.01.0622 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -21423,7 +21423,8 @@ enum _XHR_PROPERTY
         XHR_PROP_QUERY_STRING_UTF8	= 0x7,
         XHR_PROP_IGNORE_CERT_ERRORS	= 0x8,
         XHR_PROP_ONDATA_THRESHOLD	= 0x9,
-        XHR_PROP_SET_ENTERPRISEID	= 0xa
+        XHR_PROP_SET_ENTERPRISEID	= 0xa,
+        XHR_PROP_MAX_CONNECTIONS	= 0xb
     } 	XHR_PROPERTY;
 
 #define XHR_PROP_ONDATA_ALWAYS 0x0
